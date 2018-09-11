@@ -1,6 +1,7 @@
-import React from 'react';
-import Show from './Show';
-import formatTime from '../lib/formatTime';
+import React from "react";
+import Show from "./Show";
+import formatTime from "../lib/formatTime";
+import { addToPreviouslyWatched } from "../lib/previouslyWatched";
 
 export default class Player extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class Player extends React.Component {
     let lastPlayed = 0;
 
     // for SSR
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const lp = localStorage.getItem(`lastPlayed${this.props.show.number}`);
       if (lp) lastPlayed = JSON.parse(lp).lastPlayed;
     }
@@ -48,7 +49,7 @@ export default class Player extends React.Component {
   }
 
   timeUpdate = e => {
-    console.log('Updating Time');
+    console.log("Updating Time");
     // Check if the user already had a curent time
     if (this.state.timeWasLoaded) {
       const lp = localStorage.getItem(`lastPlayed${this.props.show.number}`);
@@ -62,11 +63,14 @@ export default class Player extends React.Component {
       const progressTime = (currentTime / duration) * 100;
       if (Number.isNaN(progressTime)) return;
       this.setState({ progressTime, currentTime, duration });
+
+      // Check if episode was previously watched if not add it to the list.
+      addToPreviouslyWatched(this.props.show.number, progressTime);
     }
   };
 
   togglePlay = () => {
-    const method = this.state.playing ? 'pause' : 'play';
+    const method = this.state.playing ? "pause" : "play";
     this.audio[method]();
   };
 
@@ -78,8 +82,8 @@ export default class Player extends React.Component {
 
   playPause = () => {
     this.setState({ playing: !this.audio.paused });
-    const method = this.audio.paused ? 'add' : 'remove';
-    document.querySelector('.bars').classList[method]('bars--paused'); // 💩
+    const method = this.audio.paused ? "add" : "remove";
+    document.querySelector(".bars").classList[method]("bars--paused"); // 💩
   };
 
   volume = e => {
@@ -103,9 +107,9 @@ export default class Player extends React.Component {
         <div className="player__section player__section--left">
           <button
             onClick={this.togglePlay}
-            aria-label={playing ? 'pause' : 'play'}
+            aria-label={playing ? "pause" : "play"}
           >
-            <p className="player__icon">{playing ? '❚❚' : '►'}</p>
+            <p className="player__icon">{playing ? "❚❚" : "►"}</p>
             <p>
               {formatTime(currentTime)} / {formatTime(duration)}
             </p>
@@ -132,7 +136,7 @@ export default class Player extends React.Component {
           <button onClick={this.speed} className="player__speed">
             <p>FASTNESS</p>
             <span className="player__speeddisplay">
-              {this.state.playbackRate} &times;{' '}
+              {this.state.playbackRate} &times;{" "}
             </span>
           </button>
 

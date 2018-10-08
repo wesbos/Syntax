@@ -47,6 +47,14 @@
         flex 2
       & > *
         width 100%
+    &--bottom
+      display flex
+      justify-content space-around
+      width 100%
+      border-top 1px solid rgba(0,0,0,0.6)
+      color rgba(255,255,255,0.85)
+      @media (max-width: 650px)
+        display none
   &__icon
     font-size 2rem
     line-height 0.5

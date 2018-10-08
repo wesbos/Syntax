@@ -20,8 +20,13 @@ export default class Player extends React.Component {
       duration: 0,
       currentTime: lastPlayed,
       playbackRate: 1,
-      timeWasLoaded: lastPlayed !== 0
+      timeWasLoaded: lastPlayed !== 0,
+      volume: 1
     };
+  }
+
+  componentDidMount() {
+    window.addEventListener('keypress', this.handleKeyboardShortcuts);
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -46,6 +51,52 @@ export default class Player extends React.Component {
       );
     }
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('keypress', this.handleKeyboardShortcuts);
+  }
+
+  handleKeyboardShortcuts = e => {
+    switch (e.which) {
+      // k: play/pause
+      case 75:
+      case 107:
+        this.togglePlay();
+        return;
+      // j: backward 10 seconds
+      case 74:
+      case 106:
+        this.forwardBackward('backward');
+        return;
+      // l: forward 10 seconds
+      case 76:
+      case 108:
+        this.forwardBackward('forward');
+        return;
+      // i: volume up
+      case 73:
+      case 105:
+        this.volumeShortcut('increase');
+        return;
+      // o: volume down
+      case 79:
+      case 111:
+        this.volumeShortcut('decrease');
+        return;
+      // [: decrease speed by 0.10x
+      case 219:
+      case 91:
+        this.speed('decrease');
+        return;
+      // ]: increase speed by 0.10x
+      case 221:
+      case 93:
+        this.speed('increase');
+        return;
+      default:
+        return;
+    }
+  };
 
   timeUpdate = e => {
     console.log("Updating Time");
@@ -83,15 +134,85 @@ export default class Player extends React.Component {
   };
 
   volume = e => {
-    this.audio.volume = e.currentTarget.value;
+    this.setState({ volume: parseFloat(e.currentTarget.value) }, () => {
+      this.setVolume();
+    });
   };
 
-  speed = () => {
-    let playbackRate = this.state.playbackRate + 0.25;
-    if (playbackRate > 2.5) {
-      playbackRate = 0.75;
+  volumeShortcut = type => {
+    let volume;
+
+    switch (type) {
+      case 'decrease':
+        volume = parseFloat((this.state.volume - 0.1).toFixed(1));
+        if (volume <= 0.1) {
+          volume = 0.1;
+        }
+        this.setState({ volume }, () => {
+          this.setVolume();
+        });
+        break;
+      case 'increase':
+        volume = parseFloat((this.state.volume + 0.1).toFixed(1));
+        if (volume >= 1) {
+          volume = 1;
+        }
+        this.setState({ volume }, () => {
+          this.setVolume();
+        });
+        break;
+      default:
+        break;
     }
-    this.setState({ playbackRate });
+  };
+
+  setVolume = () => {
+    this.audio.volume = this.state.volume;
+  };
+
+  speed = type => {
+    let playbackRate;
+
+    switch (type) {
+      case 'decrease':
+        playbackRate = parseFloat((this.state.playbackRate - 0.1).toFixed(2));
+        if (playbackRate <= 0) {
+          playbackRate = this.state.playbackRate;
+        }
+        this.setState({ playbackRate });
+        break;
+      case 'increase':
+        playbackRate = parseFloat((this.state.playbackRate + 0.1).toFixed(2));
+        if (playbackRate > 2.5) {
+          playbackRate = this.state.playbackRate;
+        }
+        this.setState({ playbackRate });
+        break;
+      default:
+        playbackRate = this.state.playbackRate + 0.25;
+        if (playbackRate > 2.5) {
+          playbackRate = 0.75;
+        }
+        this.setState({ playbackRate });
+        break;
+    }
+  };
+
+  forwardBackward = type => {
+    switch (type) {
+      case 'backward':
+        this.audio.currentTime =
+          this.audio.currentTime - 10 <= 0 ? 0 : this.audio.currentTime - 10;
+        break;
+      case 'forward':
+        this.audio.currentTime =
+          this.audio.currentTime + 10 > this.audio.duration
+            ? this.audio.duration
+            : this.audio.currentTime + 10;
+        break;
+      default:
+        break;
+    }
   };
 
   render() {
@@ -145,6 +266,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="0.1"
                 id="vol10"
+                checked={this.state.volume === 0.1 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol10">
@@ -156,6 +278,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="0.2"
                 id="vol20"
+                checked={this.state.volume === 0.2 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol20">
@@ -167,6 +290,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="0.3"
                 id="vol30"
+                checked={this.state.volume === 0.3 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol30">
@@ -178,6 +302,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="0.4"
                 id="vol40"
+                checked={this.state.volume === 0.4 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol40">
@@ -189,6 +314,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="0.5"
                 id="vol50"
+                checked={this.state.volume === 0.5 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol50">
@@ -200,6 +326,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="0.6"
                 id="vol60"
+                checked={this.state.volume === 0.6 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol60">
@@ -211,6 +338,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="0.7"
                 id="vol70"
+                checked={this.state.volume === 0.7 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol70">
@@ -222,6 +350,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="0.8"
                 id="vol80"
+                checked={this.state.volume === 0.8 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol80">
@@ -229,11 +358,11 @@ export default class Player extends React.Component {
               </label>
               <input
                 onChange={this.volume}
-                defaultChecked
                 type="radio"
                 name="volume"
                 value="0.9"
                 id="vol90"
+                checked={this.state.volume === 0.9 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol90">
@@ -245,6 +374,7 @@ export default class Player extends React.Component {
                 name="volume"
                 value="1"
                 id="vol100"
+                checked={this.state.volume === 1 ? true : false}
                 className="sr-only"
               />
               <label htmlFor="vol100">
@@ -252,6 +382,14 @@ export default class Player extends React.Component {
               </label>
             </div>
           </div>
+        </div>
+
+        <div className="player__section player__section--bottom">
+          {/* <div>Keyboard Sortcuts:</div>  */}
+          <div>Play/Pause - K</div>
+          <div>Forward/Backward - L/J</div>
+          <div>Speed Up/Down - ]/[</div>
+          <div>Volume Up/Down - I/O</div>
         </div>
 
         <audio

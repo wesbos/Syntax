@@ -1,0 +1,29 @@
+.highcontrast
+  filter: grayscale(100%)
+  body
+    background: #000
+    .subscribe a
+      color: #fff
+      background: #000
+      border: 1px solid #fff
+      border-radius: 3px
+      margin: -1px
+    .show__displayNumber
+      color: #333
+#highcontrast
+  border 1px solid yellow
+  border-radius 3px
+  padding 5px 10px
+  position fixed
+  top 15px
+  right 15px
+  font-size 12px
+  &:hover
+    border 1px dotted
+  @media (max-width: 767px)
+    position relative
+    margin 10px 15px
+    text-align center
+    display block
+    right: auto
+    top 0

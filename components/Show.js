@@ -1,22 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import slug from 'speakingurl';
-import Router from 'next/router';
-import { FaPlay } from 'react-icons/fa';
-import Bars from './bars';
+import React from "react";
+import PropTypes from "prop-types";
+import slug from "speakingurl";
+import Router from "next/router";
+import { FaPlay } from "react-icons/fa";
+import Bars from "./bars";
 
 export default class Show extends React.Component {
   static propTypes = {
     show: PropTypes.object.isRequired,
     currentPlaying: PropTypes.string.isRequired,
     currentShow: PropTypes.string.isRequired,
-    setCurrentPlaying: PropTypes.func.isRequired,
+    setCurrentPlaying: PropTypes.func.isRequired
   };
 
   changeURL = (e, show) => {
     e.preventDefault();
     const { href } = e.currentTarget;
     Router.push(`/?number=${show.displayNumber}`, href, { shallow: true });
+    this.props.highlightSearch(show, this.props.query);
   };
 
   render() {
@@ -24,8 +25,8 @@ export default class Show extends React.Component {
     return (
       <div
         className={`show ${
-          currentPlaying === show.displayNumber ? 'show--playing' : ''
-        } ${currentShow === show.displayNumber ? 'show--active' : ''}
+          currentPlaying === show.displayNumber ? "show--playing" : ""
+        } ${currentShow === show.displayNumber ? "show--active" : ""}
       `}
       >
         <a

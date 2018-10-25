@@ -59,7 +59,49 @@
   display flex
   flex-wrap wrap
 
-.showList
+.searchBox
+  position relative
+  &.sticky
+    position: sticky
+    position -webkit-sticky
+    z-index: 1
+    top: 102px
+    @media (max-width: 650px)
+      top: 0px
+  input
+    width 100%
+    height 3rem
+    padding 1rem
+    border 1px solid grey
+    border-left-width 10px
+    background lightgrey
+    font-size 1.5rem
+    outline-color yellow
+  .search-icon-wpr
+    position absolute
+    right 3rem
+    padding-top 0.5rem
+    .search-icon
+      color #000
+      position absolute
+      margin-top 2px
+      margin-left 3px
+      width 12px
+      height 12px
+      border solid 1px currentColor
+      border-radius 100%
+      -webkit-transform rotate(-45deg)
+      transform rotate(-45deg)
+      &:before
+        content ''
+        position absolute
+        top 11px
+        left 5px
+        height 6px
+        width 1px
+        background-color currentColor
+        
+.column-wrap
   width 38%
   display flex
   flex-direction column
@@ -67,6 +109,11 @@
     height 300px
     width 100%
     overflow-x scroll
+  .no-results
+    font-size 1.5rem
+    text-align center
+    &.hidden
+      display none
 
 .showNotes
   padding 2rem
@@ -97,4 +144,6 @@
     color lighten(black, 20%)
     border-bottom 1px solid yellow
     text-decoration none
-
+  mark
+    background yellow
+    

@@ -26,7 +26,7 @@
     "express": "^4.16.3",
     "glob": "7.1.2",
     "meta-marked": "^0.4.2",
-    "next": "^6.0.3",
+    "next": "^7.0.1",
     "next-url-prettifier": "^1.3.0",
     "now": "^11.2.4",
     "postcss-easy-import": "3.0.0",

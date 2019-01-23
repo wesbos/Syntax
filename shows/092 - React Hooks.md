@@ -19,70 +19,70 @@ If you want to know what's happening with your errors, track them with [Sentry](
 
 2:30
 
-* Function components
+- Function components
 
 4:50
 
-* What are React hooks?
+- What are React hooks?
 
 8:12
 
-* What problem does this solve?
+- What problem does this solve?
 
 12:00
 
-* State hooks
+- State hooks
 
 21:50
 
-* Context hooks
+- Context hooks
 
 26:02
 
-* Effect hooks
+- Effect hooks
 
 36:46
 
-* [Reducer hooks](https://reactjs.org/docs/hooks-reference.html#usereducer)
+- [Reducer hooks](https://reactjs.org/docs/hooks-reference.html#usereducer)
 
 40:40
 
-* Ref Hooks
+- Ref Hooks
 
 48:00
 
-* Libraries already using React hooks
-  * [Rehooks](https://rehooks.com/) → Listing of hook libraries
-  * [React Spring](http://react-spring.surge.sh/)
-  * [React Measure](https://github.com/souporserious/react-measure)
-  * [Formik](https://jaredpalmer.com/formik)
-  * [Immer](https://github.com/mweststrate/immer)
+- Libraries already using React hooks
+  - [Rehooks](https://rehooks.com/) → Listing of hook libraries
+  - [React Spring](http://react-spring.surge.sh/)
+  - [React Measure](https://github.com/souporserious/react-measure)
+  - [Formik](https://jaredpalmer.com/formik)
+  - [Immer](https://github.com/mweststrate/immer)
 
 50:30
 
-* Resources
-  * [Dan Abramov’s Talk](https://www.youtube.com/watch?v=dpw9EHDh2bM)
-  * [Harry Wolf](https://www.youtube.com/watch?v=jd8R0a2Ur8Q)
-  * [Use Hooks Newsletter](https://usehooks.com)
-  * [Awesome React Hooks](https://github.com/rehooks/awesome-react-hooks)
+- Resources
+  - [Dan Abramov’s Talk](https://www.youtube.com/watch?v=dpw9EHDh2bM)
+  - [Harry Wolf](https://www.youtube.com/watch?v=jd8R0a2Ur8Q)
+  - [Use Hooks Newsletter](https://usehooks.com)
+  - [Awesome React Hooks](https://github.com/rehooks/awesome-react-hooks)
 
 ## ××× SIIIIICK ××× PIIIICKS ×××
 
-* Scott: [Bad Blood](https://amzn.to/2JMfowo)
-* Wes 1: [Swindled Podcast](http://swindledpodcast.com/)
-* Wes 2: [Scrub Brush Drill](https://amzn.to/2JMEpHV)
+- Scott: [Bad Blood](https://amzn.to/2JMfowo)
+- Wes 1: [Swindled Podcast](http://swindledpodcast.com/)
+- Wes 2: [Scrub Brush Drill](https://amzn.to/2JMEpHV)
 
 ## Shameless Plugs
 
-* [Scott's Pro Gatsby 2 Course](https://LevelUpTutorials.com/pro)
-* [Wes' Advanced React Course](https://advancedreact.com/) - use the code SYNTAX for $10 off
+- [Scott's Pro Gatsby 2 Course](https://LevelUpTutorials.com/pro)
+- [Wes' Advanced React Course](https://advancedreact.com/) - use the code SYNTAX for \$10 off
 
 ## Tweet us your tasty treats!
 
-* [Scott's Instagram](https://www.instagram.com/stolinski/)
-* [LevelUpTutorials Instagram](https://www.instagram.com/LevelUpTutorials/)
-* [Wes' Instagram](https://www.instagram.com/wesbos/)
-* [Wes' Twitter](https://twitter.com/wesbos)
-* [Wes' Facebook](https://www.facebook.com/wesbos.developer)
-* [Scott's Twitter](https://twitter.com/stolinski)
-* Make sure to include [@SyntaxFM](https://twitter.com/SyntaxFM) in your tweets
+- [Scott's Instagram](https://www.instagram.com/stolinski/)
+- [LevelUpTutorials Instagram](https://www.instagram.com/LevelUpTutorials/)
+- [Wes' Instagram](https://www.instagram.com/wesbos/)
+- [Wes' Twitter](https://twitter.com/wesbos)
+- [Wes' Facebook](https://www.facebook.com/wesbos.developer)
+- [Scott's Twitter](https://twitter.com/stolinski)
+- Make sure to include [@SyntaxFM](https://twitter.com/SyntaxFM) in your tweets

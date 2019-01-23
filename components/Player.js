@@ -2,10 +2,199 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaPlay, FaPause } from 'react-icons/fa';
 import formatTime from '../lib/formatTime';
+import styled from 'styled-components';
+import { theme, mixins, media } from '../styles';
+const { colors } = theme;
 
-export default class Player extends React.Component {
+const PlayerContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: -1px;
+  bottom: 0;
+  width: 100%;
+  background: ${colors.black};
+  border-top: 1px solid ${colors.yellow};
+  color: ${colors.white};
+  z-index: 2;
+  button {
+    ${mixins.flexCenter};
+    justify-content: space-around;
+    flex-direction: column;
+    background: ${colors.black};
+    color: ${colors.white};
+    border: 0;
+    padding: 1rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.6);
+    outline-color: ${colors.yellow};
+    font-size: 10px;
+  }
+`;
+const PlayerSection = styled.div`
+  order: 2;
+  background: ${colors.black};
+`;
+const PlayerLeft = styled(PlayerSection)`
+  width: 100px;
+  min-width: 80px;
+  ${media.phablet`
+    flex: 1;
+  `};
+`;
+const PlayButton = styled.button`
+  width: 100%;
+`;
+const PlayerIcon = styled.div`
+  font-size: 2rem;
+  line-height: 0.5;
+  margin: 2rem 0;
+`;
+const PlayerTime = styled.span`
+  margin-bottom: 10px;
+`;
+const PlayerMiddle = styled(PlayerSection)`
+  position: relative;
+  border-right: 1px solid rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  ${media.phablet`
+    order: 1;
+    width: 100%;
+  `};
+`;
+const PlayerRight = styled(PlayerSection)`
+  display: flex;
+  ${media.phablet`
+    flex: 2;
+  `};
+`;
+const PlayerSpeed = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  padding: 1rem;
+  ${media.phablet`
+    flex-grow: 1;
+  `};
+`;
+const SpeedDisplay = styled.span`
+  height: 2.5rem;
+  line-height: 2;
+`;
+const Progress = styled.div`
+  background: #0d0d0d;
+  width: 100%;
+  height: 2rem;
+  cursor: crosshair;
+  overflow: hidden;
+`;
+const ProgressTime = styled.div`
+  min-width: 20px;
+  height: 100%;
+  transition: width 0.1s;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background: ${colors.green};
+  background: ${colors.grad};
+`;
+const PlayerTitle = styled.h3`
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  max-width: 650px;
+  width: 100%;
+  margin: 0;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  ${media.phablet`
+    padding: 1rem;
+  `};
+`;
+const PlayerTooltip = styled.div`
+  position: absolute;
+  top: 22px;
+  transform: translate(-50%);
+  opacity: 0;
+  &:after {
+    content: " ";
+    position: absolute;
+    bottom: 94%;
+    left: 50%;
+    margin-left: -2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent transparent ${colors.white} transparent;
+  }
+`;
+const PlayerInputs = styled.div`
+  font-size: 0;
+`;
+const SRInput = styled.input`
+  ${mixins.sr};
+`;
+const SRLabel = styled.span`
+  ${mixins.sr};
+`;
+const PlayerVolume = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 120px;
+  padding: 1rem;
+  text-align: center;
+  outline-color: ${colors.yellow};
+  font-weight: normal;
+  letter-spacing: 0px;
+
+  ${media.phablet`
+    flex-grow: 0;
+  `};
+
+  &:focus-within {
+    outline: ${colors.yellow} auto 5px;
+  }
+  &:hover {
+    label {
+      border-top: 1px solid ${colors.yellow};
+    }
+  }
+  label {
+    border-top: 1px solid ${colors.green};
+    &:hover {
+      & ~ label {
+        border-top: 1px solid ${colors.black};
+      }
+    }
+  }
+  input {
+    ~ label {
+      background: ${colors.green};
+      border-right: 2px solid ${colors.black};
+      display: inline-block;
+      width: 8px;
+      height: 2.5rem;
+    }
+    &:checked {
+      ~ label {
+        background: ${colors.grey};
+      }
+      + label {
+        background: ${colors.green};
+      }
+    }
+  }
+`;
+
+class Player extends React.Component {
   static propTypes = {
     show: PropTypes.object.isRequired,
+    getPlayerState: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -61,7 +250,6 @@ export default class Player extends React.Component {
   }
 
   timeUpdate = e => {
-    console.log('Updating Time');
     const { show } = this.props;
     const { timeWasLoaded } = this.state;
     // Check if the user already had a curent time
@@ -102,9 +290,9 @@ export default class Player extends React.Component {
   };
 
   playPause = () => {
+    const { getPlayerState } = this.props;
+    getPlayerState(!this.audio.paused);
     this.setState({ playing: !this.audio.paused });
-    const method = this.audio.paused ? 'add' : 'remove';
-    document.querySelector('.bars').classList[method]('bars--paused'); // 💩
   };
 
   volume = e => {
@@ -151,24 +339,22 @@ export default class Player extends React.Component {
     } = this.state;
 
     return (
-      <div className="player">
-        <div className="player__section player__section--left">
-          <button
+      <PlayerContainer>
+        <PlayerLeft>
+          <PlayButton
             onClick={this.togglePlay}
             aria-label={playing ? 'pause' : 'play'}
             type="button"
           >
-            <p className="player__icon">{playing ? <FaPause /> : <FaPlay />}</p>
-            <p>
+            <PlayerIcon>{playing ? <FaPause /> : <FaPlay />}</PlayerIcon>
+            <PlayerTime>
               {formatTime(currentTime)} / {formatTime(duration)}
-            </p>
-          </button>
-        </div>
+            </PlayerTime>
+          </PlayButton>
+        </PlayerLeft>
 
-        <div className="player__section player__section--middle">
-          {/* eslint-disable */}
-          <div
-            className="progress"
+        <PlayerMiddle>
+          <Progress
             onClick={this.scrub}
             onMouseMove={this.seekTime}
             onMouseEnter={() => {
@@ -177,189 +363,156 @@ export default class Player extends React.Component {
             onMouseLeave={() => {
               this.setState({ showTooltip: false });
             }}
-            ref={x => (this.progress = x)}
+            innerRef={x => {
+              this.progress = x;
+            }}
           >
-            {/* eslint-enable */}
-            <div
-              className="progress__time"
-              style={{ width: `${progressTime}%` }}
-            />
-          </div>
-          <h3 className="player__title">
+            <ProgressTime style={{ width: `${progressTime}%` }} />
+          </Progress>
+          <PlayerTitle>
             Playing: {show.displayNumber}: {show.title}
-          </h3>
-          <div
-            className="player__tooltip"
+          </PlayerTitle>
+          <PlayerTooltip
             style={{
               left: `${tooltipPosition}px`,
               opacity: `${showTooltip ? '1' : '0'}`,
             }}
           >
             {tooltipTime}
-          </div>
-        </div>
+          </PlayerTooltip>
+        </PlayerMiddle>
 
-        <div className="player__section player__section--right">
-          <button
-            onClick={this.speedUp}
+        <PlayerRight>
+          <PlayerSpeed onClick={this.speedUp}
             onContextMenu={this.speedDown}
             className="player__speed"
             type="button"
           >
-            <p>FASTNESS</p>
-            <span className="player__speeddisplay">
-              {playbackRate} &times;{' '}
-            </span>
-          </button>
+            <span>FASTNESS</span>
+            <SpeedDisplay>{playbackRate} &times;</SpeedDisplay>
+          </PlayerSpeed>
 
-          <div className="player__volume">
-            <p>LOUDNESS</p>
-            <div className="player__inputs">
-              <input
+          <PlayerVolume>
+            <span>LOUDNESS</span>
+            <PlayerInputs>
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="0.1"
                 id="vol10"
-                className="sr-only"
               />
               <label htmlFor="vol10">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 10/100</span>
+                <SRLabel>Volume Level 10/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="0.2"
                 id="vol20"
-                className="sr-only"
               />
               <label htmlFor="vol20">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 20/100</span>
+                <SRLabel>Volume Level 20/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="0.3"
                 id="vol30"
-                className="sr-only"
               />
               <label htmlFor="vol30">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 30/100</span>
+                <SRLabel>Volume Level 30/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="0.4"
                 id="vol40"
-                className="sr-only"
               />
               <label htmlFor="vol40">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 40/100</span>
+                <SRLabel>Volume Level 40/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="0.5"
                 id="vol50"
-                className="sr-only"
               />
               <label htmlFor="vol50">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 50/100</span>
+                <SRLabel>Volume Level 50/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="0.6"
                 id="vol60"
-                className="sr-only"
               />
               <label htmlFor="vol60">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 60/100</span>
+                <SRLabel>Volume Level 60/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="0.7"
                 id="vol70"
-                className="sr-only"
               />
               <label htmlFor="vol70">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 70/100</span>
+                <SRLabel>Volume Level 70/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="0.8"
                 id="vol80"
-                className="sr-only"
               />
               <label htmlFor="vol80">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 80/100</span>
+                <SRLabel>Volume Level 80/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 defaultChecked
                 type="radio"
                 name="volume"
                 value="0.9"
                 id="vol90"
-                className="sr-only"
               />
               <label htmlFor="vol90">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 90/100</span>
+                <SRLabel>Volume Level 90/100</SRLabel>
               </label>
-              <input
+              <SRInput
                 onChange={this.volume}
                 type="radio"
                 name="volume"
                 value="1"
                 id="vol100"
-                className="sr-only"
               />
               <label htmlFor="vol100">
-                {' '}
-                {/* eslint-disable-line */}
-                <span className="sr-only">Volume Level 100/100</span>
+                <SRLabel>Volume Level 100/100</SRLabel>
               </label>
-            </div>
-          </div>
-        </div>
-        {/* eslint-disable */}
+            </PlayerInputs>
+          </PlayerVolume>
+        </PlayerRight>
+
         <audio
-          ref={audio => (this.audio = audio)}
+          ref={audio => {
+            this.audio = audio;
+          }}
           onPlay={this.playPause}
           onPause={this.playPause}
           onTimeUpdate={this.timeUpdate}
           onLoadedMetadata={this.timeUpdate}
           src={show.url}
         />
-        {/* eslint-enable */}
-      </div>
+      </PlayerContainer>
     );
   }
 }
+
+export default Player;

@@ -15,39 +15,39 @@ Email marketing for less, via Amazon SES. EmailOctopus sends your emails through
 
 4:03
 
-* What's the difference between synchronous and asynchronous code?
+- What's the difference between synchronous and asynchronous code?
 
 5:56
 
-* What's the difference between .call and .apply?
+- What's the difference between .call and .apply?
 
 7:08
 
-* How do you share code between files?
+- How do you share code between files?
 
 8:18
 
-* What's the difference between double equals and triple equals?
+- What's the difference between double equals and triple equals?
 
 10:40
 
-* What's the difference between null, undefined, and undeclared?
+- What's the difference between null, undefined, and undeclared?
 
 14:18
 
-* What is the event loop?
-* [Philip Roberts - What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+- What is the event loop?
+- [Philip Roberts - What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
 16:02
 
-* Why is extending built-ins never a good idea?
+- Why is extending built-ins never a good idea?
 
 ## Tweet us your tasty treats!
 
-* [Scott's Instagram](https://www.instagram.com/stolinski/)
-* [LevelUpTutorials Instagram](https://www.instagram.com/LevelUpTutorials/)
-* [Wes' Instagram](https://www.instagram.com/wesbos/)
-* [Wes' Twitter](https://twitter.com/wesbos)
-* [Wes' Facebook](https://www.facebook.com/wesbos.developer)
-* [Scott's Twitter](https://twitter.com/stolinski)
-* Make sure to include [@SyntaxFM](https://twitter.com/SyntaxFM) in your tweets
+- [Scott's Instagram](https://www.instagram.com/stolinski/)
+- [LevelUpTutorials Instagram](https://www.instagram.com/LevelUpTutorials/)
+- [Wes' Instagram](https://www.instagram.com/wesbos/)
+- [Wes' Twitter](https://twitter.com/wesbos)
+- [Wes' Facebook](https://www.facebook.com/wesbos.developer)
+- [Scott's Twitter](https://twitter.com/stolinski)
+- Make sure to include [@SyntaxFM](https://twitter.com/SyntaxFM) in your tweets

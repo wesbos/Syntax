@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import slug from 'speakingurl';
-import stylesheet from '../styles/style.styl';
 import { description } from '../package.json';
 
-const Meta = ({ show, staticPage, baseURL }) => (
+const Meta = ({ show, staticPage, baseURL, styleTags }) => (
   <div>
     <Head>
       <html lang="en" />
@@ -36,6 +35,7 @@ const Meta = ({ show, staticPage, baseURL }) => (
         content={`${baseURL}/static/syntax-banner.png`}
       />
       <link rel="shortcut icon" href={`${baseURL}/static/favicon.png`} />
+
       {show ? (
         <title>
           {show.title} — Syntax Podcast {show.displayNumber}
@@ -46,9 +46,8 @@ const Meta = ({ show, staticPage, baseURL }) => (
           Podcast
         </title>
       )}
-      <style
-        dangerouslySetInnerHTML={{ __html: stylesheet.replace(/\n/g, '') }}
-      />
+
+      {styleTags}
     </Head>
   </div>
 );

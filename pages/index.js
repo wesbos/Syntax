@@ -8,6 +8,15 @@ import Player from '../components/Player';
 import Meta from '../components/meta';
 import Page from '../components/Page';
 import getBaseURL from '../lib/getBaseURL';
+import styled from 'styled-components';
+import { theme, StyledWrapper } from '../styles';
+const { colors } = theme;
+
+const ShowWrap = styled.div`
+  background: ${colors.white};
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 export default withRouter(
   class IndexPage extends React.Component {
@@ -25,6 +34,7 @@ export default withRouter(
       this.state = {
         currentShow,
         currentPlaying: currentShow,
+        isPlaying: false,
       };
     }
 
@@ -41,14 +51,18 @@ export default withRouter(
       }
     }
 
-    setCurrentPlaying = (currentPlaying) => {
-      console.log('Setting current playing');
+    setCurrentPlaying = currentPlaying => {
       this.setState({ currentPlaying });
+    };
+
+    // Passed down to Player component to fish out the state of the player to animate the bars
+    getPlayerState = isPlaying => {
+      this.setState({ isPlaying });
     };
 
     render() {
       const { shows = [], baseURL } = this.props;
-      const { currentShow, currentPlaying } = this.state;
+      const { currentShow, currentPlaying, isPlaying } = this.state;
       // Currently Shown shownotes
       const show =
         shows.find(showItem => showItem.displayNumber === currentShow) ||
@@ -61,21 +75,23 @@ export default withRouter(
       return (
         <Page>
           <Meta show={show} baseURL={baseURL} />
-          <div className="wrapper">
-            <main className="show-wrap" id="main" tabIndex="-1">
-              <Player show={current} />
+          <StyledWrapper>
+            <ShowWrap id="main" tabIndex="-1">
+              <Player show={current} getPlayerState={this.getPlayerState} />
               <ShowList
                 shows={shows}
                 currentShow={currentShow}
                 currentPlaying={currentPlaying}
                 setCurrentPlaying={this.setCurrentPlaying}
+                isPlaying={isPlaying}
               />
               <ShowNotes
                 show={show}
                 setCurrentPlaying={this.setCurrentPlaying}
+                isPlaying={isPlaying}
               />
-            </main>
-          </div>
+            </ShowWrap>
+          </StyledWrapper>
         </Page>
       );
     }

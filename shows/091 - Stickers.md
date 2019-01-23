@@ -15,46 +15,46 @@ In this Hasty Treat, Scott and Wes talk about stickers and break down Wes' entir
 
 6:08
 
-* Design
+- Design
 
 9:23
 
-* Printing
+- Printing
 
 16:08
 
-* Types of Stickers
+- Types of Stickers
 
 19:34
 
-* Selling
+- Selling
 
 21:43
 
-* Envelopes, stamps and shipping
+- Envelopes, stamps and shipping
 
 30:47
 
-* Returns
+- Returns
 
 32:42
 
-* The future
+- The future
 
 ## Links
 
-* [Bos.af](https://bos.af/)
-* [Patrick DePuydt](https://twitter.com/patrickdepuydt)
-* [Alibaba](https://www.alibaba.com/)
-* [Sticker Mule](https://www.stickermule.com)
-* [Shipstation](https://www.shipstation.com/)
+- [Bos.af](https://bos.af/)
+- [Patrick DePuydt](https://twitter.com/patrickdepuydt)
+- [Alibaba](https://www.alibaba.com/)
+- [Sticker Mule](https://www.stickermule.com)
+- [Shipstation](https://www.shipstation.com/)
 
 ## Tweet us your tasty treats!
 
-* [Scott's Instagram](https://www.instagram.com/stolinski/)
-* [LevelUpTutorials Instagram](https://www.instagram.com/LevelUpTutorials/)
-* [Wes' Instagram](https://www.instagram.com/wesbos/)
-* [Wes' Twitter](https://twitter.com/wesbos)
-* [Wes' Facebook](https://www.facebook.com/wesbos.developer)
-* [Scott's Twitter](https://twitter.com/stolinski)
-* Make sure to include [@SyntaxFM](https://twitter.com/SyntaxFM) in your tweets
+- [Scott's Instagram](https://www.instagram.com/stolinski/)
+- [LevelUpTutorials Instagram](https://www.instagram.com/LevelUpTutorials/)
+- [Wes' Instagram](https://www.instagram.com/wesbos/)
+- [Wes' Twitter](https://twitter.com/wesbos)
+- [Wes' Facebook](https://www.facebook.com/wesbos.developer)
+- [Scott's Twitter](https://twitter.com/stolinski)
+- Make sure to include [@SyntaxFM](https://twitter.com/SyntaxFM) in your tweets

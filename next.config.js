@@ -2,6 +2,11 @@ const path = require('path');
 const glob = require('glob');
 
 module.exports = {
+  publicRuntimeConfig: { // Will be available on both server and client
+    ALGOLIA_APP_ID: '0BJH6ZHANS',
+    ALGOLIA_API_KEY: '6b603f518f8226fe184df623bba4dce1',
+    ALGOLIA_INDEX_NAME: 'SYNTAX_FM'
+  },
   webpack: (config, { dev }) => {
     config.module.rules.push(
       {

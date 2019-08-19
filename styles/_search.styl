@@ -1,0 +1,92 @@
+.ais-instantSearch
+  display flex
+  flex-direction row
+  @media (max-width: 650px)
+    position sticky
+    position -webkit-sticky
+    flex-direction: column
+    .ais-InfiniteHits
+      width 100%
+      &-list
+        height: 300px;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: scroll;
+
+.ais-search
+  display flex
+  border-bottom 1px solid grey
+  &-container
+    position relative
+    display flex
+    flex 1
+  .ais-PoweredBy
+    position absolute
+    top 4px
+    right 20px
+    display flex
+    flex-direction column
+    &-logo
+      height 20px
+      width 77px
+    &-text
+      font-family sans-serif
+
+.ais-microphone
+  appearance none
+  -webkit-appearance none
+  border none
+  background-color white
+  border-left 1px solid grey
+  width 48px
+  font-size 2rem
+  svg
+    margin-top 6px
+    pointer-events none
+  &-on
+    background-color #5468ff
+    color white
+
+.ais-SearchBox
+  flex 1
+  &-form
+    display flex
+    flex-direction row
+  &-input
+    text-indent 1.5rem
+    padding 0
+    padding 1.5rem 0px
+    border none
+    font-size 1.5rem
+    width 100%
+    outline-color yellow
+    color black
+    font-family sans-serif
+    &::placeholder
+      color gray3
+  &-submit, &-reset
+    display none
+
+.ais-Highlight
+  &-highlighted
+    font-style normal
+    color yellow
+
+.ais-InfiniteHits
+  width 38%
+  display flex
+  flex-direction column
+  background lightgrey
+  &-list
+    margin-top 0
+    margin-bottom 0
+    list-style none
+    padding-left 0
+  &-loadMore
+    appearance none
+    border none
+    background black
+    color white
+    padding 2rem 2.5rem
+    font-size 1.5rem
+    font-family '💪'

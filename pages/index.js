@@ -3,7 +3,6 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import ShowList from '../components/ShowList';
-import ShowNotes from '../components/ShowNotes';
 import Player from '../components/Player';
 import Meta from '../components/meta';
 import Page from '../components/Page';
@@ -41,7 +40,7 @@ export default withRouter(
       }
     }
 
-    setCurrentPlaying = (currentPlaying) => {
+    setCurrentPlaying = currentPlaying => {
       console.log('Setting current playing');
       this.setState({ currentPlaying });
     };
@@ -65,13 +64,9 @@ export default withRouter(
             <main className="show-wrap" id="main" tabIndex="-1">
               <Player show={current} />
               <ShowList
-                shows={shows}
-                currentShow={currentShow}
-                currentPlaying={currentPlaying}
-                setCurrentPlaying={this.setCurrentPlaying}
-              />
-              <ShowNotes
                 show={show}
+                currentPlaying={currentPlaying}
+                currentShow={currentShow}
                 setCurrentPlaying={this.setCurrentPlaying}
               />
             </main>

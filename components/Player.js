@@ -3,44 +3,51 @@ import PropTypes from 'prop-types';
 import { FaPlay, FaPause } from 'react-icons/fa';
 import formatTime from '../lib/formatTime';
 import VolumeBars from './VolumeBars';
+import ls from '../lib/localstorage-object'
+import upgradeLocalStorage from '../lib/upgrade-localstorage'
 
 export default class Player extends React.Component {
   static propTypes = {
-    show: PropTypes.object.isRequired
+    show: PropTypes.object.isRequired,
+    enableLocalStorage: PropTypes.bool,
   };
+
+  static defaultProps = {
+    enableLocalStorage: true,
+  }
 
   constructor(props) {
     super(props);
 
-    let lastPlayed = 0;
-    let lastVolumePref = 1;
-    let lastPlaybackRate = 1;
-
-    // for Server Side Rendering
-    if (typeof window !== 'undefined') {
-      const { show } = this.props;
-      const lp = localStorage.getItem(`lastPlayed${show.number}`);
-      const lastVolume = localStorage.getItem(`lastVolumeSetting`);
-      const lastPlayback = localStorage.getItem(`lastPlaybackSetting`);
-
-      if (lp) lastPlayed = JSON.parse(lp).lastPlayed;
-      if (lastVolume) lastVolumePref = JSON.parse(lastVolume).lastVolumePref;
-      if (lastPlayback)
-        lastPlaybackRate = JSON.parse(lastPlayback).lastPlaybackRate;
-    }
-
-    this.state = {
+    const initialState = {
       progressTime: 50,
       playing: false,
       duration: 0,
-      currentTime: lastPlayed,
-      currentVolume: lastVolumePref,
-      playbackRate: lastPlaybackRate,
-      timeWasLoaded: lastPlayed !== 0,
+      currentTime: 0,
+      currentVolume: 1,
+      playbackRate: 1,
+      timeWasLoaded: false,
       showTooltip: false,
       tooltipPosition: 0,
       tooltipTime: '0:00'
-    };
+    }
+
+    // for Server Side Rendering
+    if (typeof window !== 'undefined' && this.props.enableLocalStorage) {
+
+      upgradeLocalStorage()
+
+      const { show } = this.props;
+      const currentTimeLabel = `currentTime${show.number}`
+      
+      if (ls.currentVolume) initialState.currentVolume = ls.currentVolume
+      if (ls.playbackRate) initialState.playbackRate = ls.playbackRate
+      if (ls[currentTimeLabel]) initialState.currentTime = ls[currentTimeLabel]
+
+    }
+
+    initialState.timeWasLoaded = initialState.lastPlayed !== 0,
+    this.state = initialState
   } // END Constructor
 
   componentWillUpdate(nextProps, nextState) {
@@ -48,58 +55,37 @@ export default class Player extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { show } = this.props;
-    const { currentTime, currentVolume, playbackRate } = this.state;
-    if (show.number !== prevProps.show.number) {
-      const lp = localStorage.getItem(`lastPlayed${show.number}`);
-      if (lp) {
-        const lastVolume = localStorage.getItem(`lastVolumeSetting`);
-        const lastPlayback = localStorage.getItem(`lastPlaybackSetting`);
-        const data = JSON.parse(lp);
-        const data2 = JSON.parse(lastVolume);
-        const data3 = JSON.parse(lastPlayback);
+    if (!this.props.enableLocalStorage) return
 
-        this.setState({
-          currentTime: data.lastPlayed,
-          currentVolume: data2.lastVolumePref,
-          playbackRate: data3.lastPlaybackRate
-        });
-        this.audio.currentTime = data.lastPlayed;
-        this.audio.volume = data2.lastVolumePref;
-        this.audio.playbackRate = data3.lastPlaybackRate;
-      }
+    const { show } = this.props;
+    const currentTimeLabel = `currentTime${show.number}`
+    if (show.number !== prevProps.show.number) { //show changed
+      const currentTime = ls[currentTimeLabel]
+      this.audio.currentTime = currentTime
+      this.setState({currentTime})
       this.audio.play();
-    } else {
-      localStorage.setItem(
-        `lastPlayed${show.number}`,
-        JSON.stringify({ lastPlayed: currentTime })
-      );
-      localStorage.setItem(
-        `lastVolumeSetting`,
-        JSON.stringify({ lastVolumePref: currentVolume })
-      );
-      localStorage.setItem(
-        `lastPlaybackSetting`,
-        JSON.stringify({ lastPlaybackRate: playbackRate })
-      );
+    }
+    else {
+      ls[currentTimeLabel] = this.state.currentTime
+      ls.currentVolume = this.state.currentVolume
+      ls.playbackRate = this.state.playbackRate
     }
   }
 
   timeUpdate = e => {
     // console.log('Updating Time');
     const { show } = this.props;
+    const currentTimeLabel = `currentTime${show.number}`
+
     const { timeWasLoaded } = this.state;
     // Check if the user already had a curent time
     if (timeWasLoaded) {
-      const lp = localStorage.getItem(`lastPlayed${show.number}`);
-
-      if (lp) {
-        e.currentTarget.currentTime = JSON.parse(lp).lastPlayed;
+      if (this.props.enableLocalStorage) {
+        e.currentTarget.currentTime = ls[currentTimeLabel]
       }
       this.setState({ timeWasLoaded: false });
     } else {
       const { currentTime = 0, duration = 0 } = e.currentTarget;
-
       const progressTime = (currentTime / duration) * 100;
       if (Number.isNaN(progressTime)) return;
       this.setState({ progressTime, currentTime, duration });

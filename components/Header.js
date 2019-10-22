@@ -1,14 +1,16 @@
 import Subscribe from './Subscribe';
-import Link from 'next/link';
+import Logo from './Logo';
 
 const Header = () => (
   <header className="header">
     <div className="header__left">
-      <Link href="/">
-        <a aria-label="Syntax.FM">
-          <img className="header__logo" src="/static/logo.png" alt="Syntax" />
-        </a>
-      </Link>
+      <Logo 
+        shouldRedirect 
+        redirectOn={{
+          click: 'right',
+          url: 'https://ssl-static.libsyn.com/p/assets/7/9/0/7/790703531a3c8eca/iTunes_Artwork.png'
+        }} 
+      />
     </div>
     <div className="header__right">
       <div className="title">

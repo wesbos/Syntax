@@ -2,6 +2,16 @@ const path = require('path');
 const glob = require('glob');
 
 module.exports = {
+  experimental: {
+    rewrites() {
+      return [
+        {
+          source: '/',
+          destination: '/show/latest/latest'
+        }
+      ]
+    }
+  },
   webpack: config => {
     config.module.rules.push(
       {

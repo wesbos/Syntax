@@ -3,3 +3,5 @@ node_modules/
 .DS_store
 *.log
 haters/
+
+.vercel

@@ -1,19 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { description } from '../package.json';
 import stylesheet from '../styles/style.styl';
-import getBaseURL from '../lib/getBaseURL';
 
 class SyntaxDocument extends Document {
-  static async getInitialProps(ctx) {
-    const { req } = ctx;
-    const baseURL = getBaseURL(req);
-    console.log(baseURL);
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps, baseURL };
-  }
-
   render() {
-    const { baseURL } = this.props;
     return (
       <Html lang="en">
         <Head>
@@ -24,9 +14,9 @@ class SyntaxDocument extends Document {
           <meta property="og:description" content={description} />
           <meta
             property="og:image"
-            content={`${baseURL}/static/syntax-banner.png`}
+            content={`https://syntax.fm/static/syntax-banner.png`}
           />
-          <link rel="shortcut icon" href={`${baseURL}/static/favicon.png`} />
+          <link rel="shortcut icon" href={`https://syntax.fm/static/favicon.png`} />
           <style
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: stylesheet.replace(/\n/g, '') }}

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import slug from 'speakingurl';
 
-const Meta = ({ show, staticPage, baseURL }) => (
+const Meta = ({ show, staticPage }) => (
   <Head>
     {show ? (
       <>
@@ -19,7 +19,7 @@ const Meta = ({ show, staticPage, baseURL }) => (
         />
         <meta
           property="og:url"
-          content={`${baseURL}/show/${show.displayNumber}/${slug(show.title)}`}
+          content={`https://syntax.fm/show/${show.displayNumber}/${slug(show.title)}`}
         />
       </>
     ) : (
@@ -56,8 +56,7 @@ Meta.propTypes = {
   show: requiredPropsCheck,
   staticPage: PropTypes.shape({
     title: PropTypes.string.isRequired,
-  }),
-  baseURL: PropTypes.string.isRequired,
+  })
 };
 
 export default Meta;

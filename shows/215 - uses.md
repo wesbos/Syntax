@@ -37,7 +37,7 @@ If you want to know what's happening with your errors, track them with [Sentry](
 * [Clearbit API](https://clearbit.com/)
 * [unavatar](https://unavatar.now.sh/)
 * [Now.sh](https://zeit.co/home)
-* [webserv.nl](http://webserv.nl)
+* [weserv.nl](https://images.weserv.nl/)
 * [country-emoji](https://github.com/meeDamian/country-emoji)
 * [Andrew Luca](https://github.com/iamandrewluca)
 * [joi](https://github.com/hapijs/joi)

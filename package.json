@@ -30,7 +30,7 @@
     "express": "^4.17.1",
     "glob": "7.1.6",
     "meta-marked": "^0.4.2",
-    "next": "^9.4.2",
+    "next": "^9.4.5-canary.18",
     "next-url-prettifier": "^1.4.0",
     "now": "^16.7.2",
     "postcss-easy-import": "3.0.0",

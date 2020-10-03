@@ -62,6 +62,7 @@ export default withRouter(
       this.state = {
         currentShow,
         currentPlaying: currentShow,
+        clickedTimestamp: undefined,
         isPlaying: false,
       };
     }
@@ -89,7 +90,12 @@ export default withRouter(
         return <ErrorPage statusCode={404} />
       }
 
-      const { currentShow, currentPlaying, isPlaying } = this.state;
+      const {
+        currentShow,
+        currentPlaying,
+        isPlaying,
+        clickedTimestamp,
+      } = this.state;
       const show = shows.find(showItem => showItem.displayNumber === currentShow)
       const current = shows.find(showItem => showItem.displayNumber === currentPlaying)
       return (
@@ -97,7 +103,11 @@ export default withRouter(
           <Meta show={show} />
           <div className="wrapper">
             <main className="show-wrap" id="main" tabIndex="-1">
-              <Player show={current} onPlayPause={a => this.setIsPlaying(!a.paused)}/>
+              <Player
+                show={current}
+                clickedTimestamp={clickedTimestamp}
+                onPlayPause={(a) => this.setIsPlaying(!a.paused)}
+              />
               <ShowList
                 shows={shows}
                 currentShow={currentShow}
@@ -108,6 +118,12 @@ export default withRouter(
               <ShowNotes
                 show={show}
                 setCurrentPlaying={this.setCurrentPlaying}
+                onClickTimestamp={(timestamp) => {
+                  this.setState({
+                    currentPlaying: show.displayNumber,
+                    clickedTimestamp: timestamp,
+                  });
+                }}
               />
             </main>
           </div>

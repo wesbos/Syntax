@@ -7,6 +7,7 @@ import VolumeBars from './VolumeBars';
 export default class Player extends React.Component {
   static propTypes = {
     show: PropTypes.object.isRequired,
+    clickedTimestamp: PropTypes.number,
     onPlayPause: PropTypes.func,
   };
 
@@ -49,7 +50,7 @@ export default class Player extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) { //eslint-disable-line
-    const { show } = this.props;
+    const { show, clickedTimestamp } = this.props;
     const { currentTime, currentVolume, playbackRate } = this.state;
     if (show.number !== prevProps.show.number) {
       const lp = localStorage.getItem(`lastPlayed${show.number}`);
@@ -83,6 +84,9 @@ export default class Player extends React.Component {
         `lastPlaybackSetting`,
         JSON.stringify({ lastPlaybackRate: playbackRate })
       );
+    }
+    if (clickedTimestamp !== prevProps.clickedTimestamp) {
+      this.audio.currentTime = clickedTimestamp;
     }
   }
 

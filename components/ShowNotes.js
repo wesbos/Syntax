@@ -1,11 +1,44 @@
 /* eslint-disable react/no-danger */
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-const ShowNotes = ({ show, setCurrentPlaying }) => {
+const TIMESTAMP_REGEX = /(\d{1,2}):([0-5][0-9])/
+
+const getSecondCountFromTimestamp = timestamp => {
+  try {
+    const [_, minutes, seconds] = timestamp.match(TIMESTAMP_REGEX);
+    return parseInt(minutes) * 60 + parseInt(seconds);
+  } catch {
+    return null;
+  }
+};
+
+const ShowNotes = ({ show, setCurrentPlaying, onClickTimestamp }) => {
+  const processedHtml = useMemo(
+    () =>
+      show.html.replace(
+        /(\d{1,2}:\d{2})/g,
+        `<button type="button" class="link" id="timestamp-$1">$1</button>`
+      ),
+    [show.number]
+  );
+
   useEffect(() => {
+    const addTimestampEventListeners = () => {
+      const timestampButtons = document.querySelectorAll(
+        'button[id*="timestamp"]'
+      );
+      Array.prototype.forEach.call(timestampButtons, (button) => {
+        const timestampValue = button.id.replace('timestamp-', '');
+        const secondCount = getSecondCountFromTimestamp(timestampValue);
+        if (secondCount !== null)
+          button.addEventListener('click', () => onClickTimestamp(secondCount));
+      });
+    }
+
     document.querySelector('.showNotes').scrollTop = 0;
-  });
+    addTimestampEventListeners();
+  }, [show.number]);
 
   return (
     <div className="showNotes">
@@ -29,7 +62,7 @@ const ShowNotes = ({ show, setCurrentPlaying }) => {
       >
         <span className="icon">✏️</span> Edit Show Notes
       </a>
-      <div dangerouslySetInnerHTML={{ __html: show.html }} />
+      <div dangerouslySetInnerHTML={{ __html: processedHtml }} />
     </div>
   );
 };
@@ -37,6 +70,7 @@ const ShowNotes = ({ show, setCurrentPlaying }) => {
 ShowNotes.propTypes = {
   show: PropTypes.object.isRequired,
   setCurrentPlaying: PropTypes.func.isRequired,
+  onClickTimestamp: PropTypes.func.isRequired,
 };
 
 export default ShowNotes;

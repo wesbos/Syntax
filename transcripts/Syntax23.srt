@@ -1,0 +1,512 @@
+1
+00:00:01,290 --> 00:00:10,529
+Announcer: You're listening to syntax the podcast with the tastiest web development treats out there. strap yourself in and get ready. Here is Scott Delinski and Wes Bos.
+
+2
+00:00:10,529 --> 00:00:36,990
+Scott Tolinski: Hey, welcome to syntax. In this episode, we're going to be doing a look back and a little bit of a look forward on our 2017 and into 2018 as we approach the end of the year here, so we're going to be doing a little bit of personal and professional look back seeing what worked for us what didn't work and what we're excited about in the future. We're also going to be talking about what happened this year with JavaScript, CSS and a web over all.
+
+3
+00:00:37,860 --> 00:00:40,740
+Wes Bos: Awesome. How's it going, Scott? How you doing today?
+
+4
+00:00:41,370 --> 00:00:53,850
+Scott Tolinski: I'm doing pretty good. All things considered not getting much sleep still. Oh, yeah. The little one but uh, yeah, all things considered. I'm feeling pretty good here. I'm ready to go. It's a beautiful sunny day here in Denver. So awesome.
+
+5
+00:00:53,850 --> 00:01:16,140
+Wes Bos: We're about to get slammed by a snowstorm and I hadn't got our snow tires on so i i went crawl into it's actually a good good use case for for talking about relationships, because I have a really good relationship with my mechanic and he'll always squeeze me in no matter how busy he is. So he just threw him on for me. He got some bloodaxe on there. Oh,
+
+6
+00:01:16,310 --> 00:01:18,000
+Scott Tolinski: nice. You're gonna be plowed through that.
+
+7
+00:01:19,310 --> 00:02:00,239
+Wes Bos: Looking forward to it. Cool. So let's let's jump right into it. We'll take let's start with some personal and professional look backs. Like personally, what what did we both do in 2017. And then we'll jump into some like what actually happened in the the greater industry in 2017. So other than this podcast being sponsored by blues x, we're also sponsored by Freshbooks, which is cloud accounting software and snip cart, which is the best way to implement a shopping cart with any any sort of back end on your website. So thanks so much to them for sponsoring. And we'll we'll go into them a little bit more partway through the show. So let's kick it off with some personal and professional stuff that both happened with us. How was your 2017?
+
+8
+00:02:01,140 --> 00:03:13,020
+Scott Tolinski: I thought it was great. 2017 is a year year for the books. I don't know, they might my my year is sort of up and down. Right? So personally, we had our first child, my son Landon was born in May. And so that's sort of totally world world changing. So on a personal basis, becoming father was just endlessly crazy and amazing. And all those things that they they tell you it's going to be without being able to actually understand. Yeah, so in that regard, you know, you know, 2017 is going down in the books, but for the for the but other than that, like my year was sort of all over the place in between, you know, the all the new parents stuff, where you're really not getting any sleep and your whole worlds completely turned upside down. I'm feeling at the tail end of 2017 to finally be feeling like things are moving forward in the best possible way. And yeah, I'm superduper excited to have that momentum going into next year. So I'm looking forward as 2017 was a like a launch pad for 2018. And all of the awesome stuff that I'm looking to get done.
+
+9
+00:03:13,860 --> 00:03:55,950
+Wes Bos: That's awesome. Yeah, we had. So we didn't have a kid this year. But we had our youngest in September. And still, like a good chunk of my 2017 was like when they don't sleep and you have a bad sleep, especially for me, I can't operate on very little sleep. It just rocks you and it really cuts into your productivity and just those that feeling good about where you're getting professionally, obviously, like I wouldn't trade it for the world. And I think there is a little bit of like dad juice that you get from from having kids that I didn't necessarily have before that. But it definitely definitely takes a toll on on your professional side as well when your kids aren't sleeping. Yeah,
+
+10
+00:03:55,980 --> 00:05:14,570
+Scott Tolinski: yeah, it's, it's been one of those things. And like, if you're doing a lot of recording, like recording tutorials and stuff like that, it's so hard to wake up and first thing in the morning and be like, yeah, let me start speaking into a microphone coherently, because it's not going to happen. You're just Yes, sound over. So I would have to like push my recordings back to later in the afternoon till I was feeling awake. And it's just been a huge adjustment. And these past maybe two months or so here coming into the end of the year have just been endlessly improved upon and improved upon. And now I'm feeling like I have this this significant flow going into next year. So other than that, you know, again, a second half of the year, I've improved in braking for like the first time in a long time, because when you get to my age, it's like kind of a big decline. But this year, I can finally say I think I'm a much better dancer than I was last year which I haven't been able to say for a little while, even though I've been practicing just because age, age injuries, that sort of stuff. Yeah, and health wise man, I've, I'm entering the beginning of 2018 better than I was at 2017 even though the middle of 2017 was a complete shit job working out for me, so I feel very good about it right now. Yeah.
+
+11
+00:05:15,889 --> 00:05:16,470
+Wes Bos: Awesome.
+
+12
+00:05:16,620 --> 00:05:18,180
+Scott Tolinski: How about you on the on those fronts?
+
+13
+00:05:18,259 --> 00:05:39,750
+Wes Bos: Yeah. My personal 2017 was was really, really good. We talked a lot about on the health and fitness show. I've been getting into shape. I'm turning 30 in February. So trying to get all that in gear before I I officially turn old. I guess that's when you officially turn all this 30 I think that's Yes. Are you 30? Now? Yes,
+
+14
+00:05:39,750 --> 00:05:48,089
+Scott Tolinski: I am. I'm 31 Yeah, what, uh, when is your birthday? February 18 18th. I'm not on March 1. So we're right around the same time.
+
+15
+00:05:48,149 --> 00:07:51,019
+Wes Bos: All right on. So yeah, it's I'm really happy to finally have my health taken seriously. And sort of getting that in all into gear. This was my first full year of this, I guess more on the professional side. But so my first full year of doing just being on my own for myself, for myself. So I've probably been on my own for about a year and a half now doing no client work. And this is my first full year of it. And it's funny, I was looking back on my my goals for this year, and I totally missed them, I thought I would launch a lot more content than I actually did. But if I look back in terms of like, what I actually did accomplish, and in terms of like revenue, and sales and all that stuff, I like I just kicked it out of the park. So very happy on that front, which I kind of goes back to last episode, we're talking more about course correction, then then slamming these goals. So pretty happy with with how everything went. In terms of professionally. I obviously, I made a lot of improvements to my course platform. So the reason why I didn't get as much content out as I had hoped in 2017 was I spent a lot of time on my my course platform and making sure that that could handle just absolutely everything from the the viewing experience the sales experience to marketing, I spent, like probably at least a month of my time this year, on email marketing, I still don't do a whole lot of email marketing, but I moved everything over to this company called drip. And they have they have this really crazy tagging and segmentation, and the ability to automate stuff. And it's it's really, really powerful. And I spent a lot of time making sure that every little piece of data that I have on someone who's watching a course or on someone who's visiting a website that goes into my drip, so that if I need to be able to target people appropriately. So it's pretty happy about moving over. That's a big undertaking, especially when like it doesn't show at all It shows in my sales, but it doesn't show to anyone at all.
+
+16
+00:07:51,750 --> 00:08:12,149
+Scott Tolinski: Yeah, that's one of those things that gives me a lot of anxiety. Like I don't like working with emails already. Like I don't I hate working in HTML emails. I don't know anyone who honestly really likes it. If you like it, shout out to you. But like, yeah, anything dealing with email management email lists, that all just gives me a lot of anxiety for some reason.
+
+17
+00:08:12,480 --> 00:08:49,230
+Wes Bos: Yeah, it's it's not. I think as developers we we we all hate email. And we hate getting email. And it's, it's this like, sort of weird double edged sword where it's absolutely the best thing you can do for your business. And it's absolutely something that we we generally don't like. So I've been pretty happy like with where I've been at for email in the last year in terms of like the tone of how I write them, and how often I send them and whatnot. And the response to them is always great. And it always helps my sales. So I think I'm in a really good spot with email. And that's that's been at the forefront for my 2017.
+
+18
+00:08:49,670 --> 00:08:52,260
+Scott Tolinski: Nice. Maybe I'll have to put that on my 2018
+
+19
+00:08:52,280 --> 00:09:05,540
+Wes Bos: Yeah, I had goals, maybe we'll have a show on specifically on email, how to how to do it without feeling yucky. What else do you have on on your personal professional front?
+
+20
+00:09:06,210 --> 00:09:30,420
+Scott Tolinski: I got a lot of professional stuff. I for a large part of this year, I worked on that startup I mentioned in the last episode. And it took a lot for me to do this because it was the largest codebase I had built it was, you know, the project felt like a part of me. But I cut ties with the team and I cut ties with all of that code and that project. And that felt very, very, very, very freeing.
+
+21
+00:09:30,420 --> 00:09:32,370
+Unknown: I felt excellent, amazing.
+
+22
+00:09:32,580 --> 00:11:01,080
+Scott Tolinski: Yeah, so now all of that time and energy and effort that I did not get to put towards level up tuts is going to be used directly towards a level up tuts. And again, I'm just so excited for I am seeing what I was able to accomplish with it this year while I was doing this other thing. So if if I'm 100% invested 100% available for it. I'm just excited to see what I could accomplish right? Yes, your site made here. huge huge steps forward, the loading time got cut down like crazy because I started using pretty, pretty awesome code splitting, using react loadable and meteors dynamic imports. I added server side rendering, I added Redux, I added web workers and stuff like that to make it work better offline. I added local storage persistent state for my Redux store. major redesign on several pages, a new payment system, added Braintree and ripped out the whole thing. Oh, yeah. Simplified all of my offerings before was like five different ways you could buy things on level up, and it's totally been simplified. So overall, the site is is is cruising right now. And I'm really excited to see what I can do for it in 2018. But for Siri, series wise, I recorded a whole bunch of series two, I probably recorded. I don't know I probably I'd have to do some math on here. But I probably recorded like, 400 tutorial videos this year. Wow, watch?
+
+23
+00:11:01,470 --> 00:11:02,100
+Unknown: Yeah,
+
+24
+00:11:02,369 --> 00:11:30,510
+Scott Tolinski: I'll have to do some math on that one. But that would I don't know if that would be my highest year. I typically work around that range for recording. But I have recorded a lot of stuff. And I feel really good about I don't know, production values, increasing and, and editing and everything just seems a lot better. Not only that, but we started a podcast. And yeah, that's been a ton of fun. So that's, that's number one, I think,
+
+25
+00:11:30,540 --> 00:12:50,280
+Wes Bos: yeah, look, we've been, we were talking about launching this thing for for forever, right. And it's something that I've wanted to do forever. And podcasting has blown up like I've been listening to podcasts since like this week in tech launched like 11 years ago, or whenever it launched. And it seems like they've been it's been really, really taking off. And we'd launched it what June, late July, late June, something like that. Yeah. And now we're 23 episodes in and it's been amazing. I've been like super happy with, right out of the gate, we had some extremely solid listener numbers. And I guess that's because we both have had audiences elsewhere. So we were able to sort of launch with a with a bang. And it's really well been getting some really good feedback in terms of what people like and what they don't like. And we're talking about doing some sort of shuffling up some different formats in the new year. We're starting to get some consistent sponsors, people are finding value from actually sponsoring it, which is, which is great to me to be able to help other businesses reach our developer audience. So yeah, like super happy that everything that has gone on with a podcast and Big thanks to everyone who has has left a review or supported us or shared it with a friend because I really enjoy it. Right?
+
+26
+00:12:50,520 --> 00:13:05,010
+Scott Tolinski: Yeah, tremendous. I mean, I'm thinking about how much better the show's gotten in the 23 episodes, and I'm thinking like, Man and 23 more episodes, how much better is it going to get, it's just gonna keep getting better. So here's, here's looking at the features actually index, I feel like
+
+27
+00:13:05,010 --> 00:13:27,780
+Wes Bos: say, even myself in terms of how I can explain things, I think my tutorials are getting better. I think like, when I give conference talks, I'm a lot more confident, I'm able to just go off the cuff a lot more. A lot of that had come from my teaching in person for six years. But I think doing this every single year, every week, in week in week out has has really helped my ability to explain things.
+
+28
+00:13:28,020 --> 00:13:49,470
+Scott Tolinski: Yeah, yeah, I agree. I recorded seven tutorials on Friday for Redux and react. And I maybe misspoke, like three times, all seven to door I like, my video editor is not gonna have anything to do. He's gonna chop out some dead space, he's just gonna be like, wow, this is you didn't even mess this up at all. So that's amazing. Yeah, definitely improving on that friend.
+
+29
+00:13:50,700 --> 00:16:11,160
+Wes Bos: What else from my end, I launched my learn node course, which did extremely well, I was really happy with that. That was a huge undertaking. For me, it was a really big course, I spent a lot of time making sure that it would be very feature friendly. It was all it was all done in a sink await, which I was really happy at the time a sink away had just landed in node and like the next week I launched it, which was amazing. I updated my s6 course. My JavaScript 30 course Actually, I was just looking at it. It's been out for a year now it came out on December eight. But most of the traction and most of the sort of the winds and all the feedback and all the people that have discovered it had come in this year. So I was really happy to see all the people that have gone through that course and taking it that's by far my most successful course so far in terms of signup numbers and people taking the course. And then I've been working the last couple months on I'm sort of half done react course and half done a grid Course button boom working on both of those sort of in parallel and just pausing the mouse I have have to wait on things. So early 2018 is going to be jam packed with some big big releases. Awesome before oh and stickers that was that was one thing sticker mania sticker meanie I think I did two big runs of stickers and I finally have like a process and a fulfillment and all the stuff in place for for stickers and up until the last batch that I had done I had been just sort of breaking even trying to figure this thing out. And at the last batch actually made a little bit of money, which I was happy about because I don't know, it's it's a silly thing, but it takes a lot of time. And in order to get all of that in place and to to modify my code base to sell stickers and to automate the the printing and like it's huge. There's like literally 5000 people each time I sell stickers that are interfacing with this thing. So it was kind of a neat little challenge to to be able to move my skillset over to the physical and do the whole I've always been curious about the whole like, fulfillment and hearing them from like, I have them printed overseas, so it's kind of it's been a been fun to do that. I'll probably do them again sometime in 2018. Just not not yet.
+
+30
+00:16:13,320 --> 00:16:16,350
+Scott Tolinski: We'll stick it out. Yeah. Nice.
+
+31
+00:16:16,410 --> 00:16:17,370
+Unknown: Oh, by anymore.
+
+32
+00:16:17,370 --> 00:16:52,200
+Scott Tolinski: Um, let's see professional, personal, I don't know, thinks thinks of just, like I said the first half of the year. You know, it wasn't necessarily as focused son was born and then got really unfocused. And this last half of the year been really super focused. Yeah. So I think that's it pretty much it for me. I, like I said made major, major, major updates to the platform. I've released a whole bunch of tutorials Somehow, I don't even remember how I did that. But somehow, but yeah, no, that's it for me some
+
+33
+00:16:52,200 --> 00:17:25,070
+Wes Bos: What about your your goals for 2018? And Scott and I used to be part of a, what's it called? What do you call that? mastermind. A mastermind which is where we sit around and maniacally laugh and things like that we actually call What do we call it the yacht club, where Yeah, the yacht club, the yacht club, where we would all agree names and talk about businesses. And one day, we'll buy yachts. But the the thing with goals is that you need to make sure you make smart goals. And this is business school West coming out. But a SMART goal is simple, wet,
+
+34
+00:17:26,010 --> 00:17:26,520
+Scott Tolinski: miserable,
+
+35
+00:17:26,550 --> 00:18:05,090
+Wes Bos: simple, measurable, attainable, and hold on, let me pull this up. I don't want Business School West doesn't know how to specific, measurable, achievable, realistic, and timely. So like, having goals, you don't say like, I want to get better, I want to get in better shape, or I want to get more views on YouTube, you say, I want to lose 15 pounds, I want to get 30,000 more subscribers or something like that. So we're not going to go through our smart goals right now just because like they're a little bit more personal. And sometimes they're monetary or whatnot, but just kind of a look forward. What are you hoping to do in 2018? Yeah,
+
+36
+00:18:05,250 --> 00:19:39,150
+Scott Tolinski: yeah, as you say that, like all of my goals listed here, because I didn't want to get personal, but they were like better production, like Yeah, totally. Yeah. Better features, ya know, so for me 2018. Like I said, I have all this energy that I was able to put in at the second half of this year. So I'm looking forward to having a full year of putting all that energy in, I'm going to release a new series every single month for level up tuts. So if your level of pro you can subscribe and vote on what those series are going to be in shape which content I make. But so I'll be releasing a lot of premium tutorials, I plan on releasing a lot of stuff for YouTube, because of I'm going to be having a video editor do editing for me, I'll be able to record a lot more I'm looking actually to hire on a few different people to help out here in their contract wise to like, let me focus on the things that I like doing, which is recording tutorials because you know, if I can spend more time recording, I can produce more and not have to worry about all the stuff that I'm doing. I'm the type of person that likes to do everything myself. So trying to break out of that mold of doing everything myself and getting a little bit of help here and there. So yeah, better better. more tutorials, higher production values. I'm going to be building a set in my office at some point over YouTube channel. Yeah, I know I've been thinking a lot about this and I don't have a totally down yet, which is why I don't have it but I'll be building some sort of set. I'm gonna try to make it not cheesy zero cheese factor. It's not my style. Trying. Yeah, trying desperately not to make it cheesy. And then
+
+37
+00:19:39,800 --> 00:19:40,310
+Wes Bos: yeah,
+
+38
+00:19:40,340 --> 00:20:29,760
+Scott Tolinski: so better features on the site. There's a lot of stuff on the level of tutorial site that I just, I don't know needs improvement, UX wise, features wise, whatever. There's always things you're your own worst critic. I look at it. I see all of the imperfections and all the things I want to fix. So there's a billion billion billion things I want to add a level up tutorials and And most importantly, here, I think this is a big one. I want to spend less time working overtime, because right now I work constantly. I work 24 seven, and with a son and a wife, it is not a good idea to do that all the time for my mental health. Yeah. So really, I want to be able to take weekends off and evenings off and spend time with my family and stuff like that. So. So the goal is going to be able to get things into a place where I have to work less overtime, which is, which is always good.
+
+39
+00:20:30,050 --> 00:21:00,150
+Wes Bos: Yeah, yeah, totally. I think that in in 2017, I got really good at not caring when an email comes in, and not being like, Oh, I should just run up quickly in in reply to them, or I should quickly in like, just being able to like, whatever, I'll do it on Monday, I don't know if that comes with just do been doing it for a while or being able to just like, let it go and not have to worry about it. So I don't I don't know how that happened. But I'm really happy that it has really improved my weekends.
+
+40
+00:21:00,630 --> 00:21:03,720
+Scott Tolinski: Nice. Yeah, I'm looking forward to that. Cool. So
+
+41
+00:21:03,720 --> 00:22:47,100
+Wes Bos: my goals for 2018 are not a lot, I think 2017 was was spent a lot of time sort of prepping a lot of the foundations for a course platform and marketing and email list is really, really big now. So I have the sort of stage in 2018 is going to be just really doubling down on what is working in and releasing lots and lots of content. So I'm hoping to release four new series in 2018. I've got the advanced react one coming out. I've got the CSS Grid one coming out. I really want to do like VS code. One A lot of people have been asking for that I think that'd be a fun one to do wouldn't be too hard. And then a lot of people, the one thing that really kills me right now is they don't have anything for people who are new or new, or new ish to specific technologies, meaning that someone comes to me and they say, I can't take your courses because I'm not good at JavaScript. And because my stuff is all like beginner to more intermediate, I guess. Yeah. Like it's not the not the one on one. So I've spent a lot of time like at least two years just thinking like, what would an introduction to JavaScript course look like? That is not the same as the thousands of them that are out there already. So I really got some good ideas in terms of like how to make a JavaScript course, both for people who want to fill in the gaps. Maybe you've been doing JavaScript for a year or two, but you you still feel a little shaky. But as well as it can be, you can just like give it to somebody, you can point people to it and be like, if you are new to JavaScript, this is where you need to go. And it's not the like, same old document dot write and alert or prompt or things like that, that you've seen over and over again.
+
+42
+00:22:47,220 --> 00:22:54,120
+Scott Tolinski: We should we should talk off Mike about this. Because I have a I've been doing it. I have a whole page of notes about the same. Oh, really? Yeah.
+
+43
+00:22:54,150 --> 00:24:07,770
+Wes Bos: Yeah. Sweet. Off, Mike. Hashtag off mic. Sorry. And I also want to do that for for CSS as well, because people have been coming to me. And it's developers, all experiences being like, why don't you show us the CSS in your courses? And the answer to that is because it would be 30 hours long. Like it literally takes me weeks to design the stuff. And it but people just want to know, like, how do you do this? What's the best way to approach it? And I think that it could make a really nice CSS course where, regardless of if you're brand new to CSS, or if you just kind of shaky I know a lot of offers come either from being back end devs or just JavaScript devs. And they, they want to get like rock solid at writing CSS. So those that's my hopeful and by I go back to the if it's not a hell yes. It's a no, that's a quote from Derek Severs. There's a lot of really fun stuff coming my way in terms of conferences, and training and partnerships, and all kinds of stuff. And it's all really exciting. And I want to do it all. But I just can't. And I think I need to double down on actually just creating more content. Because that's, that's what I love to do. And that's what my business is, right?
+
+44
+00:24:07,950 --> 00:24:10,230
+Scott Tolinski: Yeah, on a percent. Exactly.
+
+45
+00:24:10,260 --> 00:25:40,200
+Wes Bos: I also want to rewrite my checkout experience, both because I want to be a little bit more flexible in terms of the different payment gateways that I can accept in the future. As well as the Mobile Checkout is a little bit wonky right now, which I know is probably losing me some money. The the design of it isn't great. I know sometimes people miss type their email address, and I know that first people are stupid, and they don't know how to type their own name and their email address. But probably more importantly, I think that's something that design can solve. If you're having people mess up when they're checking out. I think that design is is something that can can solve that issue there. And then my last one is continue to delegate and automate and so I've I've read it In the past month, I've hired on an assistant to help me with my email, which is my most hated thing in the world, which is great. So she's been, she's been doing most of my email, and all the sticker stuff and a whole bunch of all over the place different stuff for me. So that's, that's been my first foray into delegating to other people. And I really want to figure out how to continue delegating and automating I always prefer to automate things. But at a certain point, you need a human to step in and do some work. So I'm been been doing really well at the automate part. And I think the the delegate part is where I'm at now.
+
+46
+00:25:40,499 --> 00:25:52,560
+Scott Tolinski: Yeah, so it seems like we have pretty similar goals and a lot of ways more content. And, you know, delegate, automate, improve experiences.
+
+47
+00:25:52,620 --> 00:26:22,320
+Wes Bos: Exactly stuff. Yeah. And I also want to get faster at recording. I feel like it takes me a long time. I feel like you're much faster at making content than I am. And I think that that's actually one of the first things I asked you, when we you join the, the mastermind is how do you how do you record so much, and so little time? So I want to figure out a better process or I want to be able to just flip on my screen recorder when I've got half an hour, and it'll have to set aside like half a day. Otherwise, I won't be recording or something like that.
+
+48
+00:26:22,350 --> 00:26:29,580
+Scott Tolinski: Yeah, sure. Yeah. There. I got a lot of tips there. Some of it's just practice stuff. But yeah, I'd love stuff. Cool,
+
+49
+00:26:29,670 --> 00:26:30,540
+Wes Bos: tasty, treats,
+
+50
+00:26:30,780 --> 00:26:41,160
+Scott Tolinski: tasty treats. So talking about improving your cart experience, a nice way to improve your cart experience would be by using a snip cart. Yeah.
+
+51
+00:26:42,600 --> 00:29:20,490
+Wes Bos: Everyone on Twitter has been talking about Scott's amazing. What do you call that segues a segue. It segues into it. So sniff car is our sponsor. And what they do is they provide an entire end to end shopping cart experience for your website. So if you want to sell something online, like a course or like stickers, or a T shirt, or any type of or maybe have like a reoccurring billing thing, then you don't want to have to build it yourself. Because like we just went over, it can take months out of your year to actually build this stuff yourself. You can just drop snip card onto your website. And it's like sort of the the perfect thing. Because some of the some of the other solutions, they kick you off to an external website to complete the transaction. And I know myself that you're going to lose money as soon as you kick somebody off here or your website off to a separate one. So what this does is it just drops right into your website with a couple lines. It's a JavaScript library. So you just drop it into your website with a couple lines of HTML, and you'll be able to integrate the cart right into it. And then it is a service that essentially replaces your entire back end for you. So some of the features that it has reoccurring, you can do discount. So any type of coupon codes, you can handle all the payment gateways. So you still can work with stripe or PayPal, or all these different payment gateways that you have. It can deal with shipping, calculating how much a specific thing is going to cost to ship to you invoices multicurrency customer dashboard, all the stuff that you would want in in being able to to sell stuff online, it does the back end for you. And this is perfect, because we're slowly moving over to this whole like sort of like, no back end or serverless. And if you if you want to be able to charge a card, even with stripe j s, you can still drop the Buy Now button on your page with JavaScript. But at some point, you need to charge the card, or you need to charge that token on a server. And whether you're doing that on a traditional back end or a serverless function, that's still a back end. So snip cart will take all of that away it will do all of the the transaction processing for you. If you head on over to snip cart.com for slash syntax, they are going to give you three months for free which is amazing. And yeah, I don't know that's I'm pretty happy that they're sponsoring because when I had a quick call with the the developers behind it, and I was like this is like perfect overlap because people are building on this like totally so client side experiences in react or something like this. And if you need a shopping cart, you could just drop in snip cart.
+
+52
+00:29:20,490 --> 00:29:22,610
+Scott Tolinski: Super nice, super.
+
+53
+00:29:23,400 --> 00:29:28,050
+Wes Bos: Yeah, so thanks so much to them for sponsoring. Make sure you go to snip cart.com forward slash syntax.
+
+54
+00:29:28,350 --> 00:30:02,640
+Scott Tolinski: Nice. Cool So okay, we went over some of our our stuff in this year. Now let's get to this some some Cody, Cody stuff, some code here. Let's talk about JavaScript in 2017. Because to me, the overall message of JavaScript in 2017 is that things got easier and better to build like, like everything got easier to build stuff between next j. s and Gatsby and all that stuff that came out that Smith did create react app come out in 2017, or 16 2016.
+
+55
+00:30:02,640 --> 00:31:01,800
+Wes Bos: But it was I think, maybe mid 2016. I think 2015 2016 was the year of people being extremely overwhelmed. Everything sort of thrashing changes, everything was quickly 2017 was was still a year of a lot of stuff coming out. But I think a lot of the things that did come out, were like, this is going to make your life easier, and it's not going to be so bad. And we saw a lot of really kind of neat new things come out in terms. I think, for me, the biggest ones were these frameworks, the server side rendered frameworks, like, personally, I use next j. s, but it for view people, there's a knucks, j. s, Gatsby j s, which is a static site generator. And they sort of just bundle all both the like the hard web pack part as well as the how to use server side render react all and it makes it just a super simple. So I was so happy to have all of these these frameworks start to become standard in in 2017.
+
+56
+00:31:01,949 --> 00:31:36,810
+Scott Tolinski: Yeah, I spent less time writing configuration in 2017 than I have in 2016 2015. So all I think that's like, the overarching message to me is that things are getting better. Not that they were bad, but things are getting cooler. And so so yeah. So in JavaScript, we saw the release of these SSR frameworks, static site generators, basically, tooling just platforms on top of platforms that make things easier to build. So I'm really excited to see I mean, even what was the one that just was at parcel is the thing that just came out? Is that
+
+57
+00:31:37,589 --> 00:31:38,670
+Wes Bos: one parcel?
+
+58
+00:31:39,059 --> 00:31:46,410
+Scott Tolinski: Is that the correct name? I might be totally wrong. is a Webpack build configuration?
+
+59
+00:31:47,970 --> 00:32:12,540
+Wes Bos: Oh, the new one that just came out? Yeah, parcel. Is it parcel parcel .js dot org. Sorry, I tweeted about this. So yeah, it's like an alternative to to Webpack. And it's for now with the zero config, which everything starts off as zero config, and eventually the maintainers. Break and add a setting. But for now, it's a zero config bundler. That is sort of an alternative to Webpack.
+
+60
+00:32:14,100 --> 00:32:25,800
+Scott Tolinski: Nice. Okay. So yeah, so I think I think what we're even seeing that is the tail end here is that the tooling is going to be getting less and less of a pain in the ass. So that's a plus for me. And I've been
+
+61
+00:32:25,800 --> 00:32:53,700
+Wes Bos: saying this for all year, I, people have been asking me for a web pack course. And I was like, No, just wait, it will get easier. And there will be people that either build stuff on top of web pack, or there will be alternatives to web pack that are a little bit more suited to whatever use case that you're you're specifically working on. Because I don't think that it makes sense for every every Jo developer to be configuring a web pack themselves. It's just too difficult.
+
+62
+00:32:54,000 --> 00:33:01,440
+Scott Tolinski: Yeah, hashtag let someone else do it for you. Gonna be my motto for 2018?
+
+63
+00:33:02,460 --> 00:34:50,040
+Wes Bos: Another thing that happened in 2017, I think is that graph qL started to gain some serious momentum. So graph qL, if you haven't heard of it is we didn't do our episode on graph. QL. Did we know we talked about it like several times guy, tasty one coming for you feisty is a rather than having like a REST endpoint, that you you hit your REST endpoint for maybe orders. And then you use specific, maybe you want like a user. So you have to hit another endpoint for the user. And then maybe you want to list a product. So you hit another endpoint for that, instead of that you have sort of like one endpoint and you create these queries, which is essentially it looks like the data without, it's just JSON, but with only the left hand side values, and then you hit this endpoint, and then it will just populate the only the data that you want. And the benefit to that is that you both your sponsors are just as small as you could possibly get them, it only contains the data that you want, maybe you only want the orders with the order number and a description of the order and not the rest of the data, you don't have this request that. And then I guess the The other benefit to that as well as it's relational. So you can request maybe users and orders at the same time, or maybe you can ask for an order and then populate the product info from that order. And then from that product info, you could also populate related products and you can go like three or four levels deep populating the values as you want. So, it's really exciting. It's gonna take a while because it's a big shift change from graph qL from arrest to graph. qL but I think that if there's something worth learning in 2018, especially if you are looking at like getting a job and having a nice looking resume, I would definitely spend some time on on graph qL
+
+64
+00:34:50,279 --> 00:35:02,100
+Scott Tolinski: Yeah, yeah, man. I love how it's like sort of self documenting to with your queries. I mean, you know what the data you're getting, so you know what data is going to be available? It's super slick. I really love it.
+
+65
+00:35:02,250 --> 00:35:55,190
+Wes Bos: And it's it's all typed. I guess this is another trend for 2017 is Yeah, typings. Right. So big, big, big trend. Yeah, graph qL is typed in. For those who don't know, type two means that in JavaScript, we were what's called loosely typed to mean that you just create a variable called age. And you could set that to a number or a string or an object or anything that you want. And these type languages like TypeScript or flow, which is tacked on to JavaScript, or graph qL reason ml. So you have to specifically give it the type. So whether you have to tell it if it's going to be a number or a string, ahead of time. And what that does is it makes your the tooling and the autocomplete really, really nice, because as you start to type, it will try to suggest possible fields for you in the graph. qL query, which is neat. Yeah,
+
+66
+00:35:55,190 --> 00:36:01,190
+Scott Tolinski: I think that was something so like, TypeScript, I think had its moment once Angular two.
+
+67
+00:36:03,710 --> 00:36:09,110
+Wes Bos: Did you hear that? Yeah. I just got, I just got the ring doorbell.
+
+68
+00:36:09,330 --> 00:36:12,170
+Scott Tolinski: I have the ringer. I just got the ring doorbell to on Black Friday.
+
+69
+00:36:12,209 --> 00:36:21,650
+Wes Bos: Yeah, me too. And I I hooked that up, and I got the desktop app. And somebody walked up to my front door and the motion detector went.
+
+70
+00:36:22,290 --> 00:36:24,170
+Scott Tolinski: I see. I hear you have the wind chimes.
+
+71
+00:36:25,020 --> 00:36:27,570
+Wes Bos: Yeah. Now you can leave that in if you like,
+
+72
+00:36:27,860 --> 00:36:28,880
+Scott Tolinski: Oh, you know, it's hilarious.
+
+73
+00:36:29,129 --> 00:36:30,360
+Wes Bos: What were you gonna say?
+
+74
+00:36:30,540 --> 00:37:31,770
+Scott Tolinski: No, I say I was gonna say that, like, Oh, is it? I know, was it 2015 when Angular two was announced with being TypeScript either way TypeScript had its moment when Angular two was going to be fully in TypeScript. Right? Because now everyone is sort of by default, using TypeScript in this platform that's hugely popular. So that instantly makes it one of those things that everyone knows about. But in this year, I mean, between flow reason ml, or reason, I guess, and, and TypeScript, you definitely saw a huge trend of people really making the effort to do it in all of the platforms react and whatever, even if it's not required, like a lot of people are going to a strictly typed, or a type system here. Something that I don't think we have really seen this strong of a shift into type systems since I don't know I don't think we've ever seen it. So it's really interesting to me, I'm not using anything yet. I'm trying to see which one is the winner. Yeah, waiting for a winner right now.
+
+75
+00:37:32,250 --> 00:38:02,610
+Wes Bos: Just sitting on the sidelines. It's also really funny to process. I've always been a JavaScript developer. And then as we get, I've always been a JavaScript developer. And I've always been a text editor user. And as many people get excited about typings in JavaScript and autocomplete in our VS code, it really makes people who have meaning other languages that are typed for Oh, yeah. And it errantly makes them angry, but I'm sure just let us be excited, folks. And we know that this has been around forever. Yeah, I wonder
+
+76
+00:38:02,610 --> 00:38:14,520
+Scott Tolinski: if there is like that thought that JavaScript developers like, don't know this, like, don't know that these things have existed before. Like, yeah, I think we all know, it's just exciting to have those kind of toolings Yes,
+
+77
+00:38:14,580 --> 00:38:36,570
+Wes Bos: come come to the JavaScript realm. Another thing that happened in in JavaScript land or maybe in WordPress land is that WordPress has been been really rewriting their entire post editor with this thing called Gutenberg. And this is pretty exciting because they made the decision to go with react in WordPress core. I
+
+78
+00:38:36,570 --> 00:38:37,080
+Unknown: think
+
+79
+00:38:37,080 --> 00:38:39,420
+Wes Bos: it was up in the air for a while there because of the
+
+80
+00:38:39,440 --> 00:38:51,710
+Scott Tolinski: I wonder what happened with that, because it they announced that they were dropping react because of the the pattern stuff. Yeah. But then when react dropped the patent stuff? Did they I believe,
+
+81
+00:38:51,810 --> 00:39:52,920
+Wes Bos: I believe, continued react, I think they I didn't hear an announcement. But I did see some people posting screenshots of how do you write a Gutenberg add on and Gutenberg Gutenberg add on and you can write them in react, which is really, really neat. So that's pretty big, because we're again, JavaScript is infiltrating everywhere. And I think that's going to be a big shake up in. In 2018. We're gonna see a lot of the WordPress developers needing to double down on their JavaScript and even I think it was like a year ago or a year and a half ago, Matt Mullenweg said like, learn JavaScript deeply. And there's still a lot of people in WordPress land that are skirting by on not knowing a whole lot of JavaScript and time is running out I believe, because it's it's a it's everywhere. And if you're going to want to write next generation WordPress experiences, you're going to need to learn some serious JavaScript or at least some some decent JavaScript.
+
+82
+00:39:53,150 --> 00:40:32,580
+Scott Tolinski: Yeah, and you know, it'd be really sick would be like, a full on like perfect WordPress experience or perfect There is a Drupal experience that are would be 100% node and react based. I mean, there are people who don't who are doing the node and react CMS sort of land. Yeah. But it'd be sweet if there was like something that was as good as WordPress is for, for what it does. And who knows what that even looks like? Or if that even makes sense. Yeah, the 18 there's there are things like graph graph CMS that look like really super sweet that that are kind of taking over some of that CMS role. But also, there
+
+83
+00:40:32,580 --> 00:41:12,980
+Wes Bos: was another one that went there was another one that I was using for a while it was based on Express. I totally it totally, I'll put it in the show notes when I remember it. But it seems to development seems to have stalled. And I don't know I think that WordPress is going to become much more of a CMS people love the back end of WordPress, people are love to be able to put their content into it and myself, I'm just so tempted to to rewrite my website and I'm not they're not not leaving WordPress anytime soon. But I'm very tempted to rewrite the front end in next j. s and how it all like preload and really slick interface with animations and be like, it's WordPress baby, just be react react on the front end. Yeah,
+
+84
+00:41:12,980 --> 00:41:43,920
+Scott Tolinski: and, you know, I mean, you could do all sorts of stuff with that. Because now with with even with Gatsby, you could there's a WordPress graph qL plugin for Gatsby that makes pulling queries out of your WordPress API super easy and graph qL and have it statically generate, there's a lot of cool options. And I think we got a lot of these cool options in 2017. It's gonna be really interesting to see some of them mature and grow a bit and 2018 and, and how this all all changes for us.
+
+85
+00:41:44,210 --> 00:41:56,070
+Wes Bos: Exactly. And on the same note, React dropped its silly patent. So recently, yeah, React had this like patent license, which was causing a ton of people to drop react. And
+
+86
+00:41:58,770 --> 00:41:59,310
+Unknown: right,
+
+87
+00:41:59,550 --> 00:42:20,730
+Wes Bos: it was causing a ton of people to, to drop react, and I'm really excited to finally see react and all the Facebook projects have dropped that license. And yeah, can we can stop having to. But I guess as a benefit to that if you got really popular as well, because a lot of people are moving over to view and realizing how amazing view is.
+
+88
+00:42:21,600 --> 00:43:12,270
+Scott Tolinski: Yeah, that definitely took a like, that was one of those things where the React license was tripping some people out. And that was at that right time when view was really starting to grow. So I think view took a big advantage of that of that, like, you know, where should I go, which I do. And here's this new platform view that's really nice. It's sort of reminiscent about the things that we liked about Angular one, but you know, nicer overall than ever, you know, more modern, more component based and, yeah, views cool. I love the ideas. I'm not using it myself, because I'm so invested into react right now. But it's one of those things I keep an eye on. And I know how if I wanted to get into it, I could do it. But you know, just keep an eye on it. It's definitely definitely had its its year so far in 2017 view saw a big, big new audience.
+
+89
+00:43:12,900 --> 00:44:25,350
+Wes Bos: Awesome. Let's take a quick break to talk about our sponsor, which is fresh books, fresh books is the best cloud accounting software that you could possibly have for your business. So I've been using it myself for for years and years and years. And it's great for being able to invoice your clients. If you have to send off an invoice to somebody, it's, for example, Freshbooks sponsors this podcast and I have to send them an invoice to actually pay us send it off to them. One of the features that I really like about Freshbooks is I use it to track all of my expenses as well. And one thing that you can do is you can hook it directly up to your bank account. So anytime that you have an expense, you can just import all of your debits or credits from your bank in into your Freshbooks. And you can line each of those up with an with an actual expense. So you're not accidentally forgetting sometimes I lose a receipt or something like that. But I still want to get the actual expense logged. So in that case, you can just import them right from your bank. So if you are a small business or just looking to build someone, make sure you go to freshbooks.com forward slash syntax and enter syntax into the How did you hear about us section? Because that will make sure that Scott and I keep getting paid. So thanks so much to Freshbooks for sponsoring.
+
+90
+00:44:25,710 --> 00:44:39,600
+Scott Tolinski: Nice if see if I would have done a segue for that one. Here's this here's segway school 101 here, okay, I could have done like, let's say view is a fresh technology and you know what else is fresh?
+
+91
+00:44:40,380 --> 00:44:46,650
+Wes Bos: Off fresh book. Why? Yeah. Oh, that's good. Kinda amazing. I mean, it's supposed
+
+92
+00:44:46,650 --> 00:45:06,090
+Scott Tolinski: to be good. I am a dad now and I've been like really, really like before. I was a dad. I was trying to do dad jokes and my was just like you're not getting that. Like, I don't know that this dad joke thing is going on. Work and I've been trying to practice really hard. And I think the Segway and the dad joke thing lineup like very well, yeah,
+
+93
+00:45:06,090 --> 00:45:08,970
+Wes Bos: you're doing really well. I'm impressed.
+
+94
+00:45:10,800 --> 00:45:39,300
+Scott Tolinski: It's been it's been practice. So yeah, okay, so JavaScript huge advancements huge new things made life a lot easier. Let's talk a little bit about CSS because CSS was not without its fair share of growth and moments as well in 2017. And I think, obviously, the biggest one that you could say is probably one of the biggest changes to CSS overall, or how we write CSS is the arrival of CSS Grid and what that means for us moving forward.
+
+95
+00:45:39,659 --> 00:46:31,830
+Wes Bos: Yeah, the so the browsers just came out of nowhere. And they all had released CSS Grid. They are all being developed behind a flag sneakily. And then within I think about a couple months, all of the the browser's turned on support for CSS Grid. So it's here, obviously, we still have iE 11 that we have to worry about. don't tweet me I understand. But it's pretty soon in the next year or so I think 2018 will be the time that CSS Grid starts to make it into a lot of production websites, if not already. So pretty excited about that. We also saw Firefox's a really sweet CSS Grid Dev Tools launch. So if you haven't seen it puts this really nice grid over top of your grid to show you exactly where the different sections and whatnot are. Are you you've been pretty happy with CSS Grid so far, too.
+
+96
+00:46:32,100 --> 00:47:27,270
+Scott Tolinski: Yeah, I'm using it in production. I'm converting a bunch of my layouts over to it already. I just love the simplicity. I love how easy it is to build excellent responsive grids with it. I was when I when I did my modern CSS layouts course available on level up tutorials, comm forward slash store. When I made that series, you know, it really opened my eyes to some of the the more complex, amazing things you can do with CSS Grid, and some of the irregular grid shapes. And if you can, if you can think about it, like, I don't know, there's not too many layouts outside of that, you know, Pinterest style layout, that's still not really super existing without JavaScript that you can't do with CSS Grid. It's just one of those things. That's excellent. And I feel like it's forever changing the way that I'm approaching writing my CSS, and absolute for the best. So yeah,
+
+97
+00:47:27,420 --> 00:48:04,920
+Wes Bos: I've also been I had a really nice talk with Benjamin de Kock, who works at stripe he's he's been crazy about CSS Grid for for quite a while now. And I talked to him about like, like, when do you use Flexbox versus grid and he had some interesting things to say in terms of just use always use grid. So I've been trying that the last week or two of Can I write everything just in grid? And there's some there's arguments on both sides for it. But I haven't made a decision. So I won't go into it too deep just yet. But it's a it's been interesting. I'm curious to see how people's grid usage unfolds once they start to use it in production applications over 2018.
+
+98
+00:48:05,220 --> 00:48:44,850
+Scott Tolinski: Yeah, Yeah, me too. I'm ready for the the blog posts. And the really cool all you can do this with CSS Grid. I mean, we're already getting those. And I'm excited for more of them. Because these kind of major shifts are going to ripple and ripple and ripple until we have like a totally new way of doing all sorts of stuff. I remember like, I don't know, when people found a new way to do clear fix. And it was like, Yeah, like crazy. Over here. We've been doing clear fix this way for all these years. But this way is more performant better, whatever smaller. And we're gonna have those kind of epiphanies all year in 2018. And I'm excited for it, because that that sort of stuff gets me excited. I love CSS.
+
+99
+00:48:45,270 --> 00:49:34,710
+Wes Bos: Another thing that has become really popular in 2017 was the sort of the idea of component sizing your CSS. So a lot we've been writing like bem CSS for years and years. But I feel like a lot of people are really starting to see the benefits of writing your CSS in components, whether you're writing it in bam, or a lot of people more likely are writing in something like style components or scoped CSS or style JSX or whatever the scope CSS is in view, where you write your CSS for a specific component and CSS does not leak outside of that. And we we talked about that in a couple of our episodes so far. But we're starting to, we're starting to see it become really popular in in. I've been a conference this year. What about you, Scott? Yeah,
+
+100
+00:49:34,740 --> 00:51:30,930
+Scott Tolinski: I've been moving my system over to styled components. And one of the things that's opened my eyes to is building design system. So I made a big effort to build out my entire design system into figma, which is my which is my design application of choice. Love figma. If you don't know it's a cross platform works on Mac, Linux, Linux, Windows, And is like sketch but works on everything and is browser based and cloud saves and that sort of stuff. It's awesome. So, so I've been making an effort to really rebuild my entire design system in figma. But at the same time, I'm building this design system of styled components to match my design system and figma. And it's totally opened my eyes to how you work with things and extending them. And maybe if you have this one off thing, and that styled component lives exactly in that sort of same file as that react component. And you never have to worry about those styles colliding with anything else. You don't have to worry about class names. You don't have to worry about naming things because that's like a giant pain sometimes is coming up with these long bem names and stuff like that. I mean, obviously, you love them. It's a great thing. And it's made everyone CSS more readable. But you know, not having to come up with those class names has been really super nice. And I honestly, I've just been totally blown away by the system. I'm ready. I'm ready to start moving the entire thing over right now. And we're gonna see how that goes. I I kind of miss a lot of the features on stylists. But that said, I'm loving the the sort of way that styled components have made me rethink about my my styles overall and be fought. Yeah, again, before you tell me this, like I do know that. I don't need styled components to rethink my CSS design system. But it has definitely opened my eyes to how it could be better. Yeah,
+
+101
+00:51:30,960 --> 00:51:57,840
+Wes Bos: yeah. Yeah, absolutely. Another thing in CSS is, and this isn't new, but I think it's it's getting a lot of traction is is CSS variables. A lot of people are finding out about our CSS custom properties this year. So it's exciting to see all of the different use cases that you can use in CSS, and we talked about it a couple episodes ago is what's new in CSS. There's a lot of really exciting stuff that's going to be coming in 2018 as well. Yeah, I'm
+
+102
+00:51:57,840 --> 00:52:32,310
+Scott Tolinski: super excited to use CSS variables. In my application without any sort of felt like, I'm just dying to do that. I wish I could do it right now. I have like a 3% audience of people that would not get variables. And I guess 3% is large enough that I need to have fallbacks for those things. Yeah. And so that kind of bums me out. I don't want to have to write the color in the background, or anytime I'm using a color, I don't have to write the property twice as a fallback. But I'm so excited for CSS variables, I want to use those right now more than anything else, I think
+
+103
+00:52:32,490 --> 00:53:20,070
+Wes Bos: I'm really curious to see where we'll be a year from from right now, because the rate at which the browsers update, especially once we bear a bid farewell to iE 11. It's going to be it's gonna be a totally different game in terms of like, these things are new. And three months later, everybody can use them. Because I there's still, I guess, I'm old devices that might be like the new iE 11. But I don't know, I think this stuff is going to be moving a lot. And it already is, it's moving a lot faster than than it is I remember, we had to wait forever just to use some of the new CSS three very sorry. I knew we had to wait forever just to see some of the new CSS three features. And it seems like this new CSS stuff is coming quicker than then we had to wait before.
+
+104
+00:53:20,370 --> 00:53:45,450
+Scott Tolinski: Yeah. But CSS is the best it's ever been. And it's only getting better. And I'm excited to actually get to use a lot of this great new stuff, and excited to see all the new stuff that you're eventually going to get to you. So yeah, I think 2018 is going to be a great year for CSS. It's going to be a great year for JavaScript, it definitely it's going to be a great year for all of us developers who work in these tools. So I'm just totally optimistic and I'm pretty psyched about everything so
+
+105
+00:53:45,660 --> 00:54:29,790
+Wes Bos: awesome. Let's wrap it up with some just like general anything goes what happened I think one of the big ones was VS code. Got a really really big it seems like everybody moved over to to VS code Abraham but in the last year I myself moved over to it. We did a probably one of our most popular podcasts was about VS code and people switching over we heard tons and tons of people who made the switch after that podcast so VS code released tons of new features it's getting really really good. It seems like every release there's there's lots of new exciting stuff. So I'm excited to see the new What is it the the live coding the sort of pair programming that's going to be coming out in 2018 with VS code?
+
+106
+00:54:30,060 --> 00:54:49,080
+Scott Tolinski: Yeah, a lot of cool features. And it's the My favorite thing about VS code is just how much improves all the time. I'm on the insiders build and I like look forward to updating every single day because you never know what you're gonna get. There's always just excellent, excellent improvement and that team is doing some serious work and building a serious serious text editor. It's awesome.
+
+107
+00:54:50,190 --> 00:55:45,210
+Wes Bos: Um, what else do we have? Iron yard close down. So it coding boot camps are have been around for for many, many years now and I'm a big fan of coding. boot camps, I think that they're one of the best ways for someone who's trying to, to get up and running and sort of get climatized. With this crazy industry of ours, obviously, we were doing an hour long show of what changed in the last year. But one of the biggest ones, which is iron yard close down, which is a bit of a bummer, I know that they had tons of really great students, as well as tons of really good instructors that live there. So it was a, I was pretty bummed to see that happen. A lot of them had taken my courses as sort of supplemental information. But I don't know if that's has anything to do with our industry, or it was just business decisions that maybe the the company was growing too fast and running out of cash. I'm not really sure what happened there. But it was kind of kind of a bummer to see.
+
+108
+00:55:45,210 --> 00:55:49,410
+Scott Tolinski: I actually had not heard of the iron yard.
+
+109
+00:55:49,680 --> 00:55:50,460
+Wes Bos: Oh, man. They're
+
+110
+00:55:50,910 --> 00:55:54,570
+Scott Tolinski: super nice. It was very nice.
+
+111
+00:55:55,770 --> 00:56:27,300
+Wes Bos: They had how many I think they had, how many locations that they have let me go to their website here. See if it's still up. One, two. Yeah, probably about 15 locations all around the US, Atlanta, Austin, Charleston, Dallas, Charlotte Durham. So they were one of the big big players there. And they just closed their doors, which is sad to see, but props to anyone who did go through that boot camp, and now got jobs. So it's pretty neat to see.
+
+112
+00:56:27,960 --> 00:56:48,990
+Scott Tolinski: Yeah. Oh, yeah. I don't know about what else what else happened? Yeah, I don't really know. It seems like there's so much JavaScript and CSS stuff that happened this year, tooling got better. We got a hyper terminal, which I personally don't use, but a lot of people seem to really like, which is a terminal that's based in electron. So yeah,
+
+113
+00:56:48,990 --> 00:56:50,160
+Wes Bos: good luck on web
+
+114
+00:56:50,160 --> 00:56:52,080
+Scott Tolinski: looking forward in JavaScript.
+
+115
+00:56:52,380 --> 00:57:47,880
+Wes Bos: Pretty neat. I use it myself. It's not perfect yet. But it's, it's pretty good. I think that in the last maybe three months, it's got a lot better in terms of performance. But I still have some some issues here and there, but I like it enough that I've been staying in it. Twitter, switch to 280 characters, this is not development related. But as someone who uses Twitter quite a bit, I was pretty happy to do that. I know a lot of people are butthurt over the 280 characters, but I like to post Twitter tips every now and then. And it allows me to be a little bit more spacious, with my explanations of things. And the the well actually is have cut down drastically. Because I'm able to explain a little bit more in in a tweet before I actually can send it off. So I was pretty happy about that. Yeah, I like it.
+
+116
+00:57:47,939 --> 00:58:07,920
+Scott Tolinski: I you know, I think the the day of abuse, like where everyone was abusing it for like 24 hours. Yeah, now that that period has gone like, I think if if nothing else, it's made me less like frustrated when I'm one or two characters over. So a plus on that. Did you I guess, like progressive web apps became a bigger thing. This year?
+
+117
+00:58:08,010 --> 00:58:15,300
+Wes Bos: Yeah. Yeah. It's actually something I haven't haven't dabbled in a whole lot. But it's something that I heard a whole lot about. You want to explain what that is?
+
+118
+00:58:15,629 --> 00:59:41,550
+Scott Tolinski: Yeah, progressive web app. I don't quote me on this as being de facto, whatever. But it's a website that's going to work like more like an application. So it's going to be fast, it's going to be reliable, it's going to work offline, it's going to at least have some sort of offline experience, not like necessarily the same offline experience. So basically, these are applications that function much more like a real application. They use things like web workers to deliver this experience offline. There's a whole app checklist may actually find this. Yeah, so your site must be delivered over HTTPS pages are responsive for mobile and tablet, your URLs, load went offline metadata to add your application to a homescreen of a phone first, fast first load on 3g site works cross browser page transitions don't feel like they block the network. Each page has a URL. There's a whole lot of stuff here. And it's all things that aren't going to make your site better. So yeah, so I think progressive web apps, this is an episode we need to do prioritize early 27 or 2018. Just like our our graph qL one. So we should move this up to the top of the list because this is there's going to be a lot of stuff here. And it's going to be a lot of stuff that makes your application instantly better. And a lot of it's actually really easy to implement. So
+
+119
+00:59:43,380 --> 01:00:54,000
+Wes Bos: yeah, I'm excited for that one. Other than that, what is one thing in 2018 that you are either looking forward to or really, really hope that we'll drop in in web development? I can while you think about it, I'll talk about mine and I really Hoping for container queries in CSS to be specked. out and and to get that red stamp of approval. I don't know if it will happen in a year, but I'm really hoping it will. And what that is is sort of like a media query. But instead of just having the viewport size, you can, you can specifically say when the width of this container, like when the width of this component in my CSS is less than 400 pixels, then change it because sometimes you might have like a Twitter widget or a cart widget, and you might have it in two different spots on your website. And when when one of them is 600 pixels wide, or 500 pixels high, then you want to like make it look a little different than when it's really, really small. Right? So there are some ways you can do container queries right now with JavaScript, but having them natively in CSS is something that I'm really crossing my fingers for.
+
+120
+01:00:54,360 --> 01:02:27,690
+Scott Tolinski: Yeah. There's so many times when you could almost say that element queries or container queries are almost always going to be the right way, rather than like a media query. Because if you think about it, each of your components should respond to its given size, not the browser size. Exactly. And maybe the browser sizes, what's changing up your layout and stuff like that. But each individual component? Yeah, we we used element queries via polyfill. Very briefly, when we were doing for.com, we eventually had to abandon it due to just general issues with compatibility, right, yeah, even with the polyfill. But in that brief time that we were using them, I was totally convinced that this was the feature of how we are going to do media queries and reshuffling components overall, it's excellent. So yeah, I would just copy yours. I would say that, that I'm also I'm just looking forward to being able to use CSS variables and explore all of those exciting ways that we talked about using it not last episode, but the episode Before that, we were talking about being able to use them and media queries and stuff like that. I'm excited to get my hands dirty, and start using some of that stuff in production. And hopefully, I'll be able to do that. Because I think that's just you know, the future. Also, it would be sick if we could do better transitions with CSS Grid. I know we've mentioned that before. I have no idea if there's any plans involved in that. I don't know what it would even take but it'd be sick. I would love it. I would love it. But yeah, that's that's just me.
+
+121
+01:02:27,690 --> 01:02:33,720
+Wes Bos: Right on. Let's talk about some sick pics. And then we'll wrap it up. Yeah, so
+
+122
+01:02:33,720 --> 01:03:58,440
+Scott Tolinski: my sick pick this week is something that is an unexpected sick pig. I picked it up on a whim here on Black Friday, I got the the Google Daydream, which is a VR headset for your phone, Google phones or Daydream ready phones, they're like specific type of phones have this VR mode where it like boots into a separate version of the operating system and runs superduper nicely. This this headset was like 6070 bucks or something. And it has a remote control. And we've been going nuts with it. Courtney and I have been using it like watching 3d videos, I was watching videos on all these different, you know, civilizations and stuff like that. And you can go tour different stuff, and have these 3d videos. And as someone who doesn't have a legit VR headset, for the price and everything it works with my phone. The Google Daydream was just so unexpectedly awesome. I have my having a hard time putting it down. I want to like go watch more 3d videos, I just did one where I was like a Redbull f1 driver. And you're, you're really feeling this speed and you're looking around and you know, I sound like a noob to VR. But this this stuff is super duper cheap. It works really extremely well. The controllers, amazing everything about it. Wow, very nice. So Google Daydream really, really super cool.
+
+123
+01:03:58,710 --> 01:06:21,210
+Wes Bos: Wicked. I got one now, my sick pick is because I because I have an assistant now helping out with my email, which is I'm pretty excited about I needed some way to share my inbox without just giving out a password because there's a whole lot of like stuff that goes along with with sharing an inbox with somebody and being able to mark things as done and assign them to people. So I ended up switching over to this email client called missive. And it works with your existing email account. So I use Gmail and Google Apps or what is it called Google suite now for that, but what missive does is it just it's it's an app on the web. It's an app on your desktop, it's an app on your phone, and then you can add multiple people to that. And then each of them then has their own concept of an inbox. And then what you can do is they can either see all the email or like for example, my personal email, I can take things out of and give to my system. For the I have a new email address that everything all my new support stuff goes to and she sees all that and, and deals with accordingly. So if it's something that I need to be dealt with, then she signs me and I can assign her. And what's really neat is that in the threading of the emails, you can also have chat, which means that like, even like, we can chat back and forth in terms of like how to deal with an email, and then and then you can actually send an email to the client and it's all in this one really nice, slick thing. And the one thing that I didn't expect about it is that the actual client for dealing with me email is really, really slick and it's really fast. And I feel like I processed my email once I learned all the different keyboard shortcuts and once I got used to it, I feel like I'm doing my email much faster than than I was before, because I could just blow through it really nice. Okay, I've never in my life used a desktop email client. I've always used something in I've used Gmail or Google inbox in the web, but it's been super happy with with how it's going. So it's called missive and it's, it's not really it's not really for someone just who's doing their own email but if you are looking at sharing an inbox if you have a support email address where you need to have multiple people being assigned things and I definitely check that out.
+
+124
+01:06:21,600 --> 01:06:32,940
+Scott Tolinski: Nice Yeah, that that seems like something that's going to be super good for your goals to for this year, which were you know, automating and delegating that that fits right in to this episode perfectly. So
+
+125
+01:06:32,940 --> 01:06:42,210
+Wes Bos: Exactly. Nice. Other than that, and we are done this episode, or do you have any shameless plugs for me?
+
+126
+01:06:42,750 --> 01:07:14,340
+Scott Tolinski: I got a shameless plug. Well, he last week you plugged your Instagram account, I'll plug my Instagram. Yeah, which is s tau Lynskey, or I have one at level up tutorials, level up tutorials for code stuff, and add s to Lynskey. If you'd like to see me spinning on my head and stuff like yes, I but I honestly mostly post photos of my wife, Courtney, my child Landon or myself spinning on the ground. So if you want to see any of those things, follow me on Instagram.
+
+127
+01:07:14,640 --> 01:08:01,020
+Wes Bos: That's awesome. I actually got a ton of new followers on Instagram after last week's episode, so props everyone who who follow through on that if you still haven't, I'm at Wes Bos on everything, but Instagram as well. You want to follow me on that. Other than that? I am today I'm starting recording my CSS Grid series. I finalize everything I have a I do have a sponsor coming on to help out with the the paying for my time in the recording. So I was pretty happy about that. I just finalized those details on Friday. And that should be out. I know. I was hoping to get it out before Christmas, but things didn't work out. So I'll likely have it out first week of January as well. It's looking like right now. dope. Cool. Other than that, we'll see you next week. See ya. Have a good one,
+
+128
+01:08:01,080 --> 01:08:10,170
+Scott Tolinski: head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

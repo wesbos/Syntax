@@ -104,8 +104,8 @@ export default function IndexPage({ showNumber, shows, transcript, params }) {
             isPlaying={isPlaying}
           />
           <div className="showNotes">
-            <Transcript transcript={transcript} />
             <ShowNotes show={show} setCurrentPlaying={setCurrentPlaying} />
+            <Transcript transcript={transcript} />
           </div>
         </main>
       </div>

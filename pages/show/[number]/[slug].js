@@ -9,6 +9,8 @@ import Player from '../../../components/Player';
 import Meta from '../../../components/meta';
 import Page from '../../../components/Page';
 import { getShows, getShow } from '../../../lib/getShows';
+import { getShowTranscript } from '../../../lib/getTranscripts';
+import Transcript from '../../../components/Transcript';
 
 export async function getStaticPaths() {
   const shows = await getShows('all');
@@ -23,7 +25,7 @@ export async function getStaticPaths() {
           slug: 'latest',
         },
       },
-      ...shows.map(show => ({
+      ...shows.map((show) => ({
         params: {
           number: show.displayNumber,
           slug: slug(show.title),
@@ -34,11 +36,23 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  console.log(params);
   const shows = await getShows();
   const showNumber =
     params.number === 'latest' ? shows[0].displayNumber : params.number;
   const show = await getShow(showNumber);
-  const props = show.date > Date.now() ? {} : { shows, showNumber };
+
+  const transcript = await getShowTranscript(parseFloat(showNumber));
+  const props =
+    show.date > Date.now()
+      ? {}
+      : {
+          shows,
+          params,
+          show,
+          showNumber,
+          transcript,
+        };
 
   return {
     revalidate: 1,
@@ -46,14 +60,14 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function IndexPage({ showNumber, shows }) {
+export default function IndexPage({ showNumber, shows, transcript, params }) {
   const router = useRouter();
   const [currentShow, setCurrentShow] = useState(showNumber);
   const [currentPlaying, setCurrentPlaying] = useState(showNumber);
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(
-    function() {
+    function () {
       const { query } = router;
       if (query.number) {
         setCurrentShow(
@@ -71,17 +85,17 @@ export default function IndexPage({ showNumber, shows }) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const show = shows.find(showItem => showItem.displayNumber === currentShow);
+  const show = shows.find((showItem) => showItem.displayNumber === currentShow);
 
   const current = shows.find(
-    showItem => showItem.displayNumber === currentPlaying
+    (showItem) => showItem.displayNumber === currentPlaying
   );
   return (
     <Page>
       <Meta show={show} />
       <div className="wrapper">
         <main className="show-wrap" id="main" tabIndex="-1">
-          <Player show={current} onPlayPause={a => setIsPlaying(!a.paused)} />
+          <Player show={current} onPlayPause={(a) => setIsPlaying(!a.paused)} />
           <ShowList
             shows={shows}
             currentShow={currentShow}
@@ -89,7 +103,10 @@ export default function IndexPage({ showNumber, shows }) {
             setCurrentPlaying={setCurrentPlaying}
             isPlaying={isPlaying}
           />
-          <ShowNotes show={show} setCurrentPlaying={setCurrentPlaying} />
+          <div className="showNotes">
+            <Transcript transcript={transcript} />
+            <ShowNotes show={show} setCurrentPlaying={setCurrentPlaying} />
+          </div>
         </main>
       </div>
     </Page>

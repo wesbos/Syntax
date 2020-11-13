@@ -22,7 +22,7 @@ export default class Show extends React.Component {
       `}
       >
         <Link
-          shallow
+          // shallow
           scroll={false}
           href="/show/[number]/[slug]"
           as={`/show/${show.displayNumber}/${slug(show.title)}`}

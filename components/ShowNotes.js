@@ -8,7 +8,7 @@ const ShowNotes = ({ show, setCurrentPlaying }) => {
   });
 
   return (
-    <div className="showNotes">
+    <div>
       <p className="show__date">{show.displayDate}</p>
       <h2>{show.title}</h2>
       <button

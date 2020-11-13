@@ -1,0 +1,516 @@
+1
+00:00:05,970 --> 00:00:11,250
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:12,540 --> 00:00:34,400
+Wes Bos: Hello, everybody, welcome to another syntax. Today we're gonna have sort of a q&a show or like mini treats show where we don't have one specific topic, but we're gonna sort of rattle through a bunch of questions that we start to have, it doesn't necessarily have enough to make up an entire show, but enough to to have some nice little q&a. So, Scott, how you doing today?
+
+3
+00:00:34,770 --> 00:00:43,830
+Scott Tolinski: I'm tired. Yeah, so it's having a, you know, a four month old is, can be rough, sometimes.
+
+4
+00:00:44,340 --> 00:00:45,570
+Wes Bos: Very rough, slowly,
+
+5
+00:00:45,570 --> 00:00:49,380
+Scott Tolinski: slowly waking up here, but I'm doing my best. How about you?
+
+6
+00:00:49,410 --> 00:01:24,450
+Wes Bos: That's good. That's good. I'm doing pretty good. We also had a bit of a rough night, I just got home last night or last afternoon, a trip to I was in New Orleans for CSS dev comm, which was super fun. It's always a really fun conference, I met a whole bunch of really cool people learned a lot about CSS, and I did a job. I'm always the guy that comes into the JavaScript talk at CSS conference. And then I did a react workshop. So I was really fun. And then my wife and I sort of took a couple days to hang out in New York before for coming home. So feeling good, but also feel entire Yeah. Nice
+
+7
+00:01:24,450 --> 00:01:28,200
+Scott Tolinski: little hangover from the the trip.
+
+8
+00:01:28,620 --> 00:01:48,510
+Wes Bos: Yeah, yeah, exactly. So let's jump right into it. This, this is gonna be all over the place in terms of soft skills, hard skills, whatever, I thought we'd start off with a very technical one, which is do you use rems M's or pixels or Vw vhr or whatever? Like, what is the best way? And what are your thoughts on that? Scott?
+
+9
+00:01:48,540 --> 00:02:24,410
+Scott Tolinski: Yeah, I largely for the most part, use rims for everything. I like them, because I don't have to worry about the container potentially having that multiplication effect, or whatever you'd want to call that. But yeah, I use rims as relative units. I use, I use pixels for things like the height of my header up, but I guess I don't always sometimes I do. I don't I use pixels occasionally. But not not. I don't really intend to use the viewport. The viewport dimensions a lot. The VH VW Yeah,
+
+10
+00:02:24,420 --> 00:02:25,080
+Unknown: those are great. Those
+
+11
+00:02:25,080 --> 00:02:45,090
+Scott Tolinski: are absolutely great. The moment that I felt like, I could use them. I was all on board like 100% on that train. So yeah, I use rems, I use the viewport widths and heights and then yeah, I occasionally use pixels. I found myself never using EMS really ever since rims came into the picture ever since that came out. Yeah.
+
+12
+00:02:45,090 --> 00:02:49,590
+Wes Bos: Okay. So some follow up questions. What about media queries, pixels, or rems?
+
+13
+00:02:50,640 --> 00:02:52,920
+Scott Tolinski: Oh, pixels. This is where I use pixels. Yeah.
+
+14
+00:02:52,980 --> 00:03:00,000
+Wes Bos: Okay. Yeah. Cool. And then what about what, uh, what's your base font size? If you're using rems? I get to like, 10.
+
+15
+00:03:00,030 --> 00:03:28,350
+Scott Tolinski: I don't do that I did for a little while when I was like transitioning into rooms, I would set them to 10. But now I guess it's based on the design that I'm working with. And yeah, I'll set I'll set my my one REM to whatever my body font size is typically 16. But just yeah, if it if it is 18, or, you know, 24, something like that, depending on the size of the the current design or something I'll just said to my body side by body font size. Yeah.
+
+16
+00:03:28,980 --> 00:05:12,600
+Wes Bos: Cool. Cool. Well, I'm in a similar boat. Maybe I should for those who haven't used a whole lot of rams, RAMs, let me explain real quick. The idea with pixels is what you say is what you get a rendered out to the screen, you set something to be 100 pixels, it will render out 100 pixels to the screen. With EMS, the way that it works is that you can set something to be like one M. And then let's say that that renders out to be 10 pixels. And then if you have something inside of that container, and you set that to be two M, then it's it's going to be two times whatever the parent is. And what can happen is that as you start to move stuff around or nest things, it gets really out of control, because it's always based, it sort of just like multiplies itself as you nested. So if you have font size, whatever m nested inside of something else that has a font size nested and something else that has a font size, then you start to get in trouble where this thing is sort of going off of each other. So I don't use that a whole lot. However, there is a very good use case for EMS. And that is when you want your entire container to scale up proportionately. So if you have, like, let's say you have a widget where you have a h2 tag and a paragraph tag and your h2 tag needs to be twice the size of your paragraph tag. So you could set your h2 to be one M or a to M and you said your paragraph to be one M and then you set the entire parent container to be like font size 10 pX, and then if you just want to double everything up, you want to just sort of like proportionately scale. All the way up, then you just change the font size of the actual container. And that's that's really nice. I don't run into that all that often. But when you do need proportional M's does come in very handy for that. Yeah,
+
+17
+00:05:12,629 --> 00:05:20,250
+Scott Tolinski: I think it's more likely that the design itself, like at a breakpoint is scaling in some sort of way, like overall, right?
+
+18
+00:05:20,490 --> 00:06:11,009
+Wes Bos: Yeah, exactly. And rems is a is all based on the HTML tag font size. So it doesn't do any of this multiplay multiplying it stands for root m. So you set the you set the font size on your HTML tag, and that's exactly what I do is I set the font size to be 10 pX on my HTML tag. And then I always know that if I need something to be 20 pixels, I set it to be to rems, and I sort of set it the reason why I set it to be 10 pX is so that to maintain my sanity in terms of trying to convert over to at the end of the day. So that's pretty nice to be able to do. And then I do use pixels for, for sizing all of my media queries, I know that there's a lot of people that like, try to like convert it in rems, and stuff like that. But I've never ever run into the situation where I need to scale up or down my media queries.
+
+19
+00:06:11,040 --> 00:06:13,920
+Scott Tolinski: Yeah, I personally benefit there at all.
+
+20
+00:06:14,550 --> 00:06:51,329
+Wes Bos: At the end of the day, everyone's trying to just calculate pixels in their head. So that's actually one one cool thing I did see is I once had a student who accidentally designed their entire website when they had zoomed in two times. And their media queries just weren't making sense. No, like, why is this media query not making and then I just like, hit the command zero or Command minus this zoom the entire website out? And they're like, Oh, no, but because they had they had done everything in rems, they were able just to, it was like a two minute fix. I could scale everything up proportionately was just kind of, yeah, right. Nice.
+
+21
+00:06:51,480 --> 00:07:17,129
+Scott Tolinski: Yeah, I really love using rems for things like margins. And then when you can, you can set up a whole nice little vertical rhythm system going and then you know, that like, one space at one REM is always going to be you know, fitting with your vertical rhythm. And then two rooms is still just going to be a little bit bigger, but still fitting with that same rhythm and three rooms, four rooms and so on. And I definitely really like using it for things like that.
+
+22
+00:07:17,610 --> 00:07:54,240
+Wes Bos: Yeah, yeah, totally. So yeah, rems and pixels are good. There was like, I don't know, I don't know if this is still the case. But there's sort of this like pixel shaming going around a couple years ago, when when Rams came out, and you sort of like, do all that you can to dance around using pixels, but 10 of the day, our screens are made out of pixels. So that's what it's all calculated out to be at the end of the day. So All right, next one is what activity This is from Amanda McNeil. So I asked on Twitter for some questions. What activity that isn't developer related Do you feel most benefits you as a developer so I don't know if you have anything for this Scott?
+
+23
+00:07:55,199 --> 00:08:59,970
+Scott Tolinski: Yeah, so for me that most benefits me as a developer Yeah, I would say it maybe is is dancing, because there's a lot of creativity and perseverance through working through things like for me breaking it is not like one of those things that comes easy it took me eight months to learn the move the windmill, if you look up the windmill took me eight months of like practicing magic every day and it takes a lot of persistence and in try and see what's going wrong, fix that problem, try again, see what's going wrong, fix that problem, try again, and not being frustrated and being like angry with not being able to do these things because at the end of the day, it's all about personal advancement. So you know, I use braking a lot when I talk about web development stuff but definitely I'd say it's taught me a lot of these like troubleshooting and patient skills that have definitely carried through into my programming
+
+24
+00:09:01,380 --> 00:10:58,140
+Wes Bos: awesome that's I'm pretty much on the same same wavelength as well i think the the two other things that are a big part of my life right now is is cooking I really like to cook often spend weekends I'm really into smokey me I'm really into like techniques. So like whether it's I just got a new suevey a couple a couple years ago but I was like super into that at the moment or if I got a new smoker I was really into that really into different techniques and being able to take a technique that that is cooking and like I was super into kombucha and and I'm looking into curing meat Pretty soon, is like being brand new at something and realizing that you're garbage at it and being having to figure out how it works. Whether it's watching YouTube videos and reading blogs and sort of like accumulating all this information. It's good to be in a spot where you are totally green and excited about something so for me that's cooking and I also think that it's it's good for me as someone who does teaches because you can sometimes get hung up in sort of the the technicalities of things like rems versus EMS, when at the end of the day, it really doesn't matter all that much. And it's funny going into into cooking and you can look up on YouTube like this Gordon Ramsay how to make scrambled eggs, which is like the simplest thing in the world to make scrambled eggs. And he just does this dance where he's like, Oh, no, oh, funny. Oh, funny. Often, he's like, put the butter in and all that terrible, the Gordon Ramsay accent. Or in the barbecue world, there's people that are people that like swear against putting salt on your meat. At the same time that you put your robe on. And there, there's all this, like scientific evidence behind it, and people argue over it. And it's really funny to be like an outsider looking in. And that must be what people who are new to programming looking in and seeing us argue about silly things like that, right? Like, it doesn't make a difference. But it's also fairly silly, right? At
+
+25
+00:10:58,140 --> 00:11:01,380
+Scott Tolinski: the end of the day, all that matters is that the meat tastes good. Right.
+
+26
+00:11:01,409 --> 00:11:12,210
+Wes Bos: Exactly. Exactly. And you have cooked some damn good meat either way. And I don't think it matters as much as you actually think it does. So cooking is sorry, go ahead. No, I
+
+27
+00:11:12,210 --> 00:11:22,230
+Scott Tolinski: think they're parallels. They're just like really anything that involves troubleshooting, learning, being able to like examine methods and grow and improve over time and stuff like that.
+
+28
+00:11:23,610 --> 00:12:04,770
+Wes Bos: Yeah, absolutely. So the other one for me is is exercise I've been recently a couple past couple months, I've always been into exercise, but I've been like getting like super serious into it last couple months. And I find that good because I think it's the I'm really into like right now trying to become like more like mentally strong, because like having kids is exhausting. And trying to get all this stuff done. Like at certain times, you just feel a little bit overwhelmed and you feel a little bit sort of like bummed out on a lot of stuff because there's a lot being thrown at you. So I think that being taking like these new things and trying to figure it out definitely helps me become a better, more well rounded, well rounded developer.
+
+29
+00:12:04,799 --> 00:13:21,299
+Scott Tolinski: Yeah, on that exercise tip. Man, I read a book by this guy, Kelly starlet starlett, start let he's it's called How to be a supple leopard. It's a hilarious title name. But this guy. He goes from like teach. He goes from like, essentially professional sports team to professional sports team and teaches them like basic movement patterns. And I read this book, it's a tome, it's huge. And basically find out you're doing everything in life around from a push up to walking up the stairs. I mean, then he gets into basic movement patterns for you know, the bench press, and squat and all this stuff like that, and how, how these little sort of body mechanic tweaks that you can make to set yourself up for success a little bit more, really just make a huge difference. And it's so funny, because it's like, yeah, there's just an infinite amount to sort of go through and any of these things to progress yourself. Like after you get, you know, 20 push ups, you find out you can do them better, or you can do them differently, or you can, you know, yeah, we tweak your form a little bit this way or that way. There's just so much so much there. But also, if you're if you're into exercise, that book is awesome. He sees like a huge mobility guide. Definitely something to look into. Interesting
+
+30
+00:13:21,510 --> 00:13:22,380
+Unknown: out there. Check that out.
+
+31
+00:13:22,409 --> 00:13:37,169
+Scott Tolinski: Yeah. Okay. Next question. Is a hot dog sandwich. No, yeah, absolutely not. I don't know. And what universal hot dog sandwich. Sandwich. Sandwich. Yeah,
+
+32
+00:13:37,230 --> 00:14:01,140
+Wes Bos: a sandwich is a sandwich. a hotdog is its own class. Yeah, exactly. So next one. If Google, this is from Dan on Twitter, if Google realized they missed out by not hiring you and got back to you with a job offer today? Would you accept it? So last, the last episode, Scott and I both talked about how we both got rejected by Google. So would you take it Scott?
+
+33
+00:14:01,679 --> 00:14:24,840
+Scott Tolinski: If it involved me having to leave Denver, Colorado? I would say no. If they were like you could work in the boulder campus or work from home or something like that? I'd have a harder time saying no, or I would definitely be more interested to hear them out. But if it was like, you have to move to California right now, that would be huge. No, are pretty much musician or to be any, to be honest.
+
+34
+00:14:25,230 --> 00:15:32,370
+Wes Bos: Yeah, yeah. I'm the same way. Um, there's no I'm very glad that Google did turn me down because things panned out. Great for me. Like I moved to a smaller city that's really cool. It's, it's very cheap to live here. And by being able to do that, it allowed me to really just like, take some risks and focus down on my business. So I'm at a point now where like, I'm really trying to optimize career for for happiness and not necessarily for money. And that's cool to be able to do that. Because then I don't have to Don't have to worry about like commuting or like I was thinking that I was in New York this past week. And there's the traffic there is absolutely brutal. And there's these people in these very, very nice cars. And I, I turned to my wife, and I was like, no matter how nice of a car you have, you're still fucking sitting in traffic. Right? Like, unless you have a helicopter, you still have to sit in traffic in it. For me, it's just not worth that. Right. Like I'd rather be I'd rather go downstairs at 5:02pm and rather have that flexibility that I need.
+
+35
+00:15:32,940 --> 00:15:57,000
+Scott Tolinski: Yeah, and that's definitely the the traffic thing is a big one the commute in like not being able to just go into the mountains or something like going snowboarding during the weekend here. It's like a huge nightmare. So like being able to just go on a Wednesday or a Tuesday or like any random day is. It's just it's a it's a it's a luxury. I'm not sure I'm willing to give up. You know,
+
+36
+00:15:57,030 --> 00:16:51,330
+Wes Bos: yeah. Yeah. There's one of my favorite people in the world is Mike Rowe. Who who does the show Dirty Jobs. Yeah. And he has this I don't know where I heard at once. But he he just said this thing is like, Let's applaud the people who are willing to do the reverse commute. Which is is makes so much sense. Because it's like, literally, if you do the reverse commute, which is like you go the opposite way of traffic or like, in life, if you don't do the same thing as absolutely everybody. Like if you go and try to renew your health card to two hours before most people do it, you're not gonna have a line. Yeah, I think that like my whole life is trying to optimize for the reverse commute is do things at the exact opposite, do the exact opposite that most other people are doing. And life will be a little bit smoother for you. Because you you don't you're not chained to the nine to five, you don't have to do the same things as going snowboarding only on the weekend. You can go during the week, if you like
+
+37
+00:16:51,360 --> 00:16:54,570
+Scott Tolinski: yeah, and then things overall will be much more pleasant. Right.
+
+38
+00:16:56,070 --> 00:17:03,600
+Wes Bos: Exactly. I think that's that's one of the like the I guess it's people know that but working for yourself is that's one of the hugest benefits to being able to do it.
+
+39
+00:17:04,309 --> 00:17:10,200
+Scott Tolinski: Yeah, that is one of the hugest benefits, along with a whole bunch of stressful non benefits.
+
+40
+00:17:11,299 --> 00:17:13,980
+Wes Bos: Yeah, it kind of comes along with it, I guess. Yeah.
+
+41
+00:17:14,970 --> 00:17:34,500
+Scott Tolinski: Okay, cool. So let's see this next one. How did Wes and Scott meet? If I remember correctly, you had a react course. And I had a react course with the same name. And you reached out to me on twitter like, Hey, man, change your course.
+
+42
+00:17:35,730 --> 00:17:51,080
+Wes Bos: What are you doing? Yeah, but I think it was like, like, like two weeks apart. I had released react for beginners. And then you like a couple of weeks later you had released which you probably were working on at the same time as me. And you were it was called react for beginners. Yeah. And then I was like, Hey, could you not?
+
+43
+00:17:51,109 --> 00:18:22,980
+Scott Tolinski: Yeah. Which I which I knew that yours was out first. And yours was yours was like mine was like, just on YouTube? I mean, yours was like a product. So like, yeah, I'm like, Yeah, I don't want to get in the way of this stuff. So I had no problem changing mine, too. Which is funny, because I already had a naming structure, which was blank for everyone. I had Meteor for everyone. I Oh, yeah. All this stuff for everyone. And then I was like, I want to switch it up with this particular one for some reason, and then change it to react for beginners. And then it just happened to Yeah, to cause that collision.
+
+44
+00:18:24,150 --> 00:19:33,420
+Wes Bos: Yeah, that was pretty cool. And I'm glad you did that. And then what happened from there is that I had always been talking about starting up what's called a mastermind. So mastermind is a group of people who are in the similar industry to you, and you meet once a week or once every month. And you start to just sort of riff on on what's going on with you What problems you're having, what challenges you have, what's working, what's not working. And it was Scott and I and two other guys who also do sort of training tutorials in the space. And we did that for I don't know what maybe about six months or so once a week, we would meet up for about an hour and sort of just one person would take the lead in and explain. I don't know Facebook ads, or I remember Scott showed me his entire recording workflow. And like, we would just like get like details into like one thing that's working really well for us. And that was really, really helpful. We've since stopped. Just one of the guys took a full time job. And I think at certain point, you sort of stopped receiving value from specific things. And it just like, I don't think it was worth meeting like past the past all the info that we had sucked from each other's brains. Yeah.
+
+45
+00:19:33,420 --> 00:19:43,609
+Scott Tolinski: Yeah. And the guy got a little tough, too. I had a child and like he said, people were taking jobs and stuff like that. I think it was, yeah, just a little too difficult to maintain at that point.
+
+46
+00:19:43,980 --> 00:20:04,070
+Wes Bos: Yeah, I highly recommend though, getting a getting into a mastermind, especially if you're trying to run your own business, because you always left that feeling like really amped up because sometimes if the day in the day out, you can get a little bit tired of your own stuff. And being able to be re energized on a specific topic really, really helps.
+
+47
+00:20:04,099 --> 00:20:22,820
+Scott Tolinski: Yeah, I remember one, one meeting in particular, it was called make Scott cry because of this product page. I think that's, that's what we titled it. And it was just like, I left with like, maybe like 10 pages of notes, just ripping apart some of my store stuff. So I would definitely ton of value in there.
+
+48
+00:20:23,460 --> 00:22:10,740
+Wes Bos: Yeah, it's true, like people who, not just like the general public, but somebody who knows how to like sell products, they can look at your page and be like, Look, you're doing this wrong. This is like a hurdle for people, I don't really understand what's going on here. There's no really nice pictures. So it's helpful to have a group of other people in the same business. As you I know, there's there's people that are in like six or seven masterminds. And at that point, it becomes a little bit funnier. Actually, like it was really hard for us to meet because we really want it to just get to work. Yeah. But I know this delicate balance that you need there. Next one we have is what are your thoughts on CMS is adding JS frameworks like react? So WordPress is adding Gutenberg and that's all built on top of react are starting to see a lot of like CMS is change what they are doing, to to add in different types of frameworks. So I'll maybe I'll give it a shot. I think this is great, because I think the the direction that we are moving in is that we're seeing a lot of separation of your CMS and your your front end. So WordPress is still going to be extremely irrelevant. But maybe in five years, the whole WordPress theme plugin ecosystem will look a lot different. I think that WordPress is going to be a really nice back end CMS, where it at the end of the day, it just spits out JSON API or I graph qL, which is pretty neat. I'm looking at redoing my own WordPress website right now in the WP graph qL plugin, which is pretty nifty. So yeah, I think that those two things are becoming further and further apart. And it's really cool to see the CMS is sort of change up their their ways. Yeah,
+
+49
+00:22:10,770 --> 00:23:34,170
+Scott Tolinski: I think it's dope, I think I would love to see it even to some extent, you know, it's like, which framework Are you gonna pick? Right? I mean, everyone wants their favorite framework to be picked or to be the de facto framework for WordPress, or whatever. But I would love to see it be like pretty tightly coupled, like I would love to see react tightly coupled, where you're writing your entire theme and react instead of having to deal with the API dot whatever for your WordPress site and then hitting that API, like, it would be really cool if you didn't have to deal with any of that. And you just were able to write your themes more smoothly, in a nice little way that WordPress maybe does some magic for you to grab some of that stuff. But you know, whatever. It's it. Everyone's gonna have their own different versions of it. But I think, yeah, I think it's entirely necessary to go this way, because I think even some of the reasons why I don't want to build a site in WordPress today is because I don't get some of the awesome, you know, interactive stuff that I'm getting from react, I don't get those nice page changes and animations and stuff like that. They did nice UI stuff that you get from using a front end framework is much more difficult with just PHP loading up pages and stuff like that. So I love to see more integrations, more connections, all that stuff would love a nice tightly coupled WordPress and react.
+
+50
+00:23:35,490 --> 00:24:22,800
+Wes Bos: Yeah, I think that we're seeing a lot of the WordPress back end move to to react. And I don't think that the the theme system, I don't think that the killer, how do you build a theme? Or how do you build a website in one of these frameworks with WordPress? I don't think that's there yet. Yeah. Because like you and I, most people are not going to fire up a Redux store and architect this crazy thing and have it deploy because that's way too hard. So I think that at some point, we will start to see, this is the way that a lot of people are starting to build single page apps with WordPress. And I don't know what that is yet. But if you are a WordPress Dev, I would sort of sit on your hands for a little bit more in wait until to see like what are people building these things with?
+
+51
+00:24:22,830 --> 00:24:28,770
+Scott Tolinski: Yeah, definitely. Okay, next one. Where do you find remote work?
+
+52
+00:24:30,090 --> 00:25:23,250
+Wes Bos: Yes. This is from James chetwode. Thanks a lot for putting that in. Where do you find remote work? So I always tell this to people is there is no website there is no like there are websites out there. There's obviously lots of like postings, but as soon as good work gets posted online. It's a Puranas come to that and there's no way that you're going to be able to beat out like the 30,000 other people that email in for that type of work. So don't put any time into trying To find these like secret honey holes of amazing well paying remote work, if you need to, like go back to the freelance episode and go through that you need to work on your own brand. You need to work on getting yourself out there. You need to work on meeting a lot of people asking for work getting good referrals. And then once that ball starts rolling, then the work will always be coming in.
+
+53
+00:25:23,280 --> 00:26:32,010
+Scott Tolinski: Yeah, this is the second time that the word Honey Hole has been dropped on this. this. So I'm pretty psyched about that. But yeah, I agree. I mean, absolutely, there's so many things like that. It's like, you're going to build your network, you're going to want to talk to people and you're going to want to make relationships because I see on Twitter and stuff all the time people are saying I have a sweet remote gig open hit me up for more details and if you already knew that person that did that post then they're going to be more likely to recommend you for something like that or or maybe in the slack rooms we like on the level of tut's slack room we have a look a job board and you can post your jobs and other people can respond to them and we can talk to them. And I think it's it's just about forming those relationships with people who maybe know people that need work and are able to find that work for you. And you know, if you're not looking for like freelance work, but more like a full time remote a remote job. Yeah, I think it's it's all about grinding. Like I said, make those relationships to find out who's posting those jobs and apply for everything. Yeah, that's pretty much it.
+
+54
+00:26:32,700 --> 00:26:59,790
+Wes Bos: Yeah, exactly. Next one, this one didn't come from Twitter. This was in I have like a GitHub ama. And someone asked this one and I got a lot of thumbs up is what do you make your living from? So people see me sorta just tweeting all day and might not understand like, what do you do all day? Like? Where is where does your money come from? So I thought that'd be kind of a neat one to break down. Do you wanna go first year army?
+
+55
+00:26:59,940 --> 00:27:49,650
+Scott Tolinski: Yeah, I'll take this on. I have several revenue streams. So for me I, I do freelance web development work. So I take on maybe one or two freelance projects a month here and there, depending on how intense they are just because I like building stuff and, you know, keeps me working on stuff. I do. I do like premium tutorial content for companies. So you'll recognize my voice on figmas latest videos, or I've done videos actually for sketch before I've done them for companies just sort of all around, you'll, you'll maybe hear my voice here and there on tech training tutorial videos, because who knew that doing 1000 videos would set you up to this like really odd niche of being able to do screen recording tutorial videos for companies.
+
+56
+00:27:49,980 --> 00:27:50,580
+Wes Bos: Yeah,
+
+57
+00:27:50,820 --> 00:28:41,220
+Scott Tolinski: so that's sort of an odd one, right? But definitely is nice freelance gig, it's something that I really enjoyed doing. I do, I do actually get income from YouTube from ad revenue, despite it being pretty, pretty bare bones. It's, it's kind of rough at like some point it like totally cut in half. So it's not something you can rely on. But it's definitely something that comes in every month. And then I sell I have the level up tutorial store where I sell my tutorials. And I have the level up tutorials pro subscription, where you get access to all of the Pro Series, or you get I'm sorry, you get access to all of the series like any of the ones for sale or anything like that. So if if I would like to say next year, where would I like my income to come from? I would like it to come 100% from subscriptions or sales and be able to
+
+58
+00:28:41,250 --> 00:28:45,480
+Wes Bos: sign up right now folks, exactly right level up tutorials calm.
+
+59
+00:28:46,080 --> 00:29:02,760
+Scott Tolinski: Because that way, because I mean, that's my core competency, right. I love making tutorial videos. And if I could do that 100% of the time, I would be 100% in on that. But the reality is I have to pay bills and stuff like that take on freelance gigs and work my butt off to make it happen. So
+
+60
+00:29:02,820 --> 00:32:02,550
+Wes Bos: yeah, totally. Cool. So I am I haven't actually taken on any freelance work for about a year now. So I had done freelance work for or consulting, excuse me, high dollar co Yes, Yes, I did. I did consulting for about 10 years. And then I haven't done any year. Because now I am here. I'll let me run through it. So I have my free courses. And I have my paid courses. And generally where most of my income comes from is that somebody will take one of my free courses and they'll say like, Oh, I like the way this guy explains things. Or this is really good quality, or I specifically like this guy's font. Let me go ahead and buy one of the paid ones. So I've got those free ones. A lot of people who take the free ones will then finish that and want to learn more. So they go into my Patreon. So I'd say like 92.7% of my income comes from selling courses. That's sort of my my approach. bread and butter. But I do have like all these other smaller revenue streams. So on my courses, I sometimes will have sponsors. So I just tried this out recently with or about a year ago with my learn Redux course, I partnered up with a really cool company called century. They do like client side error logging, or they do error logging across the board. But specifically, I was showing how to use it with client side. So if you get like a console error that that happens in a specific browser, it'll, it'll like sort of like double it up. So century paid me to include one of their videos, one of the videos in the redex course, was how to use there. And it was like a perfect fit. Because, yeah, it was a product Kurt used, and they're willing to pay me some good money for that. So that was a kind of an interesting revenue stream for me. On my paid courses, you'll notice that you get a, I think it's a $25, credit to digitalocean when you buy my node course. And then what happens from that is that if any, you use up that $25, and then I forget what the the arrangement I have with them is, but at a certain point, if you become a paying customer of digitalocean, then I get a referral credit for for you signing up for that. So that was a good one. Most of this stuff comes from like negotiating custom deals with these companies, because they all do have affiliate relationships. But if you want something special, like like that, then you sort of like have a have a couple calls with the the people that work there. And often what it will be is that these companies reach out to me and they're like, hey, like, I'd love to work with you. Let me know any any ideas that you have. And that'll that'll usually I get a lot more, I probably only take about 1% of the stuff because it has to be a company that I've used before and that I actually believe like Sentry and Digital Ocean very good companies. I use both of their products before. And I was happy, happy to take their money when they wanted to do deals with my some of my courses.
+
+61
+00:32:02,580 --> 00:32:15,960
+Scott Tolinski: Yeah. And that's why when like, even like with figma, when they wanted me to do their training tutorial videos, I was just like, over the moon with that, because I already was wanting to do my own series. And I already used it daily. And I was just like,
+
+62
+00:32:16,320 --> 00:32:23,940
+Wes Bos: Yes, I would love to do that's that's ideal when you can be like, of course, I love your company. Right. And you can you can totally do a lot with that. Yeah,
+
+63
+00:32:23,940 --> 00:32:30,390
+Scott Tolinski: I think for both of us, though, it's at this point, it's like whatever you can do to make it to make it work, right.
+
+64
+00:32:30,929 --> 00:34:43,080
+Wes Bos: Yeah, exactly. Yeah. What also have I do workshops as well. So I just got back from CSS dev comp, where I did a react workshop. So often I'll go to conferences, and I'll do a talk, which sometimes you get paid to do a talk. It's usually not a whole lot, it's between. And I think the the most I've ever got paid for a conference was about 2000 bucks. And that was very rare. It's usually nothing or five 600 bucks for a conference that obviously will pay for your, your traveling accommodations at the same time as well. And then I also go in privately to companies, I don't have a whole lot of time for this right now. But it is very lucrative to be able to do that where a company needs to like for example, earlier, I went into a company that had 50 Angular developers and they needed to learn react. So I spent a couple days going in and training up all their their staff on react. And that's good. That's it. I really like that because generally the developers are all on the same page. So it's very easy to teach to somebody a team that is all on the same page. So workshops and then I have some some smaller affiliate stuff so make a couple hundred bucks on YouTube per month, obviously nowhere near Scott money, but it's it's good. Like, I'll take it if it pays for like a adds up at the end of the year. Yeah, right. Absolutely. Um, affiliate deals on Amazon affiliate. So if you go to my Users page, or if you click on any of our generally our sick pics, in this thing is Amazon affiliate links. So if you click through to that, and then buy anything on Amazon, we get a small cut of that. So that adds up to, I don't know, maybe thousand 2000 bucks a year Freshbooks. I have one blog post that's called things I wish I knew about being a sole proprietor. I wrote it like four years ago. But I consistently make 100 200 bucks a month off of that blog post that people signing up for Freshbooks. And then obviously, there's this podcast as well. We've got sponsors on it from time to time that that helped make putting our time into this podcast worth it. So all over the place, just a little bit, a little bit here a little bit there. It all adds up and it's well worth it.
+
+65
+00:34:43,109 --> 00:35:57,780
+Scott Tolinski: Yeah, absolutely. Okay, so next one, can a back end dev become a good designer? And this one's interesting to me because I I don't I don't see why not. I mean, none of them. Uh, like, I think some of these things is that people sort of occasionally view design as like an a nebulous sort of good versus bad sort of thing. But if you're a back end def tech, probably you have sort of a technical brain, right? And you can look at things technically, you can learn the technical aspects of design, and and use drew inspiration of getting inspiration from other places, but like, learn what mathematically would make a design nice in terms of like, font, vertical rhythm, and spacing and stuff like that, and your designs gonna look good. So I think you can be a good designer, regardless of anything, you just, you know, understand what your strengths are. And if your strengths are technical, understand what technically makes a good design, and then maybe good colors and visual aesthetics from an inspiration source, stuff like that. Because I'm personally not a designer, and I don't think my design is awful. I wouldn't necessarily put it in the
+
+66
+00:35:57,810 --> 00:35:59,580
+Unknown: nice stuff looks good. Okay. Well,
+
+67
+00:35:59,580 --> 00:36:11,760
+Scott Tolinski: there you have it. Yeah. So did I'm done? I have no design training, right? Like, I'm a developer and a musician and whatever. But I have no design training. So yeah, if I can do it, anyone can
+
+68
+00:36:12,660 --> 00:37:48,630
+Wes Bos: do exactly, I think, absolutely. I don't think that designers come out of the womb, understanding how to be able to current fonts, or pick colors, or any of this stuff. And what surprises me about design is that a lot of it is very technical and very rule based, meaning that there are a whole lot of things that you can learn that are sort of like rules, like put extra spacing here, make sure you increase your line height, have a good vertical rhythm with your, with your paragraphs, all these things all add up to technically nice looking design. There's obviously like the artistic side of it, where you you have a bit of an imagination and whatnot. But how I learned design was that I will used to be the the PSD to WordPress guy where people would drop a Photoshop file on my lap. And then I would have to try to duplicate that in code. And then what would happen is that you would sort of like overlay the Photoshop file on your code, and you realize, like, Oh, this needed 20 more pixels of margin or padding on it, and it looks so much better. Or this color is a little bit darker than this color. And there's all these like little like, the designers would just come back at me and be like, change this bump this over. And as annoying as that is you start to realize, like what actually makes up a nice looking design. So if you're a back end developer trying to get good, just go on, like themeforest or something and buy a couple of these really nice looking designs and just try to implement them exactly to what they look like in the Photoshop file or the sketch file. And that will really start to set in what makes something look good.
+
+69
+00:37:49,130 --> 00:38:21,030
+Scott Tolinski: Yeah, and ask for advice from designers who you know, aren't going to like, rip you to shreds, like I have a couple of designer friends that I'll shoot things to, and just be like, what do you think, you know, give it to me straight. And then they'll give me great feedback. You know, why don't know if the space is enough here or whatever. And you can look into it a little bit more. Sometimes they'll even give you a little bit more direct feedback as I move this over 10 pixels or something like that. But definitely asked for feedback. And don't be afraid of critique and grow.
+
+70
+00:38:21,060 --> 00:39:11,960
+Wes Bos: Exactly. One little tip I'll give you right now is I'm Steve Kroger scholar, I can't say his last name. But he is he's the guy behind hero patterns, calm all these really, really nice patterns. And what he's done is you know how I post like code tips on Twitter, he's sort of taken that and started posting little design tips that like things that make your website look just a little bit better. Whether it's colors, whether it's like these little things that you can do like put a like a lot of my websites, I often put a little bar at the top of my website like a boarder top on the body just to make it look a little a little nicer. And then he started just like tacs little things that you can add to your design. So go to his Twitter, and just scroll through the Media tab. And you can see a lot of these these little tips that he has. I think they're they're pretty nifty.
+
+71
+00:39:12,270 --> 00:39:12,840
+Scott Tolinski: Nice.
+
+72
+00:39:15,060 --> 00:39:24,840
+Wes Bos: Next up, what do we got here? Do you ever feel tired? Scott, this is a this is a great question. Because I think Scott and I both were up through the night with our little kids.
+
+73
+00:39:25,440 --> 00:39:26,580
+Unknown: Yeah, so I don't
+
+74
+00:39:26,580 --> 00:39:48,480
+Wes Bos: know, like what's I don't know what the answer to this is. But like I think a lot of people, they see us being online and posting lots of stuff and putting out all kinds of courses in it. It just seems like you're unstoppable. When the reality is that it is exhausting doing this stuff. So I don't know. Do you have any? Any thoughts or tips or anything on this? Yeah.
+
+75
+00:39:48,480 --> 00:39:57,710
+Scott Tolinski: You know that like George Michael from Arrested Development? Jeff, where he just like walks in and falls down on the floor and lays down that's me all the time.
+
+76
+00:39:57,980 --> 00:39:58,730
+Unknown: Like Yeah,
+
+77
+00:39:59,040 --> 00:41:13,940
+Scott Tolinski: yeah, no, I am I am tired. Yeah, definitely, especially since having a child. That has been definitely one of those things that like, totally shakes up everything. But you know, it's even finding time for anything at this point. I mean, I workout three days a week, and I go to breaking practice two days a week. And I record a ton of tutorial videos and do this podcast and all this stuff. But it's all about scheduling and maximizing the time that you do have, so that you can be helpful and take care of your life stuff in the other time. And still leave time for yourself to like, totally, just, you know, sink into the couch at some point. Like I don't Yeah, I certainly like leave periods of time like Sunday evening, when lane that Landon is my son when Landon's to bed. Like Sunday evening, I just, I go downstairs, I play some video games that I stretch. Because I love stretching, it's relaxing, and just like totally chill out. So I think having these moments of like being able to fully recharge are extremely important. If you're going to be the type of person who's doing a billion things.
+
+78
+00:41:14,820 --> 00:43:13,190
+Wes Bos: Yeah, I think that's good. I always get these questions on Twitter from people like do you even sleep? And I'm someone who needs at least eight hours, nine hours a night to sleep? Yes, I sleep a lot if I can, if my children allow me to. And I think like, sometimes you see these people online that are just putting out massive amounts. And maybe you think that about Scott and I but my answer to that is always the reason why it seems like I do a lot is because almost everything that I do is put out in public. So most people are working a job full time all day long. And then they put out a little bit open source at the end of the day, if they can squeeze it in, or as my entire job is putting up code, screenshots, videos, YouTube, Twitter, all that stuff, everything I do is put out online, there's not really a whole lot of stuff that gets done in private. So I guess there's a, it just looks like that. I definitely don't work more than than eight hours a day, which I think is really important to be able to have that sort of rest in that balance. And then I think the other one is right now is I'm just trying to figure out, like, Okay, I'm going to be perpetually exhausted for the next couple of years. Like, what can I do to try and hack that so that when I get to when I do have time to work, which is during the day that I'm on, and I'm absolutely slam dunking and making good use of that time. So I'm trying to I'm trying to figure out in terms of like, scheduling things. Obviously, the GTD mindset is really important trying to figure out like, how do I eat, right, so that I don't feel sluggish during the day? Because that's a waste of time as well. So this is not something that I have an answer to yet, but it's definitely something I'm actively I'm also trying to like hire like an assistant right now to do some work for me. So it's something maybe like, we'll come back in a couple of months and talk about this, because it's something I'm actively trying to figure out. Yeah. So don't be come a zombie.
+
+79
+00:43:13,230 --> 00:43:17,760
+Scott Tolinski: Yeah, we should talk about that, too, because I just hired a video editor to help me out too.
+
+80
+00:43:17,760 --> 00:43:18,840
+Wes Bos: Oh, awesome. Yeah.
+
+81
+00:43:18,840 --> 00:44:28,710
+Scott Tolinski: So I somebody I've actually worked with before to do some video editing. So I'm pretty psyched about that. Because I mean, I I like video editing, but it takes up so much of my time. And I have a lot of video to edit. I would be better off just recording a whole bunch, right? Yeah. But yeah, I mean, I feel Yeah, and I think some people like I've had people get on me at work before, like, like, I don't have time to work out, or I don't have time to take a 15 minute break, because I have to work 24 seven, like you're gonna work better and you're gonna sleep better, and you're gonna do all this stuff, if you take the time to work out or you take the time to take a break. Or you take this, whatever. I mean, I think in the past, I haven't been entirely good about keeping it as an eight hour workday. And I'm definitely getting way better about that. Now, although the eight hours isn't continuous, I'll work you know, five hours here, and then I'll go do something I have to you know, take care of take care of my son or watch my son while my wife works out or any of this sort of stuff. And maybe I can come back to it from seven to nine you know, after he's asleep and maybe that additional work even though it's not continuous is still not pushing that eight hour work limit.
+
+82
+00:44:30,270 --> 00:44:54,510
+Wes Bos: Yeah, yeah, absolutely. I that's one thing I'm having I'm slowly realizing I'm having a hard time grasping is that it's better to roll Orca seven hours a day and go to the gym during the day than it is to work eight hours and not go to the gym, which just like doesn't make any sense to me. But obviously it does work right because then you're, you're more focused and you're you're mentally stronger and all this kind of stuff. So yeah, I am
+
+83
+00:44:54,510 --> 00:45:03,030
+Scott Tolinski: interesting. I quit work yesterday at 330 to hit the gym. And then it was definitely Definitely something that I need to do. You know,
+
+84
+00:45:03,479 --> 00:45:19,440
+Wes Bos: that's cool. So if you are a parent as well, and maybe we'll do a whole show on parenting, but if you have any tips of how to get through this as well other than slam a bunch of coffee, because that only works so much. Then make sure you tweet it at syntax FM or Scott and I, we'd love to hear it. Yeah.
+
+85
+00:45:19,440 --> 00:45:31,230
+Scott Tolinski: Because slamming a bunch of coffee does work. to a certain point, yes. Yeah, I'm currently slammed on a bunch of coffee, and it's not doing me a whole lot of good.
+
+86
+00:45:33,150 --> 00:45:49,470
+Wes Bos: Next one is a live streaming. I know Scott does a bunch of live streaming. I've only ever done it once. So people are asking like, will you ever live stream? What are your thoughts on it? So? myself? I don't know. Maybe I'll actually let's hear from Scott first because Scott does a lot of live streaming. Do you like it?
+
+87
+00:45:49,979 --> 00:47:12,540
+Scott Tolinski: Yeah, I like live streaming, because I could just like talk for a long time about, like, if it's a topic that I'm interested in, or whatever, like I did the latest one on figma. And the whole thing was how I use figma in my designs, and as a aside from the technical issues of live streaming, which I apparently this is like my fifth time live streaming or whatever. I apparently cannot get one right and with absolutely no, she's I haven't had one single one go off without a hitch. Like this time it was broadcasting and for at for some reason, instead of 1080. And just like, gosh, darn it, like one time Can I get this going without having a whole bunch of tech issues? But yeah, which is ironic, because I feel like I'm a video tech kind of person. Yeah, whatever. So I, I do like live streaming a lot. And especially if it's a topic I'm interested in talking about I, I don't I don't write scripts for any of my tutorial videos. So I do them all sort of freestyle on the mic. And yeah, I think for that aspect, I think I could be pretty decent. Like, I feel like if I, I planned a tutorial, I could do a live stream tutorial and have it be just as good as one of my recorded and edited ones. So I'd be totally in for a syntax live stream. Yeah, Wes would be and I don't think we make we don't have too many mess ups outside of my dogs barking or something like that.
+
+88
+00:47:14,010 --> 00:48:20,130
+Wes Bos: Yeah, I think it'd be kind of cool to do some sort of live stream. I've done a couple on Facebook just to test the waters where I'm sort of just answering questions. So to being out on on video, I haven't done any live coding stuff just yet. But I am, I am really interested in that just because I'm really scared that Twitter is going to go away sometime soon. And Twitter is a huge part of my business. And like, I've obviously put a lot of stock into Twitter. But I like I realized that there's a whole younger crowd that isn't on Twitter, they're spending their time on whether it's Twitch, or they're on Instagram, or I know they're on different platforms. And I'm like sort of trying to double down right now and figure out how do I how do I make these other things as big as as my Twitter and my email list. So live streaming is definitely near the top of that list. And it's fun as well, because you can sort of like interact with people and people ask for it fairly often. And it's a little bit more more casual than some of my video stuff, which is a little bit more refined.
+
+89
+00:48:20,340 --> 00:48:59,850
+Scott Tolinski: Yeah, I had a tip I have for live coding is if you are going to live code something, make sure it's something you've done before. I've had like a couple of them where I'm like, I'm gonna just gonna figure this out and like being live on air and having people in the comments being like, just not not being rude or something. But people have been like, well, he's struggling, like, Yeah, he's just like, never done this before. And it's hard to read documentation and look at your code while like you have all that stuff going on. So I think if it's something you've done 100 times before, it'll be way easier. But yeah, can I recommend Yes, figuring something out for the first time.
+
+90
+00:49:01,440 --> 00:49:34,860
+Wes Bos: I'm curious if you are a developer who likes to watch live streams, or if you don't like to watch it, like, tweet me and let me know because like, I myself have tried to watch live streams. And I find it so boring, because it's not to the point like it's not maybe like because it's a lot like my stuff is it was really nice and clean and efficient. Whereas a live stream is kind of just me talking a little bit slower. And I feel like I don't get to the actual points more like just hanging out and watching someone code. So let me know what your thoughts are on watching people live stream versus a sort of a more produced tutorial, like I put out
+
+91
+00:49:34,860 --> 00:49:45,180
+Scott Tolinski: Yeah, yeah, definitely. Okay, what stack? Should new developers use? This is an impossible question to answer. Yeah, yeah.
+
+92
+00:49:45,210 --> 00:49:47,700
+Unknown: It doesn't matter. Yeah. new developers? I
+
+93
+00:49:47,700 --> 00:50:18,420
+Scott Tolinski: don't I don't know. It depends on what you're trying to learn. Right. I mean, I don't know new if you're a new developer, my my stack is HTML and CSS. And then yeah, go learn some little JavaScript here and there, but like, I Don't know if you if you want to, if you want to be a new develop the Mamp, stack and WordPress and then I honestly don't know if you want to learn react, maybe the something like next j. s or Gatsby? And if you want to learn a database? I don't know.
+
+94
+00:50:19,980 --> 00:51:43,140
+Wes Bos: Yeah, I don't think that's always such a hard, hard question to answer because people just want to be told exactly what to do. And the answer is you sort of have to flounder around on a few things. And one, I still, I still think WordPress is a very good first web development, Introduction to people, whether you like it or not, it's, it's like a database back end for you without really having no having to know anything about server side, like, you have to figure out PHP tags and loops. But you'll have to figure that out with any templating language. So I think that's a really good really good starting point to get started on. And then otherwise, I think the whole like men stack Mongo, express node plus insert whatever framework you're interested in, or just using, like a pug or a jade templating. on the server side, I think that's really good to sort of get you up and running. That's specifically why my node course doesn't have react in it is because there's this whole, like, mindset that you need to sort of get into when you're understanding how does the server side work? And how do requests happen? And how, what is authentication? And what is this difference between a session and j WT, and whatnot? So I think that that's a really good one. I'm obviously biased, because that's the stack I use. But other people might say, Ruby is a really good introduction stack. I think you just sort of like, pick one, and stick with it and try to build something all the way through to the end.
+
+95
+00:51:43,230 --> 00:52:05,490
+Scott Tolinski: Yeah. Agreed. Yeah. And like, I like what he said about WordPress and mean, because it does, it abstracts a lot of that stuff that's really tough and really confusing. When you don't know like, why isn't this just working? I'll lead and do this, and this, and this, and this, and this. And WordPress does those things for you. And then you just don't have to worry about them. And you can focus on learning about the patterns of what working in something like that is actually like,
+
+96
+00:52:05,550 --> 00:52:45,960
+Wes Bos: exactly. And there's such a huge community of people who are at that point where they're new developers, or they've been at it for a couple years, and they're not so far advanced that like, I don't know, the stop debugging WordPress is easier, I think, than some of this node stuff to beginners, because node will often give you a really big stack trace and being able to read through that and go through it is kind of tough. I know the WordPress does give you PHP gives you some weird errors as well. But there's always like a chatroom or WordPress Facebook group or something of people who are willing to help you through whatever that tough part
+
+97
+00:52:45,960 --> 00:53:10,680
+Scott Tolinski: is. Yeah. And you can even like find snippets, like, how do I do this, and there's like always a hit result, because you have to do it. And maybe you don't understand why or whatever. But you paste in your code gives you an opportunity to learn and read. Maybe you can go to the Codex from there and see exactly what you're doing. But it gives you a little bit more opportunities, because there are people that have answers for you instead of just like, I don't know, figure it out. Good luck. Yeah, yeah.
+
+98
+00:53:11,970 --> 00:53:12,660
+Unknown: Okay,
+
+99
+00:53:12,990 --> 00:53:51,420
+Wes Bos: next one up. Do we got two more quick questions? What is your process for picking new tools from Tim Arnie on Twitter Tim? Tim runs this really nice react website react fair was called we'll link it up in the in the show notes. But if you're interested in a really good resource for react, check out his site. But uh, yeah, new tool. So something new comes your way like, like coffee cup j s, which is the best new framework tool for transpiling? compiling your, I don't know, the post it notes into react applications. Yes. How do you decide whether that's a good tool or not?
+
+100
+00:53:51,660 --> 00:55:28,680
+Scott Tolinski: Yeah, for me, there's a couple of things that the readme the documentation, like, if a readme doesn't tell you what the heck this thing is, and what it's doing and like the first couple of seconds, like in plain English, sometimes it's, it gets so jargony fill that so this in this in this for these in these in these reasons. Okay, but like, what's it going to make you do like, what what are you going to get out of it? Is it going to make you develop react sites faster, is it's entirely own thing. It's a user interface, building tool, whatever, like, so having some sort of like clear understanding about what this thing is, and why you would want it in a readme is, is the surefire way that I'm not going to click out of it immediately. Just be like, I have no idea what this is or why I would need it. And I guess second is killer demo. I'm like an eye test kind of person. I'm very visual. So like, if there's a killer demo, and your thing is the reason why this demo is so killer, I'm going to be way more inclined to be like, give me that. Give me that now, you know, like, Yeah, I remember the first time I saw a meteor demo, and they were just like, oh, everyone in this room. Here's the textbox you enter anything in this textbox and it's suddenly just going to populate and guess what this took me Like no lines of code to make, I was just like, so that's really cool. I want to do that right now, I could not do that without a whole lot of code with node and WebSockets. And whatever, right? So the killer demo and the nice README and nice looking set of API Doc's, I don't have to get into them. But like, if they look like they're organized and make sense, then that's all good for me that that's pretty much it. Also, if I can see an immediate benefit of how it's going to make my life cooler. So
+
+101
+00:55:28,770 --> 00:57:42,120
+Wes Bos: yeah, awesome. For me, I am much more of like a like a wait and wait and see kind of guy, I don't jump on tools, when they're brand new, because they will inevitably change, they'll never be break my actual application, I don't want to have to babysit something like that. So I always wait until there is sort of like you can like really tell that there's a lot of people behind a specific tool. And a lot of people are just like, praising it. Like, for example, on Apollo, I've been watching Apollo graph qL for like a year now. And it just seems to be at the point now where I talk to enough people who are using it in production. And it seems like it's at a really good spot where I can start to implement it into my apps without having to worry too much. So I just like let other people get bit by that bleeding edge. And once they're healed up and feeling a little bit better about it, then I'll jump into it. Yeah, yeah. And I think that's important not to like not to worry too much about, especially specifically with tooling that's out there. If you see a whole bunch of people that are using a specific tool, and you don't necessarily know, know why, obviously ask questions and see why. But it might not necessarily be the thing that you need, like, I feel that way about Webpack. Right now where absolutely, everybody's moving to Webpack. And it's really hard. It's It's way too hard for for what it is, and we're not all we're all doing similar stuff. And I just don't it's obviously one of the most powerful tools that's come around in a long, long time. But it's I think it's way too hard for for just us regular people who, who need to be able to use it. So I'm sort of just like, I don't use Webpack, all that much. I use these tools that sit on top of Webpack, like next jass or I know Meteor has something baked into it and, and whatnot. Or if if you are fine with your current Gulp setup that you've had for a couple of years, and you don't necessarily need something like code splitting or whatever, then it's totally fine to just be happy with with what you have. And I think at a certain point, you will realize why people are using tools and why you might want to, to move over to it. Yeah,
+
+102
+00:57:42,120 --> 00:58:02,370
+Scott Tolinski: yeah. Yeah. And a bunch of big names and big sites production using this doesn't hurt either. Right. And you found out Facebook had how x minnow react components, and they were going all in on it, you know, that gives it that proof that it's being used by big company to do big things. Yeah, yeah, absolutely.
+
+103
+00:58:02,610 --> 00:58:18,540
+Wes Bos: That's sort of the nice thing is react will always be used by facebook.com. Before it's put out for the rest of us. So you know that like, you'll likely find any bugs, because facebook.com is running it before, like syntax, FM.
+
+104
+00:58:19,980 --> 00:58:21,840
+Scott Tolinski: They have all the incentive in the world.
+
+105
+00:58:22,170 --> 00:58:24,330
+Wes Bos: So to make sure that it's good, yeah,
+
+106
+00:58:24,360 --> 00:58:41,700
+Scott Tolinski: totally performative. All I'm sorry, performance. Dang that, there we go. Someone corrected me that I said performative. And the word is performance. And I promise to remember that and I did remember that. Oh, so there I There you go. happy about that. Okay. Okay, last question here.
+
+107
+00:58:42,720 --> 00:58:49,080
+Wes Bos: This is one of those those questions. Why don't you read it off? It's one of those questions that I usually don't entertain, but I thought it'd be interesting. Yeah. So where
+
+108
+00:58:49,080 --> 00:58:51,510
+Scott Tolinski: do you see yourself in five years?
+
+109
+00:58:51,510 --> 01:00:08,910
+Wes Bos: Yeah. So it's, there's a q&a at the conference I was just at and one of the rules in the q&a was, do Don't ask questions about the future. Because I don't know I don't make any bets on the future. I react to stuff happening. So. But where do I see myself in five years? I don't know. Let's take a gander at this. I think I still think I still think JavaScript will be big. I know that we've been hearing rumblings rumblings of, what is it wasum webassembly, webassembly. webassembly. We're hearing rumblings of that for for a couple of years lately. So maybe that will be a thing. Maybe it won't be. I think that in five years, I see myself just still reacting to whatever it is that we're building applications, right. Like maybe JavaScript won't be anywhere in five years, maybe we will have abandoned it. And that's that's fine with me, because I'm not, I don't put obviously all my my eggs are in the JavaScript basket right now. But I know that I can react to whatever it is that we need to switch over to and learn, right, like at the end of the day, I'm a developer. And if we somehow shut down the web, and start just building it have apps or if we go the total opposite way where absolutely everything is done in, in JavaScript, I know that I will be able to react and sort of play along with that.
+
+110
+01:00:09,450 --> 01:02:01,920
+Scott Tolinski: Yeah. Yeah, I think that's the the only way to look at this. Because then think about five years ago, were you working in react? Did you know what react was? Did react exist? And no idea? No, you know, some JavaScript stuff. Sure. What, five years ago? Wait, I don't even know what I was doing five years ago. But I think the one was that that was 2012. Whoo. So I wasn't even I wasn't doing any. I was doing very minor Angular stuff. Maybe? No, 2012? No, that was pre Angular for me. Yeah, as I was doing Drupal sites in 2012, Drupal. So it's, you, you can't really comprehend where you're going to be in five years. And if you think you can, then you're totally wrong. So, you know, five years ago, I didn't even know anything about the city of Denver. And now it's like, my favorite place in the entire world. Like, you just can't predict, I couldn't predict that I would get a chance to interview at Google. I couldn't predict that. Well, I guess I probably could predict that I would have a son, or a child, not a son, but a child at this point. Yeah. Okay. Sure. That's like maybe one thing. So in five years, I would like, here's what I'd like I would like to be I'm still teaching web development or development or technical anything. Who knows, maybe we're all going to be living in virtual reality or augmented reality by then. And instead of me on YouTube, I'm like sitting on your desk. And I'm like pointing at CIT on your computer. Like here, look here, right here is the bug. But I think you can't really, I think you can't, I can't You can't plan for anything like that. And planning for stuff like that is only going to hold you back for what you can accomplish. Because, in the essence, the reality of it is if if you're saying in five years, I want to be building this, then maybe you're selling yourself short, because you could have been building then two years or one year and you was part of your five year plan or something like that.
+
+111
+01:02:02,070 --> 01:02:20,700
+Wes Bos: So yeah, my father, he should Yeah. should be looking in like shorter amounts of time. To see like, what that looks like, you should be like having goals for three months, six months, a year out at at the most? Because anything else is just guessing. And that's that's sort of a waste of time.
+
+112
+01:02:20,729 --> 01:02:59,730
+Scott Tolinski: Yeah. yearly resolutions? No, thanks. I used to do a monthly resolutions. In fact, the first app that I built in Rails was a monthly resolution app that I would use for myself to keep track of my monthly resolutions. I'm going to do this this month, or whatever and get better at it. Actually, it's one of my I think it was my first Meteor tutorial to I did the monthly resolutions app, but either way, yeah, a five year plan. I have no clue. Hopefully, I'm healthy and probably still able to dance in some capacity. Probably not spin on my head or stuff like that. But that's it. Yeah.
+
+113
+01:03:00,390 --> 01:03:22,500
+Wes Bos: Awesome. So hopefully, that was some some tasty treats in a q&a form. If you like this form of show versus the the one specific topic, let us know we won't do it all the time. And all that can sort of drag on but every now and then it's nice to to answer these smaller questions and get a little bit into it. We could even do a live stream.
+
+114
+01:03:22,730 --> 01:03:26,460
+Unknown: q&a. Tommy actually really fun might be a nice way to do a live stream.
+
+115
+01:03:26,730 --> 01:03:34,680
+Wes Bos: Just let people that's a great idea. If you'd like to see a live stream, tweet us, let us know what you think about it. We're gonna move into some sick pics. Oh,
+
+116
+01:03:34,920 --> 01:03:35,580
+Unknown: yes.
+
+117
+01:03:35,580 --> 01:03:37,890
+Wes Bos: What do you what do you got for me today, Scott? Oh, yeah, so
+
+118
+01:03:38,100 --> 01:05:16,920
+Scott Tolinski: this one came up? In a Twitter question. Yesterday someone asked me what kind of notebook I like to use. I want a big notebook fan. I like to use notebooks but you know I have no book the movie or yes no book the movie not I see notebook the movie but only only once. Only if it's a good date film, you know the date film, but not for me. Other than that. I'm definitely i'm a i'm not like in like sort of a weird movie. I have a weird movie tastes I watch a lot of like 1970s Chinese Kung Fu films. So my movie tastes are not to be. Okay, so my notebook here I'm trying to show it to you even though it's not on camera here on the radio. So is a five star like the brand that you used when you were in high school or middle school. It's a five star spiral notebook with a plastic cover that I got once from one of my employers just had a stocked cabinet full of these things. And they were like, the one I use, I think it's like maybe 250 pages. It's it's pretty thick here. And it's spiral bound so you don't have to worry about a cover anything like that, but you get big old graph paper on it. So I get a graph paper five star spiral notebook gives you a ton of real estate. It is not fancy at all. It does not look cool and black, like a moleskin. I have a couple of those, but I just don't use them as much. Because the thing you can always have folded open on your desk and the same there has a billion pages in it cost $1. So and it's awesome. So my five star notebook is my pick for notebooks.
+
+119
+01:05:17,909 --> 01:07:32,280
+Wes Bos: It's pretty sweet. My sick pick today is more of like a life pro tip. And that is like read your credit card manual. So I just got back from a trip to New York and my wife's luggage was delayed for about nine hours. So they didn't throw it on the plane for whatever reason. And then she got it like nine hours later. But I know that and this is the reason why whenever I do a conference, I was booked my own travel with my own credit card and get them to reimburse me because my credit card has like travel insurance and all these like sort of like nice little gotcha things. Where if your flight is delayed more than five hours or if your bags are delayed more than six hours, they will often cover hotel or food or in the case of my wife's this weekend, they're covering up to $500 worth of clothing and like like makeup and things from the drugstore which is pretty sweet. So and being able to know what exactly your credit card covers by just like reading the little manual that comes with it is great because we've This is like I think this is the third time that I've actually used my credit card insurance. Um, previously. My my wife's MacBook got a glass of water dumped on it. And what my credit card does is it doubles the the warranty for the thing. So Apple care, said it's gonna cost I think they said 2800 bucks, or 1800 I think was 1800 bucks to fix it. So I just took that quote to to my credit card company. And then they sent me a check for exactly that much Oh, and bought a new MacBook, which is amazing. Yeah. What else and then I've also used that I was like, delayed my flight was delayed due to weather and if the airline delays your flight overnight due to weather, they don't care because it's it's not it's beyond their thing, right? Like it's not like they crashed a plane or something like that. So I was able to go into a nice they gave me $500 for the night and I was able to buy a nice steak and get a nice hotel and fly out in the morning right? Like I've used this things like three times now. And it's it's just because I actually went ahead and read all of the the different perks that come along with your your actual credit card. Just pretty pretty nifty. Yeah,
+
+120
+01:07:32,280 --> 01:07:34,290
+Scott Tolinski: I like steak was the important part there.
+
+121
+01:07:34,470 --> 01:08:32,970
+Wes Bos: The steak was the important part. Yeah. And also, like, I know, people always say like, Don't buy the extended warranty. But the amount of times that I've actually like cashed in on that extended warranty is like crazy. Like I've bought squaretrade for squaretrade my monitor a couple times. And last time it like my monitor croaked like a month before the square trade was up. And because it was a three year old monitor and I had bought it for like $600 and it was worth like nothing after three years, they cut me a check for the exact amount that was that I paid for three years ago. So then you just take that check and you go buy a brand new one that obviously it's much better technology out of 4k one instead at that time. So it's I don't know people are really against these like extended warranties and whatnot. But if you if you start to like weigh the benefits and you know that something like a monitor is gonna croak in a couple years then you you know you're covered for that and I've definitely used them more times than I can count.
+
+122
+01:08:33,539 --> 01:08:45,300
+Scott Tolinski: Yeah, yeah, totally. Yeah, if I see that's the whole thing if I would have had a square trade on that phone that I shattered I would have gotten a new phone and then I got one on the next phone and didn't shatter but that's how it goes.
+
+123
+01:08:45,350 --> 01:09:20,550
+Wes Bos: Yeah, that's Yeah, that's that's how the cookie crumbles. Yeah, but before everyone asked me the visa is a it's called the arrow gold it's just like it's like a pretty popular business card here in Canada. But I know that every most most credit cards that you get will have some sort of like if your stuff gets stolen or if you if your stuff is damaged within six months or whatever they just go and read all the documentation for your credit card and know exactly what you're covered under and then use your credit card This is probably bad advice but use your credit card to buy everything obviously but pay it off too.
+
+124
+01:09:20,760 --> 01:09:21,329
+Unknown: Yeah right
+
+125
+01:09:21,329 --> 01:09:32,600
+Scott Tolinski: yeah, that's a sick pic right there. I have no that's a big enough into that and we got to make this soundboard I had a request for the soundboard awesome soundboard needs to happen.
+
+126
+01:09:33,180 --> 01:09:57,600
+Wes Bos: Ya know what I also want to do is go on like Fiverr and get one of those like radio. Oh, you're welcome good. Yeah, we're sorry like that. We should we should do that. It's like five bucks. I'm gonna do that. All right, cool. Well, that's another show in the bag. In the Honey Hole, man, it's another showing that's another Honey Hole and the in the are another show in the honey Hall.
+
+127
+01:09:58,020 --> 01:09:59,670
+Scott Tolinski: This region here and grab it. Yeah.
+
+128
+01:10:00,000 --> 01:10:03,979
+Wes Bos: Hopefully you had some tasty treats, and we'll see you next week.
+
+129
+01:10:04,310 --> 01:10:17,850
+Scott Tolinski: Please head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show until next time
+

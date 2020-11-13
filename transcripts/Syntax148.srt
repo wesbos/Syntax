@@ -1,0 +1,336 @@
+1
+00:00:01,319 --> 00:00:02,790
+Announcer: You're listening to syntax
+
+2
+00:00:02,819 --> 00:00:09,000
+Unknown: the podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski
+
+3
+00:00:09,000 --> 00:00:10,530
+and West boss.
+
+4
+00:00:10,559 --> 00:00:16,110
+Wes Bos: Welcome to syntax, the podcast with the tastiest web development treats
+
+5
+00:00:16,529 --> 00:00:18,230
+Scott Tolinski: around.
+
+6
+00:00:18,389 --> 00:01:02,070
+Wes Bos: Wow. Today is a potluck where we answer your questions. We've got questions about how big is too big for state in memory? How much do I need to know to apply to us? dev job skeletons I'm a big fan of this like new like trend of skeleton wireframes well, things are loading CSS read sets, all kinds of cool stuff coming right at you. today. We are sponsored by Sentry and Sanity Sentry is going to do all of your error and exception tracking and Sanity is going to be your headless CMS. They got some new stuff that's called Sanity create. We're gonna talk about partway through this episode. With me today is Scott to Lynskey. Hey, Dan today, Scott.
+
+7
+00:01:02,430 --> 00:02:13,770
+Scott Tolinski: doing really good. Well, it's beautiful out here. And I'm taking so much time to make our backyard feel cozier. Right? I feel like in Denver here, the sun is pretty intense when it when it's out, which is, you know, 300 plus days a year. So we get a lot of sun in my backyard, in particular, especially in the first half of the day is just full, full, full sun. And it's really difficult to to really just hang out back there because it can get really hot. So we've been trying to do a couple of things and we're wanting to make our backyard much more cozy. So I planted some aspen trees. I got a giant 10 foot offset umbrella. We're, we're messing it up a bit, gusting it up. Is that a thing? Either way? I'm guessing it yep. either, right. We've been trying to make our backyard so much more cozy. And it's just been so much fun. I know, like we talked about working away from the computer. But to be honest, like I spent my entire weekend working, you know, shoveling and doing all that stuff in the backyard. And that feels awesome. It's so awesome to not even look at screens for that long. And that's really a challenge for me. So I'm feeling nice and refreshed coming in this week ready to get this potluck going? Awesome. Yeah, we
+
+8
+00:02:13,770 --> 00:02:42,900
+Wes Bos: spent the weekend just outside as well. I got a new table for my barbecue. I have a Big Green Egg smoker. Oh, yeah. So that I had bought it like last in the fall. And it was just too cold to ever put it in. It's super heavy. So you got to get someone to help you. And we've got that all set up. And I bought a piece of granite for the top. And you can go to like the Restore. You have the Restore down there. It's like Habitat for Humanity through people donate like, yeah, building products that are still good. So we bought a piece of granite and just cut into the table and slapped it in. It
+
+9
+00:02:42,900 --> 00:02:48,000
+Scott Tolinski: looks awesome. Nice. Yeah. Restore is the one with the refresh icon as the logo right?
+
+10
+00:02:48,870 --> 00:02:54,900
+Wes Bos: Really store. When I see. I'm not in Canada, it's just a Habitat for Humanity logo.
+
+11
+00:02:55,020 --> 00:02:59,940
+Scott Tolinski: Oh, well, it's like a house with two arrows circling around it like oh,
+
+12
+00:03:00,150 --> 00:03:03,960
+Wes Bos: I think that is I think that's what it is. Yeah, yeah, it is.
+
+13
+00:03:04,440 --> 00:04:21,830
+Scott Tolinski: Cool. So let's get into some of these questions here. This is the potluck where every single person brought some really, really tasty questions. I'm looking at how long some of these questions are. They're like paragraphs in here. So these ones, these are going to be some funny questions. And funny, but I mean, funny long questions. This first one is from Johnny, three hats. I don't believe that's your name. I am not easily fooled. I am easily fooled. And we have been fooled. Often Johnny three hats. If that's your name, then please tweet at me. So many people, they try to try to get one by us. So I don't know if this one's getting by me. But if you are, if you are real, I reserve that. Hey, Western Scott, how big is too big for state, I have an object of around 1000 items which will be used in a search box on the front end of my site. But the list of items won't be updated very often. What is the most diff mode is the most efficient way to store these items and deliver them to your browser? would you use state a JSON object MongoDB document in some other way that I haven't thought of this is for a side project? Well, maximum efficiency isn't vital. I'm also keen to learn real world best practices. Thanks so much for the left heart emoji. Thank you, Johnny three hats up. What do you think about this one? How much is too much?
+
+14
+00:04:22,050 --> 00:06:02,070
+Wes Bos: I think 1000 items depends on what's in each item. But yes, it's likely likely just an object with like a description and a title on maybe an image and like your standard everyday table object that you might you might run across. I don't think 1000 is too much to hold in memory. I think the thing that you need to know about having things in your JavaScript is first does it increase the load time of your JavaScript bundle? Chances are 1000 items in an array is probably going to significantly increase your JavaScript. So I would probably load that in on demand. Once the page has actually loaded itself. You can fire off for a To do that, then I think when someone starts typing, there's a question of should it be in memory already, again, is is lazy loading that going to be big, I think if it's anything over, I don't know, like 4050 K, maybe, or something like that, you probably should build some sort of back end that will just return the results to you. If it's much smaller than that, I would just keep them all in memory. There is like a memory tab in Chrome that you can take a snapshot. And I don't really know how to use this all that much. But if there were a problem, you would see that the the size of it would be like the snapshot is specifically larger than other websites. And then you know, you sort of have a problem. Other questions? would you use state? If it's just an object, then yeah, you can put it into state a JSON object, MongoDB document or some other way I haven't heard of, again, it really depends on how big it is. If it's if it's just a title, a description and the image, I probably would load all 1000 in at once, and then just just hold them in memory. From there. What would you think to do? Oh,
+
+15
+00:06:02,399 --> 00:06:38,520
+Scott Tolinski: it's one of those ones I've never done, I would need to test I think that's the only solid way to do it is to test it, push it to the limit, and see where those those limits ended up being. But to be honest, I really don't know. I don't know the answer. I think it's one of those things that you might only be able to figure out through trying something trying a different technique, record your performance and seeing seeing what works best. Yeah, or reach out to somebody who that's their specialty. There are people that work in large amounts of data, maybe even if it's with graphing, or whatever, and reach out to those people that that's their specialty, and see, hey, what's what's your preferred way of storing all of this data here?
+
+16
+00:06:38,699 --> 00:07:14,310
+Wes Bos: What other people will also do is they'll just stick it in the HTML of the document as that page load? Yes. And then you can just like put it as like window dot underscore, underscore results, and then you can just grab that for the global variable and stick it in. So again, yeah, I think the the key here is, tools over rules. So tools over rule tools over there's no rules here. You got to figure out is it actually big, chances are, if it is just a side project, it's just you using it, maybe it's running locally, you don't really care about load times all that much. You could just stick it in memory. But again, it's better to do stuff that is more real world to
+
+17
+00:07:14,369 --> 00:09:09,409
+Scott Tolinski: Yeah, definitely. Real World. No rules. Cool. Next question is from Tristan. And the question is, how much do I need to know before I start applying for dev jobs? At at you need to know at at web development, web development, you got to know 50%. css, you got to know 170 percent JavaScript No, apply, just apply. Because in my experience, a job interview is more useful than just an IT potential to get a job a lot of people look at, alright, I'm taking a job interview simply to get a job, when I've never looked at it that way myself personally, especially when you get into dev jobs, where you have to do things like you know, coding challenges, or any of this stuff. I personally look at dev interviews as practice. And I'm talking about practice here. Because it is like one of those things that you need practice of how many things in your life, have you ever been good at? without practice? Like, I don't think very many of them. I there's some things that I you know, the very first time I tried, whoops, I did it, and I'm good at it. But no, most of the time, you need practice. So even if you're not good enough, or you head into a job interview, and you bomb it, that's not a problem. That's that's like experience, that's valuable experience. And and if you you're thinking, how much do I need to know, I don't know, I think you need to know probably the basics in terms of foundational HTML, and CSS and just basic JavaScript. And it really depends on what kind of job you're applying for. Because when I applied and I got my first dev job, I didn't need to know any JavaScript. I didn't know any JavaScript probably got my first dev job. And you know, things have changed a little bit now. But I think you can get a job doing anything as long as you just go for it, apply, go to those job interviews and take that practice. That's that's my stance on this is, don't worry about how much you need to know. Just go in there and be optimistic and try your best and learn something from it.
+
+18
+00:09:09,599 --> 00:10:35,100
+Wes Bos: Yeah, I agree. I get this question all the time. It's so hard to just quantify something like this. It's just like a sort of a feeling thing. How do I know what I need to know before you definitely are going to be a little bit scared. So like Scott said, maybe try a few interviews and see sort of where you're at. Next question is from Fred Rivette. Do you folks have any opinions on skeleton loaders, and how to best implement them at my day job, we recently implemented skeleton loaders in a way that inherits the parent styles. Example, pop a skeleton line component inside of an h1, and it grows to fill the line height of the h1 would love to know if there's any other best practices of ways that we can improve this and then he links off to a medium article on loading and um, so skeleton loader is where instead of just having like a spinner, show up You try to mimic the look of the content that's going to be populating on the page via boxes. And just like lines of text that haven't loaded and grayed out images, things like that. So that when it does load, the whole page does not totally change. But the content sort of just fills itself on. And I really like this, this look for a lot of websites, I've only ever done it once on one website so far. And for that, what I did is they just created like a skeleton item. And we just show that skeleton item until the items actually get put in. So I don't really have a whole lot else to say here. What about you, Scott,
+
+19
+00:10:35,100 --> 00:14:09,779
+Scott Tolinski: I think these things there need, I think there was some sort of study that came out, I don't I'm gonna kind of butcher this because I'm going off the cuff here. But I think there was some study that came out that shows, if you show a skeleton screen when the loading time is under a certain amount that it actually the perceived loading time is lower than it would have been without the skeleton screen. However, if you have content that does take a little bit longer to load, there's a there's a threshold there, of Hey, if it's at this point, then scope and screen, perceived loading time is actually faster. If it if it's actually very fast already, then you don't want to use this golden screen, because that will make people feel that your your thing is slower. Go ahead and look that up. I'll look it up too and try to give it in the show notes or something that said, I think skeleton screens are dope for a lot of reasons beyond just their name, which is also dope. I love that they're called skeleton screens. I invokes a little, little skeleton images in my mind. But you know, I love it. I think this idea is really super cool. The websites that utilize it excellently do a really super duper Good job, the ones that don't execute well on it, it can be a little off putting, I love the things where the content sort of fades in from the skeleton screen rather than just like the skeleton screens there. And then it flashes in your content, I would love it if the skeleton screen were to like animate on and then fade into your actual content. Once it's loaded, almost sort of like the techniques that we do with image loading. I think that stuff is really sick, where you have an image that's loaded in a crappier quality or an SVG, and then it fades into the full one once the fallen loaded. I think this kind of thing has a ton of potential, I think skeleton screens are going to become more prominent and more easy to do in terms of best practices. You know what I think it's sort of the Wild Wild West, there's sort of a lot of different solutions to this right now. I've seen some libraries that are just straight up divs with animated gradients and stuff that is pretty pretty darn slick. I'm not quite sure if I was going to be doing this myself on level up tutorials, I might reach to just do everything by hand and try to figure it out. Like they have a skeleton line component, that kind of thing. I might just try to do that all myself to see if there's like some way that makes sense for me. Meanwhile, looking at other people's examples, this one I think is still open to like what the best practices actually are. Because I think there are several different strategies for implementing this. But again, I like skeleton screens. I think it's a really cool strategy. Just be cognizant of when it's making your perceived loading time faster and when it's not. Next question is from Jin Woo, I'm sorry, if I'm pronouncing your first name incorrectly, probably am. Do you think we still need CSS resets? Like normalize and sanitizer? Do I think we need them? Yeah, I think we do I use normalize on my site. And I probably always have, I think there's some newer ones. I just saw something about a newer one the other day, like what it's called. But to be honest, for those of you who don't know, the browser, and browsers for a long time, I've had some baked in default styles, but that's margin, padding, font sizes, all sorts of stuff. And for a long time, CSS reset was the thing to do, where you just dropped in a reset, and it made everything blank, like just totally blank, then people realize, well, the browser defaults are not awful. They're just all over the place. So what we then got was something called normalize, which takes them and makes them normalized so that all of the browser's are using sort of the same starting off points, rather than just a flat blank point. Can I use normalize? I've used it for a long time, I think. Right? I think I probably continue to use it for a long time, just because it's easy to drop in your CSS. But what are your thoughts there?
+
+20
+00:14:09,960 --> 00:14:56,100
+Wes Bos: it normalizes on version eight. So it's not like something this that was made for e6. And yeah, it's just around, they've dropped support for I think everything below iE 11. Now, and there's really not a whole lot in there. But there's things where sometimes I find myself being like, what is going on here. And then I go, Oh, I didn't have normalizing here. And it's just little issues that is so silly to think about your own like by by default main display block, it does not display block and IE if you just like look through the source code, you can read through it and probably a minute or two, I noticed find these like little weird edge cases where they're from browser browsers are not totally the same. And those are the things that are gonna cause you a whole lot of headaches down the road. So absolutely. You still need them, just pop them in. You don't really have to worry about them past that
+
+21
+00:14:56,220 --> 00:15:04,200
+Scott Tolinski: word. And next question is from Jamie. Go Billy go bill global, global
+
+22
+00:15:04,200 --> 00:15:05,279
+Wes Bos: global No, no,
+
+23
+00:15:05,429 --> 00:20:03,050
+Scott Tolinski: there's no I in the the do go go. Way, pal. Yeah. What? Okay, I'm so sorry, Jamie. I'm so sorry. Scott, can you tell me the story about how you landed and interview for a job in Japan, I am moving to Japan next year and wanted and wondering how that opportunity arose for you. This is actually an interesting, it's not necessarily an interesting story. But it's an interesting sort of anecdote to the importance of just talking to people. I am not an extrovert, I takes me a lot to just go to talk to people. One of my art classes that I was in in college, had a speaker come from the agency, Aqa, they have a they have locations all around the world, Aqa does insanely good work. I love aq A's work. And I was just so impressed. And I knew they had an office in Tokyo. So they came in and talk. This was probably my senior year of college. And I wasn't an AR major. But I went up to the speaker and I said, Hey, I'm a developer, I was a flat, I wanted to be like a flash developer at the time, because I knew that they did a lot of flash. And I just really wanted to work for Aqa to be honest. And so I went up to him, and I said, Hey, you know, I really, I'm looking for any sort of opportunity you got, you know, I'm taking Japanese language. So I can, you know, add to your Tokyo office, I think they have more than one office in Japan, you know, I could go anywhere and work for you. And I would really, like really love to work in Japan if that opportunity came about because I was taking the language. And this guy who's honestly a very high up person at Aqa had no reason to help me whatsoever. I'm just some random kid at a college class that just came up and asked a question. And he was like, Okay, I don't have anything, but I know some agencies in Tokyo. And if you want me to, I can just shoot you some some people's emails right now. And I said, Sure. So I took the emails. And then because that guy's name had a lot of weight behind it, I would email them. And I just said, Hey, so and so told me that you might be looking for an intern here, and I'd be happy to come work for you. And because of that, I got a job interview. And they flew me out. They you know, they flew me out to Japan, they had a guy to take me around for a week, Tokyo and did the interview. And the place was amazing. So that's how I did it. But like, the important thing isn't necessarily like, here's the spot that I went to get a job in Tokyo, the important thing is, is that talk to people like Todd, like, let people know that you're looking for this, you're trying to do this or whatever, just ask people, because if I was just a hair slower on that, I would have never talked to that guy. And I you know, to be honest, I it probably scared the crap out of me before I did it to just even go up to talk to him and say, Hey, do you have anything because he's such a high level guy at the company. But I did it. And I sucked it up. And I got that valuable experience. And I got a job interview. And it was a really cool thing. So again, even if you're introverted, or you have a hard time doing this, just try just really try to go to talk to people, ask them try to try to get that sort of stuff. Because you never know what kind of opportunities will come about, we often just talk about making your intentions known if you're a freelancer, just saying, Hey, I'm looking for clients, blah, blah, blah, it can really, really make a difference. And if you're looking to make a difference in the sort of performance, the error tracking the bugs, all that sort of stuff on your website today, the general health of how your application is functioning, you're gonna want to check out one of our sponsors. Now one of our sponsors, today is century at century die. Have they been a sponsor syntax for a little bit? And let me tell you a little bit about century now century is the bug error tracking service. It works with any of the tools, frameworks, anything that you've ever wanted to use, and it's used by so many customers are so many companies that you know, and love. I mean, it's used by Airbnb, Dropbox, PayPal, Uber, Microsoft, Reddit, ad roll, Prezi doordash. If you were to walk around San Francisco, and look at all of the different billboards, you could say, hey, they use century and hey, they use century, it seems like everybody is using Sentry to track their bugs and for good reason. Because their system makes it really easy to find about errors and exceptions, and allows you to quickly integrate with any of the technologies and tools you know and love. All of the coding platforms, native stuff, Python stuff, PHP stuff, dotnet stuff, Java stuff, JavaScript stuff, anything and then it works with all of the platforms, you know, and love like Slack, GitHub, git lab, Heroku Twilio, just so many Asana, Asana, Asana, Asana, dama. Yeah, got it, right, yeah, Bitbucket, any of this stuff, so check it out, head over to century century.io. Track your errors, bugs and exceptions like a pro. Use the coupon code tasty treat all lowercase all one word and get two months for free. You're gonna love that. So check it out at Sentry dot i o
+
+24
+00:20:03,240 --> 00:21:27,150
+Wes Bos: next question we have here is from the Dan love yalls podcast actually gave me motivation again to get after it after losing my first dev job. Awesome. I've been listened to it while delivering pizzas. Wow, bringing the treats just like us. That's good. Thanks so much. I look forward to your future tasty treats. My question you guys talk a lot about react in or view but only really mentioned Angular when discussing the big three major players in the jamis framework and never really end up? Do you have any opinion on Angular? I'm not talking about AngularJS, which is what people refer to as, as 1.0. Good or bad? Or is that you're more comfortable have used the other two. And then there's some other stuff. I'm looking into all three. So really, people ask me this all the time, it's probably six times a day I get an Instagram dm about it, like what are your thoughts? On? Which one do you use react? Why? And then I'm about I don't know, it's really just like, we've talked about at some point, I was on Angular 1.0. They, they announced Angular two, but there's this big gap. So I picked up react and I really enjoy it. And I've been on that ever since. So that's not to say that Angular or view is any better or any worse. It's really just all that we do. And that's why we talk about it, because that's what that's what we use. And that's pretty much it. So I wouldn't think that Angular is bad or something like that. It's just not something that we use.
+
+25
+00:21:27,300 --> 00:22:31,170
+Scott Tolinski: Yeah. And I think part of it, you know, the whole mess of Angular Angular j s the distinction where every, anytime you say one or the other people get sort of riled up about you're saying the wrong one incorrectly, whatever. I think that whole thing just confuses people. And I honestly think that that confusion around version two and version one and whatever. I think that just really hurt Angular as applied. Yeah. And that's personally why I sort of moved away from it, because it just didn't seem like it had an identity that was like as solid now flat, you know, now fast forward to 2019. And the people who stuck around Angular two, and now it's at version eight, or nine or whatever, 15. Yeah, yeah. I think everyone who stuck around and really likes it, they like it for what it is that said, I just, I can't get into it. Now. I I'm loving react. And now with the release of react hooks and suspense, I'm just I'm loving working in react. And to be honest, I really love working in view. And I just don't know if I have the capacity to add in another one. There's
+
+26
+00:22:31,170 --> 00:22:33,840
+Unknown: no more love to give was gone or left to give.
+
+27
+00:22:33,930 --> 00:22:59,220
+Scott Tolinski: And even if I did, I think I would go for something that takes a much different approach like spelt or something. Yeah. Which spelt version three wore rubber is really cool. So I'm sorry, angular fans, I it's not that I don't like Angular. It's just that I got no room the fans full. Next up, we have a question from a wX. All of all this, and I'm getting all the hard names. This time. I'm getting all this.
+
+28
+00:22:59,220 --> 00:23:01,980
+Wes Bos: I think that's right. All this. Yes. Hi.
+
+29
+00:23:02,280 --> 00:23:02,790
+Unknown: Hi.
+
+30
+00:23:02,790 --> 00:26:19,110
+Scott Tolinski: Could you talk about naming and structuring files, slash folders in your applications? At the moment, I'm building website with Gatsby, I'm having quite a lot of smaller components that I'm reusing throughout the website, I'm slowly drowning in folders and files with my app to the point where nothing makes any sense. In my website structure. How do you name components folders? Do you follow some sort of path? How do you structure files and web apps? This is a question that comes up all the time, specifically, because the React team for better or for worse, I think it's probably for better, to be honest, does not have like strict hey, here's how you do it. In terms of project structure, where other platforms like rails have been much more like this is the way Yeah, so how do you go about this, I personally have developed my own file system that I absolutely love working in. And to be honest, it's really not that complex. But as long as you have a system that worked for you, having a system is a big deal. Now, I should also say, when you're making your system, things will change. And you should be willing to constantly adjust and adapt your system. It's not really that hard to refactor filenames folder names, project structures, I do it all the time. And I have a big application. So that said, so here's what I do. I do feature folders. Okay, we have the in terms of components, we have our standard components for things that are only used once based on features. For instance, all of the playlist or the series base stuff are in one folder, all of the My Account, my portfolio, or my profile stuff is in another folder. The checkout stuff is in another folder, the admin stuff, the search features, all this stuff. They're in their own feature folders inside of those feature folders, all of my graph qL queries and related components. Next, I have folders for reusable stuff. For instance, if I'm using styled components, which I am, I have an elements folder, which is all my my reusable components, the stuff I could think of as being with my own personal HTML elements, right? The stuff that's reused all the time. Not the stuff that's one off. So anything that's reused, it goes in the elements folder. I also have a Utilities folder. And now utilities is often used for things like my colors, my breakpoints, my icons, my loader, that sort of stuff. I also have a hooks folder, which is a new one for me, where I include all of my hooks. And I have a global state folder, which includes all of my context and state stuff. But other than that, its feature folder. So one of the things I do to make things nice and organized, is because I don't have a ton of stuff in any of these folders. In particular, with the elements, utilities, those things, what I do is I create an index for the folder, the index is an index.js, inside of the folder that then imports and exports everything from the index. That way, I have all of my elements essentially collected. And instead of having to import a layout from UI elements, layouts, I can then import both my layout as well as my typography from imports, UI elements. So creating an index at the root of your folder for some of these things is a really good idea, especially the stuff that's highly reused, or in other situations, maybe less of a good idea for the things that are one off used are larger components or things like that. So I do straight up feature folders. And then I do specific folders, like what I just mentioned.
+
+31
+00:26:19,440 --> 00:26:57,930
+Wes Bos: Yeah, I'm pretty much very, very similar way, with the exception of not using index dot j s, I just name it whatever I want to name the component in that I'll usually in that folder also include my styles and the tests for that specific component. But for different apps, I have different approaches. And the main importance is just keep it somewhat simple at first. And then as you find yourself needing to go more complex then absolutely go more complex as I've certainly been in very simple applications where people have 4000 folders, and it's impossible to just move around it and to get familiar with the application, just like Scott says refactor as you need it into a more complex folder structure
+
+32
+00:26:57,990 --> 00:27:22,680
+Scott Tolinski: word. So complex folder structures. You don't have to deal with complex data structures. I don't know if that's a good transition. But one of our sponsors here at syntax has been a longtime sponsor, which is Sanity, it makes your working with your back end data and having your data as the service just totally effortless. And they have some sweet new features that Wes is going to talk about.
+
+33
+00:27:22,710 --> 00:28:54,240
+Wes Bos: Yeah, so sanity.io is a headless CMS. So it's sort of a bring your own front end. So think about something like next or next or Gatsby, and you want to pipe in some data to the back end, sign up for Sanity. And that will be your back end. One kind of cool thing about Sanity is that you can actually bring, you can bring your own react components to their back end. So that's kind of like they host it for you. But you still have control over what the UI looks like when you're uploading and modifying your data. They've just rolled out this new thing called Sanity create, which is really cool. Sort of the tagline here is have a Sanity powered site up and running in minutes. So if you want to try out Sanity, you have to sort of do two things, you have to pick a platform, because you need like something like Gatsby or next or Knox, and then you need like a somewhere to host it and something like Netlify. So what they've done is they've created sort of like one click installs for something like this. And you can get a portfolio running with Gatsby, or a tech event running with next or a landing page with knucks, you can get all these different examples up and running really quickly. And then you have all of the pieces in place between hooking up your get hooking up your Netlify having the actual code that needs to be run in the the back end on Sanity. So that's just a great way to sort of see the power. And if you just like wondering like I've never built a jam stack website. try this out. Go to sanity.io forward slash create and try it out. I think you're going to be pretty pretty impressed. Thanks so much to Sanity for sponsoring. Pretty, pretty, pretty, pretty impressed.
+
+34
+00:28:54,360 --> 00:28:58,530
+Scott Tolinski: Yep, yep. Yep. Got a little Larry David. David going on.
+
+35
+00:28:59,490 --> 00:32:57,860
+Wes Bos: Two more questions here. This one's from Brent. Kay, that was a really easy one for me. Hi, Wes. And Scott, I get all the hard ones. Yeah, you do. I have a question about back end Tech's specifically No. Do you think node is almost too powerful mo to handle some of the simpler tasks, a site that just needs a contact form for, for instance? Or am I missing some very simple configuration, it seems like other languages, such as PHP might be better suited for the simple task and node is really meant for larger scale application. Also, I am starting to think because as I have looked into hosting for Node JS applications, some hosting companies don't host Node JS on their basic plans. Hostgator is another. And so I'm about halfway through this question, hang on. And so you would need to upgrade to a dedicated server just to host a node Express server side code that simply sends a POST request to an email. I guess my question really boils down to as a freelancer, I understand that I need to have my hands in a lot of different tech stacks. But should I really just dive into PHP or maybe something else to handle simpler features like this. Thanks, guys keep doing what you're doing because it's fantastic. Whoo. All right, a lot here is node meant for for much more complex things versus something like PHP? No, I don't think so they can be all made for small, small things, or much larger things. I think the sort of the frustration that's coming along here is sort of two part first, PHP is just really easy, you can just write a file and hit it and handle all the logic in some in one file with node you need to have like, you need a server to be up and running, you need to start that server and listen on ports, then you need some sort of routing, and all of that stuff, starting the server route, and all the assessors comes for free with with PHP, which is why it's so easy to sort of get up and running. So there is that sort of like an I think that's sort of where serverless functions are going to really shine where you can just write a single j j s file and deploy that as a serverless function in the serverless function will take care of routing and giving you that request payload. And then you can simply just like, do what you need to do send an email, log the data, put in a database, and then send a response back to that specific user. So I think that that's one spot there. I think also part of the frustration is not having a good approach to hosting node applications. Because you think like, okay, I want to host this thing, I can't put it, I can't just like throw a folder up to my GoDaddy and it works. So like, obviously, there's, there's things like, now that sh or I know, Netlify is getting into serverless functions, there's lots of people trying to like make that area easier right now. And so you're not alone in thinking that this is too hard, it is absolutely too hard. But what I do is I have a just a Digital Ocean server, and then I use something called pm two. And what this will do is allow you to run multiple processes on your actual server at once. And then you can run a very simple, this is probably where it's very simple. I'm doing air quotes here, you also have to run what's called an nginx config on there that will proxy it. So you can do like subdomains or like Ford slash app one and Ford slash app two. And for that way, you can get away with $5 Digital Ocean all day long. And I think that's probably even cheaper than doing a hostgator. Yeah, like that. So it definitely does require a little bit more setup. There's people trying to solve that right now. And getting it easier. Like we used to have this thing called node jitsu, which was amazing. And no jitsu was really, really good. And they got bought by godaddy. And they did nothing with it, which I was very frustrated to see. Because I absolutely love No jitsu. It's sort of what now is try keep thinking next. It's sort of what now is trying to do right now, which is pretty cool. So I say Hold tight, definitely worth still learning node, given those caveats of there is a little bit more overhead than just a PHP script. But also that if it's just a simple contact form, and you feel like doing any PHP, absolutely nothing wrong with that, aside from the fact that you'll probably get spammed to hell on almost anything that doesn't have like a CAPTCHA or something installed on it. Yeah,
+
+36
+00:32:57,860 --> 00:33:42,110
+Scott Tolinski: I mean, I agree. And I think this is a good opportunity. If you wanted to do note for this, this is like the perfect use case for a serverless function. Just because it's so lightweight and easy to get going. I've recently used the functions on Netlify and really liked it. So if you're on Netlify, that's an option. If you're not then, you know, serverless functions elsewhere is something to look into again. I mean, I think you really covered all of the bases there. So yeah, no, I think that I think you nailed it. Next question is from San Malik. I think I got it. Yeah. What do you guys think about spelt? Before everything goes well as to why it was felt to be the future of programming. So okay, for those of you who don't know about spelt, let me tell you a little bit about spelt.
+
+37
+00:33:42,509 --> 00:33:48,000
+Wes Bos: I've never, never used felt myself before. It's called a cybernetically enhanced web app very which
+
+38
+00:33:48,000 --> 00:33:58,890
+Scott Tolinski: is which is funny because like, people were like, ripping on that, that hat like I just I That's funny. It's like cybernetically enhanced, or those things from Terminator. Like, it's funny. I think I don't
+
+39
+00:33:58,890 --> 00:34:00,600
+Wes Bos: I don't understand it.
+
+40
+00:34:00,749 --> 00:37:07,710
+Scott Tolinski: Yeah, I think it's from Terminator. It's not didn't shut me out about it. But so Okay, so what is felt was felt is a it's not necessarily a new, it's new ish, JavaScript framework eight came out with version three last month, by the time you're listening to this. And what's interesting or different about spelt was felt disappears. They used to call it the magically disappearing framework, because what happens is you build it your your application in spelt. And then you don't actually ship a library with your application, you just ship code. So it compiles down to nothing. Essentially, it compiles down to JavaScript. So that's the reason why you would want to learn svelte because hey, you don't have to ship react, you don't have to ship view or whatever. And one of the cool things that happened recently in spelt, when they went to version three is that they really changed a lot about how you're working with data that that sort of just the general data binding app. specs of things. And to be honest, remember the good old days of Angular one where he just threw everything on scope. And it all felt really fun and interesting when you're first learning it. Yeah, you know, to be honest, I think the smell like can really, with the new way it's doing things can really invoke some of those feelings. Because the modern way of aurvey version three way of writing spelt is pretty darn slick. And to be honest, I think it's really cool the way they handle state. Basically, if you have a count variable, you could define it in your script tags are like you do in view, you say, let count equal to zero, you have a function called handle click that just does count plus equals to one. And then guess what in your HTML or your thoughts templating language code, you could just output count. And then when you click on the thing, you run the handle, click and you don't have to reference. You don't have to bind, you don't have to create state, you just got a variable, and that variable is scoped to that component. It's pretty cool. And it's a it's a modern JavaScript framework. And let me tell you, as felt version three is sort of blowing up because I think people really, really like it. It's truly reactive, as they say, no virtual Dom write less code. Now the part of this question that I don't necessarily get is the part that's talking about, whereas before everything goes, wesam will spell be the feature, I don't think Wesson fits in here at all, I don't think it really, really matters or has anything to do with this. smelt is just a another approach for a JavaScript front end framework. And I think spelt is taking a different enough approach that it's definitely worth your time. Because some of these things are all just maybe like a different syntax do the same thing. I honestly think spelt has enough original ideas, that it feels like a very different thing, at the same time, feels very accessible and has a lot of upsides to it. So I might be doing a spell tutorial course I'm still looking into doing that. It was actually when I had previously started to record at some point first felt version two before I found out about the timeline for version three. So another version three is out here. If you are interested in that, let me know could be something we could put together again, it looks really super cool. I think easy is the right word easy, effortless, the bundle that you're going to ship is going to be smaller. I think it's really cool.
+
+41
+00:37:07,830 --> 00:37:14,670
+Wes Bos: That's really cool. I want to check out swell at some point I've been hearing a lot about it. The code examples look kind of vewy
+
+42
+00:37:15,060 --> 00:37:21,600
+Scott Tolinski: Yeah, it's like it's like vewy it's like Angular one II it's kind of effortless looking at it looks nice. Neat.
+
+43
+00:37:22,110 --> 00:37:40,170
+Wes Bos: Neat. Next question we have is from Noel Garcia what smartphones and laptops Do you use for work specific model and why this is going to be a bit boring for me I have the iPhone 10 x Xs max plus touring edition Eddie Bauer interior
+
+44
+00:37:40,200 --> 00:37:51,780
+Scott Tolinski: did not do that cuz I don't know iPhone stuff. So I was like, Okay, and then when you got to the the Turing edition, I was like, oh, okay, he's joking, but like I wasn't sure how many of those were actually joking.
+
+45
+00:37:52,110 --> 00:38:32,520
+Wes Bos: Yeah, no, I like it. It's as big as phone you can get takes awesome photos. And it works well. And then I have I don't know what kind of laptop I have. I have the MacBook that will be crippled if you get a chrome in it. So I don't know I bought it like a year and a half ago and I maxed it out. It's super fast, super stable. I really like it except for the actual hardware itself. But I spend probably 98% of my days having it just docked as well. I've never been one to like have a desktop and then have like a laptop and then try to sync stuff between those I just like having absolutely everything on one computer huge hard drive having everything on there. And it's just the the perfect setup for me.
+
+46
+00:38:32,960 --> 00:38:59,520
+Scott Tolinski: Yeah, yeah, I used to do when I had my hackintosh the two system thing and that was such a nightmare. Yeah, it was such a nightmare. And so I'm what I decided to do was not used my desktop anymore. And instead of getting an underpowered laptop getting overpowered ish laptop, I have a 15 inch MacBook Pro that has 32 gigs of RAM and 2.9 gigahertz I nine processor.
+
+47
+00:38:59,550 --> 00:39:00,440
+Wes Bos: That's it.
+
+48
+00:39:00,810 --> 00:39:01,560
+Scott Tolinski: Yeah,
+
+49
+00:39:01,560 --> 00:39:08,630
+Wes Bos: I've 3.1 I seven kilobytes of I nine wrote more eyes but I got more gigs hurt
+
+50
+00:39:08,630 --> 00:39:10,610
+Scott Tolinski: how many cores you got? How many cores?
+
+51
+00:39:10,980 --> 00:39:14,340
+Wes Bos: Intel Core i seven how many courses into that for
+
+52
+00:39:14,610 --> 00:39:24,810
+Scott Tolinski: what? I don't know how many years has but mine has six. If mine has six, six I nine 2.9 gigahertz cores and yours has four 3.1 whatever, then I win. So let's see here.
+
+53
+00:39:24,810 --> 00:39:27,060
+Wes Bos: How many courses and I seven have?
+
+54
+00:39:27,330 --> 00:39:29,070
+Scott Tolinski: If you go to About This Mac, it'll tell you I have
+
+55
+00:39:29,070 --> 00:39:30,030
+Wes Bos: four.
+
+56
+00:39:30,090 --> 00:39:33,440
+Unknown: Oh, that's it. That's it? Yeah,
+
+57
+00:39:33,480 --> 00:39:41,400
+Wes Bos: it's a 15 inch 2017. So yeah, it's almost two years old and it's still chugging along. I only have 16 gigs of RAM like a sucker.
+
+58
+00:39:41,580 --> 00:41:48,060
+Scott Tolinski: Yeah, like a sucker. So mine is a 2018 but only because Apple. Absolutely to Apple for those of you did not hear that story. Apple broke my computer and then gave me a nice discount on this super high powered one. So I have a much better computer than I originally bought and I only just pay like 300 bucks for it because they broke my other and then lied about it. That's my computer, and my phone is a pixel two XL, I will be getting the pixel four whenever it comes out, even though they haven't said anything about it. I don't know anything about it, but I'm gonna get it anyways, because I love my pixel two. It's been a great phone before then I always had the Google Nexus phones but the pixel two XL for me has just been amazing. performance wise, battery wise cameras incredible. My wife has the pixel three XL and it's been amazing for her. So nothing but good experiences, to be honest. And I like running the betas I like getting all that software stuff. So I like using the Pixel phone and I'm really big, big, big fan here. So that's specific models laptops for why yeah, that's pretty much it. I would love it. If there was a future where I could just like plug my phone into a monitor and do all my coding on my my pixel. Like have it be all VS code and Linux and stuff. Maybe that's the future some point. Who knows? I actually did see recently This is sort of unrelated but it gets called bliss OS bliss OS is a looks like it's a distro is that we say an open source distro? Yeah, of Android that runs on every device, including Mac books and surface books and stuff like that. So I have an old 13 inch MacBook that's just sitting in my closet. I'm going to install Android on my MacBook as its main iOS, and I'm going to try it. I know this this bliss. Oh S is very fresh and probably kind of buggy. But I would really love to see what that's like running Android. And then basically it's a Linux system. You could install any of your Linux stuff on it. Or mine trying it out. It's just like a fun little thing here. So check it out. I think it's at bliss. ROMs calm if you want to see more
+
+59
+00:41:48,380 --> 00:41:58,590
+Wes Bos: of it on on SourceForge. Remember stuff used to be on SourceForge Yeah, yeah. Yeah. Then they had like the banners that would be like download here like the ads that yeah.
+
+60
+00:41:58,590 --> 00:42:00,380
+Scott Tolinski: Oh, yeah. Yeah.
+
+61
+00:42:01,890 --> 00:42:04,230
+Wes Bos: They really shot themselves in the foot. Hey,
+
+62
+00:42:04,440 --> 00:42:13,500
+Scott Tolinski: I hate real. That's like a huge, huge industry. And they're just like, you know what? We're good with this crappy system here that ruin people. And they
+
+63
+00:42:13,500 --> 00:42:23,580
+Wes Bos: remember they always had like the like, diamond plate. Background design. I wonder if there's an image of the old. Do you remember like the design of the old SourceForge?
+
+64
+00:42:23,820 --> 00:42:30,570
+Scott Tolinski: I'm sure I do. But I don't I it's not coming to me right now off the top of my head. But I've been on SourceForge enough that
+
+65
+00:42:30,690 --> 00:42:35,210
+Wes Bos: Yeah, she saw I can't find a screenshot of it. But those are the days.
+
+66
+00:42:35,460 --> 00:42:37,400
+Scott Tolinski: Those were the days. All right.
+
+67
+00:42:37,440 --> 00:43:07,670
+Wes Bos: Last question from Aaron. Aaron. Should I apply for other jobs? Even if my contract gets might get renewed? Should I feel loyal to a company? Yeah, if your contract might get renewed, it might not. So absolutely apply? I think Scott talked about this on a previous episode. He basically said like, go for it. You can always say no to the job. But you might stumble into something really nice. Something really well paying something that you really enjoy the workout. So go ahead. It's nothing but practice at the worst.
+
+68
+00:43:08,010 --> 00:44:12,270
+Scott Tolinski: Yeah. And we talked about it the reason I added this question at the end here is because we did we talked about earlier in this episode, but we talked about it before. A lot of times people put too much weight into job interviews, like this job interview has a lot of weight, it's a thing No, it does not if you go apply for jobs, you're not hurting anyone's feelings. You don't have to accept a job. You just if you don't want your current employer to know that you're applying for jobs, then don't put your current employer down as a reference. And then if they asked why your current employers on a reference will say hey, my contract might get renewed there. I didn't want to make them angry if like to let them know that I was interviewing around or something but hey, if you're really interested in hiring me for this then please go ahead and talk to them. Because that's a you know, that's definitely just something you want to do you want to practice you want to get a new interview but again, the interview is not a job offer that you are accepting you get an interview go take it do it. I can't emphasize that enough. But yeah, I think that wraps up this potluck we got a pack it up. And I think there's a storm now there's not a storm coming. It's nice and sunny day here for this potluck.
+
+69
+00:44:15,090 --> 00:44:50,340
+Wes Bos: We are going to do sick pics now. I don't necessarily have another sick pic just because we've been batch recording these, but I needed to like work on a like a rotate a photo and touch it up really quickly today. And I ended up just paying someone to do it for me because I haven't had Photoshop on my computer for a couple of years now and sketch and figma these things aren't really meant for raster based editing. And a bunch of people said use affinity. Have you ever checked this out sky? affinity Affinity Photo? There's Affinity Designer?
+
+70
+00:44:50,370 --> 00:44:53,400
+Scott Tolinski: Yeah, yeah, I have a tutorial of course on Affinity Photo. Really.
+
+71
+00:44:54,750 --> 00:44:55,500
+Unknown: It's good.
+
+72
+00:44:55,920 --> 00:45:34,140
+Scott Tolinski: It's It's good. It's basically like Photoshop. The thing that makes me upset About affinity and I like affinity The thing that makes me upset about it is things like some shortcuts keyboard shortcuts and menus and stuff are like one to one the same as Photoshop and others are just different enough where it's going to make you really mad you'll kind of find this thing the applications great No, it's very powerful can do anything Photoshop can do I have it installed just because I bought it a long time ago, but yeah, no, it's pretty cool. It's it's very comparable. You know, there's like some open source Photoshop alternatives like GIMP instead. Yes, GIMP is there is that in Illustrator? One either way.
+
+73
+00:45:34,230 --> 00:45:36,000
+Wes Bos: GIMP. So Photoshop alternative? Yeah, okay.
+
+74
+00:45:36,000 --> 00:45:41,790
+Scott Tolinski: Yeah, it's way better than again. So yeah, it's much more of a Photoshop comparative.
+
+75
+00:45:42,150 --> 00:46:10,770
+Wes Bos: I need to try this out. Yeah, I also, I'm so jealous of everybody who edit stuff on the iPad, like, anytime you buy a texture pack, they're always just for iPad, like apps. And instead of like being for desktop apps anymore, and like I miss being able to do that sort of raster stuff, or Photoshop someone's face on something or whatever. So this is not really sick pic, cuz I haven't tried it yet. But I'm gonna, I'm gonna test it out. And I thought I'd just let other people know that I that are looking for something similar as well.
+
+76
+00:46:11,130 --> 00:47:29,550
+Scott Tolinski: Yeah, that's cool. That's cool. I'll you know, I'll go with you and keep the same sort of theme going an app that is taking the place of popular highly frequently used in production apps like Photoshop, whatever is for me, a big one has been DaVinci Resolve. And this might have even been a sick pickup mine before. But let me tell you, I use DaVinci Resolve for video editing. And for those of you who do any sort of actual professional level video editing, you probably use premiere and Final Cut, you probably know that Final Cut x, although it's really cool is very weird in some ways. DaVinci Resolve is a lot more like Adobe Premiere, but let me tell you, it's free. And it works on any OS. So you can use it on Linux or Mac or Windows. And it's free. Yes, it is as good as any of these other ones. It's, I've been using it professionally, the color grading stuff is sick, the audio tools, they're sick at literally everything about this application is sick. So DaVinci Resolve is my sick pick. It's a really cool app, and it looks like they just came out with version 16 I'm rocking 15 right now. So I'm gonna need to upgrade to 16 and see what's new. It looks like they they give you eight k editing in version 16. Oh, yeah, I'm into it.
+
+77
+00:47:29,880 --> 00:47:48,270
+Wes Bos: Alright, shameless plugs. Today, I'm gonna plug all my courses at Wes bos.com forward slash courses, use code syntax to grab anything if you want to learn react. Yes, six. Yes. Seven. Yes, nine. Any of the SS CSS has a whole bunch of free ones up there as well. Check it out. Wes Bos comm forward slash courses.
+
+78
+00:47:48,660 --> 00:48:22,680
+Scott Tolinski: Nice. I'm going to pick all or I'm going to shamelessly plug all of my courses that was well and I have a new course out every single month on level up tutorials COMM And if you sign up to become a pro, you get access to everything on the site. So that is like hugely important because there's a new course every single week. And if you sign up for the year, that means you get all of the I think there's like 27 Pro courses right now. And you'll get 12 additional pro courses over the course of the year. A lot of courses. The latest one is on react animations. So check it out at level up tutorials.com forward slash Pro.
+
+79
+00:48:22,920 --> 00:48:27,450
+Wes Bos: Alright, I think that's it for today. Thanks for tuning in. And we will catch you next week.
+
+80
+00:48:27,630 --> 00:48:49,650
+Scott Tolinski: We will catch you next week. And we're recording this episode in the future or in the past, I guess at this point, and it's really bizarre to say this before I say peace it's very bizarre. By the time you are listening to this episode, I'm going to have a baby yeah. That's I'm gonna have my daughter is going to be here by now by the time you're listening to this. So this is very wild.
+
+81
+00:48:49,680 --> 00:48:52,860
+Wes Bos: Yeah, that is really weird, like about the future, but it's now
+
+82
+00:48:52,920 --> 00:49:08,640
+Scott Tolinski: it is really weird, especially when it involves the new human being that you're taking care of. So Oh, welcome to this robot. Brooklyn, Brooklyn Delinski and this is really thick. So yeah, okay. But we will catch you in the next one. That's all we got for now.
+
+83
+00:49:09,480 --> 00:49:10,110
+Wes Bos: Please
+
+84
+00:49:12,000 --> 00:49:21,750
+Unknown: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

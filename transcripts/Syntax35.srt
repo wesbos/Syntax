@@ -1,0 +1,424 @@
+1
+00:00:01,290 --> 00:00:10,439
+Announcer: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to Lynskey and Wes Bos,
+
+2
+00:00:10,470 --> 00:01:19,230
+Wes Bos: welcome to syntax. Thanks, sir. I'm try that again. That was dumb. Keep that in maybe. Welcome to syntax. Thanks so much for tuning in to another episode. Today, we're gonna be talking all about this topic that I'm actually wanting to talk about a long time. And because I get a lot of emails about this, and it's not something we talk about in public all that much. But it's sort of the sense of impending doom or the the sense of being overwhelmed with how fast our industry is changing. And it's such an interesting industry to be in, because you can get a really good job in it. But it also it just moves so quickly, that I think a lot of people are sort of feeling like, they just can't catch their breath with what the tech is. And it's sort of scary when when your job and your income depends on this sort of moving target. So we're going to talk about, like, how do you keep up and how do you deal with this fast pace industry that we have. So today, we're sponsored by two awesome companies Freshbooks and Netlify. Freshbooks does cloud accounting and Netlify does some fantastic hosting for your website. We'll talk a little bit more about them partway through the show. With me as always is Scott till insky. How you doing today, Scott?
+
+3
+00:01:19,230 --> 00:01:40,110
+Scott Tolinski: Hey, I'm doing super good, as usual to some Sunny Sunny weather here in Denver. We did a couple of Park walks with the no coats on Oh, living it up in the 60s and 70s and it's been pretty nice. I'm not attempting to brag here but it's just been really like as someone who spends a lot of time cooped up in the house It has been really nice to get out
+
+4
+00:01:40,319 --> 00:01:49,799
+Wes Bos: Yeah, we just had a really like nice warm spray some of our patios were opening up you can have a beer on the patio and then we got nailed with another snowstorm so
+
+5
+00:01:50,459 --> 00:01:58,500
+Scott Tolinski: parka Oh, I so over the last break between the steps and less I turned 22 or not 22 Wow,
+
+6
+00:01:58,529 --> 00:02:00,030
+Wes Bos: congratulations. I turned 32
+
+7
+00:02:00,030 --> 00:02:09,150
+Scott Tolinski: vana that yeah, that I think that was just some like, I don't know, that's not necessarily a Freudian slip but there was this little slip there. I wish I was turning 22
+
+8
+00:02:11,009 --> 00:02:12,470
+Wes Bos: Well, happy birthday congrats
+
+9
+00:02:12,470 --> 00:02:14,060
+Unknown: on that a thank you.
+
+10
+00:02:14,720 --> 00:02:16,380
+Wes Bos: Jay anything special for your birthday.
+
+11
+00:02:16,880 --> 00:02:37,280
+Scott Tolinski: I just head out to the mountains did some some solo shredding did some a little little snowboarding I hit that I actually like hit the train Park like the whole day. So it's not usually not like I usually spend like half the day in the train park or whatever. At this time. I was spending the whole day hitting rails and the halfpipe and the jumps and feeling really good. Just having a good time.
+
+12
+00:02:37,439 --> 00:02:52,170
+Wes Bos: Now sick though the ones the one game I did play when I was a kid. I didn't play a lot of video games. I kind of wasn't super into it. But the one I did play a lot was Shawn Palmer's pro snowboarder, which was essentially just Tony Hawk but with a snowboard underneath it. It was great.
+
+13
+00:02:52,170 --> 00:02:59,160
+Scott Tolinski: There was like a while there were like they could just throw any pro and then pro this extreme sport and
+
+14
+00:02:59,219 --> 00:03:02,010
+Wes Bos: yeah, what else did I have? I like Matt Hoffman.
+
+15
+00:03:02,789 --> 00:03:07,800
+Scott Tolinski: Max there was surfing one Kelly Slater. Yeah, there's a whole bunch of I have like all of those because I love those game, man.
+
+16
+00:03:07,889 --> 00:03:41,730
+Wes Bos: That's fine. I should go back and play those. Those are really fun for real. I rereleased my react for beginners course last week. So first time it feels into this episode is first time you're hearing it. Super excited about that. So it's the third time since I released it in late 2015. So it's the third time I've totally re recorded it from scratch. And it's up to date with the latest, latest and greatest and everything that there is in react. So pretty excited to get that out the door. And now I'm focusing back on my advanced react course which is it's still a month or two out but I'm moving moving some ground on it.
+
+17
+00:03:42,090 --> 00:03:43,440
+Scott Tolinski: Nice. Glad to hear
+
+18
+00:03:44,100 --> 00:05:44,279
+Wes Bos: Yeah, so let's get into it. Let's talk about let me just like start off I'll just read this email that I received I'm not gonna mention any specifics from the the person that sent it cuz I don't want to out anyone but I thought it was just like a really good summary of what a lot of people and myself included a lot of times that are sort of feeling so hey, Wes, being a follower for a long time. I applaud you for taking the leap from agency work to bettering the community. So a couple years ago, maybe about a year and a half ago, I I took the leap from being a sort of freelance developer, working with agencies and startups, to moving to building courses and doing podcasts and stuff like this, right. So he said straight up, I'm falling behind. I used to be on the cutting edge. I've been doing this for close to 20 years, or sorry, 10 years professionally. I'm exhausted trying to know what the right tool is for the right job. I learned jQuery and so JavaScript I know stupid, which I don't agree we didn't talk about that. But now he has six is that should I wait for iOS seven before I jump in. And then this is the part that that kind of really hit hit home for me as well. My My life is infinitely more complex with a growing family. I can't crush weekends like I used to. I don't want to let my clients down. So They're sort of like this, like, at a certain point, you've been doing this for a few years, when I first got started, it's all I wanted to think about is all I wanted to do, I would listen to podcasts non stop, I would want to do it all night and code all weekend. And at a certain point you, you want to have other hobbies, you want to have the weekends off, you want to go snowboarding, you have to spend time with your family, or you want to spend time with your family. Right? There's this like, whole secondary option to it. And it's kind of hard when you're like, What am I supposed to do in order to keep up? So that's what we're gonna be talking about today. First of all, like, how do you approach this sort of feeling? as well as how do you actually keep up so that your skills stay relevant? Yeah. So
+
+19
+00:05:44,310 --> 00:06:30,570
+Scott Tolinski: I think it's important to, to state off the bat that like, you, you are not like this is not, you're not alone, this is not a unique problem, I feel like at some point or another, most people in your job or or this industry will feel like this at some point. Because with the amount of progress and the rate at which everything changes, there, it's just impossible to feel like you have a handle on everything all the time. And even if you like, even if you do have a handle on everything, it's still really easy to feel that you don't have a handle on everything, just because of the amount of churn and the amount of things and options to learn and stuff like that it is incredibly easy to have these feelings. And I would say most everyone will go through these sort of things multiple times in their career.
+
+20
+00:06:30,630 --> 00:07:47,730
+Wes Bos: I feel it all the time. And I think one of the the best sort of advantages that I've gained in my career is just being okay with not knowing everything. Like I do this for a living, my job is to stay up to date and record videos of the new stuff and to teach you folks how it all works. And I often feel like it like if I'm spending eight hours a day trying to keep up how is someone who has eight hours a day of actual dev work that needs to get done for their clients? How are they supposed to keep up? Right? It's it's just crazy. And I think that I think the biggest point that I'm going to have here today is that it's fine with not knowing how to do absolutely everything is fine with not knowing like I often have people being like, hey, Wes, what's the difference between RX js and Redux? And I used to been like a, my answer now is I don't know. I've never tried RX. Yes. And I'm sure it's great. And I often get people being like, Oh, you haven't tried it, it's amazing. And, and you get all this sort of like, energy towards it. And I'm sure I should check it out at some point, but I have a full enough plate as it is. And I sort of know what I should be checking out and whatnot. And I don't know, it's, it's something that you have to get good at is being fine with not knowing absolutely everything.
+
+21
+00:07:47,940 --> 00:08:47,100
+Scott Tolinski: Yeah. And I mean, that couldn't be any more dead on especially, I mean, with that, that point about this library or that library. There are people that will will come at you in and say, Oh, you don't know this, and maybe they're trying to be helpful. Maybe they're trying to make you feel like, Oh, this thing can help you, right. But a lot of times I feel like those people are just trying to maybe flex they're like, I know this or drop these buzzwords, or maybe like, you know, there's just this whole whole thing of trying to put yourself? Well, I know, I know, more than Wes Bos does I know more than so and so does, right? Like, I think a lot of these times if you're feeling like, Oh, so and so and everyone knows this chances are everyone has these huge gaps in their knowledge. And just because you don't know something, yeah, you have to be be cool with that you have to be very cool with knowing that there's going to be large, large gaps in whatever you learn at any point. And that's not a bad thing at all. That's that's probably a good thing.
+
+22
+00:08:47,129 --> 00:10:55,560
+Wes Bos: So first thing I kind of want to the first point I want to get across here is the cutting edge is not necessarily a place that you want to be in sometimes when you're in this sort of I don't the sphere of Twitter and listening to even our podcasts and all this you sort of see everything moving like a crazy speed that there was some stuff going around on Friday, people being like Redux is dead. And half the people are like, Wait, what? I just spent like six months learning this and you're now you're telling me it's dead? Like what the hell right? And I think what's important for this kind of thing is when something new comes out, I don't immediately jump on I started just sit on my hands. I know let people sort of figure it out. Often what happens is if there's a 1.0 of a library that comes out or if there's a new thing that comes out, it seems like absolutely everybody is jumping on that train. It's probably not something you should be jumping on. Because those people that are working on the cutting edge, they're dogfooding it which means that they're trying it themselves, they're putting it into production. They're learning what their development cycle looks like. And they're going to put in the time to sort of develop all this stuff and then at a certain point This technology is going to either go away because you know what, it wasn't such a great idea. And I'm not going to do it, or it's going to mature and become a little bit more stable in what it looks like. And that's a point where you can start to take it on because your job likely you probably have to get stuff done. And if you spend half your time dealing with deprecated, and new API's and things changing all the time, then that's going to be incredibly frustrating, especially if you've got working at like an agency where you dev something and come back six months, it's likely that you're going to have some sort of breaking changes in that application where you might just sort of yearn for the old days where you could push out a website and and come back to it two years later. And there might be some new features in the language. But you might not necessarily have trouble upgrading that to the latest libraries.
+
+23
+00:10:55,890 --> 00:12:52,620
+Scott Tolinski: Yeah, that's especially I think, important with things like these frameworks, because I mean, how many JavaScript frameworks, I mean, the joke is that there's a billion JavaScript frameworks, but how many JavaScript frameworks have come out, they make a big splash, people are talking about them for like, four or five months. And then maybe like eight months down the line, there's less people and then 10 months down the line less people, and then all of a sudden, it's sort of like not a thing, right? And then maybe you just invested, you know, a solid week of your time or a couple months of your time to, to get the handle of this particular framework. And now this framework is not being used by anyone anymore, where if you would have just sat back and sort of waited, like half a year or so you could have seen that the the trending was sort of trending downward? So I mean, there's something like it, remember? Yeah, I don't know if you would say like the the big, the big ones right now for popular JS frameworks are probably like, Angular. in Angular people. I know, there's the whole Angular Angular JS thing. I'm just saying Angular as Angular react and view, right are probably like the big three at this point. But, you know, eight months ago, would you have been able to predict views growth, I don't know, if I would have been able to predict views growth. Now I understand that it's a great framework. You know, it's it's easy to pick up and people really seem to enjoy it. But it could have been all those things. And it could have just slowly, slowly decreased rather than increased. And now you can see this trajectory is something like Vue JS or something like react are much less, much less volatile or potentially going to just go away overnight, or decline in usage or something like that. And you didn't just spend all your time learning something that could potentially I mean, there's no harm in picking up react today. There's like, there's a billion people picking up react today. Yeah. And you know, it's
+
+24
+00:12:52,920 --> 00:14:49,680
+Wes Bos: not going anywhere, anytime soon. Exactly. They're, they're picking it up just on time. And that's, I love that you just said it just on time, because I was listening to Tim Ferriss podcast last week. And he did, he has some questions. And he talked about this concept of maintaining relationships with people. And he says he tends to do what's called just in time relationships instead of just in case relationships, meaning that he doesn't go out of his way to make relationships with absolutely everybody. However, if there's something that it may be beneficial between a relationship, then at the time that he needs it, then he'll go out and try to foster that relationship. I was like, that's very similar to how I approach JavaScript. And it's more just in time learning, meaning that I know a lot about JavaScript, the language, and if there is something that I would possibly need, maybe there maybe going back to RX js, like maybe I was doing an application that it was just a perfect example. And people have been telling me like, Oh, I did an app like this, and it really helped us out. I would say, Okay, that sounds like exactly what I need. I'm going to go out and learn that specific thing. And usually, the overhead to that thing is really not all that much, because and I know we say this all the time, and especially beginners hate hearing it. But if you really do double down on the fundamentals and stay up to date with the core language fundamentals, like we just had a huge change in the language, which was ESX. There's all kinds of new stuff, the arrow functions and computed properties and classes and all this kind of cool stuff. But as long as you can keep up to date on that, you'll be able to just switch over and do this just in time learning. No problem, pick up a new library in a couple days a week, depending on how big the the breadth of the library would be.
+
+25
+00:14:49,920 --> 00:15:20,760
+Scott Tolinski: Yeah. Because if you do understand those concepts, it's going to make understanding the usage of those concepts and a library that much easier. And so yeah, I'd be doing have to know how to build a framework and JavaScript, you don't have to know how how they built XYZ, whatever, right? But having the general skills and being able to recognize patterns and recognize techniques, and being able to use those techniques is going to make learning this stuff a way, way, way easier when you need to, and that I never heard of this just in time learning, but that's definitely how I approached this. I
+
+26
+00:15:20,760 --> 00:15:21,570
+Wes Bos: made it up.
+
+27
+00:15:23,130 --> 00:15:47,610
+Scott Tolinski: Well, then that's why I have not heard of it. But yeah, I mean, it's like, hey, that's the perfect way to learn is, is when you need it when you need something like this, to learn it. And that's not to say that you shouldn't learn something if you don't need it. Because sometimes it's just fun to learn new stuff. But, you know, if you're if you have all these responsibilities, and whatever, and you don't need to learn these things, then then don't don't get hung up about it. Mm hmm.
+
+28
+00:15:47,700 --> 00:16:58,530
+Wes Bos: I think like, the thing you should take away from this is maintain your your core JavaScript, like skill set, or maintain your core web development skill set, whatever language it is that you're using. And then when it comes time to being able to learn something, then that's exactly why it's gotten I make courses, it's because you can sort of have this happen all the time, people just sort of drive by pick up my react course, do it in a day or two. And then they have the sort of base knowledge of how react works. And they can sort of take it and run with it. Whereas like the flip side, sometimes I have people come take my course. And they're like, hey, Wes, I got a job doing react. And I only know jQuery. And I'm finding it really hard to understand the back text, or the arrow functions, or understanding inheritance or any of these, like different concepts that come your way. And then it's just a bit of like, Oh, it's too bad, because like, you can kind of fight your way through it. But it would be better if you had the sort of rock solid or even, like, decent understanding of the language, and then picking up these new things would be would be so much easier.
+
+29
+00:16:59,010 --> 00:20:18,420
+Scott Tolinski: Yeah. Yeah. And, I mean, there's things like that, let's let's talk about like, ESX. Because, you know, it's, it's been available to us, essentially, for a large amount of people for a long time. But like I've interviewed for jobs in the past two years, that that don't use ESX at all, just because they feel like it's too much of a hassle. They're there, people don't understand the features. So they don't want to train everyone and stuff like that. I for me, I don't I like a lot of these things. You don't have to take the entirety of ESX features at once. You can spend time, slowly progressing your understanding of them, right? Like, oh, why are arrow functions useful? Why are they different than normal functions? Okay, I got that one. Next, you can move on and you can slowly sort of add each of these things like the spread operator, or, you know, object destructuring, or stuff like this, you can slowly sort of add them into your flow. And in that way, you can really take some time to marinate with these things. Have them like totally understand how they're improving your life on a day to day basis. But I think I mean, it is important to keep that stuff up to date, even if you maybe aren't using it at your job. Because come the time, when you you want to be able to advance or you want to be able to grow and they're asking for these skills, you want to be able to at least be able to speak to that or show some initiative to delay it to learn their speaking of staying up to date, there's one hosting company that is more than just staying up to date, they're bringing us way into the future. Netlify as netlify.com is a awesome new host that basically their slogan is right front end code, push it, we handle the rest. And that is so very true, because they offer so many insane features for front end code, static websites, all sorts of stuff that you just can't get with any other hosting platform. In addition to things like one click ssls prerendering, you have a built in content content delivery network. There's also some really amazing features like contact form handling, you have this sort of web hook deployment system. For instance, I was just talking with someone and they gave me this example of their their app, I static site updating every single time they tweeted. And that's made possible based on this really extremely simple API, where the Twitter API was just hitting their Netlify site. And it was telling Netlify to rebuild, Netlify would rebuild and grab all that stuff. And we're talking about statically built sites here. So there's just infinite possibilities for the kind of stuff that you can do with the Netlify API. And now they're having all sorts of excellent new features, like I mentioned, contact form handling, all sorts of stuff that you would typically need a server to do. And this is sort of really taking out all of any sort of the back end programming for you and then giving you a user interface to truly build things like that. Content Management System like sites with a blazingly fast static site generator using the jam stack, whether that's any of these from Jekyll to Gatsby to any of these amazing static sites, if you actually, if you want to learn more about six sites, we did a great episode last week about static sites.
+
+30
+00:20:18,480 --> 00:20:25,020
+Wes Bos: Yeah, that one that was like one of our most popular episodes in the last couple of months, I was super impressed at that.
+
+31
+00:20:25,340 --> 00:21:27,860
+Scott Tolinski: Yeah. So if you are interested headed to netlify.com forward slash syntax, and sign up, check it out. Seriously, I have never used a host that has had this, uh, I don't know, it's just this easy to use. And, and somebody was commenting on Twitter about my my cell job of Netlify in the last episode, and I was just so like, so darn genuine, I, like cannot stop talking about it. I've been telling my wife about it. And she does not do web development. She's just like, I don't care about this. So that's how much I love this service. Also, if you are looking for a job, they're hosting, or they're they're hosting, if you're looking for a job, they're hiring currently. So netlify.com forward slash careers, both remote and local position. So if that sounds like something you'd be interested, check out netlify.com forward slash careers. Otherwise, just hit up netlify.com. Check out some of their features. This seriously is a next level futuristic host for static site generators, as well as just front end code in general. Sweet. Hey,
+
+32
+00:21:27,900 --> 00:21:31,260
+Wes Bos: I got a question. Can you explain what jam stack is?
+
+33
+00:21:31,380 --> 00:22:05,880
+Scott Tolinski: So yeah, the jam stack is basically a JavaScript API's, and then markup to build your site, aka, you're not dealing with any sort of server side coding at all. So the JavaScript is, is writing your front end code, whether that is like a view, j s, or a React.js. Or just straight up JavaScript is JavaScript on the front end. Next, you have API's to handle all of your sort of server side stuff instead of managing your own server, and then markup to display your post. So you know, markdown files and stuff like that to be able to bring in all of your content.
+
+34
+00:22:06,930 --> 00:22:14,850
+Wes Bos: I'm so happy that there is now an acronym that has an acronym in it. So the jam, the A of the jam stack is API, which is
+
+35
+00:22:16,260 --> 00:22:19,470
+Scott Tolinski: we see Yeah, can we go deeper than that? I think we need to have another one.
+
+36
+00:22:19,500 --> 00:22:24,210
+Wes Bos: Yeah, three acronyms deep. So you've arrived in tech?
+
+37
+00:22:26,160 --> 00:22:26,850
+Unknown: Nice.
+
+38
+00:22:28,350 --> 00:22:54,330
+Wes Bos: All right. So um, let's talk about a little bit like why do you need to stay up to date in this industry? I think that like, obviously, you need to stay up to date, because things are changing. You don't want to get get left behind. But I think there's a lot of people who you're working on your team, you're working nine to five, and you're happy with your stack, and it's working well. So Scott, tell me why does someone need to stay up to date?
+
+39
+00:22:54,630 --> 00:23:12,780
+Scott Tolinski: Yeah, well, you know, not every job is permanent. And when you're looking for a new job, and the job resume, or the the job, you know, the posting or whatever says, Hey, you need to be proficient in SAS and ESX, and react and whatever.
+
+40
+00:23:13,740 --> 00:23:14,310
+Unknown: Well,
+
+41
+00:23:14,340 --> 00:25:12,690
+Scott Tolinski: what if all the jobs that you're looking for end up having to be to be like that, like, you might be sort of finding a really tough to find a replacement position, you know, that every time you lose a job is your fault. So you could find yourself in a situation where all of a sudden, your your comfy chair that you've been sitting on is no longer there. And there's no more comfy chairs out there. So you're going to have to look for a way to make your situation a little bit better. So I mean, in the hiring world, the stuffs the stuff moves fast, right? But honestly, I feel like the the job postings are always like, a little bit behind. So if you are feeling like the job postings and what they're looking for maybe like a little bit out of your league, or out of your range or something like that, you're gonna definitely need to stay up on that, or else you might not be able to find another position. Ultimately, also your clients, right, you might not believe this, but your clients have a pretty good handle about what's possible on the on the web, and whether or not they know it in technical terms, they use Facebook, they use Instagram, they use all these sites, and they see all these features in action, and they're just sort of like, Well, why can't we do this? You know, why can't I mean, honestly, the you know, the answer is Facebook has 1000 engineers in your, you know, maybe a smaller team, but they don't understand that aspect of they want to see these modern features, they want to see this, this really modern stuff and, and not all of the old techniques and the old code can do these modern features and techniques. So you're gonna want to be able to satisfy your clients or else again, you could get fired and and another thing is, you know, maybe your your just performance at work in general, you're getting passed by by younger developers who are making a bigger splash and the boss is sort of looking at their Work and looking at your work and saying, Wow, their stuffs a little bit more impressive. And that could you know, really hurt your chances for promotion or even the chance to keep your job. So I mean, maybe you're falling behind at work.
+
+42
+00:25:12,990 --> 00:26:51,540
+Wes Bos: Yeah, I think on that point there's there's a sort of a fine line between, like staying up to date for just to stay cool. Because I often you hear people throw the word out like hipster web developers, meaning that like it's it's almost like a meme how how much these people move around with the the new tack and are talking about the latest and greatest like framework called like scratch or sniffer, whatever it is that they're they're working on. But I wouldn't be so so fast. also write that stuff off, because at a certain point, this new tech is going to make both your job as a developer better, I think it could, because it's, you're going to have a really nice workflow, you're gonna be like, oh, wow, this is so much easier than I thought, as long as I get over that initial hump of learning. And as well as like, we need to be thinking about like, why are we building websites at the end of the day, and it's because this new tech is enabling better experiences, more sales, whatever it is, at the end game of your website, or your web app is, generally this tech comes with sort of an advantage, which it might be faster website. But it also might be faster turnaround, meaning that like you have a bit of a competitive advantage, because you can start pushing out new tech, like think about banks, and the banks are built on all this old tech. And it's so hard for them to roll out new tech and new features and new UI and stuff like that. And then what happens is that these, like new startups come around, where they're all based on this new tech, and they can move a little bit quicker, and they're a little bit more flexible. And that's generally a huge competitive advantage for it.
+
+43
+00:26:51,689 --> 00:27:55,080
+Scott Tolinski: Yeah, that's something Yeah, that's something I didn't even think about is this whole, this technical debt, this legacy debt of this stuff that you've built, and it's, it's becoming so old, that it's becoming harder and harder every single month, to be able to move it into the future. And, you know, maybe you end up being stuck in the past, right. And that is a very real concern, especially with some of this tech and not to say you need to be on the cutting edge cutting edge. But if you're not taking these steps to at least keep up with sort of modern times in your stack, you you run the risk of getting bounced out by, you know, the the, you know, the fast new app, I don't want to use the word agile in the sense of, you know, agile, you know, team stuff, but like, the more agile team that's able to come in there and sort of, you know, juke around you and be much more, I don't know, trying to keep some most sports references in here, but be like, you know, like, more athletic and just be able to surpass you and those kind of ways.
+
+44
+00:27:56,100 --> 00:29:17,130
+Wes Bos: I think another important point is that sometimes I find this myself, I would not like web development, if it stayed the same, or if it moved really close, really slowly. Because like, there's only so many things that you can do in web development, especially if you're working for an agency that works on a lot of the same kind of stuff. And I find that after maybe a couple years of doing something the exact same way, you start to get sick of it. Because it's not challenging. It's not, you're not coming across new techniques, you're not trying to solve any sort of new problems, you're sort of just going through the motions of building a credit app or styling a WordPress theme or something like that. And at least for me, I find myself getting getting really sick of that really quickly. And often, when I pick up a new technology, I feel that initially you are when you're first learning web development. And once you got past that initial, everything is broken, nothing works. But as soon as it started to work, and you're like, Oh, you get that like that feeling of like, This is so fun, and I'm super excited about it. I often will get that when I get past that initial hurdle of new tech and being like, oh, oh, yeah, I can see how this is gonna gonna be fun. So it's just fun to learn new stuff, and to always be changing how you approach problems. Yeah,
+
+45
+00:29:17,340 --> 00:29:41,820
+Scott Tolinski: I remember first learning, just JavaScript frameworks in general. And it seemed to me like I was at the time, I wasn't super good at JavaScript in general. And I didn't, I felt like everything was so scary and difficult. But then you're right, once you get over that initial hump, and especially with something like Angular that made that hump very, like minimal, like the very first version of Angular. Yeah, they're like, sort of two way text binding example, right?
+
+46
+00:29:41,939 --> 00:29:43,800
+Wes Bos: I should remember when that happened. I was like,
+
+47
+00:29:43,860 --> 00:31:24,960
+Scott Tolinski: Oh, no, I remember being like, I don't understand why this is any better than jQuery young and I was like, Well, I guess I'll try this out. And then I tried I was like, What? This is easy. What? Magic? Yeah. So like stuff like that. You get really, really excited all this whole new world. opens up of stuff that, you know, I often feel like I have superpowers with some of the things that I learned when I learned you're all of a sudden, like, I can do this. It's like getting a peek inside of the matrix or something right? You all of a sudden at Duke can do all this stuff that you couldn't do before. And it makes you just really super pumped. And, and I guess I just never like for me, like I do get that there's, there's a sense of like complacency, complacency where you like, show up to your job every day, you do the same thing. And some people really like that comfort of always knowing what to type and when to type and whatever. But I mean, it can be a major problem. I worked at agencies where years into sasses popularity, they were still calling SAS a fad, it might have been used by like a huge percentage of developers SAS is a fad, icon fonts, it's a fad, SVG, it's a fad, like at some point your websites or there's these, you know, slow WordPress sites that use images for everything and not that WordPress sites are bad. I'm just saying like, they're stuck in these old techniques. And they're just not willing to go because it's very comfortable. And so like, for that person, like how do you motivate that person who's very comfortable and is happy being comfortable rather than like the type like us who are like when I get comfortable, sometimes for too long? Maybe get a little bit stir crazy.
+
+48
+00:31:24,990 --> 00:32:31,560
+Wes Bos: Yeah, yeah, the flip side of it, I think for those people, you you need to know that this industry is not going to like I don't I don't like saying this, but this industry is not going to wait for you. And you have to always be staying up to date. It's just part of being in our industry. And the fact that you don't necessarily like to stay up to date, or you just don't have time for it like your boss. We'll talk about that in just a second. But like you, you work so many hours a day you got kids, you don't have any time you can't spend your entire weekend learning this stuff, because you've got other stuff going on in your life. And I'm a big proponent of I realize everybody has different different schedules and whatnot. But I'm a big proponent of just like not working on the weekends. And like, How do you stay up to date with that? So it's really important to know that, regardless of what situation that you're in, you need to know that part of your job will be I don't know, maybe it's five or 10% of your week needs to be dedicated to staying up to date with with what's going on. Yeah.
+
+49
+00:32:31,560 --> 00:32:32,550
+Scott Tolinski: Do you want to get into that
+
+50
+00:32:32,550 --> 00:32:33,270
+Wes Bos: now? Like how to
+
+51
+00:32:33,270 --> 00:35:02,010
+Scott Tolinski: stay up to date? Yes. You know, like you said, it won't wait for you. And you do need to make some sort of effort. Like we mentioned so many times in this episode, you don't need to be on the cutting edge, you absolutely don't. But do you need to have maybe a handle on some modern stuff you absolutely do. And for most of the time, I think it's the best way to approach it is to assume that no one has the ability to work nights and weekends. And and and grind on this stuff. Because let's face it, there are people that can and that do in the past, I have as well. But the overlying baseline assumption is that you're not taking the stuff out of your nine to five. So in that assumption, you need to find the best way to learn on the job. And I understand you're swamped with work, right, everyone's swamped with work. But you still need to find ways to learn whether that's sort of just finding something that's maybe like a little side project at work that maybe your boss knows about or doesn't know about. But it's not like a side project that's making you money kind of thing. That's something they could be mad about. Like, for instance, I mentioned another episode, I wanted to learn Angular at my job, there was no room to learn Angular, there was no client projects that could use Angular, I spent an hour maybe a day or so I mean, if you can't pull an hour or even half an hour out of your day, then not everybody is efficient. 24. Seven, at work, I'm very aware like I've worked at these these places before and not everyone's on on the clock grinding 24. Seven at work. So if you can't find like half an hour, a day to sort of dedicate to like, maybe just toying around with something that you need to maybe like look at your time and how you're spending your time. But I took this time to learn Angular, so instead of instead of just like learning Angular, and grinding away, I built a little checklist for our web developers to use in our, like a pre deployment checklist, right? And this could have been done on pencil and paper, but I decided to do it with Angular and use some new fancy things I wanted to learn like local storage and whatever. But that way if my boss was like, What are you doing? Like what are you working on to say, Hey, I'm building this, this little checklist for the team to use to go through their stuff before they deploy. They can check all this stuff, and it's it's going to impress your boss because it shows you have some sort of initiative to make things better, but it also gives you that time to Like really grind away on some new stuff?
+
+52
+00:35:03,480 --> 00:36:31,190
+Wes Bos: Yeah, I think when when I was doing a consulting and I wanted to learn something new, I was kind of in the lucky position where I was getting hired by Well, it was about half, just like companies who needed a website or a web app built in there, you they come to me because I'm the technical expert, and I can choose the entire stack. And then the other half of the time, it was existing tech teams coming to me and being like we need help with and when I was doing it is either we need help with JavaScript, or we need help with some more advanced WordPress stuff that that you're working on. And in that case, what I would I would try to do is to figure out one kind of new thing that I could work into every single project. So whether that was using SAS in a new project, whether that was install, setting up a gulp process was that was trying to find something where it was like, Ah, this probably could be done with jQuery, and it would be just fine. But I'm going to try to do this puppy in Angular, just for the sake of learning and implementing Angular into that one single thing. And that's sort of how I tried to do it into it. Because at a certain point, I didn't have time to necessarily learn on my own. So if I could get paid to learn, and that's ideal. And I could use that new tech in every single project. And that stuff adds up pretty quickly being able to try a new thing on every single project that you work on.
+
+53
+00:36:31,380 --> 00:37:41,010
+Scott Tolinski: Yeah. And I think it's also a good point to say like, these things don't have to be major leaps, right? You don't have to go to a framework or to whatever, they don't have to be these giant leaps forward, they can be little tiny leaps forward. For instance, you've always used images for icons, well, or an image font for icons, well, in this project, it's really not going to cost me that much more time to learn SVG. So I'm going to use SVG for icons. And that's like, basically, it's taking something small, right? Using SVG for icons, it's something you could learn in a day, right, and it's pushing the needle forward, it's giving you a little bit of an experience here or there. Or even like CSS Grid, you know, people say I can't use CSS Grid, but you can still learn it and write a fallback for it. And the amount of time that it's going to take for you to do that is not extreme enough, where it's going to set you back. Like I understand it's not efficient. And it's not as easy as just writing the same stuff you've always written. But it will push you forward. And it'll get you using those techniques, and it will open your mind and push the needle forward just a little bit.
+
+54
+00:37:41,010 --> 00:38:10,410
+Wes Bos: It's worth spending a little bit extra time. It's funny, any time I tweet about something, and even with my CSS Grid course, you get like this army of, like corporate devs come out being like, well, it's not supported in every browser. I'm like, Okay, thank you for telling me that. Yeah, maybe I should just shut this whole thing down for a couple years and and wait for it to catch up. There are ways that you can go around it if you cannot use it. And like Scott says, I think that's a really important point that you made there. Yeah, yeah, I
+
+55
+00:38:10,410 --> 00:38:57,030
+Scott Tolinski: didn't. So I mean, the the idea here is that you can find ways to learn at work, right? Whether that's the small projects or injecting things into your project, that doesn't fundamentally change the project itself, right? If the project guidelines are, the site needs to be a WordPress site, it needs to do this, it needs to do that. There's no there's nobody telling you. I mean, unless you have like a really, really over overreaching boss. There's nobody telling you, you can't write CSS Grid with a fallback for this the no, yes. Like, at the end of the day, people are going to care if it works, and you get your stuff done on time. And, and I do think that there is time and capability for everyone to add little things in here to push the needle forward. Absolutely.
+
+56
+00:38:57,479 --> 00:41:09,860
+Wes Bos: And one more thing while we're on that with the boss, because I get emails all the time from people being being like, okay, Wes, I'm so gung ho about all this new stuff, but the team I'm on, it's led by some stodgy old guy who hates everything new and everything that we do is totally fine. And it seems like sort of sometimes the the senior developer on the team is feeling a little bit anxious, that stuff is changing. And it's not necessarily stuff that they know how to do. So there's always this kind of weird thing where maybe the junior developer knows a little bit more, a lot more of it, because they're excited about it and wanting to try the new stuff. And the senior developers sort of just been like, Nope, it's fine. We don't compile our JavaScript. We don't try sass. We write everything like this. It's been working this way for 10 years. We're gonna do it for another 10 years. If that's the case, and I've run into plenty of situations like that, especially being a consultant, that I would be this whippersnappers that comes into companies. being like, Hey, everyone, what you're doing is garbage. So your company hired me to fix things. And people don't like you, when when they're doing that, because it's obvious that they needed to reach outside their team for some help. So when that was the case, what I would do is I would sort of put together a proposal, meaning that like, you have to spend a little bit of time putting together what the tech is why you might want to use the tech. So that was the big one is like people don't necessarily understand why I get this question on Twitter, like last week, people go, cool. It's cool that you really see react series, but why do I need react? And I was like, oh, like, I sort of forgot that some people don't even understand why you might need it, right? So you sort of can go through all the points and you start to make like a presentation, maybe a little PowerPoint, build a little app and show them how it works. And generally, if that is the case, if you can show that this actually has value, and I'm not just a hipster, trying to use new technology that will often push those those other developers over the over the hump and get them excited about it as well.
+
+57
+00:41:10,080 --> 00:42:58,350
+Scott Tolinski: Yeah, there's a certain like, show don't tell us well, right. Like, if you throw up a, you know, some some modern tech that's doing something, and it's way more performant, it's way faster, it's a way better experience than what they have, then that could that could very well be the thing that makes everyone go, aha, I get it. This is way better. I understand why this is why like just even looking at this example. Or the amount of code that you use to write this, this is just instantly something that is is an aha, so I think there there is a little bit that these people, sometimes they do, they don't see the point, they don't see the why and you need to give them that that aha experience you do, you need to maybe illustrate that a little bit. And, and in extreme cases, I know there's these these cases, and if you are the type of person who likes to push things forward, and you like to to stay up to date, and your boss is the one holding you back, right? Like if you're really excited about learning this stuff, but you're not getting these opportunities. In extreme cases, I would say that's grounds enough to try to find a new job. Like, I know, none of that's not for everyone, right. But for me, personally, I don't think I could be comfortable in a place where my boss was really denying me the opportunity to learn that much. And sure enough, people are gonna say, Well, you can't just quit your job. Sure, you can't. But you can look for new jobs. And you can look to see what's out there. And you can potentially find something a little bit more progressive, if that's if that's what you're looking for. I don't I don't want to say that you should quit your job or something like that without having something lined up. But it might be caused if if this person has you know, you've tried to reach out to them and talk to them that you want to grow in your position more, and they're not budging, then it might be time to start looking.
+
+58
+00:42:58,560 --> 00:43:41,640
+Wes Bos: Yeah, if you can't get them, often, what I'll see is, especially when I do corporate training I get there's usually one person who joins like a bit more of a corporate team. And they're all they're like the whippersnappers of the new tech. And then they'll bring me in to sort of get the rest of the team all excited about it. And in good companies, the they're open to that, because they know that tech changes, and you need to always be up to date. But in some companies, maybe it's just bad culture. And I think you need to think about your your dev career, maybe you have 2030 years left of your dev career. What is that going to look like? If you spend the next five years not progressing forward? You could be potentially hurting yourself long term.
+
+59
+00:43:41,879 --> 00:44:36,720
+Scott Tolinski: Yeah, I left to the the shortest I've ever stayed at a job with six months, in six months, I could tell that I was not going to to get what I needed out of that job. And I started looking because I mean, there's no shame in that there's no there's nobody saying you must keep a job for this long or whatever. If something is clearly like not making you happy, or not allowing you those opportunities to learn or whatever, on the job, then maybe you start looking because there are a ton of companies that really really put forward the idea of learning and progressing because those are those are the smart companies because it's it's, it's in their best interest to have, you know, their developers trained and on this stuff. So and honestly, in all honesty, if I if I had a team of developers underneath me, I would I would give them a lot of time to spend on personal learning and development if that's what they wanted on the job getting paid for it. Yeah,
+
+60
+00:44:36,720 --> 00:45:27,900
+Wes Bos: it's the way it should be. You start attracting top talent to you like you think about like, why does Facebook give developers time to work on react? Why does Airbnb give their devs time to do open source? Why does any company give their devs time to do open source and it's first because they need the the best tools in the industry, but it's also in a huge part of it is so that they can attract the top Tech, like, there's, there's reason why some of the best devs in the industry right now are working at Airbnb, Netflix, Facebook, all of these big companies. And it's the reason is is because they put out, they're known for being like the titans of the JavaScript industry, and they're going to attract the best devs that are out there. Yeah. Yeah, King of the best. Let's talk about a sponsor, which is, well, yeah, transition
+
+61
+00:45:27,900 --> 00:45:28,830
+Scott Tolinski: game.
+
+62
+00:45:28,860 --> 00:47:12,960
+Wes Bos: Oh, yeah, I'm trying to try to work on it. So our sponsor today is Freshbooks. And Freshbooks, is cloud accounting for your small business. And I'm gonna last week, I told a little little story about how I got how their customer service was great. And this week, I'm going to talk to you another little story that I have. And for 2018, I'm looking at doing my expenses a little bit differently. Currently, what I do is I just save all my receipts. And I hope that I don't lose any of them, and then line them up. So one feature that Freshbooks now has is in mud, they just rolled out my bank, I think in the last six months or so, the ability to hook into your bank so that you can auto import your expenses, right from your credit card. And that's great, because because i a lot of my expenses are in us in the receipts that I get are in us. But the conversion rate, it gets charged to my credit card, and Canadian. So what I've been doing is I've just been kind of converting it at the bank of Canada's rate for the year. But now what I can do is I can import them and I can expense it at the exact amount that I was actually charged on my credit card. And then when I do my taxes at the end of the year, there's no sort of discrepancy between, like maybe I'm out a couple hundred bucks or, or a couple thousand bucks because of the conversion rates. There's not going to be any of that. So I was really excited to see and they've had it for a long time. But specifically, my bank wasn't on there for for a while. And now they have it, which is exciting. They have support for pretty much every bank now. And I recommend that you check that out to auto import your expenses right from your your company's credit card. So go to syntax comm Ford slash Nope. Go to freshbooks.com Ford slash syntax and use syntax into the How did you hear about a section? Thanks so much to Freshbooks for sponsoring.
+
+63
+00:47:13,560 --> 00:47:19,800
+Scott Tolinski: Awesome, super awesome. So So I guess we've covered you know,
+
+64
+00:47:19,800 --> 00:47:20,430
+Unknown: hey,
+
+65
+00:47:20,430 --> 00:47:40,320
+Scott Tolinski: it's okay to fall behind, we've covered that, when it actually becomes a problem, how to make it less of a problem, right how to learn on the job, basically get paid to learn. And sometimes you need to just do it and not even ask your boss, you just need to do it. Right. What else is there hear about falling behind?
+
+66
+00:47:41,040 --> 00:48:10,530
+Wes Bos: Um, I think the other question is, okay, I want to stay up to date. What do I do? There's, there's so much stuff out there, what do I learn? How do you know what you should learn? What are the resources that I should follow? Like, what is the thing that I should read to stay up to date? People ask me all that all the time? They're like, like, what do you read? And how do you stay up to date and all that? So maybe we'll both go through? Like, what is our approach to staying up to date? You won't go first, or? Yeah, I
+
+67
+00:48:10,530 --> 00:49:25,080
+Scott Tolinski: mean, for me, we've mentioned this already once, but a strong handle on the fundamentals of JavaScript, or whatever your main language, if you're just a CSS and HTML person, a strong handle on the fundamentals, and like taking that time to grind away and that stuff is always going to be, you know, important. Now, I think there's some easy ways to have this stuff permeate into your life, whether it's following podcasts, such as syntax.fm, or other podcasts, right, or YouTube channels, and just following this stuff. Like, what kind of debt is watching a 10 minute long YouTube video that explains the arrow function to you like, that's nothing, right. So I mean, you could put one of those on a date or something. I think, for me, investing time and understanding the foundations, but also just just knowing that you don't have to sit down and invest your whole day in this stuff. So for me, getting into things that can permeate into you, whether it's becoming a fan of a YouTube channel, like level up tutorials, or becoming a fan of a podcast such as syntax, FM or something like this to to just let this stuff permeate into your life a little bit more.
+
+68
+00:49:26,069 --> 00:50:48,210
+Wes Bos: Yeah, pretty much the exact same way. I'm just gonna go through some ways that I tend to see people staying up to date for me, it's just Twitter. I'm on Twitter, like a good chunk of my day going through it. Which is funny because like, it seems like such a time waster, but for me, it's it's staying up to date having conversations like the other day I had a question about reacts new context API, asked a question and I got a whole bunch of like the people who are working on this stuff are replying some of the people that are in the forefront of Explaining how this stuff works, they're replying. And that Twitter thread alone is super valuable because I learned a lot. I know that people go through all the replies, read all their plays, and then they're up to speed that helps them know, Oh, I didn't even know react had a new context API or react has a new refs API. And I asked a question about it. And crickets, nobody replied, I had to go off and figure it out myself. And I came back and updated the thread with the information. And then whoever was following that thread now now is up to speed on that new and that's great, because it's not so overwhelming that you are sitting down and watching something, it's kind of just this passive reading of a couple tweets, seeing conversation between people, and you sort of understand what the cusp of of everything changing is.
+
+69
+00:50:48,450 --> 00:51:38,190
+Scott Tolinski: Yeah. And don't let that because that if you're, I don't know that the Twitter thing can if you follow like too many people that are like super cutting edge, the Twitter thing can also contribute to making you feel like you're behind. So maybe just like, like, maybe label some of these people as like, these are the cutting edge people and I don't need to, you know, necessarily be up on everything they're up on, but maybe just aware of it. There are like, you know, like the web dev, Reddit is a great place to stay up again, sometimes, you know, staying out of the comment section is a good idea. Because people just like make grand declarations, you know, like people either it's just an internet thing, but people would just make declarations like, this is wrong, this is right, this is the way to do it. This is not the way to do it. And that can also contribute. But yeah, even just simply getting the news, there is a little little story
+
+70
+00:51:38,190 --> 00:53:20,730
+Wes Bos: about that, actually, when I was first learning JavaScript, I remember when node came out, and I was so excited about it. And I was like, This is gonna be my thing. I'm gonna hitch my wagon to node, and I'm gonna, I'm gonna write it on the way up, because I think it's gonna be a big thing. And then this guy came out with this blog post called node j. s has cancer. And I, and I, like, I actually felt like terrible when that came out. Because I was like, Oh, no, did I just spend, like the better part of a year trying to learn this thing. And now this guy is saying it's cancer and Ruby on Rails is going to be the thing. And now I'm much more. Whenever I see blog posts like that, I'm like, Okay, this guy clearly hates it, it maybe has some valid points. But there's never going to be this like one blog post. That sort of just stomps out in entire technology, especially sometimes these people that write blog posts love to, to make these big, grand statements about about technology and put that away, because if the tech is really going to die, you're going the writing will be on the wall way before we before something like that happens. And I just like, look back at that now. And I'm like, You have no idea how like harmful that is to newbies to say something like no, Jess has cancer, because I thought that that was like, the end of my career. And I had just wasted all my time. And I should have spent it on Ruby on Rails where the reality is no, it's just some some goofy dude with a blog. And he obviously unpublished it now because if you look back at it, it's laughable. Clearly not cancer is clearly great. There's,
+
+71
+00:53:21,030 --> 00:54:09,990
+Scott Tolinski: there's something about that for everything, you could probably find a so and so's cancer post about like any given technology. And I again, yeah, that stuff, you just got to take with a grain of salt. Because Yeah, it's just one person's opinion. And that person may have their opinion formed on all sorts of factors. Maybe they run a Ruby on Rails shop, and it's in their best interest to drag node through the mud to get everyone else, you know, unexcited about it, so that they can, you know, maintain their level of, you know, income that they're getting. Yeah, that always bugged me a lot. We there used to be an old joke inside of our, his agency that we worked at, I'm sure this is a joke everywhere online as well, but the so and so is dead post, like blank is dead. Yeah. You know, it was always just, it was like, every single weekend, something else was dead web 2.0 is dead,
+
+72
+00:54:10,230 --> 00:55:02,580
+Wes Bos: or what was the other one it was, um, you attach a considered harmful to the end. Because there was a time when everyone was writing this tech is considered harmful. And then, and now it's now it's a meme where you sort of sort of say, like, syntax is considered harmful. Or I found another hilarious tweet I want to read it's, it's from kitzur. And I probably said it wrong, but I met him at a conference. And he's really involved in the React community and he's like Mr. Cutting edge and he tweeted the CoffeeScript plugin for Babel seven used in combination with create react app to and web pack for rocks so hard literally changed my life. And someone replied, I honestly cannot determine if this is a real tweet or output of some front end speak generator.
+
+73
+00:55:02,669 --> 00:55:07,680
+Scott Tolinski: Yeah, that's hilarious. That does it. It could very well sound like a robot wrote that.
+
+74
+00:55:07,740 --> 00:55:20,340
+Wes Bos: Oh that CoffeeScript Babel seven create react app to and Webpack for those are four things. I have not tried yet. Oh really is what Yeah, well, I know people seven. Table seven is about Yes, six quarters haven't
+
+75
+00:55:20,340 --> 00:55:27,180
+Scott Tolinski: learned that stuff yet. Well, what are you doing man behind? Yeah, what's going on there?
+
+76
+00:55:27,570 --> 00:56:48,450
+Wes Bos: Cool. Um, I got some other things How do you stay up to date? podcasts obviously, listen any of Peter Cooper's newsletters so Peter Cooper runs JavaScript weekly and knowed weekly, in front end weekly and all of these different weekly and he spends a lot of time curating good content, he's not just like kind of slinging a bunch of links into an email, like he spends a lot of time working on that. So generally, what I'll do is I'll just skim that every week, just to see I almost never click through to any of the stuff, but it's kind of just good to have the stuff in your head. And then if you start to see the same thing over and over and over again, then you can start to that's at that point where you realize, okay, this is not just cutting edge tech, maybe it's something that I can, can start to look at. And lunch and learns, I think are really cool. I thought it was really neat is that when I re released my CSS Grid course, like an hour later, somebody posted a photo of like four devs sitting in a room on their lunch with like sandwiches and my grid course. And they were just doing it together. Yeah. And I think that's cool. Like maybe once a week, it would do a brown bag lunch, and commit an hour, hour and a half to going through a couple of Scott or eyes video or trying to learn something together. Because if you're learning it together as a team, then there's that like, added benefit of being able to bounce ideas off each other or clarify it with with each other. Yeah,
+
+77
+00:56:48,450 --> 00:58:28,680
+Scott Tolinski: I think that's such a big thing. Because, you know, maybe you're not seeing the why but your your coworker is sitting next to seeing the why. But instead of you just sitting there not discussing that, if you're learning together, you get to bounce that, that why off, they get to bounce here, their excitement, or you get to bounce your excitement off of them. And that excitement can certainly be transferable. I mean, I didn't. I was like, like a lot of people. The syntax of react initially put me off from it. And one of my co workers was just like, no, you're dumb. This is so great. Here's why it's so great. And he was just like, always excited about it. And I just remember being like, well, dang, I think he just convinced me. And then I you know, eventually that's how I got excited about reactors by somebody else being excited about it, and then wanting to give that discussion while he was learning it. So yeah, lunch and learn. Super good. And on that same long along those same lines is meetups. I mean, every single week? meetup has a new different topic of something that you maybe it's interesting to learn, or maybe you're just interested to know that it exists. For instance, reason, I just went to a meetup about reason and react. Am I going to go use reason and react? I don't know, maybe sometime in the future, it seemed pretty cool. But I didn't go to that meetup to be like, Yes, I need to learn reason. I went to the meetup to say, hey, maybe check this out, see what's going on here, see what it what it's about. And just having that little knowledge, I know what it's about now. And I know what it's about in a different way, and maybe excited about it, whatever. But you don't necessarily have to go spend that time commitment to go learning and I'm going to spend half an hour listening to someone talk about why you might want to use reason and react. And that definitely, you know, that gave me it's good to have that
+
+78
+00:58:28,680 --> 00:59:22,140
+Wes Bos: sort of understanding of what it does, why people are so emphatic about it. And then I guess on the on the flip side, as well, it's important to note to people who are really excited about these cutting edge technologies. Often, people come off as like kind of like shamy, or like, Oh, this is the best and it comes off wrong. Because they're just so excited about this specific topic. It happens in people who are vegan or people who do CrossFit. Oh, yeah, where like, they just want to share with the world how amazing this technology is. But you come off a little harsh, and you end up putting a bad taste in their mouth. So generally, when when there's a new tech and you want to share it with someone, like it's often good to have some examples about why why it has changed your life or why you love to use it, rather than just being like use it, use
+
+79
+00:59:22,140 --> 00:59:22,740
+Announcer: it, use it. It's
+
+80
+00:59:22,740 --> 00:59:26,850
+Wes Bos: amazing. I can't say enough how amazing this is.
+
+81
+00:59:27,210 --> 00:59:40,860
+Scott Tolinski: Yeah, and also being respectful of other people's time commitments, and suddenly, everyone can go learn and not everyone has those opportunities. So not to be like you need to learn this but like, Hey, this is why it's cool, whatever. If you have time, you should maybe check it out.
+
+82
+00:59:41,820 --> 01:00:18,450
+Wes Bos: So hopefully that that puts a few of you at ease with the sort of crazy fast paging industry. Always remember that Scott and I are professional keeper uppers. And not necessarily everything we do is something that you should learn but by listening to this podcast, Hopefully it's you find out interesting things you find out about new stuff and then should there be a time that pops up where you do need to use the new tech here we go oh, I remember listening to syntax on graph qL maybe this would be a good project to to actually implement it for
+
+83
+01:00:18,630 --> 01:00:51,270
+Scott Tolinski: Yeah, and for me I guess the the big takeaway is like, you shouldn't like shame yourself or be upset about not staying up on things. But you should nessus you should become aware of maybe like the global state of the industry and make sure you don't fall behind the global state of the industry because if everyone in the entire industry is moving to this and you're not moving to this, it could become a problem but that said, little things framework changes little whatever don't stress out about it not when it can when you can don't sweat it Yeah.
+
+84
+01:00:53,640 --> 01:01:13,950
+Wes Bos: The again the twittersphere the people who are podcasting we are super into this stuff. And I would say a majority of the industry are nine to fivers who love it but don't necessarily aren't as as a head over heels as Scott and I are and the people who are talking about this stuff all day long.
+
+85
+01:01:14,100 --> 01:01:18,720
+Scott Tolinski: Yeah, and there's nothing wrong with it. You know those approaches? Yeah. It's all good.
+
+86
+01:01:19,379 --> 01:01:59,370
+Wes Bos: Awesome, so let's move into some sick pics. 76 shit pics. Wait, people we got to get the soundboard up again. people were complaining. The soundboard was gone. What's the Euro syntax. So we're just going to open up the soundboard real quick because we haven't had it open and people are complaining that we took it out. So there's some new sounds being added to it. So down there and shakes it. Neat. Neat. Exponential synergy. synergy. I'm garbage at this. Blaze and then what? Twitter Hayden
+
+87
+01:01:59,970 --> 01:02:03,810
+Scott Tolinski: downtown job. I'm glad Twitter Hey man in their
+
+88
+01:02:05,610 --> 01:02:08,400
+Wes Bos: downtown job shake. Shake shady.
+
+89
+01:02:08,400 --> 01:02:09,180
+Unknown: pretty annoying.
+
+90
+01:02:13,770 --> 01:02:14,970
+Oh, that's good.
+
+91
+01:02:15,270 --> 01:02:18,600
+Wes Bos: Where did that come from? This one's still my favorite though.
+
+92
+01:02:18,630 --> 01:02:19,890
+Scott Tolinski: It's 38 inches, man.
+
+93
+01:02:19,890 --> 01:02:23,130
+Wes Bos: Somebody told me you were talking about your monitor. Which makes sense
+
+94
+01:02:23,160 --> 01:02:24,420
+Scott Tolinski: because yeah, 38 inches.
+
+95
+01:02:24,420 --> 01:02:27,600
+Wes Bos: Yeah, you go we couldn't figure that one out. I love that one.
+
+96
+01:02:30,630 --> 01:02:32,400
+Scott Tolinski: Okay, sick picks you got a sick pick?
+
+97
+01:02:32,700 --> 01:02:36,390
+Wes Bos: I do. I was sick pick. Let me find one.
+
+98
+01:02:38,520 --> 01:04:21,300
+Scott Tolinski: Well, you're finding yours I got a sick pick. I this is a book I'm listening. I'm listening to the audiobook I've not read read this, I'm really interested in this book is been really good so far, like 90% of the way through. So if the last 10% sucks, then I'm sorry. But 90% of this book is so far great. It's called never split the difference, negotiating as if your life depended on it. And it's from an he's an FBI hostage negotiator. And he's writing this as like a in the in the in the seam of like a business book, but also how to just talk to people in general, if you need to negotiate, whether that's like negotiating big, big things like money or whatever or little things like, you know, just very small little things, basically how to talk to people to maybe not get them to be defensive or put them in like a negative position and how to always like sort of stay in a way that not necessarily puts you on the advantage in negotiations, but like puts you on equal footing or whatever, not to take advantage of people or something like that. But basically a way to talk to people and to negotiate with people without like turning it into some sort of, like I said, like someone on the defensive. So it's never split the difference by Chris boss. It was really, really good. Because it's like I said, it's like a business focused book. But it's all about this topic. And he uses all these anecdotes from his job as like a hostage negotiator. He tells you some really amazing stories about some some ways that they negotiated, negotiated out of some like really real major hostage situations that you would have seen on the news and stuff like that. So the guy's amazing. The knowledge is really good. Never split the difference really love this book.
+
+99
+01:04:21,600 --> 01:04:51,870
+Wes Bos: It's really cool. I think that's a that's a super good skill to have as as a developer, right? Like I think about like our own lives right now. And Scott just negotiated a pretty sweet deal with Netlify to sponsor this podcast, right? I've negotiated deals with like companies like Firefox to sponsor my my course, right? If you don't have those negotiation skills, then sometimes you don't have the money or the time or anything to actually put out the stuff that you wish to do, right?
+
+100
+01:04:52,230 --> 01:05:12,030
+Scott Tolinski: Yeah, yeah, and absolutely, and even in the relation to this episode, you need to negotiate with your boss to get some time to learn. Having the being able to present your argument as a way that like, yeah, these are some things that like are why it's important and to get your boss to see it instead of like, No, we just got deadlines, deadlines deadlines, you know. So yeah,
+
+101
+01:05:12,749 --> 01:06:42,540
+Wes Bos: it needs to be able to bring a clear argument to the table and, and be on their side, like, Look, I'm trying to build better experiences for our clients. So the business can make more money, in part of that is going to be furthering it. So I like that I'm going to add that to my on my audible list is getting really long, I need to go on some flights or something. It's been stacking up. Awesome. So my sick pick of the week is going to be a podcast, and what's it called, it's called. It's called containers. And this is really neat. It's a eight part audio documentary, it's available on all the podcast players. And it goes through how container ships work, you know, like these, if you have a ship, you put a container on it, and they take it off, and they put it on a transport truck, and you back that truck up to your target and take all the gear out of it. That industry is insane. How how containers work and how stuff gets shipped over from Asia to North America and shipped around the world. So they go through really how containers are like the backbone of our economy and in how the ships work and people that live on the ships. And I just found it's so so interesting. It has nothing to do with web development, but it's just one of those like, just tastes good. And one of those really nice, you know, when you watch it, yeah, it's a tasty treat. You watch a documentary, you're like, oh, that was a good one. That's exactly what this does. So it's a podcast eight, it's only eight episodes. That's it after you're done called containers,
+
+102
+01:06:42,810 --> 01:07:33,900
+Scott Tolinski: nice, sick, sick, sick, sick. So I'm going to shamelessly plug my pro Gatsby course which is on sale. Now. Basically, we go through the very basics of Gatsby, we explore the file system, we explore the graph qL data system, how you can tap into that use various things as an API, we use content fall, we use Netlify, CMS, all these things to have a real CMS experience for your static site. We also get into various hosting options, automatic rebuilding via hooks, and a little bit of fun stuff too with like the web animations API to do some animated page transitions. just general fun stuff. So pro Gatsby available right now on level up tutorials.com forward slash store, or you can become a pro and get access to all of the series on level up tutorials. So all that good stuff there.
+
+103
+01:07:35,190 --> 01:08:13,290
+Wes Bos: Wicked I'm going to plug my totally recorded react for beginners course it's at react for beginners calm. And to sort of celebrate. What I did is I put all of my courses on sale right now. It by the time you hear this, I think there should be maybe I have to extend it. I got to look at the right now as I'm recording got two days and 11 hours left. So I'll make sure that there's at least 12 hours after this podcast goes. goes live that if you're listening to this and you want to buy one of my courses, they're on sale right now. So go to react for beginners calm or learn no.com or ESXi. Oh, and pick up a course.
+
+104
+01:08:14,310 --> 01:08:15,120
+Unknown: sick
+
+105
+01:08:15,150 --> 01:08:24,450
+Wes Bos: sick. All right. I think that's it for today. Thanks so much for our sponsors, Netlify and Freshbooks. And we'll see on the Twitter's e pace.
+
+106
+01:08:27,960 --> 01:08:36,979
+Scott Tolinski: Head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

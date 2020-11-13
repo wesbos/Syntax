@@ -1,0 +1,556 @@
+1
+00:00:05,970 --> 00:00:11,250
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:13,650 --> 00:00:15,720
+Unknown: Hello, everybody, welcome to syntax.
+
+3
+00:00:15,720 --> 00:01:02,940
+Wes Bos: My name is Wes, I realized we could never introduce ourselves and people are emailing me that they're brand new the podcast. My name is Wes. And this is Scott. And this is a podcast that we do about tasty treats and web development. Today, we're going to be talking all about what's new in CSS. So there's actually a lot of new stuff that's being added to the language, CSS is not standing still at all. And there's some really exciting stuff that we're sort of on the verge of being implemented in browsers or already in browsers that we can start using today. So we're just gonna rattle through a handful of the the new things and talk about what they are and when you might want to use them. This episode is sponsored by Freshbooks, as well as a company called bug replay. And we'll talk about both of those companies partway through the episode. So hello, Scott, how you doing today?
+
+4
+00:01:02,940 --> 00:01:25,830
+Scott Tolinski: Hey, I'm doing good. I am getting over awful flu man, it seems like I've been out like every other week, for the past few months. Yeah. But uh, I'm on the up and up here. Um, I got a little bit of a cough. So I'm gonna cough away from the microphone, I'm feeling a little bit better. And today is probably like the closest I felt to 100%. So just excited to be back and feeling normal. How about you,
+
+5
+00:01:25,859 --> 00:02:13,050
+Wes Bos: that's exciting. I am great. I'm just about to head off in a couple days to Paris for the.js conference, which I'm pretty excited about. It's a, it's a pretty neat conference, say they don't have any Wi Fi, which is really cool. They put it in this beautiful theater, they don't tell it's one track conference. And they don't tell you either what people are speaking on or when they will be speaking. So you pretty much just sit in this room and you have no idea who's coming next, you have no idea what they're going to talk about. And you can't be on your laptop or the Wi Fi. And the talks are only 18 minutes long, which is making me so much more nervous than it would for a 45 hour long talk because I need to get my my talk across without in that 18 minutes. But I'm pretty excited about it. It's gonna be really fun.
+
+6
+00:02:13,500 --> 00:02:18,210
+Scott Tolinski: Yeah, that venue looks incredible. Yeah, looks is gonna be very, very cool.
+
+7
+00:02:18,300 --> 00:02:37,830
+Wes Bos: As every time I go to a conference in, in Europe, they're out these like amazing, old theaters and stuff like that. And it's just like the theater is the best possible place to have a conference because it's just so comfortable. And it's so much better than just like having these chairs that you're trying to squeezed in between all the other developers. Yeah,
+
+8
+00:02:37,880 --> 00:02:38,910
+Scott Tolinski: yeah.
+
+9
+00:02:39,440 --> 00:03:10,290
+Wes Bos: So let's let's dive into it. We're going to talk about it. Maybe we should talk about the the term CSS for we get into any of this because people tend we had CSS three and CSS three was just this monolith that contain all kinds of new additions to CSS, and it was really exciting. But the next iteration is not called CSS for and I don't know, Scott, you wanna take a? It's nice to call it CSS for but yeah, you get your head bit off when you say so maybe you can explain to us what is this?
+
+10
+00:03:10,740 --> 00:03:54,480
+Scott Tolinski: Yeah, so the thing about CSS, the reason I like the word CSS for even though it's not accurate, is that like, it gives you something to search. Yeah, here's let me look at two CSS for and see all the stuff but when the way it is now is actually each sort of thing is getting a layer version to it now rather than like CSS as a whole. So that's going to be CSS selectors layer for, you know, here, the next iteration of CSS selectors. So different components of CSS are getting different upgrades and stuff at different times. And it's not some sort of monolithic huge upgrade from version three to version four overall of CSS or something.
+
+11
+00:03:54,540 --> 00:04:33,029
+Wes Bos: Exactly. And if you want a list of what all these things are, go to draft, CSS wg, that's a CSS Working Group. They're the people that sort of steer and talk about and have meetings and do all of the hard work of deciding what will be put into CSS before the browsers actually go ahead and implement it. And we have things like CSS animations, one CSS animations to CSS multi column two, and it's kind of neat to see like, what is coming scroll anchoring scoping, scroll, snaps, scroll bars, sizing templates, tables, transitions, media queries, lay level five. Wow.
+
+12
+00:04:33,029 --> 00:04:33,720
+Unknown: Yeah, so
+
+13
+00:04:33,720 --> 00:04:49,379
+Wes Bos: some pretty neat stuff. It's it's I don't know, if you have some, it's not like light reading this, this working like props to the people that that comb through these, these drafts because there's a lot of good nuggets in there, but it's very dry and very technical, to be able to comb through it.
+
+14
+00:04:49,759 --> 00:04:58,740
+Scott Tolinski: Yeah, I remember the first time I hit this site, you know, back in the day, and I was just like, what is this like, this doesn't tell me what I need to know. Yeah, but it's just that I didn't know how to read it.
+
+15
+00:04:59,250 --> 00:05:16,560
+Wes Bos: It's more fun. Like browser, like people who work on Chrome to read and write, and then they implemented into it. And then guys like Scott and I will come along and hopefully translate that into something that's a little bit easier for everyone else to digest and a blog post or video or whatever it's gonna be.
+
+16
+00:05:17,040 --> 00:06:04,379
+Scott Tolinski: Yeah. Yeah. So I mean, that's, that's awesome about CSS is that it's just, it's growing. And it's, it's not stopping. It's not stagnating, we're not, we're really in like a really amazing time in which, like, instead of sitting there and wondering, like, when will Porter radius is being CSS, you know, we can see these things coming in. And we can see that, that it's constantly improving, and we can actually have a hope that these things like, you know, like element query IDs or something like that are going to be usable in a legit way very soon. So, you know, I, for people who don't like CSS, I don't know, to me, this is like another thing. This is man CSS. This is great. Because it's, it's growing, it's evolving, and it's, it's becoming better and better all the time.
+
+17
+00:06:04,409 --> 00:08:01,620
+Wes Bos: Yeah, exactly. And also, for people who also often have gripes about CSS, it's worth getting, you're putting some time into these things and chiming in on on it before they become standards, because often you'll see like, like today, we'll talk about CSS variables, people say that looks like garbage. And it's like, well, there's things that you need to know about the the entire process and go back. So actually, let's let's start there, with the first feature. And this is probably the one that I'm most excited about in its CSS custom properties, or likely what you have referred to as CSS variables. And the way that they work is that you can declare variable very works similar to how sass works where you declare a variable. And then you can just go ahead and use that variable in your CSS. Now there's, there's a bunch of stuff that you sort of need to know about how these variables work. So first of all they are the syntax for them is it is a little bit funky. It's the way that you declare a variable is inside of any selector that you have. And we'll talk about scoping in just a second you say dash dash, the variable name, colon, and then you give it the actual value. So much like you'd have a property value like background red, you could just make a variable called background color, dash dash background color. And then you would say colon red, or colon Ba, da 55. If it was a hex code, you get the point, right, and you can put any value into a variable, whether it's a number, a string, a unit, a percentage, any piece of CSS that you want any value they want to put into the variable, you can then when you want to turn around and actually use these variables, use the CSS function var, so you say var, open parentheses, and then you put the name of the actual variable, which is dash dash, the name of the variable that you have then made up so I have actually gotten used to it initially, I was like me, come on. That's the syntax dash dash,
+
+18
+00:08:01,949 --> 00:08:15,329
+Scott Tolinski: especially after you know how nice and terse the sass and stylish syntax for declaring and using variables. Yeah, I mean, the transcript to go from transparent variables and stylist to this was a little bit shocking.
+
+19
+00:08:15,360 --> 00:08:50,880
+Wes Bos: Yeah, exactly. But that's that I've gotten used to it. And I also think that SAS is not going anywhere, I don't think I think that SAS will be adapted to use these variables. So if you rather use $1 sign variable, and just have them transpiled to native CSS variables, that's totally fine. Go ahead. Go ahead and do that. You don't have to necessarily use that syntax that you're using. On the On the flip side, like I don't know, bite and chew. It's not that bad. And you can, I've learned to like it over the last year or so of using them in little demos here. And there.
+
+20
+00:08:51,330 --> 00:09:46,520
+Scott Tolinski: Yeah, likewise, and definitely after you learn a little bit about some of their their superpowers. So I guess some of those powers come in with something like scoping right. So one of the ways that you define your variables is to scope them to the root of your your CSS, so you do it with a colon root brackets, and then define your variable within there, right. But then you can also scope your variables to any selector and allows you to not only override already defined ones that were defined in your route, or maybe even a parent selector, but allows you to really, you know, tune your your variables. If this variable does not exist outside of this selector tree, then then you will want to define it within that right. And if it is used throughout your document, then you can define it in the root and have these things scoped to different ways. So I really like that aspect of the CSS variables.
+
+21
+00:09:46,590 --> 00:10:34,320
+Wes Bos: Yeah, me too. And I think the best way to think of it is, is if you put a variable on an element, all of the data element and all of its children will have access to that variable and nothing above it, nothing below it will actually have access to it. So you can have global variables like I've been using them quite a bit for colors in my especially cuz I'm doing my CSS Grid course I don't use sass or anything like that. But the the kind of the downside to that is I always want to use nice colors. But I don't want to make people type the hex code to that nice color. So what I would do in the past this, I would find all the fun built in ones like misty rose and pale golden rod yellow and, and whatnot. But now I can just tell people to use dash dash yellow, and I'm going to use the specific yellow that I like to use, not the built in ugly yellow that comes with CSS. So pretty neat.
+
+22
+00:10:34,860 --> 00:12:00,330
+Scott Tolinski: Yeah, for sure. And then for more scoped variables, it would make sense to maybe use things for like, if you're doing a square, you could have the the size of the square be a variable, and then set that to the height and weight. And then that is something you're never going to use outside of that particular element. But maybe like you said, colors make more sense globally, I don't know about actual dimensions sort of stuff makes sense more locally. It's one of those things that's by per case basis, what you like to use. Another really awesome feature about CSS variables is, these aren't in sass or stylus, you write your variables. And when your form compiles, right, your your hex value or whatever is dispersed across your CSS, and it stays there. However, with CSS variables, the variable itself is stays in your CSS. And what that means is if you modify or update that CSS variable, let's say with JavaScript, right, any place that you're using that variable in your CSS is going to change automatically. Unlike with sass or stylus, you'd have to update each individual hex value, because at the end of the day, those color values or whatever you're using is just getting out put into CSS. So the CSS variables are actually dynamic. And that I think that is their most powerful feature, maybe the killer feature for CSS variables.
+
+23
+00:12:00,360 --> 00:14:50,070
+Wes Bos: Yeah, exactly. On my JavaScript thirty.com. As I always like to plug my own stuff, d3, we actually show you how to use CSS variables with JavaScript. So you've got this like kind of little design where we have a picture and it has like a border around it, and then it, you can also change the blur. And you can change the background color of the actual image. And those three things are inputs. And when you change those inputs, we use JavaScript to then select the either the root element or the element where you have your element scoped to. And then you can overwrite the variable in that case, and CSS will go, Oh, this has changed. Let me then rerender, the CSS that was also using that variable. So that's the killer feature for CSS variables. As Scott said, sass, nothing else can actually do this. Because it's, it's it's compiled unless you're unless you're like less, or whatever was being compiled in the browser. But in this case, the variables live in the browser, and they're not compiled at any given time. I want to talk a little bit more about these variables in the browser, because there's this article on CSS tricks the other day, I'll find it and link it in the show notes. But it was an awesome way to sort of as you author your HTML, you can pass CSS variables as you as you want to go ahead. So if you've ever wanted to do like a tooltip, or you've ever wanted to set a color on an element, as you're authoring the HTML, what you can do is, rather than use like a data dash attribute, which I've used quite a bit in the past, and then you've had to use JavaScript to pick up the data attributes, and then inject them into your CSS, or using an inline style property and overriding them. In that case, what you can do is you can just write your element like a paragraph tag, and then you write an inline style called style equals, and you can just set your variables on that element. And there'll be scoped to that element. So I could say, open paragraph tag style equals dash dash background, or dash dash padding, or it doesn't have to be anything related to CSS, I could say dash dash dog's name or dash dash tooltip or dash dash on hover show. And then in your CSS, you could then pick up those values, using var dash dash, the dog's name or dash dash tooltip value and display it via content or change the background color. Because the cool thing is you can just set the values and then you can attach PX or you can you can pass them through calc, which is pretty cool. So if you're doing a square, and the width of the square is 100 pixels, or sorry, you're doing a rectangle and you wanted it. You could pass it through calc and divide it by two and then get a a nice little rectangle based on only one value that you've you've passed in there.
+
+24
+00:14:50,640 --> 00:15:27,690
+Scott Tolinski: Yeah, I one of the things I love about all these new features is they're sort of taking the things that we could do with, you know, pre processors in JavaScript and thing I mean stuff you could do with CSS before, but there was always a pain. And now it's going to be all within CSS. So you end up getting these extra little features that just make your life a little bit nicer. And anytime you don't have to touch JavaScript or something like that, superduper nice, Love it. Love being able to, I don't know, just be able to interact with variables like this in a way that isn't require you to do any extra work.
+
+25
+00:15:27,690 --> 00:15:28,549
+Unknown: Mm hmm.
+
+26
+00:15:30,600 --> 00:15:32,010
+Wes Bos: Do I mean talk about the next one.
+
+27
+00:15:33,330 --> 00:15:36,450
+Scott Tolinski: This transforms the I'm not sure what you're okay, here. Yeah.
+
+28
+00:15:36,840 --> 00:17:19,410
+Wes Bos: Another huge pain point that CSS variable solves for me is what I like to call independent transforms. Meaning that currently in the browser, if you want to translate x, something and rotate y something, you have to pass those in just one single transform property, to use a transform, rotate x and translate y. And we are getting the ability to do top level like rotate value. But currently, it does not supported across all the browsers. So where that becomes a problem is let's say you have two different transforms on an element, you have rotate x and translate y. And then when you hover it, you only want to change one of them, there's no way to just update one of them, you have to rewrite the entire rule by rotating x and then finally figuring out what the Y was on the initial state and setting it back to the exact same value, so won't mess that up. So that's a bit of a problem, especially if it's dynamic, you don't know what that value is going to be. So by doing this, what you can do is you just say, rotate x, var dash dash x, and translate y var dash dash y. And then when you hover over top of it, or you add a different class, you don't have to reapply any sort of transform, you just change the value of the variable. And that will kick in your your transform, and it'll transition itself or change its actual value. So there's no reapplying any extra any extra property values in your CSS selector, the only thing that will happen in your selector on hover, is updating the variable and everything will take care of it from there.
+
+29
+00:17:19,799 --> 00:18:00,900
+Scott Tolinski: Yeah, that is tasty. Because how many times that you got to do that so many times were you like you said you have a hover state, you are applying some sort of transform. And you have to either remember or worst case if the one of the properties is dynamic, have to reinitialize that what happens if you want to update the initial state and have to update the initial state and the hover state? Yeah, killer feature right here. Love this. Yeah. And the same thing works with like media queries, right? I mean, this is also super tasty. So if you like set your variables, and you want to adjust them, you can just simply update the variable within the media query, rather than rewriting the CSS to overwrite.
+
+30
+00:18:00,990 --> 00:18:21,859
+Wes Bos: Yeah, you can, you can have, like, I know, we're not supposed to say like media query phone, because phones are dynamic. But if you have like a large a medium and a small media query, and you want to change what those values actually are, then you just change the value of your variable. And I know we've all had this in SAS before, which is pretty cool. But you could you could possibly even do that dynamically.
+
+31
+00:18:22,609 --> 00:18:26,400
+Scott Tolinski: Yeah, I think that's that is, that's gonna be really super nice.
+
+32
+00:18:27,560 --> 00:19:00,900
+Wes Bos: Yeah, one other Well, let me say one other thing is, you know, box shadow, where, you know, with with background, you always have properties like background color, background size, background attachment. And if you want to update like a piece of your background, you can always just override it with a specific property. With box shadow, you don't have the ability to say like box shadow x, right? It's just simply box shadow. So if you ever wanted to update the color of your box shadow without messing with any of the other values, then you can just put set that to a variable and simply update the actual variable.
+
+33
+00:19:01,230 --> 00:19:27,240
+Scott Tolinski: Yeah. So essentially, what it's doing is it's making it possible for any of these properties, like any, any time that you don't have access to each individual property, or each individual value of a specific property, right, like, like Bach shadow, it allows any of them to be dynamic. And then that sort of mind expanding right there, because you've never been able to do that. And pretty cool. Definitely pretty cool.
+
+34
+00:19:28,530 --> 00:19:49,020
+Wes Bos: So let's move into the the next piece. And this kind of works well with CSS variables. And it's something that I've that we've actually had for quite a while but I didn't even know we had all of these. So that's CSS filter, where you can click this link in that I don't know if you click the link in the show notes. But did you know we had filter drop shadow?
+
+35
+00:19:49,710 --> 00:20:56,940
+Scott Tolinski: Yeah, and I've actually used it now filter drop shadow is a little tricky. If you are applying it to something that's like a div full of other divs different browsers we'll sort of look at the different ways I had a situation where I think I forget which browser was but it was Safari or one of them. Let's say I had a div with several divs in it, right? Yeah. Whereas I believe it was Safari was applying the drop shadow individually to every single div where Firefox and Chrome, we're applying it to the container div itself. So they weren't necessarily using these in the same sort of way. The reason why I was using this shadow filter instead of like a box shadow is because the background container was sort of an abnormal shape. And I wanted the shadow obviously, to work well with that shape. Now, like I said, it was sort of like the children were getting the shadow rather than the container. And I had issues there. But I have used a lot of these properties to I mean, even way back in shoot a long time ago, I was using filter gray scale like you heavily on the level of tut's site blur
+
+36
+00:20:56,940 --> 00:20:58,050
+Wes Bos: quite a bit.
+
+37
+00:20:58,580 --> 00:21:11,880
+Scott Tolinski: Yeah, blur quite a bit. Like I said, I use drop shadow, I did have some performance issues with drop shadow. But again, it could have been the use case where you're applying it to a thing with lots of children in it rather than the thing itself. You know,
+
+38
+00:21:11,970 --> 00:21:54,540
+Wes Bos: yeah, there's always that like, sort of like, this thing will never change. Should I just do it in sketch or Photoshop and export it? Or should I actually calculate it every single time on page load? So you do like, these are the things that cause your application to sometimes jitter. Because they have to often repeat, especially if you have something that's moving, or you have like a hover style and a transition over top of it, they have to repaint themselves pretty rapidly. And that can cause some jank. So something to be something to be aware of. But I definitely wouldn't wouldn't shy away from them in your so what this drop shadow is, if I have like a PNG, that's like, just a transparent PNG, it will then trace the PNG with the drop shadow. Yeah.
+
+39
+00:21:55,440 --> 00:22:24,869
+Scott Tolinski: Yeah. Yeah. So the thing about the CSS filters is one, the support isn't great. It doesn't work in IE, it has like partial support in edge works, and pretty much everything else except for Opera Mini, but I haven't necessarily found their performance to be like, excellent, you know, yeah. Okay. But you know, that's, that's my use case, right? Who knows? And these things are probably just going to get better all the time. But yeah, these CSS filters, which I guess we haven't listed out, yeah,
+
+40
+00:22:24,900 --> 00:22:27,420
+Wes Bos: yeah. Why don't you rattle through them real quick? Yeah, let
+
+41
+00:22:27,420 --> 00:22:55,740
+Scott Tolinski: me pull this up. I mean, we have, we have blur. So you can blur something, we have contrast, which allows you to tweak it sort of the the contrast values, a lot of these things are just like, you could think of them as like Photoshop, layer styles or whatever, we have a grayscale, which will make something D saturated, we have hue rotate, which is going to like rotate the entire color wheel, sort of really tripping out your colors in
+
+42
+00:22:55,770 --> 00:22:57,810
+Wes Bos: different ways. With that,
+
+43
+00:22:58,020 --> 00:23:19,890
+Scott Tolinski: yeah, right, exactly. And then we have drop shadow, which allows you to, like I said, add a filter shadow to something which is pretty darn cool. because like you said, if you have a transparent image, it's going to trace that image and do a shadow on that image itself, rather than the square around the image, which was like never useful ever. So yeah.
+
+44
+00:23:20,820 --> 00:23:39,570
+Wes Bos: There's quite a few of them. And it looks like you can also create your own filters via SVG, and just link out to an SVG filter URLs, not something I have ever actually seen before. So I'd be I'm really curious to give it a shot, because SVG itself has a whole subset for for doing these things like blurs and whatnot, right?
+
+45
+00:23:39,899 --> 00:23:55,230
+Scott Tolinski: Yeah. Yeah. And that SVG can get a little intense too. So man, props to anyone who's out there, really cutting the edge of SVG sort of filters and transforms and stuff like that. Definitely, really cool stuff.
+
+46
+00:23:55,919 --> 00:24:11,490
+Wes Bos: It's always neat to like, find these little, these little corners of the web that are actually massive and have so much to them. You know, like, I just want to pop a little filter on something, it just opens up this entire new world of, of SVG and filters and whatnot. It's pretty neat.
+
+47
+00:24:11,879 --> 00:24:37,320
+Scott Tolinski: Yeah, I'm sorry, we were missing a couple of filters there. I think my list was incomplete. Yeah, there's also a brightness. There's a contrast filter. There is. Let's see. We said he rotate. There's an invert, which will invert the photo. There's an opacity filter, which I'm not entirely sure why you'd use over capacity itself. But there is no capacity filter, saturate,
+
+48
+00:24:37,679 --> 00:24:42,090
+Wes Bos: does that apply it to all? That would obviously apply it to all children as well? Right.
+
+49
+00:24:42,510 --> 00:24:44,640
+Unknown: Yeah, but won't opacity do that?
+
+50
+00:24:44,669 --> 00:25:00,330
+Wes Bos: Yeah, that's what I'll pass. It does. That's always like, that's sort of like the downside. If you want to have like something behind something that is opaque. Or I don't think that does anything different though. I think it's because when you want to mix and match these things, you can put them all in one, one big filter. Yes.
+
+51
+00:25:01,589 --> 00:25:05,640
+Scott Tolinski: Makes sense. And then there's the sepia filter for old timey photos.
+
+52
+00:25:08,130 --> 00:25:15,630
+Wes Bos: Oh, that would be a great idea to do one of those photo booths where you put on like, like a Western wear and, and have like a bottle of moonshine
+
+53
+00:25:15,810 --> 00:25:18,150
+Scott Tolinski: even better, it could put those things on it for you.
+
+54
+00:25:18,599 --> 00:25:21,119
+Wes Bos: Oh, that's a great idea, machine learning.
+
+55
+00:25:24,690 --> 00:27:48,720
+Scott Tolinski: Cool. So I think that might might be a great time to take a break to hear about a bug replay. Now, a bug replay is a really cool service that you know how many times you've worked in teams, and you're you're doing testing for bugs, and maybe something's come across and non technical person has found an issue. And they're saying, Well, when I go to do this thing, it doesn't work. And you're thinking, it'd be really great if I could get a bug report. And I didn't know exactly what they were doing. Because sometimes user reports aren't exactly the most, you know, they're not exactly the most clear things, I've gotten user reports that are just sort of like you were doing what and what happened, I don't understand. So a bug replay does is it basically facilitates communication between devs and non devs. In the hope of finding and solving bugs with a simple browser extension for Firefox or Chrome, it's super easy that your tester can go through your site, use use your site, record what they're doing, it's going to record a video, it's going to give you the entire you know of any sort of bugs or any sort of error notes that come up. And it's going to give you the video in real time so that you know exactly what's happening alongside of what the user was doing. You're getting all of your bug reports and everything like that integrates with slack and GitHub and JIRA. It's superduper, cool, you can create a shareable URL for the video bug report. So that you can send it off to anyone who's working on anything and say, hey, check out this. This is what happened. Here's the video. And here is the bug report. There's also with a paid account, there's also unlimited users, so they don't charge per team members. So if you have a large team that could get really super nice for you. I know I've been in just so many large team situations where again, you've had issues and the person reporting the issues is not reliable. So bug replay that bug replay.com will definitely give you all of that information and more. Like I said, it's giving you pretty much everything you need to know from environment data. What's your browser operating system, location, memories, cookies and stuff like that. So check out bug replay.com a nice way that you can solve your bugs for both tech and non tech people.
+
+56
+00:27:48,840 --> 00:27:58,650
+Wes Bos: That's awesome. I think anytime you have to ask the user what browser you're on, you're doing something wrong, because yeah, that information should be logged somehow. And this is a fantastic way to do that.
+
+57
+00:27:59,460 --> 00:28:06,540
+Scott Tolinski: Yeah, absolutely. Not only that, you get a video as well. Whoo. Yeah. Super cool. Awesome. Let's,
+
+58
+00:28:06,540 --> 00:28:39,630
+Wes Bos: let's keep going with some CSS, not for some next level CSS stuff. And that is, let's talk about some of the the color functions that we have. So our GGP gbba which is you're allowed to have hex values, and then you can tack on an opacity value onto the end. So if you have Ba, da 55 and you want to make it 50% opaque is that the word transparent 50% transparent. Okay, because I get yelled at all the time where
+
+59
+00:28:39,630 --> 00:28:42,270
+Scott Tolinski: I think you could say opaque 50% opaque, but
+
+60
+00:28:42,630 --> 00:30:33,240
+Wes Bos: there's one word that means that it's completely see through anyways, you get the point we want to have arameans see through opaque means that you can't see through it. Okay, that makes sense. Yeah. So the AA on the end of your hex code is the the alpha value. And if you want to pass a 50% value through it, you have to pass it through in hex, which is impossible to remember unless you're one of those people who can knows how to calculate hex values. So I have this little StackOverflow that I have bookmarked because when you're actually when you're developing a Visual Studio Code theme, which Michael ball to is they actually use RGB 100% is pound FF and zero percent is is lB 00. Right? So everywhere in between, like if you want 50%, that's clearly 80. Or if you want 85%, it's clearly D nine, right? Makes sense. That would be I'm gonna throw this request out there someone who can make a alfrid extension that will allow me to quickly view and copy these to my clipboard because I do use them fairly often. Because the colors that I use, I always remember what they are in hex, but then I have to I just love my work. Maybe this will move to the next one, which is, I just want the ability to do what I do in stylus or sass and pass something one kind of color, like RGB or hex or just a named color. And then I just want to apply an alpha to that. And we are actually getting that with, with these different color functions that are coming to CSS, you'll have the ability to have a color function, you can pass it a color, and then you can you can tell it to alpha itself up 50%, or whatever the word is for that. And that will compute that actual color with the the alpha layer. And,
+
+61
+00:30:34,109 --> 00:31:11,910
+Scott Tolinski: yeah, one thing on rgg VBA, I use this in a much less a much less strict version than I would typically with like 80% opacity, I'm more or less looking at this and feeling like, well, this looks like an A to me, and then I'll apply it and do it by eye. So I don't necessarily go like who knows what percentage that actually is. I personally don't go ham on the percentages there. And I just go take it into like the general ballpark. But obviously that's that's not exactly exact, you know?
+
+62
+00:31:11,940 --> 00:31:29,130
+Wes Bos: Yeah. Yeah, it's, it's good. It's nice in a little pinch, if you're doing a demo. And I know most people have in their production application, they will have sass, but anytime you're doing like a quick little demo, you don't have sass at hand, and you want to be able to apply. So ampacity to something this is fantastic. In this case.
+
+63
+00:31:29,609 --> 00:31:58,410
+Scott Tolinski: Yeah. These color functions. What's cool about these is that we started to see color functions a little bit already. Using, you know, obviously, like RGB, a and hsla, and RGB. Those are all color functions, right? And so these new ones are just an extension of that, right? These are just the next level of our color functions. In what we have alpha saturation, lightness, whiteness, blackness, yep, those all of them, I think.
+
+64
+00:31:58,410 --> 00:32:51,240
+Wes Bos: So those are, though none of those are currently implemented. And if you actually want to see sort of what is coming, you can go to CSS next. Because CSS next is like, it's sort of like a preprocessor for stuff in CSS that we don't have it sort of like Babel for CSS, and it will try to transpile as much as they can into whatever the current equivalent is, obviously, some of the stuff is impossible, like variables. But some of the stuff is possible, like these, these different color functions. So if you click on color function, and you click through to the spec, they will click over to the actual CSS working group. And again, these things are still in draft so they could change but it'll give you a quick little look hue saturation, lightness, whiteness, blackness, tint, shade, blend, blend de contrast.
+
+65
+00:32:52,710 --> 00:32:53,790
+Scott Tolinski: Blend is cross down.
+
+66
+00:32:54,480 --> 00:33:06,960
+Wes Bos: Is it in Oh, not on mine, oh, again, these things might be gone. Or you can you can red, green, blue, or alpha something as well, we talked about the alpha. So yeah, kind of neat to be able to get all of these in the browser.
+
+67
+00:33:07,140 --> 00:33:31,950
+Scott Tolinski: Yeah, I can't wait to have all of these. I mean, these are stuff I used in in sass, non stop and my style components, I have to have my own functions that do these and stuff like that. And then in styled components, you have to do like dollar sign bracket, use your function, and then whatever. And this would be so nice to avoid all of that and just simply use it in something the browser can understand. But like you said, they are not implemented yet. So good luck, I
+
+68
+00:33:31,950 --> 00:34:17,360
+Wes Bos: can't wait I can really see myself using these if I were like developing like a client dashboard like something like Freshbooks and Freshbooks allows you to set the color of your dashboard to be the brand color. And then based on that color, you have things like borders and drop shadows and text colors. And theoretically, you can just take a brand's color and calculate what the drop shadow and the border color and all these other secondary colors so I could see you just having one or two variable inputs on the clients dashboard and as they pick from a color picker input type equals color then you can see the entire dashboard immediately changing because you're using a variable and there the rest of these colors are all calculated via these color functions that we've been talking about.
+
+69
+00:34:17,669 --> 00:34:37,320
+Scott Tolinski: Yeah, and just think how much work that saving I know like building themes for like clients and stuff like that and even through PHP or your back end and stuff like that it's having to save that in a database that that color somewhere in a database and then it's having to use that color and inject into your styles pretty much everywhere recompile
+
+70
+00:34:38,150 --> 00:34:50,040
+Wes Bos: it or yeah running I've back in the day I before sass was the thing I had like style dot php and then PHP would recompile itself based on past in colors and yeah,
+
+71
+00:34:50,249 --> 00:35:06,300
+Scott Tolinski: yeah, no good. Now it's variable man one put input you can store just one color, whatever. Read it as the variable variable updates all in browser. Dang it Love it, man, it's awesome future is looking very so features looking great. Yeah.
+
+72
+00:35:07,110 --> 00:36:19,020
+Wes Bos: Let's take another break and talk about our sponsor. Our other sponsor here is fresh books. So I've talked about fresh books all the time absolutely love them fresh books is cloud accounting software, I use them to keep track of all my invoices, all of my expenses. And recently, actually, I've had a assistant start to help do some of my email and deal with the stickers and just a whole bunch of stuff to help me out. And let me just focus on actually building my courses. And one of the things that she does is she takes care of all of my expenses. So what I did is I just added her as a team member onto my company. And then she has the both the app on her phone, as well as the the desktop app, she can log in and add all of the expenses and add the taxes and all the input the different currency values that we have. And it's actually the first time that I've actually used this one feature of Freshbooks. And let me tell you, it's working really, really well. So I've been super happy with that. So if you want to check out Freshbooks, go to freshbooks.com forward slash syntax, you'll get one month free and make sure you enter syntax into the How did you hear about a section? That way we can tell Freshbooks that this podcast is working really well for them. And they will continue to sponsor us. Nice. Go.
+
+73
+00:36:19,050 --> 00:36:20,190
+Scott Tolinski: Yeah, love it.
+
+74
+00:36:21,060 --> 00:36:27,360
+Wes Bos: Let's talk about some new selectors that that we're getting in the browser. What do you got for me, Scott? Yeah, there's
+
+75
+00:36:27,360 --> 00:36:32,760
+Scott Tolinski: a lot of new selectors in the level for selectors is looking pretty cool. It's not CSS
+
+76
+00:36:32,760 --> 00:36:34,110
+Wes Bos: for is it's got
+
+77
+00:36:34,560 --> 00:36:38,850
+Scott Tolinski: SEO. It can't be CSS for if you'd like it to be CSS
+
+78
+00:36:38,850 --> 00:36:42,510
+Wes Bos: level four, don't say CSS for CSS level
+
+79
+00:36:42,510 --> 00:37:56,940
+Scott Tolinski: four selectors. Okay. If you want to Google this Google level for selectors not CSS for select, okay. Yeah, so we have a whole bunch of stuff. And some of these I could see being super useful in my my current workflow, others not so much. But uh, you know, I'm sure they're gonna be super nice use cases for all of these. So we have, let me pull up. I had a nice list up here. Okay. So, and the level for selectors, we have things like, blank, right. And match direction, whether you're like left to right, right to left, which, if you've worked on any international, you have to support right to left to left Left, Right languages and when would have been super nice. We have drop, we have any link, we have Lang, where you can determine what language it is, we have local link, we have matches, which is sort of the opposite of not read only rewrite, we have not, which is to say like it's not this selector or not this particular thing required or optional, which are great for forms, placeholder shown which is going to be super nice for form. Yeah, I
+
+80
+00:37:56,999 --> 00:38:14,850
+Wes Bos: use that ones are actually already in the browser, I use it all the time where I have a layer, and I don't show the label until the person starts typing, and then I pop the label up right above it. It's really nice, because you don't have to have all the labels cluttering up your UI. You only have to show them once the placeholder has been gone has been removed.
+
+81
+00:38:15,030 --> 00:38:37,590
+Scott Tolinski: Yeah. And I think a lot of these are actually in the browser right now. Like not I use not all the time. Yeah. But I I think some of these aren't. We also have valid invalid again, for form inputs. Has scope in range out of range. We have some for grid structural pseudo classes. So like column selector, what does this go follow?
+
+82
+00:38:39,390 --> 00:38:57,060
+Wes Bos: Me here, I got Robin discuss. So pseudo class selector represents any element that is a scope element. This is a potentially empty set of elements that provide a reference point for selectors to match against such as that has been specified by query selector all. What?
+
+83
+00:38:57,360 --> 00:38:58,710
+Scott Tolinski: I don't know if that clears it up for me.
+
+84
+00:38:58,730 --> 00:39:25,530
+Wes Bos: Now, if you understand what the scope selector is, in their example, they all this is for for scoped selectors. Oh, okay. Oh, I see. I see. So there's there's a scoped attribute coming to the style tag. And what you can do is you can just say, colon scope, background color red, and then that CSS is kind of like styled components, or we'll go back to the React.
+
+85
+00:39:25,670 --> 00:39:26,610
+Scott Tolinski: Oh, god, yes. Oh,
+
+86
+00:39:26,630 --> 00:39:47,400
+Wes Bos: yeah. Yeah. So if you are trying to apply some CSS to all elements that are within scope, so you could just say scope, font family, Times New Roman, or whatever it is, and then you don't have to explicitly select everything, you can simply just say any of the elements that are currently in scope will then be applied to the six. That's pretty neat.
+
+87
+00:39:47,690 --> 00:40:12,230
+Scott Tolinski: Yeah. And let's see what else we have. Current which is time dimensional, or currently active position in a time dimensional element like during a speech rendering of an HTML document. During the display of html5 subtitles, this one's not available in any browser yet, we have default, we have a column combination selector.
+
+88
+00:40:12,839 --> 00:41:55,230
+Wes Bos: So you know, one that I actually am really excited about is the is actually just an addition to nth child. And let me tell you about the the problem that we have. So like, let's say you have a rapper, and inside of that rapper, you've got 10 images, and you want to style the third image, or every third image, maybe the last one in the in each of your columns, this is a bit moot now that we have CSS Grid, but you know, you've always wanted to select the third thing on every three in an element. And then that works great until and I've done this a million times, you just go in and pop a quick header into into that wrapper. So all of a sudden, your third image is now it's still your third image, but it's the fourth element. And the problem with no child is nth child does not care about what you selected, meaning that it will simply just take what you've selected, go to the parent, which is the wrapper, and then start counting them from there. So if you have 10 images in one paragraph tag, there's no way to exclude that paragraph tag. So essentially, what we want is end of selected, and that's what this is. So we're gonna say nth child, three n, every three. And then you can say of, and then you give it another selector. So you can say nth child three end of image dot dog. And what that will do is it will select all of your dot dog images, and it will it'll only highlight every third one. And you know, it's not going to if you add in other sibling elements to that you're not going to mess up your your three end. So that one's not in any browsers yet. I'm really excited for that one to be added. Because I run into that problem all the time. Me too.
+
+89
+00:41:55,260 --> 00:42:00,380
+Scott Tolinski: Yeah. And it's always it's always annoying, because you never think about it. And you're just like, Oh, yeah, crap. Okay.
+
+90
+00:42:01,610 --> 00:42:49,230
+Wes Bos: Another one I have and is div with has pseudo selector. So if you've ever wanted to select something that has a child, you'll know that it's not possible, because you can only select the actual child. So if you have a div with an image inside of it, and then you have another, like, let's save a blog post and you want to, you want to style blog posts that have images to look alike, maybe a little bit wider than the ones that don't specifically have images in them. And right now, there's no way to do that, what you would have to do is with JavaScript, you have to select all the posts, images in a post, and then you'd have to add a class to the parent selector. And in this case, we're going to be able to just say, like, dot post, colon has image and then you're gonna, you're selecting the post div not the image itself. But based on its its what it has inside of it.
+
+91
+00:42:49,500 --> 00:43:21,690
+Scott Tolinski: Yeah. And this is one of those ones that this is something I feel like people have been asking about since the the stone age's in CSS like, Okay, well, I have the child selector, but how can I? How can I style the div based on what child is there? What's inside of it? And this is finally going to allow us to do that, which is something that makes me super duper excited, simply because you'll finally be an answer for all of those questions on Stack Overflow. But, again, this one's not implemented in the browser yet, but I definitely look forward to its arrival.
+
+92
+00:43:21,900 --> 00:43:33,000
+Wes Bos: Yeah, I really hope that it again, these things could could drop out at any time. But I think that this is one that that will stay the course because everybody has been asking about this for for many, many years.
+
+93
+00:43:33,420 --> 00:43:54,090
+Scott Tolinski: Someone sexually hilarious on this. CSS for hyphen selectors comm under this selector. They've responded, this is the only comment on this page. It just says I'm definitely or it says looking. And then in quotes forward to this. That's a great joke, Chris Harrison. It's a great joke.
+
+94
+00:43:54,870 --> 00:44:06,120
+Wes Bos: That's hilarious. I like jokes like that. That's great. What else do you have any other any other exciting ones come into CSS not necessarily selectors, but anything else new.
+
+95
+00:44:06,810 --> 00:45:00,870
+Scott Tolinski: This is something that's not new in a way that like you could have used this for the past few years, if you're paying attention, but I still use it all the time in my my tutorials, and people still are always like, what is that? So I feel like I should mention viewport units. Being able to use VH for the viewport height VW for the viewport width, width, and then we have V max and V min, which is going to be like, if you use V max and your browser is wider than it is tall, you're taking the width. If it's taller than it is tall, you're taking the height. Same with the men, you're taking the smaller of the two, but I use VH and VW so much and it bums me out to know that there are people out there who don't know that you can use 100% of the viewport height at any given time. You can use them in things like calc you can use them all over the place and they are excellent at units,
+
+96
+00:45:01,350 --> 00:45:38,760
+Wes Bos: I use this all the time on the body tag, because if you the body tag by default is only as high as its content. So especially if you're trying to vertically center something in the body, and you don't have enough content to make it go as high as the body, I almost always put a min height 100 Vh on the actual body tag, and that will make sure that it is at least as high as the browser. And if there's more content, it'll just keep going higher than that. And then if you're using Flexbox, or grid or anything like that, your justify content and your align items are going to be really easy to vertically and horizontally center your things.
+
+97
+00:45:39,060 --> 00:45:50,160
+Scott Tolinski: Yeah, I play so nice with with all of that new stuff. So definitely super, something you should be using by now. If you aren't, they're very highly supported at this point. So yeah, viewport units.
+
+98
+00:45:50,340 --> 00:46:32,370
+Wes Bos: There's also there's some really neat ones coming like, there's ch which I've used only a couple times and it's ch is the width of a zero. Meaning that if you want to know how wide a character is, the CH will will tell you that. And that's kind of cool. Because if you ever have a fixed width, font, like like so what's the word for fixed width fonts, mano, a mano spaced, then you can, you can know exactly how many characters can go on a line, because they're all exactly the same size. Now that goes out the window. Because sometimes your eye is much skinnier than your actual like W's as much wider. But it's kind of neat to be able to have that.
+
+99
+00:46:32,700 --> 00:46:47,430
+Scott Tolinski: Yeah, there's also apparently an X unit, which is the relative x height of the current font. In parentheses next to it. It says rarely used, I cannot personally think of a time to use that. But I would love to hear use case. And
+
+100
+00:46:47,460 --> 00:47:04,560
+Wes Bos: EAX. That's cool. And I also the other day, I found out that you know how we always rotate things in CSS. So you you have a rotators 20 degrees, did you know that there's a whole bunch of other values that you can use are different functions. So there's, they're turned?
+
+101
+00:47:04,560 --> 00:47:07,650
+Scott Tolinski: Is there like polar units are? Right? Yeah,
+
+102
+00:47:07,650 --> 00:47:09,420
+Wes Bos: let me pull them up real quick.
+
+103
+00:47:10,530 --> 00:47:11,700
+Scott Tolinski: I did not know this.
+
+104
+00:47:13,650 --> 00:48:03,900
+Wes Bos: It's so it's called CSS angles. So the way to represent an angle and CSS, everybody uses degrees. But you can also use it in turns, which I think makes a lot of sense at turn is how many times you want to turn it around. So you want to turn it around half, that's 180 degrees, so to 0.5 turns is 180 degrees, or one turn would be one all the way around. So if you want to spin something around when you hover, you could just say rotate one turn. And you don't have to I know most people understand how decrees works. But if you ever getting into finicky stuff, like you need to turn it around like 66%, then I always find myself opening the calculator and doing 360 times 66 and then rounding where I could just be using turns. And then there's also radiance, rad and rad.
+
+105
+00:48:04,170 --> 00:48:05,550
+Scott Tolinski: I feel like I would want to use rad just
+
+106
+00:48:05,550 --> 00:48:06,150
+Wes Bos: read
+
+107
+00:48:06,869 --> 00:48:14,040
+Scott Tolinski: Raspbian you read that here. Yeah, but I would just replace all of my decrees with radians. Yeah. And then gradients. Yeah, radians gradients.
+
+108
+00:48:14,070 --> 00:48:20,100
+Wes Bos: What is a rad represents angle in radians? One circle is two pi radians.
+
+109
+00:48:20,820 --> 00:48:23,970
+Scott Tolinski: Yeah. And then a gradient is
+
+110
+00:48:25,440 --> 00:48:26,610
+Wes Bos: 400 degrees.
+
+111
+00:48:26,849 --> 00:48:27,690
+Unknown: Yeah.
+
+112
+00:48:28,679 --> 00:48:31,470
+Wes Bos: One full circle is 400 degrees with a gradient.
+
+113
+00:48:32,340 --> 00:48:33,150
+Scott Tolinski: I know not. It's always
+
+114
+00:48:33,150 --> 00:48:37,110
+Wes Bos: funny when like us web developers bump into things that are like math.
+
+115
+00:48:38,010 --> 00:49:12,090
+Scott Tolinski: So this is actually kind of interesting ingredients. Right? So zero is zero. 90 degrees is 100 180. Is 202 70. Is 303 60 is 400. So 400. You could think of as like a full turn, right? Yeah. And you just go back 100 for each quarter turn. That's pretty neat. You subtract 50% for half of that, and then subtract another 25%. For another half of that. I could see how that could be super useful. You just sort of reset your brain to think starting from 400. Yeah, gradients grad.
+
+116
+00:49:12,300 --> 00:49:35,610
+Wes Bos: I think grad and turn are a lot easier than degrees. But because that's what we've been using for so long. I had no idea until last week that these were even in the language and it looks like they showed up with degrees. But just like somebody's tutorial, initial use decrease, I guess, or I guess you grow up learning degrees and stuff like that, but that's pretty neat.
+
+117
+00:49:35,910 --> 00:49:42,090
+Scott Tolinski: Yeah, definitely. There's some mathematicians out there just like nice. gradients.
+
+118
+00:49:42,690 --> 00:50:00,900
+Wes Bos: I'm gonna do it just so people ask what that is. Yeah. Awesome. Well, I think that's, that's all I've got. There's a whole bunch of new stuff coming to language. But I didn't want to get too too much into the stuff that that might not make it and that's some of the more applicable stuff that we'll be able to use every single day. Do you got anything Else for me, Scott.
+
+119
+00:50:01,650 --> 00:50:28,170
+Scott Tolinski: I don't know. This stuff is great, though. I'm excited to see the evolution of CSS taking place before our own eyes every single day. So, yeah, no, I'm just excited to use all of this stuff. I think during this talk, my mind has been a little bit blown about the use cases for CSS variables and how I could be using them a little bit more involved than I am right now. I used them, but I'm like, dang, I should be using them in a lot of places that are not so yeah,
+
+120
+00:50:28,170 --> 00:50:43,260
+Wes Bos: I'm pretty excited when Chris coiour tweeted that link about using inline variables. When you author your HTML, and then just picking the values up in your CSS file. My mind was like, no. Oh, that's amazing.
+
+121
+00:50:45,000 --> 00:50:46,980
+Scott Tolinski: The total transformation there.
+
+122
+00:50:47,610 --> 00:51:01,980
+Wes Bos: Exactly. Yeah. So that's CSS. If you have any new stuff that's coming into CSS that you're particularly excited about? Make sure you tweet us at syntax FM. Do you got any sick pics for me today? Scott?
+
+123
+00:51:03,150 --> 00:51:15,990
+Scott Tolinski: Yeah, I got a sick pick. My sick pick is going to be my Google Pixel two XL is the nicest one I've had. It's super dope. The camera is absolutely I've been seeing
+
+124
+00:51:15,990 --> 00:51:19,200
+Wes Bos: all your photos on Facebook. They look amazing. They're good.
+
+125
+00:51:19,200 --> 00:52:06,810
+Scott Tolinski: I knew they can't I mean it's it has the highest rated camera of any smartphone on the market. So like at this point, I was like yeah, that's gonna be a good camera I'm sure will be better. But what I'm particularly impressed with is low light or high contrast in light photos. Like if you take a photo of your computer screen with a dark background in the room, you would typically there see the room or the screen but not both of them. This shows everything is pretty darn amazing build quality on this thing is great. All of the nice little features are awesome. I find myself using Google Assistant like constantly now because it's really easy to access but overall like the killer feature on this thing is the camera and holy cow the photos are awesome. Really, really loving the phone overall. Definitely new favorite new favorite device here.
+
+126
+00:52:06,810 --> 00:53:51,390
+Wes Bos: That's pretty neat. I have got something for charging all my devices. So I'm sitting here at my desk and I've got like I have to charge an iPad I have to charge my headphones I have to charge a power bank I have to charge my phone. And I hate having to plug my phone and everything into my actual computer especially my phone because like iTunes is though in the garbage for me. And every time I plug it in and like like start opens it up and is like Hello, would you like to update or something like that and like no iTunes go back into the garbage. And same with the photos I know you can turn this stuff off but every time I update my my phone every time I plug it into my computer, it opens up all these photo apps and Dropbox tries to sync all my photos and I was like I hate plugging it in just to charge so I bought this external. I bought a What is it a five Port 40 watt USB charger where it's just five actual ports. And the important thing is that it's 40 watts so you just plug it into the wall there's no power brick, which is what I love. And then I couldn't be charging all my devices at the same time as well as just leave all the cords plugged in and grab the specific one that I want. So it's pretty neat. One cool thing about with the with the new MacBook is if you get a USB regular two USB C cord for a couple bucks off Amazon you can actually charge your your MacBook you can't charge it while you're using it because 40 watts yeah is not enough you need 87 to charge the 15 inch but you can you can charge this thing off of 40 watts no problem if it's close so I actually the other day I tried to
+
+127
+00:53:51,690 --> 00:54:01,410
+Scott Tolinski: close your laptop. I don't know if my What if this is a joke I'm just calling Hi. What I do is I bring
+
+128
+00:54:01,410 --> 00:54:51,570
+Wes Bos: it downstairs and I have it have one in my bedroom. I bought a couple of these I put one in my bedroom and then I just kind of like slide it into this magazine rack and I plug it into there and it will charge it overnight so I make sure that I have a full charge so if I'm going to a coffee shop or something like that I always hate when I open the laptop and it's at 20% so I like to have I actually tried to charge my laptop on an iPhone nub the like 1.1 amp and it worked it took nine hours to fill the entire MacBook battery from dead but this thing will charge it in I don't know an hour to two full so it's the bunker I got the five Port 40 watt and then I realized after I had bought it that they sell a 10 Port 60 watt which grazie why not it's only 34 bucks Canadian right now. Nice. Which I don't know how much American that is like $1 50
+
+129
+00:54:51,870 --> 00:54:55,050
+Scott Tolinski: they make Eicher makes really great stuff. I've always liked anything. I
+
+130
+00:54:55,050 --> 00:55:44,100
+Wes Bos: thought they're really good. I've I've oh I should sorry. I shall say that this thing has this thing called I Charging, so it will sort of just pulse the, I don't know how electricity works, but it will sense the maximum rate at which your device can charge and then it will charge it at that. So it's kind of like how people like to use iPad chargers on their iPhone because it goes faster. That's exactly what this thing will do for you in the bunker is awesome. I had some problems with some ONC, an anchor USB hub, about a year back. And it just like crapped out on me. And they just, they just sent me all my money back and they didn't, didn't ask me to like send it and mail it or anything like that. They just gave me all my money back after about a year of using it. So even though it was a bad experience, because it broke. I still buy a lot more bunker stuff because it's it's just a really good quality.
+
+131
+00:55:45,630 --> 00:55:46,470
+Scott Tolinski: Super cool
+
+132
+00:55:46,530 --> 00:55:51,330
+Unknown: sake, pick, pick, pick. Cool, do any shameless plugs. For me,
+
+133
+00:55:51,900 --> 00:57:01,590
+Scott Tolinski: I am going to have a seat. But what is today, today is Monday, but this is going to be coming on Wednesday. So by the time that this release is I'm going to call it right now I'm calling my shot here. The CSS modern CSS layouts course will be live on level up tutorials for pros, as well as anyone who wants to purchase this series. It's like I'm putting the finishing touches on it. So it's just about there. I can't imagine and won't be released. I like to keep my my release dates pretty flexible. Get them out as soon as possible. But yeah, I would say by the 29th here that this will be out so don't over to level up tutorials. COMM Ford slash store, pick up this series, it's gonna be really super cool, teaches you how to basically make really interesting and different layouts with CSS Grid, I teach you all the basics of grid Flexbox and modern CSS. So it's totally applicable to this episode. And we get into actually building some really cool layouts, stuff that you may not have expected being difficult, but it's difficult from things like Instagram to Facebook to code pen, I even recreate sketch winsky, calm and CSS Grid. So a lot of cool stuff there. Awesome.
+
+134
+00:57:01,650 --> 00:57:35,550
+Wes Bos: I don't have any specific plug right now I just pushed pretty hard on my Black Friday sale, which was really successful little things that everyone who, who picked up a course or two during the Black Friday sale, but I'm working hard on my CSS Grid course. And then likely in the New Year sometime soon, I'll have another react course as well. And I'll also be updating my current react for beginners course as well for some some new stuff that's coming to react. So a lot of stuff coming from me in 2018. I've got a lot of plans and pretty excited about about it.
+
+135
+00:57:35,910 --> 00:57:45,810
+Scott Tolinski: Yeah, I can't wait for our our urine review episode where we get to talk about our our plans, because likewise, I got a lot of exciting stuff in 2018.
+
+136
+00:57:45,930 --> 00:57:48,540
+Wes Bos: Yeah, and yes, that's looking exciting.
+
+137
+00:57:49,950 --> 00:57:51,810
+Scott Tolinski: Big plans. Cool, man.
+
+138
+00:57:52,290 --> 00:57:56,670
+Unknown: Awesome. Well, thanks, everyone for tuning in. And we will see you next week. Have a good one.
+
+139
+00:57:56,970 --> 00:58:08,370
+Scott Tolinski: See you. Head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show. Until next time
+

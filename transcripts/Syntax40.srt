@@ -1,0 +1,448 @@
+1
+00:00:01,290 --> 00:00:10,650
+Announcer: You're listening to syntax, the podcast with the tastiest web development treats out there. strap yourself in and get ready to Lynskey and West boss.
+
+2
+00:00:10,770 --> 00:00:35,790
+Wes Bos: Good Monday morning. Oh, no, that's not us either. Welcome to syntax. Hopefully you're doing well today we are talking all about testing. So we're super excited to to get into this specifically JavaScript testing. But the idea is that we cover on this will be applicable to to most languages. So with me as always is Scott to Lenski. How you doing today, Scott? Hey,
+
+3
+00:00:36,110 --> 00:00:42,840
+Scott Tolinski: I'm doing I'm doing pretty good. Yeah, I'm doing this good. The hallways just working, working, working. You know, that's, that's the life I'll
+
+4
+00:00:42,840 --> 00:00:43,770
+Unknown: also
+
+5
+00:00:44,220 --> 00:01:13,439
+Scott Tolinski: Yeah, I'm recording this. It is Monday and the University of Michigan is headed to the national championship in basketball, which is not anything that anyone who follows Michigan basketball would have expected a couple of months ago. So I don't know. I am pretty psyched. The game is tonight. And by the time you're listening to this, it's probably already over and Michigan has probably already lost but just the fact that they're playing in the national championship is is pretty sweet. We're all super pumped.
+
+6
+00:01:13,730 --> 00:01:15,650
+Wes Bos: Is that like the the Final Four?
+
+7
+00:01:16,200 --> 00:01:18,030
+Scott Tolinski: Yeah, it's the final game. Yeah. This
+
+8
+00:01:18,030 --> 00:01:21,510
+Unknown: is like the Stanley Cup of basketball. It's exactly yeah.
+
+9
+00:01:21,510 --> 00:02:03,540
+Scott Tolinski: Basketball, and in a minute Michigan basketball. I mean, they got there. I don't know. Few years ago, I forget what year was, but they're there. Michigan's never been primarily known as like the basketball school. We've been we've been the football school. And like, lately, our football has not been super good. And our basketball has been very good. Which is just, it's great. It's a great thing. Especially because we have a lot of rivalries with Michigan State who's always been primarily the basketball school. And not only did we beat them every time this season, we beat them. We we took the big 10 tournament and stuff like this. So it's been a pretty sweet year for Michigan basketball out of nowhere.
+
+10
+00:02:03,870 --> 00:02:19,380
+Wes Bos: Pretty sweet. I used to be super into basketball when I was a kid. And I don't watch any sports at all anymore. I think it has something to do with just like not having cable or for I haven't had cable, and like 12 years. So I think all the sports have been drained of me.
+
+11
+00:02:19,880 --> 00:02:23,130
+Scott Tolinski: Yeah, I do the YouTube TV. So
+
+12
+00:02:23,690 --> 00:02:26,880
+Wes Bos: we don't have anything good in Canada. Do you have YouTube read as well?
+
+13
+00:02:27,470 --> 00:02:38,430
+Scott Tolinski: No, but I actually Maybe it comes with YouTube TV. I'm not positive about that. But YouTube ads on YouTube lik? I have ad blocker? Oh, I'm not quite sure. Yeah,
+
+14
+00:02:38,460 --> 00:02:59,970
+Wes Bos: my ad blocker doesn't work on YouTube for some reason. But I was looking at buying YouTube Red, which gets rid of all the ads, especially now that my kids are starting to watch YouTube, I want to turn on all the ads, but it's not available in Canada. And it's annoying, because if you want to use the YouTube app, or Chromecast it then it'll stick like a Chevrolet Spark ad in beforehand. It's kind of annoying.
+
+15
+00:03:00,390 --> 00:03:01,620
+Scott Tolinski: Yeah, that's super annoying.
+
+16
+00:03:01,620 --> 00:04:38,009
+Wes Bos: We are sponsored today by fluent cough, which is an awesome web development conference from O'Reilly happening in San Jose, from June 11 to June 14, and snap shooter and snap shooter does Digital Ocean snapshot backup. And they do like a lot of fine grained control. And you really have full control over backing up your digitalocean server. So we'll talk a little bit more about them partway through the show. So let's get into it. This sort of ideas behind a tackling a testing episode, because the whole testing landscape is massive. There's so many different types of testing, there's so many different libraries that you can use to test there's all kinds of different languages that you can test in. So our hope with this episode is that you walk away with maybe a better understanding of what testing is, I feel like testing is one of these things where people don't talk about it a lot, because they don't necessarily do it. And they talk about not testing. The kind of the shame game starts to get played where people go, Oh, you have to death because people who do do testing, are extremely passionate about it. Because once you do get into it, you're like, oh, Why wasn't I doing this forever. It's one of those things. It's like CrossFit, right? You just get you just like are so passionate about it that you come off a little, a little harsh, sometimes. So little push, I have a feeling that a large part of our audience doesn't do any testing and they are interested in getting into it. So hopefully you can walk away from this episode with a better idea of what testing isn't. It'll be a little less scary than I think some people think it is.
+
+17
+00:04:38,570 --> 00:05:27,959
+Scott Tolinski: Yeah, I think that is a big message. It is way less scary than you're expecting. And maybe like, maybe you had a bad experience like attempting to learn how to test and that like put you off from it entirely. But if you go through the growing pains or any of those initial things, you're going to see the benefits the very first time that any of these things sort of come about that we end up getting into In this episode, so I, personally as someone who never really, I never when I first started programming, I never saw the point until I had an application worth testing, you know, something that I need to make sure doesn't go down or is being used by a lot of people and, and then the moment that you do have something like that, you start to experience all of the issues and reasons why people find testing to be such an important part of your stack.
+
+18
+00:05:28,620 --> 00:06:58,680
+Wes Bos: Yeah, you only need to have a have a weekend ruin once in order to see the value. And I think that's an important point as well as is not everybody is building the exact kind of apps. So it I don't think it necessarily makes sense to test absolutely everything. I built WordPress themes for a long time. And I didn't test any of them. And I almost never had an issue with all of those applications. And but as I started to get into more building applications, more building custom stuff, versus using a lot of plugins which they themselves have been tested, I started to see the light and see that even though it does take more time to to build the stuff, it first makes me a much better developer, and we'll we'll talk about some of the benefits. And second, it really covers my ass in a lot of use cases where you didn't necessarily see things like, I'll give you one simple example. When I first launched my first course, thing, I didn't test, I would take someone's name and put it through a slug URL, and then the URL to download the book and the videos was their name would be in the URL. And I had people from Russia buy it, which Oh, China Slug a phi a totally Cyrillic name. It the slug is nothing. And then it was it was breaking the downloads for that specific user. And if I had a thought about that, and if I would have had tests for for all of those different use cases, run it through a bunch of different names, then I would have caught that.
+
+19
+00:06:59,399 --> 00:08:21,540
+Scott Tolinski: Yeah, yeah. And it's so funny. There's, I don't know, one of my favorite. And then you mentioned not everything needing the ability to be tested. One of my favorite like this doesn't need to be tested situations was when I was working at Ford, and we were doing design prototypes. And our whole job was just to crank out code versions of these design prototypes so that people could use them. Right? Yeah. And we had this this third party developer who is like from another agency who wasn't part of our team. And he got basically contracted up to fill in some additional work here and there. And he came back with this prototype, keep in mind, these things are supposed to be lean, and they're supposed to be just done immediately, he came back with this prototype that was fully tested, CSS testing, and all sorts of stuff. And he was like, going to do the handoff. And he's showing us this prototype. He's like, here's, here's where my CSS test live. And here's where this lives, and here's my, my this and that. And I was just like, this is a prototype man, like, what are you like, I'm not going to make, I'm just going to go ahead and delete your test folder, because we're not going to be using them, we're actually going to show this prototype to the client once, and then it's going to get tossed out and you're never going to see it again. So that I mean, not everything needs to be tested. But if you're working on stuff that is user focused or user facing is going to be in production here then
+
+20
+00:08:21,570 --> 00:08:24,300
+Wes Bos: yeah, testing important. Totally, totally.
+
+21
+00:08:24,870 --> 00:09:17,300
+Scott Tolinski: Yeah, so I thought I thought we'd kick things off a little bit of talking about types of testing, because there's a lot of types of testing. And they're all kind of different, in a lot of ways. And some of them the the methods in which you go about actually testing aren't necessarily the same. So I guess the most basic micro way of testing is unit testing, which is probably the one you hear the most about, which is basically testing the most simple, smallest unit of your code. If you have a function, your test would be saying, Hey, here's some input. And the output should be this. That is the unit test a single function, right individual unit, and react, it could be testing a single component, right, without without rendering more deeply than a single component. But having just one single component or one single function tested is unit testing.
+
+22
+00:09:18,330 --> 00:11:31,410
+Wes Bos: Yeah, so let me give a couple examples. The most basic one, which everybody uses when they're learning to test is you have a function called add, it takes in a and b and it returns a plus b. So what you would do is you would, you would run that function with one and two, and you would expect that the function returns three, right? And then you could run it with a whole bunch of different other edge cases. You could, you could try it with a one and a zero, you could, you could try it with negative numbers and just make sure that you're expecting what this function returns every single time is exactly what you expect. And one kind of thing that comes along with that unit testing when you do that is this whole concept of appear functions. And this is one thing I see in in react a lot where people are moving to react and Redux. And maybe they directly try to update state directly instead of using set state. Or maybe they have just like a variable outside of scope, and they're just sort of updating that outside of it. What unit testing does is because you are just testing this function, by itself, you always want to make sure that you're writing what are called pure functions, meaning that given that I feed this function, A and B, one and two, it will always return to me three. So if I ran that function 1000 times, it's not going to return to me anything different any other time where sometimes you have a function, and then you you update a variable that is outside of that function. That's, that's a mutation, and that's going to eventually kick you in the butt, because you might run that function in my error out, or if you run it once, and it returns three, but then all sudden, you run it a second time. And it returns five. That's that's inconsistent behavior, right? So I think that along with unit testing, understanding this whole concept of pure functions, pass in data, always get the exact same result back is really important. It's the same thing goes with with dates, if you ever have a function that needs a date, don't generate the date inside of that function, pass in the date into the function, so that you can always expect the exact same resolve that comes back.
+
+23
+00:11:31,919 --> 00:13:14,940
+Scott Tolinski: Yeah, yeah. So you'll see that unit testing, again, is extremely important to make sure that these individual things are going to work by themselves. And now the next one I want to talk about is going to be sort of the next step up the chain, which would be integration testing, where an integration testing is how these units work with each other, right? Because more often than not, you're not just having a single function that returns a single value. And that's the entire application, I mean, with react, you have a component within a component within a component, maybe you have a function that calls another function, or maybe you have a function that calls both of these units, or both of these individual functions. So an integration testing is doing is testing these individual integrations, these these things, these systems that work together and how they work together. For instance, again, with the React example, you have a nav component with a menu item in it write a unit test, we'll just check to make sure the nav showed up. But an integration testing is going to make sure that the nav shows up correctly. With the individual menu item showing up in the menu item component is showing up and rendering all of the stuff that needs to be rendering as in these two things are working together in unison as they should be. So integration testing is gives you a little bit more confidence that these things the system is actually working as it is in the real world. Now, most of my tests are integration tests in react, we can talk a little bit more about this when we get into our own testing setups, integration, testing something specifically with doing like mount rendering and stuff again, we'll go over more of that later is definitely something that I use quite a bit more than individual unit testing in web application stuff.
+
+24
+00:13:15,210 --> 00:13:47,280
+Wes Bos: Yeah, because there's a bunch of memes out there, where they say like two unit tests, pass zero integration tests, where, by itself, these things work great. But as soon as you start to use them together, everything burst into flames, right? So you can be sure that these things work just in like a sterile room by themselves. But if they ever need to interact with each other, then other issues can start to arise. And that's why it's important to to have integration testing as well. Yeah,
+
+25
+00:13:47,729 --> 00:13:51,090
+Scott Tolinski: yeah, definitely. Yeah, you want to take the next one.
+
+26
+00:13:51,389 --> 00:15:33,050
+Wes Bos: Next one is visual regression testing. And this one is a lot more visual, it's very visual. And the way that it generally works I've done this a lot in the past is, especially when you have a lot of developers working on CSS. And you don't get this so much when you you start to use scoped CSS or style components and stuff like that. But what I would do previously is if you have like a class of like, footer, and you'd style that thing somewhere, but you don't know that somewhere else on the website, there is also something with that same class. What What this will do is it will take screenshots of your website on every single page, and then it will diff them with how they used to look. So maybe when you check in your code to GitHub, it will generate a visual version of that site and compare it against what the current site looks like. And it will show you everything that has visually changed on the website. So if for some reason, a box got way bigger, or if for some reason your fonts changed, and you'd be able to quickly visually see that, oh, this CSS looks good, but it actually had an unintended consequence. of breaking this part of the site or changing the look. And I really like that because especially on websites where you have just one monolith CSS codebase, you can sometimes the style of your website will just slowly morph over time. And before you know it, it, the site just doesn't feel as nice and tidy and clean. And that's because your CSS is sort of leaking out to different parts of the website. So visual regression, testing will, will definitely catch those. And flag anything that is has a significant change on it.
+
+27
+00:15:34,620 --> 00:16:12,630
+Scott Tolinski: Read, see a lot of these things. It's interesting because again, testing is so important. But not all of these kind of testing, it will be important for every single kind of app like a lot of these things, the larger your app is getting, the more people that are using it, the more of these strategies you'll want to employ. Right, to make sure that there aren't, but if you have the the engineering in the time, and whatever. I mean, all of these are going to make your life a little bit better somehow. But I don't necessarily think that. But I guess they all are important. But again, I guess just not for every single app, right, I guess. Yeah, depends on how it's being used. And who's using it. Right.
+
+28
+00:16:12,800 --> 00:16:57,840
+Wes Bos: There's some sort of balance that needs to be found there. Yeah, I think if you talk to people are, who are head over heels about testing, obviously, the all of these things are would be amazing to have in place. But the reality is, is that a lot of a lot of people don't have necessarily have the time to do the thing, these things. And, of course, these things are going to save you time in the long run. But I don't think that you have to deploy all of these for the example that I'm talking about with the visual regression testing. This was a just primarily a website. So there wasn't a whole lot of functionality. But there were hundreds of pages and hundreds of different layouts on that. And we needed to make sure that all these different layouts didn't break from deployed to deploy. So regression testing was was fantastic in that case.
+
+29
+00:16:58,410 --> 00:18:42,840
+Scott Tolinski: Yeah, absolutely. Cool. So next on the list is e to e or end to end testing. Now end to end testing is a bit more. It's sort of like a robot testing the website, like you would be testing the website as a human being right. Like, when you test a website, you don't test the functions manually, you don't, you know, run a function and say, hey, did this, like as an individual, not a code testing framework like that. But with end to end testing, it's, it's actually loading it up in a real environment, like a browser, right? It's loading it up in a browser, it's actually clicking through, it's actually paging through your site and checking to make sure that things are working, you're checking to make sure that when you click this button, this thing happens in the real world in a real browser, the library I really liked for this, we're going into libraries. margen is cyprus.io. It's sort of the new kid on the block, because it's actually showing you sort of like a video or an interact, it's not really a video, it's like an interactive browser of Cyprus, clicking through your site and making sure so that way, when you writing your tests, you actually get this visual indicator of the the robot or the code that's going through and clicking and using your site. But end to end testing is basically like the biggest macro for the same type of thing that unit and integration testing are, it's just making sure that the entire system is working inside of a browser, like you're expecting it, you know, one of my, one of my Cypress tests for level up tutorials is just that I click around the site and that the pages load as expected, right. Yeah. So I click click, click head out to a few different pages, and just make sure all of these pages and all these links and all these different, you know, things are just loading as they need to. Man,
+
+30
+00:18:42,840 --> 00:19:18,930
+Wes Bos: I'm really excited about this, the Cypress because no good. Previously, what what's the one that everyone you see, use Selenium? Yeah, I had used that. And it's so slow. And it's like, so brutal. Yeah, I don't like it makes me not it made me not not makes me It made me not actually write tests for it, because I just like couldn't deal with the like, okay, I built this thing. Let me spend the next hour, like waiting for it to boot up. So I was not happy about that. And I see this Cypress and it's a service, but it's also open source, which is my favorite kind of service. So pretty sweet. It's
+
+31
+00:19:18,930 --> 00:20:32,190
+Scott Tolinski: a it's a joy to use. I'm gonna tell you that right now is that syntax, it is like, I mean, it's like jQuery syntax to find click, find click whatever. But then when you run your tests, every time you save or whatever, every time your tests run, you have that browser window open, and you see it clicking through. And so that way you can see exactly if the test if the test is doing what you expect it to be doing. And if it's not, then you can inspect or you can just click on the test and will time travel back to when it's actually attempting to do that to troubleshoot writing your tests basically, I found like the the amount of resistance I had writing test to be so extremely small because I was able to see every step every you know, I sat through it. Talk about Cypress one time in the guy described integration tests or end to end testing with Selenium is like, I don't know, try to solve a problem while you're blind and deaf, like you just you're just like waving at, you know, you're just trying to figure this thing out where this, this testing problem is actually sort of illuminates and gives you total vision into what's going on in the test itself. So I'm a big fan of something like Cypress, but I'm also a big fan of end to end testing, because again, this is how your users are actually using your site. And that's why it makes it important.
+
+32
+00:20:32,550 --> 00:21:24,690
+Wes Bos: There's a couple other pieces of testing, which we are not going to cover today. But that's stress testing, which is what happens when 100,000 people visit your website at once. Or what happens when you try to sell stickers on $5, Digital Ocean droplet or something, I need to learn how to do performance testing. So making sure that everything is as fast as possible usability testing. So that's learning things from your users as they they actually use a website and beta testing, which is getting people into your site before you actually deploy it large. So those are all the different types of testing out there that we could think of I'm sure there are some more. But let's talk a little bit about why you would want to test like what are the benefits to testing? And then we'll get into the nitty gritty of how you actually run a test. Sure. Yeah, so
+
+33
+00:21:24,690 --> 00:22:49,410
+Scott Tolinski: I think one of the the biggest, the biggest single reason for why you would do testing is confidence that your code is going to work. There's, there's, you don't necessarily realize this while you're writing code, but you have all these connected systems, right? And you think, Hey, I'm writing this code right now. And it's working right now. So why would it work tomorrow? Right? Well, what happens if you change something on your site tomorrow that you might not realize is actually kind of connected, and that connection ends up breaking. And then therefore, the thing doesn't load and you didn't know, because you didn't go back and manually check each page. So the confidence that you get from writing each from will write all of your tests, passing is going to give you the confidence that everything works. And if you have integration tests, unit tests, end to end tests, right? You have this confidence that not only are your individual functions working, but your your system as a whole is working together. And then therefore, if something is breaking, or something's going wrong, you know about it instantly, the moment that you write some bad code, or some code that affects another system, and modifies it or something like that, you'll know because when you run your tests, your tests will fail. And it'll tell you what's going on. And it'll tell you where the problem is. And you're not going to have to spend a lot of time and you don't have to have a user reporting to you that this thing is broken, you'll already know it's broken before it ever hits production.
+
+34
+00:22:50,850 --> 00:24:02,850
+Wes Bos: Awesome. Yeah. The greater confidence is such a such a huge one. Next up a wide test is easier factoring. So often, what happens is that you have let's say you have a function where if you input a credit card number and some some billing information, and then what comes back from that function, or what resolves from that a synchronous function is either a success or an error, right? And then all the nitty gritty about how that happens lives inside of your libraries and everything like that. So if you wanted to refactor that library, and totally rip out the guts and and rewrite it, maybe you're putting in a new payment library, maybe you're just updating the code to from callback base to a sink await. You want to have confidence that that is not going to break how it works, right. And we've all had this code where you sort of shy away from touching the code, because you don't want to break it. Well, if you have tests Oh, is running against that code, you can totally change the internal guts. And as long as it still covers every single edge case of how you're testing something, you can have confidence that your factor went properly, and you can have much faster refactoring.
+
+35
+00:24:03,630 --> 00:25:09,090
+Scott Tolinski: Yeah, I mean, I really liked this too, because it also made me a much better developer, because you can write, you can find your code and see where it is these larger chunks that are more difficult to test, right. So you break things out into smaller functions, you test those smaller functions individually, you tech test the whole thing as an integration, but it to me it like really helped me illuminate where some of the issues in my not necessarily issues, but where some of my code could be better just by simply writing the test itself. So one of my things that I really like about testing is you end up having a greater understanding of how your code works. Because when you get into writing these tests, you need to address it, sort of what cozen what comes out what goes in what comes out, and then you think about what possibly could go in adding in what possibly could go in and seeing what comes out and then being able to adjust your your functions or your code accordingly. You'll end up just having a much greater vision of your code and understanding because you've written the test, you understand what should be in what should be out that sort of thing.
+
+36
+00:25:10,020 --> 00:26:51,360
+Wes Bos: Yeah, along the same lines as edge cases in your code will show themselves so much faster when you have tests. So an example of something I'm working on right now is, or a function that I have in my own codebase is that I show how much a product is, and I have all my products stored in cents, so something might be 5000 cents, and that is really $50, right. And I want to format that as a price. So if something is 5000 cents, I want to format it with the dollar sign, and just 50 I don't want the 50 dot 00 on the end. But if it's it does include cents, then I want to show like $50 and 48 cents. And then there's all these other edge cases that it would run into where if it was $50 and 10 cents, my format, or would just do 50 dot one, right? Like, obviously, you need the zero on the end there. And then there's rounding and all kinds of stuff that that needs to happen. So what I do with this is, is I basically write this function, and I say given sense, it should, I should expect that it returns dollar sign $50 or dollar sign 50 dot 42 cents, and and then it becomes a game because you're like, how can I break this function? Right? Yeah, and you sort of throw like 40 or 50 or not, not that many. But you should throw all these different, what we call assertions at it. And you you say like, Okay, if I give it amount of full dollars and incense, then it should format it like this. And you can write all these different things. And if I would ever refactor that function, I have all of these different tests written against that function. So I don't have to go back and try it again, myself.
+
+37
+00:26:51,810 --> 00:28:02,970
+Scott Tolinski: Yeah, this was a big one for me. Because like he said, it is it is a game. And once you realize that, like a lot of the times when you're writing your code, you're writing the code was sort of perfect inputs, right, because you're designing the input, so then therefore, you're getting outputs that you expect to be perfect. But what happens when your inputs aren't totally perfect, right, or the numbers aren't coming in, as you'd expect, it is so much faster to write a test that tests the results of this function than it is to try a billion different varieties of this value, right. In the last one, I the simpler code base, I did kind of touch on to it, writing tests sort of illuminates again, where these functions are maybe a little too monstrous. And they could be broken up into smaller bite sized pieces that are easier to test. So if you write code that is hard to test, then that is a good indicator that maybe your code could be written a little bit differently or better. Because, again, if these tests are hard to test, or you're not quite sure what to do, they're the writing these unit tests, or these integration tests are going to help you just sort of figure out where these areas in your code that could be simplified.
+
+38
+00:28:03,060 --> 00:28:22,980
+Wes Bos: Someone once told me, if you if you're describing your tests and includes and you're probably your function probably does too much, or your test is probably doing too much. So you got to break that up into smaller pieces. And, again, it's just going to make for much simpler codebase. Overall. Nice.
+
+39
+00:28:23,250 --> 00:28:45,540
+Scott Tolinski: Yeah. So I guess the big takeaway here is confidence, right? I mean, we're all looking for greater confidence in our code, and we want to make sure it works. And so another thing that can give you great confidence is snap shooter. Snap trigger gives you the confidence that you're always going to have the backup solution that you need for your Digital Ocean droplets.
+
+40
+00:28:46,020 --> 00:30:22,260
+Wes Bos: So snap shooter is a Digital Ocean backup service. So it's actually pretty, pretty nifty, and hardware. So if you've never used digitalocean, before, first of all, you should, because digitalocean is awesome, a second of all, so in digitalocean, you have these things that are called droplets. And if you want to take sort of like a backup or like a what's called a snapshot of the entire image of that, because you want to maybe move it to another server or you want to be able to restore to that snapshot. It's funny, we're actually gonna be talking about what snapshots are in testing today. In digitalocean, you can also snap shot your entire server, and digitalocean lets you manually do that yourself. However, snap shooter is a service that sort of takes it off to the next level. So if you want fine grained control over how often you you backup your services, how long you can keep the backups of your Digital Ocean. So Digital Ocean only lets you backup your servers for four weeks. So if you need backups that are much longer than that, this is a perfect service for you. You can retain them a lot longer. I thought this was kind of neat. A snap shooter actually runs on Digital Ocean. So you're a snapshot of your server will never actually leave Digital Ocean itself, which is pretty, pretty nifty. It's this is really great. I actually just started it up before the podcast, they have a free plan that's for 14 day free trial. And I was running a backup of my own server in, I think, what was it about two minutes? Scott? Yeah,
+
+41
+00:30:22,260 --> 00:30:30,360
+Scott Tolinski: I would, uh, I mean, in the lead into this episode, it was absolutely no time. I mean, I yeah, it was it was super fast,
+
+42
+00:30:30,539 --> 00:30:55,200
+Wes Bos: pretty sweet. You just connect it to your Digital Ocean account. And then it will take a look at all of your droplets. And then you can go ahead and start scheduling it all from there. So if you need some backup for your Digital Ocean server, check out snap shooter.io. And of course, we have a coupon code for syntax listeners, use the code syntax to receive a 20% off for your first 12 months.
+
+43
+00:30:55,529 --> 00:31:00,630
+Scott Tolinski: Nice. Yeah, if you so if you're backing up? snaps, you got to do
+
+44
+00:31:00,630 --> 00:31:17,130
+Wes Bos: it. Yeah, we should do an episode on backing up as well. Because that's that's one thing I think people aren't doing as well as, as they should, because it only takes one terrible crash. Before you just want to stick your head in the sand. So check it in how many people
+
+45
+00:31:17,130 --> 00:31:44,160
+Scott Tolinski: I guess you don't really experienced this too much anymore with solid state drives. But how many people remember like had like a hard drive full of stuff. And all sudden the hard drive won't boot up? One day, I had a lissie like raid drive one time that one of the drives died. And I lost everything on both of the drives. And I didn't have a backup. Because I mean, it was my backup. But I still had extra stuff on there. It wasn't living somewhere else. So backups. Yeah, I had burned.
+
+46
+00:31:44,580 --> 00:32:42,540
+Wes Bos: I had my my old MacBook Pro, I put in a one terabyte SSD in there. And it was like 1200 bucks or something like that. And it died, like a couple of months in and I was so unhappy. But luckily, I had backups in place. It's Yeah, I think everybody should know it's not if your drive dies, it's when it drives. So you should always have some sort of backup system. And you can also restore from snapshots as well. So if things do go south, it's just a couple clicks away to restore your droplets, which is pretty sweet. Food. Cool. All right, let's move into libraries and services. So you get it you want to test you want to do some sort of the testing that we did, what are the different libraries that you can use? And we're gonna be attacking this from a JavaScript standpoint, because we are primarily JavaScript developers. But again, you should know that these ideas, they are an absolutely every single language.
+
+47
+00:32:43,230 --> 00:33:04,950
+Scott Tolinski: Yeah, absolutely. Yeah. And there's, there's probably like a lot of things in actual software testing that's existed for ever and ever and ever that, you know, web developers, or as we write more and more complex stuff are just starting to dive into. So okay, so some of these libraries. Did you want to test drivers assertion library first?
+
+48
+00:33:05,160 --> 00:34:08,130
+Wes Bos: Yeah, let's just clarify real quick. And these sort of blur the lines, there are kind of two ideas there, you have what's called a test runner, which will watch your files and suck in all of your tests and actually run them for you. And then you have what are called assertion libraries, which is inside of your test runner, you actually need to check if those values are what your you're expecting, right? And generally, your your assertion libraries will say, like, expect the add function to equal three, or expect this react component to have three children or expect this react component to look like this or to have attribute or, or you get the point, right, like, run this code, expect these things to happen? Are these things to have been called or it to look like this, right? So there's sort of two ideas and some of these overlap, some of them you use together? It's a bit of a complicated space, because there are so many different tools out there.
+
+49
+00:34:08,630 --> 00:35:43,400
+Scott Tolinski: Yeah. Cool. So we're gonna start with the most popular test runner out there. Which is well, it's this is also sort of an assertion library as well. Right? It's both Yeah. So yeah, it's a jest. Now, just as a library made by Facebook that will run your test and also do your assertions to make sure everything is as expected, but just sort of came onto the scene the past couple of years and has been a hot hot, hot favorite. In fact, I, I my tests were written originally in mocha. So I was, which is another one we'll get into in a second. So I was on mocha and I wasn't necessarily planning on rewriting everything. The API is pretty similar. But I had a tweet a few weeks ago, where I was just saying, Hey, I'm gonna do a series on testing when people want to see mocha or jest, and I had a Maybe like 10,000 responses? Just, it was like, in fact, some of them were like getting into insulting. They're like just You idiot, like, why would you do anything else. So people are pretty, pretty high. And just right now, I do like mocha as well. But like, just is a new more sort of, I would describe it as being a little bit more simple, easier to use than some other things. There's a lot of extra features, we'll talk about some of the snapshot testing stuff, because I haven't actually done very much of that. But just is a Yeah, it's a pretty sweet library for testing. Anything really in JavaScript, a lot of times people think because it's a Facebook library that it's for react specifically. But it's really just for JavaScript testing.
+
+50
+00:35:43,530 --> 00:36:04,130
+Wes Bos: Yep. It's awesome. Because like, it obviously tests your JavaScript, it comes with a really nice test runner in it. So it will watch all of the files on your computer, it's very fast, it will, it'll run the test, I think it's much faster, a little bit faster than some of the other libraries out there. What is there's some other things that are really like,
+
+51
+00:36:04,530 --> 00:36:27,230
+Scott Tolinski: really nice code coverage features will tell you how much of your code is covered by tests, it'll give you this nice little table output of, you know, different percentages for this, this file is covered like this, and this files, so it gives you some some eyes into your code as to what tests you need to write and how you can make your code a little bit more robustly tested.
+
+52
+00:36:27,600 --> 00:37:05,940
+Wes Bos: Yeah, sure. Because if there are some lines of code in your data in your application, they obviously aren't tested. And there's a possibility that things could go south there, the thing I was talking about is that the watch feature on your tests will it works with Git. And that's really cool. Because it will by default, if you watch your files, they will only watch the files that have changed since your last get check in. And I thought that was really neat. You can obviously overwrite that with the dash dash watch all flag. But I thought that was really neat, because you can just test only the things that have changed since the last time you had committed.
+
+53
+00:37:06,230 --> 00:37:25,920
+Scott Tolinski: Yeah, and I really like to there, while the test runners running it can there'll be a thing, you'll just like push F to test all failed tests, right? You can only run the tests that have most recently failed, or you can, you know, run all the tests or again, run the test of code that's been changed since the last commit and stuff like that, I found some of those things to just be awesome.
+
+54
+00:37:27,420 --> 00:37:46,590
+Wes Bos: That's great. So another library that we have is mocha, and this is one that I used on my own codebase before I moved over, just like you it is fairly similar to to how Jess works. I don't know. Do you have any any examples of of what you didn't like about it? I guess we sort of covered that with just,
+
+55
+00:37:47,100 --> 00:38:29,550
+Scott Tolinski: yeah, basically, I didn't find the like, I didn't find everything to be as painless. I think there were some maybe some extras syntactical stuff here and there that I needed to do. I didn't find that the runner itself to have as many options like loading up the things like the code coverage and stuff was just so easy with just that. Like, I'm not like a Mocha Pro, though. So like mocha people, if it's, you know, in your mind as easy or something, let me know, but from what I've heard from people who have used both pretty extensively, that just has a pretty much a big up side, compared to those features, you know,
+
+56
+00:38:29,940 --> 00:39:19,670
+Wes Bos: yeah. Another one that's actually totally different this is this is one that I have experienced on a couple of projects, kind of the the neat part about being a sort of a contractor for all the years is I have dipped my toes into many different teams, and they all have different testing strategies. And I love that because often you get people who are so passionate about their way, but they've been working on the same team for five years. And that's the only way they've ever done it. But it's kind of neat to see a different approaches to it. So this was one it's called cucumber. And this is we'll talk about what BDD is behavior driven development. And so I'm laughing cuz Scott Scott stock, what did he say about your dog? Oh,
+
+57
+00:39:20,010 --> 00:39:53,760
+Scott Tolinski: he's afraid of BB DS, which is an acronym that is usually used for something else, but we use that for big black dogs. He's a little shih tzu and if he sees a big black dog, he loses his mind it's like this, these other dogs sort of like whatever but we're on a walk. We'll be taking him through the park and then Courtney and I will just be like, Oh bvd and then those. It's like you cannot control them you cannot. It is scary to over something.
+
+58
+00:39:55,830 --> 00:41:49,460
+Wes Bos: Anyways, is BDD is not the thing is basically blackdog. So what cucumber allows you to do is that you can write your tests in plain English. So let me give you an example of Let me pull up an example of cucumber. So the way that cucumber works is you write these dot feature files, and you say a feature is a slider, or a feature is a checkout, and you say, as a customer, I want to be able to buy something. So that I this is tip example, I really didn't like this approach. But here, let me give an example from the actual website. So the feature is Hello, cucumber. As a product manager, I want to I want our users to be created when they visit our site so that they can have a better experience. And then inside of that you have a scenario user sees the welcome message, when I go to the homepage, then I should see the welcome message. And you just write all of these bizarre feature examples. I know there's people that are absolutely nuts about using this cucumber, and they love it. But I always just found like, I was like, as a developer, I want to die when I write a cucumber. But then what happens is that it converts them to actual like, like a regex matching. And then and then you go and actually write the test behind it. So you're right, the clicks, and the and you look really say like when I click this button, expect this pop up to be visible and things like that behind it. So I always thought that was kind of neat, because you can sometimes get like project managers or things like that to actually write the the cucumber tests, and then you as a developer can go ahead and just wire them up and make sure that they all pass. Yeah,
+
+59
+00:41:49,880 --> 00:43:03,840
+Scott Tolinski: yeah, I actually I didn't, I didn't mind hurting cucumber tests personally. But I'm kind of like, I like that sort of like English II thing where it's very like, we the way you read, it makes a lot of sense, right. But definitely, definitely a little bit different option there that we mentioned another one already, in the end to end testing section, which is cypress@cypress.io. They were a sneak peek of mine at one point again, this, the service gives you a really nice little browser window into seeing exactly as your tests are running, you could sit there and watch them run. I found the actual assertion library and everything when you're writing your test to just be extremely seamless and easy, just just super easy. And again, that's not react specific or anything. Cypress is just for testing your code, right? Because you're basically pointing Cypress to a URL, you're saying, hey, load up this URL, and then do this stuff. Hey, click here, click here, then this should load this should load this should do this. Oh, when you click the when you click the Checkout button, if there's no products in the cart, then it should show this alert message if you click the Checkout button, and there's products in the cart, and the cart should open. I mean, it's just really really super slick in my opinion.
+
+60
+00:43:04,290 --> 00:43:15,210
+Wes Bos: Yeah, I I think that's pretty neat because I Kent C Dodds, you know, Kent C, Dodds has been just laying down some some testing nuggets on Twitter over the past couple
+
+61
+00:43:15,380 --> 00:43:19,260
+Scott Tolinski: years. So good. Yeah. So blog post his tweets, all that stuff.
+
+62
+00:43:19,290 --> 00:44:15,060
+Wes Bos: Yeah, he's he's just got so much good. I think he's got a bunch of video content as well. I'll make sure I link it up in the in the notes. I'll pull it up. But he said that like the closest The closer you can get to how the actual user expects to use your, your website, the better, right? So rather than, like, sometimes you you just write all these unit tests and you assume that the the data coming back from the API is correct, and or if it is correct, then then you're in good shape. But what your user actually cares about is that you can actually see the products in the cart, and that there are six products in the card and that they have an image beside them. Right. So I think that's pretty neat that Cypress is coming out with this this product and it's open source, so you don't have to pay for it. If you don't like it. I think it's pretty neat that it's making this sort of like closer to the user testing a lot easier than than it has to be.
+
+63
+00:44:15,480 --> 00:44:16,710
+Scott Tolinski: Yeah, wait, absolutely. I
+
+64
+00:44:16,770 --> 00:44:17,940
+Wes Bos: say that right. A lot.
+
+65
+00:44:18,000 --> 00:44:29,700
+Scott Tolinski: It's making it a lot easier. It's making it a lot easier. Yeah, absolutely. Okay, so let's get into a couple of react specific libraries. The most popular one is enzyme which was written by Airbnb, is that correct?
+
+66
+00:44:29,760 --> 00:44:30,840
+Wes Bos: Yes, it is.
+
+67
+00:44:31,020 --> 00:45:20,670
+Scott Tolinski: Okay, so enzyme is basically a way for you to work with react specifically, you pass in a react component, you can say hey, shallowly render this, which will just render that single component and not anything deeper than that, basically, essentially, for a unit test. Then you have the Mount, which is going to fall on render that component along with any sort of child components, which again, is going to illustrate any of the sort of integration issues that you're you might run into between data as getting passed down. So enzyme is a very, very, very popular library. It's primarily the library for react, testing up until this point, and then and I say up until this point, because it was only a week or so ago or a couple weeks ago, that Kent C, Dodds released his appropriately titled, React testing library.
+
+68
+00:45:20,910 --> 00:45:23,400
+Wes Bos: Yeah, he's totally gonna win the SEO game there.
+
+69
+00:45:23,760 --> 00:46:02,490
+Scott Tolinski: I know, which is hilarious because react testing library is basically I mean, we talk a lot about, you know, what he was saying before about how user is using the site, what this library does is it strictly sort of enforces best testing practices with react, because it doesn't give you the option to do everything, it basically limits you do test the way that is going to be more reliable to how your users are actually using the site. And this thing is brand new, I've only had a chance to read the docs, I haven't had a chance to use it. But it should be easy to just drop into your application and start rendering your components and testing them. From what I looked, it seemed like it was pretty sweet.
+
+70
+00:46:03,000 --> 00:47:55,350
+Wes Bos: Yeah, so and with both of these enzyme and react testing library, I should say that they allow you to sort of orchestrate the application yourself. So you either shallow render it or you mount it. And again, the difference between that is shallow render will only render that component. And if you have any other components inside of that, it will just like if you have a store picker component, it won't render the store picker component inside of it. And a mount will go inside every component all the way down and mount that actual component and render it out. And then inside of that you can simulate form submits clicks, typing into text boxes, all of those different things, you can check specific you can you can check that your component has like a paragraph tag in it, you can check that the attributes are properly set, you can say like click this button and then expect that the button has a red border around it. There's also a whole extension for enzyme that is for style components. So if you really want to test that like, like when I do this expect that the border is red, or the border thickness is 20. I haven't gone that far, because I don't think it's necessary for stuff I'm working on. It's it's pretty nifty that you can you can sort of orchestrate as a user would would actually use it and then check whether it's checking that the text is displayed on the page. Or you can also reach inside of props and state, which is I think a little bit frowned upon in the React testing space. Because again, you want to you want to make sure that there's a paragraph on the page. And that that paragraph on the page says what you're expecting it not that props and state match what you're expecting, because again, you want to look at it as a user, not the actual, you're not not a robot, right? Yeah,
+
+71
+00:47:55,379 --> 00:48:28,980
+Scott Tolinski: yeah. Again, it's it all comes back to that you want to be testing the closest to how your users are actually using good seeing your site, rather than how a robot uses and sees your site. Right. So yeah, all of these things, again, are just going to like really, I don't know, educate you on how your site is, is handling things, right? It's going to keep you up to date and having just a full understanding of of where your site is at all times. So well. Another way that you can boost your education is by attending the fluent conference.
+
+72
+00:48:30,120 --> 00:48:32,280
+Wes Bos: Beautiful segue, Scott, that's
+
+73
+00:48:32,280 --> 00:48:38,220
+Scott Tolinski: great. Trying to use the speaking of speaking of speaking of
+
+74
+00:48:38,580 --> 00:50:15,210
+Wes Bos: testing, you're getting really good at this. So O'Reilly, who comes out with all those books that probably have taught you various web development they are running their fluent conference for, I don't know, I think they've been doing it since like 2011, I spoke at the very first fluent. And it's fantastic. It's a massive, massive conference, which with edge, tons of speakers and tons of really good training inside of it. So if you are looking for a conference that is sort of going to get you up to speed with what's going on in our industry, some of the best practices, you get to see I always love going to conferences, because in 45 minutes, or however long a talk is you can see. Or you can hear from an industry expert that is in that specific space. So maybe there's gonna be somebody on testing there, maybe there's gonna be somebody that's talking about react may be someone that's talking about new JavaScript API's that are coming to the browser, you can just sort of take their their sick last six months of work, and just brain dump it right directly into you, which is really, really exciting. So I definitely suggest that you should check out the fluent conference. If you are any sort of web developer, software engineer, your designer working on web performance, any of that good stuff in web development, check it out. So it's fluid conference on June 11 to June 14. The training is the first couple days in the conferences the last two days, I believe it's in San Jose, California, you can get 20% off with the coupon code syntax. So nice, so much to fluent for sponsoring. Awesome. Okay. So
+
+75
+00:50:15,210 --> 00:50:31,680
+Scott Tolinski: lastly, before we wrap this thing up, we're going to just talk about some general concepts here. If we haven't gone over yet, so the first of which is mocking mocking is a word that you probably see. I don't know, only in testing, I do see mocking elsewhere other than in testing?
+
+76
+00:50:32,400 --> 00:50:36,090
+Wes Bos: I don't think so. I yeah, I don't, I've never seen it anywhere else. No.
+
+77
+00:50:36,450 --> 00:51:20,700
+Scott Tolinski: So mocking is is sort of, you got to take the word as what it sounds like. But you're basically using fake information, whether it's a fake function or a fake data to plug it into your code, right. For instance, you have a API, that API returns some data, and that data goes into your component, that component renders out, what you want to be doing is not necessarily always testing that API. Because if you know that information is coming back a certain way, you can make mock versions of that data, so that you have data to put into a function without hitting that API, you put that data into your react component, check to make sure everything renders out fine. Or maybe you are mocking out functions where you don't actually want the function to run as it needs to run in the real world.
+
+78
+00:51:20,850 --> 00:51:57,690
+Wes Bos: So yeah, I guess like a quick example of mocking is, if you have a function, and let's say you, you have a function called get cupcakes, and and that will hit an API and come back to you with Alyssa cupcakes, you don't necessarily want to actually have your, your API requests and be hitting the network for all of those because it's slow. And that makes your test brittle. And what you can do in that case is somebody else's testing that API to make it work. And that that may, that may also be you. But you could just immediately return a list of cupcakes that you have stored in like an object or JSON, file it just load that in and return it immediately. Is that is that right?
+
+79
+00:51:58,020 --> 00:52:02,700
+Scott Tolinski: Yeah, yeah, that's That's my understanding as well, correct us if we are wrong,
+
+80
+00:52:03,000 --> 00:53:38,550
+Wes Bos: beautiful, there's a whole bunch of like terminology in here. And even though I use it, I don't necessarily know the the words just perfectly Yeah, it is. Next one is a spy function. And what this is, is sometimes again, just like the the network requests, sometimes you actually don't want to fire the real function, you just want to make sure that that function was fired. So for example, on a react component, maybe have a Checkout button. And when somebody clicks that button, it'll it will trigger a whole bunch of functionality that is outside of that component, all you want to do is make sure that when someone clicks the Buy Now button, you want to make sure or you want to expect that the function was called, you want to expect that the maybe you want to expect that the function got called twice, maybe you want to expect that the function was called in passed in a certain parameters, maybe you want to expect that the function errored out. And so spy function is basically just like swap out an actual function with the sort of fake one. And then that spy function will record all of the things that happen to it, how many times it was called what it was called with, and all the other data inside of it. So often, what I'll do with a react component is since your your functions get passed in as props, you can just pass in spy functions to all of your like, all of the functions that you have. And then you can run the component, you can click a couple buttons, and then you can expect that those functions were then called.
+
+81
+00:53:39,210 --> 00:53:54,420
+Scott Tolinski: Nice. Cool. So lastly is snapshot testing. And snapshots are basically Well, they take a snapshot of your code, and then you compare the snapshot with how the code is now and make sure that everything looks and functions the same. pretty much it.
+
+82
+00:53:55,320 --> 00:56:19,740
+Wes Bos: Yeah, I'm not I I am a big fan of this snapshot testing. because let me tell you why I'm with enzyme. What happens is that you you render your react component, and then you will maybe render a div. And inside of that div, you have like a paragraph tag, and that paragraph tag says, your cart total is $44. And what you would do with enzyme is you would first you would find the paragraph tag, and then you would expect the text of that paragraph tag to be your cart total is $44. Right. And usually, the way that you write that whole test is that you you render the component at once you go ahead and copy the text that was in that paragraph tag, and then you you paste it into your expect. And then if somebody changes the text or that paragraph doesn't get rendered properly, for some reason, then that test will fail. And you have to go back into the test to update what that paragraph tag. And same with attributes right you can, you might write six or seven expects in a test to say expect that this attribute is set this class is set to act Have expect that this form is disabled. And with snapshot testing, what it will do is, it will basically just take a dump of your HTML and this is by default, in, put it into a snapshot file, and then every time it runs, it will make sure that what got rendered is exactly what is inside of the snapshot test file. And then if anything changes, let's say, you you had the word your total is, and then you changed it to just total colon, then that snapshot would fail. And all you have to do to update it is just push the U button. And then it will go ahead and update your actual snapshot. Now, there's a bit of a downside there, because you can very easily just hit the U button and say, Oh, yeah, just update all my tests. And you might not catch it. But why I really like this is because if you were to check in some edits to a react component, you would both see what happened to the React component. But you also get this really great visual change of what the output with the changed output is actually going to look like. Because you would check in your snapshots to GitHub, and it would show you that your total is got changed to total, at the end of the day. Hmm,
+
+83
+00:56:20,160 --> 00:56:31,350
+Scott Tolinski: yeah, see, I haven't been using snapshot testing, because I've primarily had all of my tests already written in mocha. So like, so I had to dive in and really start snapshotting it up to to get that that benefit there. Okay, so
+
+84
+00:56:31,350 --> 00:57:20,700
+Wes Bos: it were, I got one more thing. Yeah, I found that it replaced a lot of finicky finding of elements and checking the content if I had like a lot of them. Whereas I can just dump the whole thing into a component. All right, going into a snapshot and then check if it's there. And you just know that if the entire thing matches what it used to be, then then it works, right. It's pretty cool. There's also custom serializers, as well mean that you could snapshot test anything, it doesn't just have to be a react component, it could be if you really wanted to, you could just like dump an entire JavaScript object. And then you could just expect that the, the JavaScript object looks exactly the same. So there's all kinds of different custom serializers out there, there's, there's one for specifically for enzyme objects, which I use.
+
+85
+00:57:21,120 --> 00:58:27,810
+Scott Tolinski: Nice. Cool. So we talked a little bit about the concepts, the stuff, let's talk about TDD, or the strategy here for test driven development. Now, TDD is something that I first learned about when I first started doing Ruby on Rails stuff, because I think more so than any other community, the Ruby on Rails community really embraced TDD as part of their education process. So TDD test driven development is basically this you are, you first write your test, then you write your tests, so that it fails, right, you write your test, your your test obviously fails, because the code doesn't exist, then you write your code, then the test passes, because your, your, your code. Now matches are now completes correctly. So the idea is, is really that the test driven development is instead of writing your components, and then testing them, you're writing your tests, and then writing your components. Second, so that your tests again, exist first. And then your code exists second, so that you write your code to pass the tests rather than your test to pass with the code.
+
+86
+00:58:29,760 --> 00:58:33,300
+Wes Bos: Yeah, so pretty popular. Do you? Do you use this at all yourself?
+
+87
+00:58:33,749 --> 00:59:09,090
+Scott Tolinski: Sometimes? It depends on how much time I feel like I have, or I really add, because it does take a little bit more time. But again, it gives you more confidence. Overall, I do it. Sometimes I'd like to do it. But I don't always when I dive into the features, I'm definitely like, if I'm diving into something, I'm definitely a little bit about results driven. Like, I want to see something really quick for my own motivation sake rather than for anything else. But when I am feeling motivated already, and I don't need motivation, then yeah, I like test driven design or development.
+
+88
+00:59:09,479 --> 00:59:21,330
+Wes Bos: Yeah, totally. I myself, don't use it. But I definitely see the benefit of doing something like this. And I know, again, people who are into TDD are absolutely crazy about it, and love it.
+
+89
+00:59:22,350 --> 00:59:23,430
+Scott Tolinski: Yeah, nice.
+
+90
+00:59:24,150 --> 00:59:42,980
+Wes Bos: And then the other one that we have is a BDD, which is big blackdog is behavior driven development. We talked about that. That's what's cucumber. So rather than I guess, I'm not really an expert in this, but rather than then doing it all based on me, how do I describe this?
+
+91
+00:59:43,320 --> 00:59:57,930
+Scott Tolinski: Instead of how you're, instead of thinking about your code in like code land, right, like, you know, robots using your code or functions passing in this. It's more about again, it's more about how the behaviors of your users are are driving the the tests.
+
+92
+00:59:58,320 --> 01:00:13,770
+Wes Bos: Yeah. So I think there's like a As a user, I am approaching the website are given that I'm on this page, when I click this button, then expect the pop up to be open, just like we talked about with that cucumber. So that's kind of a neat way to approach it as well.
+
+93
+01:00:14,460 --> 01:01:12,750
+Scott Tolinski: Nice, cool. Okay, last on our list is continuous integration, which is something that is been really cool lately. But basically, continuous integration is an automated build and testing process when you're committing to version control. So basically, you commit your code up to GitHub, GitHub, then triggers a build of your code that runs does all your tests, and then maybe either push it like, let's say, you push to production, production that goes ahead and runs all your tests, make sure everything passes before actually pushing to production. That way, there's no case scenario where a user on your team has made some changes to the code didn't run their test didn't confirm that it was working and had this thing, God, this is extremely important in applications, again, in both applications, libraries and stuff that rely on a lot of people using them. Because again, you don't want some sort of errant push to go ahead and break the experience for a lot of people. So continuous integration is something that is really super cool. The main sort of library for that is Travis CI.
+
+94
+01:01:14,250 --> 01:01:56,310
+Wes Bos: Yeah, that's the one that we had used. And you can set up Travis to do anything you want, right? It can, it can take snapshots, it can run visual regression testing for you, it can run all of your tests. And often those are integrated directly into GitHub, because then it will run all of your tests as soon as you submit a pull request. And if the reviewer sees that all the tests are still passing, you didn't break anything else, all of your new tests are passing, then they can go ahead and just merge that thing. And it'll it'll go ahead and push it to production. So I even heard of people, they have a big, like a big red light in in the office. So if you submit a pull request with a failing test, it'll go off,
+
+95
+01:01:56,370 --> 01:01:59,430
+Scott Tolinski: which is funny. I like that. I like stuff like that. That's
+
+96
+01:02:01,560 --> 01:02:14,340
+Wes Bos: beautiful. So let's wrap it up. Just talk a little bit about our own our own testing strategy. So do you want to take a quick dive into that? I guess we've sort of talked about it throughout the episode. But yeah, somewhat up in 10 seconds or so.
+
+97
+01:02:14,700 --> 01:03:16,650
+Scott Tolinski: Yeah, I use Cypress for end to end testing, just test generally usability or user clicking around things. test to make sure my stuff that the users are doing works, I use jest to do my test runner, my code coverage. And as my assertion library as well, I don't do a lot of or any snapshot testing, really, but I probably will at some point here. So I'm pretty much testing all of my components with enzyme. And I'm using mounting instead of shallow rendering. So all of my components are mounting. So I pretty much use full mounting, I use enzyme. I don't have any continuous integration set up. I don't do a lot of stress or performance, or usability or beta testing. I don't do any visual regression testing, although I probably could do some of that stuff. So yeah, that's pretty much it. I do a lot of unit integration and end to end tests using jest and Cypress.
+
+98
+01:03:17,280 --> 01:03:25,890
+Wes Bos: Beautiful I am. It's funny. Anytime we describe our own thing, it's almost always saying, but I am just
+
+99
+01:03:26,070 --> 01:04:39,210
+Scott Tolinski: yet sorry. Sorry, sorry. Yeah, at some point, I forgot to mention this, I have this like really slick mocking setup for graph QL. And Apollo, which I got to talk about this because this is really cool. Basically, it's a, you know, some of the times mocking your your data can be so hard. But since I have a full stack app, I have access to my schemas, as well as the whole basically my entire graph qL Apollo setup. So because of that, I have a single function called mock man Mach Mang, that I just pass in a a query. So I use the same query that I'm using on the actual front end of my site, I import that into my test. And then I pass it through my mock Mang function. And that's about as much data as I want all mocked out with fake data. It's never actually hitting the API. It's instant. It's so fast. It's so cool. Basically, just say, Hey, give me give me the the actual query that this thing is using, give me the data, the actual data, this thing is using a pass it in. And just like that, I have all my data mocked out. It's super cool off to publish a blog post diamond or something like that. It's not anything crazy. It's using some built in methods and stuff that Apollo gives you just wanted to touch on that really, really quickly.
+
+100
+01:04:39,810 --> 01:05:46,980
+Wes Bos: Yeah, that's pretty pretty nifty. I need to check out that because I was I was talking to you about testing. I'm sort of in open mind mode right now with like, writing writing tests for my next react course. And just in general, I think there's a lot changing right now and I'm sort of just like, not throwing everything out the window. Because I was doing all kinds of reading and everyone says, everyone's like just shallow mountain and, and don't. And then and then there's other people on the other side, which is Oh, Mount everything and don't shallow render anything, right. So I'm a bit I'm sort of testing out both of them, I haven't made any decision, this is the decisions decision made any hard decisions on either way, I'm using just an enzyme, I'm using a enzyme to JSON, which will allow me to do snapshot testing with enzyme. And then I'm not doing any sort of continuous integration, stuff like that on the on my current stuff, just because it's not as big I have in a lot of previous other projects that they worked on.
+
+101
+01:05:47,640 --> 01:06:32,580
+Scott Tolinski: Yeah, I'm gonna look up to I'm going to be looking to set up some sort of continuous integration of my setup fairly soon here when I get a minute. Okay, and since we are running a little short on time here, and I don't think either of us have anything, I think we're going to skip our stick pics today. and jump right into the shameless plugs. I released a new series Vue JS for everyone, check it out. If you're interested in learning view, j s. It's a beginners course. But we go over all sorts of stuff from routing to API's best practices, and everything with the brand new view CL is version three, everything is fancy, fancy, fancy and new. So check it out, view j s, for everyone for sale right now level up tutorials comm forward slash store or become a pro subscribe to get access to all that stuff to
+
+102
+01:06:33,810 --> 01:07:26,610
+Wes Bos: beautiful, I'm going to plug my YouTube channel. I've I've been starting to throw up these I've been starting to throw up these sort of just short informal videos. Because my courses are such a big produced thing. It's nice to have an outlet just between Twitter Hot Tips and a big produce course. It's nice to have like the sort of in between videos where it's just me kind of riffing on an idea. So I did one on object nested object destructuring I did another one on react context API. And it's just between five and 10 minutes explaining how something works and they seem to be doing doing really, really well in terms of views. And I'm trying to get to that hundred thousand subscribers so I can be like Scott and get the what is a silver playback button. Yeah, I
+
+103
+01:07:26,610 --> 01:07:31,320
+Scott Tolinski: have the silver I wish I could get the the better ones. But the silver
+
+104
+01:07:31,320 --> 01:07:32,490
+Unknown: one is pretty nice. It's
+
+105
+01:07:32,490 --> 01:07:36,120
+Scott Tolinski: pretty actually it's way heavier and cooler than you'd expect. But uh,
+
+106
+01:07:36,180 --> 01:07:38,490
+Unknown: cool. Yeah, I've had so right now,
+
+107
+01:07:38,490 --> 01:07:47,610
+Wes Bos: I want everybody to go to youtube.com forward slash West boss. And hit that subscribe button. smash that subscribe button. Just just
+
+108
+01:07:47,640 --> 01:07:49,950
+Unknown: punch your fist, right? Yeah, join the bell club.
+
+109
+01:07:50,970 --> 01:08:20,790
+Wes Bos: Like, subscribe. Ring the bell. What else do you have to do? You know, ring the bell is get post notifications, or when someone posts on to YouTube. Oh, yeah, ring ago. You got to ring the bell and do all that you got to do and get me to that. I'm so far away about 44,000. But I've been 5000 in the last month. So nice. I'll be there in a couple of years. Yeah,
+
+110
+01:08:20,790 --> 01:08:22,310
+Unknown: get it. Get it, get it right on.
+
+111
+01:08:22,520 --> 01:08:39,020
+Wes Bos: Cool. That's it for today. Thanks for tuning in. And if you have any of your own testing thoughts, please tweet them at syntax FM and I'll be sure to retweet them from the account. always interested in hearing what other people have to say as well. Or pace is
+
+112
+01:08:39,470 --> 01:08:49,770
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

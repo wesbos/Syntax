@@ -1,0 +1,444 @@
+1
+00:00:05,970 --> 00:00:11,250
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:12,570 --> 00:01:12,560
+Wes Bos: This episode of syntax is brought to you by fresh books, which is an easy to use Cloud accounting software that saves small business owners two days a month in paperwork, and get some paid up to five days faster for your 30 day free trial of fresh books. Go to freshbooks comm forward slash syntax and enter syntax into the How did you hear about a section, we'll talk a little bit more about them partway through the show. Hello, everybody. Welcome to another episode of syntax. Scott and I are here today to talk all about advice for newbies. So we've sort of compiled a whole bunch of the wisdom that we've gained over the years and sort of like things that we've noticed over the years of actually teaching people who are new to programming. And we're sort of just going to do a brain dump of all the advice that we have, as well as I tapped my Twitter crowd for some of the advice that they have as well. And some, some terrible advice on there. But also some really good advice that that has come in through so we're gonna kick it off in chat with Scott, how you doing today,
+
+3
+00:01:12,570 --> 00:01:41,550
+Scott Tolinski: Scott? Oh, doing super good on. I'm excited for this week. This, uh, I guess, tomorrow at the time of recording, this is the Google event to release or at least announce the new pixel phones. I'm very excited about. And the NHL starts this week. I'm a huge hockey fan. So it starts on Wednesday as well, I believe. And there's snow on the mountains out in Denver. So there's just so many things happening this week. So very, very excited.
+
+4
+00:01:42,149 --> 00:02:49,350
+Wes Bos: How about you a quite a bit going on with me, I actually just released a big update to my ESX for everyone course, which is available@esx.io. And I had released it, I don't know about a year ago, and that it covers all that ESX has to cover. And the nice thing about this course is that it doesn't go out of date because it is the language right? It's not like it's not like react or something that's going to update whoever JavaScript has not stopped. And there's a whole bunch of new stuff that's coming to JavaScript like a sink await. And we've had some we've got object spread coming we've got some new methods static methods on objects. So I what I did is I took a couple days and recorded just a bunch of videos that covers everything in iOS seven esa s nine, and in just a tacked it on to the end, the major part of it is using a sink await now that we have it in the browser, now that we have it in node, we can do a lot more flow control, which it's totally replace my use of like generators and regular then based promises. So yeah, I was super stoked to finally launch that.
+
+5
+00:02:49,980 --> 00:03:03,930
+Scott Tolinski: Yeah, that's one of those things that Meteor has had async await for quite a little bit by default on the server and like, Oh my god, that that totally just changed how I thought about any sort of, you know, promises or anything like that. Love it big, big,
+
+6
+00:03:04,200 --> 00:03:36,180
+Wes Bos: amazing I've been, I've been refactoring my own app and taking all the sync dot waterfall calls out. And it's just like, so beautiful. To be able to do that, as well as I go into some more advanced error handling, where you use a high order function to handle the errors rather than wrapping everything in a try catch, because that's a bit of a bummer to have to do that all the time. So sort of the combination of those things is makes coding just like so nice. For no sequence based stuff.
+
+7
+00:03:36,690 --> 00:03:57,780
+Scott Tolinski: Yeah, I think it's one of my favorite things about it, too, is just how easy it is to look at and just see exactly what's going on. Yeah, you know, sometimes with promises, I think even though they're not it's not callback, hell, it's still the visual aspect of it to me can seem a little like that. And so with async await I think it's just a nice little visual cue. Yeah,
+
+8
+00:03:57,810 --> 00:05:20,490
+Wes Bos: yeah, exactly. And then I also launched my stickers. Last Friday, which was a bit of a bit of a kerfuffle. So internet. Yeah, I broke the internet. I they showed up. They were supposed to show up on Monday. And they showed up on Friday afternoon. I was like, Oh, I bet I can get these suckers up by like three o'clock. So I did. And then And then last time, I didn't like email everybody to tell them that the stickers and I had a whole bunch of people that were mad that it didn't email them. So I was like, I better just like email and tweet it at the exact same time. So like everybody has a fair shot. And that was a huge mistake. Because I I it wasn't as much traffic as some of my other projects. But because I was not using CloudFlare to cache this because CloudFlare does not work on.af domains. The domain name that I use is bosta af as sort of a joke, which is stupid thing because you can't use my old server just fell over. And I got like something like three or 400 emails telling me my server was broken. So I fixed it all. I actually just had to scale up my digitalocean droplet. And everything was was back up and running. And they surprisingly all sold out within about 14 hours. So I guess now I have to order some more.
+
+9
+00:05:21,240 --> 00:05:26,009
+Scott Tolinski: Yeah, I mean, I'm not surprised. Everyone's hungry for stickers you know? Especially the
+
+10
+00:05:26,040 --> 00:05:31,889
+Wes Bos: the syntax sticker that here hold on me show you I haven't even shown you what it is yet. Beautiful.
+
+11
+00:05:31,980 --> 00:05:33,029
+Scott Tolinski: Oh, yeah. Oh, yeah.
+
+12
+00:05:33,029 --> 00:05:34,949
+Unknown: Love that tasty treats,
+
+13
+00:05:35,459 --> 00:05:36,300
+Scott Tolinski: tasty treats.
+
+14
+00:05:36,779 --> 00:06:12,209
+Wes Bos: Cool. Well, let's, let's jump into it. The our sort of idea is that we're gonna, we're gonna break this down into like, three sections, such as like mindset for beginners, tactical things you can can do day in and day out to make it work. And then we're going to touch on like a hot topic, which is imposter syndrome. How do you actually deal with being like, I'm not all that good at this, why should I be paid to do this or blogging about it or going to a conference or whatever it is? So I want to kick it off with some of your tips for dealing with mindset, Scott.
+
+15
+00:06:13,980 --> 00:07:27,209
+Scott Tolinski: Yeah, so I mean, at the end of the day, you one of the most important things, and learning in general is to have this understanding that the people who who get where they are, they didn't get there by, you know, wondering or worrying about not being skilled enough, they got there by opening their mind to deciding to devote a large portion of time in life to learning. So these people who are at the highest echelons of everything, are still to this day, never stop learning. So you have to just really open your mind to this. Oh, yeah, Wes is showing off and never stop learning sticker. It's so true. It's like, you have to just completely open your mind and say, Hey, I'm forever a student, there is never going to be a time where you're done in graduated. And like, I know everything. And you know, I think that is a mindset that can just hurt people's growth or hurt her, you know, what you're learning or whatever, you just really have to say, Hey, I'm gonna I'm going to soak up everything I can, I'm going to try to learn as much as possible. And I'm going to do that from now until forever, you know,
+
+16
+00:07:27,269 --> 00:08:25,980
+Wes Bos: yeah. And you have to be totally fine with like the your entire world being pulled from out from under you. Sometimes I see people that are in other industries, like, I had a talk once where I there's this thing called shark bite in the plumbing industry, that's just like totally changing how quick it is to plumb a house and how well how well the the joints fit together, and there's no leaking and you can like, take it apart, you don't have to solder and it's there's all these benefits to it. And there's a lot of like people that have been doing like soldering pipes together forever. And they're like, that's stupid, I would never do that. But like, the reality is that the entire industry is being shook up by these new things. And you have to be totally fine with that happening. Like, I don't know, six times over your career, like, how many times have my industry Let me think about this. How many times have my industry been shut out? Like, I started? jQuery came around. And then it was all about like Angular and backbone for
+
+17
+00:08:25,980 --> 00:08:31,379
+Scott Tolinski: don't even forget flash because yeah, I mean, just think how many people were going to be flash developers till the end of time?
+
+18
+00:08:31,800 --> 00:08:50,970
+Wes Bos: That's that's a that's a really good point. And what we saw when flash was is that like, people Haha, flash socks, but like the people that were doing flash were really smart people. And the ones that were smart about it, they just transferred their skillset over to other JavaScript API's. And then they were just amazing JavaScript developers at that time, right. So
+
+19
+00:08:50,970 --> 00:09:25,789
+Scott Tolinski: right, because ActionScript wasn't that far off. And I mean, at least you have your your foundations there, and is based on ACMA script, and one of my mentors was like a huge flash developer, and I never got super into flash myself, but like, the stuff she was making was like, she made like the Pokemon website. So like, wow, like the actual Pokemon website. And so like those people, you know, she she was smart enough to see that it was coming to an end and, and just transitioned hard. And she's a brilliant front end developer, and did not get lost in that in that transition.
+
+20
+00:09:26,100 --> 00:10:23,760
+Wes Bos: Yeah, absolutely. I think that's, that's a really good point that you have there. One of the mindset tips I have for people, and I've maybe I should give a bit of background. So I've taught maybe 200 people in person who are brand new learning to code and then obviously, there's been, like many thousands of people online who are new to coding who I've taught in some of the stuff that I see is, first a frustration with how come everyone's learning faster than me, especially if you're in like a boot camp or a class or something like that. And you see some people just get it immediately. And you look at those people and you're like, Oh, damn, you're like, why am I not getting as fast as them? And that's great for those people. But most people take a lot longer to to pick up these things myself included is people always ask me like, how do you learn so fast? I was like, I don't I learn really slowly. But if you can sort of chip away at it and keep at it, it's it's no problem there.
+
+21
+00:10:24,480 --> 00:10:45,120
+Scott Tolinski: That Yeah, absolutely. There's a lot of times where I'm telling my wife, I, there's no way I'm going to be able to solve this problem. And then like, you know, 24 hours later, you solve the problem, but it's just everyone struggles through stuff, especially learning and seeing things seem like way over your head. And if you keep persisting, you'll get through that, that fog or that misunderstanding of whatever you're doing.
+
+22
+00:10:45,150 --> 00:11:33,030
+Wes Bos: Yeah, it's so don't put yourself down, I think the other thing that I see a lot is, people write themselves off as not that type of person. So we see people come to programming and say, like, Oh, I'm not a math, the kind of person, I'm not going to be good at this, or I don't think that way. And they sort of just like, they like to like go online and find some sort of survey about their personality type, and then just write it off, because that's just the way that their personality is, when the reality is, is that doesn't matter at all. Those obviously, there's different personalities are going to learn to learn a little bit different. But don't stick that in your back pocket and pull it out as an excuse every time that something gets hard. Because this stuff is hard. And using that as an excuse is is not what you want to be doing at that point.
+
+23
+00:11:33,690 --> 00:13:52,919
+Scott Tolinski: Yeah, and if anything, you should be doing the opposite of that you should be looking at those those character traits. And thinking of how those character traits can improve your your learning, or maybe give you a different perspective that someone doesn't have, like, you know, even if you have something that you feel like can hold you back, it most likely is a strength in another way. So if you flip it and say, Hey, what is the strength allow me to do like me, personally, I don't have a great memory or something like that. I don't have these. You know, I don't have this programming background. But I am superduper persistent. And I will, you know, work on something as hard as possible for as long as possible until it gets done. So I could look at that and say, here are these things that are holding me back. But in reality, there's so many other things that will propel you forward, you just have to identify what those are instead. So yeah, it's so funny, because I taught I've taught breakdancing for a long time, why I don't currently but I've taught for like children, I've taught adults, whatever. And it's amazing how many similarities are back and forth between the stuff. I mean, at the end of the day, it's all teaching, but like, one of the things we used to talk about in breaking was your foundation, right? So the foundational elements are like the dancing elements and sort of base positions and sort of base balance things and handstands and whatever. And the idea is, if you don't have a solid foundation, you're never going to be able to get past that. So this, you must have a solid foundation, or else the entire house is going to fall down. So that holds true with almost anything you're trying to learn. And especially in web development, and things like that, do not neglect, you know, basic HTML stuff, basic understanding of why you use things. And when you use things, basic understanding of just general JavaScript basic understanding of CSS, because people do get they get to this point where like, even the things like CSS where they're saying, well, CSS sucks, for these reasons, well, maybe it doesn't. And maybe that like you just didn't learn the foundational elements enough. And you know, maybe it does, in some ways, too, but like, basically, at the end of the day, you want to make sure that you really, really, really drive home those foundations, because those are what's going to support your entire career. And if you don't learn those foundations, you're going to find yourself coming back to them later on in your career and having to learn them solidly before you move forward.
+
+24
+00:13:52,919 --> 00:15:24,360
+Wes Bos: Yeah, and I think that is probably the advice that most people hate hearing. Because I get all kinds of email people ask Should I learn react or view? I'm in this two months so far, what should I learn? And it's you want to like you want to be able to tell them like, Oh, yeah, take take react and run with it. And you're going to Atlanta job at Netflix, and it's gonna be great. But the like, the the like, sort of bummer answer is, is like, go back and do your array filters. And really focus on getting those fundamentals down pat, because by the time that you get up to speed with react, or whatever it is, it's totally going to be changed and the rug is going to be pulled out from under you. And if you're not able to adapt to whatever it is that people are working on at this time, then you're going to have a bit of a problem. So that's that's not to say like, you should be sitting in the console log and looping over foo bar Baz for your entire life, but and this is the exact sort of mindset behind my JavaScript 30 series is that focus on building stuff that excites you. But that is not so far abstracted from the fundamentals that you're not going to be learning them. So my JavaScript 30 series teaches you all kinds of like little fundamental things that you need to know about JavaScript, but not from an aspect of, we're just console logging stuff all day long. Because that's we all know, that's very boring to actually do.
+
+25
+00:15:24,799 --> 00:16:07,860
+Scott Tolinski: Yeah, yeah, absolutely. And I mean, it's one of those things where anything that can help you understand why you're doing nothing is going to save you an epic amount of time in the long run. I mean, so many times people get errors, and they'll they'll come in, they'll come to me and say, Hey, I'm getting this error. What's the issue here? And a lot of times, it says the issue right in the air. But if you knew why you were typing what you were typing, then the issue would be obvious, right? Like, oh, why am I putting these brackets here? Because it's an object? Why do we write objects like this? Because of this one, you know, it's like, if you if you understand these foundational elements, then you'll just have so much less friction, a, you know, growing up in your career here,
+
+26
+00:16:07,890 --> 00:17:08,089
+Wes Bos: exactly. Another example is, with when I used to teach beginner HTML and CSS, we would always have a couple people that would say, Can I just use bootstrap? And I would say, I'm, like, Sure, go ahead. I don't recommend it. But like if you really want to, because they think that they know, they know, HTML, CSS well enough that they're gonna just start using these things. And then inevitably, what happens is when something breaks, they come to me and they say, why is bootstrap doing this? Why is foundation screwing up? And the answer is almost always it's not foundation or bootstrap. But it's an underlying issue with how you understand floats, or how you understand the ideas behind inline block versus block, or why can I give a height to something? Or how do you clear elements that need to go side by side and as much as you want to just hurry up and learn these more advanced stuff, because that's what's on the job posting. It's well worth your time and learning those those fundamentals.
+
+27
+00:17:08,599 --> 00:17:49,950
+Scott Tolinski: Yeah, and especially, I found this to especially be true with CSS, because not CSS fundamentals and like an understanding of the cascade are how you can accomplish things easily. And CSS can take a large CSS file and make it so much more concise, and so much more readable. Because you have this big picture understanding of how it's all how a nice way to build these patterns. And basically, you can save yourself a ton of headaches later on with this big old, messy, giant spreadsheet or style sheet where you're adding a ton of styles to do things where you could accomplish with just a better understanding of how to solve your, your layout issues in general.
+
+28
+00:17:50,280 --> 00:19:33,390
+Wes Bos: Yeah, exactly. Another thing I always tell people who are new to programming is like, give it a chance, give it a second, because a lot of what I see when when people are learning how to do something a one way, the example that when I taught a boot camp that we had, as we were just building HTML and CSS websites, and then you switch to another way of doing it. And what we were doing at the time was we were switching to WordPress. And then that's a huge wrench in people's plans, because they just want to be able to edit the HTML directly, and not have this like thing in between that would compile the HTML for them, or output it in a little bit of a different way. And we always had a couple of people who would say immediately say, I hate WordPress, or I hate X, Y, or Z, and they would just write it off immediately. Because it's not exactly what they're used to. And chances are, they say it was such like, I don't know, if it's when people talk very aggressively about not enjoying a certain language, I think that some people think makes them look smart. And it makes them look very opinionated, and like well rounded. But it to me, it just seems like okay, clearly don't understand the whole scope of everything. And you don't understand the benefits of one way versus another. So it's okay to not like a certain technology, you're gonna have your own opinions, but like, give it a chance at first. Don't write it off immediately. Because you're there's likely a piece of that, that you're not actually understanding. And by learning how all these different pieces work together, you're going to get a better overall understanding, and then you'll be able to sort of form your opinions as you move along.
+
+29
+00:19:34,020 --> 00:20:27,990
+Scott Tolinski: Yeah, and we see this all the time, like all the time when anything new or fancy or anything interesting comes out even the upper level people get into, you know, arguments whether or not this is a good idea or not or whatever. They just give it a chance. Yeah, even like CSS and JavaScript. Like how how, how many seconds did it take for us to say that we were doing a CSS and JavaScript podcast to have somebody tell us that it CSS and JavaScript was stupid. I mean, it's just like It was almost like on the dot you hit send, and you're getting people telling you it's dumb. So I mean, that's my mindset too, is that you need to be totally open minded to just see maybe there's a reason why people are liking this. And maybe there's a reason why it's helpful. It can help you pretty much in anything, right? If there's a billion WordPress websites there, chances are WordPress isn't the dead? Yeah, maybe. Okay, you need to open your mind. Exactly.
+
+30
+00:20:28,200 --> 00:21:23,810
+Wes Bos: There's a there's, I can maybe go back and find the tweets for me that I was at the conference, when react was announced in I think it's 2013. And there's tweets of me being like, this is stupid, you don't put your templates in your logic, what you're the separations of concerns like, Don't you know that, and like, obviously, I had no idea I was so inexperienced, I didn't know of any better ways, I was sort of just like repeating the same stuff that everybody says about separations of concerns and stuff like that. And I thought that I was making myself look smart, and opinionated and well rounded in JavaScript. But clearly, I was so out to lunch, that people coming up with new ideas such as react where they had been around the block a couple times, and they understand that maybe you should rethink all of the best practices. And lo and behold, here we are a couple of years later, and everything is going in the direction that react was sort of showing.
+
+31
+00:21:24,240 --> 00:22:11,730
+Scott Tolinski: Yeah, and I was I was the exact same way, except for I don't have an embarrassing to look back on it was more or less between coworkers looking at what is this? Like, I'm happy with Angular here. And then like, sure enough, yeah, tried it, loved it, whatever. Yeah, there's, it's definitely one of those things. And, and you have to, I think this goes along with, you know, one of the things that I was gonna say was just basically don't ever act or feel like, you know, too much or everything. Because if you if you do, if you feel like you know, this, and you know that and whatever, and that these are the way things are, then you're you're you might as well just stop progressing at that moment, you're, you're done, you're plateaued. So you have to sort of always be sort of able to expand your mind a little bit.
+
+32
+00:22:12,000 --> 00:22:20,520
+Wes Bos: Yeah, exactly. So do you have any other mindset tips? Or should we move over to tactical things that you can do?
+
+33
+00:22:21,119 --> 00:22:24,060
+Scott Tolinski: Yeah, let's get into let's get into some tactical stuff.
+
+34
+00:22:24,090 --> 00:24:22,770
+Wes Bos: All right. So my first one is, you might even want to pause the podcast right now. And just Google Ira Glass, but gap. And this is like my most favorite motivational video, I show it to absolutely everybody who is first learning to code. And so if you don't know, Ira Glass is a radio producer, who runs the most popular podcast in the world called This American Life. And he's been at it for 30 years. And of course, he probably gets email every single day from new students being like, hey, like, how do I get better. And he sort of, like stumbles upon this idea of when you're first getting started with something, whether it's you're becoming a podcaster, or whether you're becoming a developer, there's going to be this gap in between your taste, and what you can actually make. And you know, that the stuff that you're making, you're looping over an array, and the stuff that you enjoy, which is really sweet, single page, React apps, there's this huge gap in between it, and it's sort of a letdown, to, to sort of look at that and be like, Huh, like, I'm so far from that. And I just don't know how to close this gap. And what our glass goes on to say is the only way to close that gap. And there's no book, there's no conference, there's nothing that you're going to do, except do a lot of work. That's it, you just keep putting in the time, keep chugging away, keep doing work every single day. And by putting in that work, you're going to become more experienced, you're going to have a lot more stuff under your belt and that sort of like that, like incremental, those tiny little improvements that you do day in day out. It's sort of like like going to the gym or any other thing that you are trying to learn if you put a little bit of time into it absolutely every single day, and you improve a little bit every single day, you're gonna wake up three or four years later and be go Oh, I'm actually kind of good at this and I'm getting paid for it. And it's my career. I'm sure I'm glad that I started this three or four years ago.
+
+35
+00:24:23,310 --> 00:25:44,160
+Scott Tolinski: Yeah, and it's one of those things that's so like, everyone wants instant gratification on stuff right? You want you know you're playing the video game, you you level up and all of a sudden your characters way better and fancy or whatever. And it happened really quickly happens, or whatever those games on your phone that like tap into that, like sense of you're constantly improving your farm or some, you know, whatever. Yeah, but like in real life, it just it doesn't happen that easy. And if you you want to take a little bit of growth over a long term and all of a sudden you'll wake up one day and say Holy cow, I have superpowers. And it happens to me all the time where I just, I somehow transport my mind into my mind, you know, five years ago, and I think about how cool like five years ago, my mind would have absolutely been blown doing the stuff I'm doing now. And it's it didn't happen overnight, it happened through every single day of working and growing to that, and it takes a long time. And it's pushing that little notch a little bit further every single day. And then all of a sudden, you'll find yourself just way, way, way, way, way further than you could have imagined. But it doesn't happen overnight. And it's not easy. And it's not necessarily like, you know, it's not, it's not the instant sort of gratification that you might want to get.
+
+36
+00:25:44,220 --> 00:26:52,859
+Wes Bos: Yeah, I have another example of this, which was not necessarily like development skills, but in terms of, like building online presence, or building a blog is when Chris coiour first started CSS tricks. I don't know how long ago that was, I think, like 10 years ago. And I saw it after about a year or two. And he had this huge following on the blog. And I looked at them like, Oh, that's amazing. Like, I could do that. I could just write a blog post every other day for an entire year. And then like a year later, I would look back at it, and it would be even more popular. And I would just be sitting there being like, I could do that. All he's doing is writing CSS, blog posts every single day and like, and what I finally like you'd like knock myself over the head is I'm not doing that. And clearly all that is like, obviously, he's a really good writer. He's a smart guy. He knows a lot about CSS, but all of that stuff has come just because he was incredibly consistent with writing these blog posts about it. And if you look at it over the course of 10 years, the thing is absolutely massive now, because it's a day in day out small little progress every single day.
+
+37
+00:26:53,460 --> 00:27:36,270
+Scott Tolinski: Yeah, and that same thing applied with level up touch, right? I mean, how many I know then then shaft the guy started level up touch with he and I used to talk about doing something like level up hubs for probably about a year before we actually did it. And if we would have started that year earlier, I can't even imagine where it would have been by now. I mean, we would had a whole nother year of content under our belt, but that was the same thing. It was, okay, well, we'll just start it, we'll just make video tutorials every single week. And people you know, ask about that YouTube growth. And really, it was just consistency over four years or whatever, just uploading content all the time, and it would never have gotten anywhere if it wouldn't have started right. Your own you have to start. Yeah, to get somewhere.
+
+38
+00:27:36,300 --> 00:29:40,560
+Wes Bos: Yeah, that consistency is such a competitive advantage, you know, just being able to, to do it. Because if you're looking at other people who might be catching you in terms of career, or if you're trying to build some sort of blog or online video course or something like that. There There are things like little tricks and hacks that can get you a little bit extra but there's there's absolutely no replacement for that day in day out work that's that's going to grow over time. This episode of syntax is brought to you by fresh books. And you all know that I love fresh books, and I use fresh books for all of my stuff. But I want to talk to you about one of the pieces of fresh books I didn't even know existed. So I actually sent fresh books and invoice for this podcast I have on my own Freshbooks which is mind blowing enough that you can build Freshbooks using Freshbooks. But one thing I didn't know is I goofed up the I goofed up the invoice and I put the wrong amount of tax on it because because Freshbooks is from Ontario where I'm from, and Freshbooks has the ability to comment on invoice and sort of go back and forth with the person who is receiving the invoice. And that is extremely helpful, because often I'll have like back and forth with clients on an invoice, whether it's the right amount or if it needs to be paid or something like that in that stuff gets lost in email, and it's not directly attached to the specific invoice that you're talking about. So if you ever need to pull up the information that you were we're trying to talk about with with your client, then it's kind of hard to match up email with the actual invoice. So Freshbooks allows you to comment on the invoice and go back and forth and chat directly tied to the invoice. So at any time, if you need to go back and look at what had happened. You can read the chain of events in terms of when people commented it and even when people have viewed it. So if you are a small business, you just need to build somebody and you need to get a real invoice through Microsoft Excel and the garbage in grab Freshbooks go to freshbooks.com Ford slash syntax and enter syntax into the How did you hear about a section? Thanks so much for them for sponsoring. Do
+
+39
+00:29:40,590 --> 00:31:10,530
+Scott Tolinski: Okay, yeah, so we're talking tactical. So one of the things you know, a lot of the times it's just getting your hands dirty. And we mentioned you know, Foundation, right, and there's a time and place to really drill that foundation and but there's also a time in place to get out of your comfort zone and experiment a little bit and have no idea what you're doing while you're sort of figuring out what you're doing. One of the best places to do that are things like code pen. And just, you can browse code pen. And there's so many cool projects on there. And you could look at this stuff and think maybe I can never do this. But I think one of the coolest things that that allows you to do is allows you to look at a project and then maybe without looking at the source code, say, I might not be able to do this, let me just try and just spend an hour or two or whatever, just hacking together something, seeing if you can do it. And maybe you're going to be in the total wrong way. But at the end of the day, that's a learning experience. And, and those those failures will push you in the right direction, but will also help you understand it a little bit more deeply. And when you look at the actual solution, then maybe that solution is going to make way more sense. And it's going to have a lot more impact than just like, Oh, I'm reading some code now. And this is what it is. So you do need to get your hands dirty. And you do need to experiment quite a bit with code, because that's how you're going to make mistakes, you're going to have issues, you're going to have problems, you're going to work through those problems. And then you're going to push that notch just a little bit further. And you're going to have some personal growth there.
+
+40
+00:31:11,040 --> 00:32:53,910
+Wes Bos: Mm hmm. Well, one other tip that I like, and this is actually from at Simon Swiss on Twitter, he said, Don't wait to be an expert to put yourself out there, write blog posts, submit meetup talks, you'll inspire people, and you'll grow your own self. So I think that that is 100%. My story as well is that I always like like to put myself maybe like I talk about putting yourself out there or pushing yourself maybe like 15% more than you think you should. And by doing that, you're going to put yourself into new waters. And you're going to learn new things really, really quickly. So when I first started writing blog posts, I had no idea what I was doing. But I learned like a little little thing, like whether it's a little piece of WordPress, or a little piece of CSS, and I understood it. So I wrote it down on a blog. And I also did that with meetup talk, I knew a little bit about this one thing. So I went to meetups, and I did talks on that one little thing and being being okay with knowing one thing, but not knowing a whole bunch of other stuff is exactly where you want to be, you're not going to be an expert, you don't sit around and wait until you're an expert at something to be able to start sharing and teaching others. By doing it as you are growing as a developer, you're going to strengthen your own skills. So much more, I think back to when I was first teaching CSS layout was back with floats. And like when I first started that class, I had a pretty good idea. I could hack together floats and keep changing stuff until it worked. But then when I taught it, I actually had to really figure out how to float actually work. Why does clear fix happen? Why is it clear fix fix it? And like all these things, I now have just like this amazing mental model of how does layout in the browser work? Yeah,
+
+41
+00:32:53,940 --> 00:33:36,720
+Scott Tolinski: I mean, is there any better way to truly understand something than to have to explain it to someone who doesn't understand it? Like I was sometimes when I'm working through something I know, my wife doesn't love this, but I talked with her. And she like her eyes Rola like I am not I have no idea what you're talking about. But it's not for her necessarily. Yeah, she can tune it out for all I care, because the process is me having to understand it in a way that I could explain it or at least attempt to explain it to someone who has absolutely no background or understanding of what the heck I'm talking about. And and some of those things can just truly eliminate like really those foundational what and whys and how's your doing something rather than just push button get code working?
+
+42
+00:33:36,750 --> 00:34:32,690
+Wes Bos: Yeah, nothing? Yeah, exactly. I think if if you are looking like how do I even start that, like what does that look like? For me? It is going on StackOverflow and answering questions. It's writing a blog post or my favorite is you find a meetup group that does sort of coding. And here in Ontario, we have ladies learning code, which does weekend workshops. And they are always looking for mentors, which you grab a table of three or four women and you are their point person to explain stuff to. And it's amazing that you spend a couple Saturdays doing this, you're going to really start to first understand what common trip up points are for people, but you're going to find that your own skill in whatever it is that they're teaching starts to get a lot better because you've explained at six or seven times to to that person. So find your local group, whatever that is and volunteer to actually help out with that because that's going to skyrocket you in terms of your own understanding of it as well.
+
+43
+00:34:33,270 --> 00:36:54,600
+Scott Tolinski: Yeah, or hop on even like slack rooms and stuff like that. There's a ton of like coding slack rooms. Wes and I both have one and and people there are always having you know, questions or problems or whatever and there's always opportunities to teach or show someone something that you might know that maybe they don't and and if you feel like you're you don't know enough to do that. There's always going to be something that you know that someone else doesn't, there's just always going to be the situation and So, I don't know, like Wes said, just jump into it and find ways to teach people. Yeah, it's definitely something that will improve your overall understanding of what you're doing. Exactly. Yeah. Another thing that I think is really tactical for just having personal growth here is, is we mentioned before, like doing things that excite you finding things and code that that will propel you into states of learning. Because that like flow state, or that learning state where you're not doing anything, but focusing on whatever you're trying to learn, those come about, because you are interested in what you're doing. If you're totally checked out and not interested in what you're doing, then it's going to be difficult or more difficult to get into those states of deep, deep learning, deep learning and deep thinking. So if you have a project for fun, or client, whatever, for fun projects are usually easier to be honest. Because, you know, there's obviously ties to motivation with monetary stuff, right? I don't know if you know about this, but it's like, psychologically, less beneficial to have money tied to a project it for your own personal motivation. And that's why many times when people get paid for things, they they lose the motivation. And it, it's interesting to counter intuitive thinking it works. My wife explained it to me that works to an extent, right, if you give someone $1 to do this thing, then they're going to be more inclined to do it. But if you make it their job, they're going to be less inclined to want to get into that flow state. So it's definitely one of those things is take things that are interesting, exciting, maybe not your job, but maybe could be related to your job, yeah, in some sort of way and, and just grow with it, find something fun, make it, try to make it and let yourself get totally enveloped in something that is, you know, potentially just groundbreaking for you.
+
+44
+00:36:55,610 --> 00:38:10,380
+Wes Bos: Another tip that I have is to take something that already works, and then try to tweak it to do what you want. Because sometimes if you're trying to like build an express app from the ground up, it's incredibly frustrating. And it's likely that you might not ever get it working. So what I like to say is grab something like if you're trying to learn Express, there's this thing called the hackathon starter, the hackathon the starter theme, or starter boilerplate, or something like that, where you can just npm install this thing. And then there's an entire like login system hooked up with Twitter, there's pages and data, everything is already done for you and go, Okay, well, now I want to make a new controller and a new model. And I want to be able to save items to that model. Or if you're trying to build a website, maybe grab WordPress and a very basic starter theme, and then build up from there. Because starting from a point of it works, and going sort of tweaking it and it works. It works. It works. It works all along the way. Especially when you're first getting into this is so much better, because I understand that the frustration of it's broken, and I've been it's been broken for six hours and I'm ready to quit this. That is all too true.
+
+45
+00:38:10,940 --> 00:38:28,730
+Scott Tolinski: Yeah. And in and yeah, you will experience that so much over the course of your career. Like I just don't even know I don't know how I can even proceed with this. But a lot of times it is that persistence, and you will get through it and it will work. You just have to trust that maybe go for a walk Yeah, your brain a
+
+46
+00:38:28,730 --> 00:38:38,040
+Wes Bos: little bit have a shower, and I always do that myself like Oh, yes, walk away, and then it's gonna come to you at some point don't waste any more time on it. Absolutely.
+
+47
+00:38:38,130 --> 00:39:16,400
+Scott Tolinski: Yeah. I mean, one of my one of my probably like my first or second WordPress website, probably my first WordPress website ever. It was it was just that it took a theme I already I didn't know the CSS layout stuff enough like floats and everything like that. I didn't understand that stuff enough. But I knew I wanted to make this this color. And this this color, whatever. So I found a WordPress theme that had the layout I wanted to and I just tweaked the visual styles until it worked. And it was just an experiment just for fun. But it didn't taught me a lot about how they made those layouts and how that stuff actually works and why people do things certain ways. The definitely, definitely a good tip there.
+
+48
+00:39:17,340 --> 00:40:14,520
+Wes Bos: Let's move on to the third part, which is talking about the imposter syndrome and how to deal with it. So imposter syndrome is when you think that you are a bit of imposter with your in regards to your level of coding. So it always comes when people take on a project or you're applying for a job or you actually get a job or you're going to do a conference talk or you're writing a blog post and it always sets in you're like I really don't know what I'm doing here. And the answer to that is first of all, you actually do no more than than you think. And second of all, everybody absolutely everybody gets this at every stage of their career. I get it myself all the time. And just being able to deal with that and understand that this is something that everybody gets is super important. So let's talk a little bit about like, how do you actually deal with imposter syndrome? Yeah, I
+
+49
+00:40:14,520 --> 00:41:23,760
+Scott Tolinski: think for me, one of the most important things for dealing with imposter syndrome is to look at your accomplishments. So, in you, you chances are you have accomplishments, right? Whether it's you've made this or you've made that or you, you develop this, I think about, like my wife, she has a PhD, and she gets imposter syndrome. And you just have to think you worked really hard for this PhD, all of that stuff that you got up until that point to work that hard. That is your proof that you deserve to be there. And breakdancing, man, we used to enter competitions, and we'd be going against some people and maybe like the semi finals, or something like that, that were just really high level people. But you got there, because you got there was a tournament and you were tired, and you got there. So you deserve to be standing where you're standing. And that same thing applies to absolutely everything right? in programming, you got to where you are, and you were given the opportunity, because of all of your past accomplishments. And so it's really important to look at those past accomplishments and really wear them as like a badge of honor and a badge of courage, right, like, let that stuff push you through?
+
+50
+00:41:24,630 --> 00:43:09,210
+Wes Bos: Absolutely. I think also where imposter syndrome comes in is when people are applying for jobs that seem a little bit outside of their realm, or they're interviewing for a job that seems a little bit harder than than the skills that they know. And that's absolutely absolutely normal. I think that it's, it's fine, because you don't get hired just alone for your skill set. Because people look at you as a potential hire. And they say, Okay, this person is great at learning, I could see them like people, they essentially want to like buy low and sell high with with developers, they want to they want to hire people who are at an entry level, because it's cheap. And like the hot like high level developers command quite a quite a large salary, they're hard to get they they move around a lot. So if they can take a look at you and say, Okay, this person has learned this much so far. And they clearly show that they enjoy learning. And then they also have all these soft skills stop. They also have all these soft skills that come along with being a good developer, which is having empathy for other people understanding how to work on a team, how to how do you communicate properly? How do you do understand the the business aspect and the goals and all the stakeholders of the actual business side of it, as well as as being a developer and sort of all those things that come together is what will make you a really, really good hire. And that's what people are looking for when they're off and looking for looking for someone to hire you, it might just look like a list of skills that someone wants to hire for. But being a very well rounded person is almost always what people are looking for when they're hiring for a job.
+
+51
+00:43:09,750 --> 00:44:13,800
+Scott Tolinski: Yeah, absolutely. And it's one of those things where you have to look at it this way, too. If If you are looking at this job application, and it doesn't feel a little bit over your head, and you're aiming way too low. Because that's how you grow as a developer, I don't want to take a job full of stuff that I already know how to do. You want to take a job full of stuff where you can grow in that role. I can't think of a single job I've ever applied for or gotten that wasn't above what I felt like my level was, because What's that? What's the point of staying down at that level, right? You want to be pushing yourself forward. And that imposter syndrome that comes in and says you maybe can't do this? Well, if you get the job, you can do it. I mean, you you can make it work, you can learn you can if they want you there in that role, then you're supposed to be there. So you know, you want to be looking for these opportunities to see it as a growth potential rather than a overwhelmed I can't do this. Yeah, potential there. I shouldn't be here potential. You know,
+
+52
+00:44:13,830 --> 00:44:19,350
+Wes Bos: I just thought of a really good new sticker idea, or a sticker that just says, I bet I can figure it out.
+
+53
+00:44:20,460 --> 00:44:43,170
+Scott Tolinski: Absolutely. And that's Oh my god, I can't tell you how many times that's been my motto. You know. It's actually really funny because again, my wife would be like, I told her I'm taking on this or this in this project, and should be like, Can you do that? And I'll be like, I can figure it out. Yeah, I can make it happen. And you do make it happen if you got it right. I mean, you get thrown overboard, you figure out a way to get back on so yeah,
+
+54
+00:44:43,200 --> 00:45:01,470
+Wes Bos: I would always take on stuff that was way over my head. And that's where I would always reach out to my community being like look like I remember once I took on the idea of like a realtor website where we're going to pull in live listings into his website, and I realized Sounds like one of those right now
+
+55
+00:45:02,639 --> 00:45:03,960
+Scott Tolinski: is a freelance project. Yeah,
+
+56
+00:45:04,019 --> 00:45:47,250
+Wes Bos: I realized I had no idea how to possibly do this. So I had to reach out to friends who did do this. And I explained it to them. And they sort of like, helped me out and got me up and running with the piece and getting it out of bare bones functionality. And just know that there is a huge developer community out there, whether it's, at times, I also had to, to pay people at this time as well, because I realized, like I took on this project, it's a paid project, but it's way over my head, and I need to help someone in but the next time around, I was able to do that. And then you do that every single time where you push yourself just a little bit to 15 20% more than you think you should. And that's how you you get some serious growth and, and sort of kill that imposter syndrome that you have.
+
+57
+00:45:47,759 --> 00:45:53,040
+Scott Tolinski: Yeah, and I mean, honestly. So there's, there's two things I guess I want to say about that is,
+
+58
+00:45:53,040 --> 00:45:53,700
+Unknown: you do kind
+
+59
+00:45:53,909 --> 00:47:19,170
+Scott Tolinski: of got to be a little bit smart about it. Because like, obviously, you don't want to take on a project that you have no idea. Like, you want to take something that like you're 80% sure you can do or 70% sure you can do, if it seems like somebody's asking you to build, you know, something that seems totally mysterious to you, and you have no idea where to even start and maybe reconsider. But yeah, you want to be finding these opportunities that are past your comfort zone, but not like epically past your comfort zone. And another is if you fail on these things, like what's the worst that could happen, right, all of a sudden, you get this job, that's like above your level, it you know, maybe it pays a lot or whatever the worst thing that could happen if you fail is you get fired. And then you look for another job because it didn't work out. But that that point, you're still at square one, and you've gained a little bit of experience. And that that's not a bad failure. There's nothing wrong with that. There's nothing wrong with being over your head, and not being able to hang you you'll grow from that. And same thing with any of these projects, like Wes said, what the worst that happened there is that there was something that was above your level, you paid someone else to do it, and you got through it. So like, yeah, failing is really not a huge thing with with imposter syndrome, right? If you feel like you take something on you, it's above your level, you, you fail at it. You got to look at that as still a positive. Right, your personal growth moment.
+
+60
+00:47:19,200 --> 00:48:17,430
+Wes Bos: Yeah. And another tip I have is just sort of adopt an attitude of not knowing absolutely everything in being obey sort of like this is like full circle to our first point, I think is that, like, I claim to know a lot about some things. But there's other things I absolutely know nothing about. And rather than sort of like fake understand in whatever I just say, I don't know, I've actually never done that. I've never touched it before. Like somebody asked me the other day, what do you use for code coverage? And I said, Well, I actually haven't done a whole lot of code coverage before. And that's fine, because that's something that I'm looking at learning right now. But just being being totally fine with not knowing absolutely everything and being open to chatting with other people who are experts in a specific thing, because you can always like leech information out of these other people that are experts in that specific area. Yeah,
+
+61
+00:48:17,430 --> 00:48:57,960
+Scott Tolinski: and nobody knows everything. They're you know, everyone has gaps. Everyone has gaps in different sort of places. And some gaps are bigger than others and whatever. But that shouldn't be holding you back from anything, right? Though, all you should be looking to do is if you need to fill those gaps, fill them and if you don't need to fill them, then maybe I don't know, maybe you don't need to fill them. But like if you have a basically you just don't. Don't let that stuff hold you back. Just don't let it hold you back. Yeah, because everyone has gaps. Everyone has imposter syndrome. Everyone struggles improving all the time. And it's all just about persistence. And I like we said open mindedness and persistence, you'll get there exactly. I
+
+62
+00:48:58,200 --> 00:50:19,230
+Wes Bos: think, Oh, I know, we're going long here. But I one more tip is like Gary Vaynerchuk always talks about staying in his lane, which means that like, find your thing, and just become like slam dunk that that one thing in your your aspect. So whether you are the person who does CSS animations, you're the SVG person, or you're the the view components person or whatever it is like you're the webcam person. If you just like take that one thing and just run with it, write a bunch of blog posts, submit talks to conferences, and you're going to get this really good confidence being like I might not know a whole lot about absolutely everything because this JavaScript world in this web development world is absolutely enormous. But I sure do know a lot about how text and x SVG work together. And whenever there's a question about that, or especially like, take something that's new and run with it, because like grid, just CSS Grid just came out. There's a huge opportunity right now. For you to become the CSS Grid person. So you can write a bunch of blog posts, submit a whole bunch of talks and over the next three years grid is going to become extremely popular. And you hit your hit your horse to that wagon or hit your wagon to that horse. Think the horse would be CSS Grid. You put your wagon on that and and run with it
+
+63
+00:50:19,230 --> 00:50:30,840
+Scott Tolinski: depends on if the horses and the horses always in the front of Yeah, I guess I should know this being in a wagon country here. I've worked with ever since we moved out west we're like, wow, this is a lot more Western, then.
+
+64
+00:50:31,290 --> 00:50:34,440
+Wes Bos: You know, there's just wagons in the streets, though. But
+
+65
+00:50:34,440 --> 00:50:42,660
+Scott Tolinski: we were just at an apple orchard or whatever. There was like, like old wagons like antique wood giant Where? Oh, yeah, like decrepid hanging out in the field.
+
+66
+00:50:42,690 --> 00:51:17,850
+Wes Bos: It's sure what is the thing let's let's look this up, hit you wrap your hit your wagon to a star. There's no horse, Scott. It's a star. So you want to hit your wagon to the CSS Grid star or the Flexbox star or the like I just tweeted today about some brand new stuff that's coming to to JavaScript, just figure out how this one thing works and write a whole bunch of blog posts, make some YouTube videos apply to conferences to talk about that. Well, we'll have another whole episode on conferences itself, but then you can use that as sort of your your launch point. And you can rock it yourself up in that topic.
+
+67
+00:51:18,570 --> 00:51:23,820
+Scott Tolinski: Yeah, well that you wouldn't full circle with the rocket. Hitting to a star. Yeah.
+
+68
+00:51:25,350 --> 00:51:28,860
+Wes Bos: I always screw up sayings. I don't understand how it all works.
+
+69
+00:51:28,890 --> 00:51:31,770
+Scott Tolinski: Oh my god. Yeah, I'm the worst about that. Yeah, definitely.
+
+70
+00:51:33,420 --> 00:51:39,480
+Wes Bos: Um, any any last tips about I think like, maybe we should talk a little bit about jobs? I would have one. Yeah,
+
+71
+00:51:39,480 --> 00:52:52,620
+Scott Tolinski: I would have one more in like job interviews. Yeah. And having to deal with imposter syndrome. And we can use this as a segue, well, imposter syndrome, you should never let it affect your confidence in a job interview. And in a job interview, you should be honest. Like, if they ask you a question, you don't know the answer. You can say I don't know the answer. But like, never let that hurt your confidence. Because if they ask 20 questions, and they're asking them to 20 people, if those 20 people are honest, you know, not all of them are going to have the answers to all of the questions. So you, you can't let it affect your confidence just because you don't know the answer to one thing, or maybe the other thing or this thing or that thing. You're still a viable candidate, though, you could learn that one thing or those two things, or those even three or four things you didn't know you can learn those on the job, it's not a big deal. So in an interview itself, you cannot let this stuff get to you. You have to go in there and be confident with your abilities. And you have to say, Hey, I deserve this job. Because I'm here, they let me in the door. I deserve to be here. They're not you know, hiring security to go grab me by the collar and throw me out, then you deserve. You deserve bet that chance to prove yourself.
+
+72
+00:52:52,979 --> 00:53:11,790
+Wes Bos: That's that's really good advice. I myself have I've only ever interviewed for one job. And it was years ago, I got asked to interview at Google and I went through it just because it was Google. And I thought that'd be kind of neat to work at Google. And I didn't get the job I got pretty far. I think I got about four or five interviews and say
+
+73
+00:53:11,880 --> 00:53:18,960
+Scott Tolinski: I also interviewed at Google how Yeah, how far did you go? I did you get flown out there? Because I got I got flown to Mountain View. That's it?
+
+74
+00:53:19,710 --> 00:54:36,690
+Wes Bos: Well, I I drove because Google's about 45 minutes out from here. But yeah, I think I did three phone interviews and three in in person interviews that were like technical, like whiteboard challenge. And it was I felt like so defeated after I had gone into the thing. But then what had happened is that I wrote a blog post about my experience and getting turned down by Google. And my email inbox exploded with job offers. Like I couldn't believe it. But it makes sense to me now, like some kid that got through six Google interviews now. Yeah. And also at the time, I felt like a huge imposter. I remember like, Oh, yeah, I remember just like reading about sorting algorithms and tree sword and bubbling and all these computer science stuff. And I was like, shit, I am not gonna be able to do this interview. And it turned out to be good. Like, the people were very reasonable. And the questions that they asked were, were stuff that would happen actually in JavaScript, and I didn't have to do a tree sorter or anything like that in the interview, and I'm glad I did it because I had huge confidence issues going in and then coming out of it, especially after writing that blog post. I felt great about my own skills, and maybe I do know a few things about this.
+
+75
+00:54:37,170 --> 00:55:42,240
+Scott Tolinski: Yeah, and I mean, I have a lot of the same feelings because here I am, I'm getting flown out. You know, they're they're paying for my my room and board to fly me out there. I had to spend an eight hour day I had to have had like six interviews and I had to give an hour long presentation. Wow, PowerPoint presentation. Yeah. And I was just in there like the entire, like, time leading up to it like holy cow, Mike. Good. Enough for this, like, what am I going to give a presentation like this is holy cow. And, you know, sure enough, you went through, you did it, and I look back on it. So finally, because it was awesome, it was a great, it was a great trip. And again, I didn't get the job, but I didn't get the job. And that opened up the opportunity for me to move to Denver, right, which is one of the, you know, the best things I've done in my career. So, you know, there's just so many things like that, that they'll seem like these big, giant, daunting, you know, I can't do this kind of stuff, and you do it. And you're always better for it. And you always feel good about it afterwards, even if you even if you would have gone in there and totally failed. They still invited you to come out there and do that. I mean, that was a big deal.
+
+76
+00:55:42,270 --> 00:55:48,540
+Wes Bos: Yeah, that's a pretty sweet story. So I actually I'm curious more about your Google interview story. What did you make a PowerPoint on?
+
+77
+00:55:49,260 --> 00:56:16,440
+Scott Tolinski: Well, so they gave me like a one of these exercises. It was like a mobile layout. And it was like, just recreate this mobile layout. And at the time, I was doing Angular. So I did it in Angular. So I had nice and fancy I had like, you know, touch pullout drawers, wow, on loading animations and stuff like that. So it was fancy, I did a good job and whatever. And I got to talk about, I did my presentation on animation. So then I talked about, you know, request,
+
+78
+00:56:17,700 --> 00:56:18,960
+Wes Bos: request animation frame
+
+79
+00:56:19,020 --> 00:56:52,020
+Scott Tolinski: request animation frame, I wanted to say request or user media because we had to. But yeah, request animation frame and talking about how I got it to 60 fps and how I did the you know, the touch drags and how I did the animation on loading and stuff like that. And just talking about why you wouldn't want to use easing curves. So I just did it on on CSS animations, which is one of the things I like the most, you know, that's sort of my go to is if you've got to do something that is big and scary. Go to something that you really like. Yeah. And I really like CSS animations.
+
+80
+00:56:52,050 --> 00:56:58,140
+Wes Bos: Yeah. That's pretty neat. That's kind of cool that we maybe this should be our clickbait title for the podcast
+
+81
+00:56:58,410 --> 00:57:00,150
+Scott Tolinski: is how we didn't get job.
+
+82
+00:57:01,680 --> 00:57:04,680
+Wes Bos: Advice for newbies and how not to get a job at Google.
+
+83
+00:57:05,370 --> 00:57:05,970
+Unknown: Alright,
+
+84
+00:57:06,690 --> 00:57:56,970
+Wes Bos: cool. Well, that's, that's good. I think one more tip, I really don't know all that much about like the job world. But I have seen quite a few bootcamp students. And like, one other tip is that in the tech industry, it seems that the best way to to increase your your level is to jump around quite a bit. So I've definitely seen lots of people who they have a beginner entry level role for a year or two. And then they jump to something else. And they get like a 2030 grand pay increase, and then they jump to something else. And for you know, what, after like five or six years, these people are in senior level there. They're leading teams, they have senior level positions, they're making over 100 grand a year. And it's pretty incredible. But you think about it, like if you were to spend six years straight on this thing, you you start to figure this stuff out, right?
+
+85
+00:57:57,690 --> 00:58:56,070
+Scott Tolinski: Yeah, and, and that's exactly how my career is mostly, when I've almost always worked at agencies and whatever, you can't be afraid to take those opportunities. I mean, one of the jobs I had I had, I had only worked at for six months before I got a recruiter email, giving me the opportunity to build the front end of four.com. And that's like, you get that email. And you're like, Yeah, I just took this job. But I know so many people that would be like, Well, I haven't been at this job this long and whatever. But here you have an opportunity. And this opportunity is going to one look great on your resume, but two, it's going to potentially propel you into so many further roles or learning opportunities or whatever. If these job opportunities are here, at the very least go and interview you've been at one place for two weeks, go and interview who cares, you get a job opportunity just interview and check it out and see what that opportunity could lead to because it could be something that could totally change your career. And in just the best possible way
+
+86
+00:58:56,100 --> 00:59:16,530
+Wes Bos: that's true and also helps shake off any nervousness or it'll help you get more comfortable interviewing because like Scott and I talk every week on the podcast and even just this how many This is number 1415 my conversational skills are getting a lot better just by doing this. So yeah, I could see that also happening through doing a lot of interviews.
+
+87
+00:59:16,950 --> 01:00:45,810
+Scott Tolinski: Yeah, I have gone to probably more interviews with the expectation that I don't want the job even if they give it just because you you you'll you'll flesh out some things right you'll want to get those skills practice you'll you'll feel more comfortable in interviews going forward which is a huge thing to feel comfortable in an interview. I mean, I think we should maybe even do a little bit more talking I have a lot of experience on both sides of the table there. So like what people are looking for or not but you do these things and off the off chance that this project ends up becoming something super cool. And maybe they valued you coming in. There's so much that they throw a big offer your way and then all of the sudden you have this big offer sitting in front of you You can take and just, again, totally change your financial situation, your career, whatever. You never know if you could go into something that says, okay, the base pay is 80,000, or whatever you go in, you do your interview, whatever. And then they say you are the guy we want you. And you say, Okay, I'm going to cost 100,000. Yeah. And then then they'll say, Okay, well, let's see if we can make that work looking to go back, maybe make it work. So, you know, don't be afraid to even apply in interview for things that you might not necessarily need. Right? Yeah, it's all going to be, it's all going to be personal growth, it's going to give you confidence, it's going to remove that imposter syndrome. It's going to inflate your ego a little bit, especially if people are throwing job offers at you. Yeah,
+
+88
+01:00:45,870 --> 01:01:53,550
+Wes Bos: yeah, absolutely. So hopefully that is some some useful tidbits to to newbies, if you are an experienced developer, hopefully, that will also help you maybe mentor somebody who is new to the industry, because I know a lot of times as developers we get asks for advice from people. And we might not necessarily know what to tell people. I think what most people do is, this is what I did. So why don't you go forward do the exactly same way. And this stuff is always changing really, really quickly. Like the fact that I started off writing blog posts might not be the best way anymore, right? So I don't know it's it's good to have this this sort of viewpoint when you're talking to newbies and whatnot. Also, I'm gonna plug the the the code newbies community, there's this really amazing community called code newbies, and they have a podcast and they have like a twitter q&a every every week. And I the only reason I know, but it's because my JavaScript 30 has become like a big part of the the code newbies sort of community. And it just seems like such a great positive, supportive community. So if you are fairly new to learn to code, definitely check that out.
+
+89
+01:01:54,420 --> 01:01:55,020
+Scott Tolinski: Nice.
+
+90
+01:01:55,860 --> 01:02:02,040
+Wes Bos: So let's do let's do some sick pics and some shameless plugs. So what do you got for me for a sick pick today?
+
+91
+01:02:02,040 --> 01:03:38,160
+Scott Tolinski: Yeah, so my sick pick is going to be something that is is the Nintendo Switch. Sure, maybe a lot of people know about this. I got it on pre order before it came out. I'm a big fan of Nintendo stuff. So I wasn't gonna miss the switch. It looks awesome. And sure enough, every single month, a new excellent game has come out for it. The hardware is fantastic. Like it's just so solidly built. It's great. Because if we're like hanging out and watching TV, my wife can, like put on some TV that I don't care about. And I can play the switch. And we're still getting to hang out together, right? It's not like, Oh, I'm gonna go play video games. Yeah, you're gonna go do something else, you know. So it gives you an opportunity to just sort of take video games with you, whatever. And I and I don't play a ton, but like, that Zelda game was just brilliant. And then I just got a game called a golf story, which is like, it's sort of like a classical RPG, where you're like walking around in different towns and talking to people and solving problems that the whole thing's like rooted in like, super regular Nintendo style golf game way, which I grew up playing these old golf games. I'm terrible golfer in real life, but golf games are just so fun. And it's it's just an absolutely hilarious combination. Someone described the game as like a warm blanket. It's very fuzzy and comfortable game to just sit down and play like low stress or what Yeah, so between all of that stuff, man, this the Nintendo Switch is just super cool. Even if you you know, are just playing video games here and there. It's just awesome.
+
+92
+01:03:38,550 --> 01:03:59,430
+Wes Bos: Yeah, I've never been a video game guy at all. My first website was about PlayStation two and I got super into building the website for it. And like just like dreaming of it for like a year in advance. And then finally, when it came, I camped out and we bought it the PlayStation two, and we bought two of them. We flipped one and paid for the pays for the other one, and then I just didn't play it after that.
+
+93
+01:04:01,470 --> 01:04:28,590
+Scott Tolinski: I grew up with video games we had like, before Nintendo came out we had an Intellivision. And then we had like all of the Nintendo systems growing up and then PlayStation, whatever. I've never been like, hardcore gamer man. But like, like, I'm not going on Reddit and complaining about video games or something like everyone else. But, you know, I really like you know, I like certain kinds of games and I like to sit down and just relax and play a video game every now and then.
+
+94
+01:04:29,220 --> 01:06:11,070
+Wes Bos: Yeah, absolutely. It's pretty cool. All right. My sick pick for today is more of like a sick Hot Tip pick where it's here. I just explained it. So when I'm when I'm designing something, whether it's a new course or, like right now I'm designing a slide deck for a conference that I have next week. One of my like, I'm I don't know if I consider myself a designer or not. But I have a lot of like little tricks and tips that I like to use. Okay, well when I design something and one of the biggest thing is getting a nice font, right. And the first thing that people do is they go to Google fonts. And then they just start scrolling through the, like 12,000 fonts that are available there. And when you're doing like a slide deck, are you trying to do like a hero image on a website, it's nice to have something that is not the same font that everybody else is using on their website, we'll have enough lobster in our lives to make this work. So my my tip is to go to these websites where these independent font designers sell their fonts. And pick up one of those because these fonts are often very ornate, very, very unique. They're not on Google fonts. And you can buy them for 10 2030 bucks for a really, really nice font. And it just makes your stuff look so much better than using one of the built in default fonts. So it's a little bit of a trick or hack that I like to do is to not use a built in one, you can always convert them to Web Fonts if you need to. Some of them can't be though, because they're massive, because each letter is like a big ornate SVG file. But a lot of them can be converted to web fonts and they work out and look really nice.
+
+95
+01:06:11,610 --> 01:06:14,190
+Scott Tolinski: Are there any places in particular Yeah,
+
+96
+01:06:14,220 --> 01:06:45,660
+Wes Bos: so I used to go and I was this is going to be my tip is I used to go to this website called sell fi and they would have like every couple months they would have these like packs of like 6000 fonts and all these brushes and I would bought for like 19 bucks I would buy them all and then there'd be like lots of good stuff in there and sell fi they recently discontinued their marketplace. So now I go to creative market where a lot of the same creative sell their their fonts and their their brushes and all that stuff, Photoshop actions and whatnot.
+
+97
+01:06:46,470 --> 01:06:52,620
+Scott Tolinski: Yeah, cool. I really like in terms of like fonts. I like last last type. Yeah.
+
+98
+01:06:53,310 --> 01:07:01,200
+Wes Bos: I see us last type a lot. But then it got so popular that you started. I don't know if this was this was me or not? Are they still putting out new fonts?
+
+99
+01:07:02,520 --> 01:07:03,980
+Scott Tolinski: I think so. Oh,
+
+100
+01:07:04,380 --> 01:07:18,630
+Wes Bos: I haven't been here in a long, long time. I remember this was like the one of the first like pay what you can font websites, and they're just amazing stuff. So last type is, is really good as well. So that's pretty neat. And these ones, these ones are often web ready as well, which is great.
+
+101
+01:07:19,140 --> 01:07:25,950
+Scott Tolinski: Yeah. Super cool. Nice. So yeah, you have any a shameless plug shameless
+
+102
+01:07:25,950 --> 01:08:11,160
+Wes Bos: plug, I'm going to shamelessly plug my ESX course, which I already have. It's now ESX. And beyond, includes all the cinco away and a whole bunch of new stuff that is sort of come to JavaScript. So first, if you've bought it, then just go and log in and watch the new videos, they're just tacked on to the end. I also updated the baybel video to not use the es 2015 preset, but to use the ES, or the Babel preset Nv, which is kind of like autoprefixer for JavaScript. So you just tell it I need to support these browsers. And then it will tell you what to compile and it will tell you what to keep as native ESX because all your browsers support it. So I yeah, whole bunch of Ops, go to esx.io and grab that.
+
+103
+01:08:11,880 --> 01:10:21,979
+Scott Tolinski: Oh, what am I yeah, I'm gonna plug my new mastering figma course, for subscribers now as well as it's on the store as of like right now. So by the time this episode releases, it'll definitely be on the store store dot level up tutorials, comm mastering figma figma Have you don't know is basically the coolest new design application. It's cross platform. It has these amazing features for collaboration. So, you know, Wes and I could work on a duck Google Doc style. It's basically like sketch meets Google Doc, wow, we both work on the same project, I could see his cursor moving stuff around, we could write comments to each other, like, I think this should be blue. And then you can change it in tweaking and whatever. There's also a handful of awesome prototyping tools and presentation tools. So you can give actual like really great design presentations with your app. Even with like hotspots clicking through without having to take it into envision or something else like that. It would be so handy. I can think of like, a billion times working at agencies where those presentation view like would have just killed it for us. And instead, we made a PDF out of such files and stuff like that. So it's definitely one of those apps. It's totally changed. paradigm shift. For me. It's like Excellent, excellent, excellent. They they just launched this like team libraries feature that allows you to like really, truly organize all of your components. So you can build out your whole component library in figma and store it all in a nice organized manner with labels and descriptions and stuff like that of all your components. And it's superduper flexible, all of your components can be updated and they can be manipulated and transformed and you can create sub components and components without and it is just super super cool. I wouldn't gush over this if it wasn't like my new favorite thing in the entire world. So if you want to learn figma mastering figma on store dot level up tutorials comm or you can become a subscriber to level up tutorials and I'm going to be doing a new series every single month. So if you become a subscriber, you'll get access to all of that new stuff as well. That's
+
+104
+01:10:21,979 --> 01:10:23,520
+Wes Bos: wicked congrats on launching that.
+
+105
+01:10:23,970 --> 01:10:27,120
+Scott Tolinski: Thank you been working on it for a long time I bet Yeah, fan
+
+106
+01:10:28,430 --> 01:11:09,720
+Wes Bos: wicked I think that's it. We did sick pics and shameless plugs. Other than that, if you have any tips for this episode that you want to give to to newbies, make sure you tweet it at syntax FM on Twitter, what what I've been doing is I've just been sharing all of the tips and retweeting them it's kind of cool because like I didn't really know what to do with the the syntax FM Twitter account. And obviously we can post like when the show goes live, but it's it's kind of cool because if you ever looking for like a handful of tips, whether it's command line or VS code or now advice for newbies, just tweet it at syntax FM, and then we'll retweet some of the good ones, then and other people can get some some benefit out of that.
+
+107
+01:11:10,290 --> 01:11:12,300
+Scott Tolinski: Yeah, we're just gonna smash that.
+
+108
+01:11:12,420 --> 01:11:14,370
+Wes Bos: Smash that retweet button all day long.
+
+109
+01:11:14,760 --> 01:11:16,170
+Scott Tolinski: Yeah. Cool.
+
+110
+01:11:16,200 --> 01:11:18,470
+Wes Bos: Cool. Awesome. Well, we'll see you next week. Head
+
+111
+01:11:18,470 --> 01:11:28,800
+Scott Tolinski: on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show until next time
+

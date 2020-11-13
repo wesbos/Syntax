@@ -1,0 +1,128 @@
+1
+00:00:01,319 --> 00:00:51,060
+Scott Tolinski: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to whiskey and West boss. Welcome to syntax In this episode, this is going to be a little hasty treat on roles. And even though it's a hasty treat, and its roles, I'm not talking dinnertime roles here. I'm talking about role systems and users. So we're gonna be talking all about how we both manage our user role systems, permission systems, that kind of thing, as well as the different strategies that you can take when designing or even thinking about your role system, why they're kind of important, and some of the security implications surrounding all of that stuff. So with me, as always, my name is Scott Williams ski, and with me is Wes Bos.
+
+2
+00:00:51,239 --> 00:00:52,650
+Wes Bos: What's everyone?
+
+3
+00:00:52,650 --> 00:00:53,640
+Scott Tolinski: How's it going?
+
+4
+00:00:53,819 --> 00:00:58,830
+Wes Bos: It's going fantastic. We just recorded an episode before this. So I have nothing new to tell you.
+
+5
+00:00:59,219 --> 00:01:05,189
+Scott Tolinski: Nice. Nice. I'm glad nothing's happened in the 15 minutes in between that, yeah, so it's here,
+
+6
+00:01:05,189 --> 00:01:09,870
+Wes Bos: I went and had some cherries. That's what I had. Ooh, that's there.
+
+7
+00:01:10,370 --> 00:03:28,410
+Scott Tolinski: That's not nothing. I'm gonna tell you that right now. This episode is sponsored by Netlify. And you've heard us talk about Netlify. Before, if you have listened to this show, because Netlify is one of our very, most favorite companies, they do Excellent, excellent hosting for modern web projects, they give you a whole bunch of stuff out of the box, stuff that is no fun to deal with, like HTTPS. Continuous integration, CD ends, a lot of configuration stuff that you don't have to worry about now, because it's all taken care of by the host, and it saves you so much time, it's insane. You simply just give it a repo, if it's a Gatsby site, or something like that. It just knows that it's a Gatsby site, it builds it for you. And then it waits for changes in those repo to give you continuous deployment. In addition to that, there's all sorts of excellent features that you can or you know, you can choose to not add these. But if you want these features, they exist such as functions, which is an extremely easy way to work with AWS, lambda functions. Anyone who's done serverless knows, knows that working with AWS lambda is not the most fun thing in the entire world. While serverless functions are really super cool. They're a giant pain in the ass. So this makes working with functions really just super easy. addition, there's identity where you can manage login, signups password recovery without even having your own server side authentication system. And lastly, there is forms, which makes working with user forms superduper, easy to, again, all without any sort of server side code, you just sort of hit their API with your form, and it takes care of the rest. So check out Netlify netlify.com forward slash syntax, and sign up, let them know that you heard about Netlify from syntax, because I know they love to hear it. Because a so many of you have told Netlify how much you love their service after listening to them on our show. So again, I personally I love Netlify. It's my go to host if I want to host anything at this point. So netlify.com forward slash syntax, check it out, browse through their their gorgeous website, they did a redesign somewhat recently, and it looks great. So there's a lot of great information, great stuff all on netlify.com. Check it out.
+
+8
+00:03:28,500 --> 00:06:53,820
+Wes Bos: Wicked. Alright, so let's get into it. Role systems, permissions, being able to do stuff, how do you manage that both on the client side in terms of displaying things like a button where the user should not see the delete button, if they can't delete it, as well as on the server side where you actually have to check if they have permission to do such a specific thing. So I'll go into sort of how I do roles on my myself both in my own course platform as well as in my upcoming advanced react course. I asked almost a year ago, I asked on Twitter, has anyone ever rolled their own roll system, which is a roll your roll, roll roll system and rolling. Everybody shared kind of how they approach it. And what I was doing in the past was I was doing what WordPress does. And I was just giving a level to everyone. So a user would be like a one. And an admin would be a five and like a I would be a six or a 10 or something like that, where everyone would have a different level. And then I would check if they have a specific level before they do something. But that sucked. It was it wasn't very good at all. And it's very similar to it just wasn't flexible enough. Yeah, it was it was very confusing, and it wasn't flexible enough in order to as I started bringing more people onto the platform, where I would bring on my assistant and I wanted her to be able to read and write customer data, but it didn't want her to be able to view aggregate sales data or be able to do specific functions to each of the users. Like delete an entire user where I could only do that they could only edit it right? So when I got into that it got a little bit more confusing. And I asked on Twitter what people had done. And Micah rich, who is Micah be rich on Twitter tweeted at me. And he said, See here, I've always just thrown an array of permissions in user data, you can have both specific and general permissions in the same mechanism. And I really like that. So imagine that you have a user object and on the user object, you have permissions. And permissions is an array. And in that array, you can put very broad permissions like admin, as well as you can get really specific where you can have like customer, colon, read customer, colon, right, customer, colon, delete, right, you can do all the CRUD operations. And I like that, because that allows me to just create new permissions as I do new things like, I want my system to be able to view other people's certificates of completion so that she can set Save as PDF and send them because some people don't know how to print a PDF. So she has to do it themselves. So I created a new permission called certificate read, right and and, and then all it does is generally in my Express back end, I'll have a middleware, and I have a middleware that's called has permissions. And then I'll pass it in array of permissions where at least one of them has to have access to and then I have another function for has all permissions where you must have all of these permissions before you are allowed to advance. And that's great because I first of all, I don't have to check permissions in the actual controller itself, I just do it as a middleware before for that request, it goes through whether it's a get request or a POST request. And that's really where I've settled on right now I've been really liking it, it's really flexible in terms of being able to do very broad permissions or very, very specific permissions.
+
+9
+00:06:53,820 --> 00:06:54,390
+Scott Tolinski: Nice.
+
+10
+00:06:54,390 --> 00:06:56,040
+Wes Bos: What about you? Yeah, yeah,
+
+11
+00:06:56,040 --> 00:06:57,000
+Unknown: my head,
+
+12
+00:06:57,030 --> 00:09:38,370
+Scott Tolinski: I don't necessarily have too many specific permissions, I have more of like a straight roles based, I have, like a higher level role, I have an admin role that just gives you access to the admin panels, I have like a super role that will give you access to everything, I have an editor role that will give access to people who are eventually going to be able to do blog posts, or edit their own kind of stuff, I have, let's see, like a customer role, a subscriber role, like a lifetime subscriber role, there's all these different these kind of things that either give you access to various levels of my site, right. So it's basically an array of roles on the user object. And that array of roles determines what you get access to. Now, again, I check these things in both the client and server side. And some of the beauty of things like Apollo with graph qL is that in my graph, qL schema on the user, I actually have for some of the roles, I have a way that it's just in my resolvers checking the role server side, but returns and is admin, right? So I just have an admin property on the user that comes back. And I have in his editor, his property for different roles. That way, I'm not like always checking the array for everything, like, for instance, subscribers, I use the subscriber role all the time, instead of checking an array to see if the subscribers in there all the time I do that server side and my resolver just returns is pro true. So then I can access that. Now, again, security wise, you might be thinking, well, I can just come into react and change that is true, too, or is false to true and get access to the pro content. No, because the data that I'm serving up is only going to be the data that your server side role has access to. So I'm checking your role server side on any data that I send, therefore, if you try to access the tutorials, when you're not a pro server side's going to know, and it's not going to send up any of that data. And therefore, likewise with admin or any sort of things like that. So I do have some little shortcuts built into my graph qL schema to make access to the things I use all the time, way easier. And then a lot of times I'll do checking or more complex checking on the server side for any resolvers mutations or anything like that, just checking for those properties in the the array there. But yeah, I do I do definitely more of a a straight role based system than a permission system. But my system is definitely lends itself to be able to be expanded upon. And that way you could add micro permissions in there as well. And it would still work just as fine.
+
+13
+00:09:38,520 --> 00:10:37,520
+Wes Bos: Yeah, the way I kind of see it with these like you can have high level permissions admin, and lower level permissions, like customer delete, is that you can make a specific role and this is actually how it works in WordPress as well. If you get into custom roles in WordPress, where you can create like a new type of role called like a editor and then you can can check and uncheck boxes from all of the possible permissions that are available. And then when you map over that array of permissions, you can expand something like editor into a whole bunch of roles. And you can check if they have those specific ones. Or you can when you do your checks to see if there are an editor, or they have the permission to do something like this. Yeah, it's honestly not bulletproof. I'm sure I haven't run into all of the issues just yet, because my use cases are not nearly as complex as some of the applications out there. But it's been working really well, for me, especially based on what I used to have.
+
+14
+00:10:37,669 --> 00:11:25,830
+Scott Tolinski: Yeah, and I used to work a lot in Drupal, and Drupal, his role system is intense, its intense, in a great way, because you could access to absolutely everything, but rules and permissions and roles and end up becoming such an issue. Whenever there was like a bug, you would always check the roles or permissions first because it was extremely micro, every little thing in your extension, or plug into you were using, or every little thing in Drupal had a micro permission, you know, can edit, can edit, own, can delete can delete own only sort of things. And there's just a giant table like a giant table of checkboxes. And again, superduper useful super fine, super fine grain, you can tune it up really super nice, but really daunting to look at daunting to manage.
+
+15
+00:11:26,010 --> 00:12:58,980
+Wes Bos: Yeah, totally. So let's talk a little bit about I talked about how I handled it on the server side with the middleware or right in the controller. But on the client side, sometimes there's a whole bunch of stuff, you need to do it with check. So if you have a specific component where you need to be signed in, or the user needs a specific permission, or you want to display a button, you obviously need the user at that point, right. So what I've done in my Apollo course, my graph qL courses, I've created a component called please sign in. And that is just a component that will wrap any component that needs to be signed in first. And this isn't a security measure. This is simply just a UI measure where it won't show anything, or it will show please sign in, if the user is not signed in. And then that component will always query the current user. And that way, I don't have to make sure that I have the user wherever it is that I need it, I can just wrap it in a component called please sign in. And then one step further, what I've done is that please sign in component will take some props of an array of permissions, and it will check if they have at least one of the permissions that is required for that thing. And then that's another way to I can easily say if this person has the permission to delete an item, then go ahead and show it and I could just wrap it in that component. Otherwise, it just won't show anything or it will show an error message or, or whatever it is that you'd like to show. So I've been pretty happy with that. Although I would like to hear how other people approach permission based UI. Yeah,
+
+16
+00:12:59,010 --> 00:14:00,480
+Scott Tolinski: I like that idea of having a component to do it. I personally just mostly doing an inline conditionals per component basis. And again, like I said, I have the for the different roles specifically that I use in my schemas that I have all the time, like is Pro is admin. Yeah, got little aliens. Yeah, little Boolean 's that are easy to get out. And then I'm not checking a whole bunch of stuff. So for me, that's how I do it. I just say user.is admin, and then they get access to the admin stuff. Again, don't think that flipping a switch on the front end will give you access to anything that you can actually do. Because, again, we you mentioned this briefly, but it is worth reiterating, these kind of front end role system, things should never be viewed as a security measure. I mean, it is in some regard a security measure, but it's not keeping people out what it is, it's just keeping the UI to be the way it should look for that user. So don't rely on the front end role system to save your bacon in the back end, because it's not going to happen.
+
+17
+00:14:00,960 --> 00:14:06,899
+Wes Bos: Yeah, if you're if your security plan is, oh, they'll never see that, then you're in trouble. Yeah,
+
+18
+00:14:06,929 --> 00:14:08,669
+Scott Tolinski: yeah, people will see anything. Yeah.
+
+19
+00:14:08,909 --> 00:15:14,159
+Wes Bos: Okay. The last little thing I think we can talk about is, where do you store your roles. So I store my roles just on the user as an array. It's not any more complicated that I need a separate model or something from that. I just put it in the user, I know that some people will use JW T, I use jadibooti. myself. And one of the features of jadibooti, although I don't use this specific feature, is the ability to store data in your token, because a JSON Web Token can be decrypted. It's not really data, it is not secure at all, because you can just decrypt it yourself. Yeah, it can be read. And then you can store little pieces of data in there. And most likely, you're going to store the users ID so that you can query them on the back end. But you can also store like common things like roles in the in the jadibooti. So you don't have to make a whole round trip to the server. If you want to know what permission missions that they have. And that that can be really helpful. Again, not for security, but just for being able to quickly check if somebody is an admin, and then you show the admin button. And then anytime they try to actually delete something, then you check that on the server.
+
+20
+00:15:14,299 --> 00:16:19,049
+Scott Tolinski: Yeah, you know, there's another level of complexity, too, we didn't talk about with like group based roles, where you could do it very, like fine tuned, where you could say, is admin. But in addition to his admin, the, there's another separate like nested array that has a whole list of things is an admin entails, again, I guess, it's all just sort of different flavors of the same thing that group bass rolled, and you could, then I guess, this is no different than what we've been talking now that I think about it out loud. But again, you could check for micro or macro based roles, and having some sort of group where you could say, hey, remove the is admin, and it will remove all over the micro based rules as well, you know, rather than having to deal with each of those individually, but yeah, there's a lot of stuff here. And as you can see, it's really just checking values, right, you have an array of values, and you're checking values. And these things can be whatever makes sense for you. And as long as you're doing it in a way on the server and client that are both secure, it doesn't really matter, as long as it works for your project. And you've put some thought into it.
+
+21
+00:16:19,320 --> 00:16:48,049
+Wes Bos: Yeah, if anything, I think if you over engineer it at first, it is much easier to accidentally slip up and have a security issue where you're not checking, you're not covering all your bases. So I think starting simple is important, because then your all of your checks will be very simple. And as your needs grow with the application, then you can get into a little bit more complex stuff, because it's a little bit scary being like I think this is set up properly. But you never want to be in that spot.
+
+22
+00:16:48,149 --> 00:17:08,790
+Scott Tolinski: Yeah, absolutely. Yeah. Like I could always add a more complex part of my my schema on the graph qL and a more complex resolver to check more complex role stuff, in addition to the is admin and his pro and his editor, whatever that I have going right now, if I need it, though, is easy to add that and that way, you don't have to totally refactor everything you already have
+
+23
+00:17:09,030 --> 00:17:15,450
+Wes Bos: anything else for today, or should we wrap up this treat? Should we scrape the plates and hit the dishwasher?
+
+24
+00:17:15,590 --> 00:17:43,340
+Scott Tolinski: Hit the dishwasher? Yeah, this is a quick little snack. This tasty treats we're going to be doing these weekly. So let us know kind of topic Do you want to see us cover in the sort of rapid fire? We sort of glanced over that to be in this episode. But this is a new thing. We're doing hasty treats, which are going to be these short little digestible little videos or not videos, audio podcasts that you're listening to in your podcast player. So check it out hasty treat on roles. That's it. That's that's the role system. We got a selfie going on right now.
+
+25
+00:17:43,610 --> 00:17:49,170
+Wes Bos: Oh, Instagram story. Wave a bat,
+
+26
+00:17:49,410 --> 00:17:49,950
+Scott Tolinski: dude. All right. That's
+
+27
+00:17:49,950 --> 00:18:00,930
+Wes Bos: it for today. Thanks for tuning in. And we'll see you next week. Or maybe No, no, we'll see. We'll see on Wednesday. Hopefully enjoy even more of us every week. Yeah,
+
+28
+00:18:00,989 --> 00:18:05,790
+Scott Tolinski: we're gonna be talking about design systems. Yep. Yep. Design System. very highly
+
+29
+00:18:05,790 --> 00:18:08,040
+Wes Bos: requested episodes. I'm looking forward to it.
+
+30
+00:18:08,130 --> 00:18:10,850
+Scott Tolinski: Yeah, likewise. Cool. All right. Well, we'll see you then.
+
+31
+00:18:11,219 --> 00:18:12,690
+Unknown: Say Yep. Is
+
+32
+00:18:14,460 --> 00:18:24,210
+Scott Tolinski: head on over to syntax.fm for you full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

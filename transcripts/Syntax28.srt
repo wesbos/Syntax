@@ -1,0 +1,444 @@
+1
+00:00:01,290 --> 00:00:04,560
+Unknown: You're listening to syntax the podcast with the tastiest
+
+2
+00:00:04,560 --> 00:00:31,680
+Wes Bos: web development treats out there. strap yourself in and get ready to Lynskey and West boss. Hello, everybody. Welcome to shop talk show. Wait, nope, nope, that's not i'm not Chris. Okay. Hello, everyone. Welcome to syntax. Actually, what's funny about that as the amount of times people tweet me and get me or you can confuse with Chris or Dave, I guess two white dudes on a podcast talking tech.
+
+3
+00:00:34,020 --> 00:00:34,710
+Unknown: Nice.
+
+4
+00:00:35,489 --> 00:00:37,920
+Wes Bos: Welcome, everyone. How are you doing today, Scott?
+
+5
+00:00:38,040 --> 00:00:51,840
+Scott Tolinski: Hey, I'm doing cold. I'm sure a large part of you know, North America is cold right now so very cold Yeah, I woke up today and like the the furnace like couldn't hang so it's like really chilly in our house right now.
+
+6
+00:00:51,870 --> 00:00:54,600
+Wes Bos: Oh, like your furnace is like just totally dead dead. No, it's
+
+7
+00:00:54,600 --> 00:01:11,549
+Scott Tolinski: it's we we have an old house. Yeah. Yeah. And the the windows are probably the the culprit of all of our insulation issues. But like because of that our house does not stay super warm. And the furnace is just like, it's too cold for me right
+
+8
+00:01:11,549 --> 00:01:12,060
+Unknown: now. I'm
+
+9
+00:01:12,060 --> 00:01:13,439
+having a hard time keeping
+
+10
+00:01:13,439 --> 00:01:39,299
+Wes Bos: your hands up. Yeah. Oh, boy. We just got new doors. Yeah, we have a super old house as well. And we have new windows, but we just got new doors and like the matter how nice and warm it is. And then I also spend an entire day going around with a can of spray foam and dice. I don't know it's it's so silly. How these old houses are built with like no insulation at all. Yeah, it's very expensive to heat a house like this. Yeah, for sure.
+
+11
+00:01:39,360 --> 00:01:48,150
+Scott Tolinski: Yeah, I'm dying to be able to be in a place financially where we could get our windows replaced. Because that would Yeah, a huge improvement. What a What a
+
+12
+00:01:48,150 --> 00:02:02,159
+Wes Bos: bummer. How expensive like, let's let's talk old man talk right now. What a bummer. How expensive windows and doors are like, I can't believe it. Yeah, such like you could buy a brand new car or get windows in your house.
+
+13
+00:02:02,219 --> 00:02:09,990
+Scott Tolinski: I just I haven't even I haven't even gotten a quote just because I know it's gonna make me upset. It's gonna, just gonna like be like, Oh, okay.
+
+14
+00:02:11,370 --> 00:04:42,769
+Wes Bos: Oh, boy. All right. Well, today we are talking about a sink, await and flow control. We know we've dabbled in a sink away in lots of our previous podcast, we're gonna dedicate the entire show to explaining what a sink await is, how we use it, how we use it with promises some best practices. And probably my my favorite topic is error handling, because a lot of the examples just show a try catch. So I actually just did a talk, which I've you might have seen I've been pumping it on Twitter quite a bit at .js. Back in December in Paris, I did a 15 minute talk on a sink await. And I kind of go through it and explain all that. So if you're still looking for more after this podcast, I'll link that up in the show notes as well. But, um, so let's just let's kick it off and talk about flow control in general and flow control. What does that mean? That means when you have to do a couple things, one after another, it's kind of hard in JavaScript. And that's because JavaScript by nature is entirely a synchronous, meaning that it won't sort of freeze up the the entire programming won't stop your entire program. Whenever it needs to do work it what it does is it kicks off a process. And it will move along to the next line of code. So if you're coming from like, let's let's think of like PHP or something like this. If you have code that needs to run top to bottom, and you let's say you need to fetch some data. By default, if you're not using threads or anything like that in PHP, it's going to just stop the code from running for a split second while it goes and grabs that data and then moves on to the next line. Whereas in JavaScript, it's going to kick off that fetch or kick off that David database request. And then the next line of code underneath that is going to immediately run rather than wait for that line to be done. So that's why flow control in JavaScript is like a synchronous. The the whole reason we have no j. s, if you go back into Ryan dolls, initial talks about why he chose JavaScript to create this new server side programming language. And he did it because JavaScript is almost entirely a synchronous. And it's fantastic. Because it's very hard to write any bad code that can lock up your entire application or block the thread or, or block the process, as they say, which is great. It's just kind of hard to write code that looks good. And in the past, the solutions to that were, what were what were some of the solutions out there. If you had callbacks,
+
+15
+00:04:42,930 --> 00:05:49,949
+Scott Tolinski: the big one. So I mean, callbacks was the the solution for forever. If you can think about it for a long, long time. We just used callbacks and, and a callback is essentially a function that gets passed into the second or the last argument of a function and that that function then runs upon the completion of, you know, whatever your action is. So if you go to hit an API, you hit your API. And the result is returned as the arguments in that function that are that is then run. Now, that actually was a nice little solution for maybe a couple of seconds until you have to do multiple calls and multiple different services and stuff like that. And then you arrive at what's commonly known as callback hell, where you have a callback within a callback within a callback in your code is indented, like 10 lines deep, and it's super confusing to track down and you have to start using, like, let's say you want to access those variables outside of that callback, you're gonna have to start doing some form of variable, this equals whatever Some are that Yeah,
+
+16
+00:05:50,040 --> 00:06:05,250
+Wes Bos: especially before we didn't have the concept of an arrow function. Yeah, var that equals this, or you declare empty variables up top and just set them six levels deep and then reach outside that function to grab the variable. It's a couple. It's just just not a good time.
+
+17
+00:06:05,280 --> 00:07:18,600
+Scott Tolinski: Yeah, I actually remember specifically, having code that only used like one callback here or there. And people who talk about callback hell, and I would just sit there be like, I don't understand what's so bad about this. This looks this looks nice to me. I mean, this works fine. And then like the first time you have to deal with that, the the actual callback hell, you're just like app, I get it. Okay, yeah, I'm ready for something better. And then so be because of that. I forget when when the sort of started coming out, but there was, I guess, around No, no time, there was some various libraries for promises. I think there was one called queue and Bluebird, and there were several different libraries for what's called a promise, which a promise instead of having this, this function that gets called afterwards, a promise is sort of the state of the result that gets returned. So you run a function, and then using a dot then or catch for an error or something like that, you would then be able to say, Okay, here's the first step, then here's the next step, then here's the next step, then here's the next step. And it's all sort of in one line instead of step within a step within a step within a step like callbacks. Where,
+
+18
+00:07:18,959 --> 00:08:14,160
+Wes Bos: yeah, exactly, I always like to say like promises are sort of an IOU for some data that will come back eventually. So rather than the function, the function running and giving you the data back immediately, it gives you the sort of IOU that you can listen to. And I like the sort of think of it's kind of like an event listener, you say, like, when someone clicks do this thing with promises, you say, when the data comes back, then then run this code or when something bad happens, like an error, then catch, and then that's way how you can have it. And that that largely solved a lot of our flow control issues. Because our code stopped, stopped looking like nessa callback hell and started to just go into then then then then and you can chain these promises as long as you want. And you can sort of like it's a lot more readable. For your ability to, to read it top to bottom.
+
+19
+00:08:14,459 --> 00:08:41,490
+Scott Tolinski: Yeah. Yeah. And that was I think that was a nice shift for a long time. And, you know, promises definitely, I don't know, they solved the problem in a much more elegant way than then callbacks did. But now we have async await. And async await is basically, in my opinion, it's its promises with a better syntax.
+
+20
+00:08:41,969 --> 00:09:10,320
+Wes Bos: Exactly. It is promises like let's be clear about that, right? a sink await is simply just seeing syntax on top of existing promises. So all of your code is still written in promises, because the flip side to, to listening to promises, you can write a function that will immediately return a promise. And then at some point in the future, it will either resolve meaning it worked and will give you data or it will reject, meaning that there was an error and it will cancel or not cancel, but it will error out.
+
+21
+00:09:10,710 --> 00:09:27,920
+Scott Tolinski: Yeah. So that's where how we've arrived at today, where we have well, tons of options, but we have native options. We have package options and all sorts of stuff to help you control your flow. And probably is the best it's ever been inside of node ecosystem.
+
+22
+00:09:29,730 --> 00:10:55,770
+Wes Bos: Yeah, absolutely. So let's let's dive into how a sink away actually works. So rather than having a dot then what you simply do is you put in front of your function that returns a promise. So let's say we have a function called Get the weather and get the weather will return a promise which at some point will either return you the weather or it will error out cuz something bad happened. And what we used to have to do is we would say go get the weather parentheses, Toronto, Hamilton Denver. Whatever. And then you tack a dot, then on to the end of that, where, when that promise is resolved, then code will run. And that's great because you can chain them like we talked about. But it's still kind of callback key because you still have to put your subsequent code inside of the dot dot then. So a sink await allows us to just put the word await in front of the promise. And it will temporarily pause that function from running or temporarily freeze that line of code, until that promise is either resolved or rejected, and then the line underneath it will continue to run. Now, the only the catch here is that you can only await a promise function and it has to be inside of a another function, which is marked as a sink. And that's as simple as just putting the word a sink, before you define your function.
+
+23
+00:10:55,890 --> 00:12:00,120
+Scott Tolinski: Yeah. And I love I love this syntax, because like you mentioned, it's not pulling you out of sort of the normal flow of your code. It's simply just essentially pausing your code to say, Hey, wait a second, wait for this stuff to come back. Alright, we're Wait, here it is. Okay. And to mean, just even though the word await, like, is sitting there, right there, and it makes it immediately obvious that your code is waiting on this, this to come back. And so I absolutely love the the syntax for this, I think it solves all of the sort of the issue that I've had with promises just that it's too much extra code to sort of do something that should be simple. It makes it nice and simple, right? Just like I mean, it mentioned coming into JavaScript the first time and saying, oh, man, I want to write this code that runs in sequence. Well, I need a promises, you need to understand the concept of promises, you need to get the whole then and catch this, this sort of stuff. And then with await, it sort of takes away all of that. And you just simply saying, hey, wait on this stuff. Wait for this. Exactly, yeah.
+
+24
+00:12:00,180 --> 00:13:35,820
+Wes Bos: And the another cool thing is you can put a variable in front of an await. And the eventual data that comes back from the promise will be put into your variable. So you can do something like const, weather equals await, go get the weather. And whenever the function go get the weather resolves. Whenever that promise resolves, then the resolved data, like sunny and 20 degrees will be put into your actual variable that's on your, your left hand side. So there's no callbacks or any like weird syntax here. It's just simply reads top to bottom. Which is great, because often when we start learning programming, oh, like, what are the what are like the three things that everybody teaches? When you first learn JavaScript, it's alert, prompt and confirm. And all those three things are entirely synchronous, because they pause the flow of JavaScript from running. And it's great because you don't have to get into the concept of callbacks or anything like this. But the downside to that is that people think, Oh, well, if I just need to go get some data now, it'll just pause, right? And then you're like, Oh, actually, no, there's this whole concept of being a synchronous and callbacks. And, and now all you have to do is just be like, we'll just wait on this data to come back. It's kind of a kind of wish that alert prompt and confirm would go a synchronous, showing that and then we could just show somebody that if you try to prompt someone for some data, the line of code underneath it will run won't wait unless you put the word await in front of it. So I kind of wish that that that would go and I'm sure I could could build my own as well.
+
+25
+00:13:35,850 --> 00:14:01,080
+Scott Tolinski: Yeah, right. Yeah. I and it's funny, because I never thought about it like that. But you are sort of teaching the wrong concept right off the bat. Yeah. It's t it's like just an instantly saying like, Oh, you know, this first thing you learned? Well, it's kind of a lie. You know, I mean, it works in these situations, but it's a lie for the rest of your time in JavaScript. So yeah, I think it would be easier to to go that way. But yeah, good luck. Good luck with that one.
+
+26
+00:14:01,590 --> 00:17:42,630
+Wes Bos: Exactly. Ah, let's take a break. Talk about our sponsor, and our sponsor today is a fresh books. Fresh books is cloud accounting software. And it's I think it's the best cloud accounting software out there. It's the eye if you run any sort of business, whether it's a you're a freelancer, whether you're just someone doing some side projects, or whether you're just a small business in general, what you want to do is sign up for Freshbooks and you're going to get the best invoicing software out there it's going to they're saying that you can get paid faster because there's you can get paid online I have my stripe and my paypal hooked up right to it so we don't have to do that silly dance where like the checks in the mail wink wink where it's not really you can just get paid online immediately. You can put all of your invoices in it you can set up all these automations were or mind your clients to get paid. Fantastic. Small Business software in general. I'm really really happy with it. So go to freshbooks comm forward slash syntax, enter in syntax into the How did you hear about a section? Thanks so much to Freshbooks for sponsoring, alright, so one of the is, like we talked about being a synchronous is great because it's hard to write code that will will be unperformed. But with a way that it is possible to write bad code, and that is like, let's say, for example, I want to fetch two pieces of data, I want to fetch the weather, and I want to fetch a list of restaurants for my city, those two things have nothing to do with each other. So it doesn't make sense for me to get the weather and wait for that to come back. And then when the weather is back, then go fetch a list of restaurants and then come back and then deal with it. Because that's, that can be slow, right? Like, what if the weather takes two seconds, and then your stores take one second. So what ideally you would do is you would fire both of those off at the exact same time. And then when, when they're both done, then you can finally move on to the third step, which is displaying that data to the user. So the nice thing about this is that you can take your your weather promise, and you can take your your stores promise, maybe it's like the Yelp API or something, put those two things in variables. And those are just promised variables. And then you wrap them in a what's called a promise dot all and what promise dot all will it'll sort of make a mega promise. I was just telling Scott like, hey, Scott, let's talk about mega promises. And he's like, yeah, that's hilarious. Because we do have these things on our topic list sometimes. And I'm looking at it and I'll Google it, because I don't recognize it and nothing comes up. And I'll just be like, Alright, is this like a special? Yeah, a mega promise. And a mega promise is a promise that is made up of littler promises, or other many promises. And the beauty of this promise dot all is itself will return a promise, where it will only resolve itself, after all of them have been successfully resolved. So once both pieces of data have been been resolved, so that's pretty neat. And then you can simply just await promise dot all and then those two pieces of data is going to be returned as an array. And what I like to do is immediately destructure those into like, const, square bracket, whether comma, stores, you know, I don't know if we should be coding with the voices here. But you know, you're right, where then we have our two variables, and we can move on to the next line, that's going to be as performant as we possibly can. So be aware of not going willy nilly and unnecessarily awaiting things. If there's two things that can run at the exact same time, then stick those in a promise that all for a mega promise.
+
+27
+00:17:42,660 --> 00:18:45,000
+Scott Tolinski: And I think this illustrates something that we didn't, we haven't really touched on with a sink await. And maybe a misconception about it is that well, it's not necessarily a full on replacement for promises, it is promises, and they can be used with promises. So in this instance, like you said, we're using a sequence or not a sequence of promises, but you were using promises that were going off at the same time. And then we are awaiting that. So this is a sink await being used with promises to do that, because the sink await itself doesn't necessarily have these features where you can run them at the same time and stuff like that. And since again, a sink await is just using promises. And underneath it all. It makes it so that there are really like killer team more so than an evolution of right you could think of a sink await is like a feature on top of or with promises rather than a replacement for promises. Exactly, exactly.
+
+28
+00:18:45,000 --> 00:19:57,560
+Wes Bos: It's just syntactic sugar, as we like to say, just Knights nice syntax built on top of the existing promise API. And that's why we're only talking about using it in terms of a sink away. And we're not talking about like, how do you make an async function because there's there's no way to, to make a function that you will wait with a sink await you just use, you just use a regular function that returns a regular promise. Or let's, let's talk about like some people say like, Okay, that's good, but I like the I like the bluebird API better. And I like the the syntax of this other library that I've been using for so long. And while that very well may be true, I am urging everyone to just drop those and start using native promises. And that's because you don't have to have specific buy in from a framework. These are just built into the browsers. And many of the new browser API's being built right now are all built on top of native promises. So let's go through a couple browser API's. Do you know of any browser API's that are built in native promises there, Scott? Yeah.
+
+29
+00:19:57,560 --> 00:20:23,760
+Scott Tolinski: So you know, I mean, even so, Fetch, which is the hot way of getting data from an API is built with promises. And so because of that, you can no await fetch, you can await fetch, rather than having to use some sort of, again, an additional library or doing anything like that. You can use just normal promises with the the hot new API for hitting API's
+
+30
+00:20:23,810 --> 00:21:10,680
+Wes Bos: that so fetch. One really, really funny thing about the fetch API is that it's actually like a double promises because you, you fetch some data from your API. And then as a second step, you need to convert that data into whatever it is that you're expecting, it's likely you're expecting JSON to come back. So then you have to call the response dot JSON, which in turn returns another promise. And that's what you have. So you sort of see these these funny little things where people either await fetch dot then, and then they do like data data dot JSON, or you can await await the fetch and just put parentheses in between the first and second or await What is this? I don't know, I seen that the double await Okay, I
+
+31
+00:21:10,680 --> 00:21:18,030
+Scott Tolinski: don't know if I've seen example that I always just use the wait, that to get JSON from it. The second one rather than Okay, I'm
+
+32
+00:21:18,030 --> 00:21:19,800
+Wes Bos: gonna I'm gonna send you a
+
+33
+00:21:21,080 --> 00:21:21,860
+Scott Tolinski: little snippet.
+
+34
+00:21:22,439 --> 00:21:28,980
+Wes Bos: Yeah. I put it in slack. A little, a little example.
+
+35
+00:21:29,160 --> 00:21:42,420
+Scott Tolinski: Yeah, I haven't seen this. And I actually really liked that I went away. I feel like some people might not like this, but I like it. It's, uh, it is essentially what you described, it's a total weight wrapping around a fetch command. I
+
+36
+00:21:42,420 --> 00:22:24,150
+Wes Bos: love it. Yeah. I thought that was pretty funny when I saw that, because I was always like doing this like weird dot then data, data, JSON. Yeah. And I was like, I wonder how you could do double away here. And it's just the regular bracket, and whatnot. So some other API's, it's pretty good. Some other API's that are promise based. So instead of using fetch, I like to use a library called axios, a x iOS, and that's all based on promises. So you can simply just await it and they have some JSON default, so you don't need the way to wait. But the payment request API that's coming. So if you want to be able to sort of autofill your customers credit card data, and billing information and shipping information and all this stuff, there's some really neat spec,
+
+37
+00:22:24,209 --> 00:22:38,760
+Scott Tolinski: it is gonna add a bunch of security essentially, to your to your payment, you don't have to worry about the super secure forms or coding a form yourself, right? I mean, the browser will handle the the form, so you don't have to worry about that. Uh,
+
+38
+00:22:39,060 --> 00:25:13,110
+Wes Bos: some cases that will release the Chrome, right? in Chrome, it depends. It's okay, the mid let's talk about this, we got time. So the payment request API is at the very basic, a glorified autofill. Meaning that if you call the payment request API, it's gonna open up this little drop down in Chrome or in on Android, it's going to open it up or on Apple, it might open Apple Pay, and then it you request certain things like a credit card number and expiration date and a billing address. And then the browser will give you that data back. And you can just put that into your own input field. So it's kind of just like a standard way to autofill your credit card data, rather than using like a last pass or the trying to guess, with the existing autofill. So that's at the very, very basic and how use the single way with that is, you can simply like say const credit card details equals await new payment request, and then that will pop up and the user will have as much time as they need to interface with that dialog. And then when they press OK, that will resolve the data for you, or when they press cancel, it will reject that payment requests. And then you have to catch that error and ask them for it again, or just tell them that sign was wrong. That's a very basic, but then there's also like this other side to it, where things like Google pay, it's not called Android Pay anymore called Google pay, or Apple Pay. Or it works very similar to how stripe works where you can use them as the processor or you can use them sorry, they're not the processor. Still stripe is your processor, but you can interface with them. And what you do is instead of getting the credit card number and all the details back, you just get a token. And then you can then take that token to Google pay or Apple Pay or whatever. And then you can sort of charge that token on your server side without ever having to touch a credit card detail. So there's a lot to it. I spent some time reading into it because obviously I accept credit cards on the internet. But it's going to be pretty exciting. I like the ladder where you don't have to touch credit card details at all. Even though like I never do credit card details on my server at all because I Send it right destroy. And then your tone. We talked about this. If you're interested in this whole process, listen to the episode we did on accepting money online. But it still will work in terms of like getting the raw credit card data as well.
+
+39
+00:25:15,000 --> 00:25:34,050
+Scott Tolinski: Yeah, I that's the thing, I need to dive into more, I was just reading about a little bit about it on Braintree had some new update for Google pay or the browser API. And I just glanced at it. But I need to definitely spend some more time on that. And it's annoying, I just rewrote my entire shopping cart.
+
+40
+00:25:35,580 --> 00:25:56,940
+Wes Bos: Well, I think I think what is is going to be nice is that you likely won't have to do that if you're using like stripe Checkout, is that the folks at stripe and they have already done this is they will check for the payment request API. And then if it's there, they'll try to use that. Because that will obviously lead to to higher conversions and more payments online word.
+
+41
+00:25:57,600 --> 00:26:01,890
+Scott Tolinski: Cool. Well, what other other any other browser API's that you can think of? Yeah,
+
+42
+00:26:01,919 --> 00:26:10,440
+Wes Bos: the get user media. So if you want to use someone's webcam, he actually used to be based on a callback, right? So there was there was two callbacks success callback when someone
+
+43
+00:26:10,440 --> 00:26:14,460
+Scott Tolinski: gives you access. That's the only way I've used it. To be honest, I didn't I didn't know it was promised. But yeah,
+
+44
+00:26:14,460 --> 00:26:52,530
+Wes Bos: that's that's actually deprecated. And now the new get user media will return a promise. And then once someone allows you access to their webcam or to their microphone, then that will resolve what's called a stream. And then you can take that stream and pipe it into a video thing or something like that. So that's pretty exciting. And the web animation API, so the the JavaScript web animation API is largely built on promises, which is absolutely what you want for doing sequential animation. So like fade out, then when the fading out is done, then then grow the size. And then when that's done, turn it green. You get the point, right?
+
+45
+00:26:52,560 --> 00:27:05,880
+Scott Tolinski: Yeah, and then that I feel like that could if not a, what are we calling them that's snack episodes or snack packs or hasty tray stew treats? I like tasty treats a lot. We should actually do some sort of a poll on what Yeah,
+
+46
+00:27:06,150 --> 00:27:15,510
+Wes Bos: wait, let's talk about this year. So our shorter episodes are going to be called either snack episodes. tasty treats. What else?
+
+47
+00:27:18,360 --> 00:27:23,400
+Scott Tolinski: Dang, how am I forgetting this way? I just said it two seconds ago. I don't know. Rewind and listen to
+
+48
+00:27:25,980 --> 00:27:33,120
+Wes Bos: snack pack. Snack packs. Yeah, yeah. Let us know on Twitter, what you what you think the little ones should be called? I think Casey treat is pretty good.
+
+49
+00:27:33,150 --> 00:27:56,760
+Scott Tolinski: Yeah, I like tastytrade. A lot. So I think maybe if not a full episode, we could have a hasty treat on the web animations API, because that's something that's pretty darn new. And if you weren't paying attention, it might have flown under the radar a little bit for you. And definitely something that I love animations on the web. So me personally, something I'm super excited about.
+
+50
+00:27:57,180 --> 00:28:07,860
+Wes Bos: Yeah, exactly. Especially if you're feeling like a little bit limited by CSS animations, you want to you want a little bit more control, you want to orchestrate it a little bit more. The web animation API is exactly where you want to be.
+
+51
+00:28:07,920 --> 00:28:10,980
+Scott Tolinski: Yeah. Cool.
+
+52
+00:28:10,980 --> 00:29:07,650
+Wes Bos: So what else do we got here? We talked about mega promises, different libraries that are using promises, you can obviously make your own library. So often, what I'll do is I'll take a callback based function that I have. And you can update that function to instead of accept a callback, or In addition, you can make your your function either run a callback, and sorry, you can make it both accept a callback or return a promise, which is cool. So you could use either or. And then there's also these these bunch of different utilities out there. So node just shipped one on the util package called promise a phi, where you can take a callback based API and turn it into something that returns a promise. Or you can in a hug like that, that sounds great. Because how many times I don't know how many times but there's been times where you go to use someone's API and find out that they don't even return a promise from it. And you're just like, great.
+
+53
+00:29:07,650 --> 00:29:16,890
+Scott Tolinski: Like, I've just got so invested in all this, you know, async, await promises stuff. And here, I have to go use a callback. Again, it's kind of a bummer. Exactly.
+
+54
+00:29:17,340 --> 00:29:37,140
+Wes Bos: So in my node course, we use everything as a sink away in my node course. And a lot of the packages we use don't didn't have promise based things yet. So we had to like convert a couple of them over to being a sink await. So we could not have to mix and match callback and in promises
+
+55
+00:29:37,169 --> 00:29:37,830
+Scott Tolinski: nice,
+
+56
+00:29:39,060 --> 00:29:43,500
+Wes Bos: pretty, pretty sweet. Let's talk about error handling strategies.
+
+57
+00:29:43,610 --> 00:30:43,110
+Scott Tolinski: I'm just gonna, and I'm really interested to hear your thoughts on this. I know you said you did a talk on it. And like, I personally have just been using the try catch, which, if you don't know is something that's been in JavaScript for a long time, which is a try followed by curly brackets, and then a catch for By curly brackets, so in a synchronous function, you would have your try. And you put all of your code inside of the try. And then inside of your catch, you would have the error available and do something in the case of an error, right. So you're essentially saying, hey, just try this, see if it works. If it fails, then go to the catch statement and the catch statements where you get to alert or throw an error on the server or something like that. So, so try catch has been around in JavaScript for a long time, and now, actually, is, in my opinion, become much more useful by having it be the sort of main way of error catching inside of async await.
+
+58
+00:30:44,340 --> 00:33:29,940
+Wes Bos: Yeah, exactly. I think that's what everybody's been seeing in all the examples. And that is, that's great if you want to handle the error inside of the actual function itself. So your functions called display data, and you try to fetch some data and you know, in that function, you also want to handle how the error happens, you just wrap all your code in a try. And then and then you have this catch, where if anything goes wrong, there's a 404, on one of your GET requests, or you have a syntax error, or you try to call a method, like on on the return data, that the method isn't there, then then it's going to all fall back to a catch. And that's sort of how promises have worked in the past is that you can just put one catch at the end of all your, then then then then then, at any time, one of those promises, trips up, then it'll fall back to the very end, catch. So that's good. It's just like, a little bit ugly in terms of writing your code, because we talked about this beautiful sink away. And now you're just like kind of juggling it up again, with this try catch. So a couple other options that you have here. And and I'm not going to go too deep into them, just because it's very visual. With is with what's called a high order function. And this is, again, this is kind of in the functional programming world, but what you can do is you can just make your a sync function without any error handling in at all, you just assume it works fine. And then you create a another function, that will simply just take in that function as an argument, and chain a dot catch on to the end, and this is totally something you're going to need to look at the code for six or seven times. And that will then sort of that high order function will just return a new function, that's sort of like the safety FIDE version of that function where it has just tacked on a catch onto the the end of that. And then inside of that catch you you deal with it, whichever way that you want. And that's that's exactly how we use that in my node course. Because in my node course, anytime in most of my routes, I'm doing things like querying the database, and resizing images and checking for permissions. And if any of those things go wrong person, the query goes wrong, they don't have the correct permissions. You can somebody just throw an error or the error will be thrown for you, because you you did some bad code. And then what will happen is you wrap all of your routes in this higher order function. And then you can handle all of the errors for all of your routes by simply just passing that error to a 404 page or a 500. Page and displaying exactly what had gone wrong. In that case, yeah,
+
+59
+00:33:29,970 --> 00:33:34,110
+Scott Tolinski: that sounds a lot better to me, or at least a lot more familiar, you know,
+
+60
+00:33:34,590 --> 00:35:32,520
+Wes Bos: exactly. And that's really good for when you want to handle all of the errors in the exact same way. Without having to specifically every single time you write a new route, or every time you have a new new controller function, you don't have to, you don't have to deal with like, making sure that you had handled that error in the correct way, you know that it's just right, because you've wrapped it in this higher order function. Um, what else? What are the other ones that you can handle the error when you call it. So if you have in a sync function, you could like let's say we have in a sync function called load data, what you can do is you can just call load data without any error handling inside of that function, and then just chain a dot catch on to the end. Because you can load data function is a promise. So you can just chain a catch on to the end. So you say like, I'm going to run this function and I'm going to deal with it right after I did with like a proper catch, there's no need to wrap it in a try catch, you can just chain the promise based catch on to the end of it. And then finally, in node, so pretty soon node is going to quit the process if you have an unhandled promise. So that means like some people just like assume all of their sink await it's gonna work out just fine and if something goes wrong Notice going to quit the process mean that if you're running like a server, your entire server is gonna fall over, and your website will go down. So what you can do to sort of like, catch yourself there is you can listen for an event called unhandled rejection. So it's processed that on unhandled rejection. And then in that case, you can do something, log it, send it off to, like, I use Sentry, and I'll send that data off to century. And then I don't know whatever else you want to want to do with it, or just eat the error and pretend it didn't happen.
+
+61
+00:35:33,000 --> 00:35:39,780
+Scott Tolinski: sweep it under the rug. There's nothing wrong here. Everything's perfect. Exactly. So
+
+62
+00:35:39,810 --> 00:35:53,130
+Wes Bos: those are just a couple different error, error handling, I need to write a blog post or something like this, because I need to get the code out in the open. But the talk I did do has a has all the examples as well. I'll link to some screenshots of it as well.
+
+63
+00:35:53,190 --> 00:35:54,420
+Scott Tolinski: Yeah, blog post 10.
+
+64
+00:35:54,900 --> 00:36:12,600
+Wes Bos: Blog it. Oh, yeah. So let's let's handle it. Stop it with browser support. Obviously, async await is not in every single browser. It's in most of the most recent browsers. But like, what do you do if you have to support iE 10? Or iE 11? Where it's not in? Yeah. What do you do with that? Scott?
+
+65
+00:36:12,900 --> 00:37:29,280
+Scott Tolinski: I mean, the answer is the same thing as the answers for everything at this point is Yep, run your code through a compiler Babel in this case. So yeah, Babel is going to make sure that your async code or your async await code is going to be compliant with whatever browsers you tell it now. Now, with the new way of telling Babel to almost like an autoprefixer type, you know what browsers to support, you can just write your code and say, hey, I want to support these browsers or whatever. And Babel is going to know if that needs to actually transform that async await or not. So I mean, I'm sorry, hit my mic. So I mean, that's the answer for everything nowadays, right? Which is way better than it used to be. Because the way it used to be was like there's some new fancy CSS, there's some new fancy JavaScript, and guess what, you can't use it. You can use it in five years. And now the answer is, hey, you can use it, you just have to either configure your build tool properly, or you, you just you have to know what polyfill to use or something like that. So that's the answer is that you'll want to use something like Babel in your build process to make your JavaScript compatible. And you probably already are anyway, so it's true.
+
+66
+00:37:29,310 --> 00:38:55,190
+Wes Bos: Yeah, you're in good shape, then. So it's definitely something that you can start using today. One other thing I forgot that we didn't talk about, and this is probably one of the biggest criticisms of using promises is that there is no way to abort, or there's no way to cancel a promise. So let me give you an example. If you have a, like a website, and you're searching for products, and somebody types in like someone's searching for a shirt, and they type sh IR, and then they scratch their nose. And you would you would probably say, Oh, the user has stopped typing, let's do a quick fetch to the back end, and search the back end for things that are sh IR. And then you come back with the data. What could possibly happen though, is they could keep typing, and they put a T on that. And then you send off another request. And now all of a sudden you have to fetch requests going off to your back end. And there is a possibility that they will come back out of order. And your your shirt will come back first and then your sh IR will come back after that. And then you overwrite with old data. So what you need to do in that case, you need to cancel that first request, because you're now searching for the SH IRT. And one of the big, big things with promises that you couldn't cancel it, which is a game stopper, a game stopper. What a showstopper shows
+
+67
+00:38:55,860 --> 00:39:00,170
+Scott Tolinski: shoppers like positive like show stuff. Yes, like, whoo, that's cool.
+
+68
+00:39:00,210 --> 00:39:30,000
+Wes Bos: Yeah, show Safra wood. Okay, this is a game stopper. And the answer to that is now we have this thing called a board controller. It's kind of cool. It's like its own thing. And it can be used for more than just promises. But that will allow you to abort fetches. And Jake Archibald has a really good article on the Chrome Developers website. I'll link to it in the show notes about how to do a portable fetch. So that's not something you really have to worry about anymore.
+
+69
+00:39:30,090 --> 00:39:38,010
+Scott Tolinski: Nice. Yeah. Yeah, all these things, man. There's just gets better and better all the time. Every every single day It feels like
+
+70
+00:39:38,400 --> 00:40:21,090
+Wes Bos: Exactly. And also, if you are using a different language, whenever we talk about this stuff, people get a little upset though. My language just had this for a long time. Like, let's just take a second to congratulate everybody else that has a different language. Like Good Good for you. Right? Like we're we're really excited that it's coming to you. Yeah. We're really excited that this is coming to JavaScript because the this has been a huge pain point for for JavaScript developers in the last like, five years or so. So it's super excited that async await is becoming mature. My mom, let's talk you got anything else about it? Or should we move into some some sick pics and plugs?
+
+71
+00:40:21,110 --> 00:41:01,320
+Scott Tolinski: I think I think we said everything there there is to say about a sink await. Other than, hey, just use it, get out there and use it because I guarantee it'll ask you this all the time. But I guarantee if you get out there and just start writing the code, you're gonna be like, Oh, this is awesome. This has made my life a lot better, especially if you're like, imagine if you're making the jump from callbacks to async await and just skipping promises, which I I mean, you should still learn promises, but like, imagine making that jump and all of a sudden you're just returning a value from a function rather than having to reframe a callback like you use a sink away. It is awesome. It makes your life super easy. So yeah, use it.
+
+72
+00:41:02,129 --> 00:41:05,250
+Wes Bos: Awesome. You got a sick pick for me today.
+
+73
+00:41:05,550 --> 00:42:15,540
+Scott Tolinski: Yeah, I got a sick pic. And it's a it's a sick pic that we are, are both both pretty high on right now which is the ring doorbell I got this thing on Black Friday. And I got the cheap last year's model. So I know you had some issues with your last year's model. I did not have any issues with my last year's model. So if you're looking for maybe like a cheaper solution, you can get that one and try it out. The new one I don't know too much about it other than its little sleeker West you might have some some more knowledge there. But like I i this thing has kind of changed how I deal with stuff at my front door, which is kind of ridiculous to hear. But like I now instantly know if there's a package outside I instantly know if somebody's soliciting at my door. Yeah, you know, everything is become a lot nicer with how you interact with who's at your door and whatever. Sure. The security features and stuff like that are great. I actually I like this primarily so that I know when my packages arrive I get a little buzz This is someone's at my door. Well I'm not expecting an email right now must be a package. I'm gonna be out there and get it like
+
+74
+00:42:15,570 --> 00:43:26,150
+Wes Bos: that. Me too. That's exactly what I use it for is I think I've had a couple packages swiped off my front porch. Yeah, or the incompetent delivery. There's in Canada that they're using this new like kind of Uber for package delivery. So anybody with a 98 camera ink and start delivering packages and like it's called intelecom it's brutal they're just awesome. They're tossing or just not showing up or is marked as delivered and it shows up like for I got so much stuff for free over the past couple of months because like it says delivered and I'm like hey Amazon it's not delivered and then like a week and a half later it actually shows up because the guy found it underneath his spare tire or something like that. Anyways, ring It's amazing. I've got the the older one as well I've had some trouble because of the way that my house is angled out the road. So anytime a snowplow drives by with its big flashy lights, it triggers motion. And ring is amazing. They sent me these like wedges that you like put underneath so it'll angle the doorbell doorbell down a little bit and hopefully it won't trigger him. So I'm gonna try that it's just been freezing.
+
+75
+00:43:26,610 --> 00:43:35,420
+Scott Tolinski: So a installation that was super easy right I mean, I didn't even have to wire mine up it's all wireless. loved all of that stuff.
+
+76
+00:43:35,480 --> 00:43:36,150
+Wes Bos: Are you just on battery
+
+77
+00:43:36,150 --> 00:44:34,260
+Scott Tolinski: Are you hard wired I'm on I'm on battery because we have this Our house is kind of weird. We have a standard Denver square and it's it's like a house layout you see all over the place but our porch has been totally screened off into some kind of like, I don't know if you'd call like a Florida room or something like that. It's totally totally windowed off. And our doorbell like broke a while ago and our our doorbells on essentially a door that's not our main front door really, it's a door. And so like I went to replace the doorbell and I took it off expecting it to be all wired up. And sure enough, it's a wired doorbell or a wireless doorbell. And I've like like how am I supposed to replace this now I have to replace like the entire system. So the ring was like a perfect fit for that. So yeah, I just I'm running it on battery. I just screwed it into the place. And then uh yeah, I actually I also love getting the ring. Oh, yeah, you're holding the ring screw right I
+
+78
+00:44:34,260 --> 00:44:38,220
+Wes Bos: got the little ring screwdriver with the torques hat on it. Yeah,
+
+79
+00:44:38,700 --> 00:44:47,820
+Scott Tolinski: but I love getting the messages on your the notifications on your phone too. Rather than just hearing the doorbell my dogs don't go absolutely nuts. Now anytime anyone rings the doorbell?
+
+80
+00:44:47,820 --> 00:44:52,470
+Wes Bos: Sure do use the little chime thing when someone kind of walks up it chimes
+
+81
+00:44:53,010 --> 00:44:55,500
+Unknown: or when they push it. Oh yeah,
+
+82
+00:44:55,530 --> 00:44:56,430
+Wes Bos: we actually
+
+83
+00:44:56,520 --> 00:44:58,770
+Unknown: we don't have time on my phone when they win mode. So
+
+84
+00:44:58,770 --> 00:45:01,650
+Wes Bos: it's only on your phone. Right, you don't have an internal chime.
+
+85
+00:45:01,710 --> 00:45:06,900
+Scott Tolinski: I don't I didn't buy the external, like plugged into the wall one, but it's only set to trigger when you
+
+86
+00:45:06,930 --> 00:46:17,130
+Wes Bos: push it. Okay, yeah, we, we bought the external one because we didn't have a doorbell at all, ever. So it was just old school knocking. And I would always miss packages. So I hated that now it's awesome to be able to get the notifications, we bought the external chime. And then because it's so frickin cold here, the battery just gets zapped, like they tell you it goes six months, which is not bad, you unscrew it twice a year and charge it up. But after two weeks, it was at like 30%. And every time I got really cold, it would tell you like cannot charge. Or it's like it's like your doorbells going to die because it's too cold. So I am luckily we got new doors and so I I just ran a low voltage wire through the the casement of the door before they sealed it up. And then you can buy this little transformer that takes your 120 down to like 20 volts or something like that. And then you can you can hook that up to the doorbell doorbell no problem. So it was extra pretty painless. You just bought it at like Home Depot for 10 bucks screwed it right into a light socket that was in my basement and he's up and running. Cool.
+
+87
+00:46:17,160 --> 00:46:23,760
+Scott Tolinski: Yeah, maybe when uh, when I get those windows redone we'll redo that entire Florida room area. And yeah.
+
+88
+00:46:25,440 --> 00:46:36,960
+Wes Bos: We we want to do if you're interested, let us know, we want to do an episode just on home automation in general, because I've been by I've been pretty excited about this whole home automation thing, and I've bought a whole bunch of stuff lately.
+
+89
+00:46:37,080 --> 00:46:45,390
+Scott Tolinski: Yeah, I'm super interested in it too. Although, being the owner of an old house is a little bit more difficult.
+
+90
+00:46:45,840 --> 00:49:22,980
+Wes Bos: Yeah. Oh, definitely. It's it's kind of painful trying to retrofit 140 year old house with all this old stuff. Well, yeah, what's your sin my, my sick, I had a sick pick today, but I wasn't super sick about it. So actually, I'm going to give you a sick tip, which is breaking the rules, but whatever we can, we can do it. And it's something I just learned about this morning and in the latest Chrome Canary. So this is coming to Chrome in six weeks or whatever. The autoplay is going to change in Chrome. So we've all been to websites where autoplay will. It'll autoplay, like annoying video about something you're like, where is it, and you have to find the pause button, like I hate this website, and you close the tab. So Chrome has changed it now. Where if you have a video on autoplay, and it is not muted, it will not play unless a user explicitly click something very similar to how pop up blockers have worked for 15 years where you can't pop up a window unless someone actually explicitly clicks something and you how you attach that with an action. So that's cool, but like what about things like YouTube, Netflix or my own course platform where you want to autoplay the next video, I was getting these errors, and it would say like, Here, let me read you the error. Dom exception play can only be initiated by user gesture. So my users have to keep pressing play to play the next video. And that sucks if you're just trying to like sit there and watch a whole bunch of videos. So I dug into it. And I found out that there's this new thing called a media engagement index, where you if your user consumes visits your website more than five times consumes the media with both audio and video. For more than seven seconds, the tab has to be active, and the size of the video must be greater than 200 by 140. If they do all of these things, which it sounds like a lot, but it's it was pretty easy for for me to trigger it, then chrome gives your website a height greater than 0.3 media engagement score, and then you are allowed to call play programmatically without having the user clicks. So definitely was the head scratcher for a while because all of the searching it just turned up stuff from like Android and iOS because like you haven't been able to autoplay on those things for a long time. But now it's coming to the desktop. So if you have any sort of auto playing video on your website, either make sure it's muted or get ready to try get a high media engagement score.
+
+91
+00:49:23,190 --> 00:49:45,240
+Scott Tolinski: Nice. I actually wonder this my autoplay broken the latest Chrome Canary but I'm using YouTube YouTube embeds in my my autoplay is no longer allowing like the option to autoplay this video on the YouTube embed is like just totally stopped working and that I'm not getting any sort of browser error. I'm wondering if this has anything to do with this. That's likely
+
+92
+00:49:45,240 --> 00:50:19,830
+Wes Bos: it because like nobody is exempt from this YouTube themselves. So you can visit this URL Chrome, colon slash slash media dash engagement and it will tell you the media engagement do right now while I'm talking about this, I'll send you the link on slack From media engagement, and that will tell you what your score is for that specific website. And then I haven't read too deep into it. But there's this Google Doc that talks about how embeds work. So maybe I don't know if the score is related to your own website or to youtube.com? likely your own right. Yeah,
+
+93
+00:50:19,830 --> 00:50:26,760
+Scott Tolinski: that's a great question. And on top of that, like, is this for a page specifically? Or is this for the entire site,
+
+94
+00:50:27,719 --> 00:51:13,800
+Wes Bos: this is for the entire its domain base, like all the other all other security stuff. So that's, that's pretty interesting. And for, I think, for most people, that won't matter, because someone will come to your website, hit play, it'll hit all those, the five visits kind of worries me because if someone's trying to view my course, they have to come visit five times. Not sure how that will work. But I ran into a big problem because I was trying to fix something. So I just kept playing like, two seconds of video and then toggling over to my editor. And that was not a focused tab. So I got a really low score for my own domain. And I had to sit there and watch my own videos for 10 minutes to bump up my my score enough that I could get the autoplay working again. Yeah, I'm getting a score of zero.
+
+95
+00:51:14,880 --> 00:51:24,030
+Scott Tolinski: For tutorials, calm on the media engagement. But my local host has a score of point. 03 so I
+
+96
+00:51:24,030 --> 00:51:29,610
+Wes Bos: don't know. 03. See, that's Yeah, point 03 or 0.30. Point or point?
+
+97
+00:51:29,610 --> 00:51:31,650
+Unknown: 03. Yeah, see, that's
+
+98
+00:51:31,650 --> 00:51:32,460
+Wes Bos: not high enough. That's
+
+99
+00:51:32,460 --> 00:51:39,000
+Scott Tolinski: just problems in watch my stuff. Although YouTube has a big old engagement score, so who knows here?
+
+100
+00:51:39,689 --> 00:52:07,590
+Wes Bos: Yeah, I think it's domain based, especially with the iframe honor author read into it after this. Yeah. Interesting. to something that popped up. Hopefully, it saves a few people some headaches as to why these things like the whole thing about web development is it's supposed to be code it once and it works forever. But like stuff like this causes your your websites to just rot. And it's good to know that there's nothing you can do about sick tip.
+
+101
+00:52:08,520 --> 00:52:12,840
+Sick tip. You got any shameless plugs for me.
+
+102
+00:52:13,049 --> 00:53:09,270
+Scott Tolinski: Um, though, I did add some videos, though, to my full stack graph QL Series. So there's now I believe, 17 videos for free in that series. So head on over to YouTube and check out the series is called full stack graph qL with Meteor react, and Apollo teaches you all sorts about stuff. We're we just added on the latest videos, we added user accounts. So now you can log in, is actually built like the world's worst login form because I did it in like six minutes. It's great. But yeah, you now have user accounts. And you can use those user accounts in the context of your queries and return some secure data and stuff like that, instead of returning all of the data, you get just the users data automatically and stuff like that. So if you want to learn graph qL, and you want to do so with react in Meteor and Apollo, that's a great place to do it. Videos are free. They're 17. There's new ones added every week.
+
+103
+00:53:10,260 --> 00:53:18,510
+Wes Bos: Awesome. People really like the graph qL episode last week. So that was really cool to hear that. People were enlightened by it.
+
+104
+00:53:18,540 --> 00:53:24,960
+Scott Tolinski: Yeah, I love it. I'm a big fan. I'm a I'm a I don't know, I'm total convert at this point. I'm super into it.
+
+105
+00:53:25,560 --> 00:53:58,260
+Wes Bos: Me too. My, what is it called a shameless plug is my CSS Grid course will be out on Thursday. I'm saying it here. It's been done for like two weeks. But I have a sponsor, which is amazing. And they are just getting some dotting their eyes crossing the T's. Anytime you work with a larger company, there's always some slowness with their legal department to make sure everything is on the up and up. So looking like Thursday, it's going to launch and I'm super excited about that. It's going to be at CSS grid.io. And it possibly is already out. But if you're listening to this nice.
+
+106
+00:53:59,190 --> 00:53:59,880
+Scott Tolinski: Alright, and
+
+107
+00:54:00,390 --> 00:54:06,120
+Wes Bos: so for that one. Good. Good. We'll see you. Next week.
+
+108
+00:54:06,210 --> 00:54:07,140
+Unknown: Next week.
+
+109
+00:54:07,140 --> 00:54:08,580
+Have a good one. Yeah.
+
+110
+00:54:09,030 --> 00:54:10,380
+Later, please.
+
+111
+00:54:12,660 --> 00:54:21,720
+Scott Tolinski: Head on over to syntax dad FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

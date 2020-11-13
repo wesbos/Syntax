@@ -1,0 +1,316 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax,
+
+2
+00:00:02,820 --> 00:00:05,760
+Unknown: the podcast with the tastiest web development treats out there.
+
+3
+00:00:05,760 --> 00:00:10,500
+strap yourself in and get ready. Here is Scott, ski and West boss.
+
+4
+00:00:10,500 --> 00:00:32,100
+Wes Bos: Welcome to syntax. Today we're talking about debugging tools and tips. So what are the different tools that we can use? What are the different techniques? What is the sort of the mindset that you need to put yourself into, to debug a problem and get through it as quickly as you possibly can? With me, as always, today is Mr. szalinski. How you doing today? Scott?
+
+5
+00:00:32,489 --> 00:01:22,500
+Scott Tolinski: I'm doing good, doing really super good. Because when you're listening to this, I have a new baby girl, which is actually hard for me to talk about, because she's not here yet. And you know, like, there's such a huge shift between, you know, the baby going to be here and the baby being here in terms of your actual mindset, in terms of just like how you feel about life. And like, yeah, it's hard for me to say, by the time you're listening this, I'm gonna have a baby girl. So I'm just going to imagine that I'm doing fantastic. And I'm super duper excited. That's the energy I want to put out there. But yeah, no, I'm ready to go. I'm ready to talk about debugging here. And yeah, this is one of my favorite topics. This is something I'm always been very interested in. And I'm happy to, to learn a little bit more about debugging all the time. This episode is sponsored by a couple of our longtime sponsors, which is Netlify and Freshbooks, both of which we're going to be getting into later on in this episode.
+
+6
+00:01:22,799 --> 00:01:48,600
+Wes Bos: Alright, so let's get on into it. We're gonna go through sort of first different tools and different types of debugging. Then we'll get into some network requests, talk about the VS code debugger. And then we'll switch more into some tips and debugging of mindset. And like, how do you like what questions you ask yourself and whatnot. So first thing is good old console dot log. So it's kind of the joke that got put here, see LD D, which is console log driven development.
+
+7
+00:01:49,049 --> 00:01:51,270
+Scott Tolinski: That's my style, man. That's my style.
+
+8
+00:01:52,139 --> 00:02:36,090
+Wes Bos: When you're debugging JavaScript, or we can really like, we're gonna pretty much be focusing on JavaScript here. But this obviously could could work with pretty much any language that you you were using. console log is probably the most basic where you run something. And then when something happens, you want to output some sort of data, or some sort of information about what happened in console dot log along with its other I think we flattened the entire episode just on the different console. methods. There's console dot warn console, dot info, console, dot trace, console, dot, time, start group groups, dark group end all there's all kinds of different methods. And there, we won't go into them all that much. But that's the very basic and I would say like, what percentage of your your debugging is done with console log.
+
+9
+00:02:38,880 --> 00:03:43,020
+Scott Tolinski: The fact that I'm laughing, there is not a good sign, I would say, a decent portion because I just I, for some reason, I just haven't spent the time. It's so funny, the episode we recorded that's going to be airing in a week or so we just recorded an episode on making yourself feel uncomfortable to grow as I am avoiding using the debugger because it makes me uncomfortable. So I would say a good portion of it, I even have I have a better like, I think it's a better console log or something. I have a console log extension on my VS code, and I remapped it to command l so I can highlight, or I can just have my cursor over a variable. And I can hit command L, she's outputs a console log with that a little indicator of where it is. And because that just little command L is so like, in my muscle memory, is it way too much. I use it way too much. I feel really bad about saying that. But again, we all have our holes, and things that we need to get better at. So a decent portion of my debugging is through console logging and some of the other stuff we're going to get into in this episode. But definitely I lean on it way too much.
+
+10
+00:03:43,199 --> 00:07:06,570
+Wes Bos: Yeah, so I'm pretty proficient in all the different debugging methods. The other sort of one is debugger. We'll talk about that in a second. But in most cases, a console log is fine. I would say like 92.8% of my debugging is just on console log. And I don't think that you should be ashamed of using console log because I think it's the handiest. And like if you're trying to debug a click, and you're like you want it to run a couple times, it's totally fine. It's when you get into more advanced use cases where a console logging a bunch of variables, or you're trying to peer into the scope or like if you're trying to log so much information, because you need all of that at that point in time. That's probably where you should reach for the more mature tools that are in the browser, which is debugger and break statement. So let's let's get into that. Now. debugger in the browser is just like one, it's a statement. Actually, it's just a word. You can type debugger in your your as a line of code with a semicolon. And what will happen is, if your browser has the dev tools open, it will freeze your website from running or your application. Wherever you had put that debugger command. That's what's called a breakpoint. It will break your code and pause the actual execution of the code at that point and it will throw little screen on your browser. And at that point, you have a whole bunch of options as to what to do next. So there is the ability to just resume the code. So when it pauses, you have the ability to peer into things like the call stack, which a call stack is going to tell you which functions ran up until this point. So if you have a function that runs another function that runs another function that finally calls, the one that that your breakpoint ran, you can see exactly what led up to that happening. And you also see a call stack when you have an error as well. And that's super helpful, because you can see the process of things happening. And then from that point on, you can actually keep going. And you can just say, okay, run the next line of code or step into the next function or step over the next function, there's a whole bunch of buttons there that will allow you to skip over functions or step into the next function, and keep running with that call stack, which is pretty helpful. So along with the call stack, we also have the scope. So the scope will show us any closures that have happened there, the scope will tell us what this is equal to. If it's a function, and there's only there's variables that are scoped to that function, it will, it will show you all of that. And that's usually where where people cringe, or they see somebody console logging 11 different variables. And if that's the case, just throw a debugger in there, it will freeze and it will give you this nice interface for going through objects like Chrome Dev Tools, or Firefox Dev Tools normally gives you, you can just sort of explore the objects as they were at that time. And know that's also sometimes a problem in Chrome Dev Tools, where if you console log an object, at the time of console logging, it was empty. But sometimes there's like a race condition where the object is actually it shows full in the console. But at the time of logging, it was empty, and then you're like, but I see the data right there. Why is it telling me cannot read property of undefined? And if that's the case, you don't you need to freeze your entire thing. So it doesn't give you a reference to that object, but it actually gives you the values of the time of running that thing.
+
+11
+00:07:06,870 --> 00:07:33,210
+Scott Tolinski: Yeah, that's such a key one. I think that happens all the time. For beginners. I mean, I think people will run into that. And that's one of the biggest like, hmm, it should work. But it's not working, what the heck is the problem? And it The fact is, is that it was never working. And the way that you attended it to it was just the way that console log works. So okay, I'm interested I can, I can throw a little debugger in my code and get some some info. That sounds all good for me. I like it, I like it.
+
+12
+00:07:33,570 --> 00:08:12,630
+Wes Bos: We should also say that you can also set breakpoints in the browser. So if you have like a website that you don't control the code to, you can't just pop a debugger in there, you can go into the sources tab of your your developer tool, and just click on the number. And when you click on the line number of that code that will set a breakpoint. And then when you run that code again, or you refresh the page, the breakpoint will break, it will pause the code from running at that specific point. So breakpoints and debugger statements are the same thing. It's just have you are you controlling it from the browser in the dev tools? Are you controlling it from your authoring environment? Which is your your VS code or something like that?
+
+13
+00:08:12,810 --> 00:08:40,350
+Scott Tolinski: So it seems like you can, you know, do the click the little breakpoint. And I mean, there's like the obviously the little breakpoint column in VS code, if you've ever Yep, hovered over to the left to where that numbers are. And then I don't know about other text editors at this point, because I've just been so in VS code code world, you get that little red circle. And if you click that, that actually adds a breakpoint. But how do we connect VS code to our our chrome debugger? Is that is that a? Is that an easy do is that Yeah, I do.
+
+14
+00:08:40,499 --> 00:10:31,669
+Wes Bos: It's not as easy as I thought. So um, the way that it works is that you have to proxy your application through VS code. So you run your own server, localhost 3000. And then you run a VS code server, a debugging server. And what that will do is it will just proxy all of the requests through this debug debugger server. And then it allows you to do things like you get your entire console in VS code. So you don't have to actually leave VS code in order to see what's going on. You can set breakpoints by just clicking the line number on there, you can see call stack, you can see scope, all of the stuff that you're used to seeing in the Chrome Dev Tools, you can actually see all of that inside of VS code. And if you have like if you're working on like one project for months, absolutely set this up. Because it's it's super handy to be able to have your authored code and your debugging information. In the same window. It's there's lots of helpful information that's going on there. And you can just you just start it up every time that you you want to run it, it will connect to the chrome debugger. And you get basically all the info. Like the logic is still running in the Chrome Dev Tools. It just ports, all of that information to your VS code so you can see it in there. For me it's too much of a pain to set up because the nature of the world work that I do is that I obviously have a few big projects. But I'm always doing, like for my upcoming JavaScript course I have like 50 demos or 30 demos Oh, yeah, like that. And I can't set up a new new one of these things for every single thing that I'm working on. Because it is a little bit, a little bit of extra work, especially like when you don't necessarily know what port your app will be running on, if to go ahead and change it. So I personally don't use that for any of mine. But I know that people are absolutely in love with this feature of vs. Code.
+
+15
+00:10:31,909 --> 00:10:49,020
+Scott Tolinski: I'm thinking I'm ready to set it up. And I'm going to watch a bunch of videos that I need to dig into this because I as we were talking here, through debugger into my into my app, I saved it. And I watched this I got all this information. And to be honest, this was easier than console logging anything. So
+
+16
+00:10:50,250 --> 00:11:02,220
+Wes Bos: James quick? Oh, sorry. Did you hear that? Yeah. Yeah. James quick, has an awesome YouTube video on setting it up. That's how I actually initially did it. And he's using my theme. So that's pretty cool.
+
+17
+00:11:02,399 --> 00:11:04,740
+Scott Tolinski: Yeah, James, the cool guy. Yeah, I know, James,
+
+18
+00:11:04,770 --> 00:11:06,929
+Wes Bos: we'll put a link to that one in the show notes.
+
+19
+00:11:07,169 --> 00:11:36,029
+Scott Tolinski: Yeah, shout out to James quick. Yeah, I'm gonna have to do this. And I want to since I mean, obviously, since level up tutorials is the project that I'm going to be working on for a considerable amount of time here. I think it's in my best interest to get this connected to Chrome or get my VS code connected chrome right away and start diving into the stuff. There is no more excuses need to make myself feel uncomfortable here. I need to get get going. Because it's, it's already pretty sweet. I'm already seeing the benefits of it. And it's kind of ridiculous that I've avoided it.
+
+20
+00:11:37,260 --> 00:11:42,390
+Wes Bos: Well, maybe we'll come back in like, a couple months and and get your thoughts on it.
+
+21
+00:11:42,600 --> 00:11:50,760
+Scott Tolinski: Yeah, right. Yeah, you know me by then I'm gonna be like, I'm gonna be wearing t shirts of the chrome debugger, and just totally all about it. So.
+
+22
+00:11:51,179 --> 00:14:04,830
+Wes Bos: So that like breakpoints are probably the the simplest version of it, you just click which line you want it to break on. But there's all kinds of different types of breakpoints when you're trying to debug. So a couple handy ones are break on x HR requests. So if you were like, Huh, I want to know when this application is sending data, like actually these like debugger tools are very, very handy when you're trying to figure out how another application works. So whether you're writing a scraper, or you're trying to find a private API, or you're just trying to figure out like, what data is this thing sending about me, you can turn on these breakpoints to say anytime there's an X HR requests, which is a fetch request, or a jQuery dollar Gad or anything like that, it will break and at that point, you can peer into the request. And then you can step into it and see what what the result of that data is. So you can do that by just going into your Chrome Dev Tools. And in the sources tab, there is a little breakpoints on the side here. And you'll see that there's breakpoints, which is code. And then there's also x HR fetch breakpoints, you can add those, you click on Add. And you can say break when the URL contains whatever it is. So if you want to see like, okay, who this app, if it's sending any information to Convert Kit, let me know exactly what it is that they're they're sending. So you could say break when this app send something to anything with the URL upconvert in it. And that can be very helpful as well as it can be very helpful for your own application, if you're just trying to figure out, like, let's say you get thrown into an application at work. And you want to know like, when is this thing, firing off the data, because you can sit there for, I don't know, seven or eight hours and try to just like comb through the code. But like that, that's a big problem. Sometimes where you get thrown into a large project, and you don't know where the code is, to actually modify it, you can do is you can say just set a breakpoint for whenever an X HR requests goes off. And you can just sort of click through the app. And anytime something is fired off, it will freeze. And it will show you the code that was written in order to fire that thing off. And that will allow you to quickly find in your source code where that actual thing it had been written.
+
+23
+00:14:05,039 --> 00:14:30,600
+Scott Tolinski: Yeah, well, I just I just went in here and I found the event listener breakpoints. And I think it's pretty sweet. I just selected, hey, give me pause on the next animation. And so it I then clicked my play button. Because I had a breakpoint in there, I clicked my play button, the webpage started to load. And since you know me, I have animations that immediately stopped the moment that the next animation came in. And I thought that was really pretty slick.
+
+24
+00:14:30,750 --> 00:15:15,600
+Wes Bos: Yeah, it's, it's awesome. There's, there's a whole bunch of other ones that we have here. You can break on attribute change. So if you want to know, like, this is something that happens all the time to me, like what code is adding this class to this element? Yeah, like how do you answer that question? I don't know. Well, you just say like, well, this element has a class of playing, you set a breakpoint and say, break once when the class changes or break when an attribute changes or you can set it to break when a child is modified and At that point, you can just go ahead and start clicking through your application. And then whenever that class has changed, or one of the child has changed, the whole thing will freeze up. And it will show you exactly the code that caused that to happen, as well as the call stack that led up to that happening. Dang,
+
+25
+00:15:15,659 --> 00:17:55,800
+Scott Tolinski: I'm feeling like I'm missing out. All the stuff that I've been missing out on all this stuff. And it was so much scarier in my brain. I think it's so funny. Once everybody listens to that making yourself feel uncomfortable episode, they're gonna have a whole lot of like context to what I'm saying right now. Because this falls into exactly what is it this is almost like a companion piece to that episode in a in a sort of tangential way. It's hilarious. This just looks like it could make my life so much easier. And this is going to be a sponsor transition here, just a heads up. But another way you can make your life easier is via Netlify. Netlify is a awesome and awesome. It's an awesome host that allows you to build, deploy, manage modern web projects. And we are joking. I mean, every time I look for every time I have a project that I'm working on, or something that this Netlify is the very first place I go to because they make all the hard stuff superduper easy. Let's say you have a site, you want to throw it up, you just connect your GitHub repo to it, you give it its build command. And if it's one of these platforms that Netlify is very familiar with such as Gatsby bullet automatically detects that you have a Gatsby site. And it automatically adds your build command. So you don't have to worry about any of that. And so if you have a Gatsby site in particular, I mean, there's other projects that work with it. So the Gatsby is just where we're very comfortable. If you have a Gatsby site, you can connect it to GitHub, and deploy this thing in just about like, I don't know, a minute or less in That's unbelievable. This is the easiest way to host any front end code. And Netlify is not all just about front end code, because they give you the ability to add in all of the cool stuff that you need, if you are using any sort of front end code, because they give you the ability to have functions which are serverless functions, you need some server side code in here, you could deploy serverless functions instantly and easily. Identity allows you to have logins, passwords, signups, that sort of thing. forums allows you to have contact forms in large media. So say, storing and saving large media, all this stuff is just super duper easy. Again, I think Netlify is big, big thing is that they just make everything that is hard about web development in sanely. Easy, so you're gonna want to check out Netlify netlify.com forward slash syntax, and let them know that they you came from syntax, because trust me, they love to hear that. We've spoke at the jam, stack calm, and we're big fans of Netlify over here. So again, if you use this for the first time, and it blows your mind, like it has most people that have checked this out, then go ahead and let them know that you found out about Netlify from syntax, thank you so much to Netlify for sponsoring this episode.
+
+26
+00:17:55,920 --> 00:19:12,630
+Wes Bos: next type of breakpoint is a conditional breakpoint. So if you want to break only when a variable is equal to a specific string, a number that is greater or something that is true, something that is false, you can do that. And you don't have to, like, let's say you say like, I only want to pause this debugger, if the event type was a mouse down. And if you wanted that, then you'd have to like go into your code and say like, if e dot type is equal to mouse down, then debugger, yeah. And then you have like a block. And that's its own scope. And you don't need to do that, you can just open it up. And you can have a condition in there. And it's like any condition in JavaScript. And the browser will specifically do that for you what other kind, I got a couple more here we have, you can break on event listeners. So again, if you like, one thing is my, my bank doesn't let you paste into password fields, which kills me because I use a password manager. Yeah, and like always supposed to have a secure password if I can't face into it. So like I was like, I'm gonna like reverse engineer this. So what I did is I took the input and I say break on paste event. And then what you can do is you can find the code that is stopping you from actually pasting the code. And then you can just go ahead and modify that.
+
+27
+00:19:14,190 --> 00:19:17,810
+Scott Tolinski: actually do it. You hacking a bank? West, it sounds like you're hacking bam,
+
+28
+00:19:17,810 --> 00:19:37,550
+Wes Bos: hacking a bank by allowing myself to paste my own password into the box. Like, it's just stuff like that, like answers the question like, Where is the code for this? And of course, you can just like, spend hours poring over the code. Or you can get really good at dev tools and breakpoints and figure out how to dynamically run them like that.
+
+29
+00:19:37,710 --> 00:20:27,720
+Scott Tolinski: Interesting. Very, yeah, you could even use it's funny because you meant I mean, we just talked about that. I said, you could do the animation in the event listener, but you could do anything in here. And it's a lie. It looks like it. It looks like it has all of the new chrome features, though. It even has one for picture and picture, which is like kind of wild because picture in picture is like a brand new API to Chrome. So I'm fast. needed by this. This is like kind of blowing my mind. And I am feeling I'm feeling like a dummy, feeling like a big old dummy. But this is really exciting. I think this is one of those things that if you are sitting at your computer or listening to this, pop open your web app, if you're if you're coding through a debugger, and there, try this out right now, because this is one of the things that I think is easier than people expect it to be. And I say that as speaking from the perspective of somebody who expected this to be more difficult. So, right.
+
+30
+00:20:29,330 --> 00:20:30,080
+Wes Bos: enlighten you.
+
+31
+00:20:30,180 --> 00:20:36,480
+Scott Tolinski: Yeah, I'm feeling in mind. Do you want to talk about the the next section here about network requests, or you want to stick on this for a little bit?
+
+32
+00:20:36,830 --> 00:21:03,350
+Wes Bos: No, I mean, that that's it. That's how simple it is. It's just breakpoints at different points of time. And if you know that a breakpoint is something that pauses your script from running and allows you to sort of peer into the code at that point in time, then, you know, all about breakpoints, and you just need to know that you can set them at different on different events and different exceptions and different conditions and different types of things like animations and fetch requests and whatnot.
+
+33
+00:21:03,350 --> 00:21:17,700
+Scott Tolinski: I sort of feel like people who come from none HTML and CSS backgrounds, like people who come from Java or, or any of these higher level programming languages. I feel like they're probably cringing pretty hard at this level. It's
+
+34
+00:21:17,700 --> 00:21:22,710
+Wes Bos: the same one, we're Geeking over VS code having like, yeah, like very simple ID features.
+
+35
+00:21:22,740 --> 00:23:33,840
+Scott Tolinski: Yes, because these are things that are like very commonplace, but this is the web. And the web is evolving to a point where we now have the tools that, you know, real programmers have had for so long. And again, yeah. It's it's funny because these, these are the tools that people have been using forever. And now we get to experience them in a way that is just like, so enlightening, I think is going to make our lives a lot easier. So another one that we wanted to touch on here in this episode, was the Network tab in your Chrome Developer Tools for debugging. Because a lot of the times we're working with requests, right? We're sending requests for anything, whether it's an image, whether it is an API call, whether it is a ServiceWorker, or something like that we're grabbing something, and sometimes it can feel like, like, why isn't this image loading? Why isn't this font loading? Why isn't this thing working? Well, we have access to every single request that's coming in and out of your website, how long that request took, if the request worked, the size of the file, the response, the headers, we have access to so much information in the Network tab. So if you pop up in your network tab, you give your page a refresh, you're going to see every single request that happened. And you're going to be getting the headers, the preview the response cookies, or timing, that sort of stuff. And I use this constantly. And I know, it's not just a graph qL thing, obviously, but let's say one of my queries isn't working specifically in graph QL. I don't know why it's working. Maybe I could throw the Apollo to give me the error output or something like that. But if I don't want to modify my code in that way to have the error, or console log or something, you can always just pop open the Network tab. And that failed request is going to be highlighted in red, you can click it, and it's going to tell you what the problem is right there. Right, right in your thing. Yeah. And it's so easy to navigate and find this thing. If you want to look at all requests for any given thing. You can filter it, you can say, Hey, give me all of the script request, or just give me the image request for the media, the font, this was really super instrumental for me debugging WebSockets. If you use WebSockets, this is the way to go to figure out what is the problem with your WebSocket I just get so much value out of the Network tab. Yeah, the
+
+36
+00:23:33,840 --> 00:24:49,770
+Wes Bos: the Network tab is kind of the console log of anything that gets fired off. And that's super helpful, even just to like sometimes if you go on like Instagram, and you can't like right click save a photo, like I even showed my wife Yes. shows like asked me like, how do I save this photo? Because they like did as a background image. And I was like, Okay, well, let's show you and it was easy enough for her to figure it out was like go to the Network tab, filter for images, and then sort by size. Because probably the main photo is going to be the biggest thing on the page. And then you just kind of hover over them until you find the one that you want, right click open a new tab. That's the reason why nothing is secure. Sometimes the photographer's asked me like, like, how do I protect my images from being stolen? So you can't you want to literally say the watermark, you're sending them to the person that's on the website. There's absolutely nothing you can do in order to say the actual What's one thing that I did see was blob was sending someone was streaming a blob in and just displaying it in a canvas, which I use again, you can still have a lot. But yeah, I guess I'll stop people and then you just get people screenshotting a low quality version of it, which is maybe even worse.
+
+37
+00:24:50,010 --> 00:24:51,930
+Unknown: Yeah, yeah, right.
+
+38
+00:24:52,170 --> 00:25:01,230
+Wes Bos: Big fan of network. We talked about Network tab in the scraping and what was that? What do we call that one scraping and like, like alternative method It's let's find it.
+
+39
+00:25:01,500 --> 00:25:03,030
+Scott Tolinski: Yeah, it was like it was.
+
+40
+00:25:03,030 --> 00:25:56,640
+Wes Bos: It was an interesting title, the undocumented web scraping private API's proxies and alternative solutions. That was episode number 30. alternative solutions, that was the word anytime and trying to figure out how a website works. I honestly think this is like the view source of understanding how servers work, because you want to know like, what data are they sending? Who are they sending data to? When are they requesting it? What's happening on page load? All of that information is shown hash. Yeah. Is it cached? Is it not? You can also in the Network tab, you can dumb it down to like 3g or edge just to see what your website looks like. The dev tools are so cool, we need to do like an entire show on every tab, everyone's tab because like there's the Performance tab, there's the memory tab, we've talked about the elements tab, the console tab in the sources tab a lot. But there's, there's more tabs out there, Scott.
+
+41
+00:25:56,850 --> 00:26:47,220
+Scott Tolinski: Yeah, and one of the my favorite things to do in the Network tab is to just see what's taking a really long time. Because maybe you have a request, that could be like an image, right? Maybe you have an image that's taking a lot longer than you I mean, maybe you just see it and you say, Wow, this image load is actually taking up a large percentage of the overall load of my entire page. And maybe that's like a little message to you that there's a different way, maybe you should be loading this image, maybe you should be optimizing it. Maybe we'd be serving like a web p to those of you who use Chrome or the users who use Chrome, I check out this all the time specifically for images of compression, that sort of thing, seeing what's cached, what's not cached, just generally tuning my performance, even though this is the Network tab and not the Performance tab. But I'm a big fan, in case you can't tell.
+
+42
+00:26:49,590 --> 00:27:59,460
+Wes Bos: Next up, we have just like the debugging mindset. So, uh, tools aside, you just have to be you have to think properly in terms of how do you fix things. We've all had that experience, whether it's in code, or just something else in life, where you work forever on something, and someone comes over, and you just explain the problem to them, and then they just start firing off questions to you. Did you try this? What happens when you do this? What color is this? What you get the point, right? They're just asking lots and lots of questions. And that type of person is really good at sort of just like triage into fearing figuring out and I don't know distilling down the information as to what went wrong. And anyone being a person who can ask the right questions like that, that's just it's amazing how quickly you can get to the root of the problem, if you know what questions to ask. And I think that's a huge skill in being a developer, that's something you should probably constantly be be working on. And that's the mindset. So what are some good questions and some good things that you can do in order to sort of narrow down the problem?
+
+43
+00:27:59,820 --> 00:30:05,670
+Scott Tolinski: Yeah, so I mean, my experience in this has started, like, even from a non web perspective, one of my jobs was that I managed and maintained projectors in an auditorium. And for doctors, right, and doctors have a lot of problem with technology, they would plug their thing in and it wouldn't work. And so a lot of times, I was having to debug or troubleshoot these issues in front of a an entire auditorium full of doctors. Meanwhile, they're all very busy and you know, wanting this thing to move on. So you feel the stare of 10,000 eyes of everybody just looking at you, while you're standing in front of a computer, right. And so a lot of the processes that I've learned in code have come from even those situations and how to how to find the problem in a situation. It's almost universal, even throughout code. And typically, it helps to have maybe a set of checklists, or a name that like an actual checklist, but just a set of steps that you go through and that you can use to figure out your problem, like what kind of stuff do we debug, for instance, like CSS, right, something's overlapping something else? Well, there's a number of ways that you can look at this thing, whether it's in your Inspect Element, and then you go into that 3d view. And you can see where it is on the DME, or one of the helpful tools that one of my mentors told me about, which is seems kind of dumb, but just start giving things, either borders or backgrounds of primary colors. And there's an extension that I have that actually just wraps all of the divs and everything in a box. And so you can see the boundaries of every single thing on your page. And once you can see the boundaries and look at these things and see the whole big picture. To me. That is the the best way to start debugging and get this debugging mindset is to have a view of what the thing is actually doing. Because we look at our code, we look at our website and we look at the output, but we don't always look at all right. What is the thing actually? Doing so that you can take a look and actually start solving some of these problems. I just
+
+44
+00:30:05,670 --> 00:30:31,590
+Wes Bos: got a little example that I've got here for something. This is when I taught in the boot camp, this would always happen. Someone would call me open, and we'd be doing something with API's. And they say, when I click the button, it used to go off to the API, fetch a joke, and display the joke on the page. And now when I click it, it doesn't work. Hmm. And you're just like, Okay, well, what have you tried? Nothing? Okay. What's the thing? I've tried nothing. And I'm all out of ideas yet.
+
+45
+00:30:31,590 --> 00:30:33,270
+Scott Tolinski: Yeah.
+
+46
+00:30:33,930 --> 00:32:44,940
+Wes Bos: But so like, what's my thought process for tackling something like that? So you click a button, it fetches some data comes back and displays on the page. So first, is your click working? Is the event listener actually working right? Like don't automatically think the API is broken? Or, or go to the very end and think like, the whole thing is broken? You just have to take it down. So is the event listener working? So how would I do that? Probably just console log clipped at that point. And just make sure that your event listeners working, if that's working, is the request firing. So go into the Network tab, and then go ahead and click it. And usually what I'll do is I'll clear out the Network tab. Mm. And then I'll click it and then see if our request forms there. If that shows I say, Okay, well, are you sending the right data. So in that case, I'll maybe throw a breakpoint in there and see what data is currently being sent off to that request, is the data in the right format. So sometimes you are sending the data but you're sending it as it's misnamed, maybe have a spelling mistake in there, maybe you've camel cased it, when it shouldn't have been things like that. So that's good, is the data is the request being sent properly. So you can click through the network request. And sometimes it will just tell you like 407, or 404, or whatever error, it's unauthorized, you're sending it to the wrong endpoint, your API key wasn't sent along, your API key was undefined. I've seen that all the time. So if that's the case, then then you know that that's a problem. So if it is being sent, you say, Okay, then what is the response, there's another tab in the network for responses. And that will allow you to see if the data has come back from the request properly. If that's still good, then you go in your function that handles the the sort of the callback or the async await. And you can console log or throw a debugger in there and see if the data is being there. And then finally, if you still have the data there, then obviously it's a display issue, you go into the function that displays the data, right. So like, that was like eight different steps that I took there, where you see me only a small problem. It doesn't work when I click this button, but there's so many different things and being able to isolate it and sort of step along, each step in the process is super important as a developer.
+
+47
+00:32:45,210 --> 00:34:48,510
+Scott Tolinski: Yeah. And I think that's what I was, like inferring when I was talking about having these steps, right. I mean, yeah, I'm thinking you click doesn't work well, okay. The first thing you need to make sure is right, like you said, Hey, is the ease the click even happening? And once that's happening, you can go from there. And it's all about this, this idea of getting the minimal part of it working, right, get the least amount of stuff working, and then add on and keep going as you go from there. Okay, did this work? Okay, yes, this work. Next step, did this work? Okay, yes, this work the next step. And that allows you to really find exactly where the problem is. And this can happen a lot in react where you have an issue, and the issue might not immediately be apparent where it lives. And you might be thinking, Okay, well, you know, I think this is in this component. But well, I can't be sure. And when I do this, it doesn't fix it. So in those kinds of situations, what I start to do is I go into maybe like the upper level of maybe my routes, and let's say, I have all of my, my header, my footer, my main section, my whatever this, I just start commenting those out. And I'll just, it's so easy to comment them out, I just Yeah, and command, backspace or forward slash, or whatever. So command, the command, whatever, and comment all that stuff, you reload, okay, the page still isn't working? Well, that means the problem is not within any of those things. So you can, you know, you can either leave them commented out, or you can uncomment, or whatever. But the idea here is to start getting rid of every single thing until you have something that works. And then once your code starts to work, then you have a minimal working example, once you have a minimal working example, you can work backwards from that. And you can start uncommenting things until it breaks. And then the moment it breaks, then you know exactly where the problem is. Because Hey, you just uncommented this component out. And now the whole thing breaks. Well, that gives you a hint that that's where the problem is. And so that's a really good tip that I like to do is, is take a take a look and just remove everything and see slowly add stuff back in until until it doesn't work anymore.
+
+48
+00:34:48,860 --> 00:36:08,580
+Wes Bos: Other things is if you're having a problem, like trying to debug something, take it outside of your application, and try to replicate it in like a code pen or something like that. I think that's super helpful. is just being able to build a use case of the problem. And almost always as you're building the use case, by isolating it, you figure out what the problem is. Or you figure out okay, well, this works on its own. So it obviously isn't this code right here, it's probably something totally different. I was working on a bike yesterday, and I was switching the derailleur, which is the thing that moves the chain. And I took a broken one off, put a new one on, it didn't work. And I was like, so frustrated with it. So I took it off and put another one on, and then the same problem. And then I was just like, What is going on? I like going all over it and tuning in and playing with the the cables and everything. And then I realized, like, oh, the issue was with the shifter, not being tight enough, had nothing to do with the actual thing I had spent the last half an hour on, I was like, that's the perfect example of taking a step back and saying, huh, this thing isn't working. But it might not be this thing, it might be something else that's actually causing the issue. And I thought, like, man, I can't wait to talk about this on the podcast, because this silliest example, but it happens all the time to us as developers.
+
+49
+00:36:08,759 --> 00:38:31,770
+Scott Tolinski: Yeah. Another one that I dislike is, is usually the thing breaks, when you change something, you know, like it works before you change something, and it breaks. I've had issues where like, I changed something in the body. This is this is just like a non real example. But it illustrates it, you know, let's say you change something in the main section of your site. And then all of a sudden, the error that pops up is something about your navigation or your header. And you might be thinking, Well, I didn't change anything in the navigation or header, how could it possibly be broken? Well, chances are, there might be some connection to some connection to some connection that leads to the error being thrown in the header. But even though the error is because of something you wrote in the other section of the site, because that happens to me all the time, where the error response that I'm getting is not necessarily exactly helpful. But I just changed this other thing. So what you don't want to do is you don't want to then jump into the header code and start tweaking that code if you didn't change it in the first place. Because chances are, it's not broken, if it was working fine before stuff doesn't break without you touching it. So going backwards in time, looking at previous Git commits. This is actually one of the huge benefits to commit a very frequently, you know, commit when your codes working and commit frequently. And then at any given point, you can always go back at your code and say, Wait, what did this file look like when it was actually working? VS code has that little icon in the top right, that looks like what the heck does that icon look like? It's called Open changes. But it's got like two little arrows and circles sort of looks like a refresh icon with arrows in it. But if you click that, it shows you the same file in the previous commit with some green and red diffs. To show you what's different, what changed. And I use this non stop when I'm troubleshooting. Because if like something is broken, I click that button and I say, Okay, this is what I changed. So therefore, the problem that I'm running into must be something in these sort of lines, and worse comes to worse, one thing I'll do is I'll just straight up, go into the previous commit, all select all of copy at all, paste it into the current version of file, and I'll confirm that it's working. And then once you confirm that it's working, then you can command Z, undo that copy and paste and then begin to know Okay, well, at least, it definitely works with this last commit, it definitely works with this previous code. So at the end of the day, I can always come back to this to sort of my baseline of something that actually worked.
+
+50
+00:38:31,940 --> 00:39:01,670
+Wes Bos: Next one is we talked about this before rubber duck debugging This is simply put a rubber duck on your desk and explain the problem to it. This is I always have this where I have the issue, I can't figure it out. And then I have to explain it to somebody else, so they can help me. And as I'm explaining to them, I figure it out. Because by forcing yourself to talk through an issue, even if it's to a rubber duck on your desk, it forces you to think about all the moving parts. And that will usually jog something in your memory and say, Oh, that's exactly what it was.
+
+51
+00:39:01,859 --> 00:39:43,170
+Scott Tolinski: Yeah, yeah. And sometimes your rubber duck can be another human being like my my wife, who may as well be a rubber duck when I'm rubber ducking debugging it there. Because she doesn't need to listen to what I'm actually saying. It's like, I need to just be saying it out loud for it to be helpful, right? She's not going to give me the answer. It's the fact that I'm telling her a bunch of this stuff is is what's going to help me with the answer. You know, she would probably prefer that I actually had an actual rubber duck to do it, though. I don't think it's exactly a good use of her time. But yeah, I think I think that's it for debugging. Do you want to get into our last sponsor here, which is Freshbooks. the freshest of our sponsors fresh
+
+52
+00:39:43,170 --> 00:40:28,880
+Wes Bos: books is the freshest of the books that you out there. If you are a small business, you're a freelancer, someone who needs to keep track of all of your expenses, all of your invoices all of your time tracking, who's paid who's not actually accept money online is one thing they do via PayPal Palin's stripe and all these things Freshbooks is what you want to check out. I use it all myself, I just finished up my taxes. And I just did one big dump of all of my information, sent it off to my accountant. He saw all of my all of my income, all of my expenses. It's just a great way to stay organized with all of your accounting, check it out@freshbooks.com forward slash syntax to get a 30 day unrestricted free trial. And thanks so much to fresh books for sponsoring you
+
+53
+00:40:28,880 --> 00:40:49,980
+Scott Tolinski: fresh books. Cool. So this is the part of the show where we like to get into sick picks, which are picks that we find to be sick. They're things that we like could be anything, like anything, anything I think you're sick pick here really illustrates that. I think I think pick a lot more before to to the little spoiler about what was the sixth pick is going to be? So do you want to get into your sick pick?
+
+54
+00:40:50,310 --> 00:41:33,540
+Wes Bos: Yeah, so my sick pick is the wall lawnmower, which is an odd thing that they sell it didn't even know they sold one. I've talked in the past how I'm on the DeWalt brand, just because I have lots of batteries. And once you buy into batteries of this tools, you start to stick with that set of tools because batteries, the batteries are so expensive, the tools aren't really all that expensive themselves the batteries. So we were looking for a new lawnmower. And we have we have pretty tiny little lawn, one in the front one in the back. And it takes like, I don't know, seven minutes to mow it. And we had a we had a push mower. And that thing sucks. It's it doesn't do a good job. And I sharpen everything and it's a lot of work. And I can't
+
+55
+00:41:33,540 --> 00:41:34,920
+Scott Tolinski: imagine doing that. That Yeah,
+
+56
+00:41:34,920 --> 00:42:02,610
+Wes Bos: there's more socks. It's it seems really cool. And then we've got electric one with a with a cord. And I grew up I had a lawn mowing business when I was a kid and I hated the lawn the thing because there's always a cord where you want to mow, and it just gets in the way all the time. And you always have to like flip it over and unplugged and you're like tethered to the wall. And we've always been long more blessed over my house, I guess. Yeah, oh man, I
+
+57
+00:42:02,610 --> 00:42:03,840
+Scott Tolinski: deal with the plugin one.
+
+58
+00:42:04,080 --> 00:44:03,570
+Wes Bos: so frustrated with with electric I grew up with electric and I used it for my entire lawn, my business, I hated it. And I ran over the cord so many times. So and also just like the setup of getting the cord out and plugging it in, moving it around. It took more time than actually mowing the lawn. So I thought okay, like we need to get a gas one so that it's just quick. But the problem with gas is that like he has to maintain it. And you take the fuel out in the in the winter and make sure that you mix the oil and everything properly. And that's a bit of a pain as well. So I was like Finally, I was like I think that these electric lawnmowers are at a point now where they're good. So I went and researched all of the different ones out there. I know Ryobi has like a decent one. But I found out that default now makes an electric lawnmower. It takes two batteries that came with two of the big beefy five or six amp hour batteries. You slot it in and it's it's relatively quiet much quieter than a gas one for sure. And I think it's even quieter than our old electric one. And the sort of the kicker was that they are super cheap refurbished because the reality is is that the batteries don't last all that long if you have a medium to large size yard, so there are tons of people who've returned them after using them one or two times and we just went and bought a refurb for a couple hundred bucks less than a brand new one would cost just because a lot of people actually return these and it came with brand new batteries not not the old used one so I thought that was really cool to be able to buy it. I've mowed the lawn three times and I'm only a third of the way down my battery so I figure for our small little lawn I can get two or three months out of a set of batteries. Though if you have a large lawn you might I've seen reviews online people can't even mow the in their entire lawn and one battery charge which if that's the case, then that's the big Yeah, that's that's a huge downside. You're not going to spend an extra like the batteries themselves as an extra 200 bucks or 150 bucks for
+
+59
+00:44:03,960 --> 00:44:05,670
+Scott Tolinski: batteries right there. recharge them Yeah, but
+
+60
+00:44:05,670 --> 00:44:21,660
+Wes Bos: like you Yeah, but you can't like stop mowing your lawn halfway and wait for four hours to charge these things. So yeah, I think that's why but if you have a small lawn I highly recommend it the wall it's a 40 volt. lawnmower it's two ticks two regular 20 volt batteries. I slot in big fan.
+
+61
+00:44:21,660 --> 00:44:25,710
+Scott Tolinski: I use the ego one eg Oh,
+
+62
+00:44:25,830 --> 00:44:28,770
+Wes Bos: yep. And this is a Home Depot brand, right?
+
+63
+00:44:28,890 --> 00:45:03,150
+Scott Tolinski: Yeah, they're they're at Home Depot. I think it's a Chinese company, but they're manufactured in Michigan. So that's sort of like backwards. Yeah. They're pretty cool. You know what the thing that like blew my mind the most about mowing the lawn within electric or battery powered lawn nor was I've always moaned with a gas and you smell that gas it's like coming up in your face and the thing to me that like blew my mind was just how awesome fresh cut grass actually smells while you're mowing the lawn. grass. And and also the sound benefit to it's so much quieter and it smells so good. I love everything about my battery powered lawnmower. So
+
+64
+00:45:03,210 --> 00:45:14,670
+Wes Bos: yeah, I want to get the I want to get a blower too because like my kids, I can't blow the backyard when my kids are out because they start screaming because it's too loud, dude. And I'm like, Oh, good. Yeah,
+
+65
+00:45:14,820 --> 00:46:12,000
+Scott Tolinski: I have the ego one again with that. And it, it is so powerful that I used it as the snow blower this year, I didn't know my snow blower at all. I just used it to do snow all over the place. And I love having a very, very powerful leaf blower is like something that I just never imagined that I would actually use that much having a powerful one because I had kind of a weak one before. And now I have a nice powerful one big fan. My sick pick today is going to be something to get you energized for the day. It's a cold brew coffeemaker, these things are just like really cheap and amazing. It's a giant ball jar. Like when I say giant o arrived, it is the largest ball jar I've ever seen. It is monstrous. And then it has like a giant, double layered filter, and then a little like lid popper. And so you can do is to basically throw coffee in here, throw water in here, put it in the fridge, let it cold brew, and then you have a concentrated cold brew crow. It's 25 bucks for the biggest one. And how easy is that? It's so easy to court
+
+66
+00:46:12,000 --> 00:46:15,750
+Wes Bos: which insane measurement is about two liters.
+
+67
+00:46:15,990 --> 00:46:17,070
+Scott Tolinski: I think it's three liters.
+
+68
+00:46:17,250 --> 00:46:21,390
+Wes Bos: Is it I'm just googling to CT two liter 1.89 liters.
+
+69
+00:46:21,450 --> 00:46:26,310
+Scott Tolinski: Oh, this. Oh, liters. Yeah. What am I? Yeah, get on.
+
+70
+00:46:26,760 --> 00:46:28,290
+Wes Bos: Get on metric, Scott.
+
+71
+00:46:28,440 --> 00:46:38,850
+Scott Tolinski: Yeah, I know. I would like to live your life that my whole life is based around Imperial. Is that what it's called? Yeah, it's called. It's a whole lot based on dumb measurements and
+
+72
+00:46:38,850 --> 00:46:40,560
+Wes Bos: leaders and stuff like that. Yeah,
+
+73
+00:46:40,590 --> 00:46:57,240
+Scott Tolinski: yeah, insulators. I'm all about insulators. Now this thing is super easy. super nice. super cheap. If you like coffee, cold brew coffee, man. Get yourself one of these beats beats thrown in a jar and having to filter it later. Yeah, that's all I got. Um, shameless plugs today. Do you have any shameless plugs?
+
+74
+00:46:57,330 --> 00:47:07,620
+Wes Bos: I'm going to shamelessly plug all of my courses Wes Bos comm forward slash courses, check them out. JavaScript CSS, you can learn it from me. JavaScript,
+
+75
+00:47:07,650 --> 00:47:10,830
+Scott Tolinski: CSS, JavaScript node modules. breakdancing barbecue.
+
+76
+00:47:12,690 --> 00:47:18,720
+Wes Bos: We need to make another one of those. If someone has an idea of like a silly thing to do, I think yeah, it would be really funny.
+
+77
+00:47:18,990 --> 00:48:19,920
+Scott Tolinski: Silly. Silly is good. My shameless plug is the latest course from levelup tutorials. If you want to learn React Native from a React Native expert, you're going to want to check out level two React Native and this one is not a course for me. It's a course from Spencer, Carly. And he has done such good React Native content. His React Native content is so good that it's so the way that I initially learned React Native myself through his videos. He's got a ton of work on YouTube. So if you want to see if his teaching style is for you, check out his YouTube channel. I'll have a link to Spencer Carly's YouTube Channel in this video. But if you want to learn React Native, we get into all sorts of amazing stuff in here swipe gestures, add removing items from lists, persisting lists with async storage. We use hooks in this course. So Spencer has done just a great job of using modern react and modern React Native. So if you're looking to level up your React Native skills, check out level two React Native on level up tutorials right now.
+
+78
+00:48:20,280 --> 00:48:25,200
+Wes Bos: Alright, I think that's it. Thanks for tuning in. We will catch you next week.
+
+79
+00:48:25,410 --> 00:48:39,300
+Scott Tolinski: Catch you later is please head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

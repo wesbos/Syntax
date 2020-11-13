@@ -1,0 +1,452 @@
+1
+00:00:01,290 --> 00:00:10,650
+Announcer: You're listening to syntax the podcast with the tastiest web development treats out there. strap yourself in and get ready. Here's got to Lynskey and Wes Bos.
+
+2
+00:00:10,980 --> 00:00:18,780
+Wes Bos: Welcome to syntax. Welcome to Episode 1 million Well, not Episode 1 million, but we have just crispy one.
+
+3
+00:00:19,730 --> 00:00:21,450
+Scott Tolinski: One episode
+
+4
+00:00:21,510 --> 00:00:53,490
+Wes Bos: is our 1,000,000th episode. Thank you so much for hanging in there. And with that, we'd like to announce that we are shutting it all down. No, I'm just joking or not. But we we just cracked 1 million downloads. And I'm pretty excited about that. So huge thanks to everybody who has listened in and shared it with a friend. And I don't know it done everything. It's been a wild ride. And we're looking forward to 1 billion. So with me today is Scott to Lenski. How you doing today, Scott? Hey,
+
+5
+00:00:53,550 --> 00:01:04,680
+Scott Tolinski: I'm doing super good, as usual, just recording by next series and getting all that stuff going coding up and doing all sorts of, I don't know, it's just just work and feeling good. How about you?
+
+6
+00:01:04,889 --> 00:01:25,620
+Wes Bos: Good. I'm feeling good, too. I just got back from a conference in Manchester, which was super fun met a lot of syntax fans there, which was pretty, pretty fun to actually meet people in person. It's funny people are like, I hear your voice all the time. But now you're in person. Or and now you're like at one x i usually listen to you at two x You sound like your
+
+7
+00:01:25,620 --> 00:01:43,620
+Scott Tolinski: dog. I know that it's a weird, like when I like listen to a podcast, I suddenly turn it back to the normal speed. The just sound like you're talking so slow. It's so weird. I like don't get it like does your brain just adjust back to normal at some point? Like, I can't handle it?
+
+8
+00:01:43,739 --> 00:02:51,360
+Wes Bos: Yeah, I can't I just like the whole world is ruined to me. I just like talk to people in person be like, hurry up. So slow. Oh, so we've got two sponsors. Today, we've got cloud Neri which does image and video hosting. And we have O'Reilly's fluent conference, which is sort of a really good web development, JavaScript focused conference. We'll talk a little bit more about those partway through the show. So today, we're gonna be talking all about easy perf wins. So there's, there's a lot of things you can do in your website and on your server and with your CSS and your JavaScript in your network requests that you can, you can do that make these little changes to your website and your web app that will make your website faster, it will load faster, it will respond faster, it will give you a better experience. So we're gonna rattle through about 20 different tips that we have. And hopefully you can, you can take away a couple of these steps, you don't get super into it, because this performance world is another world into itself. But hopefully you can take away a couple little tips and and go and research the stuffs yourself a little bit more.
+
+9
+00:02:51,900 --> 00:03:22,620
+Scott Tolinski: Yeah. And you know, everyone always talks about that, that that quote or or that study where they found out exactly what percentage of users or conversions drop off for every millisecond your site loads. So hopefully, these kind of things are going to get you thinking about just ways that you can completely smash up in that, that. I don't know that loading, initial loading speed, get your conversions, get your website performing much better and get your users happier. Because there's nothing worse than a slow, slow website.
+
+10
+00:03:23,010 --> 00:04:00,360
+Wes Bos: No kidding. And I just saw I just went overseas and I bought like the 500 meg data plan. And I can't believe how fast I was like $100 for 500. Meg's and I blew through it in like, like a day. And I was just like, I take it. Like I have like, almost unlimited data plan. I really fast internet at home. And you sort of get used to that. And then you realize that like there's a lot of people out there that if you accidentally waste like six Meg's for them, because you're not compressing an image or you're inefficiently loading some resources. Like that's, that's money in their pocket that you're taking away from them.
+
+11
+00:04:00,810 --> 00:04:03,240
+Scott Tolinski: Yeah, expensive, very expensive.
+
+12
+00:04:03,660 --> 00:04:51,360
+Wes Bos: So we're gonna, we're going to break this down into a couple different sections. We're start off with like some network stuff that you can do. So how you request assets from the server, how you serve up assets from your server, some media stuff, how you deal with pictures, we did a whole episode a couple episodes ago that was specifically on dealing with large media files. So we talked a lot about compression and whatnot there. And then we'll talk about CSS and JavaScript, what you can do to low those faster, remove unused code, etc. And we got some stuff on fonts because because fonts, custom web fonts can really bloat your page side size. And that's, that's a big one right now, where you get that sort of like you don't see any text for a couple seconds until the font download. That's a bit of an annoying one.
+
+13
+00:04:51,810 --> 00:05:06,829
+Scott Tolinski: Yeah, super annoying. And a lot of these they will annoy your users whether or not your users tell you a lot of times your users will just no longer become you Your users anymore after enough of these issues, because they're, they'll be fed up with your site with your slow site.
+
+14
+00:05:07,130 --> 00:05:12,889
+Wes Bos: Totally. Um, Alright, so let's kick it off, you want to, you want to start us off with a network tip.
+
+15
+00:05:13,440 --> 00:06:07,620
+Scott Tolinski: Yeah, network tip, this is the probably one of the most I say basic tips on here is to reduce the amount of HTTP requests. This is one where every single time your site loads, and it has to go and grab something from another location, it makes this request and that that round trip time for the request to happen, can slow the loading of your page, if you have, you know, of 2020 requests to different JavaScript files or something like that. Maybe you're loading all your plugins from CD ends or something like that. Let's say you have all of these different requests going out, each one of those is going to take some amount of time, your code needs to wait for that stuff to load, just one of those things that you want to reduce as much as possible. So that's one of the reasons why people use a build process or a bundling tool to bundle up all your script files and stuff together into one file for them to load in, make one request.
+
+16
+00:06:08,459 --> 00:07:36,060
+Wes Bos: Yeah, cuz there's some sort of limit, I don't know what it is, offhand. But there's some sort of limit in the browser right now, where you can only request so many things from a specific server at once. And if you have more than that, then it's going to wait until they come back in our purse and then go off and fetch more, that is going to be changing sometime soon. So we're getting this thing called HTTP, HTTP Two, two, or as the Brits like the color, ah, h two, h two, h two. And what that's going to do is it's gonna allow you to like multiplex your requests, meaning that it won't matter that you have 100 requests, because what's going to happen is that it will just go to the server and come back with all those requests at the same time, rather than going back and forth, back and forth, back and forth for every single request. So that will eventually will change. And that's, that's kind of goes along with JavaScript modules. Because eventually, we won't have to use Webpack, or anything like that to bundle everything into one big j. s file. But we'll be able to just serve up our our unbundled modules, and then it will sort of crawl through all of our modules and do those imports for us and doing extra requests every single time. But I don't really know how far that that is off. There's some other people out there that are better at all linked to some talks on YouTube that that explain HTTP to a little bit better. But I'm looking forward to that as well. Yeah,
+
+17
+00:07:36,060 --> 00:08:36,360
+Scott Tolinski: I think a lot of our solutions are going to be something about either, like bundling tools, or like maybe like future improvements will fix these things for us, eventually, the future is bright, as always. So that's, you know, something to look forward to. So Another good tip is to utilize caching, also utilize local storage for data that doesn't need to be refreshed. If you use a system like like Apollo or Redux, or any of these sort of libraries, they have different local storage and caching systems that you can just sort of plug and play in and make sure that, you know, like, let's say, a user goes off and gets information about something. And well, that information is not changing the next time they're getting it. So why are you going to get that information again. So utilizing some of the stuff is going to prevent extra, again, extra requests, but extra time it takes to get that information from an API, your things going to load faster, and your users aren't going to have to sit and wait, while it makes a redundant request for you.
+
+18
+00:08:36,390 --> 00:09:31,160
+Wes Bos: Yes, that's pretty good. And also on the server side, you can turn on whether you're running like an Apache server or nginx server, you can also turn on like aggressive caching of your images and have your JavaScript and your CSS. And what that will do is every single time that your browser requests something, it'll go, Oh, I actually had downloaded this JavaScript file before, I don't need to make that round trip, I'll just serve it up from the cache. That can be a little bit of a pain when you're trying to invalidate the cache. And that's generally why Yeah, people put hashes in their CSS and JavaScript files where you might have like scripts dot before nine, seven dot j s. And then when you need to invalidate that cache, then you just change the script name to something totally different. And then the other kind of cheap, cheap way that you can do it is you can just do a question mark V equals one like, you can put a little query pram on the end, and that will also bust that cache.
+
+19
+00:09:32,910 --> 00:09:39,630
+Scott Tolinski: Yeah, a lot of these libraries will do that kind of stuff for you too, or these build tools and stuff like that for you, which is web pack will
+
+20
+00:09:39,630 --> 00:11:24,390
+Wes Bos: definitely do that for you. Yeah, the next one is enabling g zip on your, on your server. So a lot of times, people don't understand what Jesus epistle, let me explain what it is really quickly. So what jesup is, is when you have some, let's say text that's being sent from your server to the browser, Let's say I have the text West is cool. And I am writing a blog post about myself and I write the text West is cool 11 times, what Jesus will do is it will take that text that is duplicated over and over and over again, and say, Okay, I see that this test is cool is being sent 11 times, I'm only going to send it once. And every other instance of that I'm going to just point to that first instance of West is cool. So it might just send West is cool. And then in place of West is cool, it will always send like something like go look here for the actual text, that'll sort of point to it. And that's great, because if you ever have duplicate CSS selectors, you have duplicate CSS rules, like how many times is your your CSS have text align center in it, right. So it will only send text align center once, and then it will point to that text align center for every single time. And that will really make your CSS as small as possible in your JavaScript as small as possible, because you're not unnecessarily and that's why sometimes people don't necessarily care about duplicate CSS rules or sending more CSS over the wire than they should, because it might just be that you have GS F and you should have jesup turned on on your server, because then your requests are going to be as small as possible.
+
+21
+00:11:26,400 --> 00:11:49,590
+Scott Tolinski: Yeah, I mean, I love stuff like this, because like you said, you don't have to worry about your your CSS, duplicate, or any of that sort of stuff. Because I mean, at the end of the day, writing code should be easy for you to read. You shouldn't have to worry about what's easier for a computer to read, right? Let the tools sort of make it optimize better for the server itself and allow you to have your code as well as it is easy for ya.
+
+22
+00:11:49,710 --> 00:12:11,010
+Wes Bos: I agree with that. Sometimes you see people going way out of their way, in the name of performance. And like, that's great. But like it kind of bums me out that like we have to like, think about what the computer is doing and what is faster in that case. And ideally, either the tools or the platform would would know these things and make it faster for you.
+
+23
+00:12:12,090 --> 00:12:50,010
+Scott Tolinski: Yeah, yeah, yeah, yeah. Okay, so this next one is something we've talked about probably a few episodes on the show already, as he's, you know, content delivery network to deliver your stuff. Basically, again, the the idea here is that your server is in a physical location, a CDN is going to make it so your data is spread out amongst locations, so that the point of request is closer to where the data lives. Rather than having to, you know, go from Tokyo to New York to get the data, it can go from maybe like, I don't know, Tokyo to Kyoto or something, depending on where the different CDN locations are.
+
+24
+00:12:50,519 --> 00:14:47,250
+Wes Bos: Yeah, CD ends, very popular, go back to our episode on what dealing with media files, would we call it big zips, something like that. And you can begin to talk a lot more about doing that. Next one we have is loading your JavaScript at the appropriate time. So we're gonna we're gonna talk about a little bit more about this, and when we hit CSS, and JavaScript, but what you likely learned when you were learning JavaScript is in the head tag of your HTML, you put all your link tags, which loads your CSS, and you put all your script tags, which loads your JavaScript. However, the problem with that is that those things are what are called blocking, meaning that it will pause the parsing of your HTML, and pause everything else below that, that needs to happen while it goes out and downloads and parses your JavaScript in your CSS. And that sucks, because generally, what's happening is your user sees nothing. Because if you're thinking about the head that's loaded before any of the HTML on the page has been parsed and put onto the page, so your user is just sitting there on their hands, waiting and staring at this white screen. So the easiest way to get around this, and there's lots of different script loading techniques, we'll talk about them. But the easiest way to get around this is just load your script tag before the closing body tag. And what that will do is it will make sure all of your HTML is loaded on the page first, your user can start to orient themselves to what's on the page, they can start reading, seeing where these items that are on the page, and then your JavaScript is going to load right before the closing body tag and, and sort of as an added benefit to that as you if you do that you never have to worry about like document ready or or when the document is loaded. Because by the time your JavaScript runs, it will have already loaded all of the HTML on that specific page.
+
+25
+00:14:48,660 --> 00:16:53,130
+Scott Tolinski: Word. Yeah, definitely. Next one is a one lazy loading. Now I have a personal story about this. I was having some slow loading times on my level of tutorials. page, which is a page that doesn't make any database requests, it's server side rendered. There's a lot of reasons why this should not be slow, right. But I was still seeing a couple of maybe a second and a half delay on each load, right. And so, you know, you went into my tools, we're going to talk a little bit about troubleshooting later in the episode, and maybe how you can solve some of these things. But I found out that one of the things was the Twitter component that I have, where it brings in tweets. And so that whole block of things was going off to Twitter and getting those tweets and it was delaying the loading of other content on the site. Now, one solution I came up with was to just lazy load that whole block, because that tweets is not into view, at that point, the user doesn't need to see the tweets, and therefore they don't need to load. So lazy loading is a way of basically telling your site to only load specific things when they are about to come into user view or are in user view. So it's nice to go out and get those tweets until the user scroll down enough and there's maybe an offset, to say, Oh, hey, now go get those tweets, it can make that request, instead of delaying the loading time of your site overall. So having things lazy loading, using it, I mean, things like react, make lazy loading effortless, because there's just like a lazy loading component, you can just wrap wrap your components in a lazy loading component and give it an offset, and therefore, you know, you never have to think about it again. But lazy loading the stuff that your user doesn't need to see, if you have 100 images loading, and they're only seeing the first five of them, you don't need to load all hundred of those images, lazy load the ones out of view, given an offset, so that they're never like necessarily seeing an image load unless they're scrolling super fast. But lazy loading is a great way to delay the loading of content until your user actually wants to see it, you know, no reason for them to pay up front for something that they might not even see.
+
+26
+00:16:53,760 --> 00:18:49,980
+Wes Bos: That's a super good tip. I like that a lot. Next up, we have is a link REL equals preload. So we all know about the the link tag to load your CSS, but the link tag can actually be used to load in almost any other type of asset, if you give it an attribute of REL set it to preload. So what this can be used for is any other content that you have on the page that you'd like to sort of kick off the download. And this I don't think that this was a block your page from loading, but it'll sort of go off in the background and start to download it. So if you have a, like an mp3 that you want to play quickly, or if you have a video file or an image or some JavaScript that will be loaded, at some point, during that page, you can kick off in your head, you can kick off a preload of that asset. And then by the time the user or the browser actually needs that asset, it will have already likely been downloaded. And that will make things a little bit faster. On that same idea, there's also a rel equals prefetch, which is pretty neat. And what that will do is if you have a page that you'd like to prefetch, so maybe I have a homepage, and I have a store page, if someone's on the homepage, I might want to pre load the store page, so that by the time they click on that store, page, bam, it will already be loaded. And it will be that like sort of that instant cutover that we're used to I use this in a little bit differently. But I use this index j s quite a bit where if you if I have like a page of products, and I have a previous page of products and a next page of products, what I'll do as all preload the previous and the next page, so that when they actually click it, it will have already gone to the API and got the list of products and rendered out the HTML and then at the instinct cut over to that actual page.
+
+27
+00:18:50,970 --> 00:19:01,980
+Scott Tolinski: Yeah, and that's such a great experience. I've been on so many sites where like, I click it and the page loads really quickly. And I'm like Courtney, Courtney come look at this page load so quickly, and she's just like,
+
+28
+00:19:02,840 --> 00:19:03,420
+Unknown: people like
+
+29
+00:19:06,330 --> 00:19:10,530
+Scott Tolinski: I don't know if she listens to this, she's definitely going to be agree with you.
+
+30
+00:19:12,350 --> 00:19:13,650
+Wes Bos: Oh, that's okay. So
+
+31
+00:19:13,650 --> 00:19:39,240
+Scott Tolinski: okay, these are general network tips. But we're gonna break it down into several different classes of stuff. And the first of which is going to be media. So like, we already had a whole episode on things like this, but I think these some of these things we either didn't mention or are worth reiterating in this section. So first be using the picture Phil and image source set. Is it do you call it source set for SRC set?
+
+32
+00:19:39,270 --> 00:19:50,280
+Wes Bos: Yeah, I call it source says what do you what it stands for? Yeah. Like it's a setup server thought about that? Yeah. Because Because you have the image source. And then you can have many sources, which is the source set.
+
+33
+00:19:51,300 --> 00:20:33,150
+Scott Tolinski: Okay. I mean, it makes perfect sense. I've just never thought about source it. So yeah, so this basically is a winner. Parts of web design first came out, there was a whole this, basically you throw with 100% on your images, and they sort of just adjust to the container size, right? And everyone was doing that for a little while. But we didn't necessarily Well, not to say we didn't think about this, because people were thinking about this. And you know, but a lot of people weren't necessarily thinking about, Hey, I'm loading up this 700 pixel wide image on a phone that's, at the time 320 pixels wide. And they're, they're the desktop user and the phone user getting the same image, even though like they don't need the same
+
+34
+00:20:33,270 --> 00:20:47,700
+Wes Bos: or even worse. So had the the iPhone retina came out, do you remember that? And everyone? Oh, yeah, exporting all their buttons and two inch maps at two acts, that was a nightmare. Which so sorry, go ahead. Yeah, no. So
+
+35
+00:20:47,700 --> 00:22:05,700
+Scott Tolinski: what this allows you to do is to specify various images, as in multiple images per a picture in the browser is going to sort out which one, your user needs to be served using things like media query, right, so you'll be able to say, at a minimum width of this size, go ahead and serve up the user this and this actually pairs really nicely with one of our sponsors, which we'll get into it in a second here. But uh, in in the way I do this is I have various, I have a picture tag, and then I have various source sources for my images. And then I have cloudinary, go off and fetch the perfect image for any sort of given size, I have basic browser with setup. And this can all be done sort of dynamically, I didn't have to export a billion images at different sizes. cloudinary is going to create those when I asked for them. But basically what it is, is this allows you to have the perfect size image for any given scenario. And this also means that you can cater your image for desktop, to mobile, whatever, if you need to do specific cropping. Or maybe you want a different even height, verse width, image ratio, you could do all sorts of stuff. It's basically using a media query to serve up whichever image is most appropriate for your user given whatever device or browser they're using. Yeah, you know,
+
+36
+00:22:05,700 --> 00:22:38,700
+Wes Bos: where I use this a lot was with like a banners like sliders on a homepage, generally, on the homepage ever really like a long rectangle. But then as you get down to mobile, that rectangle doesn't doesn't shrink very well, because it's it's almost microscopic, by the time it gets really wide. And we want it to go on to move to more of a square or more of like a taller rectangle. So we would just create a couple different banner sizes and then use source set to change it up. But what is what's the difference between sorsa and using the picture element?
+
+37
+00:22:38,940 --> 00:22:42,720
+Scott Tolinski: Oh, are you asking this knowing the answer to No, I
+
+38
+00:22:42,720 --> 00:22:48,900
+Wes Bos: actually don't know the answer. I okay. I've used the picture and picture, Phil before. And I've used source as well. What is the difference?
+
+39
+00:22:49,590 --> 00:23:06,510
+Scott Tolinski: I think they're their combined techniques. The picture element uses various sources, your source set to display the right image. And then like what is the picture element is an actual HTML element? It's just you need a polyfill to use it.
+
+40
+00:23:07,410 --> 00:23:17,700
+Wes Bos: Know, the picture element is a standard though, but and picture fill is just a polyfill for the picture, but can't a source that just put directly on an image tag to or not?
+
+41
+00:23:19,080 --> 00:23:22,080
+Scott Tolinski: That's a good question. I have never used it out of the picture element.
+
+42
+00:23:22,110 --> 00:23:26,160
+Wes Bos: Okay. Okay. I get it. That makes sense. Have you thought
+
+43
+00:23:26,160 --> 00:23:27,150
+Scott Tolinski: about that?
+
+44
+00:23:27,179 --> 00:23:28,140
+Wes Bos: Let me let me look it up.
+
+45
+00:23:28,169 --> 00:23:30,690
+Scott Tolinski: I don't know if you can't, or can I have not? I just haven't
+
+46
+00:23:30,720 --> 00:24:41,790
+Wes Bos: let me look it up real quick. Okay, and we're back, I actually didn't know what the difference was. However, I found a nice little tweet from Chris coiour, about four years ago, it says source set and sizes is information to help the browser decide what to do best in the picture element with with MIDI attributes. With the with the picture tag, you can have these sub source tags inside of it kind of like a like a video tag, or an audio tag. And that will allow you to explicitly tell it when to do something sort of like with with a media query. So I think that what I'm understanding from this, and if this is wrong, please tweet us and we'll retweet you from the ad syntax FM is that the source that will usually give as much information about how big the different sizes are, and when you want them to come in, and the browser will make a decision for you based on different things in the browser. And then the picture is you you make all the decisions with different media queries. And you can do a little bit more what's called Art Direction. Which means that you can say at this level use this and that's that's what I've used it before. I've used the picture fill library for that. So yeah,
+
+47
+00:24:41,790 --> 00:24:48,570
+Scott Tolinski: pretty much only use the picture fill without with I mean the only the picture filled not using both. Oh yeah,
+
+48
+00:24:48,600 --> 00:25:07,200
+Wes Bos: yeah. So the picture fill for those who want to know is a polyfill for older browsers that don't have the the picture element, which most most new browsers do on picture element. Let's look at On Can I use picture element is supported in everything but iE 11? Like most good things in the world?
+
+49
+00:25:08,040 --> 00:25:12,810
+Scott Tolinski: So, yeah, so use your polyfill. If you gotta do it awesome. At this point, it's pretty cheap one.
+
+50
+00:25:13,260 --> 00:26:11,520
+Wes Bos: Yeah. Next one, we have image compression. So we talked all about that in a couple episodes ago, where you can take image op DME, and you can use web P and JPEG and PNG, you can create lossy versus lossless, I think that is some of the lowest hanging fruit out there. Don't worry about getting all tie downs on these, like, there was this big thing the other day where where people would get all bent out of shape about using a library like jQuery versus coding it all in vanilla, because jQuery was much too large to actually load onto the page. And there was a sort of the things as one last one last image, meaning that like, if you're really sweating, loading one JavaScript library, take a look at the actual images on your page, because you could likely gain a lot of perf there. And that's such low hanging fruit. So I would definitely start there if you're looking at making your website faster.
+
+51
+00:26:12,509 --> 00:27:52,380
+Scott Tolinski: Yeah, yeah. Yeah, actually, we never mentioned this one in the I think this is sort of self explanatory. We didn't mention this in the network. One, this goes along with that if you want things to load faster, you have to serve less data. We just totally overlooked that. But like, I mean, that goes along with that image compression, right, you want your images to be smaller, you want everything to be smaller, the less amount of information you're sending over the wire, the faster things are going to load. Okay, so the last one in our Media tab is going to be inline SVG. Now, HTML, SVG can be in HTML. The only problem with it is SVG is typically kind of messy. So for a long time, people were just using the image tag and using a source image as an SVG to load up their SVG tags. Now, there's a lot of, you know, this fetches as an image, it creates another request as to go to your server to fetch that image, when the SVG could just be into your HTML by default. So there's a couple of solutions for this, you could actually physically copy and paste your SVG into your HTML, which isn't necessarily that reusable. I mean, if you're using react, you could make it a component or something like that. But nowadays, there's some really cool libraries that what they will do is take your SVG files, you can just use them as an image like normal. But then when Babel goes to compile your code, it's going to place all of your SVG G's in line, so that you don't have to write the code that way. But you end up having code that is with inline SVG. Other benefits to inline SVG are being able to target the various parts, the elements in your SVG with CSS yakko,
+
+52
+00:27:52,380 --> 00:29:02,130
+Wes Bos: which is a great thing, you use an image tag, you can't access the internal bits of your SVG. But if you inline it, you can change the color, you can rotate like pieces of the SVG, you can, you can add outlines. And it's really sweet. So I love that. And I've also done it in pug and Jade before where you can just include it. Like you're including a partial, but you can include the SVG file, and it will inline that entire for you. So that one takes a little bit more setup in terms of tooling, which is I think, why we are still seeing a lot of people using Font Awesome. With the class of fa, the whole idea is everyone wants to get away from these icon fonts, because they can be really slow to load this entire icon font when having an Yeah, they're pretty big, whoo. And loading inline, SVG is so much faster. But we're seeing some pushback against that, because it's just harder, right? People don't have the tooling in place. And they like just adding it, fa fa dash Twitter. So if you can spend a little bit of time getting that tooling, a place that will auto inline the stuff for you, you can still author it as you're used to. And then it will sort of handle the heavy lifting for you sort of when when,
+
+53
+00:29:03,210 --> 00:29:31,830
+Scott Tolinski: yeah, since I started my site before there was those plugins to inline it for you. I just have a react component named icon. That's a simple switch statements looking for a name of the icon passed in as a prop and then outputs the inline SVG. Now that icon component is kind of a giant mess of a bunch of SVG tags. But like, it sort of hides it all the way. And I can say, Hey, give me the icon which icon this icon, okay, it's like my own little icon library. Look at the one I want. Pretty nifty.
+
+54
+00:29:32,160 --> 00:31:51,420
+Wes Bos: Alright, let's take a break and talk about one of our sponsors. So our sponsor today is cloud Neri and cloudinary does, at the very basic, it does image and video hosting for you, but that's really not all it does. We're talking about performance and whatnot. What cloudinary will do is you can take your image, you can upload it to cloud Neri and it's going to do what they call these transforms on it and you can do everything from resizing your image to compressing your image. to changing from a PNG to jpg, and I like to talk about my favorite part of cloudinary. And this is something that I use in my own websites. And it's just to set the format to auto and to set the quality to auto. And what it will do is if you give it a JPEG, and you can say, give me back this JPEG, or give me back this image at 500 pixels wide, but you figure out what is the best format and you figure out what is the best quality, and it's going to smoosh down that image as much as you possibly can. And it's going to determine if a PNG or a JPEG is going to be a better format for that specific image. Or if your browser that is requesting the image supports web p, it will serve up a web p which is much smaller. And it's great because it takes all the heavy lifting and the image compression and all that stuff sort of off your plate, and it will just take care of it for you. So I'm a big fan of it's got introduced me to cloudinary. Like maybe like 20 episodes ago, I've been using it in all of my projects. It's just, it's just fantastic. So if you are looking for some sort of image hosting solution they have, they obviously have adapters for they have an API of the stuff for for Ruby and node and I myself have just used a lot of the have a URL that you can put in front of your existing images. And it will start to suck up all of your existing images and spit out the compressed and smaller versions of it, which is super handy for existing websites where you just want some easy wins. So definitely check out cloudinary@cloudinary.com. And then they also have a image con that's coming up in April, it's on what do we got here, April 12. So just in 22 days yet, and if you're interested in heading on over to it, that's in San Francisco, on April 12, use the code syntax 99 to get a big discount off that.
+
+55
+00:31:52,500 --> 00:32:52,110
+Scott Tolinski: Nice. Yeah, one of my favorite things that I did since I started using cloudinary was before the I was pulling in images from YouTube's API. And not only was I having to hit YouTube for those images, because I wasn't grabbing the images, I was just loading them up in YouTube only gave four different image sizes. But for some of their older uploads, it only gave you two image sizes. So I had to have all this logic to say Oh, if you know if this and chose all four, then then you know, use the picture filled to show the right one. But sometimes there's only two. And so with cloudinary, I was able to plop my highest res one at the end of a cloudinary URL. So not only would cloudinary upload the image, but I could then use that URL to give me all of the appropriate sizes rather than just relying on what YouTube provided. And you know, everything was just a okay after that. It just simplified everything so much. This is one of those services. When I first started using it, I was like what's the catch? There's kind of a catch. Yes. Great. We should mention that is I'm here.
+
+56
+00:32:52,410 --> 00:32:54,450
+Wes Bos: It's free. Oh, yeah.
+
+57
+00:32:54,450 --> 00:33:03,780
+Scott Tolinski: It's pretty good started using I just could not believe it. And then what here I am a year later. And I'm still being like, there's got to be a catch. This is too good. It's too good. Yeah, one of my favorite services.
+
+58
+00:33:03,860 --> 00:33:29,280
+Wes Bos: They're they're great. Like they get what do you get 20 gigs of bandwidth. And I actually was using the free plan on my CSS Grid course. And I went over that 20 gigs, and they didn't cut it off. So like, even if you get a spike in traffic, they're going to they're gonna tell you your account is over. And you have to go to our premium plan. But they're not just going to immediately cut you off, which is like one another really cool thing about about this company. So check it out@cloudinary.com.
+
+59
+00:33:30,330 --> 00:33:48,420
+Scott Tolinski: Nice. Cool. So we've talked about network requests. We've talked about media, and now we're into actual code that we use with CSS and JavaScript. So there's a lot of little things here you can do, some of which can be done automatically for you. So do you want to go ahead and hit the first? Yeah.
+
+60
+00:33:48,630 --> 00:35:30,750
+Wes Bos: So the first one is what we like to call critical CSS. And what critical CSS is, is you load the CSS that is needed for that first paint, before everything. So generally, the way we do it now, and this is the way I do it in most of my websites is that all load all of my CSS and a link tag in the head. And that makes sure that all of your CSS is loaded before your HTML is loaded. Because otherwise, if you load your CSS after you're going to get like flashing, where it will download the HTML show you in black and white, and then your CSS gets applied. And you get that sort of like that flashing and your users get disoriented. So the solution is just load all your CSS first and then load your HTML. But that can be slow, especially if you have lots of CSS. So the absolute best way to do it is to do what's called critical CSS where you can use some tools that will figure out based on the viewport of your website, what CSS is absolutely needed for that first pain, meaning that maybe your logo and your nav, and whatever's on your homepage for that specific page. load all of that CSS in just a style tag, above your HTML And then a synchronously load the rest of your CSS at a later time, once the page is actually loaded, and that that'll kick in as your user needs to scroll down. So this again, this requires a little bit of tooling, especially if your homepage is constantly changing. But there is some libraries out there once called critical CSS, and it will sort of look at your CSS, look at your HTML, and then it will figure out what minimum CSS needs to be loaded. And that's called your critical CSS.
+
+61
+00:35:31,770 --> 00:36:34,290
+Scott Tolinski: Nice, I actually like this section of the the sort of suggestions a lot, because a lot of these things in this section here are going to be stuff that your tools do for you. Like, if I can get free performance gains, just by downloading something or enabling something in my tools, like to me that's as good of a win as possible. So this next one is going to be kind of obvious, is minify your code? Because, well, what minifying does is it replaces things like long variable name strings, and stuff like that, basically long bits of text, and it's going to smoosh it all down and remove the whitespace and make it totally unreadable. What that does is going to essentially reduce the file size. And again, you're sending less big file sizes down the line, everything's going to load quicker. So again, minify is going to make sure that your code just basically is not human readable. And that's not necessarily the point. But the point is to make it doesn't have to be human readable, it has to be computer robot
+
+62
+00:36:34,320 --> 00:38:05,670
+Wes Bos: usable. And that's what source maps do, right? Like source maps will, right? Take your minified code and your transpiled code. And it will always point you back to your actual authored code at the end of the day. So that's again, one of the lowest hanging fruit you should absolutely be doing a lot of the stuff that we're doing is, is kind of nice extra stuff that you can squeeze a little bit of extra perf out. But if you're not minifying your code and you're not compressing your images, then you're likely doing something wrong, because that's such a such an easy win. Next one I have here is remove unused code. So you can we all have been there where you're like doing Do I need this CSS anymore? Do I need this JavaScript library? Just not gonna touch it because I don't want to mess anything up. So you can use again, you can use some tools that will look at your your website and figure out this is unused CSS, we can remove it. And also I like to have in when I'm writing JavaScript, I like to have my es lint rules where you should never import something that you don't actually use in that file. And that, by default, will just figure out, oh, well, why are my importing this piece if I'm not going to actually be using it in here. So I found that as ever since I was switch to writing JavaScript modules. First, when you stop using a JavaScript module in a file, that code stops getting bundled. And second, es lint lint will yell at you if you accidentally have imported something that you're you're not using anywhere in that module. Yeah,
+
+63
+00:38:05,880 --> 00:38:36,360
+Scott Tolinski: yeah. And this one kind of goes along with that is just code splitting. Because if you're, what code splitting is going to be doing is basically taking all of your modules and determining what is being loaded at that given point. And, you know, some of the criticism of these front end applications is that we're sending, we're replacing, you know, I guess, a lot of, I don't know, we're replacing sort of standard techniques for sending a ton of JavaScript down the line like
+
+64
+00:38:37,290 --> 00:38:38,760
+Wes Bos: Greg's to hello world.
+
+65
+00:38:38,880 --> 00:39:37,560
+Scott Tolinski: Yeah, right, exactly. And that's the joke is say, hey, and you know, you just replaced all this, but now you're sending this huge JavaScript file down the line. So a code splitting is going to do is find out basically, what are the components and what is the code that needs to load at that given time, and only send that in the JavaScript bundle. I mean, I cut off, you know, megabytes of code by initiating code splitting. Basically, if you hit the front page of my website, the user does not need to load all of the JavaScript from the store, right? The store includes a whole bunch of third party libraries for managing payments, that includes a whole bunch of stuff that the the homepage of the website doesn't even care about. And when I hit the store, I can then do that loading of that bundle. And you can break your code up into various bundles that are only, you know, being loaded on demand when you need them rather than at the start. So again, yeah, you don't want to send your entire application online every single time.
+
+66
+00:39:38,760 --> 00:40:05,340
+Wes Bos: Yeah, I think it's kind of cool with, especially with react and Webpack. And or view and Webpack is that this stuff will be very simple. Like you shouldn't have to think about, okay, what do I need on this page, right? Like, it should just figure out that, oh, this module is not on this page. So it's not necessary to actually load that module and then one You go to the store page, it will kick off the request for that, that bundle that you have there.
+
+67
+00:40:05,670 --> 00:40:34,560
+Scott Tolinski: Yeah. So basically just using like a dine, they called dynamic imports is that is that the Yeah, so basically using a dynamic import, where the import itself doesn't happen until the resources requested. And if you have like a routes page, and you load up each one of the components for each of your routes as dynamic imports, the router is going to be smart enough. And the code is going to be smart enough to know not to load any of those other bundles. But it doesn't actually you don't just have to bundle it routes, you can bundle wherever you want based on your dynamic imports.
+
+68
+00:40:36,570 --> 00:41:10,980
+Wes Bos: This was a quick one transpile less, so we're starting to get to a point where you don't have to Babel or Babel everything, you can start shipping some of these things depending on what browsers you support. So I like to recommend to people is use a Babel preset env v n. And that will, what that will do is it's sort of like can I use where you tell it which browsers you want to support. And it will tell you what you need to transpile and what you can keep as native and that way you're going to be transpiling you're not going to translate and the stuff that is unnecessary?
+
+69
+00:41:11,400 --> 00:41:41,940
+Scott Tolinski: Yeah. Again, smaller, smaller files, right. So here's another one has a great name. It's one of my favorite names and in tooling, tree shaking, which is basically again, finding automatically finding is sort of like what you mentioned with your unused code thing. It's it's finding your your stuff that's not being used that's in the bundle anyways, and shaking it out. It's like you got a bunch of apples in a tree that nobody is using. You shake them out of their trees a little bit less, less heavy.
+
+70
+00:41:42,330 --> 00:41:44,220
+Unknown: Tree Chicka Yeah.
+
+71
+00:41:44,220 --> 00:41:54,110
+Wes Bos: Do you ever watch that? That show? Where they catch? crocodiles? Like they hunt crocodiles every in like the buy you down in? In the south?
+
+72
+00:41:54,380 --> 00:42:04,530
+Scott Tolinski: He talked about like, the swamp people? Oh, I thought you're talking about like the Crocodile Hunter like the name. Steve Irwin. No, yeah,
+
+73
+00:42:04,860 --> 00:42:14,480
+Wes Bos: no, I'm talking about swamp people. They got this. I think it's down in Louisiana, somewhere in the in the by you. And he's like, every time he's got a big one. It's called the
+
+74
+00:42:14,480 --> 00:42:16,500
+Unknown: true Chicka chicka.
+
+75
+00:42:19,350 --> 00:45:23,250
+Wes Bos: That's good. Next one I got here is a sink in differ on your script tags. So there's a fantastic website here that just breaks it down. So so simple. And the idea here is that when you load an HTML page, and you have a script tag in that page, what happens is your HTML starts to, it loads all the HTML, and then it starts to parse the HTML, which means that okay, I've downloaded this HTML file, I'm gonna go top to bottom and start parsing every single line, oh, this is an h1 tag, this is an h2 tag, this is a span, oh, this is a script tag. So then it it sort of pauses on the script tag and does a couple things. So it poses its own HTML parsing. And then we'll go out and download that script tag. And then when it comes back, it will also parse the contents of that script tag, and then it will keep on going with its life. And that's what we refer to as blocking, meaning that the HTML sort of just puts itself on hold while it downloads and parses the the script tag. So what you can do in your script tags is you can give it an attribute called a sync. And what a sync will do is in it will kick off the download of your JavaScript while it's still parsing the HTML. And then once the download of the J s is finished, it will it'll pause itself and actually, and actually run your JavaScript or parse it, that's the word we use. And then there's also another attribute called defer, which what it will do is it will, it'll parse all the HTML at the same time download it. And then at the very end of the HTML being parsed, it will, it will parse the JavaScript and actually run it. So take a look at this blog post, I probably didn't do a very good job at explaining it. But it just has these really good diagrams as to when things are happening. And as a general rule of thumb, you probably want to pop in a sync tag on your, on your script tags, which will definitely speed things up sick. Let's take a quick break and talk about one of our sponsors, which is O'Reilly's fluent conference that's happening in San Jose from June 11, to June 14, from the 11th as well, they've got some training and they and from the 12th, to the 14th. They've got the conference going on and what floon comp is conference dedicated for web developers, it used to be entirely JavaScript focused. Now it seems that they're they're broadening it just to web development in general. But I actually spoke at the very first flume conference many years ago and they invited me this year. I couldn't make it unfortunately, but I can definitely tell you that it is a great great conference and if you are looking for a conference to go to that is front end web development focused, I would definitely check this one out. I'll take it from the top. So if you want to check out fluent, go to conferences.oreilly.com and use the code syntax that's going to get you 20% off. Hopefully enjoy it. I love going to conferences, and this is definitely one that you should check out.
+
+76
+00:45:24,240 --> 00:45:25,710
+Scott Tolinski: Nice, nice.
+
+77
+00:45:26,010 --> 00:45:29,520
+Wes Bos: Beauty. So let's keep rolling. What are we going to talk about now?
+
+78
+00:45:29,760 --> 00:45:57,780
+Scott Tolinski: Yeah, so we got fun. So one of the things that we mentioned earlier on with svgs is use SPGs. In place of icon fonts, icon fonts are big. Typically, they take a long time to load, you get a whole bunch of like, if you're using 10 icons from an icon font, there's probably about 115 icons that you're not using and your users loading all of those. So again, like do you really need to load all of those fonts in there, I mean, replacing them with an inline, SVG is going to save you some cavies.
+
+79
+00:45:58,260 --> 00:48:52,680
+Wes Bos: Next one is really easy when you see a lot of people just scrapping Web Fonts altogether. Because Because Web Fonts can can be pretty large, especially if you just take a normal desktop font, you try to convert it yourself, it's not uncommon for it to be several hundred k B's. So using a native font stack, which is using the fonts that are already installed on your user's computer, is a great idea. So the dash Apple dash system font, it will use the San Francisco font built into your users operating system, it looks great. And then there's there's also blink Mac system font. And then this is really nice font sack, I'll put it in the show notes that will it will find the best Sancerre fonts that are installed on like almost everyone's computer, and you get a really nice fast loading website. And it just looks really, really slick. So use a native font stack if you can, without having to load those custom web fonts. But if you do have to use a custom web font, there is a new property in the browser that is called font display. And this is actually not one that I've used myself, I just asked on Twitter, about some perf tips for this, and a bunch of people said to use font display. So I'm just gonna go through the docs and explain exactly what it does. So here's the problem that it solves. If you have a website, sometimes you are just sitting there looking at a website and the text is unreadable. It's it's like invisible text. And you can you can select the text and you can highlight it, but you can't actually see what the letters are. And that's because your entire website has loaded your CSS has loaded, but your web font is still trying to download it and come back. And that's extremely frustrating to users, because they likely do not care that you're trying to load in Roboto, when they have a perfectly good Helvetica on their computer. So font display, what it will do is it tries to like find a happy medium of when the browser will cut over to a fallback font. So there's the whole idea of a block period, which is when you have that invisible ness that's by default, there's a period where it is swapped. So if the font face is not loaded, any element attempting to use it must render a fallback font face. If the font faces successfully loads during this period, it uses it normally. And then there's a failure period as well where it will fall back to your other one. So that's another one that I would definitely check out especially if your users are on sort of like spotty 3g, most mobile phones are going to support this font display property. And likely when somebody is trying to get like look up directions or trying to pull something up on a spotty 3g connection. They do not care about your fancy font. They're just trying to get the information of the website.
+
+80
+00:48:53,370 --> 00:49:38,220
+Scott Tolinski: Nice. Okay, so before we get into the sick tips, let's talk a little bit about troubleshooting this stuff. I actually feel like maybe this we could do like an entire episode on troubleshooting performance. Yeah. I mean, if that's something you want to hear us dive deeper into other than just a quick mention, at the end of this episode, let us know, I think we could fill a whole episode worth of this stuff. But some of the, the easy things are to fire up the Network tab in your Chrome Dev Tools, give the page a reload. And you can see exactly how long everything is taking to load. And it happens in sort of day to day is that is that called the waterfall. Where one happens the next happens the next happen. So yeah, it's that I'll show you Yeah,
+
+81
+00:49:38,250 --> 00:49:58,350
+Wes Bos: it'll it'll show you like what is depending on other like one request kicks off another request kicks off another request. So it'll definitely point out like what is slow and how long things are taking in there. So they have that but then each the Network tab also shows you how long each resource has taken as well as how big each resource is.
+
+82
+00:49:58,649 --> 00:51:07,050
+Scott Tolinski: Yeah, and it will show you next With all that on a timeline with screenshots of your application, yeah, you can see if there's one thing in particular that's blocking that first paint, you can figure out a way around to block that paint. It's just super, I don't know, it's super handy, handy, handy. Again, we could talk a lot about the Network tab and some of these other other tabs in your Chrome Dev Tools. There's also, I think, a good tip is to simulate slow network speed. Because really, I mean, you're used to, many of us are used to just using this, this application on a fast earned network. So if you add to the Performance tab in your dev tools, there's a little gear in the top right, you can click that. And you can simulate a slower network speed for fast 3g, slower 3g, you can do CPU throttling, you can do all this stuff and load your app. And again, see some screenshots of everything going down, what your users might be using this on slower, less powered devices, or perhaps bad network connections. Last thing you want to do is have the experience be downright bad for everyone.
+
+83
+00:51:07,439 --> 00:51:58,530
+Wes Bos: Yeah, I even know some people take like one day a week or or one day a month, and they turn this on on their entire computer. So they can simulate what it is like working on a slow, slow network on their entire website. And on their entire computer, which is great. I had this myself is I pulled up my ESX at i o course on a slow connection this weekend. And I realized that the fonts were loading in times the Roman for a quick second, and then flipping over to my custom web font. I was like, damn it like I should have a better font stack for that. How did I miss that? And it was because it was first because I had the the font always installed on my computer. So it was installed. Right? Yeah. And also I'm Oh, if I wasn't, I was always on a fast connection. That wasn't an issue for me. And then I looked at I was like, that looks terrible. How could I let that slip and I should turn this thing on before I launched the site.
+
+84
+00:51:58,889 --> 00:53:03,960
+Scott Tolinski: Yeah, I one of my I was using App I made called B boy tools, which is to like, store my breaking moves and stuff in it. And I was using that at practice the other day, and there's like no connection and practice. And I was like, this sucks. What am I doing? Like, I mean, it's a hobby project. So I haven't put the time into it. But like, I would click click an action that would have to hit the database, but the database because the network was too slow. So like the action didn't have any sort of indication that it was doing anything and all these sorts of things that I should have seen. I mean, that's a hobby project. But all these things I should have seen just by simply simulating a bad network connection, and maybe doing some optimistic UI stuff and all that sort of stuff. Lastly, we have something called a mu not Lastly, you might have another one. But we have something called PageSpeed, which is a Google, basically you drop your site into PageSpeed. And it spits out a whole bunch of tips that says, hey, you were doing this well, and you're not doing this. Well. This is one of the first tools I ever used to open my mind towards performance, when you would first drop your site into PageSpeed. And it's like you get a big old fat F. But luckily, it gives you a big old list of stuff to fix.
+
+85
+00:53:04,529 --> 00:54:05,310
+Wes Bos: Yeah, I love that. It's almost like a game like one a couple years ago, great. Yeah, there's a, I have a YouTube video on this. Basically, my PageSpeed was brutal. And I just like, threw my screen recorder on. And I was like, Alright, I'm going to try to fix my WordPress website, it's really slow. And I'm going to go through all the recommendations that it has. And I would just sort of take one off, and then show people how I fixed it and then take another one off and show people at a certain point at Google just wants you to serve up a blank page with nothing. That is 100. So there are some things that you kind of have to ignore being like, of course, I need a style tag. Otherwise, it's not gonna load. But there are some fantastic recommendations on that page. And it was stuff that I had just like, I didn't even know that I was doing it like I wasn't compressing my images properly, or I didn't have the right caching turned on in my ht access file. And they're just like small little wins that if you spend an hour or two on your own site, you can really improve your perf
+
+86
+00:54:05,820 --> 00:54:07,380
+Scott Tolinski: about it. Love it.
+
+87
+00:54:08,400 --> 00:54:22,290
+Wes Bos: So I think that's all we got today. That's, that's quite a bit a little tips. I know there's only 1000 more. If you have any more tips of yourself, please tweet them at syntax FM. I always like to hear it like to retweet those to other people.
+
+88
+00:54:22,860 --> 00:54:35,580
+Scott Tolinski: Yeah. And also, if you'd like to hear us do an episode on using your dev tools to troubleshoot performance, or just troubleshoot in general. Maybe we should just do a whole site on Dev Tools tips. Yeah, we should totally do dev tools.
+
+89
+00:54:35,580 --> 00:54:37,050
+Wes Bos: I'm down.
+
+90
+00:54:37,590 --> 00:54:39,780
+Scott Tolinski: Yeah, gotta be down with dTT
+
+91
+00:54:39,960 --> 00:54:43,740
+Wes Bos: All right, I'm at dTT I'm down to dev tools
+
+92
+00:54:44,040 --> 00:54:48,660
+Unknown: to be t dTT. It's great. Love it. print it.
+
+93
+00:54:49,260 --> 00:54:52,170
+Wes Bos: Awesome. What about you got a sick pic for me today?
+
+94
+00:54:53,070 --> 00:56:31,380
+Scott Tolinski: I do. Okay, I do. I have a sick pic. And this is one that I took a chance on. So to say like I wasn't quite sure if this thing was going to be great. This is a smart power strip that I got. Now this smart power strip is considerably cheaper than all the other ones on Amazon. So at first I was sort of like I don't know. But it's it's basically a smart power strip that has four different plugs in it. And then four USB plugs, it connects to a smartphone app. But it also works with Alexa and google assistant and all that stuff. But you can turn off any of the individual ports, you can turn them all off. Again, it has four USB ports, the USB C ports, but I set this up on my porch to do like routines. So you can hook it up to timers and do like sort of standard timer routines. But you can also, like I said, hook it up to the Google Assistant, which if I say the words right now, the one on my desk is going to start beeping so I'm not going to, but you just say hey, turn on the lights, or better yet with my phone because I have the pixel two, I just squeezed the phone and say turn on the lights and then the lights turn on. It's a it's a cheap, it's a $30 power strip. And it is for the price. I mean, it's the smartest $30 power strip I've ever bought. And it's worked really well for a couple weeks for me. So I've been really impressed when I first started Googling these power strips, I was seeing a ton of overpriced sort of not what I was looking for stuff. So this is this I'll link this one up in the video description. It comes in black or white, nice, super easy to use. Super easy to connect. Perfect.
+
+95
+00:56:32,340 --> 00:56:36,360
+Wes Bos: Yeah, you can turn off each each one individually like those four.
+
+96
+00:56:36,360 --> 00:56:55,020
+Scott Tolinski: Yeah, and the app, there's like you can give them names. So you give them names. So if I want to say turn off the patio lights, it's going to turn off the one thing specifically and the other one I could say turn off the porch heater turn off the you know the the radio or whatever. Yeah, that's pretty sweet, right? Yeah, I'm
+
+97
+00:56:55,020 --> 00:57:14,940
+Wes Bos: gonna we're gonna do a show on like this home automation stuff, because I've been super into it as well. last little bit. And we'll Yeah, we'll have a whole show on that at some point because I've got the I got a camera and doorbell and all these different plugs. And it's the whole house is almost voice activated now.
+
+98
+00:57:14,940 --> 00:57:30,330
+Scott Tolinski: Oh, nice. I've been really wanting to do more of that. I'm trying to figure out a solution. We have a fence, right and it has no lock. I want to figure out a smart, smart fence lock situation, but it doesn't look like there's anything like perfect for me. So I'm gonna have to get get some smart hacking going on. Oh, yeah.
+
+99
+00:57:30,360 --> 00:59:13,890
+Wes Bos: Yeah, it's it's funny how many times you think like, Oh, I could just hack together a little Arduino. And you realize that you have no time? Yeah, exactly. All right. Mine is not I don't know if this is necessarily a sick pick yet. But I just like to talk about the stuff. It seems like there's a lot of little gadget heads that listen to this podcast. And it's kind of cool to just share different stuff that you're trying out like those those charging cables that I've been using those magnetic ones. Those are pretty neat. So what I did on my last flight is I forgot my headphones. So I had air pods and my bluetooth headphones. And it didn't have any way to connect to the inflight entertainment system to watch a movie. And so I because I forgot the actual cable and went to a whole bunch of places no one had one. So I was like, whatever, I'll use the crappy ones that they give you. But when I was just boarding my flight just before I found this little thing at the drugstore, and it's a it's a little Bluetooth adapter that will take an ox in and then it will just transmit it via Bluetooth so that you can you can convert the inflight entertainment system or really anything that has an ox out into a Bluetooth hotspot which is super cool and then you can use my headphones without it and first of all, it was amazing because I always get tangled up in my headphones when I'm trying to trying to go to the washroom on a plane or something like that. So I had no no headphone cord that it was at times it did have like a like a quarter or half a second delay which it was a little bit noticeable so it's not perfect because I don't know Bluetooth is Bluetooth is it's so good, but it's so garbage at the same time.
+
+100
+00:59:13,890 --> 00:59:18,060
+Scott Tolinski: Yeah, it's one of the it's one of the best worst technologies that exist. Yeah,
+
+101
+00:59:18,060 --> 00:59:56,580
+Wes Bos: it's like when it works, it's the best and when it doesn't, you're pairing it for half an hour and you can't figure out like my keyboard. I couldn't pair my keyboard the other day and I wasted like half an hour trying to get the pair but this little thing has got a like a nine hour battery built right into it. And I'm also thinking like, you can go on you remember like those old Bose sound Doc's that have the 30 pin connector for your iPod. Those things are those things are dirt cheap on on like Craigslist right now and yeah, you could just go and buy one of those and plug like a little Bluetooth adapter into the back and you have like a Bluetooth sound doc
+
+102
+00:59:56,640 --> 01:00:03,210
+Scott Tolinski: I was just thinking about like donating one of them because it's like I don't have the port anymore. But he already does have an ox port dev the
+
+103
+01:00:03,600 --> 01:00:26,400
+Wes Bos: use case for it. It's a speaker at the end of the day. So definitely check that out. I'm pretty happy with it. I'm still I wasn't thrilled about the little bit of a delay. But I thought it was pretty neat to mention it. And we'll see it's called a Ks wireless airline adapter. Sick. Sick. All right. What about uh, what do we do shameless plugs?
+
+104
+01:00:26,609 --> 01:01:38,160
+Scott Tolinski: Yeah, hey, I'm gonna announce my next Pro Series right now. I was gonna do it on Friday, and I didn't do it. So now's a good time to do it, I will be doing a Vue JS for everyone, which is going to be a 20 part video series, teaching you the basics of view. So basically, we're gonna be building a project that's like the movie database that we did for react 16, that's going to be showing you how to get started how to understand view without by its first get started in view as sort of just like a Hey, throw this onto a div on a website, then it goes into more of the application building stuff. It goes through routing, it goes through hitting API's, it goes through all of the basic foundational skills that you'll need to build a straight up view, j. s app. So it's using all modern techniques, async, await all the straight up modern stuff that you've come to expect from level up tutorials, tutorial videos, so check it out, level up tutorials.com, forward slash pro or just hang out until the end of the month when the series is released. And you can purchase it outright. So it's going to be Vue. js for everyone is going to be available for level of pros Sign up today and get access to all of the excellent level up tutorials pros series that are available right now.
+
+105
+01:01:38,940 --> 01:01:50,190
+Wes Bos: Sweet. People are gonna be really excited about that. So all that like every day, I probably get maybe 700 DMS, from people asking me to compare react in view,
+
+106
+01:01:50,220 --> 01:01:54,420
+Scott Tolinski: we need to have that episode because I'm ready to do that. I'm very ready to do that. Yeah.
+
+107
+01:01:54,510 --> 01:02:48,720
+Wes Bos: All right. Let's say I've been taking it on. I got a lot of taking notes. Oh, yeah, well, it'll happen the next couple episodes, then let's do it. I'm just gonna give a little update on my advanced react course. So I am almost done building the application that we want. It's a big app, it's going to be a big course I'm really excited for it, it's going to cover it's going to be full stack, advanced react and graph QL. Meaning that we're going to build the back end API. We're going to build the front end with advanced react in in graph QL. I've just been working on the last couple days have been working on writing all the unit testing of the actual components I've been using gesture that pretty excited about all of that. So I'm still probably a good month, month and a half out from from actually releasing actually got to record it and everything like that. But the app we're building is, is getting nice and polished. So look forward to that.
+
+108
+01:02:49,140 --> 01:02:49,650
+Unknown: Yeah,
+
+109
+01:02:49,650 --> 01:02:55,730
+Scott Tolinski: speaking of much testing, got an episode on that, too. Our episodes are just non stop. We got so many to do,
+
+110
+01:02:55,979 --> 01:03:05,370
+Wes Bos: man when we started this podcast, I was like, how will we ever like once we've done react and a couple of them? How will we ever know what to talk about? But the the list just keeps on growing?
+
+111
+01:03:05,609 --> 01:03:09,540
+Scott Tolinski: Yeah. Unbelievable. Sick. All right. That's all I got.
+
+112
+01:03:10,049 --> 01:03:11,010
+Wes Bos: See you next week,
+
+113
+01:03:11,010 --> 01:03:22,290
+Scott Tolinski: right, please head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

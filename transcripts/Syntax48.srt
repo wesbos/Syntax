@@ -1,0 +1,532 @@
+1
+00:00:01,319 --> 00:00:02,820
+Unknown: You're listening to syntax,
+
+2
+00:00:02,879 --> 00:00:08,010
+the podcast with the tastiest web development treats out there. strap yourself in and get ready
+
+3
+00:00:08,669 --> 00:00:20,300
+Scott Tolinski: to live ski and West boss. Welcome to syntax, the podcast with the tastiest web development treats around with me. As always, we have Wes Bos. Hey, what's up?
+
+4
+00:00:20,339 --> 00:00:24,179
+Wes Bos: Hey, everybody, hope you're doing well today. Happy Memorial Day, Scott. Hey,
+
+5
+00:00:24,179 --> 00:01:01,110
+Scott Tolinski: yeah, in the US, it is Memorial Day today. And today we are going to be talking about VS code. Again, it's going to be our part two to our VS code episode that we did more than half a year ago, and basically covering a lot of updates and changes in VS code since then, again, some of the extensions, tools and tips and all that good stuff that we like about using pretty much both of our favorite text editors, I'd say, yeah, this episode is sponsored by Log Rocket. We'll talk a little bit more about Log Rocket later. But it's an excellent way to help debug your applications.
+
+6
+00:01:01,169 --> 00:01:30,300
+Wes Bos: Cool. So yeah, it's been I think I counted like eight months, which blows my mind that we've been doing this podcast for even eight months. But about eight months ago, we made an episode on vs. code. And we went through some of our favorite tools and tips and whatnot. And I know that we've audiences has grown quite a bit since that time. So I thought we would just start off and explaining like, why are we on VS code? I think I've been on it for almost a year. Now. I've been on VS code. I think you've been on it even longer. But I thought we just did a quick,
+
+7
+00:01:30,360 --> 00:01:31,290
+Scott Tolinski: maybe a couple
+
+8
+00:01:31,410 --> 00:01:48,540
+Wes Bos: a couple years. Wow, impressive. I was on. I was on sublime tax for years and years before that. And it was hard for me to switch over just mentally, but actually did this switch over it was it was so nice and quick. And let's just talk about like, why why do you use VS code over anything else?
+
+9
+00:01:48,570 --> 00:03:07,560
+Scott Tolinski: Yeah, for me, it's a nice middle ground between something like sublime, which is performant, but has kind of, in my opinion, not a great user experience. And it's like a has a fine user experience. But like, I've never found debugging things going wrong in Sublime Text to be very much fun. Yeah, I mean, there's something as simple as es lint not working now, how do you figure out why it's not working in Sublime Text? Just, it's just no fun, right? I mean, it's, again, all this stuff's doable, whatever. But I've found that the nice middle ground between you have this sort of no help system, that sort of bare bones, but very performant, like sublime. And then you have this system, that's all user interface focused like Adam, but has terrible performance. I liked that him for a long time. But the larger project you get on that thing just started chunking. down. And then so vias code is a nice little middle ground in between there. And even, it's now become more of an ID light, where it has all these excellent ID type of features. But it's still super performant is free, and has a huge extension market is just, in my opinion, the the text editor with the most bang for your buck, which is obviously zero dollars, but it's still got the most stuff, and it performs the best. And it feels the best. I just like it all around.
+
+10
+00:03:07,590 --> 00:04:55,130
+Wes Bos: Yeah, I think the the thing that got me moving over to it at first was that VS code has just the right amount of UI for being able to interface with it. Because with sublime, we had like a, like a couple different modal pop ups that you could use and some very limited subset of CSS. I know they're, they're currently working on making that UI in sublime better. But just the ability to have a really nice UI and have everything in VS code is what moved me over to at first. And then just like the sheer amount of awesomeness that they're they're bringing to the editor in the the crazy pace that they're working on, I think they have, they must have like, like 1015 and I don't even know how many people work on VS code. But every single month they release once a month, or you can get in the insiders build and you get these new features all the time. And they release every single month with just a huge slew of new things that are coming in. And like you said, a lot of the new features that they are starting to roll out are Id like features, which is really funny again, we joke about a joke about most web developers are sort of just like sitting here with our untyped languages and text editors and and there's people using typed languages and at ease being like I told you this was awesome. Yeah. Yeah. But yeah, some of the features that are coming are amazing like one of the new features that they have is auto import. So if you were to import if you're to use a function that is from an imported module, it'll automatically stick that import at the top of your file it doesn't work for me every single time and I haven't really dug into why that is but it's pretty cool to see that all these new new features are always coming to the editor and again the extension market the theme market is just blowing up there's there's something that is amazing for absolutely whatever you're working on
+
+11
+00:04:55,130 --> 00:05:34,110
+Scott Tolinski: Yeah, and I ride with the insiders build way Yeah. Wow is always out. Asking for updates and is occasionally breaking. But yeah, it's really nice because you do get the features early. They they don't always document what those features are. So you might not even know these things exist. But if you're poking around the editor, you can see new things here and there. And I like it. For the most part I sometimes wish I wasn't using the insiders build when some some odd things happen, like my react, commenting system breaks occasionally. And then you have Oh, yeah, data restart. But other than that, I mean, it's, it's pretty darn solid for the most part. But yeah, this this new stuff, or no, do you want to get into some of the new features coming other than auto imports?
+
+12
+00:05:34,350 --> 00:06:44,460
+Wes Bos: Yeah, yeah, let's, let's rattle through a couple of them. And what I would suggest that you do, if you're interested in what's new, is just do a quick search for vs. Code updates, or just go to code, Visual Studio comm forward slash updates. And along the sides, they have every single month, and they have the big release notes for every single one. And a lot of these new releases are targeted towards JavaScript, CSS devs, just web developers in general, which is, I guess, the target market for VS code. But some of my favorite new ones that have come up, come out in the last couple months other than auto imports is the new notification API. So if a plug in or a theme or something needs to notify you that something happened, like maybe one of your plugins needs to update a snapshot, we'll talk about that in the future, then it has this new little update in the bottom right hand corner where it doesn't really get in your face, but it's a little toaster pop up that allows you to, to see what's going on and you can put buttons inside of there. And that's that's just what I mean about VS code. Having nice interface. They saw the need that it was hard for people to notify users that something had happened. And then they rolled out this new type of notification, which is a bottom right hand corner toaster.
+
+13
+00:06:44,460 --> 00:08:32,580
+Scott Tolinski: Yeah, you know what, I love everything about this, except for when I'm recording tutorials. And I don't know, popped up and then I realized I'd recorded a good like five minutes with this toast message. You have to Yeah, go cancel it out. But yeah, no, the new the new toast message is great. I love that. And you another really cool thing, again, is the the auto import which you had mentioned, which again, it doesn't work every time for me. And that is a little bit of a bummer. But being able to auto import your stuff is not super huge, exactly straight from your, your NPM file. And it almost is the kind of the features that do make it feel like an ID right, where that's the kind of thing you miss from work. Well, not the kind of thing I necessarily missed. But it's the thing you miss from working in Java or you know, Android development that I used to do, where it always is referencing which packages you need. And I don't know, I just love that kind of helpfulness that comes from your, your editor here. So another awesome new feature is these linting errors in the file explorer, because these will show you anytime you've been editing a file and it has an error in it. Now I don't know for you, but for me, it's only going to be showing these errors for files that you've modified. Since the last commit, I believe or you have open I'm not quite sure which it is. But it shows you the error message or shows you the errors or which files have errors by highlighting the color and the file name red. And then it will tell you how many errors are in that file on the right hand side of the Explorer. So let's say like two comma m m, meaning modified since the last time you had a git commit. So if if there's warnings, it turns your files, yellow, and if there are errors in your file, it turns your files red. So you can quickly see at a glance which of your files still have es lint errors that you need to take care of. Yeah,
+
+14
+00:08:32,660 --> 00:09:06,090
+Wes Bos: I love this because you can quickly and also if there's a file hidden inside of a folder, it will turn the folder read and accumulate all those error numbers into a single number. It's fantastic because at a quick glance, I can see pacifically I use es lint and prettier. It will show me what errors and warnings I have in my sidebar and I can quickly rattle through all those rather than having to spit out a list in the command line, I find that I use this quite a bit. Also, when I before I do a git commit, I can quickly see what's been modified, modified, added, deleted, etc.
+
+15
+00:09:06,120 --> 00:09:11,659
+Scott Tolinski: Yeah. So for me, it only shows the files that are open. I've determined this
+
+16
+00:09:11,730 --> 00:09:15,120
+Wes Bos: Okay, for me, it shows me everything really? Hmm.
+
+17
+00:09:15,899 --> 00:09:23,250
+Scott Tolinski: For me, it's like I was I have to open a file and have an error in that period to work out. Who knows this could be an insider's build thing or one of these little issues.
+
+18
+00:09:23,850 --> 00:11:12,419
+Wes Bos: Yeah, that's actually a problem with sometimes when I do tutorials, people ask me how I replicate a specific UI and my editor and I'm just like, Oh, I don't know, because you've been like working on your editor for like two years. You don't know what is what a standard, what's a plugin what you've changed via your own settings. So what I tried to do, and I just have a dot files repo up on GitHub, but that just gives everybody my current settings and usually from looking at all of my current settings people can figure out okay, is this something that Wes had used the setting for or is it a special plugin that he's installed? Or is this a standard VS code thing now, huh? Cool. Another one that I really like is column selection. And this goes way back to when I used to use text expander. This is something that I could never get working in sublime. If you click the middle button of your mouse and I don't doesn't Mac button have a middle button by default? No, no. Okay, I use this thing called better touch tool, no, not better touch tool, magic prefs. I've been using magic press for for years and years. And it's just a nice little preference that you can put on your computer that will give you a middle click button on your Magic Mouse, because I need a middle click to be able to close tabs, right. And what happens when you when you click your middle click button and drag down, it will give you cursors all the way down. So if you have some, let's say you have like 80 lines, where you need to put cursors. And you need to select character eight through 14 on all of these lines. And this often happens when you have data that looks exactly the same, you can just middle click drag down and select every single line in the same amount of time, which is amazing. And you could also just use it to pop a cursor at the same point on every single line. And I'm so glad that they added this feature because it was something I had missed from text
+
+19
+00:11:12,510 --> 00:11:32,279
+Scott Tolinski: that I say text expander earlier the expander but I was no man text. What is it text? Text me text me? Yeah, I know, it's been so long since I've had text. I know that was like the the first text editor that I used that had the plugin system and then this kind of interface before that. I think it was like more into things like coda and stuff like that was a long time. Yeah.
+
+20
+00:11:32,399 --> 00:12:14,100
+Wes Bos: Another really cool thing that I've just noticed recently is if you ever open up a file that has an extension that VS code doesn't know what to do with, like, for example, I opened a CSV file the other day. And what happened is it just opens it up in plain text. But it then suggests, hey, the marketplace has a bunch of extensions that are useful for CSV files. And I love that because every time I open up like a dot E and V file or a CSV file, then I discover new plugins and new syntax highlighters that are specifically for it. And I found this really cool one that will highlight a CSV file and every single comma just as a different color and the content inside of that as a different color. So it's really easy just to visualize a CSV
+
+21
+00:12:14,100 --> 00:13:40,649
+Scott Tolinski: file. Cool. What am I new favorite features that I'm not quite sure when some of this came in, because it sort of comes in all the time. But since the time we recorded this podcast last two now there has been a ton of more options for customizing the interface. Even things like hiding what's called the the activity bar hiding the status bar hiding the entire sidebar, the entire panel where you have all your your debugging extension icons, all that stuff you couldn't necessarily hide or even customized before with a theme. So now you can customize it with theme obviously that that came into VS code A while ago. But the fact that you can hide all of this stuff just from the view, the View menu and you can select View and then toggle any of this stuff, I really recommend learning the keyboard shortcuts especially if you're hiding the sidebar stuff, I use the the the extension or the the keyboard command to hide the Explorer, the extension window all the time. And I just leave it open. What that does is it gives you a ton of room it with your actual editor for your code, your terminal all that stuff. If you don't need to have your file explorer, open 24 seven, which you most likely don't need to have it open 24 seven, or that extra little toolbar, how many times do you actually need that toolbar if you just memorize Command Shift E or Command Shift X to switch between those windows. To me that was a huge change allowed this editor to really clean up the sort of space that it takes up in my window.
+
+22
+00:13:40,679 --> 00:14:55,770
+Wes Bos: Yeah, because like as Scott and I we're recording these video series spaces at an absolute premium when you're trying to show your code and what I like to do in my tutorials is show both my code and my what we're building at the same time if I can fit it. And when you have all this extra like already the VS code gutter where you have the line numbers that's already huge because it needs to be able to import breakpoints and put get status in the in the gutter there. And then you have this this activity bar on the very left. That's where you can switch beside between like viewing your extensions and viewing your debugging and viewing your open files and, and file system. So what I recommend is just hide the activity bar altogether. And then learn like Scott said, learn the shortcuts to toggle those things open and close and just open them when you need them. Because chances are you don't need to have them open because you can either toggle them open, like we said or most stuff is going to be available via the command palette. And that's Yeah, that's like a little tip that I like to tell everybody is that you're probably not using the command palette as much as you should be. The command palette is if you hit I think it's Command Shift p i have the sublime key map extension installed. So whenever I tell people shortcuts so it might it might not be
+
+23
+00:14:56,370 --> 00:14:58,080
+Unknown: the it's command. Okay, yeah.
+
+24
+00:14:58,289 --> 00:15:22,500
+Wes Bos: And you just got a huge list. have anything that you can do in the entire editor like rename a file, open up a terminal, close the tag, rename a tag, etc, you get the point, right? Yeah. And that will give you both a list of everything you can do, you can filter down, it will also give you what the shortcuts are for that specific thing. So if you forget what it is the first 20 times that you do it, then you can quickly look it up via the command palette. Yeah,
+
+25
+00:15:22,500 --> 00:16:13,679
+Scott Tolinski: and if you're traversing fyers files, or you're trying to get to other files, my favorite things from going from file to file is typically never popping into the Explorer to look for a file, I usually just do command p to go to a file and just start start typing in the file name. Or if I'm in a file specifically, and I want to go to another file that's related, like let's say I'm in a react component, and I want to go to the React component that's being used. If you hold down the Option key, and you'll get a little underline underneath any of your variables. It's called the SCO to definition. So if you hold down the command key, hover over the React component name and select it, it's going to jump you to where it's defined in another file in that particular file. So for me, that's the fastest way to get around these files, rather than having to hunt for them in the sort of command or in the Explorer window. Anyways,
+
+26
+00:16:13,710 --> 00:17:10,500
+Wes Bos: that's such a good tip, I don't think most people know about that. Or if you hold on your option key, you can click through to the different files that you have. So like I would, I would encourage people, anytime that you find yourself grabbing your mouse and hunting, like doing a little mouse hunting with your, with your cursor, I'll stop, there's probably a way better way that you could possibly do this, because there are shortcuts for absolutely everything. And using your mouse probably is the last thing I do use my mouse a lot in tutorials. But that's because I want to show people where we are and give them context for the file system. But when I'm coding on my own, I never use my mouse to do that thing. I often get emails from people trying to be snarky, but like, you know, there's a shortcut for that. And I was like, I know there is I wrote an entire book on it about shortcuts. But yeah, is much faster to use the the shortcuts in the command palette and clicking through and all these little features that you might not necessarily know
+
+27
+00:17:10,500 --> 00:17:37,580
+Scott Tolinski: about. So do you use ever the keyboard shortcut for the going to a definition of a component, which is just the F 12 key? Oh, no, I don't I don't because when I hit F 12? Well, one I have to hold the function key with the stupid Touch Bar. But to like does a little bit expo's a thing from Mac OS, just like totally override that. So I always unfortunately, use the Command click on the thing. It's not that big of a deal. But just wondering if you use that.
+
+28
+00:17:37,680 --> 00:18:34,170
+Wes Bos: Yeah, there's you can definitely see some of the Microsoft Enos come through in the product when a lot of the shortcuts are F keys. Because as a Mac user, the F keys are so hard to to get to. And it's it's worth either getting some sort of utility like carabiner, or better touch tool to reclaim your F keys or remapping them. There's an amazing the utility for remapping keys nVs code is amazing. And it will tell you if you try to overwrite one and you can just hit the key code. You don't have to like in sublime, you had to just edit this huge JSON file. But the there's actual utility inside of VS code for recording new keyboard shortcuts. So again, if it's on your F keys, you're probably not going to be using it that much. So it's worth assigning a new keyboard shortcut. Maybe I should be doing that. That's not something that I've been using all that much. It's it's one of those habits that you get into Yeah, like somebody just on Twitter recommended this react snippets library, which I just like, I just it's called
+
+29
+00:18:34,200 --> 00:18:38,430
+Scott Tolinski: because I use one that I really enjoy. And I've been using it for a long time here.
+
+30
+00:18:38,489 --> 00:18:42,870
+Wes Bos: It's called es seven react Redux graph. QL. React Native snippets.
+
+31
+00:18:42,870 --> 00:18:43,740
+Scott Tolinski: That's one
+
+32
+00:18:43,770 --> 00:18:49,260
+Wes Bos: that's the one Yeah, like Why? What have I been doing with my life that I don't know about this suit? And I haven't
+
+33
+00:18:49,260 --> 00:18:52,770
+Scott Tolinski: been using it didn't every tutorial series I've ever done with react. You
+
+34
+00:18:52,770 --> 00:18:56,010
+Wes Bos: know how much I hate writing prop types. Dude, there.
+
+35
+00:18:56,790 --> 00:19:33,750
+Scott Tolinski: Yeah, I actually wrote my own prop type snippet, because I liked it better than this one. But okay, well, I mean, obviously, like RCC to create a react component, all that good stuff. But yeah, so Okay, so so another new hot feature. And this thing is this. I think this is a real game changer for vs. Code is the Visual Studio live share, which gives you Google Talk, like real time collaboration on your code, and even gives you like a little, I don't know what you'd call that little tag of whose little tool Yeah, who's typing and who's cursors, who, just like a Google doc type situation, Wes. He said, You recently spent some time with this.
+
+36
+00:19:33,900 --> 00:21:44,400
+Wes Bos: Yeah, so it was recently released out of private beta into the public, which means that it doesn't come with VS code yet. You have to install an external extension that's made by Microsoft. It's called vs. Live share. And I would imagine that it would come standard in VS code. I think it also works for just regular Visual Studio. Yeah, it looks like it, which is pretty nifty. And the way that it works is that you install this extension you sign in with either GitHub or your Microsoft account. And then you can just start going live, which means that you can you can start up a session, and then you get a link and you send that link to your friends. And then all of a sudden, anybody that has that link has the ability to view all of the files in the sidebar, there's some security things that you need to be cognizant of like, like, make sure that you're not sharing environmental variables vital. Yeah, there's somebody you can you can exclude it, there's a whole page that is just on security. And it's worth spending five minutes reading that so you make sure that you're not doing anything silly. By default, the terminal is not shared, which is good. So somebody can't RMR your entire hard drive. Yeah. But if you trust that person, obviously, you can allow them to you can share your terminal and allow them to just to view or to have it. And it's really, really cool. Like, I think this is exactly what we've been waiting for. Because pair programming, and maybe we should explain that that's what this is for. If you want to pair programming with someone, or you both are editing the same code at the same time, you need something to do with that. And previously, most people have just been using vim, and I believe something called t mux. Yeah, or T mux will allow you to share a terminal session with multiple people. And like that requires you to know vim, right, and like some a lot of people know vim, but a lot of people don't know vim, and a lot of people are comfortable in their own editor. So by sharing this, and it's kind of cool, because you can just open up a separate VS code window and and share it with yourself if you're lonely and have no friends to code with. Yeah, and it's, it's great, you can see exactly where everyone's cursor is, you can see what people are selecting. I don't believe there's voice. But I would imagine that Microsoft would integrate this with Skype at some point, although Skype is a bit of a dumpster fire lately. So
+
+37
+00:21:44,400 --> 00:22:49,620
+Scott Tolinski: maybe Yeah, right? I would imagine that, like they're just relying on you to use some other tool for that. But I mean, a lot of times people are doing like pair programming, one monitor one keyboard, and just like passing the keyboard or talking and stuff like that. And so I guess this would be a really great way to just be able to put pull your monitors next to each other and sit next to someone and code to I mean, if you're in an office office environment, it would be pretty sweet to be able to work on the same document to different computers, and be able to actually see that happening all in real time. I would, I don't know, I think back to times that we were collaborating on certain projects, and certain various gigs of mine. And like how amazing it would have been to have some like this way, you can both be editing the same files and same codebase and stuff like that. And actually seeing it rather than making small change here get pushed small change Git pull, you know, like, yeah, actual legitimate real time collaboration stuff is just super, super exciting to me. And I wish this existed when I worked at an agency with multiple people on a code base.
+
+38
+00:22:49,650 --> 00:23:32,010
+Wes Bos: Yeah, apparently, you can also share servers as well, which is means that you could you could run it on someone's computer. And this is exactly what I need. Because so often I have like a question on like something about graph qL or Apollo, and I'll jump on a quick like zoom or hangout or something with with a developer and what has to happen is if they actually want to get in into the code, and I can't just share my screen, I have to get them. And then I have to tell them to NPM, install the back end and the front end. And that's just another 10 1520 minutes, hopefully, if they can get it running locally. And this will just speed that all up because they can actually edit the code directly on my machine and run the server directly on my machine, but still have full access to to it.
+
+39
+00:23:32,070 --> 00:24:16,890
+Scott Tolinski: Yeah, I just love this, this kind of stuff. Again, this all goes back to the one thing that we talked about with VS code being just relentless in their updates, I would I would describe it as relentless because there is new updates and new stuff to this thing coming all the time. So even though it came out last year, it was my favorite text editor. It's not like they've just sat back where, you know, remember, I mean, Sublime Text is great. But remember, there was a huge period of time in Sublime Text three, where it didn't see a single update. And so this is certainly not that case. There are updates to this thing all the time, and they extremely useful updates. Another thing that's extremely useful that we should take time to talk about is Log Rocket, which is going to allow you to stop guessing why bugs happen?
+
+40
+00:24:16,980 --> 00:26:40,410
+Wes Bos: Yes. So Log Rocket was a sponsor a couple a couple months ago, and they've since come back for more because apparently you folks loved it. And I think this is a really cool tool. So when you have a website and you're you're running code on a website, there's a couple things that you need to be wary of. And I think the biggest one is that sometimes there are errors that happen on your website, and you need to know about them from your customers. And luckily sometimes for me when I have errors on my own website, luckily, my website services actual developers, and I get very helpful emails from people being like, hey, Wes, this isn't working. Here's why it wasn't working. That doesn't happen in the real world. What happens is that someone visits your website, something is broken. And your sales suffer, maybe someone emails you with a vague, your site is broken. And there's not a whole lot of information in there. So what Log Rocket does is it will sort of help you get through that in doing three major things. And the first one is exception tracking. So this is when an error happens either on the server or the client side, you're going to get information about that error that happened, and it's going to send it back and put it in the database for them. And that's helpful, because it'll tell you how many people are having this error, what browser it's actually happening on when it's happening. And you can usually by looking at that data, see, okay, this error is specifically happening on one generation old iPads. And here's the actual error that's happening, you can figure out what's happening. But if that's not enough information, they also do session replay. So if you want to watch a video, so what Log Rocket does, they told me this they, they instrument the DOM to record HTML, CSS on the page recreating pixel perfect video. So what they do is pretty much track what the user is doing on the website, what buttons are clicking where their mouse is all that information? And then if you ever need to see, okay, how did a user actually end up getting this error? What did they do to to reproduce it, they're going to give you information. And then the third thing that they do is application performance monitoring. So they will watch your application for things like asset download failures, x HR latency, so if your fetch requests are taking a whole lot of time. So it's kind of cool that this tool does a whole bunch of stuff, all in one. And I definitely recommend that you check it out. Yeah,
+
+41
+00:26:40,410 --> 00:27:05,280
+Scott Tolinski: I love how it integrates with a lot of stuff too. Like it integrates with, like anything you could possibly want in this, this this workspace like century and robar, and New Relic and Trello, and JIRA, and GitHub, and integrates with everything. So it's pretty sweet. And they have a lot of big hitters for their client base, like Carfax and NBC and Reddit. So a lot of big names using this tool, they clearly like what it's doing for them.
+
+42
+00:27:05,460 --> 00:27:17,220
+Wes Bos: Awesome. So you want to check out Log rocket.com for slash syntax, and that's gonna get you started for free. Check it out. And thanks so much to Log Rocket for sponsoring the podcast.
+
+43
+00:27:17,250 --> 00:28:43,170
+Scott Tolinski: Thank you. Okay, so we talked a little about some hot new features. And over the course of that, we talked about some tips here and there. Let's talk a little bit about some extensions. Because since we recorded last, there have been a lot of new extensions, both themes and useful tools inside of VS code. And so I guess maybe we want to just go through some of either our new favorite extensions, or maybe ones that we've been touched on before, and if we're still using them, but one of my new favorite extensions that's come out fairly recently that I get maybe more comments about than anything else in my videos is the it's called a bracket pair colorizer. And what it does is it colors, the bracket pairs, so you can quickly at a glance, see what your pairs are, because obviously when you hover over a bracket, it's going to or when you click in the bracket space or your cursor is over the bracket space, it's going to show you the of the closing or the paired bracket for that, but be able to just look at your code at a glance and see Alright, the blue lines up with the blue the yellow lines up with the yellow, the pink lines up with the pink. And the this thing is easily one of my my favorite extensions, not only that, but it also colors the what you call that the line that the vertical line for the tab spacing Oh, the indentation indentation line. So it also colors, the indentation line the exact same color so you can quickly see the entire scope that your bracket or your parenthese is covering. I love this one. Yeah,
+
+44
+00:28:43,350 --> 00:29:10,380
+Wes Bos: I need to check this out. Because I just installed a What was it? It's called rainbow brackets. But I just disabled it and tried this one. And I think I like the colors that this one has better. And I'm not sure if I like the indentation coloring yet or not. Sometimes what happens is that will ask for suggestions on Twitter for these extensions. And then I'll use them for a couple of weeks and then I'll make my final decision. So this is going on my own for the next couple months. Yeah,
+
+45
+00:29:10,440 --> 00:29:21,060
+Scott Tolinski: I like it and I've been using this one for I don't know maybe five months now and it's it's one that I haven't I haven't considered turning off. It's just been a plus for me so far. Wow.
+
+46
+00:29:21,090 --> 00:29:55,230
+Wes Bos: Pretty nifty. Can I wonder if I can color the because with my theme, the indentation colors don't look all that great? Or if I can tell it look like they fit right in with mine. That's pretty cool. What are some other ones here auto rename tag is one that I've been using, like I think I recommended on the last one. And what this does is if you have an opening HTML tag and you rename that tag, it will close the course or rename the corresponding closing tag. I use this all the time especially in react when you have to rename a component. You just have to rename the opening one and not worry about the closing one.
+
+47
+00:29:55,259 --> 00:31:03,510
+Scott Tolinski: Yeah, I don't know how I live without this one. Definitely makes my life easier on a day to day basis. At least save some time. Another one I've been using lately This is a more recent install for me is called better comments. Now a better comments is basically inside of your comment, you have different keywords, that's going to highlight your comment with a different color. So if you have a comment, and then you have the word to do colon and all caps, it's going to give that a color. Likewise, if you have a comment and you have an exclamation point, it'll give it a red color. If you have a question mark, it'll give it a blue color. If you have an apt puram or an ad, whatever the parameters, it's going to color it a certain way. So this thing is pretty sweet. You can totally customize the colors that works with like every language that exists. And I have been loving this especially for to do comments or alerts or, or things like warnings. Like if I want to leave myself a warning while I'm in some sort of development or refactor branch or something like that. And I want to make sure I know to come back to a line I use this and it instantly gives you that like visual, looking at your code of Hey, hey, hey, you look at this. So love this one.
+
+48
+00:31:03,600 --> 00:32:16,650
+Wes Bos: That's sweet. I've got I just installed these. That's why I like doing these shows. Because sometimes you get so complacent, like I said earlier, I didn't know about this react snippet library, you just think like, Oh, that's fine. I'm pretty happy with my setup. But as soon as you get a whole bunch of new plugins, a becomes really fun. Again, I've got a couple here. And they have to do with testing. So we did a show on testing a couple of months ago, a couple weeks ago. And some of the plugins that I use are first I use the jest, the jest test runner. And what it does is it will first it'll run all of your tests inside of VS code. So you don't have to actually run a separate extension in the in the terminal. And then it will also put little icons beside each of your test definitions to show you whether it has not run, whether it's passing or whether it's failing. And if it's failing, it will, it'll show you a little pop up or you can click through to see what the actual problem is. So I thought that was pretty nifty. I still do run some of my tests in the in the terminal because I'm not totally sold on it just yet. But I just installed that and when I was writing my testings in the terminal, I found that Oh, that's kind of nice that I can can see if they're running or not right from right from VS code.
+
+49
+00:32:16,680 --> 00:32:23,520
+Scott Tolinski: I use a different one for the same exact thing. It's called called jest. It's by Orta. Oh, Arthur, and
+
+50
+00:32:23,520 --> 00:32:24,450
+Wes Bos: I use that
+
+51
+00:32:24,480 --> 00:32:27,630
+Scott Tolinski: Yeah. Oh, cuz there is just runner as well.
+
+52
+00:32:27,719 --> 00:32:32,700
+Wes Bos: Oh, no, no, this one's just called jest. Okay, by it's got you 250,000 downloads. Yeah,
+
+53
+00:32:32,700 --> 00:32:51,600
+Scott Tolinski: this one because again, when it fails, it actually leaves a look a little comment next to the test to showing you in line without having to without having to reach for like a tooltip or something like that. So I do like this one quite a bit. I also probably even though I have this installed, I almost always run my tests in my terminal as well. Oh, yeah.
+
+54
+00:32:51,630 --> 00:33:51,900
+Wes Bos: Yeah, it's a It could also be just like a secondary thing that shows you what your tests are doing when you're when you have them open. But you can also run them in the terminal as well. Yeah, nice glance, something else that I use on the same idea of testing is one called snapshot tools. And this one doesn't have a whole lot of downloads, 10,000 downloads, I think more people should see it where if you are writing any sort of jest snapshot, which is let me explain it real quick, a snapshot will like you could take like some HTML, or you could take a react component and snapshot it and it will convert that HTML. And then if your snapshot ever changes, meaning like, Oh, you used to have the word West is cool. And now that was changed to Wesley is cool, then it will tell you Oh, your snapshot, your snapshot test is failing, because something about your UI has changed. So what this will do is it will allow you to update your snapshots directly from VS code, but it will also allow you to hover over top and click through to see your snapshots. So I thought that one was pretty handy when I was doing snapshot testing.
+
+55
+00:33:51,930 --> 00:34:04,290
+Scott Tolinski: Yeah, I don't use this, you know what I don't I don't actually do very much snapshot testing, as we talked about in the snips, or in the testing show. There's something I probably want to do more this tool looks pretty cool. I'm gonna install it and give it a run anyways, it looks pretty sweet.
+
+56
+00:34:04,350 --> 00:34:40,460
+Wes Bos: Yeah, I've been finding since the even since the testing show, I've written all the tests for my upcoming react course. And and what I find I'm doing is not snapshotting the entire component, because sometimes that's a little much, especially when you have a bunch of a bunch of other components inside of it that may have objects like mutation and query components. But I have been finding that like, Oh, this little header that has an h1 and like a subset text, I'll just snapshot that little header Yeah, and and make sure that that little piece of the component doesn't change. And you can have three or four of those snapshots in a single test to make sure that everything is looking good.
+
+57
+00:34:40,560 --> 00:36:09,920
+Scott Tolinski: Nice. Cool. Another one that I really like I use this all the time for if you've already written code and you need to modify it in some sort of way I use a specifically for adding try catch around things is called j s refactor by Chris steed as 180,000 downloads. This one's really great because basically you can make a selection of Have your code. And then you can either right click and see what kind of refactoring you want. Or you can make a selection of your code, I believe the extension is Command Shift, and then for various ones, so it's a command shift j, there'll be an additional extent, there'll be an addition key command, you need to actually wrap your code. But if you do Command Shift j, these Command Shift j, I'm going to check the actual extension for this. But it allows you to do things like select a bunch of code, do the keyboard shortcut, and then have that actually wrap that code in a try catch, it can do really interesting things I can make it can extract a method extract a variable, it can inline a variable can rename variables, it can convert arrow functions to will convert convert functions to arrow functions, it can convert to template literals. It does a whole lot of stuff, all based around refactoring your code. And again, I use this primarily for wrapping my stuff in a try catch or using making something async or whatever, but it saves me a ton of time. There's There's nothing worse than having to go try, catch, copy, paste, move these lines down, whatever. So yeah, I find this saves me a lot of time.
+
+58
+00:36:09,980 --> 00:36:55,670
+Wes Bos: Cool. You have any other extensions. Oh, you've got a couple here import costs. Yeah, that's one someone asked me about all I'll talk about that one. Real quick import costs whenever you have an import or acquire statement in a module it will tell you how big that module actually is. So if you accidentally import something that is massive like I've previously in a tutorial once I imported this thing that was meant for server side and it was like made my bundle like two Meg's so it'll tell you how big it is. I had to turn it off though, because my lacks last workshop I did. I had a couple people type 400 k BG zipped beside the code that I told them to write and I was like, Oh, no, no, no, no, this extension that I have, but they actually just like copied it down verbatim of what they saw. So I had to be careful with that. Yeah,
+
+59
+00:36:55,670 --> 00:37:49,130
+Scott Tolinski: that's wild. That's funny. Lastly, we have polar code, which Yeah, questions about this one a lot. But if you see some like fancy photos of code on Twitter or Instagram or something like that, chances are it's either I believe there's like an app that does this what is it called carbon there's I forget what the app name is because I've always used polar code. So polar code allows you to in your editor to basically select some lines of code then you tell it to make it into an image and then it makes it into a really pretty image using your current syntax theme and everything that that becomes nice and shareable you could share that anywhere and it's easy to read nice you can modify all the font sizes and anything that you have going on in your actual code will show up in this little image that you can then put on the social medias or your blog
+
+60
+00:37:49,650 --> 00:38:26,960
+Wes Bos: I've been been loving this just because it makes my my I've been doing code screenshots forever and this makes my my code screenshots just look so nice. One thing I wish that it would do and I think this might be coming as it has this like default gray background by the way in there Oh yeah. And I would love to take I have this like beautiful picture of wheat that I use for my background and everything we and I would love to bring my wheat photo in automatically put that into the background and then also maybe like watermark it and in the bottom right hand corner without Wes Bos drilling because I get people stealing my my tips every now and then so I guess if they're gonna steal the probably just cut it off.
+
+61
+00:38:28,110 --> 00:38:30,360
+Scott Tolinski: Yeah, you cannot people stealing your tips, man.
+
+62
+00:38:30,540 --> 00:38:35,520
+Wes Bos: Yeah, well, I don't care. I kind of care but it's probably not worth it at the end of the day. Yeah,
+
+63
+00:38:35,550 --> 00:38:36,120
+Unknown: for sure.
+
+64
+00:38:36,120 --> 00:38:39,440
+Wes Bos: You got any other extensions as you move on to some tips?
+
+65
+00:38:39,750 --> 00:38:42,000
+Scott Tolinski: I guess the themes? Maybe Lastly,
+
+66
+00:38:42,060 --> 00:38:48,690
+Wes Bos: yeah, any? What theme Are you using right now and there's a couple of new themes that have hit the block that are are the new hotness, yeah,
+
+67
+00:38:48,690 --> 00:39:38,040
+Scott Tolinski: so right now I'm using the my own theme level up official because I like these colors. I chose my brand colors because I like them. So level up official if you like the level of colors, which is a lot of background, it's a dark theme. It's it's really dark purple for the background, and then a lot of teal and red and greens. It's a for me I really like I really like this theme I built it to to fit my tastes so ever since then I've been just really really enjoying it and haven't really found the need to balance it kind of gives again my videos its own like personal look because they are my brand colors and stuff like that. So I've been liking the level up official theme and I have been continuing to work on a little bit improve it here and there. Make it a little bit better, but definitely my favorite theme right now.
+
+68
+00:39:38,130 --> 00:41:52,170
+Wes Bos: It's pretty sweet. Sarah dresner just came out with a new theme called Night Owl. And it's it's right down my alley. Apparently she used my theme as a starter but it looks nothing like my theme anymore, but it's right down my alley where it's got this kind of like bluish purplish background. So it's not like a dark dark theme but it's also not a light theme. It's kind of nice nice in between and it looks really good. It's got a Hun download 22,000 downloads and like probably about a week ago she released it. Whereas like my theme has been out for like 10 years and I have like 70,000 downloads. Yeah, I definitely hit hit a the right spot. Apparently it's super accessible as well in terms of colorblindness, some nice contrast, I've also heard from a lot of people who have difficulty seeing that they really like my cobalt to theme because it has a very high contrast, and it's very easy to see. Nice. So check that out as well. It's called Night Owl. Let's talk about just some some tips like these are just things that you should know how to do in VS code. I've got a little list here, maybe Scott has a couple as well. But these are just things that I see people not doing when I am doing a workshop in person. And then I'm like oh, are people ask me about them all the time when they see me just casually doing something in, in a tutorial that's not specifically about how to use your editor. And probably the the biggest bang for your buck that you're going to get in terms of being fast at coding is learning how to jump and select by letter, word, line and wrapped lines. So and what I mean by that is when you have your cursor and you're trying to move around your document really quickly, you should almost like spend like 10 minutes just like having a bit of cardio where you learn to jump to the top of the file, jump to the bottom of the file, select the entire file, if you have your cursor in front of a line of code, you should be able to hold down I think it's your option key in here, hit your arrow keys and jump word by word instead of just like leaning on your arrow key and waiting for it to get to the end of the line. Same thing goes with if you want to select four words, you shouldn't reach for your mouse and select those four words you should get to where you want to start, hold on your Option Shift key and then just use your arrows to select everything that you want.
+
+69
+00:41:52,190 --> 00:42:28,050
+Scott Tolinski: Yeah, and and, and along the same lines of that bang for the buck, one of the ones I use the most is to move a line, if you hold down the Option key and hit up or down on your errors, you're going to move that line up or down. And again, if you hold option and shift and hit up or down, it's going to duplicate that line and move it up or down. So if you are I mean, if you're rearranging lines, or you need to move a line, I use this all the time, or this Option Shift one to duplicate and stuff like that. And I think that's one of the ones that when I in my tutorials I get the most comments out of people never seen before even though it's a it's definitely superduper useful to use all the time.
+
+70
+00:42:28,130 --> 00:42:41,210
+Wes Bos: Yeah, line bubbling as what I like to refer that to and I don't think Yeah, and it's so good. If you're trying to cut and paste, I always get really worried when you have to cut lines and then paste them somewhere when you can just bubble them up and down.
+
+71
+00:42:41,280 --> 00:42:42,230
+Scott Tolinski: Yeah, I use that
+
+72
+00:42:42,270 --> 00:44:05,040
+Wes Bos: my next tips I just got to write here. And they're just operating. They're not have nothing to do with VS code. But I see it all the time. Where if you have two windows of the same application. So if you have two VS code windows open, I see people drag their one window out of the way and then click to their new one. And then when they want to go to the old window, they drag their other one out of the way and drag the new one in. And it drives me bonkers seeing people do that. So you should know that just like you can command tab and switch between applications, you can command bactec and switch between windows of the same application. And if you're a Windows user, I'm sure this exists, I just don't know what it is. But command backtick, what that will do is it will cycle through all of the windows of it. So if you have three versions of three windows of Chrome open command backtick will cycle through them all you should never be using your mouse to drag and drop windows around this is it's not actual sheets of paper. You can just automatically surface them it's magic. And then the other one I have along with that is go into your keyboard settings of OSX and change your key repeat to as fast as it goes in and change your delay until repeat to a short as it goes. And that will just make your your editor fly. When you hold down the arrow key it will go as fast as possible, rather than you having to sit there and wait for it to slowly move over. What's funny, this
+
+73
+00:44:05,040 --> 00:44:49,440
+Scott Tolinski: one got me in trouble with my clicker for my presentations. I turned my key things all the way up. I had gotten this new clicker, and I plugged it in for the first time and I click and it advanced by like three or four slides. And I was just what the heck, I just bought this thing. It's so good. Like, what and and so I after much after much troubleshooting and like really being annoyed at the clicker I found out that day was that and so I just had to temporarily bump it down, which was super annoying for like, the couple of days that I was actually coding while I was about to get my Oh yeah. And then I had to bump it back up afterwards because I'm so used to being able to utilize that. That the holding rapidfire key thing
+
+74
+00:44:49,740 --> 00:44:57,300
+Wes Bos: that's interesting. I never thought about that. That's that's gonna happen to somebody else six months from now and they're gonna be like, thank you, Scott. That was what it was. Yeah,
+
+75
+00:44:57,300 --> 00:45:09,360
+Scott Tolinski: I know. That was That was a tough one to troubleshoot. I have no idea how I figured that out. I was thinking it was, it was a problem with the clicker was a problem with the presentation software. I was not imagining it was like key press thing.
+
+76
+00:45:09,480 --> 00:45:11,850
+Wes Bos: Interesting. Do you have any other tips? Yeah, I
+
+77
+00:45:11,850 --> 00:46:40,170
+Scott Tolinski: think a lot of my tips were covered earlier here. Let me see. So I guess one of my my tips is to use the Git features. Now, there are a lot of extensions that will really help with this as well. But like Git History, being one of those extensions, that allows you to see the entire, like, the history of all your branches and your files, and you can select a commit and see which files were modified. But that and the default get sort of view this file compared to its last committed version. It's the I don't know what the shortcut is, but the icons in the top right, it has a file with a magnifying glass. And if you select that, and your file has been modified, since the last commit, it will show you what the previous version of that file look like, I use this all the time in case something went wrong, while I'm coding and I want to just go back to where I was, or see what the heck, why did I make this change? And with this change, or how did this change affect my overall code. So I use these get features a lot. Another one is by default in the bottom left. Again, I should probably know the keyboard is central for this. I'm using my mouse to do this, but it shows what branch you're on. If you click on that branch, it's going to show you all of your different branches. And then you can just select your branch to get to, to check out a new branch or even create a new branch. I use this more often than the actual command line. I use Git like command line for everything committing and adding and all that stuff. And but for changing branches, for some reason, I really like the actual interface. do see your branches in here.
+
+78
+00:46:40,200 --> 00:46:58,980
+Wes Bos: Yeah, it's it's slowly turning me from a like a command line Git purist into someone who likes a little bit of gooey because I never had a good app that would do show me diffs. And allow me to move around. And I know there's hundreds of different good apps out there. I've tried a lot of them. But this is definitely hitting that sweet spot for me. I'm pretty happy about it.
+
+79
+00:46:59,010 --> 00:47:16,500
+Scott Tolinski: Yeah. Especially when you have branches that their names aren't like I have some occasionally some branches, where it's like a version name or something like that, like trying to remember the actual branch if it's not like a feature branch name or something like that. And make sure you don't have any spelling mistakes when, when changing over to a new branch or something. I just found it to be nice and easy.
+
+80
+00:47:16,530 --> 00:48:21,600
+Wes Bos: Yeah, I actually have another one that has I just little tip I learned about this morning. So I always gripe about the spellcheck in vs. Code. Yeah. And that's because it's not native, meaning that it's not normal spell check that you use for the rest of your OS. It's it's built into, it's just an extension that you have to add. And for some reason, like when you click on this word that spelled wrong, little light bulb that shows you the things, it's always in random spots. For me, it's never right beside the word. I don't know why it's moving around. But I learned that you can just hit command period. And it's control period if you're on Windows, and that will open up what's called code actions. And this is just part of VS code. And if you have like, let's, for example, if you have an es lint error that's fixable, I have them automatically trigger on safe, but you could also hit command period, and that will open up code actions. But one of the code actions you can do here is to open up the possible misspellings or the possible correct spellings, or add that word to the dictionary. And that's amazing because it's this for my entire life, this
+
+81
+00:48:22,050 --> 00:48:29,100
+Scott Tolinski: extension and into the code. The code actions is VS code specific, which spell checker are using along with it.
+
+82
+00:48:29,100 --> 00:48:37,230
+Wes Bos: I'm the one is called code spell checker. It's got 1 million downloads. It's the one I think that everybody uses. Yeah, there's a few of them. There's
+
+83
+00:48:37,230 --> 00:48:41,520
+Scott Tolinski: a spell checker code spell checker. Okay, cool.
+
+84
+00:48:41,580 --> 00:49:09,300
+Wes Bos: Yeah. And so if you hit command space, it will show you the things but what I love about this is for my entire life, I've been trying to find a way to access spelling mistakes via the keyboard. Yeah, and there, there is no way to do this in OSX, you always have to reach for your mouse if you have a spelling mistake, and it sucks. However, with this extension, which I used to hate, I now love it because you can now access your spelling mistakes via the keyboard and not have to reach for the mouse.
+
+85
+00:49:09,330 --> 00:50:08,880
+Scott Tolinski: Yeah, that's great. I'm gonna be using this immediately. I made a lot of spelling mistakes. It's actually kind of hilarious. I don't know if you've ever heard of this. But when I was growing up, I was put into an experimental curriculum called the creative spelling. And I don't know if this was a Michigan specific thing. If you have taken creative spelling, let me know. But creative. Creative spelling has nearly ruined spelling for my entire life. It basically was like, how do you think you should spell this? And then that's just sort of how they taught spelling. And because of that, I cannot spell no way thing correctly. I'm just so bad at it. My wife. She's like learning about creative spelling curriculum and how it was like a total failure. Obviously a total failure. But that is my history of spelling. And one of the reasons why I'm just so bad at Because I was just not taught it correctly in school, it's almost like a huge joke now that I had to take creative spelling not not like actual spelling like a normal child.
+
+86
+00:50:09,000 --> 00:51:39,450
+Wes Bos: Oh man, I'm not the greatest speller. But my problem is that I don't take the time to, to give it a quick glance over before I push something live. And that drives some people nuts that I sometimes have a little spelling mistake on it. And I kind of want to leave it in now, just because it frustrates some people so much that I there's sometimes a little spelling mistake in it. What other tips, I got a couple more here, and we're almost running out of time. Yeah, renames symbol and change all occurrences is something I use a lot. If you have like a function name or variable name in your project, and you want to rename that, first, if you're using TypeScript, this is something that just comes with TypeScript is awesome. But you can also use it and just regular JavaScript or CSS or things like that. And like a symbol is something like a variable or a function or a CSS selector. So you can just like right click and use the what is it called, I always just use the keyboard shortcut. That's why it's called. It's called rename, rename symbol names, rename symbol. And that will rename it throughout your entire project. Or then you can also use change all occurrences that will change it in the current folder. And this is way better than using Command D as many times as you find the thing or place or to find and replace, because those things will do partial matches sometimes, and you could accidentally replace something that you didn't mean to replace and this will actually find a proper symbol in your project and do their place on it. Seriously, this
+
+87
+00:51:39,450 --> 00:52:06,120
+Scott Tolinski: this one why sigh I forget man who originally somebody originally tweeted this out, I'm gonna feel really bad for forgiving of the first time I saw this on Twitter as a hot tip. But the moment that I saw this, it was like, Wow, that's so nice. That's so nice. They mean vs. No, it wasn't you. VS code or like ID users are gonna be rolling their eyes really hard at that one. Because Yeah, that seems like a feature. That's right to make fun of for that kind of thing.
+
+88
+00:52:06,210 --> 00:52:19,440
+Wes Bos: Yeah, I've I have a theory that VS code and TypeScript and graph qL are just like these little gateway drugs, trying to get us portal web developers on proper type programming and IDs. Yeah,
+
+89
+00:52:19,470 --> 00:52:22,710
+Scott Tolinski: well, VS code is free. And web is not free. So
+
+90
+00:52:22,740 --> 00:52:45,210
+Wes Bos: they're there. Take that, yeah. Wow. Any other tips that you have here, there's just so much I just, I tweeted out earlier today, like, send us your favorite tips and tweets, and it's just a treasure trove of little nuggets that people have. Because every everyone's got, like two or three little things that that not everyone else knows. And just I just love reading through the comments and finding new things. Um, another tip, I
+
+91
+00:52:45,210 --> 00:53:04,650
+Scott Tolinski: should have put this in, like, I've had a lot of my tips here end up that could have been falling onto the extensions. But I use a actually is this and maybe I'm not using an extension for this, you'll have to tell me if you have this functionality. If you do get your command palette, and then do a sore two lines if you type s or T sort.
+
+92
+00:53:04,770 --> 00:53:06,600
+Wes Bos: Yeah, that's that's a default. Okay.
+
+93
+00:53:07,560 --> 00:53:50,610
+Scott Tolinski: An extension, but VS code, I guess this is a hot tip rather than an extension tip. But this allows you to sort your lines by ascending or descending. And I use this all the time, especially with, like my imports to be alphabetical sometimes. Or if you have, for instance, I'm merging all of my graph qL schemas like that to be alphabetical. Or if I have a list or something like that, or an object that like to be those in a specific order, I can, I can highlight those lines do Command Shift p sort lines by ascending and then it's going to short them, sort them alphabetically by their, their object property name or something like that. But either way, if you like your stuff to be in a specific order, rather than sort of willy nilly, this is going to absolutely help with that.
+
+94
+00:53:50,790 --> 00:54:24,060
+Wes Bos: I use that one in sublime all the time. And the two that I'm missing is unique lines. And I don't think that VS code has it. Maybe it does. Let me just double check this No, there I don't think there is a unique lines. And I also don't think that there is a title case you can uppercase and lowercase all of your selection. But there is no title case, which I used a lot in sublime where if you're trying to take a list of components and and capitalize all of them, because their classes or something like that, then it's helpful. So there's probably extension out there, I just have to spend 10 minutes looking nice.
+
+95
+00:54:24,180 --> 00:54:28,110
+Scott Tolinski: Yeah, I would like that, I would like that very much. And
+
+96
+00:54:28,350 --> 00:55:01,500
+Wes Bos: also one other thing I don't have and maybe somebody can send me an extension that does this is a select two quotes. I have one that will will toggle quotes, you can toggle between single, double and backticks. But if you're inside of a string and you want to expand your selection to a string, I currently don't have a way to do that. And I would love to get that back in my workflow. But each one of those things means like, like let's say you have like a string. Yeah, and your cursors inside the string and you want to select everything inside of the string, not including the quotes Huh, how would you do that? you
+
+97
+00:55:01,500 --> 00:55:02,820
+Scott Tolinski: double click it What?
+
+98
+00:55:02,820 --> 00:55:09,600
+Wes Bos: Unless there's no like, you have like a Hello, my name is Wes in quotes and you want to select the words. Hello, my name is
+
+99
+00:55:09,630 --> 00:55:10,890
+Unknown: Wes. And this was
+
+100
+00:55:10,950 --> 00:55:12,300
+Wes Bos: Yeah. Hold on.
+
+101
+00:55:12,300 --> 00:55:16,110
+Scott Tolinski: I don't know how to do it with the keyboard extension. But if you double click it with the mouse
+
+102
+00:55:16,200 --> 00:55:20,820
+Wes Bos: it double click what with the mouse word? No, but what if you have many words Hello my name is was I
+
+103
+00:55:20,820 --> 00:55:22,560
+Unknown: was loved all any words?
+
+104
+00:55:22,620 --> 00:56:07,200
+Wes Bos: Yeah, this selection expand selection. So here we go, we're learning live here. It's command, shift space, Command Shift, Holy smokes, I learned something. All right. So if you're inside of a string, and you want to select everything inside of that string, hit Command Shift space. And if you hit that, again, it will expand the selection one bigger to the quotes hit that again, it'll expand it one bigger to the parentheses around it, hit it again, it'll it'll just keep going one level wider per for from whatever defines it is a something that stops it Command Shift space is not doing anything for me. Now, maybe, maybe that's my sublime. Go to selection, expand selection.
+
+105
+00:56:07,230 --> 00:56:25,380
+Scott Tolinski: Okay, I'll have to check this out in the selection. Are you in a C key bindings that need to go to key bindings ba okay. Learn in live learning? Yeah. keyboard shortcuts, selection. Expand selection, where you at? expand the line selection?
+
+106
+00:56:25,440 --> 00:56:27,120
+Wes Bos: Yeah, that's the one I think so it
+
+107
+00:56:27,120 --> 00:56:45,690
+Scott Tolinski: looks like mine is command and then whatever that like, you know, that like vertical character that's just straight up and down. Pipe pipe? Yes. Pipe? No, no, I never called that pipe. That makes a lot of sense. Yeah. Although it doesn't work out though. Yeah, I might have to check this out. Because it doesn't seem to work for me. Hmm.
+
+108
+00:56:45,720 --> 00:57:04,140
+Wes Bos: But that that's one I used all the time in sublime. And I never figured out maybe I have an extension for that, because I remember griping about it a while ago. And there's sometimes you have problems that are just not a problem enough to figure out a fix. So you just live your life with this little annoyance until you die. Yeah, you know those things?
+
+109
+00:57:04,140 --> 00:57:09,030
+Scott Tolinski: Yeah, you just I don't want to think about this right now. So I'm just gonna think about it later. And then you never think about it later.
+
+110
+00:57:11,250 --> 00:57:16,050
+Wes Bos: Exactly. Cool. So I think that's that's all the tips. I have anything else that you want to let's talk
+
+111
+00:57:16,050 --> 00:57:58,770
+Scott Tolinski: about maybe a couple things really quickly, before we go that we'd like to see improving and VS code? Yeah, I got this in the last episode. I'm going to gripe about it. Again. This is the region folding. Last time I said I would like region folding because there's no region folding in VS code. And sure enough, Charlie, after that episode aired region coding, it came to VS code. And shortly after that, it just totally stopped working entirely for me, i and j. s code and react code. I am not able to get a region coding folding to work flat out. I don't know what's going on. I'm in the insiders build. I didn't change it in the defaults. I have not been able to get it to work since that initial install. And that bugs me I wish it was easy. I wish it was way easier than it is
+
+112
+00:57:58,800 --> 00:59:23,610
+Wes Bos: to have the gripes that I had last time. We're first you couldn't style a lot of the stuff outside of the editor. And now that has totally changed. You can you can have workspace specific settings. Oh, yeah. Which means that like, first of all, if you have a theme, and you don't like something about it, which I get emails every day people like I like this. But can we have an option for x, y, and z, every single thing in your theme can be overwritten, which is amazing. So if you don't like a specific color, or you don't like the metallics or you don't like anything, you can you can overwrite those yourself and change it. But you can also color the top bar to be a different color. And I'm going to do this in my my upcoming advanced react course where we have a back end and a front end. So I'm coloring them different colors. And this is coming to Windows within a couple weeks as well. So Windows users don't Don't worry. That's dope. Yeah, you'd be able to do so that was a gripe I had. And now you can you can do it all one thing I would like to see is the the sidebar, the indentation isn't very sometimes I get mixed up or sometimes I create a file in the wrong folder because the indentation in the sidebar isn't great. And I think that's something I can control with my theme. I just haven't put the time into to building that yet. I would like to see like lines or something like that, like a tree structure. So you could see exactly what folder these files are in. Oh, yeah, yeah. No, she made and I think that was my my two grapes. Yeah, the workspace specific settings are super nice to be able to have specific settings for specific projects.
+
+113
+00:59:23,640 --> 01:00:17,100
+Scott Tolinski: Yeah, I've one little gripe is that sometimes when there's I mean, there are ways to figure this out. Don't get me wrong. But when sometimes when there's an extension that is causing your CPU to balloon, there's not great way to just be like, hey, which extension, is it? Because if you look at obviously your Activity Monitor just shows it as a generic code process there. Like it would be really nice. You know, in Chrome, there's the extension or is it what is the performance manager something in Chrome or basically shows you each individual extension and how much RAM and CPU it's taking up? I would love to have something like that for this because As there are occasionally extensions that are just making your CPU go nuts, and it's not VS code itself, but to hunt down which extension of that is the processes, either CPU profiling or like turning off all your extensions and turning them back on one by one. And it's just not so great.
+
+114
+01:00:17,130 --> 01:00:52,320
+Wes Bos: Yeah, that this is something that I always feel bad for both people who work on Chrome and people that work on VS code, because people always snarky tweets, Activity Monitor being like vs codes taking 5,000% of my money out of my bank account. And it's almost always some rogue extension that is going awry, and being able to figure out what is causing that I thankfully, I have never had perf issues with VS code. And I have a ton of extensions installed by hostpapa. A very expensive computer. So that might have something to do with it as well.
+
+115
+01:00:52,350 --> 01:00:58,860
+Scott Tolinski: I've purchased us only because I'm running the insiders build and it's not exactly like a final build, you know,
+
+116
+01:00:58,980 --> 01:01:33,270
+Wes Bos: oh, yeah. But the VS code has like they've got their thumb on performance, and they really don't want. I think they've done a lot to make sure that it's hard for extension authors to do bad things. But it still is like I accidentally shipped my theme with a bunch of developer dependencies as regular dependencies. And somebody said that that was causing the the theme to slow down, or the VS code to slow down and they switched them to dev dependencies, which means that it doesn't make it into the the final bundle. And that speeded it up quite a bit. So it's helpful to have people knowing that stuff is I had no idea. Hmm, cool. All right. Well, this
+
+117
+01:01:33,270 --> 01:01:43,260
+Scott Tolinski: is a this has been a super it has been informative for me. I learned some stuff. So if I learned some stuff while we were doing this, and I had notes prepared for it, I hope you all learn some stuff.
+
+118
+01:01:44,700 --> 01:02:01,050
+Wes Bos: Yes, what you should do after this is take your favorite tip either from the episode today, or just a tip that we didn't talk about and tweet it at syntax FM and tweet it out yourself. And we will retweet those because I know there's a lot of little nuggets that people have and the more we can share it the better. Yeah,
+
+119
+01:02:01,050 --> 01:02:09,300
+Scott Tolinski: absolutely. That's how that's how we all figure stuff out. So absolutely. Do you have any sick pics today?
+
+120
+01:02:09,450 --> 01:02:20,940
+Wes Bos: Sick pics. I Oh, I do have a sick pic. And again, my sick pics have been on tech related in the last little bit just because I have I only have so much tech we
+
+121
+01:02:21,720 --> 01:02:46,860
+Scott Tolinski: had 47 sick pics so far. And for those of you who don't know a sick pick in this show, if this is your first first episode of syntax is where we talk about the stuff that we like we just basically pick something and it can be really anything we've done like fitness equipment, we've done yard work equipment, we've done all sorts of a code stuff and books that we like so the sick pics are really just stuff that Wes and I are liking right now. Yeah, so
+
+122
+01:02:46,860 --> 01:03:50,550
+Wes Bos: this one is I've been working on my yard we talked about automating watering and stuff. So over the last couple weeks I have installed drip irrigation system to all of the plants in our backyard because I hate watering plants and we always forget about it and then all of our plants die then I also had my dad install a in ground sprinkler just one because our yard is tiny. So we just installed one and then I bought this like timer on Amazon and it's great because a lot of timers are just like manual where they click click click click click click and then when they hit a certain tab, they turn the water on and they hit another tab they turn the water off but I bought this like hose timer you put it on your your hose bib and it gives you four spouts and you can use this to like basically set up cron jobs for your different ones. So I have one of them going to all my plants and another one going to my sprinkler and you can set up how often it waters how much water is for how long it waters and then you can also just switch the knob to it so it's called the Mel nor digital Aqua timer and it's been working out really well to me. I'm a big fan of it.
+
+123
+01:03:50,550 --> 01:03:52,110
+Scott Tolinski: Nice Aqua timer.
+
+124
+01:03:52,169 --> 01:03:52,920
+Wes Bos: Aqua timer. Yeah,
+
+125
+01:03:53,190 --> 01:05:21,230
+Scott Tolinski: it's pretty sweet name micic pick is going to be very odd. This is I don't know there's there's sort of this whole world of face soaps and stuff like that, right? I'm gonna be talking about a face soap, which I really like, which is kind of hilarious sick pic here, but it's this Korean face soap. It's called. I'm going to butcher the pronunciation of this company. It's t o s o w o n g I'm not even gonna try. I'm sorry. I don't have any Korean training so long. So so long. Yeah, I don't know. I took Japanese for a couple of years. So for me, it's like I don't have no know what this is. But it's it's called the enzyme cleaner. And it's a powder wash. It's really unusual. It's like these little tiny pellets. And this thing lasts forever, which is one of the reasons why I like it so much. So as opposed to like a liquid soap or like any other kind of like face soap. It's this like little tiny it's like powder, right? And so you just dump a little bit of the powder on your hand. You get your hand wet and then you rub it together get superduper sudsy and this stuff is so good for like 11 bucks, these little tubs Diesel tubes last me for ever. So this is an odd tick pick, I think but like I use this every day, and I like it. Yeah. So I hope you if you're needing a new sort of facewash, check out this enzyme cleaner, we'll have a link to it in the course descriptions again, this is it's sort of hilarious. But uh, it's definitely something I really, really makes my life better. I think I
+
+126
+01:05:21,230 --> 01:05:42,750
+Wes Bos: always find that funny that like, sometimes people ask me, like, should I have a separate Twitter account for stuff that's not code related? And I would say like, no, like, developers have other interests other than coding, and like, I'm willing to bet most of our audience has a face, you know, so really, maybe most of us would have a face. Yeah. So there you go. Yeah. Sick back sick pick.
+
+127
+01:05:42,750 --> 01:05:45,630
+Scott Tolinski: Yeah, get some face up some enzyme face cleaning.
+
+128
+01:05:45,750 --> 01:05:47,820
+Wes Bos: Okay, and what about a shameless plug?
+
+129
+01:05:48,030 --> 01:07:13,260
+Scott Tolinski: Shameless plug, I have released a new series, level up tutorials.com forward slash Tour, which is my intermediate react series. And this is going to be covering all sorts of intermediate react topics, stuff that wasn't covered in my react 16 for everyone course. But in this series, we do a lot of practical interface stuff. But I also teach you all of the hot new skills that you hear all about things like the new context API, we talk a lot about creating portals, we create what we don't just create, but we really, really dive into understanding render props, you've probably been seeing render props a lot in new plugins or other people in react, talking about using render props, and maybe about why you want to use this. So this, we dive into creating a sort of component that uses render props, and exactly why it's a better system than what we could be doing without them. So it really really hammers home the the sort of core ideas behind a lot of that stuff. And we get into building some extremely performant animation stuff. So we build like the Tinder interface where you're dragging a card left and right and animates, it's really super smooth, you can do things with those actions. And we build an animated modal component, all sorts of stuff using this library called react spring, which allows for extremely customizable performance animations, it's gonna stuffs gonna blow your mind. So head on over to level up tutorials.com forward slash store and check out level two react
+
+130
+01:07:13,350 --> 01:08:13,470
+Wes Bos: wicked, I'm going to plug all of my courses, I just put them on a bit of a secret sale. It's not secret anymore. I didn't send a big email, or anything like that. But I I put them up for sale, I actually put them up just for a couple days yesterday, and they started selling really well. So I'm putting them out for another week, because I like selling stuff. And so you if you want to learn react, go to react for beginners, calm, if you want to learn iOS six, get up to speed. So especially if you are like sort of like anticipating my advanced react course that's coming out in hopefully a couple weeks. And you want to be prepared for it. definitely make sure you've done react for beginners, and you're super comfortable with ESX as well as the sink await and all of the new stuff that's come to to JavaScript. So esx.io and if you want to brush up on your node, so we are we are going to be using Express for the server side portion of my advanced react course. So if you're want to brush up on your Express skills, go to learn node.com and all of those are on a little bit of a discount right now. Grab one or all three. Enjoy. Nice,
+
+131
+01:08:13,500 --> 01:08:22,890
+Scott Tolinski: Cool, well that that should be it. Yeah, again, tweet at us your hot VS code tips. We want all that stuff. We're going to retweet you, and we're going to share the love on Twitter.
+
+132
+01:08:22,970 --> 01:08:25,409
+Wes Bos: Cool. We'll see you next week. Peace Peace.
+
+133
+01:08:27,329 --> 01:08:37,100
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

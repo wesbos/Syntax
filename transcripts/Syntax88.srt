@@ -1,0 +1,448 @@
+1
+00:00:01,319 --> 00:00:06,480
+Unknown: You're listening to syntax podcast with the tastiest web development treats out there. strap yourself
+
+2
+00:00:06,480 --> 00:00:09,600
+in and get ready to live ski and West
+
+3
+00:00:09,600 --> 00:00:10,530
+boss.
+
+4
+00:00:10,530 --> 00:00:18,090
+Wes Bos: Welcome to syntax. My name is Wes Bos, I'm a full stack developer with me as always is Scott to Lynskey. How you doing today, Scott? Hey,
+
+5
+00:00:18,090 --> 00:00:23,250
+Scott Tolinski: I'm doing super good. Ready to get started on this episode here. It's a lovely Monday morning.
+
+6
+00:00:23,339 --> 00:01:07,200
+Wes Bos: Yeah, I'm excited about it too, I just went through obviously went through a huge launch with my advanced react course. And we should talk about what we're talking about. We are doing sort of like a pre launch checklist, website. These are things that you should check before you push a website live to the world. And this is mostly from experience with things that I've dropped the ball on myself many times over. Today's sponsor is two awesome companies. First one is Sentry, which is going to help you track down all of those errors both on your client side and your server side as well as dot tech domain names, which is going to allow you to find a decent domain name with a dot tech extension. So the way that we sort of structured This episode is we're just gonna sort of run through all the little things that you should try to figure out before or check yourself before you go live. So
+
+7
+00:01:07,200 --> 00:01:13,200
+Scott Tolinski: we're looking at person performance stuff, some you shouldn't you miss an opportunity for check yourself before you wreck yourself.
+
+8
+00:01:15,720 --> 00:01:44,580
+Wes Bos: Wow, that's good. What else we've got some tips from the trenches compatibility, content, accessibility, SEO, analytics server stuff, you should check yourself different company processes, there's a whole bunch of stuff that you should be checking before you actually launch a website. And it's easy to accidentally forget about some of these things, or it's easy to have these things where it looks works fine on my machine, and you're not actually thinking about the broader world. We're gonna be going through all of those. You want to kick her off there, Scott?
+
+9
+00:01:44,580 --> 00:02:06,960
+Scott Tolinski: Yeah, let's do it. I think a good overall tip for this stuff is to let some robots do some work for you. Because we have some of these auditing tools that exist both on individual websites along with in browser extensions and stuff like take advantage of these tools. Like lighthouse, I think is lighthouse is built in to Chrome, I think you can
+
+10
+00:02:06,990 --> 00:02:08,280
+Wes Bos: use Chrome Dev Tools.
+
+11
+00:02:08,280 --> 00:02:54,360
+Scott Tolinski: Yeah. and run it on mine as well. I think it's under the audit tab. Right? Yeah, yeah. And so you'll want to take advantage of those things. There's SEO checkers, there's like a billion SEO checkers that although make sure that your your SEO content and all that stuff is as it should be. And then you know, you have accessibility checkers as well, both built into lighthouse. But there's also acts outside of lighthouse. But really the the overarching point is these things are going to give you a checklist essentially, of things that you haven't done, it's going to alert you when there's things that you haven't haven't done. So overall, if you're feeling like, Oh, I don't know what to look at next, go and hit up some of these tools, specifically lighthouse and just go through some of the things that it's letting you know that you still need to do because I think that's an easy, easy, super easy win right there.
+
+12
+00:02:54,509 --> 00:05:05,570
+Wes Bos: Next one we have is performance. This is really important because often we're just developing websites locally on our computer, and they load instantly because everything is local to our computer, right. But as soon as you put that sucker up online, you start to get people complaining about performance, maybe the websites loading really slowly, maybe forgot to I see this all the time, especially in like bootcamp students, where they don't necessarily know that their website's going to be slow to load. And they have like a six Meg header, JPEG that needs to load before anything looks decent. So either flipping on the slow performance tools in your Chrome Dev Tools, or just putting it up online and trying to load it from without any sort of cache installed yourself. And that will often arise little performance issues, as well as little things where Oh, maybe the first time it loads, it doesn't actually work. And the second time around, does actually work. So what can you do for that what I do every single time before I launch a website is I'll open up Chrome Dev Tools, I'll go to the Media tab, and I'll do a hard refresh of the website. And then I'll look at all of the assets and I'll look at like the top like 12% and say like that's way too big for an image or that PNG should be a JPEG or this mp4. I often have autoplaying. mp4 on my course website. Those shouldn't be loaded on page load, they should only be loaded, like after the page is actually like, like lazy loaded in or only when someone scrolls to it or only when someone clicks on to it. So how can you do that build processes, you can have something built right into it that will compress all of your images. You can use something like cloudinary which will you just put a little URL in front of it or upload your images to cloudinary image optim is another really good free one. What's that one that I always use with with my Gulp tasks that will compress my images? Oh, I don't remember Yeah, image min. Image min. Image min. Min. is awesome. So if you haven't used image min before, you can use it with golf or Webpack or anything like that. And you can just kind of suck up all of your images. And then it will pipe them through all of the different like mas JPEG is a really good one for JPEGs SVG Oh is a good one for SVG files. There's a good PNG one. I know it just kind of sort of crank down the compression on all of those Images and it's worth sending all of your stuff through one of those, if you're not using a service,
+
+13
+00:05:05,610 --> 00:06:15,540
+Scott Tolinski: yeah, that already does it for you the additional compressing to make sure that the sizes are correct. If you're not using like a picture fill to serve up the correct sizes for the correct browser sizes. If you're throwing up a image, it's 2000 pixels wide, or something like that. Don't do that, like the biggest mistakes I see like occur very frequently is people just don't pay attention to the size of images. So if you're not using something like cloudinary, that's going to automatically give you the correct sizes, or you're not using a picture fill to host several different sizes, the largest size, whatever you're hosting, just make sure it's reasonable. I remember that was maybe the first mistake that I launched with when I was like maybe my very first site project, like very first site project is just like, oh, you just link up an image. And there it is. Okay, never think about it ever again. And this was way back in like, way, way, way, way, way back. And somebody was just like, Oh, you know, Dreamweaver has a button built in, you just click it and it makes the image the right size. Oh, cool. Cool. Man. That was my first experience with like, loading up a giant, giant image. On my very first website, you know, I just didn't even think about it. So that's an easy one to do when you're a new developer.
+
+14
+00:06:15,720 --> 00:07:32,310
+Wes Bos: Totally. There's another one of these image processing companies image IX, I met them. I was at fitc conference and they had a booth there. And as I do at conferences, I always go around and get all the swag from the guys. I need more stickers and pens. Yeah. And I was just just chatting with it. And it seems like they do kind of a similar thing to cloudinary does where you can compress your images on the fly with it with an API call. I haven't used them yet. I don't know if it's any good or not. But I just thought I'd mentioned that if people are looking for options. So there's lots of good options there. Just make sure that you compress everything as small as you possibly can. Especially if you're a developer on like a fiber line where everything works fine for you. But it can be pretty expensive on especially if someone's on like a cell phone and you like someone loads the page. They have no idea how big that page is going to be until they've actually loaded it. And in Canada, if you go over your like your budget, I think it's like per, I think it's like $20 per 100. Meg's Yeah, so like, like, yeah, easy, easy. You can accidentally do 2025 Meg's if you don't compress your images on a website, obviously way too large. But like, I've definitely seen websites that do that. And so like that just cost someone five bucks to load your website. That's he had to be really careful about that. Yeah,
+
+15
+00:07:32,340 --> 00:07:34,380
+Scott Tolinski: yeah, definitely. It's like irresponsible.
+
+16
+00:07:34,440 --> 00:08:35,309
+Wes Bos: Yeah, one other things to do, obviously, minify your code. So whether you're running that through uglify, or any of these other things that will minify your JavaScript as well as your CSS, what else you got here code splitting, that's probably something you should be thinking about when you're designing the architecture of your application. So if there's a hunk of code, I was your shopping cart example, if you don't need to load that until someone hovers over a Buy button or someone visits the shopping cart button, then then load that thing in PageSpeed, the Google Page Speed Test is also another really good one, that one I really like because it will often surface different like caching settings on your server that you don't necessarily know about. And those are often like a quick copy paste from Stack Overflow in your ht access or something like that, to get them going. And then the last one we have here is don't service worker on launch. Actually don't run service workers on my own website, I kind of feel like I should, especially on like the back end, my dream would be to service worker, the videos and everything I've talked about this, if you go back to the what's episode we did on like web apps or something like that
+
+17
+00:08:35,310 --> 00:08:37,019
+Scott Tolinski: i progressive web apps, that was
+
+18
+00:08:37,039 --> 00:09:41,940
+Wes Bos: Episode 50. On progressive web apps, we talked about what service workers are and whatnot. But the thing about service workers is that you can cache your entire page or just parts of it, but most people just cache the entire page. And then when someone visits that website, again, it will serve up the cached version immediately. And then in the background, it will go and check if there's a new service worker available. And that can be a bit of a pain. If you are making quick changes, like often I'll launch and I'll notice a little spelling mistake, or I'm getting lots and lots of the same questions. So I'll quickly read a play a fix for that. And that would have to require somebody to manually reload the page again, provided that you actually in the background, were invalidating the old cache in your ServiceWorker. Because that's how service workers work is that when you load the page, that's a cached version, it will in the background check if there's a new ServiceWorker available, like an updated version, and in that new ServiceWorker, you have to then manually invalidate all of the old files, and then pop up some sort of alert box or something. Or you can do window dot location dot reload to actually manually reload the page. But that's kind of a pain to your user.
+
+19
+00:09:42,000 --> 00:10:01,980
+Scott Tolinski: Yeah, definitely makes more sense. And like an application style, like, like to do is store Tweet Deck or some of those that are like, would you like to run the new version of this application? Like that? Yeah, seems very different to me than like a website, you know. So I guess the next thing we have on the list is Oh, actually, before we get to Next, I do Want to talk with one thing about code splitting to?
+
+20
+00:10:01,980 --> 00:10:02,669
+Wes Bos: Like,
+
+21
+00:10:02,669 --> 00:10:20,029
+Scott Tolinski: I don't know, I was thinking about like code splitting and how awesome it is. But wouldn't it be great if you just didn't have to do any of that yourself? Like, if you didn't have to determine when it code splitting? It just did it all for you. Like, that would be great. It just, uh, it doesn't do it. There's no, there's I'm not I don't have like something to present to you. That's man.
+
+22
+00:10:20,730 --> 00:10:26,010
+Wes Bos: I thought you were trying to transfer it to an ad or something. I was like, What are you doing? Yeah,
+
+23
+00:10:26,549 --> 00:10:27,750
+Unknown: no, no, I was just,
+
+24
+00:10:27,750 --> 00:10:35,850
+Scott Tolinski: I was just pontificating over here a little bit about a world where everything splits for you. And it only loads where it has to and all that good stuff. So
+
+25
+00:10:36,020 --> 00:10:49,950
+Wes Bos: no, it is good. splitting the bill with Freshbooks. Yeah. No, that would be cool. It what you can do, obviously, you have to use dynamic imports. Right? And then you have to import that thing at the top. React suspense will help with that, actually. Yeah,
+
+26
+00:10:49,980 --> 00:10:50,520
+Scott Tolinski: yes,
+
+27
+00:10:50,520 --> 00:11:19,679
+Wes Bos: I'm excited because you just kind of will have a show on react suspense, kind of help that but yeah, it would be neat. If it just kind of figured it out all for you. It's much better than it used to be you used to have to like, set up manual code bundles be like, Okay, my cart goes in this one and this one. And now if you just use dynamic imports, your bundle tool will be able to figure out how to actually split it up. But you still have to figure out yourself, where should I be using a dynamic import? And where should I be using a regular import? What's a regular import called static?
+
+28
+00:11:19,740 --> 00:11:21,299
+Scott Tolinski: Just a II?
+
+29
+00:11:22,020 --> 00:11:22,890
+Wes Bos: Guess normal?
+
+30
+00:11:23,100 --> 00:13:31,049
+Scott Tolinski: Yeah, Allah. Yeah, import? Yeah, I use that pretty much for the same way you said, where I have my shopping cart, any of those libraries behind a dynamic import, and what react loadable. And you can get all great grade server side rendering and all that stuff with it, too. So next, we want to get into compatibility, which is one thing that we've been touching on in the hasty treats for the past few episodes. browser compatibility is maybe not something you want to leave entirely for the end. But it's definitely something that you need to check at the end of the line here before you're launching, because maybe even you, you deployed a change, and it had a small little thing in it. And maybe that library or whatever you added all of a sudden has some sort of begin compatibility. So you do want to, you do want to test pretty heavy on actual browsers that need to be supported. We used to have various machines in the office to test on older browsers or something like that, I think it is important to fire it up on an ie ie, you know, 11, or I 10, or whatever you're supporting at that time, and Edge browser or Safari, whatever just fired up, make sure everything's works, make sure everything's looking fine, there's always going to be one or two little things that you could not prepare for. Even if you feel like you have a great grasp on compatibility, there's just your brain just isn't always going to have 100% coverage on all of the compatibility issues. I also like to have if you have like a staging environment, that's somewhat public, I like to have other people use it on their phones, I'll frequently ask my wife Courtney to try it out on her phone before I go up in my staging environment, say, Hey, can you just fire this up and make sure everything feels fine to you. And then she'll just try it out. And you know, she's a normal user. So she's going to try it out as if a normal user is and she's not going to know where to press and what to do. And everything's going to feel a little bit different for her. So having her test out, the compatibility in those sort of ways is a big help. So if you can find someone in your office that's maybe not like, the most tech savvy person, or maybe not the developer, or someone who's had their hand in their code, and just ask them to use it on whatever browser they have on their phone, or whatever, that's good. You can also use a service like browser stack. I don't use browser stack myself. I know you don't either. Wes, is that correct?
+
+31
+00:13:31,200 --> 00:13:50,370
+Wes Bos: I've definitely used it in the past. It's kind of expensive. So what I've done maybe six or seven times in the past, as I've just like, dipped in for a month, done my work and then cancelled my subscription. Yeah, just when I specifically need it. But I'd much rather like we've talked about in the AC trees, much rather have the hardware or VM of the actual browser or the real device in hand.
+
+32
+00:13:50,460 --> 00:14:06,149
+Scott Tolinski: Yeah. So browser stack is a service that allows you to test your stuff on 2000 plus browsers and Android to iOS and Android devices. So you know, check that out. If you're looking for more of like a service as a solution there for compatibility testing.
+
+33
+00:14:06,299 --> 00:15:48,779
+Wes Bos: One other thing I've run into is just ratios. So I have my checkout form. And I had tested it. And I always use like, I almost always just use media queries that are based on the width, right. But I ran into some situation where if people on like 11 inch MacBook Airs, their screens are like wide and not as tall. And I was running into a situation where there was like, maybe, like 50 pixels of screen sizes where you couldn't press the actual Buy button on the checkout form. And it was because I had not been testing it on. I just been testing it on width, right. And I also checked, I also tested it on heights, but there was like a, like a golden ratio of width and height where Mirman wasn't working. Luckily, the developers like By the way, I just used inspect element and figured it out. Yeah, and I press the button myself, met a developer go back and fix it. Other thing is busting caches. So if you have a style that CSS another problem I had on my advanced reactors, I had like a sale banner at the top. And then I have a login button on top right corner. And I had some CSS to say if there's a sale button, if there's a sale banner and a login button that are siblings, then you can then move the button down or so. So it's not there. But something went wrong with it, I had one or two lines of CSS, and I fixed it. But then everyone has the old cached version of yours, your CSS. So I just go my way of busting caches, I just put a little query parameter on the end of CSS, just Question Mark V equals 27. And then that will signal to the browser that it's an old, there's a new version of CSS available because of query parameters, a new URL, and then it will just delete the old one, download the new version of it.
+
+34
+00:15:48,899 --> 00:15:51,630
+Scott Tolinski: Nice West boss bust in cache
+
+35
+00:15:51,659 --> 00:15:55,950
+Wes Bos: busting caches. Yeah. nashim busting cache.
+
+36
+00:15:59,640 --> 00:17:05,059
+Scott Tolinski: So next, we have a one that it says this is something that we both definitely run into this more so than a lot of other maybe sites because we both running ecommerce platforms. And if you're running into things with sales, where you're taking credit cards and charging, this is actually one of those things that is a little scary. I think in terms of going live, if there's one thing that I manually test more than anything on my site, it's the checkout, I make sure that the subscription form works and I make sure that the credit card checkout works. And I do so very, very intensely. So there's one thing that I really test is to make sure that my checkout flow is working correctly. And this one is sort of interesting. I think different platforms between stripe, Braintree, PayPal or whatever they all make it a varying degrees easy to test these things. I think stripe makes sales the easiest to test, Braintree probably makes them not so easy to test. And then I know from experience from subscriptions stripe does not make testing subscription super easy. Oddly enough, where Braintree actually makes it way easier. So what are some things that you think are important before dealing with credit cards and things like that.
+
+37
+00:17:05,089 --> 00:19:21,540
+Wes Bos: This is just from personal experiences. First one is have multiple people test the checkout. Like one story, I think I've told us on the podcast before but when I launched one of my courses way back a couple years ago, I had installed this node package that would charge PayPal, it was like a third party node package. I know I complain a lot about PayPal. But this is not people's problem. And I did an npm install. And then I deployed it to my server. And this was before we had the NPM package lock. Or you could specify exact versions of NPM package. And what had happened is the author had released a new version of the package, but didn't understand how the new let let and const variables were scoped. So what was happening is that everybody who on the server, everyone was using the same PayPal checkout token, and people are getting this error like this token has already been used, because of the way that the variables were being scoped. And I was like, what is going on with this thing, it works fine locally. And it was because between me installing it locally and working it and pushing it up to my server and NPM, installing it, there had been a new version of this package, just a minor version bump, and that had introduced and I found this out by going through the GitHub commits and seeing the changes that had been introduced. And so I quickly just like just jumped into my node modules folder, and just like monkey patched it really quickly, and then send a pull request to the actual repo and how to fix but that's just like a perfect example of like, and that's everyone's horror of using all of these third party packages, where you just like use the kind of a, you know, just give me the latest version of the little Tilda that I'm using or the little little carrot in my NPM packages, somebody could actually introduce a breaking change into your code. But that's been since solved with the package lock, that's what package lock will do is we'll make sure that you're using the exact version all the way down through the dependency tree. That's one problem I've run into the other one is make sure that the name of what shows up on people's credit card bills is that they know it. So a big problem that I have is people open their credit card bill like a week or two after buying and they say like what is my company name is boss type Inc. What is boss type Inc. And it's either somebody from accounting in the company, or it's a spouse of the person who shares a credit card with it. And unfortunately, sometimes they'll just dispute it because they have no idea what that is. Right? I think
+
+38
+00:19:21,540 --> 00:19:25,800
+Scott Tolinski: you're a typography company. Yeah. So slang and fonts.
+
+39
+00:19:26,880 --> 00:19:40,100
+Wes Bos: No, the reason why it's called boss type is because my wife is actually a print designer, which has type and I'm a programmer, which also has types name his boss like that. I do. So they both have types and
+
+40
+00:19:40,499 --> 00:19:43,260
+Scott Tolinski: careers. It's illuminating. Yeah, I finally get it now.
+
+41
+00:19:44,300 --> 00:20:37,500
+Wes Bos: There you go. Anyways, I don't put that on people's credit card bills anymore. I think it shows up as Wes Bos slash react or Wes Bos slash the actual course that they're working on. Somebody actually showed me that a photo of me now shows up on some banking websites, which is hilarious. They know. And the other thing we did is if it does show boss type, we also have our phone numbers listed on that. We just have a simple boss type comm website, we threw up like four or five years ago when we made the corporation and then that just has quick phone number all the time I get cards, hey, I'm in accounting from company XYZ, what do you do your developer probably bought something? Oh, yeah, no problem. I'll follow up with them. And then they hang up. And that that stops a lot of unnecessary chargebacks. Because it's a pain. If someone accidentally chargeback something, you get charged 15 bucks, and it goes in for review. And then you have to contact the person. They have to contact their bank and have it revoked and it's just a nightmare.
+
+42
+00:20:37,610 --> 00:21:30,930
+Scott Tolinski: Yeah, absolutely. I know, whenever I get an email that says a chargeback, I'm like, oh, what do I do now? Okay. So okay, so we got sales and credit cards. So I mentioned that this is something that I personally test very intensely, because it's a key component to my business. And most of the things that are key components to my business, I really make sure that I have a handle on the errors, and sort of the things that are coming up when people are actually using the sites. And that's one of the reasons why I use Sentry, personally, to actually make sure that if something's happening on the live site, that I did not plan for that I'm not only alerted, but I have a catalogue of it. I know who and what browser is happening to them on and I can really catalog these and file issues and get these issues taken care of. So century@sentry.io is one of the essential parts of my workflow. And I know Wes, you use Sentry yourself.
+
+43
+00:21:30,960 --> 00:23:12,570
+Wes Bos: Yeah, that's when I launch a course you better bet that I actually have Sentry open, because it's the first time that lots of people are in production are going to be going through likely a new codebase. And that's where you often run into a bunch of issues. So I'll sort of keep my eyes on Sentry, I'm about to launch a big update to my player, as well as a big update to the back end management. And when I push that code, I'll be watching my Sentry dashboard to see any errors that will pop up any any commonalities between them. I've mentioned before in the past that I've been quickly been able to figure out there is an error on this specific version of iOS only on an iPad, and I was able to find that bug and be able to fix it. So Sentry is awesome, just because you don't have to worry about your users telling you there's an error like we joke it's nice to have developers as an audience. But most people don't have web developers, that audience or web developers might not might not even care to let you know something's gone wrong. Look, close the tab and move along with your life, you just lost the sale. Right? So sign up for century error tracking, I haven't installed both on my client side that catches all the JavaScript in the browser have installed on my server side, no handy handle any says that any errors actually happened on my server, you can get two months free essentially does have a free plan that you can sign up for, but you're gonna get an upgraded plan. So if you go over in the free plan, you sometimes will go over the amount of alerts that you can add, especially if you write terrible code like I do. So you can get two months free@sentry.io using the coupon code, tasty treat. And that's for anyone, not just new users. So if you have an existing account, you can still take advantage of that the coupon code is tasty treat all one word. So thanks so much to centuries for sponsoring.
+
+44
+00:23:12,630 --> 00:23:29,970
+Scott Tolinski: Thank you. Yeah, again, it is so key that if you launch and you have a bunch of errors that you at least can determine where those errors are coming from and how to solve them. Because there's nothing worse than getting those reports. It's not working. And you're like, oh, but it is working. No, it's not working. Oh, what am I often
+
+45
+00:23:30,000 --> 00:23:55,860
+Wes Bos: even amazed at developers who email me saying it doesn't work, or there's an error? Or Yes, yeah, it's the worst says it's glitchy. Like, what is glitchy? What does that mean? More like, what browser are you using? Like? Are you not a web developer? Do you not know that people need more information to solve it? Like if you just tell me it's not working? I go Oh, sorry. Let me turn the working. Switch back on. I had tripped over that.
+
+46
+00:23:55,890 --> 00:24:29,370
+Scott Tolinski: Yeah, I hit somebody that was using it as I was like a hostage for like a hostage situation for a free account. They were like, do you have bug on your site? I was just like, Okay, can you can you tell me what what this is? Or like, what the idea is here, and they're just like, if you give me a free subscription, I will tell you what the bug is. Uh, I don't know how to even address that because like, I chances are if you would have just told me what the bug is, I would have been you know, grateful and I probably would have hooked you up but the fact that you're like holding it hostage is like not the right idea. That's Yeah,
+
+47
+00:24:29,370 --> 00:24:36,330
+Wes Bos: no, that's not cool at all. There's there's definitely like way better ways to get in good with somebody than
+
+48
+00:24:38,220 --> 00:24:53,250
+Scott Tolinski: at Haas actually got it out of them too. And it was like it was something that was by design. It was like not even a bug and I was just like, come on, like this is Oh, yeah, yeah, it was weak. Okay, so next we have, Sir, did you want to do this tip from the trenches now or do you want to do moving on?
+
+49
+00:24:53,280 --> 00:24:56,520
+Wes Bos: Yeah, let's do it. Now. I think it's interesting to put it in them in the middle.
+
+50
+00:24:56,700 --> 00:25:52,050
+Scott Tolinski: Okay, so next we have something that we're calling tips from the trenches. Which is just some generic some sort of interesting things. There's sort of like all over the place about just things that we've run into personally, or maybe not personally, but you know, others have. And one of these things that I think is extremely important, this isn't necessarily anything I've had a problem with. But you'll want to make sure that your API endpoints are totally secured, you do hear horror stories of people launching, and they think that no one's going to backwards engineer, reverse engineer their API or something like that. Yeah, people will, people will try to do anything. So make sure your API endpoints are secured, make sure that you only have access, the people who need access and whatever get access, and no one else does. So double check your API endpoints. If you're working on a server side application, or a full set full stack application, client side validation is not enough, it is certainly not enough.
+
+51
+00:25:52,110 --> 00:26:54,570
+Wes Bos: No other things scale up your box, just in case. So if you're using a hosting platform, I specifically am currently on Digital Ocean. And I was on their $5 plan for a long time. And the thing that kills me and the $5 plan is is works fine in almost all day long. Except when I use my email list and DDoS myself by sending many like, like 7000 people to the website at one time. So just scale it up, you can always scale it back down when you need it. But if you're I know that a lot of services will auto scale, that's even better. I'm looking at moving over to something like that. But just so you don't actually have anything fall over on you and just be safe, spend an extra 20 bucks a month to scale it up. And then you can scale down if you need it. Other things I've done in the past early access my my advanced react course I put up for early access about three weeks before I actually launched it. And then the way that I did it was that I just told people click soon 30 times. So it was the it just said coming soon. And you could click the word soon 30 times and then it would pop open a button to buy it.
+
+52
+00:26:54,600 --> 00:27:04,950
+Scott Tolinski: I think I clicked it like a couple hundred times when you told me that and it just kept going. I was like, Oh lucea limit and I just kept going and it filled the screen with a hose. And then I was just like, Ha, yeah, stop.
+
+53
+00:27:05,490 --> 00:28:10,170
+Wes Bos: The cool thing about that is I've just posted it in my slack room. And I said don't tell anyone how to get access to it. Because if they don't read this message, I don't want them testing my course. And it was the best because people all day long. We're like it doesn't get access to it. It just says coming soon. And they're like, Did you not read the three sentences I posted, then it's not for you because you can't follow some simple directions. And then I also had people a lot of people view source and find the code and read through the code and figure out how to Oh, this is what the code does. Let me now go ahead and and that for sure. I want you testing my course you've great attention to detail. So it's kind of a nice way to go about it. And then the night before I launch, I just push it live. And what's what's nice about that is that it's just Australians, I'm pretty sure that's all who's awake Australians and Russians on the website, and then you wake up in the morning with a couple sales because people have found people are just checking the website, we're looking for it to go up, as well as you sort of soft launch it and then wake up to three or four emails of little bugs here and there that you haven't caught. Yeah, it's helpful to see that
+
+54
+00:28:10,260 --> 00:29:24,660
+Scott Tolinski: this might be a surprise to some level of pro subscribers or even people on the level up tutorials, subscription. But I typically am launching my courses quite a bit before I announce that I've launched them, because I want to launch them. And I want the subscribers who just see it up there, right? I want them to test it out and run everything. And then if I don't want my users to obviously test the thing. So things are going to be working when they're up. But let's say there's something catastrophic going on, then that way, I didn't just blast out to all of my followers and everyone else that you know, this thing is up and going and then have a whole bunch of people coming there at once when there's a thing and then maybe they won't ever come back. Right. So again, I like the soft launch. I like launching and then maybe not necessarily announcing it until you know for sure that everything is 100% feeling all right and looking good. Another one I have is make sure your URLs are accurately coded. Sometimes people in the flow of things will just put a URL into their site or maybe it's like a WordPress site where the URLs are like written from the database. But occasionally you'll see that situation where you'll have a localhost forward slash images forward slash Scott dot png and maybe your server is currently running on your local host at that moment you'll
+
+55
+00:29:24,660 --> 00:29:25,860
+Wes Bos: your local servers.
+
+56
+00:29:25,890 --> 00:29:49,440
+Scott Tolinski: Yeah, and so you're like well, it looks fine on my machine. All the images are loading and then someone else somewhere else who doesn't have a localhost 3000 running with your images. They're like, what the heck is this all the images are broken. So make sure your your URLs for your images are written correctly. Obviously, don't use any sort of local or staging or whatever environment you want those coded correctly so that it's pulling the actual full path, full route URL to your site.
+
+57
+00:29:49,650 --> 00:31:18,860
+Wes Bos: Other things is just keep your eye on your email. I've had people like when you launch something people always try to reverse engineer figure out how it works. I had somebody figure out that my free course says that he could change the course code of the free course and get access to my paid courses, which was amazing. And I was like, oh, man, it's amazing. I actually ended up paying out that guy, some cash because of that report that could have costed me a tons of that got out because people could have been signing up for my paid courses all day long. Mm hmm. So keeping your eye on your email when stuff like that keeping your Twitter, I have my Twitter DMS open all the time, which is probably not a great idea, because I get a lot. But when I launched something, I always keep my eye on it just in case, because people will often say, hey, something's wrong. And I really appreciate that. I appreciate that. Because nothing is worse than launching something. And all of the replies to your launch tweet being, hey, this doesn't work. It's broken. Is this funny? Looks like you're missing this. And it's like, Oh, thanks. I just spent my last nine months on this. And now all of the replies because I also pin those tweets to my profile. I want all of the tweet replies to be common questions, or people reviewing it, things like that. And that Yeah, high praise. Yeah, I want it to be good things, right. So one little way around, that is just not replying to replying to them out of the thread, so that they don't get bumped up in the tweet reply way. So that's my little, little way around that. But it always is such a bummer when you're you launch something and all of the replies are like you're missing. You're missing an L in the word cool. hear somebody like?
+
+58
+00:31:20,490 --> 00:31:57,720
+Scott Tolinski: Yeah, and you will hear about those. That's for sure. And I get that. Yeah, just right into our next one, which is like the content, right? I mean, that's a perfect lead in I don't know if you're attempting to do that. But no errors in grammar is a big one. And is someone like myself, who cannot spell things to save their life. You want other people to evaluate these or even better have spell checkers have stuff like that. But again, have people proofread your stuff, because if you're writing it or the content writers writing it, maybe they're just so engrossed in whatever they're doing that maybe they missed something or have some fresh eyes on it. Basically, make sure someone's looking over your content for spelling or grammar errors. Somebody who knows what they're doing in that regard.
+
+59
+00:31:57,840 --> 00:32:24,030
+Wes Bos: Yeah, I always have people who are very like, I have a list of people in my email who are so nitpicky. Anytime somebody cares enough to send me like a huge email full of all of the grammar, spelling clarifications, I always save that because those are the kind of people I need going through my website right before I launch it, because they have such a keen eye for that night. I don't we're joking that my gravestone is going to have a spelling mistake on it. Yeah. Yeah. So
+
+60
+00:32:24,990 --> 00:32:50,070
+Scott Tolinski: funny, because I can count on Courtney for that. Because like she she is the absolute master of like, I'll show her design. And it's just for an aesthetic purpose only I'll be like, it'll be in like figma. I'll be like, really rough mock up. And I'll be like, what do you think of this general design idea? You see, I was component wrong. I don't know what I'm asking. So that definitely happens. But do you want to find somebody who has that high? Like that is the ideal situation for that?
+
+61
+00:32:50,100 --> 00:33:02,430
+Wes Bos: Yeah, those people I feel for those people, because it must be hard for them to live in this world where that stuff bugs them so much. But I also really appreciate them because it's so helpful. It's finding those little things for people like us. Yeah, yeah,
+
+62
+00:33:02,460 --> 00:33:26,670
+Scott Tolinski: I need all the help I can get. Next, you'll want to make sure that you have a 404 page working accurately, to let users know where their content like where there's no content, right? Because, you know, they browse to a maybe a misspelled URL route or something like that. And it's porn to get them back on track to where they need go. really helpful. four pages can be dope to where they're like, Did you mean to say this, although that is quite a bit more extra work, you know,
+
+63
+00:33:26,730 --> 00:34:07,320
+Wes Bos: totally leftover placeholder text. One thing I always do when I'm building a new course site is I take the last course that I worked on, I drop it over, and then I just start changing it and often all accidentally leave in an FAQ or like the, if someone tweets out a social link, it's to the old URL, things like that. So making sure that you don't have any leftover placeholder tax or leftover content from something else. I've even seen it very embarrassing. I've seen people launch course websites with my own FAQ, because they clearly just like copy pasted it. I've had words with them. Obviously, that's awesome. But yes, like, make sure you're not like straight up jacking other people's content or a placeholder text.
+
+64
+00:34:07,350 --> 00:34:37,980
+Scott Tolinski: Yeah, I think that's an ultimate like if you've ripped off someone's design, and then you look at their meta tags and their keywords and it says, Scott to Lenski is a full stack developer their code, you're just like, Huh, I wonder where you copied and pasted this from? Also, yeah, do a quick Command F find across your entire project for ipsum. Because like, like leaving lorem ipsum in your site is is like a guaranteed iral when somebody launches something new and you see that it's um, you're just like, oh, they did not even they did not even touch this.
+
+65
+00:34:38,100 --> 00:35:34,460
+Wes Bos: Next up, we have accessibility. So we just did an entire podcast on accessibility. It got some really good reception. So go back and listen to that if you're interested. But Scott said run it through the x accessibility checker, check that all of your images have alt text on it, run the color contrast checker, that will that will show up in X, tab order things like that. By the way, we have have we had a pull request to add this Skip to content to the syntax website, which is amazing. And we also have currently 45 pull requests in the syntax. Because of October best. Yeah, thanks to everybody we have somebody is just dming me asking if we need some help wading through all those pull requests, I'm gonna get some help on that. Oh, that's great. Yeah, it's been amazing people have been pulled, requesting left and right, all kinds of helpful accessibility stuff, new features, little fixes. It's been great. Yeah, so just go through the entire accessibility podcast and make sure that you have all of that stuff squared away, because that's not something that you want to goof up online.
+
+66
+00:35:34,460 --> 00:36:17,340
+Scott Tolinski: Yeah, use that a keyboard, like use the site with gesture keyboard like that. That's a good indicator of if things are going okay, and you're very frustrated if like you can't get around your site with just a keyboard. Next up, we have SEO in a really good part of having good SEO is having an excellent domain name. And one of the great ways that you can get a great domain name is through dot tech domains, because dot tech domain names while that not only describes perfectly what we're doing in tech here, but there's also a ton of excellent availability for some of those URLs and domain names that you might not have been able to get with maybe a.io. That's super duper expensive, or I'll, you know, bought up at this point and things like that. And that tech did some good prices on some of this stuff.
+
+67
+00:36:17,370 --> 00:37:34,080
+Wes Bos: Yeah, so we've all been there, it's impossible to find a domain name that is available and you end up creating a company that's called like tutorial or lose lottery, or how wide everything or all the.io 's are almost all snapped up. Right now. There's, there's even this like guy who runs a.io reseller website making bank off of that, just because of the demand for tech domains is huge, right? So dot tech is coming out, it's one of the new tlds top level domains for you can go ahead and I if I were you, I'd probably go ahead and grab the dot tech of your own name, or maybe even your first name is still available, I would definitely check that out. This is really cool. Because the.io, which is pretty popular, it's really expensive, used to be 99 bucks a year the.io czar still like I think 4945 bucks a year. If you want to use the code syntax at get dot tech, that's where you're gonna go to register this thing, get dot tech, you're gonna get the first year man, that's pretty sweet for one year for 499 or five years for 2499. So you can get it for five years for half the price of one year of a.io. domain name. So check it out at get dot tech and let us know if you register your own tech domain name. So thanks so much them for sponsoring.
+
+68
+00:37:34,170 --> 00:38:17,210
+Scott Tolinski: Yeah, yeah, thank you. So let's get into this SEO. So you've got your excellent a new dot tech domain name that says exactly what you're doing with your your thing. So it becomes nice and searchable. What are some other SEO tips we can have before launch? I think one of the biggest ones is to make sure that you have a sitemap that is current modern and one of those ones that you don't have to like update yourself. I know if you have any sort of full stack platform. Or maybe you're even using like a Gatsby site, there's a Gatsby plugin that just generates a sitemap for you. But either way, having that ability to have a sitemap created and uploaded to it. It's this so called Google Webmaster Tools, or is it called search console or one of those things, but make sure it's uploaded to the Google Webmaster Tools. And they your sitemap is accurate and up to date.
+
+69
+00:38:17,400 --> 00:40:05,610
+Wes Bos: There's a whole bunch of different SEO checkers you can get out there. It really depends if SEO is something that you are concerned about one big one, especially if you're launching a new application, where you've done the routing yourself is you make sure that if you have two different URLs for the same page that they point back to each other that's called a canonical domain name, especially things like WordPress will automatically do this for you. If there's the possibility of reaching that domain name via like an ID, but also via like a slug, then make sure that those are pointing all in the same same way. If you're doing react, and you care about SEO, make sure that all of your server side rendering is up. One big one is making sure all of your meta tags are properly filled out, I often will just say test test test or fill this in later. And then forget to do that. So making sure that those are all filled out, as well as your meta tags for Open Graph or for sharing. So every time someone shares your website to Twitter, or to Facebook, or to Pinterest, or LinkedIn, you know, they pull up a photo, you can manually set those via the meta tags or the Open Graph meta tags. And what often happens is that you have an old domain name that has a cached version of those meta tags and that image, or you've launched it, and since changed the design of that like banner image. So what you need to do is just go to all of the tools, I think it's called the Facebook debugger. And Twitter has a version of this as well. And I think LinkedIn does as well. And you can just put in the URL of your website and then clear all of the cached values for that. And that will make sure that if you have a new website and you share it out your old logo or your old banners not going to be showing up on there and that's especially helpful sometimes you don't those are the last things you do. And if someone if someone were to share that website to Twitter before you've done it, then the unfinished version would be cashed in there. And that can lead to some headaches.
+
+70
+00:40:05,670 --> 00:40:46,920
+Scott Tolinski: Yeah, definitely headaches. That's one thing else. So you want to make sure that you have both both images in case you're What are they called, like the device images, shoot, I know this isn't necessarily an SEO thing. But it's in the same sort of realm of meta tags, like the meta, the meta, yeah, the meta images for when people save your site to the desktop or bookmark it, because that shows up as an icon. And I don't know how it works on iOS, I'm sure it's the same thing. But when you save a website to your homepage, in Android, it looks like any other icon on your home page. So that's definitely something that you want to make sure is there for those users. Last thing, you want to send some sort of generic image in that place. Because people do when I bookmark things and save them to my desktop. If it has like a nice little app icon. I'm always pleasantly surprised. Next we have analytics.
+
+71
+00:40:47,580 --> 00:40:52,260
+Wes Bos: Hold on. I got it. I found it. It's called the apple touch icon on iOS. Yeah,
+
+72
+00:40:52,290 --> 00:40:59,630
+Scott Tolinski: yeah. So there's generators that will just produce all of those for you with a favicon. And all that stuff. You just pass it an image and it shoots out a whole bunch of stuff.
+
+73
+00:40:59,670 --> 00:41:08,580
+Wes Bos: Yeah, definitely check those out. Yeah, one thing I actually don't do with my own is set the theme color. Is this on Android where it sets the top bar color? Yeah, your website? I
+
+74
+00:41:08,580 --> 00:41:16,710
+Scott Tolinski: don't I need to do that. Do it. It's so easy. I have the theme color set. And it makes my site look so much more lovely. On Android devices. I don't know why iOS doesn't do that.
+
+75
+00:41:16,770 --> 00:41:25,320
+Wes Bos: Yeah, that would be really an another thing I haven't done yet. As I have the new iPhone with the notch in it. I've not made my websites not friendly, huh? Yeah,
+
+76
+00:41:25,350 --> 00:41:38,760
+Scott Tolinski: I have not done that either. I used to I should probably just get one of those phones to have sitting around just to test it on notch phone. Although the pixel three and that has a notch. I wonder if it does the same exact. I wonder how it deals with it. Yeah, hopefully,
+
+77
+00:41:38,760 --> 00:41:50,760
+Wes Bos: I hope it's not anything. That's the problem with these five icons is you need a generator to the coverage them all, they all implement their own custom version. Hopefully, there's no like eight different versions of notch the SS they have to put in to make it work.
+
+78
+00:41:51,150 --> 00:42:21,360
+Scott Tolinski: notch dot CSS. Next we have is analytics, which is I don't know the last time I've launched a site without having Google Analytics set up. It's super easy. You just sign up for your account, you put it in, you put the tracking code in. And yeah, just the analytics is nice to have. And Google Analytics is so easy to set up. There's a whole host of other analytics, I don't know, if you use any other different types of analytics, I had heap analytics set up for a little bit. But I haven't necessarily gotten too much into it. Other than that, but I personally, I don't remember the last time I watched your site without having a Google Analytics key in there.
+
+79
+00:42:21,380 --> 00:44:04,890
+Wes Bos: Yeah, well, another this dives into whether or not you hate Facebook or not, but most people will recommend as the pup of Facebook tracking pixel in there. Because even if you're not doing Facebook ads, at the time, having lots of traffic go through your Facebook tracking pixel will allow you to in the future, you can say okay, 6000 people have been to my website, I can track I can now try to do Papa Instagram or Facebook ad in their feed for my product. But I can also take those 6000 people because those are my actual 6000 customers. And you can create audiences based off of that. So maybe 60,000 people who are very similar to that. So I've tried that it doesn't work very well, for web developers. Also, I found that my all of my tracking all of my analytics is garbage. Because almost everybody who visits My website is running an ad blocker No. So they're being blocked anyway. So I haven't used that all that much. But I do still run them. Just in case. At any point, if I want to try this stuff, you need like a really good sample size before you even get into that word. Last one is your server config and access. So you have your ht access file, if you're running an Apache server, make sure you put any redirects in there. So if you have an old version, this is something that I found myself is since I've changed my application over three or four times since I've started producing courses, I have all of these legacy URLs, because what happens is people open a four year old email the link, and that doesn't work. And then they they say, hey, this URL doesn't work anymore. So I need to make sure that I have old redirects in place. I actually don't do this at an ht access level. That's probably some more something like if you were to change a directory of where you've installed WordPress or something like that, you might want to do a mass switch. In my case, I just do it at a in my application.
+
+80
+00:44:04,950 --> 00:44:32,940
+Scott Tolinski: Yeah, yeah. In addition to that, you want to check to make sure your robots dot txt file has all of the correct information in terms of what URLs you don't want crawled, because it's important, right? There's not everything. Even if you're going for SEO on your site, there's chances are not everything on your site, you'll want crawled by a Google spider or any sort of other web search engine. So make sure your robots txt prevents indexing of the pages that you don't want to be indexed.
+
+81
+00:44:33,030 --> 00:45:33,000
+Wes Bos: other little things. It's funny that we talked about like HD access and jesup. And caching a lot of this stuff if you use like something like Heroku or xlights. Now, so easy, yeah, you don't have to worry about these. So if you use your own platform Netlify you don't have to worry about any of this stuff. But if you are still running your own server, make sure you have caching turned on make sure you're enabling g zip what Jesus moosh explain that real quick g zip what what it will do is like let's say you have a Java script file, and it says, I love to eat cookies. And then you have a nun later in that JavaScript file, it says I like to eat pizza, the word I like to eat is now twice in that JavaScript file. And what Jesus will do is it will just sort of be like, Oh, I like to eat is sort of like a variable, instead of having sending the text twice, let's just replace that with a reference to where we put it once. And that anytime you have duplicate content, say what, like CSS selectors or something like that, it will compress it. And you can have significant savings if your server has jesup turned on.
+
+82
+00:45:33,120 --> 00:46:11,670
+Scott Tolinski: Yeah, it's a big one. Definitely. And I like, again, I prefer any services that do this stuff without me having to do it myself. But if you are the server management type, go ahead and take care of all of this stuff yourself. Another good thing to check in that regard is to make sure you have your CDN correctly functioning, whether or not you're using CloudFlare and other CDN, first, a lot of reasons for your content access and your content delivery, but also for that, like CloudFlare DDoS, protection and that good stuff. So if you I mean, it's free to get started. So I would, I would definitely recommend using CloudFlare or some other CDN in front of your site. And it's not a bad thing to do at the very end, too, because it's a nice little optimization.
+
+83
+00:46:11,760 --> 00:46:36,780
+Wes Bos: Finally, we have here, just company processes, make sure that everything internally, this is should be part of your development workflow anyways, but make sure your tests are obviously passing, make sure the Git Git issues are closed, any pull requests that need to be merged. Obviously, those should be merged as well. Scott has a note here on documentation. I think that's a really good point. Because when you're in the headspace of this thing, it's best to write it down at that point, I think, yeah,
+
+84
+00:46:36,870 --> 00:47:42,780
+Scott Tolinski: yeah. And I think so too. It's, it's also good to have like your, like your processes, like, here's how to deploy this, here's how to update this, here's how to do this, because maybe you've just updated this site, and it's working for one week, and you're like, Okay, everything's working, it's time for me to take my vacation, and then you leave, and then something is going wrong. On the second week, maybe you had a variable that is self destructs. After one week, for some reason the whole thing blows up, it's important to know exactly how to fix this if someone else needs to step in and fix this, and how to how to work inside of this project. So yeah, readmes documentation processes, make sure all that stuff documented correctly. Also, some places, it's a great idea to have a staging environment that you can push to push to a staging environment, that's essentially the same kind of server as your production server, you would push the production build there, it's probably going to be password protected and not crawled. And then you can test out your site and an actual environment to make sure that the production build is going to be as expected. That way you don't run into any of those little weird issues with correct dependencies, not loading. Like we had mentioned before, before the package dot lock thing,
+
+85
+00:47:42,930 --> 00:48:34,110
+Wes Bos: I just thought a couple more things here. This has nothing to do with company processes. But DNS propagation, don't flip over your DNS like right before launch, because it might work for you. But it might not work for everyone around the world. So try to do that least a day or two ahead or have it set up where you can just swap the A records of your domain name and that will be instant rather than having to wait for DNS to propagate check it in different countries. This is something that I ran into, when I soft launched my course I didn't have my CloudFlare installed and people weren't able to get the country code discounts. I didn't even think about that. And luckily, it was just a quick flip on of CloudFlare. And everything started to work. But just like little things you think about like, what different devices are people on what different countries are people on? What different speeds are people on what different size monitors are people on you have to think about? It's not just your ideal production environment that's running on your computer?
+
+86
+00:48:34,140 --> 00:48:56,100
+Scott Tolinski: Yeah, I want one tiny little last one, make sure that there's no unwanted console logs or console errors left in your code that you ask your users to see the maybe you're logging out the entire object of something just to debug it. Or maybe you just had some little, little debug and to do later sort of stuff in there. And yeah, just get rid of that stuff. You don't need it in there. And obviously, it's
+
+87
+00:48:56,190 --> 00:49:17,910
+Wes Bos: you can really run into some issues too. Because if you have like a console log of like an object, and it's in a route and you have 10,000 people hit that route, your server logs can get into gigs real quick. Oh, yes. If you're running like a little SSD, or you're running like a little digitalocean droplet, you can run out of space pretty I think they gave me about 20 gigs. That happened to
+
+88
+00:49:17,910 --> 00:49:25,830
+Scott Tolinski: me before. Yeah, that's happened to me on my server logs filled up. And I was like, what, how is my droplet full? And then I was like, Oh, dang, locks. Yeah,
+
+89
+00:49:25,830 --> 00:50:00,330
+Wes Bos: you gotta be careful with those. Those console logs. You think God server side knowing I'll ever see it, but that will likely go into your server logs. And then before you know it, you have a six gig dot txt file, or dot log file. It's you have to just nuke the it's easy to get rid of right? But it could cause your I've totally run out of space on my droplet before and it just stops when I run out of space. It stops serving JavaScript files. Yep. So the website still works, but the JavaScript doesn't work and people are all really confused. It's just not a good space to be in. Cool, I
+
+90
+00:50:00,330 --> 00:50:15,150
+Scott Tolinski: think that's it. I think that's pretty much everything. If we left something off here, tweet us out. Let us know that what sort of pre launch stuff you like to do that maybe we didn't cover and we'll we'll give you a big ol retweet right there so yeah, any final things or is that it for you?
+
+91
+00:50:15,270 --> 00:50:16,680
+Wes Bos: I'm ready to talk about sick pics. I
+
+92
+00:50:16,680 --> 00:50:56,130
+Scott Tolinski: got a good one. Hey, I got a good one, two and this is my my good one is for those of you who like the dark net diaries podcast. I know. A ton. Oh, yeah, I really like that podcast. And this podcast was actually suggested to me by the creator of darknet diaries. So So this podcast is a very similar audience for that. In fact, the presentation is really excellent. This is it's called swindled, so swindled podcast calm or you could just google swindled and the podcast player. It's about basically people who are swindling other people. And the latest episode, which is on the fire festival. I don't know if you know anything about the fire festival. But it was such a good listen.
+
+93
+00:50:56,160 --> 00:50:56,700
+Wes Bos: Yeah,
+
+94
+00:50:56,700 --> 00:51:32,010
+Scott Tolinski: I knew the rule. Yeah, it was weird job rule. And this super rich kid. Were you rich loser who's basically swindling people his whole life. And they put on this concert, the whole thing was outrageous, actually, one of the most outrageous aspects of the story, as they mentioned, that was it one of the the Kardashians or Jenner's or whoever was paid $250,000, just to have an Instagram post saying they were going to it. And they didn't disclose that it was an ad. They just said, Hey, I'm going to this thing and they were paid $250,000 did not holo smile,
+
+95
+00:51:32,010 --> 00:51:32,550
+Wes Bos: did
+
+96
+00:51:32,550 --> 00:52:48,720
+Scott Tolinski: not go didn't get in trouble for that at all. And got to keep that money after the fact. That's outrageous to me that you could just fake it. You could like do a non transparent advertisement like that and get away with but besides the point, this podcast has some magical story element or storytelling elements to it. I cannot express how cool it is. He goes through these like stories that are search tangentially related, and they'll sort of like weave its way into the main storyline. And then all of a sudden, you're in the main storyline. You're like, How the heck did we get here? There was like one where the he was talking about, like john edwards, a political candidate. And he was cheating on his wife with this woman who was like, doing his videographer. And her dad had hired someone to kill the family horse. The guy that killed the family horse was a part of a horse killing, like not like it was like a group of people. There's something that went around killing horses for insurance money. Another guy who was also doing that was then involved in the main story of this podcast. So like, Did this like weaving its way and then all of a sudden, you're at the main story of the podcast, and you're like, Wow, this is so wild how we got here. But the storytelling is incredible. It is very similar to the dark net diaries and how he goes about things. And the atmosphere of it. I've just loved this podcast,
+
+97
+00:52:48,720 --> 00:52:57,810
+Wes Bos: man. I can't wait. I was looking last night. I was like, I need something like dark net diaries. I just need something that's entertaining, rather than all the business podcasts that I listened to all the time.
+
+98
+00:52:57,840 --> 00:53:04,260
+Scott Tolinski: Yeah, this swindled the fire festival one is a great first listen, it totally tells the whole story of everything. It's awesome.
+
+99
+00:53:04,320 --> 00:53:28,620
+Wes Bos: My sick pick is going to be what's called feefo bottles, which feefo if you've worked in the restaurant industry ever since for first in first out, meaning that if you get a shipment of strawberries and then two days later, you get another shipment of strawberries you obviously use the strawberries that were first in. They are the first out right Make sense? I don't know this is in the States. You have subway where they've got the bottles. Yeah,
+
+100
+00:53:28,620 --> 00:53:30,330
+Scott Tolinski: the squeezy? Yeah,
+
+101
+00:53:30,420 --> 00:55:11,910
+Wes Bos: that's my sick pick. These are called feefo bottles. And I've had these for about two, two and a half years. I got them for Christmas, which is a weird Christmas gift. But I basically told my wife kailyn, I said, I want our house to be like subway. Because I hate you buy ketchup, and it's in the stupid bottle, and it squirts all the time. And then you buy mustard, and then the mustard is stand straight up, and you have to like shake it to get it out. And then you have like Mayo, you got to get a knife and you get all over your wrist. And it's terrible, right, you don't get a response. But so what these people bottles are is that they're bottles that stand straight up, the squeeze part is at the bottom of the bottle, and then there's a thing that you take off on the top, and then you just put the ketchup or the mustard or the mayo or the barbecue sauce into the top and then the bottles are always you never have to flip the bottle over because you just pick it up, do a little squeeze, throw it back in. And that the added benefit of that means that you're you're obviously getting the oldest stuff first. And then the benefit of that is that your your fridge is just like all of the same bottles, right? You don't have like a weird Mayo that's huge. Or if you have like you buy a new mayo and you can just put it into the old one, just put it in it'll make sure that you don't have to finish the other one first. And anytime I make like a custom sauce, I just grabbed a little FIFA bottle and fill it up. I got them about two years ago I think and they've worked really well. They've never fallen apart. The seals on them are really good. They're high quality. The weird thing about it They're made in Canada, but they're like so expensive. I think I got a 12 pack for like 70 bucks back then. And then I just looked on the American Amazon and you can get a six pack for 14 bucks.
+
+102
+00:55:12,720 --> 00:55:15,480
+Unknown: Yeah, that's the sound of me going to Amazon right now.
+
+103
+00:55:17,609 --> 00:55:24,600
+Wes Bos: So I just got to get your content life in order if you want to be a good web developer, you got to start with your condiments in your fridge.
+
+104
+00:55:24,629 --> 00:55:26,640
+Unknown: I'm all about education and yeah, is
+
+105
+00:55:26,640 --> 00:55:45,300
+Wes Bos: a big thing. Just optimize it. You got to standardize your bottle so everything is exactly the same. Cool, I'm all in on this. I like it sick big fan. I've got a couple more like little kitchen picks that I'm gonna gonna drop because people in the fitness episodes said they enjoyed the cooking tips. So I'm gonna drop a couple more kitchen sick tip can't wait.
+
+106
+00:55:45,539 --> 00:57:07,200
+Scott Tolinski: Can't wait. Cool. So shameless plugs. I'm going to be plugging level up tutorials Pro. It's the pro subscription, you get access to all of the premium level of tutorials content, there's like over 300 plus videos right now, not to mention a new series every single month, this month series that's coming out in October is pro Gatsby two. It's the follow up to the very successful pro Gatsby course everyone really loved pro Gatsby. Well, Gatsby came out with a hot new version version number two in pro Gatsby two. Now only make sure that you are covered with all of the new awesome stuff inside of Gatsby two. But it's also basically you can imagine getting a do over on something that was already very good. So I think I'd knocked the first one out of the park when I made that tutorial series. And basically, I got to look at that series and say, all right, what could have been better about this for this pro Gatsby two. And I really think this is one of my best courses ever. So pro Gatsby two is going to be coming out in October, we're gonna be covering all the little things about Gatsby. And by the end of it, you're going to be a total Master, you're going to know exactly what to do, how to do how to get these super duper blazingly fast sites in Gatsby. So check it up at low load tutorials.com forward slash Pro, you can sign up for the year and save 25% get access to 12 new tutorial series along with all of the existing tutorial series that are up right now.
+
+107
+00:57:07,200 --> 00:57:29,400
+Wes Bos: Awesome. I got a sick pick or no I'm not sick picking I'm shamelessly plugging my advanced react course if you didn't hear last week, I finally launched it at Advanced react.com. It's the long name of it is full stack advanced react and graph qL which some guy on Twitter lovingly called it a verbal vomit of tech buzzwords. That's awesome. That's good.
+
+108
+00:57:30,600 --> 00:57:31,920
+Scott Tolinski: Reviews page just like that.
+
+109
+00:57:31,920 --> 00:58:22,170
+Wes Bos: But anyways, we are building a full stack application, we build a graph qL server on the back end with no jazz. So if you if you know any of the Express stuff that we've learned in my node course, all of the middlewares all of that will apply. We use react and Apollo on the front end for managing all of my data. A lot of people have been asking what about Redux? Apollo is sort of a replacement for Redux, in which it will fetch the data from from the server will do caching on the server, or sorry, I'll do caching on the client, we'll be able to define how stuff gets update, you can do local data as well as Server data. So it's sort of the whole thing we build an online store, we actually check out with credit cards, which is pretty cool. I'm really proud of it. People are really, really enjoying it so far. It's that advanced react.com and use the coupon code syntax and get 10 bucks off sick, sick. That's it for today. Anything else?
+
+110
+00:58:22,200 --> 00:58:27,360
+Scott Tolinski: No, that's it. launch your sites with confidence. No more. No more O's.
+
+111
+00:58:28,170 --> 00:58:31,680
+Wes Bos: All right. Good luck, and we'll see you next week later, please.
+
+112
+00:58:33,540 --> 00:58:43,290
+Scott Tolinski: Head on over to syntax.fm for you full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

@@ -1,0 +1,248 @@
+1
+00:00:00,359 --> 00:00:24,480
+Announcer: Monday, Monday Monday, open wide dev fans yet ready to stuff your face with JavaScript CSS node module BBQ Tip Get workflow breakdancing soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA, Bob and Scott Tolinksi ski.
+
+2
+00:00:25,950 --> 00:01:04,799
+Scott Tolinski: Oh, welcome to syntax. In this episode, we are going to be bike shedding, which for those of you who don't know, it's basically about arguing about things that don't matter. So we're going to be getting people really spicy, because let me tell you, Wes even just mentioned that we're going to be tweeting this episode and it started some general spiciness. So this is the best way to describe it. Here, we're going to give you some some very spicy bits in this episode, we're gonna have a lot of fun doing it. This is gonna be a lot of fun. My name is Scott Tolinksi. I'm a full stack dev from Denver, Colorado and with me, as always is West
+
+3
+00:01:04,799 --> 00:01:06,900
+Wes Bos: boss, sup everybody,
+
+4
+00:01:07,010 --> 00:03:04,080
+Scott Tolinski: sub West. West is also a full stack developer from Hamilton, Ontario. And what we're going to be doing today, again, is bike shooting. This episode is sponsored by Log Rocket. Now most of the things we're going to be talking about in this episode could be classified as trivial Log Rocket does something that should not be classified as trivial, which is allowing you to stop guessing how your bugs happen. This is something that is exceedingly important. You have bugs, everybody say it has bugs, that's just something that happens, which shouldn't happen is your users shouldn't be coming to you with the bugs first, you should be seeing them in your error tracking system. Now, a lot of times your error tracking system may not give you all of the information that you're might want. So what Log Rocket does is it comes in and it says, Hey, you know that that bug that's happening? Well, here's how it happened. And here's a video of how it happened. And here's the error log of when it happened. And here's the Network tab. And here's the Redux store. And here's all this good stuff that you would want to see when that bug happens. And this thing works with all the tools you know and love from react, angular view, Ember, Redux, all that good stuff. But it also works with any of the error tracking tools you already use. So they formed together to create some sort of a super team bug solving abilities. Log Rocket is really, really super cool. And one of those things that once you have the visibility of these bugs, it's like the lights been shined, your bugs stand no chance. It's like turning on the light in a closet and seeing all the cockroaches try to scatter. They're not going anywhere. You got them. So you want to check out Log Rocket, that is Log Rocket at Log rocket.com forward slash syntax, and you will get 14 days for free. Let them know, tell them that syntax Sencha. We love that lothbrok it's really great service. So just check it out Log rocket.com forward slash syntax, find those bugs that you could not find without it. So you had a fall. Let's get into some Sheddon.
+
+5
+00:03:04,140 --> 00:04:11,880
+Wes Bos: Yeah, so bike shedding if you've never heard the bike shedding before, the Urban Dictionary describes it best as technical disputes over minor marginal issues conducted while more serious ones are being overlooked. This implied images of people arguing over what color to paint the bike shed while the house is not finished. So it's not that these things that we talk about don't matter. In a lot of cases, it's fun to talk about these things like color schemes and fonts and tabs and spaces and things like that. But they are just topics that we will talk about and argue about until we're blue in the face. And then tomorrow, we'll start up again. And there's things that don't necessarily matter. They don't maybe they will help you write better code if for some people, and that might be your opinion. For other people, it might not be it. And these are the types of things that are often fire for arguments on Twitter. I was just telling Scott that I tweeted out like, what are your what are the bike sheds? And there was a couple people who went through all of the replies and started to like argue, like, Oh, this is better because of xy and z. And then they just like got into it
+
+6
+00:04:11,880 --> 00:04:12,720
+Unknown: or like, Okay, calm
+
+7
+00:04:12,720 --> 00:04:23,390
+Wes Bos: down, calm down. We'll just get into it. I've got a huge list of them right here. First one in I thought we would also give our own opinions on them. What do you think about that, Scott?
+
+8
+00:04:23,510 --> 00:04:28,500
+Scott Tolinski: I think it's great. I hope I hope we disagree on some of these because I would and we'd like
+
+9
+00:04:28,520 --> 00:05:21,780
+Wes Bos: we'd like to invite you to not reply to us on Twitter about this episode. So first one is tabs versus spaces is ongoing. Whether you should use an actual tab character, or whether you should use spaces and the other like, a year ago, somebody like told me like why would somebody hit their spacebar and there's that Silicon Valley? Yeah, where they hit space, space space. Yeah. Let's get this straight. Nobody is hitting the spacebar so many times to do it. Everybody's hitting the actual TAB key It's whether when you hit the Tab key, do you get one tab character? Or do you get anywhere between two and four spaces that will represent a tab, quote unquote. So I use spaces, I use two spaces because of coding in screencasts. I need the width. I prefer to use four, but I do use to. Okay, so I'm gonna keep track of these. West, you
+
+10
+00:05:21,780 --> 00:06:27,870
+Scott Tolinski: have two spaces. And guess what, I use two spaces as well. Not necessarily because of screen recordings. Because I like the it looks like it's indented enough to me, like, as long as I can see it being indented a couple spaces, then it's fine. So yeah, I used to use two spaces. And I use spaces as well. Because why don't why use tabs if the space exists, I don't really care. To be honest. I set it up. I'm not going to try to argue this. Don't try to argue this because I really don't care. Yeah. Next one we have is single verse double quotes. And let me tell you, I use whatever I don't feel like no, I have it. I use single quotes most of the time. But to be honest, I don't even think about it, I used the single quote, because I don't have to hit shift to hit the single quote key. And my ear slit takes care of the rest. So you know, and again, and someone that I really care about, but again, sometimes people get spicy about this one, because, well, sometimes you had to use an actual single quote inside of your string. Or maybe you need to use backticks for string interpolation. So people just default the backticks entirely. I kind of like that.
+
+11
+00:06:27,990 --> 00:06:38,160
+Wes Bos: I think that's a good idea. I've been saying this for a while, but I think I might just switch to backticks. At some point, I use single and j s double and HTML right now, just because yeah, that's what
+
+12
+00:06:38,160 --> 00:06:43,710
+Scott Tolinski: I like. But that's what I do, too. But it's not necessarily what I think about. It's just es lint, does it?
+
+13
+00:06:43,980 --> 00:07:00,600
+Wes Bos: Yeah, actually, well, I had to explicitly turn off double quotes in prettier and change it to single quotes. But that's just because I've at some point in my life, I decided I wanted to use single and then that's what I've been going with, I don't think that there's any benefit or downside to using a double or whatever.
+
+14
+00:07:00,690 --> 00:07:02,190
+Scott Tolinski: And please don't tell us if there is.
+
+15
+00:07:04,770 --> 00:07:51,840
+Wes Bos: Next one is semi colons are not this. This spicy. It he first came on the scene in Twitter Bootstrap. It was Jacob, which is he's fat fat on Twitter, I don't hear much from him. He used to cause a lot, a lot of stuff online. And he coded bootstrap without semicolons. And then everyone got all up in arms. And then it became very popular to not code your JavaScript with semicolons because JavaScript has asi automatic semicolon insertion. And if you understand how that works, you can code your JavaScript without any semi colons and it looks nice. I like semicolons I don't have to think about it. I teach a lot of beginners where they could get hit by those things that don't necessarily understand how asi works. So I got no qualms with semi colons,
+
+16
+00:07:51,960 --> 00:08:17,400
+Scott Tolinski: I kind of have problems with semi colons either. I'm just so used to typing them that by the time that you know the no semi colon movement was there to say happening I was well I've already been typing him. So I guess that's what I'm gonna do. And again, I actually To be honest, I don't even think I typed them I just yes lint and prettier edit for me. So I don't know why either decisions that prettier made for me. And I'm just saying, alright, you in whatever.
+
+17
+00:08:18,240 --> 00:08:52,260
+Wes Bos: I think that's if you are okay with the the things that prettier does, it gets rid of a lot of this bike shedding because you just accept the formatting that prettier gives you there's a couple options in prettier but not a whole lot. And then just just accept it. And it gets rid of a lot of these arguments, because that's the way it works. And it's no longer like, people tend to put a like a like, I don't know, there's like a lot of value in their thoughts as to whether you should use single or double quotes. And if I like a robot and external tool, which just does it for you, then there's no like person behind it. Maybe that's a little bit better.
+
+18
+00:08:53,700 --> 00:09:59,850
+Scott Tolinski: Yeah, that works for me, you know, robot can tell me what to do in this case. I'm cool. All right. Sure. Next, we have the grouping or ordering of CSS properties. This one's fun, because I'm the type of person that changes my opinions on this all the time. And like, I like to rework it and reconfigure it and move this around. Whoo, this is better than this. This is better than this. To be honest, now that I have styled components, it's a little bit different, I think about my CSS in a different way, which probably doesn't make a whole lot of sense, because it still follows the sort of block object modifier sort of way of looking at things. But, you know, for me, I think about my CSS in a way now that is all very, here's this, this design element is very design systems. Like, here's this design element. Here's this component, essentially in here's this organism, whatever, all the whole, the whole atomic design stuff. I don't necessarily think about it strictly atomic design. I don't think about it strictly as BIM. I don't have any strict patterns that I follow, necessarily. I just think about here's these components, here's the systems here's these Yeah, blocks
+
+19
+00:10:00,000 --> 00:10:15,650
+Wes Bos: I think what you're talking about is not what I wanted to talk about here. But that makes sense. I actually do think there's a lot of value in getting a like choosing BAM or choosing a component approach to your CSS because there are serious problems that can happen. Oh, yeah. Kind of willy nilly yet.
+
+20
+00:10:15,920 --> 00:10:18,770
+Scott Tolinski: Yeah. Oh, I see what you're saying. You're saying thing. properties? Not?
+
+21
+00:10:18,800 --> 00:10:32,040
+Wes Bos: Yeah. Okay. Some people alphabetize their their CSS, some people group? Like formats together, alphabet, alphabetical. Seems, seems bizarre, but there's people that live by it, I
+
+22
+00:10:32,040 --> 00:10:35,730
+Unknown: guess. ordering them. You do I do? alphabetical? Yeah.
+
+23
+00:10:36,050 --> 00:10:39,330
+Wes Bos: Oh, gosh, you live you live your life like that.
+
+24
+00:10:39,360 --> 00:11:12,540
+Scott Tolinski: Yeah, that's how you find you know where to find things. You say, Oh, it's a background image. Oh, it's under B. BB comes before c therefore, oh, it's at the top of the list. Okay, there it is. I you know, I use alphabetical. And here's how I do it to blow your mind here. And yeah, any of your text editors is a very simple command names sort. And you just select all those properties, and you say sort. And then when they sort they put them in alphabetical. That's it, I do put mix ins and things like that at the bottom of the list. So if I have mix ins or functions in my CSS, I define those at the bottom anything else is alphabetical ha media queries go at the bottom as well.
+
+25
+00:11:12,570 --> 00:11:46,350
+Wes Bos: I generally do group my like, position, whatever and top right, bottom left transforms, I group like those like positioning ones together. But not in any sort of same way, just however I want. And if I need to know where background is on a selector, I just look at the selector and find where background is. That that's this funny. I think that's the first one we probably disagree on. I don't think that there's any value in you could probably get like a prettier for CSS, so we'll automatically reorder them for you. That may be it but I found my time running
+
+26
+00:11:46,350 --> 00:11:47,010
+Scott Tolinski: faster.
+
+27
+00:11:47,010 --> 00:11:47,850
+Wes Bos: Really? Yeah,
+
+28
+00:11:47,850 --> 00:12:13,530
+Scott Tolinski: I'm not. That's it. I'm not like, I'm not gonna say this is the right way or the wrong way. Because chances are, you'll be able to find selectors in my code. That's not alphabetical. But most of the time, it's like the last step before I clean it all up. Let's am writing this thing. I'm buttoning up. I'm making sure everything works. Exactly. Oh, I'll throw a little sword there on the CSS properties and get those things all alphabetical but that's really that's it's, it's like, it's not a huge factor in my life. I'm not thinking
+
+29
+00:12:13,920 --> 00:12:29,070
+Wes Bos: this is some high quality bike shedding yet. Oh, I guess you're always fine. I guess this is cool. No, but usually bike shedding you have to tell the person they're an idiot. And the way that you do it is the only way to possibly,
+
+30
+00:12:29,520 --> 00:12:33,390
+Scott Tolinski: okay, yes, in that regard. The only way is alphabetical and you're wrong.
+
+31
+00:12:33,540 --> 00:13:46,320
+Wes Bos: Okay. Next we have variable declarations. We as a VSS we have let and const, which are block scoped. And a lot of people even in my in the tweet thread, people said, why would anyone use deprecated legacy var, which is not true, var is not deprecated. Or legacy is just another way to declare a variable. And I think that this one boils down to trusting that the person writing the code, understands how they work and how they're scoped and the different benefits and cons and how how const is not immutable, but it's bound and it can't be changed and things like that. So by default, use const. And I will change it to a left if I need to reassign it. And I don't use var. But that's not to say that, like I think Sarah studion on Twitter The other day said, like comio fashion, but I like using var and regular functions. And I were just arguing all day long. With and I was like, you can have your opinions fine. Yeah. I don't necessarily agree with that. But like, I'm assuming you know what you're doing. And you probably can still build things at the end of the day, you're not gonna shoot yourself in the foot. So I don't know. That's a funny one.
+
+32
+00:13:46,470 --> 00:14:33,390
+Scott Tolinski: Yeah, that's a funny one. So I do yeah, construct life, I use constant all of the time. I don't often reassign things. In the event case that I didn't need to reassign something I would use let but I very rarely end up using let at the end of the day, and just pretty much right on const. That said, I'm not like personally offended to see a const or a armena var in my code, or let my code I do have a es lint or prettier rules that are set up to automatically go to const if it's not being reassigned at all. So you'll install over my code. And that's just how I roll. Next, we have a default verse named exports. And again, this one is to me this one's personal preference. I use both. I don't think you should use one or the other. I think you should use both.
+
+33
+00:14:33,660 --> 00:15:44,610
+Wes Bos: Yeah, me too. There's an argument for only using named exports where the tooling around named exports gets much better because you can automatically import them and it's kind of cool. And there's default is I assume, because you don't have to know what it's called. You can just import it as whatever you want. So honestly, I've never been bitten. Like this is huge arguments as to, like you could like write a huge bug that's gonna like take down the world. If you use like default look, no as I understand how both of these things work. And if I need to know what it's called, I could crack that file open, take a quick look at what it's called and or use my tooling to import it. And the default is nice as well. So I use both it generally, if a file needs to do one thing, or it is the main thing, then it's a default. Otherwise, if it's just like a utility, or there's like a couple functions that need to be exported from that file, then then they're named, but uh, no hard and fast rule. I think a lot of this stuff stems from, there's no defined rules for when to use one or another. And then people try to, they try to, like, make these rules that are defined. And sometimes it's just, I don't know, figure out what works best in your situation and use that. That's probably fine.
+
+34
+00:15:44,640 --> 00:15:51,540
+Scott Tolinski: Yeah. Yeah, I think we all need to be a little bit more accepting of other people's choices here. Because like, Whatever, man,
+
+35
+00:15:51,569 --> 00:15:52,800
+Unknown: whatever. Yeah,
+
+36
+00:15:52,830 --> 00:17:08,360
+Scott Tolinski: yeah, this this one's funny, because this one was spicy on Twitter. Should designers code there? This is hilarious, because so many people are like, well, they shouldn't count. Because we're designers and other people are like, well, they do need to get the general experience of what coding is that they know what's possible? Or maybe Yeah, get the context a little bit better. Who cares? Man, who cares? Yeah, should designers go fishing? I don't care. Let them go fishing. You know, it's what it's whatever. And to be honest, I think any sort of understanding cross disciplinary, whatever is going to make you better at your job. I think I'm a better developer, because I have a little bit of design hobby going on. I do design as a hobby. And so because of that, I feel like I have a better understanding of some structure of things, and maybe some of my CSS structure, things I can look at from a different perspective, because I've designed it in a way that's a system rather than just designing an individual thing. So should designers code should coders design? Uh, yeah, sure, whatever, I think it's all going to make you better. But that said, don't just do it, doing it, do it because you want to do it or you you want to gain that experience or whatever. It's not required or something.
+
+37
+00:17:08,489 --> 00:18:34,020
+Wes Bos: Yeah, I think that it's should designers use a tool that they're interested in? If they want to? Sure, I think that there's a lot to be learned. And I think you'll probably be more in tune with what's going on. But that doesn't mean absolutely every designer needs to learn and sling react and all this kind of stuff is especially with some of the the way that these design tools are starting to go now. So it's kind of it's almost a meme now. Where you say should designers code I tweeted the other day should designers debug? Because actually one of our sponsors century was trying to hire someone designer in a nice it should designers debug and like 40 replies from people, the game was serious. And like these, like long thought out, well thought out things. So it's kind of a meme. Now, it doesn't really matter all that much. Next one we have here is which front end framework. So this one's very choose. I think that front end framework does make you a better developer choosing the right framework. But I think that if you weren't like people all the time, what's the difference between react and view or Angular or whatever. And the ones that are most popular and modern right now, between all of those what you've got react Ember view, Angular, other ones Angular, there's probably a couple other ones, Marco j. s, those are probably all a fine choice. And it just at the end of the day, there's there's not all that much difference between the between them all?
+
+38
+00:18:34,200 --> 00:19:37,100
+Scott Tolinski: Yeah, yes. It's like Denmark, touch of death. This one is, as people get real fired up about the choices that other people make. And these these frameworks, and honestly, again, it's productivity, you're predictive with this, you're getting stuff done. Now, the time that this is a really fiery topic, as if you're on a team of people who all have different opinions on which to use. I could see that being a interesting discussion, because how exactly do you determine which of these to use at this point, there's such a nice convergence of abilities amongst these frameworks that to say that you couldn't do something in one or the other would sort of be wrong. So it's more or less, which of these is the team going to be most efficient and and why? And so in that case, maybe it would be best off to serve this as Hey, a majority rule situation five of the developers are better at view. Therefore we use view I have no idea to be honest, how you even solve those, but again, whatever suits your needs, whatever you're good at. Next up, we have one that is also very spicy. These are getting spicier. Wes. This is like hot ones where they they progressively get you spicier,
+
+39
+00:19:37,290 --> 00:19:40,610
+Wes Bos: so we're gonna have the last dab at the end. Yeah,
+
+40
+00:19:41,040 --> 00:20:02,360
+Scott Tolinski: this is a vim Emacs verse atom code, sublime, any of your text editors. People who use vim are serious in terms of I'm not gonna say they're serious developers. They are serious about using them. I mean, the Yeah, they This is one that to be honest. I see the most intensity out of people is like
+
+41
+00:20:02,360 --> 00:20:04,890
+Wes Bos: insufferable. I would explain it. Yeah,
+
+42
+00:20:04,920 --> 00:20:48,630
+Scott Tolinski: yeah, they're like, you could be like which vias code extension do I use for syntax highlighting? And someone would be like, bam, you're used van. Like, okay. So when I'm out, yeah, that's a vim people are very loud. And I, to be honest, I am so much less likely to use vim because of how loud the vim people are. And that is a bummer. Because I'm sure it's great. I've used them. I use it when I'm on the server. But I use VS code, and I like it. And I like the interface. I like clicking around. Sometimes I know, keyboard stuff is great. But yeah, no, I don't have any beef. I don't have any beef with any of this stuff. That said, I think sometimes the cheerleaders of one thing can put off the community totally. But
+
+43
+00:20:48,660 --> 00:21:48,320
+Wes Bos: you see this all the time with people who are extremely passionate about something come off as way too harsh, or way too over the top. And I see it all the time. Anytime you talk about something, like I even see this with, like, like RX JS observables crowd, anytime I tweet anything, there's somebody who's trying to, and it's just it's put me off of that technology, or even like CrossFit, or people just like, they're just like, talking to you about it, like all the time, and it's because they love it so much. And they're so happy with how it works for them, that they can't even fathom somebody enjoying something else. And then it just puts you off of it and entirely, which is really, really funny. So yeah, that's I'm obviously I am a VS code guy. I think that there's a lot to be gained by them. But I don't think that the most of the population has the time or patience or understanding to configure and learn how it all works.
+
+44
+00:21:48,420 --> 00:21:49,770
+Unknown: Yeah, yep, yep, yep. Yep.
+
+45
+00:21:50,790 --> 00:23:08,850
+Wes Bos: Next is small perf wins. This is a spicy one as well. Because anytime that something comes out, there's always questions about whether that's perf performance or not. And anytime anything is brand new, and performance is 100%. Very, very important. But often these things get boiled down to, I have no idea, or here is JS perf, where I ran this thing, 4000 times in one second, and this thing took 100 milliseconds longer. Therefore you should always use this approach, right? Or Yes. And there are definitely things where like, like transform, you should ideally just transform, or you should only transition transforms and opacity and try not to just transform anything like border and margin. Like those are, those are good rules. And it's important to note that I'm not Pooh poohing on performance in general. But a lot of times, it's just these small, granular things, where I say, Oh, thanks, I'll remember and you see in react as well, where where people talk about like, binding and arrow functions on click, or like, I'll remember that next time, I have 40,000 react components on a single thing, like, these are things that will probably matter at some point. But for the majority of people, it doesn't matter at all at the end of the day.
+
+46
+00:23:08,880 --> 00:24:11,250
+Scott Tolinski: Yeah. And there's a big crowd that will say, Well, why would you use the less performant way when you know, down the line that it could be I think, Well, I'm not gonna waste my time on micro optimizations right now that are going to take me longer to implement, and it's going to hold me back from getting this thing done on time when it's not necessarily a big deal. It's almost like Like, seriously, I taught like a beginner react course and my react 16 for everyone course. And I did I'm thinking like the fifth video, and like the first comments were like, why don't you do it this way, it's more performance. I'm like this is a beginners react course. It is teaching very beginners how to use this system, you do not need to performance optimize this. This is not production code here. This is teaching you the basics. So there's definitely like there's room for optimizations in performance is definitely something you always need to be worried about. But micro optimizations in my opinion are just that's a crowd that can certainly quiet down and that's some advice I'm gonna ignore almost all the time. Until I you know,
+
+47
+00:24:11,370 --> 00:25:00,000
+Wes Bos: you know, what's one funny thing that I even myself got bit with you hear me all the time talk about using map filter reduce instead of loops all the time? Yeah. And then I ran into some code the other day where like a four of loop was just way nicer. It was like sequence sequencing promises, what happens then another one, then another one, and I wrote this terrible reduced function and then I wrote it in a for loop and I like tweeted it being like, Am I wrong that this for loop and I was like No, the for loop. There's the for loops are in JavaScript for a reason. And that's much more readable and it's a way better way to approach it. And I've been just like caught myself in this dogma of always used map filter reduce for everything and I had to like just shake myself out of it being like, oh, oh, don't West don't don't make these rules for yourself, because they're not always true.
+
+48
+00:25:00,659 --> 00:25:28,950
+Scott Tolinski: Yeah, it's funny. I mean, it is funny because you do you you end up lumping yourself in these roles and you forget you lose the script, you lose that bigger picture of does this thing actually the right tool for the right job? Next one is going to be what about browser support? Hey, Wes, by using float for what about browser support? I can't use Flexbox right now, like, yeah, yeah, I don't know. This one. Yeah. This is anytime you bring up any CSS property or any property in general? Yeah.
+
+49
+00:25:29,069 --> 00:26:16,500
+Wes Bos: It's such an easy one. It's almost a conversation I never want to have because first go look it up. And second, are you supporting these browsers? If yes, can't use it? If no, then use it. That's it. That's it. That's all there is to it. Yep. I know. Next one is a block formatting. This is another one that's totally solved if you just give over to prettier and let them do it. But it's whether to put the curly bracket on its own line, you open up a function. And like some sort of psychopath, you put the opening curly bracket on line after the function the or if you have like an if else. And you you put the else on the same line as the closing if block or on its own line. So that's a hotly contested. And this is
+
+50
+00:26:16,500 --> 00:26:33,630
+Scott Tolinski: why I like us. Because for two people who put it on another line as potentially psychopathic, which I totally agree, because that's just totally, totally weird. And to be honest, I have no real reason for it, other than the fact that it, it looks weird. It looks
+
+51
+00:26:33,630 --> 00:26:40,380
+Wes Bos: weird. It makes me feel weird. Yeah, no way to live your life doing that. So I'm gonna draw a line there and say, you're wrong, and you're
+
+52
+00:26:40,380 --> 00:27:02,820
+Scott Tolinski: wrong. You're wrong. And you know why you're wrong. You're wrong for no specific reason other than this, I have a feeling of that's the way it looks right. And that's why I have to say you're wrong about it. So no, I totally agree with you. That's weird. It's weird, and I don't like it. So that's the way it is a new function instance, between a binding inline arrow, whatever, I just end up using arrow functions most of the time to be honest. Call Oh, yeah,
+
+53
+00:27:02,820 --> 00:27:57,840
+Wes Bos: yeah. This one I was more thinking of in react where if you have every handler that gotcha, yeah, or anything really where if you want to like, especially in react, if you want to pass an argument to a function on click, then you have to do an arrow function. And that what that does is it technically creates a new function, which takes up more room in memory. Yep. Instead of just using one function, like it was like this big like, No, no, for a while, like, you don't do that. And you have to have this, like, super obtuse way around that of just being able to pass an argument. Yep. And then the data came out at the end of the day, and people said, like, this is fine, unless you have, again, 100,000 components on the page, you probably have a bigger problems to worry about at that point. But in most cases, it's totally fine to have an arrow function in line or to bind it in, which creates another function. Those are totally fine. In most cases.
+
+54
+00:27:57,900 --> 00:28:11,730
+Scott Tolinski: Yeah, I do inline arrow functions. And that's one of the things that people would often call out in my tutorial videos and just say, listen, does this matter? Like does it matter? No, I use the inline arrow functions, and I use them happily use them all
+
+55
+00:28:11,759 --> 00:28:27,420
+Wes Bos: I always respond to people are like, that's weird, because I clicked it. And it worked. You know, like, it's like, Is it really lagging? Even if you even if you bust out the perf tools to actually zoom in on that thing? It's unlikely that you're going to find any sort of significant impact.
+
+56
+00:28:27,539 --> 00:28:38,820
+Scott Tolinski: Yeah, yep. Totally agree. Again, all of these performance optimizations stuff, do it. Like if you know, it's going to be an issue? Sure, go ahead and do it ahead of time. But if you don't know what's going to be an issue, don't make things harder for yourself.
+
+57
+00:28:38,850 --> 00:29:00,960
+Wes Bos: One more thing I just want to say about that is a lot of times the people have these performance, because they say the chrome does it this way internally, and this is the way the engine works. And my answer to that is like, well, Chrome should change that then because we're developers, and this is how we're raising. And often chrome will change that they'll go back and under the hood, they'll say, Okay, this is how people are writing it. Maybe we should make it faster.
+
+58
+00:29:01,019 --> 00:29:22,890
+Scott Tolinski: Yeah. Yeah. Yep. Yep. Yep. All right, last one here, trailing comma. So we're gonna trail this episode with the trailing comma, because I use a trailing comma. And then that's just the way I do it. Because, hey, I mean, why not? If you ever need to add another item to an array or an object, that comp is already there, and you don't have to right so there same thing. This is one way people who are wrong or wrong, they're just flat out wrong.
+
+59
+00:29:23,549 --> 00:30:06,030
+Wes Bos: Well, trailing comma is supported I think in IE nine and up on an object and also it's better forget history where you don't have to modify the line before to add a comment. You just add a new line and then your your good history and your good blames are a little cleaner. That is bike shedding. I've been wanting to do this one for a long time just because it's it's hilarious, silly to talk about the stuff but it's also kind of fun to talk about it. At the end of the day. It doesn't really matter all that much. But there are your own personal opinions. At the end of the day you can choose whatever it is that makes you happy in your team. I'm sure you are going to be productive. with whatever which way you choose. Yeah, that's it. That was a bit of a tasty hasty, wasn't it? It was
+
+60
+00:30:06,030 --> 00:30:11,760
+Scott Tolinski: a tasty hasty It was a spicy, tasty hasty, and I hope we made enough of you sufficiently agree.
+
+61
+00:30:13,830 --> 00:30:17,610
+Wes Bos: All right, thanks for tuning in. We'll catch on Wednesday. booze, please
+
+62
+00:30:19,500 --> 00:30:29,310
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

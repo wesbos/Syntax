@@ -1,0 +1,192 @@
+1
+00:00:00,359 --> 00:00:24,480
+Announcer: Monday Monday Monday open wide dev fans yet ready to stuff your face with JavaScript CSS node module BBQ Tip Get workflow breakdancing soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA, Bob and Scott Taylor. Totally at ski.
+
+2
+00:00:26,129 --> 00:00:57,960
+Scott Tolinski: Oh, welcome to syntax in this Monday edition of syntax, which is also known as the tasty treat. We're going to be talking all about documentation, how to read documentation, how to understand documentation, how to better parse it, how things are sort of organized and maybe you know how it's the most stuff is, as always, I am Scott to Lynskey, aka te lokk El Toro loco as with me, as always is the Barracuda boss was boss. Haha, you know
+
+3
+00:00:57,960 --> 00:01:08,400
+Wes Bos: what I went down a rabbit hole of watching Barracuda fishing videos. Oh man, holy those things are so nasty. I wouldn't be so afraid to catch one of those. Yeah.
+
+4
+00:01:08,810 --> 00:01:17,190
+Scott Tolinski: I mean, the blue barracudas on Legends of the Hidden temple. Is that what it was? Did you did you get that in Canada? Nickelodeon? No, I
+
+5
+00:01:17,190 --> 00:01:24,510
+Wes Bos: never we I was basic cable when I was a kid. I like 13 channels. We never had Nickelodeon. Dang, man, you
+
+6
+00:01:24,510 --> 00:03:42,030
+Scott Tolinski: missed out on legends, the hit tab, there's a team on a game show called The blue Barracuda. And that's how I learned that Barracuda were nothing to mess with. There's this sort of like the Wu Tang clan of the fish world. So this episode is sponsored by century now. century is@century.io. And this is one of these tools that Wes and I both use, and that we both absolutely adore. I've been using Sentry for longer than I can remember now. And what Sentry does is it basically helps you track solve and fix your errors. It basically reports your errors and collects them into a system and allows you to really harness them. It allows you to know everything about these errors, whether or not the operating system, what the person was doing, maybe even attach some custom data like a user ID or something to these errors. And it makes solving these things. So incredibly easy, because when you have a lot of people using your stuff, right, there's oftentimes a lot of people using your stuff and you can't always keep track. And maybe not every bug is going to be reported to you via a you know GitHub issue or an email or something like that. You want to be able to stay on top of stuff before it happens. So Sentry takes all of your exceptions, all of your errors all of your bugs, puts them in a spot allows you to track them allows you to know what's going on. And the best of all, you can get started with Sentry for absolutely nothing. You can use the hobbyist program and the plan here and sign up. And really the amount of stuff that you get with the free hobbyist plan is just unreal. So I highly recommend using Sentry. to track your heirs track your bugs. It is one of both of our favorite services. We were just so psyched When they reached out to us to sponsor the show, because we just love this service. And talk about good docs. Sentry has some really good docs. It's searchable, it's organized it, it has everything exactly where you want it to. So it's easy to get started easy to learn. So head over to sentry.io and sign up today and use the promo code tasty treat. All right, that is tasty treat to sign up and get access to century today. Again, the free hobbyist program is unreal for what you get. So check it out at Sentry dot i o and you know, don't let your users be the first ones to report your bugs get on that stuff.
+
+7
+00:03:42,360 --> 00:04:27,600
+Wes Bos: Awesome. So today we are talking about reading documentation. And I'm actually really excited about this episode because I think that it is such a superpower to have, regardless of where you are in your your journey. And often I find people asking me questions when it could easily be done by by just reading the documentation. And I think that especially with beginners, there's this sort of idea that the documentation is a bit overwhelming. It's a little bit scary. So they just don't they rather find a StackOverflow answer or something like that. And we're here today to help you better read the documentation, be able to tackle some of the overwhelming pages the documentation so that you can become a better developer, right, Scott?
+
+8
+00:04:27,600 --> 00:06:03,150
+Scott Tolinski: Yeah, in overwhelming is a one of the perfect word I was right about to say overwhelming and then you're like, no, it's overwhelming. So we're on the same page. Because it can be I mean, you look at this stuff. And there's there's a whole bunch of different types of documentation. You don't necessarily know what you're looking to. Maybe you click the docs and it's just an API reference and you're just like, Okay, this is not what I'm looking for. So you know, part of this is going to be a little bit about how to parse what you're looking at, where to go for what type of learner you are and different types of people are going to gravitate towards different types of documentation. Some people are gonna love looking at the source and maybe the sources, all they need is their documentation. So to get started, I guess I want to do a little bit of what are the different types of documentation you'll run into on various websites, sometimes you'll see one, or just a couple of these. So you might not always see these and these don't have like official names or something. I'm just this is how I've decided to classify them. But you would often have something like the tutorials. Right? So Gatsby is a great example of this. The Gatsby site has some really excellent tutorials on how to build with Gatsby and one of the things I loved about the Gatsby tutorials. So just in the top, they have a tutorial link, they have it broken up into different chapters. So like programming basics, Introduction to Gatsby, and SP basics. And so like because they have this broken up into different chapters, it makes it really easy to go through each one of these when you can, rather than just like approaching this whole thing as like a giant mess. You know, is there any sites that you have that have particularly good tutorial documentation,
+
+9
+00:06:03,420 --> 00:07:13,650
+Wes Bos: I've always liked the React router, documentation, the new reach router, and all of that stuff is is really good, big fan of stripes documentation. Because when we're talking about API's that are language agnostic, meaning like, for example, I work with a Vimeo API. And the Vimeo API can be used with Python or PHP or JavaScript or curl, or any any language that can send a request, it can be used with write, and that's great. But often I stare at the Vimeo documentation and I just like, like, I've spent probably nine hours of my time trying to write a script to Auto Upload captions from to my videos. And it's because they don't like give you enough information, or any examples at all for how to do it. They just say like, do this. And I was uploading it as like, like a an object. And it needed to be like raw blob data and like it nowhere does it say that. So what I love about stripe documentation is that it shows you what the methods are and what you need to pass and then what the types should be. But then it also gives you examples for doing it. No doing it in Ruby doing it in PHP. And that's that's like the perfect documentation for me.
+
+10
+00:07:13,770 --> 00:08:38,640
+Scott Tolinski: Yeah, one, here's something really hilarious. I just destroys documentation just now to grab a link from it. And it was all in Japanese. I didn't set it to the Japanese. I gave it a refresh. And I went and went away. So it was a nice little fun thing right there. I was almost for a minute like, Huh, okay. But yeah, Stripes documentation is great, in fact that that I mean, Brixton, to the forefront, like a good point about a different type of docs, right, where we had the sort of tutorial based docs, but then you also have the sort of standard, because you'd call it a guide based documentation or a documentation sort of thing where it's less of an API reference, and more of like a, here's little things that you're expecting and how to do them. And this is, in my opinion, the most useful type and stripe is so good about this, because they do they have really identified the things that people are trying to do often. And they let you know how to do them. And it always frustrates me when when documentation leaves out that sort of thing, because it's like, you know why people are using your thing, why not just show them the easiest path to the thing they're trying to do rather than here is just a reference. So I really like that you know, who else is really good about that just has some really good documentation in that regard. They have their guides section, where instead of just being like, here's how to do thing, they have like paragraphs with text and examples that go along with their actual reference, as well as their tutorials sort of stuff.
+
+11
+00:08:38,970 --> 00:09:36,510
+Wes Bos: I also really like the documentation for next js, because the docs are pretty good. But the GitHub of examples that they have, they have, let me just open it up. If you go to github.com forward slash site, forward slash next j s, and go to the examples folder, they probably have, I don't know 100 150 possible examples of every possible way that you could use it, using it with Express using it with koa using it with the nested components using just a Hello World using it with data fetching, using it with exploiting using custom CSS. And it's amazing because if you are using it in a one specific way, there's no way the documentation can contain all of that. But by having 150 possible little examples, with every single possible permutation of NPM package out there. It's it's super helpful. I often find myself diving into the different versions of next Yes,
+
+12
+00:09:36,530 --> 00:10:51,170
+Scott Tolinski: yeah. Yeah, love that. Another type of documentation I like briefly mentioned a couple times already is the the API reference when this is just a straight up. Here are the methods, functions, components, whatever available to you in this package. And here are the parameters they accept and maybe like a one sentence on what they do. And this is superduper useful. It's super useful to have But it's not always the most useful when you don't know what you're doing or themes aren't things aren't like named super well, one of the I think some of the like the gold standard for this kind of documentation is in Meteor has in the same regard Apollo, because they use the same system that Meteor has for this for the API Doc's will, they'll show you every single package involved with Meteor. If you select it, there's a little drop down for the version, all that stuff, but there's like a, maybe a paragraph or two about each method. And then it tells you where and how you can use it. And it gives you the even occasionally, like suggested syntax, or maybe some different ways to use it. But it's less of a guide and more of like a straight reference. Here's all the parameters except here's what it does. And here's how it's available to you. So those are pretty much it. Do you have any other types of documentation, maybe a video video documentation could be a category?
+
+13
+00:10:51,270 --> 00:12:08,880
+Wes Bos: Yeah, I think the video documentation is really helpful. Not a lot of libraries will often put out video documentation and not a lot of libraries will often put out good documentation themselves. Because like I've said this before, the type of person who writes a library is not necessarily the same type of person who is amazing at writing documentation and conveying that to the general public. Because often the people that are building these libraries are absolute geniuses. And it just makes sense to them. And it's all in their head, how it works, right? And, and then trying to like, we've got us regular folks down here trying to use the library. And the thing might be amazing, but we don't know how to actually use it, because there's not a lot of information surrounding that. So if you yourself are someone and this is what I fancy myself as I'm not really a library author, but I am really good at explaining things. So I often will either contribute back to the documentation, or it's a good opportunity to create some extra content on YouTube. I've had many of my YouTube videos just like, like referenced or put into the documentation as here. Here's a good example to get up and running because people learn in different ways. Some people just prefer raw docs, and just to read them and they get it other people prefer, show me an example of how you would actually use it.
+
+14
+00:12:09,030 --> 00:13:03,600
+Scott Tolinski: Yeah, yeah. And and that's always a nice thing to see, too when your videos get referenced in an official documentation, because that shows that you you know, you did a good job of explaining exactly what the author was intending when they wrote this stuff. But again, that is one of those things that can be so frustrating when you have this library and it doesn't make it clear exactly how you can use it. One of my biggest API gripes is with Braintree, and it's sort of Braintree is fault for just having an obtuse API. But like with stripe and stripe, you could just say, hey, cancel this, this user subscription, right? With the Braintree, you have to say, okay, find the the current amount of allowed months that this user has left on their account and set it to one more than the amount that is that they currently have. It's just like, it's up to us, like, Why just not have a cancelled method or something like that. But personal gripe there.
+
+15
+00:13:03,780 --> 00:13:48,090
+Wes Bos: Yeah, that's it. PayPal is notorious for having the worst documentation in the world. I just went to their new documentation, and it looks really nice. So obviously, they've heard the cries of us many times on the show. We've we've griped in all developers gripe about finding documentation for PayPal was such a pain because PayPal has like, I don't know, 300 possible different products. And then they're named different things and all of the different countries. And it's impossible just to find document, I myself, I'm still trying to hunt one thing down, and I even have like a, like a pay PayPal person. Yeah, that like, well, like, if I can just call them I have their phone number just because my account, I guess I do enough processing with them. And make
+
+16
+00:13:48,090 --> 00:13:49,860
+Unknown: enough money with them is what I'm making
+
+17
+00:13:49,860 --> 00:14:13,830
+Wes Bos: money that I have like a PayPal guy. But he still doesn't they don't even know themselves often. thing. So it looks like the documentation is getting better if you go to the PayPal dock. That's where you can filter by country is that's a frustrating thing, because they have like different products and even different things for different countries. This looks pretty good. Obviously, they're on a long journey to make this stuff much better.
+
+18
+00:14:13,920 --> 00:14:24,240
+Scott Tolinski: Oh, cool. Why helps, though, because that was always one of the scariest things is when you had to go do something with PayPal API, because you're just like, Oh, no, I have to go to their docks now.
+
+19
+00:14:24,420 --> 00:14:28,500
+Wes Bos: But yeah, it'll be a good day when I can stop complaining about PayPal be a
+
+20
+00:14:28,500 --> 00:16:01,800
+Scott Tolinski: very good day. It'll be very, very good. So let's go a little bit about into reading documentation and themselves like where to go. So now you know a little bit about the differences. And I think some of this processes is go back to how well you learn things in different types of ways. So some developers are really, they're, they're very experienced, and they know exactly what they're looking forward, they can go into even the source code and look at it. Or maybe they're just going to go straight into the API reference. They want to check out all of the methods they want to see all of the different parameters, arguments, whatever they want to see See the different like how you use the stuff right? And other people are going to want a fully guided tutorial. And guided tutorials in my mind, there are great way to learn because you can sort of really just take on a small little project the problem with the guided tutorials, if you just follow it step by step by step, you might not necessarily see some of the big picture stuff, which is where sort of the in between the sort of reference docs come into play or that guide to docs where they're sort of like, Hey, this is sort of how you do different things. And maybe I have an idea, like, Hmm, maybe I want to charge this customer's credit card, I'm gonna go look for how to do that. And then so these reference docks are a good way, because instead of being a part of a full tutorial allows you to explore a little bit more. So I think, understanding how you learn, and which one of these sort of things is your best. Best way to make something stick is going to save you a bunch of time when you're looking at the documentation. You want to know, where should I be heading first, right? Where should I go first? Should I head to the tutorial? Should I head to the reference or whatever? But that's, again, a little bit of a personal exploration.
+
+21
+00:16:01,950 --> 00:16:16,800
+Wes Bos: Totally agree. Let's should we jump into understanding the the parameters? Because this is something teaching in person? This is something that I see beginners trip up all the time. Yeah. So it is like understanding, like when you have a function like what do you pass it?
+
+22
+00:16:17,130 --> 00:16:29,940
+Scott Tolinski: Yeah. And this is this is in the the API reference, typically the API reference world, where it's just giving you a list of methods, a list of functions, or components or whatever sort of stuff you want. So yeah, like,
+
+23
+00:16:30,270 --> 00:16:47,970
+Wes Bos: some examples might be, you got MDN. And you want to know all of the array methods that's built into JavaScript. But it might also be you have a library, and that library will have a list of methods that you can call on it. And those methods take different arguments and different parameters that get that get passed in.
+
+24
+00:16:48,090 --> 00:17:17,130
+Scott Tolinski: Yeah. So what are some of the pitfalls here? Obviously, some of the important information you need is what is the parameter type? Is it a string Boolean object, like, what is this expecting to receive? Right? And if you know what it's expecting to receive, then you know what you would most likely need to give it right. Next, you need to know whether or not the parameter is required or optional. And sometimes this is denoted with a question mark. Is there any other ways that you see this? Other than maybe just yeah, optional in parentheses,
+
+25
+00:17:17,459 --> 00:19:05,600
+Wes Bos: I just asked on on Twitter, because MDN specifically uses this kind of weird Unix syntax, I just asked on Twitter, like, what is this syntax called? Because if you go and maybe if you're sitting in front of a computer right now, just search MDN array map and open up the syntax part for that. And it says, The syntax for an array is that the first argument is a callback, and that callback will give you the current value. And then I'll give you the index and the original array. And then the second argument to array dot map is you can pass a this argument. And that's pretty simple to understand. But the syntax for that is that when something is not required, they put square brackets around it, which I see all the time people thinking, Oh, you pass it an array, but just knowing that the square bracket syntax means that it's required, or sorry, that it's optional, it's not required, and often the there will be a comma in front of the actual value. So current value is just passed in as current value. But then there is square bracket, comma, meaning that this is required. But if you do have it, put a comma there, and then you get the index. And then you can get the array, which I think is is a little bit confusing for people to read. I myself, I like the question, I don't look at that, I'll either scroll down to the parameters. And and let's read what the parameters are. And they'll just have a tag that says optional beside them. Or I'll just scroll down to some examples because like, I'm example learner, a rather than just seeing, like the cold, hard docs, I rather scroll down and look at six or seven different examples for what it is that I want. And then if I have questions about oh, there seemed to be passing an argument here, I'll scroll back up to the params and see what it is that you are expected to be passed.
+
+26
+00:19:05,640 --> 00:19:47,010
+Scott Tolinski: Yeah, I'm the same way. Definitely the same type of learner in that regard. There's another way, I guess you could always, I don't know, have any examples off the top of my head. But there's also maybe the required verse optional, where instead of showing which ones are optional, they would declare which ones are required. So which parameter you need to have. And then you would just assume that every other one is optional. Sometimes an exclamation point is used like in graph qL, to determine if something is required. So other things that you might want to pay attention to is the parameter order, for a long time just functions had parameters that were needed to be in a very specific order. It's this than this than this. See less of that nowadays with the new object? What does that object syntax called? I
+
+27
+00:19:47,010 --> 00:19:50,570
+Wes Bos: always forget it. It's called the structuring.
+
+28
+00:19:50,600 --> 00:20:12,720
+Scott Tolinski: Yeah. What's the syntax the syntax is called when you have the object property with the same with the same name params. Yeah, default params Not default params we're thinking of different things. But when you have an object, oh, yeah, sorry, value is the same as a variable. So you just get to declare the variable name there. Does it have a name? It's gotta have an eye. Maybe?
+
+29
+00:20:12,960 --> 00:20:31,050
+Wes Bos: Yeah, I'm not sure exactly where to I thought you're talking about in ESX, we've got the ability to either provide a fallback value, but the order still matters there. Or the other thing is called named params, which is just a kind of just a hack using destructuring. So you pass it a one argument
+
+30
+00:20:31,950 --> 00:20:40,820
+Scott Tolinski: params, but I was just talking about the technique of not D, structuring the object, but the initial when you're setting the values initially into the object.
+
+31
+00:20:40,920 --> 00:20:46,850
+Wes Bos: Oh, yeah, that's a that's still is considered destructuring. But it evolved, and we'll call it named params.
+
+32
+00:20:46,890 --> 00:21:27,510
+Scott Tolinski: Okay. So nowadays, you have things like named params, where you can, you know, actually have an object as your first argument with different parameters that have names, essentially key value properties. So basically making the order in which they're passed in to the method or function or whatever, totally obsolete. And in my opinion, that's the way to do it, right? Because, you know, we are passing it at all times that it's more, it reads better, you can see exactly what's going where. So yeah, that's pretty much, that's pretty much how you understand the parameters that go into this thing. You need to know their types, what they do, if they're required or needed, and the order of them if there is an order at all.
+
+33
+00:21:27,860 --> 00:22:10,860
+Wes Bos: One other thing I'll add to that, as often documentation will tell you what it returns as well. And that is helpful, too. Because I often see people, like a really simple example is people don't understand when to use for each and when to use map. And if you know that map returns a new array, and for each doesn't return anything that can save you a whole lot of headaches. So if you are interested in capturing the output of a function, always look at what it what the return value actually is. Yeah. And also if it returns a promise or an actual value, because many times my life, I've forgot to await a promise. Yeah. And then I'm trying to call methods on a promise which don't exist.
+
+34
+00:22:11,040 --> 00:22:53,250
+Scott Tolinski: Yeah. And if you've ever used anything like j s doc or one of these tools that generates documentation based on comments in your code, that's like typically what those things are wanting, they they want, like an overview of what it does. They want the parameters, what they expect, if they're optional, and then they want what it returns and how it returns it. So those are all like the key information. And if you have those those tools and understand all of that stuff, then you should be able to have a pretty good understanding of what this thing is, especially if it's named well and documented well. So you have a point here, it's how to tackle something new, right? Something that you've never seen before, like when you first arrive on a documentation, like what do you what do you do?
+
+35
+00:22:53,580 --> 00:24:19,980
+Wes Bos: Yeah, so my my approach to this, and I'd be curious to hear what yours is, is, first thing I'll do is I'll look for examples, right? Like, I don't sit there and read the documentation top to bottom, what I'll do is I'll look at a whole bunch of examples about how it works and what's going on. And then when it comes time to to writing my own, I'll do make sure that I do a good scan of all of the documentation, I won't read every single line, but I'll make sure that it goes through every single, every single page in the documentation to understand what is the surface area of this thing, because often if you just use the JavaScript array, it's pretty simple. Because you can just look at the sidebar, look at all of the different array methods. And if there's some that are interesting are some that you don't understand what they'll do, you can click into them and get an idea, you're not going to remember it all. But it helps you get a good surface area of what is possible with this thing. And then when it comes to actually implementing it, you can jump back into the docs and look up the specifics of that. So simple examples first, then scan the entire documentation. That's often how I come up with all these little Hot Tips on Twitter. It's because no one actually reads the documentation or no one reads the release notes of like new browsers, when when a new version of Chrome or Firefox comes out, they'll give you this huge thing of what changed. And if you just dig through that it really helps you stay on top of what's going on and understanding the new things that are in the browser. Yeah,
+
+36
+00:24:20,010 --> 00:25:16,080
+Scott Tolinski: my strategy is to have something that I want to do in mind, if I want to build a website. Let's say Gatsby, I want to learn Gatsby, I want to build a static site for something like that, I would head to the tutorial first because it's going to give you steps to do here, here and here. But let's say I was looking to do a payment processing on stripe, I would go to stripe documentation, I would look for the specific thing I wanted to do. And I would see if they would have any guides, like if they have any very specific guides on how to charge a credit card. I would start there. And if at that point, it's like too high level I would take a step back and maybe head back to the basics. So I'm definitely one more to dive in and then just try something and then realize I'm in over my head in various directions, and then take a step back, rather than just like, let me read the introduction, no, screw it, screw the introduction, I'm gonna get into some code, I'm gonna make a lot of mistakes. And I'm gonna then reread the introduction afterwards and then realized I probably should have just started with the introduction.
+
+37
+00:25:17,430 --> 00:25:57,690
+Wes Bos: Yeah, it's similar to how I actually do my, my courses as well. For example, yesterday, I just finished my jest testing video. And we were doing like a very simple example of like, expect this value to equal six, right? And then and then you understand, okay, that's how it worked. You expect something to equal six? And then I say, okay, but like, what if we had an array, and I wanted to check if a value was in that array, and then we circle back into it, let's go to the documentation, take a look at what all of them are. So again, get it working at first, then go to the documentation and get an idea of what are all the 50 different methods that we could possibly use? Because I know that I'm going to run into a situation where I need these at some point.
+
+38
+00:25:57,720 --> 00:26:14,730
+Scott Tolinski: Yeah, def cool. So you have some other little things in here about maybe some icons in here that you occasionally see it, I noticed these a little bit more on maybe the the MDN MDN. docs when anything else but you you have mentioned that we have like the beaker besides something if it's an experimental API.
+
+39
+00:26:15,720 --> 00:27:05,580
+Wes Bos: Yeah, there's the the beaker that is experimental. so careful with those don't use those in production applications. There is a trash, which is something that's been obsoleted or deprecated. Again, that's something you should not use. And then there is an exclamation mark, which is a non standard API is often sign Chrome or Mozilla will sneak into their own for whatever reason that they have on there. So it's important to like one of my favorite pastimes is just going to the documentation on MDN. For something like right now I'm on the documentation for the Canvas API, and it's on HTML canvas element, you can read through all the properties that are available. And then on the left hand side, it will show you all of the different methods that are available to you. And it's kind of interesting, because again, like it's, it's just having a good idea of a surface area of, of what is possible, you know, we
+
+40
+00:27:05,580 --> 00:29:09,660
+Scott Tolinski: should do an entirely separate hasty treat, maybe even in the next tasty treat, if there's interest to do just a listing off our favorite documentation as like a follow up to this. And then just like a list, like I'm going to talk about this one now and then talk about what I like about and then you can give one, you talk about what you like about it. And then we can have just basically a, you know, a documentation Greatest Hits list that people can check out for, like, excellent documentation. So yeah, so the last little header that we have here is what to do when the docs suck, because there's nothing worse than having documentation that's out of date. That's incorrect. Or that's just plain, you know, not helpful. In fact, bad documentation is the reason why I started level up tutorial, I had like a couple of instances in my early career where I was frustrated with the bad documentation. One of them was with a huge library, which was Jango at the time. And so I installed Django and I wanted to learn how to, to, to start to develop in this and I ran into an error on the very first page of the first tutorial on the first documentation page. And I went into the IRC room, and I was like, Hey, I'm trying to follow along with the tutorial, like what's going on here? Like, why is this broken? And they're like, oh, you're using the wrong version of Django? And I say, Okay, well, I just installed it, just like the documentation said, to install it, right, I installed Django, and then I got this error. And that's what the tutorial said to do. So what would happen was, is that the tutorial was for like an entirely old version, and they had never touched it, but it was still sitting there on their homepage. And that was such a frustrating experience, because they expected me to know that the tutorial was with one version, and that the thing was another version, even though I followed the tutorial that was on their homepage directly. So that kind of thing is really what started level up tutorials was me being like, you know what, I feel like there's so many things that go undocumented, that people just assume that other people are going to pick up and you want to to dive into these things. So what do we do if the docks suck?
+
+41
+00:29:09,720 --> 00:31:12,450
+Wes Bos: So the first thing I'll do when the documentation sucks is I will first look for other people's code that has been written because I again, I'm a big, big examples guy, I like to see other people's code. So I'll either jump into the tests for that library, because the tests often are the documentation showing how each of these things work. So if you can crack open some of the tests, you can see it actually in use, because you need to use it in order to test it. If there are no tests are the tests are too confusing for you. Because that's you still have to understand how tests work. And a lot of people don't necessarily know that in their career just yet, often do a GitHub search for other people using that code. So this is one of my biggest tricks is just go to GitHub, search for like the method that you're looking for. And that's going to bring up lots of code for people. Sometimes you'll have to write little expression In that search, because there's everybody has like copy pasted the, the tutorials example. And then that's all you get. But if you can get rid of that you can actually get into other people's examples. And that will often help you when that fails, I will usually jump into a chat room or or go to Twitter, looking for someone who has it, generally the chat room is better, or the spectrum or the discord or whatever is available, because that's, that's where the the experts hang out. And then finally, when you finally figure something out, take the 10 minutes to like, I hope someone else doesn't spend two hours of their day on this simple little thing. Or they didn't, they didn't understand how it works, go back and update the documentation, submit a pull request, almost every single library has their Doc's on GitHub. And it's it's just a huge service to the community be able to update documentation because the the authors who are writing these libraries, they're often tax to the limit, they don't have the unlimited time, lots of them are taking time away from their families or an evenings or they're doing it instead of doing other things in their life, often doing it for free. So if you can help out with the documentation, that's, that's a huge service to the community. Yeah, hey, and
+
+42
+00:31:12,450 --> 00:32:02,880
+Scott Tolinski: here's something that you can do to easily contribute to the documentation for anything that I found recently is one of my favorite things. And documentation lately, is creating a basic code sandbox, where all you're doing is the one thing that like maybe using one particular API in a code sandbox, so just make that code sandbox. And then throw it in, submit that PR to the repo. because let me tell you, the React spring API has a code sandbox for every single example that they have in their entire repo. And there's nothing better than when you have an issue, you can go to a code sandbox and compare your code, then you can mess with their code, you can try it out, you can get that experience. And then you can see exactly what you're doing wrong. So if you want to help help rebuild, I say make a code sandbox and submit it as a PR, even if you're not good at writing or whatever, that's immensely helpful, in my opinion. So
+
+43
+00:32:03,450 --> 00:32:04,110
+Unknown: yeah, I think that's pretty
+
+44
+00:32:04,110 --> 00:32:33,270
+Scott Tolinski: much it, that we we basically covered everything about reading documentation. There's always stuff here. And not everyone is going to have the same learning style. So a lot of it again, is understanding how you learn best. And then really optimizing for that, if you can now some documentation is going to give you an API reference and call it a day. And sometimes that's a little frustrating, but you know, now that you know how to read the parameters and read the methods, you'll at least have a little bit of tools to help you get through that. Anything else about reading docs, Wes,
+
+45
+00:32:33,330 --> 00:32:34,200
+Wes Bos: I think that's it.
+
+46
+00:32:34,470 --> 00:32:43,950
+Scott Tolinski: I got nothing. Thank you so much again for century for sponsoring this episode, this hasty treat. We will see you on Wednesday with a full episode of The syntax podcast,
+
+47
+00:32:44,190 --> 00:32:44,910
+Unknown: please
+
+48
+00:32:47,220 --> 00:32:57,000
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

@@ -1,0 +1,276 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax,
+
+2
+00:00:02,849 --> 00:00:48,960
+Wes Bos: the podcast with the tastiest web development treats out there. strap yourself in and get ready. Here is Scott solinsky and West boss. Welcome to syntax, the podcast with the tastiest web development treats. Today we're gonna be going over what is new in web development, there's been, I don't know a handful of things that have been surfacing lately, things that are added to JavaScript or to CSS, or just to the web platform in general. And it's good to keep up to date with with what's coming in what's new. Today, we're sponsored by two awesome companies century just going to do all of your error and exception tracking and clubhouse which is project management software that won't make you cry. I don't know if that's the tagline that they use, but it seems pretty sweet. We'll talk about them partway through the episode. How are you doing today, Scott? Hey,
+
+3
+00:00:49,200 --> 00:01:54,060
+Scott Tolinski: I'm doing super good. I just got back from the greatest wedding that I've ever been to. And I'm feeling really good. The wedding was amazing. It was in Pasadena. The bride and groom, like walked down to the stage. I guess you could call it because there was a stage and performed three songs with guitar. She played guitar, he played bass and sometimes acoustic. And then they have the guitarist from vulfpeck, or Theo from vulfpeck. He's not necessarily the guitarist, he was playing guitar with them as well. And it was incredible. They did three songs, they exchanged rings, and that is the wedding. I think every single person there was just like, wow, that was really cool. That was like they're all incredible musicians, obviously. And that's sort of how they met essentially. And it was just like, it was such a sweet sweet thing to be a part of. There was a lot of really cool people there. The a couple of the guys from both pack in general were there. So it was it was just a it was a blast really intimate, really small 60 cent people, probably the best wedding experience I've had. So yeah, no, I'm great. I'm feeling recharged after that. How about you?
+
+4
+00:01:54,420 --> 00:02:31,440
+Wes Bos: I'm feeling pretty good. I'm about to head off to New York tomorrow morning to go to jamstack cough New York, I'm doing a talk on just like JavaScript in general, just things that you can do to get better at JavaScript as well as I'm doing a Gatsby workshop, which is the first time I'm giving it. So I'm pretty excited about that. These conferences are so much fun. But they're so time consuming to, to prep for and to travel and to make a workshop. So this is the I think the last conference I will be at before I take some time off when we have our new baby. So I'm excited to have this all finished up.
+
+5
+00:02:31,530 --> 00:02:55,319
+Scott Tolinski: Yeah, you know what, I haven't done a workshop like that. Because there I mean, I've done so many online, but like, I haven't done a stand in front and do a workshop like that. But I can only imagine what the preparation for that is, it seems like you have to prepare so much stuff to make sure you you don't have any lols or downtime and that everybody's feeling like they came out of it learning something cuz I've been to bad workshops and bad workshops really make you not feel so good about sitting there the whole time. You're just like,
+
+6
+00:02:55,350 --> 00:03:54,120
+Wes Bos: yeah, they're they're really expensive. And you got to sit there all day. And like you want to learn something and you want to you want to be able to put it together. So it's it's tough to put together a workshop where you don't just want to be like type what I type, like you want to give people chances to try it on their own and, and whatnot. But then there's this also this like other section of workshop is like, if somebody gets tripped up on a on something, then then they sort of fall behind, they have to make sure that you have like, like enough like stops where you can like quickly help them or, or talk to a neighbor. So I've luckily done like, I don't know, dozens and dozens of workshops in the past, I think I've got a pretty good formula for it. I don't do like slide decks, I just do markdown notes nice that we sort of roughly follow. And the the benefit of that is that I'm able to just sort of talk off of those notes. And then the code samples are in the notes. So if you do goof up doing it live, you can always just click Copy Paste from the code samples and sort of get back to where you're at.
+
+7
+00:03:54,150 --> 00:04:53,550
+Scott Tolinski: Yeah, it's funny the the worst workshop I've ever been, I don't even want to I don't want to give too much away about this just in case. But the workshop was branded as learning x technology. It says we're going to learn this x technology. And so I was like, Oh, cool. This is something I don't know. And even if it gives me the very beginning, like very basics of this thing, I'm gonna be excited to know what the very basics are. So I get into the workshop. And it's a it's not a super long, it was like a couple hours long. But seriously, the way that we learned that technology was that by learning that technology, but was hitting an API that just returned everything for you. So the API of the stuff that you would be branded as teaching you it's like, we're gonna teach you this. No, actually, you're just gonna hit an API endpoint, and it's going to bring you back the data. And you're not going to learn any of this stuff that we told you about. I was just thinking like, Oh my god, I'm so annoyed that the half the class was spent literally half the class was spent trying to get everyone's API credentials working, like everyone is just like binds. In our case, the service isn't working. The service was half broke. It was just disaster.
+
+8
+00:04:54,930 --> 00:04:59,310
+Wes Bos: Was that person who gave the workshop working for one of the companies that sells this API?
+
+9
+00:05:00,000 --> 00:05:04,640
+Scott Tolinski: You might be right. Okay. Yeah. And I don't think I know that you are right. Yes.
+
+10
+00:05:04,760 --> 00:05:32,970
+Wes Bos: Okay. That's that's a bit frustrating sometimes. Because I guess, like you do sometimes want to go to specific workshops for these companies because you want to learn their tech. But sometimes it could just be one long sales pitch that you paid for. Yeah, for tech, which is a bit of a bummer. I think that's why i like i like to do workshops, because I just do them on on things that, like, I don't work for Facebook or anything like that. I just like do them on tech that I'm interested in, and other people have been asking to learn.
+
+11
+00:05:33,030 --> 00:06:02,070
+Scott Tolinski: Yeah, yeah. Cool. So let's get into some of these new things in web here. The first one we have is a promise static methods that are coming these new promise methods, which we have as all, and race all settled any, I have not looked at this proposal yet. But I would assume it's just more control and giving you the kind of things that we had in in other promise libraries, right, it just allows you to control race conditions and things of that nature.
+
+12
+00:06:02,250 --> 00:08:55,159
+Wes Bos: Yeah, so uh, we have already we've got promised all which we'll finish when either when all of them are successfully finished. And sort of the downside to that one right now is that if one of them fails, it'll short circuit is the word that people use. Meaning that like, if you've got five promises and one of them rejects, then it will immediately go to the the catch condition at the end, or whoever you've chosen to handle that error. And then we have promised that race which will resolve as soon as the first one finishes. And those are pretty heavily used, I use promise dot all quite a bit myself. But there's, there's two proposals out there right now we've got promised, all settled, and this is a this is in stage four. So it's it's likely going to come. And the way that it works is that you pass it an array of promises, much like promise dot all and promise dot race, this will fire when all of them are finished. Meaning that you don't care if they resolve or reject. If you have four promises, three of them resolved one of them rejects, if you want to run some code after all of them are finished, regardless of outcome. all settled is is what we need in that specific use case. Because like I said, promise dot all will immediately short circuit, it will go to the the end when one of them fails. And in this case we can wait for for whatever outcome. And then we have as well on that in in stage one currently. So stage one is it might not come to the language. But the way I see it, it's fairly likely, this proposal was written by Madea spine ins who works at Google who's behind a lot of the JavaScript ESX stuff. So a lot of the stuff that he does actually does get pushed into language. So the difference between promised that any and promised race is that promise dot any will wait for at least one of them to finish. And then it will fire or as promised that race will fire if one finishes or one rejects, it doesn't matter. So if you've got like six requests, and you don't, you know, like, maybe maybe some of these will resolve maybe some of them will reject. But I just want to know when the first one is resolved, or I want to know when all of them reject, you kind of get into the weeds as to the specific use cases that you want. And I'm betting that you probably won't reach for these all the time. But they the I definitely have found myself in situations where I do especially when like, the example that I give for this is that you've got a promise API, and you're hitting like you're trying to guess what endpoints might be. Maybe you want to see if there's a user with the name of Scott, and you want to see if there's a username with the name of Wes, and you don't know. So what you could do is you could ping both of those API endpoints. And they'll both reject if they're not there. And you can use these different new promise methods to to wait and check if both resolve or both reject or one resolves and one rejects, etc.
+
+13
+00:08:55,380 --> 00:09:33,690
+Scott Tolinski: It's your thing. You know, what I, as much as I love that all of these things exist, except for since I've moved to graph qL, I like have not been thinking that much about race conditions or some of these more interesting solutions, because I just hit my API once. And typically, I'm just doing it through that, you know, an Apollo query or something. But even if I'm hitting a query and returning a promise in waiting that it's like not a complex promise situation. So it's funny because I just, I never find myself using these. But I kind of want to, they're all these things that look a lot of fun. I guess you could say they're fun, but like, they look kind of fun to me. And it's like, can be really great if I had a situation where this was applicable.
+
+14
+00:09:33,720 --> 00:09:58,110
+Wes Bos: Yeah, I think if you were to either a be be hitting multiple API endpoints from the browser, or be like fulfilling your own graph qL requests, because like, if you're writing the code behind the resolver of your your graph, qL API, then it's likely that you're going to meet need to make at least two maybe two or three different database calls, maybe even different API's at the end of the day, and then it's all sort of swept out under the graph. qL API.
+
+15
+00:09:58,140 --> 00:10:23,610
+Scott Tolinski: Yeah, and it's funny because Apollo There's all that stuff for you, right? It's like, Oh, you just specify, call her and then the resolver does it for you. It's like you don't even have to wait for the results to be back. The platform does it. So this is really cool. Anything that makes us you know, working with async. Easier is good for me. Next up, we have lazy loading images. Now this one is money just dropped, like yesterday or Sunday gave it away. And this
+
+16
+00:10:23,610 --> 00:10:27,020
+Wes Bos: weekend most tweeted thing ever. on a weekend.
+
+17
+00:10:27,020 --> 00:12:03,809
+Scott Tolinski: Yeah, it is. It's something this is I think this is a perfect example of the browser taking over something that it should be taking over. Because how many times I mean, how many projects have you used that have implemented lazy loading, I feel like almost everything I do that's image heavy, or anything implements lazy loading in it. And so this is going to be native lazy loading is coming into Chrome, you simply just need to pass in a data property named loading or attribute, I should say, need to pass in an attribute that just says loading and have it equal to lazy, and therefore you're going to have images that not load until they're in the in the middle of the scroll view. And what's cool about this is that in this blog post, he even talks about a great little fallback, right? If the loading exists in HTML image element dot prototype, then the browser supports loading. Otherwise, you can use a polyfill, or a library instead. So he even has code inside of his blog post to show you how to have a fallback for this. So you don't need to bring in anything other than this polyfill fallback library. And you can get using this right away. So this is sick, this is very sick. In my opinion, I am so excited to have lazy loading into the browser. Again, this falls into the category of stuff that is going to make your applications be faster. And anything that makes your application be faster without you having to do very much is a huge win in my book. I mean, do the options here are the I don't know if you want to get into some of the loading attribute options that we have coming with this lazy loading, but I'm just so excited for this.
+
+18
+00:12:03,870 --> 00:13:12,240
+Wes Bos: Yeah, it seems pretty neat. There's there's lazy, which is what we talked about, there's eager, which is a loading it right away. And then there's auto, which is letting the browser decide it for you. The blog post here doesn't go into like how it decides when to load the image. But I think that that's because that's a browser implementation, though, you should tell the browser the same with like the preload attribute on a video tag, you can tell it to preload but sometimes the browser for the user experience and the batteries and bandwidth sake, it will it will sort of override that and use its own attribute or decide when it should load it is the only this thing just says it will only load them when the user scrolls near them. So I don't know whether that means it's halfway on the page, totally on the page, like one scroll view away, I'm sure that the the browser will figure out what makes for the best because I also don't like it when you have to like scroll and wait a second for the image to download. I much prefer you just to load it when it's like maybe like one scroll view away. Same here, go ahead and or like load the page and then and then start to load them in the background. That's how a lot of code split bundles work as well.
+
+19
+00:13:12,270 --> 00:13:19,860
+Scott Tolinski: Yeah. And we should also mention that this is going to be working for iframes as well. Again, these things are just this
+
+20
+00:13:19,919 --> 00:13:22,110
+Wes Bos: Oh, like on an iframe tag.
+
+21
+00:13:22,140 --> 00:13:25,860
+Scott Tolinski: Yeah. On an iframe tag such the same property? You bet.
+
+22
+00:13:26,010 --> 00:14:02,130
+Wes Bos: Oh, I bet like something like code pen will love that. Because Oh, yeah, code pen is just an iframe of people's pens. And they have to load like seven or eight websites offer every view, they probably already have their own lazy loading scheme for that. But yeah, it'd be cool to go native. And this is like a perfect example of like a progressive enhancement as well. Or like, you can just pop this on your existing image elements, even if you don't do the like the polyfill. workaround, and your your sources will just still work in older browsers. And then people who have newer browsers will be able to have a bit of a better experience or save bandwidth, faster load, things like that.
+
+23
+00:14:02,159 --> 00:14:22,169
+Scott Tolinski: Yeah, I'm pumped for this. I'm going to be using this obviously everywhere, even and I was thinking like Twitter embeds Twitter embeds take a long time to load. And I do lazy load them right now with the lazy load react. But hey, it couldn't be easier. And if it's built in the library, I don't even have to throw in that lazy loaded code. It cleans up my XML or XML. Yeah, cleans up my XML really well.
+
+24
+00:14:24,690 --> 00:15:21,390
+Wes Bos: Next up, we have CSS Houdini, which is pretty exciting. We've talked about it and we actually have a show coming up on it, we just have to spend some a little bit more time building a couple things ourselves. And before we can do a whole show on it, but CSS Houdini is this idea where you can write your own little worklets you have access to the CSS paint API inside of it, meaning that you can write your own CSS, like border jagad or filter grungy that's my I would kill to have a filter grungy and yeah, that's right. happens is that you can have access to the paint API. And then you have access to, I think it's pretty much just the Canvas API that you like the 2d Canvas API. And you can paint and you can, you can do borders. And you can, it's a lot of math of having to draw on it. But you can implement your own CSS from there on out, which is pretty exciting.
+
+25
+00:15:21,600 --> 00:16:05,190
+Scott Tolinski: Yeah, and there's some insane possibilities with CSS Houdini, if this like ends up being performant. And as awesome as CSS is already, you best believe this is going to be huge. So you could think of it well, if you want to see some of these examples, this CSS hyphen Houdini dot rocks is the coolest website. Because there is so many little experimental showcases where you can really get a good idea of just how mind blowing this CSS Houdini actually is because you can do so many things that you couldn't do before. There's even a really good example of using, you know, personalized checks, checkboxes, so like design, I'm just looking
+
+26
+00:16:05,190 --> 00:16:06,270
+Wes Bos: at this one right now.
+
+27
+00:16:06,299 --> 00:16:54,029
+Scott Tolinski: Yeah, there's slanted gradients, there's corner gradients, there is a u background properties. And you can do so much stuff here. tooltips Oh, you can make a tooltip. Finally, and CSS. That's really sweet. Custom borders, rough boxes. There's like a really cool, like highlighter example where it makes it look like it was highlighted with a highlighter. This one looks like it's sketched, I mean, there's just some cool stuff. And, man, if you can animate this stuff and have it all, it's just my mind is completely blown with how awesome CSS Houdini is, I actually, this is it is an out by any means yet, but I am, I am like already salivating at the opportunity to do a tutorial course on CSS Houdini because I just want to dive into this headfirst.
+
+28
+00:16:54,049 --> 00:17:45,860
+Wes Bos: So I'm just looking at this checkbox one right here. And what it was is it says background, and the property was paint, which is a new method, I guess, or like a kind of like when we do like background, parentheses. So it's called paint. And then you pass it the name of the paint API that you want. And this would this case is called checkbox. And then you have this register worklet JavaScript, which is I'm looking at it right now. It's probably 20 lines of JavaScript. And it just says register paint, which I guess is the the global function for registering a new Houdini, I don't even know what it's called, yeah, property, and register paint checkbox. And then you pass it a class, which inside of that you can you can recreate your own new methods and whatnot. It's just, it's just CSS or sorry, it's just JavaScript Canvas code from there on out, which is pretty cool.
+
+29
+00:17:45,900 --> 00:18:14,730
+Scott Tolinski: Yeah. And it looks like it's a lot of math. I mean, this looks like a lot of math. So maybe if you're interested in being CSS Houdini Master, it's going to be time for you to bust out some of those math workshops and tutorials and canvas tutorials, things like that, to get used to painting in context and working in like a matrix of pixels and things like that. There's so much possibility here, but I have the feeling that you're gonna have to be really good at math, and you're gonna have to be good at like Canvas skills in general to make this happen.
+
+30
+00:18:14,790 --> 00:19:11,360
+Wes Bos: Yeah, the frustrating thing about Canvas is that there's no elements, you can't just select a line and like move it over, right? You have to like paint it and repaint it. And Canvas is frustrating to me in that regard. But that's obviously how it works. Yeah, I think if you were looking like I know, a lot of people are like, how can I like, get better at JavaScript or whatever. I think like, if you were to hitch your wagon to this horse, I think it'd be very beneficial to your career, conference talks, YouTube videos, lots of examples. Like if you can become the CSS Houdini person with tons and tons of examples, I think that this would be a very beneficial thing, because there's not a lot out there right now. And I think that this is going to blow up. Like it's gonna be like CSS Grid was where all of a sudden people Whoa, it's in all the browsers. Wait, we can use it now. Now, and that is just as huge. Like, that's what I did with my CSS Grid courses. I released it like, just a couple months before it just blew up. And now everybody's using it, right? Yeah. Yeah,
+
+31
+00:19:11,360 --> 00:20:30,800
+Scott Tolinski: tip. Yeah, hot tip. And I mean, in speaking of horses, the workhorse of my bug tracking system is century. century, by all means, does the workload of a horse here for me because I just drop in some simple lines of code and some configuration to get it going and century catalogs and categorizes all of my bugs. And the cool thing is I can attach them to releases. So let's say I'm pushing out a new version of level up tutorials. And I want to say, hey, this version of tutorials should have all this stuff fixed. Well, I've attached a release to century and now Sentry is has that additional context to know Okay, this bug has happened this many times in this release, and this many times prior to this release to therefore looks like it fixed it. So Sentry provides all sorts of amazing tools like that, and you're gonna Don't want to see it to believe it because their website is not only beautiful, but their interface is amazing to work in. I never have to struggle to find where to go. Everything just sort of falls at my fingertips. I don't think I've ever contacted century support, which for me is pretty big. So, head on over to century.io use the coupon code, tasty treats all one word all lowercase, give Sentry a try. They have, you know, been a longtime supporter of syntax, and I highly recommend them as a service. So thank you so much for Sentry for sponsoring this episode.
+
+32
+00:20:30,930 --> 00:22:04,140
+Wes Bos: Next up is a quick update to CSS subgrid. In December and released in January, we recorded a podcast on CSS subgrid, which real quick, it will allow you to extend the rows and columns of a grid to a child element. And that's really cool because sometimes you want to you have like a grid with three cards. And then inside each of those cards, you want to align all of the like headings or images or footers, you want to align them all to be the same. And it's not really doable right now in CSS. You can do some some hacks with Flexbox, where you align the last thing at the end but sub grid will allow you to align like a grandchild with its parents, rows and columns. After that episode, we got a tweet from Jenn Simmons which as soon as she heard the episode was subgrid is not a year out because we said it's probably a year out. And she said we are working on it in Firefox right now if you want it sooner than 2020 how badly and for what use it. So that's really exciting because it seems to be that we will probably get it sooner than a year out. There is a flag in Firefox developer and nightly right now called layout dot CSS dot grid template subgrid value dot enabled turning that to true still doesn't enable it. But it does look like we will probably at least be able to start to play with it in Firefox sometime soon. There's a Bugzilla link to it hasn't been updated in three months. And that's really all I can find about the status of it. But I do know that we probably should start seeing it soon.
+
+33
+00:22:04,140 --> 00:22:17,640
+Scott Tolinski: Yeah, I'm hopeful too. I can't wait to see this in. I know, if you're interested in learning more about subgrid. Like why you would use it specifically, or maybe some of the in depth stuff. We did an entire episode on subgrid. And I thought it was a really great episode,
+
+34
+00:22:17,760 --> 00:22:18,360
+Wes Bos: Episode
+
+35
+00:22:18,360 --> 00:23:35,160
+Scott Tolinski: 109 Episode 109. CSS Grid level two, aka sub grid. So if you want to learn more about it, check out Episode 109 will give you a lot more background information on what's going on here. But just like with grid, you know, I might not be using CSS sub grid all the time. But the fact that it exists, I think is going to really change how we think about laying things out. Because right now I think one of the things that CSS Grid did best is it allowed us to remove some of the extraneous divs. And some of the extraneous elements we were throwing in our code just for CSS reasons, specifically, and it's gonna make our code a lot cleaner. So if subgrid ends up having that kind of impact, which I have a feeling it will. And there's definitely a specific set of use cases that subgrid is perfect for, I think subgrade is just going to further make things easier on us. And so many times we're constrained to do certain CSS techniques by the HTML, we're either given by the team that's in charge of it a CMS or maybe we just want to write ultra clean CSS and not have to have a bunch of extra stuff in there. So I'm all for additions and improvements to CSS. And that sort of way, we have a couple of other things about CSS later on in the show that again, are just going to make our lives quite a bit easier.
+
+36
+00:23:35,190 --> 00:24:28,920
+Wes Bos: I'll tell you one little example of when I want this is this sniper application I built that scrapes, Kijiji and Craigslist and Facebook marketplace, there's a button that says not on it, where you can use it takes in all of the items. And I just want to like I want to delete a bunch of them because I don't like them. Right. Sure. And the button I just wanted like sometimes there's like 300 items in there. And I just want to go Bumblebee, Bobo, like quickly go through them. But the problem is that sometimes the title of the item is two lines tall. And what that does, that shifts everything in that cart a little bit down. And that means that the button, the button moves down as well. And so as you're tapping it, the buttons move up and down, depending on how many lines of text are there. And there's not really a good solution for lining up the buttons to be all on the same row. Unless you were just it was the last item in the cart, and you're just stick it at the bottom of the card
+
+37
+00:24:29,430 --> 00:25:18,480
+Scott Tolinski: word. Alright, so next up, we have a fun one, which is that native modules in the browser. Again, I think this is one of obviously this has been a long time coming. But so many of these things that we're talking about here, it's it's stuff that we use, right? It's stuff that we want to use in JavaScript and CSS and whatever in our code. And now the browser is going to just be adding it so that we don't have to do it in code ourselves. Or maybe we don't have to worry about compiling as much or any of that stuff. So j s modules also known as ES modules, or Atma script modules. I love that. That clarification there in the blog post. But it's basically just a it's a collection of new features in JavaScript that allow you to use modules like common j, s, or node whatever have we used before using the import syntax? So this is pretty cool.
+
+38
+00:25:18,539 --> 00:25:26,550
+Wes Bos: Yeah. So the way that this works is that you just have a script tag, you say type equals module, you can only use ESM. modules. I know you said common J. I mean,
+
+39
+00:25:26,550 --> 00:25:29,460
+Scott Tolinski: I meant like, using like, like,
+
+40
+00:25:29,489 --> 00:26:16,320
+Wes Bos: Oh, yeah, yeah, like you're just used to using Yes, it's supported in almost every browser, right now, obviously, no, ie 11. And the other only other one that is significant is the UC Browser for Android is now supported in which has almost three and a half percent global usage. But that's going to be kind of cool, where you can just start using a script type equals module. And if you have HTTP two enabled on your server, it will ideally download all those assets at the same time. And you can import all of your files. And there will be no compile step, which is kind of cool. We're also getting dynamic import Pretty soon, this is less well supported. But like everything, if you're compiling using Webpack, or partial or something like that, this comes along for free already, that that will help you do code splitting.
+
+41
+00:26:16,350 --> 00:26:27,240
+Scott Tolinski: Yeah. And I see here in some of these notes here, that there's often use of this dot m. j. s to distinguish a JavaScript module, they have you ever looked into this Mjs stuff?
+
+42
+00:26:27,420 --> 00:28:40,200
+Wes Bos: Yeah. So yeah, we did a show like maybe six months ago, they sort of gave the update. And it looked like the getting modules in node. So not not modules in the browser. But being able to use ESX, ESM. modules and node was that we're going to have to start using dot m j. s syntax. And everybody was like, no, yeah, right. Don't, that sucks. And, thankfully, they listened. So there was a bit of an update about a week ago on this. And what is now going to happen is that we get to keep our dot j s syntax, thank goodness, you can use that m j s syntax if you want, but they're sort of reworking how our modules loaded in node, it's a kind of a big thing. And the big sort of the short and skinny of it is that your package JSON is going to have a type property in it. And you can set that either to common j s, which is the the way that it is now with the require, or you can set it to type module and then then that will flip it over to ESM. And that will allow you to and by doing that, it then tells your project How should I handle importing of my different files, there also is going to be a new dot c j s extension. So that if you have some older code that is written in common jackass, but you want to go sort of full throttle on ESX modules, you can still import that older module that exports code, you can still import into your ESX. So there's huge huge link to this on GitHub explaining all of the different stages, how they're going to roll it out. There's an incredible amount of of work that has gone into this like especially, I specifically follow Myles borns on Twitter, he's taken a lot of hack over this, I can tell just because people are not wanting the Mjs syntax, and it's a lot more complicated than than people think because of how modules work in Node right now, modules in Node right now are dynamic, meaning that you can import a module inside of a function, whereas ESM modules are static. And those working together and still working in the same way is harder than you think of implementing it. So I'm pretty happy with this this outcome and excited to finally get it in and node land.
+
+43
+00:28:40,229 --> 00:29:32,220
+Scott Tolinski: Yeah, Yeah, me too. I think, again, there's a common theme. And I said it before all of this things are going to take things that we do already. And it's going to make things super easy. So another thing that's going to be in my opinion, this is going to be sort of a game changer. So this one is absolutely fascinating. It's sort of a future that we all imagined a long time ago, when people first started building web apps. Like first we started talking about web apps and thinking like, okay, they're, they're like applications. And you know, maybe we'll the future will just be web or maybe the future is going to be native or what is the future of applications in general, on our devices. And here comes along progressive web apps and progressive web apps have allowed us to install applications onto our home screen. I know Android makes it a really easy experience. It throws the icon on your desktop. I think iOS is the same. Can you comment on that?
+
+44
+00:29:32,360 --> 00:29:45,360
+Wes Bos: Yes, it's as of the latest iOS, we finally have the ability to do it. I haven't tried it myself just yet. Maybe if you have some good examples of progressive web apps to install to the homescreen. Let us know at dex FM Yeah,
+
+45
+00:29:45,360 --> 00:32:28,740
+Scott Tolinski: I had level up tutorials as a progressive web app for a little bit, just to try it out. So I have the level of tutorials app installed on my phone even though I'm no longer necessarily a progressive web app right now. But that said I plan on on re rolling out some of that stuff too. But this is so cool because the actual meat of this thing is in sure we're getting progressive web apps installed. But now we're going to be able to submit progressive web apps to the Google Play Store. Oh, and unfortunately, from what I've been reading, it's not that easy. Yet, it's not as simple as just paste in the URL, let Google take care of the rest. Apparently, it's a Java based API that communicates through services with Chrome, it's already been shipped. So if you want to dive into this, you can get an app on the Play Store. That's a progressive web app. And they are called TWA. So sort of like a progressive web app is called a trusted web activity. This means is essentially a Chrome browser running on the phone that's in its own little environment, where nothing outside of that environment necessarily exists. So you're not, you know, it's a trusted application on your phone. So these things are really interesting. I dug into this a little bit. So the basics here are really that your trusted web app, I want to say I almost said try marry, for progressive, I don't even know messing up the words here. But trusted web activity needs to basically follow the Google Play Store policies, especially for payments in app purchases, digital goods, you can use your progressive web app in as a TWA, as long as it has HTTPS, a service worker with a fetch event handler, a web map, web app manifest file, a 512 pixel icon, a background, color property, and some other basic properties. And you also need to have a performance score of at least 80 out of 100, on lighthouse. So again, a big reason to use something that's going to get you that big old performance bundle, I recommend checking out your site with lighthouse all the time, that helps you find some of these slow downs. And believe it or not, there's actually several Tw A's in the Google Play Store already from big companies. This isn't just something really that normal people are using Twitter light is a TWA Google Maps go, which is essentially a lite version of Google Maps is a TWA, and Instagram light is also a T wi so we have from Twitter, Instagram, and Google all with the TWA. I think this is really super cool. I'm really looking forward to it. Because, you know, do you want to build your app a couple of times? Or do you want to build it once? You know?
+
+46
+00:32:28,740 --> 00:32:29,430
+Unknown: Yeah,
+
+47
+00:32:29,430 --> 00:32:31,590
+Scott Tolinski: that's that's a my thoughts on the subject.
+
+48
+00:32:31,680 --> 00:33:14,250
+Wes Bos: That's really exciting. I so over the last week, as a little experiment, I deleted the Twitter and Instagram apps from my phone and tried to just use the website. And by far, the fresh most frustrating part about it on iOS is the fact that as you scroll on, on an app, the URL bar goes up and down, and the amount of height you have on the screen in the viewport has changed. And it just, it results in such a janky experience. And it's not the fault of the people building them because the apps are actually really slick. And I'm assuming when you install these progressive web apps on your home screen is you get rid of the browser Chrome, and you just get the full screen. They're gonna act a lot more. I should try it. Yes. All these
+
+49
+00:33:14,250 --> 00:33:27,860
+Scott Tolinski: thoughts. My level of tutorials app is fullscreen. Absolutely no. No bar here. You can see it a hold it up to the camera right now. I'm sorry. For us it be? Yeah, it looks like a looks like a regular old app. Pretty sweet.
+
+50
+00:33:28,170 --> 00:35:37,610
+Wes Bos: I'm gonna install it right now. While we do the rest of the episode, and I'll uh, I'll let you know what it's like for Twitter. Yeah. So as you build your progressive web app, where are you going to log the tickets and track the progress of developing your view? Okay, you progressive web app. Yeah, I'm Scott in training here trying to transition to our sponsors here. So one of our sponsors today is clubhouse, which is available@clubhouse.io, forward slash syntax. And they seem to be the project management company that is going to make developers want to actually use project management software. So they sort of build themselves as project management software that developers for for building software that developers and project managers and everyone will, will love to use. You've probably use something like JIRA before. And it's very overwhelming with all of the stuff that's going on there. It's really hard for a project manager just to take a look at the dashboard and see where are we at for our q4 2019. What is currently blocked right now what are things that are people working on right now? What does our burndown chart look like? There's all this like kind of amazing information that you can gather from a good project management. So clubhouse does design beautifully. The API is really a really slick we've talked about this before. Even if you look at like century and things like clubhouse the design of these things, means a lot because it's really easy to actually use It. So if you want a fast, lightweight, powerful approach to planning your product to working with your product or working with everybody that's on your team, from the actual software developers to the project management, you want to check out clubhouse@clubhouse.io forward slash syntax. And what this is gonna do is you normally get a 14 day free trial. And with this URL, you're going to get an extra two months for free. So that's plenty of time to test it out and see how awesome this is and to try it out for your team. So thanks so much to clubhouse for sponsoring, check it out@clubhouse.io forward slash syntax.
+
+51
+00:35:37,730 --> 00:37:17,150
+Scott Tolinski: Thank you. Cool. So we're gonna get into a couple of CSS properties here that we're going to be, in my opinion, Game Changers. For CSS, everything's a game changer. This episode's full of Game Changer has been changed several times. This next one is going to be scroll snap, no scroll step is already in lots of browsers. And this one is really super cool. If you've ever done any sort of gesture based anything, you'll know that you have to have a lot of JavaScript to get this kind of functionality working in the past, maybe you're building a slideshow or something. And you want to snap and really lock on to a specific div. And this is also really useful for a lot of these fullscreen websites, you know, you have a full screen website, that you maybe only want each section to take up the full screen at a time. So you have one section, and then we start to scroll. Once you pass that threshold, the browser will then latch on to the next one. And if you were to take your finger off the trackpad and stop scrolling, it would snap down to the next one. This is really super cool. I think scroll snapping is one of these features. Again, that is something we had to do in JavaScript. And now we no longer have to bring in JavaScript to do it. We no longer have to have that extra code to make it happen. It's going to be in CSS. And it already is in quite a bit of browsers. I mean, pull up. Can I use here? Scroll snap? Yeah, so it's fully supported in Chrome as a version 69. And it is fully supported in Safari, iOS, Safari, Android, Chrome for Android. And some of these other ones Firefox has partial support edge has partial support, ie has partial support, believe it or not, what that partial support is, you're gonna wanna check out Can I use, but scroll snap is a is a good one opera, what are you doing opera is still in red. Come on, man. get it going.
+
+52
+00:37:18,980 --> 00:38:03,110
+Wes Bos: That's pretty cool. Oh, there's also this like scroll behavior property that you can now use on most browsers where if you jump to a specific part of the browser, it will just smooth scroll it, that's really cool. Because you they you don't need a smooth scroll library. When CSS tricks released their new website a couple months ago, they had it. So when you searched on the page, and when you sort of went through all of the you kept pinning enter on the search bar and going through all the different results that I found it would scroll you inside of the actual page, they since I took it off, because I think that it was too slow feeling for people that wanted to quickly jump through the page. But I thought that was pretty cool that you can control how the page jumps up and down.
+
+53
+00:38:03,149 --> 00:39:29,310
+Scott Tolinski: Yeah, super cool. Next one is this, this is a personal favorite of mine, because this is something that I've run into just about 100 times, I work with a lot of thumbnail images with videos and things that I would like to have and maintain an aspect ratio. Because now that we're in the world where our screens are no longer tied to different pixel sizes and things like that, you often have a div or an element, I think specifically, in my use case, the tutorial cards right? The series cards that on level up tutorials, it looks like a little card here. Now right now those cards are flexible. And I could I could I could design them to be, let's say, always fixed in the same size. But I don't want them always fixed in the same size and maybe just rapidly change on breakpoints. I just want to keep them and the same aspect ratio. And I want that aspect ratio to grow in scale. So let's say it's like a 16 by nine or something like that. You always keep it in that same aspect ratio, but it will increase in size. It's like, you know, when you are in Photoshop, and you hold the shift key and you make it bigger, that's what it is. So aspect ratio unit and CSS. Yes. All Yes, please. this blog post that we have in the course notes from Smashing Magazine is from March. So this stuff is sort of brand spanking new to be talked about. But again, I couldn't be any more excited for this because this is this is my wheel wheel house wheel. Well, I don't know one of those two.
+
+54
+00:39:29,399 --> 00:40:10,670
+Wes Bos: Next up is this is still probably coming. And it's a CSS nesting, which is pretty cool. So we've we've done nesting in sass for years, and both along with CSS custom properties, variables and and now that we're going to have CSS nesting, those are probably by far the two most heavily used parts of a preprocessor. And we will be getting those inside of CSS. It looks like the proposal right now is that you put an ampersand in front of your selector kind of like we do in test you sass, it's a little bit different than the sass syntax, which is fine, because you can just take three minutes and learn what the syntax is. And then we're going to have it built into CSS.
+
+55
+00:40:10,800 --> 00:41:14,070
+Scott Tolinski: Yeah, can we talk about how, like, the browser developers are learning from the best things of what we do? So they're not just saying, okay, you know, all of these tools that are now established, as, you know, serious best practices are ways to do things, we're now taking these things, and we're just going to throw it in the browser, we're gonna make it easy on you, because everybody is doing it anyways. And if you're not doing it, then you're going to really understand the joys of nesting. Now nesting can get out of control. It's one of those things that you'll typically have a little bit of growing pains there, when you're you're picking up in your new Dev, you, you want to just nest everything. And there's this weird middle space between nesting everything and nesting nothing, or it's an absolute Yes, but and it makes everything perfect for you. And you just have to write so much less CSS. But if you're not writing nesting CSS in some sort of capacity already, I would get up on this because I cannot imagine going back to a world where I have to write all these nested classes without CSS nesting. It's Yeah, It's madness. I can't imagine doing that right now,
+
+56
+00:41:14,150 --> 00:41:59,150
+Wes Bos: you're for sure gonna see some people that get salty about adding this the language because they refer to it as what's called a foot gun, which is a gun that you can shoot yourself in the foot with. Because like, you can go bananas, nesting things. And I certainly when I taught a boot camp, I would we would show nesting. And people would just start with the body tag and start all the way all the way home. And then you go, oh, I've totally forgot. Don't nest everything, only nest when you actually need it. And this is just another thing I think beginners are gonna have to learn. So like why do you need nesting? And what situations would you use this versus just using a plain old selector? So definitely has some some potential for misuse. But we've all been misusing it in SAS for years already. So not a big deal there. In my opinion.
+
+57
+00:41:59,340 --> 00:42:37,860
+Scott Tolinski: Yeah, it just takes a little bit of a little bit of effort to I don't know, this is one of those things. That's once you get burned by it, you're like, Oh, yeah, don't do that. So that's pretty much it. There's, there's a lot of new stuff. And if we didn't get to the one thing that you were talking about, don't worry, I feel like there's enough here to do another episode on this at some point in the future, because our industry is constantly changing and constantly evolving. And it's important that we evolve and change with it, make sure that we stay up on the stuff that's latest. So if you are interested in any of this stuff, we have a lot of links in the show notes, check out a lot of cool stuff. I'm very excited about the future of the web. I always talk about that. So yeah, I don't have anything else you want to get into sick pics.
+
+58
+00:42:37,980 --> 00:44:00,990
+Wes Bos: Yes, absolutely. So my sick pick today is going to be a YouTube channel called the punk rock MBA. Oh, and this is a guy Finn mcentee and he puts together these awesome videos about the history of music in general. Like when I was a kid, I would just listen to this guy, Alan Krause, and he would have the show called The Ongoing History of New Music. He's actually still doing it. But I often listen to it. And I'm like, I don't know anything about these bands, because they're just way before my time. And I feel like this new YouTube channel, the punk rock MBA, it goes into the bands over the last maybe 15 years or so. And he goes, he has like videos like how saosin changed the game or what killed new metal? Like why are there not bands like corn and Slipknot anymore? And how did blink 182 get so big? And it's just it's just like, nah, nah, just every time I watch one of his videos, it just feels like oh, it because there is so many of us. I met somebody at a conference last week. And he's like, Yeah, I was in a hardcore band. And now I'm a web developer. And I think probably, I don't know 70% of web developers used to be people that would go to shows and watch hardcore bands and stuff like that. And this look on that whole industry is just very entertaining and very informative. Interesting.
+
+59
+00:44:01,410 --> 00:44:16,500
+Scott Tolinski: Yeah, I'm fascinated. I you know, I'm a huge punk fan. I grew up with a lot of like, you know, Operation IV sort of stuff and, and maybe not hardcore hardcore, but like, I've always get a punk fan and so I'm gonna have to check this out. This is pretty sweet. Yeah, he just
+
+60
+00:44:16,500 --> 00:44:34,770
+Wes Bos: goes into like, like what killed pop punk like some 41 newfound glory Simple Plan. What killed Christian core because there's like the sick huge part of the hardcore scene was just these Christian bands from the tooth and nail record. What killed skate punk? What killed post hardcore, so good night.
+
+61
+00:44:34,800 --> 00:45:23,130
+Scott Tolinski: I love it. If you want to find some good punk music, or like pop punk music This is not like punk punk. But it's a very very I don't know very catchy, man. Yeah, it's just got that he gets called masked intruders. Let me double check on that. They are like straight up fun pop music or a fun pump, punk pop music. That couldn't be any better. It's it's like the funniest thing. About this masked intruder band is that they're all wearing masks, and they have aliases. And songs are all about robbing people and like running from the police. So the whole thing is sort of like it's not necessarily a joke, but it's really good. It's just great they do some some great little love songs. The masked intruder Yeah, definitely. I like a lot of their albums there. One EP was sick. So great there.
+
+62
+00:45:23,400 --> 00:45:34,680
+Wes Bos: I've been loving the pop punk lately. I just discovered this new band from Toronto called pop me up. Yeah. And they've got a song called free at last. I just love it. It's just pop punk is so good. It is.
+
+63
+00:45:34,710 --> 00:48:37,680
+Scott Tolinski: Yeah, I know, did ascendance any of that stuff. One of my favorite punk albums of all time was proper Gandhi, one of the property albums. I love all that stuff. Yeah, so my sick pick to get out of the the punk talk. I have a fun podcast suggestion. Now this is a different. This is a different kind of podcast for me considering all of my podcast has been about like cheating, swindling, hacking, that sort of thing. This is gonna be a lot more fun, a lot less dark. This podcast is called finding Drago. And if you've never heard of this thing, it is hilarious. Now, it's one of those short series ones. There's only seven episodes so you can breeze through it. And it's not a huge commitment. I breezed through it while I was in San Francisco. And what it is, here's the premise of the story. The premise of the story is that these guys who are podcast hosts stumble upon a Wikipedia entry for the movie rocky for and which somebody on Wikipedia mentions a book that was a sequel to essentially rocky four. But it's all about the bad guy in Rocky four. I believe His name's Ivan Drago. And just thinking like Who the heck would write a book about the bad guy from rocky four. And so what they do is they start to look because they declared that this book is a lost masterpiece in Wikipedia. So whenever they they're like okay, what is this weird book that someone's talking about on Wikipedia, they start to dive into the book. And it's just a huge web of confusion, because they stumble upon like Goodreads reviews where there'll be like, I was walking in Costa Rica and a vagabond handed me this book, and it changed my life. And it's just so bizarre. The whole thing just unravels to the point where you're just like, okay, is this this serious? And it is, it's a good time if you're if you're looking for something that sort of geeky and sort of fun and just like not serious at all, finding Drago was a really good investigative investigative podcast they refer to as like serial, but stupid. So it's, it's really super good. I like this one quite a bit. That's my sick pick, finding dry go check it out. Nice little quick one. Shameless plugs. I have a course on grid summit that is out grid some is the sort of view j s counterpart to Gatsby for building static sites in view. This course gives you everything you need to know about getting up and running with grid Sam, you can see about how it differs. It uses graph qL for the data layer, we go into a lot of graph qL basics if you're new to that, but one of the coolest things is you can get a ton ton ton done with grid seven absolutely no time because it leaves a lot of the inner workings stuff up to just basic configuration options. You pass it a path, you tell it to do something in settings, you don't have to write a whole bunch of code to make things like that happen. So I found that you can write extremely efficient sites with grid summon Vue JS extremely quickly, totally extreme at level up tutorials comm forward slash pro sign up and get that as well as every other course. Yeah, that's what I got.
+
+64
+00:48:37,830 --> 00:48:49,890
+Wes Bos: Awesome. Oh, sick payer shamelessly. Plug all of my courses, West boss.com for slash courses. You'll see a list of all the free and paid ones. Sign up for something that interests you. And keep on learning. Keep on
+
+65
+00:48:49,920 --> 00:48:51,720
+Scott Tolinski: learning. Love, laugh, live learn.
+
+66
+00:48:53,190 --> 00:48:59,250
+Wes Bos: That's oh my gosh, that needs to be a sticker. Live laugh, love learn. Love it.
+
+67
+00:49:00,210 --> 00:49:02,580
+Scott Tolinski: Get over it. The plaque over my front door.
+
+68
+00:49:03,030 --> 00:49:08,190
+Wes Bos: Oh, man. That's great. Cool. All right. Well, thanks for tuning in. We'll catch you next week. Please
+
+69
+00:49:10,170 --> 00:49:19,920
+Scott Tolinski: head on over to syntax.fm for you full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

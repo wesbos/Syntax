@@ -1,0 +1,524 @@
+1
+00:00:01,290 --> 00:00:07,260
+Unknown: You're listening to syntax the podcast with the tastiest web development treats out there strap yourself in and get
+
+2
+00:00:07,260 --> 00:00:08,970
+ready to live ski
+
+3
+00:00:08,970 --> 00:00:12,599
+and West boss ridiculous ridiculous seasick
+
+4
+00:00:12,630 --> 00:00:19,140
+Wes Bos: tasty tree. That's sweet. That's sweet. Exactly. Where did Where did Where to? Hell yes,
+
+5
+00:00:19,200 --> 00:00:27,780
+Scott Tolinski: we we predicted ridiculous 38 inches man. Because it's long because it's long taste
+
+6
+00:00:30,330 --> 00:00:58,380
+Wes Bos: syntax and that is huge thanks to Andre matter rang ma da ra n g and he just tweeted us this like 10 minutes before we started recording. And it is a syntax soundboard. Which is amazing. It has. He went through a whole bunch of podcasts and clipped out different times when we said things well, yes, shameless plugs. Where did that come from?
+
+7
+00:00:59,400 --> 00:01:00,240
+Scott Tolinski: is so good.
+
+8
+00:01:00,360 --> 00:01:01,980
+Wes Bos: The funniest thing is I don't even
+
+9
+00:01:02,010 --> 00:01:05,480
+Unknown: remember saying it's 38 inches map of these things.
+
+10
+00:01:05,580 --> 00:01:09,230
+Scott Tolinski: I don't say fear. I was like 38 I don't even know what that could have
+
+11
+00:01:09,230 --> 00:01:12,719
+Wes Bos: to do. It was 38 inches that you're talking about? I have
+
+12
+00:01:12,719 --> 00:01:13,560
+Unknown: no idea.
+
+13
+00:01:13,560 --> 00:01:16,370
+Scott Tolinski: I'm very confused. I'm gonna have to like listen to every episode.
+
+14
+00:01:18,360 --> 00:02:05,250
+Wes Bos: You know, what was 38 inches please tweet us because we have no idea. But this thing is amazing. So hopefully we're gonna be peppering Nick pics word, we're gonna be peppering in these annoying ass things throughout the episode. So we're gonna do something a little bit different. And that is sort of a q&a show, we put together a little form that would collect questions from Twitter. And we got a whole bunch of questions. And Scott and I just went through and picked out a couple of interesting ones. And hopefully this will give us a bit of a better insight into stuff you're looking for. And some of the stuff is bigger stuff. So we know that we're going to dedicate entire show to but some of the stuff is just tasty, little, little question and answers that we can go through. Today's episode is sponsored by a dev lifts and Freshbooks Douglas is going to get you fit and Freshbooks is going to get you financially fit.
+
+15
+00:02:05,399 --> 00:02:05,969
+Scott Tolinski: Yeah.
+
+16
+00:02:06,959 --> 00:02:12,930
+Wes Bos: We'll talk about them a little bit more, partway through the episode. So hello, Scott. How you doing today? Hey, doing
+
+17
+00:02:12,930 --> 00:02:22,560
+Scott Tolinski: super, super good. Yeah, I hit up a ninja warrior type of gym yesterday was fine. Yeah, it was a pretty sick. Yeah.
+
+18
+00:02:26,070 --> 00:02:30,840
+Wes Bos: That's pretty sweet. So like, what kind of stuff did you do to jump across water and
+
+19
+00:02:30,870 --> 00:03:09,420
+Scott Tolinski: gather flames. There is a severe lack of like, fire and water features like this is an HGTV here. If there's no no fire and water features, but there was a lot of jumping and hanging like monkeys. And of course, I use the opportunity to use the trampoline, which I'm a huge fan of anyone who's ever been to any of my house. Like they're my last house. I used to have my trampoline up like all year round. And I'm like trampoline obsessed. And and yeah, this unfortunately it there's no spot for it in my background in Denver, or backyard. So the trampoline is sitting in storage here. But I brought it with me just in case.
+
+20
+00:03:10,110 --> 00:03:22,050
+Wes Bos: Just put it out on the street or SAR and like in a random park or something like that. I was going to do that with the basketball net. It's just like we don't have a spot for a basketball nap. But I just want to like kind of during the night install one in the park or something like that and see if anyone notices.
+
+21
+00:03:22,680 --> 00:03:25,680
+Unknown: Right? Yeah, give it Yeah, open open Newser for
+
+22
+00:03:25,680 --> 00:03:46,830
+Wes Bos: your community. When I was a kid we used to get we take the trucks off our skateboard, and we would do air boarding on the on the ski on the trampoline. Oh, yeah. Like these incredible like tre flips and load finger flips and whatnot. It was so cool, because I was like garbage skateboarding in real life. But if you can put it on a trampoline. Yeah,
+
+23
+00:03:46,860 --> 00:04:19,519
+Scott Tolinski: yeah, actually, we did the same thing. But we taped like duct taped old shoes to escape board. And then, uh, then we tied like a ski rope or wakeboarding rope to my deck because my parents had a high deck. And we would use it to practice wakeboarding trips. So Oh, one of the coolest things is you, you stick your arm behind yourself, and you'd hold on to the rope. And then you jump in the air. And all you do is just pull hard on the rope, and it would just send you spinning like as fast as possible. Like so many times, it was completely outrageous and dangerous.
+
+24
+00:04:19,980 --> 00:05:06,889
+Wes Bos: Oh, man, that sounds super fun. I need to get back into that. Oh, yeah. Cool. So we're gonna kick it off now with some some of the questions. They're all over the place. Some of them are JavaScript related. Some of the Microsoft skills related. Some of them are just HTML actual. That's what will kick it off is what are your favorite features coming to HTML 5.2. So HTML is never done and they're constantly adding things and we're getting sort of a bit of a minor update to HTML and most of those stuff is not that all that exciting. Like you can put an h2 tag in front of a, like a legend tag or something like that. But one of the cool things about mind blowing one of the cool things is the ability is this thing. You think called the dialog box? And I was just talking to Scott about this, and you hadn't you hadn't seen this yet, have you?
+
+25
+00:05:07,259 --> 00:05:08,970
+Scott Tolinski: No, not until this morning.
+
+26
+00:05:09,810 --> 00:06:42,810
+Wes Bos: Cool. Well, let me explain what it is. So when you want to do like a modal pop up, like, are you sure you want to exit or you want to buy something and you pop something up every but you have to craft that from hand every single time. So what's coming is this new tag called the dialogue tag, and you simply just open close the dialogue tag, like you were a div. And then that element dialogue element has the ability to, it opens up to new API's open and close. And you have the ability to use JavaScript to open and close your dialog box. And that's it, it's actually kind of neat, because there's like, sort of like, you go native, and you get like the alert box and the prompt box and and the Select and they'll suck because you can't, they're native and they're great, but they you can't solve them at all. And then on the other hand, you have all these custom made things where they're not standardized at all. And sort of in the middle, we have this new dialog element that is just sort of like a div at the end of the day, you can style it however you want. You can position fix it, it's not positioned. It's it's static by default. So you can position fix it, you put the buttons in it yourself to open and close it, you can put borders and backgrounds and you can put elements inside of that like form tags, or your own clothes, buttons or, or anything that you could possibly want. It's just sort of like a standardized way to implement a pop up dialog box with the dialog and then it's up to you to both implement the look and feel there's some default styles, but they're kind of ugly, as well as the functionality. You still have to do that with JavaScript.
+
+27
+00:06:43,170 --> 00:07:14,220
+Scott Tolinski: Yeah, I think this is cool. Because like, I mean, really, there's some things like with form elements and things like that, that that if the native styles can take over and do like, native, fully native styles, like a select list or something like that, that experience is always better. Yeah. So here's hoping that this kind of leads to the same thing with models, because as we know, models are, you know, they're kind of all over the place. So yeah, I'm pretty, pretty psyched that this exists. I'm gonna try to try it out. Now that I know that it exists, but I think it looks pretty cool.
+
+28
+00:07:14,279 --> 00:07:48,540
+Wes Bos: Yeah, I could see like the browsers right now. It's not bound to like hitting escape or anything to close it. But I could see like, maybe a mobile browser implementing a gesture to automatically close that sort of thing, and maybe just adding a little bit of extra on top of it. And, and it's it's kind of time that we have this thing too, as well, because like we have custom elements for absolutely everything else, right. And if you want to, accessibly implement a modal box, you kind of have to go through a whole lot of ARIA stuff, because there's no proper way to describe what a dialog pop up box looks like. And now now we have that.
+
+29
+00:07:48,690 --> 00:08:22,350
+Scott Tolinski: Yeah, nice. Yeah, I found some of the additions to be sort of, I don't know, stuff, they wouldn't necessarily get excited about, like having multiple main tags, as long as all of them but what are hidden. So it's like now you can use multiple main tags in the DOM. But all of them the one have to be hidden. I don't really have a need for multiple main tags anyways, and their explanation is that it's single page apps, like some of them might be in the DOM, but hidden. Yeah, I guess I get that. It's just not necessarily a use case for me. Because, yeah, in reactors,
+
+30
+00:08:22,440 --> 00:08:26,850
+Wes Bos: I don't know, this. Is something more for like a lower level library author to use.
+
+31
+00:08:27,000 --> 00:08:42,270
+Scott Tolinski: Yeah, yeah, maybe exactly that. So yeah, stuff like that, or the invalidated stuff. So like, you could no longer inside of paragraphs, use inline blocks and line tables, or floated or position blocks inside of paragraph tags.
+
+32
+00:08:42,960 --> 00:08:46,590
+Unknown: You can no longer use an inline block. Is that true? It says,
+
+33
+00:08:46,830 --> 00:09:01,160
+Scott Tolinski: the only valid children of paragraph elements should be phrasing content, this means the following types of elements should no longer be used within a paragraph, inline blocks, inline tables floated positioned blocks.
+
+34
+00:09:02,580 --> 00:09:31,380
+Wes Bos: Oh, this means that types of elements should no longer be nested inside of inline block. Oh, but so if you have a span and you want to give explicit height or width to that span, you can't do that anymore. So I guess that's true. Um, I don't know. Like, you probably shouldn't be doing that either. Just use let the content flow itself. So I guess that's a good use case. But I could see that people getting hit by that here and there. I don't know if browsers will ever explicitly go back and break that. But this is the new spec.
+
+35
+00:09:31,619 --> 00:09:41,970
+Scott Tolinski: Right? It I mean, I guess it does make a paragraph function more like a paragraph of text. Right? You know, maybe some people might have accidentally used a paragraph and maybe meant have used a div.
+
+36
+00:09:42,050 --> 00:10:02,730
+Wes Bos: Yeah, that's true. You sometimes like see people reach for a paragraph element when they're not sure what element to reach for. So this is making it a little bit harder to to get into that. Neat. Let's move on to the next one. What you want to grab one off. Oh, that one was from Igor. Thank you, Igor. Oh, no, that wasn't That was from Jordan Jan's and not eager, sorry.
+
+37
+00:10:06,540 --> 00:11:24,600
+Scott Tolinski: Smooth. Okay, let's see this week. See, if I'm not looking at you, I don't know if it's you or the soundboard because they're the same level of my headphones right now. Okay, so here's a fun one, how do you retain all the information you absorb like a sponge. And this is kind of an interesting one, I think it assumes the the that we do retain everything I personally retain information more like, I'm not quite sure, something that only retains a little bit of what goes through it because you end up learning so, so much, and then he latch on to the bits that you latch on to. And then you'll maybe have to go back and latch on to other stuff as you go. But honestly, for me, the reason the way that I found to learn the best is to put yourself in the trenches a little bit and struggle through it and get your hands dirty and actually work on something. So if I'm trying to learn something, in particular, to actually start coding in it sooner rather than later, and hitting hitting issues and solving those issues and sort of working like maybe a clueless detective, what rather than like, somebody who read all the documentation, and is totally confident without ever ever written a line of code, you know?
+
+38
+00:11:24,810 --> 00:12:22,770
+Wes Bos: Yeah, yeah, I think what's important here is that, like, I don't necessarily retain information. I'm very, I guess, I'm very poor, the amount of times I found my own StackOverflow questions. Yeah, my own Stack Overflow answers, or my own blog posts in my own Google searching is I it's embarrassing how much that comes up. And that's I guess that's a benefit to blogging. It's like, write it down before you forget it, because you will forget it. But I think important point here is that you should really focus on understanding high level concepts. How do things work? What should you what pattern should you take in a specific way? And then you can always look up syntax and specific implementations of something because like, you don't have to memorize all the lifecycle methods of reactor, you don't have to memorize what the background shorthand is in CSS, because you can look that up. And eventually it will, you'll just remember it, but don't sweat that it's not nearly as important as high level ideas. Yeah,
+
+39
+00:12:22,770 --> 00:13:03,480
+Scott Tolinski: I 100% agree with this. And in fact, usually when I'm learning concepts, I'm constantly trying to either come up with a metaphor for it for something that I understand or relate it one to one to something I already understand. So this new concept is just like this other thing, I kind of learned, but it's different in these sort of ways. Or, oh, well, this actually functions like a river. And for these reasons, but like reattaching, that knowledge to something that you already know, helps you paint that picture, your brain already has those connections. So instead of having to form new connections, you're just attaching it to connections that already exist. It will make recalling it easier and make understanding the content much easier.
+
+40
+00:13:04,109 --> 00:13:10,080
+Wes Bos: Exactly, exactly. Exactly. Exactly. Gotcha. All right. I'm
+
+41
+00:13:10,080 --> 00:13:14,430
+Scott Tolinski: sorry, everyone for this because this is this is the greatest thing in the world.
+
+42
+00:13:15,450 --> 00:14:44,970
+Wes Bos: We're super, super excited about next one. I'm sorry, that last question was from ozanne. That's a really cool name. Oh, Caan was that and firma Canadians. Next one is from Blake Campbell. What are your favorite CSS library or frameworks, this is something I get asked a whole lot about. People are often surprised to hear the answer is that I actually don't use a library or framework. But I also don't have anything out for them. So I don't use like a bootstrap or foundation, in a lot of cases, because I just prefer to sort of build up my own little mini library of things that I like to use. I have used foundation in bootstrap in the past in quite a few projects. And what I really like about them is that it is a nice foundation for you to nice and cleanly architect an application if you aren't really sure about how to clean the approach building an app in with CSS. And I've also used it when like, I'm just focused on the back end, and I just want to get it up and I need it to look half decent. So then I'll like bring out foundation and add some some of those helper classes onto my elements. But past that, I don't really use it. I prefer just to spend an hour or two making like a whole bunch of little helper classes that will apply some nice CSS to me. And then I find in the long run, I've worked on a lot of apps that have us Foundation, and almost always end up regretting using something like that. And that's just personal preference. Obviously, that's not the use case for everybody.
+
+43
+00:14:45,150 --> 00:16:21,050
+Scott Tolinski: Yeah, but yeah, yeah, I mean, I've noticed the same thing especially like bootstrap and foundation there. There comes a point when an A projects been worked on deeply enough that there's just so much customizations and overrides and stuff made to the framework that You might have been better off writing that code from scratch, rather than extending a framework, you also have to think about all that extra stuff you're bringing along with you, for instance, a lot of those things include a whole bunch of different layouts. And how many of those layouts are you actually using? I mean, the CSS, skidding generated exists for that stuff. So if you're not using it, you know, that's just wasted space. So for me, yeah, I sort of go through and do that I, I look at my design, I create, I create some basic layouts, I create some basic helper classes, I create my base styles. And that's pretty much it. I don't use any frameworks. Really, the place that I do is kind of outside of CSS and React Native, I use native base, because React Native is really tough to get. Well, like following the design guidelines for both platforms at once is not some so much fun. Exactly. So like having a library to just does it all for you. So native based on React Native is a really nice framework, especially because the stuff you're overriding is mostly like colors and fonts, and maybe style specific stuff. So you get to stay within the compatibility guidelines. So yeah, I don't know, I've used skeleton, I've used bootstrap, I've used Foundation, I don't particularly I haven't necessarily chosen to use any of them on my own projects. Yeah, and now that we have CSS Grid, I mean, a lot of times you would use some of the stuff just for the grid framework, or
+
+44
+00:16:21,900 --> 00:16:30,990
+Wes Bos: just for the the layout itself. And that's totally not necessary anymore. CSS Grid will, will totally replace you need for for any of these layout frameworks.
+
+45
+00:16:31,200 --> 00:17:00,180
+Scott Tolinski: Yeah. And it will actually, here's a good use case for these frameworks, a hobby project that is simply just a hobby project. And maybe you're learning this, this thing to learn some JavaScript framework, right? You throw bootstrap on there, you don't have to worry about the sizes taking up, it automatically is going to make it look decent. So you don't have to worry about the styles. And then you don't have to spend time writing CSS for a side project when you're not trying to learn CSS or make it you know, something bigger. So I mean, that that's a good use case. And
+
+46
+00:17:00,180 --> 00:17:25,890
+Wes Bos: you can you can also go out there and buy these like for like 20 bucks, you can go buy like a bootstrap admin framework. And it's got like, everything you could possibly want for a back end admin forms and login forms and password resets and listing of users and all these things. And if you're just trying to focus on building an app as fast as possible, because you're you've got you're running out of money or whatever it is, then then totally reach for one of those things.
+
+47
+00:17:26,090 --> 00:17:27,240
+Scott Tolinski: Yeah, totally agree.
+
+48
+00:17:27,240 --> 00:17:32,220
+Wes Bos: Thank you, Blake Campbell for that one. Next up,
+
+49
+00:17:32,490 --> 00:17:35,430
+Unknown: do want to hear from a sponsor, right? No,
+
+50
+00:17:35,430 --> 00:20:39,050
+Wes Bos: yes, we do want to hear from the sponsor. So let's talk about deadlifts. deadlifts is a sponsor of had on many times. And if you want to hear quite a bit about more about Daedalus, definitely check out the episode we did on fitness and nutrition. So dev lips is JC and fat. And JC is a developer and he's also giving us personal training certificate. And that is a personal trainer. And they're on a mission to make developers healthy. So they are in sort of the the fitness and nutrition space. And they are entirely focused on developers and how they live their lives and how they can get both in shape as well as healthy. So the thing that they are offering up is a sort of a personal training and personal nutrition plan. And I myself went through it probably about, oh, five months ago now and it's been working great. So you have a consultation with them. And based on what your goals are, maybe you don't want to go to the gym, you just want to work at home, then they can, they can make you a training plan just for working at your home or for me, I like to go to the gym, but I can only go four times a week. And I travel a lot. So what they did is they made a just a four day a week, 45 minutes, plan that I I just go to the gym, they tell me exactly on which day what I need to work out and what I need to eat, they recommend a specific nutrition plan for you. And I really like that because it's like the perfect amount between like I just watched a bunch of YouTubes with these meatheads have been working out for nine, nine years. And like the total opposite, which is like I paid $900 for a personal trainer in the gym. And I don't really want that because like, like I can watch YouTube videos, I can figure out what the exercises are, I just need someone to, to take a look at my life, take a look at my goals and to figure out what I need to do in order to hit those goals. And then just then I've got my plan and destiny to work my plan. So that's exactly what DevOps is offering you. So if your New Year's resolutions are not coming along, as well as you thought you can sign up for their personal training plan, you can use the code syntax for 75 bucks off and that's good through March 1, at which point that that code will go back to 50 bucks. So if you're still listening to this after the fact you can still get 50 bucks off. Along obviously along with that your personal training plan you get access to their Slack, which there is full of developers kind of And eat slack because half the time people are talking about like react methods for sending email. And then half the time people are talking about like, how do I properly use a kettlebell or something like that. So it's pretty neat in order to join that if you just want to join the slack, they're offering that off as five bucks a month as well. So if you just want to join a community of like minded developers looking to get fit as well, you can totally do that in so go to dev lips.io and use the code syntax in order to to get access to this and you can get 75 bucks off definitely highly recommended. Again, I went through it myself, and it's really helped me get in shape.
+
+51
+00:20:39,860 --> 00:20:43,530
+Scott Tolinski: Nice. Nice LOVE, LOVE LOVE deadlifts.
+
+52
+00:20:43,560 --> 00:20:45,050
+Wes Bos: Yeah, they're they're really good guys.
+
+53
+00:20:45,390 --> 00:21:00,350
+Scott Tolinski: Yeah, super cool. Okay, so let's get another one of these going here. I like this one. What are what were some of the struggles you had early in your coding journey? And how did you overcome them from Ryan blow?
+
+54
+00:21:01,410 --> 00:21:01,920
+Unknown: Yeah,
+
+55
+00:21:01,920 --> 00:21:02,790
+I like this one a lot. Because,
+
+56
+00:21:02,790 --> 00:21:51,990
+Scott Tolinski: you know, I guess people do talk about this stuff. But it could be always talked about more just what kind of stuff, you know, people who are further along in their career dealt with or struggled with growing in their skills. And for me, I think one of the biggest aha moments overall in coding for me, was when I figured out how to work with error messages. I remember, I mentioned at some point, I, one of my first experiences working with a server side language in a database was a Magento. site. And I had only ever done static HTML. And I didn't do any research. I didn't know what I was doing. And I would hit like a white screen of death, because probably, maybe there's some something off with the database credentials or something. Who knows? Yeah, but I had no idea how to check the error. And I no idea how to fix the error if there was one. And so I was just like, Okay, I gotta start over. Like, yeah,
+
+57
+00:21:52,050 --> 00:22:00,120
+Wes Bos: I can't imagine how many times that I googled WordPress, white screen of death, right. Look, could it be anything? Yeah.
+
+58
+00:22:00,150 --> 00:23:00,660
+Scott Tolinski: And so even there, there's so many questions you see on web dev, Reddit, where people will be like, how do I get like, what's wrong with my CSS? So whether it's CSS, whether it's node, whether it's PHP, or any of this stuff, figuring out how to solve your own problems yourself is like a huge thing that you will struggle with until you figure out how to do it. So yeah, I think that's a big one, that once you get over that hurdle, you can start solving your own problems. You don't necessarily feel like, holy cow, it's not working, what the heck do I do? Basically, the message here is always check the error logs, Google the error, if you don't find anything with the error. I mean, Well, okay, check the error logs, read the error in plain English. And I because there's a lot of times again, where people will come to forum post, and they'll be like, this thing says, x is not defined, why isn't it working? And then you're just like, well, maybe you should look at whereas like, it's defined and see if it actually is defined. I mean, reading giving the
+
+59
+00:23:01,140 --> 00:23:32,730
+Wes Bos: actual error message is so so important, because it's very scary, especially with no and they just dumped this massive stack trace on you. And almost all the time, all of those lines are in the actual library itself. And for those who don't know, a stack trace will sort of show you the steps up until the error actually happened. That's what a stack trace is. And almost always it's just one or two lines that you actually need. So being able to just take a deep breath and attack that error messages. I totally agree with you. It's super valuable skill.
+
+60
+00:23:32,969 --> 00:23:41,100
+Scott Tolinski: Yeah. So yeah, troubleshoot. You're learning how to troubleshoot your stuff is a hurdle. And once you get over it, you're going to be a much more confident developer.
+
+61
+00:23:41,400 --> 00:24:19,080
+Wes Bos: Yeah, I think for me, the biggest struggle I had was just impatience being like, I felt like I was running through water, where I just wanted to make these amazing things. And I just wanted to go through and I would see all these other people just slapping together an app in a weekend. And I could just spent like, four hours trying to get my like, CSS to align properly. Yeah, it is so incredibly frustrating to feel like you're never going to get there. And it's so interesting, how incremental or not incremental, what's the word for when your skills get better and better
+
+62
+00:24:19,620 --> 00:24:21,600
+Scott Tolinski: at a exponential
+
+63
+00:24:21,630 --> 00:24:35,880
+Wes Bos: exponential, it gets exponential in your your coding skill gets exponentially better over time, and you become exponentially both better and faster. At the same time with those two things. Combined is synergy. I'm moving my hands around in the air right now.
+
+64
+00:24:35,880 --> 00:24:38,190
+Scott Tolinski: That means the universal sign of synergy, right synergy.
+
+65
+00:24:38,190 --> 00:25:15,540
+Wes Bos: So just knowing that it gets better and that it won't you won't be this slow and feel like you're running through quicksand for all the time and getting past it because that's also the the massive hack to becoming a good developer is like, how do you just mentally get past that defeated? slumped Charlie Brown kind of feeling where you're like this, I'm garbage at this, I'm taking so long, how will I ever catch up to these other people? And just knowing that you if you push through that you're going to beat out a whole bunch of other people that will never make it past that, and they're going to give up at that point.
+
+66
+00:25:16,080 --> 00:25:40,710
+Scott Tolinski: Yeah, it's definitely that kind of race. People see it as like a sprint, you know, the old thing. It's not a sprint, it's a marathon or whatever. Yeah, people are gonna get frustrated or give up or not keep that, that energy up, or that excitement up. And as long as you are excited about what you're doing and pushing through, you're gonna have those breakthroughs and all of a sudden be mister. Yeah, Mr. Mrs. Miss rocket, man or lady.
+
+67
+00:25:42,360 --> 00:26:05,250
+Wes Bos: Yeah, I think also knowing like, you're gonna have those days where you hate coding. I have those days all the time I had that day, the other day where I just like, was like, This is so hard. I'm not getting anywhere. And I'm so incredibly frustrated and just puts you in a super bad mood. But being able to separate yourself from it's okay to have a bad day. And this is really fun stuff. And I want this to be my career is super important.
+
+68
+00:26:05,370 --> 00:26:37,230
+Scott Tolinski: Yeah. Yeah. Yeah, speaking of super frustrated, like, I have a, like my first StackOverflow post that I've done a long time, because I'm just like, so frustrated with this node streaming issue I'm having right now. And it never ends. You got to, you got to always, just like you said, Take that how it is? Yeah. Oh, that's that's the life you always have one problem to another. So, uh, yeah, let's check out another one of these. Oh, I did the last one. So you get to pick this one.
+
+69
+00:26:37,679 --> 00:26:42,120
+Wes Bos: All right, I'm gonna tackle one of the harder ones here
+
+70
+00:26:42,870 --> 00:26:43,830
+Scott Tolinski: to it. Okay, so
+
+71
+00:26:43,830 --> 00:27:20,160
+Wes Bos: this one is kind of related to it totally react related to react, and it is what is high order components, render props and reconciliation. And this is from Dragon or tray, gra g a n, it's pretty sweet name to man, everyone's such cool names on here. I'm sorry, I'm gonna, this is not going to be the best explanation ever. But hopefully, it will give you a high level view. And you can go off into the React documentation is really good has lots of really good examples of what this is. And there's some also some good YouTube talks that you can go through it. But I'll give you a high order view of what these things are.
+
+72
+00:27:20,910 --> 00:27:21,750
+Scott Tolinski: Order components.
+
+73
+00:27:22,560 --> 00:28:34,080
+Wes Bos: Let's talk about higher order components and render props. And then we'll talk about reconciliation. Because I didn't even know what that was 10 minutes ago, but higher order components and render props. So when you're building react app, you have sort of two concerns. You've got like what does this component do? How does it fetch data? How does it handle changes to data? How does it save data and all that stuff? And then you have this other concern? Which is what does it look like? What does it look like when I render out the actual DOM element to the page? What styles what class names to be applied? How does it loop over multiple elements? And you you have those two things? And what ends up happening is that you sometimes tightly bind, what does it do? And what does it look like it together and then you create another component, like let's say you have a shopping cart component where you need to fetch all of the items in your shopping cart. And then you need to display the items in the shopping cart. And then you want to do like a little widget in the corner that like shows how many items are in your shopping cart and the price? So Oh, my pop, my pop is barking? Hey, no, no. Sorry. What was I saying? That's the
+
+74
+00:28:34,080 --> 00:28:37,380
+Scott Tolinski: only thing that slows us down on this show is the dogs barking.
+
+75
+00:28:38,850 --> 00:31:14,760
+Wes Bos: So yeah, these two elements, and you don't really want to overlap the same functionality of fetching the data for the shopping cart twice. So what you can do is you can separate out the sort of duplicate functionality of holding your data and updating your data into a separate component. And then you can create other components that will will figure out what they look like and how they are rendered out to the this the script the screen. And back in back in the olden days, the way to fix this was called mix ins. Or you would just like take this mixing and mixing would infuse some sort of functionality into your existing component and react got rid of those. And new ways to do that were ESX classes. And then now we have high order components, which is essentially just a function that will take in your component of what it looks like. And then it will expose the methods and the state and the data to that sort of child component. So that's what a high order component sort of is. And you will often see that where like with Apollo, you might have a component called with data or in react router. We're not sure if we have one now but it's called the width router. And then you can just export these components and then you can just say export it with the router and then the high order component from the router or the high order component from Apollo. We'll just infuse your, your component with that actual data and functionality, should you need it. Right? Yeah. So stay with me so far, Scott? Oh, yeah, I know, I know, you know these things, but I just you're the only person here to talk to. Then the other way, which is becoming a really popular lately hear a lot about it is render props. And instead of making a header component that sort of wraps your child component, you keep the functionality in the data in your, your, your main component. And then the question of what does it look like, is simply just a property or a prop on your component called render. And this is not standard in react yet. This is just like people have sort of come along the idea of this whole, like, just pass it a component. And then the render prop is usually a function that will pass your state or your data to the child component, and then you just tell it exactly what to render out. So it's a little function to say, with this existing data and functionality. We will work with all the functions, and then I'll just pass down the data that I need to the render function. And then that's, we'll we'll decide what does it look like?
+
+76
+00:31:16,440 --> 00:31:19,230
+Scott Tolinski: Cool, cool. Yeah, super cool.
+
+77
+00:31:19,860 --> 00:31:21,600
+Unknown: Word. Cool. Yeah.
+
+78
+00:31:21,600 --> 00:31:42,660
+Scott Tolinski: And you'll see, I mean, you'll see render props, and like you mentioned and higher order components and a bunch of libraries that you use. So you're probably already exposed to them. Even if you might not be, you might not even know that you were you were using them. Yeah, I mean, think about it react router for like, how do you render inside of a route for a component, but the render prop? Yep. Yeah. So stuff like that.
+
+79
+00:31:42,690 --> 00:32:57,630
+Wes Bos: Yeah, there's a really good talk, Michael Jackson gave, who is one of the authors of react router, when he sort of explains the whole. We went from mixins to tie or components. And then there's this new idea of render props. And the first time that I like really got to use it was with this downshift library that Kent C Dodds put out. And he's he's an engineer at PayPal. And he did this really cool thing because he made this like, drop down, and the whole downshift. What's it called the whole downshift component. It doesn't render out anything. It's just a functionality. And there's no baked in elements. So it's not like you have to like bend to the specific markup that downshift makes you implement. It's just a whole bunch of data and functionality. And then in order for you to make it show up on the page, you have to give it a render prop and tell it how to render out. And that's amazing. Because you get all the powerful functionality of this sort of autocomplete that downshift gives you without any of the you must use it in this specific way, you can use it in any any way that you would want. It's just render props.
+
+80
+00:32:57,840 --> 00:33:33,990
+Scott Tolinski: Yeah. And another similar library that I use render props, and all the time as react power plug, which seems very similar in a different type of way that there's like a billion different little utilities, like a toggle component. And the toggle component automatically gives you a toggle function and on off state. And it just makes if you ever need to write a toggle, you'll never have to write this down. It says state update ever again, if you want to use this, this library. So there's a lot of cool little things like that using render props to just totally avoid writing code that you would write frequently. So yeah, love it. Cool.
+
+81
+00:33:34,050 --> 00:34:00,420
+Wes Bos: And then there was this other question that was asked in the same one, which is what is reconciliation? And I also didn't even know what it was before this podcast. I looked it up. And I'll just link to the article too about it. But it seems to be how does react figure out what changed without having to rerender the entire application. And that is called reconciliation. And the way that react implements reconciliation is in a specific way. So I'll link to that article in the show notes.
+
+82
+00:34:00,570 --> 00:34:07,200
+Scott Tolinski: Yeah. And that is probably one of the it's one of the reasons you have to use keys for like everything right? I mean, that's like a
+
+83
+00:34:07,200 --> 00:34:19,050
+Wes Bos: big big so knows exactly what where to. That's Yeah, the reason why we have keys is so that react can keep track of what elements are which and when things change. Yes, the nice efficient way.
+
+84
+00:34:19,460 --> 00:34:24,330
+Scott Tolinski: dope. And as we all know, React is pretty darn fast. So yeah.
+
+85
+00:34:24,810 --> 00:34:28,730
+Wes Bos: Blaze and we have a bit of a sound check sound
+
+86
+00:34:28,830 --> 00:34:31,949
+Unknown: for that reason. Mm hmm.
+
+87
+00:34:31,980 --> 00:34:35,790
+Tasty. Tasty, is 38 inch shameless plugs.
+
+88
+00:34:35,790 --> 00:34:37,110
+Wes Bos: Okay, good.
+
+89
+00:34:39,000 --> 00:37:14,690
+Scott Tolinski: Gosh, darn, it's a great, okay. So this is a question that I really liked this question, not only for how it's how it was asked to us, but for what we also think that the question is actually trying to say the question is, when should you just drop the towel on code which will I'm sorry, Eduardo, if I, if this is, you know, shouldn't be funny, but we are kind of cracking up at that question. So yeah, how should you? When should you just drop the towel? And we assume Eduardo means like, when should you give up on your coat? Like when it's your towel? Yeah. This isn't like a locker room code here. So, yeah, so this is a good question. I mean, I guess it depends on what your project is, right? If this is going to be? I don't know, this is a tough question to answer. Because when should you give up on the code itself, not necessarily like the project or whatever, but the code that you've written. And I say this as someone who's who's given up on a large code base for our level of tutorials. So when level up tutorials was originally written, it was written in Drupal. And it stayed that way, for a long time, at the time, I was working pretty heavy in Drupal. So it was a side project for me at that point. And it was really easy for me to just say, hey, Drupal, go get me all these YouTube videos from YouTube and sort of assign them to different content, to content types, and whatever. And as level up tutorials grew, I want to start to add subscriptions, I want to add all this custom code, and I just found myself hacking Drupal and writing my own modules, more than I would care to. And, yeah, so basically, at some point, I just realized that this code base while I had put a ton of time into it, and it works well for what I needed to do is not going to be there for me in the future, it's not going to be the full on codebase. So at that point, I made the decision to drop that code base entirely start from scratch, and deal with all of the difficulties involved there and just start my own thing. So for me, I could see the writing was on the wall that this code base was not going to be able to take me where I needed it to go. And that's when I dropped it. Yeah, I mean, yes, other things are, if your project is like a hobby project, and it's beyond saveable. I could see that being something maybe sometimes you just so far off in a bad direction, and then you finally had some clarity. And it's a hobby project, you could just throw it all out the window and start over and then move on with your newfound clarity. I guess that makes sense. Definitely, too.
+
+90
+00:37:15,569 --> 00:38:48,600
+Wes Bos: Yeah, I'm sort of on the same page. I think what you need to do is look at, do I want to scrap this code? Because I think that I could rewrite it better? Or do I need to scrap this code? Because it's actually interfering with the, the the logic of the application or the speed at which we can we can develop the application? Because at the end of the day, we're developers, and it's often easy to forget that we're building things for our end users or for a business use case or for some sort of use case at the end of the day. All right, let's see, let's see, as a business, we're trying to sell t shirts on a website. And should I scrap this code? Because it doesn't look good? Meanwhile, it's totally it's working totally fine. It's selling t shirts. And it's, it's not interfering with the end user? Probably not just leave, let it be until you actually need to touch that piece of the code base again, and then maybe you can rewrite it. But if is it stopping you from rolling out new features really quickly? Is it stopping you from maybe having a nice quick application? Because you could maybe rewrite it in react versus the old one as in maybe like just a server rendered slower version? Something like that? Is it stopping you from from trying new things that you might want you might want to otherwise implement? And I think that's really my my barometer for, should I scrap this specific thing? Or is it working just fine. And I can spend my my time elsewhere?
+
+91
+00:38:49,080 --> 00:39:14,520
+Scott Tolinski: Yeah. And there's definitely sort of like a cost benefit analysis that you need to go through like, is the amount of time that this is going to take up going to be paid for by, you know, the results of this change? For me, it certainly was by having this new site, this new platform, it was going to be much friendlier for my users. I was able to get more users. Oh, yeah. There you go. Exactly. That wasn't the soundboard.
+
+92
+00:39:15,600 --> 00:39:16,460
+Wes Bos: Exactly
+
+93
+00:39:16,530 --> 00:39:20,940
+Scott Tolinski: that one was. In case you couldn't tell the difference. One of those
+
+94
+00:39:20,960 --> 00:41:08,360
+Wes Bos: was the soundboard. Exactly. Yes. Yeah. I like that. I think that's a good nice little litmus test for for whether you should be rewriting something or not. Yeah. Let's take a break for a sponsor. Let's talk about fresh books. Fresh books is the best cloud accounting software out there. So if you are trying to run a small business, if you are a freelancer consultant, or you're just trying to send an invoice over to someone, I highly recommend using Freshbooks for both sending all of your invoices, being able to bill in different currencies, being able to log all of your different expenses that you have. So this is not just invoice general. Or you could code something like that in JavaScript real quickly. But being able to keep track of all of your clients being able to keep track all your invoices, all of your expenses, there's time tracking built in, a lot of people ask me like, what do you use for time tracking. And when I used to do some hourly billing, what I would do is, you can either use the there's some apps that hook into Freshbooks, and you just click the button, I'm working for this client right now. It'll start counting all your time, you can turn it off, and then once a month, I would take all of my time entries, and then just auto generate that into one big invoice. My client loved that. Because during the day, I would just write what I was working on. And then at the end of the day, they can look at Okay, Wes, build 60 hours this month, and we can really hone down to what were those 60 hours, what were we specifically working on? so highly recommend you check out fresh books, whether you are just a small business, a freelancer or anyone that needs to manage their finances for their business, you can get 30 days free apps, what is it freshbooks.com forward slash syntax and use the code syntax? And how did you hear about us? Thanks so much to Freshbooks for sponsoring, sponsoring.
+
+95
+00:41:11,420 --> 00:41:18,600
+Scott Tolinski: Cool? Yeah. Okay, cool. So, yeah, I think I hit the last one about dropping the towel. So
+
+96
+00:41:19,319 --> 00:43:40,650
+Wes Bos: I'll pick up a new one, no, pick up that towel. I'm like this one. What is the best way to get my hands dirty with JavaScript for a JavaScript beginner, this is from Malik, like working on real life, for example. So like, if you're a JavaScript beginner, and you want to use want to get more, more experience and like, well, how should you approach that? Should you build a huge? Should you do lots of little examples? Should you build an entire application? Should you focus on the fundamentals, there's all these different approaches that lots of people recommend. So I'm going to, I'll talk about what I like to recommend to people, and maybe Scott can take a look at his. So my recommendation for this is that don't work, specifically on apps work on on what I like to call pieces. Because, first of all, we're slowly moving over to this whole idea of like componentize applications where you don't really work on an entire application, you work on a specific thing, like a date picker, or an image upload or a photo gallery, or a contact form or all these different things, right. So what I recommend for people is take take yourself out of the complexity of trying to integrate this into an existing application, because that can make make things two to three times harder than they actually have to be. And just work on sort of these nice isolated from scratch examples. So that you can really focus in on the pieces that matter to that piece. And you can worry about implementing it into an existing application at a later point. So that's the whole idea behind my JavaScript thirty.com course, which is just build 30 different things from scratch every single day. And you're going to start to to get the hang of it, you're going to you're going to start to be able to think of your applications as different pieces or different components. And you'll be able to confidently approach a specific thing. And I do that myself, if I want to implement something into an app, I don't necessarily try to do it right away into my big app, I tried to just do a little proof of concept in a separate, usually just an HTML file or a code pen. And then once I've got it working, I can I can start to migrate those pieces over to infusing in my actual app. So I don't know what about you, Scott, what do you think about that? Yeah,
+
+97
+00:43:40,670 --> 00:45:34,410
+Scott Tolinski: so for me, I agree on everything you just said, I like I like JavaScript, learning and examples that put you more in the browser and less of like, fictional JavaScript land, because yeah, so many, like, obviously, it's important to understand functions, it's important to understand for loops and stuff like that, but how many JavaScript tutorials Have you come across that start with like, let's iterate over a bunch of numbers using a for loop. And the while that stuff's great, you have to learn it. And you have to know the the foundational, the skills, I think it's important also to be excited about what you're learning about. And if you're getting your hands dirty, doing stuff that affects the browser, so whether or not you're you're deciding, like, here's a great example of a project that is small, like a soundboard right soundboard, it's gonna require a little bit of JavaScript, it's going to be fun to work on. And it's small enough chunk that you can not spend an entire month on it, right? you'll you'll spend a few afternoons on it or something, you know, even if you don't know what you're doing, but being able to identify small projects like that, that are interactive in the browser, and exciting are gonna like really drive your JavaScript knowledge because instead of thinking like, Okay, I'm learning this But why am I learning this? You're thinking, Okay, I need to do this, what do I need to learn to do this? Okay, here are the concepts that I should be looking at. And here's how to approach it. And you're going to go through a little bit more like that. Now, obviously, again, I'm before people tell me, you got to learn the fundamentals. Obviously, without a strong foundation, your house falls down. So learn learn the foundations while you're doing this, you know, do those basic foundation courses, read eloquent JavaScript, all that kind of stuff. But like, while you're doing that, also get your hands dirty, with some fun, interactive browser based examples?
+
+98
+00:45:34,440 --> 00:46:41,940
+Wes Bos: Yeah, I think that you can learn the fundamentals while you're also building something fun, and it goes to this. I don't know, I think in life, you need small successes, and need it to be fun in order for you to get confidence in moving forward with things and some people really prefer looping over foo bar Baz all day and focusing in on I'm not putting that I do put that down, I do put that down. But that's and that's totally fine. I get that. But I do think that many newbies to JavaScript need to be able to have those, those small wins. Because that gives you the motivation to to move forward and to to get excited about this stuff. And that's so so important to just avoid quitting or burning out on this specific stuff. Because it's I don't know, I when I first learned programming in school, like I had one programming class, and we did tic tac toe in SSI. And I remember just like crying because I wanted to make like a website. And I wanted to make like a sweet Tic Tac Toe app, not like one that was printed to the command line.
+
+99
+00:46:41,999 --> 00:47:08,850
+Scott Tolinski: Right? Exactly. That always that always bugged me about those classes. Like I took an engineering one on one and like, yeah, yeah, you did nothing that was visually exciting. And as a visually exciting, you know, persona. And that's one of the benefits of working on the web is that we can do so much visual cool stuff. Yeah, gi stuff without a whole lot of hassle. But yeah, I just remember being like, Ah, this, how am I ever going to show this to anyone? They're gonna be like, yeah, cool. Cool.
+
+100
+00:47:09,780 --> 00:47:46,320
+Wes Bos: Well, in one of my most popular JavaScript 30 ones is we just take the really cool navigation from stripe or stripe has this like sweet nav? Are you ever over it? No. Like, we do. It's so much fun. And then we just like recreated ourselves from scratch with just some JavaScript in CSS and being able to like show someone that you did that or build a soundboard or something like that is so much more better than being like look, I I learned how to extend a prototype. Right? So excited, right? Like those things will will come up as you're having fun, right? sick, sick, sick, sick. Sick. Wait, let me
+
+101
+00:47:46,439 --> 00:47:51,570
+Scott Tolinski: let me do for you. sick, sick, sick, sick, sick. Sick word.
+
+102
+00:47:51,570 --> 00:47:54,420
+Wes Bos: Hell yes. Sick?
+
+103
+00:47:57,180 --> 00:47:59,460
+Scott Tolinski: Yes, which one of those was actually me? Okay,
+
+104
+00:47:59,490 --> 00:48:02,730
+Wes Bos: I think we got we got time for one more, I think, ooh,
+
+105
+00:48:02,760 --> 00:49:16,200
+Scott Tolinski: is there anyone that you're you're you're itching for? We have a few sorry, if we didn't get to yours, we will we will get to more in another episode. Okay, so for our last one, we have a question that says how do you recommend a designer who, whose following falling in love with front end dev sharpen their skills while being happily committed to a full time design position? So basically, this person is a designer, and they are slowly or not, maybe not. So slowly falling in love with front end development stuff? And I you know, to me, I think the answer to this is that the two are so related in all sorts of different ways that I don't see why there's any. Well, if you're a full time designer, there should be no reason why you shouldn't be able to expand your design or your front end dev skills, while being a full time designer. Now maybe you can't do it professionally. But maybe you can get some downtime here. And there. Maybe you can wager for some 20% time or any of that sort of stuff and work on code projects. Or maybe it's as simple as just being friends and connecting with the front end developers at your job and and really sort of learning a little bit more about what they do or having them throw you resources or maybe even little small projects your way.
+
+106
+00:49:17,400 --> 00:50:37,020
+Wes Bos: Yeah, I I think that this is always the question everyone rolls their rolls their eyes at is should designers code. And it's like a never ending thing should designers code? I don't care. Maybe if you if that designer wants to learn how to code then yes, if not, then then maybe not necessarily. But I do think that being able to code is a tool in the tool belt of a designer, and I have worked with is really interesting. I had worked with designers in the past who delivered me interactions. In some It was not very good JavaScript, I rewrote it, but they they delivered me how something should act When you mouse over it, and when you click on it and whatnot, and it was really neat, because maybe part of your delivering the design to someone will be some examples, maybe it's a code pen or something like that, that will explain how the interaction should specifically work in this thing, rather than just trying to explain it or doing multiple layers in your sketch or Photoshop or using one of those design prototyping tools, you can actually just like, get down and dirty in code, some CSS and JavaScript. And in show your, your devs. This is how it actually needs to be implemented. So
+
+107
+00:50:37,110 --> 00:52:03,510
+Scott Tolinski: yeah, yeah, I mean, that that's a really an excellent point, when we were when I worked at Ford, I was the front end. I mean, I was a front end developer, I was just building interfaces in Angular and stuff like that. And the designers would come to us and they were excellent designers. So don't take this is any sort of slight against and they would, they would show us some really cool stuff. And then at the point in which the questions come up about animation, or sort of transitions, it all fell back onto us, the front end developers now, I have experienced in motion design, but honestly, that technically wasn't my job. It's the designers job. But instead of the designer having the knowledge of how that sort of animations could work in in code and stuff like that, or the JavaScript for it, we were just coming up with our own easing curves, we were coming up with how it felt as as front end, developers and I would, you know, throw a little bit of motion designer on my resume because of that, just because of that, that role you had there. So it would have been absolutely helpful for a for a designer to say, Hey, man, like if you could throw this Bezier curve on here. That's the exact the kind of animation I'd like to see. And not that I can't do it myself. But that would have helped out or maybe would have provoked a conversation. So yeah, if you're a designer, you want to learn how to code you want to learn how to do some of this front end stuff. I say go for it if you don't, like don't feel pressured into doing it either. So yeah.
+
+108
+00:52:05,220 --> 00:52:11,100
+Wes Bos: Good answer. I like that a lot. Yeah, yeah. Wait, let me get some soundboard in here.
+
+109
+00:52:12,900 --> 00:52:13,650
+Unknown: We
+
+110
+00:52:19,350 --> 00:52:20,340
+Wes Bos: like the last one.
+
+111
+00:52:20,340 --> 00:52:27,660
+Scott Tolinski: I love her laugh. But yeah, just use your own laugh track all the time. Yeah, she just had this open to give myself some laughters
+
+112
+00:52:27,690 --> 00:52:30,870
+Wes Bos: all day long. Just have it like play at random intervals.
+
+113
+00:52:31,470 --> 00:52:42,780
+Scott Tolinski: I can absolutely already see my wife Courtney hating this. Like giving myself a laugh track. I feel like she thinks that's the last thing that I would need to
+
+114
+00:52:45,780 --> 00:53:13,860
+Wes Bos: we need to make a mobile version of this so that it will be just pocket ready, actually. Yeah, it is mobile. Ready? Is it? Oh, it already is powerful. Yes. amazing job. Cool. All right, let's move on to some sick, sick, sick, sick, sick, sick, sick, sick, sick, sick, sick, sick, sick pay sick pick.
+
+115
+00:53:13,860 --> 00:53:15,930
+Scott Tolinski: This is almost performance art at this point.
+
+116
+00:53:17,610 --> 00:54:01,950
+Wes Bos: Some sick pics, this is the section of this, I realized we don't actually describe what these things are anymore. And we have people joining the podcast every single week. This is the part where we do a sick pick, which is something that we have been enjoying in our life, whether it's an app or a device, or a big bag of caffeine or, or any I should know Wait, last, um, last week, I recommended this magnet charging thing. And it's always been working good for me so far. But I did have someone who bought it and it broke within 30 minutes of them. So guard your heart, you can return to Amazon mindview. And I don't know if you got a bad one or it's just crappy, ugly built, but I will continue to update you on mine as well.
+
+117
+00:54:02,880 --> 00:54:04,980
+Scott Tolinski: 30 minutes. That's a that's pretty quick.
+
+118
+00:54:04,980 --> 00:54:06,990
+Unknown: That's pretty brutal. Oh,
+
+119
+00:54:07,020 --> 00:55:43,920
+Scott Tolinski: so Okay, so my sick pick up is a series of books or a couple books. There's three of these. I'd never read the third one because I've heard it wasn't super good. So yeah, so these books are by Paul Arden, who he was the creative director of Saatchi and Saatchi, which is a huge, huge, huge advertising company. So he has some books, one of which is called it's not how good you are it's how good you want to be and the other is called whatever you think think the opposite. And these are sort of one page is sort of a motivational like I don't know how you'd even describe it. It's an it's not like a sound like the sort of like shock you to motivate you thing. But they're both to get you thinking differently about all sorts of situations in life and if this thing isn't isn't for you, if you're not into this kind of stuff, then I could see it being pretty annoying, but like some of these things like whatever you think think the opposite is a bunch of like Stranger Than Fiction little mini stories about how you should open your mind about different things. And it's not how good you are one is sort of the same thing are just different little small little snippets and ideas where each kind of page, if you are open to it could sort of blow your mind in a different way or just really, really, really just on a different level. So I love these books. I read them all the time I pick them up just whenever I open a page and just say, Okay, I'm reading this page right now and then maybe just meditate on that for a little bit. So I'm a big fan of these little books. They're cheap, they're little they make little great additions to your office they make great gifts super cool book,
+
+120
+00:55:44,189 --> 00:57:22,620
+Wes Bos: sick pics. All that no, that was not that was a sick pick. Good sick pack. Scott. I like that a lot. Thank you. I only two sick pick another podcast, people always ask me what podcasts I listened to. And I go in and out of them. Just because I think people like I don't know, they sometimes say like, Oh, I am I don't like that one. Or I love that one. And I think it's kind of neat that you can go in and out of different podcasts depending on where you are in life. Like you're just starting up a business like I just went hog wild on business podcasts and likewise and then and then you start to get sick of some of the some of the podcasts you'd like Alright, I've heard them say these same things 7000 times I get it I don't need to be listening to this and then I I get rid of it. Right. So a couple different ones that I'm currently into is and let me preface this as I know this is cheesiest thing in the world is the the Tony Robbins podcast. So put I do know Tony Robbins is there Scott? Yeah, yeah, absolutely. So Tony Robbins is this like, massive guy who he's got all these like self help books and, and all these different conferences that are $10,000 to apply. And most people write them off as like just a bunch of Fufu. But if you get past the whole, like, Boa Fufu he actually is an extremely smart guy. He has this really really good book called master your money which just goes into like index funds and how nobody can beat the market and stuff like that. And that's not my second pick is but oh by the way, he has a really good documentary on Netflix, I would definitely watch that. Have you seen that one?
+
+121
+00:57:22,680 --> 00:57:25,170
+Scott Tolinski: I've seen it on the listing, but I haven't watched it you
+
+122
+00:57:25,200 --> 00:59:15,270
+Wes Bos: gotta watch it not just tonight. But my podcast is his the Tony Robbins podcast which funnily enough, he is not on the podcast at all. Or very, very infrequently it's actually hosted by one of his employees in the first like 20 minutes of the podcast is just them trying to pitch they're like executive training which is garbage So fast forward to that but once you get past all of that the Fufu them trying to sell you stuff they will often have because he's such a big guy that they often have very very smart people on and just the there was somebody on the other day that had a really good one on nutrition I was really into that they often have different different people from different aspects of life and I think it's like just the right amount of exposure to do outside of the the web development world this stuff that still is applicable to your life. So the Tony Robbins podcast and I'm going to also sec Peck the Kevin Rose podcast you know Kevin roses yeah he created dig back there stuff dig he had dig and then he was on the the podcast diggnation way back in the day and I absolutely loved it he's like one of my like huge man crushes and I just like love his like just approach to everything and like he's like super into different like body hacking and different like he he's on keto as well and he but he also is like not so over over the top something like Tim Ferriss where it's sometimes a bit much. So I really like it He always gets like really neat people on whether it's talking about cryptocurrency or different diets that you can be on or just, I don't know all kinds of different things, different sleep cycles and whatnot. So I find that those two podcasts are kind of broaden my horizons outside of this tech world that we're in.
+
+123
+00:59:15,510 --> 00:59:20,670
+Scott Tolinski: Nice cool. Yeah. should give some podcast sick pics sometime as well.
+
+124
+00:59:20,670 --> 00:59:35,520
+Wes Bos: Take pic sick pic. Awesome. What about a shameless plug? Oh, we don't have a button for a sham. Oh, we do. We do shameless plug shameless shameless plugs. All right, let's do it. What do you got a shameless plug for me. Yeah, so
+
+125
+00:59:35,520 --> 01:01:03,330
+Scott Tolinski: by the time this episode is released, I'm keeping my fingers crossed. What day is that? It's Wednesday. Yes, so it must be because that's my deadline I will have my React Native level to React Native course available for pros and for purchase at level up tutorials comm forward slash store. And so with this course basically the promises is that well in the in the first React Native basics course. There's so much beginner stuff to cover, we didn't get to cover a lot of real world stuff, it was more like here's how to even get going. And so in the level two React Native course, we get into all of the important stuff like routing, right, which is a huge sort of pain in this sort of React Native world. Just go through a simple routing situation and talk about how it's different from web routing and stuff like that. We talked about using native styles using native base, we hit an API through graph qL, using graph cool, so we actually ended up having at the end of the day, the thing that you're building is a journaling app. So you can log in, you can add a new post post title, you can go back, you can edit your post, and it's all authenticated. And this thing is going to be pretty much ready for primetime. So definitely it if you are interested in learning, not only React Native, but also React Native with Apollo and some new fancy graph qL stuff, check it out, level up tutorials.com forward slash store, you can get that by buying it or becoming a pro thick.
+
+126
+01:01:03,870 --> 01:02:04,590
+Wes Bos: That's pretty sweet. I am going to plug in my CSS Grid at CSS grid.io people are still loving it. So I'm really happy about that. Um, what else I'm recording my react for beginners course right now just because react world changes. So so quickly. So that's going to be getting a full update to the most recent API changes and best practices and whatnot. And then I am I've been sort of heads down last couple weeks just working on my, I think I'm gonna call it advanced react course, where we're touching on graph QL. And I've been been learning all about Prisma. And yoga, which are kind of some fun names to say. So it's sort of the right balance between building your own graph qL server and not having to spend your entire life maintaining this thing. So a lot lot coming from me. And that's kind of what you can expect. sick, sick. I think that's it. And you
+
+127
+01:02:05,160 --> 01:02:06,030
+Unknown: know, for me, it's
+
+128
+01:02:06,030 --> 01:02:27,720
+Wes Bos: all good. Cool. Oh, we should say, if you do have a question for us, I'll put a link in the show notes, so that you can submit your question to this forum. These questions are very helpful to us. Even if we don't answer it directly, we kind of get an idea of the types of questions and the types of things people are looking for on this podcast, we might do a whole episode on it.
+
+129
+01:02:27,840 --> 01:02:40,410
+Scott Tolinski: Yeah. And if we didn't get to your question, we have we have it all saved here. So like, if it's one that we want to answer, whatever in an upcoming episode, we'll be doing more of these. So Fear not, we may answer your question in the future.
+
+130
+01:02:40,800 --> 01:02:55,110
+Wes Bos: Somebody asked, Is Angular two to five already dead? No, no, it's not. It's very big. So a little bonus question there. Cool. All right. Have a good week, everybody. We'll see you next week. Please
+
+131
+01:02:56,010 --> 01:03:05,040
+Scott Tolinski: head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

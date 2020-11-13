@@ -1,0 +1,588 @@
+1
+00:00:06,000 --> 00:00:11,220
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:15,900 --> 00:00:32,180
+Wes Bos: This episode is brought to you by dive into Docker, which is a fancy new course from Nick, Jen Jane tacos. I can't say his last name, but it's from Nick. And it's great. We'll talk a little bit more about it. If you want to check it out, make sure you jump into the show notes. Click that link there. Oh, welcome,
+
+3
+00:00:32,180 --> 00:01:01,770
+Scott Tolinski: welcome. Welcome to syntax where we are going to be talking about command line. And we're gonna be basically saying how to be a command line pro some of our tips and tricks and things we'd like to use some, you know, ways to expand your horizons a little bit on the command line from turning it into something you sort of like have to do to something you truly know what you're doing. So yeah, so uh, Wes, who did a course on this, what are you? What are you up to now? Yeah, um,
+
+4
+00:01:01,770 --> 00:01:36,030
+Wes Bos: what do I have to right now? Well, last week, we did the sublime one or the vs. Code one where I ported ported my theme over and other thing I'm working on right now is obviously I'm working on my graph, qL course or my advanced react course. And then I've got a couple. What are they called conferences, couple conferences, a couple of training kind of coming up in the next couple of months. So I'm just prepping, prepping some stuff around that making some talks and updating my updating my workshop and whatnot. So I'm kind of just doing a bunch of little stuff here and there. But my main focus has been on working on that course. What about you?
+
+5
+00:01:37,410 --> 00:02:38,280
+Scott Tolinski: I have, let's see a bunch of stuff. I mean, I've been I said in the last episode that I upgraded, my shopping cart and all that stuff. I also upgraded to react 16, aka react fiber. On the RC three, I think it's IRC three, whatever. It's the latest I made of made up the three part, it's the latest release candidate at the time of this recording. And I had no issues at all whatsoever. Actually, well, I shouldn't say no issues, I had one plugin that I was using who refused to update the to the new prop types thing where you have to import prop types from a separate package from react. It's been it's been complaining about that for years, like, you know, you just think that that libraries probably been abandoned if they aren't accepting pull requests to change that. So I had to do a little bit of work to get that library working, or at least move it into my own version of that library. Yep. And yeah, upgraded to react fiber and saw absolutely no issues whatsoever with my code. So that was a really, really nice,
+
+6
+00:02:38,310 --> 00:03:13,080
+Wes Bos: that's pretty sweet. A lot of people have been emailing me and wonder react fiber announced that they were going to do a total rewrite of react, are people freaked out? Because they thought that that meant that they're gonna like change react entirely. And I get tons and tons of emails about this for my course. Like, is it going to be compatible with react fiber, like, it's going to change entirely. And there are some things that are being added to to react, but the entire API of react is, is staying exactly the same. So your app should be fairly simple to to upgrade to react. 16.
+
+7
+00:03:13,470 --> 00:03:46,110
+Scott Tolinski: Yeah. And you know, people sometimes say that, right? And then you do it in practice, and find that maybe some weird things are broken. And I was just really psyched to see that. That didn't happen. I mean, yeah, I think about the transition. I know Angular two, angular two was such a, you know, pain point. So many places still haven't moved to Angular two and stuff like that. Sure enough, they wanted to change the API and stuff like that. And, and react wasn't going for API change here. But they managed to do a full rewrite of the application. And it's free performance gains. Love me some free gains.
+
+8
+00:03:46,130 --> 00:03:50,100
+Wes Bos: I'll take it love gains in the gym. And in my code editor. Yeah, right.
+
+9
+00:03:50,100 --> 00:03:52,170
+Scott Tolinski: freakin take them anyway, you can.
+
+10
+00:03:53,520 --> 00:05:32,820
+Wes Bos: So today, I'm talking about all about the terminal. And I guess the alternate title to this episode would be like the command line for web developers, meaning that as web developers, we're not necessarily like getting nitty gritty into the terminal, and like scripting, bash scripts. And I know that there's people like that, who like to, like run their entire life on a bunch of hard to read scripts. But more like a lot of the tooling that we use as web developers, and a lot of the day to day stuff that we do is done in the terminal. And it's a very harsh place to start out, when you just pop up in the terminal. You're a new web developer. And it's just a green and black thing or black and white thing, and you don't understand, like really what to do. And the font sizes are really small, there's no colors. And it's just not a nice place to be. And I think that the reason why I did that whole command line power user tutorial series was because there's really just a handful of things that you need to know about the terminal in order to make your job. Really smooth. Being able to move along. So that's kind of what we're gonna be doing today is we're gonna be going going into what are the different apps that you can use, we're going to talk about Windows, we've got some complaints on the, the productivity one, where we didn't mention any Windows apps. So I actually have some experience on Windows. So I'll talk a little bit about that. We're talking about different shells that you can use bash that sh fish, like those are the big three some plugins and any other like little hot tips that we have tasty treats that you want to take home and and start putting implementing into your own workflow.
+
+11
+00:05:32,940 --> 00:05:34,980
+Scott Tolinski: Yeah, these are some hot, tasty treats,
+
+12
+00:05:35,010 --> 00:05:41,100
+Wes Bos: hot, tasty treats. Oh, ha caught in there. But they're tasty. For sure. Tasty? Yeah,
+
+13
+00:05:41,159 --> 00:05:42,360
+Scott Tolinski: they're sent on to the heating lamp.
+
+14
+00:05:42,659 --> 00:06:06,120
+Wes Bos: So let's talk about like the the very first thing when you when you need to work in the terminal, and that is, what application do you use? There's a whole bunch of the ones out there. So on Windows, there's PowerShell. On Mac, there's terminal. And, but you can also get other apps. So what one do you use?
+
+15
+00:06:07,200 --> 00:06:42,120
+Scott Tolinski: I use I turned two, and it's the beta three, it's I turned to version three. Yeah. are turned to version three. And I've been using I term, since it was I term. And I really have really, really love this this application, it's it's one that I've never found a need to move off of. It's very, very feature rich, looks super nice, is very configurable to make it look even nicer if you'd like it to. And yeah, I just didn't meet all my needs very nicely. I have some nice little things set up within it. We can get into if you'd like.
+
+16
+00:06:42,270 --> 00:06:48,870
+Wes Bos: Yeah, well, why don't you want to drop a few on us right now? Like, why would somebody use I term over the built in Terminal?
+
+17
+00:06:49,349 --> 00:08:20,580
+Scott Tolinski: Yeah, so one of the things that it comes with is things like profiles, right? So you can have profiles set up. And these profiles can be determined by all sorts of things. So you know, you can give them names or whatever. But these profiles can have their own unique look and feel to them. They can run commands upon starting, they can always start at a particular directory. So I have, you know, a workspace or a profile for level up tutorials. And I have a keyboard shortcut associated with that. So if I'm within iterm, and I hit, I think it's command L, what it does is it opens up a new tab and I term and it automatically sets me up in my level of tutorials directory, and it puts the level of tutorials logo in the background. So I always know that I'm working on the level upside. It makes it easy at a glance to know like what your environment is, at any given point, granted, you can just look at the path or something like that. But if I see that big logo, I always know that I'm in level up tuts. And that's what I'm working on. So being able to set these profiles is really super nice. You can set up as many as you'd like. You can have default profiles. And they can do some nice things. I've had profiles for any server that I run with a SSH. So the default command will just SSH into I keep on thinking I'm saying SSL, okay, it can SSH in, I had to sit and think about that for a second. Basically you you hit you know, Command D or whatever, and it will automatically SSH into your digitalocean server and get you set up, you have to run a command to do that. And it's a nice little little time saver there.
+
+18
+00:08:21,360 --> 00:08:49,950
+Wes Bos: That's pretty sweet. So I myself have also used AI term to for AI term and then I turned to and then I turned to beta three for four years and years. And it's amazing because there's all these like little tweaks you can do like you can change what show ups shows up in the tab you can customize the sounds, all kinds of little tweaks that you can do and get into it in the option especially if you're you're doing heavy stuff in the terminal like some people who use vim. I don't know who would do that. But
+
+19
+00:08:51,090 --> 00:08:51,600
+Unknown: you
+
+20
+00:08:52,670 --> 00:11:37,710
+Wes Bos: people you are you're good people, even people, we understand that and congrat Wait, pat yourself on the back for using vim right now please go ahead. But people use vim directly from iterm. And that is their editor, they just type them and then they're in their actual editor and all their stuff kind of comes through that so a lot of people spend a lot of time SSH into different boxes around so there's a lot of like heavy stuff that that needs to get done through that. I recently switched to hyper which is from continues my love affair with everything that the companies eat puts out. So they have they put out now which is the the hosting. They put out next j s which is the the React framework. They also have a terminal called hyper and it's kind of like if I term was sublime, like it fast and stable and just works and has all the options. Hyper is like atom or VS code where it's built in HTML and CSS, which allows you to do a lot of the cool things that you can do in Visual Studio code, which is you can install plugins like crazy because there's like a million web developers out there. And you can if you want to watch a movie inside of your terminal, or you want to inline images, or if you want to have cool tooltips, when you hover over a specific piece, you probably can find a plugin that specifically does that. So the upside to using hyper is being able to have this amazing ecosystem, it looks really cool, because you can style it with CSS, there's all kinds of really nice themes out there. And now, it's just pretty, pretty sweet. Little terminal. I've been using it for probably about six months now. And I've been pretty happy with it. But there is a bunch of downsides to it. It's it's definitely slower. A lot of people say is slow, slow, slow. And I don't really run into that day to day. But where I do run into it is when you maybe if you cat a large file, or you accidentally curl a file and forget to save it, the whole thing will freeze up. Because if you're trying to dump a bunch of text into this thing, the whole thing crashes. They've had this issue with non monospaced fonts for a long time where if you've ever seen my my little terminal prompt, we'll talk a little bit more about that where it has like the the icons for the get status every every week, like for one day, there are different sizes, and there's some issue that they just can't figure out with sizing non monospaced type. So there's like a couple like little issues, which are deal breakers for a lot of people. But I'm still still holding strong on it. And it hasn't been meant to be too bad of an issue for me. You know, do you see any CPU issues or
+
+21
+00:11:37,710 --> 00:11:48,360
+Scott Tolinski: anything like that it is an electron app. So it's built with electron. We mentioned in the last episode, it's not a given that electron apps take up a lot of memory and CPU. But yeah, I can.
+
+22
+00:11:48,870 --> 00:11:57,750
+Wes Bos: I haven't personally. But I also have $5,000 computer, so I'm probably not the guy to ask about it slowing down my computer.
+
+23
+00:11:58,650 --> 00:11:59,220
+Scott Tolinski: Yeah, I
+
+24
+00:11:59,220 --> 00:12:04,830
+Wes Bos: definitely. I bet that there there probably are some performance issues versus something like I term.
+
+25
+00:12:05,040 --> 00:12:28,860
+Scott Tolinski: Yeah, I think that's why I didn't jump on it immediately. Because it does. It looks nice. And I'm a sucker for things that look nice. But yeah, again, it's when they came out, I was on my old computer. And I was like, do I really want to add another electron app to my computer here right now? Yeah, maybe not right now. But now that I do have a new computer, maybe it's time to see if it will be nice. I don't know my ATM setups really nice. I have no reason to switch. But I do like new and shiny things.
+
+26
+00:12:28,949 --> 00:13:18,390
+Wes Bos: Yeah. If you want to, like take a quick glance at like, what are this sort of sweet things, just do a quick search for awesome hyper. And that's just a GitHub repo full of different packages that can help you out. So like, if you use one LastPass or one password, and you need your passwords to be accessible in the terminal, there's there's a plugin for that. Or if you want to inline links, or if you want to inline images or be able to click on links. Or if you have like a Chrome dev tools from your node process that pops up and you want to open that you can just kind of Command click it and it will open it up. So there's a lot of like cool little things in it. But for the most part, like I've I haven't installed any plugins for last two months since I switched over to my new MacBook. So I don't spend enough time in the terminal that either of these have been a deal breaker for me.
+
+27
+00:13:18,810 --> 00:13:23,880
+Scott Tolinski: And so you don't use the built in Terminal in VS code, do you? Because I don't personally No,
+
+28
+00:13:23,880 --> 00:13:52,440
+Wes Bos: I don't. And the reason behind that is because I like to keep my terminal open on a separate monitor. I've got my laptop, my 4k display, and then a 22 inch vertical. And I like to put my terminal on the on the side so I can see everything that's running. It's just too much. I already find that VS code some of the interfaces getting encroaching a little bit too much. And I'm trying to like cut that stuff down, because I just want to see my code. And the terminal is just just too much for me at this at this time.
+
+29
+00:13:52,620 --> 00:14:00,240
+Scott Tolinski: Yeah, I'm the same way. Just keep it separate. Why not? Yeah, I like the control of being able to put it wherever I want to monitor that kind of stuff. Yeah.
+
+30
+00:14:01,260 --> 00:14:52,230
+Wes Bos: Cool. So those are the the applications. On Windows, you obviously have PowerShell. Then there is one called command or Cmd er, which is the one that I've been recommending for years. Anytime somebody comes to an ATM, someone comes to a workshop and they've never used the terminal before I tell them to install commander. Just because by default, it comes with comes with a lot of the nice things as that sh has. It'll talk about what that is in just a second as well as a highlighting and some outage just a whole bunch of like it's a it's an app itself, but it also has some of the nice features of DataStage added on top of it. So if you are brand new to the terminal, and you're looking to get started on Windows, definitely check out command or Cmd er, and that will be a little bit of more of a welcoming experience then than the default. One that you have.
+
+31
+00:14:52,350 --> 00:15:04,170
+Scott Tolinski: Yeah, I should note for those of us stateside, Zed, it's ZZ. For those of us in the United States here. I had like no idea really talking about with Zed for a while that that is
+
+32
+00:15:04,170 --> 00:15:18,840
+Wes Bos: such a stupid way is that sh just like falls out of your mouth? It's just clunky. So, yes, z sh sounds a lot better. I, I agree that Canada needs to switch over to Z and Americans need to switch over to metric.
+
+33
+00:15:18,960 --> 00:15:19,950
+Scott Tolinski: That's a nice compromise.
+
+34
+00:15:21,210 --> 00:18:40,410
+Wes Bos: Maybe we get Trump in. And our I can't get Justin Trudeau not together. Maybe they'll switch it over. I'm on the topic of Windows. There is this pretty cool thing happening in Windows right now. And it's called Ws L, you may have heard people talk about Windows subsystem Linux. And the reason I know about this is because Microsoft sent me one of their What is it a Surface Book, whatever the like, top of the line surface laptop is, where you can snap it off, you can snap off the screen, it becomes a tablet, or you can switch it around. And it's a really, really sweet actual laptop. And it's pretty cool. Because there's they've been sending them out to a bunch of people who are on Twitter and talking about a bunch of people, I've actually made the switch over to Windows sort of as sort of like a, like, we promised Windows is not the same as when you left it. 10 years ago, we've been working really hard and seeing things like Visual Studio code, and Visual Studio for the Mac, the obviously some things are changing inside of Microsoft. And the big one for developers was that like, yeah, I can use Windows. Uh, but every time you come to install, like node or Ruby or like a, one of these, like Linux tools for image compression, or video conversion, anytime you have one of these tools, it's like it works on Windows wink. And, and it's like, the Wink is like you're gonna spend your Friday night trying to figure this out, right? So what happened is, Windows has embedded a Ubuntu core directly into Windows mean that like it's not a VM, I don't totally understand how it works. But it's pretty sweet is that they are running Ubuntu on your actual system. So that you can run your, your entire shell in whatever Linux that you want, or whatever things that work on a Unix based operating system, which is all of these things like node and Ruby and all of your command line tools. They're generally built from a Unix first standpoint, meaning that that's why they work so well on on Mac. That's why people slowly have gone over to the Mac in the last however many years, because these things just they just work, you don't want to have to like deal with them not working and whatnot. So it's pretty sweet. Because you can you can use Windows, you have the option to buy any of the laptops that are out there, you're not locked into the system. But you can have a true Linux shell running with all of your windows files available to you. And then you don't have to like find out what is the equivalent on in Windows land, you just use the the Unix one, which is all the stuff we're going to talk about today, whether you're using bash, does that sh fish, all of these different prompts that we're using all of the different NPM packages that are sort of like sorry, Linux and Mac only those will all hundred percent work on your actual windows subsystem Linux. So it's a pretty huge thing. I think it's currently only in what's called the the insiders build or, or something like that. So you have to flip that on in order to get it. But once you do, you can install this windows subsystem Linux and start using that.
+
+35
+00:18:40,530 --> 00:19:24,420
+Scott Tolinski: Yeah, I think that's it. I mean, it just shows another big shift in Microsoft's approach to just just how they think about the open source software community and web developers in general right now. I mean, with VS code, and with a lot of these changes being made, and now this, I mean, that is reducing a lot of the barrier, but it's also reducing a lot of people's previous opinions about Microsoft being this giant, monolithic corporation that doesn't care about the developers or something like that. I mean, to me, it signals like a really nice nice change. Yeah, I don't you know, it's I would be way more likely to consider a Windows laptop if that system is in place than without it. And yeah, I think that's important.
+
+36
+00:19:24,510 --> 00:20:09,350
+Wes Bos: Exactly. And, and props to the the folks at Microsoft who have been working so hard on this because like, myself included, who hasn't cracked like 1000 windows jokes, over the years of like, haha, it doesn't work very well. And then they sort of like push through all of those jokes of IE and not working on Windows and, and here we are today 2017 where the best one of the best editors out there is from Microsoft. One of the the forefront browsers that has all the features that we're looking for is from Microsoft. Yeah, some of the really nice hardware you can get is from Microsoft. And now you can run Linux shell on Your your Windows computer. So pretty sweet to see that shift happening. So yeah, some of the some of the Mac stuff doesn't look as bright of a future for us.
+
+37
+00:20:09,860 --> 00:20:34,070
+Scott Tolinski: Yeah, absolutely. Yeah, I know cuz the OSX becomes more and more closed off. And I guess it's Mac OS. Now, you know, all that stuff is definitely puts you in in consideration. I wasn't even planning on buying a Mac for my next laptop, to be honest. But then he weighed the options, and I went Mac anyways. But yeah, it definitely wasn't the same easy decision that it had always been for me. So yeah,
+
+38
+00:20:34,650 --> 00:21:41,490
+Wes Bos: awesome. So once you have this, like Unix base, and I understand I'm going to get like 1000 tweets from people being like Unix and Linux are not the same thing I understand. Once you have a Unix based operating system, whether that is Mac OS, whether that is some sort of Linux distribution that you've installed, or whether you are running Ws l on a Windows machine, then you have the option to use what's called a shell. And a shell is sort of like the way that you it's like a language that you use to interface with your computer. So you have your folder directories and you can list all the files in there. You can copy in move stuff and rename stuff and trash stuff and delete it and whatnot. So there are a number of different shells out there the the default one that comes on absolutely every Unix based computer is called bash. And that's the one that you if you don't know anything about this, that's the one that you are likely using bash is installed on every computer. Anytime you go into like a Raspberry Pi, or any almost every device that runs a computer has bash installed on it. So that's the one that I use for years. Have you used bash for a couple years?
+
+39
+00:21:41,820 --> 00:22:12,300
+Scott Tolinski: Yeah, I use bash for a while before I guess. I think that's my first experience of things existing that worked bash were from Paul Irish, his videos and you'd see his terminal like looking pretty and fancy and have things and like really interesting features. And you're like, I wonder what he's doing there. And then he had a post on z, sh, and oh, my z sh. And I think that sort of blew the doors open for me in terms of bash alternatives. Yeah. But before I knew that there were alternatives. I mean, that's the only thing you use, because that's the default. And that's what's there. And it just works, you know?
+
+40
+00:22:12,720 --> 00:22:37,320
+Wes Bos: Yeah, it's, it's kind of cool. So bash is the one that comes with it. But a lot of people move away from bash. Because first, the only reason people move away from bash or at first is because it looks good. And that's because if you move to another shell called z, sh, or Zed sh, or the Z shell along with, I don't know what you call it. What is Oh, my is that sh like a, like a plugin? a framework?
+
+41
+00:22:37,350 --> 00:22:44,220
+Scott Tolinski: Yeah, I guess that's like a framework of scripts. Yeah. I yeah, a configuration framework. Let's
+
+42
+00:22:44,220 --> 00:23:31,530
+Wes Bos: see what the website calls it. So Oh, my is that sh. So what does that sh does is it's kind of like bash, where they they re implement all of the things that come with bash, so listing files, zipping files, extracting files, moving files, traversing directories, you get the point, right. But they they do it in a bit of a different syntax, so that writing scripts and writing customized yet they call it a framework. So writing a framework like oh, my is that sh. Is, is a lot easier for you rather than some of the hang ups that you have with bash, because it's no matter what you what way you look at it. It's very obtuse for a web developer to come into bash in evens that sh and to be able to write a script, or to write a command line prompt in that.
+
+43
+00:23:31,950 --> 00:23:48,540
+Scott Tolinski: Yeah, so it says E. Sh. I mean, I don't I use the SH for a while. But correct me if I'm wrong here. But the the commands are the exact same. And the like, you could copy a command that was written in bash and paste it directly into z, sh, and you're not going to see any worries, right?
+
+44
+00:23:48,690 --> 00:24:29,370
+Wes Bos: Almost everything. There's, there's a bunch of gotchas here and there, which sometimes you'll have to convert over to this SSH equivalent. But it's such a popular framework now are such a popular shell now that almost anytime you run into an issue where this instruction was for bash, how do I then do that in that sh, there's almost always a Stack Overflow for it. And that's for those little one liners that you paste into your terminal. For things like larger bash scripts that might come along with like a build directory, or whatnot. You can still run those in bash, as long as you put the little hash bang user bin at the top, it will just run that in in regular bash rather than set sh.
+
+45
+00:24:29,580 --> 00:25:16,290
+Scott Tolinski: Yeah, because I use fish right, and I found the fish to be if csh has a few of those things, I think fish has a little bit more. We're like things like the the double ampersand doesn't work. On multiple scripts, you have to use a semi colon. And fish official is just like csh towards an alternate shell. Oh, my fish is a framework. Just like oh my z sh themes and fancy stuff. A little bit of extra features here and there. It's just sort of different flavors. I think. I don't know if I'm speaking Have ignorance here, but in my experience, fish seemed a little bit more opinionated in terms of changes to it. But also is really nice errors. So if you type something in bash, it's going to tell you how to fix it for fish directly in your your terminal.
+
+46
+00:25:16,350 --> 00:25:17,550
+Unknown: Oh, cool. Yeah. So
+
+47
+00:25:17,550 --> 00:25:29,970
+Scott Tolinski: if you use that ampersand that basically says, Hey, use this instead. Which is nice. But I do kind of wish sometimes that instead of telling me that it would just know that yeah, it can't like it. Like you're gonna take the time to tell me.
+
+48
+00:25:31,140 --> 00:25:31,980
+Wes Bos: For me, Well, yeah,
+
+49
+00:25:32,070 --> 00:25:33,000
+Scott Tolinski: yeah, exactly.
+
+50
+00:25:33,000 --> 00:26:35,820
+Wes Bos: So let's talk about like, why would somebody want to use that sh oarfish over bash? Yeah, and I think the the main reasons are because you a you can have these really nice prompts. And you can get prompts for bash and whatnot. But anytime you see somebody with like, a really sweet prompt in their command line where it tells them what good version or if they're good is dirty or not, or things are staged, or there's an x if something has failed, or maybe they want to know which version of Ruby they're on or version of node, anytime someone has like a pimped out line like that, then that's they're likely using something like Zed sh, or my fish. So the themes, the prompt themes is one of them. And the other one is plugins. So if you want to add any sort of additional functionality to your, your terminal, like you want to add custom commands, or be able to interface with a special service, there's often plugins that people have written for these specific shells. So I know Scott, why do you use a not bash? Why don't use bash?
+
+51
+00:26:36,180 --> 00:28:39,240
+Scott Tolinski: Yeah, so I can speak mostly in fish, because that's how I've been on for the longest now. So I mean, I guess it's probably nice, because you have csh. And I have a fish experience here. Yeah. So for me, fish has a lot of really nice things like auto completion, it's like, well, not just auto completion, it's auto suggestions. So when you start typing something, you'll be grayed out what the path is that you think it's going to be. So when you hit tab, you always know what that completion is going to be, let's say you have two folders that are named something very similar. You're changing directory. I mean, that's happened to me a whole bunch where you think you're going to be tapping into the, maybe the Documents folder, and it's the Downloads folder, because you type do tab or something. I mean, obviously, you just add one more letter, but the auto suggestions always lets you know which one you're auto completing to. But in addition, you get that auto completion with being able to change. So if I were to type, let's say, CD, D, right for desktop, or downloads or documents, and I don't want desktop, you could continue typing Sure, or you could hit I believe it's, if you want, like all of the directories that exist, you can double tap, like, it's just hit tab, and it shows you all of the different options that are available. So you can get that exactly like what exists and stuff like that. And these auto suggestions are our minor little life improvements that that just make working with it easier. Again, for me plugins and stuff like that, I like being able to have these themes that show you your your git branch information and being able to display things like I don't need the entire path listed out. So you know, my current theme just has the first character of each folder I'm in and then the most like most recent directory, I'll print that entire most recent directory. So it just gives you more control over the display and sort of the the features of how it looks and feels. an addition, fish also has like a web based configuration, which I really like, if you want to change themes or something like that, you can just run a command, it opens up a browser window that has a graphic user interface for modifying the configuration.
+
+52
+00:28:39,389 --> 00:28:40,350
+Wes Bos: Oh, that's nice.
+
+53
+00:28:40,379 --> 00:28:52,800
+Scott Tolinski: Yeah, it's nice, I use it from time to time, most of the time, I do just edit the fish config file myself. But if maybe there's some options you don't know exist, you can pop into the user interface and check it out.
+
+54
+00:28:53,190 --> 00:32:31,860
+Wes Bos: Yeah, I think one of the killer features that both this Zed sh and fish have is the the tab trigger meaning that like, if you want to cd space, and then you hit tab, what will happen is it will just automatically give you a list of all the folders and all or all the files that you'd like to go to. And then you can use your arrow keys to go through the entire grid, maybe you have like four files across three files down, you can use your arrow keys to go through up and down over to the right and to the left to whatever the file is and then you just hit enter and it'll automatically complete it. So anytime you're trying to manually type out the name of a file, you're likely going to screw it up or like if there's a space in the file and it needs to be escaped. It will automatically do all of that for you. So the tab triggers is sort of like the foundation for all of the the features that about both of these these shells have. I want to take a quick break and talk to you about our sponsor, which is dive into Docker. This is a course that will help you learn Docker and what is Docker? Well, you often hear people talk about virtual machines being able to run different things. heaps of application on your computer, you kind of want to emulate what your server is like. And if you've ever run into this, whether you're trying to run WordPress or node app or some sort of Ruby application on your computer, you know that it's sometimes really hard to get like the exact versions of node or Ruby installed in your computer without having to mess up something else that's, that's running on your computer. So the solution to that is to put it in a virtual machine that's isolated from the rest of your computer. And that's supposed to be great. But the problem is that like, then you have a whole nother set of problems on your hand, which is understanding how does Docker work? How do I build my own Docker file, so that I can can run this app in isolation. So this course, if you're looking to learn that is going to really help you. Let's go dive into Docker from Nick Jane takus, he's gonna kill me for just butchering his last name, sorry. But check it out. You you figure out what Docker is, you can understand all of the sort of the ins and out how to install it, how to build your own Docker files, and then sort of just like go through a whole bunch of real world exercises as to how you would build a Docker environment for yourself. So make sure you click the link in the show notes, because then we will get credit for that sale. And Scott and I will become extremely wealthy from that. Thanks so much to dive into Docker for sponsoring. So let's talk about like plugins. So like once you have the base, and you can watch my videos, if you want to, like get a better idea of some of the other like fundamental features that are just baked right into Oh, my Zed sh, or fish, I'm sure they're all sort of mirrored, they also have a bunch of plugins that will extend it. So one of the a couple of the plugins that I use are just extended tab completion. So if you type NPM space, and you forget what all the commands are like, if something that's not all that something that you don't do that often, like you want to unpublish a package, or you want to check something, you just type NPM, space tab, and then it will automatically give you a grid and of all the possibilities that you can run for that specific tool. And it will give you descriptions along with with each of those telling you what, what each ones do. So you can do that with node, you can do that with Git. So if you type Git space tab, it'll give you a list of like, all of the Git commands, maybe you forgot what it's called. And you can just do a quick scan of what they are every pretty much language every Ruby has it. Every language has these tab completions that you install. And it makes your your experience dealing with that language a little bit nicer. Yeah.
+
+55
+00:32:31,860 --> 00:33:02,160
+Scott Tolinski: So let me plug something really quick. There's a awesome fish repo that has a bunch of plugins, frameworks and themes and sort of stuff in there. So awesome fish, awesome hyphen, fish, you can Google that. One of the things I really like is actually called bass, which is like a bash. Yeah, it's hilarious. They really do a good job with these names here. It just allows you to use a bash utilities in inofficial. So it's like bass plus, equals bass. or bass. Yeah, love it.
+
+56
+00:33:02,850 --> 00:33:58,610
+Wes Bos: That's wicked. So check that out. Another plugin that I only recently gotten like maybe six, eight months ago, it's and it's the one thing that I was kind of looking over at fish Shelby and I do like that. It's the Zetas h autosuggestion. Meaning that as you as you type nice, it will try to suggest what it thinks that you did. So previously, what you'd have to do is you'd have to like type, like the first letter, like maybe like, our sink space, and then you hit your up arrow to go through all the past things that you've done in our sink. With this, you just type our sink space, and then it will you know, like a very light gray font, it will suggest exactly what it thinks that you you want to type. And if that's what you want to run, like, because you've run that specific command 11 times in the past, you just hit right arrow, and then it will auto complete it all for you. So that was pretty, pretty sweet when I figured out that that you can actually get that inside of sage.
+
+57
+00:33:59,940 --> 00:34:37,080
+Scott Tolinski: Yeah, the history auto completion stuff. I mean, the history in Zed sh, or Z, sh, and gamma scenes at sh the history and z sh or fish or like alone enough reasons to switch to one of them because the history is so nice. But yeah, like that auto completion and fish is always something that I really enjoyed. There was also here's the here's not a plugin, I know where plugins, but here's a fish thing. It does basically change directory without having to type cd. If you don't type a command, it assumes that you're changing directory. So you can just start typing your directory. It's stupid. It's small. It's nice. I use it all the time. You know, just to change directory that C drive.
+
+58
+00:34:37,110 --> 00:35:39,270
+Wes Bos: Yeah, you don't. There's there's no sense in actually having to type cd in front of it. You can just keep going like I'm in my route right now. And if I type D tab, it will give it'll autocomplete me to desktop documents, Dropbox and downloads. And then I can just use my arrows to kind of go through all those and I hit enter and it will all know that I wanted to CD in It. So that's pretty sweet. Another one that I use is set sh syntax highlighting. So if you type a command that exists, it's green. And if you type a command that does not exist, it will be red. It's pretty simple. But it's nice to know if it knows about those commands. And so before you hit enter, it tells you that is not an actual command, it will tell you immediately and things like files will be underlined, instead of just being a plain file. So you can quickly know that, oh, that's actually a file because it has an underline. So the syntax highlighting as you type is a killer feature for me as well. Yeah. How's that sh syntax highlighting? here's
+
+59
+00:35:39,270 --> 00:35:52,770
+Scott Tolinski: a, here's a fish plugin that I didn't realize I had installed, but I use it all the time. It's called Pisces with again, with the fish names. It just autocompletes, parentheses and quotes in your command line. Because why not? Oh,
+
+60
+00:35:52,800 --> 00:36:33,540
+Wes Bos: yeah, that's nice. I know. Yeah, it's it's sometimes you feel like a bit of a, I don't know, like a caveman working on the terminal, because it doesn't have all of the nice, like jumping around and the auto completion stuff that you get in your text editor. But if you put a little bit of time into it, these things all do exist in your actual the big one for me is that some people always like hit their arrow, because they can't You can't click in most editors to go where you want. But I think so if you just hold down, what is it in here? If you hold down Ctrl and click a word, it will highlight it. And if you click on, what is it here, trying to figure out what the actual for fishes option and
+
+61
+00:36:33,570 --> 00:36:34,940
+Scott Tolinski: fish it's option option.
+
+62
+00:36:35,210 --> 00:36:58,800
+Wes Bos: I believe it's option for me too. It's not working right now. But that might be a hyper term thing. I thought it was option. So hold on option and click where you want to go. And then it will just insert the cursor at that specific point. And there's some bugs, there's bugs with multi line stuff, but it works pretty good, actually nearly positive that that is an item feature rather than a zero. Okay, maybe I'll switch back. That's because I was a killer feature for him. Yeah,
+
+63
+00:36:58,980 --> 00:37:01,770
+Scott Tolinski: here it is. option click moves cursor.
+
+64
+00:37:03,330 --> 00:37:08,850
+Wes Bos: I think there's a well on option click hyper term, I think there's a plugin that I saw
+
+65
+00:37:10,620 --> 00:37:12,920
+Scott Tolinski: the plugins, that's the beauty of the plugins.
+
+66
+00:37:13,190 --> 00:40:12,150
+Wes Bos: Yeah, if it doesn't exist in the core, you don't have to petition the people who build it, you can just write a plugin for it or find someone that have has already already written a plugin for that. So that's pretty sweet. Nice. Um, next up, I want to do one called z, or Zed. And this is actually not specific to Zed sh, or bash or fish, it can be used with all of them. And it's funny, it's the one that I get the most email about from my command line power user is it will allow you to move move to your most free sent folder, and people think I misspell free sent. So like, Hello, Wes. Just to let you know there's a spelling mistake. Friesen means frequent and recent sort of together, meaning that when as you move yourself around your your terminal, you don't have to remember exactly where you are. So if you're six directories deep into a project, and you always go to that project, as you CD around, z will learn about folders that you recently have gone to and folders that you frequently go to. And what it does is every time you visit a folder, it sort of gives that folder a point. And then you can use z to just jump directly to that folder. So I'm working on a project that involves next j s right now and the folders called next. And I probably have 11 or 15 folders on my computer called next, but I just type z space next, and it will direct it'll immediately go into my root Dropbox, courses, advanced react examples. Next, right like that's like eight levels deep because I've been going there the last couple days, quite frequently and quite recently. And it has like that's like the very basic that's what I use it for 99% of the time, just z into the directory that I want z Dropbox, z syntax, if I when I want to add a new show to this, I just type z syntax. I don't know where it is on my computer, but I go there enough that it knows. But then there's a couple other options where for example, if you want to go like I when I do WordPress, I always have my theme name is always WP and if I do z wb then it will just go to the most recent or frequently gone to one and maybe there's six or seven projects that all have that folder. So what I can do is I number all of my projects. So if I know like I'm working on my wife site, and she's Project 78, I just type z 78 space web and then it will go into seven eight dash Kate Forsyth to be content Ford slash themes Ford slash web so it'll it'll know to fuzzy match both of those pieces that you've passed it and jump into it. So highly Highly recommend that you get z. I can't stop talking enough about it, obviously. But when people don't use it, I'm always amazed that how awesome it is and why they should be using it nice. Yeah, I've
+
+67
+00:40:12,150 --> 00:40:15,300
+Scott Tolinski: never heard of z until right now. I know. What do you what do you think? Are
+
+68
+00:40:15,300 --> 00:40:16,190
+Wes Bos: you convinced?
+
+69
+00:40:16,560 --> 00:40:31,920
+Scott Tolinski: I'm pretty convinced I had to do it. Yeah, I should do it. I forgot. I was trying to think of why I, I always like have I have my own like aliases that jump to my working commands, but that's like a per project basis. So this is
+
+70
+00:40:31,940 --> 00:40:39,540
+Wes Bos: Yeah, you always have an alias. Right? It's sort of like Emmet, or what was the CSS one you recommended? Last episode? Hi, yaku.
+
+71
+00:40:39,540 --> 00:40:40,830
+Scott Tolinski: Hi, Jackie, you
+
+72
+00:40:40,940 --> 00:41:02,520
+Wes Bos: know how Emmet in that and hi yaku. They don't have a set command. They just try and figure out what you meant, right. I love tools like that. Because you don't have to set it up in advance. It will just learn it's kind of smart about how you're working. And it will give a best guess for what you want. And almost all the time the best guess is exactly what you wanted.
+
+73
+00:41:03,440 --> 00:41:14,790
+Scott Tolinski: Well, here check this out on awesome fish is z a pure fish directory jumping. So it's a pure fish implemented? z on fish. So nice. That's pretty sweet. I
+
+74
+00:41:14,790 --> 00:41:19,860
+Wes Bos: think z itself is written. It's called z.sh. So I think probably best show.
+
+75
+00:41:19,860 --> 00:41:20,550
+Scott Tolinski: Yeah,
+
+76
+00:41:20,900 --> 00:41:50,070
+Wes Bos: it's probably written in bash, which even though I use that sh, it still works. Because all of the like it has a little database file where it saves what folders you've been to recently that just happens entirely outside of my shell. So it's it's totally fine. Nice. Free sent free sent. Like don't email me. What else any, any other tasty treats he got in terms of plugins or tips, because I got a bunch here, but I don't know. I don't want to. Yeah, follow, right. No, I
+
+77
+00:41:50,070 --> 00:42:05,010
+Scott Tolinski: think you should keep going. Yeah, I honestly don't use that many plugins, I found fish show between fish and my fish for to do like almost everything that I needed to do. But um, you know, I'm happy to explore new plugins like, free sent file jumping.
+
+78
+00:42:05,460 --> 00:43:45,510
+Wes Bos: Yeah. Cool. So on. Next one up is tree. And again, this is not specific to any shell, it will work on anyone. And you just brew install tree, we'll talk about what brew is next in tree will sort of give you a visual listing of what your folder structure looks like. So I have a little command just actually an alias to just T. And let me open up what it is right now. There we go. What. So what tree does is allows you to just type tree and you can type however many levels you want. And it will show you a listing of all of your folders and all of your files. And then whenever there's a file inside of a folder, it will indent it. And it uses these little like Unicode pipe characters to sort of like visually make a tree folder structure right inside of your terminal. So that's super handy when you want to get like a high level view of all of the files and all of the folders that are inside of it. And then I just have this little command called t that I use all the time, especially when I'm doing a tutorial and I want to show people what does it look like at this given moment, I just type T and it will, it will list out the depth of the three levels deep of all the folders and all the files unless I pass it something like t sex and I'll go see six levels deep. Then I limit it to 15 files at most. And then I I list my directories first, and then I ignore get node modules Bower DS store, you know all those like ones that you want to ignore. So I have this like nice tidy little command that I can just type T and get a really nice overview of all the files that are in the actual current directory. Nice.
+
+79
+00:43:45,870 --> 00:43:49,320
+Scott Tolinski: Yeah, yeah. Just make sure you don't run that on your node modules folder.
+
+80
+00:43:51,030 --> 00:44:27,630
+Wes Bos: Well, yeah, that's why I've made my own little. I think there's like sensible defaults, where it will not traverse more than, like 10 levels deep or something like that. But now that I think about that, I did crash hyper term with just the regular tree command when I was prepping for this episode, which is not what I want to do. So if you have a nice command, like I'll post this on GitHub, my little command, it will just say 16 entries exceeds file limit not opening Dir. So it knows not to skip over that one because it's it's likely just like one of those like node modules folders that's containing thousands of files. And yeah,
+
+81
+00:44:27,630 --> 00:44:28,740
+Scott Tolinski: absolutely.
+
+82
+00:44:30,090 --> 00:45:14,520
+Wes Bos: The other one is brew and brew cask. So there's all kinds of package managers for command line tools. So like NPM is the package manager for node. brew is the package manager for all of your command line tooling. So anytime that you want to install any of these things like tree, then you just type NPM are sorry, you type brew install tree, and then it will just automatically install it for you and do all of the linking. Anytime someone says make sure something is in your path. I just think Start to blank out because I hate it. I hate people making me enter, I'm like, wait, I don't understand the path. It's this long ass thing where you just like string together listings of things that need to go on my path. And if it's not in your bin folder, then it's not available to you, I just do
+
+83
+00:45:14,520 --> 00:45:19,230
+Scott Tolinski: a symlink to whatever it is into my bin folder. And I don't know that's, that's
+
+84
+00:45:19,770 --> 00:45:59,280
+Wes Bos: rude does, okay, it will install into a separate folder, and then do a nice little symlink for you. And then there's a single brew doctor, which if you really screw up your command line, it will like figure out what you screwed up. And it's just the best way to install any of these toolings without having to like, because something I remember back in the old days, I had to like compile stuff. And there'll be like pre compile steps. And then you had to type. What was that command that you always had to type like to? I forget what it is, but you have to compile all of your, your things before you actually install it yourself. And they have to symlink it and yeah, make that's exactly what it was. You have to type make, and then it would never work. And then there was dependencies that you have to also install
+
+85
+00:45:59,280 --> 00:46:02,370
+Scott Tolinski: first, and it's easy Mac ports and whatever.
+
+86
+00:46:02,400 --> 00:46:38,310
+Wes Bos: Yeah, my Mac ports used to be another big one. But it was just a nightmare to get all this stuff to work. So brew is amazing. And then there's this thing called brew cask which allows you to install like just a regular desktop apps via the command line. So you can skip all of that, like, do you agree next, next, next, next, so you can just like brew cask install Slack, brew cask install Skype, right, and all of these things will just install immediately here and then you can also brew brew or brew cask update all of your apps like that No problem. So it's just like command line tooling for managing all of your, your apps and your command line tools.
+
+87
+00:46:38,310 --> 00:46:39,540
+Scott Tolinski: Nice.
+
+88
+00:46:39,540 --> 00:46:43,800
+Wes Bos: What else do you want me going? Oh man, I got I got 100 of these. Next
+
+89
+00:46:43,830 --> 00:46:45,780
+Scott Tolinski: is gone. Trash.
+
+90
+00:46:45,810 --> 00:48:01,290
+Wes Bos: So one of the scariest things about working on the terminal is that when you want to remove something with rm rf, RM dash RF, you can accidentally just nuke your entire computer. And that's that really scares me because I've heard some horror stories of people like I once had a friend who accidentally made a directory called Tilda, and then he tried to rm rf Tilden and nuke this entire computer because you're physically deleting your entire computer and there is no trashcan for rm rf. So trash if you just do npm install dash g trash dash c li that will install this little command and it works on on all of the Windows, Linux and Mac. And then when you delete something, you just type trash and then the name of the folder or the name of the file. That's the other thing about rm rf if you like RM a folder, it's like you did not do recursive and you have to pat your what like passing dash R Yeah, what a pain in the ass. So if you just type trash and the thing that you want to delete, or like Star dot jpg, or whatever it is, it will just remove those to your trash so that if you accidentally delete something, you can always restore it from your trash been
+
+91
+00:48:01,470 --> 00:48:03,330
+Scott Tolinski: nice. I like a lot. Yeah,
+
+92
+00:48:03,359 --> 00:49:35,370
+Wes Bos: yeah, do that. And then alias RM, to like to not work or I've seen people alias it to, are you sure? And then it will it'll delete it. So I would like to look into doing that as well. So I'm kind of kind of scared of having RM on my computer. Yeah, yeah. Next one up is YouTube DL. And this is this amazing little thing. If you've ever tried to download a YouTube video, maybe you're going on a plane and you want to watch Scott, then you have to download them for offline. And what YouTube dl will do is you can pass it a YouTube video, you can pass it a Vimeo video supports like 20 different video hosts. So it's not just for YouTube, you can pass it a playlist of videos, you can pass it an array of videos, you can pass it pretty much anything that you want. And it will download all of the videos for you know, to your actual file and there's no like sketchy websites where you put your email in or wait 20 seconds while you see an ad or like anything like that. It just works and it's rock solid for being able to to download content that you're not necessarily supposed to be downloading. So that one's been huge for me. You can also just strip audio out you can you can tell it what framerate you want it. You can you can make them smaller file sizes, there's 1000 different options for it. So I'm a little video on it because some of my people always asked to download my YouTube videos and like go for it. And then I did a YouTube video on how to actually use YouTube DL.
+
+93
+00:49:35,520 --> 00:49:45,750
+Scott Tolinski: Yeah, nice. Cool. I never heard of this. I will use this all the time because I'm currently doing Nate go to shady sites and wait Well, you know, your ad blocker goes nuts trying to close all the pop ups and stuff like yeah,
+
+94
+00:49:45,750 --> 00:50:13,590
+Wes Bos: and then you're they're also proxying it through their server. So if their server is backed up or slow, then you start to have to wait for their server to do it. So YouTube dl is it's pretty pretty sweet. Nice brew install. YouTube dl and it'll give you a little nice little command for you. Um, and so that's, that's all the plugins that I've got here. Any other tips that you've got for the command line there? Scott?
+
+95
+00:50:13,620 --> 00:51:21,420
+Scott Tolinski: Yeah, tips wise, I mean, I think a lot of it is, is understanding the basic commands and understanding the basic keyboard shortcuts to get you around, can go just such a long way. I mean, understanding, you know, you could do LS to view the directory, and then LS hyphen, LA to view like all of the information about the files in your current directory. And in fact, I even alias some of that stuff. If I want to see LS LA, I just have an alias to L, you know, to to quickly get access to more that information. But learning those basic commands is is just something that you want to have in your brain 24 seven, you want to have it be second nature, you know, CD m, m, v, RM, I guess, trash in this kind of case, or LS or any that sort of stuff, you want to have that stuff, I'll be second nature, and you know, just not even have to think about it. Another thing is being able to get around, a lot of times people have trouble deleting and stuff like that. So learning the keyboard shortcuts like you know, Ctrl A to jump to the beginning Ctrl K to clear the line from the cursor forward, which is the one for what's the one to delete the line from cursor backwards.
+
+96
+00:51:22,020 --> 00:51:26,730
+Wes Bos: I should Oh, that's a good. I need that one, actually. Yeah. Command, Backspace,
+
+97
+00:51:26,970 --> 00:51:28,680
+Scott Tolinski: command, Backspace, command Backspace,
+
+98
+00:51:28,680 --> 00:51:33,930
+Wes Bos: on on hyper term, or Zed sh, I'm not sure what just doing it.
+
+99
+00:51:34,800 --> 00:51:37,710
+Scott Tolinski: I'm guessing it is a hyper term. Yeah.
+
+100
+00:51:38,970 --> 00:52:05,370
+Wes Bos: So it's funny because this stuff has been around for forever. And it's sometimes funny to go back and like learn some of these basic things that come with it. But it's definitely worth your time. And in spending like an hour or two, just reading through docs, or going on YouTube and finding like 10 terminal tips you must need or something like that, because or going through my command line power user course. Because it'll teach you just a few of the things that you need to know for the stuff.
+
+101
+00:52:05,399 --> 00:52:26,070
+Scott Tolinski: Yeah, and the more the more tools you have, and the more you understand about this stuff, you know, the easier things are going to be I mean, even, you know, I had a directory of let's say, 30 video files you download from YouTube, and it replaced ampersands with there was a percentage sign. What did that what is that encoding? I'm not sure
+
+102
+00:52:26,129 --> 00:52:29,190
+Wes Bos: Oh, I what's called
+
+103
+00:52:30,120 --> 00:52:30,750
+Scott Tolinski: whatever it is.
+
+104
+00:52:31,410 --> 00:52:32,250
+Wes Bos: encoded.
+
+105
+00:52:32,310 --> 00:53:05,340
+Scott Tolinski: Yeah. So to replace all those with ampersands, because I want it to properly display the file titles. srei, a little, little one liner that goes through a directory and is able to use a regex to find those symbols and replace them with ampersands. Like stuff like that is it makes your life a lot easier. You could have I mean, it's not even a bash script. It's like a one liner. Right. So yeah, like being able to manipulate your file system in a way that's programming rather than through visual interfaces and stuff like that will take you a long ways to do really nice and fancy things for you.
+
+106
+00:53:06,810 --> 00:54:55,020
+Wes Bos: Awesome, I've got a bunch here, I'm just going to rattle through real quick. If you type if you if you pipe into PB copy, it will copy to your clipboard, meaning that if you run something like LS dash L, or in my case, cat, which will like you type cat package JSON or cat hello.md. If you tack on a pipe PB copy, what it will do is rather than display it, it will pipe that into your pasteboard or paste port. type it into your, your clipboard, your printing, you can just your pasteboard, and you can paste it from your board, wherever you like, is that sh there's two commands extract and zip. And they do exactly what you want. You want to zip a folder up, you just type zip and the name of the folder and it's it's so much faster than the OSX compress. I don't know if OSX like checks files, or does this big recursive, deep look. But if I'm ever zipping something, I do it over the command line because it's way faster with zip. And then the opposite. If you've ever tried to unzip something on the command line, you'll know that there's like x CFR nine minus Yeah, ah, camel, whatever. And I always forget them and I always try to paste in whatever the StackOverflow suggests, but it's never exactly what I want and I just want to unzip the frickin what are the zip file? So just type extract and the zip file and then it will it will figure out what type of zip file it is. So if it's a dot seven z or dot r AR or dot zip and it will just unzip it in the folder it will unzip seven z without anything additional downloaded for that. I don't know maybe Yeah, I haven't done the seven z in a long time cuz like, unless I'm like pirating some shit. I don't run into 70 all that often.
+
+107
+00:54:55,080 --> 00:55:03,900
+Scott Tolinski: Sometimes you do with like, I don't know. It's like what, I guess windows stuff. Look, I see seven z on my phone occasionally when I've done
+
+108
+00:55:04,380 --> 00:55:35,760
+Wes Bos: seven z.gz Is that Is that it? I don't know anything about compression. There's probably people cringing right now that I know know a lot about that. I know. lol well is like a shortcut to LS dash l so LS really quick, l will give you something similar. dot dot moves up a directory. So instead of typing cd dot, dot, just type dot, enter, we'll go up a level, dot, dot, dot will go up to levels sort of like, it's, it's just one more way. Just four dots work. Oh my gosh, four dots works. I
+
+109
+00:55:35,760 --> 00:55:36,720
+Scott Tolinski: wonder where it ends.
+
+110
+00:55:36,810 --> 00:55:47,730
+Wes Bos: Okay, let's do it. 12345512345676 is the max. Yeah, I was gonna say I didn't get it. And I knew that because it turned red after I typed six.
+
+111
+00:55:47,790 --> 00:55:48,840
+Scott Tolinski: Oh, nice.
+
+112
+00:55:48,870 --> 00:56:03,660
+Wes Bos: Wow. So I learned something today, as however many directories you need to go up. Like if you're using like a standard WordPress install, you know, your, your theme is always like four levels deep or whatever. You just type dot, dot dot, and they'll go up up the four levels that might be a Z, sh thing.
+
+113
+00:56:03,690 --> 00:56:04,770
+Scott Tolinski: Start working and fish.
+
+114
+00:56:04,950 --> 00:56:07,110
+Wes Bos: Yeah, that's definitely as the SH thing.
+
+115
+00:56:07,140 --> 00:56:31,860
+Scott Tolinski: Yeah. So also another quick one that seems like basic. If you hit the up or down key, you'll go through your history of the previous commands you typed in, you can also get to your previous command by hitting two exclamation points. So let's say you rerun your previous command, like you ran something, it says Permission denied, you could type sudo space, then double exclamation points. And then it will rerun that command with sudo.
+
+116
+00:56:32,910 --> 00:57:06,030
+Wes Bos: Oh, yeah, I remember that. And dash also will. So BANG BANG is like the last command. And dash will be the last director you're in. So if you are in, let's say you're in Dropbox, and you move over to sites folder, and you want to jump back to whatever folder you were in last you type cd dash or just dash, and it will allow you to flip back and forth remember on the old TV remotes, or you could flip back and forth between two channels. Yeah, that's sort of like that. Or you can you can run it. Some people don't like the like the bangbang. Because you might accidentally rerun a command. Yeah, you
+
+117
+00:57:06,030 --> 00:57:15,390
+Scott Tolinski: actually can't they block it in fish. They really if you do it, they give you like a, you can't do it. They have a whole thing on their website about why because they don't like it. It's opinionated.
+
+118
+00:57:15,690 --> 00:57:34,800
+Wes Bos: Yes, exactly. Command R is sort of like command k, where you clear out your terminal, but command R will just move everything above the fold or above the top of it. So that if you ever need to scroll back and see what you did, so it sort of like it will, it'll clear it away. But you can still scroll back if you need it.
+
+119
+00:57:35,580 --> 00:57:37,890
+Scott Tolinski: Nice, I didn't make a
+
+120
+00:57:38,670 --> 00:58:00,210
+Wes Bos: super handy. And the last one is and this works in any terminal. This is what I use in every single one of my workshops when we're first doing command or stuff is that if you just need to get to the folder that you want, and you're fine, you're stumbling with the CD. Just drag and drop the folder into your terminal and it will autocomplete wherever in the bowels of your computer. That folder actually lives.
+
+121
+00:58:01,140 --> 00:58:03,810
+Scott Tolinski: Yeah, and then it gets does it enter it takes you there, right?
+
+122
+00:58:04,230 --> 00:58:09,390
+Wes Bos: Yeah, exactly. Nice. And make sure you type cd in front of it if you're not using SSH or fish.
+
+123
+00:58:10,049 --> 00:58:55,730
+Scott Tolinski: Nice. Cool. Yeah. Another little tip is to Don't be afraid. We mentioned the productivity episode to dive into aliases, right aliases for commands that you type a lot chameleon commands that have options. That way, you don't have to string along a bunch of options. I recently wrote a not an alias, but a function for it because fish has functions does eashl functions? Mm hmm. Okay, so I recently wrote a function, which is what they recommend to do for fish, rather than aliases, which simply just runs NPM. Install hyphen, hyphen, save. That's all it does. So I just have I just typed the word in, in the package name. That's a great idea. I know. I don't know why I didn't think about that. Because it's like, NPM, install hyphen, hyphen, say like, you could avoid typing all of that. So yeah,
+
+124
+00:58:55,770 --> 00:58:59,480
+Wes Bos: you don't need the dash save anymore. It's, it's with the M
+
+125
+00:58:59,640 --> 00:59:00,480
+Scott Tolinski: Oh, five
+
+126
+00:59:00,510 --> 00:59:02,460
+Wes Bos: as of NPM. Whatever the latest one is 554.
+
+127
+00:59:02,460 --> 00:59:04,980
+Scott Tolinski: Something I think it's five.
+
+128
+00:59:05,010 --> 00:59:21,660
+Wes Bos: Yeah, as of NPM. Five, you don't need the dash dash f you need dash dash save dev if you want to see the dev or if you do not want to save it for whatever reason there's a flag you can pass like no save. But the it will automatically add it to your package JSON when you install it. So I do NPM I and then the package name,
+
+129
+00:59:21,720 --> 00:59:28,020
+Scott Tolinski: I'm really glad to hear that because a yarn um, that was one of the best features about yarn is that it implied the the safe.
+
+130
+00:59:28,020 --> 00:59:29,580
+Wes Bos: Yeah, it makes sense. Right? Yeah,
+
+131
+00:59:29,580 --> 00:59:30,980
+Scott Tolinski: it makes sense. When do you not use that?
+
+132
+00:59:31,140 --> 00:59:39,180
+Wes Bos: I mean, exactly. Like what are you installing that you do not ever need in the future? Like that's just asking for somebody else to trip over. You're not found package?
+
+133
+00:59:39,210 --> 01:00:23,430
+Scott Tolinski: Yeah, absolutely. Yeah, no, other than that, I think, you know, tip is if you're working with any of these things like z, sh, or, you know, dive into the themes that are available, and the themes are more than just the you know, pretty pretty shells on top of the command line, right? But the themes can offer a whole bunch of different important information and you You can write your own or configure your own take include whatever information that is that you want. But they can be really, really super handy and giving you that information, especially with the good stuff. Or, you know, even just things that you would need to see personally but dive into dive into themes, editing themes, modifying themes and seeing what's out there. Because it's not just a visual sheen. It's a lot of functionality baked into those as well.
+
+134
+01:00:23,670 --> 01:00:39,120
+Wes Bos: Yeah, in Zetas, ah, you can set your prompt, which is the what it looks like the line that what it looks like, you can set that to random and every single time that you load a new tab, it will just reload a random theme for you. So you can try a whole bunch of them out until you find one that you like,
+
+135
+01:00:39,150 --> 01:00:44,550
+Scott Tolinski: yeah. Oh, are there any themes that you're particularly psyched about?
+
+136
+01:00:44,550 --> 01:02:47,850
+Wes Bos: So um, as always, I have my own cobalt two theme that I have, there's this really popular one called agnosticism. And the agnostic one is the one that has the like status, there's a red X if something has broken. And then you have your prompt, which will give you the actual folder name. And then it will give you your git status on the end there, whether it'll turn green, if it's clean, and I'll turn yellow, if there's uncommitted changes that you have there. So I forked that one and I changed that into cobalt to Zed sh prompt, which has sort of everything that we want. Maybe I should explain real quick, the different pieces of it because I got a lot of email about this. So the the, the the prompt is done in what shows up and that's done in Zetas H or in bash, or in fish. So whatever shell you're in your prompt will be done there, then the color of that. So like, like what color things are, that's done in your actual application. So if you want, there's a cobalt to prompt, which is for that sh and then there's also a cobalt to color scheme, that's for I term. And there's a cobalt two color scheme for hyper. So you got to figure out like, I got to install both of these things. And then the third piece of the puzzle is the font that you use in, in your editor, whether that's a AI term or hyper, you need to make sure that you set the non Unicode symbols to be what's called a power line font or a patched power line font. And that's how you get it sometimes you see people with the cool little get icons and the little arrows and, and the cool x, all of those things are someone's taken a font and patched in those extra characters, so that you can use that so you need to make sure that you set your, your terminal to to be that font, at least for non Unicode characters in term so there's sort of three things that need to go along and I get a lot of email people send me like your things broken. And it's just because they haven't followed all three of those pieces.
+
+137
+01:02:47,880 --> 01:03:54,720
+Scott Tolinski: Nice. Yeah, I use a well I use currently right now official called the Slavic cat. I like it because it has this hilarious like emoji emoticon like cat with it waving his hand with some rays, it's it's cute and stupid. But the basically the the little additional branches that are coming off of the cat's hand are sort of basically your different statuses of your your get of your current repo. Ah, in addition, I really like it because there's this giant really interesting red arrow for your product is cool makes it very like obvious where your prompt is. So I like that big red arrow you know, so using Slavic cat right now. Although I am a fan of this one called Wild cherry which was sweet because it has a bunch of emojis in it like you know a skeleton if your repo is dirty and you know the hand fingernails getting painted if it's a new files are ready to commit and a rose if your repos clean and stuff like that. It's stupid, but it's a visual indicator and it's nice, it's fun.
+
+138
+01:03:55,049 --> 01:04:09,060
+Wes Bos: Yeah, the the wild cherry all most of that stuff has been forked off of my cobalt too. So if you kind of want a bit more of a fun like a purple ish. Look at cobalt. Let's check out wild cherry stuff. It looks super good.
+
+139
+01:04:09,150 --> 01:04:12,840
+Scott Tolinski: Yeah, we does yours does cobalt have all those emojis?
+
+140
+01:04:13,410 --> 01:04:20,940
+Wes Bos: No, no, not at all. It definitely needs to be adding those maybe I should like add a cobalt to millennial version or something like that.
+
+141
+01:04:21,000 --> 01:04:21,690
+Scott Tolinski: Yeah, right.
+
+142
+01:04:24,960 --> 01:04:28,980
+Wes Bos: Awesome. Uh, any more tips or should we move on to sick pics?
+
+143
+01:04:29,160 --> 01:05:57,060
+Scott Tolinski: Let's move on to sick pics. That's that's good for me. So my sick pig is a website this time and it's source making.com which is in addition to having some really cool artwork here. I should should note I haven't purchased any of their premium products. I can't speak to those but the the information that's on the site here is just excellent source making.com. Basically he says, I will tell you stories about good software architecture and teach you how to create with design patterns through anti patterns of refactoring. And so it gives you like basically goes through a bunch of programming design patterns. And then we'll you can go through them and really explore these design patterns, you can explore the anti patterns, you can explore tips for refactoring and disciplined refactoring techniques. But overall, I was just super impressed with this website overall, in terms of the resource of free information, the kind of stuff it's teaching you isn't like super commonly taught this Well, I would say in my opinion, if you find other things like this, I'd be happy to check them out. But I just really liked the the visual aspects everything and how they, they they teach you these different patterns and give you a nice clean examples. And nice visual metaphors and things like that to learn them on which are can be daunting for people who don't have any background in structural patterns, creational patterns, that kind of thing. So yeah, love it source making calm.
+
+144
+01:05:57,980 --> 01:07:15,690
+Wes Bos: That's pretty sweet. My sick pick is a it's an app called My Fitness Pal. So I'm actually experimenting with what's called a keto diet right now, which is sort of like low carbohydrates, medium protein, protein, high fat, pretty sweet. We're gonna talk a little bit more about this fitness stuff in coming episodes. But I've been using that to track exactly what I'm eating every single day. And previously, I had used like daily burn and the database of foods wasn't all that good. And it sort of crumbled away, they don't, they don't seem to be updating that anymore. So I switched to My Fitness Pal, which it looks like Under Armour either bought them or has made this app. And it's pretty sweet. Because it you can basically just scan the barcode of any food that you're trying to eat. And it will break down all of the macros of the food that you're looking for. So it'll give you a nice little overview. If something is too high in something that you're trying to watch whether it's sodium or fat, then it'll give you a little bit of an alert and eat the same thing for breakfast every single day. So you can just quickly add the next day so if you are looking to to track your macros and the nutrients behind your food, Oh definitely check out my fitness pal. It does does workouts and weight and it does all kinds of stuff. But I specifically use it just for the nutrition part of it.
+
+145
+01:07:16,470 --> 01:07:17,850
+Scott Tolinski: Nice. Cool.
+
+146
+01:07:17,880 --> 01:07:58,830
+Wes Bos: So that's it for today. If you have any tips, make sure you tweet them at Scott and I because I'm sure that we're only scratching the surface of stuff that's available. I think all the time when I learned a new tip. I just smacked myself on the head. And I'm like, how did I not know that how I've been how I've I've been living my life without this this tip before. So if you have any of your favorite tips that we did not mention, send them on over because I love hearing it especially mentioned the at syntax FM account. Because what I've been doing is I've just been retweeting other people's specific tips or thoughts on the podcast. And it kind of gives us a little bit of a after the show watercooler where we can continue the discussion.
+
+147
+01:07:59,279 --> 01:08:16,729
+Scott Tolinski: Yeah, absolutely. Awesome. Well, we'll see you next week. Have a good one. See ya. Head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show. Until next time. Peace
+

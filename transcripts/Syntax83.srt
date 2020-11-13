@@ -1,0 +1,196 @@
+1
+00:00:00,359 --> 00:00:24,600
+Announcer: Monday Monday Monday open wide dev fans yet ready to stuff your face with JavaScript CSS node module BBQ Tip Get workflow breakdancing soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA boss and Scott Taylor. Totally in ski.
+
+2
+00:00:25,950 --> 00:00:38,360
+Wes Bos: Welcome to syntax. Hopefully you are doing well today. My name is Wes Bos. I'm a full stack developer with me as always is Scott to Lynskey, who is also a full stack developer.
+
+3
+00:00:38,489 --> 00:00:39,180
+Unknown: Hey,
+
+4
+00:00:39,180 --> 00:00:41,040
+Wes Bos: how you doing today?
+
+5
+00:00:41,310 --> 00:00:49,440
+Scott Tolinski: Good, good. Well, I'm actually I'm sick, so I'm not doing great, but uh, good, pretty good. Let's get going. Yeah.
+
+6
+00:00:50,400 --> 00:02:15,990
+Wes Bos: Today, we're gonna be starting off a series of three hasty treats. Actually, it's funny in the last like, I don't know, maybe a week or so I've gotten like four or five people suggest that we do like, mobile testing old browser supporting old browsers polyfills, all that kind of like stuff like, how do you use this cool stuff that we talked about every single time, but still support the older browsers that are from a couple years ago. So we're gonna be breaking that down into three sections. We've got supporting and testing old browsers, you've got supporting grid Flexbox, and other new features. And then we have a big one at the end, which is transpiling and polyfills. Talking about the differences between though what are some of the approaches into that? So today, we are sponsored by view school, your member view school came a couple, maybe a couple months ago, they sponsored the podcast for a bunch of episodes, and they have that view jazz masterclass. Well, they've launched a new website with new subscriptions. Now you can get access to their entire catalogue, which has over 160 lessons, including the Vue JS masterclass for only 12 bucks a month. So you can get that entire thing that we were talking about before, as well as this new subscription. every single week there. They're publishing new lessons, best practices form validation, advanced component design. Sounds like I need to take this because I need to learn view myself, it's sort of a running joke that the view episode is coming at some point.
+
+7
+00:02:16,800 --> 00:02:18,410
+Scott Tolinski: Right? At some point, at some point,
+
+8
+00:02:18,440 --> 00:03:14,550
+Wes Bos: well, maybe maybe I'll chat with these folks from the school and see if I can learn a thing or two of you anyways, if you are learning interested in learning view, you as a syntax listener can get the first month for only five bucks. So you can really, you can really just try it out at view school.io forward slash syntax you learn from industry expert and core team members. So check it on out sick. Yeah, thanks so much to view school for coming on for a bunch more episodes really excited to have you on as a sponsor. All right, so let's jump on into it. We'll be talking in this episode about supporting and testing older browsers. This is something that's never really exciting to talk about. Because it's not that it's fun. Yeah, it's not that fun, and it sucks. And often you we talk about these new things, and then some Debbie Downer or what's the male version of a Debbie Downer? downer?
+
+9
+00:03:14,579 --> 00:03:15,390
+Scott Tolinski: Yeah, I'm trying to think of
+
+10
+00:03:16,410 --> 00:03:30,600
+Wes Bos: this Debbie Downer, male Adani down, Dani downer. No bid Dani downer, some Donnie Danner comes out of the woodwork and says cool, but I have to support it for my work. And I can't
+
+11
+00:03:32,490 --> 00:03:40,560
+Scott Tolinski: disappoint. Like that. Like I e6. At this point, I would just be like, I quit IRS. I quit. I'm sorry,
+
+12
+00:03:40,680 --> 00:04:06,930
+Wes Bos: man. As an aside to that. I watched a movie on the weekend called something dogs war dogs. And it's about these guys who like went on like the Pentagon website and found these like, they were like suppliers of guns to the Pentagon. And because it took place in like 2000 to 2003. They were using Windows XP and IE six now in the thing, and I just kept thinking like the the people that had to code the website,
+
+13
+00:04:06,930 --> 00:04:08,100
+Unknown: like, you know, funny,
+
+14
+00:04:08,400 --> 00:04:43,010
+Wes Bos: they had to code this thing as if it were 2003. And I thought that was so interesting, because they had to find old computers and run Windows XP on them. And then build a website that was only work and also look like it was built for iecex. I thought that was so interesting. My wife's like, You're such a nerd, because I always call out when things yeah, things happen in videos that are not technical. Like somebody was texting an Android phone, and then the person on the iPhone had blue messages. I was like, if it was Android, it would be green. Just like you always ruin the entire video, but this I was very appreciative of it.
+
+15
+00:04:43,680 --> 00:05:05,820
+Scott Tolinski: That's hilarious. Yeah, I know, think about like, you wouldn't be able to hire somebody who just came out of a boot camp today because they would be like, I don't know, like, what did everything's broken. You'd be somebody who's building sites in that era. And that's like my old man moment right there. But you got to have the expert, someone who's used to some of these things that we're gonna be talking about over the course of the next three episodes here.
+
+16
+00:05:07,290 --> 00:05:14,100
+Wes Bos: Exactly. So let's jump on into it those first I'll ask you a question, how do you decide if you support an older browser or not?
+
+17
+00:05:14,270 --> 00:06:42,360
+Scott Tolinski: Yeah, I think the biggest thing is to know your audience. And I mean, knowing your audience is important. For a host of a lot of reasons, you can find out a lot of information about your your audience by your analytics data. I don't know so many like, I feel like I've never made a site without Google Analytics. So Google Analytics is a big thing, because it's going to give you a little bit of insight on who's using your site and stuff like that. But also, knowing your audience, just in general, who's going to be visiting your site, right, if it's a government or an educational site, you know, you're probably going to need a lot of old browsers support, because a lot of times, those computers are really locked down into being old, old operating systems, old everything, because that's how the the security folks aren't progressing it. And me personally, I know that my website level up tutorials is primarily going to be consumed by developers. And I can't imagine developers using IE seven or IE eight, or any of that stuff. So guess what, I don't have to support anything that's not a modern browser, because my target audience isn't going to be using those things. Not to mention, we're going to be talking a lot about mobile too, right? I know, people do consume my content on mobile, but it's primarily consumed on the desktop or their iPad or something like that. So even Furthermore, you got to know how to tell tailor your experience in your design to how people are using your content. And you can get information like that, again, from things like Google Analytics, or other types of analytics, or just simply by understanding your audience and who's using it.
+
+18
+00:06:42,780 --> 00:09:25,500
+Wes Bos: Yeah, I agree as well, I usually take a look at my Google Analytics data. And again, because I primarily support a developer audience, I don't have to reach back into it. But I will tell you that I, I have run into many situations. So I looked at my Google Analytics data. And I knew that there was like a very small, like 1% of, or maybe less than a percent of people who are visiting my website, we're doing it in IE 11, whatever the people that were actually visiting an island, they were the people that were trying to buy my most expensive team licenses that are hundreds, if not thousands of dollars. And I was getting, I was getting messages from them being like, it doesn't work. And I was like, oh, shoot, I better actually fix that. Because even though it is such a small fraction of my traffic, that makes up for such a huge portion of my actual income, that I did go back in and make sure that I didn't make sure that it looked amazing. And everything worked, I just made sure that I'm the most important features, which is buying the actual course gain by signing the spots to the developers. Those are the two main features I made sure I had to go back in and we'll talk about that in I think the third episode, how I actually fixed it, it was actually just a quick little polyfill. And I was back up and running. Nice. I think the other thing we really need to talk about is like is it worth it, time versus money. So if it's going to take you an extra week to make sure your application works in an older browser. And we keep using iE 11 for this. And I think the reason we keep using I 11 for this is because in my like world at least that's the like the one last holdout. Like when I started, it was all about iecex. And over the years, we've slowly seen them drop off and off and often now that most people who will walk into Best Buy and buy a computer are on edge, i think i think i think that this is not gonna be true across the board. But I think this is going to be a bit of a thing of the past because edge will auto update. Now. Finally, yeah, you never see people being like, oh, someone's on the old version of edge. It's similar to Chrome how in most cases, I've certainly stumbled upon people using my courses that are on a two year old version of Chrome, for whatever reason, usually, it's a employer that locks it down. But in most cases, this will, uh, will auto update. And these these supporting, like browsers that are four or five years old, is not really going to be a thing in the future, which is really cool. But yeah, my original point, is it worth spending the extra time on that? Yes, that's a question you have to have with the business that you're working with, or the team that you're working with, because certainly it could be a small percentage, but it could make up a significant amount of profit for the business that's running.
+
+19
+00:09:25,550 --> 00:10:45,050
+Scott Tolinski: Yeah. And sometimes I think, you know, you might feel a little bit locked into things. I remember when I was working at agencies we would be we have to support this. We have to support this and this and this. And then I remember very specifically, me and the other developer, were basically sat down with management showed them the browser usage statistics, and we're like, Listen, ie seven is now used by this percentage. It was it was a while ago, ie seven is now used by this percentage of people. Okay, this is such a miniscule tiny little percentage. We need to know say in all contracts going forward, that We will not be supporting IE seven, regardless of your needs, and whether or not we get jobs or not because of that, it's not something that we were willing to do. We weren't willing to waste the time that the agency was wasting supporting those browsers or the point 5% of the people using IE seven still. So I still remember that day when he came out of that meeting, and the management had approved that jump to not support IE seven anymore. And I just remember being like, yes, this is going to make our lives so much better. Because again, we were just spending so much time on trying to build modern applications and modern interfaces in non modern browsers. And it was just sort of, again, it was just costing the agency a lot of our time. And that was the the argument that we use there.
+
+20
+00:10:45,329 --> 00:11:34,740
+Wes Bos: So now that we've talked about, should you support older browsers, there certainly is another issue, which is I just support the latest browsers. But even between those browsers, there's still a lot of stuff that can go wrong, right? Like this happens less and less, I found, I don't know if that has anything to do with me becoming a better developer or browsers becoming much more consistent. But there still is the odd case where you open up a browser, or you open up a website in another browser, and it doesn't work. And it looks funny, something's off. There's just these little kind of things that differ between browser to browser. So you still have to test your website in every single browser that's out there to make sure that you're in good shape every single browser that you're supporting. So let's talk now about like, how do you actually you do that both for desktop as well for mobile? What's your strategy? Scott?
+
+21
+00:11:34,889 --> 00:12:46,050
+Scott Tolinski: Yeah, I mean, my strategy is emulation is great. But there's no substitute for the real thing. You know, whether it's having a like a Windows PC handy that you can have some of these older browsers installed on, or I mean, a, you know, something like a virtual machine or something. I don't have a Windows PC here, but my wife has one for her work. So I'll pull up her computer and try things on it. And and that seems to work fine. For me, I like to just use my stuff on as much different hardware as possible. Just because there's there's are going to be things that you just don't anticipate. And emulation is great. But sometimes it really is nice to see how the users are using it on different hardware specifically. So I have a, you know, I have an iPad sitting around here, because I know a lot of people use my application on an iPad, I have an iPhone, I have Android phones, I have an Android tablet, I have a Mac computer, I have a large monitor, and I have a Windows PC installed on a desktop, all of which I use to test things out. Because I like feeling that that Real Usage sort of stuff. Rather than emulating everything, even though emulating can often be easier and cheaper.
+
+22
+00:12:46,229 --> 00:14:59,730
+Wes Bos: Yeah, so I follow pretty much the same way, I like to get it as close to the actual user. And it's funny that we say this, because this is very much how a lot of like, just like actual unit testing is going these days or website testing is going to try to get as close to how the user will use your website, because that's where you're going to experience any issues that user has. So I've got a little Windows laptop here that all all spin up every now and then just test it on on all the versions that we have. If I don't feel like getting that out, or it's out of battery or something like that, I'll spin up a virtual box. So Virtual Box is a free virtual machine that will allow you to sort of like install Windows or Linux. And actually, you can actually install Mac OSX to it as well. And it will sort of make a fake computer for you. And what you can do with that is that you can have all of these different versions of Windows saved as images. And then when you have a specific issue with a specific version of Windows, so I would usually just have like a Windows 10 and Windows eight and a Windows seven. And then I used to have way before that, but I've since deleted them, because they they take up gigs of space on your computer. And then you can boot those up. You can also save little snapshots for each one so that you can like save it before it's been been updated to a certain version of a browser. I'll usually boot that up. This is my iE 11 machine. This is my edge machine. This is my I used to have an IE 10 machine, and then even like testing it on Chrome because like font rendering in Windows is so much different than font rendering on OSX. That's since been mostly fixed. But sometimes fonts do look a little bit different from from computer to computer. So I like to have these windows makes available to you all of these virtual images. So you don't actually have to pay for any version of Windows to test it. They they give you like these 90 day free images of windows which you can download from I think it's modern.ie. Let's just triple check. That's still the website. Yeah, you can still go onto modern.ie and pull down all these images of older versions of Windows. What thing I like to tell people is take a snapshot on day one, because once you hit that, whatever 90 day window or whatever, you can always roll it back to where you initially had it.
+
+23
+00:15:00,000 --> 00:15:03,750
+Scott Tolinski: That will work really well. Yeah, the snapshots are lifesaver in that regard.
+
+24
+00:15:03,930 --> 00:15:26,040
+Wes Bos: Yeah, big fan of that, it's pretty cool. Because you can really quickly get it up and running, I also haven't really had much issue with it being very slow my desk, I have made this because I have a pretty good computer. But when I am having like a really fussy issue, I will bring out the computer because I just there's nothing better than having like a actual keyboard and an actual machine that is dedicated to that browser.
+
+25
+00:15:26,160 --> 00:15:29,460
+Scott Tolinski: Yeah, because it's gonna be the real experience. Yeah,
+
+26
+00:15:29,580 --> 00:16:37,170
+Wes Bos: there's also a whole bunch of other testing services out there. So there's like, I think browser stack, cross browser testing Sauce Labs, there's a bunch of these other services out there, where you can actually just like do it from the website, and it will sort of stream what's happening on that computer into your browser. And that's pretty cool, because you're gonna have access to literally thousands of different devices and desktop computers. But the downside to that is I've always found them just painfully slow to work with because they're, they literally are streaming the desktop into your browser from like a machine that's server racked somewhere. And I've found them to be very slow. And and I've never been a huge fan of them. Also, like the keyboard shortcuts never work quite right in the inspecting. And there's also services that will just send you screenshots of your website, in all these different browsers. But that's really frustrating. Because if something's broken, what do you do? You try to fix something. And then it's like debugging before dev tools, you just kind of pick something and refresh the page and hope it worked. So nothing better than than the real thing. It sounds like I can't believe it's not butter.
+
+27
+00:16:39,810 --> 00:17:51,900
+Scott Tolinski: Nothing better than the real thing. Yeah, I know, it's great. Another like strategy here, I guess could be just simply even knowing what kind of issues you're going to have before you have them, right? Because a lot of this stuff is testing and you're figuring out things to make sure their work. But a lot of it is you know what's going to work ahead of time, then you can write your fallbacks or use your polyfills, or stuff that we're going to get into later, without having to like even necessarily test to figure out that you're doing something wrong. So a great resource for learning about what browser support what is can I use? And can I use comm is something that I mean, we I feel like we almost always have Can I use open window regarding this podcast just to reference certain things. It's it's incredibly helpful website, where you can basically type in features and see what browsers support them. So it's just a basic search bar, can I use? Let's say you wanted to use the fetch API, can I use, you can just type in fetch. And you can see that Well, okay, I 11 does not support fetch. So you need to polyfill for that upper mini doesn't support it. But it gives you a nice little color coded table to show you what versions of web browsers, it's a great way to learn about the sort of modern features and know exactly what you're getting into before you get into it. Yeah,
+
+28
+00:17:51,900 --> 00:18:20,460
+Wes Bos: I'm constantly surprised at people who don't know about Can I use anytime I have a tweet anytime I have a screencast or a course or anything like that I don't, I specifically don't go into browser support, because that will immediately date the content, regardless of where you're posting it. And I would assume that developers can figure it out all by themselves. Oh, I'm using this feature. Is it available on the browser that I'm trying to support? Can I use comm is invaluable in figuring that out?
+
+29
+00:18:20,519 --> 00:18:21,690
+Scott Tolinski: Yeah, absolutely.
+
+30
+00:18:21,830 --> 00:19:24,300
+Wes Bos: Let's talk about mobile devices as well. Um, this is sort of as we sort of wave goodbye to the the problems that we have on desktop, we usher in a huge new amount of headaches, which is trying to get it to work everyone's different mobile device, which has all kinds of different screen sizes, all kinds of different speeds and CPUs in these phones. And then most importantly, all of these phones have different types of browsers on them, right? Like, on your iPhone, you can have iPhone is pretty good, because they all will run the safari core, even if you use Chrome on your phone, it will still use that behind the scenes. But in Android world, there's all kinds of different browsers with all kinds of different actual engines behind them. And if you need to support some of these older devices, or if you need to support some of these devices, where someone went and got a free android phone from from their carrier, it might come like what is there's some of these phones with like these very bizarre browsers that you might not have heard of? Or if you're if you're doing like a global that often in different countries, there's there's browsers that you might not have heard of, as well.
+
+31
+00:19:24,509 --> 00:20:13,740
+Scott Tolinski: Yeah, mobile's a tough space again, because, like you said, there's just so many different things. And that's a good thing and a bad thing, right? Because it allows for all these different approaches, potentially lead to innovation, but at the same time, like how many of these things do you need to worry about and need to download? I personally, I mean, I have an Android phone. And while I could download a whole bunch of mobile browsers onto it, I just have Chrome and Firefox because those are really the only browsers I'm really worrying about. And if we're being entirely honest, the mobile browser that I've had the worst time with is Safari. Safari is constantly Assume weird bugs that have just existed for a long time. That is just makes me frustrated because you think that they would have it down at this point. But I don't know if I'm having any trouble with any browser, it's almost always mobile Safari.
+
+32
+00:20:13,920 --> 00:21:23,730
+Wes Bos: Yeah, I find that as well. There's, there's always just weird edge cases, I think the latest version, iOS 12 really fixed a lot of those issues, which I was really excited about. And the nice thing about iPhone is that almost everybody upgrades iOS in within a month or two. So as soon as the fixes out for these things, it's almost not an issue to have to figure it out. That said, you still should lean on any of your bug reporting services that you use, because things can pop up in weird corners of your website. And that will quickly show you where where that issue is happening. Personally, I like to have a drawer full of devices. So I've got just a drawer here, my office that has, I don't know, probably 1520 different phones, I don't reach for it as often as I used to, I think just because things aren't getting much better. But I often will have have issues with a version of Android, that is being weird or something on one version older if I'm on iOS 12. Now I'll make sure I keep an iOS 11 device around until we go to iOS 13. And then I'll upgrade that one, just so that we're always in good shape, make sure that you can have all devices because nothing is worse than having to ask somebody who has that device to run some some.
+
+33
+00:21:23,730 --> 00:21:27,210
+Scott Tolinski: You please try this out and tell me what happens. Yeah,
+
+34
+00:21:27,390 --> 00:22:09,690
+Wes Bos: yeah. I've done it many times before. I'm very thankful that my audience is developers, because people are often very willing to to help put those down. If you do have an issue on your phone, though, like like, how do you how do you get around that? Well, that's where you need to reach for what I call remote debugging you so on, if you open up Safari on your Mac, and you have an iPhone connected via a USB cable, you'll be able to open up full dev tools. And then you can actually just use the screen instead of your monitor. It's kind of funky because there's no Inspect Element, because it's actually on your phone. And then Android for forever has had a wireless remote debugging. You do have to get the is this still true? Maybe Scott knows. You still have to install ADB.
+
+35
+00:22:10,080 --> 00:22:29,280
+Scott Tolinski: Oh, the ADB? Yeah, I don't know if you still have to. I've always had it installed. So I haven't like gone back to a time where I'm setting this up fresh. Yeah, yeah, yeah, I always have the Android Developer Tools installed, because I actually did a little bit of Android development for a little while. So I have like a little dev environment set up there. I'm not quite sure.
+
+36
+00:22:29,310 --> 00:23:04,320
+Wes Bos: Yeah, I don't know, I would assume you still have to have that installed, it's not a big deal, you can whip it up. And then you can have full access to. And that's ideal, because, like, another thing that we have here for testing is you just resize your browser. And then you can also emulate different shapes of phones in your Chrome Dev Tools. But at the end of the day, that's still using Chrome as actual browser, it's not actually mimicking the device and the how the browser works on your device. So having it right on the on the phone, or the tablet that you're trying to test is ideal. And then opening up the console and fiddling with the CSS right from your phone is ideal.
+
+37
+00:23:04,410 --> 00:24:09,660
+Scott Tolinski: Yeah. And while even on that same regard, you can also emulate the actual browsers in your your desktop by installing the developer tools for either those browsers. Now granted, these things are going to take up a lot of space. Like one way is, if you have a Mac, you can use Xcode, and you can pop up in the simulator, which is going to be an actual device, virtual machine, which is going to be way more reliable than using any sort of like in browser chrome view of that device. Yeah, because it's actually going to be running the heart or running the actual software. And same thing with the Android you can pop up and I think there's the cool thing about Android is you can have a, it's not just the official like Xcode developer tools or something like that. It's also you can download different I think Guinea motion is one of them or something like that. But you can you can download third party emulator. So there's a whole bunch of different virtual machines for Android that you can download to some of which are faster than the others. But you can have like actual virtualized copies of the operating system, which in my opinion, is probably one of the better ways to do it. If you you have hardware that can support those things.
+
+38
+00:24:09,810 --> 00:24:49,860
+Wes Bos: Yeah, that's that's one huge benefit, I would say, for getting a Mac because that you can download Xcode for free. And if you don't have an iPhone, you can still run the Xcode emulator, and you can run all of the different versions of it. And in my experience, I've never had an issue where something worked fine on the emulator, and it didn't work fine on the device, and even the Xcode emulator in my JavaScript 30 course we try to fake a geolocation. And we want to fake a geolocation updating frequently, meaning that someone's actually driving or riding a bike. And the only way I found to do that is via the Xcode developer tools. You can fake it in Chrome Dev Tools, but you can't fake it changing. You can't fake you can't emulate somebody turning corners and suddenly, that's cool.
+
+39
+00:24:49,980 --> 00:24:50,730
+Scott Tolinski: That's really cool.
+
+40
+00:24:50,790 --> 00:24:58,230
+Wes Bos: Yeah. So that's browser, mobile and desktop testing and support part one of what you have. Do you have anything else to add to that?
+
+41
+00:24:58,380 --> 00:25:30,450
+Scott Tolinski: Yeah, I guess I don't, again, If you're serious about testing if you're very serious, and there's just nothing that can beat the feeling of device in hand, once I realized how many people browse level up tutorials on their iPad, to have it as like a second screen while they're coding, the first thing I did was just go buy an iPad, I didn't have one sitting around. So when bought one just to feel how the site used, like felt and really worked in my hands in it. And it was just kind of eye opening, and I ended up changing a whole bunch of stuff because of it. But like, again, there's nothing that's going to be that feel of device in hand, or testing.
+
+42
+00:25:30,660 --> 00:26:32,940
+Wes Bos: Totally. Uh, one other tool I often talk about on this is browser sync. And what browser sync will do is you can you can spin up a browser sync instance. And then you can proxy any existing application that you have. So whether that's a WordPress or whether it's a node application, you can set your browser sync to sit on top of that application. And then what it will then do is it will make it available on your both your local network as well as if you want, you can tunnel it to the outside world. And it's really cool because it will sync changes, meaning that you change your CSS, it will update on all of the devices, it will sync scroll. So if you scroll on one of your websites, all the other devices will it'll sync form Submit. So if you're trying to like test on six or seven different devices, you can set up browser sync, open them up on all your devices. And check it all out. I've certainly used that a lot when I've I've run into styling issues on different devices, I'll just open them all up. And then instead just have my code open on my computer and just hack away at it until it looks good on all the different screen sizes and browsers.
+
+43
+00:26:33,090 --> 00:27:08,610
+Scott Tolinski: I was using something called ghost lab to sync basically your local dev environment across a whole bunch of different machines. And it would Yeah, same thing like keep scrolling up to date. And then I you people who've been a fan of level up tutorials for a long time would have seen my device lab, back when device labs were like a thing everyone was talking about, I built this whole wall full of phones that included a whole bunch of different phones and tablets where I could see instantly whenever I save things update that those changes going across all the devices. It was pretty sweet. It wasn't insanely practical. But it did. It was like really cool to see how to design looked across different different devices all at a glance, you know?
+
+44
+00:27:08,700 --> 00:27:56,730
+Wes Bos: Yeah, totally. I'm a big fan of of using those. Even if it's just locally on your computer, I've always struggled to get things like live reload up and running. And I know there's a whole bunch of different solutions. But browser sync has never let me down. And it's always had the little there's a lot of little things inside a browser sync like proxying existing websites, but adding in your own CSS. That's something I know if people have frequently where like you're working on a corporate website, there's absolutely no way for you to get it running locally on your own computer, but you are tasked with with writing new CSS against it. And what you can do is you can take the existing website in its live form, proxy it locally and then add your own CSS on top of that and it will it will show you what that website looks with your your added CSS, which I thought was pretty neat. Nice.
+
+45
+00:27:56,790 --> 00:27:57,600
+Scott Tolinski: Nice. Yeah.
+
+46
+00:27:57,600 --> 00:28:00,240
+Wes Bos: I think that's it for today. Anything else to add?
+
+47
+00:28:00,300 --> 00:28:12,570
+Scott Tolinski: No, no ready to get into Part Two and part three. So yeah, keep your ears open the next Monday, Monday after that part two and part three are coming in the same series I guess about old browsers and what we want to do with them.
+
+48
+00:28:13,320 --> 00:28:16,440
+Wes Bos: Let's get right CLN whose face
+
+49
+00:28:18,270 --> 00:28:28,050
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

@@ -1,0 +1,644 @@
+1
+00:00:01,350 --> 00:00:07,289
+Unknown: You're listening to syntax, the podcast with the tastiest web development treats out there. strap yourself in and
+
+2
+00:00:07,289 --> 00:00:08,010
+get ready.
+
+3
+00:00:09,389 --> 00:00:39,180
+Scott Tolinski: And West boss. Welcome to syntax, the web development podcast with the tastiest treats around. Hmm. Yeah. In this episode, we're gonna be talking about marketing for developers and why marketing is important for developers, even if you aren't necessarily starting your own business or anything like that. And we have our very own marketing guru in the studio with us today, Wes Bos. Hello, everybody.
+
+4
+00:00:39,900 --> 00:00:42,930
+Wes Bos: I'm honored. Thank you so much. How you doing today, Scott? Hey,
+
+5
+00:00:42,960 --> 00:01:11,310
+Scott Tolinski: I'm doing good. And today, we have a couple of great sponsors with us. As always, we have Log Rocket, which really makes finding solving bugs, super, super easy works with all of your tools and all that good stuff, as well as Freshbooks, which you should know by now is amazing cloud accounting software that was tonight. Both both love. So we'll be getting into a little bit more about our sponsors, as we go. But yeah, so how's it going? Anything
+
+6
+00:01:11,310 --> 00:01:11,880
+Wes Bos: new? anything
+
+7
+00:01:11,880 --> 00:01:14,220
+Scott Tolinski: fun going on in the world of Wes.
+
+8
+00:01:14,250 --> 00:01:40,890
+Wes Bos: Not too too much. It was father's day yesterday, which happy morning? Yeah, thank you. As to you, too. It's funny. I think one of our very first episodes we recorded we asked how is your first Father's Day. And this is Episode 52. Which means I think we've been doing it for just about a year now. Probably a little under a year because of I did a couple hasty treats here and there. But uh oh. 52 episodes soon. Wow. Pretty impressive.
+
+9
+00:01:40,920 --> 00:02:43,920
+Scott Tolinski: Yeah, it's amazing. Yes. Speaking of hasty treats, I think we have maybe a little bit of announcement regarding Yeah, treats. So we have had so much positive support coming from every one of you who listens and all of the just the the kind words and all these amazing stuff, and people can't get enough the syntax. So we have decided that we are going to do a hasty treat a week now we're gonna get an extra episode coming in here. I don't know if we know the exact release date or day of the week yet, we haven't necessarily discussed that. But I'm sure we'll stagger them out or something like that, where we're gonna be doing what's called a tasty treat, for those of you who don't know, is a, you know, maybe like a 2025 minute long episode, where we talk about one topic in particular, and maybe it's a topic that we cannot spend a whole hour on and don't want to do, like a sort of a split show. So this way, we can focus on one minor topic and get into it nice, good. And, yeah, it's gonna be a lot of fun. We're pretty excited about this.
+
+10
+00:02:44,160 --> 00:03:24,540
+Wes Bos: I'm super stoked about it just because I often get questions about specific things like I'm just looking at the list right now. If domain management role systems, cores and SSL, what is the new front end developer refactoring setting goals, what's new in react, consulting, two products, what's Prisma there's all these things that I wish I could just send someone to a podcast so they can understand. And that's exactly what these these tasty treats are going to be, is us explaining or unwrapping something. So hopefully, you can get a better idea where you may be you're walking the dog or going for a quick drive to the store, you'll be able to get it done in I don't know, maybe even seven minutes if you listen to it at two X 10 minutes.
+
+11
+00:03:24,630 --> 00:03:43,800
+Scott Tolinski: Yeah, and I think the the best thing about this for me is that there's so many good topic ideas that we've had sitting on our list that we've been avoiding, because we can't make a whole episode out of them. So we have a ton of excellent episode ideas prepared for this. And we are ready to get these tasty treats going.
+
+12
+00:03:44,010 --> 00:05:36,899
+Wes Bos: wicked, wicked. Alright, so talking about marketing today, let's let's get right on into it. So this is this is me marketing for developers. And I like this topic a lot just because like Scott, and I obviously run our own businesses. And I know that a lot of people listening here are at some point in their life, or they're going to get the itch to build something themselves. One of the best parts about being a developer is that often if you have an idea, you actually have the skills to make that thing come and be a real thing. Whereas a lot of times, like often you see people looking for technical co founders, they've got great ideas and they have like they have connections to make it happen but they don't necessarily have the actual technical skills to bring things into fruition so at some point in your life, it might be now might be in a couple of years you might want to make a little bit of side income from whether it's a product whether you're you're trying to sell some courses like Scott and I do whether you want to host a podcast like Scott and I do as well and get that sponsorship money coming in those those Freshbooks dollars. So we're gonna kind of go through the the different parts of marketing and and hopefully you can pick up a few things, here and there. So first thing I want to note That marketing is not just advertising. And this is business school, I went to school for business. So I took a lot of marketing courses. And that's one of the things that they really hammered down was like, people think marketing is just banner ads and things like that, that's advertising marketing a large part of marketing is, is also figuring out what people want. So a big part of what I do is, is listening to developers about what they're working on what they're struggling with, what they want to learn what's hot. And by, by listening to that I am able to figure out, Okay, this is what my next courses are going to be, because I've had an open ear for for all these years.
+
+13
+00:05:37,139 --> 00:06:22,620
+Scott Tolinski: Yeah. And again, we are talking a little bit about this as like Beau who have their own business, but this stuff is important for anyone who's looking to sort of up their own, you know, personal stock game. And in this industry, you got to have ways to stand out and by marketing yourself correctly, you can increase those kind of things. For instance, I mean, even when level up tutorials wasn't making any money whatsoever. And the whole goal of it wasn't to be making money or to be a business it was just to provide content, level up tutorials got me more jobs and job interviews than anything else. So by marketing yourself knees ways, you are making yourself looking way more attractive to potential. I mean, makes your resume stand out amongst the list of other resumes.
+
+14
+00:06:22,889 --> 00:07:11,579
+Wes Bos: That's that's a really good point. And I think if there's anything you'll take away from today, it's that you should start this now before it's too late. Because I often see people who are sick of their job, or they want to move to a smaller town, because they can get a nicer house, but then they have to commute on their job, and they want to be able to work remotely. And if you start this personal branding, marketing stuff. Now, by the time you want to make some sort of switch, or by time you want to move up and take a new job, you're going to have a bit of momentum behind you. And that's gonna work. It's not something you have to do, but it certainly is helpful. Yeah, I know a lot of people are a little bit being like, Oh, I don't have time to do any of this stuff. I'm trying to learn a whole bunch of stuff. I don't want to have to run this business. That's that's totally fine. But if you want this to be an option in the future, then it's probably worth starting now. Yeah, yeah.
+
+15
+00:07:11,579 --> 00:07:39,750
+Scott Tolinski: I mean, every job I got in the web development industry, except for one, I was pretty much got because of my efforts in that department right there. I wasn't hunting for jobs. I don't think I ever hunted for a job after my first job. It was sort of people came to me, because they either saw my content. Not only that, but freelance gigs and stuff like that. I think the potential is huge. But again, you don't you don't have to do it. But it can help considerably.
+
+16
+00:07:40,019 --> 00:08:14,250
+Wes Bos: Totally. So let's start off with the the first part. So let me just actually rattle through so you can expect what we have. We got personal branding, we got stuff on just running a business, we have social media, we've got paid advertisement, we've got email marketing, we've got partnerships, and then we've got freebies. So those are the major sections we'll be going through today. The first one is personal branding. And this is probably the biggest one for Scott and I it's how people in the community perceive us and personal branding is is huge for me, and I think that it probably is would you say it's it's huge for you as well, Scott? Um,
+
+17
+00:08:14,310 --> 00:08:53,520
+Scott Tolinski: it hasn't been a No, he's done everything under my business's name, where you do everything under West boss. I've always done everything under level up tutorials. So that's a good point. Yeah, even when we started this podcast, I think more people would have known me as the level of tutorials guy than Scott to Lynskey. In fact, it took me a long time, like, I don't know if it was just like, General shyness or something. But it took me a long time, even on the YouTube channel to be like, Hey, this is Scott Tolinksi. You know, it was sort of just like, Hey, this is Scott, whatever. Yeah, it was less of trying to build my own personal brand. I think a lot of it was maybe I was just ignorant towards the importance of using my name for things. Totally. I
+
+18
+00:08:53,520 --> 00:11:06,690
+Wes Bos: actually many times in my career, I've like struggled to come up with company names. And I always ask people, and they're like, what are you doing? Your name is Wes Bos. Why don't I just use that. So I was lucky from, I guess, from being born and kind of a cool name. So I always decided to stick with it. The downside to that being obviously, it's very hard to expand my business. If I ever wanted to sell courses for someone else. They wouldn't be Wes Bos courses. However, that's not anything I'm remotely interested in right now. I just love doing my own thing, and not really looking to expand it. So I'm totally fine with that. But I'd say behind my personal brand, I hope what there is is like a trust and reciprocity that's really big for me, I feel like my whole business model is built upon giving, giving, giving, helping people, teaching people and then when it comes time that someone wants to learn something, that reciprocity gets cashed in and they can they can buy a course for me because I've given so much out and that's it I should explain how my business model works for those who are new to the podcast. So I create web development courses on, on web development, a CSS, JavaScript, those are kind of my main areas. And I have, I don't even know maybe six or seven free courses. And then I've got three or four paid ones, I've got my ESX one, my node one, my react one, gonna advance react one coming out, I've got a whole bunch coming out this year that I've got some serious momentum on them. And generally, what happens is that somebody will find one of my free courses, or they'll find my YouTube or my Twitter, we'll talk a little about that stuff. And they'll take a couple and they'll like the way that explain things. And then they'll come around in and come and buy one of the paid ones, when there is a skill that they need to learn that I offer a course in. And I feel like that that trust that I've built up by putting out very good quality free courses, like the free courses are the same quality as the paid ones, then they're they're nice and polished. And you'll learn a lot from them. There's no difference between the paid and the free ones, because except for the actual price, at the end of the day.
+
+19
+00:11:06,929 --> 00:12:15,270
+Scott Tolinski: Yeah, I think part of this part of the reason why you've been successful is because of this, sort of, I think a genuine nature of of how you're approaching this. And this is such a big thing that so many people overlook, they tried to be so and so they tried to be Wes Bos, or you know, whatever that thing, but they you have to be your authentic self, and that authenticity is going to carry through into your work. And I think it certainly does, it's something I've always tried to do myself, I don't want to be trying to emulate someone else, or you know, someone else's YouTube channel or something that they might have some characteristic that really works for them. But the last thing I want to do is try to harness that characteristic, because it's not me. And I think your audience would see through that pretty quickly. So I think part of the the benefit here of your own personal branding is that it needs to remain authentic to yourself 100% I mean, I think gets away with everything, art, music, any of that sort of stuff, the the authentic, or the authenticity as the worst word I've ever come up with, like the genuine nature of people will shine through and I think really, really helped people
+
+20
+00:12:15,630 --> 00:12:51,630
+Wes Bos: totally I often see this in in YouTube videos in every single industry and you can tell that people are copying the Casey Neistat kind of Oh yeah, they're to his thing or they're doing that stupid PewDiePie zoom in on the face or like they're just stealing the the sort of the look and feel which I think you might have to do that a little bit when you're first starting out. But I'm always for doubling down on on your own sort of look and feel and, and personal brand on things because that is gonna shine through over anything else.
+
+21
+00:12:51,840 --> 00:12:53,039
+Scott Tolinski: Yeah, absolutely.
+
+22
+00:12:53,280 --> 00:13:45,150
+Wes Bos: Cool. Personal Branding. I love it a little note here speaking at conferences, that's also something that how I have I think a big part of a personal brand is establishing yourself as an expert as as cringy as that sounds. So how do you do that? Well, writing lots of blog posts, maybe posting YouTube videos, appearing on podcasts, having your own podcast, speaking at conferences, all of these things are very important by positioning yourself as an expert, even if you're not like I'm by no means an expert in in much. And especially when I started, I had no idea what I was doing. But by but just putting yourself out there and having the guts to, to put yourself out there is really, really important. And what that looks like is going to be different for every single person because obviously, I love going up on stage and talking about JavaScript, but that is like probably the definition of health. people listening right now.
+
+23
+00:13:45,510 --> 00:14:44,340
+Scott Tolinski: Yeah, it's big. I mean that it is big. And sometimes it happens by accident, right? Like, you could just be like, I want to get started with this personal branding stuff. I'm gonna make a bunch of blog posts. I mean, for me, one of my first big hits on YouTube, so to say was, I did a series on sass. It was like before, lib sass it was before sass had really taken off. And the only way people were using sass was through Ruby at the time and stuff like that. And I'd done the series on SAS when it was pretty darn fresh when it was almost still SAS and Hamill. Like you almost talked about SAS and Hamill, not just SAS. And because of that, people really thought I was a SAS expert. I was pretty instantaneous and everyone's asking me for SAS advice and I'm thinking like, I just learned this stuff and I made this series to help other people learn this stuff, but here I am, and everyone now thinks that I am like the the SAS man. So there you go. That's how it happens. Yeah, the SAS man. I guess I could still be the SAS man if I want it to be
+
+24
+00:14:46,770 --> 00:16:51,750
+Wes Bos: awesome. So let's move on to the next point which is just like general running of your business is is good for marketing. So it should go without saying but like being good to the people who buy your products. Is is very, very important because They are the people that are at the end of the day, giving you their money and paying the bills and allowing you to have this business, right. So I think this is really, really important. I try to treat everybody who buys a course from me as well as possible. Yeah. And it's just little things like sometimes people get confused by I have like, generally in my courses have like a starter pack and a master pack. And then what sometimes happens is people don't scroll all the way down, or they get excited, and they click the starter pack, and then they, they get to the end of the video, and they're like, oh, how do I how do I upgrade, right? And what I'll often do is I'll just upgrade that person for free, because it's not, it's not their fault. Maybe the UI on my website was wrong, it might have been their fault, but I don't care. If you upgrade them for free, you lose out on 20 bucks worth worth of income. But I guarantee that person is going to tell a couple friends maybe buy a course in the future, again, they're just going to be a very happy customer. Same thing with my return policy, I don't have like a, I don't have like a 60 day return policy or something like that. I just have, if it's not for you don't sweat it. Because sometimes people buy the course life gets busy. Six months later, they'll actually take the course and then they really enjoy it. They don't want to sometimes when people are about to buy, they're like, oh, not sure if I can finish this and whatnot. So I'll just say like, if it's not for you, you can return it no sweat, does that get abused? Absolutely. It gets abused every now and then. But if I try not to punish my good users, same thing, there's no DRM on my videos. So I'm not trying to stop people from downloading and pirating them because like 98% of my customers are very good. And they don't want to be bothered by DRM. So I rather make it a pleasant experience for that 98% then punish the 98% because a couple people are gonna do shady stuff. So just being cut your customers very important, right? Yeah, it's
+
+25
+00:16:51,750 --> 00:18:13,140
+Scott Tolinski: funny because I get so many emails from people, or on my chat room that are sort of like, Hey, man, did you know that I can access your videos in certain ways, like I have found this hack, and I've had access to your video game? Like, don't you want to patch this? And part of that is well, it would mean DRM might there's no other way around some of these things. Yeah. And so, for me, the answer is, it's cool. Like, just don't do it. And don't tell other people to do it. Don't be a dick about it. And then we're all good. Because, honestly, yeah, I don't want to I've always hated the DRM thing, you know that there's nothing worse in the world than when Apple had their like iTunes DRM. I mean, Apple was sort of the quintessential example of terrible, terrible DRM practices, and just like making it difficult on their customers, and so I just just never wanted that sort of experience where people are having a hassle. And again, yeah, if somebody is going to get, and they want a refund on your course, or something like that, it is very inexpensive to just give them the refund, just give them the refund, you know, I mean, that that will that will give you a Happy, happy, maybe potential former customer if no, then maybe tell someone in the future, but it is inexpensive, even if it seems expensive at the time. It's totally, yeah,
+
+26
+00:18:13,170 --> 00:19:10,020
+Wes Bos: I've had people come back a year and a half later and actually rebuy my courses, or I've had people buy the courses after they had stolen them. And first, if you try to steal them, they're almost always out of date. So don't try to do that. But they don't do it anyway. Or they get a job. And they're like, Oh, I feel so bad that I did it. Or I've had people email me asking for help. And I'm just like, okay, like, what's your email with the receipt? I don't see it here anywhere. Anyways, that's a very small percentage. The nice thing about the industry that we are in is that most people make pretty good money. And most people are very, very good about not being a jerk and supporting me for because like Scott, and I were just out on our own right. We're not huge business out there. This is our income. And I feel so privileged to be able to actually make this my job. So it's, it's really cool to see that people will go out there and support you.
+
+27
+00:19:10,050 --> 00:19:24,690
+Scott Tolinski: Yeah. And I've actually had people refer to level up tutorials as like a decent sized Corporation. And I'm like, it is me. It's just me. Maybe I should call it Scott solinsky tutorials, but it is just me. So yeah, that's funny. All right, let's
+
+28
+00:19:24,690 --> 00:20:44,280
+Wes Bos: move on to the next one, which is a social media. There's all kinds of different social media outlets, and I've got some some opinions on how to make this work. My first point here, and then we'll kind of go through each of them. But regardless of which social media platform you're on, I think, by far the most important thing is don't try to push people off of a platform. A lot of people think like, oh, Twitter sucks, or I don't like Facebook, because nobody's clicking on my link and they just have like a website or a YouTube video and they're like, I just need to get people off of this platform where I want them To go, and that's the wrong way of thinking about it. You need to say, okay, there's people on this platform, how do I bring them content in the way that it makes sense to you? So how do I record a 15 minute YouTube video on how react context works? Or how do I post the hot tip to Twitter that will help people not leave Twitter, but just get a little value in Twitter? Or recently, we've been posting snippets of this podcast to Instagram because we don't want to we obviously have to go off of Instagram if you want to listen to the podcast. But if there's something of value that can be ingested directly on Instagram, then then that's ideal. Right. So yeah, don't push people off the platform bring tailored content to them that makes sense on that specific platform.
+
+29
+00:20:44,520 --> 00:20:54,480
+Scott Tolinski: Yeah, and I think it's, it's obvious when you're just like, it's an obvious like, sales funnel, like, please come to my site and learn more, you know, yeah, I think it's just a little too obvious. You
+
+30
+00:20:54,480 --> 00:20:57,240
+Wes Bos: want dates? Yeah, yeah.
+
+31
+00:20:57,270 --> 00:20:58,290
+Scott Tolinski: Yeah, absolutely.
+
+32
+00:20:58,440 --> 00:21:08,460
+Wes Bos: Not gonna work. So let's go through all of them and just talk about how we specifically use each one. Let's start with YouTube since Scott here is king of King of YouTube. You've got that play button? No. Yeah. Yeah, I
+
+33
+00:21:08,460 --> 00:21:16,340
+Scott Tolinski: got that. Yes, I have the Silver Play Button. I'm hoping for the gold. But that seems like a decent amount of ways off. I think that a million. I think it's a million.
+
+34
+00:21:16,380 --> 00:21:19,260
+Unknown: So everybody, go and subscribe to Scott right now.
+
+35
+00:21:19,290 --> 00:22:22,920
+Scott Tolinski: Yeah, level up tutorials on YouTube. I'm a quarter of the way there. I think you get the silver one at like 200,000 subs or something like that. But yeah, so YouTube. For me, my YouTube strategy will surprise people. My YouTube strategy has been less of hard strategy and more of quality through content and iteration. I was not good at YouTube tutorials. When I started doing them, I started doing them in 2012. And it took me a long time to get good at them, or at least what I think is better at them. And my strategy has always been, well, if I can out, work other people and release 20 videos on react that are all high quality and good, then those videos will naturally find their way to the top, you know, so I'm not going to fill my thing with sort of like those hilariously bad YouTube thumbnail designs that you see where people are doing like they're shocked face and like some some like really? Like click Beatty sort of thumbnail?
+
+36
+00:22:23,490 --> 00:22:25,500
+Wes Bos: what I did to my dear God, yeah,
+
+37
+00:22:25,500 --> 00:23:29,400
+Scott Tolinski: right. That stuff works. Trust me, it works. But that's not been my strategy. Because that's not me. I think it's kind of weak. And like, so for me, it's always been quality content first through quantity, quality content, through quantity, yeah, lots of that stuff. So basically just making a lot of good videos, and then people will find them. And my SEO strategy for that is write titles for these videos, where people are going to like, but naturally what they'd search for, if I was searching for something, I would name my video that like how to do this, and this. And that has just led to people finding my content. So really, for YouTube, the strategy has just been quality, quality, quality, quality. And that's a I think, a big message because so many people want the success they want the the YouTube thing so they go through all these click Beatty strategies, and they they tried to do it quickly. It took me years to grow the channel and I started in 2012. And maybe I could have grown it faster and other means but you know, I'm very, very comfortable with how I grew my channel. You know, that's awesome. I
+
+38
+00:23:29,400 --> 00:26:19,770
+Wes Bos: actually had watched a bunch of Scott sketch tutorials before I even had known Scott myself and it his stuff is all over YouTube. I've been on YouTube for for quite a while. Let me go back and just see, by the way, my first video on YouTube was on after effects and Final Cut Pro. So it wasn't even web development related. It took me like two series before I moved into web development stuff. Awesome. My first YouTube video was seven years ago, how to reset a WordPress password when forgotten. Nice. So WordPress uses MD five hashing algorithm and you can jump into the database and just update that hash and then your password will be reset. And I had been asked that like 100 times and I was like, Alright, screw it. I'm making a I'm making another one. And then I did another one how to import large SQL databases. So a lot of hosts when you're uploading a MySQL DB would just stop because the DB was like 500. Meg's so you could use this thing called Big dump. And it would take a big dump and split it into many pieces. And then I started like it's actually really funny. Just going through all of my old all of my old video do yeah, on here. I don't watch any of my old ones. I'm thinking about like unpublishing some of them. It's so cringy I also have like, I've unlisted videos of me in high school on the bus 12 years ago, that was I uploaded them to Google Video before YouTube was even a thing. Yeah, I remember I moved over Anyways, my strategy has always been just I kind of do two things. So first, what I do is when I release a free course, is only available on my platform. And then what I'll do is maybe two or three months after I released the course, I will slowly drip them out, maybe two per week on YouTube. And if it's a 3030 video course, then I can get 15 weeks out of that. And then what I'll also do is I'll just record these just like random one offs that sometimes I find people are having a hard time understanding destructuring. Or sometimes people are having a hard time understanding what the new react context API s and I'll just record a one off video that will sort of detail it in and usually they're about 10 or 15 minutes. And I wish I did more of those because they always do really well. And then between that my courses and just the one off videos, I've been starting to like kind of label them as like, here's how Baa baa baa works, just to kind of group them together. And that seems to do well for for titles. And yes, it's for pretty well, I'd like to do more stuff like this, like put more of my personality up on the YouTube channel, maybe show my face a little bit more. I'm at what, 53,000 subscribers, I seem to be getting about three or 4000 a month, which is has picked up significantly since I released my CSS Grid course, on YouTube. And it's all good. And I'm making pennies. Yeah,
+
+39
+00:26:19,830 --> 00:27:00,990
+Scott Tolinski: actually, that's a big misconception, you're not going to make a lot of money on youtube, I have a quarter of a million plus subscribers I have over one you know nearly 1002 and a half videos on YouTube. All most nearly all of them monetized I get a lot of views. And I do not make any sort of where near a livable salary on YouTube. I make like, you know, pocket change on YouTube. So that I think it's a big misconception, I wouldn't start a YouTube channel to make a ton of money. But it definitely is a good platform to help grow your own personal brand. And maybe like if you're like us doing courses or anything like that, it's definitely an avenue to make people aware of your quality content.
+
+40
+00:27:01,290 --> 00:27:53,760
+Wes Bos: Totally, totally. And I don't I should I say him, I don't mind saying how much I make off of it. I don't care. YouTube says you're not allowed to share these values. But I'm gonna say it anyway. So I get just for people who are curious. I last 28 days, I've got hundred and 6000 views, 3000 subscribers, and I've made 420 bucks, which is not nothing that's up significantly from previous months. I think it's because my CSS Grid course has been doing really well on YouTube. But that's kind of kind of interesting. So what actually one little kind of cool thing I've been doing is any money that comes from YouTube, I put into my kids like kind of savings account is hopefully over 2025 years by the time they're ready to do some adult stuff. They'll they'll have a little nice little chunk of change. That's sick. Yeah, cool. Anything else about YouTube riona moved on to tophatter.
+
+41
+00:27:53,790 --> 00:28:47,460
+Scott Tolinski: My YouTube strategy has changed over the years. And so before it was just create a lot of content. And I think one thing now that my courses are more developed, because before when I was doing my YouTube courses, I was recording the course as I was making it like I wouldn't write a course and then record it, I would just sort of do it free for all like, Okay, I guess next week, I'll do these videos, because this what the audience wants to see. But I found my courses are better if I plan them out and work them out and do them better. But I need to be able to support myself. So I have these premium courses now level up Pro, right, where you get access to all these premium courses. So my content on YouTube is now shifting to me more blog blog, like like an individual helpful video that's going to maybe help support some of this content rather than like a full course. But I'm still going to be doing free courses. So I guess in that regard, it is kind of helpful to see YouTube occasionally it's like a block. Yeah, and it works well that way.
+
+42
+00:28:47,730 --> 00:29:23,940
+Wes Bos: I really like YouTube in that way, just because there's something that you need to be able to get out and explain. Or there's something in your your one of your courses that maybe 7% of the people won't understand. And it's nice to just be able to point people to a separate video. So they don't have to stop the entire course to explain a specific piece of JavaScript, you can have just a supplementary one that can can be sent over. And I also find that people who are on teams, they'll often have a new hire, and my videos will be part of like the welcome package. Make sure you understand that this is how we use D structuring watch Wess video on that.
+
+43
+00:29:24,090 --> 00:29:27,720
+Scott Tolinski: Yeah, I get that and especially in like universities and stuff like that. Yeah.
+
+44
+00:29:28,050 --> 00:29:33,240
+Wes Bos: Yeah, that's really bizarre to me that a lot of my courses paid and free are part of university. Alan.
+
+45
+00:29:33,330 --> 00:30:15,060
+Scott Tolinski: Yeah. Yeah. Likewise, yeah. Before we can then the next one, which is Twitter. Let's take a moment to talk about one of our favorite sponsors here, which is Log Rocket. Now Log Rocket is one of these services that I think it's just gonna save you a ton of time because really what it's doing is saving you that that that difficult time where you're trying to solve these bugs, right and maybe you have some other tracking tools like Excel. entry or roll bar some of these that are getting you, you know, there may be harnessing your errors. However, luck racket does much more than than they give you a full on vision into what's going on with these problems.
+
+46
+00:30:15,210 --> 00:32:03,480
+Wes Bos: Yeah, it's a, I think that they've put it really well in their documentation that front end errors are not simple. You're essentially shipping all your software to a browser, which could be one of 15 different browsers, it could be iE 11, it could be the newest version of Chrome, I've had people come to me with errors. And it turns out that they're on like a year old version of Chrome. And for some reason, it just stopped updating like, they're web developers, right? There's all kinds of different devices, you got local storage, you've got often people are on proxies, they have weird Chrome extensions installed that are messing with it, there's just a whole bunch of stuff that could go wrong on the front end. So what Log Rocket does is three things exception tracking, and this is it will log any errors that happen on the client, and then it will group them together, you'll be able to say, okay, 10,000 people are having this specific error cannot read property value of undefined. And you have to go in there. Oh, I forgot to check if there was actually element there before before I pulled the value out of it. And you can fix those. Next one is share session replay super important because if you want to know how this error happened, the steps leading up to it. So they essentially record the clicks and the scrolls and the hovers and all of the steps that the user takes up until that you hit that bug. And then you can replay it like it was a video on your actual back end. And then the final one is application performance monitoring. So things like download failures, JavaScript load time, JavaScript, parse time, x HR latency, that stuff can sneakily get into and make your website feels slow over time. So this, it'll sort of monitor it over time. It's pretty neat. So check it out at Log Rocket Log rocket.com, forward slash syntax. And that's going to get you a 14 day free trial. Thanks so much to Log Rocket for sponsoring. Awesome.
+
+47
+00:32:03,990 --> 00:32:43,410
+Scott Tolinski: Thank you Log Rocket. Yeah, awesome service. So let's get into Twitter, where the king of the Twitter land amongst the two of us here is obviously Wes, if you compare our followers now, I am going to admit here, I'm gonna defer to you on a lot of this stuff. Because I was late to Twitter, I was super late to Twitter. And you probably had more subscribers or followers on Twitter than I have right now, when I joined Twitter, so I am very sort of new to this world. And so follow me at S. Alinsky. You know, let me help me grow that audience a little bit. But yeah, let's I want to hear your strategy for growing your Twitter following Wes.
+
+48
+00:32:43,560 --> 00:33:24,150
+Wes Bos: Yeah, I get tons of people messaged me about this. And my answer is just do it for I went on this website, Twitter, birthday.com. Do it for 11.3 years. So I was on Twitter extremely early, which was a huge advantage. Because similar to how Instagram is right now, people were hungry for new people to follow. Whereas I think on Twitter now people are a little bit overwhelmed with with how much content is out there. So I got in on the game early, which is why you should anytime a new platform comes out, you should spend some time on it because it might pan out to be the next Twitter it might might just flop like ello and not be a big thing.
+
+49
+00:33:24,180 --> 00:33:30,540
+Scott Tolinski: There was another new one that that came out and I was on it for like one day and I could tell they didn't have the stuff and I was like no doesn't does it
+
+50
+00:33:30,570 --> 00:33:33,180
+Wes Bos: like mastodon No, no, I
+
+51
+00:33:33,180 --> 00:33:51,450
+Scott Tolinski: don't remember how to dark theme. People will know somebody and somebody will know exactly what I'm talking about. But Google, everyone got the invite so and so I was on it for like, I'm checking out this today. And it was sort of be like a Facebook, Twitter hybrid kind of thing. I forget. I was I used it once. And I was like, Yeah, no, it's not gonna happen.
+
+52
+00:33:51,660 --> 00:35:48,650
+Wes Bos: Not worth it. So I've been on Twitter for over 11 years now. And how I got most of my Twitter followers was by doing Hot Tips. So it didn't invent the hot tip. But I did invent the little flame emoji in front of a hot tip, which is really cool to see that it has sort of like been, a lot of people have taken it on when they post Hot Tip. So sort of a standard now, which I don't mind at all. I think it's kind of cool. And the idea behind the hot tip is just like a tasty treat that something. Here's how X, Y and Z work. Here's a cool little trick about how something works. Here's how a new feature in JavaScript works. Oh, in maybe a year or two in JavaScript working or in CSS, we'll get this new feature. And and just by giving people a little nugget of information, that's why they're on Twitter, they want to see a little stuff they want to stay up to date on the industry. And they don't want to be pushed off to a 6000 word blog post about about something they want to receive a nice little piece of information in the kind of continually update all of their stuff. So I've been doing that I've done I've been doing Hot Tips for probably about four or five years now. Before that, I was obviously very involved in, in the web development world on Twitter. And that it by having these these tweets, often what will happen is that they'll they'll get retweeted by like a huge accounts like CSS tricks or smashing mag or, or they'll just like ripple through. And they'll get tweeted by retweeted by 400. People who have 300 followers each and then that will, once you do that, like six or seven times, people will start to see your account keep popping up, and then you'll and then that's what that gets your actual follow. And more importantly, that's what sort of builds credibility behind your person, because there is clearly ways to pad your, your Twitter followers if you want it to I'm sure you could go on eBay and buy 100,000 followers tomorrow. But if people don't enjoy the content that's just gonna fall flat.
+
+53
+00:35:48,780 --> 00:36:21,750
+Scott Tolinski: Yeah, I think my Twitter following amounts are proof that I'm not buying Twitter followers. But yeah, no, I think the message here is really the same as the message that you know, I was thinking in YouTube is really that quality content is going to Trump everything. And I think that maybe is a message overall is that if you're producing quality content, I think it's going to mean it will get in front of the right eyes, eventually, if it's quality content, and you usually see the cream rise to the top look at these sayings. I'm coming out with left and right here.
+
+54
+00:36:23,130 --> 00:37:31,880
+Wes Bos: So a lot of people say like, okay, it must be nice that you've been on Twitter for so long and got in on it early. But I still think that there is room if you join Twitter today, I think that there is tons of opportunity to get it. So Steve, Chicago, I can't even say his name. But he has taken the Hot Tips. And he's been posting these super high quality design tips. So So yeah, here's a way if you have a lot of information, here's a way to make that information a little bit more digestible. Here's a way to use borders that are a little bit more gray than black, and it looks so much better. Here's a way and then he just creates these these Hot Tips. Again, he's creating content for the platform. He's not pushing you off to a YouTube video or to a thing and he's gone from, I don't know, I think like a couple thousand followers to as I'm recording, he's at 28,000 recording, and he's been doing them for a year. So just a perfect example of like if you actually still consistently produce high quality content, if there's a huge hunger for it, because anything that he posts goes wild, and it's because it's really good quality.
+
+55
+00:37:31,940 --> 00:37:37,440
+Scott Tolinski: Yeah, absolutely. I think that's like one of the best bang for buck follows I've had in the past year.
+
+56
+00:37:38,850 --> 00:37:46,500
+Wes Bos: So we'll we'll link it up. Let me just type it out right here as well. Is te Ve SCHOG er,
+
+57
+00:37:46,530 --> 00:37:51,210
+Scott Tolinski: I feel like just for being a fellow Canadian. You should just know how to spell or pronounce his name.
+
+58
+00:37:51,330 --> 00:38:04,530
+Wes Bos: Chicago. Yeah, actually, he lives like a couple 45 minutes away from me. A lot of a lot of Canadians so does Adam wathan who posts a lot of really good tips as well. He He lives close to me as well. So it's something in the water here. Hot water.
+
+59
+00:38:04,530 --> 00:38:06,840
+Unknown: Yeah. Next up, we
+
+60
+00:38:06,840 --> 00:38:11,360
+Wes Bos: have Facebook. My Facebook strategy has been week
+
+61
+00:38:11,480 --> 00:38:13,440
+Unknown: week. Yeah, mine as well. Likewise,
+
+62
+00:38:13,880 --> 00:39:38,280
+Wes Bos: I'm on Facebook at Wes Bos dot developer. And what I have is that I have my assistant take my Hot Tips and and repost them on Facebook. So here I am telling you not to push your content otherwise, but I think that the Hot Tips work well both on Facebook, as well as on Twitter. So my system reposting them. I also recently have been posting all of my personal Instagram photos to Facebook my business Facebook account don't add my I have like 6000 friend requests on my personal Facebook don't add that way. Yeah, I don't either. But I for the longest time I didn't do that. And but I also part of what my personal brand is, is that people have other interests other than web development, right? They they like that I do barbecue they like that I post photos of my kids like are they like whatever I'm doing around town going for dinner and stuff like that. So I have started posting that on Facebook as well because people like to see the life behind the actual person as well. Because you kind of feel like you're friends with them. And I don't know it's kind of fun when you post something about a cooler I bought you can or a barbecue that you always get amazing information from other people who have similar hobbies and you get to kind of have a cool little friendship with these people. Yeah,
+
+63
+00:39:38,310 --> 00:40:18,230
+Scott Tolinski: my Facebook strategy has been Yeah, letting MailChimp and Instagram automatically post to Facebook for me. That is that is probably the extent of my Facebook strategy. I feel bad about that because there's a lot of opportunity but obviously, with where Facebook is in the world today, I just I don't feel good about being on Facebook, I don't feel good about being on facebook.com. And I understand the marketing possibilities. But like, at the same time, I don't know how much time and money I want to invest in Facebook itself. So I'm sort of staying away from it regardless. Yeah, whatever it could bring me, you know.
+
+64
+00:40:18,380 --> 00:40:30,090
+Wes Bos: So I find that probably 90% of my Facebook followers are from overseas. So lots of here, let me just take a quick look of or people I
+
+65
+00:40:30,090 --> 00:40:31,400
+Unknown: would agree with that. Yeah,
+
+66
+00:40:31,400 --> 00:40:49,230
+Wes Bos: lots of people from India, lots of people from Sri Lanka. Anytime that I say kind of take a look of where people are from that are liking and commenting on the stuff. It's almost always outside of North and South America. Which is kind of interesting to me that that's where a large part of the audience is coming from.
+
+67
+00:40:49,590 --> 00:40:50,610
+Scott Tolinski: Yeah, yeah.
+
+68
+00:40:50,610 --> 00:40:51,330
+Wes Bos: What else do
+
+69
+00:40:51,330 --> 00:40:53,610
+Unknown: we have for social media?
+
+70
+00:40:53,790 --> 00:40:57,380
+Wes Bos: Reddit? Yeah. interesting one, yeah, read it,
+
+71
+00:40:57,380 --> 00:41:56,550
+Scott Tolinski: it's tough. Because if you post the wrong thing, at the wrong time, you'll be put on a skewer, and everyone will be very upset. Unfortunately, or fortunately, I've never really had that happen, because I'm usually, you know, pretty cautious about that. They're very suspicious. editors are very suspicious about marketers, so I don't do any more like if people mention me, or level up tutorials or the podcast, I'll pop in and be like, Hey, you know, hey, hey, what's up by myself. But for the most part, I'm only posting my my free youtube videos of helpful tips and stuff like that on Reddit, or if I have, you know, a tip here or there or a post, I'll post that stuff, and sort of let the marketing stuff take over, as in people are, oh, hey, it's level up tutorials on YouTube. And then I'll be like, yeah, hey, check out my my store while you're at it. But for the most part, it's really difficult. You don't want to sort of burn people over there. They can get a little aggressive, I'd say,
+
+72
+00:41:56,690 --> 00:42:11,420
+Wes Bos: yeah, there's there's no marketing to to read it at all. I found my strategy. I've even got banned from our web dev couple years ago, because every time I had a new blog post, I would submit it like, Oh, yeah, submit a blog post?
+
+73
+00:42:11,420 --> 00:42:13,260
+Unknown: Yeah, like actual content.
+
+74
+00:42:13,440 --> 00:42:49,710
+Wes Bos: Yeah. But then I got banned from it. So I stopped posting my stuff all together. And I just, I just spent a lot of time in the comments, I find that Reddit web dev is very, very helpful to me in terms of research about what people are trying to learn. So I'm always reading what's going on there. And then often people will tag me. And then I'm at a point now where people will submit my own stuff, which is great. Yeah. And then I can just chime in and say, Hey, thanks so much for submitting it. And you just have to be part of a community which I have like I have a part of the The good thing about my Twitter account is that I've been on it for let me let me see how many years I've been on on Reddit.
+
+75
+00:42:49,710 --> 00:42:51,170
+Scott Tolinski: Oh, I've been on it long time.
+
+76
+00:42:51,690 --> 00:42:59,280
+Wes Bos: Let's see. April to 2007. So I've been on it for as long as as long as I have on twitter. 11 years. So
+
+77
+00:42:59,280 --> 00:43:09,380
+Scott Tolinski: where does that tell you that? Oh, okay. 2007. Wow. Okay, I'm on August 21 2009. So yeah. Wow, super.
+
+78
+00:43:09,380 --> 00:43:11,010
+Wes Bos: What are you doing those two years?
+
+79
+00:43:11,040 --> 00:43:16,380
+Unknown: I surprised that you've been on for longer? So I felt like I've been I've been on for years. A long time?
+
+80
+00:43:16,830 --> 00:43:32,820
+Wes Bos: Yeah, it's it's good. And I think just being part of a community and people have asked tons of questions on there. And it's it's easy to chime in and help someone out. And then if you help people out six or seven times, then they start to go, oh, who's this West guy? Oh, he's got tutorials. Right? Yeah, whole reciprocity thing comes in again.
+
+81
+00:43:32,850 --> 00:43:49,080
+Scott Tolinski: Yeah. And if you're listening to this, and you ever feel like posting this in text podcast, or any of my stuff, or Western stuff, yeah, please do, because it looks really pathetic when you post your own thing that, you know, like, hey, check out this, this YouTube channel, hey, check it out.
+
+82
+00:43:49,140 --> 00:44:21,780
+Wes Bos: Anytime somebody, you can go to reddit.com for slash domain, or slash syntax.fm. And you can see, anytime someone has submitted the syntax podcast, and every single one of them has gotten at least 10 votes, and most of them have like 130 220 50. So they do well when they do get posted. Because obviously, it's good content. But it's just not something that we can just machine dump all of our links on there. It has to be something that the community suggests, right?
+
+83
+00:44:21,810 --> 00:44:26,430
+Scott Tolinski: Yeah. Do you spend any time on Reddit that's not related to web dev stuff?
+
+84
+00:44:26,670 --> 00:44:33,270
+Wes Bos: Um, I go on, like, there's our smoking, which is smoking meat, not cigarettes, or vaping.
+
+85
+00:44:35,130 --> 00:44:39,840
+Scott Tolinski: What about smoking like this talking other people about smoke? cigarettes? Yeah.
+
+86
+00:44:40,620 --> 00:44:57,060
+Wes Bos: I got a DIY just to see people's like, what they've been building, which is always really interesting. Our metal core is really good for new music suggestions. And personal finance Canada. It's really good. And then there's like a local one Hamilton for my city.
+
+87
+00:44:57,150 --> 00:45:28,350
+Scott Tolinski: Oh, yeah. And I see what's going on. Yeah, I'm on the Denver in the color. I'd also like just normal personal finance, but I actually moderate and I didn't just my I think I created the our B boy, which is dancing one, which I admittedly do not put any effort into moderating that thing, but it's got 50 or no, it has 5000 subscribers. That's not very much but it's a breakdancing Reddit here. So if you want to check out some B boy clips, check it out, I guess. I don't think that brings me anything personally in the marketing but it's there.
+
+88
+00:45:28,770 --> 00:46:00,240
+Wes Bos: Yeah, let's go Reddit. Reddit is a very interesting one. It's I think it's sort of replaced the the forum for me like years ago, it was as part of lots of different types of forums that and you can always find a community that is super into like I was, I've been getting into meat hearing and then I just go to the I forget what it is like the sausage forum. Be careful searching for sausage on Reddit. But you can find people that are obsessed about it and have been talking about it for years and you can just dive in and just learn so much.
+
+89
+00:46:00,300 --> 00:46:02,490
+Scott Tolinski: I recently joined the lawn care Reddit.
+
+90
+00:46:04,650 --> 00:46:06,210
+Unknown: I was like, Oh no, what
+
+91
+00:46:06,210 --> 00:46:07,350
+is my life?
+
+92
+00:46:07,350 --> 00:47:05,760
+Wes Bos: Oh, that's great. I need to do that one. Yeah. Anyways, next last one we have here is Instagram which is been blowing up in the last maybe year or two for web developers. I've been on Instagram for probably six or seven years but just recently web developers have been have been joining in on it it's kind of interesting again it's there's a lot of people posting really odd photos of themselves just holding laptops are like that's a weird it's a weird thing that that gets so so many views use some woman or like a coffee beside a laptop with like perfectly put up code I'm always self conscious of taking a photo of my screen because people are like hey shit code there buddy. Yeah, but it's it's interesting, but I do find that it's kind of cool to a lot of the stuff is very surfacey but if you get through that our boy Denise will link it up in the because I can't can't I always butchered his last name is it Dinesh or Denise because
+
+93
+00:47:05,850 --> 00:47:06,390
+Unknown: Dinesh
+
+94
+00:47:06,420 --> 00:47:09,570
+I've been saying Dinesh Okay, I guess finish sorry. Finish. No, he's
+
+95
+00:47:09,570 --> 00:47:11,280
+Scott Tolinski: the man. Yeah, he's absolutely man.
+
+96
+00:47:11,310 --> 00:47:31,650
+Wes Bos: Yeah. So he posts tons of extremely helpful content. He's He's a perfect example of how to do Instagram, right. She's got like 20 25,000 followers. He's always pumping other people in the in the community linking up really good stuff, posting reviews of different tech gadgets that he has so big fan of the stuff that he puts out. It's pretty good word.
+
+97
+00:47:31,740 --> 00:47:42,810
+Scott Tolinski: Yeah, yeah. And again, I'm gonna need these platforms follow both of us. I'm at as Alinsky for breakdancing footage and at level up tutorials for photos of my computer sitting next to a coffee cup.
+
+98
+00:47:43,050 --> 00:48:04,020
+Wes Bos: I'm at Wes Bos WGS POS and I just cracked 10,000 followers which means that I can do swipe up in Instagram story is so good because now I can swipe up to listen to the podcast Swipe up to buy a course Swipe up to anything and it's it's so much better because people always DM me being like, Hey, what's the link for? Yeah, xy and z? Yeah,
+
+99
+00:48:04,200 --> 00:48:22,440
+Scott Tolinski: that's so frustrating. Okay, follow at level up tutorials. I only get 5000 I am halfway there. It's taken me a long time to get 5000 on there. So yeah, it is it's hard cuz you can't link your stuff and people always be like, Where's this available to? I'm like, I just go to level up tutorials. COMM But I can't link anything. So.
+
+100
+00:48:23,100 --> 00:48:32,850
+Wes Bos: But yeah, I love post though. And I have 1000 posts and 10,000 followers, you have 99 posts and 5000 followers. So clearly you're doing something right. Well
+
+101
+00:48:32,850 --> 00:48:44,730
+Scott Tolinski: Am I just started the level of tutorials. One my personal one has like 4000 posts, but it's all breakdancing stuff. So that's pretty much it and photos of my dogs down my son and my wife. So yeah,
+
+102
+00:48:44,760 --> 00:48:49,920
+Wes Bos: mop dog. mop dog. Cool. All right. Let's move on. Oh, man, where we are?
+
+103
+00:48:49,950 --> 00:48:52,050
+Scott Tolinski: Yeah, cooking on the time here.
+
+104
+00:48:53,160 --> 00:49:49,860
+Wes Bos: All right, let's, let's take a break for our other sponsor, and then we'll keep going with it. So hang in with us. This is there's a lot to unpack in this episode. So our next sponsor is fresh books, which does a cloud accounting software. I love fresh books because I run my own business. Speaking of marketing and running your own business. Part of what you don't want to spend time on is is the the business part of it, which is doing your books chasing after unpaid invoices, setting up wire transfers, all of that miserable stuff. So fresh books will take care of all of that stuff for you. You can log all of your expenses, you can give people estimates, you can turn those estimates into invoices. You can log all of your hours that you're working for specific people and then attach specific dollar rates to that work and different types of work and then just turn that into an invoice. It's amazing. I love it, check it out@freshbooks.com forward slash syntax to get a 30 day unrestricted free trial. Thanks so much to Freshbooks for sponsoring.
+
+105
+00:49:50,070 --> 00:49:51,240
+Scott Tolinski: Thank you. Alright,
+
+106
+00:49:51,270 --> 00:49:59,520
+Wes Bos: so let's keep trucking here. Yeah, let's talk about paid ads. I have a little bit experience, a lot of failure in this. I've
+
+107
+00:49:59,520 --> 00:50:00,600
+Unknown: also had You're in this
+
+108
+00:50:00,780 --> 00:51:29,610
+Wes Bos: paid advertisement is when you go on to Facebook, Twitter, Google ads, you and you pay somebody for a banner ad or insert a video, I've spent a lot of money on Facebook, which is actually funny enough how I've got a lot of my Facebook followers, I have about about 35,000, Facebook fans, or whatever you call them likes, and those almost entirely, probably about 20,000 of them had come from people seeing me post ads on Facebook for my courses. And they didn't necessarily buy the course, but they liked the page, which is great, because that's what you want is you want people to be on it. And then you got to hit them up 100 times over the next two years. And then they actually, they actually buy something. So I at some point, I had a Facebook where I put $1 in I was making $1 20 but I there's I couldn't figure out how to scale it, you know, like I wanted to, I wanted to be able to put in a million dollars and get back $1.2 million. And I couldn't figure it out. So my time is much, much better spent creating free courses, creating free content doing this podcast that pushes my personal brand so much more forward. It's and that stuff is harder. A lot of times people email me being like, okay, like I'm ready to pay $500 for ads, but it doesn't work. Yeah. And it's really frustrating because you think that advertising is just this thing where if you have a bit of money, it'll just work and it doesn't you have to like do a B testing and trial too much.
+
+109
+00:51:30,120 --> 00:51:54,660
+Scott Tolinski: I don't have the training. I'm not good at it. If I was in a position where I have someone whose specialty was that, like I would be about giving them some freedom to try that. But I personally do not have the time to learn those skills. And yeah, sometimes sometimes those ads can seem a little inauthentic to I think about that guy with the Ferrari in his garage. He's like, Oh, yeah, Ty Lopez stir. Yeah, that guy. Oh,
+
+110
+00:51:54,660 --> 00:53:28,950
+Wes Bos: that's really interesting. Yeah, yeah, he's if you don't know are, you probably know who I'm talking about is this guy, he spent millions of dollars on YouTube ads versus Oh, here's my Ferrari. And he says Ferraris. And Brent probably has a lot of people doing Oh, he's actually making bank on what he's doing. Because he promotes the sort of like lifestyle, and then all these kids want that lifestyle. And then he sells courses to become like a social media marketer, or he sells like a book club, where it's like, there's all these horror stories online, I follow him on Instagram, just because I am. Like, he's obviously a genius marketer and able to manipulate people. And it's, it's kind of he's very, very sleazy in what he does, but I still follow him because he has he knows what he's doing in terms of how to like he, every day, he has a new pair of shoes, he's got these kicks of the day, where like, obviously kids love shoes, and Ferraris and free MacBooks. And then they follow him and then a certain percentage are going to shell out they're like, go into debt on their credit card and buy his is like a millionaire course. So yeah, he's really, really, really sleazy. Which, again, like developers have such a high bs tolerance. Whereas I think other industries, like kids wanting to buy a Ferrari, or maybe fitness, there's, you can be a little bit slimy like that. But there's developers build this stuff. They know how it works. And they have very, very high bs tolerance. And there's no way that you could get away with that. I try to market developers.
+
+111
+00:53:28,980 --> 00:53:42,000
+Scott Tolinski: Yeah, for sure. Yeah, I think that's good though. I high bs tolerance is a is a is a excellent thing to have here. Because there's so much Bs and people trying to sell you all sorts of stuff in this space in general. Yeah.
+
+112
+00:53:42,150 --> 00:54:39,240
+Wes Bos: I've also tried Twitter ads in the past, to very little success. I've had many calls with Twitter ads spokesman, and they clearly don't know what they're talking about. They just want you to spend more their answer to all my questions where you really have to spend about three or $4 per XY and Z and then it just never makes sense. They just want you to pour money into this thing. Like these ads are good for people who want just notoriety. Like if you're selling a car, right? And you hear about a car three or four times on a YouTube ad or something, but it's not good for people like us where we want to track if I put $1 into this machine, I want to get a buck 50 back. Yeah, right. Yeah, it doesn't doesn't work out. Well. Some people have figured it out. You often see on Instagram, those free watches or free rings and stuff like that. People figured out how to sell you a $10 ring and make money off of that but I can't sell a $75 course and come out ahead on it.
+
+113
+00:54:39,480 --> 00:54:40,740
+Unknown: Yeah, not for me.
+
+114
+00:54:40,980 --> 00:56:01,140
+Wes Bos: Next up, we got email marketing. This is something I have a very large email list which email marketing is probably responsible for a good portion of my my big my asks. So like, obviously I spend time on all of these different platforms all day long, but then when it comes to Selling someone, I'll send an email out and I don't I don't do email particularly well. What's really big right now is called drip marketing or automation marketing where if someone were to watch three of my free courses, then I would hit them up with a coupon code and make them make them buy it, I just what I do is just every month or two, I just send out a couple emails saying, Hey, I launched a new course or Hey, it's a sale. And it works really well for me. I'm sure there's probably some some optimization that I can do in there. But I've just been spending all of my time on creating courses and people seem to remember I can lucky with a nice, memorable name, people will remember who I am. And my email and I only email they know that, oh, Wes has clearly something to say. Because he's emailing. And not Wes is emailing me every three days with a new way to try to get me buy a course. And I think that's working well for me because I have extremely high open rate and extremely low unsubscribe rate.
+
+115
+00:56:01,379 --> 00:56:42,870
+Scott Tolinski: Yeah, yeah. And I, I add again, another thing, I'm not very good at it. Clearly, my marketing game is needs to be stepped up a little bit, but I do a little bit of email, I maybe send one a month, I'm gonna probably step it up to being like two a month to say like, here's the next course. Like, for instance, I have a new course coming out this month on electron, so I'm probably going to send out another email just to make people aware of that. Because I think that's like, one big thing is that I feel like I'm annoying people with emails. But yeah, at the same time, my customer feedback to me is that we don't know what the next course is. We don't know what to look forward to. Like, that's such a huge potential for me to be able to say, Hey, here's what's next. Here's what's coming. You know,
+
+116
+00:56:43,200 --> 00:57:16,830
+Wes Bos: I totally agree with that. And this may be why I need to push a little harder and email but I'm pretty, pretty happy spot right now. And when I do and people know, when I do have a course, I'll send you like, when I launch a course, I'll probably send you four or five emails and and that's totally fine. It almost out of like, I have a quarter million people on my email list. And I almost never get a snarky reply, which is unheard of. Yeah, because yeah, you're almost always gonna trigger someone being like stop spamming me or things like that, which I feel pretty good about people not getting.
+
+117
+00:57:16,950 --> 00:57:18,330
+Scott Tolinski: Yeah, absolutely.
+
+118
+00:57:18,900 --> 00:58:02,040
+Wes Bos: I also email marketing is really helpful for me to find out what people want and often tell people to just hit reply, which is a nightmare for my email inbox. Sure, I'll say like, hey, hit reply, tell me what you you were struggling with right now. And you can often take that what they're struggling with and take like those phrases that you hear over and over again, where I'm feeling overwhelmed or the stuff is moving too fast, or I hearing a lot about graph qL and you can take those words and put them directly into copy. Because copywriting is another huge part of marketing which is how do you persuade someone to actually buy the course and by taking the words right out of their mouth and putting it into copy? It's a fantastic way to to write good copy.
+
+119
+00:58:02,100 --> 00:58:25,320
+Scott Tolinski: Yeah, well, me no words good. So I am terrible at this. And I usually I speak things off the cuff better, I think, than I do write them so I'll usually do voice dictation to write any of my copy, then I'll send it to Courtney and Courtney he'll be like what is this is this English like she was just just absolutely slaughtered and helped me a little bit on that regard. But yeah, it's another thing that's a little tough for me.
+
+120
+00:58:25,620 --> 00:58:55,680
+Wes Bos: Reading copy has always been something that I enjoy so I'm really happy that I tried to just like make it very personable and not like I try to take a lot of stuff out of it. I did I have a couple copywriting courses in university which which may have helped as well I know that there's some good good courses on learning this stuff out as well. But that whole marketing space is like there's marketers trying to sell stuff to marketers and it's all just like kind of a nightmare everyone's trying to sell each other for dollar PDF so yeah
+
+121
+00:58:56,400 --> 00:58:58,440
+$300 access to slack room
+
+122
+00:58:58,500 --> 00:59:12,300
+Scott Tolinski: I'm a sucker though for for for that kind of audio book though. Like this audio Yeah. Oh my god like business. Which one is dev just all of them? Oh, yes. Anything that fits that sort of my own like hmm, I think about this one.
+
+123
+00:59:13,590 --> 01:01:41,880
+Wes Bos: Awesome. Let's go on to the next one, which is partnerships. So yes, is another way that you can do both partnerships when people partner with me and me being the person who can advertise them as well as partnerships with with affiliate so let's start off with partnerships with other companies. So we be we being the the advertisers out there so I've done a couple partnerships I get tons and tons of email about people looking to to partner because that's the big thing right now. It's it's called influencer marketing, which is another cringy word but companies don't want to buy ads anymore. They want to work with someone in a YouTube video or something like that and use their product and almost always it's a very bizarre product that it cannot see myself flexing into my course is that all Yeah, but twice so far, it's worked out nicely. The first one I ever did was was century, which does like error tracking. It's part of what, uh, one of our sponsors is today Log Rocket. Yeah. And that worked out really well, because it was a product by us myself. It was something that I knew a lot of the developers behind it. And I was very, very happy to to recommend it to users. And that was a lot of times people want to do affiliates based on that. And I always that was just a lump sum. So they sponsor the course, I get a lump sum of cash, and they get a video in the course as well as something in the in the entry email. Same with my upcoming sticker batch, I have somebody who is sponsoring the sticker batch, so they paid to print the stickers, they get a sticker in the batch. And then they also get a little blurb in the thank you email once you once you've bought it. And then the last one I did was with my CSS grid.io course, Firefox came approach me and was like, hey, how can we work together? Often these partnerships are a result of someone reaching out being like, hey, I'd love to do something, yes chat, and you jump on a call and sort of just shoot the shit with them. And something comes out. And it turned out that Firefox was releasing their grid dev tools. At the same time I was working on my grid course. Firefox's grid dev tools were amazing. I would have used them anyway, if they didn't pay me. And it's just a perfect fit. So they sponsor the podcast. And that's great. Because Firefox is very much about pushing the open web forward. And by by allowing me to be paid, it covered my salary for a couple months. And I was able to full time put my time into creating this free course, where I didn't have to sweat about doing other things and making sure I made money in that part of it. Yeah, so yes, I do. What about you, for me, I
+
+124
+01:01:41,880 --> 01:03:43,110
+Scott Tolinski: almost always turned them down. There's exceptions. I did a series that was sponsored by PrestaShop. One point when I was really into like, Magento sort of stuff, they saw my my work in that space. And it worked out well. Because they they were just going to sponsor like a course on it. And, you know, pay for each episode kind of thing. And then that worked out well for me, because I mean, PrestaShop was pretty sweet at the time. And it definitely fit into my content. It wasn't like out of the realm of what I was doing already. And so if something like that comes up, you know, I'll think about it. But for the most part, I usually, if I'm going to be working with a brand, for instance, lately, I've worked with I worked with Meteor at one point, I was doing some official videos for them. I did official videos for sketch, where my videos are published on their channel, right? I they give me the content, whatever I record, and it lives on their thing, and I don't own it as level up tutorials. And then same thing, most recently with figma where I was doing their, their official tutorial videos. And I like that flow because it doesn't necessarily like make my brand look like hey, I'm doing something because somebody's paying me even if I love figma. I mean, for instance, I reached out to figma to start that relationship, telling them how much I love their product and what I get, even though it's something that I loved and whatever, I didn't want them to sponsor my course on figma on level up tutorials, because I just don't want that sort of connection. Right. I'm happy to do their videos for them. But that's the kind of work I'll take in that regard. Yeah, so that that's pretty much it for partnerships for affiliates. I know you you do a lot of affiliate work. And I'm personally I'm just starting my affiliate program. So if you are interested in making right now, it's just sales, not subscriptions. If you're making interested in making 40% of sales on level up tutorials, and you want to you enjoy my content, and you'd like to share it reach out to me on any platform, email, Twitter, any of that stuff, let me know because I'm forming the beta forts up right now. And I'm wanting to get some affiliates on there. So check it out.
+
+125
+01:03:43,379 --> 01:06:15,510
+Wes Bos: Yeah, affiliates are awesome. When when it works out well. So I have a what's called a closed affiliate program. No, not anyone could just sign up for it. But what will happen is that if you're listening to this, it's open as well. If you have some sort of audience, whether that is so I have I have affiliates that have email newsletters, I have affiliates that have GitHub repos, where they just put one little line of text saying, Hey, this is a node repo, if you want to learn know, check out Wes, his course, I've affiliate to have Sublime Text extensions, that maybe once or twice a year, they update the extension. And in the in the release notes. They say hey, thanks so much to us for supporting my time because I don't know open source is a weird thing where it's it's frustrating that a lot of open source developers cannot get reimbursed for the time and it also often takes a toll on them. That's why we see people just kind of go AWOL on on open source projects. So it's really cool to be able to partner with some of these open source things and do it in a in a non invasive way. Like sometimes you install npm install something and you get just blasted with donate links, which I think is a little bit much but if you can do it in a way that you are referring people and if you've actually almost everyone who is an affiliate of me has Take in one of my courses and say this is great, I would wholeheartedly recommend it, which does the best for referring things like if you've actually checked tried something out. And that's why one of our, our sponsors dev lifts has done so well, because I went through the dev list program, and saw great results. And then I said, this is great, I recommend it, right. I wasn't an affiliate of dev list, they were just a sponsor on the podcast, but I have, I don't know, probably 70 or so affiliates, where people will recommend my courses. And if somebody buys one of my courses that they recommend, and also, this is really neat, I rolled this out a couple of months ago, if someone refers a free course of mine, and so they end up buying a paid one after that, then they get credit for that, which is great, because sometimes you want to say like, check out what's a CSS Grid course. And then they'll say, Hey, that was good. But let me let me do a paid one. And that person should get get 40% cut of that course because this is a refer to it. Right? So email, people have email newsletters, anyone that has a decently sized audience, people that have blogs, they want to put a little banner in the side, something like that, it's a great way to to expand your audience and and share in that revenue from from people who might not be able to reach otherwise. So
+
+126
+01:06:15,570 --> 01:06:16,230
+Unknown: yeah, so
+
+127
+01:06:16,380 --> 01:06:25,620
+Scott Tolinski: yeah, definitely a big opportunity there. But again, that really only applies if you're selling something, you know, if you're Yeah, marketing yourself, you can't really have an affiliate program for yourself. And
+
+128
+01:06:25,890 --> 01:07:22,770
+Wes Bos: it's it's such a good system for what we do. Because there's it's not like we're shipping a T shirt, we're only making $10 per t shirt. Like the the profit per course that we have is fairly high. So you have the ability to offer someone like a decent chunk, like I've had people buy a 1200 dollar team license, and one of my affiliates has gotten a $480 payout, just from like assists, like referring nicely referring one little link to someone, which is pretty cool. So I definitely would do that it can go awry the other way, there's a lot of sleazy affiliate stuff, which is why I don't have it open, because there's people that will just spam your links everywhere. And then that looks bad on you as a brand. Because all sudden your stuff is is not in a good space. So I only allow people who have our part of the industry, right and part of our community to have have links. Yeah. All right, one more section. Unless you have anything else on affiliate. No, I don't.
+
+129
+01:07:22,800 --> 01:08:02,010
+Scott Tolinski: Yeah, no, but I have a decent amount, a decent amount. I'm not gonna take up a ton of time, because we're already way, way, way, way over. But next section freebies, I give away a lot of freebies, if you don't know, I have over 1000 plus videos for free on my YouTube channel. And not necessarily wasn't a marketing decision. That was simply just a that's how I create content. But now it works that way where I give away a ton of free content, and specifically to help the community rather than to sell things. But at the same regard, it works in like a marketing fashion. But giving away free stuff is always a surefire way to get people to pay attention to your content, because it's free. And if it's free and good, then that's good for you.
+
+130
+01:08:02,310 --> 01:09:29,909
+Wes Bos: Yeah, that's I think that's why both it's worked out well for both of us. Because we're not giving away often you see people like slapped together like, Here's 10 short keyboard shortcuts in a PDF. Give me your email address, so I can spam the hell out of you. It's like no, I literally spend months and months and thousands of dollars worth of my time on these things, just to show you that, like and this is good. And also giving back to the community. Right? Absolutely. What other freebies in like March, I do stickers every now and then I just ordered another batch of stickers. So it should be another month or so before I can I get those to be able to sell and the stickers is kind of a fun one because I initially started as just like a fun thing because developers love stickers and I love stickers, I love to be able to give them away. And I've since kind of honed that process where I can make a buck or two per bag of stickers that I sell which is pretty nice because it takes me a lot of time to put all the sticker stuff together I have to hire my assistant who handles all of the email about it and all of the return stickers and the stamping and the licking and there's a lot that goes into it. It's a huge process. But it's just a kind of another fun way especially like I think getting physical mail in the web development world is such a good way people send me t shirts all the time. And it always puts that company in my mind because like who gets mail anymore right it just getting fun mail is the best. Yeah,
+
+131
+01:09:29,930 --> 01:09:38,640
+Scott Tolinski: I know it's tough like did you ever imagine that you'd be a sticker mogul at this point in your life. Or Baron or whatever.
+
+132
+01:09:39,030 --> 01:09:57,060
+Wes Bos: No, I was super into stickers like sticker books and I was a kid and now I get older and it's it's really fun to do it as well. Word. Anything else getting free stuff. Sometimes companies send me free stuff like I've got a What is it like I got a router at amplifi HD. It's like a mesh network router for free software.
+
+133
+01:09:57,060 --> 01:09:58,199
+Scott Tolinski: Anything for free.
+
+134
+01:09:58,199 --> 01:09:59,159
+Wes Bos: Nobody can do anything.
+
+135
+01:09:59,159 --> 01:09:59,850
+Scott Tolinski: Give me free stuff.
+
+136
+01:10:00,890 --> 01:10:10,729
+Wes Bos: Please send Scott something. I got a box of rubber ducks shout out to what is the company I totally forget. So apologies. I
+
+137
+01:10:10,729 --> 01:10:18,060
+Unknown: posted a photo on on Twitter. So a box of rubber ducks out in the rubber ducks. I got a shout out.
+
+138
+01:10:19,640 --> 01:10:53,930
+Wes Bos: Anyway anyways, I always disclose when people give me stuff for free because I don't want to like I don't want to ever recommend something. I don't ever want to have a sick pic on this show where it's just because they sent it for free. Yeah. So I'll always make sure that people know if if I got hooked up, I'll let you know. And if it sucks, I'll let you know for sure. I've definitely pissed off a few companies in the past where they send me it for free. And I said not so good things about it. So it sounds kind of nice. I don't I won't. I'll say get free. I got like a ring doorbell for free as well. Just by asking the company for a free one. Not fair.
+
+139
+01:10:53,970 --> 01:10:58,140
+Scott Tolinski: I've gotten stickers I've gotten I got free stickers from Wes Bos. So
+
+140
+01:10:58,199 --> 01:11:11,520
+Wes Bos: there you go. All right. Can someone do you have a peel box? No. Okay, yeah, I've got a peel box. Scott has a peel box. Will someone please send Scott a letter or a sticker or a T shirt? You have T shirts, don't you?
+
+141
+01:11:11,580 --> 01:11:17,600
+Scott Tolinski: I do I have T shirts for sale. Yes, that's it. I don't really market them. They're even kind of hard to find on the site. So let's sell them out right now.
+
+142
+01:11:17,600 --> 01:11:19,290
+Wes Bos: Where do you buy them? level up?
+
+143
+01:11:19,290 --> 01:11:22,949
+Scott Tolinski: tutorials.com forward slash store.
+
+144
+01:11:23,280 --> 01:11:29,640
+Wes Bos: How many t shirts do you have left? Maybe we can sell them out? Oh, I have anyone is still listening to this long pod. Yes, a long episode. I
+
+145
+01:11:29,640 --> 01:11:32,699
+Scott Tolinski: have no idea how many I have loved. I haven't counted them to
+
+146
+01:11:32,699 --> 01:11:33,449
+Wes Bos: be honest. Okay.
+
+147
+01:11:33,449 --> 01:11:37,859
+Scott Tolinski: We have enough. All right.
+
+148
+01:11:37,859 --> 01:11:40,729
+Wes Bos: I think that's it for today. You got a sick pic.
+
+149
+01:11:40,800 --> 01:12:58,020
+Scott Tolinski: Yeah, I gotta take big sick pic here, make it real quick, as a sick pick that I have sick picked before. I'm going to do a double Sneak Peek here. And this is Cypress cypress.io. For end to end testing. I don't think this gets enough love as Cypress is really takes all of the guesswork out of testing. I know I've mentioned it a couple times over the history of the show. But if you were a new listener, you may have not have heard me talk about Cypress Cypress IO is an excellent end to end testing system that basically gives you interactive tools to actually working with your tests and even click through gain really keen insight as to what is going on in your code. You can like wait for UI elements and stuff like that they make it really easy. Like sometimes I know when you're writing tests, if something hasn't loaded yet entirely, you could be like testing a loading screen rather than testing that loaded component. So this it gives you a lot of great tools to like wait for certain things. And okay, now that this is on, you can look for this and try this and click this and it's all very visual. So you can confirm that things are working the way you'd expect. It's pretty darn slick cypress.io I'm gonna keep it pretty short. Check it out, watch their little video on the homepage and prepare to have your mind blown by testing, which is a good thing.
+
+150
+01:12:58,080 --> 01:14:13,470
+Wes Bos: Wicked. My sec pick is a book I listened to the audiobook, but it's also a printed version. It's called own the day by Aubrey Marcus. So Aubrey Marcus is CEO of this company called on it if you listen Joe Rogan podcast you probably have heard of on it before. And he posts he has this book where it says optimized practices for waking, working learning, eating, training, playing sleeping and sex. And I thought it was kind of interesting because sometimes you listen to these podcasts like Joe Rogan, or Tim Ferriss, and they're, they always post like, Oh, I find that it's it's very helpful that if I if I wake up at six o'clock and drink the tears of a unicorn, and then do 12,000 push ups and then I run around, it's like okay, it makes you feel better. Okay, that's good. But this is like I found that this is very applicable information, little tricks, little things you can do when you wake up a little things that you can do to like what kind of vitamins you should be getting very tastefully approach because he owns a supplement company, which is always raises an eyebrow from me. He Yeah, so yeah, I thought I thought it was really good. Lots of little little nuggets, here and there. What was the name of the book again? It's called own the day from Aubrey Marcus.
+
+151
+01:14:13,530 --> 01:14:15,600
+Scott Tolinski: All right, I'm going to put that on my list right now.
+
+152
+01:14:15,720 --> 01:14:41,609
+Wes Bos: That's good. It's It was pretty, I think was like 11 hours. So I had to it took me a good couple weeks to get through it. But it was one of those that you could just pick up and put down. Because every single chapter is a different aspect of your life. And it's just helpful little little things that you can like, start or started drinking water again every single morning like instead of slamming a coffee, you gotta slam a water. You got to see my big ass water right here.
+
+153
+01:14:41,609 --> 01:15:26,880
+Scott Tolinski: I have a giant cup of water next to me at all times. Yeah, I got my my ufm this I actually have this giant like when you this is this cup for those of you who can't see obviously, is from a michigan football game when you buy the largest like beer or soda they have and is like a giant ass cup from a very terrible game. When Michigan lost to Minnesota who sucked and we lost anyways. And we kept making a bunch of people around us pretty mad because we kept talking about what Michigan really needs right now. They really need a double touchdown. And people were just like, God, darn it, these kids are just like making fun of the fact that we're learning. I love Michigan. I'm a huge michigan football fan. But so the double touchdown thing is now hilarious, because anytime we're down by a whole bunch, I'm like God, do you really use one of those double touchdowns?
+
+154
+01:15:29,580 --> 01:15:32,520
+Wes Bos: That's great. Any shameless plugs,
+
+155
+01:15:32,720 --> 01:16:21,270
+Scott Tolinski: shameless plug, I have a new course coming out. So sign up for level up pro level up tutorials.com forward slash Pro, I have a new course it is awesome. I'm gonna I'm gonna I don't normally say that about my courses. But I'm teaching you electron in this course. And it's react and electron. And we're building a journaling app. And man, you learn a lot of really cool stuff from working with your own file system, opening directories, I build them like an autosave feature. And it ends up being like sort of a markdown system for a journal post. So you create a file, you write your journal post, and you can do it in markdown, and you get a little markdown preview window right there. So it teaches you the basics of electron, but also leaves a ton of room open for self exploration. And electron is a really exciting course. So it's going to be out later this month, it's not going to be out,
+
+156
+01:16:21,420 --> 01:16:22,050
+Unknown: well, probably
+
+157
+01:16:22,050 --> 01:16:46,100
+Scott Tolinski: Oh, by the time this episode comes out, so check it out. It's also going to be available for purchase at level up tutorials. COMM forward slash store. Again, if you're interested in learning electron, and you want to do it in a really practical, beautiful app, it is sick. And I created a cute icon for this app to it is it is like a little composition book. I'm not an icon maker. So I like made this thing. And I was like, Oh, this is my life's work.
+
+158
+01:16:46,100 --> 01:18:01,680
+Wes Bos: This is this is it. That's amazing. Yeah, cool. I'm going to plug my upcoming advanced react and graph qL course it is still a bit of a ways out. I know people have been emailing me all the time, I've been talking about it forever hit my fair share of bumps in terms of libraries and things updating and changing and constantly but i'm, i'm not sweating it all that much. Because graph qL is very much still a new thing. And I want to make sure that what you're learning is going to be the latest and greatest best practices and everything like that. So it's all been reviewed, I'm going to start recording it now it doesn't look like I'm gonna get it done before I go on vacation this summer. So it will probably be at least a month out yet, which is I know frustrating for some people because they're I've been waiting for it. But I am so so happy with it. We're charging credit cards, we are writing tests, we are doing the back end and the front end and Oh man, I'm so stoked. It's gonna be such a good course it's gonna be a big course. But I think you're gonna learn a lot in it. So, sit tight, I'll send an email out with some more info and please don't email me as to when it's gonna come out. Word. Awesome. So if you're still listening, make sure you tweet at Wes Bos and stilinski letting us know that you made it this far. The longest episode in history. Hashtag team syntax if you made it this far.
+
+159
+01:18:01,710 --> 01:18:02,670
+Unknown: Yeah. Thanks so
+
+160
+01:18:02,670 --> 01:18:06,420
+Wes Bos: much for tuning in. And we'll see you next week. See it bases.
+
+161
+01:18:08,159 --> 01:18:17,930
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

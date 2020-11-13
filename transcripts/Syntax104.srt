@@ -1,0 +1,468 @@
+1
+00:00:01,319 --> 00:00:04,590
+Unknown: You're listening to syntax, the podcast with the tastiest web
+
+2
+00:00:04,590 --> 00:00:09,000
+development treats out there, strap yourself in and get ready to live ski
+
+3
+00:00:09,000 --> 00:00:10,530
+and West boss. Hey,
+
+4
+00:00:10,649 --> 00:01:07,290
+Wes Bos: everybody, welcome to syntax. Today, we're gonna be talking all about CSS layout, we got this awesome question come through our potluck button. And if you don't know, our Pollak button is where you submit questions to the show. And generally, we answer them on a potluck. However, this question came by john Lynch, who's from west of Ireland, which is kind of fun. And he said, Dear Wesson, Scott, you would make me and I'm sure many other novice front end developers very happy if you could do an episode of syntax FM, and maybe a tutorial on the topic of CSS positioning and sizing. And then he goes into break down this incredibly in depth, CSS layout. So basically, we're just taking this layout that he's given us. And we're going to go through it and talk through some of how CSS works, because it's often an overlooked thing. I even do this myself where I don't have a CSS course out. And I would love to if people ask me all the time, like, when is the CSS course coming out? Because it's such a CSS is hard, don't you think? Scott?
+
+5
+00:01:07,649 --> 00:01:26,610
+Scott Tolinski: Yeah, the biggest indicator that CSS is hard is just how many people have problems with it or hate it or whatever, or you know, that that classic CSS is awesome. Where the text is going out of the box? I mean, I think that mug right, there is a is an indication of just how hard CSS can be sometimes
+
+6
+00:01:26,699 --> 00:01:40,920
+Wes Bos: I so I've got on my laptop, I met somebody at a conference. I'm totally forgetting who this is. Sorry, if you're listening, but he printed new CSS is awesome ones where the box is properly fits around. And he's like, I fixed it. And I like that, because I actually
+
+7
+00:01:40,920 --> 00:01:42,450
+Scott Tolinski: yeah, I'm gonna get one of those.
+
+8
+00:01:42,539 --> 00:02:00,420
+Wes Bos: Yeah, it's awesome. Because like, if if you do know how to use CSS, you're not going to run into those issues. And, and that joke in that mug that everyone's talking about is a bit of a thing of the past, I think because like, obviously, these aren't issues anymore. It's just that you're having trouble writing it, and you need to probably learn it a little bit better.
+
+9
+00:02:00,449 --> 00:02:27,810
+Scott Tolinski: Yeah, so I've never been in the camp of, of CSS sucks. I've always been in like, yeah, like the CSS fan camp. And like, I never understood why other people had a problem with it. And maybe this because that's where my foundation was right. My Foundation, I didn't come from a computer science background, I came from a design background, and I wanted to, you know, be able to create these things. So I mean, my whole learning and understanding of web dev primarily resolved around learning CSS to start.
+
+10
+00:02:27,869 --> 00:03:09,960
+Wes Bos: Well, speaking of CSS, we have two awesome sponsors today, here. First one is Manning books, they've got a whole bunch of deals, 40% off all of their books and video courses. Today, we're gonna highlight one called CSS in depth in motion. So it's in depth and motion, I think in motion just means that it's a video and not actual book from Chris ward. So you want to check that one out. If you're looking to learn a little bit more about CSS. We'll talk about that partway through the show. Our other sponsor today is century century is going to do all of your error and exception tracking on your client side on your server side. We'll talk about them a little bit more throughout the show as well. So how you doing Scott? Hey, doing good. Just take it out?
+
+11
+00:03:09,960 --> 00:03:19,050
+Scott Tolinski: I don't know. I'm getting work done recording tutorials. Doing what I do working on the site. Devin, live in the dev life. Yeah, it's all good. How about you How you doing?
+
+12
+00:03:19,079 --> 00:03:41,940
+Wes Bos: Good. I'm just looking at what my next last couple days I am off for the year in this what today is what today is December 13. It's Thursday. And I'm looking at doing another three and a half more days of work. And then I'm done for for the holiday. So I'm looking forward to that. We've got some fun stuff playing with the kids. And we're always trying to maximize that that time around Christmas.
+
+13
+00:03:41,969 --> 00:03:53,280
+Scott Tolinski: Yeah, I was trying to look at the calendar here to see if our audience would be listening to this in the year. Oh, yeah. And maybe you are but the the release of this episode will not be 2019. Unfortunately, the next one will be happy
+
+14
+00:03:53,280 --> 00:03:55,500
+Wes Bos: new year, if you are listening to this in the future.
+
+15
+00:03:55,529 --> 00:03:56,729
+Scott Tolinski: Yeah. Yeah.
+
+16
+00:03:57,990 --> 00:05:14,010
+Wes Bos: All right. So let's dive into it. css layout, we're just gonna go through a whole bunch of different topics related to CSS layout, positioning, display heights, widths, units, you get the point. And we'll probably get through this whole thing. If not, we'll cut into a second show as well. So first one is when do you use the position fixed static, absolute relative and sticky. So when you have an element in CSS, you position it, and by default, it's going to be a position of static. So this is something you're not going to probably apply to any elements, unless you're trying to overwrite something that has previously been positioned. Otherwise, that's static, that's the way it works, the content inside of that element will take up as much space as it needs. And when we say that, we mean that when you put elements on the page, and you put content inside of those elements, the size of that element is determined first, by the whether it's blocked or in line, we'll talk about that. And generally, they're blocked and they go 100% across the viewport, or if it's going tainer and then the height of it is determined based on the actual content that lives inside of it. So that's that's position static. Yep. It's not all that exciting. But we've got other ones, you want to take a shot at explaining some of these other ones. Yeah, let's do a little back and forth here.
+
+17
+00:05:14,010 --> 00:05:47,100
+Scott Tolinski: So the next one on the list, I think of maybe your most used would be positioned relative isn't relative has a couple of uses. But ultimately, what it does is it basically just makes the element positioned relative to its normal position. And one thing that people I don't think knew that you could even do with position element is give or position relative item is to give it a top value, and it would actually bumped it down. So you could do something where you maybe you give your your button, a position relative, and then you give it when you push it, you know, a top of one, and it looks like you're pushing it down a little bit. They
+
+18
+00:05:47,100 --> 00:05:49,380
+Wes Bos: used to be that Yeah, I love that. Yeah,
+
+19
+00:05:49,380 --> 00:05:50,010
+Unknown: me too.
+
+20
+00:05:50,310 --> 00:06:18,000
+Scott Tolinski: But now a lot of that stuff that you would normally have used for that now you could just do a CSS transforms anyways. So I'm not typically using the relative to move things around too much anymore, other than, you know, the way it is. But the primary reason why you're using position relative nowadays, is really just as a container for a position absolute item. Because when you position tonight, um, absolutely, it does. So with the container in mind. So do you want to talk about position absolute?
+
+21
+00:06:18,030 --> 00:06:53,580
+Wes Bos: Yeah. So when you're thinking about positioning elements on the page, I always like to tell people picture a bunch of elements that are standing in line at the grocery store. And by default, all of these elements are positioned static, and they just take up as much room as they need. So you might have a little element, you might have a really big and wide element, you might have a very tall element, and however much space that they need, they take up that much space in line now. And when you position something relative like Scott says, you have the ability to start skirting around with Trouble, trouble stance or top right bottom left, I've
+
+22
+00:06:53,580 --> 00:06:54,900
+Scott Tolinski: never heard that trouble.
+
+23
+00:06:54,990 --> 00:07:02,250
+Wes Bos: No. Oh, man, you're gonna get in trouble in this podcast, because I use it a lot. It's the only way I can remember how the shorthand works.
+
+24
+00:07:02,250 --> 00:07:04,500
+Unknown: I just think about it as clockwise.
+
+25
+00:07:04,920 --> 00:07:10,950
+Wes Bos: No, that's wrong, clockwise or like, never eat shredded wheat, that's wrong, it's trouble. It is.
+
+26
+00:07:12,270 --> 00:07:14,700
+Unknown: So much easier. It's universal.
+
+27
+00:07:14,730 --> 00:08:12,270
+Wes Bos: When you apply trouble to it, you can skirt it around it, but it will still maintain its spot in line. So I always talked to people. When I was teaching CSS and ad hacker you in Toronto, I would always be like, Okay, this person is still in line. Maybe they leave the cart there or they put their foot they leave, they leave their shoe. Yeah, but they're running in grabbing like a chocolate bar from from the thing over there are they Oh, I forgot to get sour cream. Let me go run and get it you still maintain your your list. However, when you position something absolutely position absolute, it gives up its seat in line. So it sort of lifts itself up like a ghost. And all the other elements no longer think okay, you no longer get space in line. Because you've positioned yourself absolutely, you no longer take up space on the page. And any other absolute or any other relative or static items that come after that element. Simply just move up, oh, that guy left,
+
+28
+00:08:12,300 --> 00:08:13,800
+Scott Tolinski: it just turned into a ghost,
+
+29
+00:08:13,860 --> 00:08:14,640
+Wes Bos: it just turned into
+
+30
+00:08:16,260 --> 00:08:19,890
+Scott Tolinski: just the assume everything's normal and make money online
+
+31
+00:08:20,040 --> 00:09:20,299
+Wes Bos: to an absolute element, you can still give things a trouble value. So those tr bl the top right bottom left values are going to be relative to the parent container that is relative absolute fixed. We'll talk about this a little bit more as well. How do you see something based on its parent. So that's what absolute is, you can use absolute to overlap things as well. So if you if you need things to obviously overlap each other, you can position absolute them, I would go as far to say in most cases, you probably don't want absolute and this is coming from if you're a beginner learning CSS, but what I see all the time is people say I want this thing to go here. So I'm just going to position absolute it and then give it the values that I want. And that's not great, because because of the reason why it loses its space in line. And then designing the rest of your page becomes really hard because you've got this element that doesn't push things up or down depending on how much content is inside of it.
+
+32
+00:09:20,370 --> 00:10:53,779
+Scott Tolinski: Yeah, and that's why frequently you just see a container that's relative and then an absolute thing and then maybe the container has a some you know height and width or whatever. Next up we have positioned fixed, which is a lot very similar to position absolute, I think new people can occasionally get a little twisted up with when to use absolute and when to use fixed fix his position relative to the viewport, you'll see position fixed use primarily and things like pop ups modals maybe like an alert like a toast message or something like that. You'll often see it even like those like full page ad thing, takeovers that are like sign up for my mailing list like that's position fixed, right? So position fixed is again, it's positioning something relative to the viewport so when you are giving it its top, left or top right, sorry, trouble is when you're giving it its trouble coordinates, you're doing so so the if you give it a top of zero and a left of zero, it's going to be in the very top left of the viewport. No container is going to prevent this from being stuck inside of this thing. It's always going to be towards the viewport. And fixed I think fixed is probably getting used less and less. Right I like I like go out of my way to avoid using fixed. There's some like weird bugs in Safari with position fixed specifically with like text inputs and stuff. And so I've just, for the most part, I find a way to use absolute for things especially like now that you can do things like portals in react or whatever very easily to take something and put it at the very bottom of your document like modal, then you can position an absolute and that absolute visit to the actual viewport rather than something position fixed.
+
+33
+00:10:53,820 --> 00:11:42,120
+Wes Bos: Yeah, fixed has always been an issue in in Safari. Like for many years, we didn't have fixed that all in Safari just because of the way it worked. And now it's still a pain. Same with viewport heights are a pain in iOS, because of the way that scrolling works. with iOS, when you load the page, it looks fine. But when you scroll, Safari will take the bottom the bottom bar and move it out of the way. So you get more height on the webpage. And that causes this weird like gap where if you are using 100 Vh of viewport height, or if you're using position fixed and doing bottom zero, it doesn't actually stick to the bottom because the viewport is not as big as that. It's such a such a confusing thing. I have a problem with it right now on my own checkout on safari, which I'm trying to deal with. It's it's kind of frustrating.
+
+34
+00:11:42,149 --> 00:12:12,899
+Scott Tolinski: Yeah. And that's one of the reasons why like, I mean, we'll get into viewport units a little bit more in a little bit. Yeah, but like, that's one of the reasons why I almost never use the H if I want like something to be exact to the viewport height. Like I'm always always using it for like things that are like sort of close to 100. Okay, I just want to make this, I want to make sure this, this, you know, main element on the page is never less than, you know, 80% of the viewport height, you do min height, the VH or whatever. So
+
+35
+00:12:12,929 --> 00:12:21,179
+Wes Bos: that's what I use it for almost all time. Yes, let's save those treats. Because there's a lot of viewport heights or people might not even know what we're talking about. They're pretty, pretty handy.
+
+36
+00:12:21,210 --> 00:12:28,860
+Scott Tolinski: Yeah, I have a note at the viewport height thing. It's this is can we just talked about how dope viewport heights are because I use it for everything.
+
+37
+00:12:29,159 --> 00:13:56,010
+Wes Bos: The last position we have, and this is relatively new, it's called position sticky. We've talked about it on the on the podcast before, if you go to syntax FM right now and just scroll the player past where it is it turns into position sticky. And the way that position sticky works is it's positioned relative it just goes where it should be, until that thing is scrolled outside of its container. So the example we have is our the player for the podcast is I don't know about two 300 pixels down from the top. And as soon as you scroll past that it sticks to the top. And the reason is because if you position something sticky, and give it a top right bottom left value, when it is supposed to be scrolled out of the container, it will then start to respect those top right bottom left. So it kind of goes from position relative to position fixed, with the caveat of it not doing that weird thing where we used to do this thing where as soon as it scrolled out of view, you would position absolute it but then by position absolute thing it you would change the flow of the document because by position offloading it, it gives it it gives up it's spot in line and then all the content would would jump up really quickly. So position sticky just takes care of that where the elements still takes up its space in the DOM flow, but it doesn't, but it will stick to the top of the page or the top of the scrolling container if you need it. I think that's a pretty neat one because considering how hard that was
+
+38
+00:13:56,189 --> 00:14:19,260
+Scott Tolinski: just playing JavaScript how much she used position sticky because let's look at the Can I use for position sticky because I feel like it's one of these things that it's now like opened up to be usable now for really like the first time since it's been released. He had still no iE 11 support that sucks and no hopper mini support no blackberry browser 10 support looks like that's a problem.
+
+39
+00:14:19,409 --> 00:14:26,010
+Wes Bos: Position sticky is a nice one though because like you know, it doesn't have to stick to the top of the thing so it just becomes relative
+
+40
+00:14:26,040 --> 00:14:43,049
+Scott Tolinski: Yeah, that's the use case is when you don't need something to be positioned to get some weird issues with it to some occasionally weird edge Casey bugs, but I love position sticky. It's one of those things I wish I could just use all the time with no fallback knowing that it's gonna work on everything. But you know what we'll get there.
+
+41
+00:14:43,199 --> 00:15:51,049
+Wes Bos: Yeah, I'm trying to build something into the syntax, that FM website where the currently playing show also becomes sticky when you are scrolling it just so that as you scroll through the list of episodes, the one that's currently playing is stuck to the top. There's some weirdness around using sticky double sticky Yeah. Hostgator is a little weird if they get a coupon, yeah, sticky. So that is the positions, let's talk about heights heights in CSS are a bit of a funny thing as well, because heights and widths do not work the same way. Because if you give something a width, it will immediately size itself. If it is a block or inline block element, we'll talk about what those are in just a second. If you give something a width, or a max width or a min width, then it will respect that and automatically size itself based on its parent container. But if you give something a height, it doesn't always work. And that's because the height of a container is dependent on the amount of content that is inside of it. And unless it's a position absolute item, or you're dealing with a grid or something like that, it will sort of ignore the height that you give it.
+
+42
+00:15:51,090 --> 00:16:47,220
+Scott Tolinski: Yeah, I think this is probably stack overflows, number one question for new CSS developers is like, why isn't my div that has a height of 100%, taking up 100% of the height. And I think that is maybe one of the more frustrating aspects when you're first learning CSS positioning, and you're sort of like, well, it's not doing what I'm telling it to do, because it makes sense that you would say give this 100 hundred percent height, and then it's not gonna do it again, and needs that content or needs its parents to be height 100%, as well. But now that we have the viewport units, or whatever that sort of takes care of that aspect, for the most part, I think of height and width, are specifically with for in responsive web design when you're thinking of like non fluid elements, right. So when you're giving something a height and width, it's not going to adjust when the browser adjusts. So if you make the browser shorter or wider, or whatever, if you're giving it saying, hey, this thing is 400 pixels wide, then it's always going to be 400 pixels wide.
+
+43
+00:16:47,340 --> 00:17:27,800
+Wes Bos: Yeah, I think the rule of thumb I tell people is you probably don't want to give something a height unless you're trying to give it a height of 100% or 50%. And you know, exactly, because when you give something a height, you automatically are shooting yourself in the foot for when the content of that element needs to overflow it right. And you don't really know what the content of the element is going to be maybe you do when you're designing it. But that will change based on the viewport width based on the font size based on all kinds of different things that you don't have control over. So I always tell my students let the content do the sizing of the height, and you can do the sizing of the width. Yeah, I
+
+44
+00:17:27,800 --> 00:17:31,610
+Scott Tolinski: don't find myself using height that much overall, anyways. Yeah,
+
+45
+00:17:31,770 --> 00:17:58,230
+Wes Bos: the next question we had was, when do you use the max height and max width, and as well as min height and min width. And generally these are sort of just like safeguards on either end that you use along with your, your max height, or sorry, with your regular width and your regular height. So if you don't want something to go bigger or smaller than whatever size that you have, I use max height and max width a lot in Flexbox. And I find myself when I'm using grid, I don't reach for it all that much often anymore.
+
+46
+00:17:58,290 --> 00:18:58,260
+Scott Tolinski: Yeah, you'll typically use these things, again, unresponsive things where maybe you have a parent container, like a good use case, this would be you have your main section of the page, right, the main section of that page, maybe you want it centered, so you have a margin zero auto on it, but you always want it to be essentially taking up the full width to an extent. So you would give it like a max width of 1140 or something like that that way and giant monitors its sticks. And it's only ever that wide, it doesn't get super duper, duper wide max width max that I do find these to be pretty useful. Again, it's just for containing your content within certain bounds. But typically, it's for fluid items and things that are changing upon the browser changing. So they also asked about when to use top, bottom left and right. And these are primarily used within positioning things we mentioned relative sticky, absolute fixed. So we already kind of went over these a little bit. But really just giving things a nudge in a direction or position in a specific container spot.
+
+47
+00:18:58,310 --> 00:19:24,860
+Wes Bos: Yeah, I think also, what's important to say is that usually you'll probably want to use a transform, instead of using a top right bottom left, especially if you're doing animation, like if you're trying to like when you hover over something and it moves over or up and over or translate you're trying to move something Yeah, you just use a transform. And that's going to be more performant for your animations. And generally, it's much easier to work with using transforms than it is from using top right bottom left.
+
+48
+00:19:24,900 --> 00:19:42,960
+Scott Tolinski: Yeah. So in that same regard to you know, the transform 3d even if you're just moving something over to the left or to the right or up or down. Transform 3d is going to be putting that on the GPU. So I think in typical situations is going to make your animations a little bit smoother. Don't ask me if that's totally wrong. But I
+
+49
+00:19:43,100 --> 00:19:44,040
+Wes Bos: is that still a thing? I've
+
+50
+00:19:44,040 --> 00:19:48,270
+Scott Tolinski: always heard that that's the thing. I don't Yeah, is it? Yeah,
+
+51
+00:19:48,320 --> 00:20:09,660
+Wes Bos: I'm curious if that is still a thing, because I always remember all these tricks, where if you want to offload the animation to the GPU and make it buttery smooth, then use transform 3d. Yeah, and those checks almost was like, well, then why doesn't chrome figure it out and offload it to the GPU in the first place? But I still often use that trick because I remember it. And I'm curious now, if anyone know Yeah,
+
+52
+00:20:09,660 --> 00:20:21,450
+Scott Tolinski: I always use the 3d transforms. I mean, it's just like any good movie. Like, you know, we got transformers, but then you got Transformers 3d. Yes, go for the 3d one. Although Transformers isn't a good movie. So
+
+53
+00:20:23,330 --> 00:22:55,410
+Wes Bos: speaking of 3d, there's other things that need depth, and it's your CSS. This is my favorite. I love this. I was trying to convince Scott to use that transition. But he is too bad though. So I have to say it here. Anyways, we have a sponsor today that has Manning publications. And they have all kinds of great web development books and videos for you to learn. And today we are spotlighting CSS in depth in emotion from Chris Ward, it looks to be just under a three hour course with 56 exercises. And they go into oh boy cascade better specific D best, best activities that fit in and, and inheritance working with relative units mastering the box model making sense of floats, Flexbox, grid position, and stalking and responsive design. So check that out. Manning has a whole bunch of courses on sale just for syntax listeners@deals.manning.com, forward slash web dev. So thanks so much to Manning for sponsoring. Thank you. Next question we had was what about relationships between containers and their children in terms of sizing and where things position themselves so when you position something absolute, fixed or sticky, it will by default, it will just go where it used to be where it was when it was static. But if you apply a any of your trouble to it, top right, bottom left, where it sources, those top right bottom left values from on the page is based on its parent. And the way I always described this when I was teaching is that let's just use position absolute as an example, that position absolute element will sort of start going up the tree and start looking for a parent that is responsible for its positioning in life. It's like a child in line that's looking for a child that's like maybe it has its immediate parent might be neglectful. So it just keeps going up the family tree until it finds some sort of element that is position relative or position absolute or I think sticky as well. So where it bases itself office is where it will find the closest parent that is positioned relative or absolute. And then where that element is itself is is where the top right bottom left values are derived from. So most likely, you're going to just be having some sort of container element, you pop a position relative on there only because you know that in the future, you're going to have a child that is position absolute. And that needs to be the containing element for it.
+
+54
+00:22:55,590 --> 00:24:21,180
+Scott Tolinski: Yeah, I think that's good. And yes, they're all like, it's sort of like going over the same thing over and over again, because it is very like these things are also closely related that the concepts all sort of affect one another. So you explain one, it's like almost like sort of explaining how and and we did briefly mentioned that there's some things that we haven't really touched on too much with like the box model and things like that just yet, which are, are some, you know, somewhat important to this whole thing as well. And we briefly mentioned that there's a difference between block and inline and inline block items and how they sort of respect space. And by default, you may or may not realize this, depending on what your skill level is. But each element in HTML has default properties that's assigned to it. And part of these things that are adjusted via CSS resets and stuff like that. But one of the things is, is that these elements are by default, either a display block or display inline, or block, inline block, whatever the URL, all the elements in HTML have default properties for this box sizing. And so we often don't think about that. But div is a div because it takes up its space. It's a position block, right? Where a span is the position in line item. And it doesn't take up any space. It just wraps the content. And I think that's important to to know throughout this whole thing is block verse inline, inline block, how it takes up space and how it deals with that.
+
+55
+00:24:21,570 --> 00:24:58,440
+Wes Bos: Yeah, maybe we should just rattle rattle through them really quickly. So you've got display block, which is a div, a paragraph and h1, h2, all of your new tags article, figure, all of these things are display block, which means that they are by default, they span across the entire width of its container paragraph is I think I said all of those. Then you have display inline, which things like the emphasis tag, the span tag, the bold and italic tag, which aren't used all that much often. What other elements are in line by default, are the areas do you know about mark the mark tag?
+
+56
+00:24:58,680 --> 00:25:02,880
+Scott Tolinski: I don't know. know about it? No, I never had a mark tag. Now, let
+
+57
+00:25:02,880 --> 00:25:27,060
+Wes Bos: me tell you about the mark tag. So the the mark tag is like marquee, it's for like highlighting stuff. It's for marking content inside of it. And I have many times on my course websites, I want to highlight text. And it's sort of like strong, there's some you can look up the accessibility differences between it, but it's being able to highlight text using the marking by default has like a yellow background on it, but just kind of like a highlighter.
+
+58
+00:25:27,120 --> 00:25:38,160
+Scott Tolinski: That's kind of cool. No, that's interesting. I almost have never used it. I almost always used emphasis or strong to do any sort of differentiating like that. But Mark, no, Mark. Yeah, interesting.
+
+59
+00:25:38,370 --> 00:26:04,830
+Wes Bos: There is a kbd tag that's in line as well, which is the keyboard input on other elements are in here are in line, you get the point right. So these elements do not accept a width or a height. So you can you can try till you're blue in the face, but they will not. They will ignore any width or height that they give them. Why because they are Get ready. They are spiral wrap. Right? See, get it? This is my ran wrap. No, I
+
+60
+00:26:04,830 --> 00:26:05,700
+Unknown: don't get it at all. I
+
+61
+00:26:07,590 --> 00:26:27,300
+Wes Bos: get it here. Yes. If you take a span and your wrap anything with a span, the span will just wrap itself around the entire element, or the text or anything that is inside of it. And it will not go any wider or higher. It started just clings to Yeah, the content isn't there. So it's like cling wrap. Yes. But ran wrap. Yeah,
+
+62
+00:26:27,300 --> 00:26:32,940
+Scott Tolinski: no, I okay, I am getting it now. I think that's pretty good. That's pretty good.
+
+63
+00:26:33,090 --> 00:27:17,310
+Wes Bos: Yeah, yeah. So if you want to give something like a inline element of width or height, but still not break the document flow, because a block element will always start on a new line and the content after it will always start on a new line. So if you want to give something a width and a height, but still keep it in line of the document, you can make it inline block. And that will have the same effect as an inline element except that it will accept a width and a height. And the default for that is a image tag is inline block, which is great because you want to give an image a width and a hyper, you also don't want it to necessarily break onto the new line, which is what a figure tag is for. If you do want an image to be on its own line, you should wrap it in a figure and give it a caption as well.
+
+64
+00:27:17,670 --> 00:27:19,590
+Scott Tolinski: Yep, yep, yep, yep, yep. Yep.
+
+65
+00:27:19,770 --> 00:28:33,930
+Wes Bos: So those are the big ones. There's all there's a whole bunch of other ones. There's display grid display flex, there's display table. Yeah, a whole other host of unused one. But I think that's we're not gonna talk about that right now, just as we're trying to understand what the differences are between the two. And then you get into these other elements, like the different sizing of different types of elements. So we talked about a paragraph heading tags, those are blocked, we talked about spans and strong, so those are in line. But then you have these things like image tag, image tag is inline block, we have an iframe iframe is a block element, but many people think that iframe will size itself based on its contents. But since an iframe doesn't know how big its contents are, because it's another web page, there's no way to size the height of it, unless you What's the name of that where you can communicate between an iframe postMessage, you can use this thing called in JavaScript called post message, which will allow you to securely send data from an iframe to the parent document and vice versa. And often, what you can do there is you can just have like a timer, every 400 milliseconds, send the height of the iframe to the to the parent document, and then the parent document will set the height of the iframe for itself.
+
+66
+00:28:33,960 --> 00:28:52,500
+Scott Tolinski: Yeah, I think we should mention too, that a lot of times people think they can communicate with their iframes. And to do so like the iframe has to be aware. This, right? You can't just iframe, you know, syntax.fm into your site, and then just start communicating with syntax, right? The site has to be aware of it.
+
+67
+00:28:52,860 --> 00:29:42,060
+Wes Bos: Yeah, that's a huge security issue, if you could do that, because then you could just quickly iframe in, like your bank.com or facebook.com, forward slash messages and then screenshot it or dump the HTML content of it. He can't do that unless it's on the same origin. No, no, no. Okay. Last thing I want to say here is that images and video tags are a little bit different because they are ratios based on their content. No other content in the DOM can have a ratio. So if you want it to be like 16, nine, you want like a div to be 69. The only way to do that is to either stick some sort of image or video that has that ratio in it and then size it up, and it will automatically you size, the width of it, and then the height of it will automatically react or vice versa. Or you can use this padding hack. Have you ever used that padding hack? Where
+
+68
+00:29:42,150 --> 00:29:57,570
+Scott Tolinski: Oh yeah, I use that all the time. I use it on level up actually. So you give something a padding of a percentage of what you want that aspect ratio to be like a padding bottom of 62.5% I think it's the 16 by nine or whatever to get that aspect ratio gone.
+
+69
+00:29:57,750 --> 00:30:05,340
+Wes Bos: So those are the only kind of weird ones. I was love to have native ratios in CSS at some point. That'd be pretty cool to have. Oh, me too.
+
+70
+00:30:05,360 --> 00:30:06,480
+Scott Tolinski: Yeah, absolutely,
+
+71
+00:30:06,840 --> 00:30:09,420
+Unknown: you can keep going. Cool. Next up, we
+
+72
+00:30:09,420 --> 00:31:39,000
+Scott Tolinski: have the idea of floats. Now, this is one thing that I have not used in a very long time at this meeting, either, yeah, floats. Basically, the idea of floats in the first place is that you float something to take it out of the flow of the document. If you float it to the left, everything B underneath it in the flow of the document is going to scoot up and the thing that's floated left will then be shot over to the left of the flow of the document. And it's only going to take up the space that you give it. So floats were primarily used to do layouts before we had better layout tools. So if you wanted a sidebar on your site, you'd float it left. And if you wanted a content area, you just have it there. And then you give things your width and whatever. And then the container would need some sort of clear fix. Now there's a whole idea of clear fixing, which is what clears the float. Because when you take something out of the flow of the document, the container, the sort of height of the container gets messed up, and it's going to show up, and it's no longer going to respect because the item is out of the flow of the document, that container no longer has that structure to hold it up anymore, right. So because of that we would use on the div you could use going to overflow hidden on the container that would clear the fix, you could have a div that would clear the fix. There was a whole bunch of different things, there was like an after whatever to clear the fix. I have not written a clear fix in any of my code. In years now. No, I
+
+73
+00:31:39,000 --> 00:32:25,200
+Wes Bos: don't think I've written a float, let alone like the the use for floats was you have an image and you want the text to wrap around that image, right. That's the only use case that you should still ever use a float. So floats are not bad. But they've just gone back to what they originally used for which is having an image or like another example I use, sometimes I'll have like a blog post, and you want to have like a little tip inside of that like, like a hot tip like a hot tip. Yeah, JavaScript is cool. And you want the text to just totally wrap around the top, the left and the bottom or the top, the right in the bottom floating it will do that. And that's exactly what it's for. But we didn't have layout tools available to us. So people abuse it. And we use floats for for website layout. And thankfully, you no longer have to do that. Because we have Flexbox and grid. Yeah,
+
+74
+00:32:25,470 --> 00:32:42,990
+Scott Tolinski: yeah, it pretty much anything that you would have used Flexbox floats for in layout I'm doing with Flexbox I'm doing with grid depending on what my audience is. But if you were still using floats for layout, I would look into cest using Flexbox, or something better more suited for layout itself rather than what that was originally intended for.
+
+75
+00:32:43,260 --> 00:33:03,090
+Wes Bos: I think that's why people also use like the grids. We talked about grids on the past episode, like we don't use grids a whole lot anymore. And the problem was that people didn't understand how to fix these issues that you had when you ran into clear fix issues. So they just use a grid and it took care of all of those floating issues for you. But it's not necessary anymore, which is pretty cool.
+
+76
+00:33:03,180 --> 00:35:16,980
+Scott Tolinski: Yeah, I think and floats were probably again, maybe number one or number two on stack overflows, see biggest problems. And oh, we want to talk about CSS, you know, improving all the time in you know, we always talk about Flexbox and grid and how they changed how we do things. This is directly how they changed how we do things. And it's going to make things just endlessly easier for new developers picking this stuff up not to have to worry about why the heck is my container now collapsing? Or Why's this whole thing weird? or What the heck is a clear fix? And why does it even exist. So oftentimes, people would you know, they'd have these these issues, they would run to Stack Overflow, they would read it. And then they'd have to learn a whole bunch of stuff like that. All of these things are bugs that we have to keep track of. And one way that we treat keep track of bugs over here is syntax. This is not a good transition, I'm sorry, century. But one of the ways we keep track of bugs over here at syntaxes, via century, and you can learn more about sentry@sentry.io. This is a live stream che it's the place to keep track of your bugs, what's happening in your site. And when something goes wrong, what the problem is, I personally use Sentry on all of my stuff, to let me know when things are happening. And one of the coolest things about century is that it keeps track of your bugs and a nice, detailed, organized manner so that you can go ahead and find them. You can address them, you can mark them as resolved. And then you can watch in horror as that bug comes back. And you can realize that you didn't actually fix it. It's just an absolutely insanely useful tool for having any sort of code that needs to work. Right. If you have a, if you have a code that is being used publicly, and you don't have any sort of error tracking on it, then you are just it's like, it's like you're wearing a blindfold, right? You're purposefully ignoring all of these bugs that could be happening because it's not a matter of if the bugs happen. It's a matter of when they happen. So If you use Sentry for two months, let me tell you, you're going to want to be using it for three months. And you're going to want to be using it for four months and five months and so on because it is totally one of these essential elements of my toolkit. So Sentry dot i, so Sentry dot i o coupon code, tasty treat, check it out.
+
+77
+00:35:17,310 --> 00:35:46,610
+Wes Bos: I love Sentry for the stuff. I'm just I'm just on my dashboard right now. And it's almost like a game is like, Yeah, I bet I could bring that amount of errors down or I bet I could totally eliminate it. And it's just like a constant thing of like, I just want to have a clean dashboard. I want to get rid of them all. And it's really nice to be able to just like look at all the errors that your terrible coding is making happen and figure out how can I get these down? Right? Yes, it tells you exactly what you need to do if you've got a little bit of time to fix a bug.
+
+78
+00:35:46,650 --> 00:36:55,670
+Scott Tolinski: Yeah, absolutely. Yep, invaluable. Cool. So let's go ahead and talk about we talked a little bit about Flexbox and grid already and how they sort of made our lives better from float. If you want to learn more about Flexbox. And grid, we have a whole episode on on grid. It's definitely well worth your time, if you're interested in it. Both Wes and I both have courses on Flexbox and grid. So there's a lot of content there on this sort of stuff. It's definitely Well, well worth your time. One of the things they mentioned is they wanted to talk about responsive design, media breakpoints and stuff like that mobile first. And all of this stuff sort of goes into the idea of how do you want your design to be? Do you want it to be fluid? Do you want it to be sort of static where at these given breakpoints it's changing? Do you know directly? Or do you want it to grow with the site and things like that. And we mentioned if you want it to grow, you're going to want to be using max width, that sort of stuff. If you want it to be static, you're going to be using standard width and whatever. But the cool thing about a lot of these new tools like grid and Flexbox is you can do a lot of responsive web design without even reaching for a media query. There's all sorts of properties here that allows your layout to adjust accordingly, and sort of work really well and all device sizes if you're using those new tools.
+
+79
+00:36:55,770 --> 00:37:19,980
+Wes Bos: So a question I have for you. And this is something that comes up all the time is your media queries? Do you do mobile first or desktop first? And the idea behind those two is that? Do you first design the website as a desktop website and then start to size it down as you make it responsive? Or do you first start with the mobile website, and then write media queries as the thing gets bigger and bigger to lay it out? So what were your thoughts there? Scott
+
+80
+00:37:20,100 --> 00:38:33,380
+Scott Tolinski: depends on the project. I think if I have the designs laid out in front of me, like here's the mobile, here's the desktop, here's the entire thing. And this designs aren't going to change, like a designer dropped this on my desk and says, code this up, I'm almost always gonna go for mobile first. But in level up tutorials land where I'm designing mostly in the browser, and things are changing all the time, I'm reaching for desktop first, and then I'm doing media queries, I sort of actually work backwards. So the code reads mobile first. But I'm not writing it mobile first or so to just coated up to get something working in desktop. And then when I do my little refactor of in sort of refactor it to be sort of mobile first, but when I'm writing it, I'm typically writing the CSS code, desktop first. And that's for a few reasons. It's because I'm delving on desktop. But also my, the primary use case of level up tutorials is via wider width, like desktop, or a wide tablet or something like that. So for me, you know, first and foremost, the, the main goal is to have everything as good as possible on wider widths, rather than in mobile phone width. So I usually start desktop first design, and then and then sort of tweak it as I go, and then do a little refactor. How about you?
+
+81
+00:38:33,540 --> 00:39:41,130
+Wes Bos: I think the the question I was asked myself is, do I feel like I'm undoing a lot of stuff? When I'm going to mobile? Did I make things too complex on the desktop? And then I have to unravel all of this complexity and set it back to how it normally goes? If you're answering yes to that question, you probably should start desktop first, generally, or sorry, you should probably start mobile first, meaning that your site will be very simple. And then as it gets wider and wider, it becomes more complex with the different layouts that you have. Personally, I almost always do desktop first. And especially now with the with using CSS Grid. And probably like five or six projects that I've done in the last couple of years, I find that it's just so easy to just rewrite the grid at a certain breakpoint. And if things just sort of slat and fall into place. So I also get most of my traffic on desktop as well. So you need to be aware of, of who is I find that you can often hear people chanting, mobile first mobile first, and they don't have like, they probably that probably works for them. But again, you need to figure out where your audience is visiting your website, and what works best for you.
+
+82
+00:39:41,310 --> 00:42:19,320
+Scott Tolinski: Yeah, and sometimes you even have things like a nav that like the navigation, if you're using the same HTML between mobile and desktop, that's one of those things that's always almost very different between desktop and mobile. Maybe you have it hidden via a hamburger, maybe you have it, whatever, but it's usually a sort of very different situation. In that case, it doesn't matter Which one you do, because typically, the CSS is going to be so different. Like, I might have a media query for just mobile and immediate query for just desktop and have them totally separate. So I'm not having to do a ton of overrides and stuff like that. So I think there's different use cases for either or, but with again, with these modern tools, I find myself even needing to write overwrites, and stuff like that less than less than less, because Flexbox is doing so much for me, I'm no longer having to worry about floats and stuff like that. So again, the tools are just making this so so much better as we go on. And, and I think with some of these things that we're gonna be getting into a second here with these viewport units, these are one of the things that like really makes your life easier. In fact, the other day, it was like it was like a couple days ago, I was forced in a situation where I had to write a slideshow from scratch because it was super custom. And I was thinking like, I'm not really excited about writing this slideshow, I'm just going to hack together, maybe I should, you know, fork someone else's and hack together, I don't want to write one from scratch. And then the more I was thinking about how custom the slider is, I just didn't want to have to deal with that. So I just wrote it from scratch, right. But then as I was getting into it, I was like viewport units have made this extremely easy. Like it's been so long since I wrote a slideshow that I didn't realize how easy the CSS has gotten for it. Because you have things like viewport units, you don't have to worry about calculating widths and stuff like that, and all that sort of stuff. So the viewport units of which is Vw VHV men V max, are new ish. They've been in longer than I think people realize, but newest units that just like pixels or percentages are used for sizing things, the only difference is is that these are about the viewport. So if you were to say something is v w, a 100, then that's going to be the width of the viewport, right? It's going to be with 100% of the viewport. If it's Vw 90, it's going to be 90% of the viewport width. So it's important to know that these are always relative to the viewport themselves. So if you say something's v w or 90 Vw, right, and you want it to be just 90%, it's important to know that it's going to be 90 of the viewport not 90% of its container, or whatever it's in like that. So occasionally, you might think of why would I use percentages? Well, percentages are relative to the container, the VW VH relative to the viewport,
+
+83
+00:42:19,380 --> 00:43:05,900
+Wes Bos: I really like these viewport units, specifically for one thing, and that is perfectly centering something inside of a page. And the way that I do that is I will grab the body and the HTML tag and put a min height of 100 Vh on it. Because by default, the body I think the HTML tag will only be as high as the content that is inside of it. Yep. So by setting it, setting a min height of 100 Vh will automatically make it as high as the browser is. And then if it's higher, it doesn't matter, because that's a min height, right? And then you grab your body, and you can display grid or display flex and then justify and align center pops that thing right in the middle. I use this all the time, because I always do like these tiny little demos, where it's just like one thing on the page. And I want it to like look good. So you just center it and it looks good.
+
+84
+00:43:06,030 --> 00:44:02,490
+Scott Tolinski: Yeah, yeah. And I use v H. Again, I mentioned earlier in the episode, I use this all the time on my main element to just say 80 Vh. And that way, you're never gonna have a situation where the footers come in way up. And if your content isn't tall enough, it's like you know, it's not gonna scoot up there and look really weird to give them sort of main area of your site, the standard sort of height. And I love to use this for stuff like that. I remember, it's just like the the sticky footer where you're trying to get the footer on the bottom of the site or something that used to be really yeah, just no fun to do. There was like a billion. Yeah, I remember just thinking like, this is so dumb, I have all these like extra div elements, and percentages, and whatever trying to get this this footer to be sticky, negative margins, and whatever you are doing there. So again, these viewport units are just totally invaluable to me. I use them constantly, especially when just trying to work in anything that relies on the viewport itself.
+
+85
+00:44:02,580 --> 00:44:27,180
+Wes Bos: Yeah, I actually use them a lot in like mobile typography. Because one thing like, you don't even have to be thinking about what is 100%. But if you grab like an h2 tag, and give it a width of like six v w, then as you resize the width of your, as you resize the width of your browser, the text gets smaller. And that's almost exactly yeah, here. Let me let me send you a pen. No way.
+
+86
+00:44:27,210 --> 00:44:28,710
+Scott Tolinski: I did not know this. It's like a fit. Yeah,
+
+87
+00:44:28,920 --> 00:44:35,730
+Wes Bos: I use this because like sometimes I find myself like writing like seven or eight media queries. make it smaller as I go along.
+
+88
+00:44:35,730 --> 00:44:38,280
+Scott Tolinski: That is that is blowing my mind right now.
+
+89
+00:44:38,280 --> 00:44:38,910
+Wes Bos: Okay, hold
+
+90
+00:44:38,910 --> 00:44:56,370
+Scott Tolinski: on. Where's slack? Whoa, whoa. This is like a Wayne's World to do. I am blown. It's blown my mind right now. Yeah, so those those of you listening, I hope you've learned a lot from this episode was I just learned something very valuable. Something I'm gonna be using all the time. This is cool. This is very cool.
+
+91
+00:44:56,640 --> 00:45:23,880
+Wes Bos: Yeah. So what it is, is you just grab like an h2 tag, say font Size six v min, or sorry, six v w. And it will just make this the font size, like, you know, you play with it until you find like a happy size. And then as the screen size gets smaller and smaller, your text will just immediately get smaller as well. And what I found is that you don't have to fiddle with font size at any breakpoints, because it'll just like it'll kind of scale down with the, with the thing as well, which is pretty cool.
+
+92
+00:45:23,910 --> 00:45:25,110
+Scott Tolinski: Gosh, darn it. That's cool.
+
+93
+00:45:25,140 --> 00:45:34,410
+Wes Bos: That's cool. Go to go to Kiko dot info. This is my keyCode website. and resize both the height and the width of the like, hit
+
+94
+00:45:34,440 --> 00:45:38,760
+Scott Tolinski: hit a code, any key, any key, press the key, any key got it. Yeah.
+
+95
+00:45:38,790 --> 00:45:41,250
+Wes Bos: And then, and then resize the height and the width of it.
+
+96
+00:45:41,280 --> 00:45:45,270
+Scott Tolinski: I'm resizing the height and the width, I'm grabbing from the bottom right, and it is glorious.
+
+97
+00:45:45,750 --> 00:46:27,180
+Wes Bos: Yeah, so the the size of the key code I'm using, I'm using V, let me double check what I'm using here, I'm using v min. So I'm saying what v min will give you is it will give you the minimum of the width or the height. And meaning that if the if the height is smaller than the width, it will give you the height if the width is smaller than the height, it will give you the width. And what that does is if if the you sometimes run into situations where the user's browser is really short and wide, or the user's browser is very tall and skinny. And making type fit on that is really easy when you use v min. So go to Kiko dot info and just resize your browser on both axes to see that
+
+98
+00:46:27,360 --> 00:46:49,470
+Scott Tolinski: nice, this is great. This is super bad. And you can use these things to with like calc or any of that stuff do you know modify the value, you could say this is 90 v h plus five pixels. If that's you know, you have a five pixel thing going on or something like that. There's just so many cool things you can do with these viewport units for myself using them just very, very frequently.
+
+99
+00:46:49,590 --> 00:47:12,900
+Wes Bos: Yeah, before we had grid, I would use them a lot to do like the fix sidebar. Because if you wanted a sidebar to be 500 pixels, and then you wanted the rest to be the rest, you would you would say the width is 500 pixels, and then the rest of it would be 100 vw minus 100 pX, so you can mix and match units there and it will just work out. So isn't the web. Awesome?
+
+100
+00:47:12,930 --> 00:47:27,330
+Scott Tolinski: It's so awesome. And you know, this is the ironic CSS is awesome episode. I mean, maybe that's what it should be called. Because it's so it's so good. I I've always been a fan. But man, modern CSS. Let me tell you modern CSS is excellent.
+
+101
+00:47:27,960 --> 00:47:35,040
+Wes Bos: So I think that's all we've got here. I think we should do an entire episode. I don't think we've done an episode on Flexbox. Have we?
+
+102
+00:47:35,040 --> 00:47:40,650
+Scott Tolinski: I don't think so. No, we haven't. We can call it flex and with the boys. Like
+
+103
+00:47:41,550 --> 00:48:09,360
+Wes Bos: people get angry last time we said that. So we can call a flexi with the boys are. And I think we should also do a Flexbox versus grid in my CSS Grid IO series. I have a whole video detailing the differences and the same ease of them. Yeah. When do you think it's worth having a episode on the differences between the two as well, because they do have like a large overlap. But then they also do their own thing as well. Yeah,
+
+104
+00:48:09,390 --> 00:48:18,480
+Scott Tolinski: very specific use cases. And I don't know if you saw but it looks like subgrid is moving along nicely. So maybe we have a little bit more to talk about in that regard as well.
+
+105
+00:48:18,720 --> 00:48:22,530
+Wes Bos: All right, I'm gonna add a subgrid hasty treat to the list.
+
+106
+00:48:22,590 --> 00:48:50,010
+Scott Tolinski: dope. Cool. Sounds good. Well, I hope everyone enjoyed this episode on CSS positioning. Let's know if you have any more questions or sort of weird use cases about CSS. Again, this position stuff, a lot of this stuff on this list that we were talking about got totally invalidated as being issues anymore, because of modern sort of stuff. We don't have to worry about floats. We don't have to worry about any of that stuff. We have things like position sticky we have things like viewport units to make our lives so so much better.
+
+107
+00:48:50,490 --> 00:48:52,020
+Wes Bos: You got a sick pick for me today.
+
+108
+00:48:52,350 --> 00:49:17,040
+Scott Tolinski: I do and I have a podcast and now my podcast recommendations have been well received here. So this podcast is a little bit different because it has an end date. It's not a continuous one. It's like a mini series and then sometimes these mini series podcast I like don't want to get invested in but there's been a few lately that I'm like really loving the whole the whole thing we're a podcast is only 10 episodes and then it's done right?
+
+109
+00:49:17,220 --> 00:49:17,910
+Wes Bos: Yeah, yeah.
+
+110
+00:49:17,910 --> 00:50:52,650
+Scott Tolinski: Then I end up having a bunch of these these podcasts and long my thing but this particular podcast is on a topic that I'm very, very, very interested in and that's art. heisting art heists. This podcast is is from wb you are in the Boston Globe. It's called last scene. And there's this art heist. It's one of the most famous art heist in history took place in Boston. The Gardiner Art Museum was robbed of Vermeer and some Rembrandt's or I think it was a couple Rembrandt's and how much other stuff that was like sort of inconsequential but you know, important nonetheless. And it's like the most expensive art heist unsolved art heist right? In this podcast is 10 episodes and it sort of goes over the whole story how it happened, you know, who are the main players and it is fascinating. I've always like really been interested in this art heist, in particular, the gardener eyes to art heist is something I've watched documentaries on, I've watched episodes of whatever on this podcast really opened it up for me. And they, they, they spend a lot of time on, you know, who are the key players and basically where the investigation is now. And it's just so fascinating. It's a truth is stranger than fiction type of story. And that's what I absolutely love. The storytelling is excellent. They get a lot of interviews, interviews of people that people have never been interviewed before, in any regards regarding this art heist, and you get to just see a lot of angles of investigation and stuff like that. So if you're interested in anything like this, anything that sort of like true Crimea, or whatever it's called last scene. It is top tier podcast material right here. I love it. Awesome.
+
+111
+00:50:52,650 --> 00:51:35,970
+Wes Bos: That sounds I've heard that advertised on a few different podcasts. That sounds really good. I'm going to check that one out till it's good. I'm going to sic pick my drone video that is now out. I mentioned it on a previous episode. But IBM sent me a drone to do a video with which is a it's a DJI Tello drone. It's like $100 little toy drone. And it was so fun to actually code this entire thing. So what I did is I wrote some JavaScript that would power the back end via WebSockets and UDP and our front end and react. And it was pretty fun. People, people tend to like the video as well. So check it out. I'll put the link in the show notes or I'm just Wes Bos on Twitter. You can find it on there. Hey, that's it for today. Shameless plugs,
+
+112
+00:51:36,180 --> 00:52:31,710
+Scott Tolinski: shameless plug a little silly. Here, I am going to shamelessly plug my series that will be coming out this month, or should be out by the time you're listening to this. It's so crazy. We're recording in the future here. This series is on design systems will styled components in react if you are interested in styled components. If you are confused about why anyone would like or want to use CSS and JavaScript this course is for you. It's all about how to not only see the advantages of using CSS in JavaScript, but also how to build a design system something that you can elaborate something that you can scale upon and use so check it out. It's going to be available at level up tutorials.com if you sign up at level up tutorials comm Ford slash pro you can save 25% off that yearly subscription and get access to a ton of new series I think I added up it's gonna be like 700 tutorial videos between the stuff that's already there and the stuff that's coming in 2019 so a lot of content check it out little toys comm forward slash bro
+
+113
+00:52:31,830 --> 00:52:33,870
+Wes Bos: awesome good silliness Scott.
+
+114
+00:52:33,870 --> 00:52:36,060
+Scott Tolinski: I'm selling selling hat on.
+
+115
+00:52:36,600 --> 00:53:17,490
+Wes Bos: Another pug has commented that we're too silly. On this podcast where we we give ourselves one minute at the end of the podcast to plug our own stuff and it's actually called shameless plugs but I thought that was a that was kind of funny. Anyways, I'm gonna plug all of my courses Wes Bos comm forward slash courses if you want to learn full stack advanced reactive graph qL e6 for everyone react for beginners or any of my free courses. I've got more free courses than I do paid courses. CSS Grid JavaScript 30 Flexbox learn Redux command line power user markdown you name it. You've got it. Wes Bos comm forward slash courses. Thanks so much for tuning in. And we'll see you next week or get it We'll see you next week.
+
+116
+00:53:17,490 --> 00:53:18,930
+Unknown: Peace, peace.
+
+117
+00:53:20,910 --> 00:53:30,690
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

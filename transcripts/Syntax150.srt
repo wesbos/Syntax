@@ -1,0 +1,440 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax
+
+2
+00:00:02,849 --> 00:00:06,120
+Unknown: the podcast with the tastiest web development treats out there.
+
+3
+00:00:06,149 --> 00:00:09,000
+strap yourself in and get ready to live ski
+
+4
+00:00:09,000 --> 00:00:36,720
+Wes Bos: and West boss. Welcome to syntax a podcast with the tastiest web development treats. We got a banger for you today. We have a Jason, how do you spell your last name lengstorf lang stores list are from the Gatsby team who's going to talk to us all about today about Gatsby themes, which is something I am pretty excited about. With me also, as always is Mr. Scott Tolinksi. How you doing today, Scott? Hey,
+
+5
+00:00:36,750 --> 00:00:56,280
+Scott Tolinski: I'm doing super good. I just got off the weekend. It was Mother's Day this weekend. And my lovely son decided to get his mother. A whole lot of throw up for Mother's Day. Oh, let it let it loose on her. And that's how our mother's day went. But I hope I hope yours all went better than that.
+
+6
+00:00:57,930 --> 00:01:27,840
+Wes Bos: Yeah, my went mine went pretty smoothly. So I'm thankful for no throw up. Today, we've got two awesome sponsors, we got Log Rocket, which is going to track all of the errors and how they happen. They can play them back to you. And you can see exactly what went wrong in your website. And Freshbooks, which is a cloud accounting is going to invoice expenses, time tracking all that stuff. If you are a freelancer, small business, talk about them partway through the show. So hello, Jason, thank you so much for coming on. How you doing today?
+
+7
+00:01:27,840 --> 00:01:31,080
+Unknown: I'm doing well. And I'm super flattered to get the invite.
+
+8
+00:01:31,320 --> 00:01:44,250
+Wes Bos: Oh, yeah, absolutely. And we just started having people on the podcast. And so far, the response has been really receptive. We're obviously a little guarded as to who we let on but Gatsby's got deep pockets. So they paid us enough money.
+
+9
+00:01:47,220 --> 00:02:00,960
+Scott Tolinski: Disclaimer, Gatsby did not pay us. That was a joke. But yeah, no, Jason, you are only our fourth guest ever on this show. So definitely we are we keep it pretty stingy around here in terms. Yeah,
+
+10
+00:02:00,990 --> 00:02:14,340
+Unknown: I'm, I'm aware. I've actually, like I kind of had written off the opportunity to get on syntax. I was like, Oh, yeah, I'm not in that. Not in that class of guests. So I'm, like I said, I'm super flattered to get the invite
+
+11
+00:02:15,990 --> 00:02:17,400
+Scott Tolinski: me to have you. Yeah. So do
+
+12
+00:02:17,400 --> 00:02:25,110
+Wes Bos: you want to like maybe kick us off? Tell us about about yourself, who you are, where you live, what you do? Anything else you find interesting? Sure. Yeah.
+
+13
+00:02:25,110 --> 00:02:57,900
+Unknown: So I work at Gatsby, I think my my official title is is head of dev rel, but I also tend to do a bunch of other things. So I always joke that my my real job title is human duct tape. I live in Portland, Oregon. And yeah, I don't know. I've been been doing this for a long time. But I kind of stumbled into it through music. And so I was in a band and kind of learned to do web development design as part of trying to like build a street team and keep this keep this band from failing because we didn't have any music or any money to hire help. Man,
+
+14
+00:02:57,930 --> 00:03:20,160
+Scott Tolinski: that's that's actually funny because Wes and I both started because of our bands. And almost Yeah, the second guest we had on this show, Travis Nielsen, he also started because of his band. And everybody, we you make music, it's a creative endeavor. Next thing, you know, you need a website, you're pumping out some stuff. And then next thing you know, you're a web dev. That's, that's our story. So yeah.
+
+15
+00:03:21,419 --> 00:03:29,370
+Unknown: In my case, it was like I realized somewhere about two thirds of the way through the band that I was like, Man, I'm actually a terrible musician, but I'm not so bad at this website.
+
+16
+00:03:31,289 --> 00:03:34,979
+Scott Tolinski: I only learned that halfway through music school, I did not learn.
+
+17
+00:03:39,060 --> 00:03:52,130
+Wes Bos: That's great. Um, besides being like, someone who we can complain to on Twitter, like, what does a dev REL do? I know that probably a lot of our audience will know what they do. But let's explain this real quick.
+
+18
+00:03:52,259 --> 00:03:55,350
+Unknown: Yeah. So I don't know what I do. What do I do?
+
+19
+00:03:55,680 --> 00:03:57,479
+Wes Bos: relations is the word right?
+
+20
+00:03:57,539 --> 00:05:34,440
+Unknown: Yeah, Developer Relations. Or you might hear it called like community evangelism, or some, you know, there are a lot of different ways that, that this, this role gets rolled up. But ultimately, my job I guess, is to be kind of an ambassador for for the Gatsby community. We have some core values that are all really heavily centered around the Gatsby community. Gatsby is an open source project first in a business second. And so taking care of our community is the like, primary directive because without the community Gatsby fails, like instantly. So my job is to do things like I you, as you mentioned, I kind of follow around on Twitter, make sure that people aren't stuck. If they do get stuck, I try to jump in and help and point them to resources. I build a lot of examples. So if you want to see a proof of concept of a thing, more than likely it'll be me or somebody on my team. That's that's kind of putting together a little proof of concept of how that works. I write a little bit I I don't do as much writing as I used to. We've just hired Marcy Sutton as our head of learning. So she's taking Going over a lot of that work, and she is far better at it than I than I could ever be. So we're super happy to have her on. And yeah, other than that I you know, I like I run a live stream and it's just kind of like, hey, let's let's get together with somebody else in the community who's smarter than me and like build a build something together. And we typically use Gatsby as kind of a jumping off point for that. But you know, we've we've done all sorts of cool things. But yeah, ultimately, I guess my job is to, like, be nice to people, like try to set a good example in the community and, you know, be be the kind of be that like, build the kind of community that we want to see a Gatsby.
+
+21
+00:05:34,770 --> 00:06:05,580
+Wes Bos: It's funny you say that, though. But that's like probably one thing that I've definitely noticed about the Gatsby communities, everybody is very kind, very approachable, very responsive. I don't know, obviously, that probably comes as a core value of the project. Because anybody who I interface with on that, especially like, this thing doesn't work. I've got a workshop next week, and it just gets fixed immediately. And people are very kind about it. And people are always willing to take the time. I think it's like, so cool that you can do that with an open source project.
+
+22
+00:06:05,760 --> 00:07:01,710
+Scott Tolinski: Yeah. For me personally, like I one of my first videos on Gatsby was like pre release of like a pre completion of Gatsby. And I think I did like a, not necessarily an unboxing. But like, here's an introduction to this cool thing. That's, that's happening right now. And it's going to be coming down the line and becoming a little bit more popular here. And Kyle specifically, like tweeted it out, like right after I posted it, and I was thinking like I I just released this, this little video. And here the Gatsby team is already getting behind my content. And they've been so good about that the entire time I've ever worked on or produced Gatsby content. And you know, me personally as the content creator, that signals to me that I should continue to do Gatsby stuff. Because the Gatsby team, the Gatsby project, they're going to support my work, and they're going to share my learning resources that to me, makes me want to work hard for Gatsby to to share the share the love. Yeah, that's,
+
+23
+00:07:01,800 --> 00:08:27,930
+Unknown: I mean, you know, you you mentioned it was it is one of our core values, we we kind of boil it down into an aphorism we just say you belong here. And so at any given point, we're kind of driving from the standpoint of anybody who shows up into open source belongs and open source and they deserve to be treated with you know, respect and and, you know, welcoming and we need to be looking at anybody who comes in and trying to meet them where they're at, and not being upset, if they don't know things that we feel like they should know, or not being inconvenienced if, if our stuff breaks at a time, that's not great for them, always trying to be as like welcoming and just open as we can be. Because we know that like open source is one of those things that if you show up to an open source project, it's a really weird feeling. Because you're basically showing up into a roomful of strangers, and, you know, kind of without asking, just touching their stuff and opening a pull request and saying, Here's, you know, here's my idea. And if your first experience doing that is somebody like closing it and just saying wrong, or like ignoring it for three weeks, or maybe never responding, the chances of you wanting to come back and do more of that are really low. And so we kind of look at it as like every you know, our social media presence, the the repo, the way that we treat people who talk about Gatsby, all of that as an extension of open source and community. And so we want to make sure that if you, if you do take the time to put that work out there, like we want to we want to notice, we want to say thank you, we want to make sure that you're not shouting into the void, you know,
+
+24
+00:08:28,290 --> 00:09:08,100
+Scott Tolinski: yeah, I think that is a big thing. Because I mean, I picked up Django and I went into like a Django IRC room and there was a bunch of core contributors, being rude to people trying to learn or saying, okay, you're using the wrong version of Python without like giving access to correct Docs or things like that. And that, to be honest, turned me off of Django for maybe forever. To be honest, if I picked up Python again, I'd probably go look at flask instead just because it's such as a sour experience with some of the some of the people running the project and, and I think that is just a key component of getting people to be really on board with you guys. And it I think you guys do a great job of it. Some of the best I've seen, to be honest.
+
+25
+00:09:08,899 --> 00:09:34,649
+Unknown: Well, that makes me feel great. I love it because our community kind of like it's a really good virtuous cycle because we you know, we wrote down these values, but the community was already like this, like the the open source project Gatsby was wonderful before the company existed. So we just were trying to like live up to the standards, the company, the community had said, and then you know, we the community mirrors us and we mirror the community. And we just I feel like everybody's making everybody better. It's really nice.
+
+26
+00:09:35,010 --> 00:11:07,409
+Wes Bos: Great. Well, let's jump into quick Gatsby refresher. I'm gonna go through the super quick because I'm we have had, I think two shows on on just Well, we have one on static site generators, which is Episode 34. And then we also did a, I think one of our more popular episodes this year, which was Gatsby vs. Next and we just broke down the ideas between those two cuz it gets me as a react based framework and so as next Yes, but they're very different things. So we broke down how each of those works. So go back to those episodes if you want to listen to, to the core idea, but I'm going to run through everything real quick. So Gatsby is a statically generated website web app. Next point I have here is that it's, it generates HTML files, which is great. Once you load the page, Gatsby picks it up again, and then rehydrates it into a full blown react application, where you can then do things like loading pages on demand and transitions and all that stuff. One of the really cool things about Gatsby is that everything is sort of backed by a graph qL API. I always say everything goes through Gatsby mean that your your images, your CSS, all of your data. And because everything is sourced through Gatsby, you have this amazing ecosystem of plugins that allow you to I think that's the the real power behind Gatsby is you can compress images, you can do really nifty pre loading things without really knowing what you're doing. And it just works amazingly transpiling, CSS converting markdown, all of that kind of cool stuff is just backed by the sheer fact that all of the stuff needs to first go through the graph qL API.
+
+27
+00:11:07,620 --> 00:11:36,450
+Scott Tolinski: Yeah, if you want to, if you want to knock someone's socks off with Gatsby really quickly, you just show them the image component where generates an image, maybe a blurry image and fades in the other one, or even better an SVG image that then fades in their image, Once it loads to give this insanely fast perceived loading time, even with decently sized images. That's like one of those those key examples that always show people when working with Gatsby, it's like, Look, look at how easy it makes some of this stuff, look at how easy it makes this, you know,
+
+28
+00:11:36,689 --> 00:12:27,720
+Wes Bos: Next up, we have the kind of there's three files behind Gatsby. And I think it's probably worth knowing about these files as we get into what themes are. So there's a Gatsby config file, which determines you kind of say what plugins you'd like to use, as well as some other site metadata that goes in there, and all the settings as to how your plugins work, that all goes in there. Then you have a Gatsby node, which is a this runs at build time. And it will allow you to hook into different points during the Gatsby build in there. You can do things like source content, dynamically create pages, create links, things like that. And then finally, have your Gatsby browser which contains code that runs in the browser? And you can I actually don't use this on my all that much myself. But you know, I look into things like routing service workers run it, what do you use it for it Scott animations? Oh,
+
+29
+00:12:27,750 --> 00:12:52,620
+Scott Tolinski: it allows you to sort of you couldn't you could build a wrapping component that wraps around things, because when Gatsby moved to Gatsby version two, you now have maybe a little bit, the entire page refreshes, right? When you go into a new page, essentially, in terms of the components that you use. So even if you have your layout there, you can't just wrap something in an animation. So this gives you the opportunity to wrap the entire route change in an animation. So
+
+30
+00:12:52,649 --> 00:13:12,899
+Wes Bos: yeah, so you can go a bit higher, because like in next chasse, we have the underscore document and the underscore app, and these are the higher level than your page. And at Gatsby level. I thought that the highest you could go was was the page but by using these you can you can maintain that component. Well, it could register like
+
+31
+00:13:12,899 --> 00:13:20,070
+Scott Tolinski: a rapper and have that rapper do stuff. You could also do that where you you could make your own dividers and things like that if that right.
+
+32
+00:13:20,070 --> 00:13:22,110
+Wes Bos: Okay. Yeah, awesome.
+
+33
+00:13:22,380 --> 00:13:45,899
+Unknown: So Gatsby browser runs on the client side. And then Gatsby SSR does, what would be client side things during the server side render. So it's a way to, for example, if you were going to wrap a provider around something to get like an initial state, or to do things that would or if you needed to, like make sure that your your client side stuff doesn't break, because you're using a provider during server side rendering. You can stub it out or something.
+
+34
+00:13:46,320 --> 00:14:08,760
+Wes Bos: Ah, cool. That's good. All right. So that's the one on one of how Gatsby works. And what you're here today to tell us about is Gatsby themes. Because, like, maybe start us off with like, how do you currently do layouts in Gatsby? And what are Gatsby themes? I actually haven't looked all that much into it because I've kind of been waiting to talk to you on this about it here.
+
+35
+00:14:08,909 --> 00:15:57,360
+Unknown: Sure. landscape is you have your stutter, which is kind of like a prebuilt Gatsby site that you would run Gatsby new or you would clone and then you end up with kind of like the this is your config, all the plugins are there and the the like various settings. So you have to go in and edit that. And you know that that's worked fairly well. But the The downside is that it's really difficult to do things like get upstream updates, right. So if you if you're using a starter and that starter changes, you would have to manually port any changes pretty much as soon as you run Gatsby new because it's like creating a fresh clone. it deletes the Git history and everything so that you have your own. So the way that we're doing it in Gatsby themes. Gatsby themes are effectively just plugins, but they're plugins that can install other plugins. So the way that that would work is like for example, if I wanted to build a For a blog, to build a blog site, you would need to install like let's say I'm going to use MDX I would need to install Gatsby MDX, I would need to install the file system, I need to install some image processing, and a handful of other plugins something to style it with. And all of that then lives my Gatsby config with a theme and a blog theme, I can install all of those things into a Gatsby config, I can build the templates, I can set up some base styles, I can, you know, set up the the where the content is going to be sourced from. And then I can take all of that and I can package it into like an NPM module, then I can npm install my theme as a Gatsby plugin. And that plugin then has all of the stuff pre configured so that theoretically speaking, I could have a whole Gatsby site that runs where I've got a folder called posts, and that's got MDX files in it. And I've got a Gatsby config that installs the theme. And that's it. There's no no other code required to run that block. Hmm.
+
+36
+00:15:57,630 --> 00:16:03,600
+Scott Tolinski: So is there an opportunity for multiple themes? Does that make any sense? Or is that is that totally off base?
+
+37
+00:16:03,750 --> 00:17:18,720
+Unknown: Yeah, so so that's actually what I think is the most exciting thing about Gatsby themes is that they're composable. So you can horizontally compose them. So like if you installed the blog theme, and then later you want to do like set up a shop, you're not having to find a theme that does blog and e commerce, you just find an e commerce theme, and install that as well. And then now you have like a blog and an e commerce site both set up on your on your like simple Gatsby config. Again, no code written, you're just you know, you're just pulling content from where it needs to come from. And then what makes us really exciting is that if you want to vertically vertically compose themes, you can say, take your blog and your e commerce theme. And then put both of them underneath a like style theme that sets design tokens or overrides the header selectively, we have this thing called component shadowing, where if you've got a theme, and let's say that theme has like a header component, a post component and a footer component, and you want it to swap out the header, you can you can selectively shout out just the header component in your your site or a child theme. And it gets all the same props as the header component in the theme. But you can completely override it, including like you can do cool stuff like import the theme header and just add some new props to it so that it looks different or behaves differently than it would before.
+
+38
+00:17:18,830 --> 00:17:21,300
+Wes Bos: Are you familiar with how WordPress works and themes?
+
+39
+00:17:21,479 --> 00:17:43,890
+Unknown: Yeah, it's it's Yeah, really similar in, in a lot of ways to how WordPress themes work. But there's no without like the kind of global nature of WordPress themes where you're calling, like, you know, global magic functions. Yeah. Yeah. So it's, it's really similar in that in that sense, the major benefit here is that it's like WordPress themes. If you can install multiple WordPress themes.
+
+40
+00:17:44,520 --> 00:18:47,280
+Wes Bos: That's the end they WordPress themes that can have dependencies, and in logic inside, because sometimes you see that with WordPress themes as they just jam everything in. Or they say like, make sure you've installed these eight other plugins because there's no right no concept of dependencies in WordPress land. Mm hmm. That's really cool. It cuz like I had a Gatsby workshop a couple weeks ago. And people were asking about plugins. And I was like, well, let's just crack one open. And I was like, it's just a Gatsby node. And like, it's, it's not anything that you weren't already doing in your your Gatsby website. It's just that you took all of this, like these things that were related and possibly complex, and you put it into its own plugin, or in our case, now we're just gonna call it a theme. And you can package it up so that it's easily installable. And it also can live in like a separate repo, I imagine this would be super helpful for somebody who, like an agency that needs to reuse a certain theme over and over again, or reuse a set of optionality over and over again.
+
+41
+00:18:47,570 --> 00:19:15,750
+Unknown: Yeah, cuz what's really exciting about this is like you could create, like a Gatsby theme, opt in or something. And that would be like a way to have a bunch of base config and controls for just an opt in component that you could then drop in anywhere on on any other part of a site. So you can you can almost use it as like a an even higher powered design system, because in addition to packaging up components and styles, you can also package up functionality and data handling.
+
+42
+00:19:16,259 --> 00:19:45,540
+Wes Bos: Oh, yeah, because I'll probably bring a lot back to WordPress. But I think that's a lot of our users are currently moving from WordPress land to JavaScript, headless land and Gatsby is like the the main thing there. The thing about like WordPress themes, you can put functionality, but that's not really what they're for. You should probably put that into a plugin. With this. You can you can just package up how it gets its data, how it transforms its data, and how it displays it all in one go. Is that true?
+
+43
+00:19:45,800 --> 00:21:33,180
+Unknown: Yeah. And depending on how you structure your themes, like you can, you can get a piece from each thing. So it's probably a little early to talk about it. But we've we've got some ideas around what we're calling data abstraction which is which is going to be really exciting. But you know, the it all kind of boils down to this idea, which I think is pretty is fairly present in Gatsby already. And we just want to improve it with this next iteration, which is a teaching concept called the progressive disclosure of complexity. And what that means is that we're trying to set the abstractions in the right place, so that somebody who doesn't care how Gatsby works, doesn't have to care. You can just say, I want to blog. And I want to write markdown. And so I'm going to install Gatsby theme, you know, blog markdown, and I'm going to have a folder full of posts, and I have a blog, I don't have to care, like how that works, it just works. And then for somebody who wants to go deeper, they can selectively remove abstraction. So instead of having to go from like zero to 100, where if you you know, with, with some apps, you get like a great boilerplate, but as soon as you want to move beyond what it does, you have to kind of reject the whole thing. And now you're dealing with like all of the config. With progressive disclosure of complexity, you're able to say, Well, I want to change one piece, and then you can selectively eject that one piece and change it. So you get to kind of choose your own adventure. If you don't want to deal with graph QL. No big deal, you don't have to. But if you want to customize that query and do some custom components, absolutely, like just pull that out, if you want to drive all the way down into the Webpack, or Babel config hundred percent, we got API's for you to do that. But you should never have to, as a developer, you know, we're ultimately thinking like, we'd love to see this be something that designers could use, without ever having to write any code, they can just kind of install the right themes. And then set design tokens and make these like beautiful websites without having to write graph qL queries are figuring out how react components work, there's going to be tweaking.
+
+44
+00:21:33,800 --> 00:23:08,640
+Scott Tolinski: Yeah, I think that's such a huge thing. And we we've talked about a lot on this, this show in particular about how we're not fans of doing the complex sort of boring stuff that you have to do in web development that we all just sort of accepted as like this is config you have to deal with this is stuff you have to deal with. But yeah, reality things are getting a ton easier on all the fronts, just by simply making the hard stuff very easy. And in your case, you can like you mentioned the progressiveness of it, that being able to will only pull out the harder things, the deeper layers as you need to go. And I think that's absolutely fascinating, because again, like you You mentioned, having to eject from a platform, and then you're left with the entire config. And having to deal with that entire config can be really super daunting. And especially if you just wanted to install like, this is an out of date example. But in an older version of what's called a create react app, you had to eject to install sass, and a lot of people wanted to use sass, so then you're rejecting really quickly, and then you've lost sort of all of the benefits of having that initial platform. And you're sort of stuck having to learn Webpack if you don't know it already. So I'm absolutely fascinated by that progressiveness of that I think that's something that not a lot of people are doing in any sort of way like that. And that is something that I think Gatsby does very well, overall already. So the fact that it's just going to get more like that, especially with themes here. I'm very excited to hear about that. Hey, Wes, I wanted to take a quick break to do a sponsor now. I think it's probably a good time for that. Yeah. 25 minutes. Yeah.
+
+45
+00:23:08,670 --> 00:23:09,900
+Wes Bos: Yeah, I agree. Okay,
+
+46
+00:23:10,110 --> 00:24:28,830
+Scott Tolinski: cool. So really quick, I wanted to dive into a sponsor break. If If you want to reduce some of the complexity in your error handling, you'll want to check out one of our sponsors, which is Log Rocket. Now Log Rocket gives you sort of a view under the veil of all of the errors and bugs that are happening on your website, as the users are experiencing them yourselves, you get a play by play session replay, that gives you all of the Network tab it gives you as you counsel, it gives you the DOM, it gives you your Redux store at the time the user hit the bug along with a video. So you can see exactly what happened when a user clicks something and the whole thing blew up, maybe they click the wrong pixel. And that pixel disintegrated your website. So Log Rocket is going to allow you to trace find that error and see exactly what's happening. So you're gonna want to check out Log Rocket Log rocket.com, forward slash syntax, and you will get 14 days for free. So again, Log rocket.com forward slash syntax, try it out and see why this is the best way to get the visual insight into the errors and bugs that are happening on your website. Cool. So if you obviously don't have to write a whole ton of code to get started, you're not going to have any errors. So I think that's a nice little goal of Gatsby themes here.
+
+47
+00:24:32,070 --> 00:25:06,360
+Wes Bos: So what I foresee is like somebody goes out and gets like a real estate Gatsby theme, or a car salesman, Gatsby theme, or something that integrates with Shopify or something like that, in once someone activates this thing, because it has functionality and UI that sort of comes along with it. I know Gatsby doesn't really cover like UI at all right? Like it's not really the thing where like with WordPress when you activate it, you might get like a setting panel. That's, I don't sure if this is a really a question or whatever. But that's more something for your CMS. Is that right?
+
+48
+00:25:06,600 --> 00:26:17,670
+Unknown: Well, So currently, yes. Like the the way that Gatsby is built right now is like anything in the UI is in user land. One of the goals that we have for themes is that as we start moving through, and seeing what the community is coming up with, that, we'll start to see some we want to see people start to solidify around some conventions for how we want to handle that with with you eyes. There are some ideas. Jackson on our team, Jackson black on Twitter is he is working on something that he's been calling like, system UI and theme UI, which are kind of utility libraries that set various tokens, those could pretty easily be extracted into a like settings UI, if you wanted to make that a thing, where you choose colors and set like fonts and the you know, kind of the general spacing and stuff. So we're working on ideas for how to manage the way that something would look. But yeah, as as of right now, those are all pretty early ideas. And there's a lot of like, you know, we're hoping that it starts to solidify, but we're not quite sure what the community is going to kind of pick up and run with.
+
+49
+00:26:17,670 --> 00:26:18,480
+Scott Tolinski: Hmm,
+
+50
+00:26:18,480 --> 00:26:32,400
+Wes Bos: what about like, Is there any, any chance that you're going to take a stab at doing a headless CMS yourself? Or is that more something's left to all of the different headless CMS that are currently available?
+
+51
+00:26:32,760 --> 00:27:35,070
+Unknown: Like I feel like I should never say never, I think, at present, it doesn't seem like something that would be smart for us to prioritize. Like at the moment, Gatsby's in this really great space where like, what's good for Gatsby is kind of good for everybody connected to Gatsby, we are a tool that is like it makes headless CMS is more powerful. It's, it gives you more flexibility, as a developer, you know, allows you to integrate all of these third party tools really well. So if we start like launching a headless CMS, now suddenly, where we're kind of like, putting a like putting a weird spin on that relationship, I think that we if we find like a very specific need, that's like, ultra niche for Gatsby, then Sure, there might be a reason that we would start to do that. But ultimately, I think what we're aiming for instead, is more of like, how can we be really good at being like a layer of polish on top of the headless CMS experience? Okay. And that's, that's kind of what we've been thus far. And I think what we what we would like to continue to be as we go,
+
+52
+00:27:35,310 --> 00:28:19,890
+Wes Bos: Well, that's good first sponsors of this podcast that we've we've like, it's kind of funny, because we've had tons of sponsors on this podcast that our headless CMS is or jam stack based e commerce or anything like that. And even if you go to the jam stack conference, which Gatsby is always at, there's tons of companies that are sort of in that space right now trying to trying to make that work. And it's it's kind of funny, because like it Gatsby's the darling, and then everybody else is sort of this, this whole ecosystem is sort of built, not necessarily just around Gatsby, it obviously works with anything, any, anything that you could possibly want to use, but it certainly is a very common use case.
+
+53
+00:28:20,280 --> 00:28:28,530
+Unknown: Yeah, it's honestly one of my favorite things about Gatsby and one of the things that attracted me to the company is that it's, it's a very non competitive business model.
+
+54
+00:28:28,530 --> 00:28:29,520
+Mm hmm.
+
+55
+00:28:29,520 --> 00:29:58,140
+I kind of see Gatsby as a tide that has a potential to lift all ships. And so if we continue to do the stuff that we're doing, every advance that we make, makes, like everybody in the headless CMS community better. And when they make advances, you know, we have the opportunity to kind of elevate the best ideas so that other headless CMS does have an opportunity to continue to innovate or kind of like find a way to be compatible with whatever new thing is coming out. An example of that is, we have a product, our first commercial product is called preview. And the way that it works is that if you are working with a non developer on your team, and they don't want to have to run a local copy of Gatsby to see changes, like as they're making content edits, then preview allows them to have like a private URL, where they can see draft content, kind of hot reload the same way that you would if you were developing locally with Gatsby. And in order to make that work. Like you know, the headless CMS providers have to have like a web hook set up so they can notify us to pull in new content and all those sorts of things. But then like a headless CMS, like sanity.io has come up with this whole new innovation where they are basically opening up a socket and just streaming changes. So it feels absolutely instantaneous to do that. And so by, you know, by them building that, that makes our product better by us building preview that makes them you know, puts like a better use case in place for their for their feature. And hopefully we're like more and more headless CMS to start to play with that idea.
+
+56
+00:29:58,410 --> 00:30:28,110
+Scott Tolinski: Yes, and it is actually been a long time. A sponsor of syntax, and we've been sort of talking with them for a long time. So it's really great to hear how this I don't know this whole community is sort of growing together right now. And we seen the growth firsthand from when we first started talking about sites like Gatsby to now where the jam stack has just totally taken off in such a such a great way. And like us, has mentioned West that Gatsby is like the at the the darling of it. It's at the very forefront.
+
+57
+00:30:28,470 --> 00:31:18,690
+Wes Bos: Yeah, absolutely. It's pretty neat to see that. By the way, we should say like, Sanity is not even sponsoring this episode. But no, we don't talk about it, because they've obviously seen that pain point in people trying to use these tools. And they're just gung ho for making this a smooth process, because it is, is a bit of a bumpy ride people have been using their existing tools for for probably 10 years now. And now we start to see that we're not just moving to these types of websites, because it's cool. I think the the huge use case for moving to a headless jamstack with something like Gatsby is that it's is the performance, the actual user experience is going to be much faster. I think it's just a better experience for the developer and the user at the end of the day. Do you think that? Yeah,
+
+58
+00:31:18,750 --> 00:32:05,160
+Unknown: yeah, I think you know, the, the thing that's really cool about all this is like, it doesn't feel like we're racing people to get features to market, it feels like we are like in a brainstorming session with the entire internet. You know, it's like we sit around and, you know, we'll get in a, we'll get on a call with Sanity. And they'll be talking about some they're working on and we're like, oh my gosh, that's so cool. Like, we want to do something like that. And so then we start like, riffing on a like, complimentary tool. And that's been happening with with companies all over the place. And again, you know, you mentioned that Gatsby is kind of at the center of it, or the darling and I think that's explicitly because we see this as like a buoy for for other companies. And I think if we were standing there saying like, Oh, yeah, we're gonna take out headless CMS, or whatever, that suddenly becomes a significantly less welcoming environment to be in, you
+
+59
+00:32:05,250 --> 00:32:20,250
+Wes Bos: know, yeah. Yeah. That's interesting. I like it, because it doesn't seem that there is there's obviously competitors to this type of thing. But it definitely seems like Gatsby is just standing out. And a lot of the industry is sort of rallying around it, which is cool.
+
+60
+00:32:20,850 --> 00:33:09,840
+Scott Tolinski: Yeah, I think one of the things the reasons why that is, is just because of Gatsby's approach to the pain points of things that we all deal with. And I think they're very good about having ears open. Because for instance, we often talk about some of the the maybe the the barriers to entry for something like Gatsby, let's say you have a WordPress site. And a lot of times the barriers to entry are not even necessarily a barrier to entry. But somebody might say, Well, when I update my WordPress site, it updates automatically. And the front, we don't have to wait for any sort of rebuild or anything like that. Without Gatsby. And now Gatsby's hearing net with this streaming ideas, streaming data, you're seeing hot reloaded data, things like that, I just think that you guys have such a good understanding of what the community needs, and are building and iterating upon that it's one of the most exciting aspects about the platform overall.
+
+61
+00:33:10,080 --> 00:34:09,980
+Wes Bos: Alright, so quick break for one of our sponsors, which is Freshbooks. Kind of one reason why I'm so excited about this whole Gatsby thing is because I foresee the sort of industry of people who build small to medium sized websites for clients. That's pretty big industry. And a lot of those people currently work on WordPress, and we're starting to see people move over to something like Gatsby. And when you want to build people for those websites, you want to use fresh books. So go to freshbooks.com Ford slash syntax that's gonna get you a 30 day unrestricted free trial, you're going to Bill all of your clients, you're going to send them when they don't pay, it'll automatically send them update reminders that are not passive aggressive, you can log all of your expenses in there, you can keep track of how much time you spent working on all of your clients, check it out@freshbooks.com for slash syntax. So maybe that's a good question right here. Jason, what do you think about WordPress,
+
+62
+00:34:10,259 --> 00:35:16,400
+Unknown: I love WordPress. I mean that's how I made my living for for almost a decade. I had an agency after I got out of my band and and was doing exactly what you just said building websites for small to medium businesses did that for you know, a very long time built a ton of websites and and WordPress was almost always the tool of choice because it just had it had the flexibility that I needed, you know, we we set up a kind of like a really simple child or base theme. And then we created a child theme of like, bespoke everything for for each client. Mm hmm. Which is great, you know, is a really powerful tool and so I kind of you know, I still think it's a great admin interface I think, if they can if they can work through the problems of this kind of Gutenberg turbulence, especially around like the the accessibility problems they've been having, and and Kind of the other just seems like a little bit of like PR weirdness around Gutenberg. So I think if they can weather that storm, I think that WordPress still has a great opportunity to be, if not an all in one solution, at least a really heavy player in the headless CMS space.
+
+63
+00:35:16,710 --> 00:35:35,790
+Wes Bos: That's really cool to hear. It's funny that you you've sort of had the same grow up as me as well. You go from music to sort of agency world. Do you see that Gatsby is gaining popularity in the agency's small website space, like, like, or do you even know like, what type of person is using Gatsby?
+
+64
+00:35:35,790 --> 00:37:21,860
+Unknown: Yeah, we're seeing agencies are actually one of the bigger upticks in Gatsby usage. And I think there are a lot of reasons for that we had Brian Webster from delicious simplicity has has talked about this a lot and his agency, they were able to do this amazing thing where they were able to basically cut the cost of their bids in half, which meant that they would win more bids. But they were building so much faster, because everything was portable, that their their hourly billing went up. So effectively, they were able to make more money by charging about half because Gatsby cut so much of the like boilerplate and DevOps and other other kinds of Yak shaving out of their their process, which is a really cool thing. But yeah, we've seen like, some some of the really exciting ones like Nike launched the Colin Kaepernick just do it campaign. The website for that was a Gatsby website built by an agency. We're seeing some some really cool stuff from like, Well, actually, I guess just like a lot of agencies are starting to use Gatsby is especially for like landing pages because it's so quick to get something up and out. Yeah, but we're starting to see more and more advanced stuff. I mean, I it's kind of on us as a company to to do a better job of showing what's possible. So like, you know, like shop Flamingo, from Harry's, the razor company, they just built like a really cool ecommerce site with Gatsby that's got like, authentication and and you know, shopping, you can buy stuff. It's really, really cool. And that's a full Gatsby app. That's not really agencies. I guess that's that's just a company. But yeah, it's it's been really, really interesting to see. And I do think that the agency stuff is one of the big markets for for people who are going to get into Gatsby because of all the things you said the the portability and the the like, you know, lack of Yak shaving all that good stuff.
+
+65
+00:37:22,260 --> 00:37:47,480
+Scott Tolinski: So the e commerce bit, I think the our large part of our audience would be really interested to hear a little bit more about how people are doing e commerce on Gatsby. I know one of the developer on level up tutorials. Eric did a site rachio he was built with Gatsby. I think he use Shopify with Gatsby. So there is a number of options between like snip cart, Shopify, what sort of approach Are you seeing a lot in the Gatsby e commerce space?
+
+66
+00:37:47,670 --> 00:37:58,590
+Unknown: I think the one that we're seeing the most is Shopify. And I think that's because we have a canonical example, open sourced. Our own swag store is a Gatsby app built on Shopify. And which is your
+
+67
+00:37:58,590 --> 00:38:05,760
+Wes Bos: awesome swag, by the way. Cheaper than going to target and buying a T shirt. Just go buy a Gatsby shirt.
+
+68
+00:38:08,550 --> 00:39:05,610
+Unknown: Yeah, we we wanted to keep it like we actually lose a little bit on it because we don't charge for shipping. But we wanted to keep it basically a cost and and we did that because we first of all, want everybody to be able to get Gatsby swag. And second of all, because we give it away like anybody who contribute to PR or launches a tutorial or or like helps out in the community we we give you a discount code for swag and invite you to join the the Gatsby. org as a maintainer. So that's like a that's a big thing for us. And we wanted to make sure that the swag was something that people would actually want, which is why we put a little more effort into it and tried to get like really cool things from around the you know, from like a good ideas that we borrowed or just outright stole from other projects that are doing cool things and wanted to make sure we had items for women like we got a sentence crunchy and like a racerback dress which the Razorback dress I straight up stole from Tracy Lee, from the node node swag store. Yeah, you know, it's been like it.
+
+69
+00:39:06,149 --> 00:39:07,290
+Scott Tolinski: That's the way to do it, though.
+
+70
+00:39:08,580 --> 00:39:54,570
+Unknown: Well, yeah, right. Like, yeah, no, I'm not gonna try to invent the wheel. So it's really nice to just see what everybody's stoked about and be like, cool. Let's do a Gatsby version of that. But yeah, to get back to your original question, the the e commerce thing, because our swag store is open sourced, most people have been referring to that as kind of their starting point, if they're doing e commerce. I've also done a live stream with with Thor from stripe, where he taught me how to use it for like, more simple cases. So if you were going to sell a one off thing and didn't need a cart, then stripe is really really good for that. They also have like a full ecommerce solution that, that I didn't play with that much. But it's, it looks like it's pretty full featured. So if you want to use stripe instead of Shopify, there's also some some open source code out there. I'll be it a little, a little more proof of concept.
+
+71
+00:39:55,170 --> 00:40:17,480
+Wes Bos: That's pretty interesting. I also heard of like, there's always questions around like, how big Have a website is too big for Gatsby, you know, just because the the whole idea is that you do have to regenerate the entire website at some point. But I have heard of a couple for now many thousands of products and they do regenerate it 678 times a day. I don't have anything to say about that.
+
+72
+00:40:17,630 --> 00:41:56,940
+Unknown: Yeah, I mean, so I guess the the major things that are worth considering with Gatsby are like, it depends on how quickly items go up and down. Because if the items stay fairly consistent, and what you need to keep is like whether or not it's in stock, and what the price is based on, you know, whatever sales or something, then you could statically render all of the products, but then dynamically pull in the inventory status and the price. And at that case, then you don't actually have a whole lot of rebuilds required. Because the you only need to rebuild when a product appears or disappears. So if you're comfortable showing a sold out for a while until it rebuilds again, and and then it goes away, then you could run you know, huge number of products on the store, where it would start to get kind of tricky is if you wanted to rebuild, you know, 10s of thousands of projects or products on every price change every inventory change, you know that that could get a little hairy, and it's something that we are working on. We've got a we've got a proof of concept right now in development of incremental builds, which I'm super excited about. Yeah, yeah, we've been working with Anthony morcar, who is, you know, one of those like kind of mad genius people. And he's been sitting and tinkering with Gatsby for a long time. And he just he's been subtly making changes to the underlying code of Gatsby so that we can do, like, only rebuild what actually changed. So some really, really powerful stuff is coming down the line that way that's gonna start to close that gap on whether or not you know, you can run like if you want a million page site. Yeah, your first build is going to take forever, but after that, you'll only be rebuilding what actually changed?
+
+73
+00:41:57,330 --> 00:42:28,770
+Scott Tolinski: Sure. You mentioned that having e commerce the products be statically built, but the inventory be dynamic? Well, I've been wondering a little bit about that dynamic aspect in Gatsby because typically, people think static, static static so like what it does, the Gatsby team has like a the standard way of doing dynamic content, the way that they would prefer you even using things like the graph qL API's? Or do you recommend throwing another graph qL way of connecting Apollo or something into a Gatsby site? Or what's the suggested solution there?
+
+74
+00:42:29,130 --> 00:44:00,000
+Unknown: I've done it a couple of ways. I think the the current most popular and probably best documented solution is to use Apollo. If you wrap your site in an Apollo provider, then you can do dynamic queries. And like you can send mutations as well. So if you want to do rewrite from your your website, you can, Apollo makes that really easy. They've got great Doc's they're a great team very helpful. I've also done it in way kludgy ways, like just installing axios and firing off POST requests. So you can do it whichever way makes the most sense to you, depending on how full featured your solution needs to be. So like I the one where I did it cleverly, I just needed to submit one little feedback widget. And so I just used axio, so that I didn't have to install like a big library to make that work, or I guess bigger than axios. And then for something like no swag store, I use the Apollo provider because that that gives us way more flexibility and and allows us to use not exactly the same graph qL API's because the Gatsby graph qL API's only run during the build, we don't keep those live. That's one of the benefits of Gatsby is like, once you've built the site, it just sits in a static asset folder. And that means that you've got, like, in addition to the performance benefits, like lowered costs, because you're not like maintaining or scaling a node server database, and also increased security because if somebody hacks a Gatsby site, there is no path to the server or to the database, because they're just just a bucket on a CDN, so they can deface the site, but they can't like get to user data or anything.
+
+75
+00:44:00,300 --> 00:44:02,010
+Scott Tolinski: Yeah, that's, that's great. Yeah.
+
+76
+00:44:02,220 --> 00:44:13,020
+Wes Bos: So I know you just got back from all hands meeting in New York. With Gatsby. Is there any secret things you can tell us? Is there anything secret about Gatsby? Or is it all just all open source?
+
+77
+00:44:14,460 --> 00:45:23,280
+Unknown: We uh, we Yeah, we don't really do a lot of secret. We do have private repos for like the the commercial part of the business. Yeah. You know, we we had a Gatsby days where Kyle Matthews, the the CEO basically fully announced what the the commercial business goal is. And so you know, we've got preview out now we're trying to get preview to an open beta here really soon, so that anybody who wants to can sign up and try it, and then to a general availability shortly after that, and then we've got, we want to get like a customized Gatsby build pipeline in place. because our goal is to in order to do those incremental builds, you have to be able to like stand up parallel machines, which means that we need like Kubernetes clusters and these kind of auto scaling things. There's a lot of infrastructure that goes into it to actually make it fast. And in order to do that, we need to have a Like product that we can sell because it's like otherwise you got to build it yourself. And it's going to be really expensive and cumbersome. And you're back to DevOps. So kind of what Gatsby's product is going to be, is the same level of ease that you have to develop a Gatsby site locally, we want to create that same level of ease for like deploying and managing, like on a on a large team, a Gatsby site.
+
+78
+00:45:23,580 --> 00:45:37,350
+Wes Bos: Cool. What about Is there anything happening with queries right now, in terms of them? Are those expected to change at all? I know, there's some pain points around static versus dynamic queries that it can only be done on a page.
+
+79
+00:45:37,590 --> 00:47:27,030
+Unknown: Yeah. So said on the the core team has been working on a proof of concept of kind of a unified query in Gatsby, we're also we we shipped a while back, something called schema customization, which allows you to do like you get a little more control over the Gatsby query, instead of being required to use whatever the whatever is inferred in the schema. So between those two things, we're hoping that that starts to unify things. The other thing too, is, we're really just trying to get to the point where unless you want to use graph qL, you shouldn't ever have to see it. Hmm, that data abstraction stuff that I talked about, is going to play a big part in this because one of the things that we're working on that that schema customization unlocks is the ability for like you, as a developer can declare a generic post type, for example. So you know, Title, Author content. And behind the scenes, you have an adapter, so you convert a WordPress post into a generic type. And then the theme gets built on the generics. So later, you could swap out your adapters and use markdown and the data source changes. But like you, as a developer, don't have to touch the graph qL queries, because the generics are already written. So effectively, you can just expect that all of your components are going to get a post object with a title, date, or title, author and content. And you can just use that, regardless of where the data came from. So we're trying to you know, again, it's just another of that, like progressive disclosure of complexity. You shouldn't have to deal with graph qL at all. But we are going to be working to make the graph qL interactions smoother. We really want to get static queries to the point where they they can be dropped in anywhere and use variables. Cool. I know that's at least the current stated intention. We'll see if, if that ends up being possible as we get further into the design. Sure. Yeah. Because the way that works is very complex. There's a lot.
+
+80
+00:47:28,260 --> 00:47:35,790
+Wes Bos: Yeah, it's it's not a hard thing to it's, it's not an easy thing to solve, right. Like you think like, oh, there's variables, right. But the because it
+
+81
+00:47:37,530 --> 00:47:43,920
+Scott Tolinski: does say that. It is tossing the variables. That's cool. Just add an option. Yeah. Just worried. Yeah.
+
+82
+00:47:44,640 --> 00:48:07,740
+Unknown: Yeah. And we the solutions, we found that are easy, add even more restrictions. So the way that you can use them, which seems like a bad idea, because now it's like, not only does it work in a way that's not consistent across queries, but now it works in a way that's inconsistent across queries. And there are magic rules that you have to know. So we're trying to figure out how to how to solve them in a more robust way. Cool.
+
+83
+00:48:08,100 --> 00:48:13,560
+Wes Bos: All right. I think do you have anything else to say? Or Scott or Jason?
+
+84
+00:48:13,979 --> 00:48:15,180
+Scott Tolinski: I don't have anything. Yeah.
+
+85
+00:48:15,180 --> 00:48:17,340
+Unknown: Oh, I'm, I'm happy.
+
+86
+00:48:17,609 --> 00:48:31,710
+Wes Bos: Cool. All right. Well, let's get into some sick pics. Sick pics, our picks that are sick. Things that we love in our life. I don't know how to how to describe it. It's a sick pick. Do you have a sick pick for us today? Jason? Yeah,
+
+87
+00:48:31,710 --> 00:49:04,290
+Unknown: I have been. I've been talking about talking with you about this actually on Twitter. I just bought a kamado Joe one of those lag grills. And I have been absolutely loving that thing. And, like, I feel like it's one of those things where I bought it. And I was like, this is a stupidly expensive thing to buy. And then I got home and I cooked like I made pizza with it. I've done burgers and steaks. And it all comes out so much better than when I tried to do it in my oven or on my on my stove like my stovetop. And so that that is probably the thing I've been most excited about recently.
+
+88
+00:49:04,649 --> 00:49:39,660
+Wes Bos: Man I love I so I've got a Big Green Egg, which is the like even more expensive version. But the tomato is the kamado Joe like sort of swooped in and it's cheaper and they fix a lot of the design flaws that the Big Green Egg has. And it's just like so good. It's the same thing. At the end of the day you have charcoal. And people always think like it's kamado Joe versus Big Green Egg but we're really together versus the trigger. Electric pellet Easy Bake Oven grill people. You know that? Do you know what the trigger is? Yeah,
+
+89
+00:49:39,660 --> 00:49:42,930
+Unknown: when I when I bought the tomato, Joe, they were trying to sell me one of those triggers.
+
+90
+00:49:42,930 --> 00:50:23,520
+Wes Bos: Yeah, everyone knows like everyone does that. They're like, Oh, I'm gonna get a smoker and then they come back with it. And I know there's a lot of people that actually have these things, especially now because Joe Rogan is now advertising for them so everybody's going to get one. And it's funny because it's not as romantic as Like getting the charcoal and lighting it and the smoke and the it's like an art right and then the the trigger is just, you put pellets in, you plug it in and it goes and it makes amazing food but you you lose the sort of the romance of, of actually smoking weed. I was saying the other day, it's like the instant pot of smokers where you just like, it's amazing. It's just there's not a whole lot to it.
+
+91
+00:50:24,720 --> 00:50:41,820
+Unknown: Yeah, and as an instant pot owner i can i can empathize with that, like I love you know, I feel like you have to opt into your complexity, like, like just pulling that back in. Like I really like the work of using a charcoal grill. I really don't like the work of like minding a Dutch oven or something.
+
+92
+00:50:42,090 --> 00:50:49,290
+Wes Bos: Totally, totally. Exactly. It's it's a funny place to go to. Man, I forget what my sick pick was gonna be. I'm just gonna pick it up. I
+
+93
+00:50:49,290 --> 00:51:20,670
+Scott Tolinski: got a I got a good theme here. I gotta keep the theme gone. Go fine is going to be another thing that eases the complexity of something that could be considered a process, right? I'm people who listen to the show. No, I drink a lot of tea. One of the things that I use in my everyday life 24 seven is my zojirushi water cooker. It's A water boiler. That's the standard. I always call these things water cookers and like a tea kettle, I'd be like where's the water cooker and my wife would be like you need a kettle
+
+94
+00:51:22,050 --> 00:51:23,430
+Wes Bos: cooker. Yeah, the
+
+95
+00:51:23,430 --> 00:52:12,180
+Scott Tolinski: water cooker. It cooks the water. So this is LG Ruchi. It basically boils the water it keeps at the very specific temperature will keep on set to 175. Although you if you're like a very you know really intensely about it, there's actually one that allows you to set the exact temperature This one is just as for temps, the one that I use, it's four liters, keeps your water hot 24 seven, and I use it for not only tea, but I use it for like oatmeal in the morning and pop Bob in a bowl of oatmeal and said I'm going to cook up some water or microwave or anything, you just push a button and you get 175 degree hot water to cook it ready to eat. I this thing has made my life better every single day that I've owned it and I've had it for maybe like two and a half, three years now I absolutely love my zojirushi. So great, great buy if you're interested in tea or you need hot water on demand. This thing is really really super slick.
+
+96
+00:52:12,689 --> 00:53:29,700
+Wes Bos: I'm gonna keep going with the the food thing here and in just sick pick just a good thermometer. So I think I need a new one. Part of why it scares people about cooking is that they're gonna die by eating some sort of raw chicken or something like that, or part of what scares people is that they're going to overcook something and it tastes disgusting. So a really good instant read thermometer, not one there's you can buy them at like home Outfitters or something like that. And they're like, five bucks, and they they're not good because you have to sit there for, I don't know, like 30 seconds while the thing like gets up to speed. But an instant read thermometer will it's not usually instant, it's within five, four or five seconds, it will help you be a better cook because you'll know exactly where your food is that may never have to do that thing where you cut open a piece of meat to make sure it's not raw inside and then you you sort of Runic that juices start flowing out. So the best instant read thermometer as you can get are called thermal pen. There are 100 bucks, I found a pretty good alternative. That's, I don't know 2530 bucks called the what is it called? Mr. Schaeffer. It's one of the stupid Amazon one, but it works awesome. I highly recommend you get some sort of decent thermometer digital instant read thermometer to make yourself a better cook.
+
+97
+00:53:30,120 --> 00:53:35,580
+Scott Tolinski: Wes, I'm gonna be sending you a couple of Amazon referral books now because we need one of these. So I'm going to be picking one up.
+
+98
+00:53:35,610 --> 00:53:53,430
+Wes Bos: Oh, wait, hold on. Let me get my link for you don't buy your link. Man, I do not have things that I've given Scott to buy and Scott has convinced me to buy is hilarious. Yeah. What about shameless plugs, Jason.
+
+99
+00:53:54,390 --> 00:55:08,940
+Unknown: So I'm gonna plug my weekly live stream. So every Thursday at 9am Pacific I get on and stream with, with somebody in the community live on Twitch at twitch TV, slash j lengstorf. We do all sorts of stuff like this week, I'm going to get on with Bram Adams from algolia. We're going to add a search to to a site. I'm getting on with Sean Wang from Netlify. We're gonna use Netlify functions. I'm going to do something with air table do air table is a CMS. And then one that I'm really excited about, oh, I meant to talk to you all about this. I'm going to get on with Henry Zhu. Who runs. He's like the core maintainer on babble, but he also runs a podcast called hope in source. And we started playing with a Gatsby podcast theme that amberly Romo built on our team. And she based it on the open source setup. And Henry and I are going to get together and stream like building out more functionality to it including taking yalls podcast player and turning it into something that that Yeah, we want to like turn it into a component that we can use us inside the thing and we wanted to do, the only feature that we wanted to add that yours doesn't have is we want you to be able to click a timestamp and jump to that part of the
+
+100
+00:55:08,970 --> 00:55:11,250
+Scott Tolinski: Yes. Yeah, yes.
+
+101
+00:55:12,360 --> 00:55:20,100
+Unknown: So yeah, I'll talk I'll talk to you more about it offline, but I would love we really I'm really excited about that one cuz it's, it's gonna be really fun to build.
+
+102
+00:55:20,250 --> 00:55:21,810
+Wes Bos: Oh, that's cool. Well,
+
+103
+00:55:21,840 --> 00:55:22,530
+Unknown: yeah, super cool. We'll
+
+104
+00:55:22,530 --> 00:55:29,580
+Wes Bos: put a link make sure you send us a link we'll put that in the show notes. Definitely. Cool Scott shamelessly plug your things
+
+105
+00:55:29,820 --> 00:56:10,350
+Scott Tolinski: shamelessly plug level up tutorials.com forward slash pro sign up to become a pro and you'll get access to the latest level up tutorials courses, including pro Gatsby, which is one of the I would not even one of the it's not even like up for debate. It is the most popular course on level up tutorials. So if you want to learn Gatsby pro Gatsby two is 26 videos to teach you Gatsby However, if you want to learn React Native the latest level up tutorials course is going to be on React Native and it's being taught by a guest instructor React Native expert, Spencer curly. So I'm so excited about this series. And if you are interested in learning React Native head on over to level up tutorials comm forward slash pro and sign up today,
+
+106
+00:56:10,590 --> 00:56:35,580
+Wes Bos: Wes bos.com forward slash courses has a list of all of my courses, you can buy one, you can get one for free, you name it, check it out, use the code coupon code syntax for 10 bucks off. That's it for today. Thanks for tuning in. Thank you so much, Jason, for come in and spending your time with us and schooling us on all that is Gatsby in Gatsby themes. I think this is really cool. I'm excited to see where it heads over the next six months or so.
+
+107
+00:56:35,700 --> 00:56:40,170
+Unknown: Yeah, thanks again for having me. And, and yeah, just get awkward at the end is
+
+108
+00:56:41,340 --> 00:56:47,160
+beautiful. All right. Well, we are gonna wrap it up with a piece. Yeah. All right. So I gotta say peace, peace,
+
+109
+00:56:47,550 --> 00:56:48,150
+peace.
+
+110
+00:56:53,250 --> 00:57:03,030
+Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

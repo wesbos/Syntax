@@ -1,0 +1,540 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax,
+
+2
+00:00:02,820 --> 00:00:10,590
+Unknown: the podcast with the tastiest web development treats out there, strap yourself in and get ready to live ski and West boss.
+
+3
+00:00:10,619 --> 00:00:21,030
+Wes Bos: Welcome to syntax, the podcast with the tastiest, the yummiest most delicious treats on web development around.
+
+4
+00:00:22,019 --> 00:00:22,530
+Unknown: Yeah.
+
+5
+00:00:23,099 --> 00:01:06,420
+Wes Bos: Today we're gonna be talking about the fundamentals, we're sort of kicking off this new series of tasty treats that is talking about what are the fundamentals like, what do you need to know, before or during getting into interviewing, getting into picking up frameworks like like, what is it worth knowing? And at a bare minimum, before you dive into these things, as we'll talk about in a second, but like we are always talking about, like, the fundamentals are so important, and it's kind of an interesting place. So we're gonna try to distill what are the fundamentals today of HTML, CSS, and then we've got some other topics, obviously, JavaScript, and maybe server side, maybe, maybe some design stuff. So talk about that with Mr. szalinski. How are you doing today?
+
+6
+00:01:06,899 --> 00:01:25,320
+Scott Tolinski: I'm all over the place, man. We just recorded an episode a minute ago. And it was like double talking. And yeah, so I am still getting into my routine here with her new baby. And yeah, I'm just, I'm just I'm ready to go. But I'm holding on for dear life right now. So yeah,
+
+7
+00:01:25,380 --> 00:01:30,660
+Wes Bos: I'm enjoying our my good sleeps until ours comes, which could happen any day now.
+
+8
+00:01:30,690 --> 00:01:31,830
+Scott Tolinski: Yeah, good luck.
+
+9
+00:01:31,830 --> 00:03:23,639
+Wes Bos: Yeah, thank you. So we are sponsored by two awesome companies today. First one is century's going to do all of your error and exception tracking logging information about what happened, as well as Freshbooks, which is cloud accounting software for small businesses, freelancers, anybody that's got to charge some money and get paid. So let's, I thought I would just sort of like, talk about it real quick. On Friday, I tweeted this thing out, I tweeted a screenshot to a Reddit thread, or somebody said, just an observation. I've been interviewing candidates for a web dev position, a serious lack of knowledge in HTML and CSS. I feel like a lot of up and comers are rushing to cool frameworks react to the Angular, whoever, when tested on building a simple landing page, they fail out, I fell down this hole before, it's good for you to make sure that you have some solid understanding building blocks. And then it goes on to list some of the what he thinks are, are helpful. And I kind of like this thread, because obviously, it's somebody who is actually hiring people, like I'm looking to hire someone and I want to, and it's sort of like a little pitfall there. So when people see this kind of thing, we all start chanting like, the fundamentals are important. The fundamentals are important. I'm sure I've said it a million times myself. And I absolutely agree. But at a certain point, like you also, like I understand why people are rushing into frameworks, because that's what people are hiring for. And you can't just sit around, like learning the fundamentals and doing this like five year journey to really nail the fundamentals like you got to get into it. And quite honestly, I didn't start with the fundamentals. I started with trying to like, shoehorn a jQuery plugin into a WordPress theme that I didn't build either of and then I sort of backpedal then I wish I had done. What about you, Scott, did you learn the fundamentals first?
+
+10
+00:03:23,880 --> 00:05:09,870
+Scott Tolinski: No, yeah, no, I didn't. But I learned them. And that's what's important is that you have to treat them with some degree of well, not some degree, you have to treat them with absolute importance, but at the same time, don't treat is like the only thing I like to think about this in in breaking, we always used to say, without a good foundation, your house will fall down in terms of like so I for those of you don't know, I've been breaking or breakdancing for a long time. And the fundamentals and breaking are like musicality related, you're sort of dancing. You're doing maybe the footwork stuff where you're sort of running around on the floor, that stuff. And for people who come into breakdancing, they didn't watch that stuff. And we're like, well, that's why I want to learn breaking. No, they watch somebody spin on their head. And they're like, that's super cool. Like, wouldn't it be cool if I could do that? And so yeah, some instructors would like scare people away, because they would say, okay, you want to learn how to spin your head? Well, you need to spend two years just dancing without even touching the floor. And like, that's not why they're here. They're here to learn the fun stuff. And the fundamentals aren't always the fun stuff. And so no, regardless of what you're going to do, like you're gonna say, well just make learning the fundamentals fun. We'll put some games behind it, like people have fun when they get into building stuff, and when they see wins, and they see progress, and you're not going to see progress, just memorizing a bunch of syntax and names for things. And so the point here isn't that you should ignore the fundamentals. The point is, is that you need to learn the fundamentals. But at the same time, you need to get your hands dirty, you need to learn a little bit, but we want to talk and we want to do our very best to make learning so These fundamentals of fun in this episode is the best we can or at least give you an idea about what these fundamentals are in terms of CSS and HTML specifically.
+
+11
+00:05:09,870 --> 00:05:42,000
+Wes Bos: Mm hmm. And I there's I was just reading through all the replies, obviously, people have opinions all over the place on this sort of thing. And people are saying like, like, why do you need to know the fundamentals? I never used them. I only use this like, angular framework for doing this specific one was I just use Angular for media queries. I don't write them by hand. I just use this like Angular framework in that. And I think that's, that's fine to use that. And I bet that you could probably figure it out once you fall back. But there's a sweet by john Philip,
+
+12
+00:05:42,000 --> 00:07:49,500
+Scott Tolinski: I'm gonna butcher it ready. Cheerios, serious. s IR II s, he says abstractions work well until they fail. And then you have to debug them. knowledge of the core fundamentals of web is kind of a big deal. And I agree, because often I see people, why is bootstrap doing this? Have you ever like, Wes, I'm having trouble with this, like, very specific WordPress theme. Yeah. And that's all I only know how to build stuff on this like, Child Theme subset of a very specific thing. And great, you're probably doing really well in your thing. And I definitely think that you should double down on being a specialist in that. But when things break, you definitely need to know how, like a little bit of PHP works. So you definitely no need to know how the how like media queries work under the hood, so that you can debug it, and not just say, Why is my abstraction here not working? Yeah. And you see this all the time, with people asking for help when they're just getting into some of this stuff. And they want to ask for help first about like, Hey, I use this ID all over my website to do some styling, I use this one ID and now things are behaving badly, or the specificity of CSS getting in the way of why is this thing being overwritten or whatever. Again, we're gonna be talking about so many of these things in this episode. But really, the like you mentioned, the fundamentals really come into play here, not only when you have to debug, but when those tools that you're used to using aren't there anymore, either, you know, Angular is not always going to be here, and some other system will be. And if you understand what the core functionality behind everything is, you're never going to feel like you're lost with any of this stuff, you're going to know exactly what to do. And really the most important fundamentals in my mind, in front end web development, flat out period, the most important ones are HTML and CSS, because the entire web is written on HTML and CSS. It's been that way for a long time, and will continue to be that way. And I know, you know, you got CSS and j. s, we got j s, right and everything. But JSX is still HTML in a lot of ways. So you got HTML, you got to know semantics. Well, at the
+
+13
+00:07:49,500 --> 00:08:33,690
+Wes Bos: end of the day, if it's just outputting, HTML and CSS and something goes wrong, you need to understand how it's working. Right? So let's maybe jump into like, what are the the fundamentals HTML is pretty, pretty simple, I think, semantic markup, knowing what all of the HTML elements are, what they're used for. And like, in some cases, they're they're meaningful, like h1 through h6 tag is meaningful. The like, a birth, the abbreviation tag, there's the paragraph tag, those are very meaningful. And then in some cases, they're they're not all that meaningful, like a div, like what is a div? Right? Like, what is it for? And sort of like understanding what the what the difference is between those two? And why would you ever use a div something like that.
+
+14
+00:08:33,720 --> 00:08:43,909
+Scott Tolinski: But there's also meaning in the meaninglessness of a dip, write the fact that a div is meaningless, yes, is inherently meaningful. It's got it,
+
+15
+00:08:43,950 --> 00:08:50,580
+Wes Bos: it means a lot that it is meaningless. It's like the whole null in JavaScript, it is a value of nothing.
+
+16
+00:08:51,049 --> 00:09:13,399
+Scott Tolinski: Right? Right. It has no semantic meaning. And it's important that you need to know when you need to use something that has semantic meaning versus when you don't aka a section aside, any of those things that you replace an article that you replace will typically would have been a div, the main tag, remember when we got the main tag that was pretty sweet, no more divs with an ID of main. Now, that's the main tag.
+
+17
+00:09:14,850 --> 00:09:53,370
+Wes Bos: Along with that is accessibility basics. I think that this is sort of underrated. And even in my own JavaScript course that I'm doing right now is, there's two things that I'm making sure, is going to be included in my JavaScript course. It's a security and accessibility because like, these are things that should be known up front rather than sort of look back on later, we did an entire show on accessibility. Just going into like, what are the things that you need to know about to in order to to make sure that you're not like, accidentally being a jerk to somebody on your website who has a disability or someone who just in general, making a good website?
+
+18
+00:09:53,779 --> 00:10:42,919
+Scott Tolinski: Yeah, yeah. So um, let's get into some of the attributes that you have on a HTML elements. First and foremost is the one that you see all the time is ID. And Id is most frequently misused by using multiple IDs that are the same aka, you have a div, that's the main ID. And then you have another div. That's the main ID, then maybe add another one all on the same page. And you know, what an ID is for it's for an identification of a specific thing. So when you give things more than one things, the same ID, you're sort of saying all these things are the exact same thing, which isn't correct, right? Well, an ID should be a unique thing that is only applied to one thing on the page. And that is that same thing every single time.
+
+19
+00:10:43,350 --> 00:11:38,039
+Wes Bos: I also have a bunch of like class related ones here for name and action. These things make even if you are doing your forms in JavaScript, the foreign name and action attributes of a form tag, knowing what they do how you associate labels with inputs, what happens when you submit it, all those things, they make even a form submission in JavaScript, I think, much easier. Like I'm very big on using the just like regular HTML attributes in my JavaScript, as well as using Aria attributes for my CSS, rather than adding a class of current or something, or adding a class of like, highlighted or something like that. Just go and grab whatever the equivalent Aria one is, and then use that to actually style this thing thing, because then you're killing two birds with one stone, you're making it accessible. And then you don't have to manage these like weird classes of like, highlight or whatever.
+
+20
+00:11:38,490 --> 00:13:21,390
+Scott Tolinski: Yeah, yeah. And that's a really, that's an interesting thing that I think is lost on a lot of newer people that they may not even know that you can use those to target an item in CSS. And so they might think they might reach for a class right away. And a class is one of those things that we use, mostly just to use just to assign CSS. And so that's just another one of these huge foundational elements is a class no classes, unlike IDs can be used all over the place. And the classes are really just your denoting that something what it is, and you can use that class as a select door, as we'll get in with a selector is in the next section in your CSS to identify some visual attributes to this thing. Okay, so I, you know, the HTML side of thing, it seems like there's not a whole ton here, right? You have accessibility, you have attributes do semantics, but each one of those categories is pretty deep, pretty deep. Well, I mean, specifically, you could spend probably an entire 30 minute episode talking about form HTML form best practices, because forms are difficult in HTML, and you got to know how everything sort of works and functions in it should be done. So that you're building an assessable form, you're building a form that can be used by everybody. And you're building a form that is just well structured, and, you know, just correct. But HTML overall, is like that. If you're using the right semantic templates and rights, right, semantic tags and, and all those things, you you're inherently starting to build a more accessible website, for screen readers for things that utilize and use those semantics the way they're designed to be used.
+
+21
+00:13:21,450 --> 00:14:20,909
+Wes Bos: You know, it's one thing that drives me nuts, when we're talking about ideas here is people think like IDs are bad. And so they never use an ID anywhere, because classes can be reusable. And often I get this when I'm trying to link somebody to like a paragraph that's partway down through a page. And I was like, Oh, I bet this like, I bet this h2 tag has an ID because if you put a hash in the URL bar and given an ID, the browser will automatically just jump down to the element with that ID. If your heading tags don't have those IDs, then you can't link to somebody that's partway down the page. And I find that really frustrating. And it's probably even accessibility thing where you're just like, let me give somebody context into this issue. And it's not possible to to scroll partway down the page. So always give or not always, but if you have the option of especially like a WordPress or Gatsby, there's plugins that will do this, they'll just automatically generate IDs for you. That's a huge win and such an easy thing to turn on.
+
+22
+00:14:21,270 --> 00:14:34,620
+Scott Tolinski: Word. Cool. Before we get into a fresh section of this podcast, we should take some time to talk about our sponsor fresh books, ah, wow, after a non bad transitionary go followed up with an actual transition.
+
+23
+00:14:34,860 --> 00:15:53,250
+Wes Bos: So one little feature of Freshbooks that I want to sort of feature here is the the time tracking thing. So like Freshbooks obviously can get invoices and expenses and things like that. But like just one part of what Freshbooks does is you can do time tracking. So if you've got a whole bunch of clients and you're sort of jumping around between them, it can be easy to forget what you've done and it can be easily easy to like forget that you forget to build a client for specific Avik hours I've done that myself, or you just sort of say like, how much did I do like two weeks ago. And that's not really fair to your client either. So freshbooks, the mobile app has a sort of a client and project timer on it, you can turn on and off. Depending on what you're working, you have different rates for different types of stuff. So if you have a different rate for like design versus Dev, you can you can charge different ones. I always used it just to write exactly what I had done so that when I submitted my hours, at the end of the week, the person who had hired me be able to quickly look at what what I've been actually doing, it makes them feel confident like this money is not going to waste. So check it out@freshbooks.com forward slash syntax that's going to get you a 30 day unrestricted free trial. And tell us it makes sure you use syntax, and how did you hear about a section that will keep them sponsoring this show? Thanks so much to fresh books for sponsoring. Cool, cool, so
+
+24
+00:15:53,250 --> 00:16:15,000
+Scott Tolinski: let's get into everybody's favorite foundational topic. And actually, to be honest, this is my personal favorite. That wasn't being facetious there was CSS. And I think, honestly, there's a lot of here in terms of CSS. But one of the things that is one of the most foundational elements of CSS, besides the syntax is specificity. Right?
+
+25
+00:16:15,240 --> 00:16:16,529
+Wes Bos: specificity?
+
+26
+00:16:16,799 --> 00:16:21,570
+Unknown: Yeah. And did you notice that I said it correctly? And correctly all the time? So spec?
+
+27
+00:16:21,600 --> 00:16:23,279
+Wes Bos: specificity, specificity? No,
+
+28
+00:16:23,299 --> 00:16:26,220
+Unknown: no? I Are you actually I got
+
+29
+00:16:29,730 --> 00:16:32,490
+Wes Bos: it and no, ternary? ternary? I
+
+30
+00:16:32,490 --> 00:16:38,429
+Scott Tolinski: can't say it. I don't believe you anymore. So really don't believe you say?
+
+31
+00:16:39,899 --> 00:16:44,820
+Wes Bos: specificity. specificity. Hmm, yeah, that's already there. Scott,
+
+32
+00:16:45,360 --> 00:16:59,730
+Scott Tolinski: somebody told me the city part, you got to say city specific city spend that best really, it really, for me, it opened the door, it was like here's the bank vault, it's wide open. Now you get to say specificity for the for the for the
+
+33
+00:16:59,730 --> 00:17:01,200
+Wes Bos: what is like a fifth city.
+
+34
+00:17:04,410 --> 00:17:53,160
+Scott Tolinski: So this is a which the order in which CSS properties and in design component things are applied design component things, though, the way that the visual components are applied to your elements. And so specificity follows basically a little bit of a pattern here in terms of order of operations, because what happens is, is that people will have a class name something, and they'll target it with the class and say, all right, this is good, the color of red, and then they'll also have an ID on that thing. And maybe they have color of blue on the idea. And they'll be like, why isn't this thing red? What's going on here? Because different topics and different selectors in CSS have different levels of specificity? Do you want to get into some of those levels?
+
+35
+00:17:53,550 --> 00:17:57,450
+Wes Bos: I honestly don't even know what they are off the top of my head, I know that.
+
+36
+00:17:57,830 --> 00:17:59,010
+Unknown: It's fundamental is man
+
+37
+00:17:59,040 --> 00:19:00,830
+Wes Bos: what I think like like, in my mind, I know that like, you have an element selector. And then you have something with a class, you have something of multiple classes and you have something with an ID. And then also depending on like, where they are, are they in line? Are they in a style tag? Are they in a CSS file? If there's something with the same specificity does one come later? It just sort of having a general idea of like, like, anytime someone posts one of those quizzes on like, which one is more specific, and they post like this really up to slicker, I always get it right. I don't know what the rules are under the hood. I know that like a class gives it like a one point and like an ID gives the two points or something like that. But as a general rule of thumb, I know that I can like look at a selector and understand which one will be applied and unapplied. And then also, if you're running into like specific Edie issues, facility issues, you know that you're probably writing some terrible drivers or some terrible CSS, and you need to sort of reevaluate why your selectors are looking like that.
+
+38
+00:19:01,440 --> 00:19:04,170
+Scott Tolinski: Oh, my God, I really can't tell.
+
+39
+00:19:04,260 --> 00:19:09,930
+Unknown: I can't Oh, man. It's a it's a disease. specificity.
+
+40
+00:19:10,310 --> 00:19:14,640
+Scott Tolinski: It's a spesa. fizzy, specificed disease.
+
+41
+00:19:15,800 --> 00:19:17,820
+Unknown: Do you know the rules? Well, I
+
+42
+00:19:17,820 --> 00:20:03,150
+Scott Tolinski: don't know the whole point system out of hand. But I know that, you know, an ID is going to override a class. Yeah, important is going to override an ID is an element like if you're going to say h1 has the color of red, that's the least specific than a class is going to be more specific. So an h1 with a class of something, an h1 with an ID of something is going to be even more specific. And then styling directly inline styles is going to be more specific if you're just applying the style directly to the element in HTML. And then you have the important tag Lastly, which is on top of everything, with the exception being if you have another Important targeting the exact same thing further down in your code, you
+
+43
+00:20:03,150 --> 00:20:07,100
+Wes Bos: have a more specific important tag selector. Right?
+
+44
+00:20:07,170 --> 00:20:43,550
+Scott Tolinski: Well, in that I really highlight something, you know, the important tag really should not be used often, like the only time you should be using the important tag is if you're overriding some foreign CSS that's coming in from like a library, and you're only doing that and maybe one spot, it shouldn't be used for anything global. It shouldn't be used for anything. Important tags overall, like my rule of thumb is do not use important tags. Now, you could tell me, I'm wrong about that. I don't, I don't really care. I personally have my own personal rule, do not use important tags. Because they, they do nothing but hurt feelings and cause problems down the line. Yeah, yeah,
+
+45
+00:20:43,580 --> 00:21:02,790
+Wes Bos: that's, that's like a last ditch effort to throw it on there. I've definitely been there. I have it in one of my courses where I think it's my CSS Grid course. I'm like, screw it. I just threw an important on it, because I couldn't figure it out. And everybody knows that cuz they're like, Oh, it's good to hear that you do. That's a Friday afternoon. 4:45pm fix?
+
+46
+00:21:02,969 --> 00:22:33,240
+Scott Tolinski: Yeah, I don't use it. But I can't I've been on code. When I was a junior Dev, when I first got my like coding job, you know, you're a junior Dev, you get all the projects that none of the other people want to work on at an agency. It's like, all right, you We can now pass off all the ones that we've been trying to get rid of onto the new guy. And like one of them was just awful in terms of CSS, because it had been passed around for different devs for maybe like five or six years. And the thing was all flat HTML files. But it was almost like you couldn't write a single property in HTML without using an important tag. Because someone had used an important tag at some point down the line, and then patched and patched and patched. And then you're just like, Well, I have to write like important is just become a part of the syntax for this website, because that's the only way this CSS is getting applied. And can you imagine looking at that CSS that's like six years old and being like, let's rewrite this did not break anything that would not happen. So part of the CSS specificity, fundamental learnings things. The reason why it's important to understand the specificity overall with CSS or even the CSS fundamentals is because the longer and longer you take to apply good foundational fundamentals on your CSS, the longer you take, the worse your CSS is going to get. And the tremendous tremendously almost monumental task it will be to rip it out at some other time. Yeah, I can do it. You will hate your life. Yeah,
+
+47
+00:22:33,269 --> 00:23:27,330
+Wes Bos: yeah. Been there. And we only know that from experience where like, you go into something too big without spending a little bit of time on learning it. Next one we have here is selectors. So knowing you don't have to know all of the different I think there's like probably, like 15 different ways to write selectors. You've got class selectors, and element selectors and descendant selectors and direct descendant selectors and sibling selectors and future selectors and attribute selector. So like, you probably don't need to know absolutely all of them. But I would definitely say class selectors, Id selectors, descendant direct descendant, did I say attribute selectors things like, like Aria dash, I don't even know what they are right now. I just I look them up every time I need them. But like Aria dash open or Aria dash selected, and and just things like disabled selectors. So knowing how attribute selectors work can definitely be handy. Yeah,
+
+48
+00:23:27,330 --> 00:23:51,030
+Scott Tolinski: super handy. Yeah, I think it's funny because the word selector might scare people, but selector, you're just selecting something, you saying, Hey, I'm gonna have to go pick something. And in knowing those foundational terms, those syntactical terms like selectors, I think that's an important thing to have. But if you dive into saying, hey, use selectors before you're talking about what a selector even is, then, I think,
+
+49
+00:23:51,030 --> 00:24:17,940
+Wes Bos: or why you need to so that's, that's another issue that we have. I'm doing that with my JavaScript course right now. Like you often have to pedal back in and not just show somebody like what a variable is, or what something I can't think of an example right now. But like, often have to pedal back and say, like, this is why we need to learn this and not just this is this thing. And because people don't learn well, and they don't understand, like, why do I need to use something? Yeah,
+
+50
+00:24:18,060 --> 00:26:25,830
+Scott Tolinski: yeah, definitely. And I think that goes a lot of time for jargon. People want to get into jargon. There are syntactical names for things before they understand why they need them, or why they need to know what the heck they are. But selectors just like properties and any of those other things in CSS, there are terms you're going to want to need to know. So that when people like Wes and I are saying the word selector you actually know or talking about it, rather than just like, Oh, yeah, that's CSS selector. I think. So in modern CSS, this has changed quite a bit between using these new tools. But I think the next thing is going to be foundational understanding of setting up layouts. And now layouts. There's a lot of stuff that goes into layouts and some of this stuff is is very closely related to me. Every out there topic that we're going to be talking about for the rest of this episode here. But in 2019, we have more options for layouts in CSS than we've ever had before. When I started web dev, it was pretty much, okay, you have percentage based units, and you have floats. So Oh, and tables, you have tables too. So good luck making a layout, you can float things, but you need to clear fix them, you can use a table, but you should never have done that anyways. And that those were the options. But now in 2019, we have Flexbox, and grid, and Flexbox. And grid, to me make way more sense than floating with a layout ever did because with floats, like I mentioned, it takes something out of the flow of the documents, they have to clear fix, you have to change the height, or you have to allow the height of its parent container to reset, like, the nightmare caveats that you have to teach somebody who doesn't even know what the heck they're doing. And you wonder why people hate CSS because of things like this. But with Flexbox, and grid, you're basically just saying, Hey, this is how this stuff should work, here's a flex container, the items that are gonna flex, here's a great container, the items in it are going to adhere to this grid that you're designing. And to me, a layout in 2019 is one of those things that the foundational elements of layout and CSS is just infinitely more friendly to new developers and people learning the foundation.
+
+51
+00:26:26,130 --> 00:27:29,130
+Wes Bos: Yeah, and so I think you should know part of the fundamentals, you should know how to do basic layouts in in Flexbox. And grid, you don't need to go into the the super nitty gritty of nested grids, and future will have sub grid and, and like, I don't know, like What the What's the repeat autofit min max, like all the intricacies of that. But like a basic grid of putting a couple elements beside each other, maybe maybe changing them at a at a breakpoint. I think that that's probably good enough for your fundamentals, anything more than that you'll pick up when you need it, it goes through my course or whatever, if you need it, but it's not something that is totally necessary, because I think like the easiest 20% of Flexbox. And grid is what I use almost like 80% of the time. And then all of that sort of edge Casey stuff like custom layouts. Yeah, wrapping and changing the going from row two column to row reverse and Flexbox. All of that stuff is like I may be used a couple times a year. So just knowing the basics of it and not sweating, the the the nitty gritty of it. Yeah,
+
+52
+00:27:29,340 --> 00:28:33,900
+Scott Tolinski: yeah, definitely. It's like one of those things, look it up when you need it, learn the basics, learn, learn why they exist, and how to use them. But don't don't memorize all of the little properties. You don't need to memorize all of the properties. A lot of the memorization that happens with some of these things just happens over time anyways, you can make flashcards for yourself and learn these things. But to be honest, I think you'll probably learn it faster, the more you try it and use it. Next up we have is the box model, which is really one of the most important parts of CSS is understanding that everything you have sort of follows this model of a box, you have a box, and how the spacing, padding margin borders, all the things related to that box, how they affect the size of that box is the box model. And so this is a concept that I think people maybe ignore when they're first learning sometimes, you know, not saying all the time, sometimes people ignore this when they're first learning. And they maybe give something a width and they give it a border, and they don't understand why the results are what they are. And,
+
+53
+00:28:34,380 --> 00:28:34,890
+Unknown: yeah,
+
+54
+00:28:34,890 --> 00:29:05,550
+Scott Tolinski: I think the box model is the easiest to be understood by looking at a picture. And one of the coolest things that we have for us in our browser tools is if you inspect any element, and you look at the styles tab down here at the bottom, right or however yours are set up shape at the bottom right is going to be a nice little graph graph on a diagram is a better word, have a box, and you're going to see the width of the thing. You're going to see the padding the margins, the border, and you're going to see how all of those affect the actual shape of that box.
+
+55
+00:29:05,880 --> 00:29:13,470
+Wes Bos: Yeah, I think like between understanding the box model and understanding positioning, I think I had the most enlightenment and ncss because
+
+56
+00:29:13,470 --> 00:29:15,390
+Scott Tolinski: block in mind block two.
+
+57
+00:29:15,780 --> 00:30:14,070
+Wes Bos: Yeah, that's Yeah, that's true as well, because oh, frustrating when you can't get it to freaking go where you want it to go or like, like, why does the 60 and 40% thing not line up together? They're they add up to 100. Right. And there's all these sort of like, little gotchas. And then some projects, almost all projects will use border box sizing border box now. Yeah, but you may be in a interview question where they don't give you that or something like that. That's kind of like a sneaky interview question. I think someone might throw your way. And I don't honestly, I don't think it's that difficult to understand, you know, that you've, you have an element. It's maybe 500 pixels, and that element might have padding, it might have border and it might have margin, and the question is do those things padding border and margin, do they make the box bigger? Or do they eat into the 500 pixels of that box? And that depends on what your border box is set to. In your CSS. It's pretty simple. Do a couple examples. And you'll have it down pat.
+
+58
+00:30:14,430 --> 00:30:45,750
+Scott Tolinski: Yeah. Yeah, border box for life, as you have written in here ever since there was like that Paul Irish post way back when he was like, This is border box. And this is why I use it. And here's the little snippet data to your site. I think that might have been one of the greatest days in my web development. Because I suddenly did not have any more issues with the border box functioning the way that I would have expected it. It's like, border box. Like so many CSS woes for beginners have been solved if border box was the default out of the box.
+
+59
+00:30:46,050 --> 00:31:07,410
+Wes Bos: We should do like kids these days. You know that there's like that meme. Like some of y'all have never coded. Some of y'all never coded regular border box. And it shows you know that like, we should do like a whole episode of like, like y'all taking your web fonts for for granted. It was just like things the olden days of web development,
+
+60
+00:31:07,410 --> 00:31:10,800
+Unknown: and how the heck a coupon was? Yeah.
+
+61
+00:31:12,810 --> 00:31:30,960
+Wes Bos: That would be a great show, we put that on the list. If you I know, like a lot of people listening, I've been delving for over 10 years. So if you have some of those things that you used to have to do that were so painful, tweet us at syntax FM and at West Boston, slmc. Because we will put a whole show together of those funny things.
+
+62
+00:31:30,990 --> 00:32:43,610
+Scott Tolinski: Yeah, painful CSS, I'm all about it all about it. I'm also all about one of our sponsors, which Wes and I have both been using for a long time, which is sentry@sentry.io. Now, Sentry is going to be the place where you can track all of your errors and exceptions. If you're writing some code, your user does this thing and it breaks your site will century is going to lock it for you. They're going to categorize it well. They're going to catalog it, categorize it, you can categorize it, by your release or by the operating system, you can see exactly all of that sweet, sweet information that you need to know to solve these bugs. So if you write any code that is being used by any number of people, notice how I'm using the word any, it's really going to be one of those things that is going to save your butt constantly allow you to solve all of the bugs allow you to give you that sweet information, which without having to email your customer who reported the bug and say, Excuse me, but what browser Are you on because this is going to let you know exactly what browser they were on. And it's gonna allow you to solve that problem. So head on over to century@century.io use the coupon code tasty treat all lowercase all one word and you will get two months for free I highly recommend checking it out century@sentry.io thank you so much to century for sponsoring this episode of syntax talking about the fundamentals here.
+
+63
+00:32:43,920 --> 00:33:12,060
+Wes Bos: Next we have a as part of the fundamentals one thing absolutely have to nail and understand how it works is positioning so a lot of the comments in this Twitter thread were saying like we see new developers abusing are using position absolute way too much as it's kind of hard to understand like you know if you have trouble top right bottom left, as is by the way trouble. We did like a what was the one you had never eat shredded? We
+
+64
+00:33:12,420 --> 00:33:22,140
+Unknown: know I said it was clockwise. Clockwise. Yeah. What is what was that one wild concept? You have a clock these millennials
+
+65
+00:33:22,500 --> 00:33:27,600
+Scott Tolinski: these days they never read a clock was never Yeah, read by analog clock. True.
+
+66
+00:33:27,660 --> 00:33:34,800
+Wes Bos: Anyways, we had it. We had a poll on Twitter. Let me pull it up here. Real quick, just so I can bask in the sweet. No,
+
+67
+00:33:34,800 --> 00:33:41,670
+Scott Tolinski: you didn't. You won. I was winning this poll the whole time. I really feel like you gain this if you're you're winning now.
+
+68
+00:33:42,110 --> 00:33:46,530
+Wes Bos: Oh, damn, I just pulled it up. And I did lose. I thought it was I thought I won that one.
+
+69
+00:33:47,010 --> 00:33:51,150
+Unknown: Of course you did win because people are familiar with clocks. No.
+
+70
+00:33:51,480 --> 00:33:55,620
+Scott Tolinski: Didn't you even try to gain that? What was the question that you ask? Let's read the question out.
+
+71
+00:33:55,620 --> 00:34:39,330
+Wes Bos: I said CSS shorthand question mark. So we're referring to when you have shorthand, and you do look up something like a margin or something like that. It goes top right, bottom left, and I always remember that by saying stay out of trouble tr bl. And 54% of you said trouble was correct. 5% of you did never eat shredded wheat, which is like a compass and 50% of you did clockwise. Yeah. So clockwise is dumb. Yeah, it's clocks anymore. Yeah, it's the coming generation Scott. They're not going to know what clockwise is I always myself, I have to when someone says clockwise, I have to just like sit there with my finger and pretend it's a clock.
+
+72
+00:34:41,480 --> 00:34:43,170
+Unknown: I actually can't tell you that.
+
+73
+00:34:46,529 --> 00:34:55,730
+Scott Tolinski: I like to pull out and personally I like to pull up my sundial and I like to let the sun come down and wait half an hour and see which direction it went that way.
+
+74
+00:34:56,040 --> 00:35:32,960
+Wes Bos: So out of touch. Anyways, what we're talking about Listening, it's hard, it's hard to know how to position something. If you've got like a div inside of another div and that parent is relative and you position absolute mouth thing, are you fixed and relative. So knowing how positioning works in relation to its parents and what their position are, is, is a hard thing to get. And I definitely think that, regardless of whatever framework you're using, you're going to need to learn how to use this because I don't think there are any tricks for for getting this to work. So understanding positioning a huge fundamental you should spend some time on.
+
+75
+00:35:33,300 --> 00:35:37,710
+Scott Tolinski: Yeah, what is absolute relative fixed? And now we have sticky?
+
+76
+00:35:37,710 --> 00:35:38,940
+Unknown: Yeah,
+
+77
+00:35:38,940 --> 00:35:56,250
+Scott Tolinski: I thought I'd sticky kind of hard to use. I use it though. We're listening on the syntax side, I use it personally. But sticky is one of those ones that I've, you know, I think people have wanted for a long time, and I'm happy to have it. So yeah, positioning. I think people, we should throw static on here, too. Oh, because
+
+78
+00:35:56,880 --> 00:35:59,130
+Wes Bos: I didn't even say oh, that's like the default.
+
+79
+00:35:59,190 --> 00:37:09,900
+Scott Tolinski: Yeah, it's the default. And I think because if you just apply position relative to something, it doesn't do anything, you know. And I feel like people might always assume that the default is position relative. And I'm projecting it because when I was a new developer, I just assumed that the default was relative. I always just thought that, okay, you use position relative as a kid and Taner for position absolute, and that's what for, but no position relative allows you to position the thing relatively to where it is. So I mean, it literally is has a specific use case, that's not just a container for position absolute, or I think that's just an important thing. Again, I'm projecting some of my dev insecurities onto the audience right now. Another one we mentioned before, in the HTML section is forms and inputs now forms and inputs, in my mind are one of the biggest pains in the rear ends, I got a kid to get out of it. Gotta say rear ends, I can't say any of these other words. Is is the default CSS that comes on to form inputs. Now, I think we would all hate life, if CSS inputs are inputs in general had no default CSS. And we're just like a blank square, I suppose. But because they have some default styling,
+
+80
+00:37:10,080 --> 00:37:12,230
+Unknown: it's just a default.
+
+81
+00:37:12,420 --> 00:37:43,560
+Scott Tolinski: Yeah. Yeah. Consistently default is really the the thing that needs to happen, they have styling in different browsers. And because of this, we need to make sure our inputs look nice in every single browser. But this is where some of the things like in addition to the default styling of every other element, but where CSS resets are normalized, or those things come into play. But it basically forms and inputs have some default CSS, and we need to both respect that default CSS and override it to do anything with CSS forms. And that can be a frustrating thing for people who are new to CSS.
+
+82
+00:37:43,730 --> 00:38:20,520
+Wes Bos: Yeah, I particularly like aligning forms or making them look like the the mock up and also understanding. So part of what this Reddit thread was stateful HTML, and everyone's like, what the heck is stateful? HTML? Myself, I was like, What is stateful? HTML? He went on, it went on to explain that like, like, your your inputs can be empty. They can have placeholders, they can have text in them, they can be invalid, they can be valid. They can be CoverGirl like it hovered. down and focused on it. That's a good one. Yeah, there's just a lot that goes on with interacting.
+
+83
+00:38:21,630 --> 00:38:23,460
+Unknown: Remember, visited links? Oh, yeah.
+
+84
+00:38:23,460 --> 00:38:32,100
+Wes Bos: Visited links. Did you know that visited links? You cannot? This is a bit of an aside, but I think it's interesting, you cannot get the color of a visited link via JavaScript.
+
+85
+00:38:32,130 --> 00:38:43,130
+Scott Tolinski: Did you know that? I didn't know that. And that seems kind of know why. But who's using visited links anymore, I actually I prefer to have all my links blue with my visited links being purple. And that's just the way you got to happen.
+
+86
+00:38:43,560 --> 00:39:22,380
+Wes Bos: But the so the reason that you can't get the color of visited link, is because there was a hack where somebody listed every URL out there. And then they just did, what was it something like, like, visited display block, and then the rest of the links were displaying none. And then they just grabbed the visible ones. And then you could do just loop over links and say, if this link is purple, then they had visited it. And that's a way to, that's a security issue, because then you can tell a user's browser history without while they're on your own website. So you cannot get any information about visited links, styling
+
+87
+00:39:22,940 --> 00:39:26,460
+Scott Tolinski: it via JavaScript. So just like I said, it's a terrible idea. And it should not.
+
+88
+00:39:28,140 --> 00:40:10,530
+Wes Bos: Well, I like getting in Google where like, you know, if you've been to a search result already, yeah, definitely. What else do we have here? forms and inputs? Yeah, that just knowing how to style them is I think part of the fundamentals. You don't have to get too too into it, but I definitely see it that like a fieldset tag is really underused people are often just thrown extra divs Oh, yeah. Yeah. When when a fieldset is that's what it's for. I feel that is for grouping together, groups of inputs. And I often will use them for Like as a grid container, a Flexbox container. And you could also disable an entire fields that Do you know that if you put disabled on a field set, it will disable all of the inputs inside of it.
+
+89
+00:40:10,710 --> 00:40:19,460
+Scott Tolinski: I didn't know that. But it makes a lot of sense. And I've never really built that many complex multi step forms or anything. So I don't know if I would have run into that. But that's really neat.
+
+90
+00:40:19,940 --> 00:40:40,530
+Wes Bos: I use it on my react course. Because if you want to disable an entire form, when something is in loading state, then you can just wrap all of your inputs in a field set, because a form tag won't take a disabled attribute, but a field set will. And that's a kind of a cheap way to quickly turn off all of the inputs, so people aren't typing into them as you're doing work.
+
+91
+00:40:40,710 --> 00:40:42,210
+Unknown: Yeah, interesting.
+
+92
+00:40:42,570 --> 00:40:44,520
+Wes Bos: Yeah, we'll do that next year.
+
+93
+00:40:44,880 --> 00:42:39,710
+Scott Tolinski: And the next one is going to be block verse, inline verse, inline block, in terms of what an element actually is in this is one of those ones that I think you do need to memorize when you're first starting out, every single HTML element out of the box has a default status, whether it's a block level element, an inline element, or an inline block element. And this really determines how the item takes up space onto the page, if it's a block level, is always going to be the width 100%, or whatever width you specify. And typically, block level elements are either used, they're used as containers, a paragraph as a block level element, H tag heading tag, those are block level elements, they take up the whole width of the site, the application, you think can be given a height, you can say it's 500 pixels tall, and it's going to respect that. And then you have inline, which are going to fall in line. Typically, you see this with things like span span as a generic wrapper for an inline element. anchor tags are inline elements. Let's say you have a bunch of links here. And you have one of the reasons why an anchor tag needs to be in line is that if you wrap some text that's inside of a paragraph and an anchor tag, you wouldn't want that taking up full width, block level space, you'd want that to be in line in line with the rest of the paragraph. And inline block means that has some of the properties of an in line item as it falls in line, but also has some of the level properties of a block level item, you can give it some space and things like that. So yeah, I think this is one of the huge foundational elements that you need to memorize, memorize which components which elements have what and memorize what the block in line and inline block are all doing. And the fact that you can turn anything into anything else, right? You have an anchor tag, you want to take up space, you could say, display block. There's also another display here that we didn't have, which is display none, but it does. It's kind of different.
+
+94
+00:42:39,750 --> 00:43:07,260
+Wes Bos: Yeah, there's a bunch of like weird ones. Obviously, there's display flex display grid. Yeah, but those are, those are blocky, they're block ish. They have they do all the things that block element do. You can give them a width and a height. There's inline flex, which is just like an inline element. There's display table, which used to be a hack for vertically centering things. I'm in line. Honestly, don't even dive into all of those just just know what block in line in line block is. And you'll be able to extrapolate to the rest of the displays.
+
+95
+00:43:07,290 --> 00:43:08,820
+Unknown: Yeah. Yeah.
+
+96
+00:43:09,110 --> 00:43:50,490
+Wes Bos: Next up, we have sizing units. We did an entire episode on different types of sizing. Yes, I think that's probably just a good one to listen to. If you want to sort of get up to speed pixels, atoms rems, what are the differences between the two? These like, specifically, like rems and M's, where something is sized based on something else that is sized in the parent? That's what's always tricky. It's the same with absolute and relative where something is position based on something else. Same with EMS and rems. So knowing how those works, why you may or may not want to use pixels or percentages, things like that. And then you can get really into the weeds turns radians, degrees, it I don't think that those are really all that necessary, do you?
+
+97
+00:43:51,120 --> 00:44:25,680
+Scott Tolinski: I don't at least not for a foundational That to me is like a very specific use case that you're looking to do. For me. I mean, it's like, like, I think the biggest things is like pixels, verse AMS verse Rams know when the difference is no, you need to use them. percentages, pixels, know when to use them know why they're there. And then just don't worry about the obscure stuff. Everything else after that is essentially things that you need to learn on a per case basis or per situation, like an FR unit. Oh, well, you only need to really learn that if you're learning CSS Grid, and if you should learn CSS Grid, but I wouldn't learn it in the same context in which you're using other units. Yeah,
+
+98
+00:44:25,740 --> 00:44:47,040
+Wes Bos: yeah, that's a whole different spot and you don't need to overwhelm yourself in it. Again, we're talking about fundamentals here. Like what are the what are the basics that you need to know before you jump into doing something a little bit more advanced? Yes, sir. Next typography like what would you say? We don't have any notes on this? Like, what do you say the basics of, of typography is,
+
+99
+00:44:47,250 --> 00:45:15,360
+Scott Tolinski: for me the basics of typography is knowing I this is gonna be a weird one. But knowing about like collapsing margins gets people a lot how margins work to me. So yeah, how margins and line height Work is a huge part of effective typography and vertical rhythm and all those things. So that seems like a weird answer. But one of the things that the things that helped me the most out writing effective typography is understanding line height and margin and how it all works together.
+
+100
+00:45:15,870 --> 00:45:22,560
+Wes Bos: Yeah, that collapsing mark, you want to give us a rundown because that that is a lot of people seem to be like what's so collapsing margin?
+
+101
+00:45:22,590 --> 00:47:31,320
+Scott Tolinski: Yeah, a collapsing margin. Okay, so let me paint you a picture here, you have a div inside of that div is an h1. And underneath that h1 is a paragraph tag. Now, both of these things, let's say all of them have a margin of top and bottom of one rep, all of them do, I'm just giving you some some easy values here, one might think that there's a margin on the top of one rim and a margin on the bottom of one rim and then the paragraph is going to have a margin of top and then the margin bottom one rim. So therefore, there should be a two ram difference between that h1 and that paragraph tag. But there is not because of how HTML works, there's or I guess how CSS works on HTML, there is something called collapsing margins where adjacent siblings as in the h1 next to the next of the paragraph tag, they're adjacent or they're directly touching their margins, if they collide are going to collapse into the largest possible margin, aka, since it's just one in one on top and bottom, that's just going to be a one margin difference. And this allows you to build really consistent looking, I guess, typography systems where you're not getting those double spacing. So you're not having to do something like margin bottom zero, but only in this particular instance, when there's a paragraph tag right here. So basically, the collapsing margins is a thing where even though they're theoretically should be two Rams are to double the margin, they're the margins collapse into each other to form one margin. And that allows you to create these systems. Now I in the past, when I was a junior, when I started getting into CSS, I really wanted to just eliminate all possible issues by either only setting margin bottom on things, I would just do margin, top zero all and then only set margin bottom. But once I learned to embrace collapsing margins and truly understand them, I think I write better way better CSS less overrides less unique situations, because I'm letting sort of HTML and CSS do the job that it is built to do. Mm hmm.
+
+102
+00:47:31,710 --> 00:48:18,720
+Wes Bos: That's, that's good. That you said that. Other things typography, sizing your headings, sizing your, like setting up like what a font stack is setting the size of all your paragraph elements. I think that's probably the basics, maybe not even loading in external fonts. Although that's not the hardest thing. I don't think it's necessarily part of the fundamentals. Yeah. Last thing we have here is just basic media queries. So understanding how to write a, like, what is a mobile first media query, and that is that things go from small up? And what is the, I guess a desktop first media query where you write increasingly bigger or smaller media queries as things get smaller? That's really just just basic media queries. You don't need to get into the nitty gritty of it, just understanding how it works.
+
+103
+00:48:18,990 --> 00:48:21,840
+Unknown: Word. Cool. I think we covered it.
+
+104
+00:48:22,320 --> 00:48:54,690
+Scott Tolinski: There's there's probably stuff we missed. I mean, there's there's so much stuff here that I think it's sort of an inevitability that we may have missed something, maybe we can do a limited follow up in a hasty or something. But this area, yes, UML and CSS foundations, the fundamentals, Wes and I both turned into Larry Bird here and, and worked on our fundamentals for a little bit. And we're, we completed this we're gonna be doing like you mentioned a series of fundamentals episodes. Let's know if there's any topics in particular you want to see out of the fundamentals series here. series, the episodes. I love
+
+105
+00:48:54,690 --> 00:49:42,330
+Wes Bos: talking about fundamentals, I often get this on Twitter, or people like people always saying I'm like, what I often say like whoa, would you like to see included in beginner something and never being 100 tweets of people with like, very specific, like, Oh, I think blockchain cryptography is pretty important to know. And Okay, calm down. That's not that's not fundamentals like this is bare basics, you should know, as a sort of a high level thing before you before you start jumping into using foundation or bootstrap or whatever. So see, let us know what you think we're gonna have one on JavaScript, maybe even the fact that this will put an hour into just HTML, CSS JavaScript might need to we'll see two I think a server one understanding how servers work would be interesting. And then we'll, we'll sort of see from there. Yeah,
+
+106
+00:49:42,330 --> 00:49:59,970
+Scott Tolinski: I'm excited. Excited to get through all these fundamentals. This part of the show or we're gonna we're gonna be talking about our sick pigs. And sick pics are things that we find to be sick and sick isn't rad or dope or cool or any of those cool things. So or whatever word you like to use. I don't know what the kids are using today. These dang kids.
+
+107
+00:50:02,010 --> 00:50:03,360
+Unknown: Yeah, so would you got a sick pic I
+
+108
+00:50:03,360 --> 00:50:05,940
+Scott Tolinski: knew I have one sitting around here. So I do
+
+109
+00:50:05,940 --> 00:51:20,760
+Wes Bos: have one. And this is another hilarious, not totally unrelated. And it's the four arm forklift here heard of this sounds interesting. So part of my job as a husband to my wife and my job really moving heavy things, and I also as my I grew up, my parents would always buy new furniture and make me rearrange it and I hate it so much lifting furniture and like, heavy things and moving them around is like my most hated thing. And I'm always the guy that people call to, like, help him out and I'll do it but it's it sucks. So I bought these like straps many years ago called the forearm forklift. And there's these like, basically there are these big, yeah, orange straps that go underneath like a dryer or a mattress or something like that. And yeah, and basically you put them around your forearms and then you can just kind of lift from there and it's so much easier just to hold on to the thing when you have your you have the weight close to your body rather than reaching out and lifting it. I'm sure it's gonna like help your back and all kinds of stuff like that so big fan of these I would definitely pick up a strip a set next time you're at I don't know what what do you What's the Home Improvement place called
+
+110
+00:51:20,760 --> 00:51:21,300
+Unknown: Depot,
+
+111
+00:51:21,300 --> 00:51:25,080
+Wes Bos: Lowe's or something? Home Depot? Yeah, we got it I got my Canadian Tire.
+
+112
+00:51:25,770 --> 00:51:26,730
+Scott Tolinski: Wow, just
+
+113
+00:51:27,930 --> 00:51:28,440
+Unknown: 20
+
+114
+00:51:28,800 --> 00:51:34,950
+Wes Bos: Canadian Tire is like it's like a weird I don't even know how to describe it that obviously still tires. Yeah,
+
+115
+00:51:34,950 --> 00:51:37,440
+Unknown: they also sell like maple leaf for a logo, don't they?
+
+116
+00:51:37,649 --> 00:51:47,820
+Wes Bos: Yeah, it's like a hardware store but also like a like a sports store. And also like tools and that's all kinds of very mediocre things.
+
+117
+00:51:49,350 --> 00:51:50,760
+Scott Tolinski: But they got a forearm forklift when
+
+118
+00:51:50,760 --> 00:51:52,710
+Unknown: you said for forklift.
+
+119
+00:51:52,710 --> 00:51:59,760
+Scott Tolinski: I was thinking, you know, like no man that two arms forearms, you know, like a forklift comes with as for two,
+
+120
+00:51:59,880 --> 00:52:01,740
+Wes Bos: so yeah, four arms go into them.
+
+121
+00:52:01,770 --> 00:52:12,180
+Scott Tolinski: I was now I was thinking like an actual forklift. But like with Prongs, instead of to, like some guy was just like, you know, these two prong forklifts, they could be twice as effective. If we had to imagine
+
+122
+00:52:12,180 --> 00:52:16,440
+Wes Bos: having a forklift. I would just cruise if I had a forklift.
+
+123
+00:52:17,700 --> 00:52:20,070
+Unknown: Just rolling through town on a forklift. Yeah.
+
+124
+00:52:21,300 --> 00:52:23,190
+Wes Bos: That allowed probably not probably not
+
+125
+00:52:23,550 --> 00:52:32,580
+Scott Tolinski: depends on maybe like, if you're cruising through town on a forklift for like, five minutes. 10 minutes, like yeah, sure, but like, once it gets to like a whole day, I think somebody is gonna be stopping. Yeah.
+
+126
+00:52:33,149 --> 00:52:35,220
+Wes Bos: Yeah, I would. I would mod mine out.
+
+127
+00:52:35,249 --> 00:52:37,050
+Scott Tolinski: Yeah. Gotta put some effort. What
+
+128
+00:52:37,050 --> 00:52:38,190
+Wes Bos: do you got for me today?
+
+129
+00:52:38,399 --> 00:54:14,700
+Scott Tolinski: I have a show on Netflix. And this is some people are gonna hate this because it's one of those types of shows that like can make some people cringe really hard. Courtney watched one episode and it's like, I'm out. I'm tapped. I can't I can't do this. It's comedy. It's called. I think you should leave with Tim Robinson. And it has like some of the Lonely Island guys like What's his name? Andy Samberg. Akiva. They produced it. And it's it's done by Tim Robinson. Who's the comedian. You've probably seen him before in other things he was in the show Detroiters and it's it's a sketch show. And I don't know how to describe most of these sketches other than painfully awkward to the point of like, you You almost like you just tense up when you watch some of it because it's great. I don't know how to describe it other than the comedy is not for everyone. You'll know instantly. If you watch one episode and you think the episodes funny, then this show is for you. If you watch one episode, and you're like, No, no, no, you aren't going to like the rest of it. Because it almost gets gets worse and worse every single episode. And I've been I've been loving this series I did all the other day. And I was just in tears at some of the stuff. The episodes are quick, like 16 minutes. So it's not like he had to devote a ton of time to it. It's a sketch show the same way that like portlandia is Yeah, it's got a lot of celebrities in it. People that you've seen before from SNL around are in it. A lot of SNL people. It is great. I had a great time watching this. I'm a huge fan. I really hope they do another season again. It's called. I think you should leave with Tim Robinson. It's brand new. Oh,
+
+130
+00:54:15,269 --> 00:54:29,760
+Wes Bos: yeah, check that out. Funny. ELO's. I've always been disappoint Canadian Netflix Sox. Oh, and it has like no, nothing good. So whenever it's something that's like a Netflix actual show, then we get it. And I'm always happy when there's something good. Oh, nice.
+
+131
+00:54:29,789 --> 00:55:17,550
+Scott Tolinski: Yeah. Yeah, this is good. I've had a great time watching this, Jeff. So check it out. My shameless plug is going to be my new course on debugging and dev tools. It's live on level up tutorials. If you're a pro subscriber, it should be available for you already. If you are one of the sad souls who is not level up pro subscriber, you should get on that head over to level up tutorials.com forward slash Pro, sign up and learn dev tools and debugging. today. We cover just about every single tab in your Chrome Dev Tools and Talk about what they do, how to use them properly, how to understand what the heck the information is that they're giving you. Because the more tools that you understand and know how to use, the faster you can solve any sort of problem that you're having in your web development. So if you want to save time, and get those dev dev debug and dev skills up, level up tutorials, comm forward slash pro
+
+132
+00:55:17,880 --> 00:55:35,910
+Wes Bos: sec, I have all my courses at Wes bos.com forward slash courses. And we're working on a beginner JavaScript one right now, which should be out soon. And you can go to that URL and see if it's live yet or you can take one of my free ones. I think that's it. Thanks for tuning in. And we will catch you next week.
+
+133
+00:55:35,910 --> 00:55:37,020
+Unknown: copains
+
+134
+00:55:37,410 --> 00:55:38,130
+peace so
+
+135
+00:55:40,230 --> 00:55:50,040
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

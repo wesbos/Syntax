@@ -1,0 +1,400 @@
+1
+00:00:01,290 --> 00:00:02,790
+Announcer: You're listening to syntax
+
+2
+00:00:02,790 --> 00:01:12,659
+Wes Bos: the podcast with the tastiest web development treats out there. strap yourself in and get ready. Here is Scott solinsky and West boss. Welcome everybody. Hope you're ready for some tasty treats. Today we're gonna be talking all about CSS Grid, the new layout, the new addition to CSS that allows us to lay out websites in in crazy ways and unfathomable ways. I'm really, really excited about it. Today's episode is sponsored by save a bro.com. So happy November everybody. And this is a saver, bro is what they're doing is they're selling t shirts to raise money for prostate cancer. And as you know, in Movember, what people do is they either don't shave or they grow. Huge mustache. And if you go to save a bro calm and pick up one of these t shirts, there's various one that says let it grow, bro. And then there's another one that says grow a mole save a bro. And all of the proceeds are going to be going to fight against prostate cancer. So we'll talk a little bit more about about these t shirts partway through but go head on over to save a bro.com Hello, Scott, how you doing today? Hey,
+
+3
+00:01:12,659 --> 00:01:21,329
+Scott Tolinski: I'm doing super good, super good. It's starting to get a little chilly. All ready to head out into the mountains pretty soon. Maybe try to get a shred session this week.
+
+4
+00:01:21,650 --> 00:01:26,129
+Wes Bos: sash. Yeah. Awesome. So is there already snow on the mountains? Yeah,
+
+5
+00:01:26,159 --> 00:01:43,650
+Scott Tolinski: yeah. And a lot of the some of the Walton, a lot of some other resorts open maybe like two weeks ago, one of them opened a week ago. My favorite couple of resorts are opening this week, I believe the 10th or something like that. So that's starting to certain get active here. That's pretty sweet.
+
+6
+00:01:44,640 --> 00:01:51,209
+Wes Bos: I feel like we should tell the story of what, just before we started recording. Yeah.
+
+7
+00:01:51,570 --> 00:02:14,750
+Scott Tolinski: Yeah. So to preface this, I had a note on our show notes, which was Wess family connection to CSS Grid. And so before the episode started, said, so so Wes, how much do you want me to get into your dad's contribution to CSS Grid? Which was just started cracking up?
+
+8
+00:02:15,750 --> 00:02:21,300
+Wes Bos: I was like, What are you talking about? Like, I don't understand what this is. Yeah, so
+
+9
+00:02:21,300 --> 00:02:26,400
+Scott Tolinski: that leads us back to an Ask me anything that was dead. I don't know. When you When did you do this?
+
+10
+00:02:26,400 --> 00:02:28,220
+Wes Bos: August a couple months ago?
+
+11
+00:02:28,250 --> 00:03:11,640
+Scott Tolinski: Yeah. And there's a question in here. That was, what's your What? Are you a relative of CSS co inventor, Bert boss, who Berg boss has a huge part in the history of CSS Grid. s. And Wes, his response was, yep, that's my dad. And I read that and just stopped reading there. And I was like, holy shit, that's Wes is dead cool. What I didn't read was further down after he had a bunch of spaces. There was a whole bunch of spaces between in this then there was this JK, I didn't even know that. So this whole time, it's been months since I read this article. I just assumed that was your dad.
+
+12
+00:03:12,180 --> 00:03:21,540
+Wes Bos: My dad like invented CSS. That is hilarious. I didn't even know that this guy's name was the same last name as mine, which is pretty sweet.
+
+13
+00:03:21,720 --> 00:03:26,760
+Scott Tolinski: Yeah, I'm surprised I haven't mentioned it before right now. That's hilarious.
+
+14
+00:03:26,790 --> 00:04:46,500
+Wes Bos: That is hilarious. We should get stickers Burton West. Oh, man, that is good. So that's not my dad, if you're wondering. And I thought that was funny, because when I did that ama, I figured out that if you put multiple spaces, it will just trim it to one space. But if you go online and find like the ASCII space character and paste a bunch of those in, it will like give you a whole bunch of blank space. Which is pretty funny to see breaking. Well. Let's uh, let's dive right into talking about CSS Grid. Pretty excited about this. I've been, I've been been toying with CSS Grid for about a year and a half. Now I've just sort of been maintaining a list of examples. And every now and then I go back to it and toy around with it when it gets added to a new browser. But we'll talk a little bit more about browsers before we're but we're pretty much at a point now where we can kind of go full steam ahead with CSS Grid. And I've spent all of last week I spent working on my CSS Grid course, doing lots and lots of examples trying to like, do a lot of examples. That's like very, how does it work? Like 123 boxes everywhere. That's kind of the fundamentals, but also like, when would you actually use this in like modern day layout? So I've been pretty excited about CSS Grid. Have you been you've been working with CSS Grid there, Scott? Yeah,
+
+15
+00:04:46,519 --> 00:05:40,620
+Scott Tolinski: actually. There is CSS Grid on level up tutorials comm right now. Wow. Because, honestly, if you're using my site to build websites, like, I mean, do I care if you're using internet To explore I don't know, progressive enhancement. Right? So for the most part, yeah, I've been using it and I haven't been I haven't dove full full on into it. I'm gonna say that right now, I don't know all the ins and outs. But I know, I know the basics. And I've built layouts. And I'm very, very excited for from what I've done. And I'm actually also working on not necessarily a CSS Grid course, but like a layouts course. Right? Just like a CSS layouts course. So because of that large exploration right now of like, practical CSS layouts, and, and that sort of stuff. So yeah, no, it's a it's a, I don't know, paradigm shifting.
+
+16
+00:05:41,040 --> 00:06:23,759
+Wes Bos: Yeah, it's, it's crazy that I think like, I haven't wrote a even with Flexbox. alone, I haven't wrote like a float base layout in probably two years. And now a CSS Grid, because sometimes with Flexbox, he had to do a couple hacks and stuff like that. Now with CSS Grid, it's, it's totally going to change kind of like a sink await totally changes the way that we write JavaScript, and grid and Flexbox. Together, we'll talk about like, what are the differences between those two, it's going to fundamentally change the way that we lay out. So if you are a web designer, web developer, front end Dev, get ready to have things shook shook up a bit, it's going to be a little bit of work to actually learn this, but it's going to be well worth it for the advantages that it gives you.
+
+17
+00:06:23,820 --> 00:06:34,170
+Scott Tolinski: Yeah. And on that note, about the last time you're out of float, I mean, I'm right there with you, I, I do not mourn the death of clearfix, I do not mourn the death no
+
+18
+00:06:34,170 --> 00:08:20,759
+Wes Bos: whatsoever. That was that was so painful. So I thought we kick it off and just talk about like the fundamentals grid is is massive. It's it's really, there's a lot to it. But I think that if you're a web developer, the fundamentals of it is mostly what you will be using, I think like, they're like the first like 30% of greatest what you'll be using most of the time. And then as you get into more complex examples, you can get into naming your tracks and whatnot. So maybe we can both sort of take a stab at explaining what is grid, and then we'll we'll go into sort of the different pieces of it. So, um, grid is a new layout engine in the browser. So instead of having display block, or display inline, or a couple of years ago, we got display flex, we now have display grid. And what grid allows you to do is to take an element like a div, and slice it up into a grid of both columns and rows. So if you think about it in terms of like a spreadsheet, you can determine how many columns are there? And how many rows are there? And how big are the columns? And how big are the rows and and then the elements inside of that grid, you can also determine how big are those elements? How do they span multiple columns or rows, or do they span one or two rows that you have in there. So it's kind of neat, because now instead of taking a div, which was the blocked div, which was just a square, and then to in order to size stuff inside of it, you always had to size the children, you now take that parent container, display grid on it, and then you can slice it up into rows and columns, which are called track. So that's sort of my one on one understanding of it.
+
+19
+00:08:21,420 --> 00:09:22,740
+Scott Tolinski: Yeah, and I mean, that's, that's really, I mean, the best kind of Overview Description of it, it's, it's as you can think of, it's a great, you know, it completely replaces the need for any sort of class based CSS Grid System, in my opinion, I mean, you'll you'll never need to use that sort of bootstrap grid unless you want to go ahead and make those classes for yourself. Or I guess, I don't know if see if bootstrap implements CSS Grid stuff into their, their grid or whatever. But it totally removes the need to have a whole bunch of extra code in your project to handle all this stuff. Because one of the things that CSS Grid does so nicely, is it is able to build these complex grids with pretty minimal code. So yeah, I mean, the track rows spreadsheet, I mean, there's no better way to get a handle of it than to just think about a, you know, a to two dimensional matrix, you know, and that's, that's just really what it is.
+
+20
+00:09:23,850 --> 00:11:01,410
+Wes Bos: Yeah, exactly. So let's talk about the differences between it and Flexbox. And we're going to assume that you have a Okay, grasp on Flexbox during this entire podcast here. So the main difference between grid and Flexbox is that Flexbox is one dimensional, meaning that you you choose that your flex direction is either going to be a row, left to right or right to left, or a column top to bottom or bottom to top. And Flexbox does have the option to do a flex wrap wrap, which will bring those items on to the next line or on to the next column. But it's Primarily and then those items are all size the same same size on each row or each column that you have. But it is primarily used for a one dimensional layout where meaning that if you've got a bunch of elements, and you need to horizontally lay them out, or you need to vertically lay them out, that's sort of when you you reach for Flexbox. And with grid, you have two dimensional layout, meaning that you can control your grid both left to right and right to left, as well as top to bottom and bottom to top. And you can sort of mix and match where those items in your actual grid will be laid out. So it's pretty exciting, because I know that when we decided that we wanted to do grid based layouts in Flexbox, there was a lot of bugs that came along with things like margin and padding and trying to perfectly align spaces or that if you had like, a grid of nine items, but you only had eight, and you have this sort of extra space being added in there. All of those issues sort of go out the door when we actually move over to CSS Grid.
+
+21
+00:11:01,920 --> 00:11:36,030
+Scott Tolinski: Yeah. And I mean, I find the overlap to be really interesting. And I think we're still at sort of the infancy of like, when to efficiently use what in where? Because I mean, everyone's still growing. And once once everyone's using CSS Grid, I think that we will see, you know, a little bit more clear cut lines of when to use grid, verse Flexbox. I think it's still still a lot to learn there. But it's it's awesome, right? I mean, because grid can essentially do nearly, I don't know, can it do everything that like what, what is something that Flexbox can do that grid can't do is?
+
+22
+00:11:36,060 --> 00:12:58,230
+Wes Bos: Yeah, that's a great question. Because in there is a huge overlap between Flexbox and grid. So the general rule of thumb that we've been saying is that you use CSS Grid for, for layout, like general website layout, like your your sidebar goes here, and your header goes here and your navigation goes here and your content goes here and inside of your content, you split that up into three different pieces. And then you use Flexbox, for the things that are inside of that. Things that are sort of component based where you have to line it up. But that's that's not a hard and fast I wouldn't like I wouldn't live and die by those rules, because we're still trying to figure this stuff all out. And I think the other thing that's that trips a lot of people up is that there's often going to be use cases for when you use, you could use either, and it's going to be totally fine to be using either. And I tweeted something the other day where you could like, you could align like these like lines on the left and right of an h2 tag, because you can use before and after. And people got really angry that you could also use Flexbox for this with two less lines of code. And I was like I I'm sorry, I was just trying to show you how grid worked. And it's okay, if you use Flexbox. With that as well, it's totally fine. To use Flexbox, or grid, if they both do the same thing at the end of the day. And in many cases, still, you might want to just use Flexbox for that, because it has better browser support at the given time.
+
+23
+00:12:58,350 --> 00:13:35,910
+Scott Tolinski: Yeah, I know. And I find myself typically using Flexbox for things like if I have a couple of columns, and you want to justify, justify content space between their space apart, whatever, and just separate these two inside of their container quick and easy. Whatever, like that sort of stuff. To me, I usually jump to Flexbox in and then 90% of the time, it's mostly just because I'm been using it for so much longer. Now. I'm just very familiar with it. And so with, again, also browser support. But that's to say that the layout would probably be just as easy within CSS Grid. But yeah, to your your point about people complaining about that men bike shedding.
+
+24
+00:13:37,380 --> 00:14:16,410
+Wes Bos: Exactly. So I think like in in those cases, Flexbox would make sense because you don't have to go and explicitly define a grid, you just have to apply a like a flex grow a flex shrink and a flex basis on each of those children elements. And they'll sort of just figure themselves out based on how big they actually are. So every time I like run, every time I come up on one of these different layouts, I say like hmm, how could I do this in grid? And how could I do some Flexbox? And then I think after like a couple of months of us figuring out how would I do it in either we'll start to get a good feel for when you might want to do something in Flexbox and why you might want to do something in grid.
+
+25
+00:14:16,440 --> 00:14:22,650
+Scott Tolinski: Yeah, I think over time there will be at that de facto way. This is this is the way to do it. Mm hmm. Yeah,
+
+26
+00:14:22,650 --> 00:14:23,490
+Wes Bos: exactly.
+
+27
+00:14:23,760 --> 00:15:20,010
+Scott Tolinski: I'm talking about like learning research, like how did how did you learn CSS Grid or like, well, what would you recommend? Because I see like games and stuff like that, for me. I learned primarily through just reading blog posts, but like there's I mean, there's some excellent, excellent blog posts like this CSS tricks, always has like they had like the definitive Flexbox article with pictures and graphs of like, these are the properties and here's how it works. And they have the same thing for CSS Grid that complete a complete guide to grid and I found these these pages to be just excellent. I mean, one for Flexbox. And the one for grid, they show you all of the properties, there's nice visuals, there's nice images to sort of show you what the properties are doing. And I just find these display to be a great way to learn if you're a sort of visual learner. But yeah, do you would you know of any excellent learning resources?
+
+28
+00:15:20,400 --> 00:16:34,020
+Wes Bos: Yeah. So the first thing that I did in this the same way learn Flexbox is I went to the CSS tricks article, because they have this is one page is absolutely everything on it. And some really nice quick little diagrams. And that got me up and running with like, what are all the possible different situations on it, I read a bunch of different articles on it. Rachel Andrew, who was part of making CSS Grid, over the last, I don't even know how long this took, I think it was like, like, five, six years to get this thing in the browser. And Rachel, Andrew was a huge part of getting that working. So she has this awesome website called grid by example. And the part of it, she's got videos and stuff like that. But the part of it that I went into is just, she has these patterns where they're just sort of common different layouts that you have. So I took a look at a couple of those played with a couple of the code pens. But really, for me, it was just about over the last six months or so every, every time I had a half an hour. So I would just like take a layout that I was thinking of and figure out how would I build this in CSS Grid and as you after you build three or four things, and that's especially after you build real things, rather than just trying to put block numbers on an actual grid, it starts to start to feel a little bit better.
+
+29
+00:16:34,080 --> 00:17:02,430
+Scott Tolinski: Yeah, you got to get your hands dirty. And that's what any of this stuff do. I remember being very confused about like, what the heck Flexbox I mean, I knew Flexbox was awesome, and I knew was gonna save me a bunch of time. But when you're first learning it, you're sure like, this is a bunch of new terminology and new CSS properties. And there's a lot to go over here. But you know, you you start to get that stuff just really cemented the more and more you you click through it, and the more and more you actually get your hands dirty and put it into real world practice. Yeah,
+
+30
+00:17:02,460 --> 00:17:36,570
+Wes Bos: yeah, um, the one more one other resource that I know a lot of people have been recommending to me is called CSS Grid garden, which if you learn Flexbox via Flexbox, Froggy, or you jump over and stuff like that CSS Grid garden will it gives you like carrots and then you have water and you need to put the water over top of the carrots so I don't know that it's pretty neat. I don't I don't learn too well in in games like that are much rather just actually build something real world but I know a lot of people really enjoyed the Flexbox Froggy. So if you if you like that check out CSS Grid garden calm as well. Yeah,
+
+31
+00:17:36,570 --> 00:18:20,840
+Scott Tolinski: I'm right there with you. I mean, I I really, really enjoyed that site. But I don't know if I learned well from it. Same with Flexbox ragi. You know, they're they're cool resources. They're definitely pretty amazing feats of educational material. And if you want to learn about the history, there's a there's an awesome post on a list apart and actually just got pushed to the I believe the web dev Reddit today. But it was the the story of CSS Grid from its creators. It was published in October 19. By erina. Gustafson, Gustav sun, said that Yeah, is just a great history of of the grid itself, you can read a lot about Wes was is dead. And then that post,
+
+32
+00:18:21,860 --> 00:18:52,230
+Wes Bos: I should also give a shout out to Jen Simmons as well, she, her and Rachel Andrew have been speaking at conferences and working on this back in putting all kinds of examples out there. So I think whenever you say anything CSS Grid, you sort of have to include Rachel Andrew and Jen Simmons, because they have been like, tirelessly working on informing and helping people understand what this thing is for last, like many, many years, yeah, check out jen simmons.com. She's got lots of great content on that as well.
+
+33
+00:18:52,260 --> 00:18:59,060
+Scott Tolinski: Yeah. And make sure to follow them both on on Twitter to cuz that's, I mean, there's just tons of great resources all the time being posted up.
+
+34
+00:18:59,910 --> 00:20:31,200
+Wes Bos: Exactly. And even Rachel, Andrew has a like, ask me anything specifically for grid on GitHub. And you can just go through all the different questions like I had a question, and maybe we can kind of go into this is, how do I do a Pinterest base layout in CSS Grid, and I asked her that on on GitHub, and she came around, she was like, that's not what grid is. And it actually kind of, I always thought it was like just this like kind of nice block fitting thing. But it's it's not that at all. So you take your grid and you chop it up into your rows and columns, which are called tracks. And then you place your items in those tracks. And each item can span as many columns or rows as you want. But the thing about it is that it doesn't do that Pinterest based layout where if you have five items across the first row, and they're all variable height, then the next row is not going to automatically block fit themselves into each of those and just take up all the space. That's actually what CSS columns are made for. So CSS column We'll, we'll take your items in and put them into as many columns as you want. And all the all of the content will fit snugly underneath each other. The one downside to CSS columns is that the content goes, if you're visually viewing this goes one, two underneath it, three underneath it. And then four goes in the next column, which is generally not what you want. So there's some talk about having like a CSS columns direction property, which would allow your items to lay out left to right, rather than top to bottom and wrap around it to the column. Yeah,
+
+35
+00:20:31,230 --> 00:20:57,560
+Scott Tolinski: I think between that or like a Flexbox, direction vertical with a wrap, you know, on it. I think those are like the two closest options we have right now to doing the Pinterest style, the masonry layout with just CSS. I know that's a question all the time, like, how can I do this with just CSS? Well, that's as close as you're getting, you're not getting the true masonry or whatever, without using some Java. So there's
+
+36
+00:20:57,590 --> 00:22:48,570
+Wes Bos: always some sort of downside, you have to use JavaScript. So if you use, everyone always tells me you can use Flexbox for that, but you can't, because your flex wrapper needs to have an explicit width on earth explicit height, which if you're doing infinite scroll, or you doing anything, where you don't know the height of your container, that sort of goes out the window as well. So I did do one example on Twitter, because CSS Grid does have this thing called dense. So by default, maybe I should talk about this by default, what will happen is that CSS Grid will lay out your items as it can fit them. And then if you so if you have like three items, and they all fit nicely snug together, and then you have a fourth item that's too big, either vertically or horizontally, it will just move it until it finds it until it finds like let's say it's two by two, until it can find a space that is is big enough. And then what happens is you start to get these holes in your CSS Grid, because those items can't fit. So what you can do is you can set your layout mode in CSS Grid to dense, and then it will take it what it will do is every time it has a new item to place on the grid, it will go back to the start and to see if it can like fill a hole or box fit it anywhere that it could possibly want. So what I did is I created a bunch of images that were all 100 pixels based. So some images that were 100 pixels by 100 pixels, some other images that were 200 by 200, some others that were 200 by 400, some others that were 400 by 200, right, they're all hundred pixel based. And then if you have a bunch of extra hundred by 100 pixel images, and you set this to dense, all of those extra hundred pixels, ones will always go back into all of those holes and sort of plug them in, you get this nice, like beautifully fit thing where you haven't didn't have to do any math to figure out where these these items go. So that's as close as you can start to get to masonry, if you think ahead of time how big these items will be.
+
+37
+00:22:48,780 --> 00:23:39,300
+Scott Tolinski: Yeah. And that to me, honestly, that's not a tenable solution, if you have that content that works that way. But again, yeah, you know, you can always reshape your content to fit your, your, your grid. Yeah, so let's talk about browser support, and polyfills. And that kind of thing. Because for a lot of these CSS properties, what happens is they come out for a couple browsers, and all of a sudden, you want to use them. So you go look up a polyfill, or just any sort of way to get back and have that browser support. And I think a lot of people were, I don't know, put off by using CSS Grid immediately, because there's no polyfill for it, right? There's no drop in and all of a sudden, this works on your old browsers. Because it's just way too complex. There's
+
+38
+00:23:39,300 --> 00:23:46,500
+Wes Bos: no way you can write a polyfill for all of CSS Grid, there would be brutal, so many features for it there there, isn't it? Yeah,
+
+39
+00:23:46,560 --> 00:24:19,110
+Scott Tolinski: it would be very difficult. And yeah, I don't I just don't know if that's possible, practical at all. So because of that there is no polyfill for CSS Grid, which means that you are sort of stuck with the browser's that can handle it can handle it. And you have to sort of be you know, if you're going to use CSS Grid, you have to know if your audience is going to be able to support it. So what kind of backup plans can you have four? Well, browsers that don't support CSS Grid. I mean, yeah, well,
+
+40
+00:24:19,410 --> 00:26:06,270
+Wes Bos: yeah, let's talk about what browsers don't support CSS Grid right now, because we're actually in really good shape. The thing with Flexbox is that they developed Flexbox behind a prefix, so you always had to do like WebKit display box. And then there was a couple, and they decided not to do that for CSS Grid. And that's kind of the way that new CSS features are being built now is that you have to go into your browser's features and turn these things on if you want to try it so that nobody goes ahead and uses it too early or prematurely before all the browser's have gotten along. So in the last year, it's kind of like all the browser's just flipped that switch and said, okay, it's good to go. We have browser support, obviously in Chrome, Firefox, Safari, opera, iOS Safari, we have it in, we just shipped in Microsoft Edge, which was like the last major one that we're waiting. And then where Don't we have it? Well, we we have like, there's an older version of grid in IE 11, which I know a lot of people are in corporate world are still stuck with iE 11. So that's sort of a bit of a downside there. But I think that's that's quickly going away. I wouldn't worry too too much as currently, what 3.22% globally, but again, that might be 50% of yours. And then we also have so other than iE 11. We've got some other ones, which is UC Browser for Android. I know that's, that's pretty popular in different different countries around the world, you can't forget about those Samsung internet browser. And that's on a lot of phones and tablets. So that has a fairly large, again, it depends on what type of people are visiting your website. And then qq and Baidu, Baidu. Those are really big in China that you need to know about.
+
+41
+00:26:06,300 --> 00:27:25,620
+Scott Tolinski: Yeah, and you don't you don't think occasionally about browsers like the Samsung browser, right. But like, my wife uses a Galaxy phone. And she, you know, though it comes with an app browser, well, she downloaded chrome and knows and uses Chrome, I would venture to guess that most of the people who have the phone will just use the browser, just like most people have an iPhone are going to use Safari, and then the people who want to use Chrome can go grab that. So you know, there are these browsers out there that don't necessarily make its way into our, our thinking of browsers that we need to think about, but they are used pretty heavily. So definitely glad I was really glad to see the Samsung one because I recently did a bunch of testing with the Samsung browser. And I was just like, on some power. Yeah. But uh, yeah, so so. So that's great. I mean, it if you go to Can I use for CSS Grid, the amount of green that we're seeing on this is just extremely positive. Right? You know, what, it's unwell, obviously, unprefixed. But it's what nearly 70% or 75% of global browser support. Yeah, and I think that will jump quite a bit now that it like I think just two weeks ago is shipped in edge. So once everyone has that sort of update cycle, it's gonna come,
+
+42
+00:27:25,620 --> 00:29:24,090
+Wes Bos: it's gonna come pretty quickly at us, which is, I think, don't sit around whining about browser support right now. Because like, before you know it six months a year, I think that we're going to be in a spot where it's, it's very commonplace, and you're going to be able to use it even even now. So like, let's talk about that. What are what are our options when you don't, you can't use it. So the thing isn't just don't use it at all. The idea is that you can have progressive enhancement. So for a lot of these mobile browsers that don't support it. And a lot of cases, you're not actually using the complex grid layout anyway. Because you're on a mobile and a lot of cases, your mobile layouts are very, very small. Yeah, yeah, they're vertical, right? So but then you you can't like there's this whole, like progressive enhancement, rah, rah. And there's a lot of people that are saying, like, just serve your mobile experience, ie 11. But I think, Sarah, let me pull this up here. We'll pause it a second. Sarah studion had a tweet the other day, which I thought was perfect for the show. It said, if someone thinks progressive enhancement means providing a crappy experience for older browsers, and they've got a lot of reading to do. So as much as a lot of us who are in the like cutting edge web development space want to be like, like, who cares serve the mobile experience that you love? And that's their fault, right? Like, if you're making money on the internet, and your sales start dropping on iE 11? You got to make that work, right? So you can't just do that. You can't just serve them the mobile experience. So in that case, what do you what can you do? Well, what I would probably do is go back and curry code just it for IE 11, in either float based layouts, or or Flexbox. layout in IE 11. And then as soon as you drop that you have all of that code that you can remove from your thing. And it doesn't your website doesn't need to look exactly the same in every single browser. But still make sure that you're providing like a decent experience to your users who are on these browsers that do not support grid.
+
+43
+00:29:24,110 --> 00:31:09,630
+Scott Tolinski: Yeah, in a couple of things to go along with that is, is do know, your audience, because like, like Wes mentioned a minute ago, like globally, the percentage of x browser, whether it's IE might be like 3% usage. But if you go into your analytics and see that that browser is used by 20% of your audience, you know, that you can't use those statistics or those percentages for usage and you need to greater accommodate for those people. Likewise, if you see that your audience's point 01 percent usage of iE 11 then, you know, you don't necessarily have to do it. I mean, it Like a nice way for that for that tiny little bit depends on what those people are. If that's like two people. I don't know you don't again, you don't want to serve a bad experience. But is spending, you know, five hours writing fallbacks for everything worth your time for like two or three users? I don't know. It's a question you have to ask, ask yourself and whatever. But yeah, that the nice thing about CSS Grid is that if you write CSS Grid, and the browser doesn't support it, it's not going to error out. It's simply just not going to use that CSS Grid. So if you write everything under the, you know, the idea that it's a CSS Grid, and then you write your fallbacks for the stuff that needs fallbacks for progressive enhancement. the browser's not going to care and your your future browsers if you're doing like, was it like feature flags, or whatever you want to say, like feature classes? It's to know that the browser support is there to target features specifically, then you can write your fallbacks that way and, and make sure that, you know, nobody's getting a bad experience. But the nice part is, is it doesn't break anything to just start writing CSS Grid.
+
+44
+00:31:10,290 --> 00:31:59,160
+Wes Bos: Yeah, exactly. I'm looking at my stats right now, for my learn node.com, which I would assume is mostly web developers going to that website. And I have 0.48%, Internet Explorer. So not half a percent Internet Explorer. And then edge is 0.42% or less edge users than Internet Explorer is, but then again, it's it's a very, very small amount of users. And then Samsung internet browser users, which is one of the ones that you have to care about if you're supporting grid 0.25%. So obviously, I'm a web developer, most people are coming in on 80% chrome are coming in on am Well, that's interesting. 10% Safari 7%, Firefox, more Safari users on Firefox. Interesting. That is surprising.
+
+45
+00:31:59,610 --> 00:32:21,150
+Scott Tolinski: Yeah, I think we have the benefit of most of our users of our web content being tech people, they're going to be on the forward edge and our statistics are going to be skewed in that direction of the people who are actually have the finger on the pulse a little bit more than the people who are stuck in it, maybe a corporate environment where they're they're stuck with a certain specific browser that they have to use.
+
+46
+00:32:21,600 --> 00:33:38,280
+Wes Bos: Alright, we're going to talk a little bit more about our sponsor, which is save abroad calm and save abroad calm is selling t shirts to support fighting prostate cancer, which is done by the Movember foundation. So these are pretty funny t shirts. And if you want to support save a bro head on over to save a row.com and pick up one of the T shirts. So saver bros mission is to spread awareness for men's health by selling mustache t shirts to propose to support and promote No Shave November which raises money to fight prostate cancer, cancer, among other things. So there's two options, I got the let it grow bro shirt, and then they have a grow mo save a bro, which is hilarious. These t shirts are only 18 bucks. And all of the proceeds are going to be going to the Movember foundation. These are not cheap shirts, they are really nice, good quality cotton shirts that you can have. So again, you pick one up, you can be supporting the Movember Foundation, as well as being able to get a really nice t shirt. If you use the code syntax, you're going to get free shipping in the United States, they don't even have to worry about throwing down an extra 10 bucks towards using that. And that will cover if you want to buy two or three shirts.
+
+47
+00:33:38,459 --> 00:33:45,150
+Scott Tolinski: Yeah, and they are like as I said, they are soft, man, they're, they're the right kind of soft for a T shirt. So thanks
+
+48
+00:33:45,150 --> 00:35:19,860
+Wes Bos: so much to save a bro for sponsoring. If you have it in you please go to save a row.com and pick up a T shirt use a code syntax at checkout, you're going to get free shipping in the US. And make sure you tweet out your picture of your T shirt. Let us let us see your your bro t shirt. And also if you're growing a mustache or a beard, this November would also love to see it at syntax FM. Let's keep going with CSS Grid. Actually, I want to talk about one one kind of cool thing about a CSS Grid that I didn't expect it to be in the The cool thing about CSS Grid is that you can overlap CSS Grid Elements on top of each other. So if you were to slice up a div into a grid, and then you have your create items inside of that you can put them anywhere you want in the grid, including behind or over top of other grid items. So one really neat thing about this is that it's going to actually replace the need for position absolute in a lot of use cases. So you don't have to, to worry about use the position absolute and all those sort of headaches. You know, we've all done the whole position absolute top right, bottom left zero, try to stretch a div across a screen or make it 100% wide or anything like that. We'll see That's great, you just put them exactly where you want them to go. And if you want them to span the entire width, you just say, you can tell it to go from track one, all the way to track negative one, and it's going to span all the way across. And then if you make your items position relative, your z index will be respected hundred percent there.
+
+49
+00:35:20,150 --> 00:35:58,770
+Scott Tolinski: Yeah. Again, these like little takes tips and tricks and stuff like this, I feel like they're just going to, they're going to flood out, the more people that get their hands on it, because everyone's going to have just a slightly different creative eye to look at it and going to find things just like that. And all of a sudden, I think we're going to have just this wealth of new techniques and new tools for creating the same sort of stuff. That was a pain in the ass to create before. And that, to me is just so endlessly exciting, because obviously no one likes things that are a giant pain or require, you know, six or seven lines of CSS that, you know, you could accomplish in one or two.
+
+50
+00:35:59,420 --> 00:36:30,710
+Wes Bos: Exactly. So much cleaner, I want to give a shout out to Benjamin de Kock who initially posted that to Twitter. He is a designer at stripe he is responsible for a lot of the like beautiful things that you see coming out of stripe and all these amazing websites. And he has been actually coding this grid in production at stripe for a while now. And he often has quite a few tasty treats that he posts up on his Twitter so he's at BDC make sure you go ahead and follow Him for for tasty treats.
+
+51
+00:36:32,760 --> 00:36:43,050
+Scott Tolinski: tasty treats, and you know, I mean, stripe is stripe is the place for for design tasty treats, and devs Dublin got that they're just absolutely excellent.
+
+52
+00:36:43,169 --> 00:36:45,150
+Wes Bos: Some of the tastiest I've ever encountered. Yeah,
+
+53
+00:36:45,150 --> 00:36:46,460
+Scott Tolinski: right, for sure.
+
+54
+00:36:48,570 --> 00:38:08,460
+Wes Bos: So that's overlapping Another thing I get questions about all the time is animating CSS grids. So how does that work? And unfortunately, there's not a whole lot you can animate with CSS Grid. So with Flexbox, you can you can transition flex grow. And that will just sort of like go from flux for one to flex grow 10. And it will just make itself nice and bigger. And currently I know this might change Currently, the only thing that you can transition in CSS Grid is grid gap. So when you define a grid, you can set the grid gap. And that will define how much it's been as much like margin where it will put space outside of your columns and outside of your rows. And if you were to change your grid gap from 10 pixels to 100 pixels, and you put a transition on that it will grow itself without having anything else. But even then that's only Firefox, right? That was the only Yeah, sorry, I forgot about that. It's only Firefox. So no other browsers currently support that, which is a bit of a power because I love when CSS transitions just work when you transform something or pass it to something and you change it on hover, or you change it when you add a class and then we'll just figure out how to get from A to B. That, unfortunately, is not the case with CSS Grid.
+
+55
+00:38:08,480 --> 00:38:43,260
+Scott Tolinski: Yeah, if there's one thing that would i would be considered the biggest bummer of CSS Grid, I would say that's it. Because, you know, personally, I love working with in browser animations. And I would love to see some really beautiful layout transition animations. I mean, just I my brain goes immediately to all of the great transitions, you could do animating some of this stuff. But you know, I will accept CSS Grid very, very happily with without animations. And I'm not going to, you know, dwell too much on that. But it would be cool.
+
+56
+00:38:43,880 --> 00:39:12,480
+Wes Bos: Yeah, let me let me tell you about about how I did get it to work because I posted some tweets last week about how I did get CSS Grid to animate. And it was because I went to when I was at CSS dev comp a couple weeks ago, David k piano, who is prolific code Penner and CSS, er, he did this talk on this thing that I had never heard of, and it's called flip animations. Yes. And what flip animations are is what does it stand for?
+
+57
+00:39:14,010 --> 00:39:17,670
+Scott Tolinski: I actually use flip animations on my site considerably. So
+
+58
+00:39:17,939 --> 00:40:50,310
+Wes Bos: really, oh, so it's first, last, invert and play. And the idea is that you have instead of having one element that you just transition from one to another, is you maintain like double code, which is a bit of a power because you have to have two sets of HTML. But what flip will do and he has this cool library called flipping is that when you go from one item to another item, it's going to figure out what changed from A to B's and then it will transform your elements from A to B. So what I had done is that I just had two different grids, and then what happened is If you change from grade one to grade two, and then it's going to line up all of the matching flip items. So if if grid item one is matched to grid item one on the next grid and grid item two is lined up to grid item two on the next grid, it will figure out where it needs to come from and where it needs to go to. And then it will transition it between the two, which is so cool. And that's how a lot of these really neat. Animations actually happen. If you've ever used like Android or iOS app, and you get this really cool transform, apparently, that's how it's all done. And he wrote this really great library called flipping, that will allow you to use web animations API, that's the one I was using. Or you can use green sock or anything like that in order to, to animate it from one to another. So it does require JavaScript, but it is possible.
+
+59
+00:40:50,340 --> 00:41:53,360
+Scott Tolinski: Yeah. And man, that flip stuff, I mean, you can get really, really smooth 60 FPS animations using that technique. And that's definitely one of the one of the cooler parts about it. If you were a react person, there is a CSS transition sort of library called react, flip, move, React hyphen, flip, hyphen, move. And it's extremely performative performance, gosh, okay, performance transitions using, essentially the flip technique, and it takes all of the guesswork out of it. Now, granted, there's only like a few examples you can do that the library isn't like, doesn't do everything for you. But if you want a very simple animation, for instance, the level up tutorials forward slash tutorials like my tutorials page, those animations that come in where the tutorials load up there that's actually using this package. It's flipping those in, and it's using this this grow animation from here. But it's awesome. It's awesome, because it's zero configuration, and the animations are
+
+60
+00:41:53,360 --> 00:41:58,560
+Wes Bos: still here, your code because react will just create a new element when it mounts, right.
+
+61
+00:41:58,710 --> 00:42:30,540
+Scott Tolinski: Yeah. And it's great. Like I said, it's not the most flexible library. But anytime you're using transitions, or anytime you're using transforms, this thing will do it for you, you can write your own transforms or anything like that. And it does it with absolutely no configuration. And super smooth, super beautiful. One of the things I really like about it is you can stagger really easily and you can stagger a delay. So there are definitely a lot of really nice, cool things that give your animations some life here with no effort if you're a react folk.
+
+62
+00:42:31,380 --> 00:42:51,330
+Wes Bos: Not so cool. So check that out, we should maybe have another entire thing on like animations and transitions in the browser, because I had no idea about flip until like three weeks ago. And now my I was just like, Wow, this is amazing. I can't believe that I didn't know about this. Do you want to flip everything? Yeah.
+
+63
+00:42:51,600 --> 00:44:00,900
+Scott Tolinski: So now let's talk about dev tools. Because with any of this stuff, you know, the tools that you use to build it are just as important as the stuff itself. And you know, one of the great things that Dev Tools has done for us, it's allowed us to work very efficiently and test things out and code in browser and see things update in action. And as far as Dev Tools go for a CSS Grid, the Firefox, CSS Grid inspector is like one of the coolest things I feel like has ever been shipped inside of browser dev tools, period for you know, doing any sort of CSS. And to give you basically a an overview, it's a visual representation of your grid, and you can see it in action. And you can interact with your grid. And it gives you the nice sort of highlighting when you highlight over like the dummy grid onto your actual code and stuff like that. It's really just a brilliant way to see your grid and see your site in actual ways. So that I don't know you know exactly what's going on, in my opinion, like these dev tools are some of the best ways to really get a handle on what exactly is going on with your Yeah,
+
+64
+00:44:00,900 --> 00:46:16,410
+Wes Bos: I'm sure you're running into this just listening to this podcast, it's really hard to visualize this stuff. And because grid makes these things like rows, columns, gutters, grid areas, they're not elements, but they are these things that have been made in the browser and the Firefox dev tools are fantastic. For for overlaying this sort of visual thing of where your grid is, where your grid starts and stops. What grids are what tracks are, because there's this whole concept of I don't even think we should try to do it in the podcast. But there's this whole concept of explicit tracks and implicit tracks, meaning that Once you've filled up your grid and you have more items, they spill outside, then they they go from explicit to implicit meaning they've just been auto generated. And there's a whole bunch of stuff in grid that you can use to decide those things. It shows you track numbers because there's other confusing thing in grid That if you want a number, if you want to like put an item from one to four, you're not counting the columns or the rows, you're counting the gutters. So if you have four columns, you have five gutters. So it gives you these nice little number overlays, it allows you to change the color of the tracks on top of it, it'll show you the areas of your actual CSS Grid. So another thing we haven't talked about is that CSS Grid will allow you to name your areas. So you could take your entire website, slice it up into this is the header, this is the nav This is the sidebar, this is the content, this is the footer. And then you can just take an element and say this goes in the footer, this goes in the header, this goes in the nav, and you don't have to tell it start at one go to 10. You just tell it go into the actual header area. And it will just like expand itself to fit that entire area, which is pretty neat. So Firefox dev tools, amazing. They really helped my understanding of how it works. Chrome 62 just shipped grid tools. But they are nowhere near the Firefox Dev Tools just yet. I'm sure they'll get better as time goes on. But if you're doing any sort of grid stuff, definitely pop open. Firefox, yeah, new Developer Edition, you
+
+65
+00:46:16,410 --> 00:46:35,490
+Scott Tolinski: get to those by it's under the Layout tab if you're looking for it. If you open up in the bottom, there's rules computed layout, and then you have to click a checkbox to overlay your grid. There are several other checkboxes to basically have this showing what sort of information you want. That's in case you're if you're looking for it.
+
+66
+00:46:37,590 --> 00:48:08,280
+Wes Bos: Exactly, exactly. Other things about CSS Grid, I know we're not we're not going to be covering all of it just because this is such a visual thing in CSS Grid. And for us to try to explain it over audio is a little bit tough. And we've got some stuff coming out that's going to help you understand on how that works. One other kind of neat thing or not neat thing about CSS Grid is that they do have this like ASCII syntax, where you can you can define your grid areas, by saying like the header starts at one and goes to 10, your sidebar starts at one and goes to three and your content starts at three and goes to 10. So you can define where these areas are. But there's an alternative way to lay it out, which is really just ASCII where you just say you can just make a grid with words. So you can say let's say you wanted something that was a grid that was four across and however many Hi, you could just say header header header header, header header header header, header header header header, so that would be four by three of your header, then nav nav nav nav would be three across, and you can do sidebar content content content, sidebar content content content, sidebar content. And your you can visualize what I'm doing here is that I'm just making a grid out of the words. And if the words match up, like sidebar, sidebar sidebar, that is how you define the grid area that is named sidebar. And it's kind of neat. It's kind of weird. A lot of people that was their that was their first introduction to grid because
+
+67
+00:48:08,460 --> 00:48:23,790
+Scott Tolinski: isn't that super? Like? Isn't that one of the things that in Bert Bert bosses his element yet Wes is dad's implementation of this thing. I think that was one of the things that his did. And that's how people had first saw it.
+
+68
+00:48:25,080 --> 00:49:20,730
+Wes Bos: Yeah, I think there was a lot of people being like, the syntax is horrendous. And I will agree that the syntax of CSS Grid is hard to learn, because there is forward slashes and there's space. And then there's there's also functions called repeat. And then there's new words called min, and there's a function called min max. And there's words called auto fit and autofill. And just use the lines, there's just a whole bunch of new stuff. And and people can immediately go to this as garbage, when you have no idea how powerful this CSS Grid thing is. And I would like to see you tried build a better API, with the constraints of not breaking any backwards compatibility of CSS. So I don't know don't complain about the syntax, because it's, it's, it's hard, and you're gonna have to learn it. But I don't know, you spend 1015 hours learning this thing over the next year or two. And it's going to become second nature to you, just like Flexbox was Yeah,
+
+69
+00:49:20,730 --> 00:50:10,380
+Scott Tolinski: and some of the best things in life are a little bit hard to learn. You know, and, and this is one of those things that the, the new changes are some of its best features, because of the fact it allows. I don't know, my favorite thing about CSS Grid. And this allows for it because of this is that it'll, it allows CSS Grid to be as concrete and definitive or as sort of open end as you want it to be. So it can be very like, hey, everything just sort of fit in here into this space, or, hey, this is exactly how this grid needs to be. And because of the API being so flexible, you It allows CSS Grid to do so much stuff. That is with ease, I should say it allows it to do so much stuff with ease that it just makes. I don't know, it may it makes any of this stuff just a joy to work with.
+
+70
+00:50:11,280 --> 00:51:30,600
+Wes Bos: Exactly one. One other advice I'll have to people that are learning this is I always like to tell people to embrace the flex. Because when we initially saw Flexbox, what happened is that people said, Great. And they started making these frameworks that did the exact same thing that your float base layout, like column six, call seven. And it was just doing the exact same thing that floats or the floats were doing. And I would encourage you to put your your existing layout stuff aside, forget what you know about these very rigid layouts, these bootstrap grids and everything like that, and just learn to embrace the flex and and know that not everything is not going to be as rigid as you could possibly want it. But you the browser, if you use min max and autofit and autofill. And, and these, this new unit called fr, which will allow you to expand through the free space, kind of like a flex, flex grow value. If you embrace all these things and know that the browser is going to do its best job at trying to fit your content into the space. And if you embrace the flex, it's you're going to have a much better experience learning grid than trying to mash it into what you have already known because it's going to change the way that we do layout because a lot of stuff is now now possible, right?
+
+71
+00:51:30,960 --> 00:51:42,570
+Scott Tolinski: Yeah, yeah. And it's, I just love how concise the syntax is, like what you can accomplish with little to no syntax because of those things that I mean little to
+
+72
+00:51:42,570 --> 00:52:23,940
+Wes Bos: no syntax and and not a lot of duplicate or extra markup. Yeah, so a lot of times, we would be adding extra divs and spans and and whatnot to our markup just to make these layouts work. Whereas with grid, you're going to have a very toned down layout where your header and your nav, and your sidebar and your content and your footer and your features and your about section, those are all going to be siblings. And you're not going to have to have like, like a wrapper for all these, you're still going to have wrappers, that's one thing I did did realize, by doing all these examples, you still will have wrapper components. But you'll have a lot less wrapper components than you used to have with your float and Flexbox. Base Layout.
+
+73
+00:52:23,970 --> 00:52:44,790
+Scott Tolinski: Yeah, I found I found it to be a nice exercise in deleting divs. Once you're getting into this, and it's a, there's nothing better than being able to eliminate some code, that's just being there to essentially be a nice extra little CSS wrapper, right? If you can get rid of one of those divs that's really not serving any sort of structural purpose a plus.
+
+74
+00:52:45,510 --> 00:53:30,900
+Wes Bos: And one other thing I noticed as well is that you write a lot less media queries. When you're using grid, because they have this thing called min max, where you can tell an element inside of your grid to be minimum 400 pixels maximum, and you can put a pixel value on it. Or you can give it a fr unit, which it'll expand out to as big as it wants. And it will just sort of figure out how to best fit these elements on the thing, which is great. Because then you're not thinking about the viewport, this comes back to the whole container queries thing. You're not thinking about how big is the viewport? You're just thinking about? How big is this grid and how big are my elements inside of it. And the grid will start to figure out how many it can fit on a row and a column and it will just wrap the the additional ones. Yeah,
+
+75
+00:53:30,900 --> 00:53:55,650
+Scott Tolinski: and we all know that's the future anyways, because with reusable components you want your component to to work well, whether it's a child of something else, and it's sort of stuck and constrained, right? And yeah, or if it's on its own, filling up the entire layout, you want that component to be smart enough to be able to handle those changes. And that's definitely will, you know, an excellent little thing here to get a little bit of element query stuff going on.
+
+76
+00:53:57,030 --> 00:55:07,530
+Wes Bos: Awesome. Um, let's talk about what we can wrap it up, I'll talk about some things that CSS Grid doesn't do. So I already talked about the Pinterest masonry layout. It doesn't, it doesn't really do that unless you, like I said you define a bunch of predefined sizes. One other thing that it doesn't do is something called end throw, which I discovered. So let's say you wanted to build a navigation, and you had six or however many top level elements you want it so you have about home contact, and all these elements in your nav, and then you have extra elements and they wrap on to the next line of your grid that's great will be cool is if you could size or style those elements in the second row, or the second column to be a little bit different than the elements in the first round. And currently That is not possible. There's no like end throw selector to select each row and you can't Tiger stripe each individual row or column that you have. So I wrote a I don't know 15 lines of JavaScript to add a class of row one row row three are odd even. It wasn't too hard. But you do still have to reach for JavaScript if you need that.
+
+77
+00:55:07,950 --> 00:55:15,390
+Scott Tolinski: Yeah, or use something else. But I guess that, you know. Yeah, that eliminates all of the benefits.
+
+78
+00:55:15,900 --> 00:55:27,120
+Wes Bos: Yeah, exactly. And then another thing that didn't make it into the spec is this thing called sub grid. And I thought I would just try to explain what sub grid is. Have you ever heard of sub grid before Scott, um,
+
+79
+00:55:27,300 --> 00:55:30,750
+Scott Tolinski: I haven't. But I'm gonna go ahead and guess it's a sub grid to the
+
+80
+00:55:30,750 --> 00:57:13,260
+Wes Bos: grid. There you go. Nailed it. So I, Rachel Andrews has a really good blog post about about this about what it would be if we eventually do get it. So let's say you have three cards on a page, and the cards are all three of them to to a row, and they're all beside each other. And then you each of those cards has a header, a content and like a footer. So you can imagine that each card is broken up into three, three different rows. And the middle row on each of those cards is dynamically sized, meaning that the height of the middle row on each of these cards hold, you stay with me here, the middle row, and each of these cards is different. Because the first one has only six words in it, the second one has 60 words, and then the third one has 20 words in it. So what will happen is that the 60 word one is the tallest and it will size, the one to the left and the one to the right to be as tall as it, what doesn't happen is that you there's no way to tell the middle, there's no way to tell the second row of the of each of the cards to all be the exact same height. Because they're not they're not siblings, right? Because they're they're both a child of a card, and then the cards are actually sibling. So my understanding of what subgrade will do is that you will be able to size non sibling elements to be the exact same height, or to all size themselves to be the same height of as the highest one. I don't know if that makes sense or not, does it? I'm
+
+81
+00:57:14,790 --> 00:57:15,840
+Unknown: gonna go ahead and leave my answer.
+
+82
+00:57:15,840 --> 00:57:19,740
+Scott Tolinski: I'm not quite sure To be honest, I would need a like I said, I'm a visual guy there. And he goes
+
+83
+00:57:19,740 --> 00:57:31,710
+Wes Bos: to Rachel, why are we trying to lay stuff out on the on on radio anyways, but it's kind of exciting. I bet we'll get that eventually. And that'll solve some of our little edge cases that cannot be solved with Flexbox or grid.
+
+84
+00:57:31,740 --> 00:57:34,560
+Scott Tolinski: Yeah. All right. Any
+
+85
+00:57:34,560 --> 00:57:38,160
+Wes Bos: other any other grid tips for me? Or do you want to move on to some sick pics?
+
+86
+00:57:38,460 --> 00:57:59,820
+Scott Tolinski: Um, no, my I mean, for me, it's like, just use it, get your hands dirty. Have fun with it. You know, I think there's a lot of you know, people maybe a little bit afraid to get into it, because they feel like they can't use it in production. And like now, now is the time to learn it. You know, like, Sure you can learn it next year, too. But now is the time to learn it not next year.
+
+87
+00:58:00,630 --> 00:58:19,500
+Wes Bos: Especially if you're trying to get a job or trying to upgrade your skill set. It's a great time to jump in. And you can get ahead of a lot of people who have been been through the tables, two floats to Flexbox. And now to grid it's like the sort of the fourth iteration of of layout, and maybe they're not moving to it as quickly as you might be.
+
+88
+00:58:19,530 --> 00:59:12,360
+Scott Tolinski: Yeah. And if you feel like it's, it's still I don't know, for me it is it is the future. It's not or I mean, it's the present. It's not the future, it is the present. And it is CSS. It's not one of these things where you can feel like you can't learn it right? Or you shouldn't learn it like I shouldn't learn this because I can already do everything with floats or Flexbox. Or no, this is like going to be how you write CSS from this point forward. So use it just like I yeah, I had somebody in one of my comments. And it was like, Why are using es six for your tutorials. It's just going to confuse people. And I said ESX is JavaScript. It's like, the next great is JavaScript. Like, if I'm not using JSX, I'm not using JavaScript like flat out. I'm not using modern modern code. So use it,
+
+89
+00:59:12,390 --> 00:59:52,680
+Wes Bos: use it, use it exactly. And you might be coming at this and be like, well, I use some sort of framework or I use like at CSS dev cough, the author of the Suzy sass, like grid layout. She had a talk and she said don't use my Fr. I think it was called don't use my homework. Which is great to see because I personally believe you don't need any of these bootstrap frameworks, grid systems or anything like that. Because you don't need something to abstract away the complexity of floats anymore because grid is going to be can be hard to learn, but it's extremely simple to implement.
+
+90
+00:59:52,799 --> 00:59:55,050
+Scott Tolinski: Yes. Cool. Yeah. And
+
+91
+00:59:55,050 --> 00:59:57,210
+Wes Bos: can we expect your layout course there, Scott
+
+92
+00:59:57,210 --> 01:00:35,280
+Scott Tolinski: this month. Awesome. I think end of November. I'm trying to get it finished. I'm trying to wrap recording on it by the 24th. Actually, I'm trying to I'm sorry, I'm trying to get wrap recording done on the 17th. And then, so who knows, we could see it anytime between the 20th and the 30th. But like I mentioned, it's it's going to use grid, but the course isn't going to be like the Definitive Guide to grid or something like that. It's going to be mostly on modern CSS layouts, how you would approach like, if I want to approach Trello, I want to make Trello. How would you write the Trello layout using modern CSS?
+
+93
+01:00:35,310 --> 01:00:47,480
+Wes Bos: Yeah, because grid is just one of your tools in your toolbox. Exactly. Cool. I'm looking forward to that. That should be exciting. Let's talk about some sick pick six. What do you got for me?
+
+94
+01:00:47,880 --> 01:02:25,110
+Scott Tolinski: Yeah, so I got another book, I got people telling me they like the books I suggest. So I'm going to suggest another book, which is going to be the book, just my type. Now, I know a lot of us are developers and designers and sort of stuff like that. But one thing we all have in common here is that we work with type a lot, whether or not we're designing it, we still work with fonts and stuff like that. So you've probably encountered a whole bunch of fonts that are existed for a very long time and have really complex and rich backstories. And just all sorts of interesting stuff. So this book, just might type is a book about fonts. And it's essentially, each chapter talks about a different font. And sometimes they're like these origin stories about this font, like how this font came to be. And other times, you know, there's a chapter on Comic Sans. And there's a chapter on like, some of the crazy stuff that some of the people that were behind these fonts did in their personal lives. And but either way this Yeah, this book is endlessly entertaining, you walk away with it. learning a lot about type, the history of type and and how it all works, but you also walk away with it. I don't know, I'm a history fan. So it's like, there's a lot of great history in here about both the typefaces, the people and type itself, and really just one of those ones that, again, tough to put down or just superduper entertaining and relevant, but not like it's not going to be reading a book about JavaScript. It's interesting stories and history stuff.
+
+95
+01:02:26,760 --> 01:04:25,230
+Wes Bos: Neat. I'll check that out. My sick pack is not new, but I'm going to do a little bit of an update because I get lots of questions about this on Twitter. So I don't know maybe two months ago my sick pick was the Cal digit Thunderbolt three dock because I got the new MacBook Pro. It's all USBC based. And I've been running it for a number of months now and I've been super happy with it. People are asking like How's it going? It's been rock solid being able to I've got my 4k display. I've got 22 inch monitor plugged into it got all of my recording gear plugged into an Ethernet plugged into it. Multiple hard drives that need to be powered because they're powered over USB. It's incredible how much stuff I actually have plugged into this thing and it's been amazing. So I initially reviewed it when I only had it for a couple of weeks and it was working really well. And it's been been rock solid. The one thing I did have to do is that because this thing is one plug meaning that you plug all of your monitors all of your USB and then it also charges your computer. It's all over one Thunderbolt three USBC cable. And because it needs to charge the 15 inch MacBook Pro at 100 watts or the MacBook Pros at seven but it like the cable supports 100 that cable is stupid expensive. I think I paid after I shipped it from the US and got hit with duty it was well over $100 Canadian I think it's like $65 us plus shipping so it sucks because now I'm in 350 bucks for the talk and another hundred for the stupid USB cable so I'm I'm in over my a lot of people pay for just their laptop for a doc but being able to plug it in with one cable is almost worth all that money. So if you if you have the budget for it if your boss is willing to pay for it, I definitely recommend it.
+
+96
+01:04:26,760 --> 01:04:28,020
+Scott Tolinski: Joe, that's sick.
+
+97
+01:04:28,049 --> 01:04:42,420
+Wes Bos: Sweet. That's a sick pic. Alright, so that's it with this CSS Grid. If you have any tips about CSS Grid, make sure you tweet them at syntax FM, as well as make sure you follow Scott and I am at Wes Bos WSB OS and
+
+98
+01:04:42,420 --> 01:04:47,250
+Scott Tolinski: Scott is at S kolinsky to LISKI.
+
+99
+01:04:47,939 --> 01:04:49,170
+Wes Bos: That's it. See you next week.
+
+100
+01:04:49,620 --> 01:04:50,160
+Scott Tolinski: See it
+

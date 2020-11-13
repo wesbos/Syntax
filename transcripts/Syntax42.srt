@@ -1,0 +1,380 @@
+1
+00:00:01,290 --> 00:00:55,890
+Wes Bos: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to Lynskey and West boss. Hello, everybody. And thanks for checking out syntax. This is the podcast where we deliver tasty treats every week. And this week, we are going to be doing some super tasty treats. We're going to be answering a bunch of listener questions, we get all kinds of questions via the the the forum that we have via Twitter via dm all over the place. So I sort of compile those and every now and then we will rattle through a bunch of listener questions. And I like this because there's there's something for everyone in this kind of episode. And it will it really allows us to talk touch on some of these topics which are much smaller. Maybe it's just 510 minutes to talk about rather than a massive episode. So with me as always is Scott to Lynskey. How you doing today, Scott? Hey,
+
+2
+00:00:56,040 --> 00:01:06,870
+Scott Tolinski: I'm doing super good. I think we need to come up with a catchy name for these kinds of episodes. Like you know, mailbag is inappropriate because it needs to be tasty treats related
+
+3
+00:01:06,980 --> 00:01:08,310
+Wes Bos: it tasty. So
+
+4
+00:01:09,540 --> 00:01:12,420
+Scott Tolinski: I tried to come up with something off the top of my head, and I was just like,
+
+5
+00:01:12,420 --> 00:01:15,360
+Wes Bos: throwing an egg from a neighbor or like making cookies,
+
+6
+00:01:16,320 --> 00:01:18,090
+Scott Tolinski: or cookies, or
+
+7
+00:01:18,120 --> 00:01:23,370
+Wes Bos: cake sale or bake sale. Ooh, potluck. So Paul, Paul, everyone.
+
+8
+00:01:24,719 --> 00:01:32,489
+Unknown: Oh, yeah, yeah, that's all right, right in the action.
+
+9
+00:01:33,780 --> 00:01:48,659
+Wes Bos: Welcome to the potluck episode. That's actually how Scott and I do almost everything with this podcast is just kind of riffing on it. I remember when we first did the, the name for the podcast, we had so many stupid ideas. And then syntax just popped out of nowhere.
+
+10
+00:01:48,689 --> 00:01:57,930
+Scott Tolinski: Yeah, we had a lot of stupid names, we should, we should actually at some point, just go through and rattle off all of the crappy names we came up with for this show. That'd be a good little segment there.
+
+11
+00:01:57,959 --> 00:02:35,130
+Wes Bos: Oh, it's brutal. Anyways, today we are sponsored by fluid comp, which is the awesome web development conference and deploy HQ, which does sort of deployment straight from your Git repository. And we'll talk a little bit more about them partway through the show. So why don't we we dive into it, you want to pick off the first question, we've got a whole bunch here. And we're just gonna sort of get through as many as we possibly can. And then if you have your own question, we'll put the link to the forum in the show notes. And go ahead and submit your your question right now. So why don't you rip one off there, Scott? And we'll we'll try tackle it. Yes.
+
+12
+00:02:35,160 --> 00:02:59,730
+Scott Tolinski: Okay, so the first one. This one is, what are your thoughts on view? j. s? I feel like I'm appropriate. Or it's appropriate for me to answer this one cuz I just did a series on Vue. js after working in react so long. So the full question is, by Louis Hernandez, what do you think? Or what are your thoughts on Vue JS? I've recently seen a bunch of hype about it, it actually looks pretty good, but would like to hear your thoughts. My thoughts are,
+
+13
+00:03:00,300 --> 00:03:00,870
+Unknown: uh,
+
+14
+00:03:00,870 --> 00:04:59,070
+Scott Tolinski: I found it to be nice to work in. I enjoyed working in it. I was surprised at how much stuff Vue did for you. For me, I came from Angular before react. So a lot of the concepts are very Angular II, or at least Angular one E. And they're also very react D, in a way. And so because of that, it was sort of a nice hybrid of some of these ideas, you're passing props. But there's still a lot of my opinion, like magical stuff, stuff that you're sort of wondering, where's this coming from? It's not nearly as explicit as react, I found sometimes being a little like, is this going to work? Okay, this worked. Okay, um, why? Why is this working, but like, only because things weren't as explicit in that, but it's one of those things that I think that if you were working in view all the time, you knew exactly where everything was coming from, and you were very, very comfortable and familiar with it, it would be really nice because you have to do a lot less work to get things going. So in my opinion view is pretty sweet. I think it's a, a wonderful another flavor of web framework to have out there. It offers you a lot of options, and a lot of ease into development that things like react aren't doing for you. The view csli was great. It's a great sort of, like create react app kind of system. So I found the view ccli, the latest one to be excellent. All around the ecosystem, the docs, they were all great, the community was great. If I had issues, I went to the discord channel, talk to a bunch of people. So there's definitely a lot of things to like about view. That's it. I'm not going to jump out and rewrite my whole site in view right now, because I don't see that much of a reason to jump. You know, from react view. I still love working in react. So if I was working on a new project, might I consider a view? Yeah, I've definitely consider it. But I'm not exactly about to change my current trajectory and what I'm working on for it.
+
+15
+00:04:59,610 --> 00:05:43,050
+Wes Bos: Yeah. I think sometimes people ask me all the time, like, what are the differences? And which one is better? And there is really no answer to that. They're all very good at what they do. They all have their pros and cons. And we'll do a whole view episode once I actually get myself learning and building some stuff in view. But I would definitely not say that it's hype, because it's it's definitely one of the frameworks now, I would say, yeah, people absolutely love it. People are betting on it with their businesses. So I would definitely consider it if you are looking at different frameworks. And also this view press came out the other day, you see this static site generator for view? And it's built by you. Yeah, yeah. The the lead dev behind view,
+
+16
+00:05:43,110 --> 00:06:00,240
+Scott Tolinski: I only saw that it came out. I didn't fd. I didn't dive too much into it. I would like to dive into it more, because there is what view is a view x or nuxt? Or Yeah, view x. Sorry, yeah, Redux? Yeah. nuxt. Oh, yeah. I haven't used that one either. Pretty nifty.
+
+17
+00:06:00,870 --> 00:08:17,699
+Wes Bos: Cool. So Well, well, again, we'll have another episode on that some point people ask for every single day, but I just need a couple days to to build an app myself in it. And right now, I'm pretty heads down on my course. So we'll get to that eventually. We next one, kind of along the same lines is have you ever used TypeScript or flow, which do you prefer? So I'll start off on this one, and we can see what Scott's things are. So first of all, let's explain what TypeScript and flow are. So JavaScript is what's called a loosely typed language. And what that means is that if you have like a function, and you either want to accept arguments into it, or you want to return some values from it, you can just do whatever the hell you want, you can you can accept a number or a string or a Boolean, or an object, and it will always work. And you can convert these from one to another and without really, without really much problem, right. And because JavaScript is so loose, it's it's kind of nice, because you can just like get up and running with it without having to know a whole lot of stuff. However, there's a huge downside to that, which is your it can get really messy, you don't know, if you need to pass in a value, you don't need to know if you need to pass in a string or an object or a number or what you should be returning or, or any of this stuff. And then also, along the same lines, the the tooling with this stuff is really great around things like TypeScript and flow, because then you get this really nice sort of like IntelliSense in your editor, where if you type a function, it will tell you exactly what you need to pass it, what type you need to pass it a little description along with it. So I haven't built anything significant in TypeScript or flow myself. However, doing graph qL, over the last couple months, over the last couple of months, I've definitely seen the value of having a very rigid typed language because because graph qL itself is is typed like that, right? And once you get over the hump of how rigid it is, you start to say, Oh, this is nice. I definitely see why people vastly prefer this over just JavaScript.
+
+18
+00:08:17,730 --> 00:09:14,640
+Scott Tolinski: Yeah, yeah, I haven't used it myself either. Because I ended up like modifying my, my code base so much, I feel like I'm treading water instead of adding new features. So that's one of those things that like it would require a lot of work to put into place right now. And I just really need to, well have time to do that. But personally, I think I would, I would definitely try out TypeScript or flow on any other project, or even reason. I think for me, one of the things I wanted to wait and see which one is going to come out on top, I don't know if there is going to be one that comes out on top. But you know, low is made by Facebook and TypeScript, as a lot of support from a whole bunch of different companies, including Microsoft. And, you know, it's used in Angular and all sorts of stuff. So it's tough to say reasons, gaining some steam in the React community as being a new option. I really want to see, like before I invest a lot of time in picking one of these. I want to see which one is is the de facto winner. I don't know if we'll get that though.
+
+19
+00:09:15,720 --> 00:10:07,260
+Wes Bos: Yeah, and we should also say that flow is mostly just comments. And it's a little bit of a modification to the actual language. Whereas TypeScript is an entirely separate language and sort of encapsulates JavaScript and ESL ESX, and everything that we got, but then also add a whole bunch of stuff on top of it, so I would definitely check it out. It is a barrier to entry. Uh, one of the reasons why I don't necessarily reach for it immediately is because I do teach. Yeah, and if I were to immediately start to do everything in TypeScript, well, I people have asked for TypeScript classes, then that's a huge barrier to entry for a lot of people who don't necessarily want to do and generally what happens is that people that already know No TypeScript will just do my tutorials in TypeScript because they know enough to be able to say, okay, the equivalent in TypeScript is x, y and z.
+
+20
+00:10:07,550 --> 00:11:48,480
+Scott Tolinski: Yeah. Yeah. Totally agree with that. Yeah. Because the moment you make it the TypeScript, React tutorial, you're losing that chunk of your audience that isn't interested in in TypeScript or interested in in flow or reason or whatever. Okay, cool. So the next item in the potluck is brought to us by jazz. He, he brought this in, wrapped in cellophane on a paper plate here. And this is, what is your biggest? or What was your biggest breakthrough advancement in learning JavaScript, and web development? A project, a study? Or not a study, but that he saw, okay, what was your biggest breakthrough? For me, I think my biggest breakthrough was really just diving into frameworks overall, whether it was Ember, Angular, backbone, those were the first three that I dove into, for me that took JavaScript out of a land of, hey, I need to have a slideshow, let me drop this jQuery in here, or I need to have this event happened when I click this button, let me drop a little line of JavaScript in here to something that was much larger than that and much more. This is a full on application. And it's so much more interactive, and I'm working with database calls. Because previously, before working in that kind of thing, I was all, you know, CMS backend I was interacting with the database is primarily through some sort of PHP system. So for me, my biggest advancement was that the moment that the JavaScript frameworks sort of came into a more mature state, and started being a lot more used, and you're certainly building on applications with JavaScript itself, so that to me was a big Wow, super cool moment.
+
+21
+00:11:49,379 --> 00:14:19,020
+Wes Bos: Yeah, I think for me, it was I had built a I was sort of Learning Express and and passport j s, and that whole stack that where you build a back end based app, and I had taken on a project to build sort of a contest on Facebook. So the way it worked is that Facebook apps, I don't know if they're still this way. But Facebook apps used to just be an iframe that you pop into Facebook, and they send along some authentication headers, and whatnot. So what I had to do is I built this Express app where it would log in with Facebook, people will be able to upload a photo and attach that to their Facebook ID. And then people will be able to vote on those different photos. And there's a whole bunch, it was basically a contest where people would upload photos of various spots around Canada, and people would vote and then at a certain point, somebody would win. So that was huge for me, because at the time, I had been doing primarily WordPress websites and jQuery websites and being able to switch over to actually building something significant. In Express, it really pushed me and it really opened my eyes to how all of this other stuff worked. I remember like kind of weighing, like, should I try to hack this together and WordPress, or should I build this custom thing in totally in JavaScript and express and I decided to go custom because one of the things they needed, which is really funny, it was the ability to detect nudity, because people could could upload, there was no moderation process in there. So it was hilarious, I got to use this library called nude dot j s, and it would, it would detect if there's nudity based on skin tones and stuff like that. I think it was very long ago, maybe five or six, seven years ago, that I did this, there's much better stuff out there now with machine learning to actually, I remember uploading a photo of toast, and it thought toast was nude, because there's so much like this skin tone. So that's what I did. And I remember that just like really grew my crew my skill set. And then from there I built on or maybe four or five other medium sized Express apps that had authentication and logging in and uploading photos and, and all of that stuff. And that that really pushed my skill set past the sort of jQuery where I currently was not that was before frameworks had even sort of surfaced.
+
+22
+00:14:19,710 --> 00:14:53,670
+Scott Tolinski: Yeah, cool. Yeah. See, when when node was first starting to be a thing for me. I didn't necessarily. I didn't necessarily get it. I mean, I got what node did but I didn't. I didn't dive in because I was doing CMS base sites. And for me to have to go through and do a whole, I guess Express was like still infancy or whatever, to have to write your an HTTP HTTP server and get all that stuff going. I just remember being like, Yeah, but it's easy to install WordPress like, yeah, so I didn't jump on it, I think in that same regard as you did. So yeah, super cool.
+
+23
+00:14:54,960 --> 00:15:16,550
+Wes Bos: I talked about this before, but I remember watching on YouTube of the introduction to node and not talking really understanding what it was, but I could feel that it was like, going to be something big. And I'm super glad that I sort of bet the farm because at that time, everybody was learning rails and I thought, should I be learning rails? But JavaScript was a good solution there, too.
+
+24
+00:15:16,680 --> 00:15:43,590
+Scott Tolinski: Yeah, we went to a knee in the CO creator of level up tutorials bench if we went to a code meetup, and they took maybe, like, 45 minutes for them to get the entire room up with like, a Hello World, because it was like, right when it came out. And I just remember, like, this is a lot of effort. This is a lot of effort. But I also think it was probably just because there's a lot of people infancy, nobody really knew what was going on. But you know, now Now today's that the whole thing would be very different.
+
+25
+00:15:43,920 --> 00:16:07,500
+Wes Bos: Yeah, it's actually kind of interesting, because there still is no real rails of JavaScript. You know, like, you know, Rails is like everything baked in, or red or ivalo. php, has this, like everything sort of baked in, and you can just get up and running. And there are some things out there. But it seems to be the JavaScript community is just like, no, I like my small packages, and I'll stitch them together. Yeah,
+
+26
+00:16:07,740 --> 00:16:13,350
+Scott Tolinski: yeah, I really enjoyed using rails. But again, I do I do sort of like the way the node community has moved.
+
+27
+00:16:14,610 --> 00:19:28,950
+Wes Bos: Yeah, yeah, totally. I agree. Let's take a quick break and talk about our sponsor, which is deploy HQ. This is actually pretty nifty. Because people ask me all the time, how do you get your websites deployed to your actual server, because you often have your website, you've got some sort of Git repo or any other version control repo, and then you've got a server that need to deploy it to so what deploy HQ will do is allow you to either just watch your Git repo, and whenever you push something to let's say, a lot of people will watch their master branch and, and when a commit lands in the master branch that will automatically deploy to your your server. So what this will do is either via FTP, or SSH, it's going to take your Git repo or any other repo that you have and deploy that thing directly to your server. So you're always running the most recent code in there, you can write custom commands to do build. So if you have like a build step in between pushing to your master repo, and then compiling a whole bunch of assets or building your application, you can push it in there, they've got guides for for react, and view and all these all kinds of guys that you should really be checking out. They have the ability to deploy to multiple environments. So if you have a staging and a production server, sometimes you need to get it okayed by management before you actually deploy to production. That's something good to have their automatic deployments. So it's going to watch your Git repo. And as soon as you do that, it's automatically going to kick off the build process and deploy it right there. You can set up post commands to if you want to have like a big button in your office that says deploy. But you could pull a sweet little Arduino thing for that. What else do they got here, you can scheduled appointments to to deploy at a specific time, maybe you want it to deploy, not on a Friday afternoon, like I've done before, it had everything coming crashing down. Pretty nifty little thing. Pricing is very reasonable. I'm just checking it out here. It's 950 a month for up to 10 projects, unlimited deployments, unlimited user, I like that unlimited deployments before, because you You shouldn't be penalized if you do five or six commits within an hour and it kicks off five or six builds should be able to do as many as you want for your 10 projects. So it looks like it's about 950 a month us but if you are a syntax listener, which you are go to deploy hq.com forward slash syntax, and what that's going to do is it's going to give you 50% off your first six months which is pretty sweet. They also have a free 10 day trial and it's it's not one of those scammy trials where they they pull the rug out from under you and ask for your credit card no credit card required just give it a 10 day trial to see how you like it and then get 50% off. Also, this is pretty nifty. I'm gonna grab one of these before anyone else does the first 25 listeners get a who successfully deploy a project are going to get a free deploy HQ mug or t shirt so I'm gonna do mine right now and there's 24 left after this so go ahead and check it out at deploy HQ comm for slash syntax and thanks so much to deploy HQ for sponsoring.
+
+28
+00:19:29,460 --> 00:19:30,030
+Unknown: Yeah I love
+
+29
+00:19:30,030 --> 00:20:00,840
+Scott Tolinski: stuff like this because working it like you're coding your your your heads in your code and it works locally. You just sort of expected to go up to production and be okay but like who loves spending that time it once your once your deploy process is like really excellent. It's such a joy to just be able to deploy something like easily and confidently and know that you don't have to worry about it. That to me is such a big thing that it's like a life improvement in your your whole life. load everything. It's
+
+30
+00:20:00,840 --> 00:22:33,150
+Wes Bos: totally Yeah, sometimes you hear about these companies that are like, they deploy once a month, or something like that. And then it's almost scary, right? And yeah, if you deploy early to play often, and you have a process in here, it's going to be super simple. So they also have a 10 day free trial, I should mention that as well. It's not one of those things where they're gonna ask for your credit card and wink, wink, it's 10 day free trial, you can just go ahead and grab that. So their signup process is really cool. They have a link to your gmail.com. Right after you sign up. That's, that's smart. Sick, wicked. So check it out. All right, let's grab another question here. Um, any tips, this one's from critter, I don't know if that's your only or not any tips, tools, tricks for motivation or avoiding procrastination. So I'm a big procrastinator, and a big proponent of, of getting a lot done. And I know this in myself, because when there's something that I don't want to do, I will just start watching YouTube videos, or just push off all of the actual work that I have to do. Because of that one thing that I don't really feel like doing. So what I found with myself, and this is sort of the process that I go through is I do a brain dump into my things. And we've talked about this before in our productivity episode, which is I follow the sort of the Getting Things Done methodology where you do a brain dump into your app, and then you can sort by project. And then I take it one step further, where I wake up in the morning, and if I if I know it's a day where I have to do a lot of little things, like I know that I have to fix this piece on my website, there's a broken image on this site, there's an issue with my player that I need to fix. There's like a lot of like little stuff that I've been sort of putting off for a while, I'll dedicate a day to just doing little stuff like that. And then I'll sort those tasks by the amount of anxiety that it gives me, meaning that like, Oh, I don't feel like doing that, or I don't want to reply to that email, or I'm not sure how I'm going to solve that problem. I'll do that first. Because as soon as you can you force yourself to get through those sort of tougher parts, those those pieces that are pushing you away from doing your actual work, you get through those as fast as you can, then all of a sudden you start to get on a roll. And then the work gets easier and easier as you go through. So sort your list by amount of anxiety, which I think is funny, because if you're used the website Hipmunk to book a flight, I haven't, but I've seen them they have
+
+31
+00:22:33,150 --> 00:22:34,410
+Scott Tolinski: a chipmunk logo,
+
+32
+00:22:34,739 --> 00:23:07,530
+Wes Bos: they have like you can search for flights on different carriers and whatnot. And they they sort by are not anxiety, they sort by pain, pain, meaning that they don't, they have like this algorithm by based on like, how many layovers and and how short the flight is, and if it has Wi Fi or not. And that will give you a pain score, then they can sort by pain, which is exactly what you want to do. So that's that's my tip, there is sort by anxiety, get the hard stuff done out of the way. And that will open you up for a productive day. Nice.
+
+33
+00:23:07,560 --> 00:24:41,070
+Scott Tolinski: I love those tips. And it's going to actually coincide with my sick pick today. So give a little teaser of my sick pick today, which is a book called Eat That Frog, which is basically that system of doing the stuff you dread sort of first, because those are your frogs for the day. I actually one of the things that I love about to do list, which is my favorite to do application is that in one of their most recent updates, I don't know when this was they started sorting automatically by your priorities. So they have up to four levels of priority. So now when I give something a p one, it automatically moves it to the top of today's things. So instead of me having to sort them manually or whatever, I just add p one, p two, p three, whatever. And it gives them a more read severity color. And then they're like looking at it and I can see it automatically sorts my things top to bottom of the stuff I got to get done the most of the stuff, I got to get done the least. And I just go through and I don't even think about it. And I don't even say I don't want to do that. I say hey, you're the top thing on the list. You're bright red, you're staring at me I got to do this or else I'm gonna be upset with myself. So I usually go through and and first thing I do each day is to do list make a big old To Do List Mark everything is p one through p four. I can adjust it over the course of the day. But typically, I like to have a pretty good idea what I'm doing for the day. If I don't have that list, I end up just sort of meandering around in my own brain and not getting too much accomplished. So for me, procrastination tips are make that list and Eat That Frog I'll talk a little bit more about Eat That Frog in the sick picks part of the show, favorite book of mine.
+
+34
+00:24:42,150 --> 00:25:05,970
+Wes Bos: That's wicked. And if you're interested more in these whole productivities we Episode 11 of syntax back in September, we recorded our favorite productivity hacks and we were more focused on tools and and tooling around and apps that you can use as well as with touch on some methodologies, such as getting things done. So if you're interested in that, check out that episode. Yeah.
+
+35
+00:25:06,060 --> 00:28:37,860
+Scott Tolinski: Super cool. Okay, so let's get a another potluck item here. What are your? Okay, this question comes from Arkham. What are your thoughts on the new age of CMS flat file, or headless versus database driven? versus some other court? some blue sky dream CMS, basically, what are our thoughts on the CMS platform or landscape right now as we see it, where we have things like flat file, markdown file, CMS, as we also have database driven ones, as well as maybe some potentially cool other stuff, which there are some potentially cool other stuff. So let's get into it. I think some of its pretty, pretty cool. But it requires a certain level of technical know how like, I could see a markdown file driven, CMS being very popular for developers or people who are familiar with code, but like, I'm not going to tell a client who's never you know, who's only used Microsoft Word, to use a markdown file as their database or a CMS, I'm just not gonna do that. I don't think they're going to get it, I don't think they're going to have a good time. And I don't think they're going to have a good experience with me as their developer. If I'm saying, Hey, you got to come in and Mark edit these files, it might be a little bit different with something like Netlify CMS, but at the end of the day, you're still requiring some build time. So they're not going to see that instant feedback where when they save a file, it's automatically updated for them. Like in WordPress, you save it, you go to the page, it's there with nullify CMS and Gatsby or something like that, you save it, and then it has to rebuild with the new markdown file. And that maybe takes a second, it's not as instantaneous. I think it's a great system. And I really like it, I just don't know how I feel about it for non technical clients. That said, the headless CMS landscape is pretty sick. Right now, that gives me an opportunity to announce and plug my new pro series coming this month, which is going to be modern WordPress, where we're going to be doing all headless WordPress, both with next JS as well as Gatsby. So I'm going to take two different front end approaches on it both gonna be server side rendered, or statically rendered stuff, I am been pretty, pretty dang psyched with how effortless it's gotten lately. For a little while, there were so many like, I don't know what to do here, or here, or here. There's too many questions up in the air. And I think lately, the headless WordPress game has really gotten a lot more. This is how to do things. And this is the way so I'm pretty excited about it. That said, I haven't built any major client sites in it yet. And I have an opportunity to build a WordPress site. I just got a WordPress freelance client. And who knows, uh, I have this opportunity. It's got to be WordPress. So hey, I'm gonna make a judgment and do some headless WordPress on this one, and get back to you a little bit more on on how awesome that is. Before Wes jumps in here, I think one last thing blue sky, oh, what are these these other things that AR AR could exist. And this one CMS is pretty cool thing. One is called graph CMS. It's a graph qL based CMS that is a host, I believe they have an open source version of this thing. It's all graph qL based and the interface is fantastic. It looks like WordPress, if it was designed today in that manner is like really modern looking. And the guys behind graph CMS are really cool. So graph CMS is one of those ones that I really want to use really want to try on a bigger project that just haven't gotten to yet. So that that's sort of one of my thoughts on the landscape here. A lot of really exciting stuff happening.
+
+36
+00:28:38,730 --> 00:28:41,580
+Wes Bos: That's pretty cool. You're on the homepage of this website. Do you know that?
+
+37
+00:28:41,610 --> 00:28:53,040
+Scott Tolinski: Yeah, yeah, I talk to these guys all the time. In fact, I'm gonna do a graph CMS tutorial series for them. But they were working on some some big updates. So waiting for those to come through will not byline.
+
+38
+00:28:53,070 --> 00:30:54,810
+Wes Bos: Yeah. Wow, that's pretty nifty. Yeah. So I am also pretty invested in this whole headless CMS right now because my own website badly needs a redesign. My the code that's running on Wes Bos calm was originally built in 2011. And it's sort of been tweaked and fudged over the years. I've built it in less. And there's just there's a bunch of little bugs here and there that I'd like to move however, like, I'm not for sure. Not interested in moving away from WordPress, because I've got so much. So many blog posts I have every single talk I've ever done is stored in a custom post type with custom fields, and have all this content in there. And also, I really like it. So like I know a lot of people like to, to I don't totally get why WordPress gets such a bad rap. Like I mentioned, like, Oh, I'm going to redo my website. I'm sticking with WordPress, but I'm going to likely do like a react front end with something like Gatsby or next or I'm still looking at a couple of the different options that are out there and I got like 7000 people who were recommending alternative CMS is which these things look amazing like crap CMS, and there was there was like three or four other ones, I forget the names of them. And they look amazing. But I'm, I'm pretty happy with it, my assistant does a lot of updating in it. So I think you definitely need a CMS with that's easy to update, like Scott was saying a client is not going to log into GitHub and update markdown files and wait for that whole thing to build. And also, a lot of cases, you lose the sort of dynamic pieces of the website, I know that you can run JavaScript on the client side and dynamically render based on that. But like for my talks, they automatically archived themselves when the date has passed. And if that was the static site generator, and I'm statically, generating my my talk page, then I'd have to come up with some sort of regeneration
+
+39
+00:30:54,810 --> 00:30:56,250
+Unknown: web hook web
+
+40
+00:30:56,670 --> 00:32:34,890
+Wes Bos: that would ping at a certain point. And like I get, I get the whole hype around static site generators, and we did a whole webs a whole episode on them and the benefits of it, but it's it's definitely not a good use case for absolutely everything, especially when you have clients and other people at stake other than your idealistic developer. Yeah, standpoint behind these things. So pretty excited about it, I definitely think that the way forward is headless something and then a front end in react Angular view, whatever it is, I think the space is starting to firm up around things like next view press Gatsby, it's not totally there just yet. There's a bunch of people that are it's not as nearly as easy as just like slapping a WordPress theme on and, and going for it where all the queries are done for you. There's there's a lot of like, like, in Gatsby, I needed to wait like 10 minutes for it to pull down all my blog posts. And then there was an error in my graph, qL query, and then the whole thing broke. So I had to like change the query, wait 10 minutes, then it broke again. And then I just gave up because that whole developer experience is not as good as it can be just yet. I know that they're, they're working hard on it. So it's pretty interesting space. So definitely be watching it. And if I was a, like a, a web developer, like if you're if your bread and butter right now is WordPress, I would definitely be doubling down on your Angular view react skills right now, because that's, I think that's the way that it's going. It's sort of this separation of concerns, front end back end.
+
+41
+00:32:34,949 --> 00:32:50,360
+Scott Tolinski: Yeah. I've been really impressed with the system that we're using in the modern WordPress course for my new course here. So I'm pretty psyched to get called. It's the love of putting me on the air. It's a starter. Yeah, that one,
+
+42
+00:32:50,360 --> 00:33:13,050
+Wes Bos: which is from postflight, which are like life hacker. Yes, I remember. latrina Gina Trapani. Okay, your pin. Yeah, she she tweeted at me. And I was a little bit starstruck because I had grown up with her life hacker and listening to her on podcasts and whatnot. It's pretty cool that she's, she's Devin behind all that stuff. So
+
+43
+00:33:13,050 --> 00:33:29,130
+Scott Tolinski: it does, it does the thing that is most needed in this space. And it's unifying a lot of things and making it easy, which before it's sort of like, where do I go for this? What do I do for this? What do I do for this, and this sort of, like, aligns all of the stars, so I am extremely impressed. So
+
+44
+00:33:29,160 --> 00:34:05,250
+Wes Bos: yeah, I'm hoping it's gonna start settling down because there's there's nothing better than having a nine year old WordPress site. And as long as you keep it up to date, it just works, right? Like I, I tweeted the other day, YOLO updated 19 plugins on my own site, and it didn't do anything. It worked fine. Whereas you wait a week in JavaScript land, and that thing is all sudden broken, and best practices have changed. And I also don't really want to babysit something that much because I don't want to spend that much time on my own my own site. So it's kind of interesting to look at.
+
+45
+00:34:05,550 --> 00:34:10,730
+Scott Tolinski: Yeah, totally. Cool. Well, thank you Artem for that one. Art. All right,
+
+46
+00:34:10,730 --> 00:35:47,280
+Wes Bos: let's pick up another one here. Let's talk let's do a business one, hashtag business. How can I start selling and making courses like you guys, I love teaching stuff to people. I've taught in a few local meetups. And then there's another question. We'll talk about that later. That's that's nothing to do with this one. So um, how do you start doing what we do? I think it's it's just putting yourself out there and helping people. So I think like, if you look at both Scott and I, you can listen to our origin stories on previous podcast, but both Scott and I both started out. I started out doing blogs and YouTube videos and teaching at ladies learning code, which is like this, not for profit on weekends, and all three of those things that I did, I found out that I really liked it. I really found the way that I like to explain things. And it sounds like this is from Arvind, it sounds like he's taught a teaching in a few local meetups as well. That's a fantastic first start. But you really just got to start putting yourself out there, whether it's making YouTube videos, blogging, writing books, you kind of find, find your medium and find your people. And then from there, once people start to, to really enjoy your stuff, once people start to enjoy the way that you explain them, once you find your tribe, so to say, then, then they start asking for more stuff. And they started asking for you to teach them XY and Z. And at that point, you can start to put together a course based on what people are asking for.
+
+47
+00:35:48,030 --> 00:36:39,650
+Scott Tolinski: Yeah, I think a lot of it too, is starting without the expectation that people are going to be interested right away. Nobody knows who you are, they they're not familiar with your work. And you might not want them to be when you first start trying to get into this anyway. So for me, personally, I would just say, Get going start recording a bunch of stuff, get a decent microphone, listen to our episode on screencasting. Because that gives you a lot of tips and tricks there. But get get going and just start making a bunch of stuff because you're never gonna find out what you're bad at. And this until you start uploading and people on YouTube start telling you what you're bad at that at that point, you can start tweaking and fixing it and you know, not taking it personally and using that to progress. So I definitely say just go for it and get some stuff pen to paper and voice to record or tape or whatever you would say here. And just just go for it. Yeah. So yeah, I think that's pretty much it.
+
+48
+00:36:40,050 --> 00:37:33,960
+Wes Bos: Yeah, I have one more tip I probably have is, like you obviously need, you need an audience for this to work. You need a group of a couple thousand developers who love what you do. And and you can make a living off of having, I would say you can probably make a living off of having 2010 20,000 people watching the stuff that you do and and really enjoying it. So building that audience and then also figuring out how you can actually reach that audience. So I have multiple touch points through the audience. Twitter is a big one for me. Email is by far the biggest one for me. This podcast is another one YouTube videos are another one. Facebook is another one making sure that you have all these different touch points. Because when you have something to say, and when you have something to sell people, you should be able to contact them fairly easily.
+
+49
+00:37:34,770 --> 00:37:40,710
+Scott Tolinski: Yeah, good tips. I mean, we got to do we have several episodes on our to do list about business stuff.
+
+50
+00:37:41,460 --> 00:37:59,960
+Wes Bos: Yeah, if you want to hear more business stuff, Scott, I will put on our suits. And just tweet us or fill out this form with your specific business questions. Because I love talking about this kind of stuff. We should actually wear suits. When we do that episode. I just got a new one. I went to a wedding this weekend. So watch out nice.
+
+51
+00:38:00,170 --> 00:38:08,400
+Scott Tolinski: Let's take a break here for our next sponsor, which is the fluent conference in San Jose, California.
+
+52
+00:38:08,400 --> 00:40:01,440
+Wes Bos: So fluent is a conference put on by O'Reilly, you know, O'Reilly they have the the books with the animals on the front, they teach you everything about everything. I think they cover absolutely every programming topic, but fluent is a web development conference. And it covers all topics from JavaScript, CSS, security, everything you need to know for becoming a better web developer. And this is a absolutely massive conference. Let me I'm gonna go to the speaker's page here and, and take a look at there's probably 40 different speakers that are speaking at this thing, they have multiple tracks. They have multiple days, they have training in the days before June 11, to 12 is training. And June 12 214 is the tutorials and the conference. So if you are looking to both like reignite that spark, like you want to get motivated and toss yourself into different pieces of web development, as well as really just like find some of the titans of our industry and suck all of the knowledge out of their brains into yours is a fantastic spot for you to go and start to learn new things. I'm just looking at the the speaker list here. And there's all kinds of amazing people who are going to be speaking at this sort of thing and not to mention, like even just the amount of people that you can meet, like some of the best relationships that I have right now are through meeting people at conferences and, and some of the best things I've ever learned and, and being able to reach out to people for help is because I've met them at a conference before and you've developed and foster those relationships. So check out fluent conference and use the code syntax to get 20% off on your tickets. Awesome.
+
+53
+00:40:02,760 --> 00:40:03,650
+Unknown: Super cool.
+
+54
+00:40:03,980 --> 00:40:05,790
+Wes Bos: look good. All right, next one.
+
+55
+00:40:06,650 --> 00:40:50,760
+Scott Tolinski: I'm gonna hit one that is a just addressed to me here. Yeah, highlighted here so I can take that. This one is this one comes from France, or no, there's no and their fries fries Roz. Roz, right? Pres. Uh, sorry about that. I sincerely apologize for butchering. This question is, uh, how did you to gain renown in the developer engineering space? Wes has mentioned he blogged early on his career, Scott started level up tutorials. on YouTube. I'm curious to know how you went about gaining recognition expanding your reach in the developer community? Okay, I guess this is so this was just a just me. So looks like it's addressed to both of us.
+
+56
+00:40:50,850 --> 00:40:52,050
+Wes Bos: We can both take a stab at it.
+
+57
+00:40:52,080 --> 00:42:18,230
+Scott Tolinski: Yeah. So gaining renown. I'm gonna go ahead and say that I did not attempt to gain renown. And that was never a goal of mine. I don't even think I, I would say I have read. I'm not I'm in a podcast, I have a YouTube channel. But like, I don't necessarily think of myself as like a renowned developer, I still look up to a billion developers, right. So for me, it was all about creating content, content. First, I did everything for free on YouTube for years and years and years, just as not even a side gig, because people like to assume you make a ton of money off of YouTube ad revenue. And let me tell you, there is a drop, like it is a penny, you make nothing on YouTube ad revenue. So you know, I get comments all the time, like, Well, Mr. Mr. moneybags over there with his 2 million views or 20 million views. It's like, no, that's over the course of, you know, since 2012, and I have made no money off of it. So I, it's all been content first for me. And I just want to share this stuff. Because it's so frustrating to me when you have an issue, and you can't find anyone else talking about it. But you know, other people are experiencing that issue. So I like to make these videos and sort of share them for that reason. Primarily, the fact that I can now do it as a career is like all plus, plus, plus, plus, because that means I get to spend more time doing it. And I get to work on my own site. And I get to have this sort of freedom. But it was never ever about gaining recognition for me. Now once.
+
+58
+00:42:19,380 --> 00:44:23,490
+Wes Bos: That's awesome. Mine's a bit different. So I had been, like I said, I blogged early in my career with lots of lots of topics around JavaScript and CSS and WordPress. And I definitely did see the benefit of being well known. Not for the the fact of just for being famous or anything, because I think that's kind of a silly, a silly thing to go towards. But just because knowing that if you have some sort of audience, then your options for a career are much greater. Like I remember watching, I used to watch the jQuery podcast with Paul Irish on it. And all sudden, he got a job at Google. And I was just like, This guy has been blogging, blogging about information about web development, and really involved in html5 boilerplate. Very, like very influential in the community for just straight up helping people do better at their job. And that led to him getting a job at Google or a same thing for less money it owes money would go to conferences all over the world and, and help people better understand things. And he just broke it down in this way that was just just really made sense. And, and I look at people like Chris coiour. And he would just day in day out blog stuff about CSS that he had learned and wanted to share with other people. And so all three of these people who I looked up to, they all were just trying to help people learn web development, right. So I thought like, That's amazing. And they're doing what they love. And and part of the reason behind that is because they're able to amass such a following so I made a pointed decision to really double down on on Twitter, posting Hot Tips is mostly how I've got my my following on Twitter is just by I don't know, maybe it's been about five years of Hot Tips so far. Were
+
+59
+00:44:24,510 --> 00:44:25,500
+Scott Tolinski: top tips. A lot
+
+60
+00:44:25,500 --> 00:44:31,680
+Wes Bos: of Hot Tips. I think I like calculated at once and it was well over 300 how many degrees are
+
+61
+00:44:32,339 --> 00:44:35,790
+Scott Tolinski: Celsius degrees Celsius? Is that of Hot Tips?
+
+62
+00:44:35,939 --> 00:45:17,130
+Wes Bos: Oh, is it? That's it? Uh, well over 100. Yeah, yeah, well over 1200 by degrees Celsius. So it's pretty spicy. But like, I just decided like, Okay, if I'm going to make this work, it's going to take years, but I'm going to just keep helping people keep posting stuff on YouTube, keep blogging, keep posting Hot Tips on Twitter. And if you do Do that for long enough, then it starts to build and and then it builds and builds. And that momentum that you get is is unbelievable. Like it's brutally slow at first and then then it starts to just the ball starts rolling and rolling and then it it gets bigger and bigger. Right?
+
+63
+00:45:18,090 --> 00:45:20,610
+Unknown: Yeah, you bet. So
+
+64
+00:45:20,670 --> 00:45:52,020
+Wes Bos: that's the way. So it's a little bit weird to talk about just because like, I don't know, what is being renown in our industry. There's I don't see, I don't know, there's a lot more. How do I say this? There's a lot smarter people in the industry who, who don't have as much of a platform that I do. And I definitely know that there's a lot of people working on much harder problems than me, they're doing much better stuff in the industry. And that's great. But I know that like, I'm trying to help people learn stuff. And that's, that's what I'm gunning for here.
+
+65
+00:45:52,050 --> 00:46:08,820
+Scott Tolinski: Yeah, yeah, absolutely. Yeah, I don't think it's something to ever I mean, it your platform is being used for good. You know, that that's all you got to worry about. Exactly. Cool. Okay, what do we got next? Well, who brought something else the potluck?
+
+66
+00:46:10,740 --> 00:50:07,920
+Wes Bos: taught let's talk about server side rendering. What IS WHAT IS IT pros and cons? Okay, so we've talked about this a little bit, it's fresh in my mind, because I have been working on the server side rendered aspect of, of my advanced react course coming up. And server side rendering is essentially, you run the JavaScript on the node portion of your web server, and render it out to HTML, so that when someone visits the website, they immediately get just HTML. And rather than getting a blank page, the JavaScript downloads, and then and then you get the HTML, which is rendered out from your react app, or your view app, or whatever it is. So there's that. And then there's this, this whole concept of like rehydration, where your your client side will pick up where the server side left off. So react is very good at that where you can do your first render on the server, and then react will pick up the HTML from there, and then start just re rendering the pieces that it specifically needs to so why would you server side render, it works without JavaScript, if you want, SEO is still a big one for people. Because even though Google says that they index JavaScript based websites, I don't believe it. And I know that SEO is huge for me, I get 10,000 visits a day on my website, and there's no way I would gamble that with without using server side rendering. So if I was building a website today, I would definitely and I am going to be rebuilding mine, I'm going to be server side rendering it because I don't want to lose any of that Google juice or that that traffic that comes in pros and cons. Mine, my own pros, it's great SEO, it's really fast it is that initial load, you don't get, you don't get that flash of white for a split second, while the page loads. cons are that it's sometimes difficult to get set up. If you try to do server side rendering yourself. Good luck. It's incredibly difficult because you have to replicate your entire build process on the server as well. There are things like next j s, which make it so much easier for you, if you start with next jass, then everything becomes a lot easier. That's that's really important there. it's sometimes hard to consider the server when you're building components. So sometimes components will call the window or call local storage, or call fetch. And all three of those things don't exist on the server. So you have to do this whole type of window is undefined, to check if it's there in your code. Also, one other thing I run into is I'm using JW t, which is JSON Web tokens. And that does my authentication for my users. And I'm storing you can store jvt in cookies, or you can store JW t in in local storage, and I'm storing them in local storage. And the downside to that is that that doesn't come along with your initial page request. So you can't do any sort of client side authenticated rendering on the server, because the data we teach doesn't come along with it. So what I have to do is, as soon as the page loads, I have to refresh the little bits that possibly could change if the user is logged in. So that's a bit of a downside or upside, but it's not a huge deal. Because once the page is loaded, you never have a page reload for the entire application because it's all pushed state and whatnot. So That's my long little rant on SSR. I think it's definitely worth it. I can't wait for the day that we don't have to care about it. Yeah. What about you?
+
+67
+00:50:07,950 --> 00:52:03,360
+Scott Tolinski: Yeah, I mean, I echo everything you said exactly. I was every time I was like noting something in my head. Oh, I should talk about authentication. I should talk about this. You You got I think you covered all the bases. I think that was the one of the biggest things for me is still is dealing with authentication and rehydrating Right, right. For me, I'm getting like, occasionally errors on the front end saying like, hey, and react this component expected this. But now it's getting this And specifically, because of, well, the authenticated client version, when it's rehydrating is now bringing in more views or more, more HTML. So it definitely isn't as easy as it could be. I use Meteor for my build tool and meteors build tool handles both your your server and your client. So in that regard, like next j s, it makes it really easy. You just simply have to write your, your server side code to say, hey, render this. And it pretty much handles everything for you. You don't have to worry about your build tool about things talking to each other, have all my data coming in from graph qL server side rendered. So I use server side rendering for level up tutorials, I really enjoy it, I wish it was as easy as just flipping a switch. Again, you expect some things to when you first start using server side render after building client side app to all of a sudden be a little bit more difficult, like, again, like unexpected things where you're calling the window and you forgot that you were doing that. And then it's all of a sudden the server doesn't recognize a window or undefined or whatever. So there's definitely things to be aware of. But server side rendering is getting easier all the time. And I think it's just one of those things that is eventually going to become one of those things you don't even have to think about worry about and platforms like next j s just make that super, super painless. So yeah, I'm a big fan use it, we'll continue to use it. I think there was like an episode where I didn't use it in syntax already. But I like changed. It rewrote, rewrote my server side rendering thing like the day after we recorded that episode. So that's how it always happens.
+
+68
+00:52:03,390 --> 00:52:49,050
+Wes Bos: That's the beauty of this podcast, though, is because like we clearly don't know much of what we're talking about. But as we sort of riff on it, we either get ideas between each other, or people much smarter than us will tweet us and say like, Hey, have you checked out X, Y, or Z that might be a good solution to your problem. So basically, this podcast is just us airing our grievances and getting people much smarter than us to help us out for free, though little little trick. That's the truth. Um, I got one more quick one before we finish. There's they're coming in right now all these questions that I tweeted out right before the thing is, is Yeoman dead? So Yeoman is a Yeoman is a lightweight, like a generator for boiler
+
+69
+00:52:49,440 --> 00:52:51,690
+Scott Tolinski: stuff? I actually just used it this weekend.
+
+70
+00:52:51,750 --> 00:53:45,720
+Wes Bos: So so it's not Yeah. And so like, if you wanted to, like start a quick WordPress, there's like a Yeoman generator for WordPress, or you want to start a, you know, create react app is like a generator. So it's something like that. And I don't think it's dead. It's not as popular anymore, because a lot of tools are starting to replace it. And I just saw the other day on Twitter that NPM is getting the ability to do these sort of generated, so you'd be able to type I think it's NPM, create react app interest, and then it would just like you, you push a create react app to to NPM. And then it will, it'll scaffold out that app for you. I know, yarn already has the ability to do that. And it looks like NPM is now getting to get it. So I don't I don't think it's dead. But it's not not as popular as it used to be just because of its like, jQuery is just out of need. I don't think it's as popular anymore. Yeah,
+
+71
+00:53:45,750 --> 00:55:12,810
+Scott Tolinski: I used it for creating a I created on a Saturday or Sunday, I forget which day I created a a snippet library for react and Apollo just I was like, so tired of, of importing mutation, and then writing my mutation with the render prop and I was just so tired of that. I was like, Okay, let me go to VS code and check out the snippet library. Oh, there's no snippet libraries. Well, I guess I'm making one. And I was so psyched to find the Yeoman VS code plugin generator, because Ah, awesome. It's not it's like, when you load it up. It's like, do you want to make a snippet library? Yes. Okay. And then that's all you have to do. Like, I had to do no work to build the snippet library. I didn't have to do a build tool. And if you think about it at all, I just used the Yeoman generator, use the one that said snippet library and was good to go. But there was like a ton of different templates that you can start out with for vs. Code extensions. And for me, as someone who is like, if the barrier to entry is too great, I'm just going to be like, yeah, screw it. I didn't want it that bad. Anyways, I'll copy and paste it. But for me, it was just so easy to get up and running doing that, but I just did it no time. Got it up there. And now this thing exists. And if you'd like you can contribute to it and check it out. It's on my GitHub. It's the React Apollo snippet library. Yeah, I just did it, you know, pretty quickly. So the chances are, there's some things missing for it. But I just added all this stuff I use all the time. And if you have stuff you want to see in it, please submit a pull request or be psyched.
+
+72
+00:55:13,739 --> 00:55:27,900
+Wes Bos: nifty. All right. I think that's enough questions for today. Thank you so much for sending those on in. If you've got another one, please make sure you push it into the listener questions. I like doing these every now and then. It's kind of fun to talk about these these smaller little topics.
+
+73
+00:55:27,929 --> 00:55:30,330
+Scott Tolinski: Yeah, really successful potluck.
+
+74
+00:55:30,989 --> 00:55:49,500
+Wes Bos: Everybody. A lot of it reminds me of having beers at a conference where you just kind of chit chatting about different topics that may come up. Yeah, but let's, uh, let's move on to some sick pics. I'm really excited to hear more about your sick pick today after you teased it earlier. Yeah.
+
+75
+00:55:49,709 --> 00:57:14,130
+Scott Tolinski: So my sick pick is Eat That Frog, which is a great name for a great book. And I listen to the audio book on this, as I do for most things. It's by Brian Tracy. And it's basically a book about accomplishing your tasks stop. Okay, the the subtitle of the book is 21 great ways to stop procrastinating and get more done in less time. So thank you, for who submitted that question. Let me see. Um, thank you, critter for submitting that question. goes along with Eat That Frog I suppose. But because you did a nice little lead into my sick pickier. This book is awesome. It's another one that you can breeze through like getting things done. And it will have profound impact. I had my wife Courtney and I both read it. I read it and I was immediately like, you got to read this. And then now we talked about this all the time we talked about Hey, did you eat your frog today? Like it's funny because it's like actually become a point of conversation and become like a point of normalcy in my life. But I really really like this method. Because before I had this method again, I wasn't. Well, this combined with getting things done has just made my my workflow my procrastination stuff totally out the door, as long as I follow the stuff in this book. So I'm a huge, huge fan. Pick up the audiobook, listen to it, pick up the book, if you like to read but Eat That Frog exclamation. Wow.
+
+76
+00:57:14,130 --> 00:59:00,450
+Wes Bos: Can I put this on my I have so many audible credits. So I'm putting this on my list of Audible, wicked. So my sec pick today is dev Doc's dot IO. Again, you remember? What was that like desktop app dash that everybody had? That was pretty nifty, because you could just like download the docs to every single thing ever. And then you could have it as a desktop app. So I always like the web developer Am I like to have things as a website if I can. And dev Doc's dot IO is a website that lists Doc's for every single language and and many of the different. Many of the different things that you have. So Babel backbone, React Bower, Bowers is not much anymore, Drupal, WordPress, Ember, you get the point. So if you need documentation for anything, they pull them into this single website called dev Doc's dot IO. Now, this has been around forever. But what I recently discovered is that I went on a flight, and I needed the docs to jest an enzyme, and I needed all the JavaScript docs, right? So I needed those big three, and don't think that they had enzyme. It might No, they don't, they don't they have, they have jest. There's a pull request open for adding enzyme Doc's to it. But it's a progressive web app, meaning that it will store the docs offline. And if you just turn off your Wi Fi and turn off the network requests, then it automatically still works when you refresh the page, and you're offline, which is exactly what you need when you're on an airplane. So check it out at dev Doc's dot IO.
+
+77
+00:59:00,690 --> 00:59:27,030
+Scott Tolinski: Yeah, I have used this so many times on airplanes before it's like what am i pre flight rituals is to head to dev docs and make sure that I have everything saved for offline that I could potentially need. Because there's there's nothing worse. When you're like on a plane. You're like, God, dang it, if I could only remember what this method was. Yeah. So I actually really love this this website. So that's a I used to have a
+
+78
+00:59:27,660 --> 00:59:36,450
+Wes Bos: base to have like a alfrid extension to directly search dev docs. And then it would pop it open directly. I don't have it right now. I get deleted a bunch of them. Get it again, though.
+
+79
+00:59:37,230 --> 00:59:39,230
+Scott Tolinski: Yeah, Andy. super handy.
+
+80
+00:59:40,590 --> 00:59:45,540
+Wes Bos: Quick, yeah. What about I what we call them shameless plugin list bugs.
+
+81
+00:59:45,570 --> 01:00:36,900
+Scott Tolinski: I'm gonna shameless plug the level up tutorials pro level up Pro, which is the subscription account where you can get access to all of my tutorial series. It's becoming more and more valuable than ever, because every single month there's a new Premium tutorial series. This month's coming premium tutorial series I mentioned before is modern WordPress where we do all headless WordPress stuff. last series was Vue. js for everyone. So if you got excited by us talking about view today, you could check out Vue JS for everyone and find out what the hype is about as a pro Gatsby, which will teach you how to build static sites with Gatsby like a pro Redux and react for everyone modern CSS layouts level to React Native with graph qL with React Native for everyone. There's a lot of stuff here, and every single month is a new series. So a lot of value there. If you've never subscribed, you get access to all that stuff right away.
+
+82
+01:00:37,830 --> 01:01:27,930
+Wes Bos: Wicked, is gonna plug Wes bos.com. forward slash courses has a list of everything you have, if you want to learn node or react or up your JavaScript skills in e6, there's a bunch of free ones, CSS Grid, JavaScript 30, check them all out. I'm currently still working on my advanced react course. There's been a lot of movement in the whole graph qL space in the last couple months, around different libraries and whatnot. And I'm sort of just I'm still working on the application, but I'm making sure that everything is going to be settled down for at least a little while. So it is taking a little longer than I had hoped. But I am totally fine with that. Because I know that it's going to be fantastic. So stay tuned for that. Probably in another month or so I'll have that ready to launch.
+
+83
+01:01:28,050 --> 01:01:35,370
+Scott Tolinski: It was I got it. I got a request here. You stop making the show about the great Wes Bos, please.
+
+84
+01:01:38,610 --> 01:02:08,820
+Wes Bos: Somebody tweeted that the other day. Like I just like I had updated people on this react course. I'm like, so sorry. It's taking so long. And then somebody said, Can you stop making it about the great Wes Bos? Oh, some that. I guess that's another point on the having a bit of an audience you do get some wacky people coming out with some wacky people some mean things to say someone's question here too. What was the question about you?
+
+85
+01:02:08,970 --> 01:02:12,750
+Scott Tolinski: Oh, I say I say something too frequently. And that was upsetting them.
+
+86
+01:02:13,319 --> 01:02:17,280
+Wes Bos: Love the podcast. But Scott, please stop saying and stuff like that.
+
+87
+01:02:18,420 --> 01:02:54,420
+Scott Tolinski: I hope I didn't say this episode. If I said this episode, I'm gonna be disappointed in myself, because I was actively trying to appease here. So I was very, it was very concerned effort to not say that. But in the future, who knows that somebody actually had some guy, I assume it was a guy send me a message every single week. That was just like a homophobic slur for some reason. Like, I have no idea. It would be from some who knows email I would just get it was obviously the same person cuz they weren't very creative. But it would just be like a one liner. Be like, okay, like, thank you. sending me this.
+
+88
+01:02:55,560 --> 01:03:29,340
+Wes Bos: There's definitely some oddballs out there. I guess it comes with the comes with putting yourself out there. Yeah, for sure. Maybe we'll talk about that. Because that's another thing, which is like, putting yourself up on YouTube. And, like I daily post code that I write online for other people to judge. Yeah. Which is not always met with the best reactions. People have opinions on what's good and what's not. So it definitely, it can be a little bit scary. putting yourself out there, but definitely worth it. Yeah, we'll we'll have an episode like that dealing with criticism.
+
+89
+01:03:29,640 --> 01:03:35,880
+Scott Tolinski: Yeah, I think we should. There's a lot of stuff there. And I think we've both probably learned a lot of lessons over the course of the years here.
+
+90
+01:03:36,390 --> 01:03:37,620
+Unknown: totally sick.
+
+91
+01:03:37,620 --> 01:04:35,370
+Scott Tolinski: Alrighty. Well, thank you so much. Oh, we should mention, we never do this. But we we are What does episode like number 42. Now of syntax. Yeah, we have a ton of episodes, we have 42 episodes now. And we cover a lot of topics from graph qL to soft skills stuff. I mean, I can't even jQuery static site generator, site performance, all sorts of stuff dealing with failure, lots of questions and answer show. So if you enjoy this show, are you enjoying the most recent shows, check out our back catalogue, we got a lot of good stuff. We get a lot of questions asking us for topics show topics that we've already done before. So check out our back catalogue because there's a lot of good tasty treats there, too. We need to make some sort of Best of list we'd be interested to know what your favorite episodes are, so that we can compile some sort of like here, come to syntax and listen to these 10 episodes. If you haven't ever listened. Yeah, yeah, totally.
+
+92
+01:04:35,400 --> 01:04:41,130
+Wes Bos: So tweet us your your favorite episodes from the back catalogue and we'll come up with a little list.
+
+93
+01:04:41,160 --> 01:04:42,390
+Scott Tolinski: Yeah, that'd be sick.
+
+94
+01:04:43,020 --> 01:04:46,020
+Wes Bos: Sick. All right. We'll see you next week. Thanks for tuning in.
+
+95
+01:04:46,140 --> 01:05:01,140
+Scott Tolinski: They he pays. Well, that was a coordinated piece. Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review and If you like this show
+

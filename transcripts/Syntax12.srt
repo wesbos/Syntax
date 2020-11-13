@@ -1,0 +1,636 @@
+1
+00:00:06,000 --> 00:00:11,220
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:15,750 --> 00:00:44,190
+Wes Bos: Hello, everybody, welcome to syntax. Hopefully, hopefully you're ready for a another week of tasty treats. Today, we're gonna be talking all about VS code Visual Studio code, which is the hottest editor up and coming. I've recently switched to it from Sublime Text. Scott has been on it for a number of months now, kind of dancing between sublime and Adam. So we're gonna be talking about like, why is everybody switching over to it? What is so good about it? Why you keep hearing about it? So let's jump into it.
+
+3
+00:00:44,640 --> 00:01:27,300
+Scott Tolinski: Hey, Dan Scott, doing super good, dude, super good. I just finished that up. You know, I've been talking a lot about my rewrite of my card system and stuff like that. I just wrapped it up. It's going to be coming out as of the time of recording, it's tomorrow, but it will be at the time of release this podcast today. Which is weird to time travel like that. So yeah, so it will be out on Wednesday. And it shouldn't really mean a whole ton for a lot of people. But it's a huge thing off my plate so that I'm going to be just opening the floodgates for no new content, which isn't God, I've just been, you know, dying to get this done so that I can just start grinding out a ton and ton of new stuff. So happy to get that done and hoping that it launches and releases without any sort of troubles. Fingers crossed.
+
+4
+00:01:27,570 --> 00:02:22,560
+Wes Bos: Right on. So I've been lost. I think the last three days of last week, I spent porting over my cobalt to theme, which is that that blue theme that you probably see in a lot of my tutorials, I've ported that over to VS code. I've actually had it in sublime I initially built it actually initially built it in. What was that coda initially built an encoder, and ported it to sublime. And then it's been ported to atom, which is a really good fork for atom. But there wasn't there was a couple forks for VS code, but they were all terrible. They're all not like, quite good. So I spent like a full three days going through all of the little finicky details about this actual cobalt two and porting it over. So pretty happy to have that that was a huge part of me wanting to switch over, but I couldn't because my theme wasn't there. And I just didn't feel super comfortable moving over. So put some time into that.
+
+5
+00:02:22,740 --> 00:02:26,280
+Scott Tolinski: It's got to feel right, your text editor has to feel like home, you know?
+
+6
+00:02:26,550 --> 00:02:55,860
+Wes Bos: Yeah, it's especially time we're all busy. And we don't have time to spend switching over. Like if something's going to make you less efficient than then why would you do it? Obviously, like a little short term payoff is okay. But if there's enough annoying things that get in the way, then what happens is you sort of shelf it and move back. So I guess that will sort of like lead into it. Like what what is our experience with using VS code? I know you've been on it for a while. Why don't you tell us your little journey?
+
+7
+00:02:56,190 --> 00:05:47,520
+Scott Tolinski: Yeah, so that was I mean, for me, I think that like you said the the sort of that pain point of starting something and not having it be totally ready for yours. I jumped on it really early. And I think because of that I may be caught it a little too early and pretty much jumped immediately back to Adam, which was the editor I was using at the time. Before that I Well, okay, let's let's jump all the way back in text editor. History. For me. I have Dreamweaver for non for very long, but that's where I started right? A long time ago. Yeah, I never really got into Kota, I went to textmate, like, pretty immediately. So textmate was sort of like the precursor to Sublime Text. Yep. And then textmate two never came out. So Sublime Text two ended up sort of being the text made to that everybody wanted it to be. And, you know, I was on sublime for ever and ever and ever. And, you know, you really don't have too many problems with your setup until you find out how much better things are in different ways. And I've always been kind of an interface guy, as much as I love code and getting into code. If I'm in an application, like, and I'm installing extensions and stuff like that. I like pictures. I like descriptions, I like links, I like stuff like that. And when Adam came out, I really liked that it had all that stuff, right? I know, the Sublime Text interface wasn't bad or anything like that using package troll. It wasn't a big deal. But with the atom way, you got to actually get docs. For each extension, you got to have a little bit more information, maybe some screenshots or something, you had a lot more information. So you knew what you were installing when you're installing. And I found I installed a lot less extra stuff because I wasn't like hunting for something. So you know, I jumped on Adam, and I was I guess I was pretty happy with it. I was never satisfied with its performance ever. You know, I was always really laggy for me. And then even when they fix the general lag Enos of the app and it was a little bit more responsive, doing things like a Find and Replace over a lot of files would just sort of like send your computer to a halt. So, yeah, so I was I was constantly Maybe like flirting with going back to Sublime Text, and then would run into things like, Oh, you know, linting has an uncaught error, that you got to open the, you know, terminal to figure out what it is. But everything is, is kind of hidden in Sublime Text. And it's not like it's a bad thing you can find anything you need. And you know, it's a lot of its laziness. But for me, I like a good interface. And I like a well designed interface. So, so I hung out with Adam, even though it wasn't totally satisfied. And then, when VS code first came out, I tried it immediately and was not super impressed with some of the interface II things. It seemed a little clunky. In some aspects. Some of my keyboard shortcuts didn't come with me, you know, like, command one through nine and, and things like that. You were just sort of like, what is this? This is foreign?
+
+8
+00:05:47,610 --> 00:06:00,240
+Wes Bos: Like, yeah, it was a little like, I hate to say it, but it's a little Microsoft D at first, right? Was it it sort of carried over a lot of the things that you're used to in a Microsoft product and that are totally foreign to us as Mac users?
+
+9
+00:06:00,540 --> 00:06:48,870
+Scott Tolinski: Yeah, so it didn't feel like totally like home like you want it to write? Yeah, eventually I stuck with it. For one thing, I was working on a large project, and Adam just flat out couldn't handle it. I have been so far off of sublime at that point, I would have to have totally reconfigure it. So you know, I just started configuring my VS code, which handled the project sighs like a champion, it is like fast as heck it is, like, really just super performative and all sorts of ways. And now it's like to the point where it's really configured so nicely to my liking that I couldn't imagine using another text editor moving, obviously, you always say that was stuff but at this point, you know, it fixes all of my pain points, except for maybe like a few things that I don't think atom or sublime do well, either. So
+
+10
+00:06:49,290 --> 00:10:08,010
+Wes Bos: yeah, interesting. So I've got a bit of a similar story. I first started on Dreamweaver years and years ago, moved over to coda when that started to get popular. And then when sublime came out in Sublime Text two came out in the early days, I switched over to it. And I really started to like, especially like the multiple cursors. That was like the first time I had ever been able to use multiple cursors. And it was just groundbreaking for me that you could do that. And obviously, or maybe not, obviously, if you don't know, I got super into Sublime Text. And I wrote a bunch of blog posts and ended up being like, the Sublime Text guy, where I was like, super into all of the different features writing blog posts, writing a book making videos, and that's really how I got my, my initial start and selling training products. But over the years, sublime has, it's actually gotten better. It's it's fast as hell, there's a nice, very nice ecosystem behind it. But I've I've sort of been like that meme you see right now, I've been sort of like glancing over at Visual Studio code, every now and then I go, Oh, that's nice. You can do that, oh, it just works really fast like that. So what ended up happening is that I just keep hearing about these, these, this, actually, I guess it all comes down to why I'm switching from sublime to vs. Code is the interface of VS code is amazing. So sublime, if you have a third party package that needs to deliver you some information about an error that's happening, your current status, any get information that you have, there's really only a couple ways that sublime can can detail that information to you. And the first is the status bar, which is the tiny little text at the bottom. Second is like sort of like a little drop down sort of like the command palette works. And then they've recently introduced sort of like feature rich tooltips, which allows you to use a subset of CSS inside of it. And it's a little bit limiting in terms of like, I just want some really nice interface to every time that there's a plugin, it has a different, I don't know a different way that it should convey that information to me. And if you had just full control over what that thing looked like with HTML, CSS, and JavaScript, you can create a really feature rich interface. And that's exactly what the benefit of VS code is, to me is that there is all kinds of like built in interface things as well as people who have written plugins can just extend the actual interface and style those pop ups exactly like that. So it and I think the the other thing that sort of comes along with that, at first, the interface is amazing. And, and second, it just works, which is a lot of times with sublime to get things like linting, and all of your tooling and all of your Git integration. There's like a lot of like setup that needs to happen. And it doesn't always work and then just randomly it would break for me and you have to like dig back into it. With VS code. It seems like a lot of the stuff is already built in. And if it's not configuring an existing package and getting good errors when things aren't properly configured. It seems like the switch to it for me was was really nice and quick. Yeah, I mean, now
+
+11
+00:10:08,030 --> 00:10:45,750
+Scott Tolinski: that actually specifically linting was the thing that was the straw that broke the camel's back for me for getting off of sublime. And, and that was one of the things I liked about atom, which I actually think vs. code does better. But one of the things I liked about Adam was that, yeah, the linting just worked, Hey, you, when you open the editor, you installed whatever plugin and you had your config file or whatever, but it just worked. And there was no hidden errors. And, you know, I understand I can find the errors in sublime, but I don't want to go hunting for this stuff. And yeah, I don't want to have to deal with errors. I just want it to work and and VS code definitely picked up the ball there. And it's really super amazing in that regard.
+
+12
+00:10:46,110 --> 00:11:30,420
+Wes Bos: Yeah, exactly. It's, it serves like the right amount of interface on top of even just changing your settings, like rather than them just giving you a JSON file. And if you forget a trailing comma, the whole thing breaks like sublime has it actually like, sort of like guesses what you're trying to type and gives you another panel of available options, which you can quickly filter down and they'll give you in a tooltip, it'll give you possible options for that setting. So I don't know, it's just a lot of like little nice things where it's sort of taking care of you to make sure that you don't mess it up beyond belief, because I think that that will happen. A lot of times people will get frustrated, a program and it's totally their fault. But like, I just need somebody to look over man and a little like a big brother that's helping Oh,
+
+13
+00:11:30,450 --> 00:12:16,380
+Scott Tolinski: yeah. And it steps the the nice little median between a series of 1000, checkboxes and toggle switches. And the opposite, which is a giant JSON file that of course, like you said, You miss a comma, it breaks. And it manages to do both of those things very well, you still have that interface. You know, it's not holding your hand entirely, but it does give you those options and it copies it over to your workspace settings yourself or your settings yourself. It's it's just superduper nice in most interface regards. I think the only like interface thing I don't like this is stupid. This is totally stupid. So everyone out there can tell me this is stupid that when you install an extension, and you have to click reload it, like closes the window and reopens the window. Yeah, yeah, I don't like that.
+
+14
+00:12:16,440 --> 00:12:21,450
+Wes Bos: But that's like Windows from 1993. At a restart your computer whenever you install something,
+
+15
+00:12:21,570 --> 00:12:29,430
+Scott Tolinski: I'm very aware it has like little to no impact on my life. But for some reason, I'm just like, it'd be cooler if you didn't do that, you know, I don't know. It's totally illogical.
+
+16
+00:12:29,430 --> 00:13:02,190
+Wes Bos: But yeah, it's the thing about Sublime is that it's built in Python, and I believe C or c++, and that's what makes it super fast. But the the downside to that is the cool interface stuff is not entirely possible. Whereas things like atom and things like VS code, they're both both built on electron, which means built in HTML, CSS, and JavaScript. And I guess the downside to that is that you need to reload the entire thing whenever you disable a plugin, but I don't know maybe they're they're looking at Hot reloading and whatnot, which is pretty sweet.
+
+17
+00:13:02,370 --> 00:13:45,780
+Scott Tolinski: So here's the thing about a VS code that impressed me more than almost anything else in sort of a non text editor way. This is the most performative electron app that I think I have on my computer. I mean, so many times you have electron apps, I know like, I don't want to hate on slack. slack is amazing. But slack can really bog down your CPU sometimes. And there's some others that I don't know if it's a problem with electron, I doubt it is. But I think it's probably just maybe it's easy to build on performative things with it. Yeah. And because of that, when VS code loads up, and you don't see it, crushing your CPU, yeah, that that really, really super impresses me. It gives me faith that the team behind it like really knows what they're doing.
+
+18
+00:13:46,290 --> 00:14:06,030
+Wes Bos: Yeah, it's, I can't believe how how nice and fast it is, though, like startup is a little bit slower. But like, Who cares? You open it like I open it maybe six times a day where I close it and open another project. And it takes like two seconds to actually load my project. So like, I'm out 12 seconds a day versus sublime, but I can I can deal with that.
+
+19
+00:14:06,060 --> 00:14:25,890
+Scott Tolinski: Yeah, yeah, absolutely. And so it's funny because I probably would feel that same way if I went from sublime to vs. Code. But I went from sublime to Adam to VS code. And Adam felt so slow to me that going to VS code VS code feels so fast, although I'm sure that sublime was fast heard. I just had forgotten, you know.
+
+20
+00:14:26,130 --> 00:15:15,120
+Wes Bos: Yeah. Yeah. And I also like one other thing. Since joining in, I've been tweeting a lot about vs. Code, is that it seems like the the folks behind VS code I'm sure this is true for Adam as well. I'm not trying to poopoo any other editor, but I definitely think that the developers behind VS code are totally listening to to it because anytime you tweet about it, anytime anyone tweets about it, you see somebody jumping in and being like, oh, we're fixing this or, oh, this gives us a thumbs up because maybe we'll do it in the next release cycle. So they're, they're really listening to to what we're doing versus Just like sublime that the developer behind sublime sometimes just goes Mia for two years, and you have no idea if the the project is dead or obviously right now, it's it's rolling quickly, but there was a time where people didn't know if the developer had had just abandoned it or not.
+
+21
+00:15:15,210 --> 00:15:18,630
+Scott Tolinski: Yeah. Yeah. And that that part of it stuff. Yeah, yeah,
+
+22
+00:15:18,630 --> 00:15:57,780
+Wes Bos: exactly. So, um, let's talk about like, like, killer features, I think the the killer feature for me was the UI and the ease of setup, I, I, what I did is I turned it on, I ported my theme, and then I installed the sublime keymap. Because like the, the keyboard shortcuts are totally different. And like that, that's a great way to make you switch back because you're sick of it. So if you install the sublime key map, that that was super easy for me to switch over, hardly anything was different than then what I was used to. So I was That was my first killer feature. Any other killer features that that you think people should know about? You know, for me, I
+
+23
+00:15:57,780 --> 00:17:01,920
+Scott Tolinski: think some of the, like we mentioned before, the the easy setup, the painless, linting. setup. The, for me, the speed for major finding replaces across multiple files is a killer feature. I did it once. And I was like, holy cow. This is fast. Yeah. And you know, the, the get features that are in here are excellent. I don't necessarily use like the committing and stuff like that from the interface. But yeah, I do switch branches all the time from the left, if you click on your branch name in the bottom left corner, or I'm sure there's a shortcut for that, because I don't do it too much. But actually, let me hover over that right now and see what that shortcut is, I don't know, it doesn't say. But either way, the quick switching of branches. I don't know, other editors can do this. These aren't just things but it's a nice visual indicator of all your stuff. And it makes the the interface overall just more pleasant to use. So like I said, you can do any of this stuff through, you know, commands or whatever shortcuts and other text editors, the interface is what makes it just stand out to me.
+
+24
+00:17:02,130 --> 00:17:45,630
+Wes Bos: Yeah, I'm a like a git command line purist, where I've never used a GUI or any sort of app to help me along my way. And I've always like done my merge conflicts manually by actually editing the file and looking for the head and everything like that. And I've been trying out these good things. And I have to say, it's, it's pretty nice. I like the fact that it shows me it queues up all of your uncommitted changes in the sidebar, and you can commit them all it has this nice little, like, kind of like a sync icon, which will do a push and a pull at the same time. And it's pretty nifty. I think that I will be moving a lot of my, like standard Git stuff over to just using the sidebar. So
+
+25
+00:17:45,660 --> 00:18:04,070
+Scott Tolinski: yeah, there's niceties to like, I mean, if you use, like, one of the extensions I use is called Git history. Yeah. And then in parentheses, git log. I mean, if you do the git log, then you get that nice visual, I don't know what they call it, like a train sort of graph for that that line graph where they split off and
+
+26
+00:18:04,070 --> 00:18:09,000
+Wes Bos: yeah, it's kind of like a, like a train off to a branch and comes back to master. Yeah,
+
+27
+00:18:09,000 --> 00:18:19,800
+Scott Tolinski: that whole branching graph, and you get all of that stuff. You know, these are little things that it's not important, but I like that. I like that. I can go look at that. I like that it exists. Yeah.
+
+28
+00:18:20,360 --> 00:19:49,530
+Wes Bos: Yeah, absolutely. I think especially for beginners and experienced people as I guess, as well, this stuff just makes it a lot easier, because it's, it's much more visual. It's funny that as developers, we tend to decide to like just code and being pure. But I definitely like just as I like a little bit of magic in my JavaScript libraries. I like a little bit of interface on top of my, my code editor. So I think that's pretty sweet. Another thing that that got me was the sort of like the, I don't know what this is called. But it's whenever you're in a specific type of file, it will recognize that you're in that file and give you intelligent hints were in sublime, the the type, or hinting or not type hinting, but as you type, it will sort of just automatically tell you all of the functions in that actual file. Whereas let's say if you're in a package, JSON file, and you are typing like, quote s, and then it will tell you like, Did you mean scripts, or here are the all the options that you could possibly have in a package JSON, so you don't have to like look it up, or guess it will immediately tell you what the possible options are for a package JSON and a note app or what the posit like if you're editing a theme for cobalt to it'll give you a list of all the options for that possible theme. And if you type something that's not supposed to be in a package JSON, it will tell you like, it'll put a little underline on it and be like, Hey, this is not a standard one. You can keep it if it's if you know about it, but just letting you know, you might have had a bit of a spelling mistake there.
+
+29
+00:19:49,580 --> 00:21:05,130
+Scott Tolinski: Yeah, and the IntelliSense that stuff just works so well. I mean, even the the go to definition stuff where you hold. If you hold option and you click on it, you click on A variable function, whatever. And if you click on that, it gives you an underline. And that links you to the definition of it, which makes jumping to file super easy. You're not like if you work, I mean, in small files, jumping to the next file is you don't have to type anything like that. You can just hold option click, I know people get sort of a little crazy about using the mouse, sometimes you could, you know, command, whatever find your file, but maybe that definition isn't the easiest thing to find. And maybe it just makes that stuff a little bit easier sometimes. So go to definition stuffs really nice. I really like this. Was it rached tweets? Do you know, do follow her on Twitter? I think that yes, sweet handle. If it's not, I should look it up, and we'll put it in the show notes. She just tweeted out that something I didn't realize you could hit f2 on a on any sort of declaration, or whatever. And it will allow you to rename all instances of it, including the definition from that little pop up window. So you don't have to do a Find and Replace, you don't have to go hunting for all that stuff. Exactly. You used a function six times through four files, and you want to rename that function, I
+
+30
+00:21:05,130 --> 00:21:16,170
+Wes Bos: realized people are probably screaming right now like, I'd have done this for 10 years. Yeah, yeah. Okay, we're, we're excited about it. We're text editor users here. And we're starting to get a couple ID features.
+
+31
+00:21:16,230 --> 00:21:21,390
+Scott Tolinski: I did use WebStorm for like six months, I have a little bit of handle ID life. But
+
+32
+00:21:21,540 --> 00:21:38,010
+Wes Bos: yeah, it's, it's pretty sweet. Being able to rename all of your functions, or, if you have a selector will show you all other places where you've used that slider in, in all of your different files. So it's pretty neat that it adds a little bit of ID Enos to an existing text editor.
+
+33
+00:21:38,040 --> 00:21:52,380
+Scott Tolinski: Yeah, I think I had in my notes here that it's sort of ID light, it's, it's sort of a nice little in between between a totally bare bones text editor and something like WebStorm that is like a big application that handles a whole ton of stuff.
+
+34
+00:21:52,530 --> 00:23:23,580
+Wes Bos: Yeah, exactly like Sublime is unless you install extra packages. Sublime is dumb about your project, it doesn't understand the relationship between all of your files and what kind of project it is, and in VS code and understand that it's a JavaScript file and understands the relationship between all of your different files, which is pretty neat. Another one is the inline errors. So if you hit f8, or I've actually remap mine to caps error, or a PR E, it will cycle through all of the actual errors that are in your, your file. So that's another really nice thing that I have. Because previously, in sublime, if you have a bunch of linting errors, you have to hover over put your cursor in the linting error and look down at the status bar, or pull them up all in a list. Whereas with VS code, you can either go to that there's a tab called the problems tab, and it will accumulate all of the problems that are in your code. So whether that's linting errors, whether that's spelling mistakes, or any sort of other error that you could possibly have, it will accumulate them in one problems panel, or you can cycle through, and it will, it'll sort of just cut into your editor. Like if you've got an error line three, it'll line it'll move line four down and put the error on a single line and put a little arrow, red arrow to that specific error. And that's really nice, because it shows you exactly where it is. And you don't have to you don't have to hover over it with your mouse. I hate touching my mouse when I'm in my editor. So those little inline editor errors are fantastic.
+
+35
+00:23:23,939 --> 00:24:09,780
+Scott Tolinski: Yeah, see, I you know, there are people that there's so many, there's a lot of things, right? There's different levels of like, text editor purist, right. There's the like, let like don't give me an interface at all. Give me a little bit interface, give me a lot of bit of interface, whatever. Like Don't, don't make me leave my hands off the keyboard, or like, don't, you know, touch the mouse ever. I had people like yelling at me and my YouTube tutorials for touching my mouse. And you know what, like, I don't use my mouse all the time. I have. I know most of the shortcuts that make my life a lot better. Yeah, sometimes I do like to use the mouse. And I think that's just a personal preference thing. People want to be like, that's wrong, you know? Like, yeah, I don't know. It's whatever, whatever makes you productive at the end of the day. So you know, do you in that regard?
+
+36
+00:24:09,780 --> 00:24:10,860
+Unknown: You do you
+
+37
+00:24:12,450 --> 00:24:27,630
+Wes Bos: use Scott, I had super bad carpal tunnel. I don't know three or four years ago. And that's really what initially got me into keyboard shortcuts because nice. I was like scared like, Wow, I can't like let my arm fall off. Because then I couldn't code. Yeah. Do you ever get this stuff? pretty serious.
+
+38
+00:24:27,660 --> 00:24:28,560
+Scott Tolinski: Those risk guards.
+
+39
+00:24:29,850 --> 00:24:32,400
+Wes Bos: Oh, I don't have those. I'm not cool enough to wear those.
+
+40
+00:24:32,730 --> 00:24:48,120
+Scott Tolinski: I had those for a little bit. I got I like really hurt my wrist. breakdancing. Right. And then typing with a injured wrist is terrible. So I had to like wear those like 1990s rollerblade wrist guards or I was like at work trying to type with these things on it was no fun.
+
+41
+00:24:48,540 --> 00:25:05,580
+Wes Bos: Oh man. That's hilarious. We should that should be another like. Episode is like ergonomics or like how do you I'm pretty pretty tuned into how to properly set up your your desk. Economically, just Yes. I mean, ainger dangerous job being a web developer,
+
+42
+00:25:05,670 --> 00:25:12,690
+Scott Tolinski: I sit on a normal sized chair at my standing desk and type with my arms like, my shoulder height. So I don't know if I'm the
+
+43
+00:25:13,920 --> 00:25:14,850
+Wes Bos: one when you're away.
+
+44
+00:25:15,900 --> 00:25:34,860
+Scott Tolinski: No, no, I, for the most part, it's like when I get lazy, it's like, you know, 99% of the time, I'll stand in work and whatever, I'll sit down and, and work at the appropriate height. And then sometimes I'm just like, Okay, my desk is in like variable height. So I just sort of like slouch into it or something. I know, I recognize it immediately. I'm like, this is awful. You need Yeah,
+
+45
+00:25:34,860 --> 00:26:17,790
+Wes Bos: yeah. Okay. Oh, one other killer feature we've got here is the debugger. that's built into VS code. So rather than rather than going to your dev tools to find out what the error is, you can actually run your JavaScript. And I know you I haven't done to too much of it, but have tried it out with a note application is you can run your note out right from your editor. And what that allows you to do is you can put in breakpoints and pause when when the thing crashes at the specific file, and you have like tight integration between the actual running of the app. And where you're you're authoring your code in vs. Code. Have you used the debugger at all?
+
+46
+00:26:18,449 --> 00:26:23,970
+Scott Tolinski: I've briefly dove into it. I get like ID developer ID users are probably like, come on, man.
+
+47
+00:26:24,330 --> 00:26:26,130
+Wes Bos: Yeah, like this one.
+
+48
+00:26:26,159 --> 00:26:43,530
+Scott Tolinski: Yeah. Right. You can? Yeah, so No, I haven't really used it that much. To be totally honest. It required a bit of configuration. I just, I'm sure I would benefit immediately from it. I just had that honestly taking the time. And I know that's probably a terrible answer here.
+
+49
+00:26:43,890 --> 00:27:13,770
+Wes Bos: Now I need to I need to dive into it more. But whenever I talk about VS code, like unprompted, people immediately tell me the node integration is amazing. So I've tried it out a couple times here or there. But what I need to do is, you have to have like a like a custom, yeah, like a.vs code folder in your project, which contains all the information about how to run your app and whatnot. And I haven't totally figured that out just yet. So that's sort of maybe we'll do a follow up show in a couple months to see where we're at with that.
+
+50
+00:27:13,920 --> 00:27:21,930
+Scott Tolinski: Yeah, I'll definitely make that a priority for me to get going on that. It should have been a priority before but now become a priority.
+
+51
+00:27:22,650 --> 00:28:32,430
+Wes Bos: Yeah, you can do things like set environmental variables and watch different expressions from running similar stuff to that you'll see in the Chrome Dev Tools. And then there's also this plugin called, like, Chrome Dev Tools hook up. I don't know what it does. I'm sure you can can look it up. Somebody, I posted a thread on Twitter that said, like, what are your your fear of vs. Code tips, and a lot of people recommended this Chrome Dev, or it's called debugger for Chrome dev tools for Chrome, which it says a VS code extension to debug your JavaScript code in the Google Chrome browser or other targets that support the Chrome Dev Tools protocol. So I guess that what that means is that because Chrome Dev Tools and has this protocol where you can, you can NAB the debugging details from it. Like if you run a node process, you can actually debug it in Chrome Dev Tools, I'm assuming that you can pull the data from your Javascript app directly into VS code, which is pretty sweet. You can set breakpoints and see your console, debug errors and whatnot, which is pretty cool. Because if you've got an error on a specific line, you can just click right through to that file, and deal with it immediately.
+
+52
+00:28:32,550 --> 00:29:13,800
+Scott Tolinski: Yeah. And as someone who came from, like a more visual and less, you know, computer science background, like this stuff is all is all pretty. I don't know, it's it's pretty new to me in a way that it still doesn't feel totally comfortable. The breakpoint. And debugging overall is not something I ever have learned in a sort of any normal environment. So, you know, it seems weird to say that because it is it is very important, but it is it is difficult for me to come to that stuff after being not in that zone for for so long. So definitely want to dive further into all of that stuff to you know, well, obviously, increased productivity overall.
+
+53
+00:29:14,280 --> 00:29:45,900
+Wes Bos: Yeah, maybe that I'm just gonna add a card to our show last called debugging. Because, like the moment that I stopped just console, logging everything and, and actually learned how to use breakpoints and the debugger command, and being able to like pause and see inside the scope of function. It was amazing. I was like, why have I been console logging all of this time when I can actually pause my JavaScript in and see into scope and step through functions. It's pretty neat. So maybe we'll we'll add a card about that.
+
+54
+00:29:45,960 --> 00:30:03,860
+Scott Tolinski: Yeah, I feel like those are the like, literally the only things in the Chrome dev tools that I don't use, you know, like everything else. I've I don't, I can really, you know, into all the performance and all the network sort of stuff and yeah, very cool. Both Chrome Dev Tools and when it comes to breakpoints, and I'm just sort of like, huh,
+
+55
+00:30:04,230 --> 00:30:27,240
+Wes Bos: yeah, yeah, I don't use it all that much. But when you've got a, like one of those bugs that you just can't pin down or things happen too quickly, or like you console log in, it's undefined. But then you you appear in and that's, it's also not undefined anymore. Like it's like one of those like, you might have a race condition or something like that. It's super helpful to be able to just like, pause things.
+
+56
+00:30:27,390 --> 00:30:27,930
+Scott Tolinski: Nice.
+
+57
+00:30:29,820 --> 00:30:52,860
+Wes Bos: Alright, let's talk. So those are sort of our killer features, we're sort of leaching into some of the plugins that we use, but there's all kinds of plugins, I think I already have probably about 25 different plugins, I, I sort of went wild on installing them. I've since backed it up, because a lot of them do add a lot of interface on top that I don't necessarily like. But let's talk about some of our favorite plugins and what they do. So what do you got one for me, Scott?
+
+58
+00:30:52,919 --> 00:32:08,190
+Scott Tolinski: Yeah, I got a whole bunch. I mentioned Git history. git log before just had some nice little git log in history features, I use one called get lens, which is essentially like a line by line blame. So that that's really nice. Although I have noticed, I suspect it's get lens, I don't want to call get lens out specifically. But one of them is has like a, like a 95% CPU spike whenever. So I've turned off a bunch of plugins on my latest environment, get lens being one of them and the CPU spike is gone. I will continue to try it. Again. I recommend trying it and seeing if you have that or not reporting back because I really like this one. It's sort of when you're on a line, it tells you who last edited the line and the commit message and the time Yeah, stuff like that. Obviously, you can turn it off on projects where it's not applicable. For instance, on some projects, where it's just me working on it, I don't need to get a get blamed for myself, you know, yeah, Scotland, he edited this file. Thank you. Okay, I used let's see, I use color highlight, which is, you know, pretty standard for any sort of color highlighting. Basically, it just adds a color around your any sort of hex codes or RGBA values and stuff like that sort of standard fare for something that you would need ditch.
+
+59
+00:32:08,280 --> 00:32:41,700
+Wes Bos: So VS code comes with a color highlighter built in and a color picker, which whenever you type any sort of hex HSL, RGB a value, it will put a little square beside that color. But I didn't like that, because it always shifted over my text. So right, as soon as it recognized the color it was shifted over. And then I would accidentally click the color picker all the time, which frustrated me so I turn that off, and I installed color highlighter, which just puts the color right behind the actual value as soon as it sees it. And I much prefer that. So is that what you did as well?
+
+60
+00:32:41,730 --> 00:32:55,980
+Scott Tolinski: Yeah, absolutely. You know, it's funny, cuz Yeah, same exact reasons. I didn't really even think about it. It's just that that's how Adam and I had my sublime setup. Yeah, so for me, that's just how I wanted it, right. Like, I just wanted the color behind it.
+
+61
+00:32:56,040 --> 00:33:46,080
+Wes Bos: Yeah, and I want nice big color too, because sometimes that little square, yeah, you don't necessarily be able to see what that color is immediately. The one is pretty sweet. Because there's this new thing coming to CSS, which is our RGB e. that again, our GG BB A, which allows you to put the alpha value, the transparency in a hex code, so you could do like, ba da 55, which is like badass green. But if you want to, like 50% transparent, you can pop the and this is the hard part. 50% know that x value. So I've started to memorize them, which is like 3366, six E, whatever the hex value of like, 10 2030 40% is not the talk, I would have liked it. If it was just you just put like 80 on the end. That's 80%. But yeah, that would be way too easy.
+
+62
+00:33:47,190 --> 00:34:19,940
+Scott Tolinski: I always had like in in, in stylists. Yeah, this is a stylist feature. But you can just do RGBA like function, put a hex value comma in the open and the person. Exactly. Oh, it's like that's how I'm used to actually made a little function to do that for me and styled components as well. Because I just used that so much. Just keep everything in hex values and whatever. Yeah, but yeah, no, that is exciting. I don't know if I'll use it, I'll probably use it. That way, you don't have to type out RGBA and all those parentheses?
+
+63
+00:34:20,010 --> 00:36:56,940
+Wes Bos: Yeah, I don't know, I probably won't use it as much as I keep having to have this thing bookmarked, or I have to look up the hex value. And there's some people that can count and hacks but I can't I I'd much rather use a little function like that. Yeah, but the My point being this color highlight plugin will recognize those and it will show you the real value and then it will it'll try to like calculate what the opacity value is, which is pretty neat. Nice and it will it'll visually show you. These are plugins but well what if you install the ES lint plugin, you can turn on the setting editor dot format on save and es lint auto fix on Save. And what that will do is if you have installed and if you have prettier installed which I've got a lot of like tweak questions about like what is prettier so we talked about it in the the JavaScript tooling episode we'll I'll talk about it real quick. Where es lint will tell you about like code errors, you forgot a semi colon here, you don't, you're missing a closing brace whatever. errors as well, stylistic errors like, Oh, we prefer to put spaces here or we always use semi colons or we never use semicolons, we use double quotes or single quotes. eastland sort of does those two things were prettier, only deals with stylistic formatting of your code. So what you do is, it's not going to whine at you about your code, it will just fix it for you. So the way that it works is that you install prettier, you set your config. So I told it, I like to use single quotes, I like to use semi colons, I like to have spaces. On the on the either side of an object, I like to have a space after my colon on an object property, all those things. And then when you you save your thing, it will automatically run it through prettier, and then format it. So if you have any sort of weird indentation, if your line lengths are too long, I've set mine to 120 characters, it will automatically wrap it. So if you've got like an array with six items in it, and it's like 119 long, it's fine. But if you add another item to your array, it will automatically format it and put up each of them on a line. It makes it really, really readable. So having the combo of es lint and prettier. If you have those turned on, and I specifically just run my prettier through my es lint config. Likewise, it yeah, it will just like automatically fix all of your code and make it make it look amazing. You don't have to worry about like, if you if you refactor some code, or you paste in like an example from Stack Overflow, and it's in a different coding style than yours, it will automatically just fix it all for you, which is amazing.
+
+64
+00:36:57,000 --> 00:37:28,830
+Scott Tolinski: Yeah, and I would have put this under our killer feature, even though it's probably doable and other editors. But that's it. He is like one of those things I really just can't live without if my linting isn't auto fixing everything for me, then I like suddenly getting I have to, like close the editor and figure out why because I relies so much on that. It allows you to really just type freely and not worry about formatting, which is something that you know, I don't know, I like I love like properly formatted code. Yeah, but I don't want to have to spend the time, you know, making my code properly formatted. And it really takes a lot of that pain out of it.
+
+65
+00:37:29,150 --> 00:37:50,760
+Wes Bos: Yeah, you should see how many grumpy people tweeted at me when I was like, oh, prettier is great, because I keep manually reinventing my code. Like let's say I've, I've have a react component, and I delete like a wrapping component. I got to reinvent everything. Oh, yeah. And so many like grumpy old dudes tweeted at me being like, the code should come out properly from your fingers in the first place.
+
+66
+00:37:52,350 --> 00:38:02,940
+Scott Tolinski: Yeah, it's so weird. I just had like this conversation on my Slack channel. It's like people on they love to knock people down a peg or two just to prove that they're better in some way. Like I see it. You know, I
+
+67
+00:38:02,940 --> 00:38:06,110
+Wes Bos: mean, you see it? Probably relations. But
+
+68
+00:38:06,110 --> 00:38:12,630
+Scott Tolinski: yeah, I mean, like, come on. Everybody's doing their thing networks for them. And you know, if you're not hurting, yeah, no big deal
+
+69
+00:38:12,650 --> 00:38:16,460
+Wes Bos: code. The code does not always come out perfectly from my fingers. I'll tell you that.
+
+70
+00:38:16,500 --> 00:38:20,070
+Scott Tolinski: Oh, yeah. No, I got two fat fingers. And I double hit keys. I yeah.
+
+71
+00:38:21,029 --> 00:38:27,360
+Wes Bos: Oh, that's good. Anyways, uh, yeah. If you ever want to see some grumpy people look at the tweet replies,
+
+72
+00:38:27,380 --> 00:39:38,550
+Scott Tolinski: yeah, to your replies YouTube comments. Yeah, yeah, um, another really nice extension that I use here is auto rename tag. And if you are using, I mean, it's great for HTML, right. But let me explain what it does. It's great for react to. So if you have an opening and closing tag of any sort of element, whether it's a react component, an HTML element, or whatever. And let's say it changes, right, this div is no longer a div. And now it's something or this, this span is now a paragraph tag or something, you don't want to have to hunt down the closing tag and everything like that. So this allows it to auto update the closing tag of whenever you edit an opening tag, if you are changing name of react components, that that makes things very nice. So let's say you have a div that's now becoming a styled component, you can just start typing the styled component where it says div and it updates the closing tag for you. So that one saves a ton of time for me because not only do you not have to, you know hunt down the closing tag nuggets that hard but you don't have to hunt down the closing tag or do any extra work there. And you don't have to do any sort of copying and pasting or re typing or stuff like that. It just automatically updates it for you.
+
+73
+00:39:39,110 --> 00:40:19,190
+Wes Bos: Yeah, that's, that's super handy. That's the one that I use quite a bit in sublime. And I'm still on that like path of how do I like do the same thing in in sublime, like one or one of the ones right now that I have is, is expand to quotes which I've sort of got down pat, I would do that a lot. Like I just want to make my selection excellent. To the quotes, and then the one I haven't figured out how to do is toggle quotes. So I used to have the shortcut in sublime, which would toggle between single, double and backticks, or just single and double and other languages. And that's sort of one I'm looking at. But I'm sure there's some sort of plugin out there that will do that for us. Yeah,
+
+74
+00:40:19,190 --> 00:40:32,630
+Scott Tolinski: I've done. Man, I hit that setup before. And I've heard, I think I just like forgot that, that I had it set up or the keyboard shortcut, because I was doing that to toggle the backticks. It's like super useful all the time. If suddenly a string becomes something that you need a variable in or something.
+
+75
+00:40:32,640 --> 00:40:34,380
+Wes Bos: Yeah, that's exactly what it used to for.
+
+76
+00:40:34,440 --> 00:40:34,980
+Scott Tolinski: Yeah,
+
+77
+00:40:34,980 --> 00:40:35,880
+Unknown: man.
+
+78
+00:40:35,880 --> 00:40:39,090
+Scott Tolinski: I wish I had that off the top of my head, but I'm totally blanking on it.
+
+79
+00:40:39,150 --> 00:40:52,350
+Wes Bos: We'll do it. Somebody will tweet it at us. That's the nice thing about doing this podcast is Yeah, I just air our problems. And then a couple days later, everyone on Twitter has fixed your problems, because they have found that they've also had that problem that will tweet it at you, which is pretty cool.
+
+80
+00:40:52,380 --> 00:41:23,960
+Scott Tolinski: Yeah. Oh, oh, sorry. I was gonna go through I got another one. That was a good one that I have to me. Yeah, this is by Wix. So Wix has been doing a lot of cool stuff. Lately, they had like a really nice React Native navigation library and stuff. So Wix is really coming with it. And this is import cost, we slayed the size of your packages directly next to your package name. And the very best part is it also shows you the size of it. Jeez, it so you're not just like looking at what it is, you're looking at what it will be in your production environment as well.
+
+81
+00:41:25,230 --> 00:42:08,790
+Wes Bos: That's pretty sweet. I actually turn that on. And what I like about it is that I don't necessarily know what is big and what is not all that big, like you kind of hear ideas about how big react is and how big jQuery are, and you get an idea. But it will tell you it'll turn red if something is probably too big for a general website. And it's sort of like if you've ever used like a calorie counting app. After about a month or two of using this app, you get a sense of what something should be in terms of calories. And you can get an idea of how many bytes is an actual application? Or how many bytes is this thing that I'm bringing in. And if something is way too big than for what you think it should be doing that should raise a red flag, like
+
+82
+00:42:08,820 --> 00:42:12,090
+Scott Tolinski: previous flag in VS code here,
+
+83
+00:42:12,090 --> 00:42:36,710
+Wes Bos: it actually puts a red flag up for you. And yeah, you can you can get a sense for it. And it's cool because it puts it like right beside the import or the require. So if you say like import slug from slugga phi and right beside it will tell you what it is and what it is gee zipped, and minified, which is pretty sweet. You don't have to like open up an existing editing interface it sorted it just puts it gray beside the import value.
+
+84
+00:42:37,020 --> 00:42:38,100
+Scott Tolinski: Yeah, love it.
+
+85
+00:42:38,850 --> 00:43:55,470
+Wes Bos: What I've got is IntelliSense. So there's path IntelliSense, and sass and tell IntelliSense. And what Pathan, like can't even say a path IntelliSense will do is anytime you open up a quote if you're in CSS and you're doing a background image, or you're trying to actually there's node IntelliSense as well. So if you're trying to import something from a node package, what it will do is on a file, it will look at your hard drive. And it'll be relational to what folder you're currently in. So if you do dot dot forward slash, it'll go up a level, and it will give you a list of all the possible files and folders. The note IntelliSense. So if you say like import slug from quotes, slug fi, or if you just type s, it will go into your package JSON and list all of the actual packages that are in there, and be able to to autocomplete those for you. So like you don't accidentally spell something incorrectly. And then there's SAS IntelliSense. So if you've got some colors, or if you've got some selectors that you've previously used, or a mixin, or or something else it will, it's smart enough to know not just because you've typed it in the document before but it's smart enough to know these different symbols that are in your your file, and you can you can autocomplete it based on that.
+
+86
+00:43:55,560 --> 00:44:05,040
+Scott Tolinski: Yeah, yeah. So the node one you use is that NPM IntelliSense because that's the one I'm using. Okay, cool. Yeah, because there is one that's called node modules. IntelliSense and wait,
+
+87
+00:44:05,190 --> 00:44:07,350
+Wes Bos: let me open it real quick. Um, that might be a lie.
+
+88
+00:44:08,280 --> 00:44:11,700
+Scott Tolinski: I think NPM IntelliSense has way more downloads. So um,
+
+89
+00:44:11,700 --> 00:44:19,170
+Wes Bos: yeah, it's called NPM IntelliSense by Christian Kohler nice 303,000 installs so far.
+
+90
+00:44:19,200 --> 00:44:26,190
+Scott Tolinski: Yeah. Cool. So what's on the route of extensions what what theme you're using cobalt obviously so that yes, your
+
+91
+00:44:26,190 --> 00:44:45,750
+Wes Bos: cobalt two is is my thing that I just poured it over. And it's it's looking pretty dang good. The one thing that VS code just released was the ability to style the entire editor so the tabs in the sidebar and the keyframe what this thing is called where you switch between files and search and get and bugs.
+
+92
+00:44:45,780 --> 00:44:56,340
+Scott Tolinski: Yeah, was that that was a totally stupid pain point of mine to write. That's a totally useless pain point. I was mad that you couldn't change that bar. not mad. I was. Yeah, it was like less than throw that you couldn't change those
+
+93
+00:44:56,430 --> 00:45:46,800
+Wes Bos: like ugly gray, brown or black color. Yeah, it's nice to be able to have full Do you still can't have full control over absolutely everything. There's some open bugs, like there's no, there's no ability to put borders on a lot of the things in the editor, I've just spent the last three days building this theme. So some of the stuff that I did in sublime like putting a thin yellow border around search results are other instances of a find. You cannot do yet but there's there's actually a plugin called john CSS and JavaScript customize where you can like just inject your own CSS. And it's funny because the editor, you can just open up the dev tools in the editor, inspect element, and then you can add in your own CSS to whatever you want. So I made my carrot a little thicker and ended a couple little things that I like to have. Nice.
+
+94
+00:45:47,009 --> 00:46:55,290
+Scott Tolinski: Yeah, I'm what am I you? Yeah, considering the idea of making my own just to be around the level of tut's stuff. I use the material theme. Let me see which one because there are several I use material theme, by matea s store, you know, please get at me, I ruined your name. I love this, this, this, this theme because it styles everything, every part of VS code. But there's also several different variants of it. There's, you know, the light variant, the dark variant, which you always get with stuff. And then with this, there's also a green variant, which you saw an atom with, like the oceanic material theme sort of stuff. But there's also this one, it's like pale Knight. I think it's called pale Knight pale, pale, man, let me check. I think it is. Either way. It's like a light purple. And you know, me my brand stuff. Everything's purple. So it looks really nice. I really loved the syntax highlighting really loved the overall theme. And look, everything pops out really nice. So yeah, material theme. I love it. If I did a theme, it would probably be based off of this.
+
+95
+00:46:55,320 --> 00:47:17,850
+Wes Bos: Yeah, you should, you should fork it and make like a level up tuts custom one. Yes. Like I didn't understand that I was doing this at the time. I just really like blue. But it's sort of a bit of a signature of what I do. But not actually there's now a lot of other people who do YouTube tutorials that also use my theme as well, which is great. I don't mind that at all. Because I think it's cool to see other people using it.
+
+96
+00:47:17,880 --> 00:47:20,130
+Scott Tolinski: Yeah, absolutely. Yeah, definitely.
+
+97
+00:47:20,460 --> 00:47:27,180
+Wes Bos: It's cool. Even my honor, I we're not on video right now. But my room is also painted cobalt to blue. Nice.
+
+98
+00:47:27,210 --> 00:47:30,510
+Unknown: So mine is also blue, we both have blue blue rooms.
+
+99
+00:47:31,380 --> 00:48:24,330
+Wes Bos: It's good. It's a good color for a room, I got one called the version lens, which will look at your package JSON if you're running a node app, and it will tell you if you're on the latest version, or if you're compatible with the latest version. So based on some fair semver, Sam bear, how do you say that? Seven semver, seven, semantic versioning means like, you have like your, like 2.1 point three. And then if 2.1 point five comes out, you know that 2.1 point three is compatible with 2.1 point five, right? So if you hover over your, your NPM package, or you can actually get them display right above the package, it will tell you what the current version is what version you have, and if you're compatible with it, or if there's breaking changes if you'd like to, to actually upgrade. So that was it. That was super, super helpful for me.
+
+100
+00:48:24,510 --> 00:50:37,080
+Scott Tolinski: Yeah, I've never heard of this. And the moment you said what it was I click the Install button because I gotta have this super cool. Um, one thing we didn't talk about more than just extensions is some of the features for extensions. I mean, there's this like.dot.in, the upper right of the extensions thing, and allows you to basically quickly see all popular extensions and recommended extensions and all of your personally installed incentives. But I really like that being able to see popular extensions all in one spot, and you can just sort of scroll down and see if there's anything new and hot that people are using. Yeah, maybe you didn't, you didn't hear about in some sort of way. And you don't have to rely on word of mouth to hear about these things. So I really liked that aspect of it. Another thing is being able to turn off plugins for a particular workspace. So yeah, plugin has a little gear next to it. If it's installed, you can click that gear and you can disable for this workspace you can disable for always or uninstalled. And I want it maybe Can you explain what is a workspace? Sure. So your workspace is your particular project, right? It's your window in your project. And really it's it's where this settings this VS code settings file lives, whereas it's dot VS code hidden folder and then inside of that you have folders maybe for typings or launcher settings, JSON files based on whatever features of vias code you're using and he sort of settings you could take with you or whatever move from project to project but either way, that's your that's your workspace, so that that folder lives in the workspace, I don't think Yeah, well, I guess if you are modifying any sort of workspace settings This is going to create that file for you. So I would guess that you could say that the requirement of a workspace, although I think Yeah, yeah, I guess that makes sense. So yeah, your workspace is really whatever given project you're on. So what's nice about that is, like I mentioned before, when I'm working on level up, and I'm the only person editing the code, I don't need to see a good lens of everyone else's stuff. So why would I want that plugin running and potentially using up some memory or CPU or something that I don't need it to. So you can click the gear disable for this workspace, and then that plugin is just going to chill out, but it will be there for your next workspace or other workspaces that you're using an ad.
+
+101
+00:50:38,280 --> 00:51:21,420
+Wes Bos: That's awesome. On the topic of workspaces, I believe this is true that there's no way to switch from project to project or workspace to workspace right now. So what a lot of people have told me to install and I just did it myself is project manager, which you can open up an existing project and have all of your, your settings and all the folders that you like to have open for that specific project. Is that true that you cannot switch between workspaces from VS code? And so I guess I just don't know you mean? Like, oh, like let's say you've got you have your your your level up tuts. And then you've got like a client project, and you're sitting in level up tuts and you want to switch to that client project. How do you do that?
+
+102
+00:51:21,569 --> 00:51:29,760
+Scott Tolinski: I go up to File and select File. Open the folder. Okay. And it opens up in a new window.
+
+103
+00:51:29,790 --> 00:51:30,900
+Unknown: Yeah, okay. Yeah,
+
+104
+00:51:30,900 --> 00:51:43,740
+Scott Tolinski: I don't I guess I don't typically, like if I'm working on one project, I'm like, pretty much chillin in that project. And if I work in another project, I'm closing out of it and starting up a new process or new new window somewhere. Oh, yeah,
+
+105
+00:51:43,770 --> 00:51:56,670
+Wes Bos: I've got this terrible thing where I always forget where the folders on my computer are. So having being able to open the project quickly is is super helpful for me. So looking forward to using that.
+
+106
+00:51:57,480 --> 00:51:59,160
+Scott Tolinski: Yeah, I'll check this one out. I haven't seen it.
+
+107
+00:51:59,730 --> 00:52:12,810
+Wes Bos: Project Manager. Cool. What else? What other tips do we have or packages? This season just looking at here, I like I said FA to cycle through all of your your available options.
+
+108
+00:52:13,350 --> 00:52:44,520
+Scott Tolinski: I mentioned this before in another podcast. But I have a just on on GitHub, we can link in the show notes, which is to remap your key mappings to give you command one through nine to actually switch the tabs instead of Yeah. Doing the default behavior, which is difficult to Yeah, difficult to get used to. There's also, you know, little keyboard shortcuts like did this sublime or atom? I guess you don't know Adam, but sublime. You hold option? Does it move align? Is that option in the arrows?
+
+109
+00:52:45,060 --> 00:53:05,040
+Wes Bos: I often like moves up by one Brown. Yeah. Line bubbling. You mean? Like? Yes, that is it as a huge one in sublime, where they hold down, but the keyboard shortcut is option? No, it's command control, and then use your arrows to move those lines up. And I call that line bubbling in line.
+
+110
+00:53:05,370 --> 00:53:08,160
+Scott Tolinski: Is that a? Is that the official name? Or did you come up with that?
+
+111
+00:53:08,549 --> 00:53:18,090
+Wes Bos: I think I might have made that up if you search lightly line bubbling. Let's see if one of my posts comes up. Yeah. Okay, I made that up. So if you
+
+112
+00:53:18,090 --> 00:53:46,860
+Scott Tolinski: do line by line and VS code, you hold the option and hit the arrow keys up or down to move a particular line. If you hold Shift Option, it duplicates that line and moves it up and down. Which can be super handy if you're duplicating. Like if you hold Shift, you know, go down a couple lines. And let's say you need to copy those four lines, then you hit just option and hit down once more. And it copies those four lines like that. That's super easy. super nice. Nice to get your fingers doing that and used to that sort of thing. Yeah.
+
+113
+00:53:47,220 --> 00:54:13,950
+Wes Bos: Yeah, like like our last episode where we told you all of these like must have keyboard shortcuts that are global, there's probably like, like 20 shortcuts that you just must absolutely memorize and will make your life so much easier. And we should come up with a list that at some point to to be able for people to be able to reference Yeah, you should just print out like the default key mappings and take it home and study it or do some cash card. You have your own VS code series on youtube for free right
+
+114
+00:54:13,980 --> 00:54:28,470
+Scott Tolinski: yeah, it's it's a funny videos, it is maybe eight videos or so right now I'm sort of just going with it were things that are like, there's only so much to show about like basic functionality in a text editor. So yeah, right now it's a little bit tips and tricks kind of stuff.
+
+115
+00:54:29,160 --> 00:54:56,910
+Wes Bos: Yeah. And I think that's that's the kind of stuff that people want. Like I wrote an entire book on sublime and have videos and it's all that like those little things where you sort of take it for granted. But if you do it in front of a bunch of people, half of them go Whoa, what what did you just do there that you you did that little trick or you jumped from line to line or Yeah, easily easily selected all the text inside of those quotes, right? Like those are the things that make you save an hour or two a day, rather than having to manually do them. Yeah, you
+
+116
+00:54:56,910 --> 00:55:03,210
+Scott Tolinski: get you get a lot of those comments like I didn't know you could do that or Why don't you do it this way? dummy? Yeah,
+
+117
+00:55:03,239 --> 00:55:08,820
+Wes Bos: yeah. Cool. So you got anything else? Or is that looking good?
+
+118
+00:55:09,089 --> 00:55:22,560
+Scott Tolinski: Um, let's see, let's talk about is there like, What do you want? Like, what are some things from VS code that you would like to see that don't exist via extension? Or anything that you know of right now in VS code?
+
+119
+00:55:23,370 --> 00:55:43,050
+Wes Bos: Oh, that's a good. I don't know if this exists or not, I'm assuming no. But being able to like pair programming on VS code would be pretty sweet. Yeah, I know that a lot of people that do pair programming, they have to use t mux. And vim. Because really, that's the only the only way to or I don't know if it's t mux. Is
+
+120
+00:55:43,050 --> 00:55:45,510
+Scott Tolinski: what they use for I don't know, I've never done pair.
+
+121
+00:55:45,779 --> 00:56:05,010
+Wes Bos: No. Yeah, if you want to be able to you have to use vim, there's some there's some plugins for sublime that you can use to, to sync your carrots and stuff between people. But it would be pretty neat to be able to have all of the the nice interface of VS code as well as being able to sync that with somebody else that you're currently coding with.
+
+122
+00:56:05,190 --> 00:56:55,320
+Scott Tolinski: Definitely. Yeah, I think some things that I would really like is, is some of these are total pipe dreams, like how yakou was my favorite extension for Sublime Text and never made its way into atom. So I'm guessing it's kind of dead in the water. It was a Auto completer for CSS. And it was basically like, Emmet, it was I mean, it did exactly what Emmet did, but it did it so much better. Like that. It's hard to express this because my hands were so used to hi yaku. But whatever you are expecting the the auto completion to be, it will just be that like they're each each sort of CSS property had maybe like, you know, 20 different shortcuts. So you didn't have to ever look up what the shortcuts were, if I wanted, you know, something, you could just guess hit tab, and it was almost magically always Oh, yeah.
+
+123
+00:56:55,950 --> 00:57:11,790
+Wes Bos: It was a fuzzy match for it. Yes, it's best guess. And then it also learns from the things that you learned from the things that you want. And it does that as well. I don't know, probably not as great as this. But it will learn from like what you you often like to use for that shortcut?
+
+124
+00:57:11,820 --> 00:57:12,360
+Scott Tolinski: Yeah,
+
+125
+00:57:12,390 --> 00:57:13,200
+Wes Bos: that's pretty neat.
+
+126
+00:57:13,260 --> 00:58:54,090
+Scott Tolinski: I can say there's some like little things that I had some beef with Emmet, like, if you? I don't know, there were I forget what they were just some of them that my hands were just so used to typing. Yeah. And you move into mn and it's giving you something totally, not only not only something, I don't know, not logical, but something that just is a CSS property that you very infrequently use anyways, was like, Oh, this one matches it closely. But it's not a property that people use all the time. So I would love to see how yakou I don't think it's gonna happen. Could the thing is import folding, which is something a lot of IDs do really nicely. So you have if you're working in any sort of import heavy environments, importing a ton of JavaScript stuff, I mean, how many things like how many times does your file maybe have like 10 lines at the top that are just yeah, printing a whole bunch of stuff, especially even now, with styled components here, importing components and whatever, your import section can get pretty large. And VS code doesn't really offer a way to fold all of that nicely. There's some ways you could hack it by indenting that line, and then putting a comment at the top in the bottom of your imports. And then you can Yeah, but that's, that's, uh, yeah, and I don't want to live your life. Yeah, yes, Lynn's gonna fix that indentation anyway, so you're facing a losing battle there. Yeah. So that would be really nice to be able to just say, hey, fold all of those imports. And this isn't even just a JavaScript thing. You'll see a lot of people, a lot of different languages talking about it. So we'd love that. Nothing thing is that I use absolute imports in my environment that start with a forward slash. So instead of starting without a forward slash, and yeah, VS code just totally doesn't know how to handle that. So that's, that's pretty much it. It just doesn't, it doesn't matter.
+
+127
+00:58:54,540 --> 00:59:02,220
+Wes Bos: If you're importing like a style component, you don't have to think like, what directory Am I currently in? Yes, go to the root of the project. Yeah.
+
+128
+00:59:02,250 --> 00:59:24,330
+Scott Tolinski: And and since in that way, if you ever move, or like it allows for copying and pasting your imports from file to file a lot better, you don't have to like re import stuff. You know, something's like if it's in the same folder, I'm going to use a relative importer, if it's in like maybe a close folder, but if it's not in a close folder, and I'm having to do dot dot forward slash dot dot forward slash data for I'll go, that's cool. I'll do yeah.
+
+129
+00:59:24,630 --> 00:59:29,730
+Wes Bos: And that's, that's in your, like, your Webpack. Module. resolver. Yeah, so
+
+130
+00:59:29,730 --> 00:59:36,230
+Scott Tolinski: I use Meteor primarily. So it just handles it by default. I don't have to change anything to get it to do that.
+
+131
+00:59:36,900 --> 01:00:00,720
+Wes Bos: That's pretty neat. Yeah, yeah, those are some good things. Um, tweet us I'm at Wes Bos Scott is at a stilinski and just tell us what are what are you hoping that we'll come to it? Because often people like say, like, Oh, I wish I could move to VS code, but it doesn't have X, Y and Z and most curious to hear like what what are the hang ups that are stopping people from from Moving.
+
+132
+01:00:00,900 --> 01:00:01,770
+Scott Tolinski: Yeah, definitely.
+
+133
+01:00:02,970 --> 01:00:09,660
+Wes Bos: Cool. Well, let's move on to some sick pics. pics. What do you got for a sick pic for me today? Scott? Yeah, I
+
+134
+01:00:09,660 --> 01:01:25,470
+Scott Tolinski: got this book that I read a long time ago, well, not long time ago, maybe like a year and a half ago called moonwalking with Einstein. I hear people talk about it a lot right now. And it really reminded me of how impactful it was. It's not like a self help or like it is self improvement kind of book. Like I usually like. It's a story about this guy, Joshua for who basically heard about the world memory championships, and decided that he wanted to write an article about it, which turned into a book. And basically, he ends up studying with some really, really interesting people about learning to grow their memories to these memory competitions, where they're having to memorize multiple fold decks of cards and names and faces and stuff at an absolute insane rate. And the guy, you know, who wrote this book is basically like, well, I'm of average intelligence and all this stuff. And I don't have average memory. I don't have any sort of anything, but it's proven to show you that like, it's a trained skill that you can learn in pickup and all sorts of different ways. And in between the sort of like an every other chapter kind of thing goes into the science of memory and stuff like that. And it's really, really super interesting called moonwalking with Einstein. It's pretty neat. I recommend the audiobook. It's really nice.
+
+135
+01:01:26,040 --> 01:01:28,050
+Wes Bos: Cool. I'll check that out.
+
+136
+01:01:28,260 --> 01:01:28,830
+Scott Tolinski: Yeah,
+
+137
+01:01:28,830 --> 01:03:21,210
+Wes Bos: so I've got something totally different. And it's double walled stainless steel. drinkware. Whoa. So I I'm, I'm absolutely obsessed with the, you know, the brand Yeti. They make they make these coolers that hold ice for like a week. And yeah, they have. So I do. I do know this. Yeah, so Yeti has, they've, in the last like, year or two, they've been putting out these, these cups that hold ice for like 40 hours or something like that. And I've got a couple of them. And I've just been absolutely loving them. And what it is, is it's it's just a regular stainless steel travel mug. But the there's two walls of stainless steel. And then in between them they they create a vacuum which sucks out all of the air. And from from reading what I figured out is that the reason why if you put something in a thermos and this is not new thermos technology has been around for a while, if, if you remember, like I remember being a kid and having like a glass thermos. And if you were to break the glass thermos, it would be no good because there's an inside and there's an outside and in between it, they suck all the air, and then the heat or the cold that's inside of your actual thermos or inside of your cup. It can't dissipate into anything because there's not even air. There's not even air inside of that. So I have a couple of these I got a couple 30 ounces Yeti cups, and I've got I've got a 20 ounce one as well. And I bring it up to work with me and I've just got, I don't know if you can hear that or not. But I put ice in it in the morning and ice last all day long. And I can fill it up with like a little mini fridge here in my office. So they're pretty sweet. And I just ordered like a huge 64 ounce one. Because I'm supposed to be drinking a lot more wine. Is that what you got right there?
+
+138
+01:03:21,390 --> 01:03:45,510
+Scott Tolinski: I have it's not a Yeti. It's a bottle Bo TTL which is like the same thing. Same thing, vacuum sealed double walled, that my wife got me this for Christmas this year. Because she knows I love giant water bottles. I mean, you saw that giant boot I drink water out of Yeah, this is the two liter version of the bottle. And it's so wide that I can't hold it. I have to hold it with two hands
+
+139
+01:03:46,170 --> 01:03:50,640
+Wes Bos: on it. Like I can't palm it. It's giant and 27 bucks. Yeah,
+
+140
+01:03:50,640 --> 01:03:51,450
+Scott Tolinski: it's awesome.
+
+141
+01:03:51,450 --> 01:04:50,010
+Wes Bos: Yeah, let's meet so that's what I was gonna say is my next thing is the Yeti ones are stupid expensive. So and the thing is that like, it's not like Yeti is not doing anything special by sucking air out of two pieces of stainless steel. And most of these things are all made in the same factory in China anyways. So what I recommend to people is if you go to in Canada, we don't really have this but if you go to the states at Walmart, they have the Ozark Trail brand. And they sell like pretty much a knockoff of everything Yeti, but for like 10% of the actual cost. So we've got a couple of the 20 ounce. Ramblers that are from Ozark Trail and they've been really, really nice. And this this huge, like 64 ounce one is exactly what I'm looking for. Because I want something that I can put a ton ice in and still have a ton of water and because even the 30 ounce Yeti, if you fill it up with ice, you don't really get that much drink in it and find that it runs out too quickly.
+
+142
+01:04:50,100 --> 01:04:53,460
+Scott Tolinski: How about a 64 or 68 ounce?
+
+143
+01:04:55,620 --> 01:05:12,540
+Wes Bos: I think that that is what I will get that's that's amazing. Yeah. Thank you. Sell a one gallon one Yeti, which is nuts. Yeah, I would I would be Oh, it's not for drinking out of at that point. It's more for for like sneaking it into a baseball game and then pouring it for your friends.
+
+144
+01:05:12,570 --> 01:05:16,710
+Scott Tolinski: I think I'd be willing to challenge that. One drink a lot of water.
+
+145
+01:05:19,170 --> 01:05:39,060
+Wes Bos: It's pretty neat. So yeah, vacuum, double walled vacuum stainless steel drinkware. They even sell ones that are like, I know, swell bottle is another really popular one right now or you can get to like cool colors and stuff like that. But if you're looking for a water bottle, definitely check out something I look at this bottle Bo TTL.
+
+146
+01:05:39,300 --> 01:05:39,810
+Unknown: Yeah,
+
+147
+01:05:40,230 --> 01:05:55,710
+Scott Tolinski: yeah, I think my, my wife bought it because she literally googled largest double water bottle. Like, she just knew that because I had before this I had another water bottle. I was like 1.5 liters. And I was like, I'm over this 1.5 liter stuff. So
+
+148
+01:05:55,710 --> 01:06:05,490
+Wes Bos: that's awesome. Look at using liters to welcome to Canada. Yeah. 68 ounces for all y'all Americans. Yeah, I
+
+149
+01:06:05,490 --> 01:06:09,510
+Scott Tolinski: don't know any of that stuff. Not good.
+
+150
+01:06:09,720 --> 01:06:14,220
+Wes Bos: Yeah. Cool. So sick pics. Shameless plugs, anything you'd like to plug today?
+
+151
+01:06:14,310 --> 01:06:44,880
+Scott Tolinski: Yeah, looked at plug level up tutorials, I just finished my subscription service. As of today, it will be out and available. And check out level up tutorials, the level up pro stuff, it's a subscription, where I'm going to be releasing a ton of new free content, a new series, hopefully this week, and then another one this month at four pros. But either way, that whole system is new. And even if you don't want to go by anything, or subscribe, just go check out the shopping cart that is going to be live because I just built it. And I really like it. So also looking for bug reports. So if you find anything hit me up.
+
+152
+01:06:45,480 --> 01:07:35,370
+Wes Bos: Sweet, sweet. I'm going to not so much plug but maybe a public service announcement is my next batch of stickers is due in a couple of weeks should be showing up here in Canada. And I get a lot of email about people asking me when these stickers somebody even tweeted me the other day that they had a nightmare that they missed them. So they will be like, when will they come? In a couple weeks? I bet early October I'll have them up for sale. Where will they be at bosta? AF is the website will they be there'll be for sale. And I've ordered last time I order 2000. And they sold out and I think two days or so. I order 5000 packs this time. So don't worry are probably will be enough. Hopefully. I hope so. Because that's a lot of stickers to deal with. So this should be up in in a couple weeks.
+
+153
+01:07:35,640 --> 01:07:36,180
+Scott Tolinski: Nice.
+
+154
+01:07:36,540 --> 01:07:42,810
+Wes Bos: excited for that. Awesome. And there's a syntax sticker in this coming pack. So make sure you you jump on that.
+
+155
+01:07:43,860 --> 01:07:45,300
+Scott Tolinski: Is there a tasty treat sticker?
+
+156
+01:07:45,660 --> 01:08:03,420
+Wes Bos: No. I kind of wanted to but I kind of wanted to make all the stickers like hilarious inside jokes. But like I realized that like most people don't understand what these inside jokes are. So I try keep them a little bit generic so that people don't feel weird about putting them on there.
+
+157
+01:08:05,070 --> 01:08:07,170
+Scott Tolinski: You might feel worried about tasty treats on yellow.
+
+158
+01:08:07,200 --> 01:08:26,180
+Wes Bos: Yeah, I don't know if you'd like a tasty treat sticker tweet us and we'll we'll make it happen in the next patch. Cool. Alright, so that's it for this episode. Make sure you check out us I guess who said on Twitter. I'm at West boss calm. I've got a list of all my courses there as well. Other than that, we'll see you next week. Zia bass.
+
+159
+01:08:27,870 --> 01:08:38,310
+Scott Tolinski: Head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like this show. Until next time,
+

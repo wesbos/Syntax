@@ -1,0 +1,348 @@
+1
+00:00:01,290 --> 00:00:10,349
+Announcer: You're listening to syntax podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski and Wes Bos
+
+2
+00:00:10,380 --> 00:00:50,340
+Wes Bos: Welcome to syntax Thanks for checking out the podcast with the tastiest web development treats. My name is Wes Bos and with me as always is Scott to Lynskey. Today we're gonna be talking all about learning. How do you learn quickly? How do you pick up new topics in this fast ever changing fast paced industry, being able to be a quick learner is probably a super invaluable skill. So we're gonna be going through all that today, we're sponsored by Netlify. And fluent conference. We'll talk a little bit more about both of those companies. partway through the episode. However, Scott just got back from San Francisco, and I'm told he has an amazing story to tell us or
+
+3
+00:00:50,700 --> 00:00:52,560
+Scott Tolinski: maybe not an amazing, yeah,
+
+4
+00:00:52,560 --> 00:00:55,650
+Wes Bos: interesting story. So how you doing? First of all,
+
+5
+00:00:55,860 --> 00:04:36,360
+Scott Tolinski: oh, I've had I've had better 24 hour periods of time in my life. I'm just gonna go on and say that because first off, the first half of my trip to San Francisco was incredible. I had a great time. I, you know, I thought I killed my talk at Zai. De we the whole thing was great. Everyone's talks were grades. I day overall was amazing. It was just a great experience. So, uh, after that, did after there's after party, whatever, I went to a friend's place to hang out for a little bit. A guy I've known since the University of Michigan. And so I take an Uber home, right or Lyft home. I noticed my my thumb is like aching a little bit. And I'm just thinking, Okay, that's sort of weird. Maybe I hit it, and I didn't notice it. So I didn't think anything of it. Go to bed. Like two in the morning, I wake up and it felt like someone had hit my thumb with a hammer. Like it was just throbbing and they hurt so bad that it woke me up and my heart was pounding. So I just, you know, I looked at I ran under some cold water. And I went back to bed. And I was thinking like this is this is weird. This has gotten significantly weirder. And I woke up and maybe at like 4am again, and it was so much worse, like painful, pain wise, swollen wise, it was huge. And it was just absolutely killing me. So I couldn't like I couldn't sleep. So I got no sleep, right. So this is the start of the ordeal. I got no sleep. And then, so I wake up eventually. So to get my my stuff together, take a shower, and get ready to go. Because I got to hop on an airplane at like two. Actually, I think I was at one sorry, flight was at one. So I get out and I look in the mirror. And so my my thumb at this point is huge and bright red. But there is a line like a thick like one inch thick line going all the way from my thumb, all the way up my arm. And it's like street all the way up my bicep into my armpit. And my armpit was all swollen. And like, at this point, I'm like, this is really weird. So I google that. And the parent like the the first posting in there. It's just like, if you see red streaks, go to the emergency room right now, no matter what No. And I was just like, what? I have a plane to catch. I like I have no idea. So I caught my doctor. And he's like, well, it's either a blood clot, or it's an infection of the like the lymph nodes. And so that's what it ended up being the limpin Titus I think it is, which can end up to like an infection of the bloodstream, which can be fatal. And the whole thing is very dangerous. So So at this point, I still didn't really know what it was. So I'm hopping on a lift to go to the airport. I figure maybe I'll just head to the ER on the way home or something around. Like, once I get back to Denver. Yeah. And my doctor is like, yeah, so if I were you, I would not get on a plane right now, I would do anything but that I would go to the doctor. So at this point, I'm like getting really stressed out. I hadn't slept I hadn't eaten anything all day. It was like, maybe like 11 I hadn't been in and whatever. But my whole worldview just starts to really compress. I'm ringing my ears. I can't breathe. I'm like, sweating really hard. And I'm freaking the other guy in the lift out as well as the dry. Because I'd like I opened I opened the window. I like stuck my head out the window or whatever. And they're just like, you know, I have a C and I'm like, I need air Take me to the emergency room and they're just like, what, what are you What's going on? Uh,
+
+6
+00:04:36,420 --> 00:04:37,639
+Unknown: no.
+
+7
+00:04:37,920 --> 00:07:14,430
+Scott Tolinski: Luckily the guy in my lift was super cool. And he was from Cleveland. He was like, he was like trying to talk me through it but I basically passed out. Everything just like totally went went out. And I kind of like came to and the the the other passenger in the lift. Like who is like was super duper I kept apologizing but he was just like, hey, so where are you from, and he was like just trying to make small talk to get my like brain in that zone. I totally appreciate that. So I figured I would just sort of walk it off at the airport, which I did. Meanwhile, Courtney is looking up ers and places that will take our insurance in San Francisco. I am not super familiar with the area. So she eventually found some place. So from the airport, I already had my bags and everything. I just took another lift to the ER from the airport, got checked in, and they looked at me they saw like the streak on my arm and there and the first thing she says to me is like, you're gonna be here for a little bit. And I was like, oh, oh, great. Okay. So yeah, so I got checked in, I got shot up with some antibiotics and some painkillers and some stuff was given a prescription. And it turns out, my flight was super delayed. So Oh, after all of this, I actually still are in my hospital band. But after all of this, I, I walked from the hospital, like walked out of the hospital with my suitcase and everything to a Walgreens a couple blocks down, got my prescription, took another lift to the airport, again, hopped on my plane and still made my flight somehow after all of this, holy get this it gets worse. Well, it doesn't get worse. It's it doesn't get too much worse, at least well, so at the same time, Courtney, my wife is experiencing some really weird symptoms and she calls a doctor. And so we she's at home with her 11 month old Landon and, and they tell her she needs to go to the urgent care what like we don't even know what's going on. Right? So she drops Landon off at the neighbors who are awesome enough to take him put him down. And she heads out to the urgent care to get looked at. And she actually had something that's like kind of similar, which is weird, because we definitely didn't it was like, is like the the skin version of whatever I had. So she's on antibiotics or whatever. But is that I didn't bring a house key. So I finally get home. And I'm locked outside for like three hours while I have to wait for it to get to the urgent care. So I just pulled out is that in my backyard? You know, I get Wi Fi in the back. just popped up in my computer and worked on some code because that's my life.
+
+8
+00:07:14,519 --> 00:07:17,310
+Wes Bos: Holy smokes. Yeah,
+
+9
+00:07:17,310 --> 00:07:17,910
+Scott Tolinski: it's that's
+
+10
+00:07:17,910 --> 00:07:19,889
+Wes Bos: a crazy story.
+
+11
+00:07:20,250 --> 00:07:22,589
+Scott Tolinski: Yeah, totally sucked everything about it. Wow.
+
+12
+00:07:23,040 --> 00:07:24,660
+Wes Bos: And you're both gonna be okay.
+
+13
+00:07:25,259 --> 00:07:45,570
+Scott Tolinski: Yeah, I'm pumped full of antibiotics. I've been taking them on the clock and I still have the streak going on my arm. They told me it's gonna be a little bit before it goes away. But uh, my thumb is gigantic right now. It's like double the size of what it is. I can't bend it or anything. I have no idea how many this happened. It's totally bizarre. Oh, and you both had it.
+
+14
+00:07:45,600 --> 00:08:06,630
+Wes Bos: I want to cut my hand. And my hands started swelling up and just over over like two days. And then I started looking it up. And of course, it's like, yeah, it can. It's a gut infection. And it can like spread to your bones and they had to cut your arm off and I was freaked out. And luckily, thanks. Thank goodness for antibiotics.
+
+15
+00:08:06,769 --> 00:08:23,850
+Scott Tolinski: Yeah, seriously. Yeah, it's no joke. So if anyone saw my tweet that I was saying, I had to go to the ER that is the the story about it. I'm I'm psyched. I got it all taken care of. And let me tell you that hospital I went to in SF was like, top notch. Everyone there was amazing. So a good experience there. I
+
+16
+00:08:23,850 --> 00:08:30,300
+Wes Bos: guess. That's pretty cool. Wow, that's the story. Yeah. Yeah. So
+
+17
+00:08:30,300 --> 00:08:32,399
+Scott Tolinski: a great way to Yeah.
+
+18
+00:08:33,780 --> 00:09:16,620
+Wes Bos: This story is brought to you by what Netlify Thank you. Awesome. Well, that's a pretty pretty cool story. Since got here, love. I'm thankful that you didn't die. Yeah, like you're healthy now. Awesome. Well, Scott's talk in SF outside day was was all about learning. And we thought we would sort of parlay his layout into a podcast so we can spread the love a little bit further and, and sort of help help everyone else learn. So do you want to give us sort of a rundown or kick it off? And will you sort of lead through this? And then I'll throw in my two cents as I yeah, as I have stuff to say.
+
+19
+00:09:16,890 --> 00:11:24,450
+Scott Tolinski: Yeah. So if you saw my talk, this is some of the stuff is gonna be a little bit redundant. But if you didn't, hopefully, all of this information is super useful to you. So Well, the main idea here is that we have several different things that you can augment your process while you're working to. Maybe make learning more favorable, right. So one of the the, the sort of global things that you want to be having in mind is understanding how you learn and how you learn best. And I always talk about like, I see people in my YouTube comments or wherever they're, or even on like Reddit, will say like, videos are a terrible way to learn, and like, or blog posts are terrible way to learn or apps are terrible. No, that's true, because everyone has a totally different learning style, right? So whether it's videos or blogs or whatever, you need to figure out what your preferred learning platform media is, because for me, I have a terrible short term memory. I tell this story that, you know, Courtney, while she was getting her doctorate, had to do a bunch of psychological tests. So because of that, I have like every psychological test, she she has like a complete breakdown of my psychological profile, which I should mention she did before we got married, so maybe she knows something. She she saw, it was like, Okay, I guess, I guess he's all right. But my short term memory was so bad seriously, that I don't have an IQ, because it's just in the dumpster. It invalidates the IQ test, because my short term memory is really bad. So because of that reading blog posts are long stretches of text, like really sucks for me it like my eyes gloss over. And I like end up reading the same lines twice or three times or whatever. One of the reasons why I listen to audiobooks instead of reading books. But so for me, like I learned best big concepts from video tutorials. And like code concepts best from just going into the docs and trying out the code examples in the docs and then sort of like cutting my teeth that way. Did you know what your best Learning Media is? Was?
+
+20
+00:11:24,510 --> 00:13:37,200
+Wes Bos: Yeah, totally. It's it's kind of interesting that you say that you don't learn well, from from reading is because I never read books. Like in my entire life, I can probably count especially like all through high school, I always read the the cliff notes all through university, almost never read the textbooks. And I just thought that like, like, I wish that I could, but I just couldn't. I couldn't stick to it. It just had to read things over and over again. And it was really hard for me to suck information out of a book. And I just thought that like, Oh, I'm just a bad learner. But it turns out that that just wasn't my learning style. Because as soon as I found audiobooks, and I had always been a child of the Internet, and I wasn't dumb, I was always like, learning stuff and building stuff, right? So it was kind of cool when both audiobooks became popular because like, I now consume an incredible amount of audiobooks. Yeah. And when, when YouTube and all these video sites came out, I was like, wow, I like I can, I can consume this information so quickly. And I was always so jealous of people who could do speed reading, and were able to just like, suck up a book really quickly. And now I'm able to do that with with video, which is really, really cool. So I think video is definitely my learning type as well. And I also stress that even if you you find some videos and you find you're not driving, well, you may not have just found the type of learning as well, because even inside of video, there's still like, a lot of my stuff that I build is very much practical and example based in real world. And some people absolutely love that. And then there's another crowd of people who love the Foo bar Baz and just prefer to focus on concepts. And that's, that's how they learn, right, this couple different groups of people. So I would definitely first try out different mediums, books, videos, whatever it is conference talks, and then even inside that year, it's gonna be a bit before you find the type of trainer or the type of video that you like. And I think that's, that's why I do well is that not everyone likes my stuff. But I have found my little crew of people who particularly like the way that I explained things, and I'm sure you have that as well, Scott.
+
+21
+00:13:37,350 --> 00:14:59,910
+Scott Tolinski: Yeah, and that's actually I don't know if you have seen my slides, but that's the very next level that is, is to is to find is to find your preferred learning resources, right? Because again, there's 100 YouTube teaching programming channels, but even if one channel has 200,000 subs in one channel as 200 subs, you will find that the cross section between those is not actually that big because chances are it's just one person prefers one of those channels, teaching methods or learning styles or whatever so if you do find these people then like Yeah, fine, you know, little you subscribe and follow the stuff they're doing and and buy their their products. Because really like if someone speaks to you the right way, then that person most likely just learns things or has this teaching style that is going to be compatible to you so I mean you do want to find these people I remember the first time that I was listening to a lot of video tutorials and there were some like WordPress ones that we had bought at my agency and I watched and then I could not stand the instructor I don't know who the instructor was and not to be mean or anything but like it just did not vibe with me I didn't like what he's doing I didn't like his style. And then I've always really really liked i don't i don't know if you ever listened to a lot of like Jeffrey way tutorials. He had been doing tutorials for like net tut's back in the day.
+
+22
+00:15:00,000 --> 00:15:30,660
+Wes Bos: That's yeah is the kind of the first one that I really found jive well with me because it was it wasn't this like very cold approach to to learning to program a very boring like, I think that you find that quite a bit on like lynda.com tutorials where you just get someone with a PowerPoint and recording a PowerPoint and that's so boring. Whereas if you if you find someone that you like, like, like at the time that tut's I really enjoyed it, then that goes a long way in increasing your learning.
+
+23
+00:15:30,870 --> 00:16:36,780
+Scott Tolinski: Yeah, same here. Okay, so the next little little headline, I guess, is going to be to improve your foundational skills. And the best part about this is that you don't have to spend time to focus on these specifically, like people want to say, improve your foundational skills. But the cool thing is, is you can improve your foundational skills while learning a framework while doing this or that, but you want to be having the mind to improve your foundational skills 24 seven, because the best part about core JavaScript, CSS, HTML skills, programming skills, all that stuff, the best part about improving those all the time, is that you can take them from project to project and then the framework matters less, right, because you just end up having to learn the syntax of the framework rather than how you do stuff in JavaScript. Because chances are frameworks are all based heavily, heavily heavily on JavaScript core concepts. And while there is going to be some magic here and there with things like view, it's still having those skills in JavaScript are going to make you much much better at the framework than being good at the framework. Well,
+
+24
+00:16:36,800 --> 00:17:25,410
+Wes Bos: I found that I don't know if you found this as well. But I found when I picked up react a couple years ago, my mind just like, JavaScript got so much better. Because react does have a little bit of magic here and there. But almost everything in react is just JavaScript at the end of the day, and it's forces you to get better. So I really understand binding and like the arrow functions, and scope, and modules, and all these things that are just JavaScript at the end of the day, I found that react forces me to get much better at that. And on the flip side, I just taught a react workshop this past week. And I found that there was a lot of stuff in there. That was a huge tripping point for people. That was just JavaScript at the end of the day. Oh,
+
+25
+00:17:25,470 --> 00:17:33,860
+Scott Tolinski: so Okay, yeah, this is a perfectly dentist story, a story that I tell in my presentation, man, you are like, I feel like you watch this. So
+
+26
+00:17:33,930 --> 00:17:35,040
+Wes Bos: I totally didn't. But
+
+27
+00:17:35,060 --> 00:19:17,250
+Scott Tolinski: one of the stories that I tell is that I had like a YouTube comment before on one of my react videos. And someone was like, Oh, I totally, you know, like this react style lifting. But I don't understand why the React developers chose to use the word map for looping over stuff like Wouldn't it make more sense to use like a dot loop. And like, again, if you don't have your core JavaScript skills, you don't necessarily understand that that map is just outputting an array, and you're just returning an array. And that's all it's doing. So in actual react, you could have just output that as an array itself, rather than like a loop so to say. So it's having those core JavaScript skills, you recognize things in a different way. And then you stop looking at it as this is the frameworks way of doing things. And this is the JavaScript way of doing things. And again, same for me react was like, it totally improved my my JavaScript skills all the way around. Okay, so yeah, in addition to that, like, you want to be focusing on the stuff that you can take with you from project to project, because you don't want to have to learn things more than once. And this is especially true with libraries. So if you're using a library, like why would you use like a react cookie library when there's a JavaScript cookie library or something, right, because then you only have to learn the API once you can bring it with you from project to project. And then you don't have to relearn the view way of working with cookies or something, you just have the JavaScript way of working with cookies, or the JavaScript way of working with local storage. So then you only have to learn things once again, and you don't have to spend the time. So that's obviously going to make learning faster if you have to learn less things, right?
+
+28
+00:19:17,970 --> 00:20:35,430
+Wes Bos: Yeah, this is one thing I didn't like at all. When I moved away from jQuery. And I started picking up these frameworks. And I would Google, even Angular had this. Angular had its own way to make HTTP requests, and they have their own like, way to add an authentication middleware. And I didn't like that I had to, like, go out and find my own pieces for for data fetching and for managing cookies and for JW T. And I was like, why is this stuff not built into the library, but it now makes a lot more sense after having done it for a number of years, because any, anytime that I do anything, I can just bring along axios and I know exactly how how axios works or I can bring along Cookie library, I can bring it along local storage, and it just works everywhere that you go. And there's no relearning. Like you said, there's no relearning of how to do it in a specific framework. It does take a little bit of like learning initially. And it also takes a lot of, you have to be confident in choosing your own libraries, which I know a lot of people don't want, they just want to be told what to use. But I think we start to see these sort of major libraries in every single area, surface themselves, like date functions, and axios and whatnot.
+
+29
+00:20:35,570 --> 00:22:41,460
+Scott Tolinski: Yeah, and chances are those libraries are going to have a huge, more like a much larger community behind them, because there's more people in different frameworks and different things using them. So they're going to exist for longer, they're going to see updates for longer, and they're gonna have more people behind them. Okay, so let's talk about saving time. And one of the best ways that you can save time is by using something like Netlify to host your sites, because Netlify has so many awesome features that save me and Wes a ton of time when we want to deploy things. For instance, they have so new and keep in mind, these features are only pay for what you use for all of the features, right. So each individual feature has its own pricing tier, which is just totally Excellent. So they have some excellent features such as the new functions, which make AWS serverless functions as easy as it's ever been, I mean, this this thing, it totally takes all of the barriers to entries away, or using serverless functions, you can just pop in a function here and there. And Netlify makes it super easy. There's also the identity feature, which allows you to manage signups, logins, passwords, all sorts of that stuff for your users without a server side component. So that way, you can have client side authentication, and client, Aaron client authentication on your website without actually having a server having to manage any of the difficult technical stuff, you can just use their system and have it nice, easy peasy. There's also forms which I've been using a ton, which basically allows you to submit all sorts of comment forms, right? Whether this is sending an email off or in a call, so trigger a web hook or maybe post in a Slack channel. So there's a ton of different possibilities there with the new Netlify forms feature. Either way, all of these features are excellent. And just extremely easy to use. I think that's one of the things people comment on the most on Twitter, I see when they sign up to through Netlify through syntax is, wow, I just signed up and holy cow deploying my site was easy. So
+
+30
+00:22:41,489 --> 00:22:46,830
+Wes Bos: yeah, like they don't believe us. And then they actually try it like, oh, wow, that was that was amazing.
+
+31
+00:22:47,009 --> 00:23:04,710
+Scott Tolinski: Yeah, it really is amazing. And I don't say that as someone advertising something. I say that as someone who uses it and is amazed by it. So check out netlify.com forward slash syntax, and sign up and start hosting on Netlify today, because let me tell you, it's a pretty sweet experience.
+
+32
+00:23:06,750 --> 00:23:11,280
+Wes Bos: Wicked. Alright, let's jump into the next one. What do you What's your next point that you got here?
+
+33
+00:23:11,310 --> 00:24:43,050
+Scott Tolinski: Yeah, next point is to narrow your focus. A lot of times, you'll see posts where people are like, hey, I want to learn react plus Redux plus Webpack, plus this in that all at the same time, plus style components, whatever, just throw it all in there, throw it all in there once. And the problem with that is is like when you start to learn a whole bunch of like big concepts and frameworks at once. You don't necessarily see the boundaries between them. And you start to see the like, if you're learning let's say react and Redux you're not learning way react does things you're learning the way that react and Redux does things together. And you're not learning the way Redux does things by itself, either, right? You're learning this whole system at once. And the big problem with that is, is that well, that let's say I want to learn Apollo, right. And I want to replace Redux with Apollo's Apollo state link and stuff like that. Now you have to learn a whole bunch of stuff over again, right? It's almost like starting fresh, because it's not totally starting fresh. But the amount of stuff that you have to relearn is considerably more because you don't have the individual experience with each things. So my my strategy is to learn one thing, by itself react, I'm gonna learn react by itself, I'm gonna learn a really good then I'm going to learn Redux by itself or Redux plus react. But either way, the boundaries between those are much more separate so that I can always go back to my core react skills, without Redux or without Apollo, whatever. And then you can supplement it. I like to say it's like a git merge or like merging your data into the stuff that already exists.
+
+34
+00:24:43,770 --> 00:25:37,650
+Wes Bos: Totally that that was actually one of when I first launched my react course, like three years ago, that was probably the biggest pushback that I got was I even have like a funny FAQ on the website that asks if I'm using any of these flux libraries, because people assume that you need to learn all these things together. When I knew after having learned both of them myself, I'm like, no, it's better for your own learning. If you just focus on react itself, trust me. And thankfully, a Dan Abramov, the creator of Redux tweeted out, don't learn Redux and react at the same time, learn just react, because then when you move away from Redux, or if you need to build it, you might not need it. Like people ask me all the time, like, how do you know if you need Redux? And I tell them, don't build it without? And trust me, you'll find out when you need it, because you'll know exactly when that pain point starts hitting.
+
+35
+00:25:38,070 --> 00:26:40,800
+Scott Tolinski: Yeah, exactly. And so many people are like, I don't see the point of Redux, well, then you don't need it yet. You don't need to learn like, why would you waste your time learning something that you don't need? So unless, of course, you're building this big project, but in this, this case, it's specifically just learning, right? It's just projects for learning. One of the things I don't recommend doing is like, picking a serious real project to learn something. I like to learn things on sort of side projects, or here and there, look, throw away code, right? Um, okay. So yeah, so again, you know, when when you learn these things, in bundles, the boundaries become blurred, right, and you end up sort of slowing down any additional future learning. So part of learning fast is not just learning fast right now, but learning fast in the future. So you don't want to slow down potentially learning things in the future by having these giant blocks of skills rather than these individual little modules, node modules, right? Little node modules of skills. There
+
+36
+00:26:40,800 --> 00:26:41,430
+Wes Bos: you go.
+
+37
+00:26:41,520 --> 00:27:55,980
+Scott Tolinski: Yeah, like this analogies and metaphors. Alright, so the next big step is to get excited about whatever you're doing. Because yes, whenever you're excited about something, I don't know about you, but I really immerse myself in it, I dive in. And I get very not necessarily obsessed. But you get to the point where you start thinking about in a way that is much more in depth. So for me, like I like to think about when you first start learning programming or like major concepts, and you get really excited, like when you first started programming, it was like, you're getting all these big wins, you're making stuff and you're like holy cow, I can put a background color of green on an HTML page. That's amazing. So like, you end up getting really excited about what you're doing. And you just drives you to learn more and more and more. And then all of a sudden, you reach this point where you've been doing that for so long, and no stirring the grindstone to get there, and you sort of lost that feeling. You've lost that loving feeling. You're not exactly like as like, just Intuit as you were before. So you want to start thinking about that initial feeling of excitement that you've got. Because when you are excited again, you you turn into hacker man, you start hacking time. Yeah,
+
+38
+00:27:56,850 --> 00:28:47,550
+Wes Bos: I think that's this is probably the biggest point behind the entire episode for me is that if you're excited if you're invested in the things that you are building, and, and that's why we always anytime that I have something, we always build something that is fun to build and looks good, and is actually something you do in the real world, you could parlay that into an application that you want to deploy to production. Because you you need to be invested in the thing that you're building. Otherwise, you will fizzle out, you won't be all excited, even if it's silly to think about what the thing looks like, when you're building it and eat it. Some people like whatever, just slap foundation on it. But then you're you're not invested it you don't have any pride in it right? You're not going to put that that little shine on it that extra 10% to make it ready for production and be able to show other people.
+
+39
+00:28:47,790 --> 00:30:27,420
+Scott Tolinski: Yeah, and to go along with this. I mean, people say well, okay, well, okay, I get I gotta be excited. But how do you get excited about stuff. And, you know, you said to make it look nice, right? To make it to be proud of it, right, that's going to make you excited. And one of the things I like to do about projects like this is to build them around hobbies, and we've touched on this before building projects along with your hobbies, find something that already excites you. So if the code itself doesn't excite you find something external, a hobby, or something that you're already excited about your let's say, you just watch Game of Thrones, and you're, like, totally pumped about it, like make a game of thrones themed project, right? I have most of my courses, we do things like work with the movie DB API or something like that, and ensure enough Yeah, I get it, teaching you to build a movie listing. But if you don't care about movies, like I recommend finding an API of your own and using it instead of whatever I'm doing and try to apply the concepts that we're learning in this series. Because if you're not excited about whatever you're doing, it's not going to help you. So most of my side projects, yeah, most of my side project is we do our like breakdancing related or kung fu one of my first projects was a conference to film list I made so I could keep a database of all my favorite kung fu movies. And it just to find projects like that I've had co workers that are into beer brewing. So they like they wanted to learn how to build stuff with the Raspberry Pi. So they built this whole homebrew a whole controller thing for their their beer brewing process and use that as a project to learn their Raspberry Pi. I mean, there's just so many opportunities to learn stuff like that.
+
+40
+00:30:27,750 --> 00:31:11,310
+Wes Bos: That's such a good point, because that is the thing that drives me nuts is I over learning graph qL over the last six months, all of the examples are either Star Wars, or what does it pose? Yeah, the two things I care the least about in the entire world are Star Wars and Pokemon and I don't get what they are like, I don't understand. Like what a Jedi is, or I don't I don't get it at all. Like maybe if it was crazy bones or Pogs or some crazy. But it's just so frustrating to try to learn when it's all this just jargon that you don't care about. Which is really funny.
+
+41
+00:31:11,669 --> 00:31:43,650
+Scott Tolinski: Yeah, that's hilarious. Yeah, so find whatever it is, you're not you know, I've mentioned before the CO creator of level up tutorials, like he was into, like, rare and expensive baseball glove. So he was doing his project to help him buy and sell baseball gloves. But that helped him learn Angular, and it had a double function of getting you excited, as well as actually being practical and easy to use. So let's talk about something else that's extremely practical, is going to the fluent comp to up your skills. So with more about the fluent comp is Wes Bos
+
+42
+00:31:43,679 --> 00:33:31,350
+Wes Bos: fluent is the web development conference brought to you by O'Reilly, you know, O'Reilly they have those books with the animals on front of them. And I've actually spoken at fluent conference in the previous years, they invited me this year, unfortunately, couldn't make it but I highly recommend checking it out on June 11 to 12. They've got training on June 12 to 14, they have the tutorials and conference. And if you are trying to get better, or even just try to get excited, again about JavaScript and web development, performance, anything that has to do with building websites, I would highly recommend that you check out this conference. They've got some amazing speakers lined up. What do we got here, Val head, I just saw her. This past week at a conference. Her talk was amazing. All About animation, different types of animation, SVG animation, via JavaScript via CSS, it was just like this amazing, like someone who is an expert at animation, and all of these different animation libraries. I just had to sit there for 40 minutes and have their like past years worth of work downloaded into my brain. And I find it amazing that you can just go to a conference and have all of these people brain dump everything they've learned in the last six months a year into Patrick Hammon. I've met him before he does some amazing performance stuff. Brendan Eich, I don't know, I've never really heard of him. But apparently he's doing something about JavaScript. Peggy from Apollo actually met her this past week in New York. She's super smart and knows a lot about Apollo and graph qL, which is pretty sweet. So I would check it out at fluent conference. It's ai conferences.oreilly.com. Use the coupon code syntax to save 20% off. Thanks so much to fluent for sponsoring.
+
+43
+00:33:31,710 --> 00:34:33,900
+Scott Tolinski: Nice, super cool, thank you. Yeah, so the next thing about this is going to be I like to call this grind time. And grind time is the part where you get to write a lot of code. One of my favorite things in my my slides is that says, it says give let's give less shits, write more code, make more things, do stuff, start typing, right? People like to get hung up on best practices this and that, when really, they should get hung up on putting pen to paper and getting code output. Because if you get worried about breaking things all the time, and this is learning specifically, right? I'm not talking about you're starting a new project for serious, right, this is just specifically for learning, break it break it all the time. Because in that process of breaking, you figure out how to troubleshoot, you figure out how to fix the problems. You figure out what potential problems there are, you figure out all these little pitfalls. And so you want to start getting your pen to paper as soon as possible and just start writing a lot of code.
+
+44
+00:34:35,040 --> 00:36:22,290
+Wes Bos: Totally, it doesn't matter. I can't stress this enough. It doesn't matter what you use, or how you do it. It doesn't matter if it's a best practice or if it's the worst code you've ever written as long as you are actually writing code. Stop talking about it, stop researching it. Stop reading 1000 medium articles where people are pontificating about the best practices and why not those things the best practices will totally follow. But as long as you are putting pen to paper or putting wet fingers to keys and actually coding stuff. That's where you're going to see. To see leaps and bounds. I've got another tip or little thing that has helped me in my own career. And it came from Adam Savage. I might have even mentioned this on the podcast before, but Adam Savage is the he's the mythbuster. Right? I'm sure many of you have grown up watching him. And he's got this awesome podcast where he often talks about making things. And he said once on it, where he was teaching his his son how to make a Leatherman holder out of out of leather, right? I love them is a kind of this like little Jackknife thing that you put in your pocket. And he said to his son, Alright, first thing you need to do is submit to yourself that you are going to totally screw it up three or four times, and you're going to build this thing three or four times. And if you approach learning, knowing that you're going to build this thing three or four times from scratch, you're going to scrap what you have, and just throw it in the garbage. And if you're fine with that, because that is part of the learning, that's not frustrating, that's not setbacks, or something like that, then you're going to have a much better time in and knowing that that whole process of getting absolutely nowhere, or seemingly getting absolutely nowhere is totally a part of the process. It's totally Yeah, and it's very important, because, again,
+
+45
+00:36:22,290 --> 00:38:45,900
+Scott Tolinski: you just pick up so much little things, and that, that you can only learn from experience. And, and I like to call this iteration driven development, because you just right, right, right, right, right, you make a lot of stuff and through quantity ends up coming out quality, because all of a sudden, you know the pitfalls, and you know, the things that are wrong, and you've experienced them firsthand. And these big picture stuffs are starting to come into view. So another thing I really like to talk about here in the grind time is to use people that are smarter than you when you're writing a lot of code. And, you know, I don't know if a lot of people came from Angular, when we first started writing Angular code, we had no idea what we were doing, because there wasn't a whole lot of stuff out there about like best practices. So we were just sort of hacking things together. And then somewhere along the line, while we were working on our projects, the john Papa style guide came out and it was sort of like illuminated everything, all of a sudden, this is how you do it. And so we would just go to that john Papa style guide, and just read it top to bottom, and then all of a sudden, you're just like, Wow, it was a good total brain dump. Now, I've seen all this patterns, and I have a set of rules. And I can follow these rules. So you want to work really hard. But then you want to find these style guides that can help you illuminate the best practices, I think I used the Airbnb style guide for the most part for react with some tweaks here and there. And along with these style guides, you're going to use snippet libraries. And it seems counterintuitive, because the snippet library is going to be writing code for you. And here we are talking about writing lots of code and breaking stuff. But if you use a snippet library, you're instantly exposed to best practices, and you're instantly exposed to good code. So while you're learning the big pictures and the concepts, you also get to see, hey, this is what the good way of doing it looks like. Or at least this is what this recommended way of doing it looks like. And then you start to just recognize that this big patterns in your brain starts to say, this is what good code will look like, rather than, you know, this is what my code looks like. And eventually you can you can put like an es lint in your thing to you know, check against these style guides in the snippet libraries. And you're instantly going to just be looking at good code all the time. And suddenly, you're just going to be thinking in good code, because it's it's all of a sudden, it's not like, Oh, I'm just thinking and this I'm acting as the way that I'm thinking about this is the right way to do it. So you end up refining yourself by using these sort of snippet libraries and style guides.
+
+46
+00:38:46,500 --> 00:39:25,350
+Wes Bos: Yeah, the once I had react down pat, and I flipped on the Airbnb ESLint rules, it was really interesting because it would highlight like all of my code, and it'd be frustrating because it tells you your garbage developer, but it's kind of interesting to like read the rule and then go do a little bit of research as to why does this happen. And then I went from sort of like being able to build stuff in react to being able to build stuff in someone's idea of a best practice in react. And I think that that pushed me that extra step. Once I actually was able to build anything, then I started really doubling down on best practices and, and reading the whys in the house behind it all.
+
+47
+00:39:25,710 --> 00:39:59,070
+Scott Tolinski: You just gave me a great idea. In fact, this is a this is a million dollar idea if somehow this could make money, which it can't. But what if there was like an S lib library that instead of just like telling you like when you highlight it and it tells you what the problem is? What if there is an ESPN library that insulted you, Allah Gordon Ramsay, it was just like, what are you bloody idiot? What are you doing? Like that would be that'd be hilarious. I would really like I would really love to have Gordon Ramsay or it could like have a little Gordon Ramsay gift. Just like shouting at you for this mistake.
+
+48
+00:39:59,700 --> 00:40:01,190
+Unknown: Cheers. Use double quotes.
+
+49
+00:40:03,480 --> 00:40:05,690
+Scott Tolinski: I really want to see this thing in action now.
+
+50
+00:40:05,880 --> 00:40:06,390
+Wes Bos: Okay, so
+
+51
+00:40:06,390 --> 00:40:53,250
+Scott Tolinski: along with that Gordon Ramsay thing, you know, cuz he gets on people for egos and whatever is to like, check your ego because chances are, you're coming in like thinking you're how shit about something and you're not. Again, I keep coming back to the stories that I tell during my presentation, one of the stories I tell is about events. I came up with this on the spot a couple of weeks ago, because this is actually something that happened to me the day I was giving this talk at the React Denver meetup. There was this article about render props going around. And I saw it, it was like at the top of the Reddit and the Twitter's and whatever. And I was just like, Oh, I know, render props. I don't need to read this. And so a day goes by and you know, click through it, and I see it. And I'm like, oh, okay, it's still up there. Maybe I'll read it. Open the article either. And like three things, and I'm just like,
+
+52
+00:40:54,300 --> 00:40:55,710
+Unknown: yeah, I there. Here I am,
+
+53
+00:40:55,920 --> 00:41:29,460
+Scott Tolinski: I have a slide telling me to check my ego. And here I have with my ego being like, yeah, you're, you're smart, you know this. And then sure enough, that there's so much stuff I could have learned. So there's so many learning opportunities, if you just always invoke some sort of student mentality, this sort of like, I am always a student, because in this industry, you can't really afford to be a master of anything. You have to be a student, which is one of the reasons why I hate on resumes, when people would like progress bars and something. It was realistic, you should have your progress bar being at like, you know, 50% or zero the whole time because you're never done learning something.
+
+54
+00:41:30,110 --> 00:41:31,980
+Wes Bos: Yeah, that's just to infinity.
+
+55
+00:41:32,520 --> 00:42:25,130
+Scott Tolinski: Yeah, exactly. Okay, so the last one is going to be total immersion. This is the most fun one, because you can do it while you're doing other stuff. And you subscribe to any sort of YouTube blog or podcast, whatever, you just totally immerse yourself when I want to learn anything like I want to learn personal finance, I subscribe to like 800, personal finance podcasts. And I listen to them all until I'm totally sick of it. And it's just like that with anything, right? You just totally immerse yourself and you don't even need to focus on it. Because again, if you're hearing people who are smart about something, talk about something, you eventually start to think like the smart people think, because you're getting this just sort of implanted into your brain. And this sort of goes along with one of our sponsors in the O'Reilly conference is that conferences are a great way to do this, too. You sit down at a conference, and you just sort of get this brain dump from everyone that's coming in and in giving you their information.
+
+56
+00:42:25,190 --> 00:43:00,750
+Wes Bos: Yeah, totally. I do this all the time. Whenever I'm like, right now I'm trying to get into meat caring. And what am I doing? Well, I'm following all these people on Instagram, I'm watching 1000 different YouTube videos, I'm reading all kinds of blog posts about people's experiences, and he just sort of like total immersion into that specific topic. And then at a certain point, I will get good enough at it where I don't necessarily care about it all that much. And I'll be able to just sort of like let go of some of that stuff. But when you're in that learning mode, I think it's super, super important.
+
+57
+00:43:01,650 --> 00:43:22,590
+Scott Tolinski: Yeah, hugely important. And it's easy to because again, you get a lot of this stuff just by clicking subscribe. And by showing up, if all of a sudden your YouTube feed is filled with a billion videos on graph qL, you're gonna see some that you know, fit your fancy, you're gonna open them up and learn stuff, this is the most fun step because you have to do the least hard work in this step.
+
+58
+00:43:22,610 --> 00:44:20,220
+Wes Bos: Alright, so I got a couple more points here, I'm not really sure where they fit in along the thing. But these are just some things that helped me when I'm learning something new. And the first one is to just scan the docs really quickly. You don't necessarily have to read all of the documentation, although I generally do. But I just scan the documentation to understand what the surface area of that library is. So that when you have a problem with something, or when you need to do something, you can realize like, okay, I remember they had a specific thing for working with a cache in that way in the documentation. So there's this acronym rtfm. You can you can look it up on urban dictionary. And it's funny how often people don't just scan the docs really quickly, or actually read the documentation behind the project. It is boring, it's extremely boring, but if just force yourself to take 20 minutes, half an hour to, to read through the documentation, scan it, you can you're gonna get you're gonna get through those common problems a lot easier.
+
+59
+00:44:21,090 --> 00:44:39,060
+Scott Tolinski: Yeah, I love that. I mean, for me, the docs, that's the way to learn is to just go through scan it try stuff. And the worst part is I hate it when Doc's put like code that you're not supposed to do it, because I like don't read that part. And then I go, Oh, yeah, that code, and then it raises and then I like read the paragraph, but it's like don't do Oh, okay. Oh, get it.
+
+60
+00:44:39,090 --> 00:45:55,980
+Wes Bos: rtfm. Yeah. Another one I like to do is if there are a Doc's are out of date, or not very good. I like to go to the GitHub search, and the GitHub cert, I like to go to GitHub search and search for that piece of the API. And then what you can do is you can find other people who have used it in their own projects, and you can see It actually use because sometimes the documentation assumes that you know a few things. And if you can actually see it in use case in somebody else's project, it's going to make a lot more sense. So that's like a nice little trick that I like to use for any language. And you can also filter on GitHub by specific languages. And you can exclude common like, sometimes you find like a boiler plate that someone's forked 1000 times. So you can just remove all of that. Joining slack and chat for specific tech. So whenever you're learning something, join the slack room for that, because you're going to find you're going to find like other people that are at the same point as you. So generally, what I like to do is I ask a lot of questions, but then I also like to live read what other problems people are having. Like right now I'm specifically in the Apollo, the graph, the graph, cool. And the now those three slack rooms, and I see all the questions that people are asking,
+
+61
+00:45:56,850 --> 00:46:40,710
+Scott Tolinski: yeah, I do this, I do this too. And they're the or even no spectrum to spectrum and Slack, unlike all in all those communities. And what you don't want to do though, is you don't want to sign up for the community, ask a question right away, don't contribute, don't like, yeah, like, don't be the guy who just signs up and be like, my stuffs broken. And then like everyone, you know, and expect everyone to help you and then get mad when it's not, you know, so But no, I'm follow those those communities. And again, that's part of like, in my opinion, that like immersion part, because again, if you're seeing all these people talk about stuff, and maybe someone's having a problem that you've already solved, and you can solve their problem. And then also, that's a nice little confidence booster, because here you are just learning something, but you're already able to help someone else.
+
+62
+00:46:42,240 --> 00:48:36,090
+Wes Bos: Totally. Another one I have is finding like an accountability, buddy. So often, I'll see people take my JavaScript 30 course or the CSS Grid course. And they'll either do it at lunch with some coworkers, or if it's a group that's just graduated from a boot camp that all take it together, or people meet up once a week at a coffee shop and work through one or two of the exercises. And that's awesome. Because often people that are in the same headspace, they're at the same point as you are going to be so much more helpful than somebody that's like way ahead of you. Like I often laugh at people that are reading like Elon Musk's biography or Richard Branson's book, and it's like, you're not gonna learn anything about like running an internet business from Richard Branson, because he's so so far ahead of you that the applicable tasty treats that you're gonna get from him, they're they're not they're nowhere to be found. Right? So yeah, and people who are either where you're at, or maybe one step ahead of where you're at, and that's going to be such a better relationship and learning experience for you. Yeah, totally. And last one I have is just learning the open, put everything up on GitHub, asked lots of questions, share the nuggets you have, because if you blog about something that you had trouble with, and you're not only paying it forward, but you might be opening yourself up to maybe a job with that specific JavaScript, once you do get better at it, then you could maybe get a you could get some work for it, you could position yourself as an expert in the industry, you'll likely get a whole bunch of people asking you to write books about that specific topic that always happens when you write blog posts. And, and you're again, you're just helping other people as well. And that's super important to to pay it forward. Because there's other people taking the time out of their day to help you. So why can't you help other people who are sort of coming around that it's got dogs barking?
+
+63
+00:48:36,629 --> 00:49:35,490
+Scott Tolinski: No, I think that follows along too with like, a little bit of loose the moon, please stop. Part of that follows along, I think with the checking your ego part because like, a lot of times people don't want to share that stuff. Because they think my codes bad people are gonna look at my stuff and judge me, but like, nobody's gonna judge you. And if they do, they're just going to help you rather than actually judge you. So if someone's judging you about their stuff, then there's not a person that you need their, you know, approval, because that's kind of a rude thing to do. So like, honestly, you need to sort of get over that, that judgy worrying about if people are gonna like or not like your code, because there's always going to be grumpy people like that. But I totally agree. Put your stuff out there in the open. And the worst thing that are like the best thing that could happen is that someone's going to say, hey, you should do it this way instead and a nice way and then you have a nice little learning opportunity to yourself that you might not have gotten that soon. Maybe you down the line, you would have gotten that that same little tidbit that tasty treat, but like maybe you get some tasty treats a little bit sooner that way.
+
+64
+00:49:36,180 --> 00:50:52,890
+Wes Bos: Yeah. And on the flip side, if you are someone who I know there's often a lot of people out there who are really, they care a lot about the way that things are done. And often they are they come off as overbearing, and we have this in the boot camp, where people would DM me all the time the questions that they had because they're too embarrassed to ask them In the open or they're too afraid of this one guy who would come out swinging with the like the you know, just just walk all over you with is the best way to approach something where it's just like, I just had a question about how to butter my bread, and you're telling me I should fly to Italy and take a breadmaking course. You know, like we're just like, I get that all the time to ask I just hate asking questions on Twitter because you just like brace yourself for the this just like overbearing answers and you're doing it the wrong way and, and everything like that. So like On the flip side, if you are trying to help someone always know that someone is might be taking a big leap to ask this question and approach them gently at first until they they might start asking for for more from you. Yeah,
+
+65
+00:50:52,980 --> 00:52:04,020
+Scott Tolinski: if you're, if you're in this always a student mentality, right? If you're always looking at yourself as a student, and not a master, you're going to be way less likely to think like if somebody asks a question, you're gonna be way less like they think that dummy doesn't know the right way to do it like I do, you know, they're, you're more likely to think oh, cool, they're they're trying to learn this thing. Let's have a teachable moment here, something like that. Cool. So that pretty much follows it. If you want to check out my talk, I'm sure it's gonna be up on zite their YouTube channel at some point here, they have some really sweet production out there. So hopefully, it's looking nice and crispy. So I can't wait to see that myself. Because I think it was all pretty good. If you want a more concise version with slides and animated GIFs of this same kind of thing. But I hope that clears up some little things. I get so many emails about people being like, Man, you put out so many tutorials on so many different topics. How the heck do you learn this stuff? and use your all of my tools and tips and secrets? I mean, this is it right here. So I'm not leaving anything out. This is what I use to learn stuff really quickly. Do you have any sick pics? Wes, I do have a sick pic over here.
+
+66
+00:52:04,589 --> 00:53:00,330
+Wes Bos: I do. My sixth pick is audio book this time. So I've been following Gary Vaynerchuk for for many years. And if you don't know Gary Vaynerchuk, you may have have come across him online and in been put off by him a little because he's got this very, very aggressive like Work, work, work, hustle. And like this, he caught his surface layer is not great. But if you can get past that you realize that he's very genuine. He's just very emphatic about what he's talking about. And the advice and the content that he puts out is top notch is extremely good. So if you are trying to build some sort of business, or you even just need a bit of a kick in the pants to keep learning, I would definitely recommend checking out. Gary Vaynerchuk his latest book, which is called crushing it, so his I first read his his book, crush it with like, I don't know, 810 years ago,
+
+67
+00:53:00,390 --> 00:53:02,790
+Scott Tolinski: so there's crush it and crushing it.
+
+68
+00:53:03,210 --> 00:54:11,340
+Wes Bos: Yeah, so crush it came out. Let me let me find when it came out. 2009. So it came out nine years ago. And it's really what spurred me into that you can just go ahead and run your own business online. And it sort of like gave me permission to just go for it and not have to have permission from anybody else, you know. And nine years later, he has sort of followed up with this next book, which is called crushing it. And it really just goes into like some social media stuff. But really just like how do you as a just a single person, go out there and run a business and make it happen, even though you're probably short on time, and you have all these excuses out there. I highly, highly recommend it. It's super good. I already got my wife listening to it because she's trying to build her own business right now. And it's exactly the advice that I think a lot of people need right now. So check it out, crushing it, the audio book just came out. It's him narrating it which is really funny because he goes off script all the time. And it's not not boring at all. So check it out.
+
+69
+00:54:11,520 --> 00:56:45,750
+Scott Tolinski: Nice. Cool. I'm definitely gonna I don't consume a lot of Gary Vee media, but I'm about to because I just got a nice big ol recommendation for it. So I'm definitely gonna get that book up. Oh, my sick pic is a library for JavaScript in specifically react but also JavaScript is pop motion pose. That's a lot of peas there. Hopefully I didn't pop out my microphone, but we have a pop motion.io forward slash pose or just pop motion.io and pop motion pose is the declarative motion system for HTML, SVG, react and React Native. And it is pretty much the way I like to look at it is like styled components for animation. You end up defining your components just like you do in styled components. So it's like posed The component name or pose, wrap the component name, if you wanted to use styled components. And then you sort of define different poses or different positions, right. So normal normal animation sort of libraries, you have like an in and out or whatever. But this is a little bit different. If you had like a menu, you would describe the open state and the closed state, you would describe these two different named states that are two different locations or two different whatever you can have as many as you want. You could have like 10, different locations or whatever. But then you just pass in into the component, whatever location you want it to be at. So if you had a menu, and you were to have a toggle, you would say, hey, toggle, now set this to be open. And then with the CSS, it automatically does the animation you have, we have to set anything. And by default, it has some really nice sensible defaults for really nice easing less a little bouncy ease and all that sort of stuff, timing, you can you can customize all that stuff. But it makes flip animations really easy. It makes animations in react really super easy. I had a chance to play around with this for the past couple of days. And as far as animation libraries go, I found it to be really, really nice. There's like dragging animations make it really super simple. It's pretty all encompassing for animations. It has like, yeah, it's the it's really well thought of, and the only downside to this thing right now is that it's still pretty fresh. The docs are kind of lacking. The Ducks definitely need a little bit more for like practical examples and stuff like that. So maybe if you have some time and you're into it, you can commit some of that I've been thinking about doing it little YouTube series on this, because it's pretty sick. I've been a big fan.
+
+70
+00:56:46,740 --> 00:57:22,410
+Wes Bos: This is so much simpler than like, every time I need to do animation, I have to bust out what CSS transition group Yeah, in react, and I can never remember how it works. And like you have to like have like transition transition group. And then it's always so confusing, I get a lot of email about it in my course, where I try to make it as simple as possible, people are just still so confused. And at the end of the day, I just want to add and remove classes, or I want to be able to set A and B and flip between the two or I want to add items to an to list and remove it. So this looks awesome. And
+
+71
+00:57:22,410 --> 00:57:37,470
+Scott Tolinski: let's talk about confusing. Every time you'd say anything about animations, people are like react motion. And react motion is extremely powerful. But for the life of me, I just cannot get past the API. I can't, I can't I don't I don't love it.
+
+72
+00:57:37,470 --> 00:57:39,900
+Wes Bos: I just cannot. I've tried it many times. And
+
+73
+00:57:41,040 --> 00:57:57,330
+Scott Tolinski: it's just not it's not intuitive to me at all. So pop motion basically has a lot of the power of something like react motion, but with the ease of something like styled components. So definitely a new favorite library of mine. I'm going to be adding it to the level upside to do some stuff and really getting into it. So a big fan
+
+74
+00:57:58,320 --> 00:57:58,950
+Wes Bos: book good.
+
+75
+00:57:59,640 --> 00:58:01,740
+Scott Tolinski: Shameless plugs, question
+
+76
+00:58:01,770 --> 00:58:41,550
+Wes Bos: shameless plug, I will shamelessly plug all of my action to shamelessly plug my JavaScript 30 course if you haven't taken it already. And you are looking at getting better. Like one of the big points we had today is build something that you're invested in build lots of stuff. That's exactly what this course is dedicated to JavaScript thirty.com. It's totally free. The idea behind making it totally free is that you enjoy it so much that you come in by one of my paid ones, which works really well. Holy smokes. I have 170,000 people have taken this course. So maybe you have taken it already. There's not 170,000 people listen to this podcast.
+
+77
+00:58:43,230 --> 00:59:52,110
+Scott Tolinski: Nice. Yeah, highly recommend. I'm going to shamelessly plug my new series which will be out on Monday, the day that we're recording this. So we'll be out by the time you are listening to this on Wednesday, which is going to be my headless WordPress course in that course we cover getting started with headless WordPress, we cover the WordPress API, talk a little bit about just sort of the pitfalls and stuff you can come in, we use next j s on the back end for a server side rendered version of your headless WordPress site, as well as Gatsby. So we do both little to two pronged approach, right? We do a little bit of Gatsby, we do a little bit of next, and we talk about the pitfalls and the common issues that along with both. Now what we're not doing is we're not building out a whole blog, because if you've built a theme or anything with WordPress, you know that stuff, right? Or you know what you want it to look like this is more of a course to say, here's the stuff that you're going to run into. Here's the general ideas. And here's how to get up and running with a headless WordPress in 2018. And here's how to totally crush it with that. So check it out. It's called headless WordPress that's going to be available level up tutorials.com forward slash store or become a levelup pro and get access to stream all that stuff as well.
+
+78
+00:59:53,310 --> 00:59:54,120
+Unknown: Sweet.
+
+79
+00:59:55,680 --> 01:00:03,570
+Scott Tolinski: super sweet. Yeah, that's it. I don't have anything else. Although I do have another story that I promise to tell the rest of running short on time.
+
+80
+01:00:03,720 --> 01:00:10,110
+Wes Bos: All right, Scott's got a T story if you'd like to hear his t story, hang on. If not, we'll see you next week.
+
+81
+01:00:10,140 --> 01:02:01,350
+Scott Tolinski: Yeah, yeah, sorry, I don't this is totally unrelated. I tweeted out about this. And people like, I gotta know this whole story. So curious. This is a quick one. When I worked at team Detroit, they didn't have any room for us. So they put us in a hallway. So we just had like car desks in a hallway. Because of that, like all of our personal belongings were just like out in the open. And I had like, gone to San Francisco and bought this really high end fancy tea that you can only get from this one shop in Chinatown. Very, very high end fancy tea, and I spent a ton of money on it. And I have maybe like two glasses of tea with this bag of tea, and someone stole that off my desk. And it's my fault for leaving it out. But I didn't know where else to put it because I didn't have a desk or anything like that. So someone stole my fancy tea, like who steal someone else's fancy tea off their desk at a job like so I went through the office and like was like checking all the different cabinets or any I checked every single kitchenette in this like giant s building, and it could not find it. So someone stole it straight up. And that sucks. So for years and years, I've been thinking about this tea that I only got to have a couple glasses of so I did not know the name of the tea store. I didn't know anything about where it was. I knew what it looked like in Chinatown, so I just start walking around Chinatown. I started texting Courtney. I'm like, I can't find it. I have no idea where it is. then boom. I see it. I go in there. I tell the story to the guy who gives me a private tea tasting and he gives me all his favorite teas and it was amazing. And here I am right now sipping on this tea that was stolen off my desk several years ago that I am so excited to have once again and it is delicious. I have been drinking it this entire episode. And I'm just so happy to have it. That's the story for anyone who caught that tweet and was like what the heck is he talking about? That? Yeah, that's it.
+
+82
+01:02:02,220 --> 01:02:05,910
+Wes Bos: T thieves. Maybe didn't What? What's your Twitter Scott?
+
+83
+01:02:06,180 --> 01:02:09,750
+Scott Tolinski: s kolinsky stll ins k i
+
+84
+01:02:10,470 --> 01:02:18,840
+Wes Bos: beautiful. I'm at Wes Bos if anyone else wants to follow us on Twitter and I were also the same on Instagram as well.
+
+85
+01:02:19,020 --> 01:02:22,590
+Unknown: Yeah, that I Geez. Alrighty good. That's it. That's
+
+86
+01:02:22,590 --> 01:02:24,630
+Wes Bos: it. See you next week peace.
+
+87
+01:02:25,980 --> 01:02:36,030
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

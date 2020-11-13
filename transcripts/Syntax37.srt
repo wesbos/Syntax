@@ -1,0 +1,380 @@
+1
+00:00:01,290 --> 00:00:02,790
+Announcer: You're listening to syntax,
+
+2
+00:00:02,820 --> 00:00:07,260
+Unknown: the tastiest web development treats out there, strap yourself in and get
+
+3
+00:00:07,260 --> 00:00:09,599
+ready to Lynskey and
+
+4
+00:00:09,599 --> 00:00:10,560
+West boss.
+
+5
+00:00:10,590 --> 00:01:00,450
+Wes Bos: Hello everybody and welcome to a another episode of syntax today we're gonna be talking all about recording our own recording workflows. What makes a good screencast? What makes a bad screencast? What hardware we use what microphone I get a lot of questions. I'm sure Scott does as well about this stuff. So this is going to be hopefully the the podcast that I point people to when they ask me questions about the nitty gritty details of recording. And I think it's kind of a nice, nice topic. Because even if you're not running a full time business making screen recordings like Scott and I are, it's it's helpful just to have a good setup. If you want to make internal documentation, you want to throw a couple of YouTube videos up. The right setup will go a long way. So with me today is got to linsky Hey, welcome. How you doing today?
+
+6
+00:01:00,510 --> 00:01:24,540
+Scott Tolinski: I'm doing good. Doing good, beautiful day hanging out ready to get the week going? And yeah, you know, working on other new series as I as I do, I got a new monthly series every single month. So got to get on that grind. And as this topic is recording, I'm going to be doing a lot of recording editing over the next few days, as always, I suppose. How are you doing? How are you doing today?
+
+7
+00:01:24,569 --> 00:01:43,260
+Wes Bos: I'm good. I'm doing well. I'm going off to Manchester, and a couple days. So I'm just getting bigger, wrapping up my work. And I have a conference that I'm doing a talk over there. So I'm looking forward to that's called up front cough. I know I'm gonna be meeting a lot of syntax listeners there. So shout out to you.
+
+8
+00:01:43,920 --> 00:01:45,390
+Scott Tolinski: Nice, super cool. Yeah,
+
+9
+00:01:45,420 --> 00:02:16,530
+Wes Bos: this episode is sponsored by Freshbooks and Netlify. We'll talk a little bit more about both of those companies partway through the show. So why don't we kick it off. And let's start off and just talk about our hardware. So before our beautiful buttery voices even get into our computers, there is some hardware that actually needs to happen. And Scott gently touched on this a couple of weeks ago, but let's get into the the nitty gritty details of how it works. So you want to want to kick us off first what hardware use
+
+10
+00:02:16,560 --> 00:03:55,470
+Scott Tolinski: Yeah, so I actually I've been I just got a new microphone, which is the electro voice r e 20. It's a super famous radio voice, radio voice radio microphone that you often hear and things like NPR before that I was using a KSM 32 made by Sure. And before that I was using a blue Bluebird but throughout all of this I've had a decent mic. I think that was a really important thing for my setup. to having a nice mic that works well for my voice. I got a little bit of a bass your voice so sometimes having a mic that caters to that is good for me. I also use a Focusrite Scarlett is that the two eye to eye to eye it's we have the same one, so two eye to eye two as my interface. So basically, the microphone goes into the Scarlet. Oh, actually, I'm sorry, it goes into my microphone goes into my preamp which is my 286 s which takes care of compressing and DSA removed it has a noise gate built in. But mostly this electro voice mic just needs some extra gain to it. So really pumped up the game so that when it comes into my audio interface, that it's at a respectable level so that so out of the 286 to the Scarlet and from the Scarlet into my computer. I also use for a mic boom arm which you frequently see in my videos. It's just can m mic arm, it's really fancy. It has the XLR cable that runs through the the piping of the metal so you don't have any cables sticking out anywhere. So the cable just is a high super high quality XLR that pops out at both ends and plugs right into my preamp.
+
+11
+00:03:56,130 --> 00:04:06,090
+Wes Bos: Pretty sweet. And this is actually something I asked you about a couple of weeks ago. Can you like run through? What's the difference between what is it a passive mic and
+
+12
+00:04:06,150 --> 00:04:10,800
+Scott Tolinski: what dynamic bike dynamic dynamic mic versus a condenser microphone?
+
+13
+00:04:10,800 --> 00:04:11,550
+Wes Bos: Okay,
+
+14
+00:04:11,550 --> 00:05:06,990
+Scott Tolinski: so a dynamic microphone. Well, it has to do with how the magnets are inside of the microphone and somebody who who knows better than me is going to correct me on this even though I did learn this in school once a dynamic array. A condenser microphone needs an additional 48 volts of power also known as phantom power, that power travels through the XLR cable and what that power does is it if I'm totally butchering this, please correct me. It's it powers the the diaphragm in the microphone to actively pick up sound by moving the magnets. I'm pretty sure it's moving the magnets. I'm not positive about that, but it powers uses the 48 volts to To pick up the signal in a different way from a dynamic microphone, which are essentially just like talking into the diaphragm itself.
+
+15
+00:05:07,699 --> 00:05:28,110
+Wes Bos: Awesome. Yeah, that's, that's something that I, when I was shopping for my I kind of looked into all those different ones. And I don't use one with phantom power. So make sure that I have that turned off. And then there's also like, kind of like side fire microphones and front fire microphones. And both, I think both of us are using what front fire or that means you talk right into the top of it.
+
+16
+00:05:28,139 --> 00:06:19,259
+Scott Tolinski: Yeah, so the so like the distinction, there would be like a, an omni directional, which is a microphone that picks up the signal equally from every direction, a directional microphone, which is you have to talk into it at a specific direction, then there's a cardioid pattern that looks sort of like a heart, where it gets everything from the front, the sides and a little bit less than the back. And then there's a super cardioid, which is like just a more extreme version of that same sort of shape. So there's several different polar patterns for microphone pickups. So for what we're doing, having a directional is probably your best, a directional is probably best, because you're talking into it, you don't want the sound that's whatever your computer or the noise behind it being picked up. Yeah, and with a dynamic microphone, like we have, like we're both using is going to be better for eliminating that noise as well.
+
+17
+00:06:20,130 --> 00:10:15,960
+Wes Bos: Wicked. Alright, so let me go into my hardware. So my microphone is a Heil pr 40. And I picked that up, mostly because I had been listening to Leo Laporte for probably like 10 years. And that's sort of the one that he goes for. And I did a bunch of research and that one sounds, I think it sounds best with my voice. And I used to have another one, it used to be a USB microphone, and I don't think any of my tutorial, maybe my Flexbox series was recorded with the Audio Technica 80 2020, which is a USB mic. And that's like 100 bucks. And if you're just looking to get up and running, that's a great one to just pick up before you're getting too serious about it. And then I've got a Heil, boom arm that I sort of have on my desk. It's pretty good, I find that it wiggles free maybe every couple months. And there is a there is a little like desk mount that you can like drill into your desk and just like put it like a hole in your desk, which I'm looking at doing because I've already once wiggled it free and drop odo and it Luckily, these microphones are like, like, I always find that like cameras and microphones are like really durable. So it didn't do anything for the microphone. But I did snap my or does this though I have a pop filter, specifically made for the highlight. It's like a nice small pop filter that just fits right over it. And it's great because if you're saying prop types all the time, you're you're gonna be popping your piece and I specifically had to become a bit more of an audio file because for me, it sounded fine. And then you would just like people's ears were bleeding when you would say prop types and and things like that. So to get a little bit more into the audio, so comes out of microphone through the thing I have it sitting in a What's this called? What's this called shock, shock mount and that will stop any generally like when you get like weird noises in your thing. It's not just like outside noise, it's vibration. That's that's what bugs people were vibrations, especially from people's keyboard, when you're typing the vibrations will make its way back into the microphone. So it's on a shock mount which is totally suspends it on just kind of like hair elastic material, goes down the Heil, and then into my my preprocessor, which is a 286 s and that, essentially we talked a little bit more about this, but this that makes sure that the audio going into my computer is as clean as possible. It takes out any background noise if I have a truck roll by sometimes I like to have the windows open when I'm recording in the summer, or if my dogs walking around and clicking as nails that those outside or my chair squeaks or something like that those outside noises don't make it into my actual recording. Which is really, really important to me because I was spending way too much time fussing with my audio after the fact and I just wanted to like just like record and at first the sound good. And that's exactly why I have this thing it does it takes the essence out of your voice it does some enhancing. It lowers my voice. I don't have the lowest voice in the biz now like Mr. szalinski over here. So I have it, boom defying my voice a little bit. I know there's a couple other things I I had an audio engineer come over and he sort of tuned it to sound good. So it goes into that and I actually have what's called an equalizer as well, which will. What that's used is for, for filling out the sort of the lower parts of my voice So it's a nice, very consistent radio voice. I don't have the equalizer hooked up yet, I need to get the my buddy over to tune it to mix. I tried turning the knobs, but I just can't I need somebody who actually has an ear for this as actual audio engineer. Yeah,
+
+18
+00:10:16,080 --> 00:10:42,690
+Scott Tolinski: you need you need that. It's amazing how much that ear makes a big difference. I because I went to school for this stuff. And I wouldn't necessarily say I have the year I have a little bit of training. And I know what all the knobs do. I know what Yang is for but like, one of my best friends is a audio engineer by living. And he can look at any of my stuff and tell me in like two seconds, what it needs to be tweaked or whatever. Because you know, he just has that year?
+
+19
+00:10:43,020 --> 00:11:37,110
+Wes Bos: Yeah, yeah, that's when my buddy came over. And he's like, your gait is way too high, which was it sometimes if you hear people in the the trailing off of their voice gets cut too abruptly, then then you have your gate way too high and things like that. So he did a good job with that. And then so it comes out of that DB x 286. It's supposed to go into the equalizer, it's just not yet. And then it goes into the scarlet, the focus right to it, which is that just takes the actual XLR signal, and then turns it into a USB interface. And now that lets me both pipe it into my computer, into my recording programs or into Skype or whatever. And then also, I have like, a set of audio monitors on it, which it will allow you to like hear yourself as if I was on the radio a couple a couple years ago, and it was weird to me to hear yourself talking through your headphones.
+
+20
+00:11:37,140 --> 00:11:37,650
+Unknown: Yeah, I
+
+21
+00:11:37,650 --> 00:11:48,330
+Scott Tolinski: don't have my monitor on. No, I don't. either. I do the one ear ear off the headphones to hear myself better rather than a monitor or whatever. Yeah,
+
+22
+00:11:48,360 --> 00:12:27,510
+Wes Bos: yeah, it's but it's kind of kind of nice to have I used to have turned it on, but not anymore. And then I think that is it. That's all the all the hardware that I have. It's pretty expensive. Me as you're talking about like, like, what do you got invested into this? Yeah, because at first like I just had $100 Audio Technica mic, and that worked pretty well. And I would recommend that before you spend any time but after I released my rack for beginners, I was like, I want to move faster at this. So I spent, oh, I would say all this gear is probably 1500 bucks us. Yeah, which is not cheap, but worth it.
+
+23
+00:12:27,630 --> 00:15:16,140
+Scott Tolinski: It depends on what you include in that because I have my studio monitors are maybe like 700 $800. For the speakers, the studio monitor speakers, that the focus right eye to eye is the most reasonable item out there. Before I've had multiple other digital audio interfaces. Before I was using something called an inbox made by Digi design, which is like something you needed to use the application Pro Tools, which is why I got it. Pro Tools is really like the best in the biz audio software for recording. But you know, I just haven't been using Pro Tools and that that rig no longer works with Mac OS, they just didn't keep up the drivers. And I spent like $600 on it and it's essentially worthless now. So then after that I got an Apogee one, which is a kind of frustrating device. It's a it's a really brilliant audio interface. It has way better preamps than this focus, right does. But it was Mac OS only. So you couldn't use it with anything else. And it just sort of died on me one day I was getting weird hissing in my audio recording and you can hear him and some of my like a few select videos. There's just like weird hissing sound that came from the audio interface. So I had to go plop down and get a new one. And obviously after I had to sort of expensive ones fail on me in different ways. I decided to just go kind of cheap with my preamps here or with my focus, right? And I was like what this thing's like 120 bucks or something. It's not very much but the Scarlet was definitely worth the money there. And you know spending money on the 286 s like I was doing most of my stuff in post and didn't have a problem with that but I needed to buy a preamp anyways for this bike. And if you're spending an extra 50 bucks to get a preamp that includes a compressor and all this stuff instead of just a preamp that I thought that was a pretty good price for me. I've never gotten skimpy on the microphone. All of my mics have been a little costly. I think microphone is a really important thing if you're going to be doing this professionally. Yeah, yeah. So So I've never gone never gone too skimpy on the mics. So yeah, so I mean, you know, we both are doing this professionally. So we're obviously going to spend a lot of money on it. And in my In your opinion, like what are the the most essential because for me, I think the essential is if you're going to be doing this at a small time scale or you just want to try it out. It would just be a USB microphone and a little desk mic arm like that's pretty much it right you don't need any of this stuff. You can fix your audio in post if you need to. If you're using a USB microphone, but like that Don't get a cheap USB microphone, maybe like a Blue Snowball or something like that sort of USB microphone that's made for this kind of stuff. But if you have just that you should be able to at least accomplish or get better audio than, you know, 90% of other people doing this kind of thing.
+
+24
+00:15:16,590 --> 00:16:23,580
+Wes Bos: And there's a lot more you can do with your actual environment, versus actual equipment. Because if you have a crappy environment that you're recording in, it's not getting and no matter what microphone you have, it's not going to sound any good. So I always tell people, and what I did before I had even like a boom microphone, I just had the 80 2020 comes with this little tripod stand, but just put a T shirt underneath your keyboard, and that will absorb both any of the actual typing noises that are like, sometimes you listen to screencast it's like, boop, boop, boop, boop, boop, boop, boop, boop boop, when they and that's because the the vibrations of you typing is going straight into your microphone. So putting a T shirt underneath your keyboard is going to absorb your typing vibrations, as well as, take any echo that you're possibly hitting off your desk or your environment. And there's other stuff you can do. Like you can record in a if you like, a lot of times people have like a walk in closet, and they'll record in there. And that sounds amazing, because you just have shirts that are absorbing all of the environmental sounds. So there's a lot of little tricks you can do to make it sound decent with a cheap, some cheap equipment.
+
+25
+00:16:23,610 --> 00:16:30,120
+Scott Tolinski: Yeah, yeah, you certainly are not required to have a bunch of expensive stuff. Yeah.
+
+26
+00:16:30,390 --> 00:16:43,590
+Wes Bos: So once the actual audio is coming in hot off the microphone. Let's talk about actually both recording our screen as well as well as recording the audio. What is what does it look like for you there? Yeah, so
+
+27
+00:16:43,590 --> 00:21:11,600
+Scott Tolinski: I things have changed for me considerably because of new computer, a new setup, all sorts of different stuff. But right now what I'm doing is, I am recording off of my laptop, even though I'm usually hooked up to an external monitor. So my external monitor will contain all of my like notes, or code or documentation or example stuff I want to be looking at while I'm recording. So I'll have to pull that up on an ultra wide, so I could fit a whole bunch of windows on that. Since the screen dimensions of the new MacBook Pro is not 16 by nine aka YouTube's aspect ratio, I use an application called Devi to set my windows to a perfect 16 by nine that takes up the entire width of my computer. So instead of instead of like attempting to record a pixel dimension, right, I'm not recording a specific resolution, I'm more or less recording at an aspect ratio, the widest it will get on my computer. So as long as it's 16 by nine, I'm recording double the pixels using an application called I show you HD. It's recording double the pixels. So basically at 16 by nine double the pixels, I'm actually getting a 4k output resolution even though the actual pixel dimensions are sort of something unconventional. When I drop it into Final Cut Pro it actually converts it to a 4k or whatever I want. Anyway, so right now I'm actually working in a 4k pixel dimension, I'm not quite positive what it is, but it's at a 16 by nine 4k. So uh, let's that's pretty much it. So I basically I use Divi, to get everything in the right spot I use, I show you to select that 16 by nine area I hit record. And the actual recording goes like this, I typically have a either example code, right, the ending of which may or may not be determined. And I have this task I want to accomplish. And I don't use a script. Because if I did a script, I would mess it up 100 out of 100 times, right, it would be bad. And I talked through my code as I write it. I mean, chances are the stuff that I'm doing in these videos is something that I've done 100 times before. So being able to talk about my code while I'm typing. It isn't necessarily that difficult to me not to mention, I've had a lot of practice, I've recorded over 2007 videos doing this stuff. So for me, it's all improv everything except for necessarily the code is improv right, I'm just coming up with what I'm saying on the spot because I know how to describe it. I can't work off of a script, I do my recordings, I stopped the recording, and then I dropped everything into Final Cut Pro. Now I have like a really specific editing workflow that has worked really well for me. And I don't I really like Final Cut Pro specifically because of this, this magnet or magic timeline or whatever the heck this new feature was they introduced turns out most people hate this feature. But if you're recording a one track video, as in something that doesn't have multiple angles, it can be extremely handy because what it does is it zooms up the end of the clip whenever you make a cut, lurk or it doesn't allow there to be any empty space. So in a lot of different video editors like premiere, it allows you to be empty space in your cut. and stuff like that. And then you have this empty space, you have to delete, you have to move stuff over, this sort of just shoots everything over, and sort of like all falls to the earliest second. So I have this keyboard shortcut setup with z, x and c, where c is the cut, it will just make a cut in the video, Z is to edit up to the where the playhead is. And x is to edit back to where the playhead is. And I keep my three fingers on those three keys and I use my mouse to move the playhead because there's like our playhead, skimming and Final Cut Pro. And I basically play it like a piano, I just moved my mouse see exits the exit, and I'm just tapping, tapping tapping and I just look at the audio more so than listening to it, I can recognize patterns in the audio, I recognize, when I say the same thing in my audio just by looking at it in the way I do things is that the second take of what I do is always the right take. So if I see that I said something twice, I'll just cut out the first one and then in not do anything about it other than that, and then I'll listen to it all that a couple times and make sure there's no mess up. So I didn't miss anything Chop Chop, chop, push it up the YouTube directly from Final Cut Pro.
+
+28
+00:21:12,860 --> 00:22:55,530
+Wes Bos: Wow, that's I always like hearing how other people do it and all with your mind. But it's I'm always looking to learn some new tips from from other people. And actually, when Scott and I first started our our mastermind group a couple years ago, that was one of the first things that we talked about is our recording workflow. So my recording workflow is quite a bit different. So the way it works is I have three monitors going, I've got a 4k monitor right in front of me, I have a 22 inch on a on its side. So I guess in what does that called not landscape portrait mode. And then I've got my laptop to my right hand time. So on the left hand side, what I'll do is, I'll have notes open about what I want to get across. So I don't have a script or anything like that, I just sort of have like bullet points of things that I need to touch on or maybe some examples that I want to touch on in that. And then I'll also have either the finished code example up or if it's sort of like a partway I'll just kind of I'll do like a markdown file with the code example in that it's just so I can glance over and see exactly what it's going to be. So it's on my left hand side, on my right hand side I'll have it really depends on what kind of what I'm working on sometimes is empty, sometimes I'll have it, have my editing software open on there. And then on my main 4k display, what I have is I've created this sort of overlay that is I use this application called Uber layer. And I've created in sketch the sort of frame that is a 16 916 10. What is it? I don't even know what the what it is. But essentially, I'm trying to record a 1920 by 1080. Is that what aspect ratio is 16? by nine? Right? Yeah,
+
+29
+00:22:56,250 --> 00:22:58,320
+Scott Tolinski: whatever. That's standard one by nine. Yeah,
+
+30
+00:22:58,710 --> 00:25:15,270
+Wes Bos: yeah, so it fits perfectly into that. And I have this sort of overlay on my screen. And what it is, is it's a frame, and the outside of the frame is sort of like grayed out. So and then inside the frame, I put all of my windows, and then on the actual frame itself, I have all these notches for common like window sizes that I like to use. So I'm not just halfway and a quarter of the way and a third of the way and and along the height. And then I know that I can always like size my windows to these different notch sizes. So that if I have to go back and re record something, I can always size it up. So it looks pretty similar in that nice. Um, another reason why I like to use that. So I don't record my entire screen, I do record the entire screen, but I always have to trim it down to that 16 nine, I don't record in 10 at 1920 by 10 a record double that. And then I always just just bring it down, I really like that because if I ever need to to zoom in on one of my things, then I have those extra pixels available. And the video is just super crisp, it always looks really, really good. So I'm pretty happy with that. Another reason why I don't like recording my entire screen is because I we're really limited on code space. And when you're recording a video, there's sometimes when your lines get too long, it gets a little bit jumbled. And I if I can, I like to have what we're building and what we're coding open at the exact same time. So I like to get rid of as much extra stuff as I possibly can. So I make sure that things like browser tabs and things like the visual Visual Studio codes, the top bar and the bottom bar, all of that stuff is extra to me. So I make sure that that's off screen. And I only record the actual code and the benefit of that is I look back at some of my old screencasts and it hurts me because as soon as OSX updates what the Minimize buttons look like or they update a gradient or something like that, then your videos start to feel old. Yeah. And even if the content is good, then it just starts to, it just feels like oh, this is probably out of date. And it frustrates me.
+
+31
+00:25:15,330 --> 00:25:16,110
+Scott Tolinski: Yeah, definitely.
+
+32
+00:25:18,060 --> 00:26:35,490
+Wes Bos: So that's my recording. And I use a application called ScreenFlow to actually record my entire screen. So I hit record on ScreenFlow. That will pipe in my microphone into it one like annoying thing of screen, I got some gripes of ScreenFlow it's not the best thing. People always ask me like, Why don't use this, why don't use that. And I'm at a point now where I'm so fast at recording in ScreenFlow. And it doesn't annoy me enough to spend the time learning something else. Because I'm trying to run a business here. I'm trying to like teach people stuff at the end of the day. And if you get romantic about the tools and all of that stuff, then it starts to cut into your actual, like, there's this whole working in your business versus on your business. And that's just not something that I'm interested in changing right now. But the annoying thing is that if you have a microphone like I have, it will only record a left or a right channel. And you always need to like mix that back into a mono channel. And I tried like getting a hardware splitter and splitting the cable into two and then piping it into both sides of my mixer. And that didn't work because it's smart enough to maintain channels. So I use an app called What's it called?
+
+33
+00:26:35,490 --> 00:26:36,360
+Scott Tolinski: Sound flower
+
+34
+00:26:36,479 --> 00:26:43,620
+Wes Bos: sat? No, I tried sound flower, but that one that they always recommend? Yeah,
+
+35
+00:26:43,679 --> 00:26:51,720
+Scott Tolinski: I know I show you just allows you to choose your channel for your audio. So I just yeah, Mo use the left channel and make it moto.
+
+36
+00:26:52,199 --> 00:27:42,990
+Wes Bos: Most decent applications do most of the call that I saw. But ScreenFlow doesn't and then they they removed ScreenFlow was like regressing in all of their features. There's all every time there is a new version they like I think what they're doing is they're becoming like a Slideshow Maker for people who have like weddings, because every single time that they release a new feature, they talk about how it's like easier for people who make slideshows, I'm like, I'm trying to record my screen, like, for example, by default. Now, when you add audio and video, you record audio and video and you try to add that to your thing, it will put the audio after the video. Like what like shouldn't audio be overlapped with the video because it happened at the same time. What Yeah, yeah, they changed it because of people making slideshows. So she's what's the app that I use, called, I always forget what's called
+
+37
+00:27:43,350 --> 00:27:48,780
+Scott Tolinski: low on one sec, that audio hijack isn't made by that company, because it's but audio back.
+
+38
+00:27:49,170 --> 00:28:29,490
+Wes Bos: So the app I use is called loopback. And loopback allows you to do is to take your input sources. So whether it's your your microphone, or you can also take input from a specific app. So some when we did the soundboard, I piped it in from Google Chrome. And then you can mix that into left and right channel. So I have basically the left channel mapping to the left and the right channel of my virtual interface. And then that gets piped right in, I don't have to worry about mixing it into mono after the fact, which is really important to me, because I've posted so many YouTube videos by accident, where the audio is only in the left ear, and then you get every smartass in the world commenting,
+
+39
+00:28:30,360 --> 00:30:45,660
+Scott Tolinski: yeah, you gotta have, you gotta have that, you got to have that. So talking about smooth setups, let's talk about a hosting platform that makes setup absolutely painless. And this is going to be one of our sponsors, Netlify. Now Netlify basically takes out all of the difficult things in working with static sites or front end code, and really just lets you build your code and deploy it in these modern tools like we're used to. So for instance, if you had a static site that was built in Gatsby or something like that, and there's all sorts of these things, such as rebuilding the static website, or getting an SSL setup that are just more pain than they're worth, or even having a contact form, and that Netlify takes care of all of that stuff for you in a way that just makes working extremely effortless. You push up to GitHub, your site is automatically rebuilt and deployed, they have easy to use web hooks. So you can trigger a rebuild, literally add anything that you want to send you a web hook, you can easily quickly add an SSL or even like a contact form is something that's so difficult, typically on just standard front end code without having any server side component. What are you going to use a serverless function, you're going to have a script somewhere that's running this for you are going to use some other form thing. Well, well Netlify makes it extremely easy. You simply add some attributes to your form on your static site. It's some it's like a normal contact form and you can choose what you want. to do with those emails, whether an email is getting emailed directly to you, or if it's just posting in a Slack channel, or if it's just saving that form submission on the Netlify back end. So check out Netlify netlify.com, forward slash syntax and see what this hosting platform has every buddy buzzing. Now also, they are hiring. So if you are a developer, and you're looking for a new role, whether that's a remote or local, headed to netlify.com, forward slash careers, and check out what kind of jobs they have available, because they are hiring a lot of excellent people, and they could be hiring you. So check it out, again, netlify.com, forward slash syntek, or netlify.com, forward slash careers. Alright, and thank you for Netlify for sponsoring.
+
+40
+00:30:47,580 --> 00:31:43,260
+Wes Bos: Awesome, so my last couple of points that I have, there is a record right into ScreenFlow. When I screw up, I'll either just to sort of pause and do a little click, and we'll talk about screwing up in a second. And then when I actually do need like a break, or there, I do screw something up, I'll just pause. And then right then in there, usually what I'll do is I'll just trim the video so far to the point. So I sort of edit as I go. And the benefit to me of doing that is that I'm in the right headspace. And if I feel like I screwed up, or I could explain something better in the code, I'm in the exact spot where I need to be and I can always roll it back to that specific spot. So when I'm done a video, it's pretty much edited and trimmed up and ready to go. Only later I'll come back in, if I have any, like overlays that need to happen, or, or any extra stuff that needs to go over top of the video at it. So you're sort of editing while you're
+
+41
+00:31:43,260 --> 00:31:45,390
+Scott Tolinski: recording. It's like, yeah, back and forth.
+
+42
+00:31:45,930 --> 00:32:22,380
+Wes Bos: Yeah, sort of like it's pretty quick, because it's I'm pretty quick with the keyboard shortcuts in when I screw something up. And then I'll make sure that it transitions and flows nicely into one another. And, and that way, when I'm when I'm done the video, it's pretty much ready for export, other than just putting in the intro and the outro onto the video. And I don't need to come back into it because I used to record after the fact. And then I realized that I had screwed up. But it's very hard for me to get back into the code and the exact setup and get the app to the point where I would exactly was unless you have like, like get hashes that you can revert to for each video. Hmm.
+
+43
+00:32:22,770 --> 00:34:36,330
+Scott Tolinski: See, I think I just for me, it's all about knowing when I messed up like in the moment, like I'll, I'll be unhappy with a take. And I'll redo the take almost immediately. So I guess that leads us into like messing up because people hear these polished or sometimes maybe less polished recordings or whatever. And they want to know how they get that good like how I think people assume you have to record a lot of amount of time. So if my videos are like 13 minutes long or something, I'm probably not recording more than 15 minutes total. I'm not cutting out very much unless there's been some sort of colossal mistake. For me, what I do is I pay attention constantly. And if I'm not happy with something I'm saying, or if I miss type of code, I'll go back and do it immediately. Again, I mentioned before that the second take is always the best take for me. So I'll know that if or the second or third take if I if it gets to that level. I know if I say something more than once then I never even have to listen to the first time I say it, I can just cut it out because I know that I must have messed it up at some point. So for me that that's what I do with mess ups. I used to have this well alert system for myself. And this is maybe one of the more embarrassing stories of the history of me recording. I used to have this alert system and I thought about doing this again, maybe with like an app that will do like a buzzer or something like that. The whole idea for me in this at this point in my my recording time was that I had I had accidentally This was way back, way, way, way, way back. I had accident left and some mess ups and i was growing concerned that I was missing some mess ups in my editing, or my listening to the relisting. So I said it, it would be really great if I had some sort of visual indicator in the audio form that let me know that this is where mess up took place. So I started making what I could only describe as an extremely obnoxious noise into the microphone. that would that would pique the mic. And I I guess I just did this for fun. Or because I was the only one listening this but the I could only describe it as a squawk. It's it's a really lovely sound. And I just would essentially scream it into the mic so that I would keep the mic,
+
+44
+00:34:36,330 --> 00:34:44,820
+Wes Bos: right. And you can see it in your waveforms. It's the similar idea to the clap at the start to sync up audio and video. Right, exactly. So
+
+45
+00:34:44,820 --> 00:36:11,250
+Scott Tolinski: I would be okay, there's a squawk, I'll cut here, whatever. And then that way I could speed up and I would never miss anything because obviously who's going to miss that? Well, I did a series for a publisher, a recording series for a publisher packt Publishing like is a full on Magento tutorial series, which is super duper, a long recording process and it was very involved. And so I submit all of my videos to the editor and of course you have an editor who has to whose their job to go through and watch all of these videos to make sure everything you're saying is technically accurate, a good or whatever. And so this poor editor is probably sitting there with their headphones on listening to this thing. And then they're hearing me talk about Magento and then hearing me scream into their ears. Because I, I get a message on the, the my notes and it's like, everything's great, except for at 215 in this video, the author screams into the microphone. Oh, it's just like, oh, oh, no. And I'm so glad I'm never gonna have to meet this editor in person. I don't know who they are. Because I would just be so embarrassed about that. That that was probably it probably like it was probably like, cartoonish it probably like knocked their headphones off. They probably just like shot into the air and knocked them out of the carpet because it was a really, really bad sound.
+
+46
+00:36:11,730 --> 00:37:02,130
+Wes Bos: That's hilarious. Yeah, when I when I screw up I've only ever left one in. And luckily, somebody pretty cool because I dropped the F bomb. Why? Because I yeah, I had screwed up and, like, explanation of a specific topic. And I was like, damn it, like, I get it together. And then so I just like started again. And usually I'll cut those out. And but when I'm when I'm listening back to it and cutting and chopping pieces in and out. I'll listen to it at two X and ay. Ay, ay, it sounds like Ah, you dropped an F bomb, like 234 and video 70. I was like, shoot. So I luckily, luckily, they were cool about it. And they were one of the first people to listen to it. So I cut it out again. And re uploaded it which I was happy about.
+
+47
+00:37:02,250 --> 00:37:20,130
+Scott Tolinski: Yeah, I'll definitely have like a conversation with myself. Let's just be like, Scott, when you're editing this, go back to two minutes. Because you're an idiot. And you made these mistakes. Oh, like a little a little conversation with myself. But then I'll be listening to and I'll be like, Oh, this doesn't sound like it's about programming.
+
+48
+00:37:22,350 --> 00:38:03,210
+Wes Bos: What about a goofing up, I specifically leave a lot of my own syntax errors and and other errors and mistakes Africa to export something, I always leave those in because people tell me that they they actually really enjoy seeing me do that. And also what I don't know what the issue is. I'll say okay, let's try to debug this together. And if I can debug it in less than a minute or so, it's not going to like I don't necessarily pause the video, I just go through it. And I sort of explained my own thought process behind the debugging. And people say that they absolutely love that. Because that's that's such an odd skill, like how do you teach somebody? What is the thought process to debugging something like this?
+
+49
+00:38:03,270 --> 00:38:55,620
+Scott Tolinski: Yeah, I do the same thing. And like there, there are aspects of which like if you're typing something wrong, and it's clearly like a typo, I'm gonna go back and do it. But well, maybe not so much. I guess it depends. But I usually leave that stuff in definitely as a learning opportunity. But chances are my outlook on this is if I'm doing something that I've done 100 times before. Yeah, and I mess it up on camera, that means that someone is likely to mess that up for various reasons in their their code as well. I mean, it's just a very real possibility that these are the things and like you mentioned, it gives you a good opportunity to get into that debug mindset. Now that said, If I'm running to an issue, like, I don't know, if you've ever had this, where you're just having an off day, you go to record something, you'd be like, we'll save this. And now let's tap back. Oh, it's broken. Okay, let's find out why. Okay, you fix it. Oh, let's see if this was should be all cut. Nope, it's broken again. Like,
+
+50
+00:38:55,620 --> 00:38:57,920
+Wes Bos: there's just a crack. Yeah,
+
+51
+00:38:57,960 --> 00:39:27,600
+Scott Tolinski: I loop. And I'm just like, you know what, I'm just gonna toss this out. I'm gonna start over, like not getting anybody, you know, any value here, because I'm messing up so much. And that can happen. I mean, you're talking and recording and coding at the same time. So there's definitely a lot going on. And it can be easy to mess up. But I do agree, I think each time you mess up on camera is a learning opportunity for your audience to really see inside the eyes of your standard debugging situation, or some of these issues that can happen.
+
+52
+00:39:29,420 --> 00:39:48,960
+Wes Bos: Absolutely, I totally agree on that. That's I want to someday make a debugging course. You're just not sure. Like what that would look like, right? I think debugging is maybe just better in in the moment when there's an actual error. And you can you can read the syntax error and follow the stack trace back for sure.
+
+53
+00:39:49,080 --> 00:39:52,460
+Scott Tolinski: Yeah, even just teaching those skills about reading the error messages.
+
+54
+00:39:52,589 --> 00:40:42,600
+Wes Bos: Alright, let's talk a little bit about bad screen recording. So we've all seen our fair share of guys on you. YouTube with Windows XP, unregistered hyper cam yeah and no notepad open. There's a lot of bad screencasts out there. And I've certainly learned a lot over the years of doing this. And there's things that that drive people nuts. And there's things that make just for like a boring recording where people turn it off, because it's not moving fast enough. I think pace is a very important thing that I've learned over the years. Because if you go too quick, you frustrate people. But if you go too slow, that also frustrates people. So knowing where to speed things up, and knowing where to to slow things down is really important. So what are your senior recording? pet peeves? Yeah,
+
+55
+00:40:42,650 --> 00:42:12,980
+Scott Tolinski: so this year, these are things before I started level up tutorials. And even now, I watched a ton of video tutorials. And that was one of the things that I think really helped my channel become popular was the fact that I had learned a lot of lessons before I started. So if I see a lot of code channels that pop up here or there, they don't get any traction, and then they go away. If you would like to do some, you know, screen recording and not have your channel be one of those, you know, those casualties here. I think some of the biggest things is one, a bad microphone that we mentioned, you can get a cheap USB, like a Blue Snowball, or the one that you had West, but just a decent USB microphone, that's not like the one that came with your Windows computer back in the day, you know, that is going to go a long way. Having a nice microphone I there was nothing that will turn me off from a video quicker than having an awful or get this no microphone, you know, it's not going to work typing your script onto the screen and Notepad. Instead of talking into the microphone, you're typing. And you're giving those instructions that way, that's not necessarily helping a lot of people out if you are not talking and you are typing on the screen, I will close that out in a second. Next small text we are working on, you know, some people might be watching this and a smaller resolution. Some people might be watching this at half their screen while their codes open, you need
+
+56
+00:42:12,980 --> 00:42:14,940
+Wes Bos: to have it open on an iPad or something like yeah,
+
+57
+00:42:14,940 --> 00:42:41,040
+Scott Tolinski: you need to have the text, especially the code available to see. Or if you're in the debugger or something like that. And I'll often call that out if if I noticed that the screen zoomed out too much. I'll zoom it in right then and there. Maybe zoom it out a second later, just so people can see. But having small text, if you don't want to zoom up the interface, you can always just change the font size and things like VS code, just change up the font size. That way you don't get like extra big margins and stuff on the entire.
+
+58
+00:42:41,340 --> 00:43:17,280
+Wes Bos: That's one of my pet peeves. I actually, I was at a conference a couple months ago, and somebody was doing like a live code demo. And they had bumped their font size all the way up. But that also bumps everything else up. And like between the tabs and the status bar, it was like half the screen was taken up by the Chrome. So one little tip is that you can zoom your entire editor out so that the tabs in the sidebar are tiny. And then you can bump just the font size up in your settings file. And that will make sure that you have like almost all of your screen real estate dedicated to actual code rather than things like browser, Chrome and whatnot. Yeah,
+
+59
+00:43:17,340 --> 00:45:09,210
+Scott Tolinski: I get this, I do so many screen recordings that my standard VS code, font size is 36 pixels is my standard setup. And then whenever I'm actually coding like a project, like level up tutorials, comm or freelance work or whatever, I actually change that in my workspace settings for that project. So I just leave my text size at a 36 like constantly a VS code, which is kind of a pain whenever you're like create a new project. But luckily, I do way more recordings than I do new projects. So it's, you know, good for me to do that. Now another thing that bugs me is not lingering on shots of the code after you've talked about something. So you could say, now I'm going to type this and this and this and then you tab quickly back to a window, or you tab over to your eye term or, or you move off of that screen, and your user is going to have to then rewind back, but not only that, they're gonna have to pause it just the right moment right in between the time that you've finished typing. And when you've you know, because people want to see the code or if you don't have the code available on a GitHub or something like that to reference not lingering on code shots. So if you don't need to be off of the code, I usually leave the code up for a couple seconds, not only just to give people time to pause if they want to pause it but just to let that sink in just a little bit more. And yeah, yeah. Oh, here's another one. Here's an issue that I had. Early on in my recording, I wouldn't get to the content right away. Like if the video topic was how to install WordPress. I might not be talking about how to install WordPress for two minutes or so. And then it receives a hail of downvotes and then people are just like, jumped to minutes to skip all the crap. You know, it's like, oh, okay, like there's a lesson learned. Yeah, but yeah, don't do that. Because Yeah, you'll get a bunch of bad comments.
+
+60
+00:45:09,540 --> 00:45:21,060
+Wes Bos: Yeah, what's up everybody How you doing? This is TJ Yanni D going on, make sure you Patreon like and subscribe and thanks so much for checking in like six minutes in, you're like, Okay, thanks. I just need to know how to install this driver.
+
+61
+00:45:21,120 --> 00:45:33,540
+Scott Tolinski: I know I was so short, sweet. And it's usually Hey, what's up? This is Scott, in this video. We're doing this. Let's go. Here's the intro into the example right away. If you if you take way too long, people are gonna be grumpy.
+
+62
+00:45:34,200 --> 00:48:16,410
+Wes Bos: Yeah. Oh, totally. So some other bad screen recordings, sniffling and creaky chair. It's kind of an important one. Just people. It drives people nuts, mouth noise when Oh, yeah. make noises? Oh, that's one thing that a lot of microphones do. They're just way too sensitive. So you hear the person opening their mouth every single time and just like the saliva. It just, it drives me nuts. It drives a whole bunch of people. No, yes, you want to be again, the good hardware can totally alleviate that highlighting shaking of the mouse. So sometimes, if you're trying to explain something, I still always like to circle code with my mouse. But if you're just trying to like highlight a whole bunch of stuff or shake your mouse, and I think like context of to where you are in an application is really important. And if you move too quickly, or you have too sudden of jumps, or you're tabbing back and forth, back and forth too quickly, that gets that really gets people disoriented as to where you are. Too many files is one that drives me nuts. So in my model, and like in modern web development, we're all about like, having many little files and even in modern react, it's all about having like 10,000 index JS files inside of different folders, which, for me, it makes sense that you would have these folders and inside of that you have index j s, but for someone trying to learn, it's really disorienting when you need to make an update, and you have to touch 15 different files, and they're all called index dot j s. So I'll try to avoid that and just call them what they actually are, even though in a lot of people like like to go the other way. jumping around too quickly. As a bit of a pet peeve. I talked about that. And I also find that is specifically when when people use vim and tutorials like I get how awesome vim is. But it's very disorienting to people just to where you are. So whenever I make a new file, or I switch tabs or something like that, I'll always make sure that I'm clearly saying where I am. And I'll show people that I am right clicking, making a new file, even though Yes, there are shortcuts that you could do with that. It's it's good to show people where they are because I can't tell you how many times people have wasted like two hours? And the answer to their solution is you're in the wrong file or you're in the wrong folder or something silly like that, where it's so even though it's not your fault, people like people send some nasty emails when they're there have been they've wasted their weekend on something and it's not working. Even if it's not the fault of the tutorial. The emotions run high. Let's just say that. Yeah,
+
+63
+00:48:16,440 --> 00:49:07,860
+Scott Tolinski: yeah. And one of those things that I like to do to combat some of that like file craziness stuff, too. So people don't know where they are, is I'll purposefully create less new files and work in a larger file, even if I know that is not how I would normally do it. And I'll call that out in the video and say, typically, I would put this component in its own file. But since we're in this example here, it makes sense for me to show you this all together. When you're doing this, you're going to want to split these up. Because I understand that like if you're jumping around too much exactly like you said it can throw people off. So if your core code organization is not exactly a production, or my Standard Code organization and a tutorial, I think that's usually a okay for me, I usually like to keep it fewer files. And I'll usually make that explicitly noted.
+
+64
+00:49:08,400 --> 00:49:46,020
+Wes Bos: Yeah, in my JavaScript 30. In my CSS Grid course, it's just index or not even index, it's like a like whack a mole dot html. And all we have a style tag and we have a script tag and everything gets done in one file. And the amount of positive feedback I've had from that is amazing, because people understand that you can put it in a separate file. It's just that you need to make sure that you're you're not jumping all over though, especially when you're trying to reference HTML and then jump back to the JavaScript, having it in the same file and actually showing people that you're scrolling up and down is really important.
+
+65
+00:49:46,110 --> 00:49:58,560
+Scott Tolinski: Yeah, totally agree. So we've gone over what makes a bad recording. Let's take this into the positive realm. I'm all about positivity. So what makes a good recording good screen recording less
+
+66
+00:50:00,000 --> 00:52:10,260
+Wes Bos: I think for me, it's having nice like a good color scheme. Part of the reason why I have my own custom color scheme is because I've done a lot of teaching both in person as well as, as well as on screen. And I know that when lighting conditions both for throwing a projector up on the screen, or when people are trying to watch it in, maybe like they're watching it on the subway or and the lighting is really bright. Having good contrast on your editor is really important. So sometimes people have these like very wishy washy themes that they look sweet, but they're it's both inaccessible, it's not people who are colorblind or have our heart of seeing, it's very hard for them to make out the differences. So I have like a nice, I can't tell you how many people have emailed me being like thank you for having a decent theme on on it, because my cobalt too is extremely high contrast. And that works really well on on all kinds of projectors that works on all good on all kinds of screens. If you're on a bit of a older screen, it still looks really, really good. Having nice big, large text, I often like to have a font in my editor that is a little bit bolder. Specifically, on Windows, the anti aliasing is really poor. So sometimes if you have a really thin, a really thin font and and you're on Windows where the anti aliasing is wrong is is poor, it's very hard for people to make out what you're typing. So I use operator mano, and that font is nice and thick. And the yellows and the different colors that are used in it just look really good. And it's very easy to see what I'm typing. I've started now to try to make the application that we're building work well, almost sounds like a almost a mobile view, because I like if I can, and this is not always possible. But if I can, I like to have the code and the thing we're building open at the same time. And it's nice to be able to not have to flip back and forth. That's not always possible because you have to open up Chrome Dev Tools, or you have a terminal open. So you flip back and forth. But I tried to minimize that flipping around. If I can,
+
+67
+00:52:10,290 --> 00:53:06,270
+Scott Tolinski: yeah, I should do that. I don't focus on that right now. Keeping both things open, I should definitely at least try to do that. And sometimes that I think they would make a little bit of improvement, I think I think makes for a good recording is a short recording, I try not to get over 12 or so minutes. Usually, you can also too short to me is a little bit of a bummer. If it's like three minutes, it doesn't necessarily feel like you've covered everything, I like to keep it in between six and 12, somewhere like that. Obviously, these are just like personal preferences. But again, another thing that makes a good recording is simply like finding the things that your audience is complaining about. Because if you're doing like things that are, you know, various things you're going to hear about it. If you're posting these publicly, people will leave comments. And I would invite you to not take those personally and to see how they can actually improve what you're doing rather than Yeah, being grumpy about it. One of
+
+68
+00:53:06,270 --> 00:54:01,890
+Wes Bos: the biggest complaints I got was in my Flexbox course. But I did this annoying, I liked whistling sound at the other friends. And the audio on that was a bit higher than my actual voice. And apparently it scared the pants off of a couple of people. And I'm working on a feature now where you can do like a Netflix, turn it on in your settings dashboard, and it'll just skip the intro. Well, my intros are now I try to keep them like four seconds or less. But even then people people send me nasty emails and other people love them. So I like having a bit of an intro and it gives you time to sort of context switch that this one is this one is now the last one's over. And now I'm moving into another one. You can read the title as to what it is but I don't do whistling music anymore because it's a bit dismissive.
+
+69
+00:54:01,920 --> 00:54:41,160
+Scott Tolinski: I had I had a series recorded. It was like a trailer for a series for my first React Native series that came out like early last year I think it was and I was like really I wrote the song for the the trailer and actually put effort into like making the trailer exciting. And then all of the comments were like what is that high pitch noise and I swear just most of my ears must be blown out. I went to a lot of concerts when I was younger, and I did not wear earplugs I swear my high end frequencies just must be totally shot so I like I don't know if I just didn't hear this and mixing and everyone let me know about it. It was apparently a abrasive sound.
+
+70
+00:54:42,210 --> 00:55:03,840
+Wes Bos: Yeah, be I think being open to that feedback. Sometimes it comes off wrong from people sometimes it comes off a little nasty. Because I think because I have so many followers people don't expect me to actually reply because I often get like a gnarly email and then I'll reply to and be like Oh, so sorry. About About that, and then they're like, Oh, I was in a bad mood. I'm so sorry. And
+
+71
+00:55:04,380 --> 00:55:14,670
+Scott Tolinski: some people double down on it, though. Yeah, you're like, well, I'm sorry. Like, how could I make this better? And they're just like, uh, you know, if you and your whole family go die, yeah.
+
+72
+00:55:15,600 --> 00:55:21,210
+Wes Bos: Okay, yeah, those people have other issues in their life. So I feel I feel poor for them or bad for them.
+
+73
+00:55:22,710 --> 00:55:27,690
+Scott Tolinski: Cool. So you, I think it might be time to hear from another one of our sponsors.
+
+74
+00:55:27,750 --> 00:56:29,670
+Wes Bos: Yeah. So let's talk about fresh books. Fresh books is a cloud accounting for your freelancing or small business empire that you're trying to build. And I absolutely love fresh books, because it is the one stop shop that I do for all my invoicing for all of my expenses for all of the different types of money that I need to receive and spend and put all my different receipts and take a photo in. So if you are a small business of any type, and I've gone through all my different examples throughout the last, like 10 episodes or so of how I use fresh books, but if you are a small business, and you need to get some sort of accounting software in place to manage all of your expenses and your invoices, and you can also do time tracking on it. Even though last episode, we talked about not billing hourly, hit up a freshbooks.com for slash syntax and use the code syntax into the How did you hear about us, you'll get your first 30 days of totally free. And thanks so much to Freshbooks for sponsoring.
+
+75
+00:56:29,670 --> 00:56:44,160
+Scott Tolinski: Thank you. Cool. So we talked a little bit about all of our equipment. What makes a bad recording what makes a good recording or flows all that sort of stuff? I think it might be time for some sick pics and shameless plugs.
+
+76
+00:56:44,640 --> 00:57:11,640
+Wes Bos: Sick pics. All right, I actually have a really good sick pic this this week. Me too. And we bought recently. He got a good one. I'm excited for it. So I just got a new car said goodbye to the super Forster. And when I had the Super Force, I had one of those, you know, these magnet phone mounts? Where? Have you seen these before? Where they it's like a magnet that goes into the vent? And then I give you Yes.
+
+77
+00:57:11,640 --> 00:57:13,170
+Unknown: Yeah, I guess I've seen that. Yeah,
+
+78
+00:57:13,260 --> 00:59:33,270
+Wes Bos: okay. Well, I've I've been like on the constant search for phone holders in the car that are decent. So I've tried the ones that stick on the window. I've tried ones that go into the like cigarette adapter, and they always fall down or they're always kind of awkward to get my phone in and out. So maybe about a year ago, I stumbled upon these magnet phone mounts where you can slide it into a vent. And then they give you this little piece of metal that you put either behind your case, or you just stick it to your phone and then you can just smack your phone on the actual the magnet and then it holds it and they worked okay, but ever you hit a big bump and it will fall off. Or if it's cold outside, your phone would start to cook in it I had a couple times it would shut down because the phone got too hot. So putting your phone in front of the event is not a good idea either. Now, I just found another one that is a CD holder phone mount, which is the same idea because like who uses CDs anymore? No one. So this thing it slides into your CD holder in my new car. It's exactly the right spot where I want it. And then it just has this massive super thick magnet on the end. And then you got this plate here. I'll show you on the video right now. It's like metal plate stuck to the back of my phone. And it's on a ball joint, meaning that you can tilt it whichever way you want. Because the problem with the vent ones is that it would just point whichever way the vent was pointing. So I'm super happy with it. The magnet is really good. It can angle the right way. And it's just like your phone won't fall off. When you when you hit a big bump. So it's called, I don't even know what it's called. These are all there's like 1000 of them on Amazon. They're all just rebranded stuff from China. So I wouldn't sweat it although I have bought some crappy ones because the magnets not great. So this one is called the Pumas and it slides right into your CD CD holder, you push a little button, you slide it into the CD holder and then you let go the button and it will sort of like put pressure against the top and the bottom of the CD player. So it'll hold it in place so cool. Very happy with that to finally find a phone mount that I'm I like sick.
+
+79
+00:59:33,270 --> 01:00:59,850
+Scott Tolinski: I have a gadget little gadget myself here. It's gonna be so I don't know if your house has this. We both have old houses. So it was very likely that you have closets that don't have any lights. Is that something that you have? Yes, yeah, none of our closets have any lights. And so that could get kind of tricky, right, obviously. So I found this really brilliant. It's called an oxy LED and it's a little strip that looks like a strip of LED lights, that's motion censored and has a magnet back end and like a magnet sticky. So you can sticky magnet, this little wand of LED lights into your closet. And it's motion censored, and it charges via USB. And so since it's motion sensor, it's not all the time the battery's gonna last forever. But I've had this experiences, or I just put it into my office closet where I keep all my gear. And I'm so used to being completely dark and having to turn on my phone flashlight, or one of my studio lamps in there or something to see, I walked it the other day, and the light turned on and illuminated the whole thing. And I was just like, yes, this is so good. It was 11 bucks. They make these things with different, like maybe different lengths to the LEDs for different spaces. But for $11 I have a wireless motion sensor light inside of a closet, and I'm going to start putting these everywhere. I'm just gonna go by Oh,
+
+80
+01:00:59,850 --> 01:01:00,480
+Wes Bos: man,
+
+81
+01:01:00,480 --> 01:01:11,610
+Scott Tolinski: it's so brilliant, that this little thing exists. Now, this is like the future to me. I can't believe this, this thing exists. And it's so nice. It works. So well.
+
+82
+01:01:12,230 --> 01:02:06,270
+Wes Bos: That's amazing. I mean that because we just in our we Our house is like super old. And one of the weird things that our house had was like a made staircase, which is like a back staircase that people like the maids would walk up. And then there's like a tiny little room that is supposed to be a bedroom. But it's so small that like that's where the maid would stay. And we turn that into like a walk in closet. And it's annoying because we hate having to turn the light light on and off because the light switches like kind of behind a bookcase or a shelf. So we put a motion detectors switch in there. And then all you did is just walk in and it turns on and then after five minutes, it turns out so I love those kinds of little things. So I'm going to check this out because I specifically have above my where I put my tools in the basement. It's always so dim and I can never find anything.
+
+83
+01:02:06,300 --> 01:02:29,160
+Scott Tolinski: Yeah, there's a lot of people use this for that. Or I saw people like putting them underneath their cabinets in their kitchen. Just there's it's pretty endless any place that you need lights that you don't want to wire up anything like that. I couldn't believe for $11 How, how good it worked. I was expecting Okay, well, that was I told coordinators like I'm gonna buy one. And if it works, well, we're gonna buy a ton of these.
+
+84
+01:02:29,910 --> 01:02:32,880
+Wes Bos: How long does the battery last? I haven't
+
+85
+01:02:32,880 --> 01:02:45,570
+Scott Tolinski: had a diet, since it charges by USB. But this is again, it's pretty low traffic. It's a closet. I don't even go in this closet every day. So we're gonna find out on that one. But so far, I have not had to charge it. It's been a couple weeks here.
+
+86
+01:02:46,730 --> 01:03:00,180
+Wes Bos: That's pretty nifty. I think I think what you could also do is just get like an external power bank. Yeah. And then plug that in to charge it. Yeah. And then they're headed somewhere. Yeah, and put it back and then just kind of move them around the house whenever you need to.
+
+87
+01:03:00,330 --> 01:03:14,400
+Scott Tolinski: Yeah, and that's the best part is that the the mounting thing is all a magnet. So if you want to pull it off and use it like a wand you can do Oh, really? Yeah. So if you need to look in the box, specifically, you could pull it off there and use it like a wand. It's unbelievable. It's great.
+
+88
+01:03:15,660 --> 01:03:17,910
+Wes Bos: I'm gonna order some of these from my house. This looks great.
+
+89
+01:03:17,940 --> 01:04:18,660
+Scott Tolinski: Yeah, my order a couple more. Yeah, I will shamelessly plug my pro Gatsby course, which is proven to be very popular, people are saying a lot of great things about it. So I'm really excited with how it turned out. Basically, it's teaching you Gatsby, the static site generator that we talked about in our static site generators episode. And it basically teaches you how to build really, really fast performance websites that are statically generated using react. And we go through all sorts of stuff from, you know, hosting to do redeploying to even page transitions with the web animations API. And it just all sorts of good stuff. And on top of that, I'm releasing some free additional videos, I just released a free video on YouTube on Friday about how to use the contact form feature in Netlify. So there will be additional free content added on to the end of that series as well. So if you want to learn Gatsby and get up and running, head to level up tutorials, comm forward slash store and check out pro Gatsby
+
+90
+01:04:19,770 --> 01:05:38,480
+Wes Bos: wicked, I am going to plug my JavaScript 30 course which just cracked 150,000 people who've taken it, which blows my mind. That seems like a lot of people. And I think I hit a bit of a nerve with the course and people are really enjoying it. So if you are in the spot where you feel like I need more practice with JavaScript, but all the stuff that I'm trying to learn is like different frameworks and bundlers. And what's what is my thing on here I have like, I think no frameworks, no compilers, no libraries, no boilerplate. So if you want to get good at just JavaScript, No jQuery, no react, no Babel, no Webpack, none of that you just want to get good at the language itself. All well having fun while doing it, because a lot of those vanilla JavaScript stuff is like looping and console logging. And that's very boring. So in this, we build 30 different things, a one per day, everything from using Canvas to using the microphone, we do like a speech detection one, we do Ajax calls, we have some ones in there called array cardio, which people seem to really like, which is just getting good at MAP Reduce and filter, which is so important. 98% of JavaScript. Yeah,
+
+91
+01:05:38,520 --> 01:05:48,150
+Scott Tolinski: like, seriously, once I once I like, learn those, I was just like, oh, man, everything I would have done before is, you know, totally out the window.
+
+92
+01:05:48,150 --> 01:05:54,330
+Wes Bos: If you ever find yourself creating a variable and then doing some sort of for loop, like how When's the last time you wrote a for
+
+93
+01:05:54,330 --> 01:05:56,070
+Scott Tolinski: loop? I can't tell you,
+
+94
+01:05:56,480 --> 01:06:44,100
+Wes Bos: I can't tell you writing a for loop, you're probably doing something not necessarily wrong, because there's nothing wrong with it. But there's probably a cleaner solution using MapReduce or filter. It's amazing, big fan of MapReduce filter. So so check it out. It's at JavaScript thirty.com. And poster, a lot of people have posts kind of like what they make every single day, the kind of the fun thing about it is that people will will do the exercises in them. And then they'll do that, oh, I wonder if I could add x, y or z or I wonder if I could build something that is similar to this that is sort of built upon it. And that's really where you want to be for programming because you're inspired by whatever it is. So JavaScript thirty.com. That's my shameless plug sick. Cool. All right. Well, that is it for this week. Hopefully you enjoyed it. And
+
+95
+01:06:44,730 --> 01:07:01,050
+Scott Tolinski: yeah, we'll see you later. Yeah, you can now become a pro pro screen caster. These piece, head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

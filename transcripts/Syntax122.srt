@@ -1,0 +1,352 @@
+1
+00:00:01,319 --> 00:00:04,590
+Unknown: You're listening to syntax, the podcast with the tastiest web
+
+2
+00:00:04,590 --> 00:00:06,120
+development treats out there,
+
+3
+00:00:06,149 --> 00:00:09,000
+strap yourself in and get ready to live ski
+
+4
+00:00:09,000 --> 00:00:10,530
+and West boss.
+
+5
+00:00:10,589 --> 00:00:43,979
+Wes Bos: Welcome to syntax. This is the tastiest web development podcasts out there. My name is Wes Bos, I am a full stack a JavaScript developer and I make my own web development courses that are going to teach you how to build thing I know a lot of you know that. But it's funny talking to people over the last little while sometimes I talk to people about the podcast, and they don't even know that what our businesses are or what we do. And I think it's because we wait till the very end. Sometimes people don't necessarily hear that. So I create web development courses on JavaScript primarily. And as a Scott, do you want to tell us about yourself?
+
+6
+00:00:44,009 --> 00:01:14,400
+Scott Tolinski: Oh, yeah. My name is Scott Tolinksi. I'm a web developer out of Denver, Colorado, I run level up tutorials, comm which is also web development tutorials on a subscription based service. And yeah, that's pretty much what I do. I am primarily known as the level up tutorials guy, I think, more so than people even recognize my name. So like, oh, I've watched your YouTube videos for many years now. So yeah, that's what I do. And there's also I have thousands of videos for free on YouTube. So check those out, too.
+
+7
+00:01:14,549 --> 00:01:27,840
+Wes Bos: The other day, I was searching on how to do something in sketch. And your video came up from like, five years ago, I think, yeah, yeah. Still, like still a resource for learning how to do specific things in sketch, I thought that was really funny.
+
+8
+00:01:27,869 --> 00:01:40,470
+Scott Tolinski: I know, I had a friend from high school, email me and he's like, Hey, I haven't talked to you since high school. But my boss just sent me this video to watch. And it was you. It was really, really, I was really surprised by that. So that I thought that was nice.
+
+9
+00:01:41,129 --> 00:02:47,400
+Wes Bos: I get that a lot with people who I knew in high school that generally like oh, my significant other was watching your video. And I was like, Hey, I went to school with that guy or something like that. It's a small world. It is it is a very small world. So today, we're talking about how we manage our lives. These are the systems and the tools that we use for managing all that is going on in our life. So we've done an episode previously, that was fairly popular on productivity. But this one's going to be more of just an approach for like the systems. How do we approach taking notes, focusing on stuff, managing to dues, scheduling stuff, goal tracking, and whatnot. So it's going to be both like high level ideas as well as actual tools that we use. We are sponsored today by two awesome companies. First one is Sentry, it's going to do all of your error and exception tracking on your server side on your client side. Any side that you have, it will log all of the errors, and Freshbooks which is cloud accounting for small businesses, freelancers, anyone who's trying to collect some money. So how are you doing today? Scott? Doing good,
+
+10
+00:02:47,460 --> 00:04:05,009
+Scott Tolinski: just went to physical therapy this morning before recording the episode. And they've been doing this sort of dry needling. I don't know if you know about dry needling. Yes, I didn't know very much about it. But apparently, so to give you some background, those of you know, I injured my tailbone quite severely and it's been taking a long time to heal most specifically because the muscles around it are all just messed up. So I've been I've been sitting on one one leg, essentially to try to relieve some of the pain and all that did was make all of the muscles in my hips just totally jacked up on both sides. So she was doing some dry needling on my my one hip muscle. And it's like so that when you for those of you don't know, they basically stick a little needle in there and it's hooked up to electrical current, that current like really releases the muscle. But as they're doing it, it's sort of like makes the muscle pulse. And she stuck it into this one particularly sore muscle on my leg and my leg jumped nearly off the table. It's like she had she had like one out of 10 and my leg nearly like flew off and like kicked a whole bunch of stuff. It was bad. I think she was like, Whoa, I didn't even turn this thing on and that just like freaked out. So needless to say I got some issues there and I feel really good right now though. I'll tell you that I'm up. I'm definitely feeling a lot better. How are you doing?
+
+11
+00:04:05,250 --> 00:04:42,260
+Wes Bos: Awesome. Good. I had my birthday yesterday, which we record these a couple weeks in advance so it's well past now but just enjoyed my 31st birthday and made some pizza and went up for doughnuts with my kids. So it's pretty loose. Also on with this new newish holiday in Ontario called Family Day, which is just like because it gets so depressingly terrible here in the middle of February. It's just cold and rainy and freezing and snow. I think they threw us a bit of a bone and gave us a family day which was also so almost always my birthday lands on a holiday which is kind of fun.
+
+12
+00:04:42,540 --> 00:04:48,870
+Scott Tolinski: Yeah, that's nice. My birthday always falls over spring break in college. So I was got to go on spring break for my birthday. I
+
+13
+00:04:48,870 --> 00:04:51,360
+Unknown: always really like though. That's pretty sweet. Yeah.
+
+14
+00:04:51,600 --> 00:04:54,990
+Scott Tolinski: Oh, yeah. That's always good to have a nice little day off on your birthday.
+
+15
+00:04:55,200 --> 00:04:59,850
+Wes Bos: No kidding. So let's, let's jump into it. First one is to dues
+
+16
+00:05:00,000 --> 00:05:00,480
+Scott Tolinski: Yes
+
+17
+00:05:00,510 --> 00:05:06,870
+Wes Bos: to dues managing all of us. How do you how do you do handle your two dues? And what why do you use it to do system? Yeah, so
+
+18
+00:05:06,870 --> 00:07:18,690
+Scott Tolinski: I mean, I largely picked up my to do system from the Getting Things Done philosophy, there's a book getting things done that we talked about on the show a couple times. And check that book out, we'll try to link to it in the show notes, I keep a pretty intricate to do system and I, I require it essentially, for a productive day. If I don't have a productive day, I'm going to tell you, it's 99% of the time because I did not set up my two dues when I first either did it the night before or the morning up. So usually the night before, if I'm feeling really like really zoned in on what I'm going to be doing tomorrow, I'll do my two dues. Or I'll do it the morning of and I use an application called to do list. And what I do is I basically track out all of my to dues to do list is great because it has this whole seven day view the next seven days or whatever, and it has a whole scheduling where you can schedule overdue to dues and move them around really nice and easily. You can assign projects and tagging things. My favorite thing about to do list is that you can assign priorities to to dues, which I think is just absolutely essential to having a good to do system. And so I also follow this sort of Eat That Frog methodology where you you have a frog, which is your sort of main task, and then you do that main task first in the day. So when I set up my two dues I'll have my to do list for today at the very first thing I'll do is check to make sure there's no overdue to dues from the day before, if there's overdue to dues, I reschedule them. No ifs, ands, or buts, nothing stays overdue, I reschedule them, I don't have to reschedule them for today, it can reschedule them for a time when I know I'm going to get them done. Then I go ahead and I just start adding to dues into my day, even if there's small little tiny things, right, walk the dogs, whatever, just little tiny things, I put everything in there. So I see everything I have to accomplish today. And then I start assigning it priorities. And the cool thing about to do list is it ranks your to dues from one to four in priority. So your highest priority things are read and they're at the top. And I can just start there, just crank down the list, get as many done as I can reschedule, the ones that didn't get done for tomorrow mine to do system, I think is like the workhorse behind me staying productive, especially the fact that I am my own boss and I work from home.
+
+19
+00:07:19,020 --> 00:09:50,299
+Wes Bos: Yeah, so I use fairly similar to getting things done. I don't do the like dates all that much unless I have quite a bit going on. But generally, I use the app called things. It's a pretty popular one out there. And I use the projects, I use the inbox the today and the projects quite a bit. And generally the way that it works is I go into the inbox and the inbox is where I just dumped everything that I have on my mind. And I've said this many times before, but it's out of your head into your system. That's that's as important as you can remember it is that if you have something going on and you say, oh remind me to do this, or I should remember me to do this. Don't make an alarm for it, don't take a screenshot of it don't like people have all these crazy systems for it just for what I do is I just dump it into the inbox. And I know that it's somewhere. And then from from there on out, what I'll do is every day is first thing to do. So open up things and I drag things out of the inbox into what I think I can get done today. And then I'll type anything else that I remember. And generally I'll put like email on there or, or like I'm just looking at it right now over the weekend, I saw I thought of a couple good demos that I'd like to do for one of my upcoming courses. So I just dumped them right into there. And then what I do is I sort of bubble them up and down in the order at which I need to do them, I put the ones that I'm dreading generally first, except for email, I don't like to email very first thing, but I'll put the things that either that I'm dreading doing or that I'm really excited about. So for I had that one of those demos I was thinking about all weekend for did I immediately because I was really excited about it. And then I just kind of worked my way through the to do list when it gets into like projects. So often before a launch of a course, what I'll do is I'll create a project for that sidebar. And then I'll just dump all of the hundreds of little things that I meant to do for this. So whether it's fixing a little bit of CSS, or whether it's checking it on a specific phone size, I know that I have them all in there. And a lot of people will use like GitHub issues or like some other tracking software for that. And those are good. I do use GitHub issues quite a bit for my projects. But just for these like tiny little things where I just want to bang, bang, bang, go through them all. I'll just dump them all into there. So big fan of that when I do have a lot on my plate, I will assign dates to them, or if they when they have a hard date of when it needs to be done. Like if I have to submit a specific document to the government. I'll put a date on that just so that I know that it won't go but I would say for 98% of my stuff. I do not put any sort of specific time dates it just just put them in order and I try to get as much as I can done in a single day. Nice.
+
+20
+00:09:50,399 --> 00:10:54,690
+Scott Tolinski: Yeah, I do have my nitesh two days but not times, specifically. Just mostly so I can have. You know, here's the docket for today. Right. Yeah, but that actually the You said something that I thought was really interesting. That made me think of something that I often do, especially when I'm working with other people, or maybe like freelance projects. And I don't know how many times you've ever gotten an email from a client that's maybe like a list of notes, maybe like 10 things, if I ever get an email like that, of like, here's the things that need to get fixed, ie mediately, copy every single one of those and throw them out to do list software. Because in an email, it's so easy to lose track of the individual items, or maybe even miss one. But when you have it all, you can drag it all in your to do list. And then if your to do list is like the source of truth for what you need to do, then you're going to have a more realistic view of what kind of time everything's going to take. So I really love using my to do list as a way to sort of run my entire life. And even though I've built in other systems now like what we'll get into with notion, I still I highly value, a really excellent to do system. Yeah, I
+
+21
+00:10:54,690 --> 00:11:53,940
+Wes Bos: think if you're gonna spend any time on your productivity, it's worth investing a little bit into first reading that getting things done book, it's pretty easy to read, I think it can get a little bit hairy here and there. But it just push yourself through it, it will definitely help you and the ideas of that book, keep coming back to me. Initially, when I read it, I tried to use like OmniFocus, which is this, like the hardcore GTD app. And I found myself like spending more time in OmniFocus, trying to figure out how it works. and spending time on my system. I was like, This is not helping me at all, because it's just making me feel productive by spending time in the application. Yeah, whereas I make this thing needs to help me do my actual job better not get in my way. So that's why I moved over to, to things or to do list or whatever, I probably wouldn't recommend things, just because it's it's Mac and iOS only. So if I were to ever switch to something else, I would probably be pretty frustrated that it doesn't. Whereas I know Scott uses to do us right.
+
+22
+00:11:54,210 --> 00:15:33,870
+Scott Tolinski: Yeah to do is is great, because the the desktop app is great. The mobile app is great, the web app is great. And even for those of you who use Android, we have these things called widgets, which are basically like software on the homescreen that you can interact with. And like the widget for to do list is excellent, because I can access my my to do list right from the home screen without having to get into the app. So I'm a big, big fan of to do list. Overall, I do pay for the premium, but it's really not required. It's a free application for the most part. So big, big fan of that. And yeah, so I actually get this question a lot about what we use to focus. Because I think that's like a very common thing, people really, really feel like they have a hard time not drifting, right. And so I use two applications to help me not drift. And I'm not to be honest, I don't have the self control, these applications help you build the self control. But out of the box, I do not have the self control to not open up, you know, Reddit or Twitter or whatever, when I'm trying to get work done. It just it's like almost like muscle memory, your hands just want to go to do that when your your mind's drifting a little bit. So I use two applications. One's focus for Mac, it's called hate, I think it's a hate focus.com focus, a focus calm, and it's a, it's a great little app, it just runs in your little thing, you can set it up, there's a lot of options, you can set it to be pomodoro style, gives you nice little quotes to shame you into getting back to work. And it keeps a little timer there, you can have a hardcore mode in which you are allowed to turn it off, which to be honest, I think is the best way to use this application. Because even there's just been times where you're like, Alright, well, I should, you know, I've already used up my brakes the day but I just want to take it just a little bit here. And then you you quit the application. Next thing you know, you've wasted a bunch of time. So I use a focus with hardcore mode. And then for my phone, which is also pretty important besides just keeping my phone face down on my desk, instead of face up, I use the in the latest version of Android, there's this digital well being or Yeah, digital well being is in the settings. And it allows you to set time limits for apps. So I've set time limits for all of the apps that I know I spend a lot of time in. And that way, I can only spend 30 minutes on Instagram the entire day. So I know that each time I open Instagram, it needs to be a high value open, like I'm using it for its intended purposes. And I'm not just mindlessly scrolling. Otherwise, I'm just going to mindlessly scroll and my timer is going to run out and it's going to kick me out of the app for the rest of the day. So it's really like changed how I use my phone setting up these digital well beings. I was reading somebody talk about these digital well being settings and saying, after setting them up, they found themselves going to the weather app, just reloading the weather app because they were just so tuned into needing that refresh of fresh data. And I did the same thing I was I ended up going into the Google news app. And I started refreshing the Google news app. And the next thing I know I'm like, Okay, I need to set a limit on the Google news app because I'm spending way too much time Another cool thing that this digital well being app does, or it's on an app, it's just built in Android. Another cool thing that it does is it D saturates your screen at a certain time at night, so you don't feel like you want to use your phone at night, which has been really nice for me, you know, you just set it and your your phone screen turns to gray and all sudden, you're like, Okay, I have less, I don't know, this want to be scrolling around in black and white than I did when it was all in color. So setting up these systems, I think is really essential, because I don't have the self control myself. So making the robot have the self control for me is a big, big plus, for me.
+
+23
+00:15:33,870 --> 00:18:20,300
+Wes Bos: Awesome, I have that focus app, but I honestly don't use it all that much. I do definitely have a problem with being unfocused. And like finding myself like you go to the URL bar, and you type in YouTube calm, and you watch something, close it and as soon as you close it, you open up a new tab and you type YouTube and you're like, what am I doing, I'm possessed. Yep, I am possessed by this thing. And those things definitely help. But I find that they often get in the way like so the other big one for me was going to Twitter, I found myself being like, I actually do need to go on Twitter to like, tweet something or like, at the end of the day, it is part of my job. But I also do dick around on Twitter a lot. So there's like this, like, weird balance that needs to be found. So a little tips I found is first I rename applications that I find myself going to a lot. So a Tweet Deck is the big one for me as I'll just go into my applications folder, and rename it and then that sort of mindless opening of the application doesn't happen because you start typing in Tw, Tw E, and it's not there. And then I'll rename it to something like get back to work or focus please, or, or whatever. And then when I need to open it, I have to intentionally type the thing that I had renamed it to, which is really, really helpful, because I don't just like and also if I go into the Applications folder, it moves it in the application folder based on where it is in the alphabet. Yeah, I found that like, just to be a stupid, simple, handy little hack. The other hack that I've not, I don't know if you'll call this a hack. It's not BuzzFeed, but dive into like, Why do I feel this way? Why am I procrastinating right now, in generally, when I'm doing these things, it's because I'm trying to avoid doing some actual work or I'm not happy with the type of work that I'm doing, or, or whatever it is. And I just had to like, stop myself and say like, Why do I feel this way? Why do I keep trying to distract myself. And usually, it's because there's like 30 emails that can be done in, I don't know, 15 minutes or half an hour. And once those are done, I start feeling entirely different way. So we talked about eating that frog doing those hard things first, just getting those done, and then all sudden I say, oh, wow, I have about four hours left today. And now I can work on whatever I want. Instead of being like, oh my god like good hours worth of melter apply to you right now. And I don't feel like doing that right now. So I'm just gonna watch some guy care some salami on Yeah, or something. So I think just, I like those those focus apps, and I like turning them on every now and then. But I don't find that they actually solve the root issue. So I've been trying to focus on like, what is it that is causing me to not enjoy this and to look away from the work that I should be doing?
+
+24
+00:18:20,400 --> 00:18:32,520
+Scott Tolinski: Yeah, for me, the apps what they do is they remove that compulsion aspect. Because yes, you have that notice that compulsion that you're just opening to refresh the weather, then you're like, Ah, I'm a fiend. A
+
+25
+00:18:33,510 --> 00:18:34,170
+Wes Bos: cycle.
+
+26
+00:18:34,230 --> 00:21:15,720
+Scott Tolinski: Yeah, right, exactly. One of the one of the things that I learned from this is actually this goes all the way back to high school, or one of my best friends in high school, he's there. He's a really high achieving dude. He's a very, very smart guy. And the he, I've learned a lot from him in terms of just how to focus yourself in general. But one of the things he told me is that even in high school, when he was wanting to study or whatever, he wrote this sticky note, and he put it on his desk. And it just says, There's stuff that you do not, we didn't use stuff, but there's stuff that you don't want to do right now. And then it just had big letters and meat that do it. And I usually like, I have a little note for myself on my phone screen that says that. And then I have occasionally in my to do list to do that will simply just say, Are you making progress towards your goals? Like are the things that you're focusing on today? are they helping you make progress to where you want to be? And just having that simple little reminder in the to dues or just something visible somewhere where you're going to see it, which is letting you know, like, Hey, you know, these things, they're going to progress you and even if they are hard, doing them is important. So having that that awareness is just a really super important. And it's funny because I think even in web development, simply the awareness of things such as the awareness of bugs can make such a huge difference. And one of our sponsors today is century and West had a little note here is this is the to do list from bugs, which I actually love to that would have been an excellent segue as well. So yes, essentially@sentry.io is one of our favorite sponsors here. All of our sponsors are our favorite sponsors. But Sentry has been a longtime sponsor. And it's a product that both Western I use. And I use this in production, I use this all over the place, it allows you to track your bugs. And again, we're talking about to dues and focusing, this allows you to not only focus on the bugs that you're you have there, eliminate them, maybe mark them as complete so that you can then see if it's a regression if it bug happens again. But again, it is it's like a giant To Do List of bugs. If I ever need something to work on, I can go in there and I can create GitHub issues directly from the bugs that are coming up on my website. So check out century@century.io It's a great place to get visibility into your application to get yourself focused on what you need to do and present yourself with a big old to do list of all of the stuff that you messed up in your code. So we're big fans, head on over a century.io use the coupon code, tasty treat, and you'll get two months for free, which is more than enough time to really see the benefit of using something like Sentry. So check it out Sentry datavideo coupon code at tasty treat all one word all lowercase.
+
+27
+00:21:16,380 --> 00:21:20,010
+Wes Bos: It's more than enough time to figure out how terrible of a developer you are.
+
+28
+00:21:20,090 --> 00:21:26,040
+Unknown: Right? Yeah, we all we all get bugs, it happens as part of the gig, part of the gig.
+
+29
+00:21:26,040 --> 00:21:26,880
+Wes Bos: Awesome.
+
+30
+00:21:26,880 --> 00:22:15,330
+Scott Tolinski: So let's talk about a little bit about how we track our ideas, thoughts and notes. And this is something I'm big on I have, you know, for some reason, and I think this is fairly common, but for some reason, I get in the shower, and all of a sudden, I have clarity beyond belief, I see exactly what I need to do I have all of the answers for my business, I have all of the answers for the code bugs, I have all of the answers, period, I don't know what it is. And I just want to go ahead. And like the moment I get out of the shower, the first thing I do is just enter all of these ideas. So I'm really big into this space of well, what is the most appropriate way of tracking, adding and keeping track of ideas that could potentially save you a bunch of time later or give you some sort of clarity. So what kind of systems do you use for this because I'm always interested in in how I run my ideas, notes and thoughts.
+
+31
+00:22:15,540 --> 00:24:58,200
+Wes Bos: I love writing down notes and thoughts. And I try to get everything out of my head again into some sort of note. Over the years I've gone through lots of different note taking applications. I'm generally when I'm out and about and I have a quick idea, I will just throw it into my to do application, that's generally because it's on my phone also syncs with my desktop, it's I know that there's like an apple notes that will do that. But I've got Apple notes on my like, on my phone that are like pizza toppings and like phone numbers and like measurements of all the doors in our houses. And like, I found that it's not a great way to log all that information. So if I just have something quick, I'll just throw it into to do and but how I take most of my notes and how I have been for probably for six or seven years now is I just great markdown files in the project folders of what I'm working on. So whenever I'm have some ideas for a course that I'm working on, I'll open up that markdown file, it goes into GitHub, which is nice, because I can see what it used to be. And when I delete things, it's pretty slick. And it's pretty smooth process. The one thing I don't like about that is that generally it doesn't work on my phone like I could like Dropbox them and open them on my phone or I'm sure there's some apps, if you have an application that lets you still use just a regular markdown file, but sinking them to your phone. I think that would be kind of cool to hear as well. But But I still want to keep the file in each of the project folders. So that's not really a huge issue for me, because I'm almost always just taking notes directly on my computer. I had used Evernote in a long time as sort of like a digital locker of things that I need to remember. So I've got all of my like shirt and pant sizes like whenever I like buy something that I like everything from like just the size of underwear to the jeans to that the the cut of the jeans that I like, I used to throw that into Evernote, I don't like that anymore, because like last night, I was making pizza and I went into my Evernote to get my pizza dough recipe. I put all my recipes in there. And like it was like you have to unsink it or pay for our premium account. And I was like God dammit, like, it only lets you have like two devices. And then I thought like how much of a pain is this, that I've trusted them with all of my data. And now I have to like figure out one of my devices to unsink just to get access to it. So that's like one little issue that I had, I have recently switched to using notion, which I know is still a paid product out there as well. But I've been really enjoying that for both we run our entire syntax we'll have an episode on on how we use notion because it's pretty we're pretty impressed with with our setup for for syntax with sponsors and calendars and things like that. But I've just been using notion as like a nice like note taking application as well. The UI is really slick. And it's been a big fan of that. Yeah,
+
+32
+00:24:58,230 --> 00:27:16,290
+Scott Tolinski: you know what I really love about notion is that Have all my workspaces. And they're really easy to toggle between my workspaces. So we have the syntax workspace, which has all of our, um, we'll get into a little bit more about how we're using notion, especially first syntax, but it has our episodes, it has our calendar, it has our sponsors, that sort of thing. But I can pop over from syntax, I can pop right over to the level of tutorials, one, level up tutorials, when I have release calendars, I have my series plans, I have my outlines, I have all of my business information contractors, and all sorts of stuff like that. And then I can pop over really quickly to my personal one, which is where I have several different things. So for one, I'll put like questions like if I had one of the cool things about notion is that they allow you to have different types of different types of like text. For instance, it's really easy to do a toggle list, like an accordion, where you can have an accordion type, you click it, and you get the answer. So what I'll do is I'll put a bunch of questions I have in a toggle list. And then when I get the answer, I'll just put the answer in the accordion part of the answer. That way, I end up having a big old, essentially FAQ for myself, whenever I want to come back and look at some of these things. And a lot of it will just be like a general questions, I have questions for our mortgage guy, right, we're refinancing our mortgage, here's a bunch of questions I have for him, then I can go in and put all the questions in and then get all the answers. I also have like a thoughts one, where it's just simply just a collection of quick thoughts. And some of them are really dumb. Some of them are things that are worth getting worth going back to. And other ones are maybe not worth going back to. But they they're and then they're they're sort of loaded in there. And it's nice and easy quick to access for a little while I was throwing all of my quick thoughts and to do list, because I wanted to do is to do everything. And then it just like my inbox for two dues was filled up with thoughts and ideas. And I'm just like, yeah, this is not the proper use of this tool. So sometimes I think in these systems that we get into, we end up liking a system or a tool a lot. And then we end up mending that tool to use it. And yeah, or maybe not necessarily the best ways to use it. So think notion has really changed my mind in terms of like, what should be going where. And it definitely really improved my system for keeping notes or things in general or just organizing my life. I'm just like, pretty psyched about notion overall.
+
+33
+00:27:16,440 --> 00:28:49,530
+Wes Bos: Yeah, big fan of notion. We'll talk a little bit about some of the fun things that we do in just a sec. Next up, we have calendar and scheduling. I'm a big fan of not having meetings. So my calendar is actually pretty, pretty open. I do put all of my flights into my calendar, I just use a regular Google Calendar, I share it with my wife, which is great, because my wife is always asking, when do you do this? When do you fly here? What time is this thing, we only have one car. So if she knows that I have like a haircut or something. She'll check my calendar before we do it. So I'm a big fan of sharing that kind of thing as well. But I pretty much just use my calendar for meetings. I really like Google Calendar, because it will automatically add in hotel reservations, it'll automatically add in flights with your your confirmation codes into it. So it'll like just extract all of that stuff out of your Gmail automatically and immediately put it into your Google Calendar. I do use the my one little trick with Google calendar is instead of using the month view, I use the four week view UI, which I think Basecamp initially showed this at once because if you're at like the end of a month, it just shows you like the rest of the month before like the month before it which is unnecessary because that time has passed. So what a four week will do is it will just show you the first week is the the current week that you're on. And then we'll show you the three following weeks regardless of if that spills out into future months. So that was a huge tip that I had. And I've told a couple people that so far and people are how do
+
+34
+00:28:49,530 --> 00:28:50,580
+Scott Tolinski: you get to that view?
+
+35
+00:28:51,390 --> 00:29:05,430
+Wes Bos: And when you're viewing your calendar in the top right hand corner, there's a drop down that will say like day, week, month? Yeah, you could just click on weeks, I think you can just press the shortcode D will give you day x will give you the four week view.
+
+36
+00:29:05,880 --> 00:29:07,650
+Scott Tolinski: x x will Oh,
+
+37
+00:29:07,860 --> 00:29:09,210
+Wes Bos: just hit hit X key.
+
+38
+00:29:09,420 --> 00:29:11,640
+Scott Tolinski: x gives me five days. Oh,
+
+39
+00:29:11,640 --> 00:29:15,750
+Unknown: maybe you don't have I don't have the four.
+
+40
+00:29:15,960 --> 00:29:21,450
+Scott Tolinski: Really? Yeah, I see days, week, month, year, and then five days. Oh, I
+
+41
+00:29:21,450 --> 00:29:31,650
+Wes Bos: see day, week, month year schedule for weeks. Maybe I've put that into my settings somewhere. So go to your settings, click the cog icon. Yes. and scroll down to view options.
+
+42
+00:29:31,650 --> 00:29:32,220
+Scott Tolinski: Mm hmm.
+
+43
+00:29:32,220 --> 00:29:34,350
+Wes Bos: Do you see set custom view
+
+44
+00:29:34,380 --> 00:29:38,970
+Scott Tolinski: set custom view or under leaks? setting that right now?
+
+45
+00:29:39,240 --> 00:29:42,690
+Unknown: And then go back and see if you have that option? I'm gonna have it for weeks.
+
+46
+00:29:42,690 --> 00:29:45,810
+Scott Tolinski: I got it. Wham. Bam, bam, bam, bam.
+
+47
+00:29:46,290 --> 00:29:55,380
+Wes Bos: Nice. So I'm glad that I could give you that one little tip because I'm not I have the calendar user. I do look at it every single morning. But that's that's pretty much it.
+
+48
+00:29:55,590 --> 00:31:01,800
+Scott Tolinski: Yeah, so I have long been a nun Calendar user. And I think it's been to my detriment for a long time. And so in the past, I don't know, I want to say like six months, I've started really relying on a calendar. And my wife and I have a shared calendar, anything that we both need to know about, and it's made my life a lot better. Just putting every little thing in that calendar, to me has like really changed things around, and I'm not a planner, I'm not a good planner, it doesn't come naturally for me. So for me to really keep my calendar as part of my daily things and sort of know what's happening and know what's coming up when and where has been a big deal for me. And I think it's really changed things in terms of, I don't put my two dues in here, I don't put micro items, I put appointments, you know, trips or meetings or anything like that in there. And, yeah, that's pretty much why I use Google calendar for everything, it syncs really nicely. It allows me to have shared accounts and things like that. So yeah, nothing really crazy. But simply using a calendar has really changed my life.
+
+49
+00:31:01,980 --> 00:31:44,490
+Wes Bos: You know, it's one thing is remember talking about smart home and how I want like a something on the wall in our kitchen, because my wife still has like an actual like, like a physical whiteboard calendar. And she's like, tries to scroll everything on there, and we can't like stuff for the next month. And I think it's silly, because like, why would you have a physical calendar, but it is nice to be able to take a glance and see where everything is. So I think like, it'd be really cool to have like some sort of like, kitchen, iPad or kitchen, Google Home mounted there. Or even like, I know, these are dumb, but like the fridge that has the the TV built into it. Yeah, yeah, I think that actually be kind of handy to be able to, like see the calendar at any given moment, just glance over at it quickly and see when all of your appointments are, yeah,
+
+50
+00:31:44,520 --> 00:32:29,130
+Scott Tolinski: I have a couple of Android tablets are not using, I wonder if I were to put some sort of like really lightweight version of Android on them, and just have it be mounted to the wall. Some power, it could be a cool little idea, the game the power might be in, that'd be super easy. That's an interesting idea. I think that is a space that we're gonna see a lot more of, I actually saw an ad on my Instagram feed last night for a device that was specifically like that, you know, a home automation center that was mounted on the wall. But of course, they wanted to use their whole their whole ecosystem. So it wasn't necessarily great. But it looked really nice. And it did make me sort of think about the possibilities of having that sort of that sort of Central, not necessarily a computer system, but central idea that that allows you to look at that schedule and everything. Yeah.
+
+51
+00:32:29,610 --> 00:32:49,320
+Wes Bos: Yeah, I think pretty soon we'll start seeing like a, like a light switch that you can swap out that will have because the light switch is generally at the height that you need it but it will also like allow you to pony off of that for USB power, and then you can plug something in, like right above it, or right below it or something like that. I think that would be pretty cool.
+
+52
+00:32:49,350 --> 00:32:50,970
+Scott Tolinski: It'd be pretty cool.
+
+53
+00:32:51,000 --> 00:32:57,780
+Wes Bos: I bet some even exists light switch with USB. It does. Oh, it does exist.
+
+54
+00:32:57,840 --> 00:32:58,710
+Unknown: But
+
+55
+00:32:58,770 --> 00:33:24,660
+Wes Bos: yeah, the thing about a light switches, there's always power there, right. So like I took one of our in our house, we never had a plug near the light switch. So I took the light switch and I switched it into a like a two for one. It's like a GFCI grounded light switch and or a GFCI grounded plug and a light switch in one man, I guess you can also just do that for USB. To be pretty cool. You
+
+56
+00:33:24,660 --> 00:34:37,590
+Scott Tolinski: don't have to send me this, I'm not finding it. So I'm gonna I'm gonna wanna yeah, check this out. Cool. So let's get into a ghost tracking and life progression. This is also something I do in a couple of ways. So I have a combination of notion and to do list for life progression, like, for instance, I'll keep like concepts and ideas in notion things that I want to keep there as like, these are your goals, these are what you're working towards. Like, this is sort of the company culture, this is the stuff you want to establish, right, this is how you want things to be. But then I also have milestones, right? Because we hit milestones, and I want to make sure that I'm tracking milestones or goals or big, big goals, right, let's say I want to release this many videos or, or, you know, do this or that I have these all in sort of big, big lists of just big ideas, stuff that I want to accomplish, essentially, with my business or my career. And I keep these to do list because it feels nice to check them off when I'm done. But I don't consult them a whole lot. It's sort of like I set them and I look at them. And I think okay, this would be really cool if I could get here and then it's more of like the sort of big ideas that I keep into notion. So it's a combination of notion and to do this I think between notion to do is to in Google Calendar, that's like my entire system.
+
+57
+00:34:37,710 --> 00:35:17,520
+Wes Bos: For me goal tracking, I do just use markdown as well. A generally will go into I've got like a folder of all of my new year's resolutions going back like four or five years, which is actually kind of fun because you can just go back and and look at where you failed terribly and where you came short and all these things. We have a whole episode on goal tracking as well. So you have for me, it's just marked down and I think the reason Why I like to use markdown so much is because not because it like exports HTML or something like that. But I feel most comfortable in a text editor. And my ideas flow the best when I'm in a text editor, and I find that I can can do that best when I'm just inside an empty markdown file and just start typing away.
+
+58
+00:35:17,900 --> 00:35:49,110
+Scott Tolinski: And I mean, if you ever want to move that to literally anything, you could start blog posts in markdown and actually have them be blog posts or anything like that, again, these some of these big goals we're tracking in life, a lot of this stuff is about, you know, bringing in money, right, I want to bring in money. And one of the ways that when you bring in money, you need to track it, you need to make sure that your invoices are correct, you didn't make sure that you're getting paid so that your goals financially as well as professionally come to fruition. So that's why we're excited to have one of our sponsors today be freshbooks.
+
+59
+00:35:49,170 --> 00:36:57,110
+Wes Bos: Yes. So when you are a small business, you're a freelancer, you're someone collecting money, it's worth not spending your time chasing around clients trying to get paid whether whether they just forgot to do that, whether you didn't know if they've paid or not all that stuff. What's super handy about fresh books is that you can log in at any time and see exactly who's paid, who's outstanding. When invoices are do any back and forth that you've had with the client. It just takes all of that like heavy lifting out of it. And I really, really like that, because there's no sense in spending more time on accounting and stuff when you should be spending time working on your actual business. So if you want to check out fresh books, go to freshbooks.com forward slash syntax, it's gonna get you a 30 day unrestricted free trial. And make sure you use the code syntax, and how did you hear about a section? Because that will let them know that you came from syntax. And I actually saw a couple tweets from people in the last couple of weeks saying like, hey, I've got my first freelance client, a lot of people have been asking for more freelancing content. So it's really cool to to see people who are using fresh books and actually running a business off of it. Yeah, thanks so much to fresh books for sponsoring.
+
+60
+00:36:57,380 --> 00:39:35,690
+Scott Tolinski: Super cool, cool. So one last thing, we want to talk a little bit about how we're using notion to keep track of stuff in syntax, because people ask us a lot about that. Like we talked about notion we're using it and some people open it up, and they're like, Okay, this is pretty cool. But like, what can you do, because notion is actually very, very powerful. And its core, you could think of it like a note taking app, right? You open it up, you have a document, blah, blah, blah. But one of the cool things that notion does is allows for referencing and hyperlinking of things. It allows for these really custom views like calendars or Kanban boards. And so one of the cool things we do is we have two Kanban boards. Is that how you say it combine? Is there another in there? Yeah. And so each of these we have one that's like a it's actually pretty cute because it allows you to have emojis as the icons. So we have a tasty EPS episode ideas, which has a little hamburger and then a hasty episode ideas, which has a little rocket ship next to it. And both of these combined boards have hopefuls selected and as our two sort of, like topic ideas, right. So we have in hopefuls a whole bunch of topics that are just one of us have added at any given point. And then when we're feeling like we're confident on an episode we really want to do we drag it into the selected column that makes it really easy at a glance to say okay, where are the episodes that we're looking to do? Now, the coolest part about motion is because these things are all just sort of documents that are linked together is that we could then drag an episode from our Kanban board to our calendar, which is it a total nother view, you just click and drag it right to that view, and then you can add it directly to the calendar before what we were doing is we had like several spreadsheets with ideas. And we had a Trello. And episode ideas were sort of duplicated all over the point you were doing a lot of copying and pasting, when you had an a specific episode, it was like it almost got lost after you did and sometimes we weren't moving them to complete it because you had to do it in three different places. Now it's been selected, it moves to our calendar, it's on the calendar. At a glance, our calendar has references to all of our sponsors. And because their references, you can click and all of our sponsors are their own page. So when you open an episode in the calendar, you can see this the sponsor, you can click on the sponsors name. And that quickly gives us access to all of the information we need about that sponsor, where the link is, what some of the things they want to say, and all that good stuff. And then we have all the stuff about our episodes in here. Not only that, but we can tag them what types of episodes they are. So at a glance we can see we've done this mini soft skills episodes, this many JavaScript episodes and notion. Super cool. Yeah,
+
+61
+00:39:35,820 --> 00:41:00,300
+Wes Bos: it's so cool. Because it's all relational data, we can look at our episodes in a table, we can look at it in a calendar view that will show us like the calendar of when everything is and then we can look at it add a table view and that will show us what all the episodes are by date and we can sort them by date most recent to least recent. We have like a column that I added in our episode calendar as well. Whether it's live or not, so that's just a quick little like, it's kind of like a spreadsheet where you can say, if today's date is greater than equal to the recording date that it was on the calendar, then show it as live otherwise, show it as not live. So it's kind of cool. Because you can just take this raw data and create these different views, and they all update each other off of each other. I think the other cool thing is that we can look at our calendar view and see who our sponsors are. But then we can also look at our sponsor view, and see when they are sponsoring, that's really cool, because we can take like fresh books, and it will just show us a list of all of the episodes that they have sponsored. We don't totally have that all tied up just yet. Because we still do maintain a separate spreadsheet of people who have bought feature episodes, I would like to move that into to notion as well, I just haven't thought about how you do it. So it's kind of cool. It's like kind of like lightweight programming. Although you don't have to write anything. It'll code relational data. Yeah,
+
+62
+00:41:00,360 --> 00:42:37,230
+Scott Tolinski: I think this is the really powering my life right now. There's just so many nice little things, and especially in level up tutorials, you know, I have a Kanban board of my series that I'm about to release, right. And then I can same thing potential series selected series in progress completed, I can click on one of my series, and then have a complete To Do List of each episode that I'm planning on doing that way I can plan and drag around, move my episodes, I can tag them, I can have a calendar associated with promotion for these things. And there were so many things in this. I was using GitHub issues for specifically like ideas. Like for instance, I have my own forum right now for Braintree. But I wanted to look to look into using the Braintree drop in UI form, just because it takes care of a lot of things for you that I'm doing myself right now. And if there's a bug in mind, it wouldn't be present in this drop in UI. So things like that I had an a GitHub issue, like consider using Braintree drop in UI. But that's not an issue. There's nothing actionable about that other than maybe doing some research and talking about it, it makes way more sense for it to be in sort of like a, here's some ideas of things I want to look into in notion and then that way, the team can look at that stuff. We can talk about it there. And it's not a GitHub issue. Now, GitHub has been totally freed up to here's actionable items. If there's a GitHub issue, it's something you can do in code right now, not something to think about or contemplate. So I think it's changed a lot of stuff for me, I would check it out. This is not this episode is not sponsored by notion by any means. It's just a really nice little nice little tool that I have, like totally transformed how I keep my stuff in life. So yeah, check it out.
+
+63
+00:42:37,500 --> 00:42:48,900
+Wes Bos: Yeah, another thing I would like to do is investigate whether it makes sense to also do to dues on inside of notion, because is this true that they do have their own to do lists as well,
+
+64
+00:42:48,920 --> 00:43:25,590
+Scott Tolinski: yeah, and I have explored it, and it doesn't have the things that I like, like to do list, when you check something off, it hides it from your to do, yeah, and notion when you check something off, it just crosses it out. So if you were to try to maintain a daily to do list, you'd have to be dragging things into an archive folder the whole time, which is an extra step, it doesn't do a lot of the stuff that to do is just does automatically. If the to do list aspect was as full featured as it isn't to do list, I would go all in on that. But I found myself like I tried it. And it did not really do all of this, the automated stuff that I like notion to do for me.
+
+65
+00:43:25,770 --> 00:44:09,900
+Wes Bos: Yeah, there's there's such a fine line in how flexible notion is, but it's also lightweight at the same time, right? It's not like a full blown, like, you can use it as a CRM, which is custom customer relationship management. But it's not going to do absolutely everything like that, like a custom Salesforce implementation going to be able to do and I think probably their growing pain will be in a year or so people are going to be like, Oh, can you do this? And I work this way, can you implement it this way, I always just think of the devs behind this thing, because they're making this very abstract relational view any way sort of type of data management system that needs to be flexible enough to work with other people, but still, like rigid enough that they can develop the thing, right?
+
+66
+00:44:09,900 --> 00:44:43,080
+Scott Tolinski: It's It's truly a really next level platform. It takes a lot of these things that we've used in other node platforms, and sort of blown it out. And as developers, I think this thing is sort of finely tuned for you to feel right at home because of the linking. Because of those sort of things without having to touch code, some of your markdown stuff will still work. So doing like two hashes will do an h2 rather than, you know, in some nice little system. So I'm a big fan. And and also, let's say this the depth of this thing. They keep pushing out updates non stop. There's there's been updates for like crazy amounts since I started using it. I did
+
+67
+00:44:43,080 --> 00:45:03,600
+Wes Bos: just notice that Google a couple days ago released the new API that you can use to automate Google Docs with JavaScript. And I wonder I haven't looked at it yet. But I wonder if this has something to do with these types of app like there's there's a notion different ones There's one called the other one like bear or something like
+
+68
+00:45:03,600 --> 00:45:04,920
+Scott Tolinski: that. There's one.
+
+69
+00:45:05,219 --> 00:45:09,330
+Wes Bos: Yeah, there's air table, which is more of like a CMS. There is
+
+70
+00:45:09,330 --> 00:45:14,010
+Scott Tolinski: one that we just heard about recently. Oh, it's gonna haunt me that I don't know what it is.
+
+71
+00:45:14,099 --> 00:45:36,150
+Wes Bos: But I'm curious to see what, like GitHub is rolling out these new actions. Google's now rolling out these actions. And I think it's really cool. Because you can just know a little bit of coding or you can think in terms of a developer, you just want to like relate items together. And you can just like automate your life away. Some I haven't checked it out yet. But I'm excited to see what it has in store.
+
+72
+00:45:36,389 --> 00:46:36,750
+Scott Tolinski: Yeah, cool. This is definitely a space to look for, I want to hear about what sort of systems that you are using, because everybody's got their own stuff. And again, I didn't hear about notion until I saw somebody tweet about it. And then I forget who but a lot of people use it. And a lot of people love it. And you might not have heard about it before this episode. So there's probably a whole ton of things out there that neither weather I have ever heard of. So I'm interested in hearing what you use to keep your life in order. Because as developers, we have a lot of stuff going on. We have a lot of deadlines, we have a lot of meetings, we have a lot of code that we got to keep a lot of issues that sort of stuff. So it's really important to keep all of your life in order. So I want to hear what you use to keep your life in order because that's a it's a topic that I am always looking to optimize my own life. Do you have any sick pics today Wes for those of you who are first time listeners listeners to syntax a sick pic is a pic of a product service or something podcast, whatever that we deem as being sick.
+
+73
+00:46:36,869 --> 00:48:50,460
+Wes Bos: Yes, I've got one and I picked up a new monitor I think in November, October November so I've I've had a couple months working with this thing and it was a bit of a risk. It's a 32 inch 4k display and this thing is huge. And I I've had the what the 28 inch Dell display for a long time and it was so good and I absolutely loved it. I just felt like there's like this like weird resolution where I wanted to crank the resolution up just a little bit higher, but I felt like things were just a little bit too small for me and I figured, okay, well if I get like a physically bigger monitor, I'll be able to hit that resolution and then everything will look good. So it's been I don't know three or four months of me using this 32 inch it's an LG 32 ud 59 if that means anything to you. I did try a Samsung 4k display. And the colors were off and it was just kind of blurry and I tried everything like it didn't like goof up the settings or do color profile like I went deep into it. And it at the end of the day, it just wasn't a good monitor. I returned it and I got this LG one. And it's not as good as the Dell one the the Dell ultrasharp ones are like 1500 bucks for the 32 inch version. And it's just too much. This one's like 400 bucks. And I'm going to say that a 32 inch 4k display is the developer monitor that you should get because it's so huge. You can have three panes of things open so you can have a browser you can have a code editor on two thirds of your monitor really easily or just two panes or two or three panes of code open at once. I just been loving this thing and a lot of people have been asking me like hey now that you're a couple months in Do you regret it at first I sat in front of this thing and I was like this is only gonna give me a tan. And I'm not gonna this this this is too big if you attend and I almost returned it right then and there because I thought like this is too big but now that I've gotten used to it, it doesn't hurt my neck or anything like that people have been saying that but I just think that it's it's probably the best monitor I've ever had and I still run the 4k 28 inch on its side which is a little bit big. I'm considering getting rid of that one just because I think that this is the only monitor you need. Especially if you've got a laptop open beside it you can throw your iTunes or Spotify on that.
+
+74
+00:48:50,579 --> 00:50:25,050
+Scott Tolinski: Yeah, I see I also have an LG and I really like my LG but I have the ultra wide and it's not 4k but it's very, very wide and very high resolution. And I really love it. I think LG makes a mean mean monitor. They make a really excellent monitor since you did your your sick pick as a LG monitor, I'll do my monitor as well. Because it's a different, it's a different experience than yours because yours is 4k, it's big. And all that stuff. Mine is very wide, ultra wide, you might say and it has a rounded screen it sort of curse around but it's really really really good for a lot of things that said again, it's a little bit different of an experience and and I don't use it as my main mommy I use that as my my supplemental monitor. But with my screen here, there's just so much room you could have a billion panes of code open. You could have a you know, your website, full view with the dev tools with your command line with everything. I mean, it's just so incredibly wide that you get access to a billion things I use a little tool. There's a billion of these I think mine's called Devi Devi is the the app allows you to place your windows wherever you want them. So I use something like that to align my stuff in different quadrants of my screen. I'm a big, big fan. So I'm, uh, LG has the worst name for all of their monitors, they need to like take a lesson from everything else and just give them normal names. So I don't know the name of my monitor in particular, I'll link it in the show notes. ultra wide LG monitor. People ask me a lot about it when they see it on Instagram. So again, if you're looking for a ultra wide version of this sort of thing, I highly recommend this one has been nothing but great for me. So
+
+75
+00:50:25,050 --> 00:50:29,760
+Wes Bos: that's my sick pick. Can you tell me what the what is the resolution that you run it at?
+
+76
+00:50:29,760 --> 00:50:30,450
+Scott Tolinski: Me, look,
+
+77
+00:50:30,450 --> 00:50:56,790
+Wes Bos: mine's running at 3008 by 1692. In getting over the 1400 pixel high Mark was why I didn't go with the ultra wide just because I needed the actual height. I found that when I was running it at 1400, I didn't have the height that I wanted. So by going this big, I did get the height that I wanted. Also, when I record my stuff, I don't record my whole screen as record a subset of the actual screen likewise. So
+
+78
+00:50:56,939 --> 00:51:14,820
+Scott Tolinski: yeah, I actually record on my main monitor and not my ultra wide. Okay. I know because I do that because I can just do the retina double Pixel THING. Yeah, it's automatically 4k. My ultra wide runs at 3440 by 1440. Ah, yeah. So
+
+79
+00:51:14,820 --> 00:51:22,680
+Wes Bos: yours is much wider for 400 pixels wider. But about 2200 last night. Yeah.
+
+80
+00:51:22,709 --> 00:51:45,720
+Scott Tolinski: So it's not exactly the most dense screen. But my God, the amount of stuff you can fit on here is great. And if you play any video games, it's awesome. Like I play like a driving game like a race like Forza for my computer. And yeah, the screen is just so wide that it feels like your peripheral vision is taken account because it's like sort of wrapped around you almost. It's awesome.
+
+81
+00:51:45,899 --> 00:52:08,430
+Wes Bos: That's sweet. I still do want to try one of those ultra wise I'm holding out for them to release a 4k Yeah, ultra wide, which they have right now. It's like $4,000 outrageous. Yeah, yeah. But like I'm probably in a year or two, we will have the 4k ultra wide. And at that point, I will probably make the switch. Because that that width is amazing. Having that much in the fact that it curves around you. I like it.
+
+82
+00:52:08,639 --> 00:53:20,160
+Scott Tolinski: I like it. Cool. So shameless plugs, I have a new course coming out on react hooks that came out at the end of when is this episode releasing here, this episode's releasing on the 27th. So this episode will be out on the 28th. So if you're listening to this, this is be out tomorrow. And it's called react hooks for everyone, it's going to be a nice, easy introduction to react hooks. If they sort of confused you or you don't understand why everyone's talking about them, then this is the course for you the React hooks course, on the love tutorials is pretty darn cool. What we do is we teach you all of the basics, all of the basic hooks, then we get into refactoring some code, we get into writing some really useful hooks, we get into some libraries that are already using hooks and how to integrate with those libraries. And really just the the why you should be excited about this improvement to react. So that's coming out on the 28th of February. And you can get that by level up tutorials.com forward slash Pro, sign up for a year and save 25% there's going to be 12 new series out this year, and some really exciting stuff coming down the line. So check it out, level up tutorials, comm forward slash pro
+
+83
+00:53:20,399 --> 00:54:02,880
+Wes Bos: awesome, I'm gonna pick my own courses at Wes bos.com forward slash courses, I did sort of announce on Twitter the other day that my next course is going to be a JavaScript fundamentals course. I've been working hard on that for a couple months already. And I just finished the design of what the website and all the all the demos are going to look like. And at that point, when you finish the design, I'm not done all of the recording or anything like that. So don't get too excited yet. But when I do finish the design, it starts to feel very real, because you have something to visualize for it. So I'm really excited about that. If you want to learn anything else react ESX node and graph qL go to West boss comm forward slash courses and I can hook you up.
+
+84
+00:54:02,999 --> 00:54:23,490
+Scott Tolinski: Yeah. All right, cool. Well, thank you so much for tuning in to this week's episode of syntax. We're gonna catch you on Monday with an episode about authentication. So that should be a lot of fun. And the next after that I think is going to be a potluck. So really fun episodes coming up. I'm excited. Love it, love it. Love it. Anything else? Anything.
+
+85
+00:54:23,490 --> 00:54:24,150
+Wes Bos: That's it.
+
+86
+00:54:24,150 --> 00:54:25,170
+Scott Tolinski: Cool. All right,
+
+87
+00:54:25,170 --> 00:54:27,300
+Unknown: catch you later or later, please
+
+88
+00:54:29,430 --> 00:54:39,180
+Scott Tolinski: head on over to syntax.fm for you full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

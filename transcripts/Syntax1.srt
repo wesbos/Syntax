@@ -1,0 +1,516 @@
+1
+00:00:01,800 --> 00:00:07,080
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:08,490 --> 00:00:18,660
+Wes Bos: Welcome, welcome to the first ever syntax.fm podcast. Thanks so much for tuning in. My name is Wes. And here we have Scott say, Hello, Scott.
+
+3
+00:00:18,660 --> 00:00:19,260
+Scott Tolinski: Hey,
+
+4
+00:00:19,260 --> 00:01:01,950
+Wes Bos: are we go. So this might be a little bit rough because it's our first podcast, which sort of trying to figure things out. But thanks so much for joining us. Today, we are going to be talking all about react tools, different pieces, different frameworks, different things that you can use with react, and we're sort of going to take a stab at explaining what they are, where they fit in what they do, why would you ever want to use one sort of just clarify, what's this space? And all the different things are? So Well, I don't know. Why don't we kick it off? Just saying hello, until we'll tell a little bit about ourselves for those who are new, and then we'll dive right in. So Scott, hello, hello. Hey, hey, hey, yeah, hey. So
+
+5
+00:01:01,950 --> 00:01:23,100
+Scott Tolinski: I'm Scott Tolinksi. I'm the creator of level up tutorials where I publish tons and tons of free web development tutorials on YouTube, and then a lot of premium and paid products as well. But really, I've just been a developer for a long time and love to sort of share what I learned. That's that's sort of my whole thing. That's cool.
+
+6
+00:01:23,160 --> 00:01:26,250
+Wes Bos: So what's what's your website? And what's your YouTube?
+
+7
+00:01:26,550 --> 00:01:40,350
+Scott Tolinski: My YouTube is level up tutorials, or YouTube slash user slash level up, tuts, you could just find it through either of those. My personal website is just Scott tolinksi.com. You can get to anything from there as well.
+
+8
+00:01:40,410 --> 00:01:47,040
+Wes Bos: And it's likely that you've probably taken one of Scott's tutorials already. He has almost 200,000 YouTube subscribers. 200,000.
+
+9
+00:01:47,040 --> 00:01:51,840
+Scott Tolinski: Yeah, I'm at like, 192,000 Oh, man. That's it.
+
+10
+00:01:51,840 --> 00:01:53,040
+Wes Bos: 200 Yeah, I
+
+11
+00:01:53,040 --> 00:02:00,900
+Scott Tolinski: have over 1000 videos uploaded to YouTube. So yeah, wow. And that's, that's just YouTube, I have a bunch of elsewhere as well. So
+
+12
+00:02:01,050 --> 00:02:29,580
+Wes Bos: impressive. So my name is Wes. And I do similar stuff to Scott as well. I build courses for web developers who want to get better at what they do. So I've got a number of different free ones on everything from Flexbox over to Redux, as well as some premium courses on react node ESX. A bunch of stuff and a bunch of stuff that's coming out, too. So if you're interested in it's at Wes, bos.com, there's a list of all my courses. Awesome.
+
+13
+00:02:29,659 --> 00:02:30,659
+Scott Tolinski: Yeah, great stuff. Cool.
+
+14
+00:02:30,659 --> 00:02:39,930
+Wes Bos: So um, I don't know why should we kick it off? Or you have any or I guess we should we want to talk a little bit about what are we working on right now?
+
+15
+00:02:40,159 --> 00:02:45,060
+Scott Tolinski: Yeah, let's let's go this go for it. Since I went first last time. Tell us what you're working on, Wes.
+
+16
+00:02:45,449 --> 00:03:39,240
+Wes Bos: Sure. So right now I've been, I just released my node course about a month ago, maybe a little bit less than a month ago. And I've been spending the time working on platform improvements. So I built this thing called boss monster that runs all of my paid and all of my free courses. And then it's I've just been working on the coupon codes, I've added percentage base coupons were previously only had like a fixed fixed amount off. I'm working on some geo geo coded discounts. Meaning that like, I've gotten a lot of people coming from India, Brazil, and the 60 hundred dollar $120 for a course is just way too much. It's like, like a month's rent for them. So it depends on where they're coming from. So I'm working on implementing some special coupons, depending on where you're visiting the actual website.
+
+17
+00:03:39,379 --> 00:03:45,629
+Scott Tolinski: Wow, cool. Yeah, I'm excited to see some of that stuff. At least how you pull it off. It seems really cool.
+
+18
+00:03:45,629 --> 00:04:03,569
+Wes Bos: That's it's pretty neat. I'm using CloudFlare, which will give you a header and it will tell you which country the person is coming from, which I found out is extremely reliable, and also somewhat hard to spoof, with some of the more popular free VPN. So really,
+
+19
+00:04:04,020 --> 00:04:08,370
+Scott Tolinski: yeah, it actually works surprisingly well. Nice. Super cool. Anything else? So
+
+20
+00:04:08,370 --> 00:04:15,659
+Wes Bos: what about you know, that's all I got? I got a new laptop, new MacBook Pro, which I've tried to hook up all the dongles and
+
+21
+00:04:15,720 --> 00:04:18,079
+Scott Tolinski: stuff that up. Yeah, lots of dongles. Yeah,
+
+22
+00:04:18,120 --> 00:04:20,699
+Wes Bos: yeah. That's about it. What about you, Don? I'm
+
+23
+00:04:20,699 --> 00:04:28,519
+Scott Tolinski: doing a lot of just a lot of coding. I have several, several projects. I just did my very first live stream
+
+24
+00:04:28,860 --> 00:04:34,200
+Wes Bos: level up tuts I saw that my phone buzzed, and I joined it for a second.
+
+25
+00:04:34,230 --> 00:05:39,300
+Scott Tolinski: Yeah, it was, uh, that was wild because I've never done a live stream and apparently I wasn't quite prepared enough. But uh, yeah, that's sort of what they say is to just go in and do it. So in that live stream, I was just upgrading the level AppStore to react router for so I have so many little projects like that I have. The level of site overall is like kind of an old version of a router. So I'd love to get it on not only react router but react router for with server side rendering. All that stuff. So just really like code upgrades, code updates here and there. And then I have another small project that I'm, I recently met a developer on Reddit, who's also a breakdancer. For those who don't know, I've been breakdancing for 1314 years now. And I built a web app called B boy tools. And it allows basically a whole bunch of like tools that are really awesome for breakdance practice. And I found this guy who's also a developer breakdancer, who, who's now like, thrown up commits left and right, so I'm stepping up my game a little bit on it to really move that project alone.
+
+26
+00:05:39,930 --> 00:05:53,910
+Wes Bos: Wow, that's really cool. It's It's funny how often you you go into these like weird areas of your life, whether it's music, or breakdancing, and then you find like other other people that are just like you.
+
+27
+00:05:53,969 --> 00:05:57,360
+Scott Tolinski: Yeah, I know. It's a, it's actually a really, really nice thing.
+
+28
+00:05:58,080 --> 00:06:34,290
+Wes Bos: Awesome. Well, let's get right into it. We're going to be covering. Let's see here, we're going to talk about next js, create react app, React dev tools, real quick on react and Inferno, react, storybook, and then Meteor. So we're gonna kind of go through all of these different ones, section by section. Some of them I have absolutely no idea about some of them. I've used quite a bit. I'm by no means an expert on any of these. But I think that's what's going to make this podcast kind of nice, where you're sort of getting a look into these tools as everyday developer wouldn't would be working on them.
+
+29
+00:06:34,320 --> 00:06:39,209
+Scott Tolinski: Yeah, absolutely. I think that's a different strength.
+
+30
+00:06:39,720 --> 00:06:48,959
+Wes Bos: Yeah, I think that's also why a lot of people like Scott nice tutorials is that we're not the smartest shove shovels in the shed is that to say,
+
+31
+00:06:49,680 --> 00:06:56,640
+Scott Tolinski: as evidenced by my live stream yesterday, a lot of people commenting Well, it's good to see someone else struggling.
+
+32
+00:06:59,550 --> 00:09:17,700
+Wes Bos: Oh, that's great. Cool. So we're gonna start off with next chasse, which I've actually been working with quite a bit lately, I've been building a sort of an administrative dashboard for myself on my courses. So my own course platform, a lot of my admin has actually been just query it up in the database, open up the raw Mongo file, and then edit it from there. And now I'm adding much more reporting, being able to edit, reset and refund customers, all that good stuff. So react is a perfect use case for billing an admin dashboard, because there's a lot that's going on there. And also, that when you're searching for people and filtering data, you don't want to have to do a full page reload on each of those. So I decided to build it in react. And with that, I'm using this new framework called next j s. And it's, it's from the folks you've probably used hyper term before or now to sh, which is a new sort of hosting platform. And what it does is, the big thing that it does is server side rendering without any of the the tears or the pain that comes along with trying to do server side rendering. So out of the box, what you do is you have a pages folder. And if you want to build a website that has like an about page or a customer page, all you have to do is create a component in your pages folder called customer dot j s. And what that will do is it exports a component, a react component, and then when somebody visits that URL, it's automatically going to be rendered right to that URL. So it takes care of all the routing for you. There's there's no react router setup. And yes, it does. It's all its own routing, and then it does the server side rendering of all of your components. So that's really neat if you are either worried about a search engines hitting all of your pages, or be what's called pre loading. So let's say I'm on a homepage, and I want to preload my pricing page. What we can do is we can preload the the entire pricing page component. And then when someone clicks on the pricing page, it's just going to be an instant cut over to the pricing page. Because we've already decided to preload that link.
+
+33
+00:09:19,670 --> 00:09:20,400
+Unknown: Nice. What else does
+
+34
+00:09:20,400 --> 00:09:21,390
+Wes Bos: it do? Yeah,
+
+35
+00:09:21,410 --> 00:10:03,450
+Scott Tolinski: yeah, I mean, to me, I love I love things that that take care of that many things for you. I know some some you know, it gets into that, like the magic territory, right? where some people like a little bit of magic, and I've never been the type to shy away from a little bit of magic, right? I think in when the rails community was in in full force. I think that was one of the most attractive things about rails. Was that it? It did a lot for you. And yeah, I haven't used next to myself, but I've been I've been checking it out quite a bit and that built in server side rendering with the node router just seems like a really nice little time saver. Cuz I mean, yeah, who wants to write routing every single time?
+
+36
+00:10:04,020 --> 00:11:20,250
+Wes Bos: Yeah, and there there is stuff. If you want to do custom routes, I'm sure um, but you can get away with like Ford slash customers. And then I would pass the customer ID via query string. And then I didn't have to set up any custom routing, it does all of the the baybel in the web pack stuff for you, as well. And it's just a right about a right amount of magic for me, because it does expose a config file, which will will sort of fold into your web pack. So if there's anything extra that you want to do, it will, it'll do that for you. Yeah, um, one thing I wanted to, to talk about, which is pretty neat is that it adds this concept called get initial props, which is not a standard react lifecycle method. But they add it in. And the way that it works is that it's, it's in a sync method, which means that you have to actually return a value from it before it will actually render your component. And by doing that, what you can do is you if you need to fetch any data on the server, before it actually kicks the HTML out to, what it will do is it will hold up rendering that component, because it's a sink, until you do like, an Ajax requests or something that needs to take a little bit of time to actually fetch some data and bring it back
+
+37
+00:11:20,280 --> 00:11:30,120
+Scott Tolinski: for the render to happen. So does this give you access to maybe some sort of like a loading component? While you're waiting for that data? Is there like a, you know, while this is loading, throw this up?
+
+38
+00:11:30,150 --> 00:11:59,670
+Wes Bos: Yeah. Um, what it will do is, because it can fetch everything, it fetches everything without a page reload, there's a little component. And if you look at the Hacker News example that they have, it's great. They have this little, you know, some websites have this like little loading bar across the top where it sort of cuts across, it gives you one of those. So it gives you some progress in terms of how it needs but again, that that's not there, if you if you need to preload, if you preload some of your pages. Awesome.
+
+39
+00:11:59,700 --> 00:12:00,750
+Scott Tolinski: Yeah, that sounds great.
+
+40
+00:12:01,260 --> 00:12:14,610
+Wes Bos: Yeah, big fan, I am definitely going to be recommending it for people starting out in in react because it just does away with any of the the pain that comes along with with setting up your own
+
+41
+00:12:14,880 --> 00:12:31,710
+Scott Tolinski: nice. And so it doesn't require like servers. It's not basically any server side code or anything like that. It's just essentially, your server side rendering and your routing. But we don't have straight up database queries or anything with it Next, no, it doesn't
+
+42
+00:12:31,980 --> 00:12:43,680
+Wes Bos: have any of the any of that server side stuff included, you sort of bring your own back end, whether that's graph QL. In my case, I integrated it into an existing Express app. Right. So it has support for that as well.
+
+43
+00:12:43,710 --> 00:12:49,920
+Scott Tolinski: Cool. Yeah. Yeah, a graph. qL is another one of those things that I think we're probably gonna have to have a whole episode on.
+
+44
+00:12:49,950 --> 00:12:59,580
+Wes Bos: Do a whole show on that. Yeah. Big fan. I'm drinking what is I'm drinking the Kool Aid, which is the graph qL cute.
+
+45
+00:13:00,450 --> 00:13:02,040
+Scott Tolinski: I've never heard that before. That's great. So
+
+46
+00:13:02,040 --> 00:13:06,210
+Wes Bos: when I someone on Twitter said they love the Kulin, I thought that was hilarious.
+
+47
+00:13:07,380 --> 00:13:10,890
+Scott Tolinski: Have you you've checked in to Apollo and stuff like that?
+
+48
+00:13:11,610 --> 00:13:20,070
+Wes Bos: Yeah, very, very high level had a call with the folks from graph. Cool. Yeah. Which is like a hosted graph. qL pretty neat. They
+
+49
+00:13:20,070 --> 00:13:21,150
+Scott Tolinski: love these names.
+
+50
+00:13:21,570 --> 00:13:28,440
+Wes Bos: Yeah, people are just kind of, it's really funny to see like this, like enterprise database company with like, a hilarious name.
+
+51
+00:13:30,030 --> 00:13:32,820
+Scott Tolinski: I appreciate it, though. I love that. I love every second.
+
+52
+00:13:33,330 --> 00:13:44,250
+Wes Bos: It's so for those who are wondering, it's graph. Cool. Because it's a graph QL. But it's graph. Cool. Anyways, create react app is Next up, have you used create react app, Scott.
+
+53
+00:13:44,730 --> 00:14:41,250
+Scott Tolinski: You know what I've I've used it, but only at a brief level to basically explore maybe doing a tutorial series on react. And that was the hardest thing about for me getting a tutorial series on react was the initial setup part of it, right? Because everyone has opinions about what they want to use. And, and I don't want to spend, you know, two whole videos on setup. And if I'm going to do Webpack, I don't want to have to teach you Webpack from the start. So for me, the Create react app was like the perfect solution for getting something like that going. Yeah, but I haven't used it in any major projects, just tutorial based stuff. But it's a fantastic way to get off off the ground. Like I said, there's nothing I hate more than spending so much time writing tooling and stuff like that. Yeah, do not copy and paste. Uh, you know, like, I remember when Gulp was the thing, it was just sort of like you move your Gulp file from one project to the next.
+
+54
+00:14:41,490 --> 00:14:44,190
+Wes Bos: Yeah, you have like 800 Gold files going at once.
+
+55
+00:14:44,190 --> 00:14:50,220
+Scott Tolinski: Yeah, yeah, exactly. So anything that can reduce that amount of time for me is is a plus.
+
+56
+00:14:50,610 --> 00:16:55,770
+Wes Bos: Yeah. So for those who've never heard of crate react app, it's essentially like a kind of like a starter kit for react. Um, if you think back to the like, If you've got kids, you got like a Friday night with three hours to kill, and you're like, Oh, I'm gonna try out react tonight, and it's gonna be good. And then, and then cut the three hours later. And you're just sobbing on StackOverflow. Why? Why syntax error angle bracket what is going on. And so what create react app does, it just sort of like sweeps, it's more magic, it sweeps all of the bundling, and build steps and server steps. And all of that complexity gets swept under the rug. And you don't have any dependencies except this thing called react scripts. And it will just take your your main js file in a file called index HTML, it will serve up your index HTML, and bundle your react app for you. And then, at a certain point, you you have all this, it gives you your build server gives you hot reloading, it gives you CSS importing, it just gives you all of that for free, which is great. And then at a certain point it it, it gets to a point where you actually need to customize it a little bit because whereas something like next j s is meant to always be built in next jass create react app is more to like, just get you started to build your application. And then when you need to do something custom, like, for example, one thing it doesn't do is CSS preprocessors currently, so if you want sass or something like that, either got to do it totally separate with a gulp task or a node script, or you have to eject from create react app. And then what that will do is it will, it'll go under the rug and take out all of the magic that it was doing, and give you access to everything that you needed, which is I really like that approach because you just want to get going sometimes. And then once you've got the sort of the MVP up and running, you need a little bit more control, then you can sort of bring it out from the closet and start to work work on it. Yeah,
+
+57
+00:16:55,770 --> 00:17:46,610
+Scott Tolinski: yeah, no, it's one of those things that I you know, we'll get into this later. But one of those things I love about Meteor, right? It, it allows you to get going with like, absolute no effort, right? Get going, Yeah, do what you got to do. And then let's say the idea you're thinking of is a total bust and you want to blow it up. You didn't just waste a whole bunch of time, on the Getting Started stuff. There's there's nothing more frustrated than like, getting all going finally getting into code and then just being like, I don't really feel like doing this anymore. And I just yeah, this time. Yeah. So no, I love tools like this. I'm glad to see this, this come out. I'm really happy to see that, you know, maybe some command line stuff coming to the React community. Again, that was one of the things I loved about the rails community, the rails command line interface, that sort of stuff. So yeah, a plus a plus for me.
+
+58
+00:17:47,160 --> 00:19:05,790
+Wes Bos: Okay, cool. All right. So next up, just a quick one, React dev tools and Redux dev tools, likely you have already used them. If you haven't. React dev tools and Redux Dev Tools essentially allow you to view your application as react sees it not as the the render Dom output. And that's extremely helpful. Because react is all about thinking in components and thinking in terms of state and props. And allow you sort of just appear into that you can change props, and view state and whatnot. So a couple quick tips, I thought that not everybody necessarily knows, when you select a component in react dev tools, what that will do is it'll give you $1 r in your in your JavaScript console and dollar R will be equal to whatever is the currently selected component in your your console. And that's great, because sometimes people are confused by the idea of components. But when you see $1 on the console, you realize, Oh, it's just an object, and there's state and props and, and methods on this thing. And I can call them right from the console without having to necessarily, the thing I use it most for is that like, if I build a method, and I want to call that method, and I don't necessarily want to like hook it up to a button, nice, um, I'll just select the component and then manually call the method right from the right from DevTools. Yeah,
+
+59
+00:19:06,030 --> 00:19:50,520
+Scott Tolinski: I think that's, uh, I haven't done that personally, myself. But that seems like a really nice use case. You don't have to wire it up for anything. You know? Yeah. I think even just like giving a straight up view into what that object is, is just one of the things that is definitely an aha moment in react. Because, yeah, you know, even when you're first learning things, and they show you, you know, maybe like a basic, like rafs example, where you're just using refs very basically, right? And you're assigning a ref, but you might not know that it's just throwing it on to the component, right? It's just in that object. So just really having a total understanding of what is in that object. And what's available to you is endlessly helpful, I think.
+
+60
+00:19:50,550 --> 00:20:03,000
+Wes Bos: Yeah, absolutely. And when I teach react in a workshop, and I show people that there's a lot of Oh, it's just an object. Yeah, the day Like not this like sort of like, mystical,
+
+61
+00:20:03,030 --> 00:20:10,340
+Scott Tolinski: yeah, mystical thing, CML element thing that has methods into it? Yeah, yeah, yeah,
+
+62
+00:20:10,470 --> 00:20:48,860
+Wes Bos: um, another little tip I have is sometimes I find people have a hard time finding the component that they're looking for, where they know where it is in their HTML. But what component that is in the React dev tools. If you know what the name is, you can quickly search for it. But if you don't know what the name is, what you can do is you select the element in your your elements panel in the DOM, your regular elements panel, and then you flip over to the React dev tools. And it will try to figure out what is the equivalent react component, and then that will allow you to quickly get to the actual component that is making and rendering out that that HTML to the page.
+
+63
+00:20:48,900 --> 00:21:36,900
+Scott Tolinski: And you know, it actually, I think that's a newer feature, too, because that was a pet peeve of mine was that if you hadn't first loaded react dev tools, you'd have to load react dev tools, first let it sort of get itself then you could find your element, then you had to go back to it, and then it would find it every single time. But yeah, even you know, I don't know how recently that was. But that was a just a such a nice thing. When I opened it up, I clicked on the React, you know, tab in your dev tools, and it was already selecting the element. Yeah, that was a nice little improvement there. And I super handy, I do love that they're constantly improving it too. It was one of those things where you have it, and it's an extremely useful tool, but then it just keeps getting better. And you know, that those kind of things are invaluable.
+
+64
+00:21:37,340 --> 00:21:47,400
+Wes Bos: Yeah, I love it, I even use it. If you want to open up netflix.com with react dev tools. Um, I think it's at least last time I checked, they don't strip the names of their components
+
+65
+00:21:47,400 --> 00:22:59,610
+Scott Tolinski: nice when they push to production. So it's kind of cool, because you can see how Netflix architects, their their components, they have this thing called a job bone that when you click on like a movie, it will drop down the movie details underneath it. They call that a job bone. And it's really neat, like, the react or Netflix has some of the best react devs out there. So it's it's very interesting to take a look at what they're doing. Yeah, it's almost like a new style of looking at someone's CSS, which was like, I always used to love going in and exploring the big guns, CSS and sort of seeing what they're doing maybe why they're doing it. Yeah, I mean, it was like back way, way, way, way back in the day, when Amazon was using as or eBay, whoever is using a spreadsheet. And people all of a sudden, were starting to talk about sprites. Yeah. And it was like stuff like that you didn't know that these people were doing until you dove into their code, or someone did a blog post on it. So being able to see someone else's component structure, sort of see how someone else thinks about react, but not only just someone else, but somebody like the amazing devs over at someplace like Netflix, you know, yeah, to get their ideas onto it is just really awesome.
+
+66
+00:23:00,720 --> 00:23:55,230
+Wes Bos: That's pretty neat. Real quick, I'll run through Redux dev tools as well. So Redux is sort of a state management library for react. And they have their own dev tools, which allow you to first see what is in your your store, which holds all of your data. In Second, it will, it'll show you exactly what actions have happened. So if you comment on a post, or like a post, or fetch some data, you can kind of they call it time traveling, which means that you can go back in time and and turn off some of those things. And your UI will update as if those things never actually happened. But it's neat, because you can go like, you could go in the middle of five things and turn off the two. And the the first two in the last two would would still work. So I'm a big fan of the Redux dev tools. Obviously, if you're working with Redux, you probably are already using
+
+67
+00:23:55,230 --> 00:24:04,350
+Scott Tolinski: Yeah, I think the council complaints do with both react and Redux, right, doesn't it? tell you hey, you're not using the dev tools? Oh, yeah,
+
+68
+00:24:04,380 --> 00:24:22,140
+Wes Bos: it'll tell you hey, check out the the Redux dev tools. Yeah, yeah, have them installed. It's a little trickier to get set up because your requires buy in from the code side of things right. To communicate with the dev tools, not like reactive tools, but it's definitely worth the pain of getting that installed. Awesome.
+
+69
+00:24:22,830 --> 00:24:23,490
+Scott Tolinski: Great stuff.
+
+70
+00:24:23,970 --> 00:24:30,660
+Wes Bos: Yeah, um, have you let's talk about preact and Inferno you if you heard of it, these used them before?
+
+71
+00:24:30,690 --> 00:25:03,720
+Scott Tolinski: Yeah, so I haven't used I've heard about I've read about I've seen all the the speed comparisons. I've read the blog posts, I have not used preact or Inferno, yet, but I know basic concepts about them. Basically, what they're they're the same API it's supposed to be as similar to using react as it can be, meanwhile, focused on speed and bundle size. So I think I don't know necessary. Why you wouldn't use them? I just haven't. To be honest.
+
+72
+00:25:04,859 --> 00:25:44,400
+Wes Bos: I'm sort of in the same boat where it will work with your existing react code. I'm assuming you've written in ESX API. So no create class, but extending and whatnot. But one reason is that it doesn't support React Native. It doesn't have the virtual Dom part of things it has. It just uses the real DOM. And it's funny, like react is working on on making it much faster. But there's pretty much just one guy behind each of these projects, or the guy from Inferno now works on react, yeah, like, Hey, we have all of these resources. How are you doing?
+
+73
+00:25:44,400 --> 00:25:46,920
+Scott Tolinski: Yes, yours is faster somehow, okay.
+
+74
+00:25:48,660 --> 00:26:09,030
+Wes Bos: And react is pretty much just one guy, he actually lives around the corner from me nice. And just doing amazing things in terms of performance and whatnot. So it's a whole nother level. That's not really where I'm at right now with the in terms of knowing how all these perfect things happen, but some, some smart people behind it.
+
+75
+00:26:09,060 --> 00:26:58,800
+Scott Tolinski: Yeah, and what I think with any of these things, you know, preact and reef Inferno are both sound like amazing options, right? Because of that speed. But at the end of the day, you know, Facebook, like they did is going to, to learn and you know, snatch these people up, or or just improve their code to the point where are these libraries worth? Maybe diving into really heavily other than from like a theoretical standpoint to understand how they work? Because with react fiber and version 16, coming out, is that necessarily a great investment of your, your time or whatever? Because, yeah, no, who knows fiber fiber? Seems like it's going to be a total game changer. And I'm getting excited for it. But we'll have to see when it's fully released.
+
+76
+00:26:59,640 --> 00:27:26,070
+Wes Bos: As far as I see it, it shouldn't even, hopefully not be an investment because you should just be able to alias react to react. And then if you've written your code properly, it should work. But then I don't know I've never done it. So we'll have to see how that pans out. If you are, specifically if you're in I think like the mobile space, or you're very performance conscious. It's definitely something worth looking into. Yeah.
+
+77
+00:27:26,310 --> 00:27:41,280
+Scott Tolinski: Yeah, I think even react performance would be another topic I think we could dive so much into because there's a lot of neat little tricks, tips and tricks that I think a lot of people just overlook, or maybe don't know about, maybe the rendering cycle and stuff like that.
+
+78
+00:27:42,540 --> 00:27:44,880
+Wes Bos: Yeah, yeah, let's let's put that on the list.
+
+79
+00:27:45,210 --> 00:27:47,190
+Scott Tolinski: Nice building the list. Cool.
+
+80
+00:27:48,840 --> 00:28:06,120
+Wes Bos: By the way, if you have any suggestions for topics that you'd like us to talk about the whole idea with this podcast is we're going to talk about web development stuff, but also like sort of stuff that's related whether it's productivity or fitness or breakdancing, whatever it is. Yeah,
+
+81
+00:28:06,330 --> 00:28:09,480
+Scott Tolinski: I can I can. I don't know about Wes. But I can speak on breakdancing.
+
+82
+00:28:10,320 --> 00:30:19,020
+Wes Bos: I can't speak on breakdancing go. But with everything else, I'll try to speak as if I do no. Fair enough. Next up, we got react storybook. This is another one which I have not used. But I'm have recommended to many people because they love the the sort of idea behind it, have you maybe maybe I should explain it real quick. And then I'll yeah, flip it over to you to see your thoughts on it. So the whole idea behind react is that you build not pages or not parts of your site, but you build components. And you build this really modular things that can be moved around anywhere in your app. And as long as you feed your components, the right things, you feed them the right data, you feed them the right functions that they need to to work, then they should be movable anywhere in your application. So I always like to equate this to CSS. If you've ever built something in the sidebar of a website, and then tried to move that maybe to the footer or to like the main section and then your CSS breaks. That's because you are dependent on your sidebar CSS for something that is in your sidebar. Ideally, you would write your CSS so that the CSS just applies directly to that component, regardless of where it shows up on your website. So the same idea is with react where you can then apply, you can put these components anywhere. So react storybook aims to take you out of your application, and build your components in isolation. So what you can do is you build this library of all of your different UI components, maybe have a button, maybe have a danger button, maybe have a button with text in it. Maybe you have a video player, maybe you have a video player with multiple videos and then you can sort of just how Have a list of all of these different components and all the different places or all of the different ways that they may be rendered. And then you can just work on the component where via your styling and your functionality and, and whatnot. And then you just build them in. And then it's like Lego, you got all these components, you started to just click them together and start to build your application. Yeah,
+
+83
+00:30:19,020 --> 00:32:46,140
+Scott Tolinski: and you can have various states of props in there, too. So you can show off one component with x props, and another component with y props, or whatever. So you can see all these different essentially versions of your components that can potentially be modified by what you're passing in. I have used it. In fact, I like it. A lot of the biggest problems I have with react storybook are getting it to play nice with my environment. Whereas I'm not doing all of my CSS in line, I'm doing some CSS in line, but I'm not doing all of it in line, right. So having it work with my CSS preprocessor. And getting it all sort of set up that way, isn't necessarily the most fun thing for me. Yeah. But in terms of like the features that you get, I do love seeing your components in isolation, I love being able to sort of modify how you think about your components that way, and seeing them pulled out gives you a different view and can potentially illuminate some issues that you hadn't necessarily thought of that it's so easy to just think about these whole things in the system that they exist in. But the moment you pull them out of that system, why is this breaking? Or maybe you've not having your your correct, either default props or required props or stuff like that, that you may not have thought of being required or needed. So for me, it's one of those things that's really nice. I like it a lot. But does it necessarily find itself in my sort of heavy workload? That that's the hard part for me is finding time, if it was an automatic, like, here's the kind of tool that I would love it to be, I would love it to scan my directory and just pull out all my components and do it for me, right? Which is not a bad idea. Yeah, it's it's a little outrageous, but it's not, you know, if it could do that, then I would be on board in one second, obviously, because there's no time overhead. But as it is right now, I'm spending a lot of time coding and testing and whatever. And I don't know if storybook ends up finding its way if I if I'm on a team, maybe more time available, I think it would be a superduper great resource, but as like a solo Dev. Not I'm not quite sure I have the personal capacity for it. Yeah,
+
+84
+00:32:46,140 --> 00:33:06,840
+Wes Bos: that's true. It definitely would save time on larger sites with a bigger team. Especially if you have different people working on the on different components. Oh, it's pretty nice. That's that's another show we should do is talking about style components and inline CSS in your components versus just a style sheet for your actual application versus
+
+85
+00:33:06,900 --> 00:33:10,530
+Scott Tolinski: Yeah, something like I am it's Oh, and that's a fiery one to people.
+
+86
+00:33:10,560 --> 00:33:15,900
+Wes Bos: Yeah, people get work But wait, hold on. We have a name for that. What is it? Mama drama
+
+87
+00:33:15,930 --> 00:33:23,610
+Scott Tolinski: mama drama. That's some hot hot takes. Yeah, that that episode will be a soundboard full of hot takes. Yeah, we got to get a soundboard.
+
+88
+00:33:24,180 --> 00:33:28,950
+Wes Bos: We're gonna get a soundboard where whenever there's drama, we're gonna it's gonna be like mama drama,
+
+89
+00:33:29,130 --> 00:33:30,690
+Scott Tolinski: or some drama, Mama,
+
+90
+00:33:30,960 --> 00:33:41,610
+Wes Bos: drama, drama Mama. All right. Last one, we got Meteor, which is something I've never used. So I'm gonna flip this over to Scott.
+
+91
+00:33:41,610 --> 00:36:17,150
+Scott Tolinski: Yeah, so I use Meteor all the time, especially in react projects, for a lot of reasons. For instance, basically, it gets a number of reasons it gets getting started really easy. It has a built in database, which you know, uses Mongo for better or for worse, it's easy to get set up. It bundles it all in, there's basically no tooling configuration out of the box. If you want to add stylist, you want to add sass, you just do Meteor add, stylist, whatever. It takes care of everything, in terms of the build tools, compressing all of that sort of stuff. But really, it basically just allows you to have a lot of things at your fingertips that you wouldn't have reduces a lot of boilerplate. So you have server side code, with node, basically out of the box along with methods that allow you to communicate between the server and the client without having to write an API yourself. So for instance, on the client side, I want to update something in the database, I can just run a meteor call and then the method name, pass in some information, data, whatever, sends it to the the server side, server side can hit the database, do whatever you want. In addition, it also has things like in the latest version of Meteor. There's a lot of really nice code splitting and bundle bundle stuff. So you can do conditional module loading, especially with react, it really makes it. So you can basically have these conditional bundles that greatly reduce the initial load time, right. So if you're only loading up, maybe whatever the user seeing, you can have these bundles of your different components that load at any given point, you can cache those bundles, you can split your your bundle size up that way. So it basically gives you a lot of tools that might be sort of complex, either through a Webpack config or something like that. Or even having to write a like an express back end, it gives you all that stuff out of the box makes it nice and painless. And then it In addition, it comes with this like prototyping insecure mode, where you can actually do database writes directly from the client side. So in your react component, you could do a Mongo insert directly from a method or something like that. It's obviously not something you'd want to leave in. But if you're doing a pet project or something like that, you just want to try something out. Not having to write that API or anything like that can save you a whole ton of time.
+
+92
+00:36:17,520 --> 00:36:39,780
+Wes Bos: Yeah, that's pretty sweet. I think a lot of the stuff that we're talking about today all breaks down to, I'm super excited about this thing. I've got a couple hours, and I want to jam on it right now. And these tools are great for that. And they also allow you to sort of say, Okay, this is getting real, how do I settle down and make this actual into a production application?
+
+93
+00:36:39,809 --> 00:37:16,079
+Scott Tolinski: Yeah, and I think there's a lot of, if there's any concern about Meteor, it's either one that it forces you to use Mongo, which I don't think is going to be forever, the same team that's behind Apollo is believed mostly behind Meteor. So I could see a future where Meteor is using Apollo by default. Is that you that way, you could use whatever database you would like. But in addition, you know, I have several large production apps in Meteor. And if there's any concerns about scaling, I think it's totally overblown. I think you can scale up and Meteor really well. Just Yeah,
+
+94
+00:37:16,260 --> 00:37:40,610
+Wes Bos: yeah. And same for Mongo too. I get a lot of people Pooh poohing Mongo, and I have a couple of fairly large applications running on MongoDB as well, obviously, it's, it's not the most relational thing, if you're gonna do a lot of relationships, that's probably a Postgres or MySQL is, is a good pick for that. But you have to be doing some serious stuff to actually start to run into these issues.
+
+95
+00:37:40,610 --> 00:38:23,340
+Scott Tolinski: Yeah, in interest. I mean, that's a big thing is is this fear of scaling up? But how many of these projects need to scale up to the size of something where it actually becomes an issue? Like, yeah, I would have to assume that if anything I made that started in Meteor was ever going to get to be the size of Twitter, or something like that. I would have a team of engineers who can figure that out, right? Like I did that that doesn't need to be a concern right now that needs to be concerned, potentially somewhere in the future. For me, I'm definitely in the camp of Get up Get going. Get get something rather than actually, those were actual lyrics to a goody mob song. By the way, get up.
+
+96
+00:38:23,630 --> 00:38:24,170
+Wes Bos: Get some
+
+97
+00:38:26,960 --> 00:38:30,980
+Scott Tolinski: CeeLo Green right there. There's like 90s, cielo 1990s.
+
+98
+00:38:31,050 --> 00:38:31,710
+Wes Bos: That's awesome.
+
+99
+00:38:31,710 --> 00:38:37,050
+Scott Tolinski: I'm just dropping rap lyrics by accident. Wow. It's a It's a gift in a curse.
+
+100
+00:38:39,630 --> 00:38:52,469
+Wes Bos: Oh, that's great. Cool. So what what is a feature of Meteor look like? I realized that like Meteor just sort of dropped what was it was a blade as their their templating engine in place? Yeah, Blaze or react. Right.
+
+101
+00:38:52,469 --> 00:40:02,340
+Scott Tolinski: So I don't think that they're they're still supporting Blaise, but what they did is they open sourced it. So Blaze is actually totally underrated as a front end framework. And I think the reason specifically why it is is because there's no like, there's no one using blaze standalone. But if you were to use Blaze, I think you'd be pleasantly surprised. It basically uses a variation of handlebars called space bars. There's some really nice integration with like just general actions, dealing with events and stuff like that. But for the most part, you can use, you can choose to use any front end framework you'd like. So Blaze, view, Angular, whatever, and it plays really nicely. The for me, the future of Meteor, I think is going to be more in the the data layer, we'll have to see. They're doing an incremental update right now to get it on. I think node eight right now is the next version of Meteor. But this 1.5 just came out with the the bundle splitting and stuff like that. And there's like a really cool, I don't know if you've ever used the application days. disk to see what's on your hard drive.
+
+102
+00:40:02,340 --> 00:40:03,599
+Wes Bos: I have open right now.
+
+103
+00:40:03,599 --> 00:41:56,150
+Scott Tolinski: Yeah, Daisy disk love it. So that should be one of the sick to sick pics at some point. But yeah, so Daisy disk has that really cool circular visualization, right. And then the latest version of Meteor, there's a core package that you just add just by Meteor add bundle visualization or bundle visualizer. And it shows you all of where this basically just like Daisy disk where the size of your application is based on what you're importing, and when you're importing it. So that way, you can look at it very clearly and say, hey, why is you know, this being loaded right now when I'm not using it? Except for I'm only using the whole administrative side of the site. When you're on slash admin? Why is it all being loaded? bundle size is huge because of it, you can then figure out really nice ways to not only trim your dependencies, but also trim up your bundle size a whole bunch. Yeah, yeah. So I mean, meteors dropping great features left and right, the team behind it's excellent, really great, talented people. So, you know, I would love to see better integrations with Apollo, if you end up getting sort of like a graph qL system out of it as easily as the meteors tracker system works currently. Then that would be really great there right now, their whole, their whole thing is this pub sub system where you're publishing and subscribing to data, and then it's automatically reactive. So you know, changes on the database automatically get pushed through a socket to your front end. Yeah. So I could see a future where you know that that system is integrated in a way with Apollo or something like that, and then you can have all the benefits of graph QL. Meanwhile, having this the same sort of pub sub system, obviously, I'm not a developer on it. I have no real insight there. But I think it could be a, you know, a really cool future for Meteor if it continues to grow.
+
+104
+00:41:56,630 --> 00:42:10,079
+Wes Bos: Yeah, yeah, I definitely think that that's something we're gonna be seeing, or you can already do it now in graph qL, so on called subscriptions. I think that is interesting that that might be one of your back end choices for building
+
+105
+00:42:10,079 --> 00:42:24,230
+Scott Tolinski: an app. Yeah. Yeah. Like I said, I'm a big fan. I've published, I don't know, five or six, large Meteor and react applications. And right now, it's my favorite stack. But, you know, obviously, this stuff changes all the time.
+
+106
+00:42:25,500 --> 00:42:30,750
+Wes Bos: Cool. All right. Well, now it's time for the part of the show that like we like to call
+
+107
+00:42:30,780 --> 00:42:33,480
+Scott Tolinski: sick pigs, sick pigs.
+
+108
+00:42:35,099 --> 00:43:53,820
+Wes Bos: This is the part of the show where we tell you one thing that we are enjoying this week. And that you should check out and it might be a tool might be a thing might be a dongle, you don't know. So my sick pick this week is an application for OSX for your iPhone. And I think for Android, and a web app is called parcel. And I'm doing a lot of ordering stuff online. I get sticker ship from China, I buy a bunch of stuff from Amazon. And I always hate having to like find the tracking number and check where it is. So personal app will allow you just to throw all your tracking numbers into the app. And then it will give you a push notification on your desktop and on your phone. When there's a change in that actual the tracking of that, which is pretty sweet. And then the One really cool thing is that you can it gives you an email address that you just forward your emails to and then it will it'll sort of detect the tracking number in the email. And then it will add it automatically. So every single time you get an email from Amazon, you can even set up a rule in Gmail, when there is a email that says your order has shipped, then forward to the special number and automatically add it to your parcel app.
+
+109
+00:43:53,849 --> 00:45:42,329
+Scott Tolinski: Cool. Yeah, I've never heard of that before. I could see like an everyday situation where that'd be nice. Check it out. Yeah. So my sick pick is something that I've used for a little while. Now, this isn't necessarily anything new, but I feel like not enough people talk about it or know about it. It's a fish shell. I know z sh is really popular. And I personally use GSH for a long time. But fish shell is pretty much just like that fish, z sh where it's a replacement for bash for your shell. And it basically it adds a ton of excellent features fresh out of the box, like the auto completion features and ghosting of your files. So when you're typing, it has like a ghosting auto completion. So you instead of like sort of guessing when you hit tab, like what is this going to autocomplete to if you have two files that are similar name, you can actually see that ghosting and you can change between them. So if you can see that it's you can type in a couple of letters, you can see that it's finding a particular file. I think it's just the up or down key allows you to change which particular file Actually selecting. In addition to that, it's, it's just really nice. There's a ton of extensions and themes and there's additional like, Oh, my z sh stuff. There's also Oh, my fish or fishermen, which are two two versions of that package fishermen. Yeah. And they're both great. You can you can use the command line to download and install themes. I have obviously like a cute little theme with like a little guy like sparkling rays out towards the, the the command and stuff like that, or even just showing you get features and things like that. So my pick is fish shell. I feel like there's probably not enough people using it. It's an excellent replacement for bash or z. Sh, who highly recommend.
+
+110
+00:45:43,139 --> 00:45:50,460
+Wes Bos: Cool. I've heard heard some really nice things about it. I have a, I've got a course on z sh or Zed sh as we say over here. Oh,
+
+111
+00:45:50,820 --> 00:45:52,110
+Scott Tolinski: yeah, I forgot about that. It's
+
+112
+00:45:52,110 --> 00:45:54,719
+Wes Bos: funny. People are like, What are you saying? Zed sh for?
+
+113
+00:45:55,829 --> 00:45:58,349
+Unknown: Your extra? Yeah, extra carrots and
+
+114
+00:45:58,349 --> 00:46:16,469
+Wes Bos: shells. It's it's I don't know, I think Canada should should abandon that said. It doesn't make sense. But I've got a command line power user.com, which shows you how to use the Z shell. In a lot of people have been showing me some pretty nifty things with fish as well. Yeah. Apparently, it's it's fast,
+
+115
+00:46:16,469 --> 00:46:31,260
+Scott Tolinski: really fast as well. Very fast. Yeah, both of them are big improvements over bash. So as long as you're using z, sh or fish, I sort of latched on to fish recently and have been very big fan. But yeah. Cool.
+
+116
+00:46:31,260 --> 00:46:35,940
+Wes Bos: That should be another. I just wrote that in the doc. That's another we'll do a whole episode on the command line.
+
+117
+00:46:35,940 --> 00:46:40,380
+Scott Tolinski: Hey, yeah, I think that's an underrated skill to have Definitely,
+
+118
+00:46:40,440 --> 00:46:42,389
+Wes Bos: yeah. should be taught in grade schools
+
+119
+00:46:42,420 --> 00:46:43,889
+Scott Tolinski: should be taught in grade school.
+
+120
+00:46:46,500 --> 00:47:21,750
+Wes Bos: Awesome. Well, that's it. That's the first show in the book. All right, the last segment of this is called shameless plugs. It's where we plug stuff, we try to get you to spend all of your money on us, or our friends, or whatever it is that we need to direct stuff to. So I'm gonna plug my learn node course right now I just released it about a month ago, it goes into building an application with Express Mongo passport. pug, it just shows you how to build an API as well as a server rendered application right on the server. It's become super popular,
+
+121
+00:47:21,750 --> 00:48:25,590
+Scott Tolinski: I think it's sold over 6000 copies so far, and people are really, really enjoying it. Yeah, excellent, excellent stuff. Um, and I am going to shamelessly plug my latest series which is React Native for everyone, which is basically getting started with React Native. And you don't have to know react, you don't have to know React Native, only thing that's required. It's a little bit of JavaScript. And we use the Create React Native app, which bless you build an app and something called Expo, which Expo basically holds your hand a little bit makes it really easy to get up and running. And look just like create react app, you can eject out of it anytime you want. If you want to use straight up, create, just React Native. But basically, it takes you through, we build a tip calculator, and by the end of it, you'll actually have an APK file signed and ready to get uploaded to the Google Play Store. As well as whatever the iOS file is, I'm not quite sure what it you know, and you don't end up working with those that much so.
+
+122
+00:48:26,040 --> 00:48:36,510
+Wes Bos: So you would just there's a bit of an aside, but Expo Expo means you don't have to install Xcode or whatever the dog of react. Android is, right? Correct. But
+
+123
+00:48:36,510 --> 00:49:18,659
+Scott Tolinski: we do in this series anyways. Okay, so you don't have to install Xcode, you don't have to install the Android SDK. But with Expo, basically, it allows you to essentially push the code without rebuilding a native app every single time, it sort of like a native app shell that goes around your native code, it makes it makes one, when you save an update, it makes everything a lot faster, in terms of seeing your changes. But it also like you said, it reduces the overhead of the amount of things you have to install. And you can install Xcode or the Android SDK if you want to use those emulators and stuff as well.
+
+124
+00:49:20,400 --> 00:49:24,000
+Wes Bos: Cool. That's a good good so check out Scott's course on
+
+125
+00:49:24,000 --> 00:49:35,429
+Scott Tolinski: Oh yeah, I forgot to mention Where's store dot level up tutorials.com you can over there. There's a bunch of series but it should be number one on the front page there.
+
+126
+00:49:36,360 --> 00:50:01,380
+Wes Bos: Awesome. So that is the first show in the books. Thanks so much for tuning in. If you could give this a five star or one star or whatever star you thought review on iTunes or whatever pod catcher you are using that would mean the world to us. We're gonna try try like really pump this thing up so that we can get a lot of subscribers and and and really devote some time to doing the show. Isn't that is that it on your
+
+127
+00:50:01,380 --> 00:50:02,639
+Scott Tolinski: end, Scott. That's it.
+
+128
+00:50:02,670 --> 00:50:05,909
+Wes Bos: I got nothing. Awesome. See you later folks yet.
+
+129
+00:50:07,109 --> 00:50:17,609
+Scott Tolinski: Head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player in drop a review if you'd like this show. Until next time
+

@@ -1,0 +1,448 @@
+1
+00:00:01,290 --> 00:00:09,599
+Announcer: You're listening to syntax the podcast with the tastiest web development treats out there, strap yourself in and get ready to linsky and
+
+2
+00:00:09,599 --> 00:00:33,210
+Scott Tolinski: Wes Bos Welcome to syntax. In this episode, we're going to be talking all about media and large files because that's something that you encounter all the time on the web, from video, to images, to downloadable zip files, all sorts of stuff. We're gonna be talking about all things working with media and large files. So as always, with me is Wes Bos. How you doing man?
+
+3
+00:00:33,750 --> 00:00:59,280
+Wes Bos: doing pretty good. We had a family day this week. I'm laughing because I forgot to hit record on my I forgot to hit record on my end. So we're doing this how you doing thing again, but I'm good. We we just had a family day here in Ontario, which is a holiday they just made up a couple couple years ago. And it overlapped with my birthday. So got a nice long weekend on my birthday. I was pretty stoked about that. Join the club 30.
+
+4
+00:00:59,280 --> 00:01:00,300
+Scott Tolinski: Nice now
+
+5
+00:01:00,300 --> 00:01:01,050
+Unknown: welcome.
+
+6
+00:01:01,050 --> 00:01:02,790
+Scott Tolinski: Welcome to the 30s
+
+7
+00:01:04,010 --> 00:01:05,700
+Wes Bos: Thank you, Thank you How you doing?
+
+8
+00:01:05,870 --> 00:01:51,060
+Scott Tolinski: I'm doing pretty good. Just doing a lot of coding, we also had holiday was Presidents Day, yesterday, I spent the whole day working on improving my test coverage for my site. And in turn, I kind of came up with a really, really slick process for doing just graph qL mocking of data, just like really, really one liner code. And it's just really super slick and is made me just very, very excited to just finish this, this little testing update i'm doing i'm like getting really excited about working on my test, which is not something that I typically do. So I'm gonna do a little blog post about how I'm doing these these tests and graph qL, Apollo and my whole sort of stack here and how nice and smooth the whole processes. So
+
+9
+00:01:51,510 --> 00:02:08,430
+Wes Bos: yeah, that's exciting, pretty psyched. I'm looking forward to that, because I just I just finished up writing all the tests for my my graph qL server that I'm building for my course. And I'm happy with it. But I definitely think that there's a little bit of magic, I could add there. And I'm excited to see how you have architected those tests. Yeah,
+
+10
+00:02:08,430 --> 00:02:17,580
+Scott Tolinski: yeah, it's using some some tools that Apollo gives you with some little, I don't know, nice, custom little fun stuff. That's pretty sweet. Or
+
+11
+00:02:17,580 --> 00:02:40,080
+Wes Bos: we'll have a testing show coming up as well. Once Scott, and I sort of put it put together all the content and decide what will go into it because a lot of people have been asking for a testing show. I think there's a lot to talk about. There's a lot of like new services and new things coming to the scene right now. So I think it's a pretty exciting space. I think it's a space that's getting a lot easier than than it used to be even a year or two ago.
+
+12
+00:02:40,110 --> 00:03:13,800
+Scott Tolinski: Yeah, yeah, definitely. Can't wait for that one. This episode is sponsored by xojo, which is a cross platform rapid web app and app development platform, as well as cloudinary, which is an extremely I don't know relevant sponsor for this episode, because they do asset hosting for both video, and photos. And they do all sorts of on demand and manipulation and really fast file loading the really, really cool service. So we will hear more about those sponsors later on in the episode.
+
+13
+00:03:13,830 --> 00:03:20,640
+Wes Bos: So today, we're talking all about like images, videos, and downloading big zips. Hashtag big zit,
+
+14
+00:03:20,670 --> 00:03:23,100
+Scott Tolinski: we both got a lot of big zips download,
+
+15
+00:03:23,220 --> 00:05:16,050
+Wes Bos: we both, we both have big zips. And we've all we've run into various issues and found out various ways. And I guess part of making your website as fast as possible and making the user experience as as good as possible is paying a little bit of special attention to your videos to your images into your big zips that you have to download. So why don't we kick it off and just start talking about like a CDN. And what that is because everything we'll be talking about today generally involves working with some sort of external server. So a CDN stands for content delivery network. And the idea behind a CDN is that rather than putting your media files and and even your your CSS and your JavaScript files, rather than putting them on the same server that your website is hosted on, it sometimes makes sense to put those on a separate server that is distributed around the world, because what tends to happen is like, sometimes you just assume that everybody's in the States or North America and your website loads fast for you. And it's great. But if someone from say Japan is trying to visit your website, it can be a little bit slow, it can be a little bit sluggish for them to actually load those assets on your website. So a CDN will essentially give you one spot where you can load your images and then it will then go and distribute your images and your videos and your your media assets around the world. And then anytime someone requests like a JPEG of Scott, it will figure out where is the closest Scott JPEG on a server to me and let me let me load that one from the Japan server. of the Asia server or from the Europe server rather than having to go all the way across the ocean? Because I don't know how how the internet works. There's some sort of pipes series oceans. Oh, okay. Okay. And it'll speed it up, right, Scott? Yeah. And that's one of those things
+
+16
+00:05:16,050 --> 00:06:30,240
+Scott Tolinski: that you might not even think about, like, let's say, you're located in New York, and your server is located in New York, and you're thinking everything is loading up snappy. And that that actual physical distance is not very long, right. But let's say you're in Japan, and you're in Tokyo, that physical distance has just been multiplied by an extreme amount. And you're definitely going to see those latency that latency take place, with the actual physical distance that data needs to travel. So this content delivery is a delivery network, as Wes stated in our last take is like fairy dust, sprinkling your data all over these different servers all over the world, and making it nice and easy for users to access it. I remember when I was first learning about CD ends was when PageSpeed was starting to be like a major thing. And they would give you like grades like A, B, C, D, E, F, and whatever. And if you got a big old F for PageSpeed, your your page speed score would just go way, way, way down for the content delivery network. So that that was the first time that I was sort of had my eyes open to the wonders of a CDN, and just how it can improve your site loading performance and just overall deliverability of your assets.
+
+17
+00:06:31,290 --> 00:07:53,670
+Wes Bos: Yeah, the The first time I ever ran into it was when I released my sublime textbook, I had a bunch of videos, and I think I had about a gig worth of videos. And I was getting emails from from users in Europe saying like, this is brutally slow, my internet is fine, here's the here's the PageSpeed for my or here's the like, let's be tests for my internet, it's great. But your specific links to these videos are brutally slow. And what I realized is that I had thrown them up on Amazon s3, which is Amazon s3 is a space where you can throw up large media files and pay by the gig for how much people download them. And then based on where the people are in the world, you pay different amounts per gig. And it worked great for me, except that it was extremely slow because I was hosting them somewhere in the States and the European users were being extremely slow for them. So what ended up happening is that Amazon has another product called CloudFlare. Fried, no front, oh, so many clouds, too many clouds, cloud front, in front of your s3, and then it will magic fairy dust them around the world. And then when somebody from Europe then requests it, it's going to connect them to a European server rather than that one is a little bit more expensive. putting that in front of there, but well worth it because you can't can't give your users such a brutal experience in downloading these video files or big zips.
+
+18
+00:07:53,699 --> 00:08:22,350
+Scott Tolinski: Yeah, yeah. And I also am a user of cloud front. I'm gonna say that I'm gonna get it right. I heard that last time I was at CloudFlare. And it was something Yeah. But yeah, they'll also use that. And there's a lot of other CDN options. We have a few listed here, like cachefly max CDN, you can use, you can use what's called as a CDN. CloudFlare to as well.
+
+19
+00:08:23,759 --> 00:08:51,170
+Wes Bos: Yeah, that's me. We'll talk a little bit more about them when we talk about some of the different services. But there's the beauty of CloudFlare will sort of just sit in the middle of your application, and you don't really have to worry about distributing them for you, which is pretty neat. Yeah, so CD ends definitely is definitely a must have when you're you're loading up any kind of large media file or even just images files, because that can definitely slow down your website.
+
+20
+00:08:51,600 --> 00:09:09,650
+Scott Tolinski: And I would act Sorry to interrupt I would actually say you you would you'd need a CDN. On any site period that you're you're looking for have two people to use all over the world, right? If this isn't like a hobby site, this is like a professional site. I feel like you should be using a CDN no matter what.
+
+21
+00:09:10,650 --> 00:09:46,620
+Wes Bos: Yeah, like when might you not need a CDN? Maybe if it's like a local business, I'll be like, your users or hobby project. Like I did a lot of like WordPress websites, and very rarely unless it was a sort of an international audience, would I would I pick up a CDN. But I think there's not a whole lot of excuse not to use some sort of CDN these days, because I think it's a lot easier to and we'll go through some of these different services and different packages that you can use. And they're sort of just you can just bake them right into your WordPress or to whatever it is that you're using. Yeah.
+
+22
+00:09:47,640 --> 00:09:48,330
+Scott Tolinski: sick,
+
+23
+00:09:49,080 --> 00:09:55,710
+Wes Bos: sick pick pic. So what should we talk about first video images or big zips?
+
+24
+00:09:55,710 --> 00:10:41,910
+Scott Tolinski: Let's start with the the smallest and work our way up. So The smallest images, videos and then some Wiggins' some big gig territory with the big zips. So I think Yeah, we'll start with we'll start with images because images are usually of the range of, from, you know, kilobytes all the way to megabytes. Maybe if you have some giant images, you should, you should probably keep your images pretty small. But, uh, yeah, let's talk about images. And first and foremost, I think is a is the format's because that's like, sort of the initial, you know, starting point of an image is what initial format it is whether or not it's a JPEG, or ping, or PNG is some like, say,
+
+25
+00:10:41,910 --> 00:10:59,010
+Wes Bos: I say Pac. I say PNG. But then one Funny thing is is totally different. But we watching HGTV, and in Canada would call the H fac. But in the States, they always say it out. They say h VA See? Oh, yeah. What do you say get h fallis? h.
+
+26
+00:10:59,010 --> 00:11:22,860
+Scott Tolinski: Our they say I've always heard h back. But yeah, that seems like something that could be very possible. Yeah, we have a web P and we have we have the controversial name format. And I don't want to get an anybody's ruffle any feathers here. So the a gift or a GIF, depending on which one you like. But the GI f format?
+
+27
+00:11:22,860 --> 00:11:24,150
+Wes Bos: The gi Yeah,
+
+28
+00:11:24,180 --> 00:11:28,860
+Scott Tolinski: yeah, yeah, maybe we should just start calling it a GI F and then just go to de taris. Gi.
+
+29
+00:11:28,860 --> 00:12:12,840
+Wes Bos: Yeah. That's great. So I think it's really important to talk about different image formats, because like, we talked about making your site as fast as possible and using CD ends. But at the very basic, I think a lot of people don't pay enough attention to making your images small enough. And I myself am guilty of this. But it's really easy to launch a website with two or three Meg's worth of images, when in reality, you could probably get away with like 100 or 200 k worth of images if, if you paid a little bit of attention to format. And we'll talk about this in a second and compression of these. So I don't know, do you want to run through the different formats and say kind of what they are for?
+
+30
+00:12:13,170 --> 00:12:50,130
+Scott Tolinski: Yeah, so this is my understanding of it. Basically, you're going to be using a JPEG for photos primarily, they're going to be lower in file size. That way, you're going to be using a ping or a PNG file for graphics or something that you need transparency because pings do transparency and JPEGs do not. And then we have web p, which is sort of the modern wonder format, which is developed by Google I believe, and it is just a faster, smaller, better letter, everything format, stronger, all of those things.
+
+31
+00:12:50,160 --> 00:13:01,800
+Wes Bos: So it does everything you want. It's tiny in size. It has transparency like a PNG it does full color like a JPEG it does animation, like a GIF. It's everything right? And the
+
+32
+00:13:01,800 --> 00:13:06,030
+Scott Tolinski: only thing missing is compatibility. And that's that's Yeah, the only thing I wonder
+
+33
+00:13:06,030 --> 00:13:12,090
+Wes Bos: let's look at it let's look it up right now because I'm web p
+
+34
+00:13:12,510 --> 00:13:22,080
+Scott Tolinski: image format and I use so can I Yeah, looks like the gold right in Firefox big old red and edge big old red and IE. Big old dreaded so far.
+
+35
+00:13:23,340 --> 00:15:19,860
+Wes Bos: So it's let's maybe we'll flip it. It's currently only available on Chrome, Opera Mini Chrome for Android UC Browser and Samsung internet. So nothing to shake a stick at because Wait, is that the same? It's still significant because like, let's talk about like, if your Facebook Wait, Facebook, I believe currently serves up Web p to Chrome users. So let's say half of their users are on Chrome and they could save 20% on every image that they serve up that's like a major savings in bandwidth for free using Chrome and also in this is a bit great because our sponsor today one of our sponsors is cloudinary is one of the features of cloudinary which I've used for my my CSS Grid course is the ability to just set the format to auto and what it will do is it will first it will compress it to whatever format is is best which is great because I always find this thing I it's like the rule of thumb like pictures are JPEGs and logos are PNG s but then sometimes like if you save a PNG as a JPEG it's like way smaller for whatever reason and the for the there's no lost he can't you can't see any pixelation or anything like that. So you're like, Oh, that's weird. Like why do I Why Am I breaking this rule of this should be a PNG it's like a logo, but it's way smaller as a JPEG. And one of the cool features of cloudinary is you just set it to format auto and it will figure out what the smallest possible version it can store it as And then it will also, if it detects a browser that supports web p, it will serve up a web p for you for the user. Otherwise it will serve up whatever it thinks is the next best format for you, which is pretty, pretty nifty that you the developer doesn't have to care about that. It would you just say, I don't know, do your best. And, Jennifer, yeah, I'm
+
+36
+00:15:19,860 --> 00:15:51,090
+Scott Tolinski: a huge fan of the punting to the experts like, you are the expert in this you are the service, it's in your best interest as an image host to serve up the smallest file size possible. And cloudinary does a great job with it. So sorry, if this seems like a large ad, but this is just like, how we use it. So it's one of those things that Yeah, I would absolutely trust them to give me the best image format, not only because it's in their best interest, just because there are the image compression experts as well on that.
+
+37
+00:15:51,120 --> 00:17:15,240
+Wes Bos: Yeah. One other thing we should talk about with compression is often when you are compressing via different methods, we'll talk about what those are in second. There's an option between lossless and lossy. And the difference between those is that lossless will never actually degrade the quality of your image, it will try squeeze out as much of the space that it can by doing I don't know sorting the bits in different ways and using all kinds of different tricks to make the image as small as it can. But it will never throw any extra pixels out the door. And with lossless that's when you start getting pixelation, but at a certain point, there's sort of the sweet spot with lossless where you do throw some of the pixels out the door, which makes the file smaller, but it still is, you can't really tell that it's been pixelated or compressed anymore. So it's kind of that sweet spot where you want to get it as small as possible without affecting the quality at all, or all that much so that it's actually noticeable to your user. Yeah. And then there's the I mean, there's the type of compression, that's simply just removing all the extra data that doesn't pertain to the image whatsoever, which is all of your metadata. Like a lot of people don't know this. But when you take a photo, there's a ton of data attached that photo, whether it's the location, the type of camera, all sorts of stuff about like, this photo, right has a whole bunch, it's called Ada Exif, Exif
+
+38
+00:17:15,389 --> 00:18:26,670
+Scott Tolinski: EXIF data. Yeah. And one of the things that these compression engines can do is just remove all that because, you know, why do your users need to care about what kind of camera this This photo was taken on? They absolutely don't. And if for the most part, you don't want to serve them that data. So a lot of these image compressions and I would, I wouldn't necessarily say a lot of I would say all of them are going to remove that metadata, if you ask him to, which is usually a default option. And that's definitely something that you're going to want to make sure you get rid of its image compression is one of those things, that's easy, it's easy. If you are have a build tool, it's easy, if you don't have a build tool, it's easy. If you're using a third party service, it is something that you cannot leave out of your process, because it's so easy and so valuable. I mean, shaving a couple of kilobytes off an image, you know, hundred times over is going to really just increase the amount of positive address impression that your website has on people just because of these load times are going to be faster, there's going to be less jank overall, but the whole thing is just going to be better. So there's really no excuse not to compress your images in some sort of way. Mm hmm.
+
+39
+00:18:26,840 --> 00:19:19,500
+Wes Bos: I think another one thing that I see after teaching couple coding boot camps is awesome people come out of it, and they they don't, it's not often taught about compression and how easy this sort of stuff is. And there's I guess there's like three things that you can do to make the file size smaller, like, the obvious one is resize your image to the size that you actually need it to be. Or even in some cases, resize it to be just a little bit smaller. And then you can stretch it up without any seeing anything. So obviously, the size of it. And then there's the Scott talked about removing all that extra metadata. And then the third one is actually using a compression library on it. So let's talk about that. Like, okay, I'm sitting here, I've got a website with a bunch of images. What do I use to make my images smaller? Yeah. Is there some automated stuff there? Is there some services I can use?
+
+40
+00:19:19,530 --> 00:20:17,700
+Scott Tolinski: Yeah, so like, one of the cool things, one of the coolest, easiest ways to do this is let's say you have the site and you just have a folder full of images. You don't have a build process set up, you're not using Webpack Gulp grunt any of that stuff on the easiest possible things you can do is download an app called image opt in. We'll link to that in the show notes. Image. optim is just a standard app that you can throw it in your dock and you could essentially click and drag that folder onto the icon of image, opt in and click Go and it's going to shave a ton of data off of your images. And the coolest part is it tells you how much data shaved off of each image so you can see and you can feel really good about that decision. To drop your images into the image optomap and just let it sort of crunch those images a little bit, and there's no degradation and photo quality with image optim. So nice and easy, it's free. Just just something that you you should be doing if you aren't using any sort of other image compression.
+
+41
+00:20:17,730 --> 00:22:45,690
+Wes Bos: Yeah, image Optimus great, I always have it because as much as a command line, techie as I am, sometimes I just need like one image to be compressed. And I just open the app, drop it in, and it spits it out the other end, nice and compressed, much smaller than I actually need it. So under the hood, what is image optimum actually using and it's likely and there's, there's this thing out there called image min. And the thing about images, that compressing images that was so hard for so long, is that all of these different libraries, you need a different library for every type of image if you're compressing PNGs is a different library than if you're compressing JPEGs. And even when you're compressing JPEGs there's all kinds of different libraries out there that you could possibly use. And even with SVG images, you might think, oh, SVG are the best. They're they're vector. Even inside of that there's all kinds of stuff that can be stripped out of an SVG to make it even, even smaller. So what's really neat is that there's a there's a library out there called image min interfaces with all of these, I think there's like 14 or so image compression libraries out there. And they're always like built in these like lower level languages called light like like C and whatnot. And it's hard to use. So image Minh is a JavaScript interface that you can use to actually interface with all these different ones. And it takes care of the compiling and all that like harder stuff. And you just have to simply and I've used it specifically with Gulp and Webpack. In the past, you just have the types of images and it comes defaulted with a whole bunch of really good ones that so you could you could just use it with the defaults, I specifically like to swap out the JPEG one with a compression library called Moz. jpeg. Because as men, it's amazing. If you're just posting up photos of people on the internet, you run them through mas. jpg, that's exactly what it's for. It's exactly for displaying JPEGs on the on this on the internet. And it just gets them so nice and small. I usually have a gulp test setup where it just watches my image folder. And then anytime there's a new image folder in there, it will just rerun that specific image through it, and then dump it out into like a compressed folder where I just have like a mapped one to one, I always always maintain my like original images, and then was kick out the the smaller ones into like a compressed folder. It's just so so nice.
+
+42
+00:22:45,720 --> 00:23:13,590
+Scott Tolinski: Yeah, and this is one of those things that you can throw in your build tool. Regardless of what build tool you tool you're using. chances are there's an interface for literally whatever, if you're using just to Webpack, or Gulp or grunt or Yeah, so it's gonna work with whatever build tool you're using. So definitely, definitely something to add in there if you are using a build tool. And if you're not, again, image optim, drag that folder and drop a compress all that good stuff.
+
+43
+00:23:15,060 --> 00:25:27,780
+Wes Bos: Awesome. So let's take a quick break and talk about our sponsor, which is cloudinary already talked about them. And I talked about this earlier. But cloudinary, I found out because of Scott, and Scott had us in a couple projects before and then I sort of was Scott told me like you can just put the one of the features of cloudinary is you can just put their URL in front of your existing images. And it will sort of suck up the images, compress them, resize them, do anything you want them and then spit them out the other end. And that was great if you have an existing website, which you want to just like, run all of your images through it. But it is a sort of a full featured image and video hosting platform as well as it has a whole bunch of tooling built into it. So what I like to use it for now is I use it for uploading all of my images for a specific website. And then it has resizing built in. So if you don't want to have to manually resize all of your images, or even write a like a gulp script that will manually resize them down free images, you can just hit their API or hit their specific URLs, and it will transform them to that specific size. It has a whole bunch of stuff for watermarking and filters, rotation images, face detection, all kinds of really neat stuff. The thing that it use it for most is, is the two things. It's auto image quality. So it will say I'm going to compress this thing as much as I possibly can without making the final image look like garbage. And then also the auto format where it will figure out if I need a web p or a PNG or whatever, and then serve up the appropriate one to your users. And you, the developer do not need to care about this stuff. So I'm a, I've been a big fan of only been into cloudinary for maybe about a month now. But I used it on my CSS Grid course, when it launched because I got nailed with traffic. And it saved my butt because I didn't have to worry about a CDN, because it does the CDN for you. I didn't need to worry about compression or resizing or any of this stuff. It just took care of it for me. So I know you're a big fan of it, too, right?
+
+44
+00:25:27,840 --> 00:26:24,720
+Scott Tolinski: Yeah, yeah, I use it for all of my image hosting, I upload images directly to cloudinary from the client, I use it to re host the images I pull in from the YouTube API, because when I pull them in from the YouTube API, they're giving me a YouTube link right for the image. And I basically just tack that that image link on to the cloudinary link. And then instead of having to worry about YouTube's servers, or CD ends, or anything about loading up, those images are having to worry about pulling those images off and saving them to my own file storage. cloudinary does all of that for me just by using that fetch URL, and it keeps it up on their servers, and I forever stored in there with that URL that I don't have to worry about ever again. And I don't have to worry about someone else's servers, all of my images are in one place. And yeah, I also use that auto formatting. I use a nice little we can talk about this in a minute here, but a picture fill to serve up a whole bunch of different sizes for different people that's like, Oh, yeah,
+
+45
+00:26:24,720 --> 00:26:28,680
+Wes Bos: cuz you can, you can generate a bunch of sizes, when you upload a single image or so
+
+46
+00:26:28,680 --> 00:27:37,320
+Scott Tolinski: yeah, actually. So I don't know, we can we can bleed out of this advertisement into actual content here. So like, what I what I do is I have like an array of images or image sizes, right? These are my different sizes, and then I just have a map over that array. And then I have that in my picture fill of these different sizes, and then that those sizes, essentially just get tacked on to the cloud Neri URL as what size I want the image to be. So I can just give it an array of saying here, I want this image at 200 pixels. At the device with of 200 pixels, I want this image at 400 pixels at the device with a 400 pixels, whatever just iterates over that array inside of a picture, Phil cloudinary is going to generate all of those images at the different sizes for me. So that way a user on a mobile device is only ever getting a photo that is 200 pixels wide, or 300 pixels wide or whatever. And I didn't have to do any work. I didn't have to generate those photos. All I had to do was pass in a number to a URL in cloudinary made that cached it served it up and made it nice.
+
+47
+00:27:38,580 --> 00:28:27,510
+Wes Bos: Yeah, that's so awesome. It's one of these things like I hate to be or not, I'm glad to be gushing about it. Because it's like one of these services that I found. I'm like, why have I not been been using it? They also have like a really nice like, free I think what do you get like 10 gigs for free before you even have to start paying for it? Yeah. Which is, which is pretty nifty. The API is really good. I'm using it in my upcoming react course. They're not paying me for this or anything. I just think that it's the easiest way to upload images. And I'm not lying the code to upload an image from a form tag, the JavaScript is nine lines, nothing like it's a weight fetch, you hit this API endpoint, you send the data along in the body. And it comes back with a URL of your resized and compressed image based on a preset preset and your back end, which is pretty neat. Yeah,
+
+48
+00:28:27,510 --> 00:28:48,540
+Scott Tolinski: it took something that I did not like working in at all, which is image hosting, compression, all that stuff, right? There's too many variables, there's so much stuff to do, I took something that I did not like doing. I especially didn't like my server doing it because it can occasionally be expensive on your server if there's a lot of stuff going on and made it very nice and easy. So love it. Yeah. Big fan. Cool.
+
+49
+00:28:48,630 --> 00:29:32,670
+Wes Bos: So a couple more after we're done gushing about a couple things, I want to tell you about cloudinary. Specifically, they asked so they obviously have adapters for all for react for view for for node for Python, all of your back end and front end languages. You can use it just right from the client if you feel like doing that as well. And then finally, they also have a conference on April 12 coming up called image con, as a conference all about, I guess images on the internet, which they're hosting. It sounds pretty exciting. And you can use the code syntax 99 to get a discount on that. So thanks so much to cloudinary for sponsoring and happy to have you on. All right, so we did images. Should we should we keep going with talking about video?
+
+50
+00:29:32,699 --> 00:31:12,660
+Scott Tolinski: Yeah, so we are we're getting into some bigger gigs here. Not yet into the big zip territory, but definitely some bigger gigs and we're gonna talk about images or images video. Because video is something that has become more and more viable every single year on the web. And for a host of different reasons for a long time video was just a huge, tremendous pain to do on the video. You had to always jump immediately into the flash system you had to either use A package like JW Player, one of these big old flash players, or you had to buy one, you have to worry about hosting this specific format that the Flash Player is going to use. And then you had to deal with while building the actual player in Flash, which was always awful. And so for a lot of these reasons, video hosting on the internet really took off when things like YouTube started to get more popular. People wanted to host more more and more video on the web. And video is expensive. There, there is a large file size at plate, there is some complexity at play. And thankfully, html5 came along with the video element saved us all from the flash or JavaScript held that we were in. And it's made working with video so much easier to the point where anybody, like, can just throw up a video, I mean, I have a video as the background of my website, it's like, hey, this video was so inexpensive and so easy that it's in the background, who cares, you know, whatever, video is just become one of those things that on the web is just now everywhere. And so having your file sizes, having your services have everything loading quickly is becoming a much bigger deal.
+
+51
+00:31:14,370 --> 00:35:15,090
+Wes Bos: Yeah, exactly. So what do I I'll talk a little bit of my own video hosting setup, and I'll talk about some of the different options that you have there in the first one is you cannot just serve up video from a regular server. Because the actual streaming of the video is first you're going to kill the bandwidth that you have available on the server. And second, if you get 100 people trying to stream a video, the CPU that is trying to serve up that large file is just going to spike and your server is going to fall over. So you I would go as far to say you absolutely have to use some sort of external server that is sort of set up and ready to serve up these these larger files out there. So I've talked about mine if you're if you're curious about Scott, and I've set up how we do this, we have a whole podcast called our stacks. And you can go back I get emails all the time people asking about, they usually say love the podcast, what do you use to host your video, and I'm like, you obviously didn't listen to the podcast, because we have a whole podcast on that. But I'll talk a little bit about mine right now, for the longest time, and actually for forever, I've been using Vimeo to host my videos. So when I'm when I have my videos, I export them from my ScreenFlow. And they are in extremely high quality. And then what I do actually, no i i don't i export them at 10 ADP, and I have some settings that I use. They're not they're not extremely high quality, but they're fairly high quality. And then what I do is I'll upload those to Vimeo. And then Vimeo will then make a couple copies of that and they will compress them down to different versions that will make sense for mobile and, and for for 720 and 1080. And then what I was doing is I took the Vimeo pro for like 250 bucks a year, they'll just give you like the raw mp4 file which you can then use in your own player. So for the longest time, I was using my own player that I had built with vimeos mp4 files. And that was pretty good. I was really happy with it because I got a custom player. But the downside to that is I would often get users around the world where the the bandwidth was much slower. And they would say like, like, Is there any way I can degrade the quality so that it would load faster for me? And my answer to that was no, I don't have a way to do that. Which sucks in those users which have to download the zip file and watch them locally. But that's not a great experience because you lose like video tracking which one you watched and whatnot. So I what I and also kind of at the same time just before Christmas on like December 23, I got an email from Vimeo being like, Mr. Boss, you're currently using about 25 terabytes a month in bandwidth. Which there's no way they're making money off of me at 25 terabytes a month for $200 a year or 250 a year. So what they said is you may not use unlimited bandwidth on our unlimited bandwidth plan if you're using your own player. And I said, Okay, fair enough. I've been I've been meaning to figure out a solution for my video as well. So I switched to the Vimeo player. So vimeos own player will embed into your actual player and then they do automatic degrading of quality. If you're on a slow network or all that stuff, and it's great. Their player is good. The only reason I hadn't used their player in the first place when I built my platform was because they didn't have the ability to control the playback speed, which is a huge thing when you're watching tutorials. So they had since implemented that and I was able to to switch Over my react player to using Vimeo as a player for that. So yeah, they are happy, everybody was happy. And I know it's good, I was really happy to actually offer my users the ability to degrade quality, if they're on a slower bandwidth. Yeah,
+
+52
+00:35:15,090 --> 00:37:33,270
+Scott Tolinski: and I think this highlights something that I like about video services, that just how important it is to lean on companies that have this infrastructure in place, because video, you're serving up a big gigs. And you, you know, like you had with this, this custom player, this custom player wasn't able to serve up the, the sizes that we're going to keep vimeos bandwidth in check, right, or their their usage. So you lean hard on their, their player, and that player is now more capable. And I lean hard, personally, like lean super hard on YouTube, I let their servers do all of the work. So I host all my stuff on YouTube, and even unlisted or private videos, I bring them in through some special stuff, I wrote my API that I can host, you know, private videos on YouTube, and still have them play on my website, and not have to worry about a third party hosts other than YouTube. In addition, I use them for compression, because I edit and record and do everything in 4k 60 frames per second, then I'll throw them up to YouTube. But I don't want my users to download 4k 60 frames per second. Not only that, but I don't want to have to store a whole bunch of different versions of these files, outside of my, my backup servers and stuff like that. So what I do is I, I upload that full quality, 4k, whatever to YouTube, I let them host that version. And then I use the YouTube DL, the library, the command line tool, and I use that to download all of my playlists in whatever format that I want. And the cool thing is, is you can just pass it into YouTube download, you can just pass in the playlist, and then maybe some formatting options or, or file size options. You just say hey, go and it's going to download all that stuff. And and these files are going to be compressed to the the way that YouTube would have you download them or whatever anyways. So again, it's leaning hard on your YouTube servers to handle all of that processing, all of those the video hosting and all that stuff for me. And then I don't have to do it. I don't have to sit and wait for you know, 10 hours. Well, Final Cut in my little laptop tries to render these videos out in eight different formats. So I lean like hard on YouTube. Yeah,
+
+53
+00:37:34,350 --> 00:38:07,650
+Wes Bos: sure, the amount of time I've spent trying to figure out all the different like bitrate and audio settings in my thing, I'm garbage at figuring out how to best compress video compared to YouTube who does like millions of videos a day. So I'd much rather just give them the highest possible quality version. And then they will come back to me with a compressed version after about 10 minutes or so. And you can then download that. And usually that's the best way to get a really nicely compressed video is just to let the pros do it for you.
+
+54
+00:38:08,360 --> 00:39:18,600
+Scott Tolinski: Yeah, I This used to be my job. I was a video editor. And part of my job was compressing and exporting video. I mean, I had to do that for specific DVD releases and stuff like they used to be part of my job. And I still don't want to do it like I don't, I would just rather have YouTube take care of it. Especially using those tools make it so so easy. If you aren't into having a company like Vimeo or YouTube host your video that are primarily like public video storage places. There's a lot of other third parties that are primarily built for private video hosting. at Ford, we used bright Cove, bright kovas is one of those ones that handles they give you good metrics, the service does cost a little bit, all of these services are going to cost a little bit of money. And you're definitely paying a premium for that. But they do give you a customized video player. They make it nice and easy to host your videos with Brightcove. And at that point, they sort of act just like it's an image host, or it's a video host right? They handle all the video player, they handle all that stuff. There's also Wistia Wistia, which I was calling Wistia. But apparently it's Wistia Wistia
+
+55
+00:39:18,899 --> 00:39:38,690
+Wes Bos: Yeah, I was using Wistia initially, actually, but the their bandwidth is is just too much. So it would be like four grand a month for me to host my videos on Wistia which they have some really nice tools but the the bandwidth is just too much for me. Mm hmm. Then there is also sprout video, which is one of the ones we looked at when we were looking at Ford for Ford.
+
+56
+00:39:39,900 --> 00:39:57,000
+Scott Tolinski: Yeah, it does spark video. Nice little website. Honestly, I don't know too much about it more than that. But it's it's video hosting. They give you a video player customize metrics, analytics, that sort of stuff. So a lot of these are going to be very similar in sort of what they're offering maybe that it's just like micro points. what's different between them?
+
+57
+00:39:57,920 --> 00:40:17,630
+Wes Bos: Yeah, definitely check them out. And then obviously, our Sponsor de cloudinary also does video as well as they do the transforms for you. So you can upload your video to them, you can use their nice player but the ability to add watermarks and crop the video and compress it and all the stuff that you would do to an image you can also do it to video as well.
+
+58
+00:40:18,650 --> 00:40:22,080
+Scott Tolinski: Yeah, that's pretty amazing. The Yeah, man transforming.
+
+59
+00:40:23,400 --> 00:42:18,030
+Wes Bos: It's pretty, pretty nifty to be able to crop and, and watermark. And, oh, I think that you can put a, I guess you put a circle around the video and whatnot. So I'm pretty. I'm gonna check it out for for my own stuff i don't i'm so heavily built into Vimeo at this time that I don't see myself moving anytime soon. Because I have a whole thing with captions, like I can auto upload my captions to Vimeo and whatnot. So I'm pretty happy with that. But it's definitely worth checking out if you're doing any sort of custom video stuff. And then also, what is that on CloudFlare CloudFlare. So maybe we should talk about what CloudFlare is. And then we'll talk about their video product that's coming out CloudFlare is they started out I guess has like the DDoS mitigator, where the way that it works is that you, instead of putting your domain name directly to your server, you put your domain name and point it to CloudFlare. And then CloudFlare will sort of sit in between your domain name and your actual server. And it will intercept all the incoming requests. And then it's able to do all kinds of stuff. So one of them is mitigate DDoS. So if someone's trying to nail your website, it will stop that. Another one is it is a CDN for you. So it will take your CSS, your JavaScript, all of your images, it will try to compress them for you it will put them on CD ends around the world, and then serve them up. So you don't even have to really worry about compressing your images, because CloudFlare will do that for you. What other kinds of stuff does it does it do for you? Obviously, it puts your website around the world for you. It gives you free HTTPS, which is pretty sweet. To be able to do. I don't know cloud CloudFlare is pretty sweet. And even on the the free plan that they have. It gives you quite a bit for free, which is pretty nifty. Yeah,
+
+60
+00:42:18,149 --> 00:42:41,460
+Scott Tolinski: that was you use CloudFlare. I don't on level up. But that was one of those things than the free plan came out. I was just sort of like, yikes, this saves you a lot of stuff for free. I remember when they've they first hit the scene and everyone was just so like blown away by how cool it was. I don't use it. Because I just have my CDN set up, I guess it would be useful for like the DDoS protection and stuff like that.
+
+61
+00:42:43,190 --> 00:43:20,820
+Wes Bos: Yeah, it's really good. And then one other thing I use it for, which is totally random that they do this, but they they give you a header on every request that tells you what country the user is coming from. And I use that for my country specific discounts. And I found that that is fairly hard to spoof with a CloudFlare is like a huge piece of the internet. And it's it's very hard to trick them. And I think part of what they also do is they know about people trying to use proxies and whatnot. I'm not saying it's not possible. It's certainly a few people have tried and done it. But it does a pretty good job at weeding out people who are trying to cheat the system.
+
+62
+00:43:20,960 --> 00:43:21,570
+Scott Tolinski: Nice.
+
+63
+00:43:22,190 --> 00:44:04,320
+Wes Bos: Yeah, that's and so what they're doing, like the one thing that they don't do is they don't cache any of your large files at files, and they don't cash in your video file. So what they're rolling out now is a new video hosting service. It's currently in beta. I've had some chats with them before the new year before while I was having that trouble with Vimeo. But I since I since I've switched over to the Vimeo custom player and I'm not looking at it anymore. But it's pretty exciting that CloudFlare is coming out with their own their own video hosting product. And from what they were quoting me on pricing, it seemed very good. So I'd be excited to for when that comes out to the general public. Yeah,
+
+64
+00:44:04,320 --> 00:44:30,990
+Scott Tolinski: I. And like I said, it's an exciting time for video on the web. I mean, I just remember the wonderful feelings I got when I found out I could just use a video tag for the first time in HTML. And then you have to deal with any sort of, I mean, you had to deal with different formats, because at that time mp4 was chrome and then you had Oji v ogV was for Firefox.
+
+65
+00:44:31,980 --> 00:44:40,560
+Wes Bos: G Yeah, that was a nightmare. You had to like, supply like three formats and then fall back to a flashplayer Yeah, inside of the video tag man, those were the video for
+
+66
+00:44:40,560 --> 00:45:33,960
+Scott Tolinski: everyone. I remember that. There's a website video for everyone that you could just upload your video and whatever, give you a bunch of different versions and give you the code to make it happen in the flash player and everything like that. Yeah, that video is come so so long, so long, so long. It was actually Okay, so One of the things that you mentioned before is that, you know, you'd want to not host your videos on a server or your own server, I actually think that there is a use case for hosting very, very short videos on your server. Like, for instance, the background of my level of detour, or the background of Scott tolinksi.com is a very short video. And I think it's like kilobytes. I don't know how big it is. But it's a really small video. And that is a short video. It's on loop. And it's that's not hurting anybody, I don't think but I think now that most part if you're getting, like watching video territory,
+
+67
+00:45:34,920 --> 00:45:59,790
+Wes Bos: oh, one other kind of cool thing I want to talk about while we're on this video thing is web torrent. So we all know what what torrents are, they are the ability to distribute a file across many computers. And then when you want to download a file, let's say, I don't know what what kind of legal video would you download from like, if you wanted to watch it like a open source breakdancing video,
+
+68
+00:45:59,790 --> 00:46:08,610
+Scott Tolinski: or let's say you wanted to watch a live streaming hockey game, like a hockey game that's live streaming that's legally provided as a stream.
+
+69
+00:46:09,420 --> 00:47:48,360
+Wes Bos: Yeah, so they would distribute these files across all of the different browsers, or all the different computers, and then you would download a little bit from everybody. And then as part of the downloading, you'd also seed which means that you would also give the video up for download the the pieces that you do have, you can let other people download the pieces from you. And that's the whole idea is that it's just as mesh of computer sharing stuff. And I'm pretty sure that's actually how Spotify works as well. Don't quote me on this. But I did hear that Spotify will use the computer's bandwidth to upload files to people that are nearby, rather than have a central service. So there's this thing called web torrent, which is just basically BitTorrent implemented in JavaScript. And it's pretty neat, because what that then allows you to do is I don't do this, but what I could do is I could use my users who are watching my videos, and also be cedars, and upload the video to other people. And then you have no bandwidth bill, as long as there's always enough people watching it. And you can also you can also supplement it with your own server as well if you'd like. And it just blew my mind that that was possible to watch a video in the browser, by downloading it from other connections that they use. I think they use web RTC to connect to air on different computer, and then simultaneously upload it to other people, which is pretty neat. I'm not stoked about using my users bandwidth, without them knowing. They're like they pay me to watch my video. So I don't really want to use their bandwidth to do that. And I have a pretty good thing going on already. But I was pretty interested to see how WebStorm works. Yeah,
+
+70
+00:47:48,390 --> 00:48:28,770
+Scott Tolinski: yeah. In fact, one of the cool things, there's an app called soda player, soda player.com. This episode getting a really nice looking website. But it's overall it's like this modern video streamer torrent app, video torrent app, and you just paste in a URL to that torrent or whatever. And it plays that the torrent. But this app is is built on electron. And I believe it uses web torrent. I guess I don't know what else you would use. If it looks like someone on Hacker News is saying it uses web torrent and FFmpeg. Yeah. So there's all
+
+71
+00:48:28,800 --> 00:48:31,200
+Wes Bos: sorts of features. Oh, lievable.
+
+72
+00:48:31,230 --> 00:48:36,720
+Scott Tolinski: Yeah, the web here is powering probably the best video torrent app on the market. Amazing.
+
+73
+00:48:37,620 --> 00:49:46,470
+Wes Bos: Neat. All right, let's take a break and talk about our sponsors. xojo. Before we get into talking about big zips, and we've had xojo on a couple times, and xojo is a cross platform development tool for creating native apps for desktop, mobile web and the Raspberry Pi was xojo, you can really just write a one app, say can write one on a Mac, you click a button and it's going to compile to the completely native version on Windows or on Raspberry Pi or whatever it is that you're looking to compile to. So sojo lets you abstract from the platform specific details you can focus on actually just making your application focus on the application itself and not worry about all the different cross platform bugs that are gonna pop up when you do this thing. So users of xojo include fortune 500, companies, citizen developers, professional developers, it hobbyists, and students, anyone who wants to build apps faster. So listeners of syntax get 20% off with the coupon code syntax, and you can try it out for free at xojo. That's Expo jo.com forward slash syntax. Thanks so much to xojo for sponsor, yeah,
+
+74
+00:49:46,500 --> 00:50:01,920
+Scott Tolinski: I'm such a huge fan of things that just make difficult tasks like cross platform apps a lot easier, right? Yeah, you know, people spend way too much time on on that sort of stuff and having tools that can really eliminate a lot of times Yeah, big abstracted away from you.
+
+75
+00:50:02,040 --> 00:50:03,690
+Wes Bos: There's something to be said for that. Yeah.
+
+76
+00:50:04,230 --> 00:50:50,340
+Scott Tolinski: Yeah, absolutely. All right. It seems like we're getting into big zip territory. We're gonna be diving into some big zips here. Big zip, which we both we both host a lot of big zips considering that we both have video platforms that are selling videos and videos, as we mentioned in the last section of this are big. So yep, let's talk about hosting zip files because I've primarily been using Amazon s3 to hosts all of my videos. And I've done a little tour of backblaze b two as well, which I know you use. So I host on backblaze as well as s3 I got a little bit of here and a little bit of they're doing some trial me so yeah,
+
+77
+00:50:51,000 --> 00:52:05,610
+Wes Bos: yeah. So I what I had done for the longest time is I zipped up my files and I put them on Amazon s3 and then I put cloud front in front of that, which would distribute them around the world and then you pay for that and my bandwidth bills were extremely high, just because cloud front and s3 are expensive. And also I was doing a poor job at compressing my videos like they were way too big for for what I should have been I didn't even realize this until a couple of people emailed me being like, Hey, you know if you run these through, like, what is the video compressing FFmpeg I use handbrake, which is a UI and then handbrake will handbrake has this thing called a like a fast 10 ADP, and it will it'll do a good job of compressing them. And then so I did that. And that brought my my zips down. They were not so much big zips, they're just medium zips. And then I'm testing out, I still have about half my files on Amazon s3 with CloudFront and have the other half on black backblaze b two. And back black mu, the backblaze v2 is so much cheaper. Like I think it's like four or five times cheaper. Let me look it up real quick.
+
+78
+00:52:05,640 --> 00:52:18,510
+Scott Tolinski: backblaze. You know, what I didn't like about backblaze is that you want to use their command line uploader to upload a file that was larger than six gigabytes. I had like just one zip. Yeah,
+
+79
+00:52:18,540 --> 00:52:24,360
+Wes Bos: there's there's a couple gripes I have with it. That's one and I remedied that by using you know the app transmit
+
+80
+00:52:24,390 --> 00:52:31,170
+Scott Tolinski: Yeah, yeah. Just to fit. Oh, but it was blocking me from Yes, it was it? I don't know. Maybe you're right. Maybe that's what I did as my solution because
+
+81
+00:52:31,170 --> 00:53:44,010
+Wes Bos: that was it's not FTP. But transmit knows about backlight. Yeah, so it'll interface with with backblaze. So backblaze to store a gig a month is half a cent. So if you've got a one gig zip, that's half a cent a month. And then to download it, it's two cents a gig. And then in comparison, Amazon s3 was five cents a gig plus whatever CloudFront was on top of that. So I know that sometimes when I had users from India downloading my files, I was paying maybe like 1520 cents a gig because it was more expensive in India, and then you also pay to store as well. So I was so impressed at how much my bandwidth went down by both from doing better compression and moving over to backblaze. It was so much cheaper. The one thing that I still don't know, and I've said this on a past episode is that it's backblaze is not a CDN. They just have one data center in the US. However, I have never received a complaint about slow downloads from backblaze. And I've received many from Amazon s3 without cloud.
+
+82
+00:53:44,700 --> 00:54:13,470
+Scott Tolinski: Yeah, I definitely have to. Yeah, although I haven't I haven't had the necessarily the Well, yes, you're right. I haven't had any negative comments from backblaze. But I have had negative comments from people using s3 just like hey, why the video is so slow downloading like they shouldn't be. But yeah, no, I think that's definitely something I should maybe do a little bit heavier of a trial on I have, you know, a good amount over there. But maybe I should be doing more save myself some. Yeah. Well,
+
+83
+00:54:13,530 --> 00:54:54,930
+Wes Bos: I had, I had a bunch of users before I did it. I had a bunch of users do some tests on some zips, some big zips that I had on backblaze. And I'm like, hey, you're in it was specifically Germany. I don't know what it is about Germany, but it was I guess I have a lot of customers in Germany but it was always slow in Germany. So I found a bunch of users spread around the world space and a bunch in Germany and all of them said it is fine. So I've been really happy with it. I am going to move the rest of my video files over to backblaze just because of the the savings like I was spending over $1,000 a month on bandwidth bills from Amazon and and my backblaze bills are under $70 a month now. Which is amazing. Nice. Nice.
+
+84
+00:54:54,930 --> 00:55:25,740
+Scott Tolinski: So for you You said you use handbrake for your video company. Yeah, I use a was an MPEG stream clip. I just wanted to get that out there. It's one of the worst. I'm so sorry if you work on this because I know it's open source it's one of the worst looking apps and websites for one of these type of projects. Again I apologize the the products really nice it but it's really good for all sorts of video format compression and all sorts of stuff like that. Really nice all open sources stuff.
+
+85
+00:55:26,880 --> 00:55:32,880
+Wes Bos: They have a hit counter on their website. Oh, they do. Whoo. 16 million hits. Wow, impressive. Yeah.
+
+86
+00:55:33,150 --> 00:56:43,530
+Scott Tolinski: Oh, yeah. That these these accordions drive me nuts, too. They have like a hot hover accordions on like sexually. It drives me nuts. latest update was in 2012. But the thing about this stuff is just rock solid. Yeah, this is like I said, this app is not been touched in forever, and it works perfectly fine. Although you probably won't be able to get some like hot new web and stuff out of it. So we actually, okay, we talked about image formats. But we did talk about video formats, of which there is the ogV. There's the mp4, which is like the one you're probably going to encounter the most. But there's also a movie, which is Apple's refusal to use MPI M Oh, yeah. It's like, come on, man. Like, why just just make this an mp4. Just Just make it an mp4, what's the deal there. And then there's web M, which is just like web P is for images. But for video. And again, it's the Google wonder format that is magically super fast, magically, super awesome. And just missing out on that compatibility layer there. So I guess those are the main formats are going to encounter of video on the web. Yeah, maybe
+
+87
+00:56:43,530 --> 00:58:16,770
+Wes Bos: we should talk about like, like, Why Why is there all these like formats out there? I think money that's cuz licensing mp4 is not an open standard. Is that right? Yeah, I forget who owns who owns what motion Motion Picture Association owns mp4. And yeah, so if you want to play an mp4 on a device, you need to pay kickbacks to the motion pictures, it was the same with mp3 as well, if you wanted to play mp3 is on like a on an iPod. Apple had to pay the Motion Picture Association, a little bit of money in order to do that. And for the longest time, Firefox dug their heels in and said, No, we're not going to pay this corporation. Because just to play an mp4. So Firefox didn't support mp4 and you had to use like a GV or GG, and then chrome did and there was all this kind of messiness. And I think what ended up happening, this might be wrong, but I think what ended up happening is because windows and and a Mac, the computers themselves ship with the ability to play these formats. I think the how it worked is that Firefox just use the built in codec into the operating system to play the mp4, rather than having to pay kick back and pay the actual mp4. So this might be totally wrong. But I feel like that's what what it was, it was a while ago, there's so
+
+88
+00:58:16,770 --> 00:58:49,290
+Scott Tolinski: much stuff in there. And it all comes down to different people own different formats, and they want to get paid for the usage of those that licensing or that usage of those formats. And open a totally open video format would be great. I get everybody to agree to it, whatever. And giving all these corporations and Apple and Google and Firefox, Mozilla whatever to work together on an open video. I don't know. Like, yeah, like and sure enough, like whatever the web web em seems like a great solution. But is that just like fully Google owned? I don't know.
+
+89
+00:58:49,920 --> 00:59:07,380
+Wes Bos: I don't I think webcam. Google made it. And then they opened it up for for everyone to use. But I don't know. I don't realize maybe somebody that knows a little bit more about the the hot drama of all the different browsers can tweet syntax and will retweet, like part
+
+90
+00:59:07,380 --> 00:59:17,940
+Scott Tolinski: of the frustration with like Safari, like doing video streaming, you know, safaris, like with this apple event where you can only stream this on safari, like, come on.
+
+91
+00:59:18,030 --> 00:59:21,510
+Wes Bos: Yeah, they have this like mp3 au format.
+
+92
+00:59:21,540 --> 00:59:34,050
+Scott Tolinski: Why Why use that though? I know I'm three au Yeah, but like, just use something that all the browsers can understand. It's like they're there. I don't know. It's Microsoft. That's a Microsoft move right there. And oh, yeah, Microsoft move.
+
+93
+00:59:35,280 --> 01:00:24,750
+Wes Bos: Weak I hate all that stuff. So weak, weak weak, or is the soundboard so that's large files. Um, there's obviously other places you can you can host your you can host them up on different CD ends. Some of these different CD ends have the ability to generate temporary URLs. So if you're hosting some sort of private content, then only a specific someone with that URL. can download at once, and then the URL invalidates itself or it expires after a couple, couple couple months or hours or whatever it is that you want. There's lots of different A lot of people ask me like, why not just use Dropbox or Google Drive? And that is because I would blow through that in about an hour. They they only allow you what 300 gigs a day or a month or something like that.
+
+94
+01:00:24,750 --> 01:00:46,530
+Scott Tolinski: So the bandwidth limits are not made for people hosting stuff for professional running companies, right? They are made for can consumer or like an internal company file storage, where you're sharing files in a company and stuff like that. Yeah, they are not made for having a billion people download your your stuff from there. That's pretty much it. Yeah,
+
+95
+01:00:46,560 --> 01:00:54,300
+Wes Bos: that's it. So big zips, images, videos. Anything else you want to chat about or get in there?
+
+96
+01:00:54,750 --> 01:01:12,060
+Scott Tolinski: We did not mention who we mentioned the words SVG, which is hilarious that like we went an entire episode about media and didn't talk about SVG. Sure, but I think SVG kind of maybe falls into its own sort of like graphic interface format, whatever would graphic interface format, is that GIF,
+
+97
+01:01:15,660 --> 01:01:16,730
+Wes Bos: graphics format,
+
+98
+01:01:17,250 --> 01:01:34,650
+Scott Tolinski: okay, whatever. So SVG is like its own sort of thing. Where, I don't know, like, you use icons. And ever as SVG, I feel like SVG has enough content, we could do a whole minisode all about SVG. The idea doesn't necessarily fit into the whole image, video and big zip thing.
+
+99
+01:01:35,430 --> 01:02:13,680
+Wes Bos: Yeah, I will plug Um, so there's a thing called SVG. Oh, and it stands for SVG optimize. And that's what that's one of the tools that comes with images. So if you have an SVG is in there, it's going to strip it out. Specifically, if you're exporting SVG, either from illustrator or sketch, they put a lot of garbage in there, and you can usually get, you can get your SVG is down to even like half or a quarter. So definitely check out SVG. There's this hilarious website from Jake Archibald called SVG OMG. Where you can just do it online, drag and drop, an image upload, and you can turn on and off different image compression. values.
+
+100
+01:02:13,680 --> 01:02:25,140
+Scott Tolinski: Sick. Yeah, it's huge. Got to be a huge fan of SVG at this day and age. It's cool stuff. Yeah, we should do we should do a mini episode on that. There's a lot of stuff there a lot of fun stuff to talk about.
+
+101
+01:02:25,859 --> 01:02:27,660
+Wes Bos: counted, and well put it in the list.
+
+102
+01:02:27,660 --> 01:02:34,980
+Scott Tolinski: Cool. All right. So well, that's pretty much it. Yeah. Do you have any sick pics,
+
+103
+01:02:34,980 --> 01:04:40,890
+Wes Bos: my sick pick this week is a Chrome extension. I don't think I've picked this one before. But it's called nim. And it's node inspector manager. So one of the pains of doing node is if you try to console log something, it just dumps it into your terminal. And sometimes when you have like nested objects inside, and you try to console log a nested object, it just gives you object object and you don't really know what's in there. And it's, it's very, I don't know, like Flintstones, to go back to that after we're used to the nice dev tools of Google Chrome. So in node, now we have this dash dash inspect flag that you can pass when you run a node process. And that will give you a URL that you can visit. And it then hosts his own version of the Google Chrome Dev Tools. And I believe it's an open standard. So you should be able to use other other browsers, dev tools that are built on the open standard CIC. And you can just use the Chrome dev tools like you're used to using them in the browser. And the most popular thing that I like to use is use the debugger command, you can pause your code execution. And then the console logs actually show up as regular console log. So if it's an object, you can open it up, and you can explore it. And you can use console dot dir and all the other different console methods that you're used to. And it's not just white text on a black background that that is dumping it into. So that's great. The one downside is that every single time you restart your process, it gives you this random URL. So if you're building an app, every single time that you make a change, it restarts your process. And then you have like a new URL you have to visit. So node inspector monitor, what it does is you install this thing that port scans your computer, which I guess, buyer beware. And then it will sort of detect when you're running a new process. And you can set it to just automatically open up a new tab in your browser and and show you the dev tools for this. So it's amazing. I've been using it for about a year now. And it's at a point now where I'm just feeling like this is what I wanted for the longest time.
+
+104
+01:04:41,460 --> 01:05:56,040
+Scott Tolinski: sick, sick node inspector monitor inspector monitor nice. My sick pick is going to be my new video screen recording software that I've been using for the past couple of months. And as someone who's tried like everything under the sun for video screen recorders, I use QuickTime for Long time, I used a screen flick, I used ScreenFlow. I have now moved on to one that was suggested to me by Joel from a CAD called I show you instant. This app does everything I wanted to do. I don't want an editor because I use my own video editor. I don't want any sort of bells and whistles, I want to hit record. And I wanted to give me a video file. One of the things I hated about a screen flick is that I recorded and all this stuff like that. And what it gives me is a screen flick file and what do I have to do immediately export it? And what does that do? It creates two files on my computer of the same stuff. So I show you instant is really super nice. The options are all great. And what allows me to do is hit record screen record super quickly and it pops out a it's an mp4 or an MTV or whatever but it pops out a video files that I can just draw a bow Yeah, I
+
+105
+01:05:56,040 --> 01:06:07,260
+Wes Bos: think but that's the beauty of that's the beauty of it. Because what is the Quick Time always gives you mo v files, which is such a pain in the ass because then you send it to somebody on Windows and it doesn't work and yeah,
+
+106
+01:06:07,770 --> 01:06:09,630
+Scott Tolinski: yeah, and then 24 bucks. That's
+
+107
+01:06:09,630 --> 01:06:10,620
+Unknown: good. Great.
+
+108
+01:06:10,650 --> 01:06:41,220
+Scott Tolinski: It's great. Yeah, it's record super slick. It's got all of the bells and whistles for like showing click highlighting or, or on screen or can do your webcam or can record the retina screens as double pixel so I can get a 4k out of my normal computer monitor. So yeah, this app is super nice. And for 24 bucks or whatever. It definitely checks all the boxes. I record, I toss it into my own video editor. And it's all good. This thing is solves every single problem I have ever had with another video screen recorder. So yeah, yeah.
+
+109
+01:06:43,050 --> 01:06:45,510
+Wes Bos: Wicked auto a shameless plugs.
+
+110
+01:06:46,260 --> 01:07:22,110
+Scott Tolinski: I'm working on a new series called pro Gatsby. So if you want to subscribe to come a level up Pro, you'll get access to all of that and more the new pro Gatsby series that's coming out in the next couple of weeks as well as the React Native series The level two React Native series The off GS mastering figma I have so many Pro Series right now that are all like, I've been working so hard on these things. So as a as a level up Pro, you get access to like, a whole bunch of exclusive premium series that too many to list right here. Yeah, so level up pro level of choice, comm four slash Pro.
+
+111
+01:07:22,650 --> 01:08:26,600
+Wes Bos: Awesome, I gotta plug my own stuff. While I realized that there's a lot of people are coming to this podcast and hearing of our stuff for the first time. And they don't necessarily look past the podcast. So if you are hearing this for the first time, or you don't really know what Scott and I do is I create video courses that train you and scale you up in web development. And I've got a couple paid ones and a couple free ones. Paid ones are on iOS six for everyone one on learn node one on react for beginners. Then I've got some free ones CSS Grid, JavaScript 30 Flexbox command line, if you're ever wondering people always asked like how do you get that cool terminal that's command line power users for so go to West boss.com forward slash courses. And you're going to see a list of absolutely everything that I have there. And I've got a whole bunch of rerecording my react right now and then I've got an advanced react and graph qL one coming out in the very near future as well, which I'm super stoked about sick. Sick. Cool. Well, thanks so much for listening in and tuning in. I guess we'll catch you next week.
+
+112
+01:08:26,640 --> 01:08:38,670
+Scott Tolinski: I'll catch you later. Please head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

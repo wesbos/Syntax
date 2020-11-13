@@ -1,0 +1,436 @@
+1
+00:00:01,319 --> 00:00:10,560
+Unknown: You're listening to syntax the podcast with the tastiest web development treats out there. strap yourself in and get ready. Here is Scott, ski and West boss.
+
+2
+00:00:10,589 --> 00:00:32,539
+Wes Bos: Welcome to syntax. My name is Wes Bos and with me is Scott to Lin ski. This is the tasty treat web development podcasts where we talk about all things web development. Today we're doing the second half of our top 18 new things in j s, I think 18 maybe 17? Maybe, maybe 20. Who knows? What do you want?
+
+3
+00:00:32,570 --> 00:00:33,240
+Scott Tolinski: Yeah,
+
+4
+00:00:33,269 --> 00:00:33,900
+Wes Bos: and yeah,
+
+5
+00:00:33,900 --> 00:00:35,180
+Scott Tolinski: we want Yeah,
+
+6
+00:00:35,249 --> 00:01:02,909
+Wes Bos: we do everyone. If you missed the first half, make sure you go back to last week's episode, which is part one, this is part two, we're going to pick it up right from spreads and move it all on through functions, arrow functions, name params. Couple other tasty treats in there. today. We are sponsored by two awesome companies Freshbooks Cloud accounting and graph CMS, which is a graph qL based CMS. We'll talk a little bit more about both of those companies partway through. But how are you doing today, Scott?
+
+7
+00:01:02,909 --> 00:01:03,450
+Unknown: Hey,
+
+8
+00:01:03,689 --> 00:01:04,439
+Scott Tolinski: doing pretty good.
+
+9
+00:01:04,469 --> 00:01:06,120
+Wes Bos: Yeah, yeah, yeah, it's starting. It's
+
+10
+00:01:06,120 --> 00:01:32,280
+Scott Tolinski: starting to be that time of the year we're getting some some chilly temps here definitely layering up a little bit, which is wild. It was like 90 degrees last week. This This would Denver's like it was like 90 Diaz sunny and now it's like very cold. So it's it's getting to be that time of the year, but I'm loving it. You know, I'm getting a bust out bust out some of my my layers, which you know, you always plan on large layers. Yeah. Pull out those. Yeah, yeah. Yeah. How about you?
+
+11
+00:01:32,639 --> 00:02:04,740
+Wes Bos: I'm doing pretty good. I just got back from web unleashed, which is fitc conference here in Toronto. And it was great. I did a Sunday workshop is the first time I delivered my new intermediate react workshop. And then it gave a new brand new talk as well, which was a what's new in react the which I think we should spin that into an episode or two, because there's been in the last year or so there's been a lot of new stuff that's been added. And specifically some of the new stuff. It's not even out yet but around react suspense. Yeah. Have you looked into that at all?
+
+12
+00:02:04,859 --> 00:02:31,880
+Scott Tolinski: Yeah, yeah, I've watched all the demos. I watched the talk. I spoke not directly after but like a couple people after Andrew Clark is I got to watch his talk from backstage. Actually, you know, they projected from the back on those big screens. And it's Oh, yeah, I got to watch the whole talk backwards, which is pretty sweet. So no, I'm, I'm I'm looking very much forward to that sort of stuff. You know, me, I'm always on the new stuff. I like the new stuff. So I got my eye on it. I'm just excited to see it get in just just
+
+13
+00:02:31,880 --> 00:03:06,150
+Wes Bos: as a little easing. You're, if you're listening to this, it's not going to change how react works. It's just going to add some new stuff into some edge cases around loading data in a synchronous data fetching. Yeah, it's pretty exciting. We'll have a whole episode, I think we can probably do an entire episode. We might wait until it's it's officially released, just so that we can make sure that it was funny. I gave my talk in 20 minutes after my talk, they announced that they had renamed a simple cache to react cache is already out of date. We'll wait until it's all finalized before we start talking about it.
+
+14
+00:03:06,179 --> 00:03:27,960
+Scott Tolinski: That's life right there. Yeah, that's like, Dev. Yeah, I think. I think that's I don't know, it's a great idea for show cuz I did my level to react course it covered like pretty much everything except for the new stuff. So I have such a fondness for so many of the new features that reacts added. So I'm yeah, would love to that maybe we can make that. I think the next episode we're doing is a fitness episode, but maybe the one after that
+
+15
+00:03:28,079 --> 00:05:09,690
+Wes Bos: done. Alright, let's jump into it. The first item in our second part is ESX. Spread a spread is a way to take an iterable. And iterable is just something with a length in it. And most likely, that's going to be like an array, if you have a group of items that have a length to it. Or if you have a set, which is a set as a new part of ESX is kind of like an array except it's unique, as well as there's some other advantages to it. But the idea with a spread is that you can spread into a function meaning that if you have an array of three things, like you have a first name, a last name and an age, and you have a function that takes three arguments in sequential order, first name, last name, age, you can spread which means the dot dot dot the array name, that will pass each of those items in your array as a as a function parameter. You can also use a spread and this is probably where I use it most likely to add items to an array. And where I use this most often is if you have an item and you want to add it to a new array, not just push it into the old array because that gets into the whole immutability thing. But if you want to create a new array, and add it in, what you can do is you can you can create a new array literal square brackets, you put your new item in it, let's say name of West string, and then you want to put all the rest of the items from the old array and then you just dot dot dot names or dot dot Got the array of names. And that will not put a nested array in your new array, it will take all of the items from the old array and put them as new items in your new array.
+
+16
+00:05:09,810 --> 00:05:24,200
+Scott Tolinski: Yeah. And this is one of the things that you mentioned, you said premiere, I use it primarily for objects, which we know is in stage four. For those of you don't know, stage four means it's basically it's basically in JavaScript. It's just not finalized yet. It's just not.
+
+17
+00:05:24,240 --> 00:05:25,820
+Wes Bos: Is it not finalized yet? Because Well,
+
+18
+00:05:25,830 --> 00:05:33,660
+Scott Tolinski: no, I mean, node it's in. It's finalized. I think the API is finalized. But it's not like in JavaScript
+
+19
+00:05:33,870 --> 00:05:36,240
+Wes Bos: in in every browser yet. Is that what you mean?
+
+20
+00:05:36,420 --> 00:05:43,950
+Scott Tolinski: stage four isn't stage four that it hasn't been like in the current release, it hasn't been released, essentially, take a look here
+
+21
+00:05:43,950 --> 00:05:54,450
+Wes Bos: object spread, because I was under the impression that it was good to go because node released it as part of their stable, they're stable thing. So if it's in node, it should be.
+
+22
+00:05:54,540 --> 00:05:59,610
+Scott Tolinski: Yeah. But like, is it in the EAS version? Like Yes, 2018 or something?
+
+23
+00:05:59,820 --> 00:06:00,450
+Wes Bos: Oh,
+
+24
+00:06:00,540 --> 00:06:02,610
+Scott Tolinski: is that that's what I'm talking about.
+
+25
+00:06:02,880 --> 00:06:15,990
+Wes Bos: ECMO script, ECMO script 2018, standard object initializer. So maybe, is somebody else who's listening can can let us know by looking it up. But you looked it up at stage four.
+
+26
+00:06:16,200 --> 00:07:41,310
+Scott Tolinski: Yes. Spread syntax. Let's see the rest spread properties. And object literals proposal stage four ads spread properties to object literal literals. Yeah, so it is in stage four, the rest spread properties ECMO script, I have the proposal right here. But it doesn't matter. Because the API is not changing, or it's not changing, it's going to be a JavaScript. It is an ECMO script proposal, but it is good to go I'm using I've been using it for a long time. And if you're been using react, you've probably been using it at some point. But basically, this is the same sort of thing where you can pull out well, like we had, when you're talking about destructuring, you could pull out individual items from an object, well, this gives you the access to pulling out the rest of it. So it's like you pull out one or two things, you can pull out each individual property from an object. I primarily use this to Well, besides passing props and stuff like that, but I primarily use this to create a new object. Again, if you want to, if you want to duplicate an object and maybe add some properties, or maybe you're sending all of the properties from an object along to another function or something like that, you would just pass along your new properties inside of an object and then do dot dot dot than the object. And then that allows you to pass along each individual property from the the original object along to a new created object instead of mutating the object that you're working on.
+
+27
+00:07:41,430 --> 00:08:22,950
+Wes Bos: Yeah, under the hood, this does an object dot assign, which is allows you to do what's called a shallow copy of an object, meaning that all of the first level properties of an object will be copied in and not just referenced. And if you were to change the original object, the new object would not update, that is not true for the nested objects inside of that object. If you do need a, if you need a full copy, a deep clone, then you need to reach for something like lodash, which will give that for you. So super helpful to do that whenever you need to just grab a copy of an object. And again, because of like Scott said, because of the immutability aspect of react, this has become extremely popular in react and last little bit.
+
+28
+00:08:23,250 --> 00:08:39,570
+Scott Tolinski: Yeah, absolutely. is basically used to pass along a bunch of props that you're you maybe aren't using in this component, but maybe you're using in the child component and your dot, dot dot props on your components, we just pass along the rest of them. Again, it's just functioning the exact same way it just inside of JSX instead of in JavaScript.
+
+29
+00:08:39,799 --> 00:11:45,510
+Wes Bos: Next we have the rest, which is the same syntax as a spread, but it's it's sort of the flip side. So the dot dot dot means it's either a spread or it is a rest. And whereas spread is allows you to take items out of an iterable or take items out of an object a rest will allow you to collect items from either a function or from when you're destructuring, an array or I believe an object, let's let's check that. But so the way that it works is if you have a function definition, you could say dot dot dot, and then you can have a variable for it called everything. And then what that will do is that whenever someone calls that function, regardless of how many arguments they pass it, it will all be collected in to one single variable for you, which is pretty cool. There are some differences between that in the the argument variable, I don't remember them off the top of my head, there is a difference between a function rest and an argument, which is that the argument object inside of a function if you don't know there's this like magical thing called arguments, and it will actually give you access to all of the arguments that were passed in that function as well as the name of the function that was called or access to the function was called called Kali. I actually don't use that all that much myself. I What arrest will do is you can say like, this is a function where the first thing, first item that is accepted is I always do this as an example of when you have a team. So the first person that's passed is the team captain, the second person that gets passed is the Assistant captain. And then the rest of the people that get passed, are gonna be there. Yeah, they're gonna be collected into an array called grunts, data dot grunts, right. And then when you're inside of your function, you have access to just that. And then that's a true array, whereas an arguments object is not. And in this case, it will only it has to be the last thing in your function. And then it works the same way with an array, where if you're destructuring, let's say you have an array of 20 people, you could say const, square bracket, Captain, comma, Assistant, comma, dot, dot dot team. And that will, the first thing is the captain. The second thing is the assistant and the rest of them are just going to be put into an array called team, this will also work for object spread as well. So if you're trying to D structure some properties from an object, so if you have a object with a first name, a last name, and then you have like, maybe other properties that you don't know what they are surname, middle name, family name, you could say like const, first, comma, last comma, dot, dot, dot other. And that will that will do is it will collect any objects that were not any object properties that were not destructured previously to that, and then just collect them into an object for you. So that you can, you could loop over and show it to the user. So the rest is usable for both functions, and arrays, as well as objects.
+
+30
+00:11:45,570 --> 00:14:16,049
+Scott Tolinski: Nice, cool, we have a dog situation going on here. So I'm gonna, I'm gonna just try to power through this, hopefully, it's not too loud in the mic here, I'm gonna real close to the mic. Now, the next one is going to be arrow functions, which we haven't necessarily talked about yet where arrow functions were sort of the new function syntax that was added in. And when they first dropped, I think a lot of beginner JavaScript users were looking at us like, Oh, it's a shorthand for functions. Yes, not necessarily shorthand for functions, it basically doesn't create a context like a normal function does, making them super useful if you've ever done the var that is equal to this to access this inside of a function, right? So basically allows you to create these, these functions that don't have this sort of context. And the cool thing is, is that there's a lot of neat little features that make them nice and lightweight, makes them a little bit more concise syntax. And some of these things people don't love. Some of them people do love, for instance, the implicit return this is when you do not have curly brackets after your arrow and your function. And it's basically denoting that it's returning whatever immediately proceeds that so if you have an arrow, and then parentheses, right, then it's going to return whatever is inside of those parentheses. Or if you just have a one liner, it can return a directly, whatever your thing is. Now, this is exceedingly handy. And things like maybe like a map, or any of these array functions where you're looping over stuff, like you could do a one liner that iterates over your entire array, and then just simply multiplies every number in the array by two simply with just an arrow function as the iterator and then the value arrow, and then value times two. That's it, every time it goes over there, it's going to return this, I use the implicit returns all the time, because I like it. Although I know a lot of a handful of people are gonna say, well, maybe it adds some confusion. So we'll just do brackets, and then a return after that anyways, because the thought thought process behind there is like, maybe there is some confusion if it's, if people are expecting it to implicitly return an object that doesn't work, you can have arrow functions, and then the brackets and then your object and expect that to just return an object, you need to wrap that object in parentheses. So the fact that there's sort of like discrepancies there, I think, some people don't like that. And therefore, we'll just always use the explicit return like a normal function. But I personally don't mind that. And I love the implicit return, use it all the time myself.
+
+31
+00:14:16,649 --> 00:15:18,179
+Wes Bos: We were talking about this at my workshop on Sunday, where you've got arrow functions, and you have your implicit returns. And then you have the ability to take the parentheses off of your arguments if it's a single argument. But then you can also destructure that and you can D structure multiple levels deep if the thing that you're looking for is a couple levels deep and this is all extremely handy. However, when you put it all together, sometimes it can make extremely unreadable code, especially if the code base that you're working on is people aren't familiar with it. I found that it took me I don't know three or four months to really get comfortable working with arrow functions in in JavaScript and they can those implicit returns can be really hard to debug. There's some little tricks around that but I would say other than the fact that the This is not scoped. That's the real feature there. The rest of it is just what it looks like. So you can make your own decisions there and just use an arrow function, when it is that you don't you need the parent scope of this word. I personally love them. I use them everywhere. But I totally understand why some people don't like them.
+
+32
+00:15:18,299 --> 00:15:47,159
+Scott Tolinski: Yeah, I know, I feel like I almost never not use arrow functions. And maybe that's like a thing for me where it's like, I'm just, I'm consistent in my use of them. So I always know how it's going to work rather than mixing it up. And again, I just like them. I know there's there's a little bit of there. There's, but yeah, I don't I don't know, I think one of it is as long as you know why it's doing what it's doing. And you're aware of sort of the differences there, then, as long as you have that in your mind when you're using them, then it's all gravy.
+
+33
+00:15:47,399 --> 00:17:10,650
+Wes Bos: Well said. Next one we have is default function arguments. And this is a really neat one, when you're defining your function, you can define that argument. If arguments are not passed, or they are passed as undefined, then they will fall back to what the default is. And this is really handy for functions that may be taking a bunch of settings, you want to want to fall back to some settings if they're not passed, I also find myself be getting bitten by this every now and then. Because like most conditionals, in JavaScript, we often look for falsy, not just false, or not just undefined, but falsy. And what falsie means is that if something is passed as zero, false, undefined, an empty string, or what else think that's true, we look I think we've done this on the show before falsy values. Let's look it up real quick. False. I said that zero, an empty string, undefined Oh, no, and Nan, yeah, are also falsy. But in default function arguments. Only undefined is the one that that works there. Why? Because you might want to pass false zero, null or Nan, those might be very valid values, right? The only thing that is not a value in JavaScript is undefined. So you have to kind of make sure that you're not assuming that false values will be put there.
+
+34
+00:17:11,040 --> 00:21:05,190
+Scott Tolinski: Yeah, I use this all the time, I use it all the time, I'm a big fan of these, these default, I think is you have again, it, it just it just reduces the amount of time you have to check for things if they're there, because well, now you can have that default, that default value in there, I use it, I don't know how to use it pretty much all over, I'm trying to think of situations where like, for instance, like server side rendering or something like that, I have in my API, it returns an object in context, right for the user, if the user context exists, but if the user context doesn't exist, it actually returns undefined. So to have that context, always have a default value of an empty object. And then I could just check to see if there's an ID in that object, rather than having to deal with undefined and then having it you know, oh, there's there's no object This is undefined and therefore breaks any sort of my my server side rendering code, but I can I use this all the time. And another thing I actually use all the time is graph CMS. That was, oh, I use graph CMS all the time. In fact, you can even find it in the level one Apollo course where I teach you Apollo client as we use graph, CMS is just a quick back end to get up and running. It's an excellent way to not only get an introduction in graph qL, but a great way to build out your own graph qL front ends without having to worry about setting up a graph qL server yourself because what graph CMS is it's an API first CMS of the future. If you've liked all of the sort of nice things about having a back end interface for a CMS without any of the pain like you get from something like WordPress, check out graph CMS a graph cms.com. Again, this thing is basically a CMS without a front end, allowing you to build your front end in whatever you would like whether that's Gatsby or next j s or or view or anything that can consume a graph qL API, they're trying to build the world's most developer friendly CMS, the only graph qL CMS that even supports mutations. So if you want to explore more of graph qL without having to set up a server, or if you're looking for a CMS style back end for your site that outputs a graph qL API, then check out graph CMS a graph cms.com forward slash syntax FM let them know where you heard about graph CMS first, again, you're going to be really blown away by the niceness of their design. The website looks beautiful. Again, if you've taken my course you've probably seen this once before and how cool it is. There's a lot of stuff here. So check it out at graph cms.com one more time forward slash syntax FM. Thanks so much for graph CMS for sponsoring. So next we're going to get into named params. Which name params is basically a way that is allows you to name your parameters by passing in essentially an object as the first value or maybe potentially only parameter in your function. And instead of having, let's say, a function that has five parameters in a specific order, you now have an object as one parameter. And inside of that object is different properties. And basically, this allows you to one of your code way more readable. But now the order in which you're passing in those properties into your function, it doesn't matter anymore. So it's now way less brittle. Because maybe you, for some reason swapped in a value here or there, you call it a function. And well, well, you pass the wrong property into the wrong parameter, and everything's broken down. But it also makes your code waymarks Blissett. You can look at your code. And when you have a function, you can see that, okay, here's the name, or here's the value or whatever. And you can have everything basically just listed right there. I use this all the time. 24. Seven, it makes your code way more self documented, it makes it easier. Yeah, it makes it way less brittle. I love this name parameters are like easily one of my most used things and modern js.
+
+35
+00:21:05,249 --> 00:21:57,810
+Wes Bos: Yeah, if you look at some other languages, it's specifically graph QL. They don't have the ability to not have named parameters. So everything is named, that comes into your function. And that means that you can pass it in at any order. And you combine that with things like defaults, and destructuring. Here, you can, you can make some really powerful functions there. Next up is we have modules. Yeah, modules is one of my favorite parts of JavaScript. Because we've had modules in JavaScript for a long time, the two big ones were common j s, which is what we use in Node currently. And then the other one was require j s, which is a pretty popular one. And because of things like Babel, we're able to sort of intermix the use of common j. s, which is a lot of stuff used to be written in a lot of node stuff still is written in common j. s, because we don't have modules in Node just yet.
+
+36
+00:21:57,810 --> 00:21:58,560
+Scott Tolinski: You don't?
+
+37
+00:21:58,560 --> 00:22:05,670
+Wes Bos: I do? Yes. Scott does. I'm waiting for them to to figure it out yet.
+
+38
+00:22:05,760 --> 00:22:34,260
+Scott Tolinski: Yes. So one of my favorite things about Meteor is that they've always had the exact same year Babel settings for front end and back end have always been the exact same. And so without like having zero config, we've had like import with CSS, we've had our Nastase we've had JavaScript modules in Meteor for the past, like two years with like, no configuration whatsoever. So I'm just so used to it whenever I use node outside of Meteor. Now, I'm always just like, she has this requires a deck. What is the
+
+39
+00:22:34,260 --> 00:24:05,430
+Wes Bos: deal? What does it look like? Yeah, that's always frustrating to think about, like, oh, how do I do this equivalent in because they're not one to one mappings, right? Babel makes some kind of one to one mapping. But that's the reason why notice is taking so long is because they're not exactly the same thing. But we'll talk about ESX modules in JavaScript, you have imports, which you import other modules into, and it's code that you need for your dependencies, and you have exports things that need to be available from that module. And the benefit of this is that you never like back in jQuery days, we always needed to make sure that you you loaded your JavaScript in the right order, you're like, Okay, firstly load jQuery, then I load all of my jQuery plugins, then I load my my own JavaScript, and those had to happen one after another, they couldn't all be loaded at the same time. Because like the plugins needed your code needed jQuery plugins and jQuery plugins needed jQuery core, you need to make sure that they ran the benefit of using imports and exports is that every module that you're right will explicitly state its dependencies. So that if you ever just stop using like you've stopped using a react component, you stop using a react or a view component. And that has a dependency and it's not used anywhere else in your application, then you just nice cleanly drop that dependency from your final build. There's never any confusion over whether you should whether he should be using it like we've all have you been in that case before we're like, are we using the CSS? Are we using this JavaScript plugin anymore? Yeah, better not remove it?
+
+40
+00:24:05,610 --> 00:25:00,870
+Scott Tolinski: Yeah, yeah, I know, it's I was actually when I first started using JavaScript modules. I was like, I was very confused about it. Because you're so used to everything just being in sort of it's, it's, you're so used to everything just being there and available, and whatever. And then you create your own scopes, and all this sort of stuff. But the fact that I didn't necessarily see the benefit until I started building larger applications, or even just like full on JavaScript applications, it just I didn't see the benefit when I was just basically doing really, really crude Angular stuff right before is built in full applications. And then once you start to build out real real applications, it becomes very obvious that like, keeping everything organized, separated, and in its own sort of context, is extremely important. So again, this is one of those things that like if you don't necessarily see the benefit of moving everything out into its own files and the importing and exporting it, just wait till you work on a bigger project that uses it and tried to do it without them. It would be a giant giant giant mess.
+
+41
+00:25:00,990 --> 00:25:24,300
+Wes Bos: Yeah. So currently to actually work with modules, you need something like a web pack or parcel, or one of these bundles that will bundle everything up into one big JavaScript file or many little code split bundles for you. But the the idea is, is that at some point, we are going to be able to use modules in the browser. And I believe, I think, sorry, already, this chrome have
+
+42
+00:25:24,300 --> 00:25:27,570
+Unknown: it now as well. I think chrome does. But I'm not positive about that.
+
+43
+00:25:27,750 --> 00:26:10,590
+Wes Bos: That's pretty exciting. And that's really cool. Because we're with the addition of HTTP two, where you can request multiple assets at once. The fact that you import six.js files into a single module won't matter. And that's at least the dream, because HTTP two will allow you to request a whole bunch of stuff at once, and it will just send it along in a single package from the server. So that'll be the day when you can just open up an HTML file and start writing. Yes, six modules inside of it. That's actually how parcel works right now, is that you can just start writing HTML, you can have a script tag that is your main import. And then you can start importing from there, it just works for you. There's no setting up of anything like that.
+
+44
+00:26:10,650 --> 00:27:13,920
+Scott Tolinski: Yeah, that's my favorite thing about parcel. If I'm reaching for anything, when I start a new project, I usually reach for parcel for those reasons. It just to get up and running just to get get moving on it. Right. Let me let me get on my little talk about Meteor again here a little bit. Because one of the cool things that they launched in the last version of Meteor, I think is like one seven, is that you can have a legacy build and a modern build. So the idea would be that you could have a modern build of .js, that would load on the only the modern browsers, and then it's way faster and smaller. So you could get those sort of native imports and exports without having to compile in all your stuff. Wherever it works. It's really slick. It's sort of like, I guess it's sort of like it's creating separate bundles for older browsers or different browsers to handle this sort of stuff. That way, you don't have to send a bunch of JavaScript on the line that the the browser, you know, can handle in a better way. And it just I think that's like such a cool idea. So I big ups to the meteor team on that one, this little cool little sort of future thing that I don't think a lot of other bundlers are doing right now.
+
+45
+00:27:14,070 --> 00:28:02,040
+Wes Bos: Let's talk about we talked about defaults and No, we didn't actually yet. So when you have a package, you have kind of two things, you have a default export and a default import. And then you have a named imports and named exports. And your files can always export one default thing. And like that, you can export anything a number, an array of function, and object, and then whoever is importing it from your module, they can import it as anything that they want. And they don't need to know the name of the function or the variable that you export it as, because it was a default. On the flip side, if it's a named import, that's where you use the curly brackets. When you import something, you have to know the name of the thing that you're trying to import. You can rename it on the fly using the as import Scott as Scotty. And from God's package.
+
+46
+00:28:02,880 --> 00:28:07,170
+Scott Tolinski: From a Yeah, you're importing Scott from Scotts package. That's great. Okay.
+
+47
+00:28:08,130 --> 00:28:46,560
+Wes Bos: Anyways, I didn't mean to say that I apologize, folks. You get the point, though. But there is some opinions out there that you should only use named imports and exports, because first, it makes tooling really easy. Because the tooling, tooling will know the name of the thing. And if you're trying to import something, a lot of tooling will be able to search through your possible modules and find the thing that you're importing, which is pretty cool. There's some opinions out there, if you want to read a blog post about it is someone says default exports considered harmful, I think is the name of the blog post, which I always roll my eyes.
+
+48
+00:28:46,650 --> 00:28:52,560
+Scott Tolinski: I think I just knocked my head off. I just lifted off my head. Yeah.
+
+49
+00:28:52,890 --> 00:29:00,450
+Wes Bos: I don't mind default imports and exports, I don't really have problems with them. I can see the point about possible tooling. What are your thoughts on that?
+
+50
+00:29:00,630 --> 00:31:00,300
+Scott Tolinski: I use default exports all the time, it depends on the context. For me, if I have a file, that's a react component, that's all it is like, there's no reason not to use a default export. Everything's named the same. And I get it, I get the arguments against it or whatever. But it's just so easy for me to have here's a file, the name of the file is the same as the component, the name of the get on? And is what's going to be the name that I'm calling this everywhere. So do I really need to give this an explicit name somewhere else? I don't know. Maybe not. You know, again, it's it's one of those things I get, but I just I don't see a use for it. In my mind. What I do. One of the cool things that I do on a little site here is I like to sometimes have essentially sort of modules that are comprised of a bunch of smaller modules. So like, I'll have a folder full of styled components. And let's say this is all my styles components, right? And then so I'll use this syntax that's export estrus from and then the file right so what that's doing is it's basically importing and then immediately export All of your named exports from one file from the index file. And so I'll have a index dot j s, and then I'll just have a whole bunch of those export asterisks, whatever. And then now I can import any of my stub components from the elements module, essentially. So I'm doing import bracket, I just bring in any sort of styled component I have from, and then the elements. Now granted that can if you're including a ton of stuff in there that could do maybe harmful things to your code splitting, because you're not splitting things up as small as it gets. But generally, for me, it's mostly pretty small components and pretty small amount of code here. So it's not exactly crushing me there. But I do love that technique. And I've seen some people use that technique in like feature folders will, they'll have a feature folder. And inside of that, they'll have an index file, where they're exporting all of their react components from that particular feature. So you can access them from a folder, rather than from a specific js file.
+
+51
+00:31:00,390 --> 00:31:38,070
+Wes Bos: While we're talking about code split bundles. I can also talk about what's probably coming to JavaScript, and that is what's called dynamic imports. This is already a thing in many module bundlers. Webpack has it parcel has it, this will allow you to dynamically import your bundles when they're needed. So an example might be is when a user is just about to click on the cart button or when someone clicks on the cart button. You can import the cart JavaScript, just on demand, rather than having to load it all on page load or load all on the on the homepage. So there is a standard that's called import. It looks like all of like web pack and parcels already implemented it.
+
+52
+00:31:38,100 --> 00:31:39,750
+Scott Tolinski: Yeah, me, too. Yeah,
+
+53
+00:31:39,960 --> 00:31:52,290
+Wes Bos: the the React suspense stuff that's going to come out is really going to help this because you'll be able to pre load specific things as well. And as well as load before a specific render actually shows. Yeah,
+
+54
+00:31:52,320 --> 00:33:09,810
+Scott Tolinski: I love this. I use dynamic imports right now and level up, especially because I have a whole ecommerce platform. And you can imagine the commerce platform includes a bunch of, you know, JavaScript that I wouldn't want in the normal site, like I don't need, you know, all the Braintree stuff, I love the shopping cart stuff, I don't need that on every page of the site. So again, I split out all of my modules into that use the dynamic imports, then I use react loadable, to bring it all in. And I even have those code, split modules and everything with server side rendering and stuff. It's all pretty slick. But I'm a huge fan of this stuff. Again, part of the arguments against using front end frameworks in general is that you end up having like a large JavaScript bundle at the end. But hey, if you are code splitting, you're using these dynamic imports, and you're sending smaller bundles that can be pre fetched and all sorts of stuff like that, hey, that removes a ton of the arguments right there for against using anything like that. And for me, it's it's one of those things that like, Hey, if you're increasing the loading time, your speed, and you're getting all these great features, and why wouldn't you be using these kind of front end frameworks for doing that kind of thing? And another thing, you know, why wouldn't you be using is Freshbooks? Why wouldn't you be using Freshbooks? Because it's really the easiest way to get paid faster. And it's the easiest way to have cloud accounting. So with a little bit more about us.
+
+55
+00:33:10,140 --> 00:34:47,100
+Wes Bos: Awesome. Yes. So what we're talking about Freshbooks, this time is Freshbooks will allow you to get paid faster. And I know that is true. cuz I've been using Freshbooks for, I think about 10 years now. And the reason why you get paid faster when you're using fresh books versus just like creating like a Microsoft Word document or Excel is you don't want to make it a pain in the butt for your clients to pay you they want you want to make it easy for them to pay you. So what Freshbooks will do is they have a couple of things, they've got online payment, so someone can pay right away with their credit card, I found that as the best way to just get paid really quickly. Because sometimes if someone has to cut you a check, or make a bank transfer, then they got to get accounting involved and and then you have to get a purchase order number. And often people just put their credit card company credit card in and pay it immediately. And it's done with they have a payment reminder. So it will automatically remind your clients Hey, this thing is due in a couple days or this thing is overdue. it'll it'll sort of follow them up and then also has messaging because often not all the time, but sometimes my invoices don't have the correct purchase order number on or it doesn't have the correct company name or needs the address or it needs to specify anything. And by having being able to message back and forth on a specific invoice. We'll make sure that all of that communication is up front right on the invoice. So check out freshbooks.com Ford slash syntax for a 30 day unrestricted free trial and enter in syntax in the How did you hear about a section Thanks so much to send out a note to Freshbooks for sponsoring. Thanks so much to syntax for sponsoring. What do we got next?
+
+56
+00:34:47,150 --> 00:35:13,800
+Scott Tolinski: Oh here on something. It's funny, like just along the same lines about a couple minutes ago. It looks like Andy Clark had a talk at framework summit. And yeah, there's something called the lazy react Dom Lazy that's coming into react. And it looks like it's basically code splitting with just a lazy and dynamic import. So really cool looks like some code splitting and dynamic import is coming into react itself.
+
+57
+00:35:13,830 --> 00:35:17,730
+Wes Bos: Wow, that's like, hot off the press hot off the press.
+
+58
+00:35:17,760 --> 00:35:25,650
+Scott Tolinski: I just saw a tweet about it. It's so easy to just assume everyone's on Twitter. Sometimes I'm like, Oh, yeah, I sent out a tweet about this course. So everyone should know that it exists. Now I
+
+59
+00:35:26,400 --> 00:35:31,880
+Wes Bos: know, people lose a lot of people with better self control than us that don't go on Twitter.
+
+60
+00:35:32,100 --> 00:35:33,750
+Scott Tolinski: Yeah, right. I wish I had that.
+
+61
+00:35:34,080 --> 00:35:42,090
+Wes Bos: Yeah. Next up, we have classes. Do you want to I know that you just finished up a sort of a course on this. I want to give us a quick rundown.
+
+62
+00:35:42,150 --> 00:37:16,380
+Scott Tolinski: Yeah. So classes is sort of the the new way of? Well, I mean, so Well, let's talk about classes overall, right? Because classes have been in a lot of other language for languages for a long time, and is basically a lot of the things that we used, like object prototype before, where you're creating objects, essentially. And you were sort of treating them like classes and other languages are now well, essentially a class. And some people don't like this, because again, they say it's like syntactical sugar, right? It's just like a way of sort of masking something that we're doing. But classes are really just a way of creating a thing, right? I like to think of it as like a thing. And in my example, in our course, we create a team, right? And that team has some properties. And those properties are added to it in its constructor. And then you can have methods and functions inside of that, that class that do things for that team, right? Maybe the team scores a goal or something like that. When then you can extend the functionality of a class into a new class. If this is something familiar, it's chances are you've probably used classes in react with your components, right? So we say, Okay, we have a team, and you could extend it team. So you could say class hockey team extends team. Well, now hockey team is going to get all of the properties and all the good stuff from team. But you can add new things that are specific to a hockey team, right. And so again, primarily, you're going to see classes being used all over the place. Now you're going to see it in all of these front end frameworks, because it's really the, in my opinion, the best way to contain all of these things within one thing, right? I'm using the word thing a lot.
+
+63
+00:37:18,510 --> 00:39:10,940
+Wes Bos: Yeah, absolutely. I think another thing, there's there's thing again, one thing about classes in ESX, that we don't have just yet that's been a huge pain point in react is the ability to have like instance, properties, yeah, that are somewhat easy, we can have them. So if you the problem with classes, if you want to access this, if you want to access the instance of a class. So if you have a class called dog, and you make a new dog called Snickers, and you make a new dog, what's your dog's name? Lucy, Lucy, you make a new dog called Lucy, if you want to give like a name to each of those, you have to, if that that's, that's an instance property, they each have their own property called name, you have to do that inside of the constructor. And that's a bit of a pain, when you want to have a method on that class that can access this, it accesses the actual instance. And that's, that's very helpful in react because often you need to access this dot state, this dot props, this set state, right, you need to access event handlers that are on this. So the way that you had to do it in the past is in the constructor of your class, you have to assign your class properties. And then in the constructor of the class, you also have to bind all of your methods to the instance of this. And the way around that is proposal to ESX classes, which is just having an equal sign. So instead of having like render parentheses, curly brackets, that's a that's a method you will have, which by the way, render is actually bound to the instance just because react does it under the hood. But the equal sign will allow us to assign instance properties to to it. So you can say things like state equals or a handle event equals and you use an arrow function, and that will make sure that all of those are automatically bound. It looks like it's gonna make it into to JavaScript. And it's been widely used in in react land for probably almost two years now.
+
+64
+00:39:10,979 --> 00:39:38,550
+Scott Tolinski: Yeah, and I've been using it with the Babel plugin transform class properties, you can give it like a static default props is equal to an object with your default props. And then you could also even have your state just state is equal to it's just so nice. It's so nice. So yeah, I'm looking forward to that being in there. But in case you want to use it already, go ahead and use that Babel plugin Babel plugin transform class properties. I use that very frequently pretty much anytime using any sort of react or class based anything.
+
+65
+00:39:38,820 --> 00:39:46,590
+Wes Bos: It comes for free and in next it comes for free and create react app. Oh, by the way create react app to know man were yesterday
+
+66
+00:39:46,590 --> 00:39:48,690
+Unknown: that was talking about the news.
+
+67
+00:39:49,020 --> 00:39:57,480
+Wes Bos: Yeah, we got the news. He could react to came out which has support for sass and you want to should we rehash it just real quick.
+
+68
+00:39:57,650 --> 00:39:59,960
+Scott Tolinski: Yeah, let's pull it up. Let's pull it up.
+
+69
+00:40:00,299 --> 00:40:15,900
+Wes Bos: So it's got a whole bunch of stuff in it. Obviously, it has sass and CSS modules out of the box. That's the biggest reason why people would eject from create react app. The updated Babel seven, which gives us the fragment syntax of closing brackets,
+
+70
+00:40:15,920 --> 00:40:23,850
+Scott Tolinski: the fragment syntax, I use it all the time. You don't have to use the word fragment, you just yeah, you just use an open and closing are those called brackets, plat bracket, no,
+
+71
+00:40:24,059 --> 00:40:25,500
+Wes Bos: not flap angle bracket, angle
+
+72
+00:40:25,500 --> 00:40:39,540
+Scott Tolinski: brackets, yeah, use an open and close angle bracket, I use that I've been using it and I absolutely love it. And not being able to use it inside of create react app was a huge bummer to me. So that's a nice and easy, nice and easy little win there. It's using Webpack for under the hood,
+
+73
+00:40:39,779 --> 00:40:42,380
+Wes Bos: splits j s bundles more intelligently. And that's good.
+
+74
+00:40:42,440 --> 00:41:10,770
+Scott Tolinski: Yeah, one of my actually favorite things about this is the use of Babel macros, because you can now import graph qL files, which was like a thing that was a giant pain, I actually had to eject to import graph qL files in my react and Apollo course. So for those who don't know, you can write your Apollo queries and dot graph qL file and import it, and then use that query in your component rather than writing the query in the code itself. I absolutely adore that. So I'm a big fan. It seems like all of these things are big, big improvements here,
+
+75
+00:41:10,770 --> 00:41:45,270
+Wes Bos: you can now optionally get a smaller CSS bundle. If you plan to target modern browsers. That's good, because I guess they compile the CSS for you. Service Workers are now opt in something that's built me by default, the Create react app will register a ServiceWorker. And then if you accidentally run something else on the same port, that ServiceWorker will still be there. So that's good. And it uses Google's work box, which is a much more friendly way at building service workers than the actual service worker spec. So pretty cool. I'd be pretty excited to try this out.
+
+76
+00:41:45,359 --> 00:41:51,270
+Scott Tolinski: Yeah, you know, I will be I love create react app, anything that saves you that kind of time to get started. So I'm a big fan.
+
+77
+00:41:51,689 --> 00:42:01,710
+Wes Bos: All right, let's finish it up with things that are part of ESX. And maybe you're really excited about them at first, but you just don't find a huge use case for them just yet.
+
+78
+00:42:02,129 --> 00:42:33,510
+Scott Tolinski: Yeah. And this one for me isn't necessarily I don't have a huge use case, or I don't find it helpful. I don't use dot den or dot catch very much. I don't know why I don't but I just don't I pretty much I'm always using a sink await just because I like the syntax more like, it's easier to read for me. So I pretty much am just not using dot then or dot catch, like really at all. So if you love that, then that catch nothing against you. Because I think it's fantastic either way, in any way of doing it. But yeah, it just used to sneak away. I don't know why. But I just like it.
+
+79
+00:42:34,199 --> 00:43:26,820
+Wes Bos: You know, what I've been been doing a lot lately is I use a sink await and I await the actual result. But then if there is something that would go awry, I still chain a dot catch on to it. So instead of like if I have a method that's called like, fetch users, and that's an async method, I have to await instead of wrapping the entire fetch users in a try catch, because I'll often be doing it right in like a little arrow function on side of a button. I'll just, I'll say a wait there. const users equals await fetch users, and then I'll dot catch, handle error. And then just putting that tiny little dot catch handle error onto the end of all of my sync methods will allow me to nice and cleanly catch any errors that might happen, but still get the benefit of using a single way. Yeah, and I've been a big fan of that kind of a kind of mix and match. Path promises half of sync away.
+
+80
+00:43:26,879 --> 00:43:27,690
+Unknown: Yeah, right.
+
+81
+00:43:28,439 --> 00:44:12,510
+Wes Bos: One thing that I said I didn't use in a previous episode was generators. And a couple people tweeted me some really good examples of using generators. Yeah, the thing is, is even though I read those examples, like, I'm not doing that stuff, so that's probably why I'm not you know, using Yeah, it's not that I don't like them. It's just the fact that I don't write a really good example. So Jake Archibald said, he wrote the game logic for Minesweeper and use a generator to iterate over this squares around a square, which is pretty neat. And he put a link to the code where he does that. So I could definitely find myself in a use case where I need a generator, but I don't think that's an everyday occurrence for the type of code that I'm writing. Yeah, I
+
+82
+00:44:12,510 --> 00:44:14,730
+Scott Tolinski: think that's gonna be one of those learning when you need it once.
+
+83
+00:44:15,029 --> 00:44:20,280
+Wes Bos: I'm gonna be so excited when I finally do, we will have a whole episode on what is the generator?
+
+84
+00:44:20,429 --> 00:44:35,190
+Scott Tolinski: It seems like they use them really like them. So you know, I hear nothing but good things about generators, right? Like not everything in es six plus you hear good things about all the time, but I feel like generators specifically, I hear a lot of good things about them. I just don't have the use case yet.
+
+85
+00:44:35,249 --> 00:46:05,790
+Wes Bos: Yeah, one other thing I have on here as well is that I don't use is the the for of loop. So we used to have the four in and then there is now a four of loop. And the four of will allow you to loop over almost anything, which is pretty cool. You can loop over the strings, arrays, array like objects, which are like node lists, arguments here, but you know, we'll talk about those already. ish things on the thing, maps, sets, things like that. And I believe you can also use a for have to loop over a generator, which is pretty cool. Let me just take a quick look, yeah, you can use it to loop over a generator as well. And that's kind of cool because a generator might not necessarily have a definitive end to it, because the generator will just you just keep calling next, next, next, next on a generator, and at some point, the generator will tell you that it's finished. But the generator itself could be adding more items as as it's going, right. So you could say, for like, I talked about the meat counter example before. So for current user of meat tickets is a generator, and you just kind of you just will just loop over that sucker until the generator runs out of out of things to give you. So I thought that was a pretty cool example. But that's that's the one thing that I don't really use all that often. And I think it all boils down to things we've talked about before is that I'm much more using of things like map filter reduce, when I'm when I'm trying to loop over items.
+
+86
+00:46:05,880 --> 00:46:12,060
+Scott Tolinski: Yeah, I'm pretty much am to love this stuff. It's like when you have the use case for it, I think it it all clears up. But yeah,
+
+87
+00:46:12,120 --> 00:46:27,210
+Wes Bos: well, I should say that. Because you can use for have to map over an object. But if that was the case, I use object keys, object entries, object values, right? And those will those will give you a raise of keys, values, or both, which is entries.
+
+88
+00:46:27,420 --> 00:46:34,200
+Scott Tolinski: Yeah. And you can also use it to iterate over the one of the other things, we haven't really used that much, which are maps and sets.
+
+89
+00:46:34,350 --> 00:47:15,510
+Wes Bos: Yeah, maps. And sets are really interesting. Because maps are kind of like a an object. And sets are kind of like an array, they all have their they all have their benefits. I think it's one of those things where I've just always reached for an object into an array where I need to like maybe stop myself and say, Hey, would it would be better here to pull that up? One huge benefit of a set is that it's unique. So if you push the same value into an object twice, it will just D dupe it. That's actually a kind of a little sneaky way to D dupe an array where you can spread a set into an array. Now you can take an array, put it into a set and then spread it back into an array and that will D dupe all of the extra things that you have in there.
+
+90
+00:47:15,660 --> 00:47:16,950
+Scott Tolinski: It's pretty sweet word de doop
+
+91
+00:47:17,160 --> 00:47:17,760
+Wes Bos: de doop
+
+92
+00:47:17,760 --> 00:47:21,720
+Scott Tolinski: Onomatopoeia isn't that I don't know it sounds like a
+
+93
+00:47:21,780 --> 00:47:29,790
+Wes Bos: amount of pm did alright, let's talk about some or do you have anything else to add? Or should we move into some sick pics?
+
+94
+00:47:29,850 --> 00:47:33,120
+Scott Tolinski: Le Moon is sick Pixie I have nothing else to add here.
+
+95
+00:47:33,270 --> 00:47:34,170
+Wes Bos: All right.
+
+96
+00:47:34,320 --> 00:47:45,540
+Scott Tolinski: I have a sick pic here. My sick pic is going to be fun. It's gonna be very fun. It's the everything but the bagel sesame blend from t J's from Trader Joe's. It's basically
+
+97
+00:47:46,560 --> 00:48:17,760
+Yeah, if you've you know if you like an everything bagel and you were thinking hey, wouldn't be great if this everything bagel seasoning was inside of like a shaker like a salt shaker. Well that's what this is. So it's at Trader Joe's it's called everything but the bagel blend. I was just put this on like French fries yesterday and I was like this is awesome. I have everything bagel french fries right now. So I'm a big fan of this. It's just like everything you do with like sesame and onion and all that sort of poppy seed or whatever that's in the everything bagel. So everything bagel, everything but the bagel sesame blend. That's my sick pick
+
+98
+00:48:18,180 --> 00:48:54,600
+Wes Bos: this week. You know what I'm gonna I'm gonna follow your lead as tick pika trader. We don't have trade shows in Canada. But every time I go down there we've got a couple like staple items that we have. And a couple months ago I was down there and I discovered the like jalapeno like the green jalapeno hot sauce, which was unlike any hot sauce I've had before because most hot sauce are like Chili's and they're or it's a Chipotle a which is like a roasted jalapeno. But this was like a fresh, yes, green jalapeno and it's like it still has like a really nice texture to it. And I just destroyed a bottle of it. It's what is it called here? It's called the green dragon Green
+
+99
+00:48:54,600 --> 00:48:56,430
+Scott Tolinski: Dragon. Yeah, it's got a dragon on it.
+
+100
+00:48:56,970 --> 00:48:57,750
+Wes Bos: That's so good.
+
+101
+00:48:57,750 --> 00:49:00,840
+Scott Tolinski: Yeah, we got that stocked. We got that stock here.
+
+102
+00:49:01,020 --> 00:49:33,000
+Wes Bos: We so I ran out and I put out an SOS on Instagram and my boy, Patrick, he says lesson two point I can't I'm I'm sorry. He's the guy that design the stickers for my upcoming batch. He sent me like eight bottles or something like that. So I am stocked for at least I don't know, you go through about a bottle a month at our house. We call it hiccup sauce at our house because I always get the hiccups when they eat something too spicy, but it's probably my body telling me to stop but I just enjoyed so much.
+
+103
+00:49:34,170 --> 00:49:59,190
+Scott Tolinski: It's It's good. It's very good. I don't know if you or other people know this, but I'm dyslexic. So specificity is like the most nightmarish word in the world to try to read just because there's so many similar letters and like one can spines, like I look at that and I just goes, Okay, it's bad. And then the rest of it. I don't know about it. So I gotta say it like 100 times before it just drills it into my brain.
+
+104
+00:49:59,490 --> 00:50:14,730
+Wes Bos: If I try to honestly didn't even know that I was saying it wrong my entire life like and I've been teaching CSS for like nine years. And I didn't know that. But it was funny people on Twitter had such a good attitude about it. They're all everyone's howling over us, like pronounce these words.
+
+105
+00:50:14,760 --> 00:50:26,580
+Scott Tolinski: Yeah, people don't know if we're punking them. And then like, I'm like, No, this is genuine. Like, yeah, they're just some words, man, I don't know about it. That's one of those words, but I'm in I'm in it,
+
+106
+00:50:26,639 --> 00:51:14,550
+Wes Bos: I got it. Words are hard. Let's talk about some sick pics, I'm gonna sick pic because of we've been learning about JavaScript. And I have a course called es six for everybody. And it's at esx.io. And it will detail it goes into every single piece of what is new in JavaScript in ESX. And I actually updated it maybe about four or five months ago to include a sink await, which is not part of ESX. But it's such a huge thing in JavaScript now. As well as some some things like class properties, I explained that. And some of the some little things like exponential operator and function arguments, trailing comma object entries, object values, I added those as well. So if you need to get up to speed, you can just cherry pick the videos in this the things that you need to learn. It's at esx.io. Nice,
+
+107
+00:51:14,849 --> 00:52:36,180
+Scott Tolinski: cool, and I am going to shamelessly plug my new course, which is called better JavaScript, which is actually it's funny because it's called better JavaScript, the whole thing isn't necessarily focused on writing better JavaScript, maybe like half of it is it's a lot of ESX plus stuff, where we do get into usage of things like classes, we get into usage of things like a sink await. But we also get into some even like core JavaScript stuff, which is like why you'd use an event listener versus event method or something like that, we get into just basically aspects of JavaScript that you use frequently. And then there's a whole ton of functional programming in sort of clean code things in here. So we talk about writing functions that are less brittle, we talk about how to write code that is a little bit more bulletproof and easy to test. And maybe some code smells like some things where you're thinking like, Ha, when I think about testing, or when I think about how this code works, why does it make me want to cry? So basically, we go through a lot of these things and, and write code that is easy to test, easy to understand less brittle, and we talk all sorts of about some difficult topics like functional programming and in a very, like layman's sort of way about why you would even want to learn this stuff, so check it out, it's at better JavaScript, it's on level up tutorials. COMM you can get it by subscribing if you sign up to be a yearly subscriber, you can save 25% so check it out, level up tutorials.com forward slash Pro. That's all I got
+
+108
+00:52:36,209 --> 00:52:53,910
+Wes Bos: beautiful. Alright, that's it for us today. If you enjoyed it, make sure you give us a follow at syntax FM. Also hit Scott and I up I'm at Wes Bos on Twitter and Instagram. Scott is at St Lynskey and correct level up tuts awesome, and we'll see you next week. Please
+
+109
+00:52:55,890 --> 00:53:05,610
+Scott Tolinski: head on over to syntax.fm for you full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

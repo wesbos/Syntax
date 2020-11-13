@@ -1,0 +1,428 @@
+1
+00:00:01,319 --> 00:00:06,150
+Unknown: You're listening to syntax, the podcast with the tastiest web development trees out there.
+
+2
+00:00:06,179 --> 00:00:10,500
+strap yourself in and get ready to whiskey and Wes Bos.
+
+3
+00:00:10,559 --> 00:00:36,600
+Wes Bos: Welcome to syntax. Hello, everybody. Hope you're doing fantastic today. Today we're going to be talking all about progressive web apps that is building an application in HTML, CSS, and JavaScript and making it work in the browser. But I don't getting that full control that you are used to in a regular installed application. So I'm pretty excited about that. With me today, as always, is Scott Tilden ski Hello Scott hiding today. Hey,
+
+4
+00:00:36,650 --> 00:01:03,390
+Scott Tolinski: I'm super good. I entered my first breakdancing battle in like three or four years this weekend. And it might I'm paying for it right now. My back and my breath. Everything is hurting. But I did really good. I entered with a student. So we didn't get super far. It was like first or second battle. But I did really good. And I'm pretty psyched because it felt really good to get out there and actually get back competing a little bit. So yeah, how about you? How are you? How are you feeling?
+
+5
+00:01:03,629 --> 00:01:33,120
+Wes Bos: I'm feeling pretty good. Just had a nice little cottage weekend went up north to my buddy's cottage for the weekend with the kids and enjoyed that thoroughly. I'm all charged up. I'm actually heading off in two days. On Wednesday morning, I'm driving down to Dayton, Ohio, which is about six hours from here. I opted to drive because the flights were much longer with the layovers, and I'm I'm doing a workshop down there. And then back. So looking forward to that.
+
+6
+00:01:33,599 --> 00:01:34,380
+Unknown: Nice.
+
+7
+00:01:34,679 --> 00:01:47,640
+Wes Bos: Today we are sponsored by Log Rocket, which does error logging error replaying and a couple other things we'll talk about today, as well as Freshbooks, which is cloud accounting. We'll talk about both of those awesome companies partway through today.
+
+8
+00:01:47,819 --> 00:02:01,140
+Scott Tolinski: Yeah, hey, before we get into it, I know we don't do a whole lot of like topical web dev news stuff. But this one's pretty big. I thought maybe would want to touch on it. Even though this is coming about like a week late. What are your thoughts on this whole GitHub Microsoft purchase thing?
+
+9
+00:02:01,379 --> 00:02:53,940
+Wes Bos: Yeah, I think it's pretty cool. Like I'm I was pretty fine with GitHub, just operating on their own. But I think Microsoft for all the flack that it gets is actually being pretty cool. Lately, I know that there's people have all these like edge case scenarios that they come out of the woodwork, but just by seeing Microsoft champion TypeScript, seeing what they're doing with VS code and, and like what they're just doing, in general, for the open source web development community, I know that there's a lot of really good people inside of Microsoft that are, are working to make really awesome stuff. And it's easy to look at something like Skype, which is just an absolute disaster, and it gets worse every single time that it comes out. But there's also you can also look at other things like VS code and be like, Okay, I know that or I hope that they're going to do well by this. What do you think?
+
+10
+00:02:53,969 --> 00:04:00,060
+Scott Tolinski: Yeah, this is pretty much exactly my thoughts. I don't think that the Microsoft stuff today is the same as the Microsoft from even seven years ago, that would have messed this up. I don't know, I picked seven. That seemed like a good number. But I mean, I don't think it's the same company that would have done this. And I also don't think they're gonna, they're gonna be like, too overbearing on GitHub, right? I can't imagine that they would look at GitHub and be like, hey, let's mess this up. So I would I am optimistic about a lot of people are, you know, citing it as the apocalypse or something, but I really don't, I don't think it's gonna be that big of a deal. I'm not rushing to move my stuff off of it. Like you see a lot of people, a lot of people do that simply off of principle alone, that they don't want to be supporting a giant giant company. And I I get that. I mean, I totally get it. But I guess I'm cautiously optimistic, I think it's probably going to turn out fine. And, you know, what, there's a lot of competition in that space. And, you know, Bitbucket and get lab are great, too. So well, if Microsoft, you know, totally messes it up. It's not like we're like totally out of options for places to move to. So hopefully they take that, and, you know, improve upon it to compete.
+
+11
+00:04:00,060 --> 00:04:46,520
+Wes Bos: Yeah, it's pretty cool. And another thing I forgot to say was like Microsoft's also developing w SL, which is Windows subsystem, Linux. And they're making a huge push right now to make web developers like Windows just because like they're making all of our all of your like Linux kernel stuff, work on all this stuff. The reason why most people just buy Mac's when they're web developers is because it's so painful, trying to get all this tooling and everything working on Windows. And so what they're doing is they're they're making the Linux kernel work inside of windows, so that you can run all of this stuff and not have to deal with those cross browser things. So I'm pretty excited about that. It's also nice because they also as a Mac user, everybody feels totally ignored by Apple. And lastly, yours. Yeah,
+
+12
+00:04:46,529 --> 00:04:50,250
+Scott Tolinski: I know. We'll also look what's gonna happen to Adam editor? Yeah, that's
+
+13
+00:04:50,250 --> 00:04:51,200
+Wes Bos: a great question.
+
+14
+00:04:51,239 --> 00:04:52,130
+Scott Tolinski: It's a big question.
+
+15
+00:04:52,289 --> 00:05:20,670
+Wes Bos: Big deal, like like VS code has sort of won that battle. And now that they they own both, maybe they can take some of the Cuz there's obviously a ton of super smart people working on Adam and doing some amazing stuff. Like, it's easy to like poopoo Adam and say it's slow, but like, obviously, there's a lot of really smart people working on it, and they're doing some amazing stuff. So hopefully they'll just bring those devs over to VS code and, and keep up the amazing pace that they have. Nice.
+
+16
+00:05:20,850 --> 00:05:55,830
+Scott Tolinski: Yeah, so so sorry to derail the episode. Maybe, I mean, maybe it's worthwhile at some point, we can do some you know, like web development, new sort of stuff, even though that's typically not what we're doing on here. There's there's kind of a lot of big news lately and things going on. Maybe it's worth some time talking about sometimes. I don't know if we would want to do that in an episode or outside of an episode or whatever. But hey, yeah, works. Probably a hasty treat. At some point, we can rattle through some of the the most recent news and it's and like, most importantly, want to like tell you how does this apply to you as a as a web developer?
+
+17
+00:05:55,830 --> 00:06:00,600
+Wes Bos: and not so much like, what do you think about this? Yeah, this is good or not, right? Yeah,
+
+18
+00:06:00,630 --> 00:06:11,970
+Scott Tolinski: word? Definitely. Okay, cool. So let's get into progressive web apps. What are they? I mean, first off foremost, before we get into, you know why you might want to use them or whatever, what, what the heck is a progressive web app?
+
+19
+00:06:12,060 --> 00:06:48,990
+Wes Bos: Yeah. So I'll take a stab at it myself. Progressive Web App is not, it's not a framework. It's not a thing. It's just a it's a term that was coined by I think, Alex Russell, who is a developer at Google. And it's just a collection of sort of thoughts and best practices and using technologies together to make a website or a web app function similar to a native desktop application. And this is, this has long been the dream where instead of having to code something in Swift, or Alan for iOS, and then I don't know, what does Android use Java?
+
+20
+00:06:49,230 --> 00:07:03,150
+Scott Tolinski: Yeah, use uses Java, but now you can write it and oh, man, what's it starts with a D, the only word that's coming to me is Dalvik. And that's a keyboard layout. What is it? I don't know, think of it and then it here. Yeah. b.
+
+21
+00:07:03,150 --> 00:07:58,710
+Wes Bos: So you, you sort of it sucks to have to write them multiple times. So the dream is to be able to write your application and potentially your website in JavaScript, HTML and CSS and, and just deploy once and have it work everywhere. And that's been the dream forever. And I've long been on that train. But I've sort of fallen out of love with that idea. Because as a user, as a web developer, I'm all on board. But as a user, these things don't work as well as you want them, they don't feel as good. There's limitations that you have. And those things are slowly going away, especially iOS 11.3, just came out a couple months ago. And they implemented some of the major features that are needed for progressive web apps. So the idea is that you shouldn't as a user, at the end of the day, you shouldn't be able to tell whether you are using a progressive web app or a native application, as well as we'll go into some of the what what the install flow looks like that as well. I don't know. Does that make sense? What do you think? What does a progressive web app do? Yeah,
+
+22
+00:07:58,710 --> 00:08:51,289
+Scott Tolinski: yeah. Before I get into it, I do want to say that that language does not start with the D. It's kotlin. I was not even close. I've seen this word a whole thousand times. Yeah. So sorry about that. But yeah, no, I, for me, it's just like, I think about it as just more native like applications on the web. And you know, that was the first time you install a progressive web app, you'll sort of see what I mean, because they can install. I don't know how it is on iOS. But on Android, they install into your your app drawer, just like a normal application with the same kind of icon that a normal app has, when you click it, it has a splash screen loading up, it has to have all these sort of things that we're going to go into later in this episode. But it really does feel like a native application, when you're running it. It even hides the URL bar. So it does look and feel like an application. So for me, it's like this native like application, but with web technologies living on the web.
+
+23
+00:08:51,570 --> 00:09:23,940
+Wes Bos: Awesome. So you have this progressive web app checklist that Google has hosted on their website. And basically, it's a massive list of things that you should do to your application to make it a progressive web app. So what we're going to go through is kind of rattle through a bunch of the big ones. And then for each of them, we'll go into here's the idea, how do you make that happen? And then that will open up the things to different tech, like responsive design and service workers and manifest files and some new web API's, etc, etc. So you want to kick us off with the first one?
+
+24
+00:09:23,970 --> 00:10:19,710
+Scott Tolinski: Yeah, so these are the baseline things. This is the things that you sort of need, like absolutely need to be considered a progressive web app. So the first one would be that your site is served over HTTPS says that you're using a valid SSL certificate on your application. Now, this is something you should be doing anyways. So regardless, if you're interested in progressive web apps, if you know, I feel like at this day and age, you should just default to be wanting to ask no brainer. Yes, yeah. And now with Let's Encrypt, it's free, and a lot of services like Netlify, or a lot of these new hosting companies are making it really easy like a one click sort of get your SSL certificate, there's really no excuse to not be into it at this point. So you're gonna want to make sure that your site is served over HTTPS using a SSL certificate. And if you want to get one for free, I highly recommend to let's encrypt.org. I know Wes and I both use, Let's Encrypt.
+
+25
+00:10:19,830 --> 00:10:53,940
+Wes Bos: I should also say that the reason why we need SSL certificate is obviously because it's encrypted the traffic between it but also all of these new API's that we're talking about accessing the user's webcam, service workers, caching, all of these new API's are only available on what's called the secure origin. And a secure origin is an SSL certificate, website or localhost. So if you just want to get into these things, and the idea of getting a HTTPS is a little daunting to you know, that if you're running on localhost, that is considered a secure origin. Yeah.
+
+26
+00:10:54,090 --> 00:11:03,990
+Scott Tolinski: Well, again, these are, you know, sensitive. Those are, you know, using someone's sort of device. Yeah, information. It's sensitive information. So yeah, definitely, you want to take the next one?
+
+27
+00:11:04,140 --> 00:11:30,120
+Wes Bos: Yeah, pages are responsive on tablet and mobile devices. This is probably again, another no brainer, make sure that regardless of the screen size that the user has, it's a mobile friendly, whatever, especially also this goes the other way around, is if someone has a very large screen, don't just give them the 1200 pixel wides, can you take advantage of a really, really wide screen, as well as a very, very small screen and landscape and portrait?
+
+28
+00:11:30,360 --> 00:12:45,450
+Scott Tolinski: Nope. So the next one is kind of a big topic, we maybe want to get into this a little bit here. But all app URLs load when offline. So basically, you need to have an offline experience. Have you ever loaded up Instagram, when you're not online? Well, it doesn't load in your new posts, but it will typically load the ones that are stored in your cache or, or loaded already. And you can pretty much use the app just not use any of its online functions. So for a progressive web app to be a progressive web app, it needs to function very similarly, where all of your URLs need to load when offline. And one of the cool things you can do to test this is in your Chrome Dev Tools. Under network, there's just simply a checkbox where you can make yourself offline. So you can always check yourself to see if you are working. Now the way to have your app URLs working while offline, is to use something called a service worker. No service worker is basically like a script that runs in your browser. It runs in the background. And it can complete things right? It can it can do things like you know push notifications, or background sync, and in the future, apply, be able to do a lot more. But it's basically something that is a script that runs without you using a website.
+
+29
+00:12:45,659 --> 00:14:37,919
+Wes Bos: Yeah, I think the the important part of a ServiceWorker is that it runs in sort of this third space, I like to think about it because you have like your maybe have server side JavaScript, you have client side JavaScript, which has access to the DOM and, and the window and all of that stuff. And then you have this kind of third space, which is a service worker. And a service worker is a JavaScript file that is installed, but it doesn't have access to the server. And it doesn't have access to your DOM and the window and stuff like that. It's running in this third space where all it has access to is this thing called self and self is the service worker. And what it can do then is it can it allows itself to run in the background. So if you like let's say you were opened up a website and you entered in a to do item and you closed your phone and put it back in your pocket, well, that little service worker could run in the background while the phones in your pocket and still upload that like it doesn't need user interaction to actually make it work because it can run it can run in the background when you're not actually on the website. And that's how you enable things like push notifications, like Scott says, there's an it'll it has it does have access to this new caching API in the browser, where that's that's how it stores the files offline where it can, I think maybe the most important part of a ServiceWorker is that it allows you to intercept network requests. So if you were to request index dot HTML and dog jpg, the ServiceWorker sits in between your server and the browser and it will intercept that request. And then what you can do is the first time you get that request, you can you can store it in your your browser's cache, and then the next time that you visit it, you can intercept that request, and then just send back that information that index HTML and the dog dot JPG immediately before without having to even touch the server, which is what makes it offline, right.
+
+30
+00:14:37,949 --> 00:15:07,799
+Scott Tolinski: Yeah. And what's cool about this is you can make sure that this kind of thing is even working if you've installed your ServiceWorker because if you do go into the Network tab, and any of your requests that are coming from a ServiceWorker are going to specifically will they're going to have a little gear next to them, but they're basically going to show you that they're coming from your ServiceWorker and not from the same origin or location that they typically without it. So you could definitely see that all of these are when your requests are being handled or intercepted by the service worker.
+
+31
+00:15:07,980 --> 00:15:57,899
+Wes Bos: Yeah, I found this to be very tricky to work in. Because what happens is that you write a little bit of client side code that registered the service worker, but then the service worker will cache the code that registers itself. So you get into this like kind of like weird loop where if you update your code for your, your client side code, it won't update itself. But there's there's lots of ways that you can, the dev tools will allow you to bypass a ServiceWorker and fetch from the server as well as you can, you can write some code that will invalidate old caches, as soon as you update your server every time the page loads, what happens is that the client will download the ServiceWorker and check if it's changed at all. And if it has changed at all, then you get what's called an activate hook. And in that activate hook, you're allowed to sort of delete old stuff and then make room for the new stuff. Word.
+
+32
+00:15:58,020 --> 00:17:38,840
+Scott Tolinski: Yeah, serviceworkers are a big topic. And I think there's something that we could go pretty deep into. But really, at the end of the day, the lesson here is that your app needs to work well offline, and it needs to have some sort of experience, for instance, yep, level up tutorials, you can browse between the sites offline on level up tutorials, but you can't watch the YouTube videos because well, they're on YouTube, you know, you can't watch that that content, but you can interact with the site otherwise, right. So there is definitely something that needs to happen there where your sites are all again, all URLs are loaded offline. So the next one is going to be metadata provided to the with the feature where you add your application to your home screen, or your applications jar or something like this. It's basically a metadata file called a web app manifest basically allows you to define a whole bunch of information for in about your application, such as the name, maybe like a short name, what the icons are about the icons that are going to be used in the app drawer, the general background color, or the theme color is so that your your device, I know iOS and Android probably both do this. They have like adaptive themes for like the status bar and the navigation bar and stuff like that. So if you define your theme color, that way, the the operating system knows how to have that color change and stuff like that. So this is a really simple, it's just a JSON file full of a bunch of information. If you just go to the developers google.com and look at the web app manifest thing, it really just explains everything that needs to be in there. But again, this is just a JSON file with enough information that the browser can understand a little bit about your application. So they want to add it to the homescreen and knows how to treat it. Yeah,
+
+33
+00:17:39,210 --> 00:18:28,980
+Wes Bos: I should also note that this is not the same thing as an App Cache manifest file. So previously, a couple years ago, there was a proposal, I don't even know if it got merged or not. But you would be able to serve up what's called the App Cache manifest file, and you would tell it, which files to cache and then it would do it all behind the scenes. And that has since been removed and replaced with service workers, because service workers allow you to run JavaScript, and you can do logic in terms of what should get caught cached and not. Whereas an App Cache manifest file, you just gave it like index dot HTML, dog dot jpg, and there wasn't a whole lot of fine grained control over what we have there work. I don't use Android, but often I see screenshots from people where they have your the website can color the top bar of Android. Yes, this is where you would do that. Yeah.
+
+34
+00:18:29,250 --> 00:18:35,910
+Scott Tolinski: Yeah. Yeah. So you give it a theme color and stuff like that. Yeah. So yeah. So that would that would change the status bar up top there and everything yeah,
+
+35
+00:18:36,239 --> 00:19:08,670
+Wes Bos: wicked. A couple more that we have here. First, to load fast, even on 3g. So they have some, there's a lot you can do in terms of lazy loading and or only loading critical CSS, making sure that if you're going to run an app, the first download is not 10. Meg's worth of data, the first download is that first pain is really, really quickly. And then if you do need to get additional stuff, you totally can. Or you can, you can also just load things on demand with lazy loading of your scripts and code splitting.
+
+36
+00:19:08,910 --> 00:20:14,520
+Scott Tolinski: Yeah, and this is good for anyone. Again, just like the HTTPS, even if you're not doing a progressive web app, you want your site to load fast on the 3g, or at least fast enough time to first paint all that stuff. And so again, use your developers tools to throttle your internet, check out the all of that sort of your performance, your your network request, I actually actually shaved I shaved like 500 kilobytes off my my site a couple of days ago, just simply by I just flipped on this this. What is it like format auto on cloudinary. That's all of your images, web PS in browsers that support web P and I shaved like 500 kilobytes off my site with that one little change in and boosted up my score a little bit on this one. So find things that you can cut out there and get your site's loading fast on 3g or slower connections. Next is site work. cross browser as in, you know, all of the modern browsers, Chrome edge Safari, Firefox, again, something you're gonna want to do anyways, right. So a lot of this stuff doesn't necessarily, I don't know it exists outside of the bubble of progressive web apps.
+
+37
+00:20:14,640 --> 00:22:05,940
+Wes Bos: Next one page transitions don't feel like they block on the network. So transition should feel snappy as you tap around even on a slow network. And this kind of goes along with a couple other ones, which is each page has a URL, and you use the History API. So generally, what this means is that you're not reloading the page, every single time you visit a page, I have some, some apps like this, like the I have, my thermostat is eco B and the web app for it is so slow, and every time you tap, it takes forever to it. First of all, they have like, they don't have that like fast click enabled, where if you touch something, it immediately doesn't immediately it does that, like 300 millisecond timeout, so it feels very like or like very old and to work with it. And then it's just not snappy, it doesn't feel like you can tell that they're using JavaScript to build the app. And that's not it doesn't provide a nice experience. So by using like, like something like react, or view or whatever, generally, the routers have these things come with history, which is html5 push date, meaning that you don't have to reload the entire page every single time that you touch something, what it does is it just changes the URL, and then your application will react to it. And ideally, what will happen is, if there's something on that page, you could you try to preload anything that is big on that page, so that when you do hit that, you have a nice quick little thing or ideally instant, and that's something that next jass does really well, if you have a link, you just put a pre loaded attribute on it. And what it will do is it'll go off and build that page in anticipation that you actually do it. Now I've also seen other people just do like, as soon as you like, hover with, like, it's so cool pixels of that link, then they start to load it, which is great, because they can just just give you that little like, like half a second advantage that just feels so much better.
+
+38
+00:22:05,970 --> 00:22:54,810
+Scott Tolinski: Yeah, I think that's such a cool idea, too. I know sometimes that you wonder if people just are hovering, hovering, hovering, and then it's loading a bunch of stuff. But I think that's a really cool idea that the like preload on hover thing. Alright. So last one here is that each page has a URL as an individual pages are deep linkable via URLs. So this is mace basically just for sharing things, right? Because if you share something, it needs a unique location. So everything on your site, again, this one shouldn't be too tough. If you're using sort of, I mean, if you're writing single page apps, if you're using routing solution that's common, this should be pretty doable, and pretty easy. But basically, anytime you have a page, you just got to make sure it has a URL per page. Yeah, nothing, nothing crazy there.
+
+39
+00:22:55,050 --> 00:23:13,140
+Wes Bos: Now, that's something that we're like we're already doing. And that's something that's really nice about web apps versus desktop applications, if you ever need to get specifically somewhere. Or if you have, like, maybe you have like a couple different searches that you want to bookmark, it's super easy to be able to bookmark those things as we have a standard. It's a URL.
+
+40
+00:23:13,170 --> 00:24:29,460
+Scott Tolinski: Yeah. And it's funny, because when I'm teaching, React Native, that's actually a sticking point in kind of a weird, tough situation. Because you don't think about routing via URLs you think about like screens and transitioning to screens from various events. But you don't have this sort of concept of here's your URL that we're so comfortable with. So because of that the whole routing and navigation thing can seem a little bit weird for people who have never done any sort of native app development or coming straight from web. But yeah, definitely something that is easy to do with our tooling. Now, another thing that will make your life easier. I know, this is actually really bad transition here. But basically, in working with web development, we often run into bugs. And we often unfortunately, run into bugs in production. A lot of times, it's maybe testing that's finding these bugs or even your users. And if these things are happening in production, it can be difficult to figure out what the heck is going on and why. So with Log Rocket, well, it gives you the ability to both reproduce bugs faster and find how they happen. And basically, it makes fixing issues a total dream. So Wes, why don't you talk a little bit about why we like Log Rocket so much.
+
+41
+00:24:29,490 --> 00:27:24,930
+Wes Bos: Yeah, Log Rocket is I love their website, because it's so simple. Just stop guessing why bugs happen. Log Rocket lets you replay what users do on your site, helping you to reproduce bugs and fix issues faster. And we've all run into this sometimes, if an error happens on your server, and I believe Log Rocket will will track those as well. But it's a really tricky situation where when you're writing JavaScript, you're shipping the software to the user and asking the user to run the code themselves. And that's the usually doesn't happen other than if you're just shipping it like an app, shipping it to users phone. Usually it runs on your own software and the users are using it on your own hardware, right? So I often run into this where somebody will email me and say, I can't buy it. I can't log in. It's broken. Like, Oh, thanks. So, so helpful. I like, like, you don't think especially like web developers, if you don't think that you could like, check the console? Or tell me a little bit? Did you get an error message? Like, why is it not working? What were the steps you're doing? Right? And it's frustrating. And you don't really want to have to ask your customers that. So what Log Rocket will do is it will track what your user did up until that issue, and then it will aggregate all of your issues. And you can see like, Okay, this is specifically happening, like, let me tell you about a bug that I have right now that I could have used this for coupon codes, I have two checkout forms, and I have a credit card checkout form, and I have a PayPal checkout form. And then I have a total that the user can pay at the bottom. And what was happening is sometimes people put the coupon into the credit card form. And then they go, Oh, no, I'll use PayPal, and then they flip over to paypal. And then they don't put the coupon code in, in the PayPal one, but the total has updated because they did on the credit card form such a bizarre sequence of steps to actually happen. And then they would pay for it. And they say, hey, Wes, I didn't get the coupon didn't work, what's going on. And for me to figure out what was happening took maybe 10, people emailing me to finally dig down. And if I had Log Rocket, I could just say, Okay, this specific person was having an issue, I can attach it, you can attach it to specific transactions. And then I could replay what they are actually doing, where they're putting it in the wrong form, and then flipping over to the other one. And then I could go in and fix that bug. They also do. So they do accept exception tracking session replay. And they also do application performance monitoring. So if you want to kind of keep an eye on things that tend to make your website slow, maybe things can degrade over time, check it out at Log rocket.com forward slash syntax and get 14 days free. So you could just test it out, see what it's all about, put it, throw it up on your website, see if you can find it. Because those issues are scary, because you don't necessarily know that you're using it, you're losing users or you're losing money from people not being able to buy it. You just it's hard to tell they might not they might not email you, they probably won't. So thanks so much to Log Rocket for sponsoring.
+
+42
+00:27:24,930 --> 00:27:55,440
+Scott Tolinski: Awesome. Okay, so now we're gonna get into some of the things that make a exemplary progressive web app. So the other things were sort of the baseline, those are the things you have to have these things you don't necessarily have to have, but are good to have. So for instance, having all of your content being indexed by Google. And now this is again, something you probably should be doing anyways. You're probably familiar with Google Webmaster is a Google Webmaster Tools or Google Web masters. What is this called?
+
+43
+00:27:55,650 --> 00:28:04,530
+Wes Bos: Google PageSpeed? Or Oh, no. Yeah, yeah. It's Google Webmaster Tools. Yeah. Where you can like see how it's crawling your website and the errors that might pop up.
+
+44
+00:28:04,560 --> 00:28:36,990
+Scott Tolinski: Yeah. So you'll have a like, sort of a sitemap, an XML sitemap that you submit, you add your property in here, you can see that Google is going to crawl your application absolutely correctly. And if there's any sort of potential issues, or errors, or that sort of thing that Google Webmaster, I guess it may be called, it's called the search council or something like that will help with this. So definitely something you should be doing anyways. Right? I mean, if you want your content to be found, then you probably didn't want to have a sitemap. And you want to have that submitted and indexed by Google, as well as other search engines.
+
+45
+00:28:37,350 --> 00:29:40,650
+Wes Bos: Next to are something I've been doing for a long time, which is schema.org, metadata and social metadata. So specifically, I make sure that I have all the correct meta tags for Twitter card. So if someone shares it on Twitter, it shows the right thing for when you share something on Facebook ever shared something on Facebook and had a random image pop up, you know, huh, why did it choose that one. And that's generally because the person who's running that website has not set a specific banner or size or infer a description, things like that. So there's a set of like standard ones, which are schema.org. And you can say, like, this isn't a news article. This is a recipe, this is a video. And that will help anyone who's crawling it understand what the content of the page is better. And then there's social media ones, which are specific to Twitter and Facebook, actually, Facebook came up with their own standard and sort of opened it up, which is called Open Graph. And if you set generally if you set Open Graph tags, they will they will work across all the different ones and things like Pinterest that might scrape it well. We'll use those as well.
+
+46
+00:29:41,010 --> 00:29:47,310
+Scott Tolinski: Where the next is going to be to use I hate saying this word, canonical. I'm gonna Okay, there we go.
+
+47
+00:29:47,360 --> 00:29:48,110
+Wes Bos: I got a call
+
+48
+00:29:49,830 --> 00:30:16,830
+Scott Tolinski: in my YouTube video about progressive web apps, and I was like kinda that I just could not get it. So I got it. So this is basically if you have a page that's Similar or a duplicate of another page, and you have multiple routes to that same page or multiple URLs, right? I don't know. Like, I can't think of a reason why I would do this offhand. I don't know if you have something that you've done this for. I know
+
+49
+00:30:16,830 --> 00:31:07,470
+Wes Bos: WordPress allows you to have different URLs. So you could do like forward slash, like query string p equals 54. And that's like post 54. But then you can also have permalinks in WordPress, like forward slash about Wes. And those two pages are the same pages. And then there's, there's the possibility of Google crawling both of those pages and getting confused or docking you because you have duplicate content. That's a big thing in SEO to make sure that if you ever have a route that might end up at the same place that your your URLs are again, it also if you were to update a URL, and you kept the old one there, you could, okay, yeah, for SEO purposes, yeah, then those will tell it, I've never done them myself, I've only ever used them in WordPress, because when I'm doing my own routes, usually is only way unless you start have some old technical debt. I think that's probably where that comes from.
+
+50
+00:31:07,739 --> 00:31:30,450
+Scott Tolinski: Word. So basically, what you're going to want to do here is you want to specify a canonical URL with the rel canonical our l canonical. So that way, you would just add those tags to the head of your page. And that would just indicate that, again, this page is canonical, I'm gonna keep saying that. It's embedded in my brain.
+
+51
+00:31:30,989 --> 00:34:04,080
+Wes Bos: Yes. All right, we're gonna move on to the user experience, ones that we have here, there was another one called the History API in that list, but I covered that earlier. So the user experience, one is basically making the app feel good to the user. And this, the first one is content doesn't jump when the page loads. And this is specifically, this is a pretty big problem in web development. Because super frustrating. One, two, what happens is that your page downloads, and ideally, you have CSS loaded before your content is loaded. And then the CSS will be applied to that. But sometimes the CSS comes after. So you have like that first flicker where the HTML loads and then your CSS is applied. And then maybe your web fonts download, and then they flickers again, because it puts in the new web font. And there's a whole bunch of new stuff around that whole folk flash of unstyled text. And then maybe you have an image that downloads and it's unsure how big the image is going to be, because it doesn't know the width and the height of the image until it downloads the whole thing. So then it, it reloads the page again. And then maybe you're using Flexbox, or CSS Grid, which are they size themselves based on their content. So if you have an image in a CSS Grid, then the size of that grid is going to do could get to get bigger, and then that might trigger three or four more renders and and then you get this sort of like janky website that just re renders six or seven times before you're actually ready to do it. So there's a lot you can do to to fix this. First of all, you can have what's called critical CSS, where you can run some tooling against your webpage and say, like anything within the first thousand pixels high, I grab, extract all the CSS that is needed to render that critical piece of the website. And then they simply just stick that into a style tag on the page so that any other CSS that needs to load later has no effect on that, that initial one. And the same thing goes for images as well. Ideally, what would happen is, sometimes people serve up a blurry version. And this is kind of cool. Sometimes people will save like a 10 pixel by 10 pixel version of an image. And they'll just save it in like a base 64 string. And then you can stretch that thing, and blur that thing to be the size of the image that you hope to, it's a little bit more work because you need to know the width and the height of the image that's coming in, because you have to set width and height attributes on your image tags. But what that will do is it will, it will load the placeholder and it will load a blurry version of that image until the actual full image has been downloaded.
+
+52
+00:34:04,169 --> 00:35:25,440
+Scott Tolinski: Yeah, one of the that's one of the reasons why I love Gatsby so much is because stuff like that is just baked into that for you. Yeah. Oh, check out it's like the images get Gatsby images component or something. It's actually it has so many options in Gatsby hyphen image. Oh my god, it's so cool. Because one of the things that it does is it gives you the option of how it pre loads and one of those options is like a SVG version of it that like is sort of like posterized almost but yeah, yeah, I can have it fade in the blurry version. And it's one of the coolest things because it just works. It works so easily. And it it like I don't know what in my pro Gatsby course. And let note the plug there for pro Gatsby at level up calm. But in the pro Gatsby course. I think that was definitely like a wild moment. For a lot of people when you just show how easy it is to get that basic blurry image then that's not something that's a lot of fun to do on your own. So, again, this is one of those things that it causes major annoyance issues for your users. And I personally, I just think so many times when you're about to click something, and then something else loads, and then the thing loads immediately, and then you push the wrong thing. And LinkedIn was like King of that just like UI elements just popping in right in front of where you're about to click something. at the last second, I think they've gotten a little bit better. But for us, it's so
+
+53
+00:35:25,440 --> 00:35:39,150
+Wes Bos: funny that yeah, that's what everyone jokes that the the remember the Hawaii sent like a missile alert to everyone's phone. Come on. Someone joke that that was the issue or like a banner ad loaded in later and they accidentally click the wrong one.
+
+54
+00:35:39,510 --> 00:36:07,800
+Scott Tolinski: Yeah, so I i personally take care of this on level up by having like an aspect ratio wrapper for a lot of my images, there's a way you can do that with I think it's the aspect ratio, or images, if you know that you just have a percentage on padding bottom for like an image wrapper. Yeah. So that takes care of that nice and easy. But again, yeah, you'll want it's one of those these things that sort of, you'll want to be working on it all the time, just make sure this content doesn't jump in, it will make the experience better for your user. I
+
+55
+00:36:07,800 --> 00:36:32,960
+Wes Bos: really like that that Gatsby is doing the tools there. Because a lot of the stuff we're talking about today is really nice in theory, but I find it's gonna it's not going to be somebody something everyone will do until it's really easy to actually implement into your existing websites, or if you're building a fresh site. So I think the answer to a lot of the stuff we're talking about is that tooling is getting better. And we'll make a lot of this stuff a breeze.
+
+56
+00:36:33,000 --> 00:37:05,630
+Scott Tolinski: Yeah, I'm so excited for that. Like, where you don't even have to think about a lot of this stuff, because it's all great. But you know, it could be easier if you just have an image component. At some point, you pass in your URL, and the image component figures out everything it needs to do and does all that nice little loading stuff. So yeah, it could be a really nice feature. And I think they're definitely moving there. Okay, so the next is going to be pressing back from a detail page retained scroll position of the previous page. I don't think we have to do anything to get this to work this way. There's just browsers work that way. Right, unless you're modifying the scroll itself.
+
+57
+00:37:05,960 --> 00:37:30,630
+Wes Bos: Yeah, I think what happens is this works in the browser by default. But I think if you're using a like something like react, because it announced the component, and then it has to remount, when you press the back button, it doesn't actually have a cache of that like, like the browser might. So most routers, I think react router does this, it will just remember your scroll position. And reinstate that once the component has remounted itself.
+
+58
+00:37:30,780 --> 00:38:00,630
+Scott Tolinski: Yeah, so nothing crazy. When tapped inputs aren't obscured by the on screen keyboard, aka, when that keyboard pops up on your device, the input and what you're typing into, should be visible. Now typically, again, the devices are going to mostly handle this unless you have things that are CSS that's preventing this from from happening. So again, just something you want to test on your actual device or a emulated device to make sure when that keyboard pops up, that the stuff that you're typing in is actually working in find
+
+59
+00:38:00,840 --> 00:38:40,650
+Wes Bos: there's a little tasty treat here is that ever, there's a new API in the browser called dot scroll into view. So if you select a div or a input box, you can simply just call dot scroll into view, and it will smooth scroll it into view. So it's very simple. You don't need some scroll libraries anymore. And there's some nice polyfills if you're supporting older browsers that don't have it. What else have we got here? There's a whole bunch. But I want to make sure that we get to some of the more important ones content is easily shareable. No kidding. site is responsive. Got it. Any app install prompts are not used excessively. That is something that people are rallying against is when you visit any website like Reddit on the website, it just like is like usually user webapp. Yeah,
+
+60
+00:38:42,420 --> 00:38:46,650
+that's called interstitial interstitial. Yeah, that
+
+61
+00:38:49,230 --> 00:38:53,130
+Scott Tolinski: just the Enter annoying it. That's what it is. Oh, that's not funny.
+
+62
+00:38:53,150 --> 00:39:05,850
+Wes Bos: Yeah. And then the Add to Homescreen prompt is intercepted. So I guess there's a hook that you can use to when the user installs it, then you can use that to do a whole bunch of caching,
+
+63
+00:39:06,150 --> 00:39:08,610
+Unknown: then we get into a lot of these performance. We talked about
+
+64
+00:39:08,610 --> 00:40:00,860
+Wes Bos: that caching, we talked about that. So there with a ServiceWorker, you can cache all of your things on load. That's great, because then when you come back to the web app, it's going to work especially if you have spotty offline. Actually, I watched Jake Archibald has a if you search anything ServiceWorker, the whole front page is just him doing hilarious conference talks. And he said that the issue with offline is not whether you're online or offline, it's when you're in spotty connections where you're kind of in and out or you It says you have four bars and you don't really work. So by always doing cash first, you're going to always load immediately, and then you can try to update that stuff in the background should you need to, and I really like that because it's the worst when you're traveling and you're like spotty here and there and working. Just let me use it and then sync as soon as you do have some data. To work,
+
+65
+00:40:00,980 --> 00:40:15,980
+Scott Tolinski: yeah, yeah. And a lot of stuff like, Paulo makes that like nice with the optimistic UI sort of stuff. And yeah, there's definitely a lot of a lot of things that are making that easier for us. Okay, so the checklist is pretty much pretty much done for all the important stuff unless you see anything else.
+
+66
+00:40:15,980 --> 00:40:18,300
+Wes Bos: But I think some push notifications here. But
+
+67
+00:40:18,330 --> 00:40:45,510
+Scott Tolinski: yeah, I think that's what I wanted to get at would be talking a little bit about before we wrap this up, talk a little bit about the additional sort of device API's that we now have access to, and things on your devices that are going to sort of make these things feel a little bit more native, for instance, I mean, we talked about web RTC, and get user media to access your webcam. And these kind of things, again, are features that well, native apps are allowed to use.
+
+68
+00:40:45,750 --> 00:41:47,550
+Wes Bos: Yeah, web RTC is a is a really cool one. Because like, get user media lets you access your users webcam and your microphone. But well, web RTC will let you to do web RTC is a is a protocol for transferring data between clients, meaning that you could, right the reason why people like like pretty much everybody is coming out with a Skype competitor right now is because web RTC will allow you to connect from device to device without a server in the middle, there's still a little bit you still have to have what's called a I think a TURN server where they handshake between the two like they both need to know their IP address. And if they're on different routers, but that's really exciting. Because then you'll be able to send, you can really send anything, and not just video or data, I believe. What's it called web torrent is built on web RTC mean that you can send just packet data, data, anyone and that's, that's really cool, because that's like a whole network layer of being able to communicate without having the server in between.
+
+69
+00:41:47,670 --> 00:42:07,440
+Scott Tolinski: Yeah. And again, on the same long lines of things that use on your device. I can we briefly mentioned push notifications, a push notifications, for better or for worse, can be super handy on an application, they can also be very annoying. But push notifications, having that access to us that sort of stuff. Could again, it's going to make your application feel more like a real app. Yeah,
+
+70
+00:42:07,460 --> 00:42:57,650
+Wes Bos: it's and I the push notifications is a funny one. Because like some people love them and have them on like my wife has them on anytime anything happens on Instagram, she gets a push notification. And I have pretty much every single push notification turned on likewise, yeah, except for email. But I will often just turn off all my push notifications. And it's just a better way to live your life I think. But I don't know, it's, it's a necessary thing that we have. It's like anything marketers are going to abuse these new technologies. So you kind of have to get your users like you have to get their permission, and you have to have them trust your application before you hit them up with a push notification. Otherwise, you're gonna block it. And it's very hard to unblock to communicate to the user how to unblock push notifications, because the settings are often buried really deeply.
+
+71
+00:42:57,690 --> 00:43:05,820
+Scott Tolinski: Yeah, the application that I clicked block on the fastest was Facebook, just like No thanks. No, no way. Do not want.
+
+72
+00:43:07,290 --> 00:43:09,710
+Wes Bos: Should we take a quick break for Freshbooks?
+
+73
+00:43:09,980 --> 00:43:40,110
+Scott Tolinski: Yeah, Gus, speaking of things that aren't annoying. No, but uh, basically, a tool that Wes and I both really love to use for our personal accounting. I've done so many segues into fresh books. Now I don't have any left. But fresh books is really just an excellent, excellent, excellent cloud accounting software. And many of us as freelancers, web developers, they work in a small company or a larger company. Things like fresh books just make our lives so much better. Because of just how well they work.
+
+74
+00:43:40,290 --> 00:44:53,520
+Wes Bos: Yeah, like, on Friday, a couple days ago, Scott and I were for some reason almost. We sold so many sponsors spots for syntax, I think we had like four or five people finalizing some deals that we've we've made for sponsoring the podcast, which are really excited about, and all of the invoices for those go through Freshbooks. And it's fantastic. Because what I had to do is Scott said, Oh, have they paid have they paid Have they not paid, I just looked at my list of invoices. And you can see the status of all of the invoices. You can you can send like you can bug them if they haven't paid you can say it's overdue, you can have Freshbooks send the you are overdue email, so it's not coming from you but it's coming from the robot that is fresh books. And it's just a really great way I hate spending time on the stuff I've talked about this in the past I have an assistant who does most of it for me. And it's just a nice way to take yourself out of that busy work and let us focus on things that are important building courses and recording this podcast. So head to freshbooks.com for slash syntax for a 30 day unrestricted free trial of fresh books and use we use syntax in the How did you hear about a section when you're signing up because that makes fresh books keep coming back for more nice,
+
+75
+00:44:53,760 --> 00:45:03,750
+Scott Tolinski: yeah, love fresh books, and they've been a longtime sponsor for us so far, so definitely really appreciate them. You know, believing in us at the beginning, the beginning of all of it.
+
+76
+00:45:04,260 --> 00:45:10,800
+Wes Bos: Yeah. Now, now we hear speaking of great. That's awesome.
+
+77
+00:45:10,860 --> 00:45:52,380
+Scott Tolinski: Okay, so a couple more things, again, just accessing two more device things like the year accelerometer and GPS access. Again, these things are things that you're seeing in applications used more and more, you know, things like a GPS access is going to be really nice. And some applications like maybe it's a realtor's website, and you're looking for things in my area. And you can just say, hey, let's find stuff in my area. So having access to get into these device, these devices, what are they called sensor device API's, device API's and sensors? Yeah, it's just makes our lives cooler. Because we can do cooler stuff with it. We don't have to implement a bunch of code to check these things, we get access to the data right from the device itself.
+
+78
+00:45:52,530 --> 00:46:41,370
+Wes Bos: Yeah, a couple other API's that we have are the payment request API, this is really exciting. Because what happens is that you store your card in Chrome, or you store your card on your phone, and then you want to pay for something, you can use your thumbprint or your face ID or whatever it is, and then it will then what that does is it gives you a token, you can then take that token to stripe or something and then cash it in for real money. That's really exciting. Because that's one thing that that real apps have like I love not having to love ordering Uber or Uber Eats or paying for something on my phone. And then it's like, oh, just press your thumb down instead of having to like go find your credit card and type this like long ass number in and it haven't not work. So I'm really excited about Payment Request API. And I believe that it is in all of the latest browsers now. dope.
+
+79
+00:46:41,400 --> 00:46:47,190
+Scott Tolinski: Yeah, definitely one of the cooler ones to come in. lately. I know we've actually mentioned it a few times on the show already.
+
+80
+00:46:47,400 --> 00:48:12,090
+Wes Bos: Big fan, big fan. What other ones do we have here? One mug? Grab a couple more? Yeah, sure. So also, like there's a couple other API's in the browser that allow us to store stuff because we talked about serviceworkers that allow us to to run code. In the background, we talked about the cache API, which allows us to store to cash assets, JavaScript, images, HTML, you name it. But we have a couple other things. We have local storage, which is just a key value store for kind of like a mini database. If you ever wanted to store things like I often will store playback rate for or like if you go to the syntax website, and you listen to a podcast, and then you come back later, it will reinstate where you left off. And that is stored in local storage, because like you don't have an account really, to store that data in for syntax, but you can store it in the browser. And then it will remember the downside to local storage. This is just key value. And it's just a string. So if you want to store an object, you got a JSON string a file, if you want to store numbers, you need to make sure that you parse that back into a number from a string. So it it does the job in most cases. But if you ever need like a a better full blown database solution in the browser, there is a another one called index dB. And this is actually not something I've ever used myself, but it is a full blown database solution that you can use right in the browser. Have you ever used index DB before?
+
+81
+00:48:12,120 --> 00:48:32,250
+Scott Tolinski: No, I haven't. No, no, but it I mean, it looks really cool. But so for me, my local storage needs are pretty much met with a Apollo in the persistent cache plugin. Yeah. Which basically just stores your queries into local storage, and then you don't even think about it. But yeah, no, I haven't used this yet. I mean, it looks pretty cool, though.
+
+82
+00:48:32,790 --> 00:50:32,310
+Wes Bos: Yeah. And then there was one more here, oh, Storage Manager. So one thing I was even thinking about is, I use Vimeo to play my videos on my course platform. But then if someone wants to watch them on the train, they have to download them. And then and then sort of manage like a file, a folder of video files themselves, right. And what I would like is that someone could visit the website, download all of the files to the browser, and then they could just visit it on offline mode. And then it would just it would cut over from Vimeo to the videos that they've downloaded into the browser. But like each course I have is like a gig or two. So I was just like, looking into like, what are the limitations of that. And it seems to differ from from one to another. And I think you can also like you can allow a website to have more information in it. But there's this new Storage Manager API, which it doesn't store any data for you. But between the caching API service workers, local storage, index dB, all of these things take up space on your your user's computer. So Storage Manager will tell you how much space you have used and how much is available on that device. I was just looking into it on the docks, and it says a numeric and numeric value, which provides a conservative approximation of the total storage the user's device or computer has available for the site origin or web app. It doesn't tell you what that is. I think it's bytes because I ran it on my computer and it said had 66 gigs? My computer has 500 but it says it's conservative. Ah, but nowhere in the docs does it say what it's measured in, and that the example they have is just a percentage you have 12% left. And so it's pretty new. I don't even know if it's a when it's in Firefox, Chrome and Opera right now. So I think it's one of these things that is, is on the cutting edge. But I would love love love to have my course viewer totally offline. So you can go on a train or a plane and and not have to use Wi Fi for it.
+
+83
+00:50:32,340 --> 00:50:45,180
+Scott Tolinski: Yeah, I think my limitation on that might be you do? I think that might be the limitations. I'm using YouTube's embeds. Yeah. Can you download a YouTube video and watch later without paying Yeah, to bread, or you can't
+
+84
+00:50:45,180 --> 00:51:28,680
+Wes Bos: buy, like Netflix does it for kids. Or you can go on your phone, you can queue up some My kids love a pop patrol, little baby bump. So we often but they expire after like a month of having them on your phone. And what always happens is that you open your phone up when they're freaking out. And you're like, like, just take the phone in and handle it right. And then and then it's like, oh, this cache has expired. And I'm like, Damn, yeah, Netflix. So I don't know, maybe hopefully YouTube will will come around to that. Because like Google's touting all of this offline first stuff, and some of their biggest products don't follow. Yeah, any of these. Yeah, but that's often like legal and advertising.
+
+85
+00:51:29,070 --> 00:51:40,830
+Scott Tolinski: Yeah, I mean, they just have so many. They like really something new all the time. Like, doesn't matter. Do they already have a music app? Sure. Let's do another music app. Another how many chat apps can we do? Let's just keep making chat apps? Yeah.
+
+86
+00:51:42,000 --> 00:52:05,700
+Wes Bos: Hilarious. Oh, there's also a battery vibration API. No battery API was pulled back because marketers ruined it. They were using it to fingerprint you. Yeah, it means that like they could tell I think we talked about this in the past, but they could. If your battery's at 30% in your IP addresses in a certain area, and then you visited another store, and you open up your phone, they can like they can fingerprint you based on like, yeah, try to Yeah, guess what you're doing?
+
+87
+00:52:05,790 --> 00:52:33,510
+Scott Tolinski: Yeah, some of this stuff is pretty cool. Because of the ways that he you know, the creative ways that you could use these things in your application. Maybe for like low battery users? Is this still a thing? If you're using like an OLED screen, you would be staring up like black non pixels, red pixels. There's just some really cool ideas there. I actually don't know if that would actually be a legitimate way to help save someone their battery, but potentially, maybe Who knows? kind of neat. Yeah, either way.
+
+88
+00:52:33,960 --> 00:52:34,650
+Wes Bos: Don't ruin it.
+
+89
+00:52:34,680 --> 00:52:41,610
+Scott Tolinski: Yeah, right. You could do a lot of creative things with this stuff. And you don't have to use it all for practical reasons. Totally.
+
+90
+00:52:41,700 --> 00:52:44,040
+Wes Bos: Any anything, anything else you got for this or
+
+91
+00:52:44,460 --> 00:53:21,120
+Scott Tolinski: I don't know, I think that's pretty much it. Again, a lot of these things, you'll want to check out this checklist and, and take care of the the baseline things. We didn't even talk about the lighthouse girl or the audits tab, which is basically the way to check your application for a lot of this stuff. It's sort of like a PageSpeed sort of system where it audits your site. And they'll give you a report, it will give you things to fix. And it will give you links to tell you how to fix them. This is called lighthouse, there's a website for it, there's a Chrome extension for it. And in Chrome Dev Tools, under more tools, there's a tab called audits that will take care of this for you as well. It's cool,
+
+92
+00:53:21,120 --> 00:53:52,680
+Wes Bos: I need to I'm gonna run that on a couple of my sites. I haven't built a whole lot of progressive web apps. But I think what we need to do is not look at it like I'm building an app, but how can I add these helpful things to my existing and maybe just a website, right? Like I'm going through all of these and I know that my course platform could probably use about half of them to make to make the viewing experience nicer and to make the buying experience better, which will mean that I make more money, right? Yeah, more money. More money. Mo Money, Mo Money, Mo Problems.
+
+93
+00:53:55,260 --> 00:53:56,370
+Scott Tolinski: That song goes right.
+
+94
+00:53:56,760 --> 00:54:01,170
+Wes Bos: Something like that. Anyways, I got a sick pic for me today.
+
+95
+00:54:01,200 --> 00:55:47,010
+Scott Tolinski: Yes, I got a sick neck. This is one of my favorite apps. Speaking of web app, so I don't know if this is a progressive web app or not. I've never checked I don't think it is. But one of my favorite web apps is called my noise dotnet. And my noise dotnet is a noise making application. No typically these things have like, you know rain noise and wind noise and stuff like that, or white noise. This one is using like sound generator. So this thing is really awesome. Because instead of just being like a simple looping audio file or something like that, it is very interesting, how he how he makes these. It's definitely they're more much more complex sounds he uses like audio synthesis and a whole bunch of stuff to make these sounds. But there is in sort of an amazing amount of different sounds that are like non repeating and just super good. One of my favorite ones is airplane, the cabin noise. I use that I've actually used that on an airplane. Because I don't want to hear like other people's conversations and stuff like that. But I can use the airplane cabin noise and get that same sort of thing. They'll just put you to sleep. I love a lot of these noises as well. This for a long time has been an iOS only app, there was the web app. And then there was the iOS app. Well, there is an Android app for now. And I'm so excited to use it. Because I was using some crappy one. And this is like the sort of gold standard for noise making applications in my opinion. And if you're interested, definitely like click some of their affiliate links or donate I've donated to them a couple of times, because he he does this all for free. And this application is seriously amazing. follow him on Twitter and all this stuff. Mind noise dotnet, one of my favorite favorite noise making services. Wow,
+
+96
+00:55:47,040 --> 00:56:05,490
+Wes Bos: that's why good, what you got my sick pick is going to be very summer ready. And it's more of a general so I really we've talked about this many times in the past, but I'm obsessed with the drinkware. Right? Whether it's we've talked about the big bottles, what do you have the Bo TTL the bottle? Oh, yeah.
+
+97
+00:56:05,490 --> 00:56:06,420
+Scott Tolinski: And it's big.
+
+98
+00:56:06,540 --> 00:56:20,970
+Wes Bos: To me. There's, it's like, a little bit bigger than mine. It's funny somebody somebody said on Twitter the other day that one of the biggest challenges of being self employed is making sure that you're hydrated. And I'm like, that's the opposite. Yeah, I just drink so much water all day long. And
+
+99
+00:56:21,030 --> 00:56:23,070
+Scott Tolinski: yeah, the worst, it's distracting.
+
+100
+00:56:24,150 --> 00:57:31,590
+Wes Bos: Anyways, um, so I've got I have a bunch of Yeti stuff. I've got some of the Yeti low ball cups of coffee and I've got the huge Yeti Rambler that you can you can put like two liters of water in I've got a whole bunch of it and I love the Yeti stuff, but it's it's so overpriced and what's not so overpriced, but you pay a premium for the actual Yeti and to look like a cool person. But if you're if you're just like need like actually like decent cooler wear or drink where a Walmart has Ozark Trail stuff, and the Ozark Trail stuff is actually really really good quality. So I have a couple of they're kind of like insulated thermos mugs, I've got one of the backpack coolers that keeps ice for like, a kept ice for like a day, which is amazing. They sell like kind of a Yeti version of their bear proof, cooler as well. So if you're looking into high performance drinkware and coolers this summer, I would say pick pick some some of the Ozark Trail stuff. They definitely do a good job. I think it's I think it's a Walmart brand. I've never seen anywhere else. I've actually bought it all in the States because the haven't found a lot of it in Canada. Nice.
+
+101
+00:57:31,740 --> 00:57:33,240
+Scott Tolinski: Nice little summer. Ready?
+
+102
+00:57:33,480 --> 00:57:37,830
+Wes Bos: Yes. Summer ready. Any shameless plugs? Yeah, no, I
+
+103
+00:57:37,830 --> 00:58:32,400
+Scott Tolinski: just want to plug my latest react level to react course we cover all sorts of really awesome react topics. And one of my favorite things about this course is diving into an animation library called react spring. You can think of it like react motion, but a little bit easier to comprehend, that sort of has the same sort of idea you're interpolating. It's all physics based. And we're doing some really cool stuff where you're dragging and moving divs. And these things are responding based on how you're dragging. And we're interpolating all sorts of different animations. So it's really, really cool. We end up building like the sort of Tinder style interface where you know, you drag to the left, and the thing rotates and fades out. And it's all super, super performant and physics based. So if you're interested in learning about that kind of thing, along with a whole bunch more of intermediate react topics, check out check out level to react over at level up tutorials, comm forward slash store or become a levelup pro to get access to all of that and more.
+
+104
+00:58:32,550 --> 00:59:01,560
+Wes Bos: Well, again, I'm just gonna plug my Wes bos.com forward slash courses. I have too many courses to specifically pick one now but if you're looking to get better at JavaScript, React s six s seven Yes, alias. I think s nine. I'm not sure I updated it recently with all of the newest async await stuff. To learn to learn react. I've got a bunch of free courses CSS Grid JavaScript 30. So if you're looking to learn something in the next couple of weeks, or whatever, check out Wes Bos comm forward slash courses.
+
+105
+00:59:01,730 --> 00:59:25,050
+Scott Tolinski: Awesome. Well, that's it. I hope you have a better understanding of progressive web apps, how you can get going on them. If anything, is unclear, check out that checklist. Because seriously, there's basically here's the problem, here's how to fix it. And here's some links, take some links, get out of here, that kind of thing. So check out that checklist. And it'll solve a lot of your questions. If you have any additional ones after this episode.
+
+106
+00:59:25,050 --> 00:59:28,770
+Wes Bos: We're good. All right. We'll see you tomorrow or not tomorrow. We'll see you next week.
+
+107
+00:59:29,480 --> 00:59:43,320
+Scott Tolinski: See you tomorrow bases. Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

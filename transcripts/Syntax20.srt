@@ -1,0 +1,396 @@
+1
+00:00:06,000 --> 00:00:41,700
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers. Welcome to syntax In this episode, we're going to be talking about fitness.js, which isn't actually a new JavaScript framework, thank God, it's actually Yes, it is a, we're just gonna be talking about health, nutrition, fitness and how it relates to you and your career as a programmer, designer, any of that stuff, someone who sits in front of a computer all day long, it's a important thing that we all have to spend a little bit more time on.
+
+2
+00:00:42,030 --> 00:02:53,250
+Wes Bos: This episode is sponsored by a company called dev lifts. And this is kind of a neat episode because I'm going to be talking about my experience with fitness over the last couple months. And actually, even from my experiences last couple months was through our sponsor day, which is deadlift. So Douglass's two guys, that and JC that are on a mission to make web developers healthy. And what they're doing right now is they're offering these personal training plans that will, and I got one of these myself a couple months ago, just to they wanted to sponsor the podcast. But in order to suss it out, make sure that it was a good sponsor, I actually did it myself. So what they do is they, they sort of sit down with you for about 30 minutes and talk about your goals in terms of like, where you want to be why what you want to do in terms of getting healthy. If you want to lose some weight, if you want to have some more energy, if you want to get stronger, whatever it is. And then what they do is they make you this like training plan that has, however many days a week that you feel like you want to exercise, if you want to go in the gym, or you want to do it at home, they they sort of take your needs into account and make a training plan. They make you a nutrition plan, what you should eat, what you shouldn't be eating, how many calories a day, you should be eating all that good stuff, you get access to the slack. And it's kind of neat, because it's like a personal trainer, but they're not going to go to the gym and yell at you. They're just going to give you the plan, you can go off and watch your own YouTube videos to learn the exercises and whatnot. And, and then you join in the slack. And they check in with you every week and make sure everything's going good. And they answer like all the all the questions, all the silly questions that I've had. So right now what they're doing is they have let me open it up right here. It's dev lifts.io. And they have a, this whole thing that I'm talking about is 249 bucks, and it's currently on for 149 bucks. But they only have 95 spots left there was 100. But at the time recording, it's only 95. Who knows what it's at right now. And then they're offering another 50 bucks off for syntax learner. So really this $250 training plan, which which takes them hours and hours, hours to put together. We'll talk about why they're doing this a little bit more. It's really only 99 bucks. So head on over to dev listado to grab that.
+
+3
+00:02:53,730 --> 00:02:55,590
+Scott Tolinski: Yeah, super comprehensive too.
+
+4
+00:02:55,620 --> 00:03:00,570
+Wes Bos: Yeah. Yeah. Did you actually end up having one done? You can cut this out if you didn't?
+
+5
+00:03:00,870 --> 00:03:39,330
+Scott Tolinski: Yeah, I did. Yeah. And in fact, was nice for me is we can talk about this a little bit more is that I've never had a specific workout that was tailored for my athletic performance. Yeah, like an athlete, right? I'm breaking pretty constantly, but I've never had my workouts like help my, because I don't have a trainers, right? Like people, like professional athletes have trainers and everything. For me. I'm just like, oh, I'll just lift weights and I'll be stronger. And it turns out, like there's a whole lot of extra things I could be doing that could aid my like dance performance in all sorts of different explosive and strength ways that just totally opened my brain to all of that stuff.
+
+6
+00:03:39,540 --> 00:04:05,880
+Wes Bos: It's interesting. Yeah, so that is a personal trainer himself. And JC is a web developer and who's currently getting his personal training certification. So it's kind of an interesting mix to be able to just focus on just developers so this episode might seem like an IV huge, huge add for them. It's not I'm just very it's been working out super well for me, so I'm very thankful to them for for helping me out.
+
+7
+00:04:06,510 --> 00:04:42,000
+Scott Tolinski: Yeah, yeah, absolutely. I think one of the things we should kick it off with then is like sort of your history and my history of like, fitness and movement and working out or any of that stuff like over the course of my life. I've been sort of active 24 seven I was you know, always playing street hockey and whatever in the street growing up and constantly like outdoors kind of kid. Definitely like doing a lot of like play stuff. Yeah. And I I became like a rollerblader in a skateboard. I even was like skateboarders even sponsored by vans pretty briefly,
+
+8
+00:04:42,000 --> 00:04:42,830
+Wes Bos: where you really?
+
+9
+00:04:43,130 --> 00:05:39,180
+Scott Tolinski: Yeah, I got to open a van skatepark and was it and it was in. I think it was in Royal Oak, Michigan. It was in Michigan. I'm trying to remember the city but I got to be one of the first five skaters at this van skatepark like backstage passes to the warp tour. And all bunch of cool stuff and a bunch of free t shirts and whatever, but I soon actually got my first concussion, like several months after that, and I quit entirely. Sure. So um, that was in high school they pretty much all the time. So I'm definitely like super active throughout high school. And then I just started breaking because to me breaking was like, it was cool. You were singing music videos at the time. And to me, it seemed a lot like the same kind of path is skateboarding, rollerblading, that sort of stuff, right? But you didn't get in the air, which is the part I was having troubles with after a concussion caused by being like high in the air. So it's like, oh, I get to stay close to the ground.
+
+10
+00:05:39,990 --> 00:05:46,860
+Wes Bos: So for those of us who are not super cool breaking is breakdancing, right? Sure.
+
+11
+00:05:46,890 --> 00:07:54,600
+Scott Tolinski: Yeah, yes, sorry. That is something that I have trouble with. I always just refer to as breaking. Yeah, so I've been breakdancing since I was 18, I used to just sort of drive up to the University of Michigan because they had a club there and just start practicing with those guys. They used to sneak me into the the back door of one of the Campus Rec buildings, we used to have this thing because you had to be a student to go to the rec building. And these guy, it was super cool of them to do this without even knowing me. I just emailed them, and they were like, oh, we'll sneak in. And they had this whole routine where they had someone distract the guy at the desk. And then they would have someone pop open the exit door, which was right next to the guy at the desk. But it was right next to a stairwell. So they kick open the exit door really quickly, I would run in the exit door and we'd run down the stairs. And they would always like shout at you like stop, no don't, but you can't get out of your seat if you're the guy at the counter. So like that's all he could do was like, No, please don't go inside here. Please Don't sneak in. So I used to do that like once or twice a week. And they never figured it out. Because we used to do it every week. And I just started going up and breaking because you stayed close to the ground. I was 18 and whatever and eventually went to school at U of M and became president of the club at some point. And taught lessons and and been doing it ever since now. So it's been a been a long, long time that I've been doing this dance, but because of that I spent all this time maybe, you know, over the course of these years, maybe four hours a week dancing, and somewhere around then I think like maybe like 2014 I started hitting the gym. Just because it seemed like that was like a nice way to do preventative like I was getting hurt a lot. So it was like, Oh yeah, way to prevent me from straining myself, whatever and hit the gym. And then I started to learn about lifting weights and all this stuff like that, and brings me today I have a gym out in my garage that I go to three days a week and really, really enjoy. I'm the type of person if I'm not moving around or whatever, I'm getting depressed and, you know, just not happy and not productive and all that stuff. So that's sort of me, you know, I've just always been very, very active. Interesting.
+
+12
+00:07:54,630 --> 00:09:48,600
+Wes Bos: That's, that's cool to hear. on my end, um, I was always a pretty active as a kid as well playing sports, I was super into skateboarding as well. That's really where I got a lot of my exercise when I was in, in like high school age university, I started getting into both running and lifting. But maybe, I don't know, maybe three or four years ago, I would casually go to the gym. But I just I wasn't doing it as much as I probably should. And I think most importantly, as I wasn't following any sort of like really good nutrition plan. And just over over the years, I think I gained maybe like an extra 2025 pounds from when I was married I was in good shape or when like the day you got married, I was in good shape. And then you have kids and and you're married don't impress anybody anymore. And it's sort of like, slid from there and probably about Yeah, exactly two and a half months ago, I was talking to the devil of skies, and they came up with a plan for me. And I was super excited because I always really enjoyed. Especially I always enjoyed lifting weights, I never really enjoyed cardio or anything like that I did a lot of it just because it's good for you. But I was enjoyed lifting weights, it just never had like a clear goal or clear plan, I would just kind of go every now and then. So two and a half months ago, I've been going every week, four days a week for 45 minutes, as well as accompanied by we'll talk about my nutrition plan, and it's been working out super well. For me, I think I'm down, down about 17 pounds. And I think more importantly is just like feeling really good in terms of energy focus, being able to like work better and all that stuff. I don't know maybe that all that all go into as I like what are the benefits to maybe you can answer this what are what are the benefits to to getting in shape as a web developer?
+
+13
+00:09:48,920 --> 00:10:40,260
+Scott Tolinski: Yeah, a lot of that. I mean, even so, regular workouts are going to not only make your brain work better, you're going to have see cognitive benefits, you're going to think a little bit more clearly but You're also going to get better and more sleep, your body sleeps better if you have that energy expelled, right? So better sleep is also in turn going to improve your cognitive performance, right. So, you know, thinking smarter, getting better sleep, are all things that like, definitely aid you in your day to day programming. And, and honestly, the change in the difference between having that athletics or just working out or having some sort of anything movement based, right and not having it at all is like pretty huge in terms of the thinking clarity you get, you'll suddenly realized that you you have like, super brain powers or something like that.
+
+14
+00:10:40,260 --> 00:11:40,800
+Wes Bos: It's It's incredible how much we talk about productivity and using TextExpander and shortcuts and all these apps to like, make ourselves faster, because I'm just obsessed with that kind of stuff. When there's just like this one huge glaring thing in it is that if you were to put some time into fitness and getting healthy, your your brain is going to be so much better clarity, you're going to be so much more productive, you're going to get a lot more done. And, and to me that's like, that's like the huge obviously, you want to like look good and, and be healthy for years and years. But like one of the huge driving factors for me is like, I just want to I only have eight hours a day to work. Like I can't I'm not young as when I could just put in 15 hour days and work all day and work on weekends and, and stuff like that, like I only have so much time and I want to squeeze as much of it out of that. And I think a really good way to approach that is to, to get your head in the right space. So that when you are on you're you're given a right.
+
+15
+00:11:41,040 --> 00:12:51,030
+Scott Tolinski: Yeah, yeah, absolutely. And also, if you think about it, we spend so much time either sitting sitting in chairs, or standing desks or whatever, but we spend all this time sort of hunched over a computer or phone and stuff like that, and, and lifting weights or doing all this stuff requires you to sort of adjust your posture and your form and whatever and an increased like strength and better posture is going to improve your day to day even sitting at your computer, your back's not going to be hurting and hunched over and whatever. And you're not going to be feeling these sort of symptoms of sitting in a chair all day long, the same way you would if you would have like less strong core muscles and back muscles and all sorts of stuff like that. I mean, in addition, like you also get time away from screens, like how much time do you just spend with your eyes glued to your screen, and I know me, it's, it's, I have to be pulled away from my computer sometimes. And my wife is just like, you need to get away from screens right now. You know, it will help you sleep better. All that stuff is just all positives that if you take an hour out of your day, that you probably maybe not working efficiently anyways, it the benefits outweigh that the cost instantly.
+
+16
+00:12:51,120 --> 00:13:27,270
+Wes Bos: Yeah, I also find, like the hour that you go to the gym, I find that to be an awesome time to listen to podcasts, or just to think through stuff, I can't I can't tell you how many times I've had ideas for courses, or I've had a particularly troublesome code issue. And then as you're sort of just like working out you, your brain is sort of trying to process it. So very similar to like the shower where you always have like these aha moments, is because those things force you to sort of take yourself out of out of the situation, and you can start to have some time to let your brain think through all of those issues that you might have.
+
+17
+00:13:27,720 --> 00:13:57,660
+Scott Tolinski: Yeah, that's a perfect, absolutely perfect thing because it does it, your brain is working on it, even when you're not actively thinking about it and your brains like smart enough to solve these problems without you like having to think about solving these problems. And, to me, I found that to be great, because now you're getting if you think about it, you're becoming ultra productive, because you're you're still solving problems, but you're also working out your body, you're gonna be getting better sleep, all that stuff. So it's like, you're, it's almost like you're Double, double teaming these problems at the same time. So
+
+18
+00:13:57,690 --> 00:14:54,780
+Wes Bos: yeah, and I also want to say that in terms of like taking time out of your day to work out and maybe we can talk a little bit more about this later. But I people will always tell you like if you if you take an hour out of your day, and you only work seven hours a day, instead of eight and you go to the gym, you're gonna you're gonna get you're still going to be more productive than if you were on for eight hours. And you hear that from a lot of people but like, I never actually really believed it. Like, like, holy like I was like, oh, that kind of makes sense. But like really I rather just spend the eight hours like throwing myself into whatever I'm doing because I just like I love what I do. And I would love to have all that time but and slowly but surely figuring it out that like it is especially for me because like I don't have a ton of time and part of my plan is two days a week I have to go like lunch or two o'clock or in the afternoon. I have to stop my actual work to actually go to the gym. But in my experience the last couple months it's been well worth it.
+
+19
+00:14:55,290 --> 00:15:58,530
+Scott Tolinski: Yeah, yeah, definitely. I know. Three days a week. I stopped working at the 330 and then I go to the gym from 330 to 430. Because my wife has to get our son for daycare come home and at 430. And then she wants an hour to work out hour and a half or whatever. So then she gets her time to work out, I get to watch Landon, then we have dinner and then I can get another hour to work in after that. And then it's not ideal. And it's not like, you know, standard nine to five or something like that. But it works and it works for you. Yeah, and some of those times those that additional hour or two hours after dinner or whatever, some of my most productive time because you have this mental focus and clarity that you didn't have during the day. Or maybe even at the end of the year workday. Like how many times is it like 330? And you're like looking at the clock, like, Oh, is it four? So I can start thinking about when can I drive home yet? Like I just remember, like all those times at work just like an hour left of work. I might as well just browse the internet for this hour, because I'm not going to be productive right now. Anyways, so definitely a good time to cut that stuff out.
+
+20
+00:15:58,650 --> 00:16:30,600
+Wes Bos: Yeah, actually, it was I think it's kind of cool to hear people and maybe if you have like an arrangement, tweet us out syntax FM was I'm always curious to hear what people's like work. workout routines are and like how they work that into their actual work, like do you work a little bit later at night? Or in the morning? Or how do you split up your day? So that because if there's one thing I've learned is that like, you have to make some sort of change in your work routine in order to make this going to the gym or going doing your workout actual actually possible, because otherwise, it's just not going to happen.
+
+21
+00:16:31,860 --> 00:18:08,520
+Scott Tolinski: Yeah, yeah. And I think the people who have like nice gyms at their workplace, trust me, there's tons of developers out there who have a nice gym at their workplace. That's not being utilized. I was just at galvanize in Denver a few weeks ago, it's getting a little tour. And they were like, Oh, yeah, and here's the gym. And, and she opened it up. And it was huge and awesome. And like a gym, you'd pay $100 A month ago, and it was completely empty. She was like, sadly, it doesn't get much use. And I'm just thinking like, Man, these people, like, there's so many people upstairs have just, you know, you could take an hour out of your workday to go hit the gym, that's at your office, you don't have to pay for a gym membership. You don't have to have any equipment of your own. And it's all there. And it would make you have a better day, you know. And so those kind of things take advantage of if they existed, like I said, that just kind of bummed me out to hear that nice equipment was going on us. Yeah, so we went over the sort of wise in terms of how it's going to make you a better more efficient programmer in your day to day life or designer, whatever you do on your computer. Let's talk a little bit about maybe some of the house because there's a lot more of like the house than I guess anything else. Because there's just so many things in working out that can cause you not to work out based on the amount of choices you have to make whether it's Oh, do I go for a run? Do I go for a walk? Do I lift weights? Do I go take a dance class? Like what the heck do I do? There's just too much there. Right? Yeah,
+
+22
+00:18:09,420 --> 00:18:45,960
+Wes Bos: that was actually my my problem is that I would just like walk around the weights room and try to find a couple things that were free. And I would do it and then like you just don't know, like, like, when is it okay to leave or whatnot. And one of the nice benefits of having a plan is that you just do your things. And it actually after a couple weeks, it only takes me 45 minutes to actually get my stuff in. So I can walk, walk to the gym, do my thing and come back in just over an hour which is which is great. Because then you know, like, this is the start this is the stop this is exactly what I need to do. And this is how many reps I need to do today. And it's a nice clear focused and so
+
+23
+00:18:46,200 --> 00:20:36,350
+Scott Tolinski: yeah, so I think the the starting point is like, I mean, what are you what are your goals, right? Like, at the end of the day, your goals? May they be superficial or not superficial like right now. Like I've been breaking for so long and lifting and whatever like I don't know if my goals are as superficial I want to I want to make myself less injured when I'm braking and stuff like that. I don't want to hurt myself and I want to be able to be like performance but like I've had superficial goals in the gym and that's like that's super cool. Like there's there's absolutely nothing wrong with just being like man, I want to look good. look good naked is like number one reason people want to get in shape. And there's there's like I don't know if there's like a stigma about that I've always heard like, you know, sometimes developers are coated people want to talk down on people for having those superficial goals or anything like that. But that's that's super valid. And you know, so that starting point is really like what do you want to what do you want to get done? Do you want to put on some muscle? Do you want to lose some belly fat? Do you want to just, you know, actually like, what do you want to get done? And if you're, you know very overweight or something like that, like first step, just taking daily walks right going out there and getting moving, it just took a walk around the block like a walk several blocks one way. And then another if you have dogs take your dogs for a walk, but like, just really getting out there and get moving. But if you're not, if you're looking for a little bit more of like a fitness challenge, right, like, there's several different directions you could take, you could go like the couch to five K's sort of route where you're slowly ramping up your running until you're feeling confident able to run a five K, I hate running myself, like running. I don't know why I just I like in the middle of a run, I'm just like, get me out of here.
+
+24
+00:20:39,330 --> 00:20:47,040
+Wes Bos: Yeah, I feel that way as well. I still do it. But it's just like, it's not something that I really look forward to. Yeah, it's just one of those things that you do.
+
+25
+00:20:47,360 --> 00:21:43,050
+Scott Tolinski: And if you want that cardio and you don't like running, you can always take a bike ride, you can go to the gym and do the elliptical or the recumbent bike or any that sort of stuff. There's all sorts of routes. Basically, the cool thing about any of this workout stuff is, well, like there's always an alternative to something if you don't want to go for a run, there's several other ways. I mean, if you want to, if you want to build muscle, then there's obviously like lifting weights and stuff like that. And the cool thing about lifting weights is that that muscle that you build actually burns fat over time. So if you're looking to lose weight, having that muscle on you is inherently going to make you less have less body fat percentage just by lifting the weights themselves, right. So I guess those are like some of the the routes you can go right? Take a walk, go for a run, use any of that equipment, lift weights, right? There's also like dancing and more fun things like I don't know, like skateboarding or
+
+26
+00:21:43,050 --> 00:22:25,170
+Wes Bos: any of this bar. It's hockey, soccer, or whatever it is. Yeah, we're both in frozen country now. So go on, skate down the river on your hockey skates on and skate down the river. Yeah, I think important part here is that you just have to find something that you actually enjoy. Otherwise, like, we've all been there before, it's just not something that like, obviously, it's not going to be very fun, especially for the first month or two because you'll be very sore, and you'll be very tired. But once you get past that hump of of doing it, your body starts to crave it and you start to look forward to actually going to the gym or going for your run or whatever it is. It's just like a really nice thing that everybody enjoys.
+
+27
+00:22:25,620 --> 00:23:25,410
+Scott Tolinski: Yeah. And part of that is is this routine, right? So like nothing's more important than finding a routine that you like. And there's all sorts of ways that you can get your routine from, you know, like deadlifts. Right, that's a great place because they're going to tailor a routine for you. Yeah, right. You can have it you had, I don't know how you're zoned. But I had an interview with them. And then they sort of asked me a bunch of questions. And through that they discovered like what my program should look like, yeah, to me, that was really great, because it was like a tailored routine. But in addition to like having a tailored routine, just developing a routine itself, like if you want to do yoga, go to like, do yoga with me calm and just fire up a video every single other day or something like that, and just say, Hey, I'm gonna do a yoga video every other day and just stick to it. I'm gonna go running these days and stick to it. And that's like, a huge thing is not to maybe try to do too much at once. But just try to do something that you can and will stick to because that reoccurring nature of your routine is really the most important part.
+
+28
+00:23:25,440 --> 00:24:21,630
+Wes Bos: Yeah, yeah, really important. Don't Don't say I'm gonna try to go to the gym more often, you say I am going to go to the gym, even if it's just Tuesday and Thursday, that's all you can do right now. And stick to it. Because there's no, there's nothing to say for that in every aspect of life, especially learning whether you're learning to code or whether you're going to the gym if you just stick with it and actually put in the work, which is it's really funny for me because like, I've been like preaching this whole, like, just put in the time you have patience, keep at it do do the hard work day in day out and it will pay off for you. And that's the exact same advice for working out as well. Which is, which is why like, I feel like right now is the time that I need to I have I have the time kids are starting to sleep a little bit better. And I don't really have any excuse because I I've figured out how to teach so many people to code that the same advice should also apply to to getting in shape, right?
+
+29
+00:24:21,690 --> 00:25:16,860
+Scott Tolinski: Yeah, right. Yeah. Yeah, absolutely. Yeah, I think I got lucky enough where I instilled such a strict routine in for myself, in like the three years before we had kids, that now that we have our first child, like, it was more like, okay, now he's here. How long after he's here? Can we both find a time to get back to our routines? And how can Courtney and I assist each other to make sure that we both stay on our routines because it's really easy at this point. When you have a child to just say, Man, we are tired? Yeah, maybe let's just do it tomorrow. And if that comes up if if I say that or He says that it'll just be like, No, I'm watching Landon right now and you go to the gym, or you know, vice versa. Because it's important to stick to that stuff that just even keeping that routine, you let it slip a couple of times. And next thing you know, you're sitting there five months later and you haven't gone and who knows how long? Yeah,
+
+30
+00:25:17,010 --> 00:25:42,840
+Wes Bos: I think one important point that you had there is like buy in from your significant other is super important. Obviously, if you have a significant other just because you are going to need to skip some time at night when you'd normally be watching Netflix or you are going to have to take the kids while the other person goes and does our workout or whatever. But being able to work out a schedule like that has worked really well for us.
+
+31
+00:25:43,200 --> 00:28:09,120
+Scott Tolinski: Yeah, and it leads to like, you know, like less resentment over like free time and stuff like that. Because you're you're you're giving your your spouse and they're giving you all the free time you need to make yourself have that work. And you're nobody's feeling like I can't go do the things that like the gym or something like that. So it's definitely, definitely important. And you can hold each other accountable in terms of like, what you're doing and your routines and stuff like that. So just developing a routine is really great. I mentioned for yoga do yoga with me is a great place for free videos. There's like endless YouTube free youtube videos on YouTube, just like a billion people trying to make YouTube videos for yoga. So just Google it, find some popular ones and just do it. Like I said, there's a couch to five k for running. There's a website called fitness blender, which is all free youtube videos for different workout routines. And they're like, anything from short to long. I know Courtney does these fitness Blender videos and really, really loves them. There's all this is cool. I've never seen this, oh, man, it's insanely high quality. I've been inspired so much through their YouTube channel, just the amount of brilliant work they're doing. Obviously, if you want to go to the paid route, there's the whole Beachbody. They do p90x and insanity and all those bunch of DVDs you can purchase. But sometimes when you buy those, it's like, oh, I'm gonna do this workout, you buy them and then you never do it. So like I would always go the free route when you can. In terms of like, if you're going to watch videos or something. Yeah, for for like weightlifting, a good starter plan, if you're not getting a personalized plan is something like starting strength is another great, great plan. We'll link all this stuff in the show notes. But starting strength is great because it gets you all of the base complex lifts, which are just sort of like squats, deadlifts, bench, overhead press, and like through those lifts, your workout ends up being like, only three exercises long, I think it's starting during, I think it's like only three exercises long, and that's your entire workout each time. But because they're these complex lifts, it's using your whole body, for the most part are activating a large amount of muscle groups. And you end up seeing huge results, especially if you're starting at nothing in terms of lifting. Courtney was doing starting strength and like added, like a ton to her benchpress in absolutely no time. So dif a big fan of all of those plans in terms of whatever you're going for.
+
+32
+00:28:10,170 --> 00:28:10,740
+Unknown: Cool.
+
+33
+00:28:11,490 --> 00:31:12,090
+Wes Bos: So let's talk a little bit more about our sponsor, which is deadlifts. I know we've been talking about them all the way through this podcast. So I told you about like what you get for the the 99 bucks if you use the coupon syntax. But I had a Skype call with JC the other day just to like, make sure that like what we get across for them is important. And what he said is that like they're they're on a mission to get developers healthy, like that's like sort of his his life's goal and, and that's what he's he's going forward to. And he really stressed that like, the whole fitness industry is kind of around, like what you look like or be getting jacked and stuff like that. And that's cool, but like he's more or DevOps is more focused on just getting devs healthy, being able to, I don't know, like as developers, we sort of like tend to side to working long hours and eating pizza and the beer cart comes around on Friday and, and whatnot. And if we can sort of change this culture of, of working really, really hard and being super busy, and change that to be a little bit more healthy. I think that'd be really, really cool. So how you take care of your body, I think it really really affects how you work we talked a little bit about that in terms of productivity in terms of both focus and stuff like that. It's it's about being more productive, more fit more efficient in your actual work when you are on so that you can have that time outside of your life. So you don't need a gym membership. If you have dev list obviously they're gonna ask you what kind of stuff do you want to work like for me I travel a lot so they gave me an extra a bunch of exercises that are I could just do in the hotel room if I'm if I'm actually traveling. I told them like I want to lose that a little bit of weight. I want to get stronger. I want to put on a little bit of muscle and baby On me telling them what my goals are and and also like, in terms of like, this is where I'm sore have a little bit of back pain here, they will tell they will recommend all the different workout preferences, all the nutrition preferences, all that good stuff for you. So it's only 99 bucks, which is awesome if you if you get in before it. So if you are thinking about getting in shape, I would definitely drop the the 99 bucks on this just to both get to be part of the community. There's a lot of people that are sharing in the slack room already I'm I'm in there every day sort of reading what's going on with everyone, there's a lot of people that are sort of like at the same level. So we're all starting at the same time. It's kind of cool to talk through that stuff. And then also it just like gives you a plan. Like that's why people buy Scott nice courses as well as like, of course, there's lots of really good material out there. But sometimes you just need somebody to hear me out for 30 minutes and tell you exactly what to do on what day and what muscle groups so workout or whatever they recommend for you might be more cardio based or, and whatnot. So check it out at dev lifts.io. And we'll link it up in the show notes as well. So thanks so much to them for sponsoring.
+
+34
+00:31:12,390 --> 00:32:01,410
+Scott Tolinski: Yeah, while we're talking about them, you know, I want to say like my favorite part about my deadlift plan was it opened my mind to some training methodologies that I wasn't like super aware of like, for instance, I have done a lot of bodyweight training, but I hadn't done like so do handstand push ups, right and things like that. Because obviously that's very applicable to for breaking to be able to do a handstand push up. But like, they had one of my workout days do like a time under tension handstand push up where I would take three seconds to go down and three seconds to go up and it was unheard of thing is done in it. I've never done it. And I remember the first time I did it with the workout plan, it sucked. I was just like, the amount of handstand push ups I could do just went in the absolute toilet. It just went it just went right down the drain. I was just like,
+
+35
+00:32:01,680 --> 00:32:02,520
+Unknown: oh boy, this
+
+36
+00:32:02,520 --> 00:32:28,440
+Scott Tolinski: is really impossible. And it turns out like that exposed me that I don't have the ability to do that stuff very well. I can, you know, push them out explosively, but I can't do that big old, you know, this slow down and then slow back up. And so one day, it was all about explosive pushing and stuff like that the other day was all about like time under tension. And that totally blew my mind because I just was like, dang, I am really deficient in some areas, apparently.
+
+37
+00:32:28,830 --> 00:33:01,560
+Wes Bos: Yeah, they seem to know like exactly like, the poor parts. Like in a was it like two weeks after I started he just sent me messages like hey, like make sure you're spending time under contraction because you can do your workout but you do it improperly. Or if you sort of like swing the barbell up, it's you're not going to get the the benefit that you actually would so it's kind of interesting to he's, he's they've both have trained enough people. I think they know exactly. The little deficiencies after talking to someone for 3035 minutes.
+
+38
+00:33:01,800 --> 00:34:13,710
+Scott Tolinski: Yeah, definitely. And if you want that sort of help without having to ping someone else, like if you just want to like YouTube, but even if you are doing a dev list plan and you just don't want to like bother them, you just want to like look it up or something. There's a really good YouTube channel. I think it's by Jeff nip nip heart net part, I'll have to link this off to let nip harder Nippert I forget it, but he does these videos about like the science of growing your biceps, this is just thinking your shoulders, and he'll go through and he'll be like, these are the three best exercises that you should be doing and here's how you should be doing them. And if you're a scientifically minded, here's the scientific studies that back it up. So I really like that channel because I am like that and like I get some studies about what I'm doing and why to and that makes me like, Oh yeah, well, this study says to do it this way. And that makes me feel really like good. I don't know if it's a placebo. But the fact that you know, the science backs it up makes me feel better about it. You know? Cool. There's, there's so many great resources for this stuff. I love the there's a lot of like, again, there's a lot of like scammy stuff in the fitness industry, but like, there's a lot of just brilliant resources. So okay, so we talked about routines, we talked about why? I guess.
+
+39
+00:34:14,940 --> 00:34:16,610
+Wes Bos: Let's see, no, I did nutrition now.
+
+40
+00:34:18,170 --> 00:34:36,170
+Scott Tolinski: Yeah, we can do nutrition. Okay, yeah. So let's talk a little bit about is something that's definitely important for being fed is what you put into your body because the exercise is really only half the story, right? It's all about calories in versus calories. Yeah, so
+
+41
+00:34:36,179 --> 00:34:51,210
+Wes Bos: I would argue even like exercising is even less than half the story which is kind of unfortunate. I rather just eat whatever the hell I want and, and work out but unfortunately, it's it's so much based on like, how much and what you're putting in your body.
+
+42
+00:34:51,480 --> 00:35:50,880
+Scott Tolinski: Yeah, there's an old saying, which is that abs are made in the kitchen and it's like super true because you don't get I mean, you get ABS by doing crunches and stuff like that, but You don't get good looking ABS from doing 1000 crunches, you get good looking ABS from having no body fat on your stomach. And all of that comes down to nutrition. So I mentioned it's calories in versus calories out, right, the workout part is calories out, it's going to be burning your calories, even just going for a walk for 30 minute walk is going to burn a bunch of calories, and that's great. But if your calories in is so high that your calories out can't make a difference, then you're not actually a net positive or one that negative in this case, you're at a net positive and you're going to be still gaining weight. Right. So let's talk a little bit about that nutrition key here that you can maybe not necessarily like limit the quality of your food or something that comes in but limit the total amount of calories coming in. So it's easier to be at a deficit.
+
+43
+00:35:51,000 --> 00:37:37,170
+Wes Bos: Well, I'm gonna talk a little bit about what I've been doing for nutrition in the last wild. If you follow me on Twitter, you know that I love food, I love to eat, I love to cook. I love to drink beer and stuff like that. So part of my plan was that like, they asked me like, what types of food do you usually eat? What do you like to eat, etc, etc. And they have put me on this nutrition plan. I call it nutrition plan rather than diet because it's, it's not really something that you just like do for six months, I guess you can do exactly to temp it sounds I don't know, it sounds a little bit weird. But so what it is, is called keto. And I'd sort of do my best to describe it. But I'll link up some, some good YouTube videos in in podcast that you can listen to to totally understand like, why and how it works. But the idea is that your body runs primarily on something called glucose. And when you eat things that are full of carbohydrates, like like breads and pasta, and rice and potatoes and stuff like that your body converts those and in when it needs energy, that's what it's going to to run itself off of. So the idea behind keto is that your your body is not going to be running on glucose and all the sugars that come from eating carbs, but your body is going to Sorry, I should explain what you do is you you adapt a diet that is extremely high in fat, like 70% of your diet is fat. 25% is proteins and 5%. As carbohydrates are somewhere around, I can look it up, I use an app called My Fitness Pal to track what I'm eating and make sure I hit those sort of levels.
+
+44
+00:37:38,580 --> 00:41:35,480
+And what's so sorry, and what comes from that by eating mostly fats and proteins and very, very little carbohydrates is that your body stops running on all the sugars and all that glucose and it switches it over to a state called ketosis. And then your body switches itself over to to fueling itself for energy based on fat. So it's kind of interesting and then as you It takes like a while I think it took like two weeks or so to two and a half weeks to fully get into the state that is ketosis because your body is so used to to running on carbohydrates. But once you switch over to that, then your body reaches for stored fat that you might have just on your body to to reach for energy or the the fat that you've been eating, it'll it'll reach for and the the benefits to that is first you just drop like I dropped like six pounds in the first like two weeks and it's just because your body is with all those carbohydrates and you your body's retaining a lot of water so it's like not like it's great because you feel great and you drop all this water like immediately and then once you've done that you you start to actually burn away any any actual fat that you have. So like, like I don't have like I wasn't overweight, but I have lost 17 pounds in two and a half months which is pretty good. If you go on the the Reddit keto, you can look at a lot of people's stories, people that were hundreds of pounds overweight and they did keto for two years and they've lost like half their body weight. So that's one of the benefits is obviously weight loss. And the other benefits are or at least for me is like better focus and consistent energy burn. So rather than gain those ups and those downs or that three o'clock crash after your lunch are a little bit sluggish. You want to watch a couple YouTube videos after lunch. It's a much more sort of like solid consistent burn of the energy and you don't feel you don't find yourself like craving snacks throughout the afternoon and you don't find yourself like getting into that that little energy slump where you need something like maybe you need an afternoon coffee or whatever to pick you up. So it's kind of interesting. You eat mostly meats and green vegetables so I have bacon and sausage and eggs every morning. It's I will prefer Those who who are just hearing this for the first time, it does sound crazy. It sounds nuts to just eat this kind of food all the time. It sounds like it's very unhealthy for you because there's like, No, we've been we've been told that for the long time that fat is bad for you. So like I definitely did my did my homework and did a lot of reading and whatnot on these things for people that are not just personal trainers, people that are actually scientists in this field. But yeah, what do you eat a lot of meat, you eat a lot of green vegetables, the sort of rule of thumb is anything that grows above the ground is fine. Anything below the ground is not because they're like potatoes are high in carbohydrates, whereas in like, broccoli, or brussels sprouts are, are very low in carbohydrates. A lot of dairy whipping cream, sour cream cheese are just really good. Like, it's like a very delicious nutrition plan to be on. As long as you're okay with not eating rice and bread, which is kind of brutal. And also beer as well. You can you can have a little bit of beer. And there's also this is one called modified keto that you can be on where you can do like, I think I try to stay under 20 grams of carbs. And you can find beers that have three or four carbs in them. So it's definitely still doable. The only really downside that I found to it is that like because all of these things are are high in calories like bacon, a couple slices of bacon, foreigner calories, it is easy to run up your your calories for the day, because you can't just go willy nilly eating whatever you want, you still need to make sure that you're in a deficit if you want to be losing weight. Yeah, so
+
+45
+00:41:35,690 --> 00:43:48,030
+Scott Tolinski: yeah, that I mean, again, like the best part is that you have a plan and it's one that works for you with what you like to eat. For me like we always pretty much ate that way anyways, we'll still still do white rice here and there. Um, I need a little bit more carbs because I'm I'm the dance stuff is like pretty super cardio intensive. And you need a little bit of that. But like for me, it was like getting calories and dumb places that I could cut out for instance, like knocking back a few Red Bulls here and there. It's like I didn't drink soda or pop pop for all you Michigan folks. And up in Canada to Oh yeah, pop all the way I only say soda to make other people happy. But I was never like a pop person. But like, you know, I was like super into grabbing a Redbull every day or every other day or something like that. And, and that's like just totally unnecessary wood, you can get your caffeine fix from so many more nutrient, better places, like even just coffee or green tea or whatever. And so in addition to like cutting out those sources of extra calories, if you drink pop, stop drinking pop your body is like tuned to say, like a dopamine response whenever you drink that pop, because that sugar rush and whatever, but it like I can guarantee you if you cut it out of your life, you will not miss it. I have not had a pop that's not like a red bowl. And like, I don't even know when like, I don't drink it and I don't miss it at all. I drink a lot of water. So you just replace that pop with water. And at first it's gonna suck and you're gonna feel like, Man, this has no flavor. And eventually you're going to be like, Man, this pop is way too sweet. Why, like, why was I drinking this so much? Because you're just your body gets used to it. And you don't even realize that you're bringing in all these calories and all this sugar when you when you absolutely don't need it. So cutting out stuff like that was big for me in terms of like Red Bull. And again, like I could knock back a pack of chips. Like if there was like a bag of chips sitting on my desk. I would just eat a chip while I'm wearing a chip be the chip and then all sudden, like Oh crap, there's no more chips in the bag like we have in
+
+46
+00:43:48,030 --> 00:43:49,830
+Wes Bos: the dangerous slippery slope.
+
+47
+00:43:50,009 --> 00:47:25,470
+Scott Tolinski: Yeah, so it's like stuff like that, for me was for my diet plan was getting rid of that stuff. I replaced chips with baby carrots, which is an awesome idea because I love baby carrots. And it turns out though, when I got the stomach flu, we weren't sure if it was the baby carrots. Oh, no, that was one of the two items that we've had the dogs and we both had like so it was either baby carrots or rotisserie chicken. And because of that we haven't bought baby carrots again because neither of us can think about it. Unfortunately, that one's out of the door right now. But I look forward to the return of baby carrots. But like finding like little things that you like, like I like snack if I'm looking to snack on something, you know that that's a nice replacement to me. So just being able to remove those calories or replace them with something that's much better for you. And actually, here's something I just started doing in the past week. This is my first week. In fact, today is Friday. So add on Sunday, I'll have done one full week of this. I can't necessarily talk too much about its success or anything like that. But I've started doing something called intermittent fasting is like several flavors. I became really, really into it. A couple of weeks ago, and then it's just like, screw it, I'm gonna start doing it. In fact, whenever I talk about intermittent fasting, the joke is, is that if you watch Stranger Things that Courtney turns into that, the little boy who has the monster inside of him, she's like, he doesn't like that. Like, he doesn't want me to do intermittent fasting because she thinks I'm going to try to make her do it or something like that allowed her to do. But she's just like, No, I don't I don't want any part of your fasting. I'm like, that's, that's cool, like. So the intermittent fasting is basically not eating, the way that I'm doing it, there's several different flavors, the way that I'm doing it is to not eat for 16 hours, which sounds maybe like a lot. But when you think about it, it's not a lot at all. It's essentially just skipping breakfast. So if I ate dinner at 630, and I, whatever I ate dinner at 630, then I can't eat again until I believe 1030 the next day. So 630 to 1030. That doesn't really sound that bad. Like I never really had snacks at night anyways, for me just be like, skipping that breakfast meal. And that 16 hour window, what it does is it sort of causes your body to like burn through some of its fat storage is instead of other things that it wouldn't be looking to do. But in addition, and there's all sorts of like, really interesting benefits from like, suppose that cognitive benefits but also like, things like you have a greater tolerance to drops in blood sugar, your your blood sugar will sort of like, perform better because it's being like trained, right? Like anything, you're training yourself, yeah, to be able to handle periods where you're not eating. And only that, but you're not going to be hung. Like if you ever get stuck in a place where you can eat for a period of time, you're not going to be cranky and grumpy and, and all this stuff, you're going to be like, totally cool about it. Because you're used to this this state. It's sort of like people who take cold showers or whatever like that to train themselves to different temperatures and stuff like that. So you know, I said, I've only been doing this for a week. I'm not doing it for the fat loss, I have a pretty low body fat percentage already. I'm just doing it for some of these little minor benefits here and there. And so far really liking it I I can't say if I'm going to continue to do it or not. It's definitely something to look into. But intermittent fasting again, there's like a Reddit with a whole bunch of people talking about it and success stories. And now there are people who have lost a lot of weight people who do intermittent fasting with other things to lose a bunch of weight.
+
+48
+00:47:25,500 --> 00:47:52,950
+Wes Bos: Yeah, it's pretty big in in the keto world as well. It's not something I've tried just yet. But I've heard that people who are trying to especially in like, there's another like kind of like subculture of keto, which is people who are trying to gain a lot of muscle while on keto. And when you're in your cutting stage, when you're trying to get lean drop some body fat, they seem to a lot of them seem to be doing over the 16 eight, intermittent fasting, it's pretty neat.
+
+49
+00:47:52,980 --> 00:48:25,800
+Scott Tolinski: Yeah, that's actually where I heard about it from was like a powerlifting podcast. And then the one like two, these guys were like, huge names in the powerlifting community were about this, like, Yeah, I do 16 by what you know, every year for a couple years. And I was really surprised by it, because I thought it was straight up for losing a lot of weight. And I guess there's just a lot of other benefits for it. So I've been pretty psyched on it so far. But that said, it's easy to do this for a week. And be like cool about it. Like let's see, you know, a month from now, if I'm saying the same thing, or if I abandon entirely,
+
+50
+00:48:25,830 --> 00:48:30,870
+Wes Bos: we'll do Where are they now? fitness in six months and see where we are, I see where we're at.
+
+51
+00:48:31,800 --> 00:49:01,950
+Scott Tolinski: So okay, so we talked a little bit about nutrition. There are like we we mentioned a little bit about making like a nutrition plan. I want to emphasize that like dieting is not a good plan. Like just say I'm gonna go on a diet because it is temporary. And the moment you stop that diet, you're gonna go back to whatever you're doing, you're gonna put on all that weight again, and it's not going to it's gonna have a net negative, right, you're going to be at the same place you started. So like really changing your, like permanent nutrition plan is a better way to be. Absolutely, yeah. Yeah,
+
+52
+00:49:01,980 --> 00:49:39,000
+Wes Bos: your relationship with food needs to change. And I'd have to say that like when you do go out and have a beer or when you do cheat and have like a little bit of something that you not don't usually do have. It's so much better. It's like I guess the or does that thing like delayed gratification really does work? Because like we I was on it for two months. And then I went to New York and I didn't care about it for a couple days, even though I like I still kept pretty good to it just because I really enjoyed that, that way of eating. But I think we went and had some pizza and it was like, Oh, this is amazing. Rather than like I used that pizza a couple times a week. Right?
+
+53
+00:49:39,180 --> 00:50:01,350
+Scott Tolinski: Right. You don't need that. Like that's all thing is that like if you have it a couple of times a week. It's like not as good and even sometimes you feel crappy after it and stuff like that you have like I'll just go get pizza and you're like, Okay, maybe I shouldn't have like gotten that pizza or something. Yeah, and if he if you do it is more of like a irregular thing. It just becomes a better experience overall.
+
+54
+00:50:02,370 --> 00:50:03,870
+Wes Bos: So totally agree
+
+55
+00:50:04,140 --> 00:50:09,900
+Scott Tolinski: about nutrition. Let's talk a little bit about like supplements because as you probably know if you've done anything and some SOPs,
+
+56
+00:50:10,589 --> 00:50:30,750
+yeah, like the supplement industry is absolutely, like gigantic and people are gonna try to sell you on everything. So like, I'm not necessarily going to sit here and say you need this and you need that. I'm just going to talk a little bit about what I use. Wes is going to talk a little bit about what he uses and why. And maybe just a little bit about our views on on supplements.
+
+57
+00:50:32,010 --> 00:50:33,690
+Wes Bos: Yeah, um, you want me to go first?
+
+58
+00:50:33,720 --> 00:50:34,680
+Scott Tolinski: Yeah, kick it off.
+
+59
+00:50:34,710 --> 00:51:52,230
+Wes Bos: Sure. Um, so what I'm taking right now is I'm actually not doing taking protein which is is kind of interesting. It kind of threw me because every time I've ever worked out Yeah, big scoops of protein and this chocolatey shake after. But because of the the macros that I talked to you about earlier, it you have to be careful that you do not have too high of protein, you need to make sure that you're you keep with that. fats, protein, and carb layout mom, but what do I take? The deadlift guys got me taking branched chain amino acids, which is kind of interesting. There's specifically one Hold on, let me find it. It's called amino energy is bcaas. And what that does that helps repair in correct me if I'm wrong, helps repair like any like sore muscles that you have. And as your muscles sort of build themselves back up after working out, this will help to speed up that process. And it definitely does work. I can definitely tell when I haven't taken them because I'm sore for for much longer. And what's cool, is they they taste awesome. You can get all these really delicious flavors. And you you scoop them in a huge ass thing a wash like JC carries around this like, like get in the states have like a gallon of milk in this like big goal.
+
+60
+00:51:52,290 --> 00:51:52,830
+Scott Tolinski: Oh yeah,
+
+61
+00:51:52,830 --> 00:52:30,600
+Wes Bos: I think we have. So we have bags of milk in Ontario, which is very bizarre. Yeah, we could talk about that. It is weird. But we have bags of milk. And so he carries around this thing and it's blue. And it looks like he's carrying around like a gallon of Windex. And I was just talking to him on Skype he swigs from and I started dying. I was like, What are you doing? But anyway, so that has caffeine in it, which is great because it gives you a little bit of a boost the boost, which is kind of cool. Sometimes I take a pre workout. So there's all kinds of different pre workouts out there, which will it'll kind of Kochi up before you go workouts,
+
+62
+00:52:30,600 --> 00:52:42,690
+Scott Tolinski: some of them had like so like, even like five years ago, one of the pre workouts which you can't like buy anymore had like a relative of meth in it. And it's usually like before people knew what it was in it you were just taking you're like, Oh my
+
+63
+00:52:42,690 --> 00:52:43,230
+Unknown: god, I
+
+64
+00:52:43,230 --> 00:52:44,400
+need to go work out.
+
+65
+00:52:44,940 --> 00:52:48,960
+Wes Bos: This stuff is not it's like you, you take a scoop of it, and then you're like tingling?
+
+66
+00:52:50,100 --> 00:52:52,770
+Unknown: Like a couple, beta alanine. And yeah,
+
+67
+00:52:52,799 --> 00:53:38,730
+Wes Bos: yeah, so every now and then when I'm feeling like I haven't taken it in probably a couple of months. But every now and then when I'm tired and I want to like just kill it. I'll take a scoop of that. I'm on Geno flex, which is citrus quadrangularis apparently it's for joint support. Getting old, I'm almost 30 now I got to make sure my joints are in good, good shape. Fish Oil multivitamin, those things are just generally good for metabolism and making sure that you're you're getting all of your all of the different vitamins that you need. So I wouldn't say not a whole lot of stuff. It does seem like a lot of stuff but no, it's good. It's good stuff. I found that they they work pretty well. So I've been happy with them. Are you?
+
+68
+00:53:39,030 --> 00:54:21,570
+Scott Tolinski: Yeah, and that's the thing like I also take a multivitamin and it's one of those things that people will say like you don't need a multivitamin because you get nutrients through your food right but like 990 Brown This is a made up statistic but 90 like aren't getting the all of the nutrients so like what a multivitamin does is sort of just fills in the gaps Yeah, talking like a men's specific or a lady specific multivitamin. It's going to be good for you especially as we're getting older right I'm 30 and you probably don't need it when you're younger but as you're getting older it's definitely something that's gonna help you out so I do take them men's multivitamin I take the now now brand you see now all over Amazon they make really nice stuff.
+
+69
+00:54:21,780 --> 00:54:31,890
+Wes Bos: Oh, we should like to that I'm taking the one called Vita gym, but the gym because I ordered everything from bodybuilding.com and Oh, nice. Everything on there sounds so douchey but
+
+70
+00:54:31,890 --> 00:55:50,040
+Scott Tolinski: Oh, it does. Yeah, I know. It's all about it. So yeah, in addition to the multivitamin, I also take the the quadrangular, whatever that one for joint support. This is the first time I heard of it, Dev, the dev lips guy told me about it. And like the first time I'd ever heard of this, I have awful joints, my wrists. I went into the doctor one time because my wrists were hurting and the doctors like well, just like the bad news is like you have no cartilage in your wrists. Also abuse, like from doing all the breakdancing stuff, which is really super hard on your wrists apparently. And the easiest. So here's your options. He's like, your wrists are like in a lot of pain, so we can give you a steroid. The only problem is, is that your like, wrist will be worse over after six months, but it'll feel good right now. Like, why is that an option like you're gonna give it six months like he's like other than that you just like, tough it out. So yeah, my wrist had been absolutely shot for a long time. It's my own fault, I take full responsibility for it. So I take that for joints. It I actually have noticed a big thing. It helps with my carpal tunnel, which is carpal tunnel, I did not get it from bad posture. I got it from breakdancing and then like the computer work does not help it. So but just being raw that
+
+71
+00:55:50,250 --> 00:55:56,160
+Wes Bos: just so you so you actually notice the difference after taking this cissus quadrangularis.
+
+72
+00:55:56,250 --> 01:00:46,380
+Scott Tolinski: Yeah, I'm really hard on my wrists. Yeah, twice a week. So I've noticed a big difference. In terms of just the amount of general pain I'm in when I leave practice, which my pain should be zero, but unfortunately, I'm not smart enough to like not to do things on my wrists. You know, it's like, Yeah, what's the, I don't know, I want to do this. So I'm gonna do it, I guess. So in addition to that, I do take protein powder. I take the I think on nutrition brand, it's really good stuff. Yeah, I take it post workout to just sort of I do like pretty heavy lifting stuff sometimes. So I'll take it, then I'll take it maybe before practice if I'm going to be working really super hard. Like I said, I've pretty low body fat percentage. So it's mostly for me about like keeping that muscle on that I have and not letting my body burn that off. And then I take creatine which is like as a ton of misinformation about it. But creatine is one of the hands down like best supplements you can take if you're doing any sort of weightlifting, what it does is like surrounds your muscles with water and helps them heal faster. It also makes you look stronger than you really are because it gets a little bit of water weight in your muscles. But creatine is one of those ones that they're just like people were thinking that it gave you like rage symptoms and all sorts of stupid. It's like, it's like one of the most mild mannered supplements out there. And if you check out the science behind it, it's like one of the most scientifically backed safe supplements that exists. So I take creatine, I take this stuff called citrulline malate or citrulline de maleate, which is again, it's it's just for like straight up athletic performance, it's good for muscle endurance, muscle endurance is something I really super need when I'm you know, at the third hour of a breaking competition, and my whole body wants to give out. So that stuff really, really helps. It also gives you a sick pump. When you're lifting weights. Again, it makes you look stronger than you really are. Oh yeah, I actually really like it. I just started taking it maybe like six months ago. And I've really enjoyed it. I take psyllium husk which is just straight up fiber. It's like these fiber capsules, that you take three of three times a day. And it does, it's not like a it's not like it doesn't do anything for you, other than gives your body like maxed out on daily fiber requirements. Most of us, most of us don't eat enough vegetables, which is where you're supposed to get a lot of your fiber from so it fills in that fiber gap, the dietary fiber gap. But other than that, I don't think that's it. So just protein, creatine, citrulline, malate, and psyllium husk and then a multivitamin. I also take caffeine as a supplement, which is like I bought a this is actually purely from a financial perspective. Because I like coffee, my stomach doesn't like coffee, I like tea. And I obviously like Redbull. But I found on Amazon, you can buy a bag of 200 milligram hokay pills, which are not like they're not like they're not like no dose. They're like bulk supplements. Calm is a really great website for ads, where I buy all my supplements is bulk supplements. And so it's basically just like, you take one of these, and it's the equivalent of having two cups of coffee in the morning. But then you get the caffeine without anything additional. Right? And the bag of 300 200 milligram caffeine. Like capsules is like 13 bucks. So for 13 bucks, you have caffeine that's going to last you the entire year. And why if I want a coffee, I'm not going to take one of the years or if I want a tea or whatever. I'm not going to take one of these Yeah, if I just want the experience of having the caffeine in the morning and then you're all straight. Obviously, it's important to know your like caffeine limits and people look at this and they'll say like, Oh crap, caffeine pills or something like that because there was an episode of Saved by the Bell where Jesse was taking caffeine pills and she was getting nuts on him or there or something but yeah, but like they remind his kids Yeah, right now These kids. But actually like, the regular sort of, you know, caffeine range for people is anywhere from like 100 milligrams to like 400 milligrams, which is maybe like four cups of coffee over the course of a day. So if you're taking one 200 milligram pill, you're like, right and dead center in the middle of that. And even like the the warning limits for caffeine is like up around 1000 milligrams or something like that. Obviously, caffeine isn't something you want to mess around with, because there is like, pretty easy to overdose and kill yourself on caffeine. So you know, be careful. And obviously keep it in that like under 400 milligram range, and you're good. But I found that that has been like a nice little thing for me financially because then I don't have to spend all this money on coffee or tea or Redbull, you know?
+
+73
+01:00:46,770 --> 01:00:49,920
+Unknown: Yeah. I get myself a bag a lot. Yeah,
+
+74
+01:00:49,950 --> 01:00:56,010
+Scott Tolinski: yeah. Just keep it away from the kids and the dog. Yeah. Anything? Anyone? Yeah. Because it's kind of dangerous stuff.
+
+75
+01:00:56,160 --> 01:00:57,300
+Unknown: Yeah, totally. Totally.
+
+76
+01:00:58,590 --> 01:01:09,660
+Scott Tolinski: Yeah, so Okay, so we covered we covered the whys, we covered the house, we covered supplements and nutrition. Is there anything else you want to cover?
+
+77
+01:01:10,140 --> 01:02:07,170
+Wes Bos: I think that's that's it. For me. I'm I mean, like, I'm just a couple months in on sort of this, like, new fitness life that I've been living. So I'm sure that I have new new stuff and new tips to say, but it's pretty interesting stuff. I Hopefully these tips are helpful to someone who's maybe thinking about getting getting into better shape, or maybe you're feeling a little bit not as energetic as he used to be, and you want a little bit better focus. I'd be really curious to hear. And maybe I'll even see you in the dev dev lives chat room. Yeah, if you if you do that, I'd be curious to see how well it works out and what other tips people have, as well. So if you have any tips for your own fitness that you found work really, really well make sure you tweet them at us. Because I'm still learning just tons and tons. So it's helpful. Even just talking to Scott here today, it's helpful to find tips like bags of caffeine and stuff.
+
+78
+01:02:07,410 --> 01:02:35,010
+Scott Tolinski: Yeah. It's like one of those things. It's like, I guess my biggest takeaway here is like, don't feel like it's too much stuff because you don't need any supplements. And you you don't need an exercise plan. Like you need to get moving several times a week, you need to do it regularly. And you need to cut your your calories out where they're the easiest possible ways to cut your calories out with pops and stuff like that.
+
+79
+01:02:35,040 --> 01:02:38,820
+Wes Bos: Yeah. Well, one thing I should say, Sorry, cut you off.
+
+80
+01:02:38,850 --> 01:02:39,570
+Scott Tolinski: Yeah, no,
+
+81
+01:02:39,900 --> 01:03:51,090
+Wes Bos: oh, one thing I would say in terms of the calories is get a calorie tracker for at least the first couple of months. Because it's amazing what you think you're doing okay. But it's really easy to quickly go 10 to 20% over your calories when you think you're being good. And then even if you're over, you're not going to lose any weight, you're going to gain weight, right. So I use my fitness pal and I just input it, it's got a little barcode scanner, you scan all your you scan your bacon, or whatever it is. And you can just add all of the portions that you've done, I've got a little scale on Amazon that's super helpful is like eight bucks, and you weigh all of your food. And being able to do that after after a couple of months, you sort of get an idea of, of how how, what's bad for you, and what's good for you and how much you can eat in a day. But that was really really key for me because there's a lot of kind of like, Whoa, I was eating way too much of that or, or Wow, I could eat I could eat a lot more like I was some days I would not track it and I'd be super hungry. And then I would just put in everything I ate and I'm like, oh I still 400 calories left I can I can eat my big My favorite thing in the world is to make guacamole with pork rinds. Because it's like the keto you can't have chips when you're doing keto, but you can have fried pork skin.
+
+82
+01:03:53,430 --> 01:04:50,790
+Scott Tolinski: Yeah, man. Yeah. Again, it's like whatever gets you to do it. There's some people who are all about that, like that analytical mind that you want to see all of those calories. Yeah, if that's the encouraging thing that gets you to do it like, man go right for that. And if you're the kind of person that that sounds totally overwhelming to like, Ah, you know, don't do because you don't have to write you don't have to, but as long as you're doing something, it's it's going to improve your life. And I guess that's my, my, like I said, my takeaway is just do something. And if you're the type of person who's analytical, you want to get in depth with it. Yeah, calorie count is going to blow your mind. But more or less just move. Stop eating bad stuff. Yeah. I don't know take it seriously because it's serious. And you're going to be a better developer designer person because of it. So make it happen. Don't neglect it. It's important.
+
+83
+01:04:52,710 --> 01:05:33,230
+Wes Bos: Awesome, so let's move into some sick pics. So keeping with the fitness my sick pick is just going to be a pair of sweat pants that I never I was never the guy that wore sweatpants ever actually didn't even own a pair of sweat pants until a couple years ago but I wear them at the gym. And I've I found that I get really picky about the sweatpants because I want to have my phone in the sweatpants. And then if they don't have zippers on the pocket, then they fall on your phone falls out. Or the it's too small or the zipper is hard to open. So I settled on the Nike tech fleece sweatpants which are if you're looking for a nice set, they are the ones that you want.
+
+84
+01:05:33,930 --> 01:05:43,860
+Scott Tolinski: Nice. Yeah, I got some nice sweat pants myself that are definitely gym ready to a crucial piece of equipment. Got a nice
+
+85
+01:05:43,860 --> 01:05:45,780
+Wes Bos: zipper pocket on it. Oh, they
+
+86
+01:05:45,780 --> 01:05:51,300
+Unknown: don't. Your phone's gonna fall out. It does gonna crack your screen. It absolutely does.
+
+87
+01:05:51,330 --> 01:07:42,230
+Scott Tolinski: Yeah, I got a bumper case on I'm bummed. Okay. My sick pick is going to be a trigger point grid foam roller, which is like this little thing. It's like a foam roller. What it does is I got one of those. Yeah, it's it's basically like a personal massage. So it's this foam roller. It's like a, it's like a tube. And it's made of foam and plastic and you put it underneath your muscle and you roll around on it. And what it does is it works out knots and all this stuff in your body. But if you're sore, it's one of the best things in the entire world. It's basically like getting a massage at your home. They're pretty cheap. They They range from all sorts of different prices. I have the triggerpoint grid foam roller, it's awesome. I'd leave it in my living room, and we're sitting there like watching TV or Netflix or something. And I'll be like just foam rolling left and right because it makes you feel and recover a lot better. It actually can give you some sweet flexibility gains to which I'm all about I'm like I need that stretching every night. So this thing like really helps just sort of work out those kinks in your muscles. And you man if you have something especially if you have posture issues or you've been sitting in your chair weird, this can be really super good for your back. Another thing I use a lacrosse balls, which you can get from Amazon, they're just like dense lacrosse balls, and you could put them underneath the sore spot in your back and just lay on it for a little bit. All of these things are important because like I said, we sit in chairs all the time, and definitely your back and your shoulders to get that like Turkey neck, we're like leaning really far forward can be like awful for your, your, your backfields. So yeah, trigger point, massage foam rollers like the greatest thing ever. I've had it for a few years, it's held up perfectly. I don't know when I would ever need to buy another one. It's great. Yeah,
+
+88
+01:07:42,270 --> 01:07:50,550
+Wes Bos: I got one as well. It's like it's super cheap, like 20 bucks or something like that. And I just need to use it a little bit more than than I currently do. I
+
+89
+01:07:50,550 --> 01:08:05,970
+Scott Tolinski: like the idea of putting it in front of the TV though I'm gonna steal that anywhere. Anytime there's like something I want to do more of I put in like, I want to play the guitar more put the guitar right in front of the TV. Or put in like I have all that stuff. our living room is just like filled with my my stuff that I want to do.
+
+90
+01:08:06,900 --> 01:08:10,680
+Wes Bos: I like it. Cool. Any shameless plugs that you got,
+
+91
+01:08:11,160 --> 01:09:15,660
+Scott Tolinski: I have a I have a CSS layouts course coming out at the end of the month, I'm hoping to get it out the last week of November, I'm looking at the 27th as a release date, but it's not set in stone, it will be out before the 30th. And we do a bunch of modern layouts teach you to build like the Instagram layout responsively and all sorts of cool ways we build my website using CSS Grid, we're building like Facebook, and we're building trust, not Trello we're building a Tweet Deck, a bunch of like modern stuff using CSS Grid Flexbox. All those tools. It's not specifically about CSS Grid, but it's gonna teach you those properties and all sorts of stuff like that, just new ways to look at layout in ways that we haven't had before. So plugging that in addition, I'm going to be doing a Black Friday sale for a level of pros, you're going to get a big discount on the yearly plan if you sign up for a year on Black Friday. So by the time this episode comes out, which is what the 22nd
+
+92
+01:09:15,870 --> 01:09:19,470
+Wes Bos: Yeah, it'll be right before Black Friday, right. So
+
+93
+01:09:19,500 --> 01:09:30,270
+Scott Tolinski: yes, so yeah, so on that I believe it's the Black Friday is the 24th and I am awful at dates. Is Thanksgiving really on the 23rd? I'm just
+
+94
+01:09:30,300 --> 01:09:45,350
+Wes Bos: Yes. I already had Thanksgiving. Oh, yeah. But uh, we've we sort of adopted the whole Black Friday thing, which is bizarre because we also have a song called Boxing Day, which is 26 is when our deals come. But now I have double deals because we love deals,
+
+95
+01:09:45,390 --> 01:09:46,380
+Scott Tolinski: double deals, deals, so
+
+96
+01:09:46,950 --> 01:10:00,210
+Wes Bos: I'll be having some black Friday sales, all of my courses are going to go on on sale as well. So you'll likely get a couple emails from me with many exclamation marks and countdown timers and all the kind of things that work to sell you stuff. Bom Bom
+
+97
+01:10:02,180 --> 01:10:03,540
+Scott Tolinski: sounds good looking forward to it.
+
+98
+01:10:03,629 --> 01:10:06,470
+Wes Bos: Cool. Other than that, see you next week.
+
+99
+01:10:06,660 --> 01:10:18,960
+Scott Tolinski: Alright see it, head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show until next time
+

@@ -1,0 +1,564 @@
+1
+00:00:05,970 --> 00:00:11,250
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:13,679 --> 00:01:13,620
+Wes Bos: This episode of syntax is brought to you by Lauren Stewart's new course called the intro to the serverless framework, what is serverless? You've probably heard people saying serverless Functions as a Service or Cloud Functions. And this is essentially something that runs on Amazon's AWS and you can write these functions with you can write them with any language, but this one is specifically node j. s. So we'll talk a little bit more about that as well as have a couple courses taken away part or partway through the episode. Hello, everybody, welcome to another episode of syntax. Today, we're gonna be talking all about our stacks. This is actually something I get a lot of questions about. And it's it's something that I recorded a quick little YouTube video on about over about over a year ago. And it just explained like, what is my stack? What are all the different pieces that get it up and running and Scott has also built as his own course platform. So we're sort of gonna dive into the nitty gritty details of what we use and why we use these things at a different level. So welcome, Scott. How you doing today?
+
+3
+00:01:13,620 --> 00:01:28,170
+Scott Tolinski: Oh, yeah, I've actually honestly been doing better just getting over the entire family, Doug's included with food poisoning, so just slowly returning to normal life here. So yeah, but yeah,
+
+4
+00:01:28,470 --> 00:01:28,980
+Unknown: overall, I
+
+5
+00:01:28,980 --> 00:01:31,560
+Scott Tolinski: guess it can't no other than that, I can't complain.
+
+6
+00:01:31,710 --> 00:01:35,130
+Wes Bos: That is that is dicey. So it was rotisserie chicken.
+
+7
+00:01:35,520 --> 00:02:08,190
+Scott Tolinski: Oh, that that's the suspect right now is either that or baby carrots. We honestly have no idea we're trying to think of like what are all of the things that my wife and I and the dogs all dogs live in and there's only a couple things so it but the baby didn't get sick? Yeah, the baby, thank God, that, you know, the baby has been like the cause for us not sleeping for so long. And now all of a sudden, like, the other night, we were just like, thank God, the baby is like, the baby is taking care of himself. He's like the most functional person in our family right now.
+
+8
+00:02:08,399 --> 00:02:41,720
+Wes Bos: Yeah, we we had the stomach flu, like the entire family when we had like a six month old. And she was just, everybody's just puking and like passing out and like, I remember like googling, like, Is there like a nurse that can just come and help us because it's just the worst feeling in the world. And since then, I realize if you're a parent hot tip, buy a jug of Pedialyte, which is like Gatorade for kids. Because it's like one of the only things that will help your kid get hydrated when they're always puking and thought,
+
+9
+00:02:41,970 --> 00:02:43,770
+Scott Tolinski: Oh, I didn't realize that. Yeah,
+
+10
+00:02:43,770 --> 00:02:46,890
+Wes Bos: hot tip. That's my sick pick for today's Pedialyte.
+
+11
+00:02:48,630 --> 00:02:49,380
+Unknown: Big Big.
+
+12
+00:02:50,160 --> 00:03:12,690
+Wes Bos: Let's get into our stacks. I thought maybe we'll we'll kick it off like explaining a little bit about our stacks like what what does it all entail from selling stuff to viewing? And I don't know, I know that we both have affiliate systems built in. So do you want to just give us a high level overview of of your of like, what it does not necessarily the technology, but what your stack does?
+
+13
+00:03:12,750 --> 00:04:16,880
+Scott Tolinski: Yeah. Yeah. So one of the reasons when I was first starting to look into building this, actually, the site used to was originally on Drupal. And it's just because it's what I was using all the time. So it was easy to put it on Drupal and use their importer to grab everything from YouTube. And then when I started to research, like building a new stack, I had all these like pros and cons of maybe like using a, you know, like Shopify, or something like that for my store. And then I started to weigh how much custom stuff I needed to get in there, and how much real tweaking I would have to do. Yeah, integrating with those API's and, and, you know, I have all these these big plans of, you know, automating a ton of stuff. So I can push it up to YouTube, and then it automatically collects all my stuff. So yeah, big, big picture. I just, I needed a sort of a really flexible system that I could customize entirely and have it work really nicely with the YouTube API specifically, but as well as that some some others. So that that's pretty much high level of sort of why I wanted to go custom with this. But yeah,
+
+14
+00:04:17,310 --> 00:04:29,220
+Wes Bos: that's pretty sweet. And then you have, like, you have obviously the the checkout experience that you've built in, and then you have the the viewing experience. So someone that signs up for your course they're able to get access to the courses, correct?
+
+15
+00:04:29,310 --> 00:05:18,319
+Scott Tolinski: Yeah, so there's a pretty intricate role system, an account system. And so there's maybe several major components where you have tutorials, the playlist, right you have the store section, where you have products, you have user accounts, which tie in what they get access to what they don't get access to. And sort of how those things interact and work together. Because if you are pro you get all of the products on the site for free. So you know these these role systems and things that need to I'll be interconnected between the store and the site itself, which are actually now one site, they used to be two entirely separate domains. I know, we mentioned that at the beginning of the first few episodes of this podcast, when I migrated them together, it's actually one of the best decisions I've made for the platform is moving them together.
+
+16
+00:05:19,319 --> 00:05:38,699
+Wes Bos: That's really neat. I just added a card on our show list ideas of role system. So that's something I get questions about a lot, where you have like intricate, being able to edit things and not add things, or you can view it but not updated. Or you can create one but not update it more than three times. So it'd be kind of a neat episode to chat about. Yeah, how to accomplish that.
+
+17
+00:05:38,909 --> 00:06:07,439
+Scott Tolinski: Yeah. And I and another thing, I think would be interesting is talking about sort of, like Administrative Tools, because that's a whole nother section of this site that I'm almost bummed people don't get to see because I put so much work into this admin tool section. Yeah. And I'm the only person that uses it. And, and I was like, totally, like, ignoring the design aspect of it. And recently, I went through and I made this whole, like, admin theme for it. And it's very, I don't know if you know, the style outrun, which is like outrun or vapor wavy, it's like, very like 1980s.
+
+18
+00:06:08,310 --> 00:06:13,199
+Wes Bos: Looking like like this. It's like, an AR game where the lines are coming at you.
+
+19
+00:06:13,259 --> 00:06:28,860
+Scott Tolinski: Yeah, it's exactly like that. And, and I would show it off more, but it's not totally done. But I just started, like doing all this stuff for the admin section. And I'm like, no one's seeing this. But me. I guess maybe I shouldn't spend so much time on it. But it's a nice little playground. Yeah,
+
+20
+00:06:28,920 --> 00:06:40,980
+Wes Bos: well, yeah, whenever I have like a day where I just don't feel like doing anything, what I'll do is I'll tear off some sort of like, wish list item of mine for my admin back end and implement that. It's always fun to do that sort of stuff.
+
+21
+00:06:41,040 --> 00:06:45,660
+Scott Tolinski: Yeah, totally. Yeah, absolutely. So what about you? What's your what's the high level of your stack looking?
+
+22
+00:06:45,959 --> 00:08:12,060
+Wes Bos: Yeah, so I initially a lot of people ask me, like, why do you build your own when there's so many platforms out there. And I initially built my own because my first product was a book and videos, and there was no, there's nothing that would have the ability to do both of those. So that's kind of why I initially did it. And it's sort of morphed into, I lovingly call this thing the boss monster. Because it is a entire stack that powers all of my courses. All of my paid video courses, as well as all the freebies, you have this kind of unified dashboard, where you can log in, and you see all of your courses for all the different domain names, I do things a little bit differently, where I launch a different domain name for every single course that I do. And what I was previously doing is that every one of my free courses, and every one of my paid courses, I think I had like two out at the time, they were all all of the free ones were just like, static site, like had a gulp file that I will Gulp out. And then all of my paid ones were separate note instances. And that's just a as you know, it's a nightmare to have to maintain these things even with like Git and version control. So I sort of like peeled it back in and rebuilt it to handle multiple domain names. It's all just like one instance running behind all of these different domain names. So again, I like I have pretty custom use case for the way that I approach things. So I was I was happy to to build my own for that.
+
+23
+00:08:12,569 --> 00:08:25,740
+Scott Tolinski: Yeah, like it becomes a nice playground, right? I mean, you learn a whole lot while doing it, it gives you a chance to experiment with some stuff and allows you to sort of show off your skills and something that's like really feels like yours. I mean, it's Yeah, your platform.
+
+24
+00:08:25,829 --> 00:09:59,610
+Wes Bos: Exactly. And anytime I want to like maybe like tinker with something, maybe add a feature try like some sort of different marketing techniques, or integrated parody purchasing power for different countries. Anytime I want to do anything specific to that I just have to hop into my code base, and I can start building stuff on top of that. So yeah, it's I know, developers always like to build their own thing, but it's been I think it's been really good for my business to have had built my own thing. Yeah, but um, so what is in it, obviously, the the whole entire purchasing checkout system, the whole free course checkout system for that the course dashboard, where you can manage your courses and change your email and watch obviously watch all of the courses you can download the courses depending on what level because that's another thing that I did is like a lot of my courses, the the beginner level, you can only stream them, whereas if you buy a master package, you can stream and download them. So you have to be able to manage that. There's a whole affiliate system baked into the back end. So a lot of my sales come through an affiliate system where people who have large audiences refer my courses and then I give them a 40% cut of the profits from that specific sale. So I've got this affiliate system that comes in generates reports I can do payouts through it and, and all that good stuff. This so a lot of stuff sort of built into obviously coupons are a big thing for me as well. So a lot of like little things built into it and it's been been a blast to be able to build this from scratch.
+
+25
+00:10:00,000 --> 00:10:48,770
+Scott Tolinski: Yeah, yeah, it's funny with things like coupons, I guess this is sort of the the nice thing about having your own platform. I mean, honestly, like, if you're going with a pre existing cart, it would already have coupons baked in or something like that. But let's say you were existing on like a platform that didn't have something like that. And you need to add it in, you could do it at a very, because it's totally yours. Like I initially with coupons, I just had it as a private JSON file, where it's checking the coupon, and to see if that coupon is in that JSON file, or whatever. And that's how I did coupons. But then, you know, as my needs grow, I want to be tracking who's using coupons. And I want to say, Oh, you can only use this one, how many times and whatever, have a legit system you can build upon then build upon that. But you don't have to do it all at once. It can. It's you have like intimate knowledge of this, this platform. So you can make little things like that happen at a time. Yeah,
+
+26
+00:10:49,039 --> 00:11:31,409
+Wes Bos: that's hilarious. That's exactly how my coupon started off was just a JSON file with an amount that you take off. And then now it's, it's a lot more robust the ability to lock down coupons by country, or you can issue a fixed amount coupon like $11 or 28%, off coupon if you like, you can pretty much lock it down in any way you want. And every time you want to introduce some sort of new locking system, you just have to write another function and extend that all of the different checks that it goes through. It's pretty neat. Exactly. Cool. So uh, maybe we'll we'll start about talking about like, what is the like the main language and framework that each of ours is built in? Why don't you go ahead and check that off.
+
+27
+00:11:31,620 --> 00:11:49,650
+Scott Tolinski: So mine's pretty just straight JavaScript platform overall. So on my back end, here, I'm using Meteor, which is a node platform, and provides you with a bunch of really nice stuff. So do you want me to go in depth about that platform right now? Yeah,
+
+28
+00:11:49,650 --> 00:11:50,190
+Unknown: backends. Let's
+
+29
+00:11:50,190 --> 00:11:50,760
+Wes Bos: hear it.
+
+30
+00:11:50,760 --> 00:14:39,929
+Scott Tolinski: Let's do the back end. Yeah, so So for my back end, I chose Meteor initially, because it was easy to get up and running, right. You don't have to spend time writing an API, you don't necessarily have to spend time having you know, an express you have your your API, your back end and your friend and are so separate. But in BDR, it makes it a lot more combined. So to say, I mean, one of the initial selling points is that you could do database rights from the client, obviously, that's not secure. And it's not something you should have in production. So as you grow it, even though they're they're, you know, getting more separated, they're still a little bit way more connected than something like an express site, or less having your own API. So for instance, for me, it's easy to call methods on the server simply from the client by calling that method. And what's nice is it can do all the validation client side. And if it passes that validation, then it can move on to the server side and perform whatever actions it needs, checking permissions and roles and stuff like that. So I chose this, this Meteor node platform because it allowed really nice, just integration between front end and back end. And not to mention it, it integrates with front end tools, like react really well. So at the end of the day, it's it's just straight node stuff. And then anytime you need to sort of communicate with the front end, you're using Meteor stuff, but it also has like accounts baked in. So I don't have to think about accounts, I don't have to think about other platforms for accounts, I don't have to think about other libraries. It just works. It just baked in. And it I've been a huge fan. I know there's some people that have concerns about Meteor in various ways. But I mean, if you go to level up tutorial site, you refresh it or go to this site, man, nothing loads so quickly. Yeah. And so the performance concerns, I think, are totally overblown, just knowing how to write performative sites and stuff like that. Also, I think, you know, some people get scared from media, because of the reactive stuff where, you know, everything's done through WebSockets. Typically, if you're updating something, everyone's seeing those updates in real time. But you can turn off that real time stuff, or you can call a method to get your data just like hitting an API, and you don't have to use the reactivity. So their activity is is free. It comes with it. It's nice, but you don't need it. You certainly don't have to have it. So yeah, that's pretty much why I went with Meteor as my back end stack. It's it's basically just a node site and has some nice little features for communicating with the front end. And yeah, I probably would have used MongoDB. Anyways, I think that's another concern people have, we can get into database stuff a little bit more. Yeah. Anyways, but yeah, so because of that, yeah, Meteor seemed like a nice platform to me be able to go up and quickly and add new features quickly.
+
+31
+00:14:40,710 --> 00:16:28,650
+Wes Bos: Awesome. That's pretty sweet. My stack is fairly similar to that, with the exception of the meteor part. So mine is a node stack, I think initially built it back when it was like no 10 or node 12. I built it many many years ago. And I built it I've been sort of upgrading with Express as we go along. So it's a node stack, I'm using the Express framework on top of that to handle all my routes and all my rendering. I'm a big fan of Express. And there's a lot of different frameworks out there. But I've been coding and express for years and years and actually my my learn node course at Learn node.com, you should buy it. That's pretty much that stack is pretty much exactly the stack that my course platform runs on. And I was really proud of that course. Because it shows everything that I've learned over the like five years of doing no development. What else goes along with that passport, j s is probably one of the bigger modules that I have there. And that handles all of my, all of my sessions. Actually, x Express has a sessions package that you install there. And then I'm using passport j s in order to to log people into their actual system. And then I also, I don't have, you don't have to log in before you buy a course. So something I see a lot of people doing on their course platforms is they, I don't know if you have this or not. But when they when you want to buy something, they make you login first and that you have a huge drop off there if you make people create an account first. So what I do is I just take their money, and record their email, and then once you click through to the email, it will, it will either already be attached to an account, or it will ask you to then create an account, which will then attach that purchase to
+
+32
+00:16:29,400 --> 00:17:23,970
+Scott Tolinski: nice, yeah, I do actually require you to make an account. But it's you don't have to verify your account or something like that. It's just you click on the card, or you click Add now sign in whatever that's it like a one sort of step sort of thing. But actually just implemented that because I had it in place how you do before. And I was seeing issues where people were losing their email receipts and stuff like that. And then maybe they sometime down the line would want to make an account and then add that account in that the orders their previous orders to their account that they created. You know, last where they they made a purchase last year, then they created an account of this year, and they wanted those to collect each other and stuff like that. I was just dealing with a lot of issues there. I think it was a little bit easier for me to just since I have the subscription service and all this stuff to require you to log in first.
+
+33
+00:17:24,349 --> 00:17:55,609
+Wes Bos: Oh, yeah. Yeah, makes sense. Makes sense. It's certainly a lot easier on the customers and I often have people will buy something and then a week later, they're getting ready to take it in. And for whatever reason, they don't click the link in the email that I sent them. But then they they're a little bit confused as to like how do they actually get access to it because they try to like sign in. But they haven't yet created an account. So there's there's a little bit of like Limbo room there that that you give up in terms of being able to make checkout as easy as possible.
+
+34
+00:17:55,710 --> 00:17:56,550
+Scott Tolinski: Yeah, for sure.
+
+35
+00:17:56,700 --> 00:18:04,140
+Wes Bos: So what about database on the back end? I think we this is gonna be fairly simple. Yeah, I use MongoDB do use a MongoDB.
+
+36
+00:18:04,310 --> 00:18:31,800
+Scott Tolinski: Yes, I also use MongoDB. And there's so many haters out with MongoDB. I've never been one to get on, like the hate train about anything really myself. But like, yeah, MongoDB it's it served me well. I don't need a crazy relational anything in it. Like I said, it's the default database for Meteor. Right now, it's sort of a major pain to try to use anything else. So I was I was fine with that. I didn't have to do any major setup for it. And it just works.
+
+37
+00:18:32,330 --> 00:20:15,030
+Wes Bos: Yeah, me too. Um, I don't have the largest app in the world. But I do have a couple of my collections of a couple hundred thousand entries in them. And I don't have any trouble. But I know people get into millions and, and dozens of millions of things. And then they start to run into trouble. Or you try to build like an extremely relational, like MongoDB does do relationships, they have quite a bit of them in my node course. But I know that people who do heavy relational stuff or have something like Twitter, much prefer to use like a Postgres or MySQL, or something like that. But I really like MongoDB. I use the mongoose package to interface with the database. That is all promise driven, which allows us to use a sink await in order to have really nice clean flow control all the way through our controllers. So I've been been very happy with with MongoDB. And especially like, I don't know if we can we can talk about like, how do you interface with your database. But when I initially got started, I didn't have any administrative tools at all. It was just a database and dumping info and if if anybody asked me to do something super simple, like update their email address, or change the name on a package or anything like that, I just would pop open a GUI to interface with MongoDB. The one that I use all the time is called Mongo hub. But recently MongoDB The company has has put out their own prod project which is called MongoDB compass, it's just a fantastic GUI interface in order to database interface with your database and sort of get like a high level overview of like, what kind of data you have aggregations of that data. It's just like really nice. We use that in my node course as well.
+
+38
+00:20:15,390 --> 00:20:22,410
+Scott Tolinski: Nice. Cool. I haven't seen compass before I use a studio three tea. Have you seen lower?
+
+39
+00:20:22,820 --> 00:20:23,910
+Wes Bos: 3d? No,
+
+40
+00:20:24,240 --> 00:20:34,230
+Scott Tolinski: it's not like the the prettiest app or something like that. But it's a very full featured, and it allows for like, really nice importing. And Expo.
+
+41
+00:20:34,260 --> 00:20:35,599
+Wes Bos: This was Mongo, Chef.
+
+42
+00:20:35,640 --> 00:21:02,700
+Scott Tolinski: Yeah, this was Mongo. Shove us this. Yes. Yeah. It's, it's nice. It's it has a lot of features. And especially because you can interface in Poland. Like it makes pulling in, like, if I want to pull in from my production database into my development database. Just to bring in all the products or tutorials, I can do that like one click, it's like copy from this database to this one, import all those records go. And that's sweet. It's super nice.
+
+43
+00:21:02,760 --> 00:21:25,770
+Wes Bos: It looks like one of those those tools that does absolutely everything under the sun and is amazing. And then it looks like it's built in Java or whatever. You know, like those Absolutely. Like, what it was like working with the other day. audacity, what an ugly program, right? Yeah. Terrible so much. And it's amazing. And it's free. So yeah, mango chef is another good one as well, but pretty happy with that one.
+
+44
+00:21:26,040 --> 00:21:53,220
+Scott Tolinski: Yeah. And so you said you use mongoose. And Meteor you do is very pretty much the exact same. It's just a meteor interface for Mongo, your standard fines and aggregation stuff. And you publish that data. And then there's something called mini Mongo allows you to use Mongo on the front end to do your your fines and stuff like that directly on the front end, for whatever data you've had published. So yeah, that's pretty much I'm integrating there.
+
+45
+00:21:53,820 --> 00:22:32,609
+Wes Bos: That's pretty sweet. And I should also say, a lot of my, a lot of my stuff is built on like Ajax requests. So what you'll do with these is you have a controller that looks up your database, and then instead of rendering out a view, it will actually just send JSON response into into how you've actually ping that data. So that's kind of like I think the The one downside to to not using a more involved framework is every single time that I need to do something, I need to write another endpoint for that specific task. Alright, let's talk about front end. What do you use on your front end? How do you make things work?
+
+46
+00:22:32,790 --> 00:24:55,650
+Scott Tolinski: Yeah, so I use a I'm actually in react 16. I haven't been since the like second release candidate or release candidate, which I think they were so they were so solid at that point. Anyways, it wasn't really too crazy of an upgrade. And now I guess what yesterday, React 16 officially launched at the time of recording this. And so yeah, so I've been on react for a while. Ever since I've built this platform and made a huge fan. I mean, it works really nicely the component interface and stuff like that. So I use react. For my views, I use a stylus for my CSS stuff, although I've been migrating to styled components. And pretty much anything new I'm making with styled components is sort of built up that component library, but it's a pretty big project. So I haven't had the time to move everything over yet. It's still like, as it as something new comes up, I will build out those components that I need for that something new and if those components can be reused in the rest of my site, then I'll go through and refactor those areas to bring in those components and that sort of stuff. I don't use Redux for state management. And I not because I don't like Redux. But because I don't really feel like I need it. To be honest. Meteor handles so much of that data pulling in I'm not my data is not stored in Redux. So what would I be using it for, I don't know minor things like opening a navigation or a window here and there opening the shopping cart. But I actually do that with just straight up session variables there. Meteor has these things built in called, they're just called session session bars. And even in the meteor community, a lot of people don't use these because they're totally global. But I think they're totally underutilized. What it is, it's basically a reactive local session variable. So you're storing something in your local storage, right? And it's reactive, if it changes, that those updates will just filter on right down through. So you know, my my main navigation, I just have a session bar stored up there that's never open or closed. That's it. And I have a clear plugin that shows me all of my session bars across the whole thing. And since they're global, you know that that's it, but I don't have that much that much state to worry about. You know, it's not like a crazy amount of, of state. So, yeah,
+
+47
+00:24:55,680 --> 00:25:16,500
+Wes Bos: yeah, cool. Um, so my friend again, I built mine, probably Three or four years ago, and it's been working really well for me. So I don't use a whole lot of the the most recent technology. So most of my app is server side rendered. It's it's not like Scott's is done entirely in react, and you do do server side rendering, right, Scott,
+
+48
+00:25:16,739 --> 00:25:54,180
+Scott Tolinski: I don't I use a no, I use a pre render pre render.io to do my for for like, you know, web search crawlers and stuff like that, whatever they're called search crawlers, I don't know, search engines and search engine optimization, right. So I use pre rendered to do that. But for the most part, I just use really small JavaScript bundles, and everything loads really quickly. But yeah, I haven't. To be honest, I, I've had the server side rendering going at a point. And I didn't necessarily see any sort of performance benefit from it that I'm not seeing from the current system.
+
+49
+00:25:55,230 --> 00:29:44,070
+Wes Bos: That's pretty sweet. Cool. Well, mine is done, mostly all templated in, in Jade, or what is now known as pug. And that's all templated, I have sort of like, an overarching course layout. And then I will modify, I have these like, sort of like sub layouts, that that extend that and then modify it depending on which of course that we have. So I've got a bunch of different index files for each of my courses. And then some shared stuff. I've shared styles and, and shared mix ins and whatnot in Jade for things like listing out videos and showing modules and the videos that belong to that. So it's pretty nice because I can share things through all of my different domain names that I have. So that once the HTML from pug and Jade get to the browser, I then pick it up with JavaScript. Most of the The courses are done in jQuery, which I've I've slowly been refactoring that over to just vanilla JavaScript, because quite honestly, at the end of the day, it doesn't need jQuery doesn't need react, it doesn't need anything because like what's happening, I'm showing a modal box, I'm collecting your credit card data. I'm pinging stripes endpoint to get a token, and then take that token and ping my own back end with that token, and, and then the back end will pick it up from there. So I'm really not doing a whole lot of heavy lifting, aside from some sharing of data between all of my different domain names. So that's sort of where I'm transitioning to it now. But it's it's very low on my I much rather spend my time on the back end, which is react, the whole course viewing experience, being able to to watch the courses to skip through them to fast forward to change from to bookmark specific videos, and whatnot. All of that is built in react and react router. And that's really where I'm spending my time lately is because I want the the course experience to like I think I've got the whole like marketing side down pat. And I'm not too too concerned about the tech for that. But the the course being experiences is perfect for react because you can make this really slick interface without having a single page refresh or, or anything like that, which is pretty neat. Yeah. My CSS is all done in stylists. I've got lots of shared little components, that I share my stylist between all of my sites, because I have things like the login button and the frequently asked questions that all have a base CSS. And if I if I have an error on one of my sites, it's likely that I have an error on all of my sites and being able to update just that one base CSS will likely fix the bug across absolutely everything on my on my free courses. So if you go to like JavaScript, thirty.com, or any of these other ones, that's all done in vanilla JavaScript as well, where that's pretty much just pinging my back in and then on my back end, I've got a slew of checks that will check if you've already signed up for it if you're doing it maliciously, if you're trying to hit the back end multiple times, because I've had people maliciously try to pump thousands of email addresses into my database at a time. So I don't use Redux or anything on my own core site just again, it's it's not something that I necessarily need. I don't have a whole lot of data for the course viewer, I've got like an object that contains the videos. An object contains the user object that contains the user's progress that is sort of like synced with the back end there. If I were to do it again, I would likely and I'm likely going to move moving a lot of my stuff over to react Apollo, which will allow me to just not not worry about any of this stuff again.
+
+50
+00:29:44,490 --> 00:29:49,680
+Scott Tolinski: Yeah, yeah, I am likely to be adding some Apollo to my stack as well. So
+
+51
+00:29:50,099 --> 00:29:51,150
+Wes Bos: it's good stuff.
+
+52
+00:29:51,150 --> 00:29:52,109
+Scott Tolinski: It's good stuff.
+
+53
+00:29:53,099 --> 00:31:56,490
+Wes Bos: What else do I use? I use I've talked about this previously, I use a plugin called cross storage which is from Zendesk and what that allows to do is share local storage across all of it because because I am server rendered and because I am session based and not JSON Web tokens. If I want to be able to share data from one domain to another, it's a little bit tricky because you have cross origin policy and not being able to do that. So I've spent some time implementing that being able to like, like, what I'll do is, if you're logged in, I'll check if you have bought a course. And then if a course is on sale, I'm not going to show you that this course is on sale, because you've likely you've already bought it. So it's not something that you necessarily need to see just like little little things like that being able to share the data between the different domain names that we have there. Yeah. And I think that's, that's all of my friend. And it's, it's, it's funny, because all of my courses are very heavy front end. And my course platform aside from the the viewing experiences, is all done. Oh, I'm sorry, that's that's the other thing I totally forgot is I have an administrative back end, which is my own thing. And that is recently built. And I built that in next jass, which is a, a framework for building server side rendered react apps. And that's great, because like, I hate doing administrative stuff. So this thing is just so fast, you click something, it's all pre loaded, be able to search for people based on any of their things based on their email address based on their name based on what coupon they use based on what course they use, how much they paid. And then I can I can modify all of that data that you have there. And I also have team licenses as well. So when somebody buys a team license, they get like a special interface to be able to, to dole out those licenses, I used to have people email me who should go on their team license. But that's just that was a supreme waste of my time. So I felt like this nice, slick little interface that will be at give people the number of slots that they have. And then they can dole them out to teammates on their team. Nice. So
+
+54
+00:31:56,490 --> 00:32:01,140
+Scott Tolinski: you keep your your administrative tools entirely separate. Yeah, it was separate, but
+
+55
+00:32:01,680 --> 00:33:00,599
+Wes Bos: only because I had built it at a later point. Yeah. And I wanted it to be like a really slick interface for being able to manage all of my data. And I have all custom graphs. And I'm able to like filter down for how many sales that I have in the last week, or how many sales of this course that I have, what is my like, one thing I keep track of is what is my ratio of free courses to pay courses. And I try to like keep a keep a close eye on like, what what that looks like. So I've always wanted to have this like just TV in my room where I have like my empire and all of the stats coming in at once. And I'm slowly getting there. I don't have a TV yet. But at some point, I would like to have like the sort of like auto and that's the that's the other thing is it's auto updating. Yeah. Because it's not WebSockets just it just pings the back end every every, like 10 1020 seconds or so. But if it was WebSockets like yours, yours is all real time, right?
+
+56
+00:33:00,630 --> 00:33:33,720
+Scott Tolinski: Yeah, yeah, my mind's all real time. And that's actually part of my like orders thing, you could just leave my orders page and little graph and I use chart js, although I'm probably going to be moving off of chart JS when I have a free second because it's pretty heavy compared to some others. There's like victory by formidable that looks really nice. Either way, it's all animated and fancy. So in order comes in and my little graph goes. And then you know animates in with each order that comes in. So I can just sit and leave this open in a window if I want to. And just keep an eye on it, what do you would use for your charts,
+
+57
+00:33:33,990 --> 00:35:18,920
+Wes Bos: I actually had had brought in all these react chart libraries. And then like, I don't know, after a couple hours, I was like none of this is working for me. And really what I what I have is I've got here I'll read them off right now I have a block of my revenue for the day or sales for the day in us because that's what I believe in and then I have that converted over to Canadian at the I pull in the the current exchange rate just to give me an idea of what that is in Canadian I it shows me how much I've paid out in like in processing fees to stripe and PayPal, it shows me how much I've paid out to affiliates. And then it shows me like a final profit number of like, this is the revenue minus all of your affiliates and your fees and all that stuff. And then it shows me like a profit number for what that is. And then it gives me aggregates. So this is more like numbers, aggregates of how many paid products I have, how many what's my paid to free ratio looking at right now. And then I've got a little like mini chart for I basically use Flexbox Actually, it's pretty funny is I take I took all my courses. And then I just like like right now 129 people have signed up for my JavaScript 30 whereas 54 people have signed up for my Redux. And then I just apply flex grow of 129 and 54. That's my secret and then it Just that kind of makes its own bar chart. And then when that data updates, flex grow will transition, because you can just apply a transition, flex grow one second, and then it will just add itself out or in depending on how those numbers have have adjusted themselves. Same goes for my affiliates as well. Sorry, go ahead. No,
+
+58
+00:35:18,920 --> 00:35:33,540
+Scott Tolinski: I think that's like the universal sound for little animations coming in here. That's the only Yeah, that's the only sound I can think of. Yeah, yeah. That's really smart. You don't need a library for that then. And honestly, this discharge as like I said, it's too heavy for what I'm doing. Yeah, I
+
+59
+00:35:33,540 --> 00:36:03,750
+Wes Bos: just couldn't figure it out. Like I was so frustrated. And like, I also didn't need a chart that looked like that I just needed like, the raw data in my face. Yeah. And then to get like a high level overview of like, Oh, that's interesting. My JavaScript 30 bar is twice the size of my Redux bar. That means that twice as many people have signed up for it, and then you can like, I can filter for like the last week, last day. 30. Day, we talked about this when we're talking about moment j. s, I use? Yeah, I have this like filter that will filter it down for all the different days.
+
+60
+00:36:03,780 --> 00:36:05,670
+Scott Tolinski: Yeah, like was cool.
+
+61
+00:36:06,780 --> 00:38:26,690
+Wes Bos: Yeah. So that's, that's front end. Obviously, there's there's a lot that goes into to that want to take a quick break and talk about our sponsor, which is a course from Lawrence Stewart in the courses called intro to the serverless framework with AWS and node j. So you've probably heard a lot of people talking about serverless, Cloud Functions, functions that serves what what is that? Well, instead of building your app in like one monolithic application, what you do is you build your application in these smaller what are called Cloud Functions, or serverless functions where each function does a specific thing, whether it's scraping a website, resizing an image, trimming a video, or saving a, sending an email, bringing something saving something to a database, there's all kinds of different tasks that your application is going to do. And sometimes you're I know this myself, I just had a website crash on me, when your application gets really, really popular, you need to scale up really, really quickly. And rather than just like, buy a very expensive server, and then have to pay for that forever and ever, what you can do with serverless in AWS is lambda service is be able to just scale up, like let's say a lot of people are immediately resizing photos, or you have a spike in traffic. And one specific part of your website that needs needs a lot more hardware thrown at it. So Amazon's AWS, lambda function is going to scale up and you're going to just pay for that as you need it. So if it's only for an hour that you need that extra work, it's going to spike up and then come down, and you're not going to be paying for it over and over. So it's infinitely scalable. It only runs on an as needed basis, you're only paying for the execution time. And it's just a really cool way I'm seeing a lot more people build and architect their applications in this way. So if you want to learn all about that, then I definitely suggest that you check out this course. And we've actually got a couple freebies to give away 20 free courses if you use a coupon syntax, underscore free all caps. And if you miss that will probably be gone within the first 15 minutes of this episode. So once those are gone use the coupon syntax for an extra 10 bucks off the course. So thanks so much to Lauren Stewart and his new course for sponsoring. Yeah,
+
+62
+00:38:26,690 --> 00:40:13,230
+Scott Tolinski: so what kind of acid hosting for me, I have a lot of a lot of downloads, I make most of my videos available for download as well as series concerning I have like 72 series on level up tutorials. So that's a whole lot of content. And I have images and thumbnails for all that stuff. So I host all of my I host all of my downloads for big, big stuff like my my series and stuff on Amazon s3, just because that was the easiest one to get up and running with at the time. And it was sort of the de facto place to put all your stuff. So I haven't really had a need to migrate off of there. Although I heard you talking about backblaze I believe it is. Yeah. And so thinking about it, but yeah, so pretty much all my my series and everything like that are hosted. My actual videos are all hosted on YouTube, even the like premium series and stuff like that. I didn't want to write a video player. And I didn't want to pay for video hosting. So I just have them as unlisted private series, and I wrote some code that will be able to just I give it a playlist ID and so no one on YouTube playlist, I gave it a playlist ID and it imports into my thing. And then people who are, you know, subscribers who have access to that content, they can then watch this unlisted playlist, but they get all of the nice things like YouTube's and coding, they get all of you know all of the nice stuff you get with YouTube without having to actually make it be you know, Public. So I, that's where I start my actual videos is on YouTube for everything, series downloads on a s3, and then I host all of my images on cloudinary. I don't know if you've used them.
+
+63
+00:40:13,460 --> 00:40:14,040
+Unknown: No,
+
+64
+00:40:14,360 --> 00:41:04,440
+Scott Tolinski: it's sort of like a an on demand image thing. So basically, if image host that can do a ton of manipulation through URL, what's really nice about this is that a lot of these images that I'm using are actually pulled in as thumbnails from YouTube. So what I can do is I use this cloudinary path where it's like cloudinary, forward slash levelup, tuts, forward slash whatever. And then I just pass in the entire domain, or the entire URL of the YouTube hosted image, and it will pull that in to cloudinary, generate a version of it at whatever dimensions, I'm telling it. So I can give it like 100 different dimensions, I could say, at this screen size, give me That's amazing, or Yeah, and so all the sudden you get an image that's 300 pixels wide, and it's cached on their server. And it's perfectly optimized. And you can, you can crop,
+
+65
+00:41:04,440 --> 00:41:06,780
+Wes Bos: and you can do all kinds of stuff
+
+66
+00:41:06,780 --> 00:41:29,760
+Scott Tolinski: to do all kinds of stuff. I mean, you can do Instagram filters and stuff on it if you really want it to, but for me, I just use it mostly for the fact that you could have on on mobile, particular image, and I don't have to write software to generate, you know, five different versions of this image. cloudinary will just do it on demand. It's amazing cash.
+
+67
+00:41:29,790 --> 00:41:30,330
+Unknown: You
+
+68
+00:41:30,420 --> 00:41:58,080
+Wes Bos: know, it doesn't reminds me of his way back in the WordPress days before we had the concept of like a post thumbnail, there was no way to attach an image. So you had to do like a custom field. And then if you wanted to resize it, we had this thing called Tim thumb. Yeah, yeah, Tim thumb did the exact same thing. Like so many huge security flaws. I remember just like every month having to upgrade my Tim thumb because somebody could like, execute remote code on your
+
+69
+00:41:58,080 --> 00:42:04,320
+Scott Tolinski: server. Yeah, I know. I know. I remember them being a huge pain to get set up to occasionally. Yeah, it was at least on Drupal,
+
+70
+00:42:04,350 --> 00:42:13,130
+Wes Bos: you needed your server to your PHP server to have like, whatever the the package was to, to actually deal with images on the server. And
+
+71
+00:42:13,400 --> 00:42:29,940
+Scott Tolinski: yeah, yeah. So that's, that's pretty much it for this asset hosting, this was recommended to me by a friend of a friend. And I've been really just psyched cuz they have a really nice API on top of this, or you can just use these simple URLs and whatever. Their Doc's are good, they're their blogs, good and
+
+72
+00:42:30,060 --> 00:42:33,600
+Wes Bos: 300,000 images for free.
+
+73
+00:42:33,710 --> 00:42:45,600
+Scott Tolinski: Yeah, I know, the pricing is pretty outrageous, too. And if you do referrals, they like take take some off of your bill. So all I would have to do is put a link to the referrals in my YouTube account. And I think, okay, in the
+
+74
+00:42:45,600 --> 00:42:46,560
+Unknown: show notes.
+
+75
+00:42:46,860 --> 00:42:48,630
+Scott Tolinski: Yeah, I should put that I'll definitely put that.
+
+76
+00:42:48,650 --> 00:42:53,310
+Wes Bos: Yeah, everyone go and click Scott's link in the show notes. And yeah, let him get it.
+
+77
+00:42:53,340 --> 00:43:02,760
+Scott Tolinski: But so I, I've been on this and what I'm using, like 15% of my monthly bandwidth at the end of this month. And that's the free plan. I'm not paying anything for it. Oh, really?
+
+78
+00:43:02,760 --> 00:43:20,280
+Wes Bos: Oh, wow. I know. It's amazing. It's pretty I love I love things like that, well, sometimes they don't because they go out of business. And then you're Yeah, but I guess as long as you have the source image, the original image that is yours, it's fine. Because you can always find another service or build your own.
+
+79
+00:43:20,420 --> 00:43:43,050
+Scott Tolinski: Yeah, version of this Exactly. It's either always pulling the original image from my file system in the app itself, or from YouTube's API. So if these images would not be allowed, if they shut down tomorrow, all I would do from my code is remove that part of the string in the image that says cloudinary. And all the images would still work. They're not going to be optimized, but they'll work. You know,
+
+80
+00:43:43,590 --> 00:43:47,400
+Wes Bos: that's pretty neat. I never heard of this, I may have to start using this.
+
+81
+00:43:47,430 --> 00:43:48,330
+Scott Tolinski: Yes. Pretty cool.
+
+82
+00:43:48,780 --> 00:47:59,400
+Wes Bos: Cool. So for mine, obviously, what I do is I stream all of my videos, and then I offer downloads as well. So for the download side of things, I started with Amazon s3, and I didn't like at the time, when I did my sublime book, I didn't totally understand like, what the point of CloudFront was. So I just threw it up on Amazon in Virginia, or wherever the closest one was. And then I got all these emails from Germany, of it's always slow in Germany for some reason. And I didn't totally understand it. And then somebody said, like, you know, you're, you're hosting it in, in, in the States. So it's very slow for the rest of the world. So I use Amazon s3, and then you put cloud front in front of that. And then that will distribute it to all the different servers around the world and make it fast and cash and do all that sort of like a nice stuff for you, which is pretty, pretty neat. So that's what I was using for the longest time and my bandwidth bills were just absurd. And part of that is because it's s3 and CloudFront are, they're expensive. I guess it's cheap, but like when you're doing the sort of moving as many gigs as I am, it starts To get pretty expensive, I have many months where my mortgage was less than my Amazon s3 bandwidth bill. And the other thing was that I didn't totally understand like video compression. So I was uploading these these videos, zip files that were like a gig, or two gigs when they really could have been like 700. Meg's, or something like that, like I just re compressed my ESX series. And it went from like, three gigs down to like one and a half gig. So I was stupidly throwing money out the door, like, I'm pretty sure that if I were to look at my Amazon bills, I probably pay over 15 $20,000 to Amazon and just bandwidth bell. So that was mine. And I've recently moved off of Amazon s3 over to backblaze. So backblaze has always been the like, backup your computer, it's like Dropbox for your entire hard drive. And I've been using that for years, I always recommend it to people, because it's sort of the like, Oh shit, moment II where you accidentally delete something or your entire computer goes down. This is passive backup, it always runs on your computer. It's always backing up absolutely everything and you can restore parts are all of your computer, they'll even FedEx you a drive. Whenever it is, if you're like sort of in a panic. So I was I've been a big fan of backblaze for a long time. And then they recently announced this, well, they've had it for a while. But they have this thing called what's it called bt two. And they just recently announced that it is going to be much cheaper than Amazon s3, which is incredible. Let me just pull up the backblaze thing, maybe you cut this out, I just want to pull up the pricing. Here we go. So per gigabyte downloaded, it is two cents. Whereas on Amazon s3, it's five cents 10 cents. Sometimes when people from India download my courses, it's like 1112 cents, a thing. So it's like, five, six times cheaper than using Amazon s3. And that's not even including the extra charge they have for CloudFront on top of it. So I moved almost i think i think at this point, I've moved all my stuff over to backblaze. And my bandwidth bills have just like been sliced by like between compressing my files properly. And moving over to backblaze. My bandwidth bills have gone from thousands a month to not even 100 bucks 200 bucks on like a launch month or something like that. So nice. Very, very happy about this. The one thing that I haven't figured out is that backblaze only has one data center. Where are they they serve their stuff up from? So I'm like, well, is that going to be a problem for people across the world? And I actually haven't found an answer to this. But I also have never received a single complaint about the the downloads being slow like I did when I was on s3. Sure.
+
+83
+00:47:59,640 --> 00:48:10,080
+Scott Tolinski: Yeah, that's part of why I let YouTube foot the bill for most of my videos take us because they have they have enough servers and enough everything to take that
+
+84
+00:48:10,110 --> 00:49:35,790
+Wes Bos: Yeah, man, I didn't realize how expensive bandwidth can be. And then I should also talk about streaming all my videos. So what I do to stream my videos is I host them on Vimeo because, again, if I were to host them on one of these streaming services, it'd be very expensive. But I don't know why this is a thing. But Vimeo has like a $200 a year Vimeo, bandwidth Vimeo Pro, where you can just stream away till your heart's content. And it's pretty sweet. So I use Vimeo and I don't use the Vimeo player, I would love to use a Vimeo player because it's really nice. It is just missing the ability to increase the speed, the playback rate and so there's just no button, there's no way you can like get into the Vimeo iframe and like run some JavaScript to speed it up, like add a button on the bottom or something like that. Which looks something like Wistia you can do. So I unfortunately had to code my entire player from scratch, which is just an html5 video player and it has like captions and the ability to speed things up and jump around and all that good stuff sort of built into it. But if you were to view source on any of these videos, they're all hosted on Vimeo servers, which is great, except if you live in Indonesia, because it is blocked. And it sucks. If you live in India, she has to download my courses. Well,
+
+85
+00:49:35,820 --> 00:49:36,330
+Unknown: yeah.
+
+86
+00:49:38,040 --> 00:50:16,320
+Wes Bos: So that's where I host everything and my images. I host some of my images on s3 and some of my images on backblaze. I did have them on my my just my regular Digital Ocean server, which is not a good idea because I was just just my CPU with spike when I was like when I launched my JavaScript 30 there was like 8000 And people on the website at once and the like the server was falling over. And I realized it was because I was serving up static images directly from my Digital Ocean server. So I moved all those over to s3 and in a hurry to try to fix it. And that immediately fixed it for me.
+
+87
+00:50:16,410 --> 00:50:25,980
+Scott Tolinski: Yeah. And this is it's funny with these platforms, right? We built our own platforms. And essentially, we are reinventing the wheel over and over again, because so many other people are like, Well, duh, of course, that's gonna happen. Right?
+
+88
+00:50:25,980 --> 00:50:26,970
+Wes Bos: Like,
+
+89
+00:50:26,970 --> 00:51:14,430
+Scott Tolinski: it's a nice learning experience. It's not hurting anyone. Yeah. For me, I I like appreciate those moments, because there's so many of those moments that that really build out some of the best learning experiences like, Oh, this is why people say not to do that. Yeah, I should have listened for these reasons. But yeah, definitely, I didn't run into that myself. But I think on another project, I had some sort of issue where and then Elson was just totally understood why people separate their concerns so much. Because if your server goes down, your whole site's going down, and nobody's doing anything. So it's better something else is sharing the load. You know, I also use CloudFront. For my CDN, by the way, just because it's, I don't know, easy, easy to integrate.
+
+90
+00:51:15,210 --> 00:51:30,330
+Wes Bos: Yeah, yeah, it's, it's super simple. You just flip it on, and then you just change your use, you set up CloudFront to go in front of a bucket, and then you just change your URL to a different bucket name, and then it will automatically distribute them around the world. It's, it's pretty nifty.
+
+91
+00:51:30,480 --> 00:51:35,340
+Scott Tolinski: Yeah, yeah, definitely. So testing, do you do any sort of testing on your platform?
+
+92
+00:51:35,700 --> 00:52:18,870
+Wes Bos: Um, not a whole lot. I have some stuff that's done in mocha, I had written a bunch of it a couple years ago. And then and now anytime that I, I do write a new controller, I'll write that in mocha, just because that's what I've got set up. But for my new stuff, what I've been doing is writing it all in jest, I just haven't integrated that into my into my new my course platform just yet. So that's, that's sort of on my eventually, what I want to do is, have somebody helped me on my own course platform, because there's a lot of things that I would like to do. And I think it needs to be a little bit better tested before I let somebody run wild in changing stuff inside of the court, of course, platform.
+
+93
+00:52:19,080 --> 00:53:22,320
+Scott Tolinski: Yeah, I was. Yeah, I had been wondering a lot about that, too. I'm actually very interested in just because I've very briefly used it like I fired it up, I ran a snapshot, and I did did that kind of stuff. Yeah, but I haven't used it pretty extensively. I use mocha Chai pretty, pretty heavily in my testing. And then there's this Meteor package. Practical Meteor Meteor mocha. And just like the meteor testing environment. This is really nice if you run Meteor in the testing mode, and like pops up another window, and you get this whole visual interface for your test passing and stuff like that. You just server client tests or whatever. But the for a long time, I think the meteor testing thing was sort of all over the map. And people are just trying to figure out what was the right way. And then eventually, Meteor came out with an opinionated This is how to do testing on Meteor and everything's been good. Since then, everything's been really nice. And so just pretty much have gone with straight out of there. DOCSIS two. My dog is flipping out, every everything just straight out there docs. And that's pretty much it.
+
+94
+00:53:22,410 --> 00:53:42,930
+Wes Bos: Cool. And we're also going to have a show on testing coming up, that's gonna sort of dive into the different types of testing like unit testing and integration, testing and whatnot, to maybe clarify some of those stuff, because I know a lot of people have been asking me questions about that. Let's talk about API's up next. So is there any external services that you interface with on your stack?
+
+95
+00:53:43,200 --> 00:55:34,260
+Scott Tolinski: Yeah, I rely pretty heavily on the YouTube API. And I've been on the YouTube API since it was like version one or two. So it's really nice to see how it's grown and stuff like that. And I use this thing. I have a an admin tool, I called the import Iser all of my admin tools and an Iser, so I have like the series Iser the download Iser, or some of I have the affiliate or affiliate later. But yeah, the the import Iser basically will just hit up the API, and I bring everything into my local or into my Mongo database, so stuffs all stored in the database. But basically, I pass in a playlist idea grabs everything, it saves it to the database, whatever. And then I can hit that API whenever I want to update it. But I'm not ever really necessarily hitting the YouTube API to load the series because I just have too much. I want too much control over right. I don't want things to come out of YouTube directly into my site. I want to be able to tweak and modify it, you know, as I need. So I use the YouTube API to basically bring in and save everything to the database and then I have recently moved over to Braintree for my payments system, so Braintree and yeah, and I still use I still have stripe, integrated. I have a lot of legacy stuff on this stripe stuff. What I need to deal with is how many basically the people who have had subscriptions and purchases and everything with stripe, I want to be able to have all of that still up and running while I transition over to Braintree. Until obviously, all of my new subscribers are on Braintree. Yeah. And within that system, so I use both of those. And then I mentioned before pre render for basically pre rendered versions of my site. But yeah, that's that's pretty much it. Just YouTube and Braintree are the two heavy ones right now. Cool about Jim.
+
+96
+00:55:34,500 --> 00:56:05,160
+Wes Bos: I'm pretty much the same. I use stripe, and PayPal like me, Kate with their API's in order to transact. I use an API fixer.io to pull in my exchange rates. That's just for my own administrative dashboard. I don't show any exchange rates on the actual website, although it's something I'd maybe like to, to experiment with. Because showing it in US dollars, maybe I don't know, maybe people who don't live in the US can tell me this, do you prefer when a website tells you what the prices in your local currency, or in in us?
+
+97
+00:56:05,220 --> 00:56:21,750
+Scott Tolinski: Yeah, I'm interested in this as well, I actually have it on my to do list for the next release of my site to have international pricing conversions. But I would be interested in knowing if that's something that people really would like to see. Because if they would, yeah, that they'll get bumped up priority list.
+
+98
+00:56:21,990 --> 00:57:03,180
+Wes Bos: Yeah. And then I work with the Vimeo API as well, which, so I'll put all my videos to Vimeo and put them in a collection. And then when I want to pull down a list of videos to interface with my both with the front end, like the main page, I want to pull in a list of videos along with their titles, and thumbnails and everything that sort of comes in from the boom API, as well as when people want to watch the videos on the back end now comes from the Vimeo API as well. So those are the only three I don't do a whole lot of external touching other than email, maybe we'll talk about that in just a second. is external services for that as well. So let's let's actually, yeah,
+
+99
+00:57:03,960 --> 00:57:21,510
+Scott Tolinski: yeah, I was gonna say i guess i that is an API use mandrill for email sending, although, you know, MailChimp mandrill probably isn't like the cheapest, best solution. It's just what I've been on for so long, and I haven't had the time or energy or anything to move off of mandro slash MailChimp so that that's where I'm at.
+
+100
+00:57:21,900 --> 00:57:34,170
+Wes Bos: Awesome. I was on mandrel for for the longest time. And then what happened is they I think that they had some sort of they either were making money with it, or they had abuse because they were giving 1000 sends out.
+
+101
+00:57:34,380 --> 00:57:36,270
+Scott Tolinski: I know, I love that free tier and
+
+102
+00:57:36,840 --> 00:59:40,620
+Wes Bos: it was very poorly handled. I really like MailChimp as a company, but the mandrel what they did is they just shut it down within like, like two weeks or something like that. And then you can only use it if you have a paid MailChimp account, which I don't I don't use MailChimp I use drip to send all of my email out. So luckily, and this is like a lesson I didn't use any proprietary mandrill package I use just SMTP Yeah, I use a package called node mailer. And node mailer will just interface with smtp. So I was able to just swap out my credentials. Real quick. I moved to Amazon es es simple email service for a long time. But I had some some issues with deliverability on that. And apparently, like, people were telling me that like, that's where like, a lot of spammers go to send their email. deliverability isn't great. So I didn't and also like when people would tell me like, Hey, I didn't get my email, I would be like, I don't know, I don't know where it is, like, I don't know what happened. Because Amazon gives you absolutely nothing, no information, no insight. And I was like mandrill. And what I use now is called postmark, which I tried out a whole bunch of them and postmark was the best will give you activity for every single person. So if somebody tells me, Hey, I'm not getting an email, I can go into the activity for their email address and see every single email that they've ever ever been sent out. It saves a copy of what that email looks like. It tells me how many times they've opened it, when they've received it, if it's bounced, sometimes people have really restricted IT departments that restrict email from from people that are not internal. So I can tell them like, hey, it actually, it actually bounced back, you have to talk to your IT department to to allow my domain name. And so I'm a big fan of postmark. Yeah, over the years and it's so cheap, like I think like, how many how many credits if you want to send half a million email, it's $1 per 1000 emails that sent out so it's, it's almost nothing I'm gonna
+
+103
+00:59:40,620 --> 00:59:59,100
+Scott Tolinski: get on this because not because I don't like mandrill or whatever. But it is expensive and I'm paying for that right now. So this looks really nice and like you are not using any mandrel specific library or anything. So it would be as simple as me just swapping that out. So
+
+104
+00:59:59,550 --> 01:01:02,790
+Wes Bos: the one that You careful about is mandrel automatically encodes their URLs so that the URLs go through their system. And that's the way that they can track clicks. And then when they shut it down, they just killed all of my mandrel links. And I was like, What the hell, I have like, I've sent out like 300,000 emails all that have mandra links in it. Oh, now you just killed all of my my links. And then they said, you have to you have to formally close your account for the links to start working again, like, so. That was so stressful. And now I make sure that the links go directly to my server, should postmark ever go under, then the the URLs aren't going to go through because the amount of email that I got of people being like, hey, Wes, something's wrong with your links. And it's like, it's not me that they're just being fed through an intermediary. So lesson learned there. Yeah. About clicks anymore, because I just want to see, I just want the links to get to the people without having someone in between there.
+
+105
+01:01:03,390 --> 01:01:13,500
+Scott Tolinski: Nice. So okay. luden API's? Let's talk about hosting. Where do you host that? You said digital image? You mentioned digitalocean? several times. So I'm guessing digitalocean?
+
+106
+01:01:14,010 --> 01:01:17,790
+Wes Bos: Yeah, actually, can we talk about email real quick, a bit more? Yeah. Let's talk about email. Let's
+
+107
+01:01:17,790 --> 01:01:19,140
+Scott Tolinski: cut that back.
+
+108
+01:01:19,200 --> 01:01:54,270
+Wes Bos: Yeah, cut it back. A couple more things. Well, my email setup, I write all of my emails in pug, or Jade. And then I feed them through this thing called Inky, which is, I think it's called it's now called a foundation for emails and from the zurb, run the foundation framework. And essentially what that gives you is, rather than having, as we know, writing HTML emails is just a nightmare. So what it does is, it's sort of like react components, where you just like write a button tag or like column tag, and then it will convert it to whatever the like terrible
+
+109
+01:01:55,410 --> 01:01:56,100
+Unknown: HTML, inline
+
+110
+01:01:56,100 --> 01:02:31,500
+Wes Bos: CSS and HTML that it is. So I use that inky to convert the zurb. html to regular HTML. And then I use a package called juice, which will take my CSS and inline at all, because you need to have for most email clients, you need to have all of your CSS inlined into your actual elements that are there on the page. So it's sort of like it's like three or four steps to send out an email but have that all automated from compiling the Jade template to inline to actually sending it off to to postmark to send it to the customer.
+
+111
+01:02:31,560 --> 01:02:55,590
+Scott Tolinski: Nice. I use something, I guess maybe not that similar. But I just have basically straight up HTML email templates. I'm bringing those in and then modifying them with like a mustache, mustache, templating, and then bringing my data and rendering it that way, and then shooting it out. Through meteors built in email that send so this is pretty much it. Nothing crazy. Awesome.
+
+112
+01:02:56,040 --> 01:03:00,150
+Wes Bos: Looks like all hosting. Once you have your app, where do you put it online?
+
+113
+01:03:00,570 --> 01:05:00,510
+Scott Tolinski: Yeah, so for a long time I hosted on digitalocean I actually still host most of my stuff on digitalocean like my personal site and client work and any sort of that stuff goes up on digitalocean. And forever and ever and ever level up tutorials was hosted there, as well. But Meteor has their own host called galaxy, which was actually pretty reasonable for pricing for containers, they used to be like super expensive when they launched it and then they they dial it back quite a bit and had some more entry level things because I don't get a an insane amount of traffic that I need to be paying an insane amount. But of course it you know, gives you the ability to scale but the features on galaxy just kept getting so much better and better and better that I was just like, man, why am I Why am I worrying about my own server where I have to worry about security and all this stuff like this when I can take a container approach to this and just run a one one you know, deploy command or whatever and get an interface where I can roll back versions if I need to. I get access to just increasing I mean it's basically like it's a lot like Heroku if you used Heroku you can increase containers, increase container size or any of that stuff. And it gives you things like pre render, built in pre render so yeah, I've been really psyched with it at first when they came out I was pretty skeptical. It's one of those things you don't want to go put up on host if it's not a major company that you you know you have no idea if Meteor galaxies going to be around forever or whatever. It just the the features and everything. were so nice and at the end of the day the price was going to be the same so I made that jump and I've been just super psyched about it because there's nothing more that I dislike than trying to manage and keep my server up to date and all that sort of stuff have to deal with server stuff is really just not my, my forte and I don't think I ever will be necessarily so yeah I host on galaxy. Everything else on digitalocean though big fan of them. Still,
+
+114
+01:05:01,290 --> 01:06:48,960
+Wes Bos: that's sweet. Yeah, so I am currently on digitalocean as well, I've been on them for a long, long time. And it's working pretty well. And it's kind of neat because you can do like we talked earlier about this like concept of a floating IP. So you can run a couple of servers running your app, you can cut over to the, to the other one without a whole lot of downtime, or no downtime in that and whatnot. So, and what's nice is that the documentation for digitalocean is really good, you can always find ideas. But at the end of the day, you still are managing a server. So there's security updates that need to happen, there's, if you don't have enough memory, I had to set up like a swap memory in order to do some stuff on there. And I just don't like having to maintain a server at the end of the day for this kind of stuff. So I am looking at moving over to now sh which is from ziet. They do next jass, which is my favorite react framework, and hyper, which is the terminal that I use. So they do this concept of like immutable deploys. And I think this is similar to what you're talking about where you deploy your app to, to now. And then when you deploy it a second time, it will just give you It gives you a new domain name for every single deploy that you have. And then you can alias your main domain name over to the other one. So right now when I need to restart my app, I have about three seconds of downtime. And it's not a big deal. But every now and then I get people sending me screenshots of like they, they hit it at exact time that I reboot my app. And then they say like, hey, you're down. And I'm like, just refresh, it's up again. But with with now, what you can do is it will just cut over the the alias, the domain name alias, to the new URL, and you have zero seconds of downtime. Yeah, for that kind of thing.
+
+115
+01:06:48,980 --> 01:07:12,060
+Scott Tolinski: And I love this stuff. Because you don't have to worry about it. I mean, with galaxy like you have multiple containers, right? it decides always going to be available. Right? Yep. regardless of if one of them is down, another one's going to be up or any of that stuff. So yeah, big fan of that. I've also hosted a lot of stuff on Heroku before too, which can get kind of costly, but same sort of deal really nice. Where did you host to be for digitalocean.
+
+116
+01:07:12,450 --> 01:08:19,770
+Wes Bos: That's a so I've always been on digitalocean for my my course platform for since it's it started. But but for my other stuff. I've been on Bluehost from my own personal website and a bunch of family members websites for a long time. And now regret that because they did some shady stuff, where what they did is they went into every single word because like 80%, or 90% of Bluehost is just WordPress installs. And they went in and turned on a very aggressive caching plugin on everybody's WordPress install, without like, without telling them or doing anything like that. So I'd like just pissed away for hours being like, Why won't this update, and then I looked into it, and I was googling all these error messages. And it turned out that they went in there and flipped it on, which is such a shady move. So I highly recommend you never use Bluehost ever. So I've been recommending because like these hosts can get expensive when a lot of times people just need like a cheapo $5 a month. So what seems to be everyone's recommending these days is siteground. If you just need a quick PHP host to throw something up on, like nice.
+
+117
+01:08:19,770 --> 01:08:33,270
+Scott Tolinski: Yeah. All right. Do you remember media temple, I think that was the original home of level up tutorials was media temple. And then they got bought by godaddy. And I noticed out of that so quickly. So as they I wanted to do it.
+
+118
+01:08:33,560 --> 01:08:51,350
+Wes Bos: I had dinner with a lot of the media temple people once and they're very, they're very separate from GoDaddy, because they're like they talk about GoDaddy as being the rich uncle. Yeah. being like, by the way, GoDaddy, or by the way, temple if you want to sponsor this podcast, come on over. Oh, yeah. Well, that's it.
+
+119
+01:08:51,350 --> 01:09:00,390
+Scott Tolinski: I know, I never had any issues with media temple. And in fact, I didn't even wait to see if there was going to be any issues. It was simply they got bought. And I just was
+
+120
+01:09:00,420 --> 01:09:02,550
+Wes Bos: Yeah, I was out of there. Yeah, it was out of the
+
+121
+01:09:02,760 --> 01:09:22,170
+Scott Tolinski: you didn't know what Addy you didn't know what the future would hold. And at that point, is at the same time, that digitalocean was becoming like very popular. So it was like, oh, okay, I'll check this out, you know, kind of thing. Yeah, yeah, absolutely nothing against media temple. Their service was great the whole time. I had it.
+
+122
+01:09:22,260 --> 01:10:46,220
+Wes Bos: Yeah, I was on them for a while. And I it got expensive for me. Yeah, just for what I was using at the time WordPress hosting. So I cut over to Bluehost and move everything off of media temple, but it looks like they now also do, like they do managed hosting, so you can use Amazon's servers, but they will manage it for you, which is interesting, kind of neat. I don't know it's not really something I need. I think that like, as I'm getting older, I'd much rather pay a little bit more for a service like now and have them deal with it. Rather than be like, oh, five bucks a month. I can like host my entire world and my bandwidth. bills are cents every month, right? I don't care that much anymore. I rather just have it work and not have to, especially with like things like SSL. Like I have to like, like, a couple Sundays ago, I had my lessons encrypt, auto renew, but I forgot to set up a cron job to reboot nginx. So I was everyone's like tweeting me, like, all your sites are like, what's wrong with your SSL certificates, they're all broken. And I was like, Oh, shit, like what happened like Sunday at bringing out the laptop. I hate doing that. And then, and I just had to like type nginx s reload and everything worked again, honestly, it's a it's a quick cron job that you can have. But I don't want to have to figure out that cron job and, and make sure that it's working. I just want it to work. And I want to enjoy my weekend.
+
+123
+01:10:46,290 --> 01:11:15,229
+Scott Tolinski: I know that's a huge pet peeve of mine, I feel like SSL is are one of those things that I feel like they're one of those things that if you have a like a future facing hosts around Nice, nice host, and you want an SSL, it should be click this button, give me an SSL, and I don't want to have to do anything else about it. Because there's nothing worse than having to, to, you know, generate your certificate and do all that stuff and upload to your server. It could be so much easier than that. Yeah, yeah, whatever.
+
+124
+01:11:15,270 --> 01:12:23,700
+Wes Bos: Although I should say Let's Encrypt is, once you have the cron job in place, it is very, very quick like I can I can do an SSL for a site and validate it with like a custom. Let's see, I had to write a custom nginx config to Yeah, to be able to validate it. But once it's up, I can I can kick out a new site real quick. I should also say before everyone tweets me about CloudFlare, I do use CloudFlare in front of all my websites as well, that helps both mitigate DDoS attacks. It helps cache stuff. It helps save on your bandwidth bills for things like images. And then it also gives you a free SSL cert, or it's it sits on top of your existing server and will give you SSL, no problem. But I, I still want to make sure that my traffic between my server and CloudFront is encrypted, as well as from CloudFront to the end user. So I run SSL certs on both. And that way, that way, I can turn off CloudFront at any time, and my another SSL cert will sort of pick up the slack there. Word. Cool. Um, what else do we I think we're running a little bit. Over on time here. We got any other stuff to talk about in terms of what our stacks look like?
+
+125
+01:12:23,730 --> 01:12:29,910
+Scott Tolinski: Yeah, I guess just future plans, things you want to see out of your platform coming in the future. And then we can do sick pics. Peace out?
+
+126
+01:12:30,300 --> 01:13:25,520
+Wes Bos: Yeah, um, I think I want to rewrite my checkout flow. There's a couple issues with my checkout flow. Right now. One, I'm using placeholders instead of labels, which is a little bit confusing when people check out. Also, like, my coupon code flows a little bit funny, people often put the coupon code in the credit card form and flip over to paypal. And then the coupon code didn't apply to paypal. And they're like, what's going on? I put it in. And so there's like a couple like little things here and there that that I'd like to, to sort of make easier I would like after our talking about our stripe episode, I would like to try bring stripe JS back. Rather than running it myself. If you want to listen to that episode, you can figure out how I built my own interface to stripe jazz but but like the whole Apple Pay and Bitcoin, I would love to be able to just turn those things on. Yeah, and start accepting them. So that's that's in my very new features a rewrite of the checkout flow. Cool.
+
+127
+01:13:25,620 --> 01:14:28,800
+Scott Tolinski: Yeah, I since I just rewrote my checkout flow, thankfully, that's been crossed off of my plan. But I must say, I really am really loving the new checkout process. I know the last time we recorded a way to just launched and after like two weeks or a week now it's been really super nice. So pretty psyched with that. But yeah, so I think the future for me would be as much as I love Meteor, you never know what the future may hold. So maybe using less Meteor stuff here and there. So maybe start to look into integrating more Apollo into my data layer. And instead of relying entirely on Meteor, just to I don't know, see if it's see if it's a way to for the future. You know, right now, everything's working fine, though. So that one is obviously not going to happen anytime soon. And then if the site if the site is really growing in in state, then potentially looking to some sort of more managed state system, something like Redux. I don't love Redux. If I'm being entirely honest. I like what Redux does. But I don't love it itself. Don't hate me.
+
+128
+01:14:29,600 --> 01:14:30,840
+Wes Bos: Paulo. I know.
+
+129
+01:14:30,960 --> 01:15:15,540
+Scott Tolinski: Yeah. And then there's a server side rendering, which I would add, but like I said, I when I did have it, I didn't necessarily see the performance benefits. I'm not necessarily getting the SEO benefits. But it would be nice to have, I mean, just from a standpoint of when you hit the site, it would be nice to have that HTML already there instead of having to resort to JavaScript to load it all up. So yeah, those are those are some some future plans. But overall, I think a lot of the stuff is adding features, features. features for me. So like a lot of the stuff for subscribers, there's like a billion features I want to add for subscribers here and there. And luckily, my platform flexible enough, it's gonna allow me to just do that as I as I can. But yeah, pretty much it for me. That's pretty sweet. Yeah, I
+
+130
+01:15:15,540 --> 01:15:40,640
+Wes Bos: think with myself, it's always tough to manage just geeking out on my platform, whereas, like, where I should be spending my time is customer experience and developing new content. So yeah, and that's kind of a delicate balance that we try to have there. And that's why I still have jQuery running on all my sites, because it works fine. And I'm doing just fine. Who knew you could still make money with a website running jQuery?
+
+131
+01:15:40,970 --> 01:15:49,260
+Scott Tolinski: I know I, I would actually be interested to calculate how much money I lost by spending, like a couple of hours removing jQuery for my site.
+
+132
+01:15:49,260 --> 01:15:50,250
+Unknown: Like,
+
+133
+01:15:50,430 --> 01:15:57,540
+Scott Tolinski: I really probably wasn't hurting my load times that much. That said, My lifetimes are nice. Okay. Yeah. Um, yeah, so let's, let's
+
+134
+01:15:57,540 --> 01:16:02,010
+Wes Bos: get into sick pics. Awesome. What do you got for me today? Yeah, so
+
+135
+01:16:02,010 --> 01:16:12,810
+Scott Tolinski: I'm gonna go with something that people ask a lot about is my audio interface, which is, I believe you have the same one the focus, right? Sapphire, the red box. This
+
+136
+01:16:12,810 --> 01:16:16,590
+Wes Bos: Scarlet two idea is what I have. Yes. Okay, so
+
+137
+01:16:16,590 --> 01:17:50,100
+Scott Tolinski: this is a this is the Focusrite Scarlett two itu, it's basically an audio interface allows you to plug in XLR, or just any audio cables essentially, and digitally convert them to your computer. So if you're doing any sort of audio recording, instead of using maybe like a USB mic or something like that, you're gonna get a little bit better pre preamps. and stuff, a little bit better sound, it's sort of like the next step up from the entry level, like podcasters microphone, right? So and this thing is entry level, you're not going to spend a ton of money, I think it's like 100 something. Let's check. It's not very expensive. 140 bucks, super simple. Plug it in USB, whatever. And it just works. I've paid for way more expensive audio interfaces before I used to use an Apogee. I don't remember the exact model, but it was expensive. And it was really fancy and nice, but at the end of the day actually broke. So you know, two years and it's gone. And then I had another one which is an M audio inbox. Well, it was actually on by Digi design at that point. So Digi design inbox, which integrates with Pro Tools and it was like the top of the line nice little box for you know, using Pro Tools if you're like a hobbyist, and then they never updated their drivers and it's dead it's it's just dead weight sitting in my closet. Luckily, this thing is just nice and easy. No super proprietary anything and it just works.
+
+138
+01:17:51,330 --> 01:18:05,700
+Wes Bos: That sounds pretty sweet. Yeah, I have again, I have the exact same one. And it's really cool. Like right now I'm I'm being a true radio personality where I hear myself. I have feedback in my my ears of I can hear myself talking and
+
+139
+01:18:06,000 --> 01:18:14,550
+Scott Tolinski: sounds pretty cool. The next step if you want to get really radio, you got to take one year out of your headphones. You got to get Yeah, you got to yeah, check it out.
+
+140
+01:18:14,700 --> 01:19:14,640
+Wes Bos: Why don't I just get those like beats that you can Beats by Dre like this is swish back. Yeah, swish my sick pic is not the website hotwire. Which if you've never used it before, it's like this website where you can you just book a hotel in a general area, and it tells you how many stars and the amenities. But you don't know the actual name of the hotel. There's this website called better bidding calm, which will allow you to like match up the location and amenities with a list of a hotel. And every single time that I've used it, I've nailed exactly what hotel it actually is. So you can get some I'm going to New York in a couple weeks. And we want to get a nice hotel, but I didn't want to like pay full price. So I went on hotwire and I was able to sort of look that up. And and see so it's better bidding calm to have this little thing where you can like, click through and figure out, do a little detective work to figure out what that hotel is. Thanks for tuning in to another syntax. We'll catch you in the next one.
+
+141
+01:19:14,790 --> 01:19:26,640
+Scott Tolinski: Yeah, see you. Head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like the show. Until next time
+

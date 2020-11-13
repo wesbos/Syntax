@@ -1,0 +1,352 @@
+1
+00:00:01,290 --> 00:01:04,950
+Unknown: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to live ski and Wes Bos. Welcome to syntax. In this episode, we're going to be talking about something that is always an important topic. Something that we cannot talk about enough is burnout. It's something that is extremely prevalent in our industry right now. And in as just everything grows and progresses, it's really easy to get burnt out. With me, as always, is West boss. Hello, everybody. Hopefully, you're doing well. excited to talk about this topic. I think it's a, I don't know, I think there's a lot of a lot of people that are suffering from burnout on the verge of burnout kind of feel like this, this nagging feeling every now and then. So I'm, I've definitely felt that myself quite a bit. So I think it's something that's neat to talk about, and talk about how you can stop it from happening and, and just have a bit of more of a balance work life.
+
+2
+00:01:06,030 --> 00:01:41,520
+As as you learn, right? Yeah, absolutely. And especially those of us who are either work in law, I guess anybody is susceptible to burnout. But those of you who are, you know, you're in the hustle lifestyle of the startup world or something like that. It's so incredibly prevalent. This episode is sponsored by Freshbooks, which is cloud accounting software, and fluent, which is an awesome conference in San Jose. Beautiful, so well, how we're gonna tackle this is, we're gonna talk about like, what it is real quick, if you're not totally sure, what causes it, and then we're going to dive into
+
+3
+00:01:42,840 --> 00:02:36,240
+how you can sort of get around it, how you can avoid it, how you can fix it, if you're sort of leaning that way and, and hopefully give you a couple tips to, to stay away from it. Because like, I honestly think like that my competitive advantage in this industry is having mostly figured out I don't know, I don't I wouldn't say totally figured out but I would say mostly figured out how to have a bit of balance in my career. And I think that is a massive competitive advantage. When you're, you're in any business, and especially web development, being able to be both good at what you do, but also not hit that wall. Because often I see people who are just like, just given her and there's definitely times in your career where you're super into that. But you can definitely see it from a mile away where that's gonna crash and burn in six months from now, because there's no way that sort of
+
+4
+00:02:37,500 --> 00:03:39,990
+involvement that sort of hustle is is sustainable at all. Let's kick it off and talk about what is burn out just for those who might not know or I don't know, it's kind of a weird feeling. So do you want to take a tackle at describing what that feels like? Yeah, it's well, burnout is a, I guess it could be like, categorized as a sort of overwork to the point of pure exhaustion. And it could even be like depressive like symptoms where you don't want to work. You don't want to, to spend any time learning, you don't want to even look at code, right? You just, you sort of just want to check in at work or check out or whatever, show up, get paid And leave and you're no longer passionate about what you're doing. You're no longer excited by the challenge of code or anything like that. You're You're lashing out at people who are also actually keeping up with the the modern, sort of new things. And if somebody mentions a new JavaScript framework, you're gonna say that thing is stupid, because I don't have time. I don't have a energy. Yeah, think about it.
+
+5
+00:03:41,100 --> 00:03:43,380
+Yeah, I think it's just it's best summarized as like,
+
+6
+00:03:44,490 --> 00:04:37,380
+just like that gut feeling where you just lose all enthusiasm for, for what you're working on. And I want to be careful around that. Because I think burnout is a bit different from just not liking what you're doing. I think that burnout is really easy to say, I'm getting burned out. It's like, No, you just hate what you're doing. And we've all had, I have at least one day a week where I just have to work on stuff that I don't feel like working on. And it's just not fun. And I don't want to do it. But you got to sort of slog through that. That terrible work to get to the fun stuff. It's not all going to be fun. And I think one of a trait of being good developer is being able to work through that work that you don't like but burnout is just like day in day out you start to lose your enthusiasm you start to hate what you're working on. You start to detest what it is that you're doing working for the weekends kind of a TJ Yeah, right like that kind of mentality.
+
+7
+00:04:38,400 --> 00:04:59,970
+over weeks and months can can start to lean learn to sorry lean to it to what I call burnout. Yeah, and I you know, a lot of our sort of modern the way we're, we're telling each other to work this hustle harder sort of thing. It's like permeated on perpetuated, not permitted on all these different social media platforms for you have to work harder, work harder.
+
+8
+00:05:00,000 --> 00:06:19,860
+Work harder, you know, keep going. And that that does nothing but breed this feeling of you can't keep up. Or you're maybe not as adequate as these other people because you can't keep up, right? Or it's just that you are trying to keep up so hard and realizing it's slipping and slipping and slipping and slipping. And eventually, it's just overloaded to the point where you can't feel like you can do anything. Yeah, I'm all about the hustle. And I'm all about the the hard work and just putting in the time and yeah, and really given her but part of being good at that part of being a very efficient productive developer is knowing how to have balance in your life and knowing how to take a break. So that when you come back to it, like we talked about this, on one of the fitness episodes, or I think as a productivity episode, where it taking time out of your day to actually go to the gym, will make you a more productive developer. So by working less, you will get more done at the end of the day, I think that also lends itself to just being a productive developer. Yeah. And avoiding burnout in this case. Yeah, absolutely. And we're gonna be talking about some of these things about how to prevent it and stuff later on in the episode, but there are there are just so many things that you need to structure into your life to make sure, so Okay, so we got that you're overworked, overloaded, overstressed.
+
+9
+00:06:21,030 --> 00:09:38,130
+So why? Why is being burnt out bad? I mean, this is kind of an obvious thing, right? Why is it bad to be burnt out, even the word sounds bad. Typically, you're things that are burnt out, or like an engine that's overloaded, or something like that, right? That it's no longer able to function correctly. So that's really just it is that it's bad, because you're no longer able to function correctly, you've lost your passion, everything becomes monotonous, a lot of it is just really that, like, all your learning is going to really be halted or slowed down, and you won't be developing as much as a professional as a human being, or anything in life. Because why would you want to learn something if you're so overwhelmed or overloaded by it? Yeah, it's, it's kind of scary, because especially I think that there's, there's a lot of people that are sort of sort of feel like they're keeping their head above water in our industry, because it moves so fast. And it's kind of scary to be in a spot where you don't want to keep learning and you don't want to, you don't like what you're doing, but you feel like you have to keep it up and to keep building stuff. Because otherwise you're gonna fall behind, you're gonna be without a job, and you likely have like a mortgage or a family or you have, like you need that job to, to keep going. Right, yeah. And then a more serious level, it could lead to abuse of drugs, or alcohol or anything like that, just because of these depressive symptoms, where you're not wanting to do anything, right, you're not wanting to work, you're wanting just come home and unwind or something like that. Because you have a hard time leaving your work or something like that, maybe you're drinking a little bit more. There's a lot of heavy stuff involved around there. And it all, you know, it doesn't have to be that serious. But like, I mean, it certainly could lead to that sort of situation. Yeah. And, you know, I mean, you talked about your work life balance is one of your greatest skills. And one of my not greatest skills is the fact that I haven't totally gotten this figured out yet. You know, I I'm definitely getting there. And then this year has been one of my main goals is to take more time, and I've always had my, my hobbies that help out with and stuff like that. But, you know, it's, it's a problem, when some of your hobbies are starting to the things that you do every single week, these things that you do to unwind, you're starting to put them off to go work more. And that that is a little bit of a warning sign. So I personally have not mastered this, and I'm definitely getting better at it. But I had, you know, numerous situations last year, where I was just putting in putting in the days, you know, 12 hours, yeah, just constantly 24 seven, working both weekends to try to get this stuff done. And it was it was getting really bad. I was not, like I said, I wasn't going to breaking practice, I was making reasons to, to avoid taking the breaks, or maybe playing a video game or going on a date night or something like that. I was I was making these excuses, because I had so much to do, and there was just so much on my plate. And I thought I never possibly get all of this stuff done. Without absolutely grinding for it. In turn. I did not want to get out of bed. I did not want in the same turn. I didn't want to go to sleep either. So you you'd wake up and you'd be like, yeah, I'm not. I'm not feeling like I want to do anything today because there's just too much to do.
+
+10
+00:09:39,300 --> 00:09:48,150
+And that sort of really just it got really tough, right? And it didn't get any better until I prioritize these things. I I
+
+11
+00:09:49,170 --> 00:10:00,000
+you know, my wife, Courtney, you know, she sat down and we had a chat about here's what needs to be instituted in your life to make this better and a lot of it was having designated
+
+12
+00:10:00,000 --> 00:12:19,710
+nights to unwind, chill out, go to practice more, make things like going to work out a priority, all sorts of stuff like that. And we're going to talk a little bit about how to prevent burnout a little bit more later on coming up here in the episode. But really, it was it was a problem, and definitely something that I'm hoping to improve this year. And I'm already seeing quite a bit of progress. That's awesome. I see that in myself as well, where if you are having problem with some code, or I'm coming up to a big course launch, or I'm just frustrated, in general, I'm not getting moving as fast as I thought I could be with something. My immediate reaction is just to throw sheer time at the problem. Yeah, which I always look back in hindsight saying, like, that was a stupid idea to, to do something like that. And it's something that I'm slowly, slowly doing, because I think that every time that that does happen, I throw your time at it, it's just not the code quality suffers. Every everything suffers at the end of the day, and and you just start to feel like garbage, because you are just so I think like both like physically taxed, but also just mentally taxing as well. And, and I also want to say like, this is not to say like people who are, are putting in those long days, that's not necessarily mean that you're going to find yourself in burnout. Like I definitely when I was first learning to code, I was just loving it and just absolutely wanted to spend every single hour with the thing. But after I had done it for a couple years, and I realized that those those longer days were not as fulfilling, but they just left me feeling like garbage. Yeah, yeah, like, like garbage. I mean, it's it's exactly it. And I don't know, it's one of those things that you if you haven't experienced it before, you almost don't know that it's coming on until it's on. And you're just so used to working, working, working, and all of a sudden, you're just like, Ah, oh, like there's just like, great feeling of despair or whatever, that you just cannot do any more work. But by then it's already too late, right? So, because of that, I guess we want to dive into a little bit of how to prevent it. Because at this point, right, we have,
+
+13
+00:12:20,730 --> 00:12:21,840
+we've established
+
+14
+00:12:23,010 --> 00:12:42,150
+you know, what it is how this sort of onset feels. And we also sort of talked about how it, it's too late, right? Once you're feeling burnt out, you are burnt out. And it's much tougher to become unburned out after you're already burnt out. So how can we start to prevent this kind of thing from even happening in the first place.
+
+15
+00:12:43,230 --> 00:13:28,200
+And it's easy to get overwhelmed with all this stuff when you have so much to do. So I guess there's a little bit of heavy transition. But I mean, one of the ways that you can prevent being overwhelmed is by, you know, farming out some of the things that you know, you have to do, or not unnecessarily farming them out, but making them easier. One of our longtime sponsors fresh books, again, is something that in my opinion, makes accounting easier. And accounting is one of those things that I look at all the time, and I'm just like, Oh, I don't want to do my accounting, that's extra stuff I got to do. It's just more and more and more things on my plate, right. So I'm really thankful for products like Freshbooks for making that part of my life quite a bit easier.
+
+16
+00:13:29,670 --> 00:15:00,000
+Absolutely. So for my Freshbooks ad read today, I wanted to talk about one of the the products that Freshbooks has in it's, it's just a free book called breaking the time barrier. And kind of it's it's pretty cool because like Freshbooks, put out this free book. And it's not about how to best do your accounting or, or something like that. But it's they honestly want their customers to make more money at the end of the day. And that's why they have all these automated payment reminders. They make billing really easy. But another way to make more money is just to charge more. So Freshbooks put out this free book, which was written by their CEO, Mike McDermott, and it's called breaking the time barrier, how to unlock your true earning potential. So we talked a lot about in the freelance episodes, how to do value based billing and how to really get paid what you're worth and how to stop chasing that time talk about like putting hours in and getting burnt out. The best way to kill your passion for a coding is to maybe start a business in it, and just to throw your time at it because it's one thing to be worried about keeping up with code. But it's another thing to actually have to get stuff done for your clients when you're you're sick of it. So being able to Bill what you're worth and be able to take that time off is super important. So I want you to check out this free buckets online from Freshbooks. They also I also have a print copy. I think I picked it up at a meetup at some point. But just give a Google search to breaking the time barrier and also sign up for your
+
+17
+00:15:00,000 --> 00:17:22,290
+30 day free trial of fresh books@freshbooks.com Ford slash syntax and you syntax into the How did you hear about a section? Nice? Sick? Okay, so good. Yeah. So again on the line to that is is making your life easier for yourself is definitely one of the things that you want to do to prevent, to prevent verb burnout, right? Like, what kind of things can you automate? Can you remove from your life that you have to do every day that you don't need to do every day? Or like, potentially you're, you're, you're not like doing your things efficiently, right? I guess those are two separate topics. But really, if if part of the reason why you're burned out is that there's too much on your plate, it's, it's finding these patterns of things that you can remove from your plate in a consistent manner. Rather than just you know, getting rid of this play getting a you know, the next one the stack until they're all done, maybe like grouping and organizing and automating to help sort of relieve some of that pressure. Yeah, I find that a totally sometimes you hear people complaining about all the work that they have to do, when if you were just to spend some time, investing in your tools, investing in your process. And you can really automate that I take all the time I there's a lot of work that hate doing. And we talk about doing like shit work, where I cannot force myself to do work that I do not like doing. And like one example was people would always ask for amendments to the receipts. And like, that's like the last thing I want to be spending my time on, which is adding your VAT number to a receipt of something, right. So I implemented a voice system where the user could easily just amend the receipt and add in that information so that their, their billing information was cracked, right? Or we talked a lot about email, go back to the email episode. And I hate doing email. So I have a system for it, right. So if you are feeling like you're exhausted by a lot of this busy work, and you you just have too much to do, as well as sometimes there's just so much going on in your head where you're trying to keep all these balls in the air. If you can set aside some time to build both build tools for that, whether it's building a workflow, whether that's building actual, like coding things that will automate tasks for you, rather than having to manually do it.
+
+18
+00:17:23,730 --> 00:17:32,160
+Like that. Or it just spending time on like getting your email workflow down, Pat, that's going to really help you out in terms of taking that stuff off your plate, like,
+
+19
+00:17:33,180 --> 00:17:40,440
+even like if you were to look at my calendar for this week, let me go open it up right now. My calendar this week has
+
+20
+00:17:42,840 --> 00:17:44,880
+one thing on it. And
+
+21
+00:17:46,080 --> 00:18:00,240
+that's that's it, I just have a physio appointment on Wednesday. That's it right. And I have absolutely nothing else. Why? Because like, I very aggressively turned down meetings, I don't go for coffee, I don't
+
+22
+00:18:01,260 --> 00:19:59,250
+have calls all that often. Obviously, that's it's not completely avoidable. There's all these things, my entire week is pretty much just wide open. And that's intentionally done. Because if I want to work on something, I usually have the entire day just to spend my time working on that. And I'm not trying to, to juggle meetings and phone calls and all these kind of like little tasks that I have to do, I usually take a day out of my week to do all the little tasks that things that have to get done, here and there. But having a nice clear schedule is extremely important to to avoiding this stuff, I think, yeah, but that also is a product of you doing your own thing. Because so many people, like they don't get to pick their own calendar, right? I mean, they get no meeting invite, and they have to click accept, or else their boss is going to be like, why aren't you coming to this meeting? I mean, I just, I remember back to my days at agencies or, or anything, just like all of the pointless meetings and all this stuff. Yeah, and, you know, some of the times we're most productive was when your boss was on a vacation, and you were just working really hard all day instead of having to take this time out. So I mean, it's it's not like the easiest thing to do. But you know, if you're in that situation, I mean, you could address why these meetings are killing your productivity in various ways or adding overload or stuff like that. And they may tell you to just you know, screw off or whatever you might not be like they totally receptive to that but it doesn't hurt to to have that dialogue. I've done it with with clients in the past where there was too many meetings and I said like, look like you're billing me by the hour. It'd be fine to sit my ass at a meeting 11 times a week, but I just can't get anything done with this amount of and there's this kind of like thing I've been been looking into lately which is like locus of control. This is going a bit off tangent but locus of control is
+
+23
+00:20:00,210 --> 00:21:11,160
+degree, I've got it on Wikipedia here the degree to which people believe they have control over the outcome in their lives. And you often do hear people complaining about, Oh, that must be nice for you to be able to have a completely open week. But the reality is, is that I saw myself getting just engulfed in meetings and calls and all this like little busy work. And I set out like maybe three years ago to say, like, I don't want any of that. And after three years, I'm almost completely wide open to working towards that. Yeah. And you have control of that. And we'll be talking a little bit more about like, work life and an actual job situation burnout, sort of advice there. And I mean, you mentioned like emails and stuff like that. setting, you know, time at the beginning, and the ending of your day to check email is a common tip amongst productive people. Yeah, and I definitely, like not having to check your email 24. Seven does a and st link, reduce my anxiety absolutely does or, or turning off notifications on my phone was like, one of the big things for me, I just turned off all notifications for anything, unless obviously, someone's calling me and it's an emergency, but
+
+24
+00:21:12,300 --> 00:23:36,600
+I don't, I don't pick up my phone to just check every single time I get an email now, because I'm not getting the little flashing light or any sort of indication that I need to go pick that up and, and do that thing. So so that's definitely a big thing as to to get those automations in place. And, and I should say, like, it's hard to see the forest from the trees when you're in it, right? When you are really just feeling this this heavy workload, you want to keep scrubbing plates, right, you want to scrub plate, throw, scrub, pray, you know, like a cartoon or something. But like, it's really more advantageous for you to take a step back to look at the overall big picture, make an organizational plan, plan it out, and then go forward with it rather than to just keep scrambling, because that scrambling is only going to lead to worse performance, you're going to miss things. Again, things like testing, you're not going to want to do because you got to keep going, you got to keep adding features or whatever, who cares for tests, and then turn, your code is going to suffer because you're going to have bugs, those bugs are going to come back to bite you. And it could have been prevented if you had some sort of a bigger plan. Another, you know, thing we talk a lot about on the show is is using your hobbies and work life balance in the terms of being active getting outside going for walks going to the gym, I go to dance practice twice a week. And let me tell you, there are some days where that dance practice on Tuesday night is you know, it's from eight to 10pm, we put the little guy down and I drive out to the north side of Denver to go dance practice, it is not easy to to get myself in that car and go especially in the winter, right. And then you're there, you're tired, you've already had a hard day, and I get there. And honestly, I've never been upset when I've left every single time that I leave. I'm just like, that was worth it. I feel so much looser, I feel so much less burdened, I took that two hours to stop thinking about everything that is plaguing me. And I've used that creative energy output in a way that is expelling a lot of energy, a lot of that stress, right? So this kind of stuff is very, very important to take time to burn some of that energy or that excess stress off of you via working out walking going to the park or something like that.
+
+25
+00:23:37,920 --> 00:24:07,590
+Yeah, I can't tell you how many how many times I do not want to go to the gym. And then I come back from the gym being like, Oh, that was amazing. How do I keep forgetting how this feels when you are finished the gym, right? Yeah, oh, it's always all the time. Like I don't want to go and then you start working out and you're like, Oh, this is great. And then you come back and you're on top of the world. why don't why doesn't everybody do this? Yes is amazing. So that that paying attention to your health both like what you're eating, what you're eating what you're
+
+26
+00:24:08,790 --> 00:24:40,950
+what you're doing in terms of exercise is so important to to avoiding burnout. And I'd say that's probably one of the top ways to avoid it. Because it's both going to take you away from your work as well as all of the good things that exercise does to your mind and your body. Yeah, I actually a personal story. I woke up this morning, I was dropping my son off at daycare and as I was getting carsick, you know what, I don't know if I really want to go to the gym today. I have a lot to do. And then I was just like, you dummy. What are you thinking? Like?
+
+27
+00:24:42,480 --> 00:24:59,970
+So so mad at myself for just being like, yeah, I mean, I didn't it didn't hit me until we started. Just talking about it just now that here I was trying to rationalize avoiding the things that I need to do to prevent burnout here and I'm just telling you, it's like a problem for me and I'm trying to
+
+28
+00:25:00,000 --> 00:25:13,110
+Still trying to avoid the things that I know are going to help me here. So that's how hard it is if you're this type of person who just likes to work, work work, it's tough. It's tough to shut it off.
+
+29
+00:25:14,370 --> 00:27:23,850
+Totally. I think another one is, let's let's talk about sleep. And then we'll get into the the more of the the motivation, the more mental ones, I guess, sleep very important. Obviously, I do not get enough sleep because I have kids, I'm coming off like a two hour sleep right now. Yeah, from my kids being up all night, and I feel like garbage. And I think it's really easy to get poor sleep. And it's really easy to stay up a couple hours later than you actually are. And then when I do get a good sleep, I feel on top of the world and I definitely noticed my productivity just just skyrockets. So that's important one to keep track of. Yeah, and again, another one that is better to take care of sooner rather than later. Because when you are burned out, you can lose sleep over thinking about your code, your work or your stress. And that can actually give you poor worst sleep, and it can just make the problem worse. I myself am not a good sleeper, I will sit up and think about code problems all night long. It's a terrible, terrible thing. So I have to, I have to train myself for use things like that app headspace, which is like guided meditations sort of relax you to get you in the mood, for going to sleep or to get your brain off of those things, or play. Like, I know, video games aren't always super good idea there because they, you know, excite your mind. But playing a relaxing video game, I was getting your brain into a space that is more meditative and relaxing through reading headspace, or whatever you can do to relax yourself. Um, I think we should talk now more about just like motivation in general, towards your code. Because I think sometimes this the burnout doesn't necessarily come from some of the physical stuff that we're talking about. But it can just become from the work that you're doing the actual work that you're doing. Because often you are working on things that might not be as exciting as you want. Maybe you're working on a particularly hard problem. I remember spending just weeks and weeks just trying to like, tweak some CSS, that was like such a slow process and you feel like you don't get anything done. And you're not really proud of what you do. And
+
+30
+00:27:25,140 --> 00:28:18,600
+I really think that your your motivation in life comes from lots of small wins. And if you if you stop having those small wins, and if you're not proud of don't feel good about the stuff that you're working on, it's it's easy for this feeling to sort of creep in, right. So whereas taking breaks is really important, I think it's also as important as just making sure that you are either working on stuff that excites you. And obviously not everyone can be doing that because your job is your job. And you have to work on the stuff that you're assigned. But it's important to have maybe side projects or to be always investigating new avenues. Myself, I find listening to podcasts or watching conference talks. Yeah, I'm working on new JavaScript API's just sort of stuff that's out there. Like I think back to
+
+31
+00:28:19,800 --> 00:28:46,290
+when I first got really excited about this stuff. I was just doing stuff for the fun of it. I was working with webcam stuff, I was building little applications that would help me buy bikes from Craigslist much faster than anyone else, right? I would just have all these projects. And I still do have all these different projects out there myself. And it's fun to have these little pet projects that are both something that you're totally invested in and having fun with. But all you're also learning something new
+
+32
+00:28:47,730 --> 00:28:49,500
+as you go along. Yeah.
+
+33
+00:28:50,820 --> 00:29:37,980
+I mean, this is definitely one that is like it's very it can happen. And when you're working at a job, right, because a lot of times you're not getting to pick your projects. I worked at an agency, and they are sort of mandated. Everything is CMS based, it has to be using these older versions of PHP. So we were primarily on WordPress and Drupal, specifically. And there were blocking a lot of newer techniques and technologies, you had to support old browsers. And I think I was just so not happy with the work I was doing. But also the people at work, they would finish their jobs really quickly. Right? So we'd build a WordPress site, you'd knock it out. And then some some of the dudes were like playing games on their phone and stuff like that. You just end up sitting there for a while. And
+
+34
+00:29:39,000 --> 00:30:00,000
+if you work around that environment, you end up getting into the trap of being just like that. And I remember starting to play games on my phone in my free time at work and thinking hey, I'm getting paid for this. And then it was maybe novel for about a day and you're just feeling like, ah, I don't want to do anything right. I don't want to do any work or whatever. I'm
+
+35
+00:30:00,000 --> 00:30:27,690
+Just not excited by any of this. And part of that started to really turn around. When I started learning different different frameworks I, at that time, I had so little to do at work, I instead of, you know, hanging out with the guys and playing whatever on their phone, I started doing a tour of all of the different front end frameworks, I learned backbone, I learned Ember, I learned everything under the sun, and I was feeling productive. And by the end of it,
+
+36
+00:30:28,920 --> 00:31:01,560
+you know, a couple weeks later, I had a job offer from a better place, because of specifically that stuff I was doing and I got out of that job. And then my new job was exciting and fresh, and all this sort of stuff. But it was just so beat down by doing this same sort of monotonous work that was not exciting and not motivating to me, and I could not modify that I did my best I could and so instead, I found things to motivate myself and found ways to pull myself out of that and that in turn led to a better situation overall.
+
+37
+00:31:02,580 --> 00:32:18,750
+Man that that might be some of the best advice that that is in this entire episode. Because like I cannot agree more with with being learning new stuff is both going to reignite your passion with the stuff but it's also going to make you extremely employable. So that if you are in a bad situation with your job and and you can't talk to your boss about maybe using new tech or negotiate negotiating some time every week to learn then it might be time that you you go see you go get a new job. Yeah. And by having side projects, and getting to know this stuff is is definitely going to help you in that way. Yeah, I mean, it is funny that the stuff I learned in that tour is directly what I got the job doing. So yeah, it was it directly caused myself to shoot up. And not only that, but it was a nice, huge pay pump for me. So you know, all around, it was a good thing. So not not to toot Scott arrise own horn here. But I think the best way that you can do this is not to aimlessly wander around outdated, broken GitHub repos with lots of examples, because that's what Scott and I do, but but then we distill it down into tutorials. Like, I would definitely recommend that you pick up a tutorial, one of the best
+
+38
+00:32:19,920 --> 00:32:50,880
+things I ever feedback I ever got on my course was someone said, Wes has reignited my passion for web development again, and I just thought that was such a good feedback. Because like, that's exactly. I think a lot of people are like, Huh, like, oh, new stuff, I have to learn something new. But if you if you maybe take a course, that's fun, and you're learning a lot of new stuff, and and you get excited about again, and you think back to like maybe when you first got in this and you it was really hard, but you were really excited about it. So taking some sort, of course I definitely recommend.
+
+39
+00:32:52,320 --> 00:33:50,280
+Yeah, I'm, uh, I'm working on a talk right now about my, my, everything I've learned about learning, right? Because I have to learn so quickly for this kind of job, right? And one of those points is, is that go back to when you first started, right? Because when you first started web development, chances are, you were just very, very motivated and excited, and you weren't burnt out. But you are motivated and excited because everything was exciting and interesting. And you were you're getting to learn all this new stuff. But I guess we could talk about the other side of the coin coin is when you're you're there's also a situation where you're spending all your time learning new stuff. And that's what's burning you out. I just learned this. And now I have to learn this and this and this. And I just learned that now, this is no longer used. I just learned Redux. And now people are telling me not to use Redux context API that that can lead to burnout so quickly. So I guess in that, that instance, the advice would be, you don't have to learn all the new stuff.
+
+40
+00:33:51,660 --> 00:34:30,960
+Because if you try to learn everything that's new, you're gonna have the same it's a balance right now everything is is this way or that way. You don't want to go full swing into either direction. You want to take your time to be motivated to find stuff to learn and do all that stuff. But you don't want to feel like I have to grab this and this and this and this and this forever. Yeah, so if you are feeling like that, please refer back to Episode 35. Keeping Up With The Kardashians, which I Scott made that stupid title, and I almost I almost axed it and deleted him from slack. But then yeah, but it was a hit everyone love that title. So I, I see corrected.
+
+41
+00:34:32,190 --> 00:35:00,000
+I came up with that title. And I messaged Courtney first and I was like, Courtney, before I send this to us, I need your honest opinion. And I was like, I think this is hilarious. Like what do you think? And she just sends me back? No, no, don't even send this to you. He's going to kick you off the show. He's gonna he's gonna do the show by himself. He would rather do that. But then I was just like, no that come on. It's not that bad. There's no way it's that bad. So then I said to you, I'm like, yeah. I'm a
+
+42
+00:35:00,000 --> 00:35:08,970
+Where this is this is, this is bad. If anything, it just it just talks. It says lots about our audience where everyone thought that was hilarious.
+
+43
+00:35:10,050 --> 00:35:17,430
+Good. Awesome. Speaking of learning new things, let's talk real quick about a sponsor our sponsor today.
+
+44
+00:35:20,520 --> 00:35:53,760
+This as well. So our sponsor today is O'Reilly's fluent conference, which is, you know, O'Reilly, they build all the books with the animals on the front. They have a conference that is they are building a better web. It's from June 11th to June 14, is an absolutely massive conference. I've spoken at it before they have some of the best people in the industry speaking. I'm just on the website right now. Lynn Clark from Mozilla, she's the one who builds all those amazing like, how does Redux work in cartoons? Like?
+
+45
+00:35:55,530 --> 00:36:03,540
+A good way to explain things she just is awesome illustrations a Peggy from Apollo. She's, she does a lot of the dev on
+
+46
+00:36:04,860 --> 00:36:10,980
+Apollo clients link city, link state and all that stuff. Who else is speaking here, Val head.
+
+47
+00:36:12,390 --> 00:36:16,020
+Patrick Hammon, I've, he does a lot of performance stuff.
+
+48
+00:36:17,340 --> 00:37:02,520
+Who else? I'm just just scrolling through all the Cory Doctorow. Wow, that's impressive. So, so some pretty awesome speakers at this. And I think that conferences are a fantastic way to reignite your passion in web development again, because it takes you out of where what you're working on. And it puts you into all kinds of different areas of people are working on stuff in all kinds of different areas. And you can sort of dip your toes into different things like you can dip your toes into performance and into react and into different parts of CSS. And it's pretty nifty. So I want you to check out O'Reilly's fluent conference, the training is on June 11, to 12. The conference is on the 12th to the 14th. It's in San Jose, California.
+
+49
+00:37:03,810 --> 00:37:13,470
+You can go to conferences.oreilly.com forward slash fluent to grab your tickets, and you can use the code syntax for 20% off.
+
+50
+00:37:14,850 --> 00:39:08,040
+Nice, dope. Nice, dope, dope, dope. Okay, so we talked a little bit about how to prevent we can talk a little bit more and this I kinda want to focus maybe a little bit more on like nine to five jobs stuff, people who are working in an office, we talked a little bit about this. But you know, chances are you could be burnt out at your office, if you're overworked, underpaid, you know, that again, though money, they could throw money at the problem right in, in, you know, a new pay raise is only going to temporarily make you happy, that regard, you're still probably going to end up being more burnt out, even if they're paying you more, but uh, in my opinion, too much overtime for too long, especially not getting paid for it, we had a situation where we had three devs on a project, we were already working hard and one of the guys couldn't hang so they let him go. And then that work just ended up getting dumped on to the other me and this other guy, Jeff, our plates. And we hustled through it. But at the we knew it was going to be like light at the end of the tunnel, like you're only working this hard until we get a new guy on the project. And until then we'll pay you overtime. So because of that, we were able to say okay, we just chug through this, right? And then that was a situation where you work your ass off instead of working your ass off to get burnt out. So if you're, if you're not getting overtime for continuously working overtime, I would not do that I would be looking for another job, I would say I'm either pay me overtime, or don't give me overtime work. And you are valuable enough. Not necessarily to just tell your boss that but you are valuable enough where you can go look for another job. Or you can prevent that situation from happening. Because if you're working 60 hour weeks and getting paid for 40 hours a week, someone else will pay you that money for that time. There's just no way about that somebody will do that if you're employable.
+
+51
+00:39:09,090 --> 00:39:40,350
+So there's no use of really putting yourself through totally, I think if your employers worth anything, letting them know that you're starting to feel burned out and letting them know that you're you're just not feeling great about all the work that's that's coming your way. And that you might need some sort of break or you need to switch things up. That's, that's something that needs to happen in a lot of use cases. And if it's a decent employer, they're hopefully going to understand because they value you as an employee, and they know that pushing you to the bone isn't going to help anyone.
+
+52
+00:39:41,640 --> 00:39:58,380
+Yeah, absolutely. If they don't tell you you then that's that's a big problem. Yeah, communicating with your management. I mean, they're your bosses, but there are people and just like any good relationship, you should be having open lines of communication and you should let them know how you feel in a very nice and professional way.
+
+53
+00:39:59,430 --> 00:39:59,970
+Yeah, and
+
+54
+00:40:00,000 --> 00:40:23,280
+We've mentioned this several times today, everything gets bad enough look for a new job, there's really just no reason to stay at someplace that doesn't value you as a person. Yeah, we're in a pretty good industry, at least right now, where if you are a decent developer, you have probably in much more demand than you think you are. So it might be it's not easy to find a job, especially like I know people have.
+
+55
+00:40:24,630 --> 00:41:37,080
+They might live in a small town, there's not a whole lot of opportunities out there. But it's worth putting yourself out there, especially for even remote work as well. If you live in a small town, you can't necessarily find something. Because if you sort of stick your heels in and in and keep going with it for next four or five years, then then you're going to sort of wind up being like, Oh, I'm five years later, I absolutely hate it. My skills are out of date, because I haven't wanted to keep up and, and now I feel like I'm scared of scared of losing my job because I'm just not relevant anymore. Yep. Yeah, absolutely. All very important. Okay. So next is you've burned out. Because so far, everything's a little bit preventative, right. And this is the point where you've already gone over the edge, you are feeling totally worthless. You're feeling like you don't want to do anything you don't want to learn. What can you do to reignite your spark to get yourself going to get yourself out of the dumps? Like, what's, what's the first step? You're just like, oh, crap, this episodes really hit hit a nerve with me. And I'm feeling like, I'm totally burnt out, what do I do?
+
+56
+00:41:38,460 --> 00:42:17,700
+So, in my opinion, the first thing you want to do is to, I would say, if you can, if you have vacation time, or whatever, take a personal day, right? If it's a job, take a personal day, if you work for yourself, take a personal day, it's one day, everything will be fine, when you come back to it, take that day, go for a walk, go for a hike, go downtown, do something fun, do something that's non destructive. So it's like don't go out to the bar and just go get hammered or something like that, do something that is going to be a positive, and just let everything go right, this, this work will still be here. Even if you have deadlines or whatever, take a vacation day.
+
+57
+00:42:18,780 --> 00:43:34,830
+And that's going to get you just a total refreshed mindset. And what you're wanting to do is when you come back is you're going to start to make a plan on how to make things better. Because we mentioned before, when you have all of these things that you're juggling, it's so hard to really take the time to see the big picture. And this point, you've you've distanced yourself a little bit, taking a day or two or maybe even a week or whatever. But you've been able to distance yourself enough where you can start to look at the bigger picture and start to make a plan to organize, automate, take care of these things in a way that when you come back to work, you're not just like, shit, let me just start working again, as hard as I can. Yeah. Because then you're just going to get right back into the dumpster. I think some of those things that it could be in your plan is you obviously can't just stop working. But I think there's a lot of other things like figure out where a lot of your source of burnout is, is potentially coming from, it might just be that you have to stop going on Twitter, every single day, because you're seeing all of the new stuff is stressing you out and giving you anxiety FOMO. And you need to turn that off. Or maybe it's all the I know that a lot of people get burnt out from GitHub notifications, you do this amazing thing where you create all this open source software. And then it just becomes this enormous burden, where there's thousands of people
+
+58
+00:43:36,000 --> 00:43:48,030
+relying on your own open source software. And there's there's bugs that need to be fixed. And there's ideas, people have opinions and pull requests need to be merged. There's all this like, extra work that needs to be done.
+
+59
+00:43:49,560 --> 00:44:29,850
+And maybe it's just reaching out and saying like, I need someone else to do this, right? Like being able to delegate that to somebody else who is invested in the project and, and letting it go, right. Like I'm a big proponent of sabbatical. I think in a lot of different occupations every I think it's seven years traditionally, where people just take six months off from the work. Obviously, we can't necessarily do that in web development. But by maybe taking a break from some of these things that do cause you to burnout will will be helpful, and you'll be able to come back refreshed and with a new attitude towards it.
+
+60
+00:44:31,050 --> 00:44:59,910
+Yeah, I mean, one of the big things I think you even touched on there was just delegating, giving up some of the control, right? You're an open source maintainer, maybe you're the only maintainer. Look for the guy who is sending you the most pull requests and say hey, do you want to be a maintainer of this project or even put out a call how you know, is there anybody who would like to help me maintain this project, or just just looking to give up that control? I have a hard time with giving up control. I know we've talked about this before. I have a hard time with don't want to do everything myself.
+
+61
+00:45:00,000 --> 00:45:23,850
+It's not necessarily that I feel like, I can do it better. But I know the project, it's gonna take me less time just giving up that control and delegating or even just giving up the control overall and saying, Hey, listen, who wants who wants this thing? Who wants to help out? Will will definitely help you in that regard? Oh, yeah, I would say also, one kind of fun thing that you can do to,
+
+62
+00:45:24,990 --> 00:45:40,320
+to make this better is to have like a online chat group of just some other developers that not aren't necessarily your your co workers. Because sometimes I'm so frustrated with something. And
+
+63
+00:45:41,370 --> 00:46:35,250
+it's causing me to, like, really hate what I'm working on. And all I really need to do is just a sounding board of six or seven other devs or, or even just like messaging Scott and being like, I can't figure this out, or isn't, this isn't the way that they designed this API stupid, and you could just ran, you can just rant for 10 seconds. And then or like, Oh, I totally ran into that. Here's how I went around it. And just having like a sounding board that will help you get across your problems. I think sometimes when you when you hit problems, you put all that weight on your own shoulders when the reality is if you just took a break, or if you just have a sounding board of other developers to listen to your problem, you can often get through that, that dark period of being frustrated with what you're working on much faster, whether that's just like somebody is being dumb, do you or your code is not working?
+
+64
+00:46:36,450 --> 00:48:52,230
+Yeah, and shout out to the level up tutorials slack room for doing exactly that. And there's a number of guys and gals in there who will just chime up again, either expressing frustrations or sharing their their latest thing or whatever. But I mean, I even just yesterday, I was, like reworking the entire styled components system design system in my my site. And I was just like, this is really hard. I'm very frustrated. When I'm there, you know, hey, it turns out redesigning your whole design system after it's already in place is very difficult. And it's no fun. But it's definitely something you've got to do. Right? So it's on the list. So yeah, so Okay, you you get this place to sound off is definitely like a good thing. But how do you you're let's say you've, you've burnt out, you sort of recharge, you've got these things? How do you rekindle this, the spark has still burned out the engines or whatever you get to get this new spark to get going up and running. And one of my favorite things, again, is to learn something, but have it be inconsequential to your business or your work, right. Because if you're learning everything or your work is taking over your life, the last thing you want to do is to learn something that is like business critical, what my my opinion, you should learn something fun, you know, maybe it's if you're into audio visual stuff, you can work with the Web Audio API, or the camera, the web RTC, or do something fun or just goofy that way. Or maybe you want to explore Canvas a little bit. But that'll like still be increasing your coding skills while having it not be mission critical. It's not going to feel the pressure of work, and you're still going to be making some sort of progress advancement, you're going to be learning something new is going to drive motivation. Absolutely. I cannot agree more. And I do that all the time. myself. I have a massive folder of demos that I have never seen the light of day because it's just little things that I fiddle around with myself. And yeah, it's not something that I want to put out because it's it's not necessarily that all that interesting. But I learned a little thing. I built a little tool for my own like, the other day, I built a script to do automated DMCA takedowns on YouTube, because I have all these silly, silly folks who buy my course and upload it to YouTube.
+
+65
+00:48:53,250 --> 00:50:00,000
+And then YouTube's DMCA takedown is like five minutes per video, but there's a you can I built a script that would automate it. And I just like run the script in the console on a YouTube page, and it will automatically generate the whole takedown notice for me. And it's amazing. So like that. And that that felt good to do that, right? Because I had I learned a couple things along the way. And I had success in it and that those little successes are where your motivation comes from. Yeah, absolutely, totally agree. And I have like, my I bring this project up this B boy tools. It's an app I use for breaking. But I use this app as a shell for all sorts of these experiments. Like I wanted to work with the, you know, the webcam, and web RTC. I wanted to mess around with it. And so I was like, Well, what can I do in this B boy tools app that will work with that sort of stuff. And so I made this this camera again, that delays itself. So it's almost like watching yourself in the mirror but 30 seconds later so you can dance for 30 seconds and then go back and watch it without ever having to touch your computer. But that again was something that I came up with as
+
+66
+00:50:00,480 --> 00:50:18,750
+is something I could add to something that already exists. But it's it's getting, it's not mission critical. It's not work. It's just for fun. I wanted to experiment and learn that sort of stuff. And that's actually one of those things I did when I was burnt down. That's one of the projects that that helped me get out of that feeling like totally overwhelmed.
+
+67
+00:50:20,010 --> 00:50:55,950
+Yeah, and I would say, it's worth having a list of things that you'd like to work on one day, because I find myself as soon as I have a list myself, anytime I want to rage quit something, I just, I close all my editors. And then I open up one of these little projects and just fiddle with it for an hour in and build a little bit of something and then I feel a little bit better. Or also what i what i do is I'll just record a little YouTube video on something that I know really well. And I feel like people I should share, right. So just like that total context switch to something where you can, you can finish something, you can put a YouTube video up, and then you feel a little bit better, you can go back wins,
+
+68
+00:50:57,090 --> 00:52:07,410
+small wins. Cool. So any other last tips on dealing with burnout, other than just just it's important, again, affects your total mental state, it can affect your relationships with people outside of work people with inside of work, it can affect just your own levels of feeling confident and everything like that. So don't take these feelings or this overwhelmingness don't take it lightly make sure that you're you're you're checking yourself before you wreck yourself because nobody wants to get wrecked themselves. You know, that just that's not something we want to happen. Totally. Yeah, that's really good. If I so hopefully you found that useful. If you yourself have some some tips on on how you've avoided it or how you your own experience. I know there's a lot of medium posts up there where people who have kind of gone through it themselves and and how they've dealt with it and different things that they've put in place because this is just gotten AI's own experience. So if you have your own, make sure you tweet at syntax FM, really appreciate when people kind of share their own experience as well. Because it's I know it's hard to to be vulnerable and to just tell people that you you didn't like coding for him. Yeah. Yeah, I know. There's no one no shame. no shame in that game.
+
+69
+00:52:08,760 --> 00:52:14,220
+Yeah, so I guess it's a sick pick time. Do you have a sick pick?
+
+70
+00:52:15,240 --> 00:52:42,780
+I do. It's another another household pick. So Scott gave his lights the other day I gave my my lights the other day, which by simple wishes, sort of targeted collection like chip and Joanna just gotten West pictures of us slim and Lacroix. Yeah, that's that's sweeping up Roy can sculptures for your coffee table. Like ceramic Lacroix cans. I'm gonna I gotta get that done. Now. I gotta make that. Oh, that's a great idea.
+
+71
+00:52:43,800 --> 00:53:10,680
+Man, we've got that syntax Lacroix sticker. So tweet us at syntax FM if you want this the Lacroix I do for syntax because I'm about to put in the order. So I we're doing a renovation at our house right now. And we have to buy like a vanity and tile and all this stuff. And there was like a deal at load of Lowe's in the States. Oh, yeah. Yeah, it's like a, like a Home Hardware home or Home Depot kind of store.
+
+72
+00:53:11,910 --> 00:54:59,940
+And I got all these gift cards because I bought some stuff. And what I use the gift cards on was a brand new drill set. So I had this like crappy drill that the battery would die all the time. There's only one battery so if it died, you had to like sit there for four hours while it it charged. And I bought a new DeWalt drill set, which I was really excited about because they're they're like the best some of the best drills you can get. I have that one. Do you really? Yeah, I do that one, the two. No, just the just the one better. So I got a drill drill and impact driver. Oh, see, I don't have the impact driver but I have the drill and it's the best. Super good. So the thing about these drills is you got to commit because the battery packs are all different and once you commit to a battery pack system, there's all kinds of other tools that you can buy that the batteries are swappable, right so I committed to the DeWalt system and that was free because I had all these like coupons or all these like gift cards for it and then what I did is I went out and bought this thing from DeWalt is called the 20 volt cordless wet dry vacuum so it's you know what a shop vac is? Yeah, it's like a thing and you can suck up all kinds of like drywall duster anything just whatever you whatever you pointed that yeah just suck it up yeah then you can just suck it up and it's awesome awesome little vacuum The problem is that it's like so unruly. Got to plug it in and the hose is super long and digit courts are always so short you like move it a little bit. plugs that's the worst. Oh, it drives me nuts. I hate Accenture cores IO plug in lawnmower right now that's another story but that drives me crazy. Yeah, yeah. Yeah. Anyways,
+
+73
+00:55:00,000 --> 00:55:03,449
+So DeWalt has this like tiny little handheld
+
+74
+00:55:04,650 --> 00:56:04,050
+vacuum that you can pop the hose off, you put up the put the battery from the drill in it, and then you can just bring it with you and do all your little vacuuming. So like, if the car is a little bit dirty, or the basement needs to dirty, or we just did like a renovation, you need to suck up some sawdust or something like that. It's like the most convenient little vacuum to bring around. So I know has nothing to do with web development. But I know that there's a lot of homeowners out there that are very happy with this little vacuum. Hmm, that's great. I'd like I'm gonna have to get this because I want love my DeWalt drill. This thing looks great. This looks exactly what I need. But that drill, I'm telling you, that thing is so high quality and when you press the trigger, but it talks so hard, it almost like tweaks your hand. You know, it's like yeah, charm off. Yeah, it's awesome. I think the first time I probably was like, whoo, whoo, this is nice. Yeah, I was my contractor had one. And I was like,
+
+75
+00:56:05,220 --> 00:56:33,090
+Oh, this is nice. I need to get one of these. Yeah, that's, we were building a deck and my dad borrowed one from his office and was like, Oh, I gotta get this. We both went out bought them that day, because they were just that good. Yeah, it's, it's amazing. And now that I'm, I'm in the battery pack of jewel, there's all kinds of stuff you can buy with it. And this vacuum was the first thing I bought. And it's I've been so happy with it. Sick. That's a sick pick. I'm gonna pick
+
+76
+00:56:34,350 --> 00:59:03,240
+a cool man. Well, my sick pick is a totally different realm as well, which is the documentary that I watched that popped up on Netflix fairly recently. I am a huge fan of this is a totally odd hobby of mine. I'm a huge fan of mountain climbing documentaries. I have. It's absolutely absurd. In that that shift super project I was talking about with music. One of the first shift super songs I did was using, like, Oh my God, this documentary is so old. I don't know how old it is like 1940s called the hardest way up for climbing this mountain Annapurna. But I'm a big fan of these mountain climbing documentaries. The older the better if I can find ones that are superduper duper old, like I'm all about that black and white, whatever. Because it's just so fascinating. Yeah, so I've seen every mountain documentary climate that's that you can find readily available. And this latest one came up on Netflix, and that's called Meru, me are you about the this peak Meru. And it's in the Himalayas. And it is bananas. It's the movies more about like, these three dudes in their life struggles as they're attempting to climb this peak that's never been climbed before, out of all the peaks in the world. There's such a large, you know, all of the big ones have been climbed. And this one had not been climbed in so many people had failed on it. And so this this video was about them. And the one one of the climbers is a videographer. And his job is to like film, famous skiers and snowboarders doing the crazy run. So he's doing the crazy runs with them, and stuff like that. So the video work and the production work on this thing is absolutely top notch. It is just beautiful. Everything about it the documentary is from 2015. So it's not like brand new or something. But it is so good for so many reasons about their their adversity, and the amount of stuff they encounter. And just sort of the lessons that they're learning. I watched it a couple times. I watched it first. And then I was like corny. You have to watch this like right now because it's so good. And then she really liked it. It was just, I don't know, it was a really interesting, exciting well made documentary that told a really good story. So many times. These mountain climbing documentaries are just like, oh, they want to get up the mountain. And sometimes they don't. Sometimes they do. And that's the whole thing. And this is much more of a story out these these people. And I just found it to be absolutely amazing. Just a brilliant story with twists and turns and stuff you don't expect. Very, very good,
+
+77
+00:59:04,290 --> 00:59:06,720
+man. And have you ever been mountain climbing?
+
+78
+00:59:08,130 --> 00:59:49,860
+No, I live in Colorado. That's like a big thing here. Not only do mountain climbing but there's there's things called these fourteeners. There's 14,000 14,000 feet peaks, where everyone in the state of Colorado. They're like they meet each other and you're like, Hi, my name is Scott. I've climbed 1514 years I've climbed 1014 like it's so weird people like so many people claim these things. I did it's like bizarre. We have not climbed any yet. And there's a couple on my list that are just like easy leisurely hikes, but they are it's a big thing here. You get a lot of both professional and amateur just like someone you meet at Whole Foods. Turns out they may have climbed a mountain at some point. Wow.
+
+79
+00:59:50,940 --> 01:00:00,000
+That's pretty neat. I'm gonna put that on my Netflix. I love documentaries. It's like one of the only things actually watch. If you like documentaries, I found this one to be exceptional for the for the story.
+
+80
+01:00:00,000 --> 01:00:10,650
+And the production. Yeah, I mean, I always need high quality production. So that that's what I watch. One was called one mile, mile and a half. Hmm.
+
+81
+01:00:11,759 --> 01:00:14,610
+Let me double check. That's right. Yeah, mile, mile and a half.
+
+82
+01:00:16,619 --> 01:00:19,380
+Yeah, I watched this one called mile and a half on,
+
+83
+01:00:20,640 --> 01:00:34,200
+on Netflix about a year ago, as amazing as about people who walk. They didn't climb mountains, but they walked really, really long way. And it was just the production quality was amazing. And the story was super cool. So I'm gonna check this one out. Sick pick.
+
+84
+01:00:36,270 --> 01:00:38,640
+Low see you running sick pigs.
+
+85
+01:00:40,770 --> 01:00:53,700
+All right, now it's time for shameless plugs. And you can hear my dog huffing and puffing, she heard something, I don't know what she's hearing. But she's got to keep us safe. So she's letting us know.
+
+86
+01:00:55,200 --> 01:02:01,500
+somebody's doing construction nearby. And that is a potential harmful cause for us. So my shameless plug is going to be Thank you, Lou. My view j s. For every one series that I just released. There's 24 videos on view, j s, it's going to teach you all of the basics, we get routing setup, we do some animations, we talk about sort of why and how view works. And it's all modern view stuff. I mean, this thing just came out. And it's all using the latest techniques. So you are going to feel like a view Pro, you're going to understand the component system, you're going to understand how to bind variables, you're going to understand how to hit an API, the lifecycle methods, all of how it's different from react, how it's different from Angular and how it sort of fits into this landscape, right and also how it's similar to these things. So if you've heard the hype about view, j s, and you want to learn more, check out my series Vue JS for everyone that's on sale this month for 29 bucks, so a good time to pick it up. Because next month, it's going to go right back up. So $29 brand new series for me Vue JS for everyone, check it out.
+
+87
+01:02:02,760 --> 01:02:28,500
+Wicked, I'm just gonna plug my courses page. So Wes bos.com, forward slash courses, that will give you a list of all the courses that I have. So if you're looking to learn something new, I've got a bunch of free ones and a bunch of paid ones. So mostly JavaScript and CSS focus and check it on out. sick, sick. Cool. That's all right. That's it for today. Hopefully you enjoyed it. We'll see you next week.
+
+88
+01:02:29,760 --> 01:02:40,980
+Please head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

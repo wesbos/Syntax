@@ -1,0 +1,396 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax
+
+2
+00:00:02,849 --> 00:00:04,590
+Unknown: the podcast with the tastiest web
+
+3
+00:00:04,590 --> 00:00:10,530
+development treats out there. strap yourself in and get ready. Here is Scott, ski and West boss.
+
+4
+00:00:10,559 --> 00:00:51,960
+Wes Bos: Welcome to syntax This is the podcast with the tastiest web development treats today we're gonna be talking a bout a potluck. Actually today we're gonna be talking about all kinds of stuff. headless CMS is react hooks context Redux API, default props in react, different CMS is all kinds of fun stuff. Oh, this is I'm really looking forward to this one. What's the difference between a function expression and an in a function declaration? So we're gonna dive into that? A little interview question for you. Today we are sponsored by two awesome companies. First one is a century's gonna do all of your error and exception tracking and second one is Freshbooks gonna do all of your expenses and invoice tracking? We'll talk about them partway through the episode. Hey, Scott, how you doing today?
+
+5
+00:00:51,960 --> 00:01:31,920
+Scott Tolinski: Doing good. I discovered yesterday that apparently some hard drive plates are made of glass. What I discovered this because I was destroying old hard drives that we just had sitting around from old computers right you know, you don't know what their social security's on them or something. So I've been Yeah, open them up and ripping up the blades and I went to bend this plate. And this plate exploded in my face, just like really sharp glass shards everywhere. So I'm still finding them. I thought I did a good job. But Dang, I like feel a little pokies here and there. I'm like sitting on glass or something. Yeah, figure out which if your hard drives glass before you get bended. That's a good one. Yeah. Well, you
+
+6
+00:01:31,920 --> 00:01:36,720
+Wes Bos: are wearing your peepee though. Our personal protection equipment.
+
+7
+00:01:36,809 --> 00:01:39,630
+Unknown: Well, technically, glasses, glasses, so I got lucky. I
+
+8
+00:01:39,630 --> 00:01:43,650
+Wes Bos: got lucky. I got Yeah, yeah. Got lucky that. Yeah. That's good to know.
+
+9
+00:01:44,489 --> 00:01:51,510
+Scott Tolinski: The only one what's funny is that I have so many other hard drives. I've been bending them whatever. Yeah, no, this one did. It definitely caught me off guard.
+
+10
+00:01:51,539 --> 00:02:03,930
+Wes Bos: Man, I need to do that. I've got this hackintosh that I built like 10 years ago. And it's just sitting here. And I don't want to like give it away because there's hard drives in it. And I just need to get it. Yeah, I do have exactly what you're doing.
+
+11
+00:02:03,930 --> 00:03:24,750
+Scott Tolinski: I break it down. I got it. And then I go to recycle it at Best Buy. Because Best Buy has just like a tub or tech recycling. You can just go drop your stuff off in the tub. nobody says anything. Oh, yeah, it's really nice. Yeah, I have just like I dropped off all of my, my tech recycling there. So you feel good about it. So let's get into this first question here. This is from Jamie. And this question is I am a full stack developer who went through a boot camp. I'm trying to find a resource to learn more computer science related to knowledge. Every single interview I have taken asked me questions about algorithms closures, and I've tried to brush up on things in my own. I wonder if there's some tutorials you'd recommend that I haven't found Thanks in advance. This one's tough, because it depends on the interview. I have never been asked any of these questions in an interview. To be honest, I think it's all all depending on the kind of stuff that you're interviewing for. Right? Was Do you have any good resources for this kind of stuff. Because the the best place that I've seen personally is at Udacity. A founded by Google, they were owned by Google, they had people from Google or something involved. Either way, they have a lot of like really in depth tutorials where you code along with an interactive thing. So they have the School of data science, the school of artificial intelligence, they have a lot of stuff like that. So in my opinion, there was some very good courses there. But I don't know if you have anything specifically that you've seen that I haven't seen.
+
+12
+00:03:24,779 --> 00:03:54,120
+Wes Bos: Yeah, when I did my interview at Google, this was like seven years ago, is Nicholas zakas, who is pretty well known in JavaScript industry in general, just writing books and tons of blog posts and being pretty involved in a lot of libraries. He had a bunch of blog posts that like figured out how do you do these algorithms, but in JavaScript, and I found that to be pretty helpful myself, but I can't find the link for it right now. I'm just googling around. I'll try find it and put it in the show notes. And if someone else knows what I'm talking about, make sure you tweet it at us. And we'll add it to the show notes. Oh,
+
+13
+00:03:54,149 --> 00:04:03,569
+Scott Tolinski: you know who else has a good algorithms course is Coursera. Okay, they're up there. They have a very good algorithms course, I have seen highly regarded.
+
+14
+00:04:03,779 --> 00:04:48,690
+Wes Bos: Oh, it looks like Nicholas zakas has a book called humans who code from way back like 2009 to 2012. The thing about these like computer science stuff is that it doesn't change, right? Like you have pointers and quick sorts and, and these trees and all that stuff. I honestly have never written any of these things, which is, I know, it's a huge frustration for people who have interviews where they go into them. And they're asked these questions like, how do you do a bubble sort or things like that. And it's like, I don't know, I never would have written that in my entire life. I just use the source that's built into JavaScript. So unfortunately, I don't have a good one. I think this is a good one that will throw open to the community. If you have a good resource. Tweet us at syntax FM and we'll retweet it because I think there's probably better equipped people out there to answer this.
+
+15
+00:04:48,719 --> 00:05:11,970
+Scott Tolinski: Yeah, definitely. And we will reshare those, but there is content out there and if you you go for it. I think a lot of that stuff too is really good from universities. That's why I think Coursera is a good option because they really believe from actual universities, their courses you can sort of jump in on them. They're very, very intense. I've had some of them that were almost too intense to keep up with. But definitely good stuff if you're looking to dive in fully. Excellent. So
+
+16
+00:05:11,970 --> 00:06:29,370
+Wes Bos: I'm Ali Williams, I'm trying to pick a headless CMS contentful seems kind of expensive. ghostly is too limited and blog focused. I've been thinking about Prismic. And strappy, do you have any suggestions. So this is this area right now is rife with companies that are sort of coming out and doing it like we've obviously had a bunch of them sponsor, the podcast, we've had contentful sponsor, the podcast, Sanity has sponsored our podcasts, I went and visited Prismic the other day just to do some YouTube videos, then there's also just the self hosted options where you can, you can use WordPress as a as a self hosted, I honestly haven't done a whole lot in that though, the one that I do have experience with that I've just briefly gone into his Sanity. And that's because they've sponsored the podcast. And I just wanted to make sure that I knew what I was talking about when we do it. But I don't really have a good thing, I would probably opt for either something like Sanity or something like that's open source like a like a WordPress out there. It really depends on on what you're looking to spend at the end of the day, you're saying that something like contentful is a bit too expensive for you, maybe you want to look for open source. But on the flip side, sometimes people it's too expensive for them to maintain the thing themselves. They just want it to work, they just want a service. And at the end of the day, a hosted version is going to work better.
+
+17
+00:06:29,520 --> 00:07:49,020
+Scott Tolinski: Yeah, yeah, this really goes into Are you looking to manage and maintain something yourself? Or are you looking to just pay a service to do it, right, because if you're looking to just pay a service, you connect to that API, you build your back end through clicking around and whatever, then there's a ton of good options. I really like Sanity, hesser take shape. There's just so many content for Prismic. It's like it's outrageous how many there are, but there's a lot of good options. So that's good news. If you're looking to go the hosted solution where you're doing it yourself, I think WordPress is still a great option. Because the advanced custom field support within the WordPress API is really super good. And I've used WordPress myself for a couple of headless sites now. And I've been very impressed with how easy it is, especially with something like Gatsby worth plugins just work. And you can pull in the data super easily. But because the advanced custom fields and custom UI stuff works really well, with WordPress in the rip, I would go with that I've heard Drupal is making big, big moves on that as well. I know that the new Drupal front end is going to be written in react. So I think there is definitely some movement in that regard. That said, I haven't used Drupal for a headless CMS, which is kind of surprising, because I have a lot of experience in Drupal. And I think it's a very powerful, flexible CMS. So it's definitely an option there. If you're looking, I
+
+18
+00:07:49,020 --> 00:08:43,320
+Wes Bos: just found this website, headless cms.org. That seems to go through all the open source and closed source, which I think is cool, because then you can you can sort of choose what direction you'd like to go. And like it's from the people who made static Jen calm, which is the static site generator comparer. And this seems like there's tons of options. Also, I can't say what it is just yet. But there is somebody who I've been talking to that is going to release a number I've been talking about the sort of rails for JavaScript, where you get like a back end just up and running in authentication built in, and it just works out of the out of the box. Something like that is coming. And I'm really excited to talk about it. I've been playing with it last couple of months. And hopefully I'll be able, they asked me not to tweet about it, because it's like not ready for primetime yet, but I am super excited to be able to talk about it because I think this is going to be really big in our industry. So that's a bit of a tease, but I promise I will talk about it as soon as I can.
+
+19
+00:08:46,159 --> 00:09:04,620
+Scott Tolinski: Nice, yeah. teason teasin Whoa, whoa, would be a good list that that was a little appetizer. Say getting you ready. All right. This next question is from Paul mower. He's he says that mo is spelled like mouth are pronounced like mouth so Mauer Mauer, as I read that mouth and I just wanted to be like,
+
+20
+00:09:04,620 --> 00:09:06,720
+Wes Bos: oh, malware how Mauer
+
+21
+00:09:06,750 --> 00:10:54,330
+Scott Tolinski: Mauer. Sorry, Paul, this question is Hi, Wes. And Scott, I'm about to finish a coding boot camp, common theme here and a program in a couple of weeks. I come from a customer service background. And part of the reason for me developing these skills is to transition to a line of work that offers more flexibility. Ideally, I would like to find a remote work or a local organization that is open to remote work. I do think do not think freelancing is me at this point. I would like small, I would like some amount of mentorship. Do you have any advice for someone who's that in my position to seeking that type of work? Is this a realistic goal? You know, this is actually an interesting question. There's a second part of this question that I'll tackle in a second here. But the first part of this question here. Yeah, freelancing definitely isn't always for everyone. So for those of you who are feeling like hey, I'm not I'm not doing great or feeling great at freelancing. It could just be you, right? I mean, that's not going to be the perfect route. For anybody, so don't feel bad if that's what you're looking at. And you want to be looking at a full time position instead. Because there's, you know, full time position work is awesome. So this one is tough because remote work often is going to go to those who have a lot of experience, right? and mentorship is going to be a lot tougher remotely. So I might think that you're better off looking for, like you said, a local organization, or a local company, a local agency, a lot of design and dev agencies exist in most towns that you can start, you know, looking at or investigating more seeing when they need work. But you know, these kind of systems are going to be better for you, these kind of places are going to be better for you, because then you could maybe work into saying, Oh, hey, can I work from home, you know, one day a week, or something like that, rather than we're working remotely full time. remote work is great, but I, you're gonna have a hard time finding like the brilliant remote dev job as a first time job.
+
+22
+00:10:54,360 --> 00:12:37,740
+Wes Bos: Yeah, the thing about becoming a brand new developer is that you obviously need to work on your your tech skills. And that can be extremely frustrating when you're not in the same place. Because just debugging and everything is just a lot slower than when someone could just roll their chair over to your desk and, and help you out. So there's that. And then there's this whole communication skills, trying to understand how to how to best communicate with developers. So I think that a lot of the the Remote Jobs go to developers who are just that good. Like I even often we see these developers who they work for a company that's no remote, but they're, they're so good that the company is willing to make an exception, because they're like that, there's obviously companies out there where the entire team is is totally remote. And that certainly is an option out there as well. So if I was in the situation, and like the the one day goal is to have this awesome remote job, I think that that is such an awesome goal for somebody has to have especially because like if you have these ideas of I would love to go live in on a farm or like I want to go live with my family in. I don't want to mention any state because there's people that are listening, right. But you know what I mean, right? Like people just want to go and live where they want to live and live, like the life that they want to live. But I also have this awesome job that is totally remote. And I think that the people that are hired for those are the ones that are visible. So I would have that as a goal and start working towards it. I think a lot of the things that we said in the freelance episode as to how to get noticed those things also apply if you're trying to get a job as well. So in yourself working on open source, maybe writing blog posts, just to show that you are knowledgeable in your place, and you're sort of a self starter that will go a long way in getting these these Remote Jobs.
+
+23
+00:12:38,010 --> 00:13:27,690
+Scott Tolinski: Yeah, that's a good point. Because if if people are seeing that you're capable of doing that sort of work by yourself, and that you don't need any any help, they're there, they are going to be more likely to want or be cool with you working remote. But yeah, I think you nailed it with some of that stuff, especially with the freelance stuff, because that's the everything that I've ever done in that we've talked about in that freelance episode, whether it's creating blog posts, or doing tutorial videos, they helped me so much in job interviews, specifically because people could see that, you know, I they didn't need a manager to come tell me to do work. The second part of this question is also a second question if you have time. How come in your intro Scott El Toro loco Alinsky gets a bowl noise, where West Barracuda boss does not get a barracuda noise. I think you should throw a flipper or shark noise or something in there for fairness. Yeah,
+
+24
+00:13:28,260 --> 00:13:32,880
+I'm in totally agreeance with you, Paul, our guy who who made that intro drop the ball.
+
+25
+00:13:33,419 --> 00:13:34,620
+Unknown: Does America make?
+
+26
+00:13:34,799 --> 00:13:39,630
+Scott Tolinski: I mean, you could just have some some wiggling around in the water, just a little water wiggle.
+
+27
+00:13:41,010 --> 00:13:45,299
+Wes Bos: I'm gonna get a sound of a barracuda. Okay, let me know if you can hear this.
+
+28
+00:13:58,679 --> 00:13:59,399
+This supposed to be
+
+29
+00:14:02,970 --> 00:14:04,110
+Unknown: very good a remake
+
+30
+00:14:07,380 --> 00:14:58,440
+Wes Bos: is gonna look for chopping down. All right, I've googled chopping sound on YouTube. Here we go. Yes, that's actually the sound that I use in one of my upcoming. I made this like hilarious game where if you move your mouse, there's like a mouse and a cheese. And you have to move your mouse over the cheese. But it's like one of those bikes that you ride at the fair where if you turn left, it goes right and it goes the opposite. So like you have to like get good at moving your mouse in the opposite direction. Sort of like when your monitors like tilted the wrong way and you need to like go and change the settings. And that's the sound that is when the mouse actually eats the cheese. Because I thought it was like a kind of a fun example of how to like, detect overlap of the mouse div and the cheese div and then how to select an element and play it anyway. Maybe we should
+
+31
+00:14:59,880 --> 00:15:03,779
+Scott Tolinski: do Nice. No, no, that's That's dope. There we go.
+
+32
+00:15:03,779 --> 00:16:28,980
+Wes Bos: Maybe we need Oh, yeah. intros, I think, oh, we just need to think of some hilarious ideas for new introductions. All right. Next question we have here is from Austin Randolph, how much importance would you place on the design of a resume? I've seen a few resume designing services out there, I was wondering if it's worth it to pay for. So the resume is kind of an interesting one as well. Because I think a lot of like the online applications, you have to just fill out a form but the actual physical piece of paper or like the the PDF that you get, I think that that says a lot about the person as well. So what I pay for something like this, Probably not, but I definitely wouldn't go with the default Microsoft Word template. One thing that bugs me so much is when people use defaults in anything. So if you think about like, papayas being used in a logo, I know that drives a lot of designers and developers crazy, are you sometimes you watch like a commercial and it has that like default iMovie music and in it, you're like, come on. And the funny thing is that the person who made it probably is oblivious to that being like that. So I think that if you are designing something, and you think it looks good in Microsoft Word, to the person who you're giving it to, they've probably seen 10,000 of the same template, and it won't really stand out. And they'll sort of like cringe at whatever it will Calibri or whatever font that you're using by default, right? So,
+
+33
+00:16:29,299 --> 00:16:39,659
+Scott Tolinski: yeah, well, it's funny, even like in music. If I hear GarageBand loop in a song, I'm like, No, okay, you have not spent any time on this, you went to GarageBand.
+
+34
+00:16:39,720 --> 00:16:50,039
+Wes Bos: It's so true that when I go go to one of these websites out there, buy a $10, resume, outline and then just drop in your info. I think that's probably good enough. What do you think? Yeah,
+
+35
+00:16:50,039 --> 00:17:53,790
+Scott Tolinski: I think don't overdo it. I even think it's a decent, like standard, plain looking resume looks fine. As long as one, like you mentioned, you're not using any of these crappy default fonts. And to think about it as just like a typography, exercise, right? You have this resume, you have data, you have a way that it needs to be displayed in red. And if you want to make it look nice, don't add a bunch of shapes. And you know, whatever design elements that way, do straight up typography, do a nice vertical rhythm, do a nice type system, pick a font that is, you know, usable, but not overused, something that they'll have in Google, Google or word or whatever. But it also would look nice, maybe if you export it as a PDF, that way, it's always going to look nice, but again, I wouldn't overdo it. Don't go crazy with design elements, like people like to throw in charts and chopping sounds don't throw audio into your resume. But yeah, the chart thing where people put like a chart in it says, like skills, you know, 5% Oh,
+
+36
+00:17:53,969 --> 00:18:14,640
+Wes Bos: everybody did that. For the longest time. I even taught that in the bootcamp because it was like kind of a fun way to show how like CSS wids work, and everyone thought it was amazing. And you could like overlap rover and they would grow and like, What does 47% JavaScript mean? You know, like that, doesn't it? It looks cool. But yeah, I know, it doesn't really doesn't really do a whole much.
+
+37
+00:18:15,540 --> 00:18:23,460
+Scott Tolinski: It doesn't do anything. And I think some people are straight up turned off by it. So that can be an issue too. But again, keep it simple, stupid, as they say yes. Yes.
+
+38
+00:18:23,460 --> 00:18:24,450
+Wes Bos: Keep it simple.
+
+39
+00:18:24,930 --> 00:18:25,500
+Scott Tolinski: Keep it simple.
+
+40
+00:18:25,500 --> 00:18:38,970
+Wes Bos: I would say yeah, if you're a hiring manager, I know a lot of people listening to us hire developers. What are your pet peeves that you see in in resumes. And when people apply to this ad syntax, FM, I'd love to hear that.
+
+41
+00:18:39,270 --> 00:20:22,950
+Scott Tolinski: I would love to hear too. But you know what I would not love to hear, I would not love to hear that my website is broken. So I managed to not hear that my website's broken by having century@century.io century is a longtime sponsor of syntax. And they do a great job of tracking and keeping stock of all of your errors and exceptions. I use this constantly, it pretty much lives on my computer in terms of one of the tabs I have open, I get email notifications for stuff I was able to see the other day that a undefined, it was like cannot destructure user of undefined. And we were trying to destructure a user from a an Apollo query that just came in and the query was set to undefined. Therefore, it's causing an error and anybody who refreshed one of the specific pages. Luckily, I was able to see this when one person had the issue because I knew the instant that error came in that that was bad news because I could recognize like what the situation was immediately from the hair, I could go fix it, and I could take care of it before I realized it was a problem, then we could update our unit test to make sure that this wasn't going to be happening in the future. So century to me is one of these tools that I just really can't live without if I want a secure, stable environment. So head on over to century dot IO use the coupon code, tasty treat all lowercase all one word, and you'll get two months for free. And trust me, you're going to want to try century because like myself, it is just so incredibly easy to set up. And once you set it up, you see your errors command people are using your site. It is invaluable. So huge fan century.io coupon code tasty treat get two months free.
+
+42
+00:20:23,010 --> 00:20:39,150
+Wes Bos: Can we also talk about the century.io they have this little SVG animation of someone checking their phone, and then the lights in the background are flickering, and then the Get Started button flickers. Oh, it's so subtle. I don't know. I've never noticed it before. I just noticed that now. And oh, yeah, he
+
+43
+00:20:39,150 --> 00:20:41,400
+Scott Tolinski: just Yeah, the phone move. Yeah,
+
+44
+00:20:41,430 --> 00:20:56,840
+Wes Bos: good. Check it out. Yeah, true.io, I think that's probably the best way to get sponsors to the website is to do something cool on your website and have fun talking about it. It's not intentional at all. But every time we're looking at these websites, doing the ad reads, we find something new about the website that we really like,
+
+45
+00:20:57,000 --> 00:22:55,860
+Scott Tolinski: Yeah, I know it. But it goes to show you that great work and attention to detail is is like paramount for some of these companies and in century is no exception to that. So it definitely carries through. Okay, so this next question is from Jeff. And the question is with the new react hooks and context API, do we still need to use Redux? Well, I was of the opinion that you You didn't always need to use Redux before, because, you know, Redux is great for what it does with managing lots of global state and in your state of your application as a whole, it's great for that, in fact, the dev tools around it are second to none, they're awesome. But if you're only managing a couple of things, models opening and closing or, or navigation or whatever, it's really not, it's a lot of work to get that little stuff in there. So for me, it depends on the scope of the state that you're trying to manage. For instance, I manage my state through or my data state, like all of my data coming in through Apollo, so I'm not going to use Redux and Apollo there. But I still needed something to manage the models opening and closing. And to be honest, I was using Apollo state for a little bit. And I'm no longer using Apollo state due to some issues I was having with it. So now, I was looking like, Well, what do I do? I just had this this huge, long exploration into new hooks, libraries and different ways of managing state. And so after looking at nearly every single global State Library, I ended up writing essentially my own thing that was using context. And it didn't just use one context, they actually use this several contexts. And then I have a provider that combines the providers. And so I end up having individual context. So I have like a navigation context, I have a shopping cart context. And that way, I can use hooks to pull in any of the actions, any of the values from that specific one without having to worry about the state updating for something that I'm not really interested in. Ah, yeah, anything
+
+46
+00:22:56,400 --> 00:22:57,870
+Wes Bos: to show on this yet. You
+
+47
+00:22:57,870 --> 00:23:57,060
+Scott Tolinski: should I'll share my my setup, I just wrote it. And trust me, I am loving it. Because anytime I want to use the context for anything, the shopping cart, just use the use contacts. And then I have my basic state functions. If I need more complex state, then I would use use reducer inside of it. But it is really pretty slick. And so I would highly recommend if you if you don't need a ton of state to be managed, like you're not managing your your data loading and things like that. I think that the context API with hooks is really just as good as it is good as it's ever been. So it's a really nice system. That's it. There is a lot of other react state libraries out there right now. Like, I think there's like Easy peasy, there's a pool. I'm blanking on some of the names, I'm sorry, because I just looked at all of these. There's so many out there right now, I would highly recommend checking them out and seeing if any of them fit your idea of what you want your state to look like, because it's an open space right now. And people are trying new things. And in. It's exciting.
+
+48
+00:23:57,210 --> 00:24:29,130
+Wes Bos: Yeah, somebody sent me a link to something with context that has its own state, but then it also like gives you all of the updater functions out of the box. So like increment decrement, up to a and it look cool because it looked like pretty batteries included. So I know that we've answered this question before, but that was like two or three months ago. And even since then there's there's a lot has filed. So I think it would be really cool if we do an entire show, diving into just like managing data in react with context and state and things like that. So
+
+49
+00:24:29,160 --> 00:24:31,500
+Unknown: we'll do that on the left all the libraries there. Yeah,
+
+50
+00:24:31,530 --> 00:27:01,290
+Wes Bos: the one thing I want to say about this is that so what's been going around on Twitter lately is the unpopular opinion, tweet threads, where you're allowed to say something that is an unpopular opinion. And it just turns into mostly popular opinions that people are scared to say. Somebody on Twitter this is I don't know niruri on a and er IO and a ya. They said they're there. react. unpopular opinion was most of the time Redux is just money laundering for global. That was hilarious because it has like 1400 likes on it. I thought that was really funny. I think in most cases, people were reaching for Redux because it was so hard to do global variables and in global updaters, in any way. And now we have all these really good options. So I think in most cases, yeah, you probably don't need it all that much. Because it is so easy with the built in context API. And now hooks. Yeah, slick. All right. Next one is from Brian via, hey, Scott, and Wes love the podcast. Thanks. If either of you could change anything about your personal tech stack, what would it be? And why? Oh, that's, that's a kind of an interesting question. Because sometimes you you make these choices when everything seems to be hot. And then six months, a year, two years later down the road, you start to feel like the growing pains, or you start to see better, better ways that people have approached things as as new tech rolls out. And I think for me, I'm actually really happy with the all the tech that I've built mine on the node Express server on the back end react on the administrative server rendered pages mostly react for the checkout. It is now so I'm pretty happy with that. I think the one thing that I'm frustrated with is that I think I would go for more services, meaning that I went the route of mostly just like hosting my own, I use m lab for hosting my, my database, but I have just digitalocean, which is amazing. But because it's digitalocean, I have to manage this the server myself, I have to scale it up, I guess I could like, use some of the other products from digitalocean as well, I have to manage my own SSL certificates. And I much rather pay an extra 20 3050 bucks a month for that to all be handled for me. So I am now looking at some more sort of baked in services that I don't have to play sysadmin for that.
+
+51
+00:27:01,680 --> 00:30:01,200
+Scott Tolinski: Yeah, my platform is, as we've talked about before, it's Apollo for data, it's react on the front end and server side rendered react, and then it is Meteor on the server side. So I struggle with this one a lot. Because I do really like Meteor as a platform. That said, it would be really nice occasionally to get off with Meteor. The only reason being is because it's easier to find people who have worked in other environments that aren't Meteor that said this, the meteor specific stuff that I'm even using at this point is really just a database in account stuff. I'm hardly even using it, I'm using it mostly as a build tool in those regards the meteor build tools, fantastic. There's a lot of like really nice things about it that I think that people don't know, like building bundles for the specific browser that you're using. So you're not shipping code for people that don't need it. So there's a lot of like, really nice features that that come into Meteor. And to get those same features and another platform, I'd have to really roll it all myself. So that said, as much as I think about potentially moving off of Meteor, every time I like go through all the list of things that it's giving me essentially for free that I have to do somewhere else, I don't know if I would change it. I'm a big fan of how it all works right now, you know, I think the only change I would have made is at the start is maybe not using MongoDB. I like MongoDB it's fine. But I think people have negative experiences with it to the point where I'm concerned that maybe I'll hit them at some point. But I personally don't have too many negative experiences with it. Maybe if I was more focused on speed for something, I might be considering another database. But really, that said, I'm very happy with how my platform works. I have a hard time saying that I'm not happy with any of the major pieces that I swap out all the little pieces all the time, like I just rewrote all of my my state into a new state library. So we'll see as things evolve here, but Meteor 1.8. point one is about to come out. And it includes a bunch of node updates. And I'm very excited about it. So yeah, I don't think so. I don't think I will be like to change things too much. Next question here is from Aaron, do you prefer reacts default props or plain default? Oh, this anon. Oh, I just saw that end. And I was like, that's an R. It's Aaron. This is from a non anonymous, you did not leave a name not Aaron. Sorry. Do you prefer react default props, or plain j s default function parameters to give your components and default values. Now I pretty much always use default props only because most of my components will maybe not most I'd say maybe 5050 of my components are class based, or they were class based at one time. So I had default props. And if I convert it to a function component, I'm just copying and pasting and moving things around rather than rewriting that stuff. I don't know I use default props. And I use prop types. And I've been very happy with it. So I don't know. I might use default arguments in the future. It makes a lot of sense. It's very JavaScript II. It's not reactive. So Yeah, I think
+
+52
+00:30:01,259 --> 00:30:42,810
+Wes Bos: I like default props in most because most of my stack is still classes. As we move more to just regular functions as hooks are rolled out, I think I probably will still stick with default props, unless it's something that's so dead simple that you're like your props is like a number or something like that. But generally, the data that's coming in, I like to just have it separate below the below the function then trying to decipher this, like for line destructuring, default ROPs inside of it. Like that's very true default arguments in JavaScript are amazing. But they start to look pretty hairy, once they get a little bit more complex than just a number or Boolean sign like that. So it's it's nice that they're there. They're in there. Yeah,
+
+53
+00:30:42,810 --> 00:30:43,350
+Scott Tolinski: super nice.
+
+54
+00:30:43,380 --> 00:31:41,640
+Wes Bos: Next one, we have Shawn from Denver, you guys chat. CMS is sometimes why no love for Umbra Co. I had to look up what Umbra co was, I thought it was like Umbra, the designer of like, just like home goods. But umbraco is open source ASP dotnet CMS. So why don't we use that? Well, I don't write any ASP. net. Yeah, just which is why so I think one thing you need to remember by listening to this podcast is that Scott and I live in very similar tech stack bubbles. And we love our note on the back end, we love our react on the front end. And while we do like look at what else is out there, we're not going to spend our days trying out dotnet CMS is because it's just not our tech stack. So it's important that you probably should check out other stacks, especially if you are a dotnet shop, it's probably worth looking into. And maybe it's even like a really nice, headless CMS that you could get and get up into. But other than that, we're it's just not part of our world. Yeah,
+
+55
+00:31:41,789 --> 00:32:16,620
+Scott Tolinski: I think that my first initial answer with this is WTF is umbrella umbrella. I'm working on word. I'm braco. They should, um, Broncos. first problem is the name. I'm going to tell you that right now. That's the first problem. No, the website is actually very nice. I went to this website, and I was really impressed. I like it. It seems cool. Yeah. Just like Wes, I have no ASP dotnet experience. Absolutely none whatsoever. So you know, we come from JavaScript, and then PHP a little bit before that. So no, it looks cool. I think ASP dotnet people probably like this. But yeah, that's why we don't talk about it. That's pretty much it. Tell them to change the name, though.
+
+56
+00:32:16,830 --> 00:32:17,430
+Wes Bos: All right. Next
+
+57
+00:32:17,430 --> 00:33:21,720
+Scott Tolinski: question is, well, this was actually from Twitter. People were demanding that I tell this story on the podcast, when I mentioned that I was actually very clumsy. People see me breakdance and they say, oh, wow, you must be very coordinated. I say no, I'm actually very clumsy. One time, I was actually somewhat forcibly removed from a dance club for being drunk. When I was completely sober. It's the story goes as follows. We enter the club, who you know, we're in line or whatever. And I pull out my ID to give to the guy. We're like, in the lobby, I give the guy my ID. And I drop it because you know, I'm clumsy. Sorry, I just I fumble it, I drop it, I pick it up. I give it to the guy, the bouncer and he's like you out now. And just like, what? We were in a group of people. I was just like, what, why? And he's like, I've been watching you this whole time. Your eyes are all over the place. You're hammered. I am totally sober, man. Like if you had a breathalyzer. So yeah, that's how I got kicked out of a club for being drunk while being sober.
+
+58
+00:33:23,910 --> 00:34:10,860
+Wes Bos: That's amazing. Can we just go back to this umbraco for a quick second, I was looking at their website, and they have certification courses that you can take in person or in line, and it's 1200 euro for a one day course, which is how much USD 1400 us and then they have in person on site training for 60 $500 us a day. So maybe we do need to get into this umbraco and selling a one day course for 1400 bucks. Man, the thing about the corporate world man is you can make fun of the corporate world all you want until you realize that they're spending 1400 dollars a person to learn the CMS in one day, which is pretty incredible.
+
+59
+00:34:11,009 --> 00:34:12,900
+Scott Tolinski: For sure. fo sho
+
+60
+00:34:12,980 --> 00:34:17,630
+Wes Bos: you know what else is a lot of money or not? Not a lot of money.
+
+61
+00:34:18,000 --> 00:34:25,050
+Scott Tolinski: Hey, Wes, if you were if you're teaching a course on umbraco, and you made all that money, what would you use to keep track of all of that money,
+
+62
+00:34:25,290 --> 00:35:37,320
+Wes Bos: I would use fresh books. This is a sponsor. By the way, someone complained that we sometimes don't mention that as a sponsor as we start to schmooze into it. freshbooks is these small business accounting software that is going to make your billing painless. So if you are it's, it's I'm going to be doing this right after today. It's time for taxes and I need to get a list of all of my expenses. I need to get a list of all of my different invoices that I sent. I need to find out which ones aren't paid. So I can write that off as as an unpaid invoice. I need to figure out what are all the different taxes that have paid what are all the different currencies that I've made money in. So I can state that as income in the different currencies and convert them to Canadian and taxes are extremely hard invoicing, expenses, all of this stuff is extremely difficult. And I feel good about it. Because all I know that it's all inside of Freshbooks, it's all being tracked accordingly. And I just need to take a big dump of all of this information out of my fresh books, and send it off to my account. So if you are looking for some sort of cloud accounting, check out freshbooks.com forward slash syntax. Scott, enter in syntax into the How did you hear about us section? Thanks so much to Freshbooks response.
+
+63
+00:35:39,980 --> 00:35:43,230
+Scott Tolinski: Sorry, it's gonna take a big old dump there.
+
+64
+00:35:45,480 --> 00:35:47,730
+Wes Bos: Alright, let's keep this PG we can we?
+
+65
+00:35:48,510 --> 00:37:40,050
+Scott Tolinski: I'm sorry about that. All right. Speaking of keeping this PG this next question is from silly coconuts. So thank you for asking a question silly coconuts. This question is, I have a good working relationship with my boss, I'm ready for a new challenge. How do I break this to my new employer, I can't shake the feeling of guilt, aka you're looking at leaving your job, you're feeling guilty about it. Because you've built up a report, chances are you've worked at these places, you've become friends with all these people, your bosses, all these things, makes it really tough to leave a job. I remember being emotionally distraught when I left my very first dev job for another job. And it turned out that another job that I left the that job for what ended up not being any good, but it was a good pay raise. And it was good for my career. And it led to other opportunities. So this is totally normal. And it's very difficult to leave a job, especially one where you're so comfortable with and you you enjoy the presence of those people. It's so weird, because these are people that you spend, like every day with all day with, you become very close with them, so to have to leave, and you almost feel like you might be betraying them by leaving or taking another opportunity. My advice here is do not limit your career and don't hold back just because of those things. I know people that have stayed at the same job their entire life, and their career never move forward. And if they're cool with that, and they're happy with that, that's cool. But if you're feeling like you need a new challenge, chances are that that those feelings are legit. And those are important feelings to not ignore. So I've left jobs that I've really love my coworkers, you can always keep in touch with everybody, I keep in touch with a lot of old co workers, and we still chat all the time. So I would advance your career and I would move forward. And if these people are really your people, then they'll understand absolutely,
+
+66
+00:37:40,050 --> 00:38:11,100
+Wes Bos: these types of people will be happy that you are going there. They're excited to see that you're growing. And I think that it's hard to tell them but you just have to break it to them. And likely they'll be happy for you. And they'll be sad that you're leaving, of course, they probably really enjoy you as an employee, but they're excited to see you move on to bigger things and to continue on in your career. They know that you're not going to be working there for your entire life if there's no nowhere for you to grow in your current job. Yeah, so that's advice from someone who's never actually left a job. So
+
+67
+00:38:12,300 --> 00:38:15,150
+Scott Tolinski: assault No, it's very true. It's very true.
+
+68
+00:38:15,269 --> 00:41:38,400
+Wes Bos: Next one is from Morrow, de protests. This one could fit in a stumped episode. We haven't done a stump episode in a while, but we've got a treat for coming up for you in a couple of weeks. So hold on to your pan a tasty treat a tasty treat. The question was, what is the difference between and here, you're gonna have to just visualize this code. I hate doing code on on audio, but const add equals, and then we have an arrow function that takes in a and b, and then returns a plus b. So it's just a function that returns that takes in two arguments or returns the sum of them. And then the other one is function, add, takes an argument amb, and then returns a and b. So the first one is just a variable called ad that is set to a arrow function. And then the second one is just a regular function declaration turns a and b. So what are the differences between these two, not a whole lot. It doesn't really matter all that much which way you go. There used to be that the difference between the first one which is just a variable, that's called a function expression, where you you put a function into a variable. And then the second one is called the function declaration where you use the keyword function, and you go ahead and define it. It used to be that the function expression was bad for debugging, because that's technically an anonymous function. It's not named ad, it's just stuck in a variable called ad. However, debuggers have got much better browsers have got much better and the name of the function is inferred from the variable itself. So that's not really an issue anymore. Some other differences I've got jotted down here, arrow functions don't have this context, right. So there's something Their function expressions aren't hoisted, meaning that with regular functions you can use the function before it's defined. And I heard a really good argument for this the other day, maybe I'll just pause this really quickly is, remember, during the buzzwords episode, we said, we explained what hoisting was. And we said, why would you ever use hoisting like, what's the what's the benefit of using hoisting, and hoisting, for those who don't know is the fact that you can use a function before it's been defined in the the one reply I got from that was someone that wrote a blog post, and they, I prefer to have a file. And when I open the file at the top of the file, it's what it does. And then at the bottom of the file, it's how it does it. So meaning that you write all of your logic at the top, and then you define your functions at the bottom, because you crack open a file, and you can quickly see what does it do? And then if you are concerned about how does it do it, well, how are the functions made, then you can scroll down to the bottom. So I thought that was pretty good argument. I just don't use it myself. I just define the functions first, or in a module and import them. But that is one good I guess, use case for hoisting and function expressions are not hoisted. So there's that. And the final thing I have here is that arrow functions don't have an arguments object. So it's inside of regular functions. There's like a variable available to you called arguments. And its array like object that has a list of all the arguments that have been passed in. But it's generally a no no to use the arguments object. If you do want something like that. Just use a rest Fram inside of your function. So that's not really a big deal. So I don't know. What do you think about any anything to add there? Scott?
+
+69
+00:41:38,760 --> 00:41:47,360
+Scott Tolinski: No, you nailed it. Dude, that that was a great, that was a if you were in an interview, when you gave that answer, I would assume you were reading it that we had,
+
+70
+00:41:47,670 --> 00:42:03,270
+Wes Bos: I did come up with those notes, obviously, before this. So there's not a whole lot of difference? I probably would just do. I don't know, that's a good question. What would you would you do the constant add a B function? Or would you do a regular function? In this case?
+
+71
+00:42:03,630 --> 00:42:13,710
+Scott Tolinski: I mostly just use arrow functions, because that's just how I work. It doesn't. To me this one of those things that it doesn't necessarily matter that much in my day. Yeah.
+
+72
+00:42:13,730 --> 00:42:40,670
+Wes Bos: Unless you need the like the binding of this right? Which in this case, no, you don't need it. It's an add function, you know, it's not an object or you say this dot total, or something like that. So it doesn't really matter if people have very strong opinions on either end. There's some people that just arrow function by default, just because it's new. And then there's other people that don't use arrow functions at all because they think it's hipster or something like that. Or it's hard to read or something like that. You can make your own decisions there. There's not a whole lot of difference, though.
+
+73
+00:42:40,830 --> 00:42:42,980
+Scott Tolinski: Cool. Well, I think that's it for this potluck.
+
+74
+00:42:43,190 --> 00:42:45,690
+Wes Bos: Awesome. Hopefully that was tasty. I'm full.
+
+75
+00:42:45,710 --> 00:42:46,380
+Scott Tolinski: I'm full.
+
+76
+00:42:50,190 --> 00:42:51,750
+Wes Bos: Um, do you have any sick pics today?
+
+77
+00:42:51,780 --> 00:43:46,530
+Scott Tolinski: I have some sick pics. Let me see here. So my sick pick is ja henckels granite pans. We just got some new pans and pots. And they have been like, it's been a while since we got where the the coating was starting to come off. They were very clearly showing their age. And we're like, Well, what do we get? And I talked to my brother and he said they got these granite pans, which are they're I mean, they're metal pans, but the nonstick surface is granite. Yeah. And they are incredible. We just got them. I'm loving them. The non stickiness is great. The pans are just very well made. We never had anything like this. And just as a huge fan, we got like the 10 piece set from Costco online. So I'll link that up the Costco ones that we got. But if you're looking for some pans, and you never heard of granite surface pants and check these things out because I'm I've been a big fan.
+
+78
+00:43:46,800 --> 00:43:52,920
+Wes Bos: Yeah, we've been using these for we've been using the rock ones, which is why I always say
+
+79
+00:43:53,010 --> 00:43:59,580
+Scott Tolinski: do you smoke? Yeah, yeah. Oh, that's a great, I'm gonna start started doing that. Sorry,
+
+80
+00:43:59,640 --> 00:44:39,600
+Wes Bos: I do use cast iron quite a bit. I know that there's gonna be the cast iron people coming out and saying I do use cast iron a lot. But when I just want like a really good nonstick pan, and we have used these for about two years. I use probably mine two or three times a day. And it lasts about a year and a half a nonstick pan does not last forever just because of sometimes if you go too hot on it, you ruin the finish on it and things like that, but I've just been loving these. It's the same idea. It's just like has like a kind of a speckled surface right? Yep, yep. And nothing sticks to it. And just big fan of it. So yes, you should check out these these henkle ones. I'm gonna start doing some some rock.
+
+81
+00:44:39,720 --> 00:44:46,380
+Scott Tolinski: Some Mickey's melt the rock is cooking things because that's hilarious. You know what my dad's name is rock. And I'm really surprised that he's never said that before.
+
+82
+00:44:46,440 --> 00:45:03,420
+Wes Bos: Because that sounds like I know. I can't believe that. You smell? That's great. Yeah, we just we just bought a whole cook set. All of our pots and pans are made out of this rock stuff. And don't Don't tell me that it's gonna kill me this Surface probably some sort of chemicals or something like that. I know.
+
+83
+00:45:04,770 --> 00:45:08,280
+Scott Tolinski: I know. I know. We got cast iron going on here too. I get it. Yeah,
+
+84
+00:45:08,310 --> 00:45:17,760
+Wes Bos: yeah, I use cast iron when I need the benefits of cast iron. And it's really well seasoned, but just when I'm making eggs and things like that, I'd still like to use a nonstick.
+
+85
+00:45:17,760 --> 00:45:18,540
+Unknown: Absolutely.
+
+86
+00:45:18,690 --> 00:46:21,840
+Wes Bos: My sick pick is going to be wire strippers. So I talked about last time how I'm working on this project where I'm trying to wire up my kids Barbie Jeep to just juice it a little right just a little faster. Awesome. Yeah. So I bought these I've had these like terrible wire strippers my entire life and finally said, you know what I'm gonna buy the best wire strippers you can have is like, I as I get older, the more realizes like life is too short to have crappy versions of things, right? Yeah, I just want the very best. So I found that there's these automatic wire strippers actually found it on like the subreddit, it's called specialized tools, where Yes, it's like subreddit of these really specific tools. And somebody showed this like wire automatic wire stripper, where you just put the wire in, clamp it down, and it like, does like perfectly gauges the size of the wire for you, and then just strips off that, and I use it with really thick and very, very tiny USB wire. It just works perfectly every single time. And it's like 17 bucks for a pair of these. And I'm just like kicking myself, because I've bought like 10 pairs of the cheap $5 ones
+
+87
+00:46:21,840 --> 00:46:23,700
+Scott Tolinski: that are awful.
+
+88
+00:46:23,790 --> 00:46:42,360
+Wes Bos: They're all over my house, they don't work and I've every time I need to strip something I go through like a meteor worth of wire. So I'm just just so happy with these things. They're they're made by Irwin vise grip. They're called the self adjusting wire stripper. I've got the eight inch ones. I'll link it up in the show notes as well. But super happy with these.
+
+89
+00:46:42,570 --> 00:46:51,180
+Scott Tolinski: Nice Yeah, I saw those on your your ID and I was like, Ooh, that looks like something that is always a pain whenever you need to do it. And it looks like it solves that pain. It's one
+
+90
+00:46:51,180 --> 00:47:01,500
+Wes Bos: of those things where you just have to buy it now and put it up in your toolbox. And then at some point, you're going to need to strip something like Oh, thank goodness I got this thing saves me so much time.
+
+91
+00:47:01,560 --> 00:48:04,350
+Scott Tolinski: Yeah, for real cool. Uh, as far as shameless plugs go, I have a series on the grid, some that is now available on level up tutorials. COMM so if you want to learn how to build static sites, in view, j s, this is a very similar platform to Gatsby. It's, you can think about it like this. It's Gatsby. If you wanted to use view instead of react, and you wanted a little bit more magic in the configuration side of things. You wanted to be able to just write some config and have it be able to do a whole bunch of stuff for you without actually writing JavaScript. You don't have to go through looping over each of your nodes to create pages, you just say, Hey, here's a pages directory, go ahead and just make those pages for me. There's a lot of really, really interesting, easy stuff in grid summit. In my opinion, it's a very, very fast way to build static sites. So if you want to learn how to build fast static websites using Vue js and grid Sam, head on over to level up tutorials.com forward slash pro and sign up for the year to save 25 firsthand
+
+92
+00:48:04,560 --> 00:48:51,450
+Wes Bos: metaphor. I'm gonna plug my youtube channel again. I've been on uploading spree lately with I'm doing a series on scraping and then I just recorded like a one off little someone tweeted like a specific CSS problem. And I stepped through all of the like, why he can't do it in grid like you can't do it in Flexbox why you can't do it in CSS columns. And the funniest part about it is everyone in the comments is an expert without actually watching the video. It's just yell at comments. I'm like, just do it with grid You idiot. Thanks. Thanks for watching the video. So I've got that up. I got a couple new interviews that I did at Prismic a couple of weeks ago in Paris, so just go to YouTube search for Wes Bos w esbls. And make sure you subscribe to my channel. I'm trying to catch up to Scott with the his hundred thousand subscriber What do you Oh, you're almost out 300 300,000
+
+93
+00:48:51,450 --> 00:48:53,070
+Scott Tolinski: Yeah,
+
+94
+00:48:53,070 --> 00:48:57,390
+Wes Bos: yeah, there's no way I'll ever catch you. But I need that plaque for my own self esteem.
+
+95
+00:48:57,720 --> 00:48:58,740
+Scott Tolinski: Yeah, I got that plaque.
+
+96
+00:48:58,800 --> 00:49:05,310
+Wes Bos: I got that plaque. You got the O g one right there. Now they're like giving them out to everybody. So they're not able
+
+97
+00:49:05,850 --> 00:49:25,230
+Scott Tolinski: to change the design of them. Mine was heavy. And it came in a big box. And it was a nice, I almost didn't wanna throw away the box because the box was almost like a thing. So no, it was it was definitely super cool. All right. Well, that's it for this one. We're gonna be hitting you up on Monday with a tasty treat. It's gonna be a lot of fun. We're going to be talking about portfolios.
+
+98
+00:49:25,350 --> 00:49:27,180
+Wes Bos: All right. We'll see you then. Thanks for tuning in.
+
+99
+00:49:27,390 --> 00:49:41,160
+Unknown: Thank you for tuning in peace, peace. Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

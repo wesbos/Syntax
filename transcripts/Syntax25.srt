@@ -1,0 +1,224 @@
+1
+00:00:01,290 --> 00:00:10,619
+Announcer: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to Lynskey and West boss.
+
+2
+00:00:11,250 --> 00:01:09,980
+Wes Bos: Hello, everybody, welcome to syntax today, we got another minisode for you. And we're gonna be talking about how to deal with email, how to deal with email overwhelm, everyone's got way too much email. And I don't know, I think I hit a bit of a breaking point in 2017 with my email because it was just something that was taking too much of my time, something that I hated doing. It just was, it's it was just a big problem for me. And I've, I think I've solved it. And I sort of took all of my ideas into solving it and put it into a system. My whole my whole mantra to life is called make it a thing. And so I took all of my lessons learned from from solving my email woes, and put it into this thing called the breakout email management system. So what we're gonna do today is we're going to go through the main points of the breakout email system, and I'll sort of explain how what they are and how they might help you. So house How you doing today, Scott? Doing good, I look how you,
+
+3
+00:01:10,310 --> 00:01:14,730
+Scott Tolinski: you gave that minisode a little bit of a character there was that minisode?
+
+4
+00:01:15,299 --> 00:01:24,959
+Wes Bos: So I, we haven't decided on if it's a minisode or not, like if this is a word that we want to use, but I kind of like it.
+
+5
+00:01:24,989 --> 00:01:27,930
+Scott Tolinski: Yeah, I got to just sort of organically popped up or maybe
+
+6
+00:01:27,930 --> 00:02:01,829
+Wes Bos: like a snack episode, you know, tasty. snack is okay, if you please vote, tweet us, if you like snack episode, or minisode better. This episode is sponsored by fresh books, fresh books is the easy to use Cloud accounting software, that I've been using myself for many, many years. So if you are running any sort of small business, or you need to build somebody, go to freshbooks comm for slash syntax. And you sign up for a one month free. We'll talk a little bit more about them partway through the show.
+
+7
+00:02:02,939 --> 00:02:04,860
+Unknown: Nice. So So yeah, just
+
+8
+00:02:05,310 --> 00:02:06,209
+Wes Bos: get into it.
+
+9
+00:02:06,390 --> 00:02:14,690
+Scott Tolinski: Yeah, let's get into it. And maybe as before, we could talk a little bit about you know, your inbox in anxiety.
+
+10
+00:02:15,630 --> 00:02:16,250
+Wes Bos: Yes,
+
+11
+00:02:16,260 --> 00:02:25,620
+Scott Tolinski: right. Like, I don't know, it actually gives me anxiety to see other people's inboxes have like 1000 unread emails and stuff like that. So
+
+12
+00:02:26,160 --> 00:02:41,880
+Wes Bos: yeah, that is absolutely no way to live your life. It's just like, remembering that like you talk about like cognitive load for load. And the people, what they do is they remember how many they had. And then if it goes up by three, they know they have three new ones. Like, that's, that's a terrible way to live your life. It's terrible. And it's got
+
+13
+00:02:41,880 --> 00:03:13,710
+Scott Tolinski: to feel like, you know, like hoarders when they're their house just feels like it's the walls are closing in on them or something like that, you know, you're the guy that has to feel like very, very restricting. And I know personally, because there was points in my life, maybe it was college or wherever, where my inbox was totally out of control. And so I practice trying to get zero inbox every day. But I'm really interested to hear about this this system, because I don't know the details of your your breakout system.
+
+14
+00:03:14,070 --> 00:05:24,380
+Wes Bos: Yeah, cool. Well, let's let's get into I actually don't, don't do inbox zero. And I think a big chunk of this big breakout email system is just not carrying all that much about your email, because it will always keep coming in there will always be too much. But that said, like, there's probably people listening to be like, this guy's talking about how good he is an email. Yeah, he doesn't. He hasn't emailed me back in, in a month. And the the answer to that is I know, there's a lot of emails, I haven't. And I'll probably eventually get to it. Or maybe I won't, but I know that at the end of the day, my people that have pressing issues, they've been fixed. And I am not spending more time on my email because I've got better stuff to do. Email is busy work for me. And I need to be recording courses and actually running my business rather than being busy in the process that is email. So let's start off with the the first point of this email system is to decide I have here the core of breakout is that you likely don't have an email problem, you likely have a decision problem. So it's human nature to avoid having to make decisions to defer to a better time to to leave that email to not open it to leave it sealed, because you saw the first line you're like, Oh, I don't want to deal with that right now. And and that's really like if we like hit home as to like, what is my email problem? It's that I hate to make some sort of decisions. Specifically, the big one for me right now is is replying to people about conferences that are a year away and they're like, hey, do you want to come? And I'm like, I don't know. Maybe yes, the kind of I don't want to make the decision right now. So what I did is, is I stopped doing that I'm going to deal with that later. And I just forced myself to actually make a decision. And if it's something that I'm sort of not feeling great about, I know that I can just just turn it down or just tell them I'm just I don't have time to reply to this right now. And that alleviate alleviated a lot of the stress of email for me, because, again, it wasn't the fact that I just opened up my email. And
+
+15
+00:05:24,660 --> 00:05:26,940
+Unknown: sorry, did you hear that? The wind chimes?
+
+16
+00:05:29,610 --> 00:07:07,290
+Wes Bos: doorbell. Okay. What was I saying? Oh, yeah, it wasn't that it was this decision paralysis, where I just had too many decisions to make in a day, and I just didn't have the mental energy to do that. So being able to sit down and go through it is had really, really helped me out. So how do you how do you deal with that? Let's go to the next one. The first one is kill it at the source. So whenever an email inbox comes to me now I just say like, how do I stop this from coming into my email inbox? Like if people the one of them for me was that people would always email me and request amendments to the receipts being like, especially in Europe, there's weird tax laws there. And they say, can you add this to the receipt? Can you do this, and for me that it was causing a lot of extra busy work. And I thought, like it shouldn't ever actually hit my, my email address, or people would sign up with people like 11 different email accounts. And then they're like, I signed up with 42 different email accounts, and you merge them all for me. So what I did is I just built tooling to allow the person to merge them themselves or I built I what I did is they just stuck a content editable on the receipt. And then if something's not right on your seat, change it yourself, and just print it from there. I don't care what you put on your receipt to make your company happy. I'll trust you on that. So finding out like, what is the source of these problems? And how do I stop them from getting into my inbox in the first place? And as a flipside, that also made my customers much more happy? Because they didn't have to email me and wait for me to actually reply.
+
+17
+00:07:08,370 --> 00:07:37,139
+Scott Tolinski: Yeah, I like this. There's a lot of this stuff that I deal with where my contact form gets hit a lot with tech questions like, how do I do this, or I'm trying to do this or that and whatever. And this is, this is a non a non technical solution to that. But I just put up a text. It's saying, like, if you email me with technical questions, I will not answer them. Like, I will not answer your email and that cut down, it doesn't completely eliminate it,
+
+18
+00:07:37,139 --> 00:08:54,990
+Wes Bos: I still maybe get one or two a day, but a cut down significantly amount of just the tech questions I get in my inbox. And then once I do get my inbox, I don't answer anyway. So you know, I think that that kind of system is much needed to recognize these patterns. Exactly, exactly. Next one is the your inbox is not the world's to do list. So we talked earlier about our productivity show about getting things done, and being able to have a to do list and to focus on that. Whereas a lot of people treat their email inbox as a to do list that anybody in the world has right access to, and anyone in the world can add stuff to. So as stuff comes into your inbox, you need to deal with it. And if it is a to do item, you need to process that and put it into the appropriate thing. So in my case, if there's something in my email inbox that I need to deal with, but I can't deal with it at the that given time, I don't leave it in my inbox, I put it into a to do list, assign it an area, put a due date on it if if needed, and then archive that email. Because it's it's not something you should as when you open it, you should deal with it right then and there and have a process and a system for following up with that piece of email if it's needed.
+
+19
+00:08:55,710 --> 00:09:10,380
+Scott Tolinski: Yeah, I agree with this. And it's a great way to, again, clear out that that inbox clutter. Exactly the inbox. I mean, it's the name is the inbox, it's not the place where email lives forever. Decide what yeah, that
+
+20
+00:09:10,400 --> 00:10:56,520
+Wes Bos: that's the whole idea behind the you would have an inbox and you would use to have an outbox, right. And you would, you would just process it, you wouldn't just leave it all in your inbox, you would put it in your your outbox. Next one I have is filtering. So I've spent a lot of time like, Gmail has these, I use Gmail. And they have these tabs that filter for social promotions, updates and forms, which is great because I'll often just select all and delete it, because I don't necessarily care but they're not perfect. And what I like to do is just create I have these massive, these rules in Gmail or anything that comes from Basecamp or slack or GitHub or Trello or PayPal or Asana or anything like that, it will automatically apply a tag to it and then I can just go through those times. And I know that anything that is in that I can just safely delete and that will just blow it away. And that'll that'll really bring the the number of emails in my inbox down similarily automatic reply, I get hundreds of these because my email list is fairly large. And all of Germany is always on vacation. So if I send out an email, I get hundreds of Germans auto reply with automatic dished antwort. And I built this massive rule of every single language of out of reply, I tweeted it out. And people people made this really big rule that said, anytime that has a response automatic or auto reply or out of office or in every language, and then it'll just automatically archive those because I do not care if you're out of the office and just automatically throw those into the trash for me, which is great. Nice. So yeah, spending some time on filters is well worth your time.
+
+21
+00:10:56,550 --> 00:11:21,720
+Scott Tolinski: Yeah, yeah. And I filter, anything that comes from any sort of like, sales email, or anything like that, or newsletter, I'll unsubscribe. But I'll also put a filter on it just in case, you know, some of those emails come back. And they're like, Hey, you know, even though you unsubscribe, we're still sending you email, because I don't know if that happens to you. But that happens to me all the time.
+
+22
+00:11:22,770 --> 00:14:58,020
+Wes Bos: Yeah, absolutely. Let's talk a little bit about our sponsor, which is fresh books, you know that I absolutely love to use fresh books for keeping track of my expenses, doing my invoices, and all this stuff. And one of my favorite features of fresh books is that you can allow it to automatically follow up with people who have not yet paid. So if you have a client, and you send them an invoice for 1000 bucks, and you say it's due at a certain point, first of all, you can see when they've seen the invoice so there's none of that like back and forth, like, Oh, I never saw it. Like, I can see that you opened it up, and you saw it. And second of all, it will automatically follow up with them if they have not yet paid. And it's nice because the robot is doing that not actually you. So if you are a small business owner, and you need invoicing system, cloud accounting software, being able to keep track of your expenses, and all that good stuff, check out freshbooks.com forward slash syntax and enter in syntax into the How did you hear about a section, automate and expand is the next tip. So tech support goes to slack, obscure programming questions, I send them to StackOverflow questions of all my text editor or anything that like what font Do you use goes to Wes Bos calm for such uses. I get a lot of people who who want advice, they say, this is my very specific situation, what should I do. And the reality is, is that you most of those people just need a little bit of motivation, they just want you to be like, hey, like, keep going keep going at it. And you'll do great, because your situation is not unique, you just need to put in a lot of time and build a lot of stuff. And you'll get good at programming. So I just sort of like D is stuff that like like that needs to be redirected elsewhere because it doesn't belong in my inbox. So those redirects can seem sort of rash and cold. Like I don't like that I have to do this to people, but I need a fast way to redirect people out of it. So what I use is text expander for these common emails where I have like, I type colon brief, and it just doesn't say like, hey, thanks so much for the email. I apologize if this email is brief, I do get a lot of it. I really wish I could spend more time on it. But I am short on time right now. And then I will then I will type exactly what I want. And that little little bit of like humaneness before I do. The redirect really helps in it, it gives people like a little bit of a better feeling because we've all gotten like short emails and tone is often lost on online. And I don't want to leave people with sort of like a sour taste in their mouth. What else do we have here? So that's another reason is that often emails that need like, empathetic response, often emails that need a little bit of time, those are the ones that you put off, because you need to figure out okay, how do I reply to this properly, I need to reach deep and have a little bit of empathy in this one. And those are the ones that you're like, ah, I'll do this later. I don't have time. I can't can't be bothered with it right now and say you should not be it should not be putting away so things like that text expander I have lots of little snippets often what I'll do is if I copy their name Optech Spanner automatically input it into the response. So if you if you say the person's name, it looks a little bit more human which is ironic because it's not because it's a automated response. But it allows me to have the level of humaneness that I want with the sheer amount that I actually get. So I've been pretty happy with with the TextExpander automation that I've been been using.
+
+23
+00:14:58,050 --> 00:15:04,260
+Scott Tolinski: Nice yeah I really need to get set up with text expander in a much greater way.
+
+24
+00:15:05,190 --> 00:16:21,330
+Wes Bos: Yeah is also you can check out a text, which is like a $5 replacement at Tech spender recently switched over to like the monthly, which is brutal. I haven't haven't upgraded to the new one yet, they just didn't add any features and then started charging you monthly for instead of just a one time purchase. So a tax is a nice little alternative there. Um, next one is dictation. So OSX has a really good dictation built into it, where if you turn it on and you download this like two gig file, it will be really good at being able to take your text and make it into speech. So I'll just hit function function, and then it will just take whatever it is that you're saying and put it into an email. So I often will do that because it's both quicker and also comes off a little bit more human than typed text because it's just me typing into or me talking into a microphone. And doing that so huge fan of dictation. It's come a long, long way. And it's pretty good. You still have to go over really quickly. Or I'll just put like a quick like, Hey, sorry if there's like weird. I have had some like really weird ones where I didn't catch mistakes. But often Yes. But like, Hey, I dictated this. So apologies for any weird. Any weird issues that that got my way? Yeah, yeah, this
+
+25
+00:16:21,330 --> 00:16:53,100
+Scott Tolinski: actually that's something that I would have been interested in a lot more in general anyways, is dictation for me. Because obviously, I'm decent enough at recording audio, like I talk into a microphone for the videos in this podcast, right? Yeah, I'm a terrible writer. And so maybe the solution for me writing blog posts isn't, isn't to write a blog post more, it's to just talk it out and then edit it later. So in not in the context of email, obviously, but dictation is definitely something that I'm super interested in right now.
+
+26
+00:16:53,670 --> 00:17:21,350
+Wes Bos: Exactly. I had my my entire ESX course I had it captioned. And then I took those captions to a technical writer, and the technical writer turned them into blog posts. So it was me speaking into a microphone. And eventually they ended up as beautiful blog posts that are helpful for everybody. And also gives me a really nice Google boost, because I've got 60 blog posts on JavaScript that will show up when you search for something
+
+27
+00:17:21,560 --> 00:17:22,170
+Unknown: nice.
+
+28
+00:17:23,760 --> 00:20:59,760
+Wes Bos: video responses, I don't use this a whole lot. But often, especially like people are doing like a school project, or they want to have an interview or something like that. And then they send me a list of like, 47 questions that I have to then reply to, and they're gonna publish it on their blog. And sometimes I don't do these because it's a bit of a tactic to write a blog posts, email, everybody who has more than 80,000 Twitter followers for their opinion. And then and then email them back once it's published and ask for a share. So that's a bit of a, I don't know, I'm not really stoked on that tactic. But often people will have like, legitimate questions for me, and they want to put it into a blog post. Whereas like, I just like, I don't want to type this because it's gonna take me forever. So I'll just flip on my email, I'll flip on my video recorder on cloud app, or, or just do an audio one. And I'll just talk through all the questions as fast as I can. And then I say, I'll just give it to them and be like, here, good luck, like transcribe it, if you like anything that I've said, nice otherwise, nothing that I have there. Um, should you defer. So deferring email should be a last resort, if you need to reply to email, but you're waiting on another party, you can defer it. So whether using a Google has like a snooze feature, where you can just get out of your inbox and snooze it until the next day. And I'm a big fan of that for things that you actually are waiting on somebody else, and you can't archive it, but you just want it off your plate. So you stop thinking about it. And deferring is really good for that. Next one, batch processing is I often will do an email just once or twice a day, I'll have it open all day, just in case something like a fire comes up. But usually I will just like not touch my email. And then once a day, I'll just go through it as fast as I can, I'll blow through it. And even now I've since I've written this, I have an assistant as well, that takes care of a good chunk of the email and she uses the same tactics that I do. And it's just that you go through it a couple times a day, blow through it, all the questions are, mostly have answers that can be solved within a minute or two. And then anything else is where I'll go through it once at once or twice a day. And and add my own little touch to that. Nice, I'm a big fan of using send an archive and or auto advance in Gmail because what that will do is as you send one it will automatically bring another one up, and then it doesn't give you a chance to sort of escape When can because if it's marked as red, then you have to, then you got to deal with it, you can't just like keep leaving it in your inbox. So there's a it's it's in Gmail labs where you can turn it on, where when you archive an email, it will automatically put another one on your plate and it won't bring you back to your inbox. It'll just give you the next one, which is great. And finally, my last tip is stop emailing yourself. There are lots of different good places that you can store information rather than emailing it to yourself. People always just send themselves attachments or reminders or something like that. your email inbox is not a to do list. So get a proper to do list. If you have information, put it in Evernote, put it in Pinterest, put it in Dropbox, put it in Google Drive, airdrop it to somebody. There's not a whole lot of use case for emailing stuff to yourself. Yeah, any more. Yeah, and that just again, that just clutters up your inbox, it's not not necessary.
+
+29
+00:21:00,239 --> 00:21:09,510
+Scott Tolinski: Yeah, I've never been a huge fan of emailing myself, because you're right. I mean, there's a billion other things that would do that better for you anyway, so yeah, love these tips.
+
+30
+00:21:09,780 --> 00:21:34,580
+Wes Bos: Cool. So that's that's it. For me. Those things have really helped me a lot this year. I've been really happy with all this different process. And it's it's not perfect. I like I sit right here right now I have 44 new emails I've come in the last 20 hours. But I know that when I do do it, I'll probably be able to deal with it in less than half an hour. Yeah. And then I'll be happy about it. One
+
+31
+00:21:34,800 --> 00:22:04,260
+Scott Tolinski: couple things I might want to add. Obviously, these aren't part of your system. But I know this is cliche at this point, but make time to focus on your email and then like close it for the rest of the day, like yeah, from nine to 10 is usually when I work on email, or take care of all my email every single day. And then I never ever open it again for the rest of the day. turn off notifications on your phone that stuff will drive you nuts. Because notification every time sends you an email nothing is that urgent.
+
+32
+00:22:04,860 --> 00:22:21,000
+Wes Bos: Especially on the weekend that can wreck your wreck your weekend when you accidentally see something that will like whether it's a bad review or somebody Yeah, like someone emails you in the say they're disappointed in the content that will really ruin your day. So yeah,
+
+33
+00:22:21,000 --> 00:23:36,390
+Scott Tolinski: and you're not gonna take care of it on a Sunday anyways. Exactly. Also, what unsubscribed from email us obviously ones that aren't not mine, West scissor or mine. Yeah. But if if target is sending you emails, they're like, do you need emails from Target? Like, do you need emails from Costco or IKEA Niemeyer? I don't Yeah, I don't need emails from those people. But occasionally you get signed up for those things. And you just sort of let those emails come in and ignored and stuff like that. Obviously, if it's high value content, like Wess and mine, you want to keep those emails but for for, like low value content that comes all the time. Like for instance, there's a really awesome savory spice shop in Denver, Colorado. And we we'd love to savory spice shop, and we just kept using my mother's account so that she would get all the bonus points every time we bought anything there. And then yeah, a couple weeks ago, I signed up for an account myself, and they send me three to four emails a day, and no way. Yeah, yeah, I told, told Courtney, I was just like, I just got another email from savory spice shop. I need to end this right now. It's it became just like, I love you guys. But cut it out.
+
+34
+00:23:36,419 --> 00:25:21,750
+Wes Bos: Yeah, yeah, seriously. And I especially like when they ask for your email at the cash register. I'm just like, No, No, No way. No way I unsubscribe from absolutely everything. The only like, the only sort of like things that I don't unsubscribe to is people that are also in my industry. Because often what I want to do is I want to go back and look at what are people in, in our industry, or people that are sort of like selling stuff in a in a different industry, but kind of the same way, I'll often like to go back and see how they're doing it. But I will definitely auto archive all of those things. So you're it's not not taking up space in your head nice. And in your inbox and in your inbox. Cool. So uh, if you have any tips, make sure you tweet them at syntax FM, we're going to move on to the listener question. And we're gonna we're trying this out. We're going to every episode we're going to just try to answer a little question that has come our way if you have any make sure you just sent no send us a send us an email, send us a Tweet, whatever it is that you want to do. So today's question is about prettier, which is the the JavaScript format or that has just exploded in last last year or so. And if you haven't heard of it, what it will do is you just write your JavaScript in a will automatically format it to whatever settings that you you sort of have turned on and on I really like this because you don't have to spend any time making sure you've properly indented or, or put the put arguments on single lines or any of these rules, it will just do it for you. And you don't have to worry about it at all. So I get a lot of questions about like, how do you actually set up prettier? And it'd be interesting to see just Scott and I are real quick. How do we have prettier setup for our own dev?
+
+35
+00:25:22,050 --> 00:25:44,100
+Scott Tolinski: Yeah, so I personally have the ES lint plugin for prettier and in my es lint.or.ts lint RC file, I simply just have it listed in the plugins prettier. And that's it takes care of everything for me, and then I zero configuration on top of it and just let it do its thing.
+
+36
+00:25:44,970 --> 00:25:55,470
+Wes Bos: Oh, wow. Awesome. I also use the ES lint. So es lint is I know it's already hard to explain what Yes, lint is and people are getting a bit butthurt lately about
+
+37
+00:25:57,450 --> 00:26:05,610
+Unknown: improperly explaining what Yes, lint, it just finds issues or configure it or it finds issues or syntax wise or
+
+38
+00:26:06,480 --> 00:26:15,240
+Scott Tolinski: Yeah, structure wise or any of that in your JavaScript code and fixes it based on a set of parameters that you've either set or brought in with patches, plugins, whatever.
+
+39
+00:26:15,660 --> 00:26:46,500
+Wes Bos: Exactly, exactly. And prettier is is focused on syntax and like code best practices format. And yeah, format and es lint is more focused on improper coding where if you forgot to improperly scope something or you have forgotten? I don't know. What are some of the other I should open up my slides here. I have hundreds of settings in it. Yes. Oh yeah, you
+
+40
+00:26:46,500 --> 00:26:59,970
+Scott Tolinski: open it up. Find it even just fixes my tabbing it fixes my usage of semi colons it automatically alert me if maybe I'm missing prop types or default props and react. It does
+
+41
+00:26:59,970 --> 00:27:45,690
+Wes Bos: a lot a lot of stuff for me comma Dame dangle calm making sure you always have a function name or not, I have that one turned on moving whitespace like unnecessary space for parenthese. Those, there's a whole bunch of ones for for react and whatnot. So I have that all in my es lint. And then when I have my my prettier, I will just install the the prettier plugin and then it will auto fix all of the stuff in prettier started off as a zero config. But they have bent a little bit and added a couple different settings for it. Specifically, I have the ability to I have trailing comma set to s5 I don't even know what that is. Like trailing comma is after?
+
+42
+00:27:46,500 --> 00:27:48,630
+Scott Tolinski: Yeah, do you I use a trailing comma.
+
+43
+00:27:48,900 --> 00:28:06,000
+Wes Bos: And lady. Because the because of the the get change. I really like the fact that you don't have to mess with the previous line with it. Yeah, I've changed it to single quotes instead of double. And then I've set my column width to 120 instead of the default 80. Just because yeah,
+
+44
+00:28:06,000 --> 00:28:10,680
+Scott Tolinski: cuz Yeah, I got who can do 80 like that, who I don't know. That's why apparently
+
+45
+00:28:10,680 --> 00:28:23,040
+Wes Bos: everybody and they have like multiple columns open at once. But I got a big monitor. And I'm happy with that. It's kind of the nice thing about being a dev on your own is you don't have to conform to a team standard. You can just have your own settings. Yeah.
+
+46
+00:28:23,040 --> 00:28:39,960
+Scott Tolinski: And I have actually had mine set to 160 I didn't realize I had that. Whoa, No, I know. I do like short lines. But I think then I keep my my, my type size pretty small. Like kind of squinting Deaf to see it smell. So I just
+
+47
+00:28:39,960 --> 00:28:47,610
+Wes Bos: like them. And then here's a question. Do you have it? In VS code? Do you have it? format on Save?
+
+48
+00:28:47,669 --> 00:29:03,390
+Scott Tolinski: I have it format on Save? Yeah, yeah, cuz I love that I love not having to worry about space after and tabs and they add stuff hitting Command S and just seeing everything sort of getting the line. I love that I don't want to say Hey, man, fix yourself up. I just wanted to,
+
+49
+00:29:03,660 --> 00:29:41,370
+Wes Bos: it's funny I used to, when I taught i would i would give feedback to students. And I would always tell them, like, make sure you watch your indentation and, and make sure that you're like you're properly indenting because this this code is a bit hard to read. Whereas I look back at it now. And I was like prettier is the ultimate beginner's tool, because you don't have to worry about the proper formatting indentation and where everything goes it will just fix it for you. And it will make your code extremely readable. So prettier also works on HTML and CSS and a bunch of different It started off just JavaScript but works on a bunch of different languages as well. Yeah,
+
+50
+00:29:41,370 --> 00:29:56,760
+Scott Tolinski: I would say my code is pretty terribly red. If I'm not using es lint like I've just I've been in it so much to fix on Save that. If I don't use it, I've just like my muscle memory is completely gone for making sure it's formatted correctly.
+
+51
+00:29:56,790 --> 00:30:09,600
+Wes Bos: There's also a i a format on paste in VS code as well. So if you're pasting in code from somebody else's code or from online it will automatically format it as you paste in which is pretty neat.
+
+52
+00:30:10,200 --> 00:30:11,360
+Unknown: super neat. So
+
+53
+00:30:11,580 --> 00:30:17,340
+Wes Bos: big fan of prettier. Check it out. You got anything else for me, Scott or should we wrap this puppy up?
+
+54
+00:30:17,340 --> 00:30:21,900
+Scott Tolinski: Let's wrap it up. Let's wrap this snack up. That's an episode.
+
+55
+00:30:22,350 --> 00:30:29,160
+Wes Bos: Thanks for snacking with us. See you in the next one. Bye. Bye,
+
+56
+00:30:29,190 --> 00:30:38,460
+Scott Tolinski: see, don't overdo syntex.fm for a full archive of all our shows, don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

@@ -1,0 +1,1416 @@
+1
+00:00:01,319 --> 00:00:10,530
+Unknown: You're listening to syntax podcast with the tastiest web development treats out there. strap yourself in and get ready to Lansky and West boss.
+
+2
+00:00:10,559 --> 00:02:02,850
+Okay, I think I think we've managed to do the furniture moving in record time. I'll be honest, that would have been a whole lot quicker heard Western Scott not demanded that we got them a shrubbery. They were it was it was a deal breaker. I'll be honest, I'm so I'm so excited about about this as the way to finish the day, when we first talked about doing jams calm. We spoke to Western Scott really soon and said, you know, would you be prepared to come and record one of your podcasts live here, apart from anything else? West Scott on syntax FM, we've just been incredibly supportive for Netlify and Netlify, sponsored the podcast for a little while. And the thing that's just been amazing to us is not just how many people have discovered it discovered Netlify through syntax FM, but how loud they are, when they find it. They like shouting to the world. Not only that the founder, but they found it through syntax FM, the very very vocal user basis really excited, exciting. We had several talks throughout the day that I've kind of touched on education, Quincy Larson just a moment ago, really inspiring stuff talking about his mission to spread education about about coding, if it's so nicely that we've got West and Scott both here, because Wes Bos is just another one of these annoyingly prolific people who just like churns out doesn't just churn out content. It's so good, like learning all kinds of things about development, really prolific. It's just like a go to resource for from Wes Bos. And then Scott Tolinksi is just the same, you know, with with his tutorials are just all over the web, really, really good quality. And somehow for for how many? How long? Have you been doing syntax FM? About a year and a half they've been doing this podcast, and they never met until we brought them together. So so so there was a couple of hours.
+
+3
+00:02:04,710 --> 00:02:05,760
+Oh, oh,
+
+4
+00:02:07,680 --> 00:02:27,870
+I can't decide if that's pride or or biol. Rising is a lovely moment. So we're just so excited to have them here. I think we can have lots of fun hearing from them. I think there might be microphones in the audience at some point. So brace yourself, please get involved. Give them a huge round of applause. Scott Tolinksi. And Wes Bos are
+
+5
+00:02:30,180 --> 00:02:33,990
+not gonna miss that. Hey, Hey,
+
+6
+00:02:35,000 --> 00:02:36,270
+Scott Tolinski: Hey, Hey,
+
+7
+00:02:36,380 --> 00:02:40,440
+Wes Bos: good to see everyone. Just gonna get this is two ferns with Wes and
+
+8
+00:02:40,440 --> 00:02:42,630
+Unknown: Scott. Yeah, this reason
+
+9
+00:02:42,660 --> 00:03:19,650
+Wes Bos: this is really weird, because we've never like met, and also have never recorded in person, let alone being in front of many hundreds of people. We're really excited to be here. So thanks so much for coming on out. So for those who don't know, we are a podcast called syntax. We're available at syntax out FM, we we do web development. We talk about web development twice a week. So on Mondays we have this thing called hasty treats, which is a dumb way of saying it's a small podcast, usually it's like 2025 minutes. We were hoping it would be like 12 minutes, but sometimes they're like 45 minutes. And then on Wednesdays
+
+10
+00:03:19,680 --> 00:03:35,789
+Scott Tolinski: Yeah, on Wednesdays we have a tasty treats, which is also a dumb way to say a longer podcast, which is where we take an individual topic and spread it out over the course of an hour. So depends. Yeah, sometimes a little bit longer as well. But you know, we don't like to to limit.
+
+11
+00:03:36,120 --> 00:03:39,690
+Wes Bos: Totally. So we are sorry. Nope, that's wrong. Yeah,
+
+12
+00:03:39,690 --> 00:03:40,979
+Scott Tolinski: we are not Scotland ski.
+
+13
+00:03:43,560 --> 00:03:54,780
+Wes Bos: By the way, Adam, cut that out. Yeah, we have an editor named Adam. And we may sound like we're very good at podcasting, but we're not and Adam cuts everything out. So we might have a couple little item. Cut that out.
+
+14
+00:03:54,810 --> 00:04:08,819
+Scott Tolinski: Yeah. My name is Scott Tolinksi. I'm a web developer. I'm from Denver, Colorado. You can find me at St Lynskey on Twitter, Instagram. I'm also at level up tuts or level up tutorials all over the web on YouTube, Instagram, all that good stuff.
+
+15
+00:04:09,720 --> 00:04:46,560
+Wes Bos: My name is Wes. I build web development courses most recently released one on advanced react. Anyone ever taken one of my courses before? Awesome. I'm from Canada, which is why I say JavaScript funny. And I apologize for that. I'm at Wes Bos on Twitter and Instagram. So we're here at jam SATCOM, which you obviously know, but there's 30,000 other people listening to this podcast right now that don't know that maybe we're at a conference right now. And jam stacks stands for JavaScript API's and markup and we've seen some amazing talks today that really dove into I think what the future of web development is going to be looking at.
+
+16
+00:04:46,580 --> 00:05:42,570
+Scott Tolinski: Yeah, and speaking of jam stack, this conference is sponsored by Netlify. Now Netlify is not only an excellent podcast, or an excellent host for your website, they're also an active a host of this conference and everything. So we we both love, I know you've listened to the podcast a while you realize how much we both love Netlify so much. I personally host everything that I can at Netlify anything anytime you need front end code, but not just front end code, you have access to the serverless functions, you have access to the content form, you have access to identity, all that good stuff. If you need a host seriously, the first place you should be looking at is Netlify. And I mean, if you know me or listen to the podcast at all, then you would know that I'm not saying that because they're a sponsor. I truly love this service. So thank you so much for Netlify for sponsoring today's episode of syntax.
+
+17
+00:05:42,930 --> 00:05:45,240
+Wes Bos: How many of you do listen to the podcast?
+
+18
+00:05:45,870 --> 00:05:47,100
+Scott Tolinski: Awesome. Oh, Dave, you
+
+19
+00:05:47,100 --> 00:05:50,130
+Wes Bos: were excited to see a Scott ad transition in person.
+
+20
+00:05:55,290 --> 00:06:02,550
+So today, what are we gonna do today? We're pretty much just gonna goof around for an hour. And then that's the end of the conference? No, really, we're
+
+21
+00:06:02,550 --> 00:06:20,280
+Scott Tolinski: gonna break it down into a couple things. We're going to start with what we call spicy jam tips, some Hot Tips for building jam stack applications, then we have a game that we're calling this, that or both. And I think you were all gonna have a ton of fun with this. We were cracking up when you're making this. So this is I'm excited. We think it's funny, hopefully
+
+22
+00:06:20,280 --> 00:06:43,200
+Wes Bos: Yeah. Then we're gonna play stumped. Is this something we do on the podcast? Where Scott and I try to answer interview questions without any sort of preparation. And we usually fail horribly. So this time, instead of embarrassing ourselves, we're going to ask you from the members, a couple of brave souls to come on up, we'll ask you some tricky JavaScript or web development related questions. And we've got some pretty sweet prize.
+
+23
+00:06:43,230 --> 00:06:59,370
+Scott Tolinski: Yeah, prizes. After that we have underrated or overrated, or overrated or underrated, which is a segment that we're going to be talking about maybe new stuff, fun stuff, or just funny stuff. And we're going to maybe discuss a little bit whether or not we think it's underrated or overrated.
+
+24
+00:07:00,270 --> 00:08:04,520
+Wes Bos: Finally, we're gonna wrap it up with a q&a with Scott and WEF. Thank you, man, that makes me feel so good. All right, so let's get into the first section, which is spicy jam tips. These are some hot tips for getting started with the jam stack we just kind of came up with over building apps over the last couple years, here's a couple little hot tasty tips that we've been working with. First one that I have is set your auth tokens by default. So something that happens in your application, when you want to ping one of your services, often, what will need to happen is you'll need to like reach into local storage or somewhere else and grab your API key or your JW T or your bearer token, and then send that along for the ride with your request. So whether you're using Apollo or axios, or any other sort of like, fetching library, you can usually in these, you can set it up so that every single request will automatically grab that token and send it along for the ride. So you don't have to do that in every single request. It's a small thing, but it really cuts down on how much code you need to write on every request.
+
+25
+00:08:04,920 --> 00:08:37,909
+Scott Tolinski: Yeah, next, I would say a lot of times when people first hear jamstack, they may be go towards static or static sites, and even the static sites that you might build with the jam stack. I think people maybe corner themselves into this static territory. But not only can static sites be as dynamic as you need them. But really working with the jam stack can be as large as you need it to be. I mean, it's not for small, just small projects, quick projects, it's for any project, especially things that you're working with outside API's and just need to be as fast as possible.
+
+26
+00:08:39,210 --> 00:08:58,399
+Wes Bos: Next one is don't wait to use new tech. So sometimes we talk about all of this new exciting, this is not necessarily just jam sack. But it's really important to figure out how do we progressively enhance where we can make the experience better for people who do have these newer browsers? Or how do we fall back in gracefully degrade Where is needed.
+
+27
+00:08:59,419 --> 00:09:38,899
+Scott Tolinski: The next is there are many jam stack libraries in the sea. I mean, really, the idea here is that there's a ton of stuff around the jam stack. So if you've only experienced one particular library or one particular platform, even if you're not comfortable in other areas, or other platforms, venture out and see what else is out there and try different things. And really just see what works best for you. Because sometimes you might pick something up because it's the first library platform that you've used. But in reality, there might be one that you're even faster with or maybe it connects to you in a better way. So feel free if you have small projects or whatever, try them out, try out a whole bunch of different stuff because there's there's so much great stuff around the the jam stack ecosystem,
+
+28
+00:09:39,799 --> 00:10:08,250
+Wes Bos: along with trying stuff out his side projects, I think it's a key to to both learning, because it's intimidating to take on this new tech, especially if you're trying to like stick your neck out and suggest to other people on your team. This is what we should use. It can be hard to convince other people we've always done it this way. There's nothing wrong with this way. Why would we need to move it over. So I always recommend you just build a couple little side projects, so you have something to show. And you're when you're going into much larger potentially client projects, you're gonna feel a lot more comfortable with it.
+
+29
+00:10:08,880 --> 00:10:11,070
+Scott Tolinski: Cool. All right now,
+
+30
+00:10:11,070 --> 00:10:27,149
+Wes Bos: I'm really excited for this. This is a segment that we're calling this, that or both. To give you a little bit of heads up what this is. So we are going to give you the name of a possible web development library or framework. And you
+
+31
+00:10:27,270 --> 00:10:31,909
+Unknown: all get to vote on whether or not it's real, or we're just pulling your leg.
+
+32
+00:10:33,020 --> 00:10:34,399
+So head on over to
+
+33
+00:10:34,399 --> 00:10:51,750
+Scott Tolinski: take your phone out. Yeah, pigeonhole.at forward slash tasty. And you're gonna be able to vote as we go here. And then we'll have all of the results live on the screen here so we can see what everybody is thinking.
+
+34
+00:10:52,890 --> 00:11:01,830
+Wes Bos: So once you go to that, there's going to be a this stat or both. Click on to that. Click through to that. There we go. Five people. 11 people. 12 people. There we go. figured it out.
+
+35
+00:11:05,669 --> 00:11:06,240
+Unknown: Cool.
+
+36
+00:11:07,559 --> 00:11:11,460
+Wes Bos: I don't know how long we need to wait. We'll see. Wait till we get to we'll wait
+
+37
+00:11:11,460 --> 00:11:14,370
+Scott Tolinski: till it stops increasing. This might be time for an NBA Jam joke.
+
+38
+00:11:14,490 --> 00:11:27,330
+Wes Bos: Okay, what do you got? So not everyone? Yeah. When we first talked about this, Scott got his notebook open is like, I don't know what we're gonna talk about a jam stack. But I need to have an NBA Jam, Joe. Yeah.
+
+39
+00:11:27,360 --> 00:11:34,080
+Scott Tolinski: My first the very first note I wrote was make NBA Jam joke. And then last night, I was like, Hmm, I really need to come up with an NBA Jam.
+
+40
+00:11:36,120 --> 00:11:44,340
+Wes Bos: We hit 100. Now we're dipping. Alright, I think that's good. Let's let's start off Scott. Can people still join as it goes? Yes. Yeah, people can still okay.
+
+41
+00:11:44,340 --> 00:11:54,149
+Scott Tolinski: All right. Well, we'll still climbing. All right, let's start this quiz. The first one. Is Evo RX.
+
+42
+00:11:55,350 --> 00:11:58,260
+Wes Bos: Is it a high end carbon fiber roadbike
+
+43
+00:11:58,679 --> 00:12:07,770
+Scott Tolinski: or a Redux lid for asynchronous and event based operations? I'll give you a couple of seconds here. Oh, man. 140 people in?
+
+44
+00:12:10,080 --> 00:12:15,390
+Wes Bos: Oh, tell you how many votes there are? Yeah, a lot of votes are climbing. It's your votes and get your votes in?
+
+45
+00:12:15,390 --> 00:12:20,970
+Scott Tolinski: Is it a high end carbon fiber road bike or a Redux library for asynchronous and event based operations? Or both?
+
+46
+00:12:21,000 --> 00:12:41,159
+Wes Bos: I guess yeah, it can be most of these will have an option for both of where they are both. Alright. I think that's good. Let's see. It is a car of a high end carbon fiber road bike. 66.6%. Good job. All right, next one. Next one jumpsuit. Is it a rap rock group from Flint, Michigan?
+
+47
+00:12:41,640 --> 00:12:45,929
+Scott Tolinski: Or a minimal react and Redux framework? Or both?
+
+48
+00:12:52,470 --> 00:12:56,940
+Wes Bos: I'm really impressed with that last one. Everyone got 66% of you.
+
+49
+00:12:58,320 --> 00:13:05,520
+Scott Tolinski: Alright, let's see it. All right, going to reveal get your votes in a minimum.
+
+50
+00:13:07,260 --> 00:13:20,850
+Wes Bos: So 60% voted both but the correct answer was only 26% of you knew that it was a minimal react Redux. That would be an awesome rap rock group.
+
+51
+00:13:20,880 --> 00:13:22,020
+Unknown: It's perfect. Yeah,
+
+52
+00:13:22,020 --> 00:13:30,750
+Scott Tolinski: I ideal name. Next one, is Afro dating? Is it a react styling library
+
+53
+00:13:30,779 --> 00:13:33,870
+Wes Bos: or at best selling a erotic novel?
+
+54
+00:13:44,429 --> 00:13:50,370
+Yeah, that was one of the prizes is the actual copy copy of the novel. Signed by me.
+
+55
+00:13:50,460 --> 00:14:01,169
+Scott Tolinski: All right. All right. So yeah, revealing Oh, two bits to be fair, isn't very likely a chance to actually ride along at
+
+56
+00:14:01,169 --> 00:14:09,570
+Wes Bos: home. 58% of you voted both which was wrong. As 27% of you voted as a rack styling library.
+
+57
+00:14:12,390 --> 00:14:13,620
+Scott Tolinski: Alright, next.
+
+58
+00:14:13,860 --> 00:14:19,590
+Wes Bos: Next is you go Is it a static site generator but built in Oh, camel,
+
+59
+00:14:20,010 --> 00:14:44,970
+Scott Tolinski: or is it a mini hatchback built in the former Yugoslavia? Your votes in? All right, we got revealing the answer. All right. Oh, winner. It's a winner winner.
+
+60
+00:14:44,970 --> 00:14:51,960
+Wes Bos: So 46% of you correctly guessed that it is a mini hatchback built in the former Yugoslavia. Which is true.
+
+61
+00:14:51,960 --> 00:15:07,020
+Scott Tolinski: All right, number five. We have C control. Is this a modern state management library. For web components, or is it a studio headphone mixer? Or both?
+
+62
+00:15:07,529 --> 00:15:08,130
+Wes Bos: Both.
+
+63
+00:15:14,279 --> 00:15:14,970
+Unknown: Alright.
+
+64
+00:15:16,859 --> 00:15:24,120
+Scott Tolinski: Alright, lock those votes in. Here we go. Oh yeah 4.8% correctly
+
+65
+00:15:24,120 --> 00:15:27,630
+Wes Bos: guessed it's a studio headphone mixer. Correct. Job.
+
+66
+00:15:28,890 --> 00:15:29,640
+Scott Tolinski: Number six.
+
+67
+00:15:29,669 --> 00:15:31,529
+Unknown: Next is the Yak back.
+
+68
+00:15:32,010 --> 00:15:40,950
+Scott Tolinski: Is it a recordable HTTP testing interface? A popular 90s electronic toy? Or both or both?
+
+69
+00:15:47,370 --> 00:15:48,450
+honored 53
+
+70
+00:15:50,940 --> 00:15:52,590
+Unknown: Oh.
+
+71
+00:15:54,510 --> 00:16:00,049
+Scott Tolinski: All right. Ready for the reveal? Oh,
+
+72
+00:16:00,270 --> 00:16:14,130
+Wes Bos: incorrect. It is both. Most of you knew that it was the electronic toy who had a yak back when they're a kid. Yeah, no, we're not so much fun. But it also is a recordable HTTP testing interface. Also,
+
+73
+00:16:14,130 --> 00:16:25,440
+Scott Tolinski: yes. All right. Next one. Juice. And this is spelled j o s e for those of you playing at home? Is this a East Coast juice bar with six locations?
+
+74
+00:16:25,950 --> 00:16:29,549
+Wes Bos: Is it a meta object system for JavaScript? Or
+
+75
+00:16:29,580 --> 00:16:32,100
+Unknown: a popular Instagram? vape. Daddy?
+
+76
+00:16:33,179 --> 00:16:37,320
+Wes Bos: He's got over 600,000 followers, or all three?
+
+77
+00:16:41,159 --> 00:16:42,210
+Unknown: Juice.
+
+78
+00:16:47,100 --> 00:16:49,950
+Scott Tolinski: All right, lock those votes in here we go.
+
+79
+00:16:54,149 --> 00:16:56,299
+Unknown: Ah,
+
+80
+00:16:58,529 --> 00:16:59,580
+set so 50
+
+81
+00:16:59,610 --> 00:17:14,220
+Wes Bos: only 15% of you did it right, which was a meta object system for JavaScript 20%. We thought it was a vape daddy from Instagram. Oh, and most of you thought it was all three.
+
+82
+00:17:14,280 --> 00:17:23,190
+Scott Tolinski: I had to Google. This wasn't an actual juice bar. Before we did this because I was not convinced. Next we have easy router.
+
+83
+00:17:23,810 --> 00:17:41,730
+Wes Bos: Is it a client side object oriented router written in vanilla JavaScript? Or a drain cleaning apparatus popular amongst local plumbers? Oh, some of these? I'm just like, what is it? A guy we have the right answer on here.
+
+84
+00:17:46,230 --> 00:17:57,800
+Scott Tolinski: Yeah, when we went back through this afterwards, and we were trying to bold the right answers, and some of them I was just like, I'm gonna let's do this. What's the right answer? All right, what do we got? Alrighty. Revealing this answer.
+
+85
+00:17:57,830 --> 00:18:13,740
+Wes Bos: Oh, 50%. Of You guessed correctly a drain cleaning apparatus. I thought router would be like very tricky because it's object oriented. So instead of having double Oh, yeah, blow in there. Yeah. Yeah. So you want to make an object oriented router. Please go ahead. And
+
+86
+00:18:13,770 --> 00:18:19,470
+Scott Tolinski: yeah, I think it's an open open namespace. It totally is. Okay, next. Okay.
+
+87
+00:18:19,950 --> 00:18:27,240
+Wes Bos: We got aqueduct. Is it a server rendered ORM and OAuth 2.0 based framework built in Dart? Or
+
+88
+00:18:28,530 --> 00:18:48,660
+Scott Tolinski: is it an early 2000s pop group hailing from Venice Beach. Okay, let's see. Let's see. Let's see. All right, then. Ready to reveal? Oh.
+
+89
+00:18:50,700 --> 00:19:03,420
+Wes Bos: So it is a server rendered RM and OAuth 2.0 based framework built in Dart? 54%. Has anyone ever used that? No one. That's impressive. Yeah. Yeah.
+
+90
+00:19:05,490 --> 00:19:13,290
+Scott Tolinski: All right. Number 10. Gort? Is this a 1980s animated cartoon series villain, or is it a ccli
+
+91
+00:19:13,290 --> 00:19:17,330
+Wes Bos: toolkit for Robo Robo ops written in go?
+
+92
+00:19:19,020 --> 00:19:23,280
+Scott Tolinski: Or both? It's a tricky one.
+
+93
+00:19:29,640 --> 00:19:51,350
+All right, lock those votes in here it comes. Oh on Yes, there is a caveat here. Gort is apparently a transformer. But it's it's one of the Autobots. It's one of the good guy. I don't know why not a villain. I found that after googling It was like, Yeah, not a villain.
+
+94
+00:19:51,660 --> 00:20:04,650
+Wes Bos: So 50% of you guys both which is incorrect. And then second place 26% of you see a lie tool kit for Robo ops written in go Robot row robot robot robot robot. What
+
+95
+00:20:04,650 --> 00:20:06,450
+Scott Tolinski: did I say? Robo Adam cut
+
+96
+00:20:06,450 --> 00:20:07,080
+Unknown: that out.
+
+97
+00:20:07,080 --> 00:20:12,780
+Scott Tolinski: Cut it out. Yeah. Yeah. All right. Last one we
+
+98
+00:20:12,780 --> 00:20:19,050
+Wes Bos: have is Raptor eyes. Is it a jQuery plugin for playing of lat velociraptor screech,
+
+99
+00:20:19,289 --> 00:20:22,800
+Scott Tolinski: or a popular DIY spray on truck? bedliner.
+
+100
+00:20:26,840 --> 00:20:28,920
+Wes Bos: The last one don't drop out here.
+
+101
+00:20:30,080 --> 00:20:40,070
+Scott Tolinski: Your last chance. Last chance. All right, right. got ready.
+
+102
+00:20:41,550 --> 00:20:44,360
+Wes Bos: Whoa, this is the closest one
+
+103
+00:20:44,970 --> 00:20:45,780
+Scott Tolinski: is a tight race.
+
+104
+00:20:46,230 --> 00:21:03,660
+Wes Bos: Correct at 37.8%. Most of you guessed it is yes. A jQuery plugin for playing velociraptor screech. But 29 and 33% of you thought it was either both or a popular DIY spray on truck. bedliner. That's great. Thank
+
+105
+00:21:03,660 --> 00:21:09,350
+Unknown: you so much for playing. Oh, we had a ton of fun making this. Everyone had a
+
+106
+00:21:09,350 --> 00:21:29,010
+Wes Bos: blast. probably could have just done an hour of this. Yeah. All right. So now we need your participation. We're gonna play stumped. And if you're interested in winning a sticker pack with 18 web development stickers, a GitHub, Hugh bot or a or an A? Yeah,
+
+107
+00:21:29,040 --> 00:21:32,840
+Scott Tolinski: every every winner gets a level up tutorials t shirt here. So So
+
+108
+00:21:32,880 --> 00:21:42,480
+Wes Bos: come on up. start lining up right here. They're not that hard. We're not gonna embarrass you. Right, embarrass you. Come on line up. Yeah, we got a couple.
+
+109
+00:21:44,640 --> 00:21:48,030
+Scott Tolinski: Maybe you'll get lucky. Get an easy one.
+
+110
+00:21:48,420 --> 00:22:25,500
+Wes Bos: There we go. All right line on. Can we grab a microphone? No. No, it's 123456. We got six questions. And if someone gets it wrong, we're just gonna bring the next one up. So come on up. First one, what's your name? cam. All right, cam, you're ready for your question? Question number one. We have this JavaScript code let age equals 26. Age forward slash equals to console log age. What does age console log to be?
+
+111
+00:22:34,380 --> 00:22:36,750
+Unknown: 26. No.
+
+112
+00:22:36,780 --> 00:22:41,340
+Wes Bos: Incorrect. Next one up. Thank you for trying. Should we want to try give this one a shot?
+
+113
+00:22:41,910 --> 00:22:48,060
+Scott Tolinski: Or should we have somebody just raise their hand? Who knows it for these? Yeah. We don't just burn through the line. Okay, good. Who in
+
+114
+00:22:48,060 --> 00:23:13,620
+Wes Bos: the audience knows that? yell it out? Yeah. 13 nailed it. Did you know I did not know this until last week. In javas. Looking for the screen. It's not right there. And in JavaScript, the like the plus equals also you can do minus equals and times equals and if you're mutating the variable, it's probably not a good idea. But it's I thought it was kind of awesome. What's your name? Tom.
+
+115
+00:23:15,240 --> 00:23:20,070
+Unknown: Tom, question number two, name all seven types in Java.
+
+116
+00:23:22,410 --> 00:23:31,140
+Number, string, Boolean symbol.
+
+117
+00:23:31,680 --> 00:23:34,530
+Wes Bos: That's the one everyone forgets good. No.
+
+118
+00:23:36,060 --> 00:23:37,860
+Unknown: undefined. And
+
+119
+00:23:40,260 --> 00:23:41,490
+Wes Bos: don't say object.
+
+120
+00:23:48,000 --> 00:23:49,230
+Good job, Tom.
+
+121
+00:23:51,690 --> 00:23:58,350
+Scott Tolinski: I should say for the T shirts. I don't have them here. I'll ship them out. So after come find me get your address. We ship out the T shirts.
+
+122
+00:23:59,100 --> 00:24:09,960
+Wes Bos: It's funny because we wrote that question. I couldn't even remember them all. So look it up to write it. What's your name? Amir? Amir. Question number three. pronounce this word.
+
+123
+00:24:14,070 --> 00:24:15,630
+Scott Tolinski: Should I pronounce it the right way or the way?
+
+124
+00:24:17,700 --> 00:24:18,840
+Unknown: specificity?
+
+125
+00:24:25,830 --> 00:24:31,560
+Wes Bos: specificity. Oh my god. It's specificity.
+
+126
+00:24:32,070 --> 00:24:32,580
+Unknown: I got it.
+
+127
+00:24:33,810 --> 00:24:35,190
+Yes, I can't say it.
+
+128
+00:24:37,200 --> 00:25:13,350
+Wes Bos: No. All right. Next one up. What's your name? Neil. Neil, question number four. What is event delegation and when might you use it? Wow. Yeah. I'm gonna get this wrong just for fun. Um, what does bento I guess you might want to use event delegation for I guess, clicks and one out on the page or one you delegate certain events on the page. Why? Why would you not listen to an event directly on an element but delegate it? Okay, in case you want to dynamically create the elements on the page, ding, ding, ding, ding, awesome job.
+
+129
+00:25:17,820 --> 00:25:20,400
+Scott Tolinski: All right. Oh, it's good. What do we got next?
+
+130
+00:25:20,820 --> 00:25:24,840
+Wes Bos: What's your name? My name is Adam. Adam. Yeah. Number five.
+
+131
+00:25:25,020 --> 00:25:28,980
+Scott Tolinski: All right. What is CSS add supports for?
+
+132
+00:25:30,720 --> 00:25:40,860
+Unknown: This was a mistake. If I had to guess, though,
+
+133
+00:25:41,340 --> 00:25:47,430
+Scott Tolinski: probably something to do with supporting older browsers, potentially, that don't have newer features.
+
+134
+00:25:48,510 --> 00:25:49,170
+Wes Bos: What do you think?
+
+135
+00:25:50,460 --> 00:25:51,450
+Unknown: It's close.
+
+136
+00:25:52,470 --> 00:26:09,540
+Wes Bos: Audience should we give it to them? Yeah. It's like, guy. It's kind of like a media query for features. You can you can test if the features are available on a browser. Yeah. Beautiful. So yeah. Good job. All right. I think this is the last one. Is it? I don't even know what we're doing here. I'd
+
+137
+00:26:09,540 --> 00:26:10,530
+Unknown: have like, What's your name?
+
+138
+00:26:11,160 --> 00:26:11,820
+I'm sorry.
+
+139
+00:26:12,239 --> 00:26:34,800
+Wes Bos: Sorry. I got this function here. You know, if the look on here, const. calc all equals. It's an arrow function that is empty. And then below it. I have calc all I just pass it one. And then I have calc all I pass it like six or seven arguments. How might I modify this calc all function to accept any number of arguments passed?
+
+140
+00:26:36,090 --> 00:26:44,940
+Unknown: Using the spread operator to spread the number so kind of how I've always like spread? Argh. So it just splits them all out?
+
+141
+00:26:45,390 --> 00:26:46,260
+A spread?
+
+142
+00:26:47,940 --> 00:26:49,800
+Wes Bos: We should give it to him. Because Scott did this. Take
+
+143
+00:26:49,800 --> 00:26:51,210
+Scott Tolinski: this to Iowa. I was
+
+144
+00:26:52,800 --> 00:26:54,570
+Unknown: getting it backwards. Yes. The other way around. What
+
+145
+00:26:54,570 --> 00:26:55,290
+is it called?
+
+146
+00:27:00,060 --> 00:27:01,080
+Wes Bos: starts with an R.
+
+147
+00:27:01,320 --> 00:27:03,480
+Scott Tolinski: It does your clothes.
+
+148
+00:27:04,140 --> 00:27:05,340
+Unknown: rash breast
+
+149
+00:27:05,370 --> 00:27:33,360
+Wes Bos: there? Yeah, it will give it to him because it's the same three dots. Why is it different things around applause. All right. That's how you would you would do it. And the reason why I did that, what does someone else have another solution to that? Yeah. Array from arguments. But that wouldn't work because arrow functions don't have an arguments object. See?
+
+150
+00:27:33,360 --> 00:27:37,290
+Scott Tolinski: Hmm, yeah, it's tricky. All right. Number seven.
+
+151
+00:27:38,310 --> 00:27:41,190
+Wes Bos: What's, what's your name? Tina. Tina.
+
+152
+00:27:41,250 --> 00:27:45,390
+Scott Tolinski: Oh, what is the difference between slice and splice?
+
+153
+00:27:45,750 --> 00:27:57,900
+Unknown: slice allows you to select a portion of an array, for example, where a spice allows you to do the format plus put something in at a specific point and rejoin it,
+
+154
+00:27:58,440 --> 00:28:10,050
+Wes Bos: put something in into the array into the new array. Is that right? Yeah. So I have mutation. Yes. Yeah, there's a mutation. So you are you're
+
+155
+00:28:10,050 --> 00:28:13,440
+Scott Tolinski: looking you're like listening for the word mutation? And then like, not me, yeah.
+
+156
+00:28:15,330 --> 00:28:26,130
+Wes Bos: Awesome. Good job now. Sorry. Not even a hesitation. They're beautiful. Oh, we got one more. wants to do another one.
+
+157
+00:28:27,060 --> 00:28:32,370
+Scott Tolinski: Yeah. All right. Question number eight. What's your name?
+
+158
+00:28:33,000 --> 00:28:33,570
+Unknown: Josh.
+
+159
+00:28:33,570 --> 00:28:41,640
+Wes Bos: Josh. How would you calculate the number of milliseconds since midnight of January 1 1970?
+
+160
+00:28:52,530 --> 00:28:54,840
+Unknown: I'm not sure if this is this a trick question is this one?
+
+161
+00:28:56,490 --> 00:28:57,090
+Wes Bos: Question.
+
+162
+00:28:58,890 --> 00:29:01,050
+Scott Tolinski: I told I told you this would make people mad.
+
+163
+00:29:01,110 --> 00:29:05,700
+Unknown: I know. I know. There's some data around that time where time started in computer language.
+
+164
+00:29:05,999 --> 00:29:07,170
+Wes Bos: So when God created the earth, right,
+
+165
+00:29:07,170 --> 00:29:10,260
+Unknown: when when, when mankind created machine time,
+
+166
+00:29:10,320 --> 00:29:10,860
+yeah.
+
+167
+00:29:11,759 --> 00:29:15,090
+So I don't know. You would?
+
+168
+00:29:15,210 --> 00:29:32,910
+Wes Bos: Yeah. New time. Close. That's not milliseconds. Yeah. Convert data. No, that wouldn't give it Yeah. De dot now. No, big plus one. Is it plus one?
+
+169
+00:29:32,940 --> 00:29:33,540
+Unknown: I don't know.
+
+170
+00:29:34,950 --> 00:29:36,090
+Scott Tolinski: I've never done now. I
+
+171
+00:29:36,090 --> 00:29:39,330
+Wes Bos: looked it up in the MDN. You can have some stickers. Anyway.
+
+172
+00:29:45,780 --> 00:29:48,360
+One more who's got it. I love it, though. You
+
+173
+00:29:48,360 --> 00:29:49,890
+Scott Tolinski: forgot how many questions? I don't know.
+
+174
+00:29:51,810 --> 00:29:52,410
+Unknown: I told you.
+
+175
+00:29:54,000 --> 00:30:13,020
+Wes Bos: Is this the last one? I don't know. This is the last one. So what was your name Veronica? Her ronica so we've got this right here. const age equals console dot log 100 or 200. Console dot log age. What does age console log in? Why?
+
+176
+00:30:19,980 --> 00:30:22,380
+or if you just want to take a 5050 guess?
+
+177
+00:30:23,550 --> 00:30:30,510
+Unknown: Well, I would think that it's 100. Because it's first.
+
+178
+00:30:32,130 --> 00:31:01,740
+Wes Bos: All right, let's see. That would make sense. Oh, there's no answer. They answer it is 200 100. And the reasoning is because console dot log will return nothing, which is falsi, which will then make the or fall back to 200. And it's kind of a little trick that we use in react land to console log in implicit returns. So it's a bit of an obtuse knowledge. Great job. And I gotta thank you.
+
+179
+00:31:05,760 --> 00:31:09,630
+Scott Tolinski: Thank you so much for anyone who came up there and putting videos out there like that.
+
+180
+00:31:10,050 --> 00:31:10,950
+Wes Bos: I would have done that. Yeah.
+
+181
+00:31:10,950 --> 00:31:21,090
+Scott Tolinski: Likewise, oh, yeah. Although, we have a, we have an episode of stumped coming out, I think in a week or so. And I think I get every question. And they're all really easy. So
+
+182
+00:31:21,990 --> 00:31:41,220
+Wes Bos: yeah, interview questions are are weird. All right. Now we're going to a section called overrated or underrated or Scott and I will give our own opinions on if things are overrated or underrated and why. So the first one is arrow functions, overrated or underrated? No, I mean, they're
+
+183
+00:31:41,220 --> 00:31:43,290
+Unknown: they're graded, they're rated the third grade
+
+184
+00:31:44,640 --> 00:31:46,020
+I think could be not the game.
+
+185
+00:31:46,050 --> 00:32:09,690
+Scott Tolinski: I know they could be considered underrated because I love them. I you know, I think sometimes, like people might get hung up on maybe the implicit returns and whether or not that's the easiest way to read things. But personally, I love that that easy return. I love the shorter syntax. I love how it handles this. Me personally, I'm reaching for an arrow function most of the time, and I would say they're underrated. I love arrow functions. Yeah,
+
+186
+00:32:09,719 --> 00:32:18,750
+Wes Bos: yeah. I would say underrated. They're, they're really good. You don't have to reach them for them, like by default or all the time just know when to use them. And they're really helpful tool in JavaScript.
+
+187
+00:32:18,780 --> 00:32:23,820
+Scott Tolinski: Yeah. All right. Next we have downtown scooters, overrated or underrated.
+
+188
+00:32:24,150 --> 00:32:43,230
+Wes Bos: I'm gonna say underrated. I've never ridden one. But I see these startup boys whizzing around on them. And downtown. And it seems super fun. I want to take one off some jumps. Maybe later after we have some beers. And it just seems like a cool solution to a transportation problem that a lot of cities have. What do you think?
+
+189
+00:32:43,259 --> 00:32:52,620
+Scott Tolinski: Yeah, I mean, I I also have not written one. But everyone always looks like they're having a lot of fun on them. But you see them zoom in down there, like, a great time like, Yeah, I would say underrated too. They're
+
+190
+00:32:52,620 --> 00:32:53,130
+Unknown: cool.
+
+191
+00:32:53,249 --> 00:32:54,180
+Scott Tolinski: Yeah, they're sick.
+
+192
+00:32:54,360 --> 00:32:55,110
+Unknown: Next one,
+
+193
+00:32:55,110 --> 00:32:59,010
+Scott Tolinski: are you using sass inside of styled components?
+
+194
+00:32:59,040 --> 00:33:21,600
+Wes Bos: I'm gonna say this is overrated. So you can use sass and style style components. But sass itself has or sorry, style components itself has all of the features all of the nested selectors, variables, things like that. I think the only use case for it is if you have an existing sass, codebase. You're trying to move it over style components. You don't want to rewrite the entire thing. You can put them in in there for now. What do you think?
+
+195
+00:33:21,630 --> 00:33:30,300
+Scott Tolinski: Yeah, I love the same. Same same idea there. Yeah. I mean, you have all that stuff. JavaScript, very powerful anyway. So I personally would not reach for sass inside of stuff, an
+
+196
+00:33:30,300 --> 00:33:32,190
+Wes Bos: entire programming language inside of your CSS.
+
+197
+00:33:32,190 --> 00:33:35,640
+Scott Tolinski: It's amazing. Pretty sweet. And yeah, we should just put everything.
+
+198
+00:33:37,980 --> 00:33:39,510
+Wes Bos: Everything should be in JavaScript.
+
+199
+00:33:40,050 --> 00:33:45,390
+Scott Tolinski: Yeah. Okay, so websites that play sound in the interface,
+
+200
+00:33:45,450 --> 00:34:09,480
+Wes Bos: you're gonna hate me for that spider man say, underrated. It's a very, it can be very terribly done. But if tastefully done, if done well, if it's used to alert the user that something is happening or give some sort of additional feedback, I think it can be done. Well think about the vibration on your iPhone when something happens. How nice is that as an extra piece of information that something's happening? I think sound can be used for that as well.
+
+201
+00:34:09,540 --> 00:34:46,590
+Scott Tolinski: You know, I'm of the same opinion, which is a controversial opinion. But like, I think with the user's consent, that you're going to be playing audio don't just like start blasting, like, tech notes, or something. Yeah, like, in the background of their site. I mean, it's pretty good. It's another it's another sense that we need to explore a little bit more and interfaces, but like, again, it has to be done right? You're if you if you do it, if you just put a whole bunch of seasoning on that in that soup or something, you're gonna ruin it. So just do actually, I'm gonna I'll send a level of T shirt to the first person who does a pull request to add like a button on any of the the sounds on any of the buttons on syntax. Yeah,
+
+202
+00:34:47,070 --> 00:34:59,850
+Wes Bos: that would be really nice. like a like a like on mouse down and on mouse up. So to do this, there has to be that like somebody take the audio from the podcast, and add it to all of the buttons on the thing. Yeah.
+
+203
+00:34:59,850 --> 00:35:01,460
+Unknown: The sun and then when
+
+204
+00:35:01,460 --> 00:35:02,100
+Wes Bos: you scroll, because
+
+205
+00:35:04,670 --> 00:35:06,360
+Scott Tolinski: when you click the play that Yeah.
+
+206
+00:35:07,290 --> 00:35:08,820
+Wes Bos: What else do we want? Let's just add or
+
+207
+00:35:12,509 --> 00:35:13,980
+Scott Tolinski: we might change our opinion on this
+
+208
+00:35:14,669 --> 00:35:15,330
+Unknown: choice,
+
+209
+00:35:18,150 --> 00:35:21,750
+Wes Bos: overrated or underrated stress over new JavaScript frameworks.
+
+210
+00:35:21,920 --> 00:35:54,150
+Scott Tolinski: Yeah, I think this is overrated, because like, it's like, you're gonna complain about having too many cookies. Like there's lots of, there's lots of stuff here. There's so much that you can pick and choose whichever one you want. And you don't have to use all the frameworks, you can use one and be good at it. And if there's iterations, there's a whole lot of different stuff, then I'm of the mind that like excellences is born through iteration and constantly creating things and stuff like that. So by all means, create another one. No one's test. Yes, it is the only Yeah,
+
+211
+00:35:54,170 --> 00:36:09,900
+Wes Bos: there's some really smart people out there that are trying to like they're looking at our frameworks and be like, Oh, I think I could do that better. I think I could approach it in a different way. Let them do their thing. And if it catches on, then great. We'll all be using that in five years, and our websites will be better for it.
+
+212
+00:36:10,290 --> 00:36:14,310
+Scott Tolinski: I guess also support current ones too. If you'd like the ones Yeah.
+
+213
+00:36:14,310 --> 00:36:16,110
+Unknown: Okay, so yeah, like the one
+
+214
+00:36:16,110 --> 00:36:20,040
+Scott Tolinski: you don't want to say like if you have beef just instantly jumped ship.
+
+215
+00:36:20,420 --> 00:36:23,730
+Wes Bos: Yeah, yeah. Don't just make your own because we've been there before.
+
+216
+00:36:23,760 --> 00:36:25,170
+Unknown: Sorry. Additional note there.
+
+217
+00:36:26,420 --> 00:36:28,290
+Wes Bos: Graph QL. overrated underrated?
+
+218
+00:36:29,210 --> 00:36:31,650
+Scott Tolinski: I think the last one I was supposed to ask you this. Okay.
+
+219
+00:36:31,650 --> 00:36:34,530
+Wes Bos: You asked me Okay, Adam, cut that out. Yeah, cuz
+
+220
+00:36:37,500 --> 00:36:40,190
+Unknown: a graph qL is it underrated or overrated,
+
+221
+00:36:40,230 --> 00:37:03,060
+Wes Bos: I'm gonna say underrated. Graph. qL has a bit of a barrier to entry. Some people don't immediately see why they might need something like that. But once you get past setting it up, there's a lot of really great tools being built right now, which takes that barrier of entry, just all the way away. And I think once you once you're in it, you start singing the praises of it. I'm really excited for what graph qL is going to do in the next couple years.
+
+222
+00:37:03,110 --> 00:37:36,380
+Scott Tolinski: Yeah. For those who've listened the podcast, you probably know I'm a huge fan, I would I'm gonna say it's underrated to once you crack that hard candy shell, you get into that chocolate. It's a again, it's a there's a little bit of a learning curve. I'm not hungry. By the way. I've got like three food metaphors. Yeah, I'm not hungry. But no, I love graph qL I think it's underrated. I think we're just going to continue to see everything around graph qL get better and better and better as more and more take hold of it. And you just see it more places I use it personally love it can't get enough of it. All right, yes, six D structuring,
+
+223
+00:37:36,780 --> 00:38:14,100
+Wes Bos: I'm gonna say underrated. There's a bit of not hate, but people don't necessarily like it because of the added syntax that it adds. And if you don't know what it's doing, if you're trying to de structure, some arguments of a function, or you're trying to structure some properties off of an object or you're destructuring some values of an array. There's just a lot of new syntax. And sometimes it's hard to just look at what what's happening in your JavaScript code to and to understand. So if it takes you longer to look at it, then the regular JavaScript way, then probably not worth it. But I think in a lot of use cases that can really clean up our code.
+
+224
+00:38:14,609 --> 00:38:32,580
+Scott Tolinski: Yeah, I think a lot myself, like many other people, when they looked at it at first they were like, I don't I don't think this looks as clear to me as seeing the argument right there the parameter right there like, but once you use it, and once you get used to once you get acclimated I can't live without it. I just I honestly I can't live without Love it. Love it.
+
+225
+00:38:33,960 --> 00:38:38,360
+Wes Bos: A CSS Houdini underrated overrated?
+
+226
+00:38:38,730 --> 00:38:54,230
+Scott Tolinski: Yeah. So for those of you who don't know, CSS, Houdini is basically a way that you can write custom properties in CSS using JavaScript and CSS. It's it's coming It's It's the new gonna be the new new hotness,
+
+227
+00:38:54,230 --> 00:39:14,850
+Wes Bos: in my opinion. I like using the Canvas API. So you could be like, display a triangle with Kate Scott. And like, the text will just like wrap itself around the outline of Scott's body. Like you could just make up stuff in CSS with with Houdini and then you just write the how to paint it. You get access to the browser's low level API. Yeah, painting.
+
+228
+00:39:14,850 --> 00:39:25,670
+Scott Tolinski: I think it's underrated. Yeah, I think CSS Houdini is gonna have to call in sick to work because it is sick. It is way too sick. And I'm a I'm a huge, huge fan, and I can't wait to see I think it's
+
+229
+00:39:25,670 --> 00:39:34,230
+Wes Bos: underrated as well. People always complain about how CSS works and once we have CSS Houdini, we're just gonna be like write your own then because
+
+230
+00:39:34,290 --> 00:39:48,380
+Scott Tolinski: you so there's like a CSS Houdini gallery and like one of the things was like a highlighter in the highlighter had all sorts of different properties like a like a selection highlighter behind it. And you could choose like how dry the highlighter was. And it was so awesome.
+
+231
+00:39:48,380 --> 00:39:55,880
+Wes Bos: I was just like, this is so cool. I'm going to use it. He's like, get your selector highlighter, dashed dryness. Yeah. 40 drops,
+
+232
+00:39:56,190 --> 00:40:03,690
+Scott Tolinski: and they have little sliders. You could try it out. It's great. That's cool. Yeah. Alright, service workers and offline applications,
+
+233
+00:40:03,750 --> 00:40:35,280
+Wes Bos: I'd say underrated. Because I think we take for granted speed, and always being connected and all of that stuff where the reality is, is a lot of people, whether you're in different countries, or even, you're just taking the subway, where you go offline and online, you have flaky internet connection. It's the worst when you can't access the thing. So just a couple lines of code. At the very minimum, you can make your entire website cache. So let someone's coming back to it when they're in offline mode to be able to still read the content that's on your site. Yeah,
+
+234
+00:40:35,310 --> 00:41:27,060
+Scott Tolinski: I mean, I totally agree. I think it's actually funny that we agree on all of these. Yeah. Yeah, I think that's why the podcast works, right? Like, no, that's overrated, underrated. No, we didn't argue about any of these. I think we maybe should have added some that we argued about. But yeah, I, you know, service workers and offline applications. It's one of those things that it's, it's easy to be in the United States and have like fast internet, I have like gigabit internet at home. And like, I just totally forget what the internet's like, and the rest of the world. So this kind of thing is just such a huge, important aspect of web development general to make our sites more accessible to everyone. The offline stuff is just I think that's a that's a an aspect of web that's just going to continue to grow and become more and more important, as the tools become more and more utilized throughout the industry. Yeah. Big fan.
+
+235
+00:41:27,359 --> 00:41:58,560
+Wes Bos: final one is optional chaining proposal. So this is a proposal to JavaScript that will allow you to deep check properties inside of an object where you don't have to check all the way along. So if you've ever had that, like cannot read property, blah, blah, blah, of undefined, that will become a thing of the past with this new syntax, where you put a question mark after everyone, and it will first check if that property is there before it keeps going. Highly underrated obviously. I'm super excited. This is the last thing from coffee script that I miss. What am I Oh, yeah,
+
+236
+00:41:58,560 --> 00:42:23,690
+Scott Tolinski: I think this is so underrated. Again. I love this thing. I gotta have it. In fact, I'm gonna like go install this in my the Babel plugin for this and my repo right after we get off set home. Just hack it in there right now. I can't wait to just start using this because honestly, who loves to use whatever you're pulling in has from lodash or people and and and Wes and and names and whatever. You know, like, I don't know the top. No way to live
+
+237
+00:42:23,690 --> 00:42:24,650
+Wes Bos: your life. Yeah.
+
+238
+00:42:25,649 --> 00:42:27,420
+Scott Tolinski: It's no way to live your life. Yeah.
+
+239
+00:42:29,100 --> 00:42:32,900
+Wes Bos: All right. What do we only have like 20 minutes left? We're doing pretty good here. All right, Bruce,
+
+240
+00:42:32,900 --> 00:42:33,960
+Scott Tolinski: it, Chris in the US. Oh,
+
+241
+00:42:34,140 --> 00:42:55,440
+Wes Bos: now we're gonna have some q&a with Scott and West. So on the on the podcast, we like to call this a potluck where you bring the questions and we will attempt to answer them. So we got some mic runners running around. I got another one right here. If you want to just put your hand up and go ahead and ask us some questions. Nothing like those interview questions, though. That would be too hard. Yeah,
+
+242
+00:42:55,460 --> 00:42:58,230
+Unknown: that's a caveat. Yeah. Hey, guys, how are you? Good. How
+
+243
+00:42:58,230 --> 00:43:13,680
+are you? Nice, entertaining talk. And my first Mars first question is, since you guys met each other first. What was the thing that was like, wow, I was not expecting that from him. More like I thought he was different. But now I did. I so I don't know. I mean,
+
+244
+00:43:13,680 --> 00:43:19,800
+Scott Tolinski: anything. You know, what's that really reflective sunglasses on? I was like, Wow, those sunglasses are really reflective.
+
+245
+00:43:21,810 --> 00:43:32,580
+Wes Bos: I don't think there was anything about Scott that I didn't expect because we talk on zoom for like, what, three, three and a half hours every single week. And
+
+246
+00:43:34,500 --> 00:43:36,000
+Scott Tolinski: maybe you don't see how much I move around.
+
+247
+00:43:36,030 --> 00:43:50,940
+Wes Bos: Yeah, he's true. He's very anti guy trying to do beep ops. And yeah, yeah, Lipson. Just got to break the answer. We don't know. So after this, we will. We'll have a competition. Me versus Scott. Yeah.
+
+248
+00:43:51,960 --> 00:43:52,770
+Scott Tolinski: Sign up for that.
+
+249
+00:43:54,030 --> 00:43:59,730
+Wes Bos: Next question. Yeah. All right here, grab the mic.
+
+250
+00:44:02,070 --> 00:44:06,720
+Unknown: If there's any tycoon game you could create. Which one would you create? Oh,
+
+251
+00:44:06,749 --> 00:44:10,320
+if there's any tycoon game are you familiar with the genre was like like RollerCoaster
+
+252
+00:44:10,320 --> 00:44:12,300
+Scott Tolinski: Tycoon like roller coaster tycoon.
+
+253
+00:44:12,780 --> 00:44:26,700
+Wes Bos: Those rolling? What other kind of tycoons are there? A lot of them? I would make sticker tycoon. And I would be a businessman sailing the world bringing stickers to all web developers around the world.
+
+254
+00:44:27,330 --> 00:44:35,700
+Scott Tolinski: Yeah, I would have to do I would have to do tutorial tycoon where you create one by the end of the day or else your tutorial shop blows up? Yeah.
+
+255
+00:44:36,660 --> 00:44:41,460
+Wes Bos: And you get and one of like, the bad things that will happen is d monetize. You know?
+
+256
+00:44:42,120 --> 00:44:44,640
+Scott Tolinski: So long YouTube comment made you cry.
+
+257
+00:44:46,590 --> 00:44:54,210
+Wes Bos: Bad news react was updated. Everything is now obsolete. That'd be great.
+
+258
+00:44:54,210 --> 00:44:55,560
+Scott Tolinski: That's good. Yeah,
+
+259
+00:44:55,680 --> 00:45:01,950
+Wes Bos: my life actually More questions?
+
+260
+00:45:07,140 --> 00:45:25,890
+Scott Tolinski: Okay, in 2018, how much do you think we should still worry about supporting the no JavaScript experience on some of this stuff? Oh, I don't know. I see people complain about, like, I don't have JavaScript turned on. And this looks crappy. I'm like, Well, how does the rest of the internet look to you like this, this whole thing was terrible. Like,
+
+261
+00:45:25,890 --> 00:45:34,770
+Wes Bos: I always want to go off on those. And then someone comes out with like, a, but this, like, blind people use this thing. And then I do hate find me. I'm like, No, but
+
+262
+00:45:34,770 --> 00:45:52,230
+Scott Tolinski: the whole idea is, is to make things as accessible to make them load as fast as possible. And like, honestly, if you have the server side rendering going, you have all your accessibility things worked out, and you have all that stuff work that I guess it doesn't necessarily matter, because it can still work with
+
+263
+00:45:52,230 --> 00:46:11,730
+Wes Bos: things like like forums and stuff. Like if you've got like, React forms, that's not gonna work. Yeah, with like a POST request, right to the server. So, uh, no, I don't, I don't care for people that have JavaScript turned off at all? Yeah. Well, if you owe some fancy, it's a very, like,
+
+264
+00:46:12,629 --> 00:46:23,610
+Scott Tolinski: I care a little bit more than you do. But okay, were to email and be like, I can't use your site without JavaScript. Unless it was like a, you know, disability thing. Yeah, just hit. Delete.
+
+265
+00:46:23,820 --> 00:46:38,490
+Wes Bos: Yeah, well, let's also say like, I, I make JavaScript tutorials for living. So no one's gonna come to me and be like, Oh, yeah, I don't have JavaScript on well, then you can't learn JavaScript. So that's a definitely an interesting one.
+
+266
+00:46:41,760 --> 00:46:47,580
+Unknown: Yeah. That's how
+
+267
+00:46:47,580 --> 00:46:52,050
+many spaces Do you think should be qualified as a tab? Oh,
+
+268
+00:46:53,100 --> 00:46:53,700
+I?
+
+269
+00:46:54,960 --> 00:46:58,320
+Wes Bos: Yeah, it's a trick. This is gonna be more fiery than the last one, I
+
+270
+00:46:58,320 --> 00:47:09,720
+Scott Tolinski: use four spaces as a tab because it's the same as a tab like that way, the spacing is the same. Yeah, I did. I set it up like that a few years ago. And I've never ever thought about it ever again.
+
+271
+00:47:10,170 --> 00:47:27,420
+Wes Bos: I think four is best, but I used to, because I don't have enough room on my screen. When I'm recording tutorials. I don't have enough room when I'm trying to do pain by pain. Like it's always at a premium. And then if you use four, it's like, it's way too big. So I used to there. I don't really care.
+
+272
+00:47:27,450 --> 00:47:39,960
+Scott Tolinski: I should say, I don't care. Like if if someone were to like, be like, do you need to use this, I might say, oh, I'll get whatever, like, it's not gonna be like my tab spaces, whatever. It's not going to cause anything to blow up.
+
+273
+00:47:39,990 --> 00:48:02,490
+Wes Bos: We have a whole episode in our list called bike shedding, where we'd spend the entire bike shedding means like, what's the saying, like you spend more time worrying about what color to paint the bike shed something like something like that, where you just like talk about stuff that doesn't actually matter at all. Like, like tabs versus spaces. At the end of the day, it doesn't really matter all that much. But it's fun to talk about. Because we're developers, we have to nerd out on that stuff.
+
+274
+00:48:02,550 --> 00:48:15,690
+Scott Tolinski: Yeah, I will say a GIF or GIF, depending on who I'm talking to just to appease them. I don't care either. It's people, people really where we should go. Somebody says God me back. If somebody says GIF, I'll say GIF back. It's all lost. It's all good.
+
+275
+00:48:17,730 --> 00:48:18,300
+Unknown: Yeah.
+
+276
+00:48:19,980 --> 00:48:36,750
+In the JavaScript world, and this jam stack, where do you Where do you guys see the direction of testing and especially integration testing going? And do you think it's important? Do you think it's not important? What are your just opinions on integration testing and this new jam stack decentralized ecosystem?
+
+277
+00:48:36,780 --> 00:48:37,500
+Wes Bos: Yeah, yeah,
+
+278
+00:48:37,500 --> 00:49:37,560
+Scott Tolinski: I love I love testing. And in like, for me, I've been like, historically, a person that hated testing. And what's changed for me is that the technology around the modern testing stuff has just gotten better and better, in my opinion. So like, as far as the jam stack stuff goes, I would just use Cypress to, if you don't know, cypress.io gives you the visuals, you can see that everything's working. And it's so easy. It's like a jQuery type interface to interact with your site, and you get the browser right there. I think the only drawback to using Cypress was at some point they will for most of the time, they weren't supporting Firefox, but I'm pretty sure that's changed now. So I think, in my opinion, if I was testing a site, like a jamstack site, I might use react testing library to test the components, and do just straight up integration testing, never any sort of shallow rendering that way. And then Cypress for like full on end end testing kind of thing. But that's, I think, I think the libraries and stuff around testing are the best they've ever been in JavaScript for react.
+
+279
+00:49:37,680 --> 00:50:05,280
+Wes Bos: Yeah, I think it's, I think it's getting so much easier to test yourself. The fact that we're having these serverless functions that just do one thing, they accept a request, they spit something back out. That's such an easy thing to test all of your integration testing with your application. It's it's easier than ever, and I think also more important than ever, because we're starting to build applications that are much more complex than the things we've built. In the years past one right here, or is there another one?
+
+280
+00:50:05,309 --> 00:50:06,450
+Scott Tolinski: We got one over here?
+
+281
+00:50:07,319 --> 00:50:10,200
+Wes Bos: Everyone's heating up now. Yeah, right here. Okay.
+
+282
+00:50:11,670 --> 00:50:12,810
+Unknown: I don't care. I feel
+
+283
+00:50:12,810 --> 00:50:15,120
+Scott Tolinski: like we've been pretty hard on this side of the room. So yeah, this
+
+284
+00:50:15,120 --> 00:50:19,050
+Wes Bos: is much better. Hey, I was a No What's that you
+
+285
+00:50:19,050 --> 00:50:22,650
+Scott Tolinski: just can't see it because the lights there. sure you're blinded by the light yet?
+
+286
+00:50:22,680 --> 00:50:25,200
+Unknown: I wonder what your thoughts are on
+
+287
+00:50:25,740 --> 00:50:26,280
+the new
+
+288
+00:50:26,310 --> 00:50:28,260
+react hooks API.
+
+289
+00:50:29,310 --> 00:50:32,250
+It is underrated. underrated. Yeah,
+
+290
+00:50:32,580 --> 00:50:33,210
+Wes Bos: I know. It's sweet. I
+
+291
+00:50:33,210 --> 00:50:56,490
+Scott Tolinski: don't know that. You know, some people on Twitter are like, well, don't don't hype it up too much. But like, Oh, it's really cool. And it's again, it's just a new way of doing things. And I think we're at like Day Zero of how cool it's going to be or how useful it's going to be and give it a couple of months. And actually, you know, see how people are using it and see what comes of it. And I think it could be potential to be sick. Yeah, the
+
+292
+00:50:56,490 --> 00:51:30,300
+Wes Bos: the hooks in reactor are really cool. Because it takes all this like weirdness that surrounded react and classes and state and like initial state and all this like weird stuff. And it makes it just like really, really simple. And like part of react developers are bummed because they've become like drug dealers have this obtuse knowledge. You know, like, what, like, you all know, like finding in the arrow functions and all that stuff. And it's just much easier now. And it's probably how it should have been from the start. So I'm pretty excited about it.
+
+293
+00:51:30,930 --> 00:51:34,530
+Scott Tolinski: Yeah, I can't wait to use them. I just want to try it out. Yeah, I've not done that yet.
+
+294
+00:51:34,650 --> 00:51:47,610
+Wes Bos: Is anyone anyone used hooks yet? No one, no one, one guy? Or maybe he just has a question. Who's got the mics? Oh, yeah, go for it.
+
+295
+00:51:48,120 --> 00:52:10,080
+Unknown: All right. So earlier, Chris coiour was talking about how serverless functions make it easy for developers, front end developers to do a bunch of back end kind of stuff and how it makes us more powerful. I'm just wondering if there's any concern that he may have inadvertently unleashed? You might call it like a serverless function, architecture apocalypse.
+
+296
+00:52:12,450 --> 00:52:16,230
+Wes Bos: So he said, What was it? any concern? That's
+
+297
+00:52:17,760 --> 00:52:20,070
+Unknown: serverless function architecture apocalypse?
+
+298
+00:52:21,390 --> 00:52:26,430
+Wes Bos: Are we gonna have an apocalypse? Because of, of where everything is? You mean?
+
+299
+00:52:27,750 --> 00:52:33,870
+Unknown: I'm not sure we might end up with these like really complicated architectures of serverless functions talking to other serverless functions to make a comment.
+
+300
+00:52:33,900 --> 00:53:51,480
+Wes Bos: Yeah, you can like imagine, like being like, like a, you know, when they like go on a murder movie. And they have like a yarn. And they're like, that's the 711. And then they're here. And this is into slack. And then the slack posted to this thing. And there's 40 services, and that cost me $400 a month for my own website. Right. So yeah, definitely, I think it was important that Chris said, it's not the solution all of the time, you have to have the actual problem, I think the biggest thing I hear from people is, okay, I understand what server serverless is, but like, why do I need that? And I think it's one of those things will, you'll know when you need it, because you're going to start, you're going to be hitting these growing pains, or it's going to cost you way too much to do this. Like one, you're running a server to send email, and you're paying 15 bucks a month for it, right. So I think that you will, as you build these applications, and you start to figure out where you you need to reach for serverless function, that specific use case. So there's, there's definitely I definitely see that we'll probably be sitting at this conference in four years. And someone's going to have a talk called, like, on spider webbing your serverless functions, you know? What do you think?
+
+301
+00:53:51,870 --> 00:53:55,770
+Scott Tolinski: Yeah, I mean, he I think you've covered up. All right. I totally agree.
+
+302
+00:53:58,350 --> 00:54:02,460
+Unknown: So do you plan guys to have a course maybe together? a spouse and Scott?
+
+303
+00:54:02,640 --> 00:54:15,000
+Wes Bos: Oh, of course the other. We've never talked about it before. Maybe at some point, we could do one where I say a sentence. And I say a sentence. Erica, what do you want to learn from us? Like we could both
+
+304
+00:54:15,540 --> 00:54:19,860
+Scott Tolinski: barbecue, we could both be controlling the mouse via the internet. So the mouse is like always fighting.
+
+305
+00:54:21,990 --> 00:54:28,290
+Wes Bos: It wouldn't be a fun YouTube video if we just tried to like build something together. Yeah, pretty, pretty fun. Yeah. So maybe
+
+306
+00:54:33,210 --> 00:54:45,240
+Unknown: a lot of libraries in last five years have been promoting this component based, you know, design and that kind of stuff. How do you how do you guys think big web web components are going to fit into that in starting now? What do you think about them? And how do you think the future is going to be?
+
+307
+00:54:46,500 --> 00:55:39,030
+Scott Tolinski: Yeah, this one's kind of a, I guess, a little spicy topic. Yeah. And with spicy topics, I always like like to take the sort of middle approach here in this kind of thing. Like, I don't know, I'm in a wait and see kind of mode. personally. I like Like that they're working with libraries, like react and to maybe borrow ideas or talk about ideas. And I think that's really what it comes down to is like sharing the ideas and figuring out what these things like the best approach to them is that way, they don't just create something that gets gets like okay, that's great. Are you go back here and just stand over there the photos over here. And like everyone, all the web frameworks are smiling, laughing having a good time. Yeah, web components are over there. But no, I don't know. I'm a wait and see kind of guy. We'll see what happens. And I like Yeah, I like I like, I know, I've used web components with polymer before. And I like it, but I'm not reaching for it right now. So we'll see. Yeah,
+
+308
+00:55:39,060 --> 00:56:21,570
+Wes Bos: yeah, I don't know. I've never used it before. And it's it's one of those things where I'll just sit on my hands, wait for it to come out. And then and then give it a shot. And I think that's where probably a lot of of you should be as well is it's sometimes a little bit stressful to keep yourself on the edge and be learning about all these new things and, and be involved in the process. And there's it's important to be involved in the process. But at a certain point, you just kind of just sit on your hands and wait for it to be finished and see how that works. Yeah, let it mature a little bit the space. Yeah, totally. What? support, support and everything's a bit she says it's a bitch. Yeah. Oh, my laptop went to sleep.
+
+309
+00:56:23,070 --> 00:56:24,810
+Scott Tolinski: Let's get it's kind of a nice little background there.
+
+310
+00:56:28,470 --> 00:56:36,630
+Wes Bos: Sure. Well, we got here. We got six minutes like thing here. Like, this is the actual box that counts down from an hour. And like, how much does that cost? Is
+
+311
+00:56:36,630 --> 00:56:39,900
+Unknown: there a web app? That would do like there's like a red light?
+
+312
+00:56:40,050 --> 00:56:41,250
+Yeah, we're
+
+313
+00:56:42,600 --> 00:56:49,140
+Wes Bos: gonna close that sucker in 10 minutes. That's cool. Yeah. A couple more questions. We'll wrap it up. Maybe two more? Yes. So
+
+314
+00:56:49,140 --> 00:56:56,610
+Unknown: what's your least favorites? jam like in the spreads? Not the operator like on the bread.
+
+315
+00:56:57,480 --> 00:57:01,110
+Wes Bos: The least favorite least favorite jam? least favorite jam in the?
+
+316
+00:57:01,380 --> 00:57:17,460
+Scott Tolinski: Yeah, well, this is funny for I like I'm gonna say like, what is it like? Orange but like, or is it tangerine or something? But like, it's not like oranges and tangerines. But like if there's like tangerine, there's raspberry. And there's like poison Berry. I'm probably gonna reach for the other ones.
+
+317
+00:57:17,460 --> 00:57:34,530
+Wes Bos: Yeah, my neighbor gave me one that was like, really tart. I don't know what it was called. But there's some sort of red berry. But I hope you're asking which companies we don't like and what actual jams we like. Alright, last last one, or Oh, who's got them?
+
+318
+00:57:34,530 --> 00:57:35,850
+Unknown: I have a mic if it's on.
+
+319
+00:57:36,390 --> 00:57:37,050
+Who are you?
+
+320
+00:57:42,690 --> 00:57:48,570
+What would be your go to for a headless CMS in your jam stack? Oh,
+
+321
+00:57:49,590 --> 00:57:50,520
+sponsors here?
+
+322
+00:57:50,550 --> 00:57:56,790
+Scott Tolinski: Yeah. My go to would be a combination.
+
+323
+00:57:59,190 --> 00:58:03,450
+Wes Bos: Yeah, just grab a little capsule. And I'm lab contentful. github. Yeah,
+
+324
+00:58:03,450 --> 00:58:04,290
+Scott Tolinski: I know if I see him.
+
+325
+00:58:04,680 --> 00:58:44,160
+Wes Bos: Talk to each other. Yeah, all of them? You know? Um, that's a great question. I'm still really holding out for headless WordPress. I know that we saw some graphs saying it's going down. But I know that there's literally millions of WordPress developers out there who are good at writing PHP, who are good at writing all the hooks who are comfortable. All of their content is in it. their clients absolutely love the interface that's there. So I haven't used it yet. I'm looking at it right now. Because I'm going to redesign my own website and looking at what are all the different available options that we'll have. So I don't know. We'll have to wait. And yeah,
+
+326
+00:58:44,160 --> 00:59:29,070
+Scott Tolinski: I I honestly have no good answer for this. Other than that I, the headless sites that I've built have all been headless WordPress, but only because the client already had a WordPress install. And it's like, oh, we can throw we can throw Gatsby on top of that you already have all of the content and everything in there. So for me again, yeah, I mean, like WordPress is there and so many people use it and somebody's content editors use it. Like, I think that's a big thing is matching the back end experience of WordPress to the point where you could have somebody who's never picked up one of these things, pick it up and login and edit it and manage it like they would a WordPress site and be comfortable. Because I even know like, passing some Drupal sites off to WordPress people. They'd be like, what do I do with this? Yeah,
+
+327
+00:59:29,070 --> 01:00:01,650
+Wes Bos: well, that's that's also like the downside to WordPress is that the the back end interface for the current like WordPress organs, is still built in PHP. And if you want to build like custom stuff, you either got to reach for jQuery or you have to build a react component. And some of the CMS is are built like react first so that you can just take a react component and drop it in and, and start to build your own custom back end inputs, right because we've all been in that situation where the WordPress inputs are just a nightmare to use because it's just a drop down with 40,000 blog posts in it something like that.
+
+328
+01:00:01,710 --> 01:00:18,090
+Scott Tolinski: Yeah, I also want to say this. It's a space. That's like, growing so much. Yeah. So like, it's so exciting to me. We were just both talking about how awesome it is that space is just getting larger and better and better. So yeah, we'll see. I mean, I mean like this again, this space is only room to grow.
+
+329
+01:00:18,120 --> 01:00:20,580
+Wes Bos: I'm happy that there are lots of people working on Yeah,
+
+330
+01:00:20,580 --> 01:00:24,030
+Unknown: the whole CMS thing right now. They're, they're all my favorites. Yeah.
+
+331
+01:00:26,220 --> 01:00:31,860
+Wes Bos: How do we do we invited back next year. Any other questions? Yeah, we
+
+332
+01:00:31,860 --> 01:00:33,360
+Scott Tolinski: got time for I think one more. We got two minutes.
+
+333
+01:00:33,360 --> 01:00:34,230
+Wes Bos: According to this
+
+334
+01:00:34,710 --> 01:00:35,640
+Unknown: black box here.
+
+335
+01:00:36,000 --> 01:00:38,640
+Oh, it's yellow now. Oh,
+
+336
+01:00:39,090 --> 01:00:47,340
+Scott Tolinski: we got Yeah, Sean's got one. Okay. Well, you were like, right in light. Like,
+
+337
+01:00:47,480 --> 01:00:49,380
+Unknown: can't see and he looks like an angel right now.
+
+338
+01:00:51,810 --> 01:00:58,230
+You guys tend to agree on water is or what is the biggest technical thing you guys disagree on?
+
+339
+01:00:58,920 --> 01:00:59,520
+Scott Tolinski: Ah,
+
+340
+01:01:01,650 --> 01:01:03,630
+Wes Bos: what is it the meteor?
+
+341
+01:01:03,660 --> 01:01:06,510
+Unknown: Yeah, it's gonna say the same thing we all agree we don't agree on.
+
+342
+01:01:09,720 --> 01:01:10,380
+Yeah,
+
+343
+01:01:11,480 --> 01:01:20,640
+Wes Bos: it's not because I don't like Meteor, it's just that my own stack has always been custom cooked Express stack. And Scott stack has always been a meteor one.
+
+344
+01:01:20,640 --> 01:02:15,000
+Scott Tolinski: I, in my opinion, I feel like people drop Meteor after, when it first came out. It was all real time. And there was no NPM support and all this stuff like that. And what they don't realize is like, now, you can fire up a meteor site. And it's just like any other node platform. And it's basically Meteor is almost essentially like a glorified build tool, with accounts and database support baked in. So like it for me, if I'm even starting like an Apollo based site, or react site, or whatever, I can get, like an Apollo server, setup it with like two lines of code, I can get server side rendering, I can get code splitting. And as a build tool, it's awesome. So I think I think people have the, like, a wrong idea of what Meteor is. And so you know, who knows if it will ever recover from that misconception? And who knows, I still love working in it. And I know you haven't worked in it. So maybe that's Yeah,
+
+345
+01:02:15,030 --> 01:02:30,270
+Wes Bos: I think that's that's also what makes it a good podcast as well is that we're not we're both aren't very, like, overly opinionated about things. Like we'll talk about our thoughts on things if it's underrated or overrated, but like, if you disagree, that's fine. I don't care. Yeah, right.
+
+346
+01:02:30,330 --> 01:02:36,450
+Scott Tolinski: So like, chillin right now. Yeah. I mean, I think that's totally Yeah, that's, I think that is that is very much accurate.
+
+347
+01:02:36,479 --> 01:02:39,360
+Wes Bos: Well, the box is being read.
+
+348
+01:02:39,390 --> 01:02:43,020
+Scott Tolinski: So good, right. If that was an interface with sound, it might be actually beeping.
+
+349
+01:02:44,340 --> 01:02:55,620
+Wes Bos: Exactly. So thanks so much for coming out. This is really fun to do. I brought a whole whack of stickers. I'll be in the hallway after I go grab them. If you want to come say hi. I'd love to meet all of you.
+
+350
+01:03:06,270 --> 01:03:07,290
+Scott Tolinski: Both of my favorite
+
+351
+01:03:10,470 --> 01:03:11,280
+Unknown: little more applause I
+
+352
+01:03:11,280 --> 01:03:13,440
+think for Wes Bos, and Scott to Lynskey.
+
+353
+01:03:18,900 --> 01:03:19,860
+Thank you gentlemen.
+
+354
+01:03:22,170 --> 01:03:31,890
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

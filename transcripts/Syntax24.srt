@@ -1,0 +1,188 @@
+1
+00:00:01,290 --> 00:00:02,790
+Announcer: You're listening to syntax,
+
+2
+00:00:02,820 --> 00:00:04,560
+Unknown: the podcast with the tastiest
+
+3
+00:00:04,560 --> 00:00:09,300
+web development treats out there, strap yourself in and get ready. Here's got to Lynskey
+
+4
+00:00:09,350 --> 00:00:10,590
+and Wes Bos.
+
+5
+00:00:10,680 --> 00:00:43,740
+Scott Tolinski: Welcome to syntax. And in this episode, we're going to be doing something a little bit different than normal. We're going to be doing a mini episode. Now, over the course of the next three weeks, we're going to be having two more mini episodes here, as we sort of wrap up the year. So this is something we're going to try out. And maybe we'll continue later to this idea of like a mini episode where it's a quick topic that maybe we can't devote a full 60 minutes to, or maybe it just wouldn't make a good episode to devote a whole 60 minutes it will bore
+
+6
+00:00:43,740 --> 00:00:45,810
+Wes Bos: you. Yeah, yeah.
+
+7
+00:00:46,380 --> 00:00:51,420
+Scott Tolinski: So with with me, as always is, uh, Wes Bos. How are you doing today? Wes,
+
+8
+00:00:51,450 --> 00:01:08,189
+Wes Bos: I'm doing great. I just finished like 20 minutes and for this episode, I finished the recording my CSS Grid series, and I'm super stoked about that. It went really well. And I'm just about to head off on holidays after we record a couple of these. And
+
+9
+00:01:08,189 --> 00:01:10,950
+Unknown: yeah, are you headed anywhere? Like No,
+
+10
+00:01:11,060 --> 00:01:19,560
+Wes Bos: just sitting on the couch? and looking forward to it? Yeah, I just said my family's mostly local. So just visiting them around town.
+
+11
+00:01:19,829 --> 00:01:20,969
+Scott Tolinski: Nice. Super cool.
+
+12
+00:01:21,000 --> 00:01:21,599
+Wes Bos: What about you?
+
+13
+00:01:22,140 --> 00:01:36,390
+Scott Tolinski: Oh, we're heading to Michigan. First day like three in the morning like right I with the baby? It's gonna be Oh, good luck. Yeah. So yeah, we're gonna headed to Michigan until next Wednesday, so we're gonna be there for a week for Christmas and stuff like that head
+
+14
+00:01:36,390 --> 00:01:45,870
+Wes Bos: back here for New Year's and that's pretty much it. Awesome. do lots of Michigan things what do you do Michigan drink? Yeah, go to Meijer.
+
+15
+00:01:48,480 --> 00:01:49,500
+Scott Tolinski: Hey, you know Bye Bye.
+
+16
+00:01:49,980 --> 00:02:04,590
+Wes Bos: Oh, Meijer. People people think that they like Walmart Supercenter Walmart Supercenter sucks. And compared to Meijer Meyer is like the best thing that's ever happened to groceries and retail and Lacroix in general. Yeah, we
+
+17
+00:02:04,590 --> 00:02:09,560
+Scott Tolinski: don't have we don't have anything as good as mine are out here. Although no one in the world
+
+18
+00:02:09,560 --> 00:02:10,910
+Wes Bos: has anything as good as Meijer.
+
+19
+00:02:11,880 --> 00:02:37,500
+Scott Tolinski: We used to. We used to live in a city called Dexter, which is just outside of Ann Arbor, Michigan. Yeah. And there's a Meijer there. It is seriously, like the worst place in the entire world. It made me rethink my entire thoughts on Meijer overall, but it's more or less the location words that you'd get the absolute, like craziest characters there. I mean, it's great people watching kind of place but not not the best Meijer on the planet. Oh, man.
+
+20
+00:02:37,530 --> 00:03:03,120
+Wes Bos: So for those who don't know, Meyer is like this. Like, I don't know how to describe it. It's like a grocery store. Absolutely everything but also it has. It's like an entire Walmart in there as well. And I don't know it's just a magical place. grocery stores in the states are magical places as well. because food is so cheap, as at least in Michigan food is extremely cheap. So look, guys, Lacroix goes along that stuff down. Anyways, let's
+
+21
+00:03:03,120 --> 00:03:03,630
+Scott Tolinski: let's,
+
+22
+00:03:04,860 --> 00:04:18,059
+Wes Bos: let's get into it. In this episode, we are going to be talking about what is CSS bem? And we're gonna we're gonna talk about like, what is it? Why would you want to use it and answers so to explain the concepts behind it. I remember when I first heard about them, I just like didn't understand it. And it took me a while to wrap my head around it. Now I look at him like this is extremely simple. And it was so we're gonna hope to convey that in in 1015 minutes for you. This episode is sponsored by somebody who's got the coolest name ever been klinken beard? What a sweet name. So Ben, Ben has a he's like he's super into d3, which is the sort of like the, I don't know, what do you call that visualization JavaScript library that you can use to build charts and data visualization and all kinds of stuff. Yeah. So what is he's what he's doing is he has this, learn d3, dot js and five days, it's a free email course that you get sort of one piece every day. So we are gonna we'll go talk a little bit more about that partway through the show. But it's a d3 and five days comm forward slash syntax. And the three and the five are numbers not spelled out. Nice. All right. So
+
+23
+00:04:18,059 --> 00:04:23,509
+Scott Tolinski: well, on the topic of d3. Have you ever tried to learn d3?
+
+24
+00:04:23,699 --> 00:04:44,970
+Wes Bos: I have many times it's so hard it is this what Ben was saying is that it's got this like this massive surface area. But he said there's like there's like a couple different concepts that if you just nail these couple different concepts over a couple days in this email course, it's going to make learning the rest of library like a lot easier. So I'm actually gonna take this email course myself.
+
+25
+00:04:45,060 --> 00:04:50,310
+Scott Tolinski: Yeah, me too. I got it because I've tried to learn it so many times. So pretty psyched on that.
+
+26
+00:04:50,940 --> 00:04:53,790
+Wes Bos: Cool. So what is CSS? Bam, Scott.
+
+27
+00:04:54,060 --> 00:05:48,480
+Scott Tolinski: Yeah, so CSS bem is really just a naming or organizational system for your classes. And CSS because, you know, as your projects grow, they go from what should be, you know, easy to name, this and this and this to these giant monolithic CSS files with a ton of different classes that are potentially intersecting and overriding. And well can turn into cascade held pretty quickly, where, you know, you don't know what's overriding what or what the actual naming system, and perhaps you're switching things around. So what CSS bem does, is it basically allows you to have a system for naming everything in CSS with your classes, so that you can be confident whenever you're writing your CSS, and it's going to be totally structured and organized. So bem itself is an acronym. So A stands for
+
+28
+00:05:48,509 --> 00:08:05,190
+Wes Bos: block element modifier. So you should I give a stab at explaining what each of those are. Or maybe we should move to talk about like, what problem does this solve. And remember, when we talked about CSS and JavaScript, we talked about how, sometimes when you add CSS to your page, and it breaks something else on your page, then you've got a bit of a scoping issue. And one of the things about CSS is that it's entirely global, meaning that if you write some CSS, there's no way to scope that to your specific to your specific component. And as we start to write more componentized stuff, rather than just general styles, we want to be able to sort of scope our CSS to specific elements. So if I think about I'm writing a blog post, and I want I have different pieces inside of that blog post, the block in that case would be a post. So the whole div around the post or the article tag, that would be a post and I would give that a class of post. And then inside of that we have elements in so you might have a post heading, you might have a post content, you might have a post footer, you might have a post author, you have all these different pieces, while they themselves are their own items. They are just elements of that specific component. So the idea is that your your block is post and your elements inside of that is post heading post footer post author. And what you do the sort of the naming convention is that you use the block, which is post, and then you do underscore underscore the element name. So post, underscore, underscore heading post, underscore, underscore, footer post underscore, underscore content. And then there's the M, which is the modifier, which is the Okay, I have this post heading. But then I like I want like kind of like a variation on that post heading. I want it just to be a little bit bigger. How do you how do you deal with that. And the idea is that you have a modifier, which is post underscore, underscore heading, dash dash large. So it's like it still is a post heading. But it's a little bit different. And I just want to take what I had on post heading, and maybe jack the font size up. And that's the that's the whole idea behind modifier and that's, that's it right?
+
+29
+00:08:05,220 --> 00:08:44,250
+Scott Tolinski: Yeah. Yeah. And I think I think when people first hear about CSS bem, they think it's this big system, right? That they have to learn. But once you nail down those three little concepts, it's extremely easy to get going. I think some of the criticisms of bem would just be that sometimes the classes get a little verbose, right? having long name, hyphen, hyphen, state, or long name, underscore, underscore another long name, hyphen, hyphen, state, it could be kind of long, right for your CSS classes, especially if you're used to not using a system and just sort of willy nilly like naming stuff, adding classes to everything. Yeah,
+
+30
+00:08:44,300 --> 00:09:53,700
+Wes Bos: yeah, that was that way too. And I was like, so romantic about having clean HTML and having my everything look beautiful. And then like, just I don't know, put that aside, and, like, give it up to the fact that you're going to have extremely long class names. And when you have that, then you're going to have something like, I don't like you'll have link and link, underscore, oh, it lasts about example. You might have like a post underscore link, and then I post underscore, underscore link dash dash active so whatever is the the currently active one or in the navigation or something like that. And you will have extremely long class names. But the upside to that is, is it's extremely easy to write new components and to style new components inside of your CSS. And then also if you're using something like sass or stylus or less, you can you don't have to rewrite out the entire class name every single time you can use the ampersand selector inside of it to say ampersand, underscore underscore heading and then inside of that ampersand, dash dash large and it will just compute those those class names for you.
+
+31
+00:09:53,760 --> 00:11:10,350
+Scott Tolinski: Yeah. So I mean, in addition to like, preventing you from having you know, collision issues and stuff like that. It organizes your CSS files really nicely. And and even if I mean, if you're using encapsulation and in sass or whatever, and you always know where to find stuff, because everything is nice and neat. And then when you add new things, you obviously want to add it to whatever the baseline is basically it, it has a bunch of like little minor benefits that are, you know, something that, I don't know, you can keep your sass files or CSS files organized without them. But having them definitely makes having a system and having that all more organized quite a bit better. So yeah, I'm a, I'm a big fan of systems like this especially, I mean, having any some sort of system for your CSS naming is definitely the way to go. And initially, like I said, I was kind of turned off by the the verbosity, verbosity, I don't know if that's even a word. But I was kind of turned off by how verbose it was. So it was like, you know, it's one of those things you want to try, you want to use it and you want to see the benefits for yourself, because when you do use it, you will see those benefits. And you're going to be like, aha, I get it. I get why everybody likes this, you know?
+
+32
+00:11:10,920 --> 00:12:15,990
+Wes Bos: Yeah, exactly. Like give it on a show. I think that's like the, the anthem of my career is just give it an honest shot. And people lately have been saying, like, Oh, don't use bem anymore, because we now have CSS modules. And the benefit to having like CSS modules where a CSS in JavaScript, something like styled components, or any of the other hundred libraries is that you don't even need this naming convention anymore. Because the style components is going to take care of scoping for you. So if that was the case, then you just need to select a paragraph tag or h2 tag or a div with the class of post or something like that. And it's very simple. And then style components will take care of scoping for you. But that said, like, it's it's easy to like live in this twittersphere, where everybody is using styled components. The reality is, is a lot of us are still working on applications that are CMS based, maybe we've been working on it for five years. And this is something that you can just immediately put into place without having to have any additional tooling or change any sort of setup that you have.
+
+33
+00:12:16,170 --> 00:12:42,450
+Scott Tolinski: Yeah, and you can incrementally add it, which is like I'm a big fan of being able to incrementally add anything, right. So like any new classes you're writing, use them. And then when you have some free time, whenever that is you can go back in and start writing some of your old classes. And actually added benefit of having to rewrite some stuff that isn't in them is that you'll get a new fresh look on your entire project outlook CSS wise to maybe be able to write things a little bit more efficiently here and there.
+
+34
+00:12:42,990 --> 00:12:58,830
+Wes Bos: Exactly. So hopefully, that that clarifies what them is and definitely give it a shot in your projects. I'm a huge fan of it after, after resisting it for many years, and I just kicking myself for not for not switching over to it to it sooner.
+
+35
+00:12:58,920 --> 00:13:09,300
+Scott Tolinski: Yeah, I had the same mentality of like, I don't want I don't need this, like, I'm writing good CSS. And then when I started using it, I realized I could be reading much better CSS. Yeah,
+
+36
+00:13:09,330 --> 00:15:17,190
+Wes Bos: I specifically had a lot of projects that got bigger than I thought they would be. And then I look back at a point where I was running out of things to names to call things. And we I would change one thing on one page, and it would change something on the other page. And it just starts to get out of control. And you also don't know when you can delete CSS or anything like that. So big fan of bem definitely check it out. Let's let's talk a little bit more about our sponsor, which is learn d3 in five days. Again, this is an email course delivered straight to your inbox in five days. And d3 is awesome because you can create these amazing data visualizations, if you've got some data that you need to be able to put in if you want to make a graph or you want to make an array. I just sometimes I just love going to the the d3 website. And looking at all the different things that people have made. It's called data driven documents. And it's just a great way to visualize any data that you have. The The only trouble is that the surface area of the API for d3 is is huge. It's it's like if you had to learn an entire another library, people's like job. Like if you look on job listings, you will often see d3. And it's just like this is part of especially like I have a lot of friends who were working in journalism. And then they got into web development. So just because they wanted to be able to tell their story in a data rich way. And d3 is the tool tool for that. So if you sign up for this course, a d3 in five days.com for slash syntax, the three and the five are numbers. You're going to get a five emails that will sort of like ease you into it every single day. If you just take a little bit of time to read through the email and learn the basics. You're going to feel a lot more comfortable. And then I think you get to that spot where you understand the core concepts, and you'll be able to take it in whichever direction that you, you want to build your stuff. So, thanks so much to Ben for sponsoring, again, that's d3 in five days forward slash syntax.
+
+37
+00:15:17,460 --> 00:15:17,970
+Scott Tolinski: Nice.
+
+38
+00:15:18,300 --> 00:17:00,450
+Wes Bos: So we're a we're going to, or we're just trying this whole, like minisode thing out. And we thought that we would try to answer some listener questions in a minisode, as well. So Alright, so we're the question that we have today is, do you use Dropbox, if you're a developer, if you have a project, should you put it in Dropbox, if you have get, should you also put it in Dropbox or keep it outside of either the fan seems to spin up and this is, this is a hot topic that every hour every six months or so comes up, and it always gets me It gets me heated, because it's so frustrating. So Dropbox is one of my favorite pieces of software out there. Because it does what I call passive backup, meaning that you shouldn't have to remember to ever backup your data. Because it's not a it's not an if something goes wrong, it's a when does something go wrong. So I love that because they're automatically back things up. Dropbox allows you to fall back to data. But the downside to Dropbox is that if you're a web developer, you will often have a a dot Git folder, which contains your entire history of your project. And that thing can get pretty big. And, and to it, how often you have a node modules folder, which we all know is the biggest folder on the face of the planet. And that contains often 400,000 files inside of that. And what that will do is it will cause your MacBook to, to spin up and to get really hot and whatnot. So I'm gonna see what Scott, what is your opinion on Dropbox and web development?
+
+39
+00:17:01,050 --> 00:17:38,430
+Scott Tolinski: I don't use it, specifically because of the sinking of the files, like just billions of sinking of files, and it's a huge mess to me. Yeah, my computer doesn't like it. I don't like it. I would like to be able to do it. But yeah, I just think the sinking of all of those files is just too too much. I have other passive backup systems like time machine that's going up to a NAS cloud drive. So like, Yeah, I don't know, I don't use it. Personally, I just can't i can't get with all of the the sinking of the files.
+
+40
+00:17:38,570 --> 00:21:28,980
+Wes Bos: Yeah, yeah. So I do use it. And I'll tell you why. Because people bite my head off every single time. That is the first one is that you shouldn't put get in Dropbox. And Git is version control. So why don't you just use Git? And my answer to that is many times I've accidentally nuked a file in between commits. Yeah, and not been able to roll it back. Unless except for the fact that I had it in Dropbox and Dropbox will incrementally save those changes for me. And that that is good. People often tell me Well, there is this thing called selective sync in Dropbox where you can turn off sinking of specific folders. And that is not exactly what you want. Most people do quick google and send me a link to that. And that's not it. Because what that does is it deletes it from your computer, and then it syncs it to Dropbox, which you want the opposite. And then also, you have to do that for every single project that you have. And I have hundreds of projects on my computer that I don't want to have to manually go into every single one. So what my my solution is, is first I just bought an expensive ass computer that is very powerful. I don't, I don't notice the the CPU spiking anymore, since I got my new computer. So so that's good. And second, like also, if for me, I don't have multiple computers, meaning that I'm not actually synching my Git folder to multiple computers, because a lot of people, if you have two computers, what can happen is that your Git folder can get out of sync. Because of all these quick rapid change, especially when you like change branches really quickly. Dropbox will get really confused, and then all of a sudden, your gift should be your single source of truth and not Dropbox, right. But because I don't use I don't use it. I've actually never had that issue before. So I've been pretty happy about that. So and then other people say use something else. Like there are tools out there that will allow you to ignore node modules and get based on like a, like, what I really want is like a Dropbox ignore file and being able to Dropbox to ignore specific folders and not have them sync. So that would be my ideal. But I don't think that I think that Dropbox used to be all about like the techies and the power user. And I don't think that they really care about about power users or developers or techie tech users a more they're more about the like, like, I don't know, like kind of Google Docs competitor these days and whatnot, they don't want you to actually have files, they want you to have everything in the cloud and whatnot. So ungrateful I, I don't like Dropbox anymore. But I'm still using it just because it saved my bacon, so many times in between commits. And I also do run a time machine. And I also do run backblaze. So I have sort of three at that place. Yeah, three ways to and backblaze is essentially like Dropbox for your entire computer. And I do believe there's a way to ignore node modules, I just don't do it. And something they've done is they they're never spiking my CPU or anything like that. So I don't know, I I still recommend that you do it. And also, as a teacher, I recommend that my students still do that just because I've so many times I've seen people accidentally delete something, especially when they're that using the command line or using gold or something you're trying to delete files, you accidentally delete the wrong stuff. I've seen so many horror stories where if you don't have a rock solid backups in place, then then you definitely need to use something super easy like Dropbox. Word. So that's my answer to that. I know that a lot of people do not agree with me, and I'm not happy with it either. But it's working for me, and it saves my bacon word.
+
+41
+00:21:29,130 --> 00:21:32,840
+Scott Tolinski: I probably still won't use it. But I appreciate your points.
+
+42
+00:21:32,880 --> 00:21:46,020
+Wes Bos: Yeah, totally. All right. Well, that is our Minnesota. What what are we running up here? We're almost out 20 minutes now. So we'll wrap it up. And we'll see in the next episode. Cool. Yeah,
+
+43
+00:21:46,229 --> 00:21:53,070
+Scott Tolinski: let us know what you thought of this format, just up on Twitter. So you let us know if we should continue doing mini episodes here and there.
+
+44
+00:21:53,100 --> 00:22:18,420
+Wes Bos: Yeah. So we've got this huge list of topics. And so we're considering doing like a normal episode that we get into it. And then we have all these like other topics that can't devote an entire day to and I think I rather split it up into these smaller ones, then do a bunch in one big episode. Because I guess stuff happens. And you might not necessarily get to the end of the episode, and you'll miss some of some of the good stuff.
+
+45
+00:22:18,929 --> 00:22:25,950
+Scott Tolinski: Yeah, yeah. And I think this would be typically in addition to our standard episodes. Exactly. Yeah.
+
+46
+00:22:26,459 --> 00:22:45,420
+Wes Bos: So and a lot of people have been asking, a lot of people have been asking for more syntaxes because on your commute, you can make five days a week and we only release once once a week. So if you want want to hear more of Scott and I let us know on Twitter. Hey. Awesome. All right. Well, we'll see you in the next minisode See ya.
+
+47
+00:22:45,689 --> 00:22:56,250
+Scott Tolinski: Bye bye. Head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

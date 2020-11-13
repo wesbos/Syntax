@@ -1,0 +1,244 @@
+1
+00:00:01,319 --> 00:00:10,500
+Announcer: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to whiskey and West boss.
+
+2
+00:00:10,589 --> 00:00:43,560
+Wes Bos: Welcome to syntax, this is a tasty treat brought to you by our good friends at Netlify. Scott and I are gonna make a push to do a whole bunch more of these hasty treats, which if you haven't had a hasty treat before, they're to die for. They essentially just like smaller versions of the podcast, it's where we tackle a topic that doesn't necessarily fill up an entire podcast, but we can probably get between 2010 and 20 minutes out of it. So I'm gonna throw it over to Scott to talk a little bit about our sponsor, and then we'll dive in. And today's topic is domain management. Nice.
+
+3
+00:00:43,680 --> 00:03:13,560
+Scott Tolinski: Yeah, so Netlify, as many of our longtime listeners will know that I absolutely love Netlify. And I know West does too. Netlify is a host for your site's right. But it's more than just a host. Because the Netlify experience is so cool. You you log in, you maybe give it a Git repo, it automatically detects maybe if you're using like a Gatsby site, and then you hit go and it automatically will deploy your site. Now, that's not where it ends. Because Netlify makes everything simple for you from actually domain management stuff to SSL certificates to using serverless functions they make working with serverless functions so easy. They make identity, oh logins, password recovery, all these things are awesome features that are built right into the Netlify platform, you also have access to forms, they make all the stuff that makes working with front end code difficult, they make it absolutely effortless. So if you've ever had any barriers to entry, in working with either a static site, or just a front end code or stuff like that, you're going to find that your home is very comfortable at Netlify. With all of these excellent features. Not only that, but I'm telling you the initial experience of pushing up your first site to Netlify is just it, you don't get a whole lot of services that give you that kind of experience. So definitely something I highly recommend trying just checking it out. Who knows you try it once. And who knows, I mean, they could instantly become your favorite host. So they make everything absolutely easy. It you can get started for free. And the coolest part about Netlify is is you really only pay for the extra features that you use. For instance, if you are only using farms, and you aren't using identity, which is their login system, or functions, which is their serverless function system. If you aren't using those extra ones, you can sign up for just forms and get access to you know, however many forms you're sending. But for the most part, I mean, the free plans are pretty unreal, so huge, huge props to Netlify for everything that they do. And we're so happy to have them as the the hasty treat sponsor. This hasty treat is possible because Netlify is picking up these extra episodes. So we're just extremely happy to have them. So head on over to netlify.com forward slash syntax to sign up for Netlify. Let them know where you came from. If they ever asked, tweet up and say that you heard about Netlify on syntax, because you know, we obviously love them as a sponsor, and we'd love to keep having them on. So
+
+4
+00:03:13,740 --> 00:04:55,410
+Wes Bos: yeah, quite a few people have been doing that recently where they have been tweeting me and like, hey, syntax, thanks for showing us the sponsor. And that is awesome, because it helps sponsors keep coming back for more, and then we can keep making more awesome episodes. So let's dive into domain management. We'll start off with a one on one. And we'll dive into all the different parts of having a domain management domains are a source of a lot of frustration. Yeah, as web developers, because if you screw them up, your website goes down, your email could go down. And if you make a change, it's not instant to know if it worked or not. And you kind of have to sit on your hands for a little bit. So hopefully, we're gonna demystify it. I'm not an expert of on how domains work, but I have been using them for about 15 years now. So I know a thing or two about them. So as a one on one, if you're brand new to domain name, if you're not skip ahead 30 seconds, but a domain name is servers have add what are called IP addresses, and either has a normal IP address ipv4, it's called which is like one nine to 48 or whatever. Or you have a what's called a ipv6 address for that specific thing. And that will just be a much longer thing. ipv6 came out years and years ago, actually, when I was in school, we learned ipv6, and it doesn't seem to have taken hold very much just yet, which is frustrating because we're running out of IP addresses for the rest of the rest of our servers. Why does that matter? Well, you get a domain name like West boss calm you people can remember that. And then they point your domain name to a specific server. And that's how it works. Right. So do you want to take a stab at once you have a domain set up? You want to take a stab? What is DNS Scott?
+
+5
+00:04:55,440 --> 00:05:47,700
+Scott Tolinski: Yeah, so DNS is basically you can think of it like a like an address. sort of thing, right? So what happens is when you type in your URL bar, like you had, I'm gonna go to level up tutorials, comm and do so you want to type that in, you hit enter. So what happens is that address gets looked up in this sort of address book is DNS server and this DNS server is going to be like, okay, level up tutorials, where is that and level up tutorials will return an IP address now that IP addresses linked to a server computer somewhere else where your site's actually running. And that is essentially a look an address book, hey, here's where to go, then the next the computer goes to that IP address to retrieve exactly what you told it to retrieve in the first place. So it's sort of like a, a pretty mask on top of your, your, your domain or your IP address, right?
+
+6
+00:05:48,480 --> 00:07:19,410
+Wes Bos: Yeah, it's that. And then you have that address book full up. So there's two things that I kind of need to break down here. First, you have something called name servers, right? And and what name servers are, is that your domain name will always have one to four, usually, it's to name servers, which will point to a another server that tells you where that address book lives. So before you can even get to that address book, you need to set your domain name to have name servers that will handle the the listing of your address book, because your domain name has a lot more than just hosting on it, it will often have email on it, it will have information about like if you use like a third party email service, you want to validate that you own that domain, you might want to put a TXT record on that you got a whole bunch of sub domains, if you have aliases, all kinds of stuff goes on that address book of it. But the first thing you need is actually a DNS server. And that is what actually takes the longest amount of time. Because when you change your name server, and again, the name server is where that address book lives, those changes that sort of arrow to where your address book lives, it needs to propagate through all of the DNS servers around the world because there is a correct me if I'm wrong, but I believe there's a root DNS server, and then all of the other kind of children, DNS servers around the world need to update their cache based on that, because when you request like Wes Bos comm, I think what happens is that it goes to your ISP first. And then if your ISP doesn't know where that is, then it'll go to your
+
+7
+00:07:19,440 --> 00:07:20,550
+Scott Tolinski: the next one, and then
+
+8
+00:07:20,580 --> 00:07:35,100
+Wes Bos: the next one, and the next one, the next one, the next one. And if any of those along the way, having an older version of that of that name server, then it's going to take anywhere from six minutes to 48 hours for those those name servers to actually update.
+
+9
+00:07:35,220 --> 00:07:42,690
+Scott Tolinski: Yeah, which is a common pain point, right, that sort of, I have all my settings done. Now I just have to sit and wait to see if it actually worked.
+
+10
+00:07:42,900 --> 00:08:13,260
+Wes Bos: Yeah, and I find a lot of people only know about name servers, and then they will always change their name servers to point to their host, where what you should really be doing is pointing your name servers to a DNS management, something that will manage your DNS all in one place. And then from there, you can you can modify the different records of that address book, which they update, like in a couple minutes. Is that true? It's good experience. Yeah, in my experience, the the a record will update within 10 minutes or so.
+
+11
+00:08:13,470 --> 00:08:18,360
+Scott Tolinski: Yeah, I think there What is there? There's a value you can modify to what is that? The
+
+12
+00:08:18,450 --> 00:08:20,220
+Unknown: the TTL? The TTL?
+
+13
+00:08:20,250 --> 00:08:26,940
+Scott Tolinski: Yeah, time to live time to live? That's a sort of a heavy name there.
+
+14
+00:08:27,119 --> 00:09:05,419
+Wes Bos: Yeah, that's dark. So what are, let's give a couple examples of some of the DNS providers because what I previously used to do is I would just set my name server to be Digital Ocean, or Bluehost, or GoDaddy, or whatever. And then whenever I needed to modify that domain name, I would just have to sit there and be like, what do I need to log into, to change this domain where like managing your DNS in the same place you host is maybe not necessarily It's okay, it works in a lot of cases. But I much prefer now to have a single place to manage all my domain names. And then from there, you can point them to your different servers that live around the world.
+
+15
+00:09:05,760 --> 00:10:34,110
+Scott Tolinski: Yeah, so I managed mine on DNS simple. It's a little pricey, because you're paying like a subscription fee is sort of interesting. for five bucks monthly, you get service on five domains, or 25 bucks a monthly, you get service on five domains, and then you're paying, like you get additional features for the different tiers, right. So you end up paying per domain at some point once you get over five. So like, let's say you're on the personal program, which is missing a bunch of features, by all means it has enough features, but let's say you're on that you're got 10 domains managed on there, it's seven bucks a month, not terrible or anything like that. And keep in mind, this is just for managing DNS stuff. It has nothing to do with your actual domain hosting or whether you're purchasing your domain or whatever like that. So I use DNS and bolt. It is very feature rich, they offer like a bunch of stuff to make it really easy on you. They really emphasize sighs user experience in terms of like, Hey, I don't want to fiddle with all these records, there's so many like one click ads, oh, I'm using Google Apps. Alright, one click Add it just you almost never modify an actual DNS records. Like so many other systems, you're left to sort of know what to do with this one really holds your hands through a lot of it also makes things like SSL, really super simple with Let's Encrypt. And it just, it just makes things easy. So if you're looking for maybe paying a premium to get some easy, easy, easy service, I would check out DNS simple, I like it a lot.
+
+16
+00:10:34,260 --> 00:10:49,399
+Wes Bos: Like it, I use, I buy all of my domain names@hover.com. I've been been using them for four years, I have name.com. Name, I have a couple of name.com that you cannot buy. We'll talk about those in just a sec. Yeah, named Sarah.
+
+17
+00:10:49,620 --> 00:10:51,899
+Scott Tolinski: Nice Colorado company, nice Denver company.
+
+18
+00:10:51,919 --> 00:12:08,940
+Wes Bos: Actually, it's funny. Hover is a Canadian Toronto company. So yeah, there you go. Anyways, um, I buy them all there, and they have an awesome DNS management screen. Some of these like UI to update your DNS are always a little scary. And hovers is really, really nice. However, I often, almost what I'll do for every domain name I have, I'll point it out. point my name servers at CloudFlare. And CloudFlare is, if you don't know it's a, it's a service that does, like attack mitigation, it gives you free SSL certificates, it'll do caching, it'll actually minify your JavaScript, if you want to compress your images, it sort of like sits in between between your website and your user and will proxy a lot of your traffic. And I really like it, because I find that my stuff updates really quickly when I do it. Because CloudFlare is like a large chunk of the internet, they even have their own, like DNS resolvers, which is one dot one dot one dot one, Mm hmm. And I just put out, you could for free, you can put all your domain names in there. And you get free SSL on there as well, if you want to turn that on. And I've been a big fan of that. So I either manage my DNS at hover directly, or I flip it over to CloudFlare and manage it all directly in CloudFlare, they both have really good UI for managing all of the different records that you might have.
+
+19
+00:12:08,970 --> 00:12:59,580
+Scott Tolinski: I think that's important. And what's so annoying about these things is that regardless of the company, and the UI, whether or not the UI is good or bad, or whatever, so many different companies take different stances as to how to present this stuff. Like Yeah, they label things differently. They have their own system that they're sort of just expecting you to somehow magically know to use this or this when it's like a very specific for them kind of thing. And and the difference is when you read documentation on maybe setting up an SSL certificate in the past, like when you had to buy one before, then you'd read the instructions, and they would tell you to do something on a DNS. And it would just be like, well, I don't even have these options. I don't even have the options to do that. And that was always such a huge pain points. I'm so glad to see companies like this really taking a step forward in their user interfaces for these things.
+
+20
+00:12:59,730 --> 00:14:11,220
+Wes Bos: Yeah, totally. I agree there's is too much pain in accidentally breaking that kind of stuff. And that's, it scares me so much when you ever have to switch a domain name. So I'm, every time I've migrated a domain name, like I unfortunately have a lot of domain names on GoDaddy, because I was a web developer 15 years ago. And every time I move one over to to hover or name, it's always very scary. Yeah, to actually do that. What else do we have here? The different types of records. So you have a name, you have a records in like at records. And what those will do, those are your primary pointers at your server. So if you have a server and you want a either your main domain or sub domain, you can set those up to point out your server. Or you can point those out a load balancer, which will in turn distributed through multiple servers that you have. You've got MX records, which are for dealing with mail, mail exchange, it stands for Yeah, so I usually just set these up to be the Google aspm MX records. And then you have Google Apps set up for your domain name. And now MX records. Also priority too.
+
+21
+00:14:11,220 --> 00:14:35,610
+Scott Tolinski: If you ever see the like little number after an MX record, it's like 155 10, that kind of thing. Those are sort of which one to try first, hey, try this one first. Okay, so if you ever see those numbers, again, the lower the number, the higher the priority, so it's which one will be used first. So that way, you can ensure that it's not going to fail, right? By having multiple options, which is many times why you see so many with the MX records.
+
+22
+00:14:35,820 --> 00:14:38,789
+Wes Bos: Totally. What about C name? Do you want to give that a stop? Yeah,
+
+23
+00:14:38,789 --> 00:15:14,580
+Scott Tolinski: C name stands for canonical name. See name is basically to alias a one name to another. And oftentimes, you'll see this being used as like asterisks.domain.com. And that way, like any sub domain could point to the domain. So you're basically with a C name. You can refer to another domain. So Maybe you have like blog, dot level up tutorials comm and you want it to point to the same a record, you can do that with just the I think it's sometimes it's usually like an add sign right? Like a Was it a swirly a sign
+
+24
+00:15:14,730 --> 00:15:17,520
+Wes Bos: monkey tail is when my opa calls it, the monkey tail, That's
+
+25
+00:15:17,520 --> 00:15:20,549
+Scott Tolinski: dope man, I'm gonna start using that that's way cooler.
+
+26
+00:15:22,409 --> 00:15:54,929
+Wes Bos: Monkey tail. Yeah, that's, that's really good. Um, so that's some of the major records, there's all kinds of other records in there. Sometimes companies will make you put in just a regular TXT record, which is not a standard, but it's just like, put this on your domain name, so that we can verify that you actually own this domain name, because like, you could sign up for something like postmark and start sending emails from Wes Bos calm, but unless you have actually proven to the sender that you own that domain via setting a TXT record, or there's a couple other ones that I totally forget what they are.
+
+27
+00:15:55,140 --> 00:16:36,659
+Scott Tolinski: DNS simple has a really dope one called an alias record, which I've used before, in the past, you know, like, what they're called Apex domains, which are domains without a, you know, www dot like a just level up tutorials.com with nothing before. an alias record at DNS simple is basically a fake record type that allows you to do see name behavior on an apex domain, which is, once you get into that kind of stuff, and you can't do that. It's a little frustrating. So the fact that they have a special alias record that sort of handles any sort of complexities that you might have for you that it's super sick for me.
+
+28
+00:16:37,050 --> 00:16:39,750
+Wes Bos: Yeah, I had to go into that at some point. Me too.
+
+29
+00:16:39,779 --> 00:16:40,320
+Scott Tolinski: Yeah. And it's what
+
+30
+00:16:40,320 --> 00:16:42,510
+Wes Bos: I forget why, but it was a nightmare.
+
+31
+00:16:42,570 --> 00:16:43,830
+Scott Tolinski: Yes. total nightmare. Yeah.
+
+32
+00:16:43,860 --> 00:17:14,670
+Wes Bos: The one I'm talking about here is a DK Iam, it's a domain key identified email. So if you ever want to send email from a service that does sending email, sendgrid postmark, things like that, you'll have to do a D Kim, to prove that you actually own that domain name. Nope. What else we got here, different kinds of domain names. So what's interesting to know is that we have tlds, top level domains, you have like.com and.ca and whatnot. We have a whole bunch of them now ever since a couple years ago, we have like dot pizza and club and
+
+33
+00:17:14,810 --> 00:17:17,520
+Scott Tolinski: yeah, most of these out of nowhere. I mean, it's Yeah,
+
+34
+00:17:17,520 --> 00:18:58,020
+Wes Bos: most of them have like a, like internationally like Google will view them as international. Even though like.tv is actually for a country called Tuvalu. Yeah. Which is actually going cool. Vimeo has like a little documentary on how the.tv is funding this little little island of Tuvalu, which is actually sinking because of our polluting, but they're kind of fight it with the yeah.io is Indian Ocean, but Google sees those as Oh, that's not actually like a Tuvalu website, people are just using it because they like it.tv or.io. So it Google recognizes has a list of globally recognizable domain names. And then there's other country code discounts. Like I think I have a.af domain name, which is for Afghanistan, which has led me into all kinds of trouble. It's like, it was like, so sketchy to get it set up. And like it didn't work half the time. And I went to like the Afghanistan, Twitter, and it just said, we have shut down because of lack of resources. She's and so that is actually for Afghanistan. And I have Boston AF because I'm funny for selling my stickers. And that probably hurts my search engine, if I cared about search engine optimization on that one, because that tells it that's f Gani website, but I couldn't funny fact that couldn't get a SSL certificate from any of the places that sold SSL certificates, including CloudFlare. Because there's like an embargo on the United States doing business with Afghanistan in that not it's not, you know, I
+
+35
+00:18:58,020 --> 00:19:45,350
+Scott Tolinski: actually I had a before I hit level up tutorials, I had my freelance company, which I called folded Cata creative. And I had a sweet little like origami cat logo, it was pretty sick and actually kind of looks like what get labs logo looks like now is same colors and everything. This is way, way back then. And I was trying to buy a folded dot cat because that's the sweet domain. And it's for Catalonia. And they do no yeah, sell you domains to get a dot Catalonia, you had to prove that your website was either about the country or had something to do with the country or was like promoting the country in some sort of way. And I was like, well, maybe I'll just put like a footer in the bottom and like thanking the country. And then of course, it didn't work. It was like it's such a huge process and they wouldn't they wouldn't give it to me, so I never got that.
+
+36
+00:19:45,350 --> 00:20:06,560
+Wes Bos: Yeah, cat. Oh, man. That's what name.com does in a lot of these cases is they set up businesses and all of these countries and you they actually own the domain name for you. And then they just kind of like proxy it to you because you have to in a lot of these like dot whatevers, you actually have to own a business in that country in order to secure a domain name.
+
+37
+00:20:06,660 --> 00:20:12,050
+Scott Tolinski: Yeah. And speaking of cool domain names, you know, like, did you ever use that domain or domain? Yeah, I
+
+38
+00:20:12,050 --> 00:20:13,140
+Wes Bos: love that website. Yeah. So
+
+39
+00:20:13,140 --> 00:20:34,310
+Scott Tolinski: this is a cool website. If you've never seen it, it's a domain our.com. And you can type in your domain. Let's say we're typing in level up tuts. And then it basically gives you all of the like, interesting sort of domain names you could possibly buy with it. It looks like there's a few level up tuts domains still available, like dotnet and dark blue. Don't Don't take those for me.
+
+40
+00:20:34,820 --> 00:21:02,730
+Wes Bos: domainer for a long time, and I also use I want my name.com Oh, yeah. Which will give you a list of every single one. So it'll look up if you type in Wes, it'll tell you like West coffee is 10 bucks. West College is 99 bucks. Cologne, ooh, West cologne. That would be gross. Anyway, it shows you all of the possible options, which is kind of fun. I'm a big fan of I own domain names myself. Have you ever actually bought a domain name off someone before?
+
+41
+00:21:02,730 --> 00:21:21,990
+Scott Tolinski: off of someone? Yeah, yeah. We bought the my parents had a tea company called blooming tea. We bought blooming t.com off of someone also blooming tea calm now currently sale for sale by Scott Tolinksi. So if you're starting in Tea Company, reach out to me because I've been trying to sell that one. Yeah, so that's the only one I've ever bought.
+
+42
+00:21:22,020 --> 00:21:23,490
+Wes Bos: What was the process like for that?
+
+43
+00:21:23,570 --> 00:22:27,870
+Scott Tolinski: He had like, there was like a third party, like escrow situation going on. And we had eventually agreed to a price. It was it was like kind of, I was very green. This was like 2008. I didn't necessarily know what I was doing. Yeah. So it It took it was it worked out. But eventually it was sort of like where to send this to then they they basically just gave control over the address or wherever you tell it to send to or the account you tell it to send to you. Just like open it up to be transferred or whatever. Yeah, that whole process. Oh, no work that we're trying to buy when lately for that startup I was working at and this guy was like really trying to hardball us like giving us Jose he's like asking for like 25 grand for it. And we're just like, I don't know, it's like important, but not that important. And we eventually said, No, that's cool. And then he likes dropped his prices by 5000. They dropped it by 1020. And oh, yeah, startup at already dissolved. So we were just like, no, sorry, man, you just missed out on your chance to even make, you know, five grand on this because we've done it for five grand to be honest. But
+
+44
+00:22:28,200 --> 00:23:23,280
+Wes Bos: I always wish that I always see domain names that are for sale. And I want and I just like I can't get into it. I bought and bought two before, both from other developers, I bought JavaScript CO, which I'm sitting on for a JavaScript course. And that I bought that for 1000 bucks, which I thought was pretty good deal. Yeah. And then I learned no.com was registered by I forget his name right now, excuse me if you're listening to this, but he was very kind, I was willing to buy it for him. And he said, if you donate $300, to the E FF Electronic Frontier Foundation, you can have it, which is amazing. Like I was so happy to get that because domain names for my courses are really, really important. Those are the only two I've ever bought. And both of those I just kind of was like hope that it didn't get screwed up. And then I've never actually gone through an escrow I have looked into it, I know that it's $100, where an escrow we'll hold both the money and the domain name and then switch them over. Once both
+
+45
+00:23:23,490 --> 00:23:29,670
+Scott Tolinski: parties have been noted that the seller took care of all of that stuff. We didn't pay anything extra for the escrow. Oh, that's good. Yeah.
+
+46
+00:23:29,910 --> 00:23:36,960
+Wes Bos: Interesting. All right. We're about 25 minutes in i think that's that's it for today's hasty treaty. Anything else to say about domain names?
+
+47
+00:23:37,080 --> 00:24:03,330
+Scott Tolinski: No, I don't think so. I love buying domain names. I'm that type of developer who will be intoxicated and come up with a great idea and be like, I'm buying the domain right now. Like a million dollars and then have the domain and be like, What? Oh, no, I don't have this. So I like buying domains. It's funny because they're, they're cheap. And if you ever have a good idea, you can always just buy one. You can just buy one and hold on. It's not cheap for me.
+
+48
+00:24:03,390 --> 00:24:05,010
+Wes Bos: Well, many domain names do you have?
+
+49
+00:24:05,160 --> 00:24:08,820
+Scott Tolinski: I only have 20 right now I did some spring cleaning. Oh, yeah,
+
+50
+00:24:08,850 --> 00:24:19,830
+Wes Bos: I did my taxes last year and I spent without buying any domains. I spent 1500 dollars on domain run because I have like stupid ones like bosta af is $100 a year. Oh
+
+51
+00:24:19,980 --> 00:24:21,300
+Unknown: yeah, I'm not that expensive. when.io
+
+52
+00:24:21,300 --> 00:24:26,010
+Wes Bos: is like 49 he used to be 100 bucks a year for iOS domains.
+
+53
+00:24:26,520 --> 00:24:31,170
+Scott Tolinski: But I always want to have his level up that video. Oh, most expensive one
+
+54
+00:24:31,290 --> 00:24:59,220
+Wes Bos: with 202 I have to find some fun ones. I've s5 io just in case anyone tried to jack me. I have all the for beginners Angular for beginners, calm Ember for beginners, j s for beginners, calm CSS for beginners. I have like JavaScript 30 like typed out.com. Smart. A couple of them. Yeah, I have a whole bunch that every year. I realize what I was almost really stoked about a year before and then I forgot about totally.
+
+55
+00:24:59,340 --> 00:25:19,980
+Scott Tolinski: Yeah, I know. Some of these were like hilarious that I had, like I was like, I had one called yoga sequence calm or is going to build an app that had like computer generated like yoga sequences based off of common patterns in yoga and stuff like that it was gonna be really sick. And it's just like one of those things that you just never have the time to ever do. It's like a sick idea. Sick domain. I'm just like, yeah, I'm not gonna.
+
+56
+00:25:20,010 --> 00:25:32,610
+Wes Bos: Yeah, one of my favorites is syntax.fm. Yes, I was so stoked that that was available. It's a good one. Yeah. Anyways, that's it for today. Hopefully you enjoyed the AC tree. And we'll see in the next one. Yeah,
+
+57
+00:25:32,610 --> 00:26:02,400
+Scott Tolinski: let us know what you think about tasty treats if you want to see, like specific topics. I mean, this is again, this is sort of even though we've done hasty treats before this. This is kind of like episode Oh, one for hasty treats. Because it's gonna be a recurring thing. And again, thank you Netlify for sponsoring and taking us on as the, you know, hasty treats. So again, we're gonna be doing this more frequently and let us know what you think we're sort of omitting some of our our classic stuff just to give you a quick bite of something tasty. But yeah, that's that's pretty much it.
+
+58
+00:26:03,420 --> 00:26:06,630
+Wes Bos: They used to be called what we were gonna call them snack episodes until someone
+
+59
+00:26:06,630 --> 00:26:08,160
+Unknown: knows snack packs.
+
+60
+00:26:08,160 --> 00:26:18,030
+Wes Bos: hasty trade is the best. He's the best. It's hilarious. I told you I met the history treat the guy who came up with tasty treats. The legend. Yeah, I
+
+61
+00:26:18,030 --> 00:27:11,190
+Scott Tolinski: was at a I'm so sorry. I forgot your name. I met I met him at the site day I was speaking it's like date, he came up to me. He's like, Hey, I just wanted to tell you that I was the one who came up with tasty treat. And I was so so thankful for that. I was just like, you are the man. very best. So thank you once more shout out hasty to reach out to me on Twitter. I'll retweet you. I'm so sorry for forgetting your name. So that's it. As always, thank you so much for watching. We're going to check you out next Wednesday with the next next syntax episode where either way we're gonna last so much good stuff coming up again, so pumped to be able to do these tasty treats. As always, we're gonna have a little piece to carry us out here. All right, this is head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

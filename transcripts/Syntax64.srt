@@ -1,0 +1,656 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax,
+
+2
+00:00:02,820 --> 00:00:09,000
+Unknown: the podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski
+
+3
+00:00:09,000 --> 00:00:10,560
+and West boss.
+
+4
+00:00:10,560 --> 00:00:18,570
+Wes Bos: Hello everybody and welcome to a syntax today we're gonna be talking about gear. Gotta get the gear. Have you seen that portlandia episode? Where do you watch? portlandia?
+
+5
+00:00:18,749 --> 00:00:19,950
+Scott Tolinski: Oh, yeah, yeah, so
+
+6
+00:00:20,099 --> 00:01:04,950
+Wes Bos: there's, there's like this, uh, these characters and portlandia that they do where they get the gear and they every time they're like, oh, let's go on a hike. And then they spend like all day, getting all the gear and all the flashlights and all the like, well, hydration packs, and everything is hilarious, because my wife and I always make that joke, like, gotta get the gear. It's so whenever we have anything new, but we're talking about like office gear, like what are our setups, everything from monitors, to chairs to desk, Scott just redid his home office. So we've got a lot to say. And it's funny. It's one of these things that I actually get a lot of questions about you really think like, it doesn't really matter at the end of the day, all that much, but people love chit chatting about the gear. So let's let's do it today. We haven't gotten I haven't chatted about two weeks. So how you doing Scott?
+
+7
+00:01:05,249 --> 00:01:35,070
+Scott Tolinski: Do good Hey, I just released a new series on graph qL so it's a like a react and Apollo client series. So it was hard at work in that out and making that happen. I made some major code updates to the level up tut's site just been doing a lot of head in code. getting work done work done. You know, that's that's been it for me. I know you've been on a bit of a vacation, which is wonderful. Can you tell us a little bit about your Yeah, so you went to layer con two. So yeah, so I talked about that.
+
+8
+00:01:35,099 --> 00:02:57,270
+Wes Bos: Two weeks ago, I went to lair con, which is a Laravel conference in it was in Chicago at this amazing museum. And it was awesome. I met so many people, pretty much anyone who walked up to me, it was like, Hey, listen to sin cat syntax. It's awesome. Big fan of the show. So I thought that was really cool that you actually get to meet the people that listen to the podcast. And also it was like a primarily PHP developers. I was a JavaScript guy giving a CSS talk. So it was a bit out of my out of my area. But it seemed to be enough people. Listen, I guess that's the nice thing about being a front end dev is that even if you are a PHP developer, you'll likely have to learn some JavaScript at some point. So it was really good, met a whole bunch of people. Everyone was super nice. The whole Laravel community is awesome. They announced this thing called Laravel Nova, which is like kind of like a CMS back end that you can hook up to the Laravel. And then it will allow you to log in and it's it's amazing because like you think, Oh yeah, I can make a crud operation. But the interface is unreal. It's all built in view. It does all these relational it's really like the fit and finish of it is amazing. I cannot believe how how nice this thing was. And it really made me jealous. I was like, I want something like that for express or node. And there really isn't a whole lot out there for for us over. So I was pretty jealous of it. Yeah, I
+
+9
+00:02:57,270 --> 00:03:09,270
+Scott Tolinski: mean, that looks that looks awesome. I'm really into that kind of stuff. To be honest. I like I like I look a good fit and finish on a platform like that. If it was me with the interface a little bit, I'm a total sucker for that.
+
+10
+00:03:09,359 --> 00:03:45,600
+Wes Bos: It was like the perfect mix of like this thing it comes batteries included for like almost everything that you need. However, if you want an escape hatch to build your own interface for like a custom sort of data input or custom relationship, then you totally can and you can just code up your own view components to pull in the data into manage it yourself. So I was pretty pretty impressed. It apparently took them like, like nine months of full time Dev, which is pretty nuts that this thing took so like, I don't say as long but like it's an amazing product. And they really put a lot of time into it before they even announced it. Cool. I
+
+11
+00:03:45,600 --> 00:03:51,539
+Scott Tolinski: think this sort of next gen style CMS sort of stuff is a it's a really interesting space. Really. Yeah, I
+
+12
+00:03:51,539 --> 00:06:29,910
+Wes Bos: think space. Yeah, me too. It's very, I'm curious to see I know there's a lot of stuff in Node world and graph qL world right now. I'm curious to see where it will go from there. And then also so I went on a vacation in the last week to the Poconos, which is kind of a nice cottagey area in Pennsylvania, my family, my extended family and I like my parents and my brothers and sister and all of our 4000 kids we all rent a huge cottage somewhere and we basically were so big and when you're this big it gets hard to be able to rent a cottage because you need like six or seven bedrooms to fit everybody and so basically you you you do the filter on homeaway which is a kind of like Airbnb, but for a lot more vacation properties are on there and you basically set the filter and then you zoom out to North America. And you look at your options that actually gets like my whole family is cheapest house so we were like we want all of these things but for very cheap so we ended up finding a really nice place but had a crazy crazy experience with my daughter who is just about two years old. And I'll tell you the story because it's it was a crazy story and hopefully it can help some other parents We're after dinner one night, we're just playing with her. And she was just sitting on one of the beds and we're tickling her and playing around and my daughter is getting into the the terrible twos. So when she doesn't like something, she she gets really mad. And what had happened is that we were just tickling her and playing around and then all sudden, she decided she didn't like that. So she started like crying screaming at us. And I said, Oh, honey, and I picked her up. And she was laying on her back, and I picked her up. And she went, went unconscious, and we started freaking out. We're like, Oh, my gosh, what's happening? She's like, her eyes rolled back in her head. And her whole body went limp and stopped breathing. So we're like, oh, my gosh, what's happening in my wife's family has seizures in the family. So we're like, oh, man, this is probably a seizure. So we later on the ground, and about 10 seconds later, she came to and started crying and breathing again. And then and then five minutes later, she was totally fine. So we're just like, what was that? So we went to the ER, oh, it's half an hour away. We drove to the ER, got her in the ER, and they took a look at her and started drawing blood and doing all of this stuff. And they ended up transporting us via a, an ambulance to a children's hospital. And they put us in the Children's Hospital. And we had all kinds of doctors coming in and taking tests. And then we had asleep overnight, which is miserable thing I really feel for any parent that ever has to sleep in the hospital. And we're there all day and waiting for an EKG, which is where they attach like a electron thing.
+
+13
+00:06:29,910 --> 00:06:31,500
+Scott Tolinski: Yeah, electro Yeah.
+
+14
+00:06:31,619 --> 00:07:39,660
+Wes Bos: electrodes, electronic. Yes, desktop browser based experience. And so this lady, they tell us to get her asleep, which is a task on its own, we got her to sleep. And then they come in, she says, Okay, I need to put 27 electrodes on her head, and we got our sleep are like, Alright, let's do it. And she wheels in this like, computer with all these electrodes on it. And she plugs it into the wall. And she's like, Huh, that's weird. And she tries another plug. And she goes, Oh, that's, that's weird. And we've been waiting, like 20 hours at this point for this thing to happen. And we're just like, Oh, my gosh, what is going on? And she just keeps plugging it into other computers or other outlets. And I'm like, okay, you do not have the debugger, you know, when somebody doesn't know how to debug something, they're like, Yes, just keep trying different. And then she, she, I could tell that the the thing was getting power, but the computer wasn't turning on. And it's like this crappy Dell computer. And she just starts jiggling the DBI cable to see if that will fix it. And I can see that there's no power to the entire machine. So I get my dark, I get my cell phone out on my case that beside I know how computers work. So
+
+15
+00:07:39,869 --> 00:07:40,920
+Unknown: Excuse me,
+
+16
+00:07:40,950 --> 00:09:00,360
+Wes Bos: excuse me, I'm a professional computer user. So she has this thing. She's juggling the TVI cable, which is clearly not the issue because the monitor has power, it's the computer power supply that is likely to put. So I get down in there. I'm trying to reset all the breakers on this like, piece of medical equipment, and nothing, nothing works. And we were livid because we're like, we've been waiting 20 hours. So I'm like, okay, go get another one. And of course, it's a brain machine. You think you'd have a backup in the hospital? No backups there there said it's down for a week, Jesus to replace the entire thing. I was like, Oh, you're kidding me? Like, what are we going to do? So we can't do this brain scan. And we're just about to, we can't do the brain scan. So we're like, okay, we have to pack up and like drive home overnight. So that we can go to Canada and go to the ER there and get this thing done. Because we need to figure out what's going on. And just as we're about to like, just, like throw our hands up in the air. And the one of the doctors, like let's just see if the neurologist will still come in. And they brought the neurologist in and he says, tell me the story again, and he is very empathetic and kept asking lots and lots of questions about what happened. And it turns out that, you know, I don't know if you remember this from like high school. But do you remember when kids used to breathe out all the way and then someone would hit their chest? Yeah. Do
+
+17
+00:09:00,360 --> 00:09:02,270
+Scott Tolinski: you remember that naked pass out?
+
+18
+00:09:02,399 --> 00:09:54,529
+Wes Bos: Yeah, that's what happened where she screamed. And then I picked her out and I probably hooved another breath out of her at that bipolar Oh, and then by by putting someone who's laying down and picking them up vertical, that also the all the blood rushes out of your head. So it was like a perfect storm and just knocked her unconscious. Which is apparently such a common thing with two year olds. Like we told her friends and like three of our friends like, Oh, yeah, our daughter did that. We had to call the 9110 my and so it was nothing. It was not a big deal at all. And and the neurologist was like this happens all the time. I see it. I see it all the time. People think that there's a seizure. And then he asked us all these questions about family history and did a whole like like, Where's your daughter at how many words does she say Can she opened door handles things like that? And she's like, you're not fine, go home. And we're like, Oh, thank goodness. You know, cheese.
+
+19
+00:09:54,570 --> 00:09:59,149
+Scott Tolinski: We were really scared for you guys. Yeah, that was that was terrifying to witness.
+
+20
+00:09:59,399 --> 00:10:23,070
+Wes Bos: So it was not A not a fun, not a fun thing to go through, which is, which was terrible. But every one of the hospitals right, we've stayed in this like Ronald McDonald room, which is really cool. So they treated us nicely. It's just was a disaster. And then we were pretty pretty cooked for the rest of the vacation, which it started. It was like the second day of our vacation that happened. So wasn't the most relaxing vacation, but we're happy that that she's okay. Yeah,
+
+21
+00:10:23,099 --> 00:10:27,210
+Scott Tolinski: geez, well, it's a the best possible outcome. I think that the only thing
+
+22
+00:10:27,289 --> 00:10:39,840
+Wes Bos: Wow. So that's my that's my crazy story. Hopefully, you can remember that if you have I know a lot of our listeners have young kids. And if your kid goes blank for 10 seconds, that likely that might be it. Cheese, cheese, yeah,
+
+23
+00:10:39,840 --> 00:10:40,740
+Scott Tolinski: scary.
+
+24
+00:10:40,740 --> 00:11:20,730
+Wes Bos: So let's get into it. Let's, we're talking about our gear or office setups. We're gonna we'll start with computers. We'll move through monitors, keyboards, mice, desks, chairs, headphones, hard drives, backup systems, Wi Fi, all of that good stuff. I have a website on wherever I have a website, I have a page on my site called West boss.com, forward slash uses, that just links almost all of the stuff I need to update it with with some of the stuff but people ask me all the time about what gear I use. And I also recommend a lot of people have sort of picked up this for slash users. And if anyone else is making a I love seeing what other developers make some I encourage other people to make for slash users on their own website.
+
+25
+00:11:20,999 --> 00:11:34,740
+Scott Tolinski: Yeah, mine, Ted, forward slash my gear. Oh, yeah. Although there's a man, there's a really dope site. And I'm struggling to remember is it uses this? Oh,
+
+26
+00:11:35,130 --> 00:11:35,669
+Unknown: no, I
+
+27
+00:11:35,669 --> 00:12:20,250
+Scott Tolinski: don't think so. Dang, I don't know why I just made an account on here. I just started uploading my gear. And it's Oh, yeah. Like all of the youtubers who are into photography, use this thing. I'm gonna remember the moment that we get off of this. Oh kit is a kit kit calm. This allows you to upload all of your stuff. I just made a kit, but it's not fully done yet. And this is going to be just sort of like, Hey, here's all of my my stuff that we use for podcasting. I'll share the link. It's not done yet. But I have most everything else on the my gear part of my site. So this is pretty cool it this way it gives you like a nice little interface for it and stuff like that. Definitely a nice little nice little place to host your your gear. Yeah, that got to get that this is
+
+28
+00:12:20,250 --> 00:12:55,440
+Wes Bos: also like a good way for for people who have a bit of an audience to make a little bit of extra money, because you can put Amazon affiliate links in these things. And as long as you're like, some people, I think sometimes we'll just like say stuff, like I follow some people on Instagram, and they'll just link stuff up because it's on Amazon. And they they're like, Oh, so many people are asking about the shirt that I wear. And really nobody, nobody's asking about the shirt that you wear. You just want to like link us up. So you kinda have to be careful with this affiliate stuff. But if it's actually gear that you use, and you can you can stand behind it. It's kind of a neat way to make a little bit of extra money. Yeah, I
+
+29
+00:12:55,440 --> 00:13:13,169
+Scott Tolinski: think that you have to be Yeah, you definitely to be careful with that. And especially now, there's rules on YouTube that if you have affiliate links, they have to be listed as affiliate links on your descriptions and stuff like that. You can't just like transparently link stuff anymore. Oh, yeah. And I like yeah, that's that, to me. Is
+
+30
+00:13:13,199 --> 00:13:19,980
+Wes Bos: should be important. I don't mind if someone sends me an affiliate link, but you shouldn't be trying to trick me into clicking it right. Yeah,
+
+31
+00:13:20,010 --> 00:13:24,390
+Scott Tolinski: yeah, absolutely. Yeah. Likewise. Yeah. So yeah, let's get into it. What what,
+
+32
+00:13:24,390 --> 00:13:25,110
+Unknown: uh,
+
+33
+00:13:25,110 --> 00:14:08,580
+Scott Tolinski: what's the first thing we're going to be doing is probably the easiest to answer your computer we both use the same computer so we both use a 15 inch MacBook Pro with the the new one with the the crappy keyboard and the dongle buck, the dongle book. Yeah. So I actually really liked this computer for a host of reasons. The keyboard like, people really rag on the keyboard and it sucks in terms of failing. Like, I have to push my command keys really hard sometimes. And that's like really awful. Like, sometimes the the keyboard experience is really awful. But for the most part, I like the feel of it while typing. It's clicky the low profile keys. I like all of that stuff. I just don't like how it breaks so much.
+
+34
+00:14:08,640 --> 00:14:25,080
+Wes Bos: Yeah, so there's a there's a you can bring it to Apple and they'll swap it out. And the newest MacBook Pros have like a bit of a membrane on them, which I think is too met. So if you don't know the problem is that they switch to these new keys that are they called butterfly keys.
+
+35
+00:14:25,260 --> 00:14:26,520
+Scott Tolinski: The switches are Yeah,
+
+36
+00:14:26,640 --> 00:15:06,990
+Wes Bos: yeah. So they're they're really like low profile. They don't travel a lot and I actually like the computer but you get crumbs under it and I'm not like eating like nature Valley, you know, that is not to cook crummy crumbs. But getting crumbs everywhere. There's like this meme that is like nature Valley get crumbs. I'm not doing that. Like I have my laptop up on a stand and I still somehow get crumbs in it. That goes under the keys and then you can't like you don't get any feedback from hitting the key and sometimes you got to really ram it and it's a nightmare. So I'm hoping that the new ones saw That problem because that's probably my biggest pain point the trackpad on it is also too big. Like I hit it, I hit my fingers on
+
+37
+00:15:06,990 --> 00:15:24,090
+Scott Tolinski: it all time all the time and I love the dappled trackpad is like one of my favorite things in the world. And I hit this thing all the time accidentally though, like, it'll, it'll jump my mouse position to somewhere else, or like, click into another window by accident, just because it's like the tap, click. Yeah, that is super Yes.
+
+38
+00:15:24,299 --> 00:15:59,130
+Wes Bos: So I have mine on a dock and I don't use the keyboard 98% of the time, it's only when I go on trips. And otherwise the hardware is awesome. As fast as hell is really reliable, really, really happy with that. It's just those little things that everybody complains about. That seems to be it's just annoying enough not to make me like I wish that they made the old one like my old one where it had actual HDMI on it had the proper USB ports, things like that. You can still buy them, but I wanted like much faster. So I wish that they would bring that one back because that was my my favorite computer of all time.
+
+39
+00:15:59,189 --> 00:16:08,100
+Scott Tolinski: So if you if you get your keyboard replaced via their replacement program, do they give you the new one with the membrane? Or is that only on the new they don't say? Because I think
+
+40
+00:16:08,100 --> 00:16:22,320
+Wes Bos: that by saying it they would admit that there's a problem and then that opens the floodgates to lawsuits Should I would assume so. Like what what help would it be like you're just gonna open another nature Valley 10 seconds later and your your pooch?
+
+41
+00:16:23,340 --> 00:16:41,010
+Scott Tolinski: Yeah, yeah. Yeah, it's, it's again, I really like the feel of the keyboard. I know a lot of people don't even like that aspect of it. But I like that. It's just I know, also, they have to replace like the whole top case if they replace the keyboard. And that's like kind of insane. It's Yeah, least fixable computer ever made.
+
+42
+00:16:41,460 --> 00:17:07,650
+Wes Bos: Yeah, it's obsess, it's hard to have it. I also hate the USB C ports. Like I know people talk about this on on then that it's annoying. Like just give us at least one like the amount of times that it couldn't plug something in when I was traveling because I couldn't find the tiny little dongle adapter like I have one on my desk right here. They're tiny, tiny and then and then you can accidentally bump these dongle things and I don't know where he said like, it's a mess. But what's
+
+43
+00:17:07,650 --> 00:17:22,140
+Scott Tolinski: it called like an SD card reader man, like all of the old netbooks have always had like SD card readers and didn't so many professional photographers use this thing? Like, come on, man. How hard is it? Does this look? Yeah, thinnest ports on the planet. But yeah,
+
+44
+00:17:22,169 --> 00:17:31,340
+Wes Bos: it's sure you could just there's tons of room? I don't know. I wish that they would they would bring it back. I think Apple is listening. But I don't know that they they care enough?
+
+45
+00:17:31,380 --> 00:17:34,710
+Scott Tolinski: Yeah, they they're their trillion dollar. They do not care. Yeah.
+
+46
+00:17:36,330 --> 00:17:45,320
+Wes Bos: So that's the computers that we use. Let's What about monitors, obviously, we both sit at desks all day. We're sitting at desks right now staring at monitors. What do you have for your monitor?
+
+47
+00:17:45,720 --> 00:19:38,040
+Scott Tolinski: Yeah, so my monitor which people ask me about all the time because they see it on Instagram. And they're like, that's a big monitor. I actually am always like, I don't know the version or the the because I like LG does not make their models numbers. Easy. It's the gnome, three, four, u c, eight, eight hyphen, b, o, b Yeah, the hyphen B so that I don't really know, like, whenever people ask me what this is, but it's on my my gear page, it's on my kit, which I'll link in the thing. But it's a 34 inch ultra wide and it's curved. So it has this like beautiful inward curve to it, it takes up a ton of your vision. And in my new setup, it's it used to be directly in front of me like directly behind my monitor right. Now I have a totally off to the side here on the right. So I can push it away when I do my video recordings. And it doesn't have to be in front of me. And so it's really cool because I can angle it and whatever and it's perfect. And it just takes up so much space. It is it is I'm a huge fan of the ultra wide I when I ordered it, I wasn't quite sure how I'd feel about it. But you can fit browser window with Dev Tools open and your code with multiple tabs in your code all in one horizontal plane. And it is just an exquisite I think development experience for me. I also use this vivo dual stand it's like a one of those mitre arm stands for the monitor but I bought it for when I had two monitors. And so now that I have just one monitor, I I tried to take one of the arms off and it won't come off I actually unfortunately stripped the bolt trying to get it off because it was just like that crank down. So I'm stuck with two arms on this thing I might end up just getting a new one because now that I'm moving it around so much I might want something that's like really super smooth and this is like a $27 arm so it's definitely not the highest quality one so I think I'll probably get another one that's like put it wherever I want kind of thing.
+
+48
+00:19:38,040 --> 00:19:49,260
+Wes Bos: So where what resonates maybe you can open up your display preferences what resolution do you run that thing at because I've been looking at those ultra whites but they I feel that they only go What? 1440 high
+
+49
+00:19:49,440 --> 00:19:52,610
+Scott Tolinski: 344 wide and then 1440 tall
+
+50
+00:19:52,650 --> 00:20:00,830
+Wes Bos: Yeah, awesome. Yeah, so that's I'm like waiting for like a 4k curved one. So yeah, let me go into mine because I think Done with yours.
+
+51
+00:20:00,990 --> 00:20:11,730
+Scott Tolinski: Yeah, but I'm gonna say Trust me. I mean, if you're waiting, that's cool. But at this this 344 by 1440 Yeah, it looks crisp as, as anything does.
+
+52
+00:20:11,810 --> 00:20:44,670
+Wes Bos: Oh, yeah, that's good. So I run on them as my main monitor, I have a 27 inch Dell 4k display, which I usually run it at what 3008 by 1692, which is because like, if you run it at full 4k, everything is tiny. But if you run it at like 1920, by 1080, everything is massive. So you kind of have to go in between there. So I usually run it at about that, and I love having the extra height to work with. But that What did you say 3008? By 1692
+
+53
+00:20:44,810 --> 00:20:51,320
+Unknown: for your MacBook Pro? Yeah. Or no on my on my external monitor. Okay, that's gonna say yeah, yeah. Okay. All right.
+
+54
+00:20:52,440 --> 00:21:23,280
+Wes Bos: So I have talked to a bunch of people who actually run like, like 40 inch 4k displays, because another option is you can find a TV that does 60 hertz, it has to do 60 hertz, otherwise, you're gonna get like headaches from watching some of these cheap TVs. But some people do that. And then they run it at full 4k. But because the actual panel is so large, you can fit like 410 ATP monitors on it. And I've been very, very tempted to do that. I just haven't haven't made that. That switch just yet. So that's my, my main one.
+
+55
+00:21:23,640 --> 00:21:47,330
+Scott Tolinski: I used to do that when I had, when flat screens were first starting to get super affordable that Costco and I bought like a it was like cheaper for me to buy a 32 inch TV at the to get at that resolution. And then that hurts the refresh rate. And it had a DVD player in the side. time that was like a sick thing. I was like, Oh yeah, my monitors got a DVD player in the side.
+
+56
+00:21:47,600 --> 00:22:39,960
+Wes Bos: That's good. And then to my left, I have a 22 inch Acer display, I've had it for like 10 years, I put it on its side. So I have it vertically, vertically running. So it looks pretty good. I'm big, big fan of that I have been thinking about getting a second 4k and putting it on its side. But I just think that it's a bit too tall to put under it. So I've been thinking a lot about about these different monitors and whatnot. But I haven't haven't made the switch. And then to my right, I've got my MacBook on a what's called a reign m design. It's just a little laptop stand. And then that's just to my right, usually what I'll do is I'll put all my code in my browser on my 4k, I'll have my Slack, and any documentation to my left. And then on the right hand side, I'll have Twitter, Spotify, kind of other stuff like that open and it's nice. I don't use spaces at all, I just have physical screen space. And I can just move my head around looking at it. I don't I don't switch around to spaces or anything like that.
+
+57
+00:22:40,170 --> 00:23:08,340
+Scott Tolinski: Yeah, same here. I, I have a What is it not cinch. It's one of those apps Devi I actually use two of them, I use spectacle and Devi, because they're both very different. I use Devi to develop my windows for actually level of touch recording. Because I can say, Hey, get to this specific part of the screen, or that just use spectacle to say, hey, fullscreen, half the screen, a quarter of the screen, whatever, I use those things like non stop.
+
+58
+00:23:08,400 --> 00:23:37,740
+Wes Bos: Yeah, Yeah, me too. I've got tons of shortcut setup with better touch tool to to move monitors to go to full screen a monitor to go to the left to go to the right to go to the lower third hire third. That's pretty handy. And then I also use Divi every now and then if I just want to specifically size something, there's a whole bunch of different tools out there that that specifically do this one, I've just found that some of them just like you have to like configure them to no end and I don't have time to configure them. So I just want like a nice GUI to be able to help me out with the different shortcuts.
+
+59
+00:23:37,799 --> 00:23:39,270
+Scott Tolinski: Yeah, sure. For sure.
+
+60
+00:23:39,299 --> 00:24:02,520
+Wes Bos: I also have everything on monitor arm so I hate when your mouse bumps into something or as I often see people have like, like flash and Java books holding up their monitors. So it's high enough. But monitor arms are so cheap. I have one of them on ergotron, which is like the cat's meow of monitor arms. It's like the thing like the dead, you know, the dentist light or the dentist can move the light anywhere they want.
+
+61
+00:24:02,700 --> 00:24:06,090
+Scott Tolinski: So that's exactly sort of what I'm looking for. Yeah, yeah, every one of
+
+62
+00:24:06,090 --> 00:24:19,050
+Wes Bos: these, they're super nice, but I don't need I don't have to move it around that much. So for my big 4k, I just bought like a monoprice a little monitor arm and it's been working really nicely. I can move it back and forth. But that's about it.
+
+63
+00:24:19,289 --> 00:24:38,970
+Scott Tolinski: That's nice. That's very nice. So before we get on to my sin keyboard, let's talk about something else. Wes and I both use, which is m lab. This episode is sponsored by m lab, which is a great place to host your databases. I know I've been using them for quite a little while. I know you have to as I don't know you want to tell us a little bit more about em lab.
+
+64
+00:24:39,180 --> 00:27:38,940
+Wes Bos: Yeah. So if you are building an application built on MongoDB and you want to be able to to not deal with the database part yourself hosting the database, doing backups, all that stuff, because quite frankly, databases scare me scaling them being able to back them up frequently. What happens if you accidentally delete some stuff so lab sort of takes that all it's a service that it used to host my database and to handle all of this sort of hard stuff for me. And I really, really like it. Because let me just tell you a few reasons why I like them. First of all, they do automatic backup, I pay a little bit extra every month and get I think, every couple hours, I have a backup of my database. And that's just something that you don't have to figure out yourself, they have a really nice interface. So if you ever like like, one time I was away from my computer, and I needed to just jump into the database and fix something really quickly. And I just pulled it, I just pulled it up on the website. And you can do all of your queries and everything right from from the website and view all of your data, their services really good. I once had this weird issue where every like three days my database, which is timeout, and I could not figure it out for the life of me in it, what it ended up being is that I was running an outdated MongoDB driver on my server, not a problem with M lab at all. But they helped me I like contacted them. And I was like hey, like this is going on. I don't really know what's what's happening. But I keep my site keeps going down because my my database, and they actually had figured it out that I was running an old version of the MongoDB driver, which is amazing. And they had a had someone just contact me directly and work on it, which is so good. Their service is really, really good. They know MongoDB cold. And the other part that I really really like about them is that they send you this email every single week that tells you what slow indexes are on your or what you should be indexing on your database. So the way that MongoDB works is that you can tell it to sort of remember or keep in memory, certain things. So if you're constantly querying someone's account by their email address, you probably want to index that user's email your users models email address, so that you can quickly pull up users by their email address. And what they'll do every week is they'll say, like, hey, you're running this query, like one of the query, just looking at the email right now one of the queries that I have is based on their password reset token and their expire. And in the last week, 53, people have run that query, and it's taken an average of 224 milliseconds to run that query, you can greatly speed up that query and use a lot less resources, if you were to index those two things. So I can go back to my model and reindex those and then it will be much faster. So that's really cool. It's not just the database host, but they add this like extra little layer of of niceness on top of it. So check out m lab at m lab.com. For all your MongoDB hosting needs. I use that my node course as well for doing the entire course just because I'm such a big fan of it. Yeah,
+
+65
+00:27:38,969 --> 00:28:00,960
+Scott Tolinski: I'm a big fan of again, like not trying to manage these things that are just so important yourself. Like somebody was just asking the other day, like, what service? Should I fire up a server on to host my database? I'm like, Well, why would you fire up a server just to host your database when you could use a service like this, because it's just so important, and it takes care of all the tough stuff for you.
+
+66
+00:28:01,350 --> 00:28:28,320
+Wes Bos: They have a half gig sandbox, which is more than enough for any app. So if you're just playing with stuff, if you're just trying to like learn, do not try to set up MongoDB locally on your computer. In my own tutorial, I tell people just go to em lab. But if you really want to, here's how we run it locally. But it's so much easier just to fire up a sandbox account on em lab is totally free. And then there's there's no like, you don't have to put your credit card in. I don't think it'll just just get you up and running. Which is really good.
+
+67
+00:28:28,410 --> 00:28:30,000
+Scott Tolinski: Yeah, super nice. So thanks
+
+68
+00:28:30,000 --> 00:28:33,780
+Wes Bos: so much to em lab for sponsoring. Let's keep rolling with keyboards. What
+
+69
+00:28:33,780 --> 00:28:34,320
+Unknown: do you use?
+
+70
+00:28:35,370 --> 00:28:53,250
+Scott Tolinski: I mostly just use the Mac keyboard because my computer's just sitting right in front of me. I don't have it on a stand or anything. It's just sitting right there. And if I do use a keyboard, I have a code keyboard. That's the name of it code keyboard. I believe it was designed by coding horror horror.
+
+71
+00:28:53,430 --> 00:28:56,130
+Wes Bos: Yeah, and I built Stack Overflow.
+
+72
+00:28:56,219 --> 00:29:22,260
+Scott Tolinski: Yeah, okay, I'm trying to make sure I'm right on that but it's I have the one with the number pad I got it cuz I like keyboards is number pads. It has like a Mac settings specifically where you flip a little switch and it has everything configured. Yeah, and I bought some key caps for it off of massdrop that are kind of fun. So yeah, that's pretty much it if I use a mechanical keyboard I had a lot of people complaining that the cookies were getting picked up in the mic. So I've been yeah not using that for recording.
+
+73
+00:29:22,560 --> 00:29:36,990
+Wes Bos: That's the main reason why I'm not using a mechanical keyboard I know you can get like really quiet ones but even the quietest ones is still click click click click click and there's this sick one that's like cobalt to a couple people have bought it they keep sending me links to it like it looks exactly like my text editor theme
+
+74
+00:29:37,020 --> 00:29:37,860
+Scott Tolinski: perfect for you.
+
+75
+00:29:37,979 --> 00:30:00,480
+Wes Bos: Yeah, I just don't I just want it to be most of them are wired as well which is a no go for me. I can't have any wires on my desk. So I use just a regular Mac Bluetooth keyboard. Big fan of it. I've been using it for 10 years and then I have a Magic Mouse which is probably about 10 years ago it's disgusting like my like acid on my hands have like worn right through the aluminum are you on? Oh
+
+76
+00:30:00,480 --> 00:30:02,010
+Scott Tolinski: yeah, I'm seeing that yeah,
+
+77
+00:30:02,040 --> 00:30:43,830
+Wes Bos: it's starting to go I put up a Twitter thread if you're interested in mice go to this Twitter thread. I'll link it up in the show notes and ask like what's the best mouse out there? And it was like kind of split between use a trackpad, a Magic Trackpad, use a Magic Mouse, or and then this other one the Logitech MX Master two s, which seems like a really sick mouse. So I'm think I'm gonna buy that and just try it out. I've been loving that I've had no qualms about this Metro mouse except that if I bump it, it disconnects for like two seconds and it's really nice someone figured out you can stick some tinfoil in it and make it work better but I'm gonna try it out and and see how it is. Maybe it'll be a sick pic of mine in the future.
+
+78
+00:30:44,010 --> 00:31:10,470
+Scott Tolinski: Yeah, I use just the Magic Trackpad. If I do use one and I love the Magic Trackpad. I always like when I had desktop computers or anything like that my hackintosh I've always used this giant trackpad. So that would that's like a big thing for me. I just love like my hands are so so used to the trackpad. And the apple trackpad is just so just so nice. That's like one of the nicest things Apple does. That'd be like, the thing I would miss about an apple computer. If I left was the trackpad.
+
+79
+00:31:10,860 --> 00:31:14,490
+Wes Bos: There's also these keyboards that are split was the name of them.
+
+80
+00:31:14,520 --> 00:31:33,150
+Scott Tolinski: Yes, I know about those. And I almost bought one the shoot. And it's again, it's escaping me. I've really wanted those because you can build them yourselves. And they're like fully customizable, and they have all these keys. There. They have a ones that like your have your thumbs have like custom access keys. And this is gonna be I did
+
+81
+00:31:33,150 --> 00:31:47,160
+Wes Bos: use the Microsoft, Microsoft makes awesome hardware. And I use for many years the split Microsoft keyboard that was ergonomic with the Microsoft ergonomic mouse. And I really liked that. It was just a bit too big for my desk and
+
+82
+00:31:47,360 --> 00:31:49,560
+Unknown: I gave it up. It's the airgo ducks.
+
+83
+00:31:50,010 --> 00:31:50,640
+Yeah, yeah.
+
+84
+00:31:50,850 --> 00:32:06,780
+Scott Tolinski: Yeah, the Ergo ducks. And then there's the air go ducks. Easy, was just spelled with an E and A z. That will give you the opportunity to have them like build it for you. Because a lot of these are like coming kits where you have to, like, put it together or solder. Yeah, stuff like that. I'm not. I'm not about that. I'm not about spending that kind of time.
+
+85
+00:32:06,990 --> 00:32:22,170
+Wes Bos: Yeah. And you also have to, like learn to I'm sure, like if you spend some time on some of these, you could like relearn, like, there's the kinesis. That's the one that I'm talking about that it's like totally split, and it's like you can like almost vertical keys, which is really cool. But
+
+86
+00:32:22,200 --> 00:32:26,550
+Scott Tolinski: I don't know, one day docs is totally split two. It's like a
+
+87
+00:32:26,670 --> 00:32:29,730
+Wes Bos: Yeah, it's like it's actually two pieces with a cord in the middle, right?
+
+88
+00:32:29,790 --> 00:32:45,480
+Scott Tolinski: Yeah, two pieces. And then there's like little extra again, like thumb access keys that are like non standard keys and stuff like that, that are just like modifiers like additional modifier keys. I found a video that's called out from Linus tech tips that's calling it the dankest ergonomic keyboard.
+
+89
+00:32:47,580 --> 00:33:18,240
+Wes Bos: That I love that Linus tech tips guy he's like the most 90s hold on I've ever seen because he's like, like one of the last few guys that like still builds computers and talks about like graphics cards and chips and overclocking and stuff like that. Remember that used to be the the big thing but you don't see too many people talking about that stuff anymore. Unless you're super into gaming. Let's keep going next is a desk. You just picked your desk and the last did a one so why don't you just tell us real quick what your desk is again?
+
+90
+00:33:18,330 --> 00:33:30,390
+Scott Tolinski: Yeah, so my desk set up used to be this like IKEA desk. That was pretty cool. I found out I posted a photo on Twitter and I found out it's like a famous IKEA desk. Oh my god, you're right. Yeah, I think so.
+
+91
+00:33:30,630 --> 00:33:41,130
+Wes Bos: I had the IKEA jerker for many years. It's amazing. You can get all these like like swivel arms for it and it was great when I had like a CRT monitor that you wanted to put up and swivel it around.
+
+92
+00:33:41,250 --> 00:35:04,500
+Scott Tolinski: Yeah, so either way I had that forever and ever and ever. And now I'm rebuilding my set I want it to be wider. That one was like really deep so I got a really wide what I got is an Ikea countertop. It's the Kirby countertop it's in this like walnut Butcher's block style. It is super nice looking and for like 140 bucks it's just wide desk it's superduper wide and I'm loving it and then I also got to the Jarvis standing desk legs where they have like the presets and these things are which is a great I asked a ton of people everyone what they're using for standing desk legs and it turns out the Jarvis is pretty much the the winner of the between them the uplift but the even at high high heights it's like very very stable. I was joking that I have wasn't joking because this is serious. But I have three presets and one for sitting one for standing and then one for standing in the splits where I saw that third preset it's like Dennis from always sunny always wearing the shorts. Like I work like that and absurd amount of time. I just actually while we were recording this podcast, I had to lower my desk a little bit because I'm starting to slide into this the split stance a little bit. Keep it keep it the right height but now that that's that's my desk. I'm absolutely loving it. It's been here about a couple weeks now and it is just totally it's one of the things that I can say is like great improved my sort of like workflow and setup just how everything is configured here.
+
+93
+00:35:04,670 --> 00:35:22,880
+Wes Bos: That's wicked I I have a key a countertop as well I've had it probably for seven years now it's an eight foot countertop. I took the IKEA Alex set of drawers to put in the middle and then I've got legs on all four corners and it's solid as hell. That's my big thing about desks. I hate when the desk is wobbly. Yeah,
+
+94
+00:35:22,940 --> 00:35:24,840
+Unknown: which many of you actually go ugly?
+
+95
+00:35:24,990 --> 00:36:18,110
+Wes Bos: Yeah, if you go by a desk I hear there's really thin and light and it will it'll wobble a lot. This is nice and sturdy. Actually, my wife and I both worked on on it when before we moved to our current house we both like kind of like had to, it's big enough that you can put two different things on it and now I'm just all spread out on it. I've got lots of workspace to to work on whatever it is that I'm working on. So big fan of the kid desk it doesn't need to be refinished because I I sealed it when I first bought it but all my Lacroix's over the years have definitely left some water stains on it i think that that's my desk big fan of how that works. I cut the back out of the IKEA Alex and I stuffed all of the cables in there. I'm not like you know sometimes you see these like Instagram photos where people don't have a single cable. Um, like I always see that like yeah, right like you probably just cut all the cables off and you're,
+
+96
+00:36:18,419 --> 00:37:15,380
+Scott Tolinski: you're talking about that because I have I have spent the past couple of weeks painstakingly hiding all my cables. Because I have I have monitors I have the I have a whole lot of stuff on this desk and even though the standing desk I have two wires coming out of the side of it attached down to the leg attached around the leg and then I have that going directly into a outlet well the actually the the surge protectors underneath the chair so that are underneath the table, double sided taped underneath the table so nothing actually comes down from the table. It all plugs into the surge protector underneath the table and then it has the two cords it's just one one power cord and one audio cord. They come down to the leg and they immediately go into an extension cord that is gaffer taped to the wall and then gaffer tape along the molding and it is exquisite the cables on the ones that are on plumb to the thing they're all taped up underneath and double sided is awesome.
+
+97
+00:37:15,479 --> 00:37:36,000
+Wes Bos: Wow, that's Yeah, cuz I've got if I'm just looking at it right now I just counted I got 26 cords whether they're USB, Ethernet, microphone or power, and they all just run in one big ball down to the back of this thing and it looks okay, but I there's no way I could can make it look that good. And well maybe I'll take some tips from you.
+
+98
+00:37:36,300 --> 00:37:53,820
+Scott Tolinski: Yeah, mine is also and then my desk is currently in the middle of my room for the video shooting. And the last thing I want is for Landon to stumble in here and pull a bunch of cords and have everything come tumbling off. Yeah, it is. It is tight up. Yeah. He loves the standing desk. He pushes the buttons like crazy. What about chairs? What
+
+99
+00:37:53,820 --> 00:37:55,830
+Wes Bos: are you sitting in? If you're not standing?
+
+100
+00:37:56,210 --> 00:38:44,130
+Scott Tolinski: Yeah, I got a Herman Miller Aeron chair that I got refurbished off of this site that I wish I remember but it doesn't exist anymore anyways, and it was like refurbished chairs calm or something. I don't remember what it was. But either way I got the this this Herman Miller chair for like maybe 40% of the price and is brand new, there's like a scratch on the underside of it, but it's like these chairs are expensive and when I bought this I've had I've had it for a long time, but when I bought it my salary could not support a fully priced Herman Miller chair, but I needed a better chair. So sitting at some IKEA thing, so yeah, this chair is great. I've had it for a long time. I am looking at like a saddle if you have any nice saddles that you you you're really liking I'm looking for a nice saddle. So if anyone uses a saddle, let me know. I'm gonna check that out.
+
+101
+00:38:44,310 --> 00:39:24,420
+Wes Bos: Yeah, I went through the whole chair thing maybe three years ago, and I narrowed it down to either the Steelcase leap or the Herman Miller Aeron and I ended up going with Aaron just because it's it's such an amazing chair. You got a really a lot of people sit in them and the cause isn't that comfortable. You really got to like tune it to your body. And there's like 1000 different things and once you have it like no one else is allowed to sit in it because it's, it's perfect to my body all the levers are exactly the same. I've had it for three years I have the polished aluminum one, which I splurged a little and it looks at the feet of it are in Polish aluminum, I love the look of it. I've been super happy with it. Nice. What about headphones?
+
+102
+00:39:24,570 --> 00:39:41,460
+Scott Tolinski: headphones. Yeah, I use. I got these aka he used to have these ultrasound headphones that were like incredible. And I'm really upset because they were very expensive, like very expensive. And my dog ate them when she was a puppy and it really upset me.
+
+103
+00:39:41,690 --> 00:39:42,570
+Unknown: Oh,
+
+104
+00:39:43,020 --> 00:40:24,840
+Scott Tolinski: so now currently I'm using these AKG they are the K 553 Pro. The ear pads are very comfy which is a big thing for me. I really like these comfy ear pads. I also use the use the Beats by Dre bluetooth headphones that I got for free with my computer. That's not something I would buy typically, but they were free with a computer. So as far as bluetooth headphones go, they work nice. The sound quality is terrible, but they work nice. I'm also again, I'm looking for some wireless earbuds but none of the current generation wireless earbuds are really like doing it for me. Like I need something that I can do handstands in and move around, and breakdancing. And the air pods are not going to be able to do that. They're just gonna fall right out. So I need some time to try
+
+105
+00:40:24,840 --> 00:40:25,380
+Wes Bos: them.
+
+106
+00:40:25,400 --> 00:41:02,690
+Scott Tolinski: Yeah. And they're there. They're not sporty. I mean, they they sit in there, I want something that like will like, yeah, cuz they're spinning. In my Yeah, you're there's a lot of movement in normal. I have these like Sony ones that were not Sony, I forget who but they wouldn't be handed back your head. But they had these things that went up into your part of your ears and like really locked them in. And that was like, that was the sweet spot for me. So if I could get something like that, that they're not going to move out. And they're actually still good for everything. I'm actually just waiting for the next generation of all of this stuff, essentially, is what it comes down to. I'm sure there are some some good ones out there. I've looked at all of them. But yeah, so eventually, who knows?
+
+107
+00:41:02,880 --> 00:41:23,010
+Wes Bos: Awesome. I used the Bose QC 35, which is the the Bluetooth, I had a pair of 25. Before that for probably three and a half years. And they were rock solid, the ear cups kind of degraded after all of the years. And I got free ones from Bose, which apparently is uncommon for them to just give you free.
+
+108
+00:41:23,220 --> 00:41:24,480
+Scott Tolinski: Yeah, I think they're kind of stingy.
+
+109
+00:41:24,650 --> 00:42:12,570
+Wes Bos: Yeah, I don't know what I did. I just called them up. And the guy was like, Oh, you know what, I'll give you a new one. So I replaced them gave them to my wife. And now I've got the the wire wireless ones. They are amazing. I know that some audio files turn their nose up at Bose stuff, but they're so nice. They're so comfortable, you can kind of move around, I bought like a Bluetooth adapter for airplanes. So I don't even have to bring the cord on the airplane, which is pretty nifty. And I've been a big fan of them. I also have the air pods that I use just for the Bose QC 35 are not good. If you're moving though, if you're walking, the noise cancellation goes, boom, boom, boom. And then like you're you feel like you're in like a drum because then the noise cancellation and the vibration of walking is terrible. So like you can't wear them anymore. But the good like desk, headphones or on a plain headphone.
+
+110
+00:42:12,840 --> 00:42:41,900
+Scott Tolinski: Nice. super nice. Cool. Well, let's get into a little sponsor break here. This episode is also sponsored by one of our longtime sponsors, Freshbooks. And Freshbooks makes cloud accounting or you just encounter accounting in general, just super easy and nice. And it's it's one of those things that if you've ever used any sort of accounting software, you know how you could fire up QuickBooks or whatever, and you fired up and it's just like, Oh, I don't know. But Freshbooks doesn't give you that experience. They really just make the whole process really painless.
+
+111
+00:42:42,090 --> 00:43:48,000
+Wes Bos: Yeah, Freshbooks is, as you know, by now my favorite way to run my business I've been using them for I think about 10 years now they're they were a local company. I've been using them since they got so huge that they are now they do all kinds of they do the invoicing, expenses, time tracking, which is really helpful. If you're doing any sort of freelancing or software, it's based on the hours, we've got some other. If you're interested in learning more about that like freelancing, hourly based billing versus fixed based billing, we've got some opinions on that I've done both and freshbooks worked out really well for it, you can have specific projects that you can attach things to if you have invoices, sometimes I would have to take flights for some of my clients. And then I could just put that expense into my Freshbooks and then turn it immediately into an invoice for the client so they could pay me back for that it does multiple currencies. I think this year alone, I have three or four different currencies in my own. So if you are looking at running any sort of Route, if you're sending any sort of invoice or tracking your time, check out fresh books@freshbooks.com for slash syntax and enter in syntax into the How did you hear about us section? Thanks so much to Freshbooks for sponsoring.
+
+112
+00:43:48,360 --> 00:43:48,930
+Scott Tolinski: Thank you.
+
+113
+00:43:49,140 --> 00:43:49,740
+Unknown: Yeah, okay,
+
+114
+00:43:49,740 --> 00:45:06,960
+Scott Tolinski: so let's get into it. Let's talk about backup systems because I know you have a backup system and maybe a double redundant one. backup systems are important. They've always kind of been important. Anyone who's ever lost a hard drive in the errors of losing a hard drive knows just how much actually like double backups are important. I run a NAS drive, which is the WD my cloud e x 4100 It's a NASS drive. It's pretty cool. It has it's not like the crappy you know, like little ones. It's a full on like business NASS solution. It powers like my media server for Plex and stuff like that. So it's not it's not like a slouch. I have 16 terabytes of space in that thing. It has like dual redundancy backups, and that's pretty much why I have so much space in it is because it does double backups and stuff like that. So I keep an archive of all of my videos and editing and stuff like that. So video files for a couple thousand video tutorials over the years definitely stacks up so I have a lot of data needs. And I like to keep all that stuff just in case you know, so yes, that's what I use. I like it. It's okay I wish I would have is definitely the cheaper option of that. That class of As drives and I kind of wish I would have gone gone a little bit bigger on it in terms of my space, but you know, brand, my sister's
+
+115
+00:45:06,960 --> 00:45:14,400
+Wes Bos: a photographer and she asked me to do some research into it. And I asked on Twitter and everyone said the Sisson Sinhala Synology.
+
+116
+00:45:14,460 --> 00:45:16,560
+Scott Tolinski: Yeah, that's the one I wish I would have gotten it. There's
+
+117
+00:45:17,220 --> 00:47:25,710
+Wes Bos: a lot of people use Yeah, it's not like I, we're kind of in this weird spot where like, you're not a photographer, you don't need terabytes and terabytes. Well, you need a couple terabytes, but you don't need like, I think my sister does like, like 800 900 gigs per wedding or something like that. It's insane how much space you need. Whereas for me, what I do is that I run, first of all, I make sure that my laptop has a one terabyte in it, because I hate having to like, Oh, where's that file? Oh, it's on another hard drive. Like, it's not worth it to me. So I always pay the extra money just to have the one terabyte the new MacBooks have four terabytes in them, which is an unreal, I just want to have almost every single file that I own on my computer. And then I have a Western Digital my passport just running as a time machine that's just constantly going and constantly backing that up that saved my butt so many times, then I also run backblaze on my computer, which is kind of like Dropbox, but for your entire computer. So the initial upload took like a couple of weeks, but then every day, it diffs your files and uploads a gig or two of what has changed. So big fan of that, that's also saved my butt a few times. So I've got kind of got like double backup. And then I also we've talked about this in the in the past. So go back and listen to the episode on Dropbox. I also dev out of Dropbox, I realized that's not a good thing. For a lot of people, it works great for me, you can listen to the episode as to why I do that. So I've tripled backup. And I also don't have any empathy for when people lose files anymore. Because you should have absolutely something in place. And I'm a big fan of what's called passive backup where like, you shouldn't have to think oh, I should back up, I haven't done it in a while because that's when you're gonna get bit. And then I also just have a couple what are called cold storage. So when something like like my Flexbox course, I've that done two years ago. So I put that in cold storage, I put it on an external hard drive. And then I also put it on backblaze v2, which is like just you just could just throw files there. That's kind of like Amazon hosting for you. And so then I have if I ever need to recover it, I've got it in two spaces one local, which I'll go to first that ever burns down or gets stolen. I can go to backblaze b two and and pull the files off of there.
+
+118
+00:47:25,920 --> 00:47:31,980
+Scott Tolinski: Nice. Cool. Yeah, yeah, so what what kind of charging and charging it what are your charging requirements here,
+
+119
+00:47:32,130 --> 00:48:46,410
+Wes Bos: uh, well, I've got like a phone and he got your headphones and then I've got a couple external batteries and just stuff that needs to I pad maybe a couple Android devices that I'm testing on all of these things they do plugged in so I've sick pick this in the past it's an anchor, I don't know what it is I'll link it up in the show notes but basically it plugs into the wall and then there are I think like seven ports on it two of them do fast charge and then the other just just regular ones it's kind of like having like 14 of those little apple nubs that you plug USB into. And it's just I just have tons of micro USB and lightning cables coming out of that and I can plug all my gear in and it charges fast. I really like that because it doesn't plug into my computer because I hate the game here phones into my computer and then iTunes pops up and starts asking you questions. So it's like having like to use me please, please yeah, no, never No. So I like having just lots of spaces I also have another one in our living room because like if you're sitting on the couch watching TV there's a possibility that like three or four people want to charge their phone while they're while you're watching TV so we've got like a little octopus of of cables coming out from under our couch you can everyone can plug in and charge
+
+120
+00:48:46,530 --> 00:48:47,760
+Scott Tolinski: sick sick.
+
+121
+00:48:48,420 --> 00:49:38,820
+Wes Bos: Yeah, what about a USB so we've both sick pick this in the past we both use the Cal digit t three plus which is the beauty of USB three. USB three is such a mess but USB three and a but it's also Thunderbolt three I think where I don't understand I all I know is that I have an $80 cable that plugs into this $300 splitter and you can plug everything into that so it charges your computer and runs all of your USB stuff. I also have a USB hub coming out of x i still need more spots and that you plug Ethernet into that. I plug my display port for one of my monitors and then USB C for my 4k display. And then it just just runs everything it's it's my dream for the longest time was to have one single plugin and it does that So yeah, I know it's pretty expensive but well worth it.
+
+122
+00:49:39,180 --> 00:49:57,450
+Scott Tolinski: I know I'm I'm really happy. I bet the bullet on this because I've been loving Michaele digit. The only thing I'm not happy about it as I bought this small cable and it's like just perfectly it's like if it was any shorter. It would be a huge problem and I'd have to get the longer one but it's like it's like stretching it right right now at that full stretch. So I'm like,
+
+123
+00:49:57,780 --> 00:50:33,660
+Wes Bos: that's that's what happened to me. It comes with that. Like, what three inch cable to plug it in, and I needed it longer. And it's a special kind of cable that can handle both the 80 watts of charging. So like people are like, Oh, just go buy a 399, Amazon basic USBC cable. And there's I went down this rabbit hole of different types of cables, because it needs to do charging a to do data, it needs to do Thunderbolt three over USBC. And it turns out that like, there's like two people that make these cables. And I think it was like 80 bucks, shipped to Canada, which is brutal. It's brutal.
+
+124
+00:50:33,930 --> 00:50:37,260
+Scott Tolinski: Yeah, until I went out for Wi Fi. What do you use? Why?
+
+125
+00:50:37,260 --> 00:52:06,030
+Wes Bos: Yeah, so I have a amplifi HD. So there's this, let me pull up the thing. This company I asked on Twitter A long time ago, about like different things. And everyone was recommending either the amplifi HD or the Google Home, what is it the Google mesh network, or the what is the trend net, I think, makes a really nice one as well. And amplify actually sent me this full disclosure, and it was a pain in the ass to set up, I almost shipped it back to them. But once I got it set up, I think that they they push some updates to it. It's amazing. So it's just like, one kind of main thing. And then they gave me three access points. And you can put them all over your house and it jumps to it. I'm still not happy with it. Because like, if I go downstairs, I don't have a big house. Oh man of meager means but if I go from my like three floors down and try to run a speed test, I lose like, like 60% of the actual speed which frustrates me. So well, I don't know if if anyone can and I looked up a whole bunch of them. And people have this seem to have this problem because it has to jump from node to node to node. And I had to play with like where you put them in the house. Because if I put two of them too closely together, it started to like connect to the wrong one. And I think this is a bit of a problem with like mesh networking is that it's it doesn't know which one to necessarily connect to because the signal might be stronger but the other one might be closer to God
+
+126
+00:52:06,030 --> 00:52:30,390
+Scott Tolinski: Wi Fi does a really good job of that does it? I've never had any issues with that. And so I use the Google Wi Fi and I have a fiber fiber connection. So my desktop is all wired up for Ethernet so I can get a gigabit and stuff. Yeah, but in in the mesh network if I'm in the basement or somewhere away from the main router I still get like, like 300 Meg's down,
+
+127
+00:52:30,780 --> 00:52:35,580
+Wes Bos: but that's that's the that's exactly my problem. A gigabit is 1000 Yeah, the only
+
+128
+00:52:35,790 --> 00:52:48,870
+Scott Tolinski: 300 you're losing wireless routers have a what's it called the the the spec for the wireless router only goes up to about that much oh really missing out? Yeah,
+
+129
+00:52:48,870 --> 00:52:59,910
+Wes Bos: well I get about 100 down wired and I probably get like between 25 and 50 throughout my house on the on the main floor.
+
+130
+00:53:00,000 --> 00:53:09,930
+Scott Tolinski: Yeah, see if I had if I had 100 wired I would still get 100 Wi Fi it's the it's reached the the ceiling for what the handle or Wi Fi handle?
+
+131
+00:53:09,960 --> 00:53:27,780
+Wes Bos: Well I can't wait to the solution to this for me it's just get faster internet just unfortunately we don't have every time I see a truck in our area I asked them if they're installing fiber cuz like wanna know like, what are you doing with these wires in the on the telephone poles? Can you please install fiber in my neighborhood now
+
+132
+00:53:27,810 --> 00:53:45,480
+Scott Tolinski: when we got it I instantly cancelled Comcast. It was like the moment fiber was here. I was like, all right. CenturyLink and it's been good. I have people talk about CenturyLink not being good or whatever. But I've had compared to Comcast, oh my God, I've had nothing but great experiences with them. So I'm loving it loving the fiber
+
+133
+00:53:45,840 --> 00:54:22,530
+Wes Bos: is everything I will say with this mesh network is that I did get coverage and over my entire house like low speeds are fine. Like I really don't need that much like my Netflix streams 4k no problem, and everything like that. And it will the one thing it did do is that I now can get Wi Fi in my garage which is detached on the very back of our property and I can get I can get Wi Fi everywhere all of our doorbells that need like this is a big thing as soon as you start moving to the Internet of Things. If your doorbells that which are outside your house need good Wi Fi to connect, then you need one of these mesh networks that will will get Wi Fi in every nook and cranny. Yeah,
+
+134
+00:54:22,710 --> 00:54:56,760
+Scott Tolinski: I like the mesh. I'm all about the mesh of cool recording gear we touched on if you want to learn a lot about our recording gear, I'm gonna breeze through the mind. We had a whole episode on the stuff we used to record, but I use the microphone I use as the electro voice r e 20. I love this microphone. My wife hates it, because well she doesn't hit the microphone. But so we'll be watching TV and I'll be like Courtney, that's my mic on TV. And she'll be like, okay, like, I don't care about your mic, like because it's a famous radio mic so you see it all over the place. So whenever I see my mic, I'm always like, Oh, that's my mic.
+
+135
+00:54:56,760 --> 00:54:57,390
+Wes Bos: I love it.
+
+136
+00:54:57,390 --> 00:55:39,510
+Scott Tolinski: So I'm a huge fan of this microphone. I recently Just got a new camera which I sick pic which is the Sony A seven. It's the a seven I got three eyes so I don't even know what to refer to it as. But um it's full frame mirrorless does 4k and it is very okay with that 4k. It is awesome. I'm a big fan it is a the thing looks great. It takes any sort of footage or camera we just went to to Aspen and all the photos looked incredible on it. So video photos, all everything. This camera is unbelievable. And my audio interface is the Scarlet to itu. Again, I'm gonna have all those stuff on my kit page that I'll have linked. And you can go check out that for 100% what I'm using
+
+137
+00:55:39,840 --> 00:56:03,240
+Wes Bos: awesome. So that's Episode 37 if you really want to dig into hardware and software for recording screencasts we get a lot of a lot of questions about that it's usually starts with love the podcast, what do you use to record and I'm like, Well, you didn't listen on podcast them buddy boy. Hey, well, I don't expect anyone to listen to it because of what we have like probably over 70 hours of podcasts now or something like that. So
+
+138
+00:56:03,240 --> 00:56:07,290
+Scott Tolinski: if you haven't listened to all 70 hours I don't even know you know you never listen to one as far as I'm
+
+139
+00:56:07,320 --> 00:56:16,020
+Wes Bos: well. There's there's some people that listen to one every day and then they give her for like a month on the end or two months and then there goes through withdraw, because there's no more.
+
+140
+00:56:16,170 --> 00:56:22,620
+Scott Tolinski: Dude, I do that though with every podcast I listened to. And I when I discovered I'm like, Oh yeah, there's 200 back episodes. Yeah, I
+
+141
+00:56:22,620 --> 00:57:59,970
+Wes Bos: get 200 the best. So I use a Heil pr 40, which is a little Leo Laporte. I'm a big fan of everything that Leo Laporte does. So I went and got his sits on a Heil monitor arm that plugs into a scarlet two, I two, which somebody asked me, Why do you need the two itu and not just the Scarlet one input? And the answer to that is, I don't know. I don't think I need both inputs, because I don't have two microphones. And then that comes out of that. And I put it into the DB x 286 s, which is a preamp. That's what makes me sound like I'll Bumi and radio and takes all my SS out and takes all that like, like I've got a fan on right now. And you probably won't be able to hear the fan right now cuz and if a truck drives by things like that little outside annoyances that takes all of that away. So very happy with that, that all goes right into my USB splitter, the caldigit thing and then I can have all the interfaces. The one thing that these Scarlet two I twos do do is that they give you a left and right channel. But if you have a single microphone, it always goes to the left. So I use a program called loopback, which creates virtual audio interfaces. So you can pipe in different channels. You can also pipe in Spotify and Google Chrome. That's when we did the soundboard for this podcast. I was typing in my Google Chrome into my interface. And that allows Scott to hear what I'm playing on Google Chrome, you can kind of like make your own virtual interfaces, so big fan of that. And the only reason I you that use that is because I use ScreenFlow to record and ScreenFlow doesn't have the ability to input the microphone as mono a lot of which
+
+142
+00:57:59,970 --> 00:58:00,870
+Unknown: is messed up.
+
+143
+00:58:00,870 --> 00:58:02,160
+Wes Bos: I don't know why so so so
+
+144
+00:58:02,160 --> 00:58:06,480
+Scott Tolinski: I use I show you and that that just is like oh recorded mono. Here's the end. Yeah,
+
+145
+00:58:06,480 --> 00:58:33,030
+Wes Bos: that's it. Why wouldn't you do that day? Yeah, every other application I've ever seen does it and ScreenFlow has this like mixed Amano interface, but you have to remember to do it. And I inevitably publish a YouTube video. And people are do this the snarky sounds great in my left ear. And yeah, the thing with YouTube is you can't switch it right, you have to delete it and re upload. So I've switched to just this virtual interface and it's been working fantastic for me, rad. Okay, anything else fancy
+
+146
+00:58:33,030 --> 00:59:23,670
+Scott Tolinski: i the only thing fancy I have else in my office is I have a Google Home, which I use all the time. Even though I have the speakers and all this setup. I like Chromecast up a podcast or something like that on my google home. I hope it doesn't hear me talking right now. So it doesn't turn on. But I really like it. I'm a big fan of it. I have one in my gym, I have one in my kitchen, I have one in my office. And we use them all the time. I also have a smart outlet, which is connected to my whole rig so that all of my speakers, the table everything. And that's on the schedule. So it shuts off at like 10 o'clock at night and turns on at seven o'clock in the morning. So it's always on but it's not on powering, like I don't have to turn on and off my setup. I just have to come in here and plug my computer and everything's turned on already. And then I'm just you know, I don't have to leave it on or worry about power consumption or stuff like that. So I'm a big fan. That's that's pretty much it for other fancy stuff.
+
+147
+00:59:23,790 --> 01:01:34,500
+Wes Bos: We have where a Google Home family too. We we got the Eco B thermostat, which is awesome. And it comes with Alexa in it and I was really excited because you can you can tell it to do Alexa stuff, but my daughter's name is Lux. And if we say a Lux, can you come here? It's like, I'm sorry. I don't know what that means. And it just trips it every time we yell at our children. So we are a Google Home family now. That's hilarious. But other than that, I'm I've sic picked this in the past I use a hotspot a skyroam Solis hotspots like a little orange hockey puck, that will give you a Wi Fi hotspot anywhere in the world. And I just went on my third trip with it. And it's they just rolled out the ability to just do by raw gigs, which I like. Because before it used to be, you pay for the day and you get 500 Meg's and then after that it like puts you on edge, which sucks because you can blow through 500. Meg's really quickly, or you might need you might only need like a little sip of data. And then you have to pay the eight gigs, eight bucks for the whole day. So they switched to this thing where you can just buy like I bought 10 gigs for like 100 bucks or something like that. It's pretty expensive. But it was awesome because we just put it plugged it into the car. And then me and my wife had full data all throughout the states, the kids iPad, had data if we wanted to download a new game during the car ride, things like that I was such a big fan of it. It's it's been great I used in the past, I used the no roaming, which is the thing that you put on your SIM cards like a sticker. And that was never worked properly for me. So I've been a big fan of that hotspot, and then a backpack. I've talked about this many times over if people always send me emails about it, I use the peak design backpack, which is a one of the best backpacks ever seen. I went on a long search for the best backpack ever. And you just just go on YouTube and search for peak design everyday. And you can see it and what happened when we were on vacation is that I left the backpack underneath a window and we had a no longer storm. And the backpack got soaked and my laptop was in there. And I like unzipped it and the laptop was bone dry and I was so happy that nice waterproof backpack or well I don't know if it's waterproof or water resistant, but I do know that my $5,000 computer was bone dry.
+
+148
+01:01:34,500 --> 01:01:36,870
+Scott Tolinski: God that is awesome.
+
+149
+01:01:37,200 --> 01:01:47,610
+Wes Bos: Yeah. So big fan of that. And I met a bunch of people at layer con that had the backpack and a couple of people said they bought it after after listening to this podcast and they've been super happy with that as well. Yeah,
+
+150
+01:01:47,760 --> 01:02:12,540
+Scott Tolinski: I'm looking at this topo designs. They're they're a company that's based out of Denver. I think they're I think they're based out of Denver. They're based out of Colorado, but I'm pretty sure they're based out of Denver, and they make this like briefcase bag. That is like a really nice looking briefcase bag, but then it also has like backpack straps for when you want to wear it as a backpack. It's really interesting. I've been I've been thinking about it
+
+151
+01:02:12,600 --> 01:02:17,070
+Wes Bos: looks it kind of looks like the it's got that Herschel look to it with the square.
+
+152
+01:02:17,340 --> 01:02:18,000
+Scott Tolinski: Oh, yeah. Yeah, they
+
+153
+01:02:18,000 --> 01:02:25,110
+Wes Bos: were pieces of leather on it. Yeah, definitely looks like a style. That looks pretty cool. That's it. Yeah. Oh, designs calm.
+
+154
+01:02:25,380 --> 01:02:30,480
+Scott Tolinski: Yeah, they're their stuffs really cool. I like a lot of their stuff. clothes and bags included.
+
+155
+01:02:30,570 --> 01:02:45,570
+Wes Bos: That's pretty cool. Oh, the peak design just came out with a bunch of like larger travel stuff as well. Which I know a lot of people have kind of been waiting for for travel gear. I don't need more. I got the 30 liter one, which is big enough for me. But if you need anything bigger, they got it.
+
+156
+01:02:45,960 --> 01:02:51,630
+Scott Tolinski: Nice. Cool. I think that's pretty much it for all of our stuff. That's our stuff. Gotta get that gear.
+
+157
+01:02:51,960 --> 01:02:56,610
+Wes Bos: Gotta get the gear. Oh, they Taupo design has a fishing rod holder. Oh yeah, it's
+
+158
+01:02:56,610 --> 01:02:57,720
+Scott Tolinski: very outdoorsy.
+
+159
+01:02:57,720 --> 01:03:13,680
+Wes Bos: A lot of high cut a whole bunch of bass. Oh, it's like fly fishing. It's just for little rods. Very cool. I have to check this out. Yeah. Awesome. So I think that's it for today. What about any? This whole episode was kind of sick pics. I don't know if you have anything else. You
+
+160
+01:03:13,680 --> 01:03:21,330
+Scott Tolinski: don't have anything additional sick pick. No, I mean, I probably do. But I think we've had enough stuff in this episode that you could call it all sick pics.
+
+161
+01:03:22,740 --> 01:03:37,800
+Wes Bos: Awesome. For shameless plugs. Today, I'm just gonna, I'm going to give an update on my course I'm back from vacation and all my traveling I'm keeping recording, probably got a couple more weeks of working on and recording the course. But my advanced react course will be out fairly soon. So get ready for that.
+
+162
+01:03:37,950 --> 01:04:40,380
+Scott Tolinski: Nice cool. I released a new course on Apollo client with graph QL. So if you're interested in learning how Apollo client and graph qL work with react, check out this course it's level one Apollo with react. It teaches you all the ins and outs of doing some of the cooler, cooler stuff with Apollo the basic stuff too. But we do like optimistic UI mutations, we get into all of the new render prop components, we talk about things like loading more for like if you want to do load, more pagination, that kind of thing. It's pretty slick. And I'm a huge fan. Or if you want to get access to that along with all of the other premium courses, I believe there's like 17 or 16 Premium courses up on level up tutorials right now with a new one coming every single month subscribe become a levelup Pro. If you sign up for the year, you get 25 poor percent, not percent percent off. So yeah, sign up for a year and check it out. There's gonna be 12 new courses over the course of the next year and again, new course every single month along with a bunch of new free stuff as well. So yeah, level up pro level up tutorials.com forward slash Pro.
+
+163
+01:04:40,410 --> 01:04:43,290
+Wes Bos: I think that's it for today. Please
+
+164
+01:04:45,030 --> 01:04:54,810
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

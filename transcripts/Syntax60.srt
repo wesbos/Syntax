@@ -1,0 +1,456 @@
+1
+00:00:01,319 --> 00:00:02,820
+Unknown: You're listening to syntax,
+
+2
+00:00:02,879 --> 00:00:06,150
+the podcast with the tastiest web development trees out there,
+
+3
+00:00:06,150 --> 00:00:09,630
+strap yourself in and get ready to whiskey and West
+
+4
+00:00:09,630 --> 00:00:10,500
+boss.
+
+5
+00:00:10,529 --> 00:00:21,630
+Wes Bos: Hello, everybody and welcome to syntax. My name is Wes Bos. I'm a full stack web developer from Canada with me as always, is Scott to linsky. How you doing today, Scott? Hey,
+
+6
+00:00:21,659 --> 00:00:23,910
+Scott Tolinski: I'm doing okay, just hanging out How you doing?
+
+7
+00:00:24,239 --> 00:00:43,710
+Wes Bos: I'm doing pretty, pretty good. Excited to it's Friday, we should record on Monday. But because of vacation schedules and whatnot, it's a little bit jumbled up. But I'm getting prepping for a talk on CSS Grid, which I'm excited to give on going to layer con. So I'm going to be the JavaScript guy going to a PHP conference giving a CSS talk.
+
+8
+00:00:45,240 --> 00:00:47,430
+Scott Tolinski: I've been seeing your slides. Oh, they look nice. Yeah,
+
+9
+00:00:47,460 --> 00:01:08,840
+Wes Bos: yeah, I'm really happy with it. That's always a fun part of giving a conference sagas once you're done, you can actually design the design the thing. And I did this new thing where I did the examples in the slide deck. And I just wrote them in a style tag. And then I wrote some code that would display the style tag and then syntax highlight it, it was really cool. Oh,
+
+10
+00:01:08,970 --> 00:01:11,430
+Scott Tolinski: cool. Yeah, a little bit automation there. Nice,
+
+11
+00:01:11,450 --> 00:02:28,280
+Wes Bos: big, big fan of that. Anyways, today we're talking about the undocumented web and which is kind of like everything that is scraping private API's proxies, alternative solutions, we say in quotes, kind of necessarily, maybe gray area stuff, we're not gonna do anything. Yeah, we're not gonna do anything illegal today, we're not cops, but we've got some at some point in your life, you're going to need to do something that there's no clear cut way to do it. And you need to make your own solutions or so we say. So that's what we'll be talking about today, scraping, faking stuff, automating stuff, proxies, all of that kind of under the table stuff. Today, we're sponsored by two awesome companies. The first one is Kyle prinsloo has a course on freelancing, it's available at study web development, comm forward slash freelancing. And as you might know, it's a course on freelancing, talk a little bit more about that, as well as our tried and true Freshbooks, which is cloud accounting software for anyone who is running a small business or freelancing. So let's get on into it, I actually have a quite a bit of experience with the undocumented web, as we're calling it. And Scott, you say you don't have a whole lot of experience, are there is that right?
+
+12
+00:02:28,500 --> 00:02:46,050
+Scott Tolinski: I don't, it's mostly just like fun stuff and stuff that I've seen around or picked up. But I have not done this much fun stuff that in my career. So I'm really excited to hear about some of these, these cool things that you're gonna be telling me about some of the fun stuff we can all try out.
+
+13
+00:02:46,259 --> 00:07:49,200
+Wes Bos: Totally, it's funny that I was going through this and I have done quite a bit. And I think it's just because that's really where my, my love for web development came, is when you have a problem, or you're not allowed or being able to do something, then you can often find a way around it. So let's get into it. So what is the undocumented web, it's when the traditional methods of the internet don't give you what you want. So often, when you try to build something, you you'll be working with API's. And you'll have limits with that API, you'll have data that you need to get, and sometimes it just doesn't work out, maybe you don't have access to it, maybe it's a Friday afternoon, and you're you have to get approved for API access. And they're not going to approve you for three or four weeks, and you just want to get going with it. Maybe it's just not something the company wants to give you access to. So you have to kind of find your own way around it. At the end of the day. Most web developers are hackers. And we want to be able to find a way around these these barriers, or basically just solve the problems that we have ourselves. So often, these things are quick and dirty. Often they will be very brittle, because they can break at a moment's notice. They're not based on any sort of standards. They're just ways that you've found to go around. And if a company were to change their layout, if it's in scraping or plug that hole at any point, then the whole thing will come crashing down. So I first got into the documented web was one of my first projects was a website called deal page. And I had built this thing where back in the day. And if you if you want to hear a little bit more about the story, go and check out episode eight, which is my origin story. It's kind of how I really got into building apps from websites. And basically Groupon and all these websites were really popular, and I wanted a way to put them all on one page. And you can also get like big bucks by referring people to these things. So what I did is I built this thing that would go off to every single website and some of them had API's that you can hit and get the latest deal and pull it in. But a lot of them didn't. And what I had to do is I had to scrape the page, parse the HTML, I use this thing called PHP query, because like the only language I knew at the time was well Though I knew JavaScript and jQuery, but there was no such thing as as node at the time, and there was no such thing as, like scraping libraries that we'll talk about. So someone had written the entire PHP, the entire jQuery library in PHP. So what you could do is you could pull an entire website and then parse it and look for like an h2 tag, and an image tag with the class of featured image and a span with a class of price. And yeah, I would, I would pull all those out. And then and then put them all on one big website, which is really cool. So that's kind of what first got me into working with the undocumented web. So what we're gonna go through today is talk about undocumented API's, faking stuff, scraping stuff, automating stuff, proxying stuff, a couple tips and tricks. And then I also asked on Twitter, what your stories are hashtag, not a cop, and some people, some pretty fun, pretty fun stories. It's kind of fun in this is Twitter, too, I'm sure if you had had a couple beers. With some developers, I'm sure some of the really good stories that would it would start to come out as to what they did, let's do undocumented API's. This is probably the simplest version, where a lot of times companies will not make their data available via a JSON API for you. But they will have their own API because their own product is likely built in something that needs to ingest an API and pull the data in. So a really good example is Instagram, Instagram has an API, but they have pretty much locked it down over the last couple of years. They don't approve anyone's application. They don't want anybody using Instagram in any way other than the Instagram application. So if you want to pull in a list of your most recent Instagram photos, or if you want to pull in anyone's most recent photos, you can't do that. Because the way to do is to apply for an API token, and they will always deny you, no matter what you tried to do, I believe me, I've tried many, many times. So what you can do is you just pop open your dev tools, take a look at click on the X HR tab in the network. So go to your network tab, click on x HR, then refresh the page or click around and you're going to start seeing the requests come in. And you're going to see, okay, Instagram has their own internal API, then you can start figuring out what the URLs are in order for you to hit those endpoints. And in many cases, there's some sometimes some stuff with like cores and cross origin stuff. We'll talk about that in our upcoming hasee treat as well. But you can use that API in your own stuff, it will change at some point, I've done it many times myself, and they will just break it on you. But it's an option. If you need to be able to pull in a list of Instagram, I use it on my wife's website, and it's been only broken once in about a year. Nice.
+
+14
+00:07:49,410 --> 00:08:11,160
+Scott Tolinski: Yeah, it's funny, because I think that the Network tab is kind of underrated. Yeah, no, I love the Network tab. I spend so much time in there for various reasons. But you can find out so much good information. If you just like take the time to play around or even understand what's going on there. There's so much good stuff to find out there. So this is just one more thing that you could use the Network tab for
+
+15
+00:08:11,310 --> 00:08:50,419
+Wes Bos: sure. Even in the in the dev tools, there's like breakpoints that you can set that are like cause a breakpoint at an X HR request. And if you want to know like, what are first of all, what are they firing off? You could like if sometimes if you just hover over something, the fire off and exit chart requests to like, put in their database, this user hovered over these pants, right, maybe maybe start to remarket them, these specific pants. It's kind of interesting. just dig into like how how people say, Oh, you can't view source on websites anymore. But I think the view source now is just watch the Network tab, watch all of the different things to watch how you when you interact with a website, different things get fired off. Yeah,
+
+16
+00:08:50,460 --> 00:08:53,029
+Scott Tolinski: yeah, absolutely. Yeah, you can learn so much that way.
+
+17
+00:08:53,270 --> 00:10:13,230
+Wes Bos: One other thing i've i've done with this is in Canada, we have I think in the States, you've got realtor as well. Right. And when you buy a house, you have to go through a realtor. Yeah, yeah. So we I know you have better stuff like Zillow and whatnot. But in Canada, we really just have a low in Canada, we do. But it's like not that good. Mm hmm. And we basically have like the mafia, which is realtor. And they are the only place to go through if you want to look at what's for sale. And their application is it's gotten better in the last like six months a year, but it's still pretty garbage. And it's really frustrating to use. And it seems like they don't necessarily care because they have like a monopoly on this thing. So what's cool about that is you can again, I've what I've done in the past, when we were looking for a house, this was five years ago, you pop it open, you do a couple different searches. And you'll be able to figure out what are the different query params that they're sending to their own API, and how can I replicate that and I built my own little thing that would just like every three hours, it would hit this API and pull in the new listings and then display them to me on a nice clean page or populate them on a map or Something like that. And I love that kind of thing. Because you're scratching your own itch. It's not necessarily going to be an application everybody wants to use, but it could definitely be something that could make your your day. Much better.
+
+18
+00:10:13,350 --> 00:11:10,260
+Scott Tolinski: Yeah, nice. Now, let's see, we have here, the React dev tools, like utilizing react dev tools on sites that are out, I think this is pretty cool. Because if you have react dev tools, I mean, chances are, they're, they're smushed their, their sites and their components are all not their correct names. But you can still power around and find some stuff. And sometimes it's really interesting to go ahead and just change some props. Now, don't go changing any props on level up tutorials, because it's not going to get you anywhere, obviously, my password protected stuff is still all, you know, server verified. But you know, changing, changing user interface, things will only give you access to user interface things, but it's really cool to be able to do that on some websites and, and really, like see how they work more so than in doing anything nefarious, but like just to go in, and like, okay, so they have these props, you can toggle these props, you can maybe change these values and see how it actually affects the rendering on the screen of that given site is really pretty sick.
+
+19
+00:11:10,289 --> 00:11:58,409
+Wes Bos: If you pop open on instagram.com. If you pop open the React dev tools, and you change the number of likes from like, I don't know, 22, down to nine and Instagram after after 10 likes, it displays the number before 10 likes, it displays a list of users who have liked it, right. So if you change the number of likes to nine, it will just rerender that part of the application show you the first nine people that have liked it. And then if you change it to 10,000, it will just go in and rerender it and then I think if you could go up to like like 100,000, it will change it to like 100.2 k that many likes. And that's why I always use that in my react workshop because it shows people these react dev tools. And also it's kind of an early look into the whole templating is based off of the data, you change the data, the templating changes.
+
+20
+00:11:58,559 --> 00:12:14,549
+Scott Tolinski: Mm hmm. Yeah, that's pretty funny. You could also scam scam, your, you know, your social media fans, by posting a photo of me like, look how many likes I got on this? Totally there but then delete the photo and be like, Oh, yeah, but it was I took it off though. I got 10,000 likes, but I didn't like the photo. So I
+
+21
+00:12:15,480 --> 00:12:43,890
+Wes Bos: take it down. That's great. Yeah, I actually did that. Again, I gave away some stickers two days ago. And I had 1200 people enter as leaving a comment on the stickers. And the way that I picked the winners is that I loaded up all the comments, I had had to click Load More like 400 times. And then I just went into the React dev tools and got an array of all of the different comments. And then you can just randomly pull values from that array, which I thought was a very developer a way to, to give
+
+22
+00:12:45,270 --> 00:14:40,470
+Scott Tolinski: very developer, very developer, I'm sure there's like services that you could pay a certain amount of money to do all that for you. But that's there you go, you have the skills, you have a neat, unique set of skills and abilities to handle that. So you might as well, this one's less of an undocumented API sort of thing. And more of just an interesting API sort of thing. There was a really great talk ads I Day this year, from Simon Wilson, where he discovered all of these XML files of data, data from the city of San Francisco, like every single tree, what type of tree with the location of that tree, and when it was planted, all sorts of stuff, like tons of stuff. And so he got really interested it and ended up building this thing called data set. Now, data set is a tool for publishing data API's, you could sort of think of it as like, you upload some data, and then all of a sudden, you have an API to hit off of that you can build things. So let's say you find some data somewhere, you can use this data set to simply just upload it as a CSV, right. And then that actually publishes as an API that you can then hit and build something with. So if you have some data sitting around, and you want to transform it into an API without building anything, you can use this data set thing. It's open source. And some of his examples were amazing. It was just super cool, because he was building maps that showed you every tree in San Francisco, and he built it in no time. And then he was saying, Okay, well, let's, let's find the nearest animal near me. And you could publish instantly an animal near me website. It's like find the nearest red panda near me. And it will find you a photo of the nearest red panda near you and tell you where it is. It was just super cool. So if you're interested in some of these, like sort of Rogue API stuff, it was one of my favorite talk. Yeah, recently about the stuff I was really super interested in what he was doing there. So it's Simon Wilson's talk from as a day, we'll post the link in the description. It was really, really super cool.
+
+23
+00:14:40,529 --> 00:16:42,750
+Wes Bos: That's, that's really at the heart of of what this this kind of stuff is undocumented web where you take, maybe there is data that is available, but it's not in the format that you want it you can't really use it, how you want it and people you build like a layer on top of the data that allows you to actually build your own stuff, right? Mm hmm. One little other thing I want to say is That often, if a website is just server rendered, there's no way for you to get an API. And that's where you have to often reach for scraping. But what a lot of people who do stuff before they even reach for scraping, what they'll do is they'll see if they have an iPhone app or an Android app, because often the website is server rendered, but they also have an API that their, their different applications will use and, and talk back and forth to because if you're building an iPhone app, there is no server rendered, it has to, to ping a server to get that data pulled in, right. So one tool you can use to do that is called Charles proxy. And what Charles proxy will do is you can put it on your Mac, and it will listen to like you can hook it up to an Ethernet port or your Wi Fi, or you can also like proxy your your iPhone through it. And then it will sit, it'll capture absolutely every single packet and request that your computer makes. And then you can write these filters a little bit, it's a little bit hard I it took me a while to get it. But you can write these filters that will filter for specific kinds of requests or different names of requests. And then you can just go ahead and start surfing on the iPhone app. And then it will start logging all of the different requests that you have it if it's an SSL, you have to of course, install a certificate in the middle that will allow you to step in and and touch that. But I thought it was really cool. It's such a super helpful. I've also used it for just web development. In general, when you have like a really hard something where the requests aren't debugging, or I did a lot of work where it had to be on a VPN. And sometimes the VPN was debugging. It was buggy and I was able to use Charles to just peer into that and get a full look at it's one level lower than the the Network tab because it's the entire network layer of your machine.
+
+24
+00:16:42,990 --> 00:17:06,780
+Scott Tolinski: Yeah, you know, this Charles site reminds me of like that era of websites. Yeah, I know what I'm talking about, like transmit first came out there was like all sorts of these websites, they all had a sort of similar look, this is like this one. This is maybe when I first started really getting into like web 2.0 style design stuff this like I just came to this, this website, and it like took me right back. It took me right back there.
+
+25
+00:17:06,830 --> 00:17:14,520
+Wes Bos: The really nice background gradient of the tabs are PNGs Oh, that's good. Or a
+
+26
+00:17:14,729 --> 00:17:26,840
+Scott Tolinski: sprite? And I think the the font is a an image for the header, because it has been a little inset. Oh, yeah. Yeah, this is like classic web two point. Now. I love this. I wish this comeback
+
+27
+00:17:26,880 --> 00:18:06,930
+Wes Bos: got the 1999 doctype and everything. Dude, this is dope. That's great. All right, let's move on to the next one, which is faking. So another way around it. Sometimes you can find these these API's. But there's obviously a security layer that you need to get by. And they will only let specific people buy in the most basic example is, if you're using some sort of like web scraper, the user agent of that scraper will be Phantom j s, or headless chrome or something like that. And often websites will very like as a very basic way to stop you. They will just block requests that are coming from headless Chrome, you should
+
+28
+00:18:06,930 --> 00:18:08,880
+Scott Tolinski: mention what a user agent is,
+
+29
+00:18:08,910 --> 00:19:31,920
+Wes Bos: yes. Okay. So a user agent is a string that comes along with any browser. So any Chrome, Firefox, headless Chrome, a weird browser on your mom's Samsung phone, like all kinds of different stuff. And they will all have a unique user agent. And that's a way for you to tell information about what type of browser is requesting the data. And it's really confusing because Chrome's user agent says Mozilla in it, and there's a whole story. There's a whole story. And that's also why you should never never sniff a user agent to try to figure out like, along, when web 2.0 was getting really popular, or like CSS three people would say like, if this is iE 11, then use this. And that's really bad. Because what you want to do is you want to feature detect, you want to say, does it support border radius or not? Is it iE 11 or greater? Because there was a huge bug that came out where when iE 10 came out, people were parsing IE six, ie seven, ie eight, ie nine, and then they parsed IE one because they were just capturing the IE plus whatever came the first number that came after the word IE. So you were saying if IE one is technically less than IE nine, so then it was saying the browser is not supported. But in reality people were on the latest version of IE not IE one
+
+30
+00:19:31,980 --> 00:19:38,160
+Scott Tolinski: Yeah. What Oh, man, what was that library that you used for feature detection right around then? Yeah, I know why. It's totally
+
+31
+00:19:38,220 --> 00:19:39,210
+Wes Bos: or moderniser,
+
+32
+00:19:39,270 --> 00:19:42,750
+Scott Tolinski: moderniser. Yeah, dude, it's been so long since I thought about moderniser.
+
+33
+00:19:42,860 --> 00:19:46,500
+Wes Bos: Yeah, sure. I haven't ever I haven't had to use that in years. It's kind of interesting.
+
+34
+00:19:46,550 --> 00:19:47,130
+Scott Tolinski: Yeah,
+
+35
+00:19:47,130 --> 00:20:16,020
+Wes Bos: I guess cuz CSS has add supports now. So a lot of the his use case or some other fun stories about faking stuff. I don't know if I've told the story or not, but I got free Wi Fi on a plane because they had this like thing where Like, if you use your Blackberry, you can get free Wi Fi. So I faked my user agent with Chrome to be a blackberry pearl or something silly like that. And I logged on with Wi Fi. And then I flipped it back to regular chrome and I was able to dislike cruise through the internet.
+
+36
+00:20:16,310 --> 00:20:29,400
+Scott Tolinski: I think that's one of my favorite stories of like, you know, you're not hurting anybody. It's not doing anything like, but it's still kind of iffy, but it's still at the same time. Like, who cares, I actually, I love that story. That's my favorite ones.
+
+37
+00:20:30,630 --> 00:21:23,570
+Wes Bos: It's good. And also faking in Chrome Dev Tools, you're able to copy your requests. And you can copy all of the like you can copy as as a curl. What curl is, is kind of like a fetch or a axios library for just the terminal and you can curl things and you can download stuff with curl, and you can ping URLs. And what chrome will do is you're able to copy a request as curl. And then what you can do is you can take that curl request and pop it into like a text editor, and then figure out what all the properties that have been passed. This is often what I'll do, and I'm trying to figure it out all I'll copy it and then I'll just start removing headers and and properties that got passed with that request until it stops working. And then at that point, you know, you have your minimum viable requests, and they can go in and start changing the different values. And I'll have some more stories about about tech coming up.
+
+38
+00:21:23,600 --> 00:22:41,730
+Scott Tolinski: So all of this stuff that we're talking about in this episode is a great way to maybe you know, have some fun, but it's not necessarily the greatest way to make a lot of money. A great way to make money, though, is taking up freelancing and what better way to learn freelancing there from this course from Kyle prinsloo, which will give you access to a whole ton of things that you need to get up and running to really take off freelancing, such as a freelancing and beyond ebook, tons of HTML and CSS templates. There's a slack community, a Facebook community portfolio, website template, a conversion centered guide, a web creation checklist, a prospective client questionnaire, SEO checklist, client proposal template and invoicing template. Basically, he's giving you a whole bunch of stuff, that sort of like here is the stuff you need to get going on freelancing. And again, this is going to be a great way to sort of get all you need in the basics and sort of like set you off on the right foot, right, because we all need these invoices, agreements, these sort of things to get working. But we also need to have good advice on you know, how to deal with clients and all that stuff. So if you are interested in checking out this course, head on over to study web development.com, forward slash freelancing. And Wes, do you want to tell us a little bit about the the deal he has going?
+
+39
+00:22:41,820 --> 00:23:33,660
+Wes Bos: Yeah, so if you use the code syntax, you're gonna get 25% off, I'm just taking a look at it. Right now the complete bundles, it looks like you can buy the E book for 45 bucks. Or you can buy the complete bundle for 97 bucks on sale right now. Not sure how long that will last. But like Scott said, it comes with a portfolio template SEO checklist conversion center got all those stuff, because like, if you're going freelancing, you need to kind of like hit the ground running because you need to make money like pretty quickly. Otherwise, you're you're gonna go hungry, or you can't pay your rent and whatnot. So looks like this is a pretty good, I did download it in page. So I didn't read the whole thing. But it did download it and page through it to make sure that it was like legitimate. And it's not just something that got slapped together. Because you do see that fairly often. This looks like some legitimate good content, I would definitely check it out at study web development, comm Ford slash freelancing, use the code syntax for 25% off
+
+40
+00:23:33,750 --> 00:23:51,540
+Scott Tolinski: nice, yeah, take care of it. And you got us sometimes you got to spend money to make money, but a freelancing can definitely make you a bunch of money. So really super cool. Unlike some of this web scraping that we're about to get into. That was a double segue. I'm segwaying back. Whoa, here we go. Yeah. All right, let's
+
+41
+00:23:51,540 --> 00:25:49,680
+Wes Bos: talk about probably the most popular thing of the undocumented web is scraping. So and what that means is that is the data is often available in the HTML of the website, and you need to get it out, you just need the raw data, you don't need the whole website that comes along with that you need to convert it to like a JavaScript object that contains all of the pieces that you have. So that's what scraping is, is you download the entire website. And then somehow you parse it so that you pull out the pieces of information that you want, like I was downloading an entire groupon.com forward slash Toronto. And then I was parsing out all of the different spans and the links and all of that good stuff. So it was kind of a fun one. I use PHP query at the time. But now anytime I do any sort of scraping, I reach for a node package called Cheerio node lends itself to this because it's JavaScript at the end of the day, there is a there is another one called node Dom or something like that, where it simulates the DOM, but Cheerio seems to be a little bit faster and then Cheerio also gives you if you're used to jQuery it will give you like the entire jQuery dot find dot children dot value dot Text all of the API that you're used to using to traverse because a lot of times with the scraping, you're saying, Okay, let me find the h1. And then let me find the sibling paragraph. That's the description, then let me go up a level over one down a level, and then the image inside of there, that's the image I need to pull out. And then let me go up to levels and then find the span that has a class of price. And let me pull the text out of that, or let me pull the alt tag out of that I was doing that a lot as well. And Cheerio is fantastic for that it doesn't load the website for you, you still need to use something like axios, or request or anything to actually download the raw HTML. But then once you have it, you can run it through Cheerio. And it will turn the string of HTML into an actual Dom that you can traverse and use the jQuery methods on.
+
+42
+00:25:49,770 --> 00:26:55,830
+Scott Tolinski: Yeah. And if you're interested in some, like maybe lower level version of this way, you're doing a lot more work. But you're learning a lot about how the process of maybe parsing a whole page can work. There is a really great course it was one of the first courses that Udacity put out. And it was basically building a website crawler via with Python, you don't really have to know too much about Python and teaches you sort of the Python basics as you go. But really, what you're doing is you're loading up a page, it's giving you the entire HTML as a string, and you're traversing the site grabbing different links, going to different pages and finding different information, but you're doing it without any libraries. And I really, really enjoyed that, like the process of getting in there. And like grabbing the strings, and then being able to actually do this yourself. I felt like it made me a much better developer after I was done with it. I took this like a while ago when you destiny first came out. But if you're interested in again, learning a little bit more about like the process of that kind of thing. Rather than just using a jQuery type package. I really like that course just for to get a handle on maybe some of the ideas behind some of these things. But that Cheerio package is sick. I mean, just the who doesn't love the jQuery syntax for stuff like that?
+
+43
+00:26:55,950 --> 00:27:27,510
+Wes Bos: Totally. It's really, really slick. It's funny, I did something called about a month ago with Cheerio, and I hadn't written any serious jQuery in about a year. And I found myself having that that opposite effect of, oh, how do you do this in jQuery? whereas it used to always be the other way around with how do you do this in vanilla JavaScript? Yeah, I've totally flipped around. And I actually wouldn't mind a I wouldn't mind like a vanilla API for it as well, just because it's that's the way I'm thinking in the last year. So it just kind of funny. Yeah,
+
+44
+00:27:27,990 --> 00:27:28,740
+Unknown: yeah, nice.
+
+45
+00:27:29,670 --> 00:29:23,760
+Wes Bos: Next up, we have automation. So scraping is great when you have just a URL, and you can hit that URL and scrape it. But that's not always the situation. Sometimes you need to log in and fill out a form, and then click Submit, and then do a search, and then click on something and like there's a whole bunch of steps that need to lead before you even hit that page, where you have the thing that you're looking for the data that you want to scrape. And if that's the case, then you need to like automate those steps where you log in, you wait 10 seconds, or you wait for it to resolve and it comes back and then you click on a button, especially if these things don't have direct URLs. Like if you have like a search that you're searching for, like bikes or something like that. That's that's another good example. Let me tell that sir, real quick. Again, I know a lot of you have heard it. But one of my initial things was I would buy and sell rode bikes, and I would flip them, and Kijiji, which is like the Craigslist of Canada, they have an RSS feed of bikes, or you can like you can like run a search. And you can run a search for a specific like I had this huge search of every single kind of bike. And then you could get an RSS feed for that. But it would only update like maybe once a day or twice a day. And that was too long, right. And you can also sign up for notifications. But that only comes out once a day. And by the time those you got that email, it was too late because the good deals were already gone. So I wrote the scraper that would go to the URL, search for it, and then scrape everything every three minutes so that when something did show up that was on my radar, then it would automatically text me and I could I could view the listing on my phone and I'd be able to jump on a good deals within within five minutes of them being posted. And that led to me getting so many more bikes because it was much faster than than regular people just just searching and doing it when they have time. Right?
+
+46
+00:29:23,850 --> 00:29:33,210
+Scott Tolinski: Yeah, and this is like a, this gives you so much of a like a jump on everyone else. Right? This isn't a tool that everyone has access to. It's an unfair advantage.
+
+47
+00:29:33,330 --> 00:31:36,240
+Wes Bos: It totally is. And that's why I understand why people don't like it because like a lot of people just wanted a good a good deal on a bike. But then no, like no, I was scooping up all the deals and then jackin cleaning them tuning them up. That's on the back to these people right and that that also happens with like, ticket resellers. Right? People will right? That will automatically buy up tickets. And one of the Big one, it's it's so funny how often I bet seven times in the last year I've been contacted by some bro, who wants to build a Yeezy company, because so Yeezys Let me explain he's these are these the Kanye West has has these silly shoes, I have a pair so I can call them silly. But there's these silly shoes that he puts out there from adidas but they're called Yeezys. And they drop them only at like a DITA stores and some foot lockers and an online. And if you can get a pair, they're like 150 200 bucks, but then the resale, they can go up they can, I don't know, three, four, some of them depends on which ones you want, they get really, really high, right? So what a lot of people do, and same with like supreme and any of these streetwear brands that are hot and sell out in like a second. People have these, these bots that will sign in, fill out the credit card and just like immediately do it as like within seconds of it of the shoes dropping, because you've automated it and it goes faster than regular people can can fill it out even with like a chrome autofill. So it's a big business now, because if you can buy 15 pairs of Yeezys, and you make three 400 bucks a pair, you're swimming in it right? So people contact me all the time, because I guess they know that I can I have the tech skill in order to be able to do something like this. I always think that's funny. But anyways, you maybe you want to go into some of the tech that you might use to do this automation.
+
+48
+00:31:36,630 --> 00:32:58,230
+Scott Tolinski: Yeah. So I mean, you probably I don't know what you'd be using. But you definitely need you need something to to repeatedly run this job. So whether it's like a cron job or something like that, and a cron job is essentially going to run at an interval. And you could send to this job to do anything, right. So hey, this job, go to this page, maybe you're loading it up, and some sort of headless browser. Google has recently, somewhat recently, I guess, in the past year, I've lost track of what's recent anymore. That's definitely within the past year, released something called puppeteer, which is their own headless Chrome for a long time, people were using other headless browsers like Phantom j. s. But puppeteer is pretty sweet. It allows you to do all sorts of stuff, like generate screenshots and crawl the whole rendered page. I mean, nowadays, everything's a rendered JavaScript page anyway. So it allows you to crawl the page without there necessarily even be like a server side component to it, lets you use form submissions and all that stuff. So basically, you can use a headless browser like puppeteer to go ahead and go do something, right. So you might need something to trigger as an interval, you might need something to actually load up the content. And then you'd probably using your standard JavaScript skills to target elements, fill their values, click on stuff, do that kind of thing. And with the headless browser, it makes it all pretty nice and easy.
+
+49
+00:32:58,530 --> 00:33:28,050
+Wes Bos: I'm really excited about this, because I had to use Phantom j s quite a bit in the past. And I always ran into like I was doing something where I needed screenshots quite often. And I was using Phantom j s. And like, they only updated Chrome, like once or twice a year. So if there was something new, and then there was always issues with web fonts, and all kinds of stuff. So it was amazing for the time. But now that we have like legit, officially supported Chrome, headless Chrome, it's going to be much, much easier.
+
+50
+00:33:28,260 --> 00:33:29,340
+Scott Tolinski: Yeah, super nice.
+
+51
+00:33:29,360 --> 00:36:30,440
+Wes Bos: Next up, we have proxies. So one way that companies and people stop you from from doing the stuff that we're talking about is that they will they will ban your IP address, or will only allow so many requests per minute from an IP address. And often what happens is that you need maybe a fresh IP address because yours is tapped out. Sometimes API's will allow you like 50 requests per per IP address per hour. And then if you want to make more than that, then you have to get a secondary IP address and start making requests from that one because it looks like you're you're a second separate person, right? If you need to come from a different country. So I've done this quite a bit. Even in my browser. When I was buying stamps for my stickers. I was trying to buy us postage from Canada. And they weren't allowing me because like why would you need to buy us postage as a Canadian, right? So I you can flip on a proxy. And in my case, I use a Chrome extension called Falcon proxy. And then I it's actually really easy in the terminal, you can type SSH minus d, and then just SSH into any server that you have. So whether you've got your like a GoDaddy or Bluehost, or a Digital Ocean, or any server that allows you to SSH into it, you can just set up what's called a socks proxy. And it's just one line of code. And that one line of code will set up a proxy on your computer and then you can use the Falcon proxy Chrome extension to route all of your browser traffic through that. And that allows you to do things like watch Netflix from the US or any of these. And it's great because it's not a known existing proxy. So often well, like Netflix won't block, I think they've started to block Digital Ocean IP addresses. But in the early days, I haven't tried it in a long time. But in the early days, you could just SSH your own server. And because it wasn't like a known one of these proxies that you you pay for, it would be really easy to do that. And that's how we did it with buying these stamps as I proxy through my own server that hosts my my website. And then another little tip for for Canadians who are buying stuff, if you're trying to use your credit card, and it's asking for a US address. I've only learned this since I've started accepting credit cards, but your credit card information can be pretty far off, and they'll still push the charge through. So if you say like I'm in Ontario, I always just say Ohio as my billing address, and then your shipping address has to be different. It has to be wherever you're shipping it to but your billing address, often they will not give you the ability to put in a Canadian address when you want to use a Canadian credit card. So what you can do is you just set it to Ohio instead of Ontario, and then where the zip code is, you simply just take the numbers out of your your postal code and add to zero. So if your if your postal code is m five s two p two, you just say 522 and then add 00 on the end. And that's your zip code for
+
+52
+00:36:30,440 --> 00:36:34,670
+Scott Tolinski: Canadians. To this is wild, I don't know any of this stuff.
+
+53
+00:36:35,400 --> 00:36:58,290
+Wes Bos: Well, it's it's only because we're Canadians, and we're oppressed. And we even like buying gas, get buying gas in the States. If you put your credit card in and ask for your zip code. And you don't have a zip code because it's a Canadian. I used to have to walk in to the store. But now you just do the little trek where you take the numbers out of year numbers out of either your postal code and add two zeros to the end.
+
+54
+00:36:58,460 --> 00:37:01,920
+Scott Tolinski: And this is some helpful stuff right here. Real World helpful stuff.
+
+55
+00:37:02,900 --> 00:37:29,070
+Wes Bos: Anyways, what else do we have API throttling, I talked about that if you need a fresh IP, you need some sort of proxy, there's services out there that will give you fresh IP addresses. You can also spin up a couple little digitalocean servers at the $5 a month that you need, which is nice, because I believe you can just spin them up for a day or two, get that IP address, do your work, and then spin them down. I don't know if you're billed for a full day. I had
+
+56
+00:37:29,100 --> 00:37:30,960
+Scott Tolinski: discussions great about that. Yeah,
+
+57
+00:37:31,019 --> 00:37:32,940
+Wes Bos: I think they'll just charge you for the day's worth.
+
+58
+00:37:33,600 --> 00:37:39,420
+Scott Tolinski: Yeah, they've been super good. I mean, there's a lot of talk going on about fresh IPS. But what about talks about fresh books?
+
+59
+00:37:39,420 --> 00:38:43,170
+Wes Bos: Ah, Wow. Amazing. Yes, fresh books is a one of my favorite pieces of software just because as as you as we've talked about today, I'd much rather be working on stuff like this, rather than spending time in my business. So to run my invoicing to run all of my expenses. Anytime that I have a receipt, all I have to do is either have to open up the Freshbooks app on my phone and take a picture of their scene, enter in the details, or I have my assistant has access to it as well. And she can input all of that for me. So you can upload a PNG of it. I love it. Because at the end of the year, when I need to do my taxes, I have all of my invoices, I've all my expenses, you can track time, if you're doing hourly based billing, it's really just got everything that you need. If you are any sort of small business or freelancer, this is kind of the freelancing sponsored episode today. Which is pretty fun. So check them out@freshbooks.com four slash syntax and use syntax in the How did you hear about a section. Thanks so much Freshbooks for sponsoring,
+
+60
+00:38:43,350 --> 00:38:58,610
+Scott Tolinski: yeah, and that's the time of the year where you really want to get ahead of that stuff. Because come towards the end of the year and come towards you know that that point of time where everything's crazy, the last thing you want to be doing is rushing to get your tax in, in books in order. So right now perfect time to do that.
+
+61
+00:38:58,829 --> 00:38:59,340
+Wes Bos: Totally.
+
+62
+00:38:59,340 --> 00:39:52,980
+Scott Tolinski: So this next little category here is just for general tips and tricks. This is just like a little fun stuff. And one of my most favorite fun things that always makes me feel like a hacker, even though it's the dumbest thing in the world is when a site presents you with an overlay, like you can view this content, and then you just Inspect Element, and then click Delete on your keyboard. I don't know if everyone knows this. I feel like a lot of people probably know this. But if you select any HTML element in the elements tab of Chrome Dev Tools, you can delete it just by clicking Delete. In addition, you can also edit that HTML if you want. So I love this because there's so many I mean, people have gotten a little wise to it. But there's some websites that are still not wise to it. Or there's some people that are think they're they're slick by blocking their content behind a newsletter signup form, but they're not truly blocking it. Yeah, they
+
+63
+00:39:52,980 --> 00:39:55,560
+Wes Bos: want the Google search still there.
+
+64
+00:39:55,590 --> 00:40:06,150
+Scott Tolinski: They want the Google juice and so you just inspect it, delete it, boom. You're in it. I mean, you it's funny because you can just even be like a hacker you come in and get in there and just look at it, whatever. It's great.
+
+65
+00:40:06,570 --> 00:41:05,460
+Wes Bos: That's another little story is the first publication ever to do a paywall was the New York Times. And when it came out there like New York Times, if you read six articles, and then at the seventh, I'll put up a paywall, right, and I was like, that's dumb. It's just a div, you can delete it, right? So I wrote a Chrome extension. That was one line of CSS that said, dot overlay display none. And I pushed it up to the Chrome extension store. And the media went nuts is all these articles like hacker writes Chrome extension to defeat the near like defeat the paywall, and eventually got pulled from the Chrome store? Because, God, I guess I was using the New York Times logo, or it was so I don't know if it was allowed or not, which is hilarious, because a lot of people I got some nasty email from people. And it was like, it was like a huge thing. Like, should you display none a div, right? No.
+
+66
+00:41:06,510 --> 00:41:17,460
+Scott Tolinski: I mean, nowadays, you could do all that with just a general ad blocker where you could just have your ad blocker with the little eyedropper or something and just say, hey, this guy always block this. It's like built into every ad blocker now.
+
+67
+00:41:17,939 --> 00:41:24,690
+Wes Bos: It's true. And then there's also like, Chrome extensions that you can have, like I forget what the one is that it used to use is called stylish.
+
+68
+00:41:24,780 --> 00:41:28,110
+Scott Tolinski: Yes. Stylish, stylish, stylish.
+
+69
+00:41:28,260 --> 00:41:36,540
+Wes Bos: Yes. style. Yeah. And there's just like whole, like community user styles where people have riskin, websites, and I'll often have that on where it's
+
+70
+00:41:36,840 --> 00:41:38,480
+Scott Tolinski: annoying. Joker. Yeah,
+
+71
+00:41:38,520 --> 00:43:13,770
+Wes Bos: Kijiji itself they always have ads for like, the most random stuff. So you can like write little rules that select anything that is an ad on Kijiji, and just automatically hide it. Because it's it's so obnoxious when you're trying to scroll through it, and you keep seeing the same crappy bike over and over. What other tips and tricks do we have here? Multiple API keys. So one thing that we we do and when I taught at hacker u in Toronto, was we would always pull the weather and get students to display the weather. And I think they give you something like 60 requests per hour, which is almost always more than enough. But if you want to if a if a site gets popular, your API key will run out really quickly. So obviously, you can pay for for more requests. But another way around it is you can just ask for multiple API keys, give yourself an array and randomly swapping out and swap them out here and there. Obviously, that's not a great way to do a production app. But it's easy to get, you're just trying to like build something, and you're hitting this block and it's getting in the way, it's kind of one way you can do it. Another way is sometimes you have to apply for an API key, and you need to use it right, then what I'll do is I'll just apply for the API key, and then it'll take a couple days to get back to us like Yelp does this. But just go to GitHub search, like variable var, Yelp API key equals and people publish their API keys to Yelp all the time. You could just pull a couple off there and, and use those for the time being until yours. Yours gets approved.
+
+72
+00:43:14,280 --> 00:43:19,170
+Scott Tolinski: Oh, man, that one. That one might be pushing the line just a
+
+73
+00:43:19,170 --> 00:43:25,110
+Wes Bos: little bit. Yeah. And then of course, send a pull request letting the author know that they've
+
+74
+00:43:25,170 --> 00:43:30,300
+Unknown: Yes, put their API key public only after you, you utilize that.
+
+75
+00:43:30,510 --> 00:44:38,220
+Wes Bos: Yeah, use up there. It's almost always just these like free tier API keys that people do little simple examples with. Yeah, and then they pull it in, there was some quick and dirty stuff. Whenever I'm doing any of the scraping, what I'll do is I'll use a what's called a text database, because like, I don't want to have to like set up a whole MongoDB or whatever, and define the schema and stuff like that. So what I like to do is there's this package called disc dB, which will allow you to use like a MongoDB like interface and it'll just store the data in a text file. And I love that because it's really simple your text your your data just goes into a text file, it's fairly quick, probably not good and it's not good for production but he just tried to save some data to the disk real quickly. You can you pull in one of these things and it uses plain text files to to store it as I think JSON nice Yes, I think that's all the the tips and tricks that I have here. I did ask on Twitter what the different stories were. So I think we're just gonna gonna wrap up today with a couple different stories that we have. I got a couple of myself and then people tweeted them out.
+
+76
+00:44:38,670 --> 00:46:16,050
+Scott Tolinski: Yeah, I got at least one or two myself as well. Yeah, I could start actually one pretty recently. You know, like MLS and realtor websites. They're like really giant pain. I was working on an MLS searching website. Yeah. And all of these services. Their API's are so bad for tapping into these things. And they would not approve a local host. They were like What is your URL? And I was like, What do you mean? What is my URL? It's localhost. Like, Oh, where is the actual dev name, you know, look at it. And I was like, Well, I'm not going to set up a dev environment just for you, because they actually wanted us to pay for an additional URL that was outside of the production URL. I was like, this is a development URL, like even if I'm setting up yet, URL for this, it's still development, they're like, well, it's an additional cost for an additional URL. So I was not about to do that. Because that's absolutely ridiculous. So I went to their demo example of their code, because they write a whole demo shop up here, how it's working. And their demo example, actually, it was loading a script that was not checking any sort of anything, it was just loading a single JavaScript file that was the, like, protected file. So typically, it would hit the server, check to make sure your credentials and then serve that file was just serving this file. So I just went in the Network tab, I snipped out, I grabbed that particular file, I just copied and pasted it. And then I loaded it up, and I was using it on my local host, and in no time at all had that thing up and running. So that's probably one of my only things like this in this in this sort of, you know, this universe here. But I was very proud of myself for that one.
+
+77
+00:46:17,850 --> 00:49:18,840
+Wes Bos: That's great. Wow, I have a whole bunch of different stories out, I'll just kind of tell them in general, anytime someone has like a voting thing, often what will happen is that someone from high school, who I haven't talked to in 15 years, sends me a message on Facebook and say, like, Hey, I'm trying to vote my baby as the cutest baby ever to win $37 worth of baby food, and they just spam you and like to actually vote for their thing. Or my sister was in a photo voting. She'd like, submitted one of her. She's a photographer, she submitted it one of her photos to some sort of contest, and I was like, Hey, can I hack it, and she's like, go for it. And our, there's a couple other other ones that we've done. And the problem with online voting is that it's almost impossible to stop people from cheating it unless you tie it back to something that they really care about, like a Facebook account, or a verified email address or a GitHub account, you have to attach it to something. And and then the problem with that is that people don't want to sign in with Facebook, to vote for something because Facebook's gonna, like, post some shit for you. Like, oh, I voted for the cutest baby, right? So no one wants to do that. So what often these voting sites will do is they'll just set a little cookie that says has voted true, and and they'll they'll do you get one vote per day. And you can do it. But if you like, open up an incognito window, you can you can revoke or delete the cookie, you can re vote again. So naturally, I'll write a script that will just every second, it'll ping this URL. And if it's done via curl, there is no such concept of cookies. And if the security is really weak, it'll just keep hitting it. And I'll always just like, I won't do it so that someone will win, because that's dishonest. I'll do it. So it's clear that someone is cheating, like we, Heather Payne, who is she's the creator of hacker you or I used to teach, she was like in the running for like top entrepreneur. And it was clear that one of the other tech entrepreneurs that in her category was was cheating the system. So she's like, all right, who can who can do this, I was like, allow me. And we, we wrote a little script, and then gave the script to like 10 or 15 other students and they all ran it. And we're just like, at then I think what happened was we they wrote a script to make sure that they had just more like 25 more votes than we did, so that it wouldn't look like it was just a weird script that would like check how many votes they had. And then if there was like, if we were last, we would vote it up until we were like 50 ahead, but then their script would catch up. And then it got out of control because we just had these two robots voting each other up. And then before you knew it, it was like someone had 50 votes, someone had 23 votes, like 10,000 votes.
+
+78
+00:49:19,470 --> 00:49:20,910
+Unknown: First robot warfare was
+
+79
+00:49:21,300 --> 00:49:44,670
+Wes Bos: over votes. So um, both both people were clearly disqualified and removed from competition How can you run a school called hacker u and not try to hack the the voting when it's when it's clearly done? I feel sorry. Yeah, developers behind these things because they probably built it and like oh, I hope someone doesn't figure out you can delete the cookie and
+
+80
+00:49:48,570 --> 00:49:50,940
+Scott Tolinski: is all over one sec. Cookies gun
+
+81
+00:49:51,899 --> 00:51:32,040
+Wes Bos: is hilarious. Anyways, what else have I done vanity plate checker, so Ontario province where I live, you can enter your driver's license. And you can check if three different vanity plates are available. So I was trying to buy like, like web dev or HTML, CSS or something funny. And they only let you check three at a time. And then it's really slow. So, again, I built a little script that would take in an array of like, 100 different choices. And then it was run that three thing over and over and over and over, and then I would I would display all hundred results, whether it was available or not. That one, I don't know that one might have been sketchy because I attached my driver's license to it. But I never, I never heard from them. Because I was like, I don't know, I just did like, nobody 100 buddy. On Twitter, I asked what they what some possible ones are. Dennis Walsh, he said, he made a vehicle auction bidding app that signs into car auction, finds the correct lanes, waits for the right vehicles and then bids like a human. I thought that was pretty nifty. Because that was like the thing back in the day with eBay, you got sniped, or like you would no one would bid on this thing until six seconds before the auction was up. And then you you you coat something to sell. Right? And they they have stuff against that a lot of online auctions will extend the bidding period for two minutes. If someone bids in the last two minutes, so then it'll kind of keep going, which is frustrating for people that are trying to buy stuff online, which I think is part of why no one really uses eBay anymore.
+
+82
+00:51:32,970 --> 00:51:49,290
+Scott Tolinski: Yeah, then it was always the most frustrating because you'd always get sniped, or like I don't know. It was like it was so frustrating because there was like people that were professional eBay errs, and they were just always better than you or they were robots. And they were better than you because they're robots. Right?
+
+83
+00:51:49,530 --> 00:51:58,230
+Wes Bos: Totally. I hate robots. But I've built a few in my day. Do you have any other ones that are you pull any other ones out from here? Yeah,
+
+84
+00:51:58,260 --> 00:51:59,310
+Scott Tolinski: I was kind of looking.
+
+85
+00:51:59,310 --> 00:53:05,370
+Wes Bos: I got one here. Ben Foster said a couple years ago, 711, Australia had a Snickers promotion, where the price would change throughout the day, based on whether it detected more angry tweets. I built an electron app that scraped the website and notified me when the price fell below 60 cents. So that's pretty wholesome. I like that because it didn't, I thought I was reading this. I was like, and then you built a bot that tweeted angry things and the price dropped. And he's like, No, I just like monitored the price. And and then once it fell below 60 cents, I guess he bought a whole bunch. It's so hilarious. Ray Rielle, which sounds like a very Canadian name. I think he's Canadian. He has this talk called my hockey team sucks. And I just I didn't watch the whole talk. It's about half an hour. But I did a quick look over it. And it sounds like he did some scraping and in data parsing to get some data stats from stuff that he needed. So if you're, I love hearing stories about this kind of stuff. So I'm gonna I'm gonna watch this talk. It's from the forward jazz conference. Yeah, and I would check it out. We'll put the link in the show notes.
+
+86
+00:53:05,700 --> 00:53:20,520
+Scott Tolinski: This one's also pretty good from Jay Scott Chapman, he says that he wrote a puppeteer app that basically replies thank you to every single person that wrote Happy birthday on his face. Dying when
+
+87
+00:53:20,520 --> 00:55:10,620
+Wes Bos: I read that one, hilarious. Oh, that's super good. I like that a lot. I probably one of the best scraping things that we haven't talked about is YouTube DL. We've talked about a podcast a couple times before, but it's a command line command line utility that will download like mp4 or anything from YouTube, Vimeo, like a whole bunch of other sites. And all you have to do is pass that a video ID or a URL or, or a playlist and I did this before our trip, we went to the cottage I downloaded a whole bunch of my kids are super into these, like, watching other kids play with toys, and then trying to recreate it. It's just like, I never knew it was the thing. But there's these women tube is weird on YouTube that are like, grown, and they play with toys. Like they were just like by like Paw Patrol, or like they just like by trolls. And they just like play with them be like, Oh, I'm gonna see Mayer. And then my kids prefer to watch this woman play with her toys versus the actual pop patrol show. Right? And it's so weird. It's so bizarre. And this woman is making millions it's called the fizzy fun toy show or something like that. This woman is making millions of dollars off of just playing toys online. It's weird. It's so bizarre, but they when it's time to watch TV, that's what they want to do. And then it's kind of fun because then when they when it is playtime. You can tell that their playtime is much more imaginative, which is kind of cool. Anyways, I needed to tell a whole bunch of those for for the iPad because I'm wanted an offline so you can just pass it a playlist ID and it'll download all the all of them for offline. And then I use the VLC VLC app on the iPad just to play the mp4.
+
+88
+00:55:10,980 --> 00:55:14,220
+Scott Tolinski: Nice. Super cool. Do you have anything else here?
+
+89
+00:55:14,820 --> 00:55:23,430
+Wes Bos: I don't think so. I guess I are running up on an hour here. I think it's, it's, it's amazing. You can fill an hour with all these crazy scraping.
+
+90
+00:55:23,640 --> 00:55:42,450
+Scott Tolinski: Yeah, share your stories of fun stuff you've done like this. If there's anything particularly adventurous or fun or interesting, we'd love to see what you're doing. I am so intrigued by all of these things. And we'll we'll pass them along and share them along so everyone else can get inspired by some of your crazy stuff. Don't take it too intense, though.
+
+91
+00:55:42,480 --> 00:55:44,850
+Wes Bos: Don't need a knee and trouble and go
+
+92
+00:55:44,880 --> 00:55:46,710
+Scott Tolinski: Yeah, equations on our hands here. Yeah,
+
+93
+00:55:46,890 --> 00:55:56,280
+Wes Bos: no, don't if you don't do not call me if you're in jail, or anything like that. Because make sure everything's on the up and up. Don't do anything illegal.
+
+94
+00:55:57,240 --> 00:56:00,210
+Scott Tolinski: Don't hack presidential candidates. Don't be Elon.
+
+95
+00:56:02,670 --> 00:56:05,310
+Wes Bos: Awesome. What about a sick pick? Do you have any sick pics today?
+
+96
+00:56:06,030 --> 00:57:13,350
+Scott Tolinski: Yeah, I got a sick pic. It's a game I've been playing a lot. It's called octo path traveler. It's a RPG for the Nintendo Switch. And it is awesome. It's sort of takes you back to the days of like Super Nintendo RPGs. And it's if you're a fan of the style of game like Final Fantasy games or whatever. It's sort of like a can't miss. The graphic style is like brilliant. It sort of looks like a bit but it's 3d and ends up with this really great tilt shift camera and everything is sort of this. It's hard to explain. But the visual aesthetic for this thing is so cool. But on top of that the game is great. It's all about these stories. And these people again, if you like Final Fantasy type games, you can't miss it. But let me tell you not only is this game awesome, but the soundtrack is awesome. In fact, for a game that's of this size, like it's not like a triple A title or something. It's not like I mean, it's made by Square Enix, but it's not like the biggest game of the year. The soundtrack is is one of the best video game soundtracks I've heard in a long time. So I've been playing this on YouTube all the times. I don't think it's on Spotify yet. But it's it's great, like full orchestra stuff. And it's just really nice.
+
+97
+00:57:13,620 --> 00:57:21,420
+Wes Bos: It's wicked. I like to to check I need to start playing games. I never play game. So every time we talk about these, like that food one as well. You talked about what's that called food one's
+
+98
+00:57:21,420 --> 00:57:40,920
+Scott Tolinski: great overcooked, and we actually had a ton of people tweet out saying how much they love overcooked. In fact, I just had a buddy over and we ended up playing overcooked for like the entire weekend because it's so much fun. And it's way different experience. We had three people in the kitchen and so two people and all of a sudden everything changed. It was like a completely different game.
+
+99
+00:57:41,220 --> 00:58:13,320
+Wes Bos: Wicked. Alright, I've got two YouTube channels that I'm going to recommend because I love watching YouTube, especially like when I have lunch or if I've got like half an hour of downtime rather than just like flipping on the TV. I'll often just find some, some YouTube and I've got all kinds of different interests. And a couple of the ones that have been I've been into lately has been versus a V, which is Arduino versus evil used to stand for and it's actually a guy from Ontario. It sounds like he's from Northern Ontario, because he he talks like, you know, Don Cherry is.
+
+100
+00:58:13,590 --> 00:58:14,400
+Scott Tolinski: Yeah, so yeah, you
+
+101
+00:58:14,400 --> 00:58:15,900
+Wes Bos: kind of talk like,
+
+102
+00:58:16,260 --> 00:58:30,510
+Scott Tolinski: Sherry and the grapes is done. Terry is his nickname grapes. I don't know. I think it is. I could just be talking out of a swag. Yeah, that's right. Yes. Grapes. Yeah, there we go. Got it.
+
+103
+00:58:30,720 --> 00:59:52,050
+Wes Bos: He kind of talks like, like him, but I don't know he is hilarious wave. It's very, don't watch her on your kids. There's lots of swearing in it. But what he does is he opens up tools and electronics like you can tell he's a super smart guy. Because he's got a you can tell he's got a background in electronics, he can tell he's got a background in metalworking, and heavy tools. And not that those are electronics kind of interests me but what it'll do is it'll take like a DeWalt drill and open it up. And he'll explain the different materials, how it's made, how its die cast, why something might be good quality or not. And I find it just fascinating to hear about that side of I don't know of how things are made. And then the other one is musty one m ust IE one and he does a lot of small engine stuff, where he'll he'll go to a yard sale and pick up like a go kart or a boat motor or generator for like three bucks. And then he'll, he'll try to fix it and what I've learned, it's always the carb bi I've watched like 20 of these videos and it's always it's always the carb. He's always cleaning carbs pretty much that's what I've learned. But it's kind of interesting because he's just got this nice kind of cadence that he goes through fixing stuff and explains how things are broken and when when it's worth fixing and and whatnot. So that was pretty, pretty good one as well.
+
+104
+00:59:52,500 --> 01:00:08,460
+Scott Tolinski: That's amazing. Yeah, I've been I've been a huge fan of YouTube overall lately. So I it's one of those things that I've been publishing YouTube content for so long. And it's like only now have I been like, wow, yeah, so much good stuff on YouTube. Yeah. Especially like stuff.
+
+105
+01:00:08,480 --> 01:01:11,970
+Wes Bos: You're, you're finding people outside of the like, yeah, there's like vloggers and tech guys on YouTube and people that live in vans and stuff like that. But there's this whole like, other side, like, if you want to learn anything, I think it's such a good way to just open up your mind, I put all these videos on to x. And I just like, just watch and watch and watch and watch and like, I know a weird amount about small engines and a look at how electronics are made and solar panels and all kinds of like it just is weird rabbit holes that YouTube puts me down. I got super into these like, off grid living people that are like building houses with solar panels on top. Maybe that's why how I like re watching solar panels. And then I got into these people that build these like, tiny houses with solar panels. And most of the time, I'm just shaking my head because I can't imagine. But yeah, it's super interesting to see someone build something and, and be really knowledgeable about about that.
+
+106
+01:01:12,180 --> 01:02:05,520
+Scott Tolinski: I've recently stumbled down the rabbit hole of photography based YouTube. And there is so many photography channels, oh my god, there's so many of them. And one of the best part about photography channels or videography, whatever for cameras is that they all look good. Because all these people have great camera equipment. So all of the content looks great. And I'm just like watching it's like, oh, what lenses, what lens and what kit, okay, and now I know all the you know, identifying lenses and whatever I've never I've always, you know, been somewhat into it, but I've never been this into it. Now I'm like, Okay, I gotta get this and this and this and this and Okay, everyone's using this and everyone's using that. And this is this is what I need to be into. It's so funny. There's like, it's just like web development. There's like specific trends that you can tell that people are are latching on to right now and what they were latching on to several months ago. Yeah, the new hotness, it's the height. It's just a whole nother world. That's awesome.
+
+107
+01:02:05,730 --> 01:02:28,260
+Wes Bos: That's great. I also really enjoy watching rope swing fails, you know, like, Oh, yeah, dude, just great shit. like China sales. Yeah. I used to not be able to watch America's Funniest Home Videos, because I just like cringe, because people get really hurt on these videos, right? It's like, haha, but like, no, that guy probably was in the hospital, right?
+
+108
+01:02:28,950 --> 01:02:56,970
+Scott Tolinski: There's no better videos than people falling at weddings and America's Funniest videos while they're dancing or whatever. We had this a upstairs roommate in college, and they didn't have a TV and we had a TV and cable. And she would only come down to hang out. When America's Funniest Home Videos was on. She would knock out you know, the schedule, she just knock on the door. She'd be like, America's Funniest videos is on there. Like oh, by all means use the TV Go. Go right ahead.
+
+109
+01:02:59,370 --> 01:03:06,270
+Wes Bos: It's true. That was a really good show when people weren't totally getting ruined. Alright, okay.
+
+110
+01:03:06,270 --> 01:03:08,790
+Unknown: Somebody the undocumented.
+
+111
+01:03:09,720 --> 01:03:10,770
+Wes Bos: Shameless plugs.
+
+112
+01:03:12,180 --> 01:04:04,110
+Scott Tolinski: levelup Pro, I have a new course coming out on Apollo client. It's specifically on Apollo client, more so than anything else, but Apollo client with react. So in this course, we set up a very, super basic API. It's a totally open API. It's with graph CMS. And it's just set up and we almost set it and forget it. And then after that's up, and we explore all of the cool and interesting features in Apollo, such as optimistic UI, and in pagination and caching, persistent caching local state and all sorts of cool stuff. It's all about Apollo. So check it out. It's going to be level one Apollo with graph QL. It's gonna be on level up tutorials this month. So sign up for level up pro get access to that this month. And yeah, levelup Pro is gonna have a new series every single month. I've been going for a little while now and tons and tons of new content all the time. The signup for a year you save 25% so that's the way to do it. In my opinion.
+
+113
+01:04:04,590 --> 01:04:29,580
+Wes Bos: We're good. I'm just gonna plug my courses in general, if you don't know, I create web development courses at Wes Bos comm forward slash courses. You can pick one up, I've got some stuff coming up on graph qL and some JavaScript stuff and some big platform improvements to have been working under the hood on some mega room and Sarah nothing's been pushed yet though. So hold the hold tight coming soon. And I think that's it for today.
+
+114
+01:04:29,850 --> 01:04:45,330
+Scott Tolinski: Nice. Cool. Well, we'll catch you in the next one face, please. Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

@@ -1,0 +1,400 @@
+1
+00:00:00,359 --> 00:00:21,660
+Announcer: Monday, Monday, Monday, open wide dev fans yet ready to stuff your face with JavaScript CSS node modules, barbecue tip workflow breakdancing, soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA, Bob and Scott Taylor.
+
+2
+00:00:25,920 --> 00:01:01,080
+Scott Tolinski: Oh, welcome to syntax in this hasty treat, we are going to be stumping each other with some intermediate to expert level interview questions on various topics. We're just gonna, we wrote a little script here to randomly pull one of these questions and it's going to try to stump the each other and we're gonna see how this thing goes. It's gonna be pretty darn funny. So nervous. Yeah, I'm nervous too. So to introduce the podcast is the syntax. My name is Scott to Lynskey and with me, as always, is West boss.
+
+3
+00:01:01,380 --> 00:01:05,430
+Wes Bos: Hello, hello. I'm really excited for this. I think it's gonna be pretty fun.
+
+4
+00:01:05,640 --> 00:01:10,730
+Scott Tolinski: Yeah, it should be a blast. Now this episode is sponsored by century
+
+5
+00:01:10,760 --> 00:01:31,740
+Wes Bos: Yes. So century is an error tracking service that's going to it works in any language on the server side or on the client side. And I specifically use it myself for my use it on my node application and and on the front end of all of my applications that are running on my what I call boss monster, which is the course platform that I have you named your course platform boss
+
+6
+00:01:31,740 --> 00:01:32,670
+Scott Tolinski: monster,
+
+7
+00:01:33,000 --> 00:01:53,040
+Wes Bos: yeah, Boss monster, which is kind of it's funny, because we've recently chopped it up into smaller application smaller, really, smaller monsters? Well, it's Yeah, it's like three or four applications now that that run in unison, and power all of my, like 11 domain names or whatever. So it's
+
+8
+00:01:53,040 --> 00:01:58,020
+Scott Tolinski: like my sellers call it the monstars. from Space Jam. Now, there's several of them. They're all deadly.
+
+9
+00:01:59,610 --> 00:04:02,370
+Wes Bos: Exactly, man Space Jam coats are great. Anyway, century, what I have I have it running. And what it does is anytime that there is some sort of error, either on the server side or on the client side century will log that error into their back end. And then they take as much information about that they take the stack trace will take any source maps that you have, they take information about, obviously, when it happened, if it's on the client side, which is those are the trickiest errors to debug, because they always happen in someone else's browser. So it'll take information about what browser they were on, what the user agent was, what their IP address was, because sometimes you get people doing like malicious stuff on your website. And that intentionally throws errors. And you can say, like, oh, wow, this error through 300 times in the last month, but it's all been one person. So clearly, they're doing something wrong, or they have a Chrome extension that's causing something going on here. But if you see these aggregate of this data that there's a whole bunch of errors going on, you can get, you can kind of peer into it, you can attach errors to specific people. So if you need to contact someone to tell them it's been fixed, or to get some more information from them, it's really, really handy. So check it out@sentry.io forward slash sign up and use the code tasty treat, it's going to get you two months for free. Even if you're already an existing customer. A couple other things about century we've got a whole bunch of information here. I've gone through it and a couple of our episodes already, but it cuts your your resolution time from five hours to five minutes. So you have to pay for it. But it's well worth your money just in how much time it will cut down from figuring out what these issues are. Get multiple people on your team, you can alert different people depending on your your Git history. And then probably my favorite part about it is that it's all open source. So obviously you're gonna you can pay for it@sentry.io. But if you really wanted to, you could spin up a server and run your own version of this, which is really, really cool. So check it out. sentry.io tasty treat coupon that's gonna get you two free months. Thanks so much to Sentry for sponsoring.
+
+10
+00:04:02,400 --> 00:04:30,950
+Scott Tolinski: Yeah, yeah, Sentry is easily one of my most used services personally. Huge, huge fan. Cool. So So yeah, so we've mentioned the premise here, we have a site here, this is 30 seconds of interviews.org. And there's a whole bunch of different interview style questions here. And they have the answers all hidden. So what we're going to be doing is just sort of randomly pulling a question here or there. And we're going to try to stump each other with these random questions and see what comes up.
+
+11
+00:04:31,320 --> 00:04:53,250
+Wes Bos: All right, so the first one that I pulled up here, which is what is the difference between the postfix and prefix increment operators. So that means if you have a variable called I, and it's set to one, and you want to increment that you can do i plus plus, but you can also do plus plus i. So Scott, do you know what the differences between those two?
+
+12
+00:04:53,270 --> 00:04:57,510
+Scott Tolinski: Yeah, I see Wes grinning on the webcam because we already discussed that. I don't know the difference between
+
+13
+00:04:59,430 --> 00:05:02,010
+Unknown: I was like, let's Put that in the show, because this is great.
+
+14
+00:05:02,010 --> 00:05:10,800
+Scott Tolinski: Yeah. Now the very first one we pulled, and it's listed as an easy question, which is great. You know, this is really doing good things for my self esteem here. But no.
+
+15
+00:05:12,140 --> 00:05:12,660
+Unknown: Personally, I
+
+16
+00:05:12,660 --> 00:05:45,960
+Scott Tolinski: don't use the postfix or prefix increment operators ever. I'm, I'm always doing a, because I'm not, I don't want to mutate the value. So I never used these I always do you know, a new variable is equal to a year number plus your number, or the previous value. So I don't use postfix. And since we're not doing for loops anymore, I haven't used i plus plus, and who knows how long or plus plus? I so yeah, I don't know the difference. I've never I don't know the difference, but I don't It's been too long.
+
+17
+00:05:46,140 --> 00:06:55,770
+Wes Bos: Yeah. So it's funny because it's probably something you don't use a whole lot. And in given that a lot of us are moving into like functional programming, where you don't mutate variables, you create new variables and return them from the function. And you you don't use for loops all that often. Because you know that we did that show where all about map and all the array methods, right? The difference is that i plus plus will return the value and then increment it and plus plus, I will increment the value and then return it. So the easiest way to visualize this is go into your your terminal real quick, and say var x equals zero, and then type x plus plus, what do you expect is going to get returned from that, it's actually going to be zero in either way. That's weird. I just did x plus plus, well, the x, it gets returned immediately. And then incremented after it's returned, whereas if you if you type in x again, and just to see the value of it, you'll see that it is set to one. But if you were to do plus plus x, then you get two because it increments at first and then returns it. So that's an odd one. I can't even think of the last time i've i've ever had to use that though.
+
+18
+00:06:55,799 --> 00:07:25,230
+Scott Tolinski: What's funny is that like, I kind of, I feel like this is gonna be for a lot of these things. I kind of knew the answer, like, yeah, you know, you use the one in a for loop and it doesn't increment until the loop runs. I don't know. And, yeah, okay, let's go ahead. Let me fire up this next one here. Okay, this is a good one. Yeah, this is a good one. And. Okay, please, Wes explained to me the difference between a static method and an instance method.
+
+19
+00:07:25,500 --> 00:08:14,190
+Wes Bos: Oh, that's good. That's that's a tricky one. All right, let me think about this. So a static method is a method that lives on your object and is shared amongst it's either it just lives on the like, the parent, which is like array of, that's a static method. Or it's shared amongst all of them, meaning that every single time that you like, let's say, you had a let's let's use react, for example, if you have a coat rack component, and it's a button, you might have a method on there, that is called increment clicks, that's going to be an instance method, because every single button needs its own instance of that method, whereas a static method is going to share it amongst so you only have one instance of that this is I'm so bad at it.
+
+20
+00:08:15,179 --> 00:08:19,520
+Scott Tolinski: Yeah, I don't. I don't know if that if that if that counts as an answer are correct.
+
+21
+00:08:19,530 --> 00:08:32,900
+Wes Bos: Let me hold on, hold on. Let me get one more shot. The static method is shared amongst every single instance. And an instance method obviously gets a copy of its own for every single time that you you make it
+
+22
+00:08:33,049 --> 00:08:55,980
+Scott Tolinski: okay. Yeah, okay. Look, give me the answer. The answer according to this is a static methods belong to a class and don't act on the instances. While instance methods belong to a class prototype, which is inherited by all instances. So it seems like the static method belongs to the class itself, where the instance method belongs to the prototype.
+
+23
+00:08:56,250 --> 00:09:01,320
+Wes Bos: Oh, there you go. That that was a tricky one. That was that was under that was hard. Yeah, that was hard.
+
+24
+00:09:01,350 --> 00:09:05,540
+Scott Tolinski: Yeah. Okay. Well, that that's what you get for given me an easy one that I couldn't get. So
+
+25
+00:09:07,140 --> 00:09:28,980
+Wes Bos: there you go. Yeah, it gives an example of array.is array that's just on the as a static method, and then you have array dot push, which is an instant method. Very nice. All right. Let's get another one going here. Oh, this is a hard one to throw. I think this is a CSS question. What is a focus ring? What is the correct solution to handle them?
+
+26
+00:09:29,040 --> 00:10:22,110
+Scott Tolinski: Oh, that's a hard one. That's easy one. And since we're doing our episode on accessibility, next, I have at least researched this a little bit. So focusing is the the outline that appears on an item when it's selected like a button. And many times people say say like outline on none, right? I think it's the property outline none, or Li zero outline yet because they're like, well, what is this blurry blue thing around my button? And well, that's a major problem. for testability, because those things are there for a reason. So the focus ring itself is outline right? That that's Yep, that's okay. So, yeah, that that's what it is it lets the user know what's in focus when they're tabbing through the site. So obviously, if you have those turned off, the user is not going to know what's in focus. So yeah, yeah, that's the focus, right?
+
+27
+00:10:22,280 --> 00:10:53,070
+Wes Bos: Good answer. I remember back in the day, when you just I would just immediately turn everything that had a focus state and put an outline to zero, because I hated the blue. And now I look back. And I'm like, that was such a mistake. Because like, you need those right? Somebody is sent a pull request this syntax website, turning those off, and I was like, No, we need these. But you can you can turn them off as long as you are replacing it with something else like a box shadow or changing the You can also change the color of the focus as well. Something to give it like,
+
+28
+00:10:53,700 --> 00:10:57,960
+Scott Tolinski: yeah, this is actually being in focus. Right now. It's being used. Yeah.
+
+29
+00:10:57,990 --> 00:11:12,120
+Wes Bos: Because you as even as a keyboard user, you should be able to show your users where they are in the application should be very crisp and clear, even if it's not for accessibility sake, just for not using the mouse's sake. Yeah, deaf. All right, what do you got for me?
+
+30
+00:11:12,210 --> 00:11:22,200
+Scott Tolinski: let's fire up the old random machine. As I hit up and enter, here we go. Oh, this is pretty good. Although we probably already answered this on another question, how does hoisting work in JavaScript?
+
+31
+00:11:22,410 --> 00:11:26,460
+Wes Bos: Oh, that's a good question. So yeah, we did. When did we do this? We
+
+32
+00:11:26,460 --> 00:11:28,860
+Unknown: did this in Really? early episodes.
+
+33
+00:11:28,950 --> 00:12:17,160
+Wes Bos: I think it was in let's let me just find that episode. Real quick. It was the like the jargon show. What was what episode was that? Anyways, so hoisting is when you have an application, or you, you have a function inside of that function, the all of the function values are sorry, all of the names of the functions, and all of the declarations of your variables will be moved up to the top. So before any of your code is run, what JavaScript does is it actually takes those function and moves them up top. That's why you can actually call a function before it's actually being defined. And then it will take the variable creation, not the variable setting of values, but the fact that there is a variable there, it will move them up to the top.
+
+34
+00:12:17,430 --> 00:12:23,700
+Scott Tolinski: That was episode number 17. And that was a great answer. Yep. Yes, Episode, but
+
+35
+00:12:23,700 --> 00:12:26,280
+Wes Bos: what was that? Was that a hard or?
+
+36
+00:12:26,640 --> 00:12:36,810
+Scott Tolinski: That I think was an intermediate? Yeah, I think that would have would have been a lot more intermediate if we had an already done this. And, yeah, this solution. Okay, cool.
+
+37
+00:12:36,990 --> 00:12:38,880
+Wes Bos: I don't I don't I don't use hosting.
+
+38
+00:12:39,120 --> 00:12:43,380
+Scott Tolinski: You don't even have to add it's not something that you think about right? Because it's not No, you're doing personally.
+
+39
+00:12:43,560 --> 00:12:45,420
+Wes Bos: No. Oh, I guess I gotta give you one. Oh, yeah.
+
+40
+00:12:45,420 --> 00:12:47,250
+Unknown: What you get what you get what you get?
+
+41
+00:12:47,370 --> 00:12:53,310
+Wes Bos: What are the advantages of using a CSS preprocessor? Oh, yeah, easy question under?
+
+42
+00:12:53,340 --> 00:14:15,330
+Scott Tolinski: It's an easy question. So pre processors for CSS, for those of you who don't know, is basically a little compiler that runs on your code, whether it's a stylist code, or SAS code, or some sort of CSS like code. It's a compiler that runs on that code and transforms it into CSS. Now, the reason for this is is that well, CSS is a lot cooler, with a lot more features. Like, it's hard. It's hard to even think back to a time when I wasn't writing CSS with the preprocessor. So a CSS preprocessor allows for a ton of additional features being added on to CSS without having to worry about CSS approving those into the spec itself. So because it compiles down to CSS and it takes care of things like prefixing for you allows you to do nested selectors. So you can nest selectors inside of other selectors are greatly reducing, typing and making your code a little bit more organized. It allows for things like variables so you can reuse variables. It allows for things like functions to make your code more concise, mixins. Again, all this stuff to save you a ton of time, if you aren't using some sort of CSS preprocessor via sass, or stylus or whatever, or maybe even a post CSS kind of thing, or even a styled components or emotion or whatever. I highly recommend using something because it's uh, it's important. It makes your life a lot better.
+
+43
+00:14:15,390 --> 00:14:16,170
+Wes Bos: Good answer.
+
+44
+00:14:16,380 --> 00:14:24,240
+Scott Tolinski: Thank you. Thank you very much. All right, let's see what we got here. Oh, I gotta go to it. I got another hard one. I'm sorry.
+
+45
+00:14:24,480 --> 00:14:25,740
+Unknown: Ah, damn,
+
+46
+00:14:25,740 --> 00:14:36,330
+Scott Tolinski: I know the answer to this one. So I'm gonna hope I'm gonna see if you do what, what is memo ization? memo ization, which sounds like a child saying memorization but
+
+47
+00:14:36,450 --> 00:14:48,720
+Wes Bos: not Oh, man. I know this, but I don't I it has something to do with like nesting functions inside of each other. Where I don't know. All I know is that something to do with nesting functions inside of each other. That's,
+
+48
+00:14:49,050 --> 00:15:19,860
+Scott Tolinski: that's all I know about. The word memorization is a clue to because it's basically caching the output of a function calls so that subsequent calls are faster. Again, it's not something that we end up doing really, if you're using a lot of libraries will occasionally do this kind of caching for you. But yeah, memoization is the process of caching the output of function calls. So subsequent calls are faster calling the function again, with the same input will return the cached output without needing to do the calculation again.
+
+49
+00:15:20,070 --> 00:15:31,230
+Wes Bos: Oh, I've done that before. I didn't know that. That's what that was called. Yeah. Okay. Well, that's a good, that's such a scary interview question. That's
+
+50
+00:15:31,230 --> 00:15:43,680
+Scott Tolinski: a scary interview question. I feel like if I were given that in an interview, I'd be like, Oh, I don't know. That's why I hate interview questions. Because you know, you can Yeah, you can know this stuff and not know it at the same time, you know,
+
+51
+00:15:43,890 --> 00:15:54,930
+Wes Bos: totally. Oh, that was a good one. All right, I got a describe the different ways to create an object, when should certain ways be preferred over others
+
+52
+00:15:55,020 --> 00:16:20,790
+Scott Tolinski: different ways to create an object like instructor pattern and stuff like that? I've been using a I like, pretty much don't use any of them other than, you know, const variable equal to object? Because, yeah, in most situations, I'm using a class otherwise. So yeah, hold on a second. I'm trying to find the question. No cheating. I'm not cheating the answer here. I just want to find the question. So I can have it in front of me.
+
+53
+00:16:21,150 --> 00:16:22,110
+Wes Bos: Okay, turns out
+
+54
+00:16:22,110 --> 00:17:04,800
+Scott Tolinski: a lot of these questions. Use the word object. And yeah, this one is always I'm gonna go ahead and just say, I'm gonna do really bad on this question, because it involves memorizing of stuff like this. I don't know. Yeah, there's the constructor pattern. There's prototype pattern, stuff like that, where you're creating an object based on another object, right? Yeah. prototype is the the parent object. So you're creating a like a version of the object that has all of the properties of its prototype? So is, I honestly don't, I'm just totally embarrassed myself here with the constructor pattern? Because I don't honestly know what it means is the constructor pattern creating a new object just based on like, Yes, just creating a new object based on nothing.
+
+55
+00:17:04,949 --> 00:17:53,790
+Wes Bos: Yeah, you just have, well, you have a function like in the example they have here says a person takes in a name and an age and then and then you can use the new keyword in JavaScript, let's say, say const. person, one equals new person, and then you pass the name and the age. Yeah, from that. And then you after that, you can also augment the prototype of that. So it's, what else do we have here. So there's object literal, which is probably 98% of the time, okay, that we use, and that's object literal, is just you open a curly bracket and close the curly bracket and, and that's where you have it, then you have the constructor pattern, which has sort of been replaced by using classes now. Then you have the factory, a factory function, where you just have a, it's just it's basically just a function that returns an object. And then you have object create, which I don't myself, I never really use all that often.
+
+56
+00:17:53,810 --> 00:18:07,410
+Scott Tolinski: Yeah, see, it's like so funny, because like, you use this stuff every day. And I could, yeah, do any of these things. But the moment you asked me to define or describe the like, the names of them and stuff like that, it all goes off the rails.
+
+57
+00:18:07,410 --> 00:18:33,720
+Wes Bos: Totally. Yeah. And I think that's, that's really important to note in this is that, like, these interview questions are often not a good way to show. Maybe we're just backpedaling, because we're so garbage at this right now. But it's not a great way to see someone's skill. I think the proof is in the pudding. When when someone's able to actually look at the code that they write day in day out, rather than knowing these little gotchas. And like little oddities about JavaScript.
+
+58
+00:18:33,830 --> 00:19:05,360
+Scott Tolinski: Yeah, it's it's funny too, because like, and many times, I might even be nervous. If I were to ask this question to somebody and they were do say, like, give me an like, if they were to give me like a dictionary version of the answer is sort of like, do you actually know what this means in practice? Or do you did you just memorize this this? And yeah, so that that is the tough part with these sort of things is what they are actually doing and what they mean versus you know, the English behind it. All right, let's get one for you going here. What are we at? How many have we done here?
+
+59
+00:19:05,490 --> 00:19:09,270
+Wes Bos: Maybe we got I think we got a couple more. Let's go for another couple minutes. Cool.
+
+60
+00:19:09,300 --> 00:19:22,470
+Scott Tolinski: Yeah, I got a good one for you right here. It's an intermediate. So yeah, the tension is building. What is event delegation and why is it useful? Can you show an example using it?
+
+61
+00:19:22,770 --> 00:21:04,800
+Wes Bos: Yes. So event delegation, I actually like this one, cuz I've explained it many times when teaching JavaScript JavaScript, sometimes, let's say you've got a list of let's say, you've got a unordered list list of to do's on there, and you have three to do's when the page loads. And when somebody clicks on one of those list items, you want to mark it as done right, you want to cross it out, the normal thing you would do is you would say okay, when the page loads, select all the list items, loop over each of them, and then listen for a click on those list items and then toggle them on and off. The problem is that when you add a fourth list item after the page has loaded dynamically via JavaScript That new Li no longer has the event or not no longer it doesn't have the event attached to it unless you were to explicitly bind it every single time. That's, that's a pain in the ass. And you also have like a lot more event listeners than you necessarily need to. So event delegation, what it does is it listens for the event on a higher parent, I always talk about negligent children, meaning that you know that unordered list will be there on page load. So you listen for the click on the unordered list, and then you delegate it down to the actual child that was clicked. That's the whole idea behind bubbling in JavaScript events. And then that way, you only have one event to deal with, it's a click on the UL, and future list items that are added in the future children that are not yet born, are have to will will still be listened to. So that that's actually the way that react does it react actually has just one event? And I think it's on the body or the document not not totally sure. It just listens for events at the very top level. And it reuses that that one event over and over again.
+
+62
+00:21:04,920 --> 00:21:09,000
+Scott Tolinski: Nice. The children who have not yet been born need to be heard.
+
+63
+00:21:09,590 --> 00:21:10,800
+Wes Bos: Yeah, it's like
+
+64
+00:21:12,630 --> 00:21:13,380
+Scott Tolinski: it's a deep mess.
+
+65
+00:21:13,920 --> 00:21:27,900
+Wes Bos: The parent is responsible for listening for clicks on its children, right? children's don't know any better. There's some of the children are not yet even born yet. But the parent is responsible for handling clicks and he's known did I receive myself on that one? No, I
+
+66
+00:21:27,900 --> 00:21:38,360
+Scott Tolinski: just saying this is a deep message. We should all take some time to think about it. Alright, let's see what we got next. What's next? I'm ready. Oh, come on. Easy. Give me Oh, Lizzie.
+
+67
+00:21:38,360 --> 00:21:53,280
+Wes Bos: This is a this is a coding one. This is too hard to do on the podcast. So I'll get you another one. But the question was create a function pipe that performs left to right function composition by returning a function that accepts one. Yeah. Okay. Yeah. No, that's that's too hard to do on
+
+68
+00:21:53,280 --> 00:22:02,670
+Scott Tolinski: the whiteboard coding, but like speaking it out, speak the function will say the function keyword parenthese. Yeah, yeah. Oh,
+
+69
+00:22:02,670 --> 00:22:09,960
+Wes Bos: I like this. There's tons of ways you could probably solve this. How do you compare two objects? in JavaScript? Oh,
+
+70
+00:22:09,990 --> 00:23:25,080
+Scott Tolinski: cool. Okay, I know this. Yeah. Because I've just been recently comparing some objects. So Dude, I have some really cool stuff to show you very soon on. And I'll be showing everyone else soon after that, for some code I've been working on this is very fancy. But um, yeah. So how do you compare two objects? Well, you cannot do the equals operator, right? My, my first inclination would be to just loop over the contents of it, and compare each item key devalue, because for several reasons, I guess, the way out practically do it in like real life, I would pick up lodash. Because lodash has already built a way for me to do that. That's optimized and fast and everything like that. So in real world, I'm gonna, most likely have lodash installed, and I'm going to use a method in lodash. I don't even know what it is. It's probably, like compare something I forget what it is. I always have to look them up. But yeah, so I would I would loop over each item individually, and compare keys and values. Reason being, obviously the equals operator isn't going to work. And some people might, I think you like some people might think that you could do like a, like a to string or like a JSON to string output of this kind of thing.
+
+71
+00:23:25,140 --> 00:23:30,780
+Wes Bos: Yeah. But that would work. That's like the poor man. It won't work when it No, why not?
+
+72
+00:23:30,810 --> 00:23:56,820
+Scott Tolinski: Because Wouldn't it like, if you had a a number and a string? Like wouldn't? Isn't there some use case where something could be the same as a string, but not when it's a different type of a different type? Am I am I trippin? Like, am I tripping to say that like a string of an object is different than it was based on the type that shows up?
+
+73
+00:23:57,930 --> 00:24:23,730
+Wes Bos: That's a good question. Let's see Wes, West one name equals a string of Wes and age equals a number 100. So we just tried it. And I think JSON stringify would would do it. Because if you have like a number of 100, and a string of 100, those are going to be different because it's JSON will obviously keep types when you string a file, which is great. And then things like dates, will will be converted out for you. Yeah.
+
+74
+00:24:25,230 --> 00:24:26,670
+Scott Tolinski: That wouldn't work. But you're right,
+
+75
+00:24:27,180 --> 00:24:56,250
+Wes Bos: is probably not the most performant way to do it. There's probably some downsides to doing it. If you look at the example on this website, it's kind of interesting, because the way I would normally just do it is just take the keys from each one. And this is assuming that it's only one level deep, because as soon as you start getting into multiple levels, then you get into recursion, but then you could check all the strings to check all the dates. If you want to check prototypes, you can and then and numbers so
+
+76
+00:24:56,279 --> 00:25:09,000
+Scott Tolinski: yeah, this is this is why interesting lodash because I'm guessing they would have a D Compare. And if I really wanted to see how that deep compare was being done, I would just check out the source because, yeah, that's how I that's how I roll. Yeah,
+
+77
+00:25:09,000 --> 00:25:22,110
+Wes Bos: that's not something that I would like this is a huge function to compare two objects. It's not something that I would write myself, just because I know that something like lodash has been battle tested and is the absolute fastest way to
+
+78
+00:25:22,320 --> 00:26:07,350
+Scott Tolinski: compare a two objects. And not to mention, if you do like code splitting, and just import that one function itself, you're not bringing in like a huge library is that their code is probably going to be smaller than what you'd write anyways for that. So yeah, whoo. That's good. Alrighty, let's get this next one going here. Okay, and this is an this is a coding one, the coding, one was saying create a function that masks string characters. Okay, this one is listed as hard. But I'm gonna go ahead and say this is this is the biggest softball ever. This is actually the definition of a softball. It's large and not so easy to hit, but it's lifted as hard. Okay, can you describe how CSS specific f this word, man, specificity,
+
+79
+00:26:07,380 --> 00:26:08,160
+Wes Bos: specificity,
+
+80
+00:26:08,190 --> 00:26:13,050
+Scott Tolinski: specificity? Yeah, I do this for a living specificity works?
+
+81
+00:26:13,410 --> 00:27:21,570
+Wes Bos: Yes. So in CSS, you have elements and things on the page that you want to grab and apply CSS to it. And and there's this like, kind of actually complicated calculation as to who decides what wins if you give something a background red, and then you have another selector, and it's background green, like, Who decides if it's going to be red or green. And that's, that's what specificity is. So there's a calculation that goes into it. That says like, Okay, if you have a class selector, you get like one point. And if you have an element selector, you get two points. And if you have an element and a class selector and a child selector, you get like three points and where it is in the document. Also, it gives it more specificity or less specificity. So if if a selector comes on after, after another selector, so you say background red and background green, then the green is going to win out if the specificity of those two selectors are are the same. So there's a whole bunch of things that play into it, depending on how specific the selector is, and where it is in your CSS. And that will decide who wins out.
+
+82
+00:27:21,900 --> 00:27:23,760
+Scott Tolinski: Nice Battle of red and blue.
+
+83
+00:27:24,029 --> 00:27:43,980
+Wes Bos: Yes, here we go. Let's see what the actual answer says, oh, inline rules. That's one I didn't even talk about, like is the CSS in a separate CSS file? Is it in a style tag? Or is it a style attribute? there? Number of ID selectors, numbers of classes, pseudo and attribute selector. Number of tags. And pseudo element selectors. So
+
+84
+00:27:44,130 --> 00:27:46,140
+Scott Tolinski: exclamation point, important.
+
+85
+00:27:47,100 --> 00:27:56,580
+Wes Bos: Good to hear specificity matrix, inline ID, class pseudo tag pseudo element. In the case of equal specificity, the last rules applied, I said that
+
+86
+00:27:56,700 --> 00:28:12,180
+Scott Tolinski: this question if you if they would ask you to, like write out that matrix. Like, I feel like I could do it from memory. But you know, it might leave out one or two things just because you're not thinking of everything. Hopefully, I could just do that. Just because you have been, you know, from just writing CSS, the matrix is so
+
+87
+00:28:12,480 --> 00:28:20,760
+Wes Bos: yeah, that's, that's a really good question. I think because if you're hiring someone and you have a large code base, things get messy real quick, if you don't really understand how that works.
+
+88
+00:28:20,789 --> 00:28:22,410
+Scott Tolinski: Yeah, definitely. Alright, let's
+
+89
+00:28:22,410 --> 00:28:37,230
+Wes Bos: wrap it up there. If you like this kind of episode, let us know. Tweet us at syntax FM, and I'm at Wes Bos Scott has at St. Lynskey. Yeah, and we will do this again. I really like it. When I first found this website, I was really excited.
+
+90
+00:28:37,650 --> 00:29:00,570
+Scott Tolinski: If you like seeing a SCORM on like questions that we should be able to answer. I it's so funny, because I it's like we talk about this stuff. But you you you really know how this stuff works deep down, and you use it every day. But when somebody just sits and asks you to explain it. That's where like, then things get rough. Things get very rough, rough and tough.
+
+91
+00:29:00,780 --> 00:29:17,850
+Wes Bos: Yeah. And if you have your own questions that you would like to see us stumped with. I really like this website. So it's called 30 seconds of interviews.org. And like the It looks like you can just add your own questions on GitHub, which is really cool. So props to the guy who put this together.
+
+92
+00:29:17,880 --> 00:29:19,320
+Scott Tolinski: Yeah, it's nice. Very nice.
+
+93
+00:29:19,590 --> 00:29:27,630
+Wes Bos: Yeah. So go ahead and add in your own questions on the GitHub, and that will that will feed future episodes. Sick,
+
+94
+00:29:27,660 --> 00:29:29,520
+Scott Tolinski: so yeah, cool. Cool, man. That's
+
+95
+00:29:29,670 --> 00:29:32,790
+Wes Bos: it for today. I guess we'll see on Wednesday stuff.
+
+96
+00:29:33,630 --> 00:29:35,520
+Unknown: That should be the name of the episode stumped.
+
+97
+00:29:35,970 --> 00:29:41,460
+Wes Bos: stumped. Yeah. st you MPD. Like it's like pumped.
+
+98
+00:29:41,520 --> 00:29:44,460
+Unknown: Yeah, dude, that's perfect. Love it. stumped. printed.
+
+99
+00:29:44,490 --> 00:29:49,290
+Wes Bos: stumped. Northwestern Scott. All right. That's it. Alrighty, we'll see you next episode, please.
+
+100
+00:29:51,090 --> 00:30:00,900
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you will. Like this show
+

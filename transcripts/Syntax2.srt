@@ -1,0 +1,416 @@
+1
+00:00:03,810 --> 00:00:09,090
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:10,950 --> 00:00:47,579
+Wes Bos: Welcome, everybody. Welcome to the second episode of The syntax podcasts, we're super excited to be talking about web RTC and get user media today. And essentially what that is, it's actually not all that new. However, Apple iOS 11, recently released or it's, it's about to be released. And that was that was sort of like the last missing link. And we're going to be talking about how to access your webcam, how to access your microphone, and a new way to sort of send data from browser to browser, which is called WebRTC. It sort of goes hand in hand with with get using media. So I'm going to kick it off. Hello, Scott, welcome.
+
+3
+00:00:47,759 --> 00:00:49,020
+Scott Tolinski: Hey, how's it going? How
+
+4
+00:00:49,020 --> 00:00:51,030
+Wes Bos: you doing? What are you working on these days?
+
+5
+00:00:51,540 --> 00:01:18,540
+Scott Tolinski: Yeah, working on a bunch of improvements, really, to the level up sites, just upgrading everything to latest versions of Meteor to take advantage of some of this sweet code splitting and bundle packaging they got going on right now. Changing up routing, moving off of a sort of an older Meteor router to react router for throwing in some server side rendering in there, just basically a bunch of just nice little updates about you.
+
+6
+00:01:18,980 --> 00:02:47,520
+Wes Bos: Awesome. I just finished up the big coupon rewrite of 2017. I previously only had fixed amount coupons. And then I also didn't have the ability to restrict a coupon by by product. So what was happening is that like, sometimes I would have these like really big coupons for people who needed like 50 bucks off of the team license, because for whatever reason, they needed to bring it down by one person. And people were finding them just by like guessing what the coupons were and then using it so I had a couple people checkout by with like a $2. So I, I rewrote the whole thing, which is pretty cool, because essentially have the coupon and then I have like all these different levels of restriction. So I can restrict it now by by an entire course like react for beginners or by a product, which is like react for beginners master package, or only a teen license. And then I can also restrict it by by time, I can restrict it by either being a fixed amount or percentage off. And then I can also restrict it by country, which is really cool. I just rolled out these, what's called parody purchasing power, where if you're coming from one of the countries around the world where your buck doesn't go as far you can now buy it at something, it's it's still, it's a little bit more affordable for you. What from whatever country you're coming at. So pretty, pretty stoked to finally get that out.
+
+7
+00:02:47,639 --> 00:02:54,150
+Scott Tolinski: Yeah, I mean, like the benefits of rolling your own platform, right? Yeah, exactly. Well, freedom.
+
+8
+00:02:54,930 --> 00:03:12,630
+Wes Bos: It's true. Like some people ask me why I don't have like you use like an existing platform. And it's because of stuff like this. Whenever I have an idea like this, I can just go right into it and start building out my own thing. There's no way I would be able to have something that custom with an existing platform.
+
+9
+00:03:12,750 --> 00:03:13,950
+Scott Tolinski: Yeah, totally. Yeah.
+
+10
+00:03:13,980 --> 00:03:17,220
+Wes Bos: Well, and you had your first father's day yesterday.
+
+11
+00:03:17,310 --> 00:03:28,889
+Scott Tolinski: I did. Yeah. So first, I know, little guys a month old today. So it was great. Ya know, just hung out did some decent you know, yard work stuff and felt filled very
+
+12
+00:03:28,950 --> 00:03:31,980
+Unknown: dad ish. You know, the most dad thing ever. Yeah, yeah, totally.
+
+13
+00:03:31,980 --> 00:03:45,810
+Scott Tolinski: Yeah, I did everything but like cook steaks or something other good stuff. That's awesome. It was great. And it's a it's been a wild month and feeling very, very, very just blessed and happy. You know?
+
+14
+00:03:46,130 --> 00:04:10,230
+Wes Bos: Yeah. Awesome. That's good. We should we should talk about like parenting. I have two kids as well, that are nine months and two years old. Right now, we should do an episode on what we've learned from parenting or whatever. There's this like, Cool thing that I like to call like the parent effect, which is like, when you have kids, it sort of kicks into high gear and you really start getting shit done. I noticed that at least when I started having kids.
+
+15
+00:04:10,260 --> 00:04:28,800
+Scott Tolinski: Yeah, I'm feeling that I'm definitely feeling it. That extra dad's strength in my work every day. Like, you get this little boost, like yeah, you really got to make this work or else you know, like, yes, there's the consequences are much greater. So yeah, yeah, absolutely. Yeah. What's going on in your life?
+
+16
+00:04:29,820 --> 00:06:09,630
+Wes Bos: Not a whole lot. I'm just getting ready for a whole bunch of vacation. I got something like four weeks of vacation plan the summer nights a whole bunch of cottaging or lake house or cabining, depending on where you're you live in the world. But we just rented a whole bunch around around the states and here in Ontario, so Oh, cool, excited to take some time off. So let's kick it off. We're going to be diving into web RTC and get user media so um, I thought that I would just sort of like kick it off and Talk about what the two things are. And then we're going to dive into a whole bunch of examples of what it is where we've used it in the past and, and whatnot. So web RTC is, stands for real time communication, which essentially is a new protocol, it's a way for you to talk from browser to browser without having to actually have a server in between. So if you're doing something that is needs to be real time, like video chat, or audio chat, or you're doing something that is very bandwidth heavy, again, like video or audio chat, it doesn't necessarily make sense to go upload your video to a server and then have the server relay that over that's, that's too heavy. There's too many points of failure there. So what WebRTC aims to do is that you have this new protocol, which you're allowed to talk from client to client, you can talk browser to browser, you still do need a, what's called a stun and a TURN server, which is just a server that sort of like connects the two, it's like plenty of fish for servers, where you can just like, I don't know if that makes sense or not. But
+
+17
+00:06:10,320 --> 00:06:12,210
+Scott Tolinski: what is what is plenty of fish.
+
+18
+00:06:13,260 --> 00:06:42,510
+Wes Bos: Right? That's a dating website where it connects to eligible people who are interested in courting each other, right. And in our case, we have the the browsers that need to talk to each other, and then the the server's just figure out, like, I don't know, router levels, and networking and traversing all of that networking and IP addresses to get a solid connection between the two. I don't know any questions about that, or any comments about that?
+
+19
+00:06:42,600 --> 00:06:58,440
+Scott Tolinski: Yeah. So uh, with the the sun server, the TURN server, so those services that you typically have to hire out pay for rent as a sort of a server space, like you would a typical server virtual server? Yeah, I think
+
+20
+00:06:58,800 --> 00:07:20,790
+Wes Bos: from from what I've done before, in the past, is that I've used a public one, just because you can obviously host your own. But I just don't understand how it works. It's it's a very low level networking sort of things. And I'm assuming that if you look, you could find some service that will do that handshake between the two, it's, it's very little overhead.
+
+21
+00:07:21,000 --> 00:07:28,440
+Scott Tolinski: Yeah. So if you're doing a more than a hobby project, you'd probably want to roll your own or use a service or is that?
+
+22
+00:07:29,340 --> 00:07:47,670
+Wes Bos: I would, I would, I would say you probably could get find something again, I haven't done it. In a couple years. When I was initially doing it. It was like a little, I think it was like a Python server you had to get up and running. So you could probably find some existing package that will get you up and running with a low servers. Cool.
+
+23
+00:07:48,180 --> 00:07:55,800
+Scott Tolinski: Yeah. So yeah, let's talk a little bit about, you know, what can you do with web RTC and get user media?
+
+24
+00:07:56,010 --> 00:08:24,870
+Wes Bos: Yeah, so the the get user media end of it is the is sort of a new browser API. It's not new, it's been around since 2010. I look back at my initial examples, it was in 2010. And it was pretty cool, because you could actually access the webcam and the microphone from your actual browser and get using media is allowing you to access media from the user. And obviously, that's going to be webcam and audio. But it could really support any sort of input device from the user.
+
+25
+00:08:25,110 --> 00:08:58,350
+Scott Tolinski: Yeah. Go ahead. No. And so like, once you get that, that that video stream, right, you get that webcam stream, I mean, you're not limited to just here's the video stream, right? You can, you can throw it into a canvas, you can, you know, take screenshots, you could manipulate that Canvas. So the possibilities of just having access to the webcam alone, are just like pretty endless. If you're, if you think about it creatively enough to just, you know, take that information, you're just working essentially with a, you know, matrix of pixels really.
+
+26
+00:08:58,770 --> 00:10:29,580
+Wes Bos: Yeah. So what happens is that, when you ask the user for their webcam, or their audio, they will give it to you. And then the browser will sort of just dump what's called a blob on your lap. And that blob will, you can then pipe that into an audio element or video element. And then the sky's the limit, you can take screenshots of it, you can take the raw data out of the video object and dump it into a canvas, you can take pictures, we'll talk about some some real examples of stuff that we've worked up in the past. But essentially, by having these new API's in the browser, they let us do things like slack is now putting out sort of a Skype competitor, or Google Hangouts competitor. And they can do that because all of the stuff comes for free in the browser with using WebRTC. Another really cool example that I was super excited to see is web torrent. So if you know how BitTorrent works, it's there's no centralized system. There's essentially you get a torrent file And the torrent file points towards a tracker. And then the tracker will will connect you with other people that also have that bit torrent file and you can send data directly to that person or receive data from that person. So someone said, Well, that sounds like web RTC. So they've made web torrent, which uses web RTC, which again, is just a protocol for sending data. And then you can run a bit torrent client in your browser by sending data back and forth via a WebRTC. Connection.
+
+27
+00:10:29,850 --> 00:10:30,360
+Unknown: Yeah,
+
+28
+00:10:30,410 --> 00:10:34,350
+Scott Tolinski: that's a, that's pretty brilliant. When you think about it.
+
+29
+00:10:35,070 --> 00:11:03,480
+Wes Bos: It's, it's amazing, because if you think about like, like, if somebody were watching, like, even my courses, I don't do this, but I've thought about it is that if you're watching one of my courses online, you could also be acting as a seed for other people that like you just watched two minutes of it. Now, you could send that two minutes to somebody else, obviously, and be it can't just use up everyone's bandwidth, but I'm pretty sure that's how Spotify works as well, by saving a bunch of their bandwidth. Oh, really?
+
+30
+00:11:03,960 --> 00:11:05,580
+Scott Tolinski: Yeah, that's pretty wild.
+
+31
+00:11:05,879 --> 00:11:15,510
+Wes Bos: Yeah. Um, so let's talk about some examples of stuff that we've done with with WebRTC. In the past.
+
+32
+00:11:15,749 --> 00:13:46,950
+Scott Tolinski: Yeah. So you know, I came into web programming through actually, originally through I was a music major in college, and one of my first classes was this music programming class. So my initial introduction into programming was through music and video programming. And, you know, you were making things like like video editing software, vj stuff to maybe have videos live, manipulated by audio and stuff like that. So that's initially when I came into web stuff, that's sort of where my brain was. So what's the way that the way that I've always thought about this video stuff is what like, what you have access to the video stream, you can just it your your possibilities are endless, really. So one thing that I've been wanting to do for a long time as a as a dancer, is when you perform a you dance or something like that, it's, it's not often that you want to essentially see yourself while you're doing it, you maybe want to watch yourself in the mirror, but you want to see what it looks like. So I created this, what I call a time machine mirror, which actually records any given amount of time, I haven't tried it over 30 seconds, I'm a little afraid of doing it over 30 seconds for the the buffer essentially will break or something like that, because it's a lot of information. But really, what you're doing is you're recording a given amount of time constantly. So constantly, your recording in 30 seconds spurts. And then the next 30 seconds plays back the previous 30 seconds spurts. So that way, you can treat this as sort of like a mirror that's showing you 30 seconds ago. So basically, I can go out and I can do some sort of a dance performance. And then I can come back to my computer. And I can watch it without ever interacting with my computer without touching anything without ever recording anything. So essentially, what I'm doing here is I am I'm opening up with get user media, I'm taking the audio, or I'm taking the video as a blob. And with sort of a set timeout, after 30 seconds, I'm pushing that data somewhere else into a buffer in which I'm going to be out playing it again, 30 seconds, but at the same time, I'm still recording those 30 seconds. So it's essentially like you constantly have one variable, that's the stored data the previous 30 seconds, then you have another that's essentially the current data coming in, it's allowing you to essentially see back in time, 30 seconds ago.
+
+33
+00:13:47,310 --> 00:13:52,530
+Wes Bos: That's pretty cool. And, uh, do you do anything with those files after 30 seconds, or they just get garbage collected,
+
+34
+00:13:52,560 --> 00:14:09,180
+Scott Tolinski: they get garbage collected, okay. And I thought about saving them, but you know, and the reality is, it would be cool. Maybe if you had in that 30 seconds of time, like if you did something really great. You could always just throw a download button on there. And in pop that out as you know, an mp4 or whatever.
+
+35
+00:14:09,780 --> 00:14:30,570
+Wes Bos: Yeah, so there's there's another API pass get user media and that's called media recorder and media recorder will will take a stream which whether it's I believe they can do a screen capture, or you can do like hot off your your camera. And then you can actually save that off to a webcam or mp4 or something like that.
+
+36
+00:14:30,690 --> 00:14:35,880
+Scott Tolinski: Yeah. And I'm actually using the media recorder to have the 32nd old
+
+37
+00:14:35,970 --> 00:14:37,170
+Wes Bos: Oh, are you okay? Yeah.
+
+38
+00:14:37,170 --> 00:14:52,500
+Scott Tolinski: Cool. So that's that's essentially how I'm storing the data. Right? So it's coming in I'm using media recorder for the the current blob, right that's coming in. And then I'm, I'm starting it essentially is just like a standard video playback. 30 seconds later.
+
+39
+00:14:52,530 --> 00:15:35,250
+Wes Bos: Yeah. That's pretty neat. There's, um, there's this really cool app. Electron app electron is sort of like the They took Google Chrome and made it so that you can record desk or you can do desktop apps. And things like slack and whatnot are built in in atom. And somebody built this thing called cap k AP, it's at get cap Co. And it allows you to just record your audio and parts of your screen. And then it will kick it off to an mp4 on your desktop. And it's really neat, because these apps used to be really hard to actually get and you had to pay for them. And someone just went ahead and built one with HTML, CSS and JavaScript, using these browser API's on the desktop.
+
+40
+00:15:35,460 --> 00:15:43,410
+Scott Tolinski: Yeah, and it's brilliant. Because you get, like you said, you get it for free. It's a proprietary system that you have to create from scratch. It's brilliant.
+
+41
+00:15:43,800 --> 00:16:03,360
+Wes Bos: It's true. It's you think about like how much how much engineering went into building something like Skype, where in the browser, it comes for free, including, like, if you have, if you don't plug in headphones, and you get like that feedback, the browser automatically cancel that out for you. It's pretty neat.
+
+42
+00:16:03,450 --> 00:16:14,070
+Scott Tolinski: Yeah. Right. And I'm sure that bit of logic is that I'm sure that that took quite a bit of time and quite a bit of money to create and things like Skype. So yeah, yeah.
+
+43
+00:16:14,850 --> 00:16:16,200
+Wes Bos: It's, it's pretty sweet.
+
+44
+00:16:17,610 --> 00:16:19,860
+Scott Tolinski: You've been working on a security camera.
+
+45
+00:16:20,009 --> 00:19:20,300
+Wes Bos: Yeah, it's I actually did it quite a quite a long time ago. But a couple of maybe six months ago, I actually updated it. And when I was living in a rental up in Toronto, well, what happened is that I would get packages to my delivered and I was my office was in the back of the house and the, you know, delivery people, they like knock, and then run away, and you have to like, take a bus to go get your package. So what I did is, at the time, when when get used to media just came out, the very first browser to support it was opera. And this was before opera merged their their engine with Chrome, so it was just opera. And a cool thing about that is that opera on Android already did it as well. So what I did is, I built this thing, where I would take the take the hot feed off the camera, on my phone or on my on the desktop, and then I would pipe that feed into a video element. And then every 200 milliseconds or so I would take a screenshot of the video into a canvas element, because that's if you want to work with your actual data, you got to put it into a canvas element. And then when you have something in a canvas element, you can pull out all of the pixels, it's actually pretty cool. What happens is every single pixel of the picture, you get four values, the red, the green, the blue and the alpha values. So you just get this massive array of millions and millions of pixels. And with that information, what I was doing is I would take a screenshot and then take another screenshot. And then I would just I'm sure this is probably the worst way to do it. But I'm sure there's better ways, better algorithms, but I would just do like a massive diff. I think I use like lodash diff or whatever or you some, some algorithm out there that would like check how different the two arrays were. And then if the two arrays were more than 30% different or 40%, you can set the threshold, then that's that's motion detection, right? You take a picture, you take another picture two seconds later, if they're different enough. That's motion detection, right. So what I did is I built up a client, which was this thing that took the pictures and diff them, it was funny a diff them right on this old Android device, and it it actually ran just fine. And then if there was motion, it would take that image, convert it into base 64, which is sort of like a text representation of an image kind of cool. And then I would send that over a web socket with socket IO to my computer, which was on the other side of the actual house. And then it would show up in this little browser window that I had open, which is kind of like the the other end of it. So it was just a little node server that was communicating between the two browsers then it worked extremely well to be able to record motion between the two and I actually got some pictures of the mailman coming up.
+
+46
+00:19:20,810 --> 00:20:02,910
+Scott Tolinski: Yeah, and that's like a perfect example of using your your technical abilities or using your, you know, want abilities right, like I want to learn web RTC. So let me just hack away on something. And I think those are the some of the best ways I'm not saying necessarily that you learned web RTC through this but like, that's one of the best ways to learn. Okay, yeah, even better, right? Like learning these technologies when you have a practical goal like that, that you know exactly what you want to come out with. And it's not too far fetched. Yeah, in my opinion, is like the best way to pick this stuff up. Yeah, just come up with something. It doesn't have to be a security camera can be like something totally wacky.
+
+47
+00:20:03,959 --> 00:20:27,420
+Wes Bos: But get just just build something fun. That's really how I got into it. And my, my, I'll talk about the next one in a second. But that's my whole philosophy towards learning in general is build something fun that you're going to be invested in. Don't build these like silly things where like it works, and then you never actually do anything with it. Because you're gonna push yourself that extra 20%. If if you're actually really, really invested in it. Yeah,
+
+48
+00:20:27,420 --> 00:22:04,890
+Scott Tolinski: seriously. Yeah. And one of the, and likewise, one of the first things I built was a, this color bar projection app, it worked. So similarly to yours, right? I'm doing just a diff on two videos. But the only difference is I split those videos up into four equal sections. And that turned it into essentially vertical sections. So the way I did it, I've made this essentially a video synthesizer or a projection synthesizer. You You had a projector project for color bars onto the wall, you could actually see a video of this on YouTube, I think you just type in color bars, it might be under my username, I can put it in the show notes. But basically, yeah, it projected four color bars onto the wall. And if someone were to walk into any of the color bars, it was playing a note from a chord. And if you were to run through them, it would play the chord. So you know, you had various people, it was at an art exhibit. So people could walk into it and run through it and make it like an E major chord. So Oh, wow. Yeah, it was like that the apple, you know, the apple startup tone, essentially. But yeah, so really, the whole thing was built on the same idea, right, you have, essentially an initial screen capture of those four bars, you could split those four bars up, because you know, they're, they're widths essentially into four equal canvases. And then you can just do a diff on each one of those. So if any one of those triggers, then you're sending essentially amedee signal, I was sending it to Ableton Live, which was just handling the audio synthesis, because I wanted to use some nicer sounds than maybe what I get out of the browser.
+
+49
+00:22:06,120 --> 00:22:19,470
+Wes Bos: That's super cool. I just now I'm thinking of so many different ways that you could, you could be doing this with a with a webcam, you could just pull in the data from the webcam and and be running. Yeah, for now algorithms against it. And once
+
+50
+00:22:19,470 --> 00:22:26,130
+Scott Tolinski: you have all that data, I'm sure there are already video tracking. Have you looked into any video tracking stuff? Yeah,
+
+51
+00:22:26,130 --> 00:22:33,450
+Wes Bos: that's, that's my next one. Actually. I'll talk a little bit more about that. Cool. But yeah, I don't know, do you have anything left on your,
+
+52
+00:22:33,689 --> 00:22:46,620
+Scott Tolinski: um, that nothing on that particular but with video tracking stuff? There's, there's some really, really interesting things. I haven't done it in the web. I've done it on some other platforms, with video tracking programming. So I'd love to hear what you have to say. Yeah. So
+
+53
+00:22:46,620 --> 00:24:43,200
+Wes Bos: back in 2011, when I was I was pretty into this. I was the kind of the first thing that I built was sort of a face detection, where I found this library that does face detection on images. And I thought like, Oh, that's interesting, I wonder if you could just do it a lot, really. So I loaded up this face detection library. And then I figured out how it could just pipe an image into it. And then it would turn you an array of faces, and then each array a face will give you a width and a height and like where the eyes probably work. And it actually worked really, really well. So I just set it up on a continuous loop. Where every it depends on how how beefy your machine was, at the time, it was, I think every 200 milliseconds or So would it be able to or every hundred milliseconds. I tried it out recently on my new MacBook, and it's just buttery smooth. And essentially, what it would do is it would find the faces and then it would take this like, like hilarious like mustache and nose glasses. I just put that right over top of your actual face. So you could just like walk around the actual image, and it would actually detect where your face was. And it was pretty simple, maybe 100 hundred 50 lines of code for me to get up and running. And it was leveraging one of these libraries out there that had been trained to detect actual faces. Now, there's there's much better libraries out there now to do this sort of stuff. And they can do things like detect hot dogs, or whatever. Though Silicon Valley built an app to detect hot dogs in these models just need to be actually trained. What I learned is that these models that have been trained for other applications can also be used on the web. You just need a training library that already knows about faces or hot dogs or whatever it is that you're you're using. Well,
+
+54
+00:24:43,620 --> 00:25:02,580
+Scott Tolinski: yeah. And you have to imagine that that's how the Hangouts, you know, the Hangouts has all those different costumes they can put on you and stuff like that. Yeah, just like exactly what you're describing. I mean, you have to imagine they're doing some sort of similar just face detection video, finding your eyes, putting Things aligned with what it's finding.
+
+55
+00:25:03,870 --> 00:25:42,030
+Wes Bos: Yeah, there's a super good. Another thing that I found out that at the same time, and this was using kind of 3d where I would print out these little QR codes. And then as you move the QR code around the actual video, it would detect where the QR code is, and at what angle it had been bent at or angle that. So you could just like, and this is what augmented reality is, is that you, you look through a pair of glasses or you put your phone up in the air, and then all sudden you see Pokemon or, or something on the actual that is overlaid on top of the camera.
+
+56
+00:25:42,180 --> 00:26:44,100
+Scott Tolinski: Yeah, so it reminds me of one of the things I built was a very similar, but instead of using a QR code, I was just using like a fluorescent sticky note, because this was before QR codes. So I would put the fluorescent sticky note on like a black background card or something like that. The whole thing was just a small little business card size thing. But you could move it around the frame, and it would detect not only the position of the card, but also how close in, in 3d space the card was in to and from the camera. And I was using those values to both modify video as well as audio. So I essentially made I wasn't I didn't realize this at the time, but I made a video. What's the word? airman the theramin? Yeah, I made a fairman with my webcam. And it's dead simple, though. If you think about it, and you have that tracking component, you move it up and down in space, you can control the pitch, the frequency, all of that stuff. Yeah. Yeah, that's amazing. The possibilities are truly endless, right?
+
+57
+00:26:44,100 --> 00:27:05,220
+Wes Bos: Especially if you know you're doing like, I'm, I'm just like a web developer here, sort of hacking this stuff together. There's actual people out there that this is their career, and they understand how image processing works, and how to detect edges and things like that. No kidding. It just blows my mind. If we can do it, and we're just, we're just like slinging divs on a normal day, bring it
+
+58
+00:27:07,050 --> 00:27:09,120
+Unknown: out, do they just slang and then is
+
+59
+00:27:09,180 --> 00:27:59,160
+Wes Bos: that that's actually was another example here is at so in 2010, I did all these examples. And then I did this YouTube video showing, like what I had learned. And it got pretty popular. And that's actually how I got into conferences. O'Reilly asked me to come speak at their first fluent conference, nice. And part of my conference was I built this thing that would take my raw feed. And then I brought a big Burstall board, which is like a big piece of paper. And I did an html5 green screen, where I just put it the green screen behind me, I couldn't find green. So I had adjust the code to detect pink. And then we had the slider RGB sliders at the the threshold. So if the value was between a threshold of this green and this green, then make the alpha channel of that pixel zero,
+
+60
+00:27:59,220 --> 00:28:03,660
+Scott Tolinski: right? Because you have access to each channel of each pixel. Exactly,
+
+61
+00:28:03,690 --> 00:28:19,560
+Wes Bos: yeah. And then you can just take it out. And then whatever's behind you, whether it's another video or just like a picture of a beach, it will just show through, which is pretty neat, because you can take the data from the canvas, and then dump it back into another canvas to display it, which is pretty neat. Yeah,
+
+62
+00:28:19,590 --> 00:28:36,720
+Scott Tolinski: yeah, like I said, possibilities are seriously there seriously. And you don't have to do very much for it to be cool. I mean, if you're getting into the stuff you use, get user media, you pop in your webcam, you make an app that you click a button and just saves a screenshot. That's cool.
+
+63
+00:28:36,720 --> 00:29:17,850
+Wes Bos: I mean, that's, that's, that's something I couldn't have imagined doing on the web. When I started working on the web. It's, it's pretty neat. If anyone's actually interested in getting started, I've got a whole day on my JavaScript thirty.com series. And we just kind of dip into how do you access a webcam? How do you take it from the webcam into a Canvas? And then how do you start manipulating the pixels? So we talked about a couple different filters where we mess with the RGB values and offset them. So you look like a ghost. Some pretty fun stuff. And what's cool about that is that it's just enough to get you started. And then people usually come back three or four days later, and like, I haven't slept, but this is what I built. It's amazing.
+
+64
+00:29:20,790 --> 00:29:21,600
+Scott Tolinski: That's awesome.
+
+65
+00:29:21,900 --> 00:29:35,580
+Wes Bos: Yeah, yeah. So I don't know. Those are just some some really cool examples. Obviously, we're not experts in this stuff. But we've we've both used them and had a lot of fun with them. Anything else that you've got to say about this stuff, Scott? Oh,
+
+66
+00:29:35,610 --> 00:30:00,900
+Scott Tolinski: really? It's just that's where the learning comes from. Right? I mean, we've mentioned it before, but not being an expert in this stuff is is the best possible way because you just you don't know what's possible. You don't know your limits. You don't know. Anything's limits. You maybe have a wacky idea. You just go and do it. And yeah, that's, that's really, you know, I guess the message I want to get across is just start picking this stuff. Just start trying it. It's a lot of fun.
+
+67
+00:30:01,350 --> 00:30:40,830
+Wes Bos: Exactly, exactly. And you learn a lot about JavaScript along the way, like, Well, one thing that I, I figured out is that when you grab all the pixel data from the actual Canvas, it's not a regular array. It's like, I forget what the name is. But it's like a special array in the browser for like, very big arrays. And it doesn't have any of the methods on it. So you have to use like a regular for loop, there's no mapping or filter. But it's, it's pretty fun to be able to learn that stuff. And it's pretty amazing that it actually works, given that you have millions of millions of pixels, and you're doing this computation. Many times, sometimes 6070 times an actual second.
+
+68
+00:30:41,010 --> 00:30:52,890
+Scott Tolinski: Yeah, I mean, when you when you work, only building web interfaces, it's sometimes hard to remember just how truly powerful these machines are at doing sort of rapid computation. So
+
+69
+00:30:52,920 --> 00:31:13,650
+Wes Bos: I'm excited to try it out on iOS 11. I haven't loaded on my phone yet. But uh, once it is off, I'm definitely going to be trying to build some stuff, I think I'm going to try build like another face detection or some sort of thing with the with the, I think I'm going to build something with either face detection or the security camera. I think it'd be fun to get into something like that. Yeah.
+
+70
+00:31:13,650 --> 00:31:19,710
+Scott Tolinski: And we also should note that you you need to HTTPS if you're on a live site.
+
+71
+00:31:19,740 --> 00:31:25,170
+Wes Bos: Yes. You need a secure origin, which Yeah, https or local hosts will work.
+
+72
+00:31:25,350 --> 00:31:25,890
+Unknown: Right? Yeah. So
+
+73
+00:31:25,890 --> 00:32:02,850
+Wes Bos: if you're on localhost, right? Okay, if you're on a live site somewhere HTTPS required, or else it's going to blow up in your error queue, not like any further because you shouldn't be able to access your users webcam, unless you for sure are not having that inch intercepted anywhere along the line. In all of my examples, the the data never actually left the browser, except for the security camera one. But every hour, all of these were just the data stays in the browser. But you can certainly send screenshots over to a server or obviously you can you can stream the entire thing over web RTC. Awesome.
+
+74
+00:32:02,880 --> 00:32:03,960
+Scott Tolinski: Yeah, that's all I got.
+
+75
+00:32:04,410 --> 00:32:07,320
+Wes Bos: Awesome. Well, it's time for some sick pics.
+
+76
+00:32:07,350 --> 00:32:08,070
+Scott Tolinski: Yeah.
+
+77
+00:32:08,100 --> 00:33:23,340
+Wes Bos: So this is the portion of the show where we talk about something, whether it's a physical item and app, something for a code editor, something that we really like. And this week, I'm picking my backpack. I maybe I had a same backpack for about eight years where it was hilarious that it's still had a skateboard Spa in it, because that's how long ago initially bought it. And currently has the skateboard spot in it. I bought mine in high school. Yeah. I'm you last year or whatever this was there. So maybe you'll be buying this after. So if that thing finally blew out on me and the zipper busted, and I decided that I needed to get a new backpack. But I was pretty fussy about like, what it would include some of my things that I needed, where I needed what's called a luggage way where you if you've got a roller bag, you can slide the luggage, you can see the backpack over the handles of the actual luggage, because I do quite a bit of traveling and I really like that it needed a nice spot for sunglasses and needed a nice spot for your laptop. And then just any other sort of like nice things to be able to travel around with this. But still, I don't know I'm still a bit of a punk so it needs something that it doesn't look to to corporate.
+
+78
+00:33:23,360 --> 00:33:23,910
+Scott Tolinski: Yeah,
+
+79
+00:33:23,940 --> 00:34:22,800
+Wes Bos: yeah. So I ended up with this thing called the peak design everyday bag. And I'm not really going to do do it justice, but it's just the best backpack ever. There's all kinds of different zippers that you can access your stuff. It's got dividers inside out, sort of like a camera bag where you can, you can divide it up as you wish it swivels so you can just like sling it from your backpack in front of you and unzip the side without having to put it down. It's got a really nice laptop sleeve in it. It's got this nice little lanyard for your keys where you can clip it onto your key chain. And it's got all these different I don't know straps to be able to hold stuff on to the back. It goes really really small when you need it but will really balloon if you've got a whole bunch of stuff. There's if you go on YouTube and search for peak design every day, you're going to see some really good and you're going to want to buy something it's pretty expensive. I think it was about 350 bucks. Grab it at a local camera store here.
+
+80
+00:34:22,800 --> 00:34:34,400
+Scott Tolinski: But if you are serious about backpacks, this is definitely the one to get like I you started that with I can't do it justice. This is the greatest backpack of all time.
+
+81
+00:34:34,770 --> 00:34:52,440
+Wes Bos: It might sound like oh well. That doesn't sound that great but I look for ever for a backpack that had absolutely everything in it even just the handles are super, they're made out of that like seatbelt material. So yeah, you can even grab it from any angle. You got magnets in it, a lot of love wellmade
+
+82
+00:34:52,440 --> 00:35:01,880
+Scott Tolinski: stuff like that. It's just it's like the little things that that when you have a product that's so well made like you want to get on a plane Casting tell people about a bad show.
+
+83
+00:35:02,100 --> 00:35:06,360
+Wes Bos: Yeah, as if you're not like not very good at talking about it, and people are just like, Okay.
+
+84
+00:35:08,550 --> 00:38:09,090
+Scott Tolinski: Oh, so my, my sick pick is something I've used a couple of times, I haven't haven't dove into it entirely. But it's a video editor for mobile, which is the space that I've been really interested in. As someone who's been editing video for a really long time, I feel like I've tried every platform on desktop from, you know, avid, premiere, Final Cut, Final Cut x, pretty much anything, you can get your hands on DaVinci, whatever. So I've always been really disappointed with video editing, on mobile devices, iOS and Android, the options are pretty terrible. And it's I feel like it's, it's mostly because of the approaches people take, they want to have the same sort of either they, they go in two directions, they go, Hey, it's a mobile phone, you don't need any features. So here's a sort of feature list, basic video editor, what doesn't include things like really true, like editing for like, fine, find splits and stuff like that. Or you go the opposite direction. And they're trying to do a desktop UI. And it's just a complete mess, and yeah, usable. So what I love about this app, which is quick, it's made by GoPro, of all people, and they have essentially features in this thing, where it's, it's simultaneously both as deep and as shallow as you'd like it to be, you can select a whole bunch of video from your, your photos, whatever, and it's going to auto cut it and throw some music on there and throw some transitions and whatever. Or you can say, I don't want any of that, screw it, let me fine tune this thing. And the interface is unlike really any of these other people's approaches. So they give you sort of just what you need at a glance, here's your clips, whatever, whatever. But if you tap into a clip, or you dive further, you have total granular control of this thing of the edits, the splits, whatever. Yeah, and not only that, but effects per individual clip. So they give you essentially what you need at a glance. And then you can dive in further and further. And I edited just some clips of me dancing together for Instagram. And I, it was actually the nicer experience. I usually like have to upload everything and then I'll fire via file, Final Cut, or, you know what iMovie now or something like that just to make a quick edit. And I found this to be easier than that whole process. So it kind of blew my mind. The app interface is one of those apps that you open and start using and you're sort of like, hey, this makes me like rethink everything in this genre of apps. So I find apps like that fascinating for more than just like a Hey, this is super useful to me, but more like, how did they come up with this interface that is uncommon, but still intuitive, and beautiful and all this stuff? It definitely is one of those ones that like makes you think long and hard about certain interfaces that you're just used to using.
+
+85
+00:38:09,780 --> 00:38:20,630
+Wes Bos: So true. So true. Have you used splice by GoPro because it seems that they have I've been using splice and I just checked this out. I'm like, what's the difference icon seems to be almost the same.
+
+86
+00:38:21,710 --> 00:38:31,460
+Scott Tolinski: I haven't used splice, I'm assuming the quick one is called Quick because they give you access to all these like, select a whole bunch of videos and auto make it for you.
+
+87
+00:38:31,770 --> 00:38:46,190
+Wes Bos: I'm just just looking it up right now it says a splice is for those who want a bit more granular control. It's more it's still very intuitive, but doesn't do everything for you like quick does. Interesting. So check out quick then
+
+88
+00:38:47,069 --> 00:38:56,040
+Scott Tolinski: I'm checking out splice it doesn't look like so it doesn't look like splice exists for Android. So maybe quick for Android is splice and
+
+89
+00:38:57,110 --> 00:38:58,050
+Wes Bos: it does everything
+
+90
+00:38:58,050 --> 00:39:00,810
+Scott Tolinski: I get full granular control and quick
+
+91
+00:39:01,860 --> 00:39:08,730
+Wes Bos: what your explorer explaining is exactly what I use it in splice. So it probably is the same app.
+
+92
+00:39:08,940 --> 00:39:09,540
+Unknown: Yeah.
+
+93
+00:39:10,670 --> 00:39:25,380
+Wes Bos: It's great. The thing I use it for, even just for simple things is if you have an Instagram video that's more than 24 hours old, you can't post it on stories. So if you just run it through splice, it'll give it a new timestamp and then you can post it as fresh content.
+
+94
+00:39:26,370 --> 00:39:28,880
+Scott Tolinski: Wait, what is this? What is the time stories?
+
+95
+00:39:29,040 --> 00:39:31,860
+Wes Bos: The well you know, do you use Instagram stories?
+
+96
+00:39:31,919 --> 00:39:38,010
+Scott Tolinski: Oh, you know I never used those. I see them there I like almost never look at them or see them but I really
+
+97
+00:39:38,250 --> 00:39:57,900
+Wes Bos: know that they exist. So is it gram stories only let you post a video that's from your phone that's less than 24 hours old. Otherwise, it will only select it. So if you've got like some decent video or you've exported some video off your computer that you want to post up, then you can run it through splice real quick and it'll put a fresh time stamp on it.
+
+98
+00:39:57,900 --> 00:40:02,280
+Scott Tolinski: hackin Yeah, well pack a heck in the gram
+
+99
+00:40:03,959 --> 00:40:07,560
+Wes Bos: cool so I believe that's it for today anything else on your end Scott
+
+100
+00:40:07,560 --> 00:40:08,360
+Scott Tolinski: I got nothing
+
+101
+00:40:08,789 --> 00:40:22,500
+Wes Bos: awesome so we want to just mention our Twitter account which is slowly climbing thing we just cracked 800 followers it's at syntax FM give it a follow give a give Scott and myself a follow as well. I'm at Wes Bos got
+
+102
+00:40:22,500 --> 00:40:26,850
+Scott Tolinski: your ad s to Lynskey to Li and SPI
+
+103
+00:40:27,230 --> 00:40:38,010
+Wes Bos: awesome. And as always like and review on iTunes or whatever it is that you're using. We'd love to get that feedback from you. Until next time, we'll see you then
+
+104
+00:40:39,810 --> 00:40:50,340
+Scott Tolinski: head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you liked the show. Until next time,
+

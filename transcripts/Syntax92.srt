@@ -1,0 +1,416 @@
+1
+00:00:01,319 --> 00:00:10,530
+Unknown: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to live ski and West boss.
+
+2
+00:00:10,559 --> 00:00:44,250
+Wes Bos: Welcome to syntax everybody. Hopefully you're doing just fine today. Today we're gonna be talking all about react hooks. This is a much requested episode, React came out with this new API in the last what like week, week and a half about react by timing here, this will probably be out for a couple weeks just yet. And we're going to attempt to distill all the information about what react hooks are, why you might want to use one what the differences are between that and regular classes and sort of just give you a nice primer on on how they all work with me as always is Scott Pinsky. How you doing today, Scott?
+
+3
+00:00:44,399 --> 00:01:21,780
+Scott Tolinski: Hey, I'm not doing great. I'm gonna be entirely honest here. I was supposed to be speaking at graph qL summit this week. And I came down with the stomach flu, and I looked at getting onto a plane and then I was stuck in bed and I was like, You know what, there's no possible way that I'm going to be able to get out of bed to get on an airplane and to go stand up and talk. I am. I am just not doing I'm heavily medicated on some anti nausea meds right now. Oh, man. Yeah, I could be doing better. It seems like every time I travel anywhere, I just get sick. So here it is. Here's the time that I'm getting sick after
+
+4
+00:01:22,109 --> 00:01:33,360
+Wes Bos: traveling. There you go. Yeah, cuz we just got back. What about, uh, about a week ago, we got back from San Francisco where we did our live show. That was the last one. Last week's show. We just released that. That was really, really fun.
+
+5
+00:01:33,479 --> 00:01:47,730
+Scott Tolinski: Yeah, no, that was a blast is so much fun. I think it comes out in the audio. And once the videos released, they'll probably be released. By the time this is up. I think once the video is released, I think everyone's gonna see just how much fun we were having on stage if you totally couldn't hear it, because it was it was definitely a blast.
+
+6
+00:01:47,789 --> 00:02:03,560
+Wes Bos: It was a lot of fun. The only thing I noticed is that that when the audience roared, it was just kind of like, it sounded like a couple people were like clapping or something like that, because you didn't we didn't have a microphone on the audience itself. But don't worry if people were actually laughing at our jokes. Yeah, yeah.
+
+7
+00:02:03,749 --> 00:02:10,800
+Scott Tolinski: Yeah. Next time, we just need someone in the audience who asks really hard, and we just need to put a microphone by them. So we can mix it in recording.
+
+8
+00:02:11,429 --> 00:04:05,610
+Wes Bos: Awesome. Well, today's show is sponsored by fresh books, which does cloud accounting in a century, which is going to track all of your errors and exceptions on your server and on your client. I'll talk about both those companies partway through the show. So let's just jump on into it. React hooks, this is something that has been sort of being cooked up for a couple months yet and has just been released to the public from Facebook, it's not confirmed yet, it looks like it's going to be going ahead. But it's not in any stable version of react currently, if you want to use it, you have to install an alpha version of react 16.7. And you will have it and I thought we just kind of go into what are hooks, what are the different types of hooks, when might you want to use them. So before we even get into to what hooks are let's talk about right now about the ways that we can create a component in react, we've got two ways to create a component, right, you have your your typical what your classes. So class, Scott extends react component. And inside of there, you can have your state, you can have all of your lifecycle methods. And then of course, you have a render function. And then the other one that you have is what we call a stateless functional component, or what we called a stateless functional component. I'll talk about that in a second. And that simply was just a function that accepted in props and returned some JSX. Right, it just like rendered out some some HTML from that the resume call that stateless functional component is because it did not have any state, you're not able to have context inside of it, you're not able to do any of your component will mount component did update component will unmount, all those lifecycle methods are not available. So that's kind of what we have right now. And the pain that we have is that with those, let's call those function components, because that's what that's what react is. Now moving into the pain that we have with that is if you want to add state or add some sort of logic lifecycle hook to one of these function components, you have to then convert it to a regular class based component, right?
+
+9
+00:04:05,630 --> 00:05:16,700
+Scott Tolinski: Yep. And we all have that pain of will you make a simple component Now listen, in this simple component needs additional functionality. So then you have to turn it into a class and then that conversion isn't the most fun thing in the world, not automatic. I think there is some like plugins now in VS code that will do it for you, but was never the most fun thing to do. And you know, even that, I've resorted to essentially just making every component A class component just because, well, at some point, who knows, maybe this thing is going to grow. And since you weren't getting any sort of performance benefits from a stateless functional component. Anyways, I was just using straight up class components for everything, even if it didn't require state or lifecycle methods or anything. So now, that brings us to react hooks, which is well basically the solution to using all of those good things that we just mentioned in functional components. So we now have the ability to use what are essentially some lifecycle methods, but not lifecycle methods, as well as state as well as context and some other fancy stuff, as well as custom hooks rafts and all sorts of things that we're going to get into in this episode. In these functional components, they used to just be sort of dumb, dumb components.
+
+10
+00:05:16,740 --> 00:05:35,520
+Wes Bos: Yeah. So anytime that you want to inject or share logic or functionality into a component, let's talk about like, how did we do that? In the very first one, we had react create class, before we even had classes in react, we would use mix ins to inject functionality or data into a component.
+
+11
+00:05:35,550 --> 00:05:42,450
+Scott Tolinski: Yeah. And did you like big sense, cuz I like mix ins. I mean, I did, why they went away. But I liked mix ins. Yeah,
+
+12
+00:05:42,480 --> 00:06:47,580
+Wes Bos: I really liked them, they were very simple, simple way to add in, like, if you wanted to add a router, or the information of a router into a component, you could just have a mixin. And they obviously remove those because of it's hard to compose things, when you have mixes, there's a whole bunch of issues around them. So we moved into from that to high order components. And a high order component is just a function that will wrap your component. And then via that component will introduce things like functionality or data, like maybe a router, routers, methods and data about the current route that will inject it via props. So you just wrap your component in that function. And then the that data and functionality will be surfaced via this dot props dot, whatever, yep, then those are still popular, but they sort of fell out of favor with render props now in render props for this idea of you have a component and you could put that anywhere in your component. And then the child of that render prop component will then expose to you data and functionality via this kind of child function from which you can return. Yeah, more JSX?
+
+13
+00:06:47,670 --> 00:07:48,480
+Scott Tolinski: Yeah, I don't know how many people listening have seen their codebase go through all of these transformations, because level up tutorials has used make sense, then higher order components. And then now it's using render props to fetch this data from Apollo, right. So I, for one, have seen this transition happen from one to one to one. And yeah, when you when you did get to the current render prop situation, things felt very nice for a lot of reasons. But at the same time, one of the big problems with render props is you end up just having some bloat in your component tree, your component tree ends up having a billion components nested deep. And if I look at my react dev tools, it's almost impossible to really like navigate my component tree, and then any sort of meaningful way. And to me that it became not necessarily a big problem. But it did become an annoyance in development and debugging and trying to understand where my data is coming from and how it's living. I mean, I like the way that they they look and sort of feel in my codebase. But at the same time, I've never felt like the perfect solution.
+
+14
+00:07:48,600 --> 00:09:09,840
+Wes Bos: Yeah, that's the solve the problem well, but it also introduces a whole bunch of frustration in debugging, as well as render props writing them, if you've got three or four mutations or queries in Apollo, something like that, then there's solutions to it. But there, it's not the greatest thing in the world. So it's kind of interesting that that react now has come out with this idea of hooks that allow us to use things like state contacts, effects, which is going to be side effects. And you can write your own hooks. And they will allow us to access state and to access context and to access reps and reducers without any of these render props or higher order components, or the the need for making, making a class and then using all of those. So before we even get into any of that, though, I want to say like react is very they understand that people are probably hearing this right now and going Oh, good. I get to rewrite my entire code base. Now, thanks react for changing it. Again, this is where JavaScript fatigue comes in, because they keep changing things. So hooks are 100% opt in, and classes aren't going anywhere. So this is not something where you have to go in and rewrite all of your code. But in in many use cases, this is solving a problem. So like I probably wouldn't go out and rewrite all of your components. Unless you say, Yes, I have that problem. And this is going to fix it.
+
+15
+00:09:09,919 --> 00:09:56,659
+Scott Tolinski: Yeah, when I love that about react, it's one of my favorite things about react, it allows for these incremental changes, you can try it out and see how much you love it. And if you don't love it, you don't have to opt in to use it. And to be honest, any of these features are essentially able to stick around, you could still be using mix ins if you are on an old version of react, you know, it's like there was a conference I was at and they were raising hands about what versions of react people are on. And I wasn't super surprised. But it was interesting to see how many people were running old versions of react and probably aren't taking advantage of a lot of some of the newer stuff in react or even newer techniques and still potentially using some of the older techniques. So you don't have to jump into this stuff. And if you're still using mixins Well, you want to upgrade to hooks then now you've just missed the two other upgrades.
+
+16
+00:09:57,270 --> 00:09:59,130
+Unknown: Do you Yeah, you
+
+17
+00:09:59,130 --> 00:10:12,409
+Scott Tolinski: would write it Maybe if you skip hooks, you'll jump right to the next one. No, who knows? I think hooks seemed like they're a really good solution and probably going to be sticking around for a little while. But you know, you can't have a I almost call it a future ball. What is it called?
+
+18
+00:10:13,590 --> 00:10:14,460
+Wes Bos: Like that? No,
+
+19
+00:10:14,490 --> 00:10:23,070
+Scott Tolinski: like a soothsayer? Or like, a fortune teller would use a crystal? Oh, yeah, not a future ball. Future ball sounds like a sweet like future sport, though.
+
+20
+00:10:23,270 --> 00:11:02,610
+Wes Bos: Yeah. And also like, I wouldn't start rewriting your entire application. If you have a large production application, I would probably just sit on your hands for a couple months. First, let it hit production. Second, let everyone figure out what are the best sort of use cases around it because it comes with a couple hooks out of the box. But it also comes with the ability to create your own hooks, which is great, because I bet in a month or two, we'll probably have another another show that will say here are some of the amazing thing that people have built with hooks. And here's some amazing ways to approach specific problems that we've had in it. So maybe just sit on your hands for a couple months until we see what has come out of the community via hooks. Yeah, it's
+
+21
+00:11:02,610 --> 00:11:31,649
+Scott Tolinski: always funny to see how best practices develop, because something will be released. And then people say, Oh, this is how we do it. Oh, did you notice this pattern or this pattern or this pattern, these patterns that only come out from just trying and experimenting and someone having an idea and how to use these things? It's just a little bit different than maybe how other people envision them. So yeah, I think best practices will come and evolve, and I'm excited, it's going to be a it's gonna be a wild ride here. And it's gonna be a, it's gonna be sweet.
+
+22
+00:11:31,740 --> 00:11:56,309
+Wes Bos: I saw that as well with tag template strings, when they first came out. Everyone was like, This is awesome. But what do we what do we use them for. And then I saw after maybe even just after a year of tag templates, we started seeing like style components is using them in a really neat way. And a couple other libraries are using them in in pretty interesting ways that I would have never have thought of when I was initially sat down and was trying to build up some examples.
+
+23
+00:11:56,399 --> 00:12:22,380
+Scott Tolinski: So the first one we want to get into is probably going to be one of the most used and maybe most accessible hooks that exists in this, which is going to be the use state hook, which is essentially going to allow us to use state function components. Now each state is essentially a replacement for what is typically set state in a class based component with some differences in syntax.
+
+24
+00:12:22,409 --> 00:14:21,450
+Wes Bos: Yeah. So the way that it works is maybe we should explain a hook in react is just going to be a function that you run right before you return. So you have a I've got an example here, right now, if you're driving trying to visualize this, I just have a function called Simple counter. And it says I am age years old. And age is a variable. And when you click on a button, it's going to increment it over and over right, you click a button to increment a counter simplest example that we have. Now, if you have a component that has someone's age, in it, you have a render, which is I am however many years old, but then you also have state that is inside of that. And then you also have an event, that is when somebody clicks it, you need to increment that. So the way that the new state works is that you don't say like state equals an object where it has an age property, and you set that to zero. And then you write some sort of method that will call dot set state and update it. The way that it works is before you return your JSX, you say you state and you pass it your initial state. So here, I say you state and I pass it zero, and that will set it up a new piece of state in that component to be equal to zero. And then that you state is going to return two things, it's going to first return the piece of state, I'm going to call that age. And the second thing it's going to return is going to be the updater function. And you can call that whatever you want. The really neat thing about this is that they don't, it doesn't return you an object, but it returns you an array where the first thing is your piece of state. And the second thing is your updater function. And by returning an array that allows you to destructure into your own named variables. So I'm saying const square bracket age, comma updated update age equals use state zero, and then that will that will return me both the age which I can then go ahead and use that age variable directly in my JSX. There's no this dot State DOT age or props that age or anything like that. It's simply just a variable called age. And then when I want to update age, I simply just call that update age function and pass it the new value. It's really clean and really simple.
+
+25
+00:14:21,510 --> 00:15:39,570
+Scott Tolinski: Yeah, and I think a couple of interesting points here is that in the past, we've always said state on an object right where the object itself was a property and a value. And here we're passing in a single value to essentially a single function rather than one set state function that exists for our all of our state, we have an individual set state for this particular state value. So we don't need an object and a property, we can just pass in a value. Also, I think that multiple return thing is just really interesting. And I think potentially that destructuring and array might confused new people who haven't done a lot of D structuring arrays. But again, it's essentially just basically because it's returned. A couple of values and we want to be able to name them whatever makes sense, right? We don't want to be locked into anything. So I think there's some really interesting things about this pattern. And at first glance, to me, if you ever see a comparison between this and class based stage or anything like that, you'll instantly notice things looking cleaner. And I think that maybe holds true through most of the hooks and conversions that you'll see of class components to function components using hooks. Typically, I think the code just looks cleaner. And I'm sure it's hard to visualize. We're a podcast here, I'm sure you'll see lots of videos and code examples about it. But it to me, the syntax of this is just really nice. It's really nice and clean.
+
+26
+00:15:39,630 --> 00:16:58,200
+Wes Bos: Yeah, it's very simple. And you don't have to do that. The other thing I should mention is that you can have multiple use states inside of a component. So if you have three or four pieces of state, you don't have to put one big object into that use state, you could have like age equals use state seven. And then name equals use state Wes. And then like last name, like you'd have different pieces of state for every little piece of state that you want, which is kind of cool. And then you have separate updater functions for each one. One other thing I wanted to note is that if you look at this, and this is what happened to me at first, so I looked at it, and I was like, Okay, this is a function that runs and when the function runs it initializes, my empty state or my initial state, which is the age of zero, and then it says I am zero years old. But what happens when that function runs again, because something goes updated, does it just reset it back to the initial state. And the kind of the cool thing about react hooks is that normally variables disappear when a function exit, but state variables are preserved by react. So I thought that was pretty cool. The first time that you call use state, it will initialize a blank state. And then the second time that you call you state, the second time that function is run, it will have known that you've already initialized that state, and it will be able to preserve those values and pull them back from what we've had.
+
+27
+00:16:58,289 --> 00:17:20,490
+Scott Tolinski: Yeah, super cool. And it's funny, I mean, you have a little note here that it memorizes it, which is a fun word. And for those of you who are, it's basically you could think of it as like caching, right, it's like cache value, I always like to just add an R into that word and say memorize, because that's sort of what it does. You know, for those of you who hear the word memorizing or never quite sure what it means.
+
+28
+00:17:20,600 --> 00:18:45,830
+Wes Bos: The other thing that I tripped up on with this new update state is, you know, on set state, where if you were to have three items in your state, and you were to update a piece of one of them, the other two would, would just be merged into it. That's not the way that these new state update or functions work. And the idea is that every piece of your every top level piece of state will be have its own updater function. However, if you have, let's say, an object inside of a piece of state, so const person and update person equals use state, and then you, you you, you put Wes in there, if I wanted to update just a piece of the person a piece of West, what you would need to do is you need to spread the old state and then after that pass in the new property, which you want to overwrite it. And then there's two ways that you can do that, you can simply just spread it and then pass the secondary property, or just like in react sets the how we had callback functions, you can also pass your update or a function that will give you access to your previous state and then return the new state from that. And the differences between the two are because set state and update state are a synchronous, sometimes you can get into the situation where the current state in your component isn't the most recent because the the last update state hasn't finished yet. So it's a bit of a weird thing you can look into a little bit more. It's kind of hard to describe on on a podcast.
+
+29
+00:18:45,900 --> 00:19:02,600
+Scott Tolinski: Yeah. Yeah, that's so funny. You like coding podcasts, right? Like, how do we show these things verbally? Because a lot. Yeah, is syntax, as the name of our show would suggest, but a lot of these things are like syntax based and potentially difficult to describe over. Oh,
+
+30
+00:19:02,880 --> 00:19:25,850
+Wes Bos: yeah, I think the React documentation has lots of good examples. And it's worth going and reading through that. Or I'm hoping to do a little YouTube video on just on how this stuff works. So you can see the syntax, but it's more of the ideas here where you have a function that returns some JSX. And if you want to introduce some state to it before you return the JSX, you simply just run a little bit of JavaScript before that you state in front of it.
+
+31
+00:19:25,920 --> 00:19:36,630
+Scott Tolinski: Yeah, well, this is the certainly the the freshest way to write new components in state. the freshest way to manage your cloud accounting software is Freshbooks.
+
+32
+00:19:36,660 --> 00:21:38,640
+Wes Bos: Wow, that's good, good hook into audible. So Freshbooks is our sponsor today and they do cloud accounting. If you've never heard of Freshbooks you haven't listened to any of our thousands of podcasts where they've been a sponsor on it is the small business accounting software that makes billing painless, I use it myself to send out all of my invoices Actually, it's it's really funny because let me tell you a little story about Freshbooks. They called me a couple weeks ago, and we're like, Hey, how's it going? This is whoever from Freshbooks. We're thinking about adding a couple new features, and we just wanted to get your feedback on them. And they had no idea that I was like, they had sponsored my podcast, like it was someone's from the totally different part of so I was just talking to them about basic. So like, what do you mostly use Freshbooks for? And I was like, well, mostly use it for billing Freshbooks. He's like, whoa. But I thought that was so cool. Because they're just calling up their customers at random. I don't have a very like, I'm not like a top shelf customer. I think I have their cheapest or second cheapest plan. And they're just calling up their customers at random because they want to get more out of their customers. They want to understand like, how can we make this product better. So let's just get on the phone and talk to them about how they're using our product, maybe some of the pain points that they haven't the thing that they're I'm not even sure from muscles to say this or not, but they were asking me about reoccurring billing. If they could make away right now you can send recurring invoices, but there, there's a way to also just add a recurring actually charged the customer. So they're asking if that would be helpful for something like that for me. So I just love fresh books, it's awesome. If you are trying to build someone and send them an invoice, if you're trying to log all of your expenses for the year, if you're trying to time track, that you're working on a project with the different rates, it is the software that you need. So check it out@freshbooks.com for syntax, and use the syntax in the How did you hear about us, you're gonna get a 30 day unrestricted free trial. Thanks so much Freshbooks, for sponsoring.
+
+33
+00:21:38,790 --> 00:22:08,940
+Scott Tolinski: Thank you. Cool. Okay, so we we talked a little bit about our new state and how we're going to be using state inside of function components with use state, I think the next one to get into is one of the I think maybe one of the more interesting ones as well, which is the context hooks. So context itself was pretty recently introduced into react. And at first it was using the render prop sort of right, we had our provider we had our consumer, we talked a little bit about on this podcast at once. Yeah,
+
+34
+00:22:08,940 --> 00:22:11,940
+Wes Bos: maybe we should give a quick rundown of what context is. Yeah. So
+
+35
+00:22:11,940 --> 00:22:36,030
+Scott Tolinski: context is basically a way to share state throughout your application, it's a way to set essentially a variable somewhere and access that variable somewhere else to avoid things like prop drilling, where you're passing it down 100 components, or maybe you're sending it from one totally separate area of your application to another right things that aren't connected by the component tree in any sort of way. You can share also not
+
+36
+00:22:36,030 --> 00:22:54,750
+Wes Bos: just state, you can share anything, you can share update or functions, you could share refs, anytime that you want to sort of like take some sort of info, variables, state or anything else, or reducer even. And you want to surface that thing somewhere else lower in your application. Yeah, context is what you want for that
+
+37
+00:22:54,780 --> 00:23:36,570
+Scott Tolinski: word. Yeah. And so now we have what is going to be used context, which essentially is a hook that accepts a context object, and returns essentially the current context, basically allowing us to access the current context values that we want to be accessing, whether that's the data or the functions or whatever, it allows us to access that stuff, just by a simple function, rather than having to do a render prop wrapping our code, basically, again, cluttering up our component tree, which again, is a common theme throughout most of these, a lot of these things are going to be taking things that would have been components with render props, and turning it into a function that just returns something that we can use in our function.
+
+38
+00:23:36,750 --> 00:24:10,620
+Wes Bos: Yeah, I really like this because I'm a big fan of context myself, I use it in my own application, as well as I've done a couple workshops on it, where you can add a very high level, you can store a bunch of data, a bunch of data functions, and then surface them anywhere in the way that we surface them always was just the render Prop, or you can turn that render prop into a higher order component. Now it's so much nicer, you simply just say like const, age equals use context, age context, and that will give you the actual age break before you go ahead and your render, you're not muddying up your templating or your JSX with a render prop in that regard.
+
+39
+00:24:10,740 --> 00:24:15,420
+Scott Tolinski: Yeah. And you get that nice rerender in case anything, updates, right? Yep. Yeah,
+
+40
+00:24:15,450 --> 00:24:22,590
+Wes Bos: so there's not too much to that, it's, it's pretty simple. It's just a easier way to surface your context. Instead of using a render Prop,
+
+41
+00:24:22,710 --> 00:25:03,840
+Scott Tolinski: I think this one's making it more likely for me to want to use context more often. Right now, I pretty much just use Apollo state link for everything, right? I don't end up you. I mean, I think they uses the context or the hood anyways, but I personally don't end up using context that much because of this dirt, everything in Apollo state and it maybe I still will, once you know, we'll see what Apollo's hook situation looks like. But uh, this to me makes context way more accessible. And I'm actually excited because I think it's going to make it easier to teach as well. I think people who are new to react are going to have a lot easier time understanding function, use context, rather than what is the whole render prop syntax and having your app In the consumer and provider stuff, it's a little less jargony. In my mind,
+
+42
+00:25:03,930 --> 00:25:38,130
+Wes Bos: I'm really excited about that you still do have to wrap your application in a provider, but the actual consuming of the data is done via the use context. So pretty excited about that. I'm also really excited to see what Apollo does in terms of because they are like probably the most heavy user of render props, they move their entire API over to mutation and query components, which then expose the data or the functionality via a render prop. So this is this is a prime use case for actually using hooks where I'm assuming that they will eventually roll out their own hooks support.
+
+43
+00:25:38,160 --> 00:26:08,040
+Scott Tolinski: Yeah, if I were to list the things I'm most excited about, it would be Apollo using hooks. And the number two form libraries using hooks, of which there are already a few using hooks. And the results, in my mind look amazing. So I'm excited for both of those two things. Specifically, we will see again, how this space evolves. But I'm just pumped for the future of how all this stuff shakes out. So next, we have effect hooks, which is use effect and use effect is basically how you're going to be writing your own custom hooks. Right?
+
+44
+00:26:08,070 --> 00:26:21,000
+Wes Bos: Yeah, anytime that you're not using one of the built in hooks, you want to make your own hook, you're going to be doing that via you can either just write an effect yourself, or you can make your own hook, which under the hood will use use effect.
+
+45
+00:26:21,330 --> 00:26:39,030
+Scott Tolinski: Yeah, right. And so many of the libraries that you end up consuming are just probably going to be using use effect. Right. And I think this one is the, in my mind, I think a lot of the hooks have potential for a lot of interesting things. But in my mind, the use effect hook I think might have the most potential for maybe exciting developments.
+
+46
+00:26:39,060 --> 00:28:35,550
+Wes Bos: Yes, let's talk about how it works. So what is the effect for the idea behind effect is that anytime that you have a side effect, so what is a side effect, a side effect is when you reach outside of your function and and do something right and and we often refer to functions that reach outside and do something as unpure functions, meaning that the function just doesn't take in info and return something. It also does something outside of the function that the most basic example is a console log. Or if you were to reach outside of your function and update a div the text inside of that or update the title tag, or in some examples we have here, if you want to listen for a click on a div, if you have a database call where you need to subscribe for events from the database call if you want to do some JavaScript animation, if you've got a third party library, all of these things like if you're trying to embed a Google map, that's if you don't have a react component. For that you have to you have to write some just regular Google Maps code. At some point, all of these things are what we call side effects, meaning that they are when the component is in some sort of state, meaning that when the component is mounted, or when the component is updated, some of the data in the component was updated. Or when the component is about to be torn down unmounted, we need to run some additional JavaScript in order to make that happen. And and traditionally, we've been using what are called lifecycle methods in react to do that. So we have the three big ones that are being replaced by this use effect hook our component did mount that's when the component initially mounts component did update, that's when some of the data inside of that component changes and it needs to rerender and then component will unmount. And that's just before that function is ripped off the page. And usually in your unmount, you need to do some cleanup, like you need to if you're listening for clicks in your did mount or if you're setting up a Google map, and you're binding, or you're listening to a database and your did mount, you will need to remove those bindings and clean everything up in your unmount. Mm hmm.
+
+47
+00:28:35,580 --> 00:29:12,720
+Scott Tolinski: I think one of the most common use cases that I see this replacing is the standard hidden API, get your data set your data is the state and then render that data, this is going to sort of replace that that whole flow of now we can essentially access information from our API or anything like that without having to worry about essentially, in my mind, it's without having to worry about these lifecycle methods. Granted, it's a very similar concept. But to me, we have to worry about less things. We don't have to worry about mount verse update, verse unmount, that sort of thing. We're just worrying about the component loading and when it needs that data.
+
+48
+00:29:12,860 --> 00:30:18,300
+Wes Bos: One other cool thing I think about these hooks is that previously, if you've have a few things that need to happen on Mount and a few things that needs to happen on unmount, and a few things that need to happen on update, usually just cram those all into your different lifecycle methods. And your lifecycle methods just start to become the sort of collection of different things that happen, which is not the worst thing in the world. But with hooks, what it's going to do is we'll just be able to take all of that logic and put them into their own hooks, so that we don't really have to cram everything into your did update, especially like sometimes in the did update function, you'd have to run a whole bunch of logic inside of those to check which of the hooks you want to you want to run. Now let's talk about the syntax of of it a use effect is one argument and that argument is a function that will run and that function will run both when the component does mt as well as when the component updates and then the the unmounting. If you ever want to clean up when that thing if you return a function from that first function react will will know to call that function for you when everything's about to be torn down when a component is being removed from the page. Yeah,
+
+49
+00:30:18,330 --> 00:31:26,360
+Scott Tolinski: I think the the syntax here, the fact that it what it does is allows us, we should mention allows us to store these things as essentially functions, right? So because we we can, we can do that we can keep them in a different place. And we can use them throughout our application, basically making this sort of logic that's happening here. Totally reusable. None of that point. Yeah, no, yeah, not only reusable, but it's shareable. And to me, that's the most exciting part of this whole thing is, it's what it's what enables, you know, future future hooks to essentially go off and fetch data almost magically right, we're going to be passing in, if you could imagine a situation where this is a graph, qL query or something like that, and you just have a single function, you pass in the query, and then it returns the data and state just like it would almost with the render Prop, but in a much more simpler way, where we end up having essentially just a single function here. So to me, the most exciting part is the fact that we can store these functions and share them and keep them in a, that sort of way, I think it's going to clean up a lot of code, it's going to allow for a lot of reusability. And it's going to allow for a lot of like, really interesting library situations.
+
+50
+00:31:26,460 --> 00:31:56,670
+Wes Bos: Alright, so that's the effect hook. I've only built a couple quick little things. And this is why I think it's important that we come back in in maybe a couple of months and do another show on this just see what have other people built, what have we learned ourselves? What sort of issues have we run into because it's one thing to click a button and update a number or, or display some some data about a person. But it's another thing to actually build a real application in it, use it in our production applications and see what are the things that we've run into. So look forward
+
+51
+00:31:56,670 --> 00:32:30,780
+Scott Tolinski: to that? Well, and I think one of the things that the use effect, like we mentioned, is going to clean things up a little bit, it's going to allow you to store things and return I think your codes probably going to be easier to read and be less buggy and with less bugs is always a great thing. And another way that you can have less bugs in your code is by using a service like century now century Yeah, century is an amazing service for logging and tracking your bugs, your errors in not only your front end code, but your backend code, all of your code, any code that you write century's got your back, because they they take care of every single platform,
+
+52
+00:32:31,080 --> 00:36:08,580
+Wes Bos: century is awesome for tracking all that goes wrong in your application. They say, essentially, nine cut resolution time from five hours to five minutes. And I actually believe it, I use it in my own application. So the way that it's gonna work is that you install century to your application, I run it both on my node back end and run it on the JavaScript on my front end, they have you don't have to run just JavaScript, they've got things for PHP, and Python and Ruby and every language out there, you can install it, and then it will sort of just catch all of the exceptions that happen, and then store them in the back end. And once you log in, you'll be able to take a look at what are the issues that are happening. So I'm just looking at my boss mostre front end right now. And I'm seeing I'm seeing like an error that just spiked in the last little bit where some code that is related to how the how the page scrolls, when somebody watches a video, I want to scroll the girl the currently watched video to the top of the user list and I'm getting a error cannot read property top of undefined. That's happened in the last couple days, it's happened almost 20,000 times. So obviously, I wrote some bad code there, it happened to 7.5 thousand people. It's not a critical error, obviously, since it's not breaking it, but it could run into other issues. So I can go a little further and say, okay, it happened to not just one user. So sometimes you're going to get these errors that are happening all the time, but just to like one or two users. And if that's the case, you can investigate and say, Oh, just ignore this error. Because it's it's something to do with maybe a Chrome extension that they have installed or something that's on the actual user, because that's the thing about front end development is that you can't control the actual place where your code is being run. So I can take a quick look, I'm seeing that it's it's always happening on Chrome. It's never happening on Firefox. Okay. No, it's a chrome specific issue. It's not happening in any of my other Actually, it's 1% opera, which is the same engine as Chrome. And it's happening on all kinds of different devices. And they are all smartphones. Okay, so now I know that it's, it's happening on just just Android devices that are running Chrome. So this is great. Like, immediately, I've said this error is happening a lot of times, but it's only happening on these specific devices. On this specific browser, you can dive a little bit deeper into all the details on that. And I just spent, what, like 30 seconds on this ad just figuring out where this error is happening, rather than me having to email people and say, hey, what browser are you using? This is a weird one, I don't see it on my build is that are you sure you're still see it, can you try clear your cache all this annoying stuff, I can just get right into it. I'm going to open the drawer after this podcast and they get my Android phone out booted up. And I bet I can fix that issue. So, so quick to fix all these issues, it collects all of the information that you could possibly want. I specifically attach users, you can go into your back end. And if you have a user account, you can attach users to specific errors. If you wanted to, you could reach out to that specific end user and let them know it's been fixed, which is great. So check it out@century.io s s e n try.io, and use the code tasty treats and you're going to get two months free, which is great. They do have a free plan, but you're going to get a boosted free plan, which is great, because you get a little bit more if you have a lot of errors like I do. You're gonna get a you're not going to run out of your quota too quickly if you get this that also works for existing users, which is really cool. So I know a lot of you have signed up for century when I did my Redux digram course a couple years ago, if you still have that account, you can still use this code tasty treat. So thanks so much to Sentry for sponsoring.
+
+53
+00:36:08,610 --> 00:37:00,900
+Scott Tolinski: Yeah, I think one of my most favorite things about Sentry, even though the Add rate is done, I just want to talk about Sentry is that it shows you how many users and how many times in the past 24 hours or past 14 days or whatever, that this error has occurred. So that you can you can really see which ones are maybe like a one off weird sort of situation and which ones are clearly like a reoccurring issue. I am a big fan of that. Cool. Okay, so let's get back into it with some more hooks because there's a bunch of hooks that aren't maybe necessarily going to be the most used hooks are the most talked about hooks, I guess maybe this one might be most used and talked about, we haven't gotten into some of the other ones just yet. But reducer, which is the reducer hook is going to essentially allow you to have a little bit more control than the set state hook that we'd be using. Or the use state episode. It's just called state hook. I guess it's just called state hook.
+
+54
+00:37:00,960 --> 00:37:15,150
+Wes Bos: It's going to be hard to grab the state hook. Yeah, the state hook will give you your both your state and your your updater function. It's gonna be hard just to not refer to it as that state like I'm so used to but yes, yeah, yes. It's gonna you have to catch yourself before you wreck yourself.
+
+55
+00:37:15,170 --> 00:37:18,110
+Scott Tolinski: Yeah, and I'm gonna wreck myself on these new words. So
+
+56
+00:37:19,590 --> 00:39:13,350
+Wes Bos: so what what is a reducer Redux really popularized the idea of reducer. And the idea of a reducer is that it takes in some stuff and then returns you your your new state. So in the example of Redux, usually what happens are in this use reducer. So this doesn't even have to be in Redux, which a lot of people are saying, maybe rip Redux because between context and now being able to have these really slick reducers, in react that replaces a lot of the use case that people had for for Redux. So a reducer is a function that takes in the current state as well as an action. And an action is something where you're like, maybe somebody incremented a number, or decremented, a number or somebody added something to cart, or someone added a comment or removed a comment or liked a certain post, that's what we use in my Redux course, we have a huge array of posts, and each post has a number of likes, and that number of likes on that specific post needs to be updated. So that's a fairly complex state update function, where somebody you dispatch an action, let's call that a like, and then you might also pass along an ID of that post. And then inside of your reducer, you have a bunch of different use cases. So a case of somebody liking a photo, in that case, you are going to find that specific photo, update the number of likes, and then return the updated state. But you could also be somebody deleting a comment, it could be somebody adding a comment, it could be somebody editing a comment and all of the logic of how do you take an array of something and update the data inside of that array is sometimes a little bit complex, and can sometimes be better suited to moving it outside of your your actual function component and into its own function that is called a reducer. So it's pretty interesting if you could take a look at the docs for a couple more examples that they have if that one didn't totally make sense.
+
+57
+00:39:13,380 --> 00:39:23,400
+Scott Tolinski: Yeah, I wonder how Redux survives this personally, because what now does Redux give you that you can't necessarily do here other than maybe the the dev tools, you know,
+
+58
+00:39:23,460 --> 00:40:09,180
+Wes Bos: yeah, the dev tools was really cool, where you could time travel back and forth. But if I talk to people why they're using Redux, it was a because they can inject data at any level. Now context replaces that and be it was because they have this nice idea of nice, clean reducers. Yeah, it was so easy to test all of your logic because it's just a function that returns data. And that's like the easiest thing in the world to actually test. It's pretty cool. As well as we'll do another show on react suspense, which is coming up pretty soon as well. I think between those two things, I don't want to say Redux will die because lots of people are using it loss people are getting good use is that it is still one of my Most Popular courses, even though it uses the older react, create class API, a lot of people ask me if I'm gonna be updating that. And I'm kind of just sitting on my hands waiting to see. Yeah, well, how
+
+59
+00:40:09,180 --> 00:40:11,150
+Scott Tolinski: do wait till everything's analyze? Yeah.
+
+60
+00:40:11,190 --> 00:40:17,310
+Wes Bos: So if you have thoughts about about Redux, tweet us at syntax FM, if you think Redux will stay around or not.
+
+61
+00:40:17,400 --> 00:42:12,440
+Scott Tolinski: Yeah, I'm interested. I'm interested in the future. Again, I think the most exciting things about all of this is what the future will hold for it, rather than what it looks like. I don't know, I guess what it looks like right now is all very exciting as well. But what the future holds is also very exciting. It's a really good time to be a react developer. Right now, I think, with all this new new fun stuff, especially if you like new fun stuff. Next, we have the ref hook for those of you who have liked and use refs at any given point, a ref is basically a way to reference a DOM element in it, the way we did it originally was a ref prop on a component or a DOM element. And that was just a string value. And then there was some sort of magic behind the scenes where that would then become available as this dot refs dot the string name that you had. And while that was an easy API to understand, and it was pretty easy to use, in general, it made for some clean looking code, it didn't necessarily make a ton of sense, like magic strings, just sort of existing now on the rafts object, right. So what happened is, well, we eventually moved into sort of this dot a value assigning things onto the class itself. And then using a function to get the object essentially in an arrow function or whatever, you're passing the the DOM element to assign it to that class property. So like this dot input is now going to be equal to the ref itself in the function, it's hard to explain, it's even hard to explain on video, because the syntax doesn't look great. And it was always sort of confusing for new people to look at. And recently, React introduced some newer ways of working with refs. But I think the use ref or the ref hook is probably the best way that they've come up with so far to interact with refs. Basically how it works is you have a use ref hook that can accept initial value, many times, I feel like that's going to be just null, right, and
+
+62
+00:42:12,510 --> 00:42:18,230
+Wes Bos: you don't have to pass it anything, or you just don't pass it, you pass it nothing, and the initial state will be nothing, right.
+
+63
+00:42:18,270 --> 00:43:43,380
+Scott Tolinski: And so that gets stored to a variable, then use that variable in your ref Prop, just like we did sort of with those magic strings. But instead of being a string, it's an actual variable. So ref is now equal to the new variable you just created. And boom, you then now have access to that DOM element under the variable name dot current. So if you want to set a ref on an input or something like that, you could set focus to that element by saying that variable dot current dot focus and a function or something like that, that's going to then set set the focus into that particular element. As a side note, I keep saying the word set focus, my band in high school was named set focus based after a flash method. I think that was an excellent script for is ActionScript sorry, not ACMA script. So it's kind of hilarious for me to be using that word right now. But just a side note. Yeah. So I like this one, because I honestly, I don't think every input or every form needs to be controlled in but, and for a long time, people were saying rafts are an anti pattern. And I've always liked drafts. Because it was a really easy way to work with really dumb forms, you have a contact form or something like that, you just need the values, it was always really easy to set reps. Even though this magic string value thing was sort of weird. It was always really easy to say this dot refs dot name, this dot, refs dot whatever and pull out those ref values. So I'm personally excited to use this, especially for dumb input values, or just working with the DOM elements. in general.
+
+64
+00:43:43,440 --> 00:45:26,220
+Wes Bos: That's a perfect example of people chant, never touch the DOM, never touch the DOM. And then they intentionally don't use wraps because of it. Like in most cases, you probably want like a an update or function that mirrors that value to state. But every now and then you need to, like grab an element you need to focus like a perfect example is focusing in on an input. If you want to focus an input, you need access to that input. So you can call the dot focus method that's on it. Or if you want to scroll something into view, these are all Dom methods. And you need the DOM object in order before you can actually call any of the DOM methods. There's this website use hooks comm which is put out by Gabe Ragland, and I think this is the I love it's very specific websites. So we came out with this website and it's a new hook recipe every single day. I signed up for it, you put your email in or you can just read them right on the website. And the one example he has today is called use on click outside. So you know like this, if you have a modal box and you want someone to be able to click outside of it, and it closes itself. Yes, if that's the case, you need to listen for some a click on the outside of of the element, right. So this is really good example of first using a ref hook to grab the actual like DOM element that is the the entire box and then like a modal pop up and then using a nother custom hook to actually listen for the clicks on side of it. So a ref hook to grab the element and then a custom use on click outside effect to do the listeners for clicking outside and the listener. So it's all three of those things that we just talked about, which is reps custom effect, and a clean up
+
+65
+00:45:26,250 --> 00:45:40,050
+Scott Tolinski: effect as well. And it's so cool. It almost seems like cheating, because that's going to make it so easy to do that sort of thing. This is like, this is why people are hyped about hooks. Not only that just signed up for that I am I'm geeking out about this right now. I think that's Yeah,
+
+66
+00:45:40,110 --> 00:45:57,960
+Wes Bos: you should definitely it's use hooks comm go sign up for it right now. Because I love when when people put out such helpful because this is something I didn't think of were like hooks can be used together. Right? And this is why I'm waiting to see what what are people coming up with. It's just lots of different real real use cases. Wow, super cool.
+
+67
+00:45:57,990 --> 00:46:07,440
+Scott Tolinski: Yeah. Okay, so let's get into some of the other additional hooks that we have just sort of hanging out here. We have use imperative methods. Can you talk a little bit about use imperative methods?
+
+68
+00:46:08,220 --> 00:46:17,040
+Wes Bos: I can't. Oh, no. Hold on. Let me Google this. Yeah, these uh, these are the ones that I there's a whole bunch of other ones that come along with react.
+
+69
+00:46:17,160 --> 00:46:18,960
+Scott Tolinski: Did you like I pass that one off onto you?
+
+70
+00:46:18,990 --> 00:46:39,570
+Wes Bos: Yeah. Use imperative method customizes the instant value that exposed to the parent component when component when using a wrap, as always imperative code, using ref should be avoided, in most cases use imperative method should be used with for ref. So there you go. There you go. Now, I'm not really I have to see there's a whole bunch of other ones here use mutation.
+
+71
+00:46:39,600 --> 00:47:27,390
+Scott Tolinski: Yeah, you can use layout effect, there are various that are related. And they're actually identical nearly to use effect. So they're sort of very closely tied into use effect. So they use mutation effect is basically another version of essentially use effect. But it fires synchronously, synchronously, during the same phase that react is doing its Dom mutations before the sibling components have been updated. So they're saying here that if you are going to be modifying or working with the DOM, then you should probably be using use layout effect rather than use mutation effect. Again, if I'm saying anything dumb about these, this is still early days. And I need to personally have a little bit better handle on these two. But and they're they're just different versions of use effect for different use cases, essentially,
+
+72
+00:47:27,720 --> 00:47:56,820
+Wes Bos: these are the kinds of things where you'll run into a problem, you'll ask around, hey, got this problem with hooks. And someone will say that's, that's a use case for one of these lesser used actual hooks that you have there. And also, I think that these are often are probably going to be more lower level ones, where you'll just use a third party library, you'll NPM, install some magic hook, and then sort of down underneath the hood, the smarter people than us will know how to use these, we'll be using them for us.
+
+73
+00:47:56,940 --> 00:48:37,080
+Scott Tolinski: Yeah, I can't wait for that. It's cool. So let's get into I had a little section here, it's called Library's already using hooks, there's a really great repo called re hooks. So give re hooks a check. It's basically a listing of a bunch of hook libraries. But there's also a repo inside of that, which is awesome react hooks, which contains not only some tutorials, some discussions, some videos, some tooling, but it also includes a gigantic listing of packages that are already using hooks. So I could list a few of these, but many of these are ones that are are just really super cool. So far, libraries, like react spring, I've already dove into using hooks.
+
+74
+00:48:37,260 --> 00:48:39,210
+Wes Bos: Yeah, animations is a big use case for
+
+75
+00:48:39,210 --> 00:49:37,320
+Scott Tolinski: something we didn't talk about. But if you're using like a third party animation library, it's gonna make things really nice. And you know, I love animation. So for me, I'm geeking out about that stuff. React measure, which we all know is used for measuring everything Formic, which is the like the sort of most used form library is already using react hooks, em, or there's just an unbelievable list of libraries here that are already using hooks. Some of the stuff looks amazing. I saw Easy peasy is a new library for global state for react. It's a very nice and simple API. So if you like easy API's, that kind of thing. Oh, check out Easy peasy. There's just so many good ones in here. Even some brand new form libraries that are just popping up here and there. Yeah, local storage, network status, online status, scroll position, all that good stuff, man. These libraries were like popping up as the convention was going on. So I'm so excited for all of this stuff coming in here.
+
+76
+00:49:37,530 --> 00:49:55,320
+Wes Bos: I'm amazed that people put it out because like I consider ourselves to be pretty on the cusp of this stuff. And it's amazing that people have actually already written libraries and launch side project website with mailing lists and this is only been out for like a week so far as we record this. So it's pretty amazing.
+
+77
+00:49:55,350 --> 00:50:23,940
+Scott Tolinski: Speaking of I don't know if this is if this is any good, but as we as you just said, That little tweet just came into my twitter and it was a VS code extension for react hooks snippet. Of course, it has one install, so it's very fresh. So maybe give that a check. I haven't looked at the so I'm not necessarily endorsing this, but it is here. So this stuff is still, like I said in the infancy and this stuff, just gonna just blow up even more than it already has.
+
+78
+00:50:24,030 --> 00:51:01,650
+Wes Bos: Let's talk real quick about some other resources. So if you if you want to get a more of a primer on how all this works, Dan Abramov has a awesome talk at react cough is just search react hooks on YouTube, and it probably be the first one. Other than that, I watched some nice videos from Harry Wolf, React hooks, a complete introduction. And then a wad has, every time I search anything on YouTube, there's been a wide guys been popping up, which is amazing. So check out Ben aois YouTube channel, he's got a whole bunch of nice little crisp, tiny little videos detailing all the different hooks and in what we have. So I found those to be helpful as well, just to get a little primer on how it all works.
+
+79
+00:51:01,770 --> 00:51:21,750
+Scott Tolinski: Yeah, and I did already mentioned that Austin react hooks, but check it out. It's at re hooks, forward slash awesome react hooks on GitHub. Again, big ol listing all this stuff, just like all those awesome any sort of whatever you're trying to do. So yeah, lots of excellent stuff for hooks. I'm gonna start using them. I've decided I'm going to start using them right now. You know what I'm gonna do? I'm gonna convert my entire code base tonight. I
+
+80
+00:51:21,750 --> 00:51:22,500
+Wes Bos: bet you are.
+
+81
+00:51:24,450 --> 00:51:28,380
+Scott Tolinski: I'm not being serious. But I'm going to I'm going to certainly start using them.
+
+82
+00:51:28,800 --> 00:52:04,440
+Wes Bos: Totally. I will probably other people have been emailing me already. Hey, are you gonna rerecord your entire advanced react course to be with hooks. so important to say that classes aren't going anywhere render props aren't going anywhere, but they are going to make it useful. So probably once everything settles down with hooks. And once all the libraries have released sort of a mature hook API, making sure that's not going to change. I'll probably have either a update video on on how to do it with hooks, or I'll just re record the entire thing. That will be a huge undertaking, though. So we'll have to see on that.
+
+83
+00:52:04,680 --> 00:52:19,320
+Scott Tolinski: Yeah, I will also be redoing my courses, or at least to some extent, to use hooks whenever the API is mature. I think that's just waiting for it to officially release. Hopefully. Yeah, so do you have any sick pics?
+
+84
+00:52:19,530 --> 00:53:06,300
+Wes Bos: I am going to just sick pick Scott's picks from the last couple weeks. So first of all, Scott sick pick the swindled podcast. Holy smokes that raising? Yeah, it's so it's a podcast that dives into all these different times in history where people have have been swindled or people have stolen money from people where people have had these like crime rings, it's incredible, as in the storytelling is just amazing in it, he always starts it off with a story and then has a different story. And sometimes they connect to each other. And it just blows my mind. So very, very good. Very high quality, very much like the Darknet diaries podcast that we all know and love, which is cool. So I'm gonna pick that in a second. I also just ordered the thing you put in your drill, what was it,
+
+85
+00:53:06,480 --> 00:53:09,330
+Scott Tolinski: it was a brush set for your brush that
+
+86
+00:53:09,390 --> 00:53:29,190
+Wes Bos: you put in your drill off of Amazon because I think that's probably the sixth pick that most people have bought ever. Which is this brush that you put in your drill and it makes cleaning very, very easy. My wife is not sure about it, but I'm really excited about it because yeah, that my the gas stove is the hardest thing to clean.
+
+87
+00:53:29,490 --> 00:53:34,230
+Scott Tolinski: I use it on the glass, we have a glass one it's not gas, but I used okay and it's hard to clean.
+
+88
+00:53:34,290 --> 00:53:36,960
+Wes Bos: I mean it doesn't scratch the glass or anything like that know well
+
+89
+00:53:36,960 --> 00:53:55,800
+Scott Tolinski: enough. They have different bristle. You can buy ones with different hardness for the bristles. And they'll tell you Okay, on the box or in the description what surfaces each one can be used with. So say this one's for concrete, or this one's for you know, wood floors or something like that. So you can buy ones that are less stiff for different surfaces. Oh yeah,
+
+90
+00:53:55,830 --> 00:54:18,570
+Wes Bos: yeah, I'm gonna I'm looking at getting a pretty soft one cuz I also want one for doing my my rims on our car because it's so hard to break into like races. Yeah, yeah, I'm gonna hopefully keep one for that. And then like the cast iron grates on our range are always so hard to clean because you shouldn't really use soap on them. And they've got all these little crevices here and there that are hard to get all the grease out of it. So
+
+91
+00:54:18,570 --> 00:54:19,170
+Unknown: grease.
+
+92
+00:54:19,170 --> 00:54:25,590
+Wes Bos: I'm excited about that. I hope it's coming in tomorrow. I'm sick picking it before it even showed up. So nice, excellent.
+
+93
+00:54:25,860 --> 00:55:04,440
+Scott Tolinski: They work really well. I'm telling you, we had this like tile floor. And I used to do a cleaner tile floor and it it's almost it's an entirely different color than I even knew what it was because when we moved in, I didn't know it was a different color. And then we're like, Huh, is this dirt? Maybe it's dirt you get with an old house. But you know, my sick pick for today is going to be a book. And this book is really super good. They came up on my recommended on Audible. So if you're on Audible check it out. It's called Bad Blood Secrets and Lies in a Silicon Valley's startup Bad Blood is basically the story of what is the startup name?
+
+94
+00:55:04,920 --> 00:55:14,130
+Wes Bos: Hold on one second. I actually saw you tweet about this. And I have also started listening to it as well. It's very much down the it's very much like the two podcasts. We just talked about
+
+95
+00:55:14,130 --> 00:56:29,070
+Scott Tolinski: it really good storytelling is great. It's about theranos, which is like a medical supply company. If you haven't heard the story, the thing that is shocking to me most about the story is just how big this company was able to get on sort of basically nothing just through sheer bullshit alone, they were able to become one of the richest companies it's it's just an absurd story. And every step of the way, you're just going to be like, holy cow. How is this thing going to continue? Like I got through the second chapter. I was like, how is this book gonna be this long? And then by the end of the year, the book you're just like, oh my god, that is insane. So the whole story is bananas, and includes a ton of Silicon Valley startup folks and investors and people who have been involved in different companies and you get to see some some really giant horror story of a company that really had nothing and sold everyone on it. Basically, nothing is it's just it's a brilliant book. Again, excellent storytelling really well right if you like audiobooks, so I was a huge fan of this book I finished a little bit ago and it just been I've been looking for another good one like this so I'm like that this book came around to check it out bad blood Secrets and Lies in a Silicon Valley startup.
+
+96
+00:56:29,100 --> 00:56:38,820
+Wes Bos: Yeah, if you are listening and you know more stuff like this like I'm hooked on these I don't know what do you even describe these types of podcasts storytelling us?
+
+97
+00:56:38,850 --> 00:57:02,550
+Scott Tolinski: I have no idea it's sort of it's almost like True Crime meets like tech world. It's like Yeah, true crime in a sort of way. Either like hacking or or that sort of thing. I don't know they're some of them are just so good it when it's good. It's really good. I mean, that's when they'll podcast I purposefully saved a bunch for our trip for the jamstack calm and so I've just just like blasting through those on the the flights and everything like that.
+
+98
+00:57:02,760 --> 00:57:09,780
+Wes Bos: Oh, dirty john. That's I wreck I said pick that like a year ago, the dirty john podcast was very similar as well. Do you listen to that one yet?
+
+99
+00:57:09,900 --> 00:57:12,780
+Scott Tolinski: Never heard of it. Oh, no. I have heard of it. And you sick picked it? Yeah,
+
+100
+00:57:12,900 --> 00:57:25,650
+Wes Bos: yeah. Dirty john podcast. I did not listen to it though. We're gonna be recommending ourselves out of a podcast here. We should better stop. Alright, what about shameless plugs, shameless plugs, I
+
+101
+00:57:25,650 --> 00:58:37,560
+Scott Tolinski: have a new course out level up tutorials, comm Lopes torrijos.com forward slash pro to get access to all of the courses, which by means there are a new one every single month. So by now there's 2425 Premium courses. But the latest course is pro Gatsby two. This is the course for anyone who's been wanting to learn Gatsby. First and foremost, I should mention that this isn't an intermediate course this is a beginner course for learning Gatsby. And it's for learning Gatsby version two, because when Gatsby version two came out, there was enough breaking changes that it made more sense to just rerecord the course. So what's really nice about this course for me is that I could I could then I could look back at the previous pro Gatsby course and adjust, adjust things I felt like could have been better about it and could have worked differently. So I spent a lot more time on maybe core foundational concepts in Gatsby rather than moving the external libraries or external things a little bit quicker. So I feel like you get a much better handle on Gatsby itself. I feel like you're going to become a more competent Gatsby developer after watching this. So check it out pro Gatsby two, you can purchase it as well at level up tutorials.com forward slash store or become a pro subscriber sign up for the year and save 25% so check it out.
+
+102
+00:58:37,680 --> 00:58:42,030
+Wes Bos: Awesome. I think that's it for today. Thanks so much for tuning in. And we'll see you next week.
+
+103
+00:58:44,520 --> 00:58:45,330
+Unknown: Head on over to syntax.fm
+
+104
+00:58:45,330 --> 00:58:54,270
+Scott Tolinski: for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

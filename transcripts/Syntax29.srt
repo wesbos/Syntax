@@ -1,0 +1,332 @@
+1
+00:00:01,290 --> 00:00:10,560
+Announcer: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to Lynskey and Wes Bos
+
+2
+00:00:10,590 --> 00:00:29,190
+Scott Tolinski: Hill Welcome to syntax. In this episode, we're going to be talking all about hosting, which is something that if you work on the web, you got to do no matter what. Because while you can't just make stuff and have it sit on your computer, you got to put it somewhere that other people can actually look at. So you need to go and see
+
+3
+00:00:29,190 --> 00:00:31,530
+Wes Bos: drive is not available to the web.
+
+4
+00:00:32,310 --> 00:01:02,070
+Scott Tolinski: I well, it shouldn't be. Doesn't mean it isn't. But yeah, I mean, so in this episode we're going to be doing is basically going over from the most basic hosting types to the more complex and technical hosting types and talking a little bit about why and what and what differentiates them and why they sort of fit into these different sort of classes of, of hosting types, which I don't think are official things. I think we might just be sort of pulling these out of the air ourselves. But yeah, with me, as always, is Wes Bos.
+
+5
+00:01:02,520 --> 00:01:07,079
+Wes Bos: Hello, everybody. How's it going? Scott doing well, today are tired.
+
+6
+00:01:07,700 --> 00:01:22,560
+Scott Tolinski: I'm tired. Yeah, we got a tea there going on. We got some teeth popping in. So I'm not getting much sleep going on right now. But so yeah, if you notice some delirium, speech, it's gonna, it's gonna be at How you doing?
+
+7
+00:01:22,860 --> 00:02:03,900
+Wes Bos: I'm doing great. I just launched my CSS Grid course, which I'm super, super excited about. I know I plugged it last week's episode. And by the time this is launched, we'll be out for just under a week or so I've been super happy about how well it's going the feedback. Sign up so far, just under 30,000 people have signed up for it, which is mind blowing to me. So been super happy about it. And I also got to announce that Firefox came along and sponsored the course as well, which is, which is really cool. So basically, what they did is they just sort of like paid my wage in order to create this thing. And they will give it away for free. So if you're interested, check it out at CSS grid.io. Awesome.
+
+8
+00:02:03,930 --> 00:02:07,769
+Scott Tolinski: And that's really awesome of Mozilla for doing that. Super cool.
+
+9
+00:02:07,799 --> 00:02:45,990
+Wes Bos: Yeah, it is they like sort of like approached me a couple months ago. And were just like, hey, like, could we do something together? Like, like, just kind of open invite. And then we talked about it. And it just so happened that I had this CSS Grid course coming up. And their dev tools are amazing for CSS Grid. They're by far the best. And CSS Grid is like a really tricky thing. Because like rows and columns, and implicit and explicit, all these things are, they're not elements, right? Like you can't just like right click inspect element. So there needs to be some sort of tool that helps you visualize these sort of invisible pieces, and they do a great job at that.
+
+10
+00:02:46,770 --> 00:02:55,470
+Scott Tolinski: Yeah, I know. And I was just, I was just showing off the other day, and people like, what is that? Man, you got to get on this? It's awesome. Love it.
+
+11
+00:02:56,100 --> 00:03:13,080
+Wes Bos: Wicked. Today, we are sponsored by xojo, which helps you create cross platform apps. We'll talk a little bit more about what they are partway through the show, but check them out@xojo.com forward slash syntax and use the code syntax to get 20% off a xojo. License.
+
+12
+00:03:13,560 --> 00:03:14,430
+Scott Tolinski: Sick.
+
+13
+00:03:15,180 --> 00:03:43,200
+Wes Bos: All right, well, let's get into it hosting, basically getting your stuff up on the internet, there are so many different ways. They are all kind of confusing. Some of them require different deployment practices. Some of them require a little bit of work in terms of getting SSL up and running. So yeah, like Scott said, we're hope or hopefully just going to distill what these things are, and how when you might want to use them. What are the benefits and the downsides to the different ways of using them? So do you want to kick it off for us, Scott? Yeah,
+
+14
+00:03:43,470 --> 00:04:11,670
+Scott Tolinski: yeah, so I thought we'd start off with the most like absolute basic type of hosting, which is the type of hosting that doesn't require you to do any sort of actual work hosting it. Maybe not even any work building your site really such as services like Wix or Squarespace or even things like medium. You could call that a host, if you're building a blog, or I think it was like WordPress is a wordpress.org is the one that allows you to just sign up
+
+15
+00:04:11,700 --> 00:04:22,069
+Wes Bos: wordpress.com is the self hosted version and.org is the the sorry.com is the the hosted version for you. and.org is the self hosted version.
+
+16
+00:04:22,880 --> 00:05:09,690
+Scott Tolinski: Okay, so yeah. so.com wordpress.com. So the point of these these systems are is that, well, you don't have to worry about even the fact that a host exists at all like the very most work you're going to have to do is to point your domain to wherever it tells you to point it to so that your domain overrides their domain, but the the process for these is typically for people who have no technical background, right, maybe you're a designer, maybe you don't even have a designer and you just want a site up online and you want it the easiest possible way. Now you will pay a little bit for convenience with these. You're paying a monthly fee, whether it's X amount of month to get the total, the total package themes or whatever. But these things that largely exist for non developers.
+
+17
+00:05:09,930 --> 00:06:10,769
+Wes Bos: Yeah. And do you want to hear my my idea? Do you get a lot of like wicks and Squarespace ads on your YouTube? Because I sure do you need a website? Why not do it yourself? Right? Like every, every developer has that, like burned into their brain? Yeah. And I think that the reason why Wix is targeting, like actual developers, everyone always like makes jokes about why are you getting a Wix ad when you're like building like a custom node back end? And I think my idea is that because first they they are targeting people that throw their hands up in the air and say, This is too hard to learn how to code and I just need a quick website up. And second, I think that the main audience is, somebody in your family or extended friend network will come to you and say, How do I build a website? And the first thing that should pop into your mind is Wix, Squarespace get a WordPress blog by a theme or something like that. And it's an easy way to like, tell them like just use this. Don't bug me if you have trouble. Give them a call. Don't call me. Yeah,
+
+18
+00:06:10,860 --> 00:06:42,509
+Scott Tolinski: yeah, that I totally agree. I mean, my first thought was, they're going after the rage quit audience like, yeah, screw this, I'm done. I'm flipping my chair over and I am ready to just have somebody do it for me. But that no, that makes perfect sense to just drill it into your brain. And I do think about that all the time. If somebody comes up to me, and they want something like that, and I know I don't Well, when they don't have the budget for my time, or, you know, I don't I don't have the time for for their project. Yeah, I'm gonna think about Squarespace or Wix. Pretty much right off the bat. Yeah,
+
+19
+00:06:42,509 --> 00:07:01,740
+Wes Bos: they're kind of like the best buy of web development world when that like when I was like a kid and building computers, I used to tell people like, why would you? Why would you pay the Geek Squad to build a computer for you or install a hard drive? And now I look back at it. And like, I'm glad those places exist, so that I can easily point people over to it, and they're not gonna bug me for tech support.
+
+20
+00:07:02,310 --> 00:07:04,980
+Unknown: Yeah, right. Exactly. Yeah. So deal with it after that.
+
+21
+00:07:05,430 --> 00:08:27,180
+Wes Bos: That's a site service hosting. Obviously, most of you listening, this podcast probably won't be using that. Although I do know that like some developers do, use Squarespace because you can get in there and actually customize it sort of similar to WordPress, how if you just want to skin the thing, and have it run for you, then that's totally fine. And then sort of the next step up is your your basic hosting that likely a lot of you have and you're paying five bucks a month for like GoDaddy or Hostgator, or Bluehost, or there's like 20,000 other companies. And the funny thing is that, like Bluehost, and Hostgator, and all these different companies, they're all mostly owned, with the exception of GoDaddy, they're mostly owned by this one company that has bought up all the web development companies, it's kind of kind of interesting to hear. And they've sort of bid this type of hosting to the bottom, you generally get like an Apache box with PHP and pre installed on it, you get a cPanel. And it comes along with like these sort of like basic tools for installing WordPress and being able to just drag and drop a site via FTP or SFTP onto your, your server. And when you refresh, you get some changes. So that's the very basic there is extremely easy to use. It's really, really cheap to have up and running is able just, you can just throw up a quick website on there no problem. And there isn't a whole lot of fuss involved in getting a hosting like this.
+
+22
+00:08:27,839 --> 00:10:02,850
+Scott Tolinski: Yeah. And, you know, some of the cons of these services are they usually throw you on like a shared instance, I remember one time specifically when I was first getting into web development might have been like the second highest site I ever hosted. Yeah, I was on a basic cPanel it, I forget who it was, it was some host that maybe doesn't even exist today, or brought up and whatever. But I had a Magento site running on the service, which they had a one click Install for Magento. So you think that you know, their, their shared service would support it. But Magento is like super processor has, I mean, it's like it can just like completely kill your your box. So like, I was just I don't know, if I tried to tweak the PHP and didn't know what I was doing at the time. This is way, way back in the day. And I caused like an infinite loop and brought down the entire server. And like, think about it, like everyone who hosted a shut site on that shared server, their site went down because there's some dumb thing that I did. And likewise, my site would go down all the time because of issues with memory management or whatever and, and those services I mean, they do fit their place but they're they're not like totally free of pain, right? Yeah, you can you can run into those situations. And then other things too, like once you get to the point where you want to do things more of a technical way you're sort of stuck doing most everything through a G y which I like g wise myself, but I never found cPanel to be particularly like I don't know, intuitive in a number of ways
+
+23
+00:10:03,239 --> 00:11:52,770
+Wes Bos: cPanel sucks, like you're always scrolling around. And every host implements their own version of cPanel. And you can't find half the stuff or you're looking for it. So I too have had my fair share of pains with these types of hosts. The biggest one, most recently is I used to recommend Bluehost to a lot of people and what had to do? Oh, yeah, like they have. It sort of pains me to like, not refer Bluehost because they have a very good affiliate program, you can make like 65 100 bucks per referral, because like when someone signs up for Bluehost, they're there forever. But what happened is that like Bluehost, does, like mostly WordPress hosting. And they realize that almost no one's using a caching plugin on WordPress. So what they did is they they said, Oh, we could probably save like, a third of our budget just by enforcing all of our users to cash their WordPress is because they don't need to have such a fresh thing. So what they did very sneakily, is they went into every single WordPress install on all of their customers. And they install this extremely aggressive caching plugin without anyone's permission, and mine included. And then I wasted like three hours doing that, like, Why is this not working? it's working fine on my local one, I deploy it. And it's not working at all. And then finally, I fell found that they had turned on this really aggressive caching plugin, and there was no way to disable it with via the UI, rather than just deleting the actual plugin from I have, like 30. wordpress installs, and had to go through and delete all of them. So that was, that's pretty sketchy. I realized what they're doing is they're trying to squeeze a little bit asked her out of their boxes, but that that's sort of like lost. I lost faith in Bluehost. After that.
+
+24
+00:11:53,730 --> 00:11:58,500
+Scott Tolinski: Yeah. Weak, weak, weak stuff, weak sauce, update my affiliate links.
+
+25
+00:12:00,240 --> 00:12:06,780
+Wes Bos: Yeah, so there's all kinds of other other good ones out there. I'm not gonna go through them. But those are sort of the big ones that you see there.
+
+26
+00:12:07,680 --> 00:12:16,020
+Scott Tolinski: Yeah. And like we mentioned, they're largely very similar if they have a cPanel. It's mostly just like a skin version of the exact same software.
+
+27
+00:12:16,050 --> 00:12:48,120
+Wes Bos: Yeah, exactly. And there's some like I will recommend, because I used to teach WordPress and I used to teach like hundreds of people. And what started to surface is a lot of students were recommending to me called siteground. And siteground would will backup your WordPress for you automatically on their server. And they had internal tools for for rolling it back. And their service seem really good. It seemed to be really fast and snappy. They have a phone number that you can call. So see people seem to be pretty happy with with using siteground. Is this cool? Let me double check that.
+
+28
+00:12:48,780 --> 00:12:50,760
+Scott Tolinski: Yeah, I have not used siteground.
+
+29
+00:12:52,110 --> 00:12:53,970
+Wes Bos: Yeah, as siteground. Cool.
+
+30
+00:12:54,000 --> 00:14:00,060
+Scott Tolinski: Yeah. So okay, so that's our sort of our basic host, right. So we got our non managed non site, techie sort of site service hosting, we had our basic hosting. And then we're starting to get into the more technical levels of things. And this is primarily where nowadays, a lot of people are going to be spending their time, which is funny, because so many of these, like weren't necessarily a thing, you know, a while ago, and and so what we have here is we have two or three different classifications of some more technical hosting. And one I like to call like the service based hosting is more of your platforms that are you're not going to be using these if you aren't a developer, as in, they do take a required level of knowledge to be able to use with web technologies, but they offer a lot of services for you at a cost. So these things might be Heroku. I host my my Meteor site on galaxy, which is similar to a Heroku type thing. We have things like zite, or what else what else you got? It's got? Well, it's
+
+31
+00:14:00,060 --> 00:14:18,750
+Wes Bos: a Z, I think it's a zite. Now, that's the one that we're using to host the syntax one. What other ones are there that basically they're just these services that know how to host a Ruby application or know how to host a node app or a single page app or something like that, right?
+
+32
+00:14:19,350 --> 00:15:09,210
+Scott Tolinski: Yeah, and really the big the biggest dog here is Heroku, which has really made a name for itself. When Ruby on Rails got really popular, it was sort of the way to host Ruby on Rails apps. And eventually, when node became popular, it was like a great way to get up and running with node, they had this thing where you could have like five free site hosts where basically it's it's not like a good hosting it powers down the server when you're not using it. So like initial load times are extreme, but it's free. So if you wanted to mess around with Node JS for a weekend and actually see something online, you could do that really super easily with Heroku. And I think that's how they definitely locked in a bunch of people. And got them being like, wow, this service is really nice. Not to mention they have like, top of the line design, like their designs always been excellent. I've always been a huge fan,
+
+33
+00:15:09,570 --> 00:15:30,870
+Wes Bos: maybe maybe we can explain that whole like spin up because I didn't get that for the longest time in terms of like Heroku would spin down and spin up and and I got a win, what happens is that I think zetes now does this as well. Does does. meteors galaxy do this as well, where they they spin the server down when they're not using it.
+
+34
+00:15:31,590 --> 00:15:36,900
+Scott Tolinski: They don't because they don't have any free free or they don't have to pay for all your tears. Yeah, so what
+
+35
+00:15:36,900 --> 00:16:17,640
+Wes Bos: might happen is you might have an app that you don't necessarily you just posted online, and you might not get any hits for an entire day or a couple hours. So what will happen is they'll sort of shut down that process. And then when somebody requests a URL, it will spin up your application started again. And then that first hit is going to take a couple seconds while your application starts again, people have gotten around this by just building little bots that will ping their website every 30 minutes and make sure that it's up. But that's how they're able to offer these things for free is because you're not actually using it unless people are actually visiting your website. There's no idle processes running just in case someone, someone visits your site.
+
+36
+00:16:18,240 --> 00:17:10,410
+Scott Tolinski: Yeah. And the idea is that, once your site is actually has traffic, that you're going to be upgrading past that free tier anyways, and onto a paid program. And obviously, they make that super easy. So they could have charged a little premium for that because of the ease of all of that stuff. And then that leads to like one of the cooler things about these technologies is they allow for really easily scaling your application as your CPU not handling it, you know, you can just click the up arrow and either increase your container size or increase the amount of containers you have running your app to based on what your needs are there and give you all sorts of fancy performance metrics. So you can know. Or you can check some sort of box to have an auto scale. And that way, when your website gets the Reddit hug of death, your bill is going to be astronomical, awesome, because that sealed it up really quick.
+
+37
+00:17:11,040 --> 00:19:21,930
+Wes Bos: Yeah, I think we should also explain that these services, you do not get access to the server, you you don't get like a raw box where you can SSH into it and, and npm install stuff, these services are sort of like tidy little containers, where when you deploy your application to these services, and I believe Heroku does that via Git. So the way that you do it is you just you push your Git repo to a specific branch on Heroku. And that will sync it to Heroku. And then Heroku knows it will auto detect that or you tell it it says oh, this is a node app, or this is a Ruby app, or I don't sure what other kinds of stuff that they they they do, and then it will auto npm install all of it, it will switch the version of node. So there's no like making sure that your box is on the most recent version of node or has some of the security patches installed or SSL certificates, we'll talk about that in a second, that's a bit of a pain to make sure it will, it knows how to do all of that. And it will just scale it up. And for a lot of people, that's what you need. Because you don't have to spend your time worrying about being a sysadmin. Like understanding like I remember I have a Digital Ocean box and I had to install swap memory, which is there wasn't enough memory on my box to to do an npm install because I was on like a really like a 512 the lowest tier, I think the lowest tier is now a gig actually, which is great. But I needed more memory than 512. But I didn't want to pay for it so that you can do this thing called swap memory where it will use some of the hard drive as like sort of memory, it's a little bit slower. But it will work for MPM install thing. And I was like, Oh, this is this is kind of a pain that I have to learn first what swap memory is like I shouldn't have to care what this is. And second, like I had to like run all these commands, and you have bash tasks and all this stuff. And like I'm a web developer, I don't necessarily want to be a sysadmin. And, and really geek out over this stuff. And at the same time, my application really isn't all that unique or large that I need to need to be posting it on my own. So that's why I really like these services.
+
+38
+00:19:22,550 --> 00:21:17,190
+Scott Tolinski: Yeah, and the services are also I mean, that goes to show you to look once you are at a certain level, you can pay to have a sysadmin. And you can pay to have someone who that's their specialty, handle that and manage your own server. So in the meantime, maybe you pay a little bit more out of pocket to have a service, do all that work for you to maybe give you a little bit of buffer from potential issues that come up. And again, like you mentioned, they make some things really super easy. One of the things I really like about these services, if you have multiple containers for your app, when you push a deployment, it deploys it to one of your containers and then swaps the containers so that there's zero downtime. You never really have any sort of issues when you're deploying an update to your application with even microseconds of downtime, right? So, you know, I found that that aspect of them to be really nice. Again, the interfaces are great. You mentioned SSL certificates. For me, like, there's nothing in the world I hate more than dealing with SSL certificates. I don't, it's one of those things that's like, you got to have an SSL certificate if you're doing anything really nowadays. Yeah, there's, there's really no excuse and now that you can get them for free through Let's Encrypt. Again, there's, there's no excuse there. So one of the things I always loved about on the Galaxy platform, is just an upload box. So you, if you go to my encrypt, or whatever, your services and you get your key, you just click upload and upload it through an interface. And all of a sudden, you don't ever have to think about your SSL again until it expires, or you can even set up jobs to do all that for you. But the whole business is here, it really makes a lot of those processes that are definitely a pain in the ass. If you're having to edit your nginx config files and stuff to get working. It makes those just way less of a guessing game and way less of a thing if you're not a system admin who's doing this all the time.
+
+39
+00:21:17,330 --> 00:23:07,230
+Wes Bos: Yeah, so one, one thing I'm doing right now is I'm looking at moving over my, my my boss monster platform, if you want to hear about our stack, go back in and listen to the our stacks explained episode. But I have when I want to reboot my app. So I deploy my application to digitalocean. And when I want to reboot it, I SSH into our server and I run a command called forever restart. And what that will do is it will restart my node process. And it takes about like less than a second to reboot the entire app. But every now and then I get somebody who hit the website just at that amount moment, or I'm always worried that like Like, for example, when I launched my CSS Grid course, there was a typo on the page. And of course, I got 40,000 emails about this typo. And I. So I fixed the typo, and I had to reboot the server. But there was like 2000 people on the page at that time. And I was like, for sure there's going to be somebody who submitted a payment request or, or something during that one second of downtime. And that really bugs me because I have proper error handling on the client side. And I just have to click up, click, try again. But it bums me out that that and with now sh and all these things they, they just make sure that both servers are running it specifically now is what I have zetes now is what I have experience with they call it immutable hosting, meaning that you cannot go back and change one of your past deployments, you just deploy a brand new version of it. And it's going to cut over your domain name from one to another. It will always deploy it on this like sort of temporary domain name. And then once things are ready, you just run now alias and it will cut it over to the new version of your site. And then it will spin down that old server. And that's that is really, really cool. I like that a
+
+40
+00:23:07,230 --> 00:25:02,640
+Scott Tolinski: lot. Nice. Yeah, I like a lot of these login, like I hosted on I mentioned galaxy, which is similar to Heroku in the sense that it's like really pretty, you don't have to worry about it. I just run a deploy command. It goes up. And there's there's all sorts of like excellent features like built in pre render, so I don't have to worry about pre render, one click version rollbacks. Like if I push up and all of a sudden, some somebody messages me about something funky. And I knew that that didn't exist on the previous build, I can just click redeploy a previous version and it fires it up and absolutely no time at all. So things like that are just are just super nice. I didn't have to worry about actually going in and rolling back any sort of commit that I did on the server itself. I don't have to, it's all it's all managed there for you. And a lot of times they manage things like backups, you can easily with Heroku. You can throw on add ons, which we haven't even talked about yet which add ons can do all sorts of stuff for your application services that you could configure through code yourself. But many times, if you wanted to add on like a paper trail or something or whatever, you can just click add on and you'd be billed all through your Heroku account instead of through all of these hundreds of different accounts. So attaches it to your bill. Yeah, and and there's definitely some really cool stuff, some some caching and whatever, there's a ton of different add ons. And maybe you want a database service, you can just add on the database service and login directly through your Heroku account. So there's a lot of really cool things. Again, you're paying a premium for all of this. And people who aren't really experienced on hosting their own servers. They're going to roll their eyes pretty hard at most of this stuff because they don't need to do it. But for the people who don't want to spend that time doing it, your time is valuable. It definitely is an option. That's Yeah, super good.
+
+41
+00:25:02,730 --> 00:25:53,940
+Wes Bos: Like it can get really expensive really quickly, like you could the difference between, like for for my own app, I would say, the difference between using like a host for hosted version versus running my own server is probably, I don't know, 700 bucks a year even like my own database, I don't host my own MongoDB because that kind of scares me. And I pay, I pay hundreds of dollars a year. And you could really I could, I could probably get away with like, a couple dollars a year on Amazon, AWS, but spooks me out too much rather pay someone else to deal with it. I've had some issues in the past with that were my own issues with database drivers and the folks over at Mongo m lab. They they figured it out for me and it just that kind of like help in that kind of like, it's somebody else's problem if it goes down? That's kind of what I like.
+
+42
+00:25:55,020 --> 00:26:41,220
+Scott Tolinski: Yeah, so you're on em lab for your your database, I host my database on a compose who we used to be, I think, oh, they used to be something else Mongo Yeah. Or whatever it was, it was Mongo something. And now they're they're composer on by IBM, they have a great little interface. Nice, nice hosting for databases. And that's the thing we're I don't know if we're even. We don't even have hosting databases in our notes. But a lot of this stuff now is breaking up like that. We're like, instead of hosting your database on your own server, whatever, you're hosting it elsewhere. For four reasons like this, it's it's like their platform is going to maintain security, maintain versions, and just give you a nice little way, just basic way to connect to the database. And that's it, you know?
+
+43
+00:26:42,000 --> 00:27:50,070
+Wes Bos: Yeah, exactly. So let's take a quick break and talk about our sponsor. Our sponsor is xojo xojo, spelled XOJ. io is a cross platform development tool for creating native apps for desktop, mobile web and Raspberry Pi. With sojo, you can write just one version of your app, say on a Mac, you can click a button and have it completely compiled over to a native Windows version. sojo lets you abstract from specific platform details. So you can focus on what makes your app unique. All Apps have completely native controls, even if they were developed on that platform, just use it drag and drop to create your user interface, and one language to program the functionality. Users including fortune 500 companies, citizen developers, professional developers, it hobbyists, and students, anyone who wants to build apps faster. So listeners of syntax are going to get 20% off with the coupon syntax, you can get that over@xojo.com forward slash syntax is xojo.com, forward slash syntax, and you can try it out for free over there as well. So thanks so much to xojo for sponsoring,
+
+44
+00:27:50,220 --> 00:27:52,290
+Scott Tolinski: that's a great word to say to Joe, Joe,
+
+45
+00:27:52,290 --> 00:27:59,610
+Wes Bos: Joe, I really like that. Maybe, maybe I can name my next child xojo.
+
+46
+00:27:59,640 --> 00:28:07,350
+Scott Tolinski: That's not a bad name. I mean, if we were like living in like sweet 2030, the year 2030. Like, I feel like xojo is just gonna be a name you see around.
+
+47
+00:28:08,460 --> 00:29:47,970
+Wes Bos: Exactly. I love that a lot. All right, let's talk about the big one, which is running your own server. And this is currently what I'm doing on my own. It's, it's definitely by far the cheapest option. And by far the most configurable option. And And third, it's probably the hardest option, which is running your own server. So you can do the very basics where you just go to one of these services that provide you space, like your name, rattle off a few Digital Ocean is a big one, I use them myself, I really like digitalocean Amazon Web Services. If you love drowning in complexity, that's a good one. Yes. So AWS is is probably by far the cheapest, and you just pay for by usage. And they give you almost nothing except a lot of configuration. And then they just give you the raw server and in order to up and running. There's Rackspace, there's linode, which is another really, really good one as well. And they will give you just raw server space. And then a lot of them will also give you the ability to sort of start off a hit the ground running with these different images. So that's that's specifically what I use myself. And in my learn node course, we look at how to deploy to Heroku and ziet. And also we do Digital Ocean, where you can start with like one of these, like, has node already installed. And it will have like, some of them will even have like a react app or an Angular app already pre configured and it'll have a database installed. And you can just click those buttons and then that will that'll start to get you 90% of the way there in order to to run your service.
+
+48
+00:29:48,240 --> 00:30:51,860
+Scott Tolinski: Yeah, or you can start with absolutely nothing and then run through their documentation to install everything or you can do it if you already know the process. One of the things I loved about digitalocean It taught me a lot about managing a server because like, before they had these pre configured droplets, they did just have like, splink droplets, and I would spin one up, and then I would just pop it through there. Excellent. Excellent. Like, seriously, top of the line documentation. Yeah, just like, just go through it and read. Okay, now I need to install this and change my SSH port. Why? Why do I do that? Okay, now I need to do this and do that. And sure enough, I learned a ton about this stuff. And maybe I didn't necessarily need to know or really want to know, but I learned way more from their documentation, then. So many other different learning resources over the course of the year. So like, being able to have that complete control over your stuff and know what you're doing. And why is a super really cool thing that digitalocean offers just through their documentation alone.
+
+49
+00:30:52,950 --> 00:32:25,470
+Wes Bos: Yeah, yeah. And you can, you can also spin up your your digitalocean for so for example, when I released my last batch of stickers, I totally crashed my my own site, and I couldn't figure out what it what was happening. And it turned out that just I was running on the like, cheapest, digitalocean droplet for four years. So it just spun down, I turned off my my server, and I resized it to a much bigger one with more more RAM on it, and then I spun it back up again and started my app again. And I think it was down for about like eight minutes or something like that. And, and it was working really well. And now digitalocean, I know people are probably screaming at me being like, you don't even need that eight minutes of downtime, because digitalocean has this idea of floating IPS, where you can you set up all your domain names with like this floating IP address, and then you have all your different boxes. And you can basically have two different boxes at once. And if one box, where you could just scale up another box while the first one is running, and then just cut over your floating IP to the to the second box and then and then spin down the other one. And that's really nice, because that would again, that would have given me zero downtime as well. The only downside to that is that it didn't have the correct the correct server. Because when you also run this stuff, you also have to you have to manage your own nginx or your own Apache. And I do want to take a stab at what what is nginx? And what is Apache for those who don't know,
+
+50
+00:32:25,590 --> 00:33:27,270
+Scott Tolinski: yeah, so that mean it's a it's a HTTP server. So it's basically here's how the process when you're hitting these things, what you hit a domain, that domain hits your DNS that DNS tells you where to look, that DNS is typically going to tell you like what IP address to go to that IP addresses that which your sites hosted. And so that IP address is getting this request coming in. And your HTTP server is going to look at that and be able to determine where to sort of send send that request, right what what files to load, how to load them. Exact maybe like if it needs an SSL certificate to load the SSL and you just said exactly. And I saw a little bit smile there, I feel like is because we both got a drink. Someone on Twitter mentioned that every single time West says exactly, you have to drink. And I've already noticed this episode. So I think people might be feeling a little toasty if they're playing along.
+
+51
+00:33:27,420 --> 00:33:33,210
+Wes Bos: Exactly. What does God say? That's sweet. I say that sweet. What do you say?
+
+52
+00:33:33,300 --> 00:33:39,720
+Scott Tolinski: I don't know. I don't know. I say a lot of things on repeat. And I just catch myself been like, you did that when again.
+
+53
+00:33:39,720 --> 00:33:42,060
+Wes Bos: You said I kept on.
+
+54
+00:33:42,540 --> 00:34:15,650
+Scott Tolinski: So sorry, a little minor aside here. I did a little talk at galvanize about my career on on Friday. And I just got to like, oh, a shout out to everyone at galvanize. By the way, it was really fun getting in there. And I just got to do a little overview of like, maybe like, a web development career path. But I kept saying sayings that I've never said before, or like I was just like, Oh, yeah, it was bad. 100. And then I was like, wait, I don't even know anything about baseball. I don't know if that's the right term. I just kept on saying stuff like that in my head. I'm just like, oh, like, is that right? Is that right? Is that a thing?
+
+55
+00:34:15,689 --> 00:35:42,630
+Wes Bos: I do that when I teach to just say these stupid things? You're like, Where did that come from? I guess it's just that the nerves of being in front of dozens of people talking about technical stuff. Exactly. That's exactly anyways, uh, yeah, you got to run your own nginx Apache on these on these servers, which is, is okay. I'm glad that I do it because you can eat I learned a lot about how nginx and whatnot works. And you also have to run your own SSL certificates. So yeah, I specifically use Let's Encrypt. And what that will do is it will just generate a I think it's like a three month SSL certificate for you and it will validate it No problem for you, a lot of these nginx servers will automatically work with Let's Encrypt, so you don't have to do any custom config. And then you have an SSL can certificate for three months. The one thing you need to do, which I did set up properly, which is you have to set them to auto renew those this thing called cert bot that you can you can set up a cron job that will run every three months and, and renew your, your SSL certificate for you. But then I forgot to set up a cron job to reboot my nginx server. So I woke up one Sunday morning to all of my sites having broken SSL, and I was like, Oh, this is gonna be a fun Sunday. And then all I had to do is type nginx. Reload, and it was back up and running. super nice.
+
+56
+00:35:42,630 --> 00:36:30,570
+Scott Tolinski: Yeah, one, one thing I want to touch on before we get off the nginx config and Apache config files, these config files, if you haven't worked in them, it will if you have worked in them great. Like if you're experiencing you know what you're doing them than a okay. But if you don't know what you're doing, and you're learning, be prepared for a lot of headaches. Because if you make a mistake, you restart your server, your server is not going to restart or it's not going to load, you could crash all your stuff, none of your stuff could be working. And it could be a very minor syntax error in your Apache config file. But at the end of the day, if you haven't worked in these things, you might want to spend some time learning the basics, maybe learn a little bit Well, why you're typing and why instead of just trying to copy and paste a lot of stuff because it is super duper easy to crash your shit.
+
+57
+00:36:32,160 --> 00:37:22,460
+Wes Bos: Exactly. That's it that wasn't even on purpose. Take a drink. And that is that is no fun trying to get nginx and Apache configs to work as well, there is a sort of a third server, there's all kinds of servers out there. But there's another one that started gaining traction. It's called caddy server, and what caddy server has SSL baked in. So you don't even have to worry about generating an SSL certificate if the server itself has all that baked in with Let's Encrypt, and it will renew itself and do all the smart things for it. So that's something I expect to see a lot. Yeah, it's, it seems pretty neat. Like I haven't moved over to it yet, just because like, I don't have a pain that big. Like, yeah, SSL certificates are hard. Yeah, to do. But I also it's not big enough pain for me to switch my entire server out.
+
+58
+00:37:22,880 --> 00:38:27,750
+Scott Tolinski: Yeah, a lot of this stuff is something that you would change over at the beginning of a new project, maybe when you're like putting together your stack or whatever. But if everything's working, like I mean, don't, don't touch it, like why unless it's like you need maybe a performance issue or something like that. I also want to stress that these these private are these virtual private servers are these managed boxes, or whatever they come like blank, essentially, a lot of times like other than if they have, you're doing a pre configured version, and you're pretty much just selecting your version of Linux, like, here's what version of Linux I'm going to be running. And then you have to actually install everything, you have to keep Linux up to date, just like as if it was a computer that you were running yourself, right. So if you aren't interested in that, you're going to want to do one of those maybe pre configured droplets, I think droplet is really just a that's a digitalocean term, right? Yeah, like that. They came up with droplet because their whole their whole branding. So I guess when I say droplet, I guess I just mean any sort of server that you're spinning up on any of these cases, only an image that you started.
+
+59
+00:38:28,400 --> 00:40:11,480
+Wes Bos: Yeah, like if you were working in an IT department, and they give you a laptop already with Photoshop on it already. That's, that's a pre configured image, that's a droplet that they would just stick on to that server. Because it's so common, everybody use these things, you don't have to go through the whole rigmarole of trying to install different versions of node and compiling binaries and whatnot. There is another sort of option to do this. And that is using Docker and Docker is not something I have a whole lot of experience with. But the idea behind this is that like, currently, when I develop my my apps, I have my local config. And then I also have my server config. And then I just pray that it works the same on my local config as it does on the server, right? And we've all had this thing like well, weird, it works on my machine, but not when I deploy it, right. So Docker is the idea of you just have these containers that run run your code. And the exact same image that runs locally will also be deployed to your your production website. So you know that if it works, you don't have to worry about like, oh, weird, it works on Windows, but not on a Mac. It just it's just a sealed up image that runs on I think it's virtual box, which is sort of like a virtual machine that you can, you can run these things on and it's really nice to be able to get it to not have to worry about things not working on specific places. forms because you just have this sort of tiny little like Tupperware container of of your code that you can just like, you can put it anywhere. And you can also deploy Docker images to, to zetes. Now as well,
+
+60
+00:40:11,520 --> 00:40:48,420
+Scott Tolinski: yeah. And that's one of those things that like, the more closely your dev environment mirrors your production environment, the less you're gonna have to worry about there being any sort of confusion or difference there. Can you imagine? Like, I mean, even like, right now, granted, it's Unix and Linux, but like, my development environment is a completely different operating system than my production environment. And, and that, well, that's fine. But like, just little changes like that might have a different effect. And then you can sometimes be prepared for. So yeah. So that that's pretty much do anything, anything else on these types of hosts,
+
+61
+00:40:49,110 --> 00:42:24,090
+Wes Bos: I got one more, which is spa hosting single page app hosting. And that is when you have an application that has no back end. It's entirely client side and less likely a react or an Angular or view application. And you're just interfacing with API's? Like, what do you do with that, right, and there's a couple different options, you can go back to our second option, which is just throw it on a PHP server, because at the end of the day, your app is just an index dot HTML file, and a whole bunch of JavaScript. And you don't need anything special to in order to run those things. So the only gotcha that you need to know about when you're running a single page app is, is routing, because in your react app or your Angular app, it uses push state to change the URL bar. So if you go if you're on the home page, and you go to forward slash about, it will automatically just change that without having to reload the page. That's what's called a single page app. But if someone were to go directly to forward slash about, your server needs to be smart enough to know, okay, there's no folder called forward slash about, I just need to regardless of what the URL is, I always just need to serve up one file, and that is index dot HTML. And you can do that really, really simply with a ht access file on an Apache server or whatever the equivalent is, on the the engine x file. I have little, little a couple little examples that I have on my computer for whenever I need to just throw something up real quick.
+
+62
+00:42:24,110 --> 00:42:33,030
+Scott Tolinski: Yeah, yeah, I know, I keep a keep a handful of stuff like that around to just save your butt here and there. Exactly. And
+
+63
+00:42:33,030 --> 00:42:50,280
+Wes Bos: there's also I think, I feel like I should mention Netlify as well, sharing sure if I'm saying that right or not. But there are now services that are, are sorted out, they're just targeted towards these single page apps. And hey, let me pull up the website for Netlify. Real quick.
+
+64
+00:42:50,310 --> 00:42:52,260
+Scott Tolinski: Yeah, I've never said that word out loud before.
+
+65
+00:42:52,920 --> 00:43:48,840
+Wes Bos: Netlify. Within Netlify? Yeah, like you put it on the net, you fi it Netlify. I think that's it. So okay, um, it does all of the hard stuff for you. So you can just deploy your single page app. But it will do caching for you, you can have a whole deploy thing built into it. It will, it looks like it does a CDN. So that's really nice. If you got a whole bunch of images, you don't necessarily have to use an external CDN, it will just pick up your images and just distribute them throughout the world. So let us fast for absolutely everything. continuous deployment, I'm sure you can do like some Git integration here for for all that good stuff. So now five seems pretty good. I've only seen people say really good things about it. I've never tried it myself. But I've heard people just just going crazy over it. So I would definitely check that out if you're trying to like deploy a react app. Yeah. And it seems like they have a free tier without a credit card as well, which is
+
+66
+00:43:48,840 --> 00:44:15,630
+Scott Tolinski: great. Yeah. It seems like it would be a great place to host a get Gatsby site. I know they do. Like they have some neat tools and stuff for that a lot of good tutorials. So yeah, yeah. Netlify. And that seems really cool. Again, I haven't used it. It's been on my radar for a little while. It's one of those things I've been wanting to dive into, but like just gotta find the time. But it looks looks super cool. They got a cute little website and nice looking documentation.
+
+67
+00:44:17,130 --> 00:44:42,000
+Wes Bos: That's pretty neat. One thing we didn't touch on and I think we'll save this for another show itself is serverless. So like, what about serverless functions? How do you deploy those where do those go? And that's sort of a that's a whole nother bag of tricks. So we'll we'll save that for another show. If you're wondering where that is in the show. word word All right, let's uh, let's do some sick pics. You got any sick pics for me Scott?
+
+68
+00:44:42,000 --> 00:44:42,720
+Unknown: Ooh.
+
+69
+00:44:44,190 --> 00:44:46,080
+Scott Tolinski: I do not let me think
+
+70
+00:44:46,110 --> 00:46:43,350
+Wes Bos: I got one here. I'll I'll do mine first. Well, it may be you. You think to look around your office for something cool to say. This is more of like a sick trial. So I always see is Facebook and Instagram. For these, unlike these Kickstarters for these magnetic iPhone, micro USB USB C cables, so you know like the old MacBooks had the magsafe on it and that was like the best thing ever. Somebody came up with the idea of like, Why don't USB cables have this so I always see ads for them. And I always kind of look at it and go Yeah, right like it's a that's a crowdfunding thing. It's never gonna show up. But I started noticing them on Amazon for I think I got so I got one. It's called, I'll show Scott on the thing here. It's got a magnet on the end. And then it comes with three tips. Lightning cable for your iPhone, it comes with a USBC for your Android and then a micro USB for your older Android or everything else in the world. And then it's just got like a magnet on the end. And it's so cool. Because first of all, it totally works. The one I specifically got has a really good magnet on it. And I'm not using it on my iPhone because I've got cords all over my house and I have to take the little end out and that's annoying, but I'm using it or what I am using it for is my my wireless Bose headphones. Because every time you have to charge them which is once every two days, you have to like find the micro USB cable and then plug it in and micro USB is hard to plug in. So what I just did is I put the little nub in the end of the headphones, it barely sticks out. You can't even notice it when you're wearing it or looking at it. And then I just hear I'll show Scott and my thing. You just kind of put the magnet near it and it just like it's like a snake looking for what a snakes eat mice like a snake trying to get a good amount of mongoose
+
+71
+00:46:43,350 --> 00:46:47,280
+Scott Tolinski: that they're not eating mongoose only battle.
+
+72
+00:46:50,400 --> 00:47:55,800
+Wes Bos: Let's get we'll link up a snake vs mongoose YouTube video. But it's so cool because it for me to charge my headphones. Now if I'm just gonna run downstairs and grab a coffee, I just will click that in real quick and it will just automatically charge. So I really, really liked that. And then somebody else on Twitter told me that you can also get them for the MacBook now. It's a different it's a USBC cable, but it also it's a special one because it's USBC is a bit of a mess. There's all kinds of different types of USBC cables, and the one I needed needed to be able to support 87 watts to charge the MacBook Pro. And I only got it yesterday so I'm not gonna sick pick it just yet, but I'm sick trying it. It's kind of cool because there's this little knob that goes in the side and it brings magsafe back to the brings me say magsafe back to the MacBook Pro. Which is really, really exciting. And it's not as big like Belkin had one out, but it was like this massive thing that would go in the side of your laptop. And this one is much smaller. But I don't know how well that's gonna hold up. So I'll wait a month or two and I'll have a sick follow up.
+
+73
+00:47:56,130 --> 00:48:25,590
+Scott Tolinski: Yeah, that was always one of my like, what were they thinking moments when Apple removed the magsafe The magsafe was like one of the single most useful inventions on their computer and like my plug in already my like new plug is already bent for my MacBook Pro just because I got a dog and a couple dogs and you know, who knows, like something knocks the computer off the table. It's like now I have a problem I have to worry about like again after not worrying about it for most of my life. Well, yeah, me too. I
+
+74
+00:48:25,590 --> 00:48:54,330
+Wes Bos: anytime I teach. I'm plugged into a projector and I usually have to like trail my cable to some obscure outlet across the room. And always myself because I'm very emphatic when I'm teaching I always kick the thing. And so I'm happy to have this. If not, I'm not going to put it on my desk because I have this thing like you that doesn't my Oh, my monitor is in charge at the same time. But I'm going to do it for sort of for travel.
+
+75
+00:48:54,750 --> 00:48:56,040
+Scott Tolinski: Nice. I like
+
+76
+00:48:56,490 --> 00:49:06,420
+Wes Bos: fix my check it out, check out the show notes. Check out the show notes for the link but if you like are skeptical and maybe wait like a couple months before, I'll tell you if it's worth it or not
+
+77
+00:49:06,750 --> 00:50:41,670
+Scott Tolinski: sick. I'm gonna be I'm gonna go a different direction here. I'm gonna do something maybe a fitness related. We talked and the fitness episode about some of our supplements that we get and one of the things that I really like is this this company called bulk supplements.com. I actually asked where you get your sleeping bag of caffeine for a race. It's so I buy all my my supplements from bulk supplement, or at least the ones that I can can do in powder form like creatine and whatever. But like I buy them from Amazon and they come in this giant as bag and they're super duper cheap. And the quality's unbelievable, everybody gets five stars and everything. Prices are just so so good compared to other supplement companies. And you can tell it's like no nonsense because there isn't a bunch of like shitty marketing all over the package. It's not like bunch of crazy colors and ridiculous names of things. Yeah, right Yeah, exactly. There's so many of those it's like Dr. Jekyll and Mr. Hyde like transform your palm so brutal it is it's totally brutal So these things are like in a white bag with like a their logo on it it's like totally non described and the but yeah the the bulksupplements again I have nothing but super high quality for me and the prices again are just super nice. So if you're into mixing your own supplements or working out or any of that stuff definitely check out bulk supplements before you you buy your next can have whatever because it might be able to save you some bucks.
+
+78
+00:50:43,320 --> 00:50:44,520
+Wes Bos: Sick pick
+
+79
+00:50:44,550 --> 00:50:50,700
+Scott Tolinski: sick suit. I mean, we need to make that soundboard I just want to push a button took sick,
+
+80
+00:50:51,270 --> 00:50:58,800
+Wes Bos: sick. I will do that. That's that needs to happen. Awesome. Any shameless plugs?
+
+81
+00:50:58,830 --> 00:52:00,870
+Scott Tolinski: Yeah, I'm gonna plug at the level of tutorials pro subscription service, I've been doing a new premium tutorial series every single month for a level of pro subscribers. And this stuff is really, really, really dope. I've been working really hard to make every series exactly what the subscribers want, you can vote on the up and coming series. So for instance, the most recent series that was voted on was react and Redux for everyone, which came out last month is 21 videos on learning react and Redux. And the most basic possible way I've heard from a lot of people like some of the the feedback I've gotten was like this is the easiest way to learn Redux for me, because I tried a lot of other things. And that was really my goal. Before that I did a CSS modern CSS layouts, which touches on some CSS Grid and Flexbox stuff. But again, a new series every single month. And I'm really excited to just continue and keep growing and every single month producing major major content. So check it out, level up tutorials.com forward slash Pro,
+
+82
+00:52:02,190 --> 00:52:24,480
+Wes Bos: Pro, awesome. I'm gonna plug again, my CSS Grid course just came out. I'm really stoked on it. So CSS grid.io it's totally free. And then you can sign up for it and take it I'm currently working on some some other stuff. I just sent an email out about it. So check your email inbox, check it. Awesome. Thanks so much for for coming out. And we'll see you next week.
+
+83
+00:52:25,020 --> 00:52:37,200
+Scott Tolinski: He's exactly, head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

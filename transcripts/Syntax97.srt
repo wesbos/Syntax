@@ -1,0 +1,184 @@
+1
+00:00:00,359 --> 00:00:24,480
+Announcer: Monday, Monday, Monday, open wide dev fans yet ready to stuff your face with JavaScript CSS node modules, barbecue tip workflow breakdancing, soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA, Bob and Scott Taylor. Totally ski.
+
+2
+00:00:25,980 --> 00:00:58,080
+Scott Tolinski: Oh, welcome to syntax. In this hasty Monday treat. We are going to be talking all about CSS variables, aka custom properties in CSS, why you might want to use them why they're better than your CSS preprocessors variable system and some of the pitfalls that you could run into while using them. My name is Scott Tolan ski at stolen ski at all of the social medias. And I am a full stack web developer from Denver, Colorado. And with me, as always, is Wes Bos.
+
+3
+00:00:58,080 --> 00:01:03,750
+Wes Bos: Everybody. Hopefully you're doing well on this Monday morning, or afternoon or whenever you're listening to it?
+
+4
+00:01:03,840 --> 00:01:32,430
+Scott Tolinski: Yes. Or maybe it's not even a Monday, maybe you time traveled. Maybe you're just listening to it later. I guess that's a more reasonable assumption. So this episode is sponsored by Kyle, Prince, loose freelancing course, everything you need to know to master freelancing. And this thing is a bundle to take you to that next level into making more money, doing a better job and all around just being a better freelancer. So with more about that course, as Wes
+
+5
+00:01:32,490 --> 00:03:00,210
+Wes Bos: Yeah, so if you go to study web development comm for slash freelancing, you're going to see Kyle's bundle on everything you need to know to master freelancing and know a lot of you are looking to earn a little bit of side income, maybe just to supplement your income or you eventually want to go off on your own or Scott and I did as well. We both freelanced while we were trying to build our own businesses, because it's a great way to sort of make money while you are trying to build a product or something else that that's your end goal. So if you need help, I know that we get questions all the time about freelancing, check this out, you're in the bundle, you're gonna get freelancing and beyond ebook, you're gonna get a bunch of website templates that should get you off and running, you get the Facebook community, the slack community, a portfolio website, template, a conversion centered guide, all kinds of stuff, I'm not going to read through all of the different things here. But if you are interested in learning more about freelancing, check it out, study web development, comm forward slash freelancing and use the code syntax all caps for 25% off the bundle price there, thanks so much to them for sponsoring. So today, we're gonna get into it CSS variables, or CSS custom property with CSS custom properties is the actual name Scott and I were talking about this beside the show, they should have just called them CSS variables. That's what everyone calls it. It's like ESX. It's not actually called ESX. anymore. It's, it was es 2015. But everyone calls it that anyway. So we know that that's wrong, but we don't care. We're just gonna continue to use it.
+
+6
+00:03:00,870 --> 00:03:13,980
+Scott Tolinski: Yeah, they've been variables, since pre processors is like, what's the purpose of changing the name at this point? I guess it maybe it is a little bit more correct. In terms of what's happening here, but like variables Come on. makes more sense. Yeah.
+
+7
+00:03:14,340 --> 00:03:46,920
+Wes Bos: So let's kick it off with talking about what they are, if you don't know what they are, if you do feel free to skip ahead a minute or two, we're gonna dive into some kind of cool use cases that you might not necessarily have thought about them for. So the idea is, is that you have a variable in your CSS, like, it could be a font size, it could be a color, it could be pretty much anything that you can think of, and then if you need to use that value anywhere inside of your code, you can just reference it and the syntax to use this is the syntax is a little bit funky. There at
+
+8
+00:03:46,920 --> 00:03:51,000
+Scott Tolinski: least it it's funky if you're coming from sass or stylus with
+
+9
+00:03:51,000 --> 00:03:52,860
+Wes Bos: like $1 sign Yeah, yeah,
+
+10
+00:03:52,880 --> 00:04:09,750
+Scott Tolinski: because it's a little bit it's a little bit less sleek. You know, it's it's not that sleek sports car it's a little bit more of that that blocky Volvo but it definitely I think it has it has its benefits enough that we'll go into as to, to make up for some of the the less sleek Yeah, aspects of it.
+
+11
+00:04:10,109 --> 00:04:58,230
+Wes Bos: And I honestly don't mind it that much. I've been using it for over a year now. And I've grown to like it, I've become fond of it. So the syntax is like when you want to define your variable, you use dash dash and then your variable name. So it could be dash dash color, dash dash size, dash dash, like gray and you have a specific gray that's attached to that. And then you just use a regular CSS property, their colon, you give it your value, whether that's a color, whether that's a unit or a size, or even just like a CSS Grid area name or, or a bunch of repeaters that you want, and then when you want to use it, you just go to your value. So if you say like grid template columns, you var and then use parentheses. And then inside of that, you just use the name of your variable. So dash dash like you named it and the name of your variable. It's it's fairly straightforward.
+
+12
+00:04:58,289 --> 00:05:57,510
+Scott Tolinski: Yeah, and I think this is where more or less The cool things about it just being CSS come into play, because if you wanted to override it, the same rules of CSS specificity still apply. So you can override it just by simply redefining it in a lower aspect, or more specific area of your CSS, whether or not that's in another selector or something like that. In addition to that, you can also change them via just straight up JavaScript, I mean, the same way that you would append a style or some sort of CSS property in normal JavaScript, you can do that with your custom properties. And those will then update throughout the rest of your site. Of course, we're going to get into some of those cool things in a minute here. But the I think the interesting aspects of CSS custom properties, is really just that it's just CSS. And since you're defining these custom properties, it functions like the CSS, you know, and love, rather than something that's foreign or different out there
+
+13
+00:05:57,510 --> 00:07:08,520
+Wes Bos: or something, it's sure there's no new JavaScript that you need to learn to update these things. And there's no new CSS that you need to really learn other than using the dash dash in front of it. And other than using the var, if you want to update a variable in JavaScript, and this is one of the benefits of using CSS variables is that they are live meaning that in sass or any preprocessor, you use a variable that gets compiled, and then it's stuck, you can't change it unless you were to recompile your sass. And in JavaScript, you can just use your grab a DOM element or grab the root of your document and use the style set property method. And on that, you can just set the property like you would normally change the background or the font size, you would just use dot style dot set property, dash dash color, and then set it to the new color that you want. And then anywhere that that variable is used within scope will be then update and we'll talk about scope in just a second. So it's it's pretty cool that we're able to have this sort of now flexible CSS that isn't just figured out at author time, it's figured out whenever the variables that are used inside of your CSS change.
+
+14
+00:07:08,640 --> 00:07:55,260
+Scott Tolinski: Yeah, yeah, absolutely. And I think some of those things that we were talking about a minute ago about the there's no new syntax thing, I think one of the other new syntax II things that, you know, might seem a little bit foreign is defining these add looks sort of the root level. And so we mentioned that it functions very much like a CSS property in terms of specificity. And like, you can define it inside of a selector by defining your custom property inside of that selector. And therefore, it's like scoped inside of that selector. But if you wanted it scoped to your entire document, you would specify it as part of the route. And you would do that with a colon, the word route, and then brackets and then inside of there, you would specify your custom properties, allowing you to use them throughout your entire application, or maybe override them later or something like that.
+
+15
+00:07:55,289 --> 00:08:54,600
+Wes Bos: Yes, it's kind of like JavaScript, sometimes you need global variables, or at least module wide variables that are available in the entire module. Because those are things that are used everywhere throughout your entire application, you always need access to them. If that's the case, then you you scope them to the root, and then they're available anywhere you write CSS, otherwise, you would go ahead and scope them a little bit lower, maybe you only need a specific font or size or color or something within a specific widget. And if that's the case, like you have a Twitter widget in your sidebar, you say dot tweet, you can set a variable on that. And that's going to be available both inside of that selector, as well as any elements that are a child of that selector will have access to it. So it's pretty cool. They can be overwritten, like Scott said, you can overwrite them at any level down. And just like regular CSS, if you set a font size on your body, and then later on, you set a font size on a very specific selector, then you're obviously you're just going to overwrite that value, just like CSS spec of 50. Works.
+
+16
+00:08:54,630 --> 00:10:35,520
+Scott Tolinski: Yeah, and I've already said it correctly, twice this episode. So now that I'm nailing it, it's officially part of my lexicon, it is in there, and it's not coming out, it is forever embedded in my brain. Okay, so we have gone over a little bit so far of the why you might want to use this. But let's get into this a little bit more, now that maybe we understand a little bit more about how this thing is working. And a lot of these things do carry over from CSS preprocessors. And so the cool thing that CSS preprocessors did is it sort of opened everyone's eyes to sort of really some of the benefits of using a variables in CSS. I remember that was one of the most killer features when I started learning sass myself was to say, hey, you can now store these values in CSS and access them later at another time. In some of the lessons that we learned from sass and stylist and things like that carry directly over into CSS custom properties, for instance, it can often make sense to both define your custom properties as what they are as more or less what they do as well. So for instance, you could define a custom property Guess like this is the brand color of yellow, right. But you could also define the custom property as what it does. Maybe this is an accent, right? This is the primary color or something like that. And so these sort of lessons that you had from CSS variables within preprocessors, they do carry over. And you can develop these sort of designed systems around your custom properties, the same sort of way you did with CSS variables in pre processors. I think this is one of those use cases, that should be obvious because we've been doing it now for a little while. But if you've never touched a preprocessor, it might seem Well, a little bit more foreign. I like
+
+17
+00:10:35,520 --> 00:13:07,560
+Wes Bos: to use that instead of using like color names when you're doing theming. Like, if I'm just doing my own website, I know that it's going to be yellow, and I'm not going to change that I've only got into some hot water before with sass, where you have a variable called Blue, and then it's inevitably set to orange, because you use the same kind of style guide on another client's project. And it's totally different. So having like primary accent, secondary variables like that are really nice, because then you can use them for theming, entire values like that. Another thing, and this is probably my favorite piece in CSS, you sometimes get into a situation where you can't independently control parts of a CSS property. So the biggest two are if you have a transform that has two values, so you have a transform that rotates something and something that scales something, if you want to change the value of the rotation, or the value of the scale on let's say, hover, or when you add a class, there is something coming to CSS called independent transform properties, which will allow us to get rid of the whole transform, rotate, and it will just be simply rotate 30 degrees, that makes my life so much better. I cannot wait. It was in Chrome for the longest time, and then they yanked it and a whole bunch of my demos broke, because it wasn't ready for primetime. But the way around that right now is that you write your CSS like this, you say rotate var dash dash, rotate, scale var dash dash scale, so you just set them to variables. And then in the same selector, you set your rotate in your square scale variables. And then when you want to change one of them, let's say on hover, the only thing you need to do is not reapply your transform, you just need to change your variable on hover. And that will be enough to actually trigger it. And the nice thing about that is that you don't have to, like I've been in situation before where I'm like, okay, I only want to change the Rotate value right here, but not the not the scale value. So you just like have to like copy paste the scale value over. And then if you change the first scale value, the second one doesn't make it over right, you can, you can see the problem that we have there. So that's amazing. Same with like box shadow, or what is it text shadow, you have your x, your y your blur your spread and your color when you have a box shadow or, and that's what that's five properties that you need to take care of. And if you want to change one of those things on hover, or when you add a class or even with them, if you have like a slightly like larger size, and you only want to change the amount of the box shadow and not the other things, you can simply just change the variable and they will then be applied.
+
+18
+00:13:07,590 --> 00:13:35,130
+Scott Tolinski: Yeah, that's brilliant. I'm like loving that. Because that's a very real use case that anyone who modifies CSS at any given point for animations, or really, anytime you're you're hovering your transitions or something like that. I do want to say to that that transform thing is amazing simply for the fact that every single time I go to write, translate, or transform, translate, I always write translate colon, and I'm like, Oh, crap, it's transform, translate, not translate
+
+19
+00:13:35,160 --> 00:13:37,020
+Wes Bos: trans. never remember which one it is.
+
+20
+00:13:37,920 --> 00:15:04,980
+Scott Tolinski: Similar to me either. Not that similar, but they're similar enough. I think, another great thing that that obviously, we're going to see benefit from this is very closely related to what you're talking about. But just the ability to change these properties during your application. Like I mean, you could think of an immediately applicable way to do this would be maybe you have a dark theme. And maybe that dark theme or whatever that visual theme is, is triggered by the user input. You know, I personally use a lot of applications like to do list. And to do this as my to do list application. One of those things is a settings. And you can change the entire theme of the app. And this is not like, this is not like a revolutionary thing. There's tons of apps that do this, right. And so there's a whole bunch of 10 different color themes, that theme the entire app head to toe, right. And I can just think of how much easier that would be to change five or six custom properties in reskin your entire app with changing five properties. If you imagine having to go through your classes or whatever and find every single time those colors are used and update that to change your theme. It just sounds like a total nightmare. And it's something you'd have to like plan your CSS around from the very start, where with custom properties, you're just setting your custom properties and you're able to change them and you don't have to change the way you're writing your CSS or organizing it. So I think themes in general unroll Thema bowl content and things like that are going to be just so much easier with custom properties.
+
+21
+00:15:05,010 --> 00:16:11,820
+Wes Bos: While you're talking about those themes. We are also soon, one day, I don't know the what the status is of it right now. But we are getting the color functions inside of CSS. So you could theoretically just take that brand yellow, and then calculate your lighter values, your darker values, your opposite values, your saturation, because we're gonna have all these functions that are like opacity and alpha. And you can make something a little bit more red or a little more green, or has tint or shade or blend two colors together or adjust the contrast. It's awesome. Because theoretically, you could just have one color and your entire project and just use math and these color functions to calculate all of the other colors. I'm sure it's obviously not that easy. That's why we have designers, but that's kind of neat that you'll be able to, and you can do this in SAS already, you can just calculate like, oh, if it's a red than what should the box shadow be? Right? Yeah, I always just use RGBA, black or white and then adjust the alpha channel. Yeah, so that it looks good. But I know that it's better performance, if you actually just give it a solid color instead of that transparency there. And that would be one use case for this. Yeah,
+
+22
+00:16:11,820 --> 00:16:45,420
+Scott Tolinski: I use those like crazy and stylus to just be like, here's my read and on hover, you're going to get a red plus 10. And then it just gets a little bit lightened version of that red. So I would definitely be down for that. I love how CSS has learned so many lessons from the pre processors. And it seems to be embracing that rather than shutting the door on that. Now, granted, it takes a long time for any of this stuff to come through the gates, but like just the fact that it's evolving in that direction at all is is just brilliant. And it makes writing CSS just a lot, lot better.
+
+23
+00:16:45,870 --> 00:17:10,800
+Wes Bos: Totally. We saw that with JavaScript as well. Like we have almost all of jQuery now available in the browser. It's not as nice as jQuery was, but it works just great. And you don't need to reach for those things. And I think probably someday we will have to reach for a preprocessor because we will just be using I don't know if that one day will ever come because we're will probably always want to be using whatever is coming. Two years ahead. Yeah. But uh, we definitely are catching up.
+
+24
+00:17:10,820 --> 00:17:48,000
+Scott Tolinski: We are. Yeah. And I mean, we do have a whole section of this episode called bombers, which we'll talk about some of the bombers in relation to CSS custom properties. Do you have anything else under your use cases for why? Yeah, I think personally, the for me, the killer features are really just the ability to change them and have them affect every time it's been used. And now that CSS is so more tightly ingrained into JavaScript with things like styled components, or scoped CSS or whatever, I think we'll be seeing the rise of JavaScript controlling CSS properties in an easier manner more. So I guess, then before?
+
+25
+00:17:48,150 --> 00:18:38,060
+Wes Bos: Yeah, I think another kind of cool thing, and this might trigger some of you so be prepared, but you can overwrite variables in line as you author the HTML. So you write all of your CSS, and maybe you set up a paragraph tag to have 14 font size and be black. If you ever wanted to overwrite that, you can just use a style attribute on your paragraph tag and set the variables in the style tag. And then they will then be overwritten because it's more specific inside of a style attribute than it is inside of style tag or external CSS file. And that will then overwrite it, I've used that quite a bit myself, just because like, I'm authoring HTML right here, I know what I want it to look like I it's kind of full circle, because we're kind of coming back to the font tag of eyes and color attributes. But I can see it
+
+26
+00:18:38,060 --> 00:19:34,310
+Scott Tolinski: is more useful, unlike a larger container basis, like all of the text within this container needs to be this property, and therefore you're like changing it in a larger sense. And then more scoping. It kind of triggers me on a smaller level. But I think a lot of this stuff is using it and seeing is believing kind of thing. Now granted, you don't need to to see CSS properties or variables to understand why you need to use them. But I think some of the the magic with CSS custom properties being able to be changed, like this is definitely a useful time to use them. Now, we haven't really talked about some of the other cool things that have been recently added to CSS, like calc, and what we can do with custom properties in calc, because if you have used CSS variables and pre processors before, you know the powers of you have a variable and you can manipulate it with math or whatever. And now we have the ability to do so with things like calc, right,
+
+27
+00:19:34,340 --> 00:20:06,320
+Wes Bos: yep, you can pipe your variables right into a calc, which is really cool. Because with calc, you have the ability to mix and match percentages and pixels. Yep. Which is great. You could take like 80% minus 20 pixels, it's amazing, the RAM, and it will all just work out. Another really cool part about that is that you can use them in partnership with transitions, which will give you a really, really neat animation. So if you have an animation that's all based on variables and you change one of the those variables and you have a transition on those properties, then it will just animate for you. It's a whole new world with the stuff.
+
+28
+00:20:06,350 --> 00:21:02,160
+Scott Tolinski: There's a whole new world and getting into that whole new world thing. What are the bummers here that are going to keep you sidelined from this whole new world? Because after pumping you up for this whole episode, now we get to tear it down a little bit. I think the big problem is that they're they're supported pretty well. But they're not supported by iE 11, which is a gigantic bummer. Because, yeah, there's not a great fallback system for this kind of thing. And so I don't know, like what you do personally, but I ended up just declaring CSS properties twice. Because what happens is, is that I 11 will get to the one with the var and say, Hey, I can't read this stuff. I don't know what this means. And then just move up to the next one in line, where we'll read it with the correct color. And this means your CSS authoring is now clunky, and unnecessarily long. And now all this extra stuff. I don't have a solution for that, other than not supporting iE 11.
+
+29
+00:21:02,400 --> 00:21:33,320
+Wes Bos: We talked about this on our browser support one podcast tasty treats about a month or two ago, where the CSS there's not a lot of great fallbacks for CSS, whereas JavaScript, you have access to the actual prototype of everything. And you can polyfill almost everything. It's not the case with CSS. So you just got to sit on your hands, because this has been around for a couple years. And it's only becoming popular recently, just because we're starting to see people kiss that last iE 11. Goodbye. And then we're racing and we're in good shape.
+
+30
+00:21:33,480 --> 00:21:40,340
+Scott Tolinski: Yeah, I'm wondering what my 11 usages right now, if it gets to it, let's open up our Google. Hello.
+
+31
+00:21:40,380 --> 00:22:07,230
+Wes Bos: Yeah. So Scott, and I just opened up some website data. I'm looking at my advanced rap Comm. Course, which has had probably the most traffic in last couple months. Actually, this is just one week, and out of 20,000 people who visited it 58, which is 0.3% or on IE, and of those 5853 of them were on iE 11 and five of them were on IE eight like it.
+
+32
+00:22:07,650 --> 00:22:33,210
+Scott Tolinski: Yeah. So very, very small for me. Similarly, I have point two 5%. Internet Explorer usage. Oh, even last, wow. Yeah. Where 70% of those are on iE 11. And, and a very small percentage of users on IE eight, which let me tell you, if you are using level up tutorials on IE eight, it is not going to work. Well.
+
+33
+00:22:33,660 --> 00:22:35,970
+Wes Bos: That must be a bot. There's no way.
+
+34
+00:22:36,060 --> 00:22:47,790
+Scott Tolinski: Yeah, I was still using IE, I'm using CSS Grid with absolutely no fallback because, well, if you're learning web development tutorials, especially the React sort of stuff, you're probably not
+
+35
+00:22:47,820 --> 00:22:49,200
+Wes Bos: going to the browser
+
+36
+00:22:49,260 --> 00:22:52,560
+Unknown: top browser. I think he's easily Chrome. Let me
+
+37
+00:22:52,860 --> 00:23:08,460
+Wes Bos: come on Chrome at 74% is chrome 16%, Safari 5%. Firefox, and then you got you got the mobile browsers coming in after that. And then very edge edges beating out, ie
+
+38
+00:23:08,490 --> 00:23:14,970
+Scott Tolinski: 75% of that room for me. 15 miles Safari 5%. Firefox,
+
+39
+00:23:15,180 --> 00:23:17,700
+Wes Bos: I'm surprised that it's not more Firefox.
+
+40
+00:23:17,730 --> 00:23:20,430
+Scott Tolinski: I'm surprised that so much sorry, Jonas? Yeah,
+
+41
+00:23:20,430 --> 00:23:26,100
+Wes Bos: me too. Yeah, interesting. Cool. All right, well, anything else to add a bummer surrounding it.
+
+42
+00:23:26,490 --> 00:24:53,460
+Scott Tolinski: So I do have one more thing there is, we did mention that there's no great way to do a fallback. But there is an interesting post CSS package, if you are using post to CSS, which those of you don't know, is basically like a CSS preprocessor. But it's a post processor. The distinction is not really that important. But really, what this allows you to do is to define custom properties. And it looks like it spits out. Yeah. Okay. So you define your custom properties, as is normal custom property syntax, and it spits out the actual CSS. So you do lose the benefits of Yeah, the CSS custom properties, in my opinion, in an ideal world, what this would have done instead was spit out the value plus the left to the CSS custom properties syntax in there. Oh, no, wait, it does. It does do that. Oh, nice. There's a little there's a way that it does do that. That way, you can take advantage of that fallback. And this now makes me wish that stub components had post CSS plugins, because you could just throw this in here and get instant backwards compatibility. So this, to me looks like the closest thing to backwards compatibility, or some sort of, you know, polyfill type of thing. So it's a post processor. Granted, you have to be using post CSS to make this happen, but looks like a cool project. I'll link that up in the description of this or the the notes as we say,
+
+43
+00:24:53,670 --> 00:25:07,080
+Wes Bos: That's it for today. Hopefully, you enjoyed it. If you have any other kind of creative use cases for CSS variables, let us know at syntax FM I'm at Wes Bos Scott is at St Lynskey. Make sure you follow us up on Twitter and Instagram, and we'll talk to
+
+44
+00:25:07,080 --> 00:25:08,580
+Scott Tolinski: you next week later.
+
+45
+00:25:08,580 --> 00:25:09,750
+Unknown: Peace please
+
+46
+00:25:11,759 --> 00:25:21,510
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

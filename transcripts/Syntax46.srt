@@ -1,0 +1,432 @@
+1
+00:00:01,319 --> 00:00:02,820
+Unknown: You're listening to syntax,
+
+2
+00:00:02,820 --> 00:00:04,590
+the podcast with the tastiest web
+
+3
+00:00:04,590 --> 00:00:09,000
+development trees out there, strap yourself in and get ready to live ski
+
+4
+00:00:09,000 --> 00:00:10,560
+and West boss.
+
+5
+00:00:10,589 --> 00:00:26,190
+Wes Bos: Hello everybody and welcome to a syntax the podcast with the tastiest web development treats. My name is Wes Bos, I'm a let's let's introduce ourselves assign again, Scott. I'm a full stack developer from Canada. And with me, as always is Scott say hello, Scott.
+
+6
+00:00:26,309 --> 00:00:30,960
+Scott Tolinski: Hey, my name is Scott to ski. I'm a full stack developer from Denver, Colorado.
+
+7
+00:00:31,169 --> 00:01:16,830
+Wes Bos: Beautiful. So today we are going to be talking about what's new in JavaScript. So there's all this like JavaScript, as we know is a constantly evolving language. The language itself is always moving. browser API's are always moving new JavaScript API's are always surfacing themselves. We're getting new libraries and new ways we can use different libraries. It's a really exciting time. So today we are going to go through I don't know 10 or so different new API's will explain what they are when you might want to use them. And looking forward to it. So today's sponsor is fluent cough, which is an amazing web development conference down in San Jose and Netlify which is Scott's favorite hosting company will not stop gushing about. Yeah, so how you doing today, Scott?
+
+8
+00:01:16,979 --> 00:01:32,370
+Scott Tolinski: I do good. I have this uh, this tea that I got from that fancy tea shop. Oh yeah, blue people. It's like a serve a rare sort of lung like Korean gin seeing oolong tea. It's excellent. Oh, starting my day off right.
+
+9
+00:01:32,399 --> 00:01:50,880
+Wes Bos: How about beautiful I'm doing pretty good. Just still enjoying the super nice weather. We had a pizza party at my house last night The Big Green Egg which is the the smoker that I have. Yeah, it has a pizza plate on it. It made all kinds of amazing pizza. So super fun to do that.
+
+10
+00:01:51,030 --> 00:01:52,050
+Scott Tolinski: Wow, that sounds good.
+
+11
+00:01:52,200 --> 00:01:56,040
+Wes Bos: Yeah. And you are do you want to talk about your your studio
+
+12
+00:01:56,040 --> 00:03:23,190
+Scott Tolinski: at all? Oh, yeah, yeah, I am in the process of building a studio. Anyone who has followed me on Twitter for any given amount of time would have heard me complain about some of the noise that happens outside of my office which is plentiful from the amount of construction going on in Denver overall but to my neighbor doing things like vacuuming his patio two times a week, our dogs barking or my dogs barking or all sorts of noise that happens so I am going to be building a studio which should have some significant DB reduction I'm going for isolation room here so it should be absolutely silent when the whole thing is done. So I should be posting if you want to follow me on Instagram at S kolinsky I'll be doing a lot of like stories showing the progress and stuff like that I'm in the design phase right now I have a contractor I have a my audio engineer friend is doing the design for me and overall it should be really really cool I think at the end of it I'm going to have my isolation booth take up about half of the room and then the other half of the room I'm do did do a delicate design into the like on camera part of my studio that you'll typically eventually see me at on my YouTube videos. For those of you don't know I run a YouTube channel level up tutorials so check out level up tutorials on YouTube where you can see a lot of these videos and stuff that I'm talking about until the eventual set in studio will be heavily featured on level up tutorials to
+
+13
+00:03:23,310 --> 00:04:02,910
+Wes Bos: that's pretty cool. I'm so thankful that my office is relatively quiet right now my neighbor is cutting tile on their porch and they're my neighbor's house is almost touching ours they're that close yeah and a Scott says he can't hear it at all which is which is great. I think that's such a competitive advantage in what we do is quiet being able to record whenever it is that you want you don't have to worry about family or neighbors or any external noise that's going on are you bothering other people by talking I used to share an office with my wife and I had to wait for her to like leave before I could actually record and sometimes you're not feeling it and you you waste all that silence right
+
+14
+00:04:02,910 --> 00:04:34,320
+Scott Tolinski: yeah and right now I feel like have this like gap right the dogs not barking my dogs are barking the neighbors not outside working because he works outside all the time. Like Yeah, I have the window now I have to record and so or you know, corny doesn't work friday so she's home all day, which you know, I don't want to tell her to be silent, but I want to get stuff done. So it's just going to be nice to be able to go inside my my soundproof isolation studio, shut the door and be able to record at anytime, anytime, anywhere. Regardless of what's happening. I am psyched.
+
+15
+00:04:34,440 --> 00:04:50,630
+Wes Bos: That's pretty sweet. swipe, swipe. I was gonna say it's sick and sweet that swipe why swipe. Alright, let's, let's jump into it. I got all kinds of stuff in here, which is which one do we want to start off with here?
+
+16
+00:04:50,699 --> 00:04:51,750
+Scott Tolinski: Let's do something fun.
+
+17
+00:04:51,840 --> 00:04:55,470
+Wes Bos: Yeah, let's do something fun. You want to start off with your animation one?
+
+18
+00:04:55,740 --> 00:07:29,820
+Scott Tolinski: Yeah, this is a library I had as a sick pick a couple episodes ago which is popular. Motion pose, or pop motion overall, I really like this, this package a lot. The only downside to this package is that the docks are still growing. So you might get to it in and look at some of the examples and be like, Wow, that's really cool. But how do I, how do I actually do this stuff? Basically, pop motion pose is a new library that works in it react or works in just standard JavaScript. And the the JavaScript or the React version of this thing functions very much like styled components, where you do a pose, dot, and then your element name, or could wrap around another component, right. And then inside of your string literal, instead of having a CSS styles, you define sort of locations or posed positions. So for instance, you could have a menu, right, which is the the closed position would be translated off screen, and then the open position is translated on screen. And then you simply are just passing what state this animation is into the React component. And that actually takes care of all the animations. So instead of saying, Hey, this is active or not active, you're saying this is opened or closed. And you don't have to do anything with CSS, it works really well with styled components, it works well with any sort of other component or whatever like that. There's also some really excellent flip animation techniques, which we've talked about flip animation a little bit before, but it's where you calculate the beginning and ending position and then animate between the two. So there's just a lot of tools for really excellent animations, I just rebuilt the level up login system to use pop motion pose instead of just sort of normal CSS transitions. And let me tell you, there's some really cool stuff for really animating Well, on unmounting. And mounting, which is, in particular, something that I found to be not so much fun is animating the unmounting state and things typically, in CSS transition group and transition group for react to get you so far. Let me say the syntax for this is quite a bit better. So if right now if you you know, don't mind having things not working, or you know, really kind of crushing through it a little bit while you go through some examples. Pop motion pose is a really, really cool library. I've had nothing but really excellent results from these animations here. So I'm really excited to try to use it in a more thorough way. But I've been a big, big fan of this library lately.
+
+19
+00:07:30,000 --> 00:08:10,980
+Wes Bos: This is really cool. Because pop motion is just a I'm just looking at what because pop motion pose is specifically for react but pop motion itself. It says it's the Swiss Army knife for animators and interaction developer. So you can just use this with anything it looks like you can tween from one thing to another. No, there's lots of animation libraries out there. Actually, I have Val head had an awesome talk at a conference I was in a couple weeks ago, about all the different libraries that are out there for animating. But this pop motion looks really good. And it seems like you can just pipe the animation numbers out into any other library that you want. You could just as you can pipe it into three j s or react a frame. Pixi j. s.
+
+20
+00:08:11,040 --> 00:08:42,240
+Scott Tolinski: Yeah. So pop motion itself is really cool. It's sort of the animating the post part is where you're setting up these different positions, like open and closed. Yeah. And so that's not just react, but it can be they have like a nice component for react. So you have this sort of like this pose where you're setting up your sort of like stage or whatever. And you're, you're, you're telling these different things to do XYZ, right. They also have a really cool animation for styling, SVG, called style fire, pot motion has a bunch of pretty cool libraries. Overall, I think it's really interesting stuff.
+
+21
+00:08:42,330 --> 00:10:19,159
+Wes Bos: Next one I have here is intersection observer. I'm pretty excited about this one. So let me explain the problem first. So if you've ever had to build a website, where something happens when you scroll into a specific portion of your website, or you want like an element on your page to start auto playing, or to slide in, or slide out or to, to fade in, when you animate to a certain point, you know that that's kind of hard, because you have to listen for the window on scroll event. And then when the window event scrolls, then you need to check where your different elements are on the page and figure out if they are on page or not. So this intersection observer is a new browser based API that is based on observables. Meaning that you can watch a whole group of elements. And what you can do is you can say, Tell me when this element is a div or a video tag or anything, is either on the page goes off the page, or is partially on or off the page. So you can set these little thresholds meaning that like, tell me when this video element is halfway on the page 0.5 and then start to autoplay it or tell me when this ad unit has totally scrolled into view and then record a view for it. And this is pretty cool because in the past has been very hard to actually calculate all this stuff and it's a bit of our performance hit in the past So I'm really excited about intersection observer coming to the browser, it's going to be really performant. Because like, who knows better than the browser, what elements are actually on the page, because the browser has to paint these elements of the page, right? So check out intersection observer, I'll link up to the MDN docs,
+
+22
+00:10:19,440 --> 00:11:52,470
+Scott Tolinski: in the show notes, dope. This one is an announcement that happened at the site day conference that I was speaking at a couple of weeks ago. And this is a new library, and it's called m DX. Now, MDX is a new, full featured Loader for JSX. In markdown, it's kind of interesting. So it sort of turns markdown files into components. And you can move your components from markdown file to a markdown file, and then use them as sort of JSX inside of a markdown files. So you could see what looks like an HTML or react element just plopped down in your markdown file. And that could be any sort of reasonable chunk, essentially making markdown into something that's way more extendable than it's ever been before, you could think of this being really super useful in creating really nice readmes. Or perhaps you're in like a blog system, and you're using markdown files for your blog posts, you could be using shared sort of content between different blog posts, or perhaps there's just sort of maybe different content that you want represented in entirely in markdown. Now, right now, this is a loader for Webpack. Specifically, there is an issue queue to integrated into personal as well. So who knows what the future of this is other than outside of Webpack. But it's really sort of super cool. It's not something I think anything else is doing. And just opens up a lot of, you know, possibilities for markdown files that are used in sort of a different way.
+
+23
+00:11:52,529 --> 00:12:39,539
+Wes Bos: Totally that because that's always been a bit of a limitation to using markdown is that there was no real include structure to include stuff like that, if you were writing a blog post, you wanted to pop in a graph, or a YouTube video, or maybe you wanted a table that shows browser compatibility for a specific tech and you want to just include that into your blog posts, you could just pop in these react components right in line. So this is pretty cool. I probably will use this when I'm redoing my own blog post or when I'm redoing my own website because I need something exactly like this. And it comes from Zeit in as we know we're big fanboys here, anything that's like puts out they put out now and next next react framework, they put out hyper term, so it's it's likely that I will absolutely fall in love with this.
+
+24
+00:12:39,570 --> 00:12:46,529
+Scott Tolinski: Yeah, it seems pretty cool. When they announced I was instantly like, Oh, yeah, that's useful. I don't want to write that hasn't existed before cool.
+
+25
+00:12:48,600 --> 00:14:39,659
+Wes Bos: Wicked. My next one is along the same lines as the intersection observer is resize observer. So another question is, how do you know when an element on your page has been changed size. And right now, the only way to do that is to you either run a timeout, and you check the size of an element every, I don't know, a couple hundred milliseconds, which is really bad for performance. Or you listen for window resize. And then when that happens, you check if your elements have resized, and both those aren't really great solutions, because we're starting to move away from what we talked about is like viewport based design, meaning that like, okay, the the screen of this device is a certain width, then when when that happens, these components are going to be this size. However, not everything has to do with how big the screen size currently is, it should have to do with how big is the the component currently. So I did this in a talk and he gave an example of like, you have a video on the left. And on the right hand side, you have a list of videos, sort of like YouTube does if you have a playlist open on the right hand side. And depending on how wide that playlist of videos is, you want to style it in a couple different ways. And ideally, this is going to be something called element queries where we'll be able to use CSS just to apply CSS to things based on their current width. Or if you have a component that stretches across the whole width of your website, you want it to look different than when you put it into a footer, and it's a third of the width of the website. So resize observer is going to allow us to watch elements for when they resize themselves. And then when that happens, we can apply and apply classes or do anything in JavaScript to those elements. And I what I'm using this for is just waiting for the actual element to resize itself and then applying a class of small, medium large. And then at that point, I can jump into CSS and and style them differently. Small, medium or large.
+
+26
+00:14:39,690 --> 00:15:11,970
+Scott Tolinski: Yeah, and if you're using styled components, you could just trigger different props into that component and have different states there. I think the the possibilities that this opens up for element queries is pretty sick. I've always been a big fan of that idea of element queries, right like because why would the window you know something's its own size should just determine its layout. Rather than, like the window size, specifically, of an individual item, right, so element queries are something that I'm pretty excited about. So using something like resize observer for that seems like a pretty sweet deal.
+
+27
+00:15:12,029 --> 00:15:25,080
+Wes Bos: Yeah, I'm pretty, pretty excited about it. And hopefully, it's a bit of a stopgap solution. Because Yeah, ideal world we would have no JavaScript involved in exactly how are things look, right. So for now, we have to use it, but maybe just CSS in the future crossing my fingers.
+
+28
+00:15:25,169 --> 00:17:03,240
+Scott Tolinski: Yeah, definitely something that I'm hoping comes in. Cool. So this next one is going to be something that is existed for a little bit here, but a lot of people still don't know it exists. In fact, when I used it in my Gatsby series, I think a lot of people were surprised to see that this thing exists. And I think for good reason, the browser support isn't great. However, there is polyfills. I'm talking about the web animations API, which is a great way to work with animations in JavaScript natively, which is just basically a really nice way to set up again, different animations. And then you can have them essentially saved as a variable. And you can tell your animation to play or pause or reverse, or it gives you a lot more control over things. Because was a native implementation of animations, right. So instead of just changing classes, and having a CSS transition, or animation do its thing, you can sort of full control over what's going on here. And again, if you took my pro Gatsby course, you probably got to see these things in action and saw how just how generally impressive they were or nice to use. So I'm a big fan of the web animations API that said support is a little rough Safari, not so good. iOS Safari, definitely not so good. Firefox has full support. Chrome has partial support, and edge and IE are like totally read. So the good news is, is there's a sick polyfill out there for this called the web hyphen, animation syphon j s, it's just a polyfill to you know, get all those browsers up to date. So if you want to use the web animations API today, use it with the polyfill. Because there is really sort of bad bad bad browser support right now.
+
+29
+00:17:03,360 --> 00:17:19,680
+Wes Bos: I'm pretty excited about that one as well. Again, polyfills, unneeded, it's always a, we should probably state that a lot of the stuff that we're talking about today, we know that it's not in every single browser. There's always some sort of Debbie Downer that comes out swinging anytime you talk about anything new,
+
+30
+00:17:19,739 --> 00:17:21,110
+Scott Tolinski: but when can we use it?
+
+31
+00:17:21,149 --> 00:17:40,050
+Wes Bos: Yeah. Oh, but it's not supported in this aisle. Thank you. Or, on the flip side, there's always that people that asked me what it's supported in. And I just want to be like, Can I use.com? Check it out? Yeah, stop asking what is supported? And because you should be able to look this stuff up? No problem, right. So yeah, I can I
+
+32
+00:17:40,340 --> 00:17:43,290
+Scott Tolinski: couldn't be any more intuitive. It's a beautiful, beautiful website.
+
+33
+00:17:43,440 --> 00:18:39,540
+Wes Bos: Yeah. If it's not on there, you likely can find it either in what is it on MDN. And if that's not, if it's not there, it's probably just an experimental API, which has not been confirmed to be in the browser. Sometimes browsers will implement these things like here. My next one is the face detection API. So this, as far as I can tell, this is just an experimental API. It's not a browser standard just yet. But sometimes the browser's will implement these things just to say, Hey, this is kind of how we were hoping it would work. And then they'll sort of circle back and go through the entire process of standardizing it and making sure that all of the different browsers can implement it. So this new API is the window dot face detector API and assume that this is going to be expanded into all of the shape detection API is maybe you could feed it custom data sets of learning how to detect if it's something as a hot dog or not a hot dog. Watch Silicon Valley. Yeah.
+
+34
+00:18:39,560 --> 00:18:45,150
+Scott Tolinski: Yeah. Haven't seen the new season. But the hot hot dog hot dog was like, I think a high point of the series.
+
+35
+00:18:45,180 --> 00:19:10,890
+Wes Bos: Yeah, very good. Anyway, so the way that this works is that you create a new window dot face detector, and then you pass it an image tag, and it will return to you an array of faces, and it will tell you within those faces, where the eyes are, and where the mouth is, these things are called landmarks, which are kind of interesting, which leads me to think that it's not just going to be for faces, because if they call it a landmark,
+
+36
+00:19:10,920 --> 00:19:15,320
+Unknown: yeah, it might be general enough. Yeah, exactly. Image detection API.
+
+37
+00:19:15,390 --> 00:20:13,820
+Wes Bos: That's what I'm thinking it will eventually be Will you be able to pass it in, but I tried it out. I sent a tweet out where I passed it just a photo of me and my family, and it detected all of our faces all of our eyes and and the mouth, which is pretty cool. And then I thought and this is something I did years ago, I thought what can I also pipe in a video element. And I can't remember if I just piped in a video element or I piped in a canvas element. I think what I did is I took a snapshot and piped it into a canvas element. And then and then it would give me real time face detection and it works really really quickly. So it follows my face around the screen, no problem. It gets bigger and smaller as it moves back and forth. And then what I did is I thought okay, well Well, it tells you where the eyes are, it doesn't tell you where the tilt of the head is. So if you tilted your head, it would just keep a straight box on it. But then I remembered, I don't know, you remember from math class, you remember? Like, what a squared plus b squared equals c squared?
+
+38
+00:20:14,190 --> 00:20:15,480
+Scott Tolinski: Is that the algorithm?
+
+39
+00:20:15,540 --> 00:21:08,970
+Wes Bos: Yeah, yeah. I had to figure out what the hypotenuse of something was. And I found the perfect rhythm. Yeah, I think that that the Fagor rhythm in JavaScript called like a coast to, and it's this, like built in equation, I have no idea how math works. But I wanted to know, if I have the location, the x and the y of my eyes, can I figure out how many degrees My head was tilted. And I use that to figure out the tilt degree. And then I could use CSS to rotate the eyes and everything. So I'll put the code that I have up on GitHub, I probably we'll do a little YouTube video on it at some point as well. I think this is really fun, especially if you feel a little bit burned out, bummed out on what you're working on right now take a little break, right? I don't know, 60 lines of JavaScript, and you can build a little face detection.
+
+40
+00:21:09,180 --> 00:21:21,830
+Scott Tolinski: Yeah, API, like webcam projects are always like really one of those things that when you're feeling burnt out, it's always fun to just sort of grab some example that already exists, and then mess with it or, or play around with some new API's like that. always a lot of fun.
+
+41
+00:21:21,900 --> 00:21:23,430
+Wes Bos: It's so much fun, I love it.
+
+42
+00:21:23,490 --> 00:21:52,320
+Scott Tolinski: So if you feel like you are really getting a lot out of all these different new API's and new libraries that were going over in JavaScript today, you might want to check out the fluid conference in San Jose, because the fluent conference is going to be the place where you can hear from all of the most amazing people in our industry, talk about all of their latest and greatest things, or projects or libraries or different API's. And you can totally expand your brain even further.
+
+43
+00:21:52,530 --> 00:23:20,460
+Wes Bos: Yes, so the O'Reilly fluent conference is happening on from June 11, to 14. So first two days, they've got some training, the second two days, they've got tutorials, and the conference happening is happening in San Jose, California at the San Jose Convention Center. And I would highly recommend that you check this out. I mentioned in previous episodes that I actually spoken at flume conference before I was hoping to go this year and speak at it, but it didn't work out with some other overlapping conferences that I had. But if you are looking for a couple days just to sort of download the information of whole bunch of experts into your own brain and get up to speed with what's going on in the web development community, I would say that you should check out a fluent conference book, your hotel book, your flights grab a ticket to this because it's always a good one. They have some amazing speakers go to the O'Reilly fluent conference website and just peer through the huge grid of different speakers that they have. I went through a different speakers in previous episode, Burke Hall, and he works on Microsoft on some of the VS code. I'm just gonna grab a couple of random people that I know from here, Patrick Hammon, I don't know how to say his last name, Val head who I talked about just a couple of minutes ago, she does a lot of animation stuff, she does some awesome workshops as well, some really good titans of our industry are going to be speaking at this thing. And you should check it out. So use the code syntax for 20% off and enjoy the conference. Nice.
+
+44
+00:23:20,670 --> 00:23:22,890
+Scott Tolinski: Yeah, that that seems like it's gonna be a good one.
+
+45
+00:23:22,950 --> 00:23:40,500
+Wes Bos: Yeah, it's always hard to like pick which conference that you're going to. And this one has a high probability of you enjoying it, just because there are so many speakers and so many tutorials that's going on there. So there's likely a high likelihood that there's going to be something there that you will get extreme value out of.
+
+46
+00:23:40,590 --> 00:24:43,110
+Scott Tolinski: Yeah, definitely. Cool. So this next one is going to serve to eliminate a problem that a lot of people sort of, I guess, have issues with, it definitely is a point of security on a lot of websites. And I'm talking about the payment request API. So basically, the payment request API's goal is to eliminate checkout forms. And it's meant to do it in a way that sort of allows the platform to take over this sort of checkout process. And this is a nice thing, because Well, I mean, you're handling secure information, and you're handling, you know, people's data that they obviously want to take very seriously. You know, they're entrusting you with their credit card information like Wes and I both do. And this will allow the platform to handle it in a way that is basically one the interface will be nicer because it's again, the platform can handle a unified interface, but to I think, more secure or less, less likely for someone to write some crappy code that gets abused.
+
+47
+00:24:43,230 --> 00:26:43,290
+Wes Bos: Yeah, I should also like kind of interject here it is going to be more secure. And part of it but also, at a very basic, this web payments API is actually just a glorified autofill which means instead of you typing into a form, you just create chrome or our Android drop down or something will pop up on your your device that is native to the browser or native to the device. And then it will say, do you want to give your billing information and your your shipping information to this website and at a very basic, it will just dump an object of credit card data to the user. And then the user then takes that and sends it to stripe or to Braintree or Authorize. net? Yeah. But that's I guess that's sort of a stopgap solution, because it's kind of a nice, standard autofill. But ideally, which is what Scott's talking about here is that the web payment API will be way more secure. Because the way it's going to work. And this is how Apple Pay works right now, is that your browser, whether it's Google pay, or Apple Pay or something on the device, it will then charge it and make a token, sorry, will not charge it, it will make a make an Apple Pay token or a Google pay token. That is good for charging a credit card for 40 bucks. And then what you do with that token, is that you take that token to stripe or to to PayPal or to somebody that supports Apple Pay, or Google pay or alipay. Yeah, exactly. You take these tokens, and you say like this token, I was told I could get 40 bucks, if I give you this token, so like a drink ticket at a wedding or something like that. And then what happens is that stripe or Braintree, or whatever, will process that token, and then give you the money. And that's awesome, because that means you as a web developer never have to touch credit card data, it's just one time use tokens. And also means that you as a consumer never has to give your credit card to a sketchy website, which I'm super excited about.
+
+48
+00:26:43,680 --> 00:27:44,190
+Scott Tolinski: Yeah, because that can sort of be the wild wild west, especially with older sites, you have no idea what the back end is like. In fact, when we took over a freelance project one time, and that we were doing there, the clients, I'm not going to reveal this client. But we were doing this client's sort of e commerce solution. And we were getting them up into being PCI compliant, and all that good stuff. And starting with a sort of modern thing and their current system, I almost don't even want to tell you what it was doing. It was sending credit card information in plain text to an email to the guy who was writing down their information and then charging it by hand in their system. And the whole thing like I when I saw how the current system worked, I was just like, Oh, no, like, this is bad, bad news. So when we ripped it all up, and we had the whole new way of doing things, it was a huge adjustment for them, because they're like, why can't I just use my current credit card machine to enter the card numbers anymore, because that is totally wrong. You should not be doing that. Oh,
+
+49
+00:27:44,400 --> 00:28:14,700
+Wes Bos: that always blows my mind that that is how it works for a lot of people like we bought new doors for our house. And the person comes over and takes out a photocopy sheet, writes down my credit card number on the sheet, yeah, flips it flips it over, writes down to like three c three numbers CVC. And then like, takes that back to their office and charges the credit card. I was like, you could just go online, you have everything and you could go online and start running amok with my credit card. And how is this how it works? Yeah,
+
+50
+00:28:14,910 --> 00:28:37,710
+Scott Tolinski: get the stripe reader or the Square Reader, the the PayPal, whatever, just plug that into your for you got a phone, just plug it in and swipe the card. I mean, this modern technology has like really sort of blown the doors off of e commerce stuff and turning it into a much more obviously secure situation. But there's so many old sites and all this and that and old ways of doing things that just need to not happen anymore. Yeah,
+
+51
+00:28:37,710 --> 00:29:15,930
+Wes Bos: this is saying like a lot of these brick and mortar businesses still they don't do credit cards properly, either. Like we bought some This is like totally aside. But as I'm outraged, we bought some wallpaper that never shipped. And I wanted to get my money back for the wallpaper. And they're like they told us to come in and they could do the refund. Okay, I was like, I was like, I work with credit cards every single day. I understand how this works. And you can refund it without me driving across town. And they're like, Oh, no, we can't. So I was like, Alright, well charge back charge back. 123 charge back. And it was funny how quickly they figured out how to refund my money after that.
+
+52
+00:29:15,960 --> 00:29:18,030
+Scott Tolinski: Yeah, right. Ah, gosh.
+
+53
+00:29:18,110 --> 00:30:32,100
+Wes Bos: Anyways, what do we got next here this one is I'm pretty excited about is the n i n TL I didn't even know that this was a thing. There's a global in in the browser. And there's a global in Node called MTL, which is it stands for international. And on that there's a method called a number format. And I was alerted to this because I tweeted out about this string method called to local string. And what to local string will do is it allows you to take a string or actually a number as well. This is I think this is a method on numbers as well. And then it will convert it to formatted currency meaning that you could pass it $1,000 or thousand dollars and 50 cents, and then or $1,000 and 54, three cents. So like where it's like round is still not rounded. And then you could take that and then format it into a local currency that is in this sorry, this won't convert currency, but it will format it with the proper commas or the the periods, the decimal places and the like the euro sign the pound sign any any currency that you are looking to use. And this is awesome, because I used to use all these like annoying regex is yeah to actually
+
+54
+00:30:32,100 --> 00:30:34,740
+Unknown: do that. So annoying typically to do this.
+
+55
+00:30:34,770 --> 00:31:37,470
+Wes Bos: So I use this on my own website where I format my products where I want to say if it's $50, even, I just want to show dollar sign 50. But if it's $50 in 34 cents, I want to show $50 and 34 cents, right. And that wasn't always super easy with these, like StackOverflow functions that I used to copy and paste. So moving over to this to local strings slash international number format, they do the same thing. Apparently, the better one to use is I MTL number format. And then you can pass it which currency you want. So you could pass in like a country code, or a language code sorry, like German or Canadian, French. And if that curve, if that locale uses a dots for the thousands and commas for their sense, or the flip side, which is what we use in North America, which is commas and then your decimals or using a period, it will format that properly. So big fan of it. It's not great. It's not supported super well. And in Node world, it doesn't come with all of the different languages by default. But
+
+56
+00:31:37,470 --> 00:31:39,420
+Scott Tolinski: it looks like it's supported pretty well.
+
+57
+00:31:39,450 --> 00:31:59,880
+Wes Bos: Yeah, there's there's some inconsistencies across browsers, which of course is always happens. But if you're just formatting I know a lot of you are from North America, if you're just formatting Canadian, or US dollars, or I guess American, any anyone that's using commas first and then decimal for four cents. It works great across the board. And I've been super happy with it.
+
+58
+00:31:59,910 --> 00:32:32,100
+Scott Tolinski: Yeah, this is one that I'm so surprised. There's not more frequently talked about. And like, even if you were to Google something like format currency and find the StackOverflow post first up like this, it's not mentioned people just don't talk about it. So I'm pretty psyched to see that this kind of thing exists. And it just makes those those little things that you have to write your own solution or whatever, man, it makes that significantly nicer. So I'm really excited about this one. It's sort of like not a not a sexy one. But it's definitely very, very, super useful.
+
+59
+00:32:32,130 --> 00:32:33,030
+Wes Bos: super handy.
+
+60
+00:32:33,030 --> 00:33:05,820
+Scott Tolinski: super handy. Yeah. Okay, so I have another one, that's going to be, I guess, super handy. I don't know if you've, you know, ever tried to work with big, big, big numbers in JavaScript. But the math does not always add up if you're working with big numbers. And that's because JavaScript does not support what's called Big Ince, big big integers. So what's cool is that on May 2, v eight announced that they are adding big int to V eight, if you don't know what v eight is the engine that is that node runs on, right. Is that how you would say that?
+
+61
+00:33:05,880 --> 00:33:15,930
+Wes Bos: Yeah, yeah, that's v eight is the the engine that is behind Chrome. And they ripped it out and put it into node as well, which is why we got node j. s on the server side.
+
+62
+00:33:16,050 --> 00:33:44,790
+Scott Tolinski: So we are getting big hints. And big events as well are coming to E s, whatever most likely he is next. They're currently in stage three. The proposal is really sweet. We'll link to it in the show notes. But basically, it's going to make working with big integers, big numbers, much more of a viable thing. Because right now in JavaScript, that's always been a point of confusion for people who are new when they go to do some big math and find something's not adding up correctly.
+
+63
+00:33:44,880 --> 00:33:51,510
+Wes Bos: Yeah, I've actually never Never in my life have run into a situation when I would use begins have used God.
+
+64
+00:33:51,600 --> 00:33:55,260
+Scott Tolinski: No. But I haven't worked with big data. Yeah,
+
+65
+00:33:55,290 --> 00:34:39,420
+Wes Bos: me neither. But this is fairly common. When you are doing like computing, maybe running Bitcoin in the browser, you're doing graphics, a lot of 3d stuff often needs this. I've run into if you ever try to loop over pixels in a canvas, know that for every pixel, you get four numbers. In that case, you need us a special kind of array. I didn't even know this existed, but I forget what the name is, offhand. But if you have an array that is absolutely massive, like millions of entries, then you need a special kind of array. And I can imagine if you're doing a lot of graphics work, you'll run into the need for doing that. Nice. Yep, big and maybe maybe one day when we're adding up Scott's bank account, we'll need a big big it's
+
+66
+00:34:40,350 --> 00:34:42,210
+Scott Tolinski: no, that's the dream.
+
+67
+00:34:42,690 --> 00:37:19,320
+Wes Bos: That would be a good sticker. Big in the sounds like a rapper. Yeah, does. Alright, next one we got here is I got kind of two here, which is the the speech detection and speech text to speech. So in my JavaScript 30 courses are two API's that I've used just because they're a lot along the lines of just being real fun, and doing an amazing amount of work with a surprisingly little amount of code. So speech detection will allow you to listen in on a microphone. And it will take what you're saying and stream it into words. It's pretty cool because it will give you you can listen for the the word streaming in. And you know how when you talk into Siri, it sort of tries to type what you're saying, as you as you're saying it and then it will fix it depending on the words that you say after it, we'll do this in the browser as well. So you can stream these words in and show them on the actual page until you get an end event. And then at the end event, it will give you the entire sentence of what it thinks that you actually said, it will give you other sort of options of what words that might not have been done properly. And it works pretty well. You can also pipe in different accents that the person may have. And it will try to account for that. I've had some, I think it was in some African countries where people people were trying to speak English to it and one of one of their accents, I forget which country it was in Africa. And they said it didn't work very well. But for my Canadian accent, it worked fairly well. And I know that there's a bunch of British people taking the course as well, it worked pretty well for them. Hopefully, that will get better for all, all accents around the world and all languages. And then on the flip side, we also have text to speech, which you can then take text in and simulate it into actual words. So it's pretty cool. If you use Chrome on a Mac, it comes with something like 60 different voices that you could possibly use, because these voices are all built into OSX. If you just use Chrome on Windows or something else, I think there's only three or four different voices. So if you want to speak back to the user, you can have control over two things the pitch, and the speed. And it's it's hilarious, a lot of fun. Because you can say like, and or you can pipe emojis into it in the in the course JavaScript 30 we go. Hello, my name is Wes Bos poop emoji. And then you can do a really look. Hello, my name is Wes. So if again, if you're having a bad day, put this on the shelf thing stop right now and do some text to speech because it's absolutely so much fun to play with the pitch and the the rate at which the person speaks.
+
+68
+00:37:19,400 --> 00:38:35,400
+Scott Tolinski: Yeah, do you know what I use this for? I use this for in my my B boy tools, my breakdancing tools, I frequently recommend or I talk about on this. It's an app that I made to help me like do practice tools right for while I'm dancing. And so a lot of times when you're dancing, it's easy to sort of just like get lost in sort of what you're doing. And so I made a tool to help me like explore creativity and the app because I'm usually playing my my speakers or my sound through my computer into like a speaker system, right? Yeah, then I have the app set up and I'll hit go on this, this this thing I called the Tombow Iser and the combo, Iser is going to shout out to move names. So I've entered all of my moves into this move book. And then the app actually speaks out the move names. It will be like when Mel to this, this or that. And then I'll have to do that move combination. And basically what it does is it gives me two moves that are like totally separate. And I have to come up with sort of a transition between the two. And then that way, transitions between everything. It's like sort of like a tool to get you out of your normal mode of practicing. But there's a billion things you can do with this stuff. I mean, I have a robot shouting at me breakdancing moves while I'm dancing. It's pretty sick.
+
+69
+00:38:35,420 --> 00:38:49,380
+Wes Bos: That's great. Yeah, I just think of all the things that you could add speech to where you're not necessarily using the application when you're sitting in front of a computer. It would be awesome to have it speaking events to you rather than just visually showing them.
+
+70
+00:38:49,500 --> 00:38:52,880
+Scott Tolinski: Yeah, they you know, what else is awesome is Netlify Oh,
+
+71
+00:38:52,880 --> 00:38:55,980
+Wes Bos: it's also fun, I got a better transition for less.
+
+72
+00:38:57,920 --> 00:38:59,070
+Scott Tolinski: I'm gonna do it for you.
+
+73
+00:38:59,280 --> 00:39:01,710
+Wes Bos: You know what also makes Scott dance?
+
+74
+00:39:01,770 --> 00:41:07,460
+Scott Tolinski: Oh, yeah. Netlify Netlify does make me dance. I love Netlify. Netlify is an excellent modern host. It gives you all in one workflow that combines global deployment, continuous integration, and HTTPS with a whole bunch of excellent features. I mean, you know, HTTPS is something that's sort of a given now you sort of have to have an SSL if I think pretty much anytime and so the fact that hosting companies like Netlify make a process of having an SSL certificate on your site. Absolutely painless, is one of the most absolute unsung benefits of something like this. So you get all these awesome features straight out of the box like AWS lambda functions, right, that make working with server serverless style functions extremely easy, something that basically is constantly sort of a hassle if you've ever tried to do any sort of serverless functions, working with AWS, the interface, blah. So Netlify takes all of that stuff out of there and makes it super nice and easy. There's Also the new identity feature that allows you to manage signups logins, password recovery, all without having a server component to your website. And there's also a great new forms feature that allows you to submit contact forms that, well, they can't, they're not just don't just have to be contact forms, these forms will submit a web hook somewhere, they'll ping Slack, they'll send you an email, they'll do all sorts of stuff. So it basically allows you to work with forms in a really excellent way without having to have your own server side component. I mean, this is allowing you do all of this stuff client side, and let me tell you, the Netlify experience is something you've got to experience to understand because it is really cool. Just sign up, login with your GitHub and push a new site, I recommend something like a Gatsby site. Or you can check it out, just just push it up. And you'll see how nice and easy this thing is because it automatically detects your platform and automatically writes the build script. And basically, you just sit back and relax, you click a few buttons, and you're deployed. So check out netlify@netlify.com forward slash syntax and see why this hosting platform makes me dance. Check it out
+
+75
+00:41:07,610 --> 00:41:35,790
+Wes Bos: wicked, and it's funny how often people tweet us. And this happens with a lot of our sponsors, which is thank you for doing that. If you try out one of our sponsors, and you enjoy it, or you don't enjoy it, let us know. Because seeing people tweet about the sponsors, makes the sponsors want to sponsor more, which is good for Scott and I because then we can keep making these things. But so many people have been trying out Netlify and tweeting us being like, Wow, it actually is amazing. I didn't didn't think it would be but it is. So yeah, check it,
+
+76
+00:41:35,880 --> 00:41:36,780
+Scott Tolinski: we get a lot of those.
+
+77
+00:41:37,880 --> 00:46:21,450
+Wes Bos: Alright, next one we have here is let's talk a little bit about the state of EOS six modules in node. So kind of one of the funny things about doing my node course is that a lot of people email me being like, Wes, why did you not use like import and export default? And why did you use require and module that exports in your node course and surprising A lot of people don't know, maybe it's just because they're writing a lot of front end JavaScript, or they've always used Babel, there is no ESX modules in Node yet it is currently being worked on. And I just kind of wanted to give everyone sort of an update of where it's at right now and what's going on with it. So current status of ESX modules and note is that they are under a flag in Node. And there is an entire working group dedicated to implementing modules in the browser. And the reason why it's taking so long it's been well over a year that they've been working on this is that they don't want to, like this is a huge thing in the language, right? And yeah, they, if they goof it up, then we're gonna be living with it forever. For the next however long we're going to be building stuff in node, right? So they want to make sure that all the different implementation details are tried out and tested and battle tested and made sure that everyone is happy with it. And they've got different they have this this committee that is just the modules committee, and they have people from the node world, they have people from the browser world, they have people from all kinds of different types of programming, and they're making sure that their thoughts are heard on it. So where is it right now, right now, they are currently at a spot where if you want to build a module in node, you have to use the dot m. j. s, the Michael Jackson script. So you cannot build an ESX module, the Michael Jackson script, you have to use the dot Mjs extension, which most people myself included go really like you're making me new use a new extension, if I want to use modules, that kind of like puts me out of my workflow, because I've been using.js on the client side. And now if I want to build a module for the client side, and the server side, like if I want to be used in both, I have to now use Mjs in the browser as well, right? And that's because in the browser doesn't matter what extension you have. But on the server, it doesn't know what type of file it is until it actually opens it. So some way to signify what type it is, needs to happen. And that's why they're using the dot Mjs. Extension. And there's a lot of people are asking, like, why can't we just use like a dot j s, like it was in common j s. And apparently the difference between, there's a whole bunch of blog posts out there, I'll link up to them because it requires a there's a lot of people that are just sort of tweeting angry about it, but don't take the time to actually read into the technical difficulties that are happening. The difference is that an ESX module you need to know the shape of an API before it's parsed, meaning that before it actually parses every single line of JavaScript in a module file, it needs to know what is imported and what is exported from that file. And in common j s, which is the require it parses the entire file first before it actually exports the values mean, which is why you can do dynamic exports and dynamic imports in a require j s or sorry in a comment .js environment. So that's kind of where it's out right now is that most people are unhappy with it because it kind of sucks to have the dot Mjs. So there is a couple options. JOHN David Dalton, who is the JavaScript developer behind a ton of things out there, most notably lodash, he has written this thing called ESM, which is a zero dependency production ready module loader. And you just require this thing before you run any of your JavaScript code and node. And then it just works. So he's really pushing for if he can make a module that makes it work, I think that they could, hopefully likely make it work in in core node without it. And I think that he sort of made this thing to show them, it's possible and we should do it. So he's pushing real hard, he's on this committee, he's putting a lot of time into it to try push for just making it work. Like you shouldn't have to rename your files to dot Mjs just to make it work. And they're still still working on it. So if you have thoughts on this, make sure that you actually put in your your two cents, it's all on github.com, forward slash node j. s, forward slash modules. And you could attend any of the meetings that are happening and putting your two cents rather than just waiting till it's too late and complaining. Yeah, so interesting.
+
+78
+00:46:21,629 --> 00:47:08,850
+Scott Tolinski: Yeah, it's funny, because I'm in the the meteor system, your back end and front end are so linked that you don't ever have a separate configuration for your build process. And because of that, anytime meteors front end was getting a feature in its build process, or a Babel plugin or whatever, you automatically got that on the server. So I've been using the import syntax on the server for, I don't know, the entire lifetime of the level of Sykes that's been there in Meteor this whole time. And and so it's like, funny for me, because I'm almost been just ignoring all of this information, because I haven't even had to touch the require syntax, because I haven't even had to think about it to be honest. So it's nice to to get a sort of update on where things are now that I, you know, I haven't been paying attention to be honest, because I haven't had a reason to.
+
+79
+00:47:09,270 --> 00:47:48,390
+Wes Bos: Yeah, yeah, totally. You can just babble your entire back end if you want, or run it through this ESM or not run it through ESM, but require this ESM module first, and then everything will just work, which is great. I can't necessarily do that for a lot of my tutorials, just because these things are constantly in motion. Oh, yeah. And what happens is that you use this like hot plug in one day, and then six months later, it's like deprecated in a bad practice. I just and also like, some teams don't want to adopt this stuff. They want to do everything as close to core as possible. So hopefully, this will resolve itself in the future. There's a lot of smart people working on it. And looking forward to it being all wrapped up.
+
+80
+00:47:48,629 --> 00:47:53,490
+Scott Tolinski: Yeah, dope. Do you have any other things that you want to hit on? Because I'm all out?
+
+81
+00:47:53,609 --> 00:48:08,910
+Wes Bos: I think that's it. I think that's it. We'll probably do another one of these in six months or so as new stuff starts coming out. But if you have new stuff that's coming to language, make sure you tweet us and we'll put that on the list for the next show. dope. Wicked. What about a sick pick? You got a sick pick for me today?
+
+82
+00:48:08,910 --> 00:49:33,720
+Scott Tolinski: Yeah, I the sick pick. And the sick pick, has influenced me in a couple of different ways. A lot of people probably been seeing this thing being passed around right now. It's called dank Moto, which is a Yeah, coding font. I really like it that dank.sh I've been using Fira code because of the ligatures. And the things I love about fig. Fear code is the ligatures, but the font itself has never been my favorite aspect of it. And so I figured I would try dank mono because it has all the pretty arrows and equals and all those awesome ligatures that, you know, some people just really don't like I get it. But I love having the arrow support and the ligature support in a font. So for me, the ligature stuff is excellent. But this font on top of it looks very, very nice. It has some really interesting characters, it all sort of fits together in a nice way. And, you know, it's I've been using for about 48 hours now is my main coding font. And I have to say, I'm pretty impressed. I really like the way it looks, it makes looking at this very pleasant. There's a whole lot of blog posts that they've done on on how they made it, why they made their choices. And I just happened to really enjoy this thing. Now the thing I want to say about it influencing me is when I purchased it, it showered me with confetti on the loading screen. And I was just so I was like, Oh, that makes me feel good. I like that. So I instantly went and added confetti. A good idea.
+
+83
+00:49:33,720 --> 00:49:34,290
+Wes Bos: Yeah.
+
+84
+00:49:34,290 --> 00:49:43,920
+Scott Tolinski: So I added confetti to my purchase flow, and no regrets. It's hilarious. And I love it and just change the colors to match level up. Wow.
+
+85
+00:49:43,950 --> 00:50:05,130
+Wes Bos: So I think what's also important to note about this font is that it has all of the italics that everybody asks me about. Oh, yeah. peredur motto so I get an email every single day get tweeted every single day. What's that fun with the italics that you use? And then I say it's operator Amano. It's 200 bucks. And then people say, oh, and then they either go steal it, or they don't use it.
+
+86
+00:50:05,490 --> 00:50:08,640
+Scott Tolinski: Yeah. So I think this is running like 40 pounds.
+
+87
+00:50:08,670 --> 00:50:39,030
+Wes Bos: Yeah, which is about 55 bucks as we record, which is a fourth the cost of operator mono. It looks super good. I'm really excited about this, because 200 bucks for a coding font is not worth it for most people. So this, this is pretty sad. I actually do have a question about ligatures. I've always stayed away from ligatures. And because I don't want the inevitable I thought that people would email me being like, what's the arrow character? Yeah, I don't understand it. Do you ever get questions about that?
+
+88
+00:50:39,030 --> 00:50:40,080
+Unknown: I haven't.
+
+89
+00:50:40,260 --> 00:51:08,340
+Scott Tolinski: I would have expected to have at least had one. And I have not interesting. Yeah, I have not. So take that for what it is. But no, I haven't had any questions about that. And I used them in all of my videos. I use them in all of my code. And for me, some people you know, you'll get comments about like, I can't stand ligatures, but yeah, and they make the code way more readable. For me. I don't know what it is. I just like those symbols. Give me those symbols all day long. I'll take it.
+
+90
+00:51:08,430 --> 00:51:34,980
+Wes Bos: I want it. That's pretty cool. And on the same note, there's someone on Twitter with this. I'm gonna find his name here. kill a man. Oh, kill him. I'm probably butchering it, but he took operator moto and patched it to take the fear of code ligatures and put it in. So if you want the best of both worlds, you can either just buy this font or you can patch if you're already using operator moto. You can just patch it but dank mono looking really dank. I'm probably gonna try this out
+
+91
+00:51:34,980 --> 00:51:37,980
+Unknown: myself. Yeah, it's like Colorado. dank right there.
+
+92
+00:51:39,630 --> 00:51:43,770
+Wes Bos: Awesome. My sick pic. Oh, shoot, what was it? I had a good one.
+
+93
+00:51:43,950 --> 00:51:45,810
+Scott Tolinski: You gotta write it down, bro. Yeah, I
+
+94
+00:51:45,810 --> 00:51:46,740
+Wes Bos: gotta I gotta
+
+95
+00:51:46,890 --> 00:51:50,760
+Scott Tolinski: I always do that. And then I would start doing them. And I'm like, crap. I had a good one.
+
+96
+00:51:51,630 --> 00:53:09,330
+Wes Bos: So my sick pick today and this is saying Scott sick picked a long time ago is the ring doorbell. So I've had a regular ring doorbell I got on Black Friday. And it worked really well, except for the fact that what's the motion detection would trip way too easily because of the way that my front door is situated. It's pointed at the road. And anytime a snowplow drives by which is every minute in Canada, it would trigger the motion detection and it was so annoying because my your phone would buzz and my wife's phone would buzz and the the doorbell in the house would would would buzz. And it would just be like, Oh, another truck rolled by right? So the ring Pro, full disclosure, I emailed the ring. And I said like can you send me a free one and they did with kind of my way of life, I always asked for a free one. First, they sent me the ring Pro, which allows you to allows you to set motion zones so you could take the road out of the zone and just put my front porch on the motion zone. And I got it all hardwired in and it is working great. I think it's 10 ADP, it's really crisp. Very happy with it. So if you're looking for a doorbell I definitely check out the ring Pro.
+
+97
+00:53:09,540 --> 00:53:11,520
+Unknown: Nice. I see only
+
+98
+00:53:11,820 --> 00:53:18,300
+Wes Bos: only if the ring process dominate. Are you a professional doorbell user? Well, of course you need the ring, bro.
+
+99
+00:53:19,230 --> 00:54:25,740
+Scott Tolinski: I like about the ring a lot is when it says you community updates. I don't know if you get those community? No, no, we get we get ones that are like I don't know if this is a US only or for what I have no idea but I didn't do anything to enable this. But it's like my package was stolen off my porch. And then it shows you that person's video. And then like the general location of where there was this dude who was like really creepy, and like multiple people had him what he his whole thing was, is that he would pretend to unload a big package. So like took him a little while he would unload this big package. Yeah, he said it on your porch. And then while he was doing that, he was like trying to break into your house. So you'd see him checking the windows and going around, and it was the same dude. I'm like five people's cams. And everyone like they found him and then they sent the videos to the police caught him. And yeah, he was uh, he had been caught like several times before that for breaking and entering. So I thought that was really cool to see. Now I would see this guy and I would think he's delivering a package. It looks like he's delivering a package but like to see that and be like, Oh, man, that guy's creepy. This is what it looks like. And I got a little ping about it. It's pretty sick.
+
+100
+00:54:25,980 --> 00:55:09,180
+Wes Bos: That's really cool. I gotta see if mine has I don't know if anyone in my neighborhood. I live in a bit of up and coming neighborhoods. I think I'm the only guy that has a $200 doorbell installed. What else was there? Oh, yeah, we got to do our show on home automation just because there's so many different things that I'm talking I'm trying to automate our watering right now because we like we're so brutal at watering our plants in the summer and they always die. So I ordered this like timer that you put on the hose and then it's and I'm setting up drip line. So of our plants and hopefully it's going to be on this is such a developer way to approach plants but like automating the watering of it and the grass and everything. I'm super excited about it.
+
+101
+00:55:09,390 --> 00:55:39,360
+Scott Tolinski: Yeah, aren't we have a drip line set up through our sprinkler system through all of our plants? And it was in there before we moved in. And I was thinking like, this is great. I'm gonna have to water this stuff. And guess what, it doesn't work for some reason. And like, I'm just was way too busy last year to check it out. So this year, it's been like my goal. I'm like, I'm gonna figure out why this drip lines not working because I'm like, manually watering our plants, despite the fact that they're Yeah, right. Like, oh, I gotta go take the hose out again. Even though it's already hooked up. I just got to figure out why. Maybe there's a cut in the line somewhere. I haven't seen it. I mean, you gotta
+
+102
+00:55:39,360 --> 00:55:47,430
+Wes Bos: when did did you buy your house before winter? Yeah. Oh, you know what? You got to blow it with compressed air before winter. Otherwise, it freezes and the line Oh,
+
+103
+00:55:47,430 --> 00:55:48,450
+Scott Tolinski: no. Ready? That? No, we
+
+104
+00:55:48,450 --> 00:55:49,860
+Wes Bos: do. Okay, okay. Yeah.
+
+105
+00:55:49,890 --> 00:55:53,250
+Scott Tolinski: Oh, yeah. There you go. Do that from Michigan from Michigan. We
+
+106
+00:55:53,250 --> 00:56:08,400
+Wes Bos: know. We know about snow. I know about snow. That's another episode of gardening with Scott and Wes. Thanks for tuning in. Remember to cover your hydrangeas and water your snap peace. Yeah, we'll see you next week on community radio.
+
+107
+00:56:09,870 --> 00:56:11,040
+Unknown: Peace, peace.
+
+108
+00:56:12,930 --> 00:56:22,680
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

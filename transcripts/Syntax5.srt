@@ -1,0 +1,476 @@
+1
+00:00:02,700 --> 00:00:22,920
+Wes Bos: Welcome to syntax where we deliver tasty treats for web developers. This episode is sponsored by delicious brains that make us pretty sweet plugin called WP migrate DB Pro, which helps you get your WordPress installs from your local host on to your actual server or vice versa. We'll talk a little bit more about them partway through the show.
+
+2
+00:00:25,050 --> 00:00:53,610
+Scott Tolinski: Oh, welcome to syntax, we're gonna be talking about freelancing. Today, we're gonna be talking about all sorts of things. Basically, we're gonna be talking money, quoting, billing, just how to manage your time how to manage your contracts, consulting versus freelancing, just a whole bunch of stuff, everything you sort of, you know, you learn by experience from freelancing. So today, as always, we have West and Scott say, Hello.
+
+3
+00:00:53,610 --> 00:00:56,640
+Wes Bos: Hello, everybody. Hey,
+
+4
+00:00:56,640 --> 00:00:59,520
+Unknown: so what do you been working on less? Well, um,
+
+5
+00:00:59,549 --> 00:02:34,710
+Wes Bos: I'm just in between vacations right now. And while the one thing that I did do is release my latest batch of stickers, which, for those who don't know, I just love stickers. And I also love like, doing things really well. So I had researched a whole bunch into getting stickers printed overseas in China because it's way cheaper to get it done over there. And I finally found a really good supplier that does like really good quality and they pack them into these cool little bags. And it's just been a huge thing I did like a small batch a couple months ago, and then I just did a huge batch of 2000 packs 20,000 stickers. And I put them up I like modified my course platform to sell stickers which is kind of hilarious. And printed envelopes and did all this like I don't know anything about like shipping actual product, but I just thought I just like love being able to get stickers to other people. So that's been part of part of my week, part of my week is printing out the stickers and sorry, printing out all the envelopes. And then I I ended up driving down to Buffalo, New York. I live in Canada, and I'm about an hour from Buffalo, New York. And I just crossed the border. And the postage in the states is so cheap that I like save like 1800 bucks on 2000 stickers. Which is amazing. Like I was so happy with Yeah,
+
+6
+00:02:35,400 --> 00:02:43,410
+Scott Tolinski: I saw your your Instagram post or you're standing by the the postage with all the boxes full of stickers. All the
+
+7
+00:02:43,410 --> 00:02:53,130
+Wes Bos: envelopes. Yeah, it was the layer I paid my sister in law to actually do all the stuffing of the envelopes because it drives me nuts to do stuff like that. But yeah, it was you know, I
+
+8
+00:02:53,130 --> 00:02:56,670
+Scott Tolinski: got a pack of those stickers come into my house. Hopefully So did you.
+
+9
+00:02:56,670 --> 00:02:58,080
+Wes Bos: You buy a pack?
+
+10
+00:02:58,080 --> 00:03:00,630
+Unknown: Oh, you best believe Oh, awesome. Yeah,
+
+11
+00:03:00,630 --> 00:03:19,470
+Wes Bos: so it's, uh, they sold out in like, 24 hours. I couldn't believe it. I sold all 2000 packs, so and I didn't even send an email out like usually like if I wanted to, like really drive some traffic to something I would send an email out. But in this case, I just tweeted it. And like just people tell their friends the grab packs.
+
+12
+00:03:20,730 --> 00:03:30,210
+Scott Tolinski: Always adjust for the Seinfeld sticker alone. Oh, and that hilarious. I got one right here, though. Yeah. So to like, get my new computer to start throwing these.
+
+13
+00:03:30,990 --> 00:03:45,360
+Wes Bos: I'll send you a couple extra. I've got some like random loose ones here. I don't have any of the holographic ones left. So I got to figure out what to do on the next pack though, because I think I want to do some new stickers. But like, designing these things takes forever. So
+
+14
+00:03:45,750 --> 00:03:48,690
+Scott Tolinski: we got a we got one with the syntax logo that Yeah, the syntax
+
+15
+00:03:48,690 --> 00:04:12,930
+Wes Bos: logo for sure. easy one. Yeah, I want to do like a CSS one. And I've got one that's like, you know, Supreme, though. Yeah, yeah, I did one like it says JavaScript, but it looks exactly like Supreme, and people and outs for it. So that one's getting printed. For sure. So yeah, stickers. That's what I'm working on or what I'm done it now now I gotta actually do some real work.
+
+16
+00:04:14,190 --> 00:04:16,920
+Scott Tolinski: Developers love stickers. That's incredible.
+
+17
+00:04:16,920 --> 00:04:18,360
+Unknown: Yeah, I'm
+
+18
+00:04:18,360 --> 00:04:21,830
+Scott Tolinski: not immune to that. I love stickers. So yeah,
+
+19
+00:04:22,110 --> 00:04:40,680
+Wes Bos: yeah, it's it's pretty good. And then I like I sent a follow up email being like, click I like just said in the email. Now that you have stickers convert my goodwill into buying one of my courses and a bunch of people actually. So it's a it's a marketing tactic as well. I guess it works. Well.
+
+20
+00:04:41,160 --> 00:04:44,880
+Scott Tolinski: Yeah. Yeah. You get them hooked with the stickers. Exactly. Yeah.
+
+21
+00:04:45,660 --> 00:04:49,950
+Wes Bos: Cool. All right. Well, we're gonna kick things off. Oh, no.
+
+22
+00:04:50,070 --> 00:04:52,200
+Scott Tolinski: Wait, do we talk about uh, you know,
+
+23
+00:04:52,260 --> 00:04:58,740
+Wes Bos: oh, excuse me. I'm just talking about my stickers here. Go ahead, Scott. What are you working on? Uh, yeah. I
+
+24
+00:04:58,740 --> 00:06:48,270
+Scott Tolinski: moved my personal website, Scott tolinksi.com to a new platform because, you know, it was the week of moving things to a new platform for me. So, you know, luckily, I had I back when I wrote my site, I did it in Meteor, because I actually had some, like, believe it or not, I had some admin database stuff that I was doing, where I was like saving a bunch of my information like, you know, whatever servers I'm running or, or information that I would want to keep, maybe not throw in a Google Doc put it somewhere secure on my own service. And then I built all these tools to keep track of all my stuff and all that, and I never used it, I just thought I didn't use it. So you know, I really didn't need the database. I didn't need any of that stuff. And this platform Gatsby came out, had version one over, I think, last week or the week before, and Gatsby is basically a static site generator built in react using react Webpack, graph qL, using all of the fancy new stuff, and I thought, Hey, this is a good opportunity. My site's already in react, I will just toss it in here. So I did not a live stream on on my YouTube channel, you can go to YouTube slash user slash levelup tuts and see me converting my site into Gatsby in real time. And it's like my first time exploring Gatsby at all. Cool either way, I ended up using styled components. I rewrote all the CSS for mostly. And then the thing absolutely flies. If you go to Scott told ski calm, even though it's loading a video, the load times are unreal. It's a
+
+25
+00:06:48,300 --> 00:07:02,190
+Wes Bos: pretty sweet. Wow. So when I built the syntax website, a bunch of people asked me why I didn't end up using Gatsby and I had never heard of it. But I took a look at it. And it looks amazing.
+
+26
+00:07:02,520 --> 00:07:42,450
+Scott Tolinski: Yeah, no, I think you were We were like one week too early with Gatsby. I seriously do. Yeah, I think it came out like right after that. So or at least hit version one. The cool thing about Gatsby, we can talk about this more some other time. But you there's all these plugins, so you can use it really easily. And like a headless WordPress situation, to bring in all your WordPress queries through graph QL. You can use markdown files and make a blog statically really easily. You can use content full, there's a billion plugins for it. So it's, it's it's a pretty cool platform for a static site generation. And like I said, the thing flies, it's fast, very fast.
+
+27
+00:07:43,080 --> 00:08:09,360
+Wes Bos: It's pretty neat. Check that out. I think it's really cool to see that you can now build static sites in react. And there's also a framework, I forget the name of it. It's like MPM l or something like that, where you can write HTML emails in react components. So you can you can just write language, you can write like a button or a column tag, and then it will convert it to whatever the equivalent is in HTML emails,
+
+28
+00:08:09,510 --> 00:08:11,850
+Scott Tolinski: that sounds like something that I would vary.
+
+29
+00:08:11,910 --> 00:08:58,440
+Wes Bos: Alright, let's let's find the name of this, because we should, we should tell people what it is. Let's see. Yeah, email emails. Like MMJ ml ere we go, m j, m L. And they have all these things like section container image. And then like, that's, that's the whole idea behind components is that you, you took away the complexity, and if there's anything that's complex in the world, it's HTML, email, HTML email. Yeah, they just make they just make their own custom things. And it's all built in react, which is pretty cool. Obviously, it doesn't like run react in your email. I'm imagining that it. It does sort of like a server side rendering spit out HTML at the end of the day.
+
+30
+00:08:59,130 --> 00:09:06,360
+Scott Tolinski: And they have a cute little website here. So awesome. Work soups, cute. soups. Cute. Cute.
+
+31
+00:09:06,540 --> 00:09:55,260
+Wes Bos: Alright, let's talk about freelancing. So both of us are independent, independently operated. I've myself I don't want to hear about Scott in just a second. But I've was a freelancer for all of my life. I've actually never had a full time job. And I really, really enjoyed it. I learned a lot along the way. I made really, really good money when I was freelancing. Obviously now I'm doing full time working on my own courses. But at the time when I was doing, I called it consulting, because you get paid more for consulting but the end of the day, it's just freelancing. And I really, really liked it. So I freelanced bi for about 10 years. What about you, Scott?
+
+32
+00:09:56,100 --> 00:10:38,880
+Scott Tolinski: Yeah, so my freelancing experience has been a little bit different. I definitely freelanced full time until the past like two years but even then it's been level up tut's. Really. Yeah. So my freelance experience is more been like taking taking nights and weekends gigs here and there and maybe doing one or two at a time. The whole time. I've always had an agency job. Yeah, I worked in like several different agencies from like six people to 1500 people sized agencies like, and stuff in between. So for me, it's like nights and weekends, collect a little bit of extra cash where you can take on some small, some big, whatever kind of projects to just fill that space. That's,
+
+33
+00:10:38,940 --> 00:10:52,769
+Wes Bos: I think that's so cool about being a web developers that if you want to make an extra thousand bucks, 2000 bucks a month, like you totally can, as a web developer, you can squeeze it in here, there. And yeah, have a little bit of a side hustle.
+
+34
+00:10:53,149 --> 00:11:01,230
+Scott Tolinski: Yeah. And there's just there's a lot of work out there. There's, there's no other way to say it. There's just there's a lot of work available out there. If you can find it.
+
+35
+00:11:01,289 --> 00:11:33,690
+Wes Bos: Yeah, I that's like, I always tell people that because there's, there's not a lot of freelancing isn't for everybody. And when people ask me to refer them to someone who can freelance, I often have a hard time coming up with someone who will be reliable, who works at it full time, who is just going to be like, I'm willing to stick my neck out for them. So if you can become a really good Freelancer via the stuff that we're talking about today, there's just unlimited work out there.
+
+36
+00:11:34,289 --> 00:11:35,460
+Scott Tolinski: Yeah, absolutely.
+
+37
+00:11:35,789 --> 00:13:01,230
+Wes Bos: So um, I don't know, let's talk about, obviously, we're both doing web freelance, I should maybe talk a little bit more about what I did. Most of my freelancing time will serve maybe the first half of it was focused entirely on doing WordPress. So I was doing stuff for small businesses building, building out websites for them. And as I became sort of like a WordPress specialist, what started happening is that agencies would come to me, and they would either refer me what I call the chaff, which is stuff that's 10 to $15,000 jobs, that's agencies don't take on small stuff like that. Whereas that's a really good job for for individual like me. So they would do that, or they would bring me on for for specialization. And then over maybe the last five years or so I focus my efforts more on, I still do quite a bit of WordPress. But my my efforts were more focused on building JavaScript, building out JavaScript. And then I became more of a less of like, I'll build you a website guy and more of, we need to hire a Wes, because he is good at JavaScript, we need someone to help us out specifically with front end, say CSS JavaScript stuff so that we can get that all sorted out.
+
+38
+00:13:01,919 --> 00:13:07,740
+Scott Tolinski: Right, you're coming in and looking at looking at code and not maybe writing it from scratch.
+
+39
+00:13:07,769 --> 00:14:03,389
+Wes Bos: Exactly, yeah, writing it from scratch, like either setting people up, and then like peeling and saying like good luck, like I've got you there or coming in and fixing something where it had gone awry for whatever reason. And that that's sort of like the difference between like specialization and generalization. Whereas you can go the route of like, I'm a website builder, and then you you apply, you go to people, that's, there's lots of people that do that, and that you can make really good money there. And then there's also specialization where you become known for a specific skill. And you can go as my was, like, pretty broad, like JavaScript in front end. But you can go pretty deep into it, like be like the Google Maps person. And then you write, you'd be that like the $200 an hour Google Maps consultant that people bring in when they've got some serious problems, then,
+
+40
+00:14:03,779 --> 00:15:30,799
+Scott Tolinski: yeah, so you know, and that's in, like you said, you know, the $300 an hour $200 an hour Google Maps guy. And then that kind of is where some of the big money is, if you have this individual, you know, this expertise that not many people have, you know, I remember when we were at an agency, and we really needed someone to work in pretty high level search technologies. For instance, we had our own service for the Kresge Foundation, which is like a major foundation in the United States here. And that was one of our big clients. And they needed really, really high level search in their site. They were doing a lot of grants and stuff like that. So we bought this Google Search app search appliance. It was a literal box. That was like a Google search box. But yeah, oh, yeah. And these things are awesome. Or at least they were I don't know if there's it's still a thing. This was this was some years ago, right 2012 In 2011 ish. Yeah, and, and that was a very specific technology. And we searched high and low to find someone who was like an expert at that to wire it up to everything and, and that was that that person got paid because they, they were like the person to do this and not many people knew about this search appliance or knew the ins and outs. And and that's a very good route if you can get it. And it's a something that has demand, right?
+
+41
+00:15:30,899 --> 00:17:35,010
+Wes Bos: Yeah, yeah, exactly. Um, and one other thing I should say, while we're talking about this is I've talked to quite a bit of people who want to go freelance because of the flexibility that it provides you in terms of working from home working your own hours, and then you hear from a lot of people six months in, and they're like, I hate it. I hate my clients. I I'm always working. And it's just not what I thought at all. And I think that you, there's this really good book out there called the E myth revisited. And it goes into talking about how you can be someone who is a technician, which is us, like we're developers, we can sling code all day long, and build this really great stuff. And that's great. But that doesn't mean that you can run a profitable business. But just on that as well, because you also have to be the manager, or it's the person that actually knows a thing or two about actually running a business. So you have to know how to talk to clients, you have to know how to, like, I think one of my biggest benefits is that I don't talk to I didn't talk to clients in terms of technical stuff, people would hire me because I knew I was good at technical, but you have to talk to them in business terms. And if you can relate to how a business works, and how a business makes money, and if you can help a business make more money, then that's really where the sweet spot of running your own show starts to get because people will pay you unlimited money, if you are helping them make more money, right? Because you are, in turn extending their their actual business. So I think that's that's a really important point to take into consideration. If you're looking at it, you have to say, am I the type of person who also wants to run a business as well as be the technician where you get into the nitty gritty of, of writing code, right? Yeah,
+
+42
+00:17:35,040 --> 00:18:39,829
+Scott Tolinski: nobody's gonna do that stuff for you. Unless, obviously, you're paying someone to do it for you. So you know, I like like Wes said, if you're talking to clients, you need to learn to speak in their terms. Because if you don't, they're not going to see the why you're going to be leaving money on the table, you're potentially going to be missing out on opportunities overall, you know? Yeah, definitely something and I along those lines, there's a an excellent book design as a job, which came out by a book apart. I don't know when this came out, it came out of I don't know, I'm dating myself here. So I'm gonna say a few years, and it's probably like, six years ago. But design is a job by Mike ponterio. I Mike Montero material. Yeah, yeah. Yeah, it's really this, this book opens your eyes to all that stuff, dealing with clients and talking about business terms and money and all that sort of stuff. It's a definite definite must read if you're going to be a freelancer.
+
+43
+00:18:40,339 --> 00:18:42,320
+Wes Bos: Cool. I'll just check that out.
+
+44
+00:18:43,170 --> 00:18:44,359
+Scott Tolinski: Yeah, um, yeah,
+
+45
+00:18:44,430 --> 00:20:33,750
+Wes Bos: on the same, same sort of idea. There's this whole concept of either being an hourly based billing person or this thing called value based billing, and I actually do quite a bit of both of them. I'm a huge fan of what's called value based billing, because the way it works is that you don't charge somebody you don't charge for acid seat time, because that means when you stop working, the money starts stops coming in. And if you want any sort of freedom, if you ever get burnt out or, or anything like that, if you ever need some sort of break from this, you shouldn't have to be like, Oh, well, then the money's gonna stop coming in. So value based billing follows the term where you talk to and this is where the business sense help comes in. where you say, like, I am going to build you a store picker, and or a store like a store locator on your application, and that will bring you an extra $5,000 worth of value. So I'm going to charge you $5,000. Now, if that takes you however many hours to build it, that's that's totally fine. But if you were to do that again, or if If you were to do something similar and you were to reuse parts of that code, or you were to you already knew how to do it, because you had figured out all the problems, you can quickly code it up again. Like, if it takes you half the time, do you charge half the amount? And the answer to that is no, it's still the same amount of value that's been delivered to the end client. So the fact that you're charging $5,000, and it takes you half the amount of time, then that's, that's exactly how business works. Right? Yeah, it's
+
+46
+00:20:33,750 --> 00:21:00,079
+Scott Tolinski: all value based and, and then you don't have someone comparing numbers to numbers here, right? Like, I am working at one, you know, $100 an hour or 150 an hour or something like that. And then they're, they're looking at that as is that that time? In comparison to other things? What am I spending on, you know, dollars per hour for this, and then this, rather than this value of what you're bringing? Exactly.
+
+47
+00:21:00,079 --> 00:22:28,410
+Wes Bos: And I found, also, with with hourly based billing, I found that clients like you tell them you charge, like, for me, I think it was like $130 an hour, I was charging and like you don't come to someone and tell them that because they're gonna, they're gonna do the math in their head, and they say, I get paid way less than that. Right? So why the hell should I I should have got into that. And it doesn't mean anything to them. And then you're always managing timelines, and you're trying to quote how long it's going to take you where you have a fixed base billing, it's much easier to go as quick or as slow as you want. If you want to take some time to learn a new technology, you're not under the gun to actually to spend that time. efficiently, you can take a little bit more time on there. So big fan of fixed base billing, but hourly billing, I also did a lot. And that is the case where the scope of the work is fuzzy, meaning that you question yeah, you do not know or you're working with an existing team, you're relying on other people to give you stuff in order to work. And if that's the case, you're working with the team, then then hourly based billing works just fine, I did quite a bit of that you can make some really good money doing that as well, because you can charge a high hourly rate. Because the client doesn't have to pay your health insurance or pay for your training or any of the other overhead that comes along with actually having an employee you're simply just a gun for hire.
+
+48
+00:22:29,190 --> 00:24:13,560
+Scott Tolinski: Yeah. And and and with either of these, whether you're going with value based or our Yep, it's a lot of it can the decision can be made in what's going to be more beneficial to you, like you said, if the if the the project guidelines are fuzzy, right, and you say, you know, x features going to cost $5,000 you get in there, those are the as you get in there, they become less fuzzy, you end up spending more time on it than you'd expect, then that hourly would have benefited you, because you could have made more money hourly. So it Yeah, it's really all about what's best for you, as a freelancer, right, what's going to maximize your income in this particular application. And, and I think that, you know, leads me to something that people are pretty, they're shy about talking about money. They're, they're shy about talking about quotes, they're there. People don't want to bring it to a place where you're getting into the just sort of the dollar amounts here and there. And and that's like, really something that you can't do. Because these people run a business, they expect to talk money. Yeah, you know, negotiations around money should not be awkward, right? You should feel comfortable negotiating your price. Yeah, if you're quoting something too high, they're gonna tell you it's too high for them. So, you know, I would say, Don't shy away from talking about it. Yeah, you know, have a have a discussion about what you're thinking, you know, I I'm thinking this feature is going to cost X amount of dollars, they might come back and say, Well, you know, what can we get for this amount instead? You know, and then you can have a conversation.
+
+49
+00:24:13,589 --> 00:25:18,599
+Wes Bos: Yeah, you absolutely need to be able to talk money without it being awkward, because I always hear a freelancers just undervaluing their work, because they're afraid it's not going to get accepted. And they think it's like, they give a quote, and then they say no, and then they walk away. And the way that's not true, the way that it does work, yeah, where people think that like, I've got 300 freelancers lined up and I'm going to go for the cheapest one, right? Whereas often what happens is that they have only you that they're talking to, or they have a couple different people and they are they aren't just basing it on how much money it is going to be. But they are basing it more on your personality, how you interact with them, your communication style, all of those things. So People don't, don't chicken out on your quote, charge what you're worth go in with a nice strong quote. And if it's too much, then they will tell you and you can you can figure something out, or you can walk away because they just don't have the budget that you're able to work with.
+
+50
+00:25:19,290 --> 00:25:52,140
+Scott Tolinski: Yeah, always go high. Cuz if you're going too low, you know, it's easy to go too low, your client will love that, you know, your client will love that year, you're cheap or whatever. But what does that get you? Yeah, the person who's putting in the time to do the work, right. So, you know, obviously, friends and family discounts, you know, on another nother side of the defense there, but like, if you're doing work for somebody, it's a business relationship. And yeah, and you should, you should get what you're worth, you should get the value that your, your work is worth.
+
+51
+00:25:52,169 --> 00:26:58,260
+Wes Bos: Yeah. So how do you find out how much to charge? That's always the the million dollar question like, what is value based billing? How do you figure that and that is that is just a skill that you will learn. as you go along? There's no everyone always asks me, how much am I worth right now, if I know xy and z? And the answer is how much you, you want to like, I remember I was charging 50 an hour. And my friend was like, you should charge 100. So right, I'd started charging 100. And no one batted an eye. And it's not because I was just like amazing and super good. It was just because like it was that was fine for people to pay. And they thought that it was well worth it. So I think there's a lot of people that severely undervalue themselves, especially because they come from like, Well, I was making 80 grand as a full time developer. So cut that up into 40 hour weeks, and you got it where it's like you don't understand, like, you have to buy a laptop and pay your own health insurance. And you've got all this overhead working for yourself, that that needs to be taken into account.
+
+52
+00:26:59,099 --> 00:27:19,890
+Scott Tolinski: Yeah, I mean, a good rule of thumb is if is if all of your clients are immediately agreeing to the price that you're giving them, then you're too low. Like, you should have a little bit of pushback at some point to get that upper limit, right? If, if you're always saying it's gonna be X dollars, and they're like, Yes, we'll do it right now. Yeah, you know, then you know, that that's, that's too low.
+
+53
+00:27:20,189 --> 00:27:50,160
+Wes Bos: Yeah, exactly. You want to and for me, it was just a matter of like, sort of inching my way up. And as, as he become, we'll talk about this in just a second. But as you become sort of more in demand, once the referrals start sort of coming in, then you can, you're gonna have more and more work than you can actually deal with, or at least I that's the way I was, and then you can sort of cert, you can inch up your hourly rate or inch up your prices. And that's how the economy works. Right?
+
+54
+00:27:50,280 --> 00:28:02,130
+Scott Tolinski: Right. I mean, it's simple supply. If your skills are in demand, you need to charge more for them, because you know, they're they become more valuable and more rare as your time gets filled up.
+
+55
+00:28:02,579 --> 00:30:28,950
+Wes Bos: zactly want to take a quick sec and talk about our sponsor, which is a company called delicious brains, they make a sweet plugin called WP migrate DB Pro. And it's actually something that I've used quite a bit myself, it's a WordPress plugin that you install on both of your actual WordPress installs, like let's say you're developing one locally, and you've got another one up on your actual production server. And you have your theme, and that goes into git, but you have this other thing, which is the actual data in your database, you need to get it from local host to production or or vice versa. Maybe you're working on existing website, you need to take a copy of it, and bring it down. So how do you do that? Well, if you dump the database, there's all these strings that relate to localhost and needs to be replaced. So WP migrate DB pro will just basically connect your two word presses together and it will push or pull the actual content from one or another. And it will do all the finer place of of the actual strings that you have and any other problems that are bound to pop up when you're migrating a WordPress. So I've been using this for for years and years and it's absolutely essential piece of doing WordPress development. So it's kind of cool that we're doing the freelancer one because quite a few freelancers use this to move around their clients. WordPress does. Yeah. And WordPress overall, as you so heavily in freelance dev work, yeah, yeah, exactly. That's sort of like if you're looking at getting into if you're like maybe a new developer, and you're looking at getting into the freelance game. WordPress is definitely some low hanging fruit that you can, you can just jump into and get up and running. Right? Yeah, using themes and then getting to customizing your own themes and building very complex. Exactly, exactly. That's exactly how I got started. So they've got a 20% off code for us at delicious brains.com forward slash syntax, check it out. And huge thanks to them for sponsoring the show. So, let's talk about finding clients. Where do you get clients from? A lot of people when they're starting out, they go to, they go online, and they're like, are they asked me like, what's the like, Honey Hole of, of clients? Like, where do I go to get the best clients? And like, or what am I? What about what are these? Is that a thing?
+
+56
+00:30:30,570 --> 00:30:36,030
+Scott Tolinski: I know I just got great imagery. I got like, you know, Winnie the Pooh, the tree.
+
+57
+00:30:37,230 --> 00:32:58,140
+Wes Bos: But their answer to that is like, by the time a job gets posted online, and this can be true for full time jobs as well, there's going to be 20,000 people applying for that actual thing. So the good work will always come from people reaching out directly to you, because they know that you do something or through a referral from an actual friend. So the way that I sort of boosted up my initial career was Twitter back over 10 years ago, was, was like a, there's maybe a couple hundred people in Toronto that actually were on Twitter, and I was one of them. And we used to have these things called tweet ups, where you would just like get together and drink a beer with people from Twitter, which is a very bizarre thing to do. But through that I had met all kinds of people who run agencies, and that were sort of in the tech scene. And they, I was very loud about being a developer, I am a developer, I post on Twitter post on Facebook, I have a website that tells people what I do. And just by doing that, at some point in time, people go, I need a developer. Oh, Wes. Okay, I remember, he's always talking about his web stuff. Even like, for people who are on Facebook, they don't like like posting, like work stuff. But yeah, if you're that person who's always posting like working on a website, or pictures of code, or whatever, it's not going to immediately lead to leads. But what happens is that it's funny, I was teaching freelancing class once and I opened up my Facebook, and I did a search for like, doing website or need a website, and I found like, like, 13 different people where it's like people from high school you haven't talked to in 15 years. And they're like, Hey, how you doing? Blah, blah, blah. Anyways, my brothers uncle needs, I guess that would be their uncle, but my uncle needs a website, are you doing that, and that's how I got a lot of my initial leads was just from telling people exactly what I do. And then when it comes time to these people actually needing someone to build them a website, I was the first thing that actually popped into their mind, before they did a search or asked a friend or did anything like that?
+
+58
+00:32:58,710 --> 00:33:57,720
+Scott Tolinski: Yeah, it's a simple Association, right? You know, you think, Oh, this guy is always posting this. I mean, I have 1000 of those. So associations of people on Facebook, just based on what their post exactly, you know, not websites, but what those things are that you identify that person by, and if you make that identity as the guy who works on websites, then yeah, you're gonna get thought of, and that is really the best way to to get your name and get clients is, is to have people think of you when they think of the website, so whether you're going to meetups, your, you know, your casual meeting people and stuff like that, or are new people, you know, you tell everyone I make websites, you know, and that's everybody knows somebody, and everybody knows somebody, you need something, you know, I can't tell you how many client projects I've gotten just from a friend of a friend, yep, friend of a friend of a friend, you know, just your name comes up in conversation, they reach out, and you do good work. Exactly.
+
+59
+00:33:57,720 --> 00:34:32,610
+Wes Bos: And I think once that starts happening, as you continually put yourself out there as a web developer, no matter and that's important to do, no matter how much work you currently have, because you always got to keep that the fire stoked for the more more coming in. But if you are doing good work, if you're extremely reliable in what you do, if you're very personable, able to communicate with the client, you will get unlimited referrals because they tell their friends, their friends, still their friends, their friends, their friends, and before you know it, you're you're absolutely slammed with really good work.
+
+60
+00:34:32,610 --> 00:34:55,190
+Scott Tolinski: Right? And that's infinitely better than let's say, Oh, I just put my portfolio online, right? I just put my like, people are maybe arriving at your portfolio and looking through it and whatever. But your portfolio is not going to get you this kind of work. No, it just it just won't, you know, because, you know, people honestly don't care now that
+
+61
+00:34:55,260 --> 00:35:10,860
+Wes Bos: my portfolio was was broken links for most of my freelancing career. And people do not care. They just need a referral is worth its weight in gold from, from somebody who said, Oh, this guy's good. Make sure you check them out.
+
+62
+00:35:11,549 --> 00:35:17,400
+Scott Tolinski: Right? So how did you get your very first client? Like, what was your very first client interaction? I
+
+63
+00:35:17,400 --> 00:36:29,070
+Wes Bos: was good. Um, so I we should do like a whole show on our like origin stories, but that's good. I was doing like MySpace designs and doing t shirts for bands. And the people, these kids that had bands, their parents had pool companies and campgrounds and like, just like random businesses that needed websites. And they would ask their kids like, Hey, where did who can do us a website, and they would say, oh, that West guy that did our MySpace, he can also build websites. So it sort of sort of went into that. And then when I moved to Toronto, just getting really involved in the agency scene, letting making sure that every single agency in town knew who I was, was really important, because the agencies pass on a lot of $15,000 projects. And it's, it's really, it really sucks to tell someone, you can't work with them. So if you can say, I can't work with you, but this person can, it's so much nicer, because you can sort of like, like, get out of here and drop it on someone else's lap. And I was very willing to accept those lap drops. Yeah,
+
+64
+00:36:29,100 --> 00:37:19,380
+Scott Tolinski: yeah. Right. You got to be, especially if you're trying to make it, you know. Yeah, I know, my first client was my parents who did who did not pay me for this. But I had a job at the time. So it's cool. It was a definitely a, you know, just a favor. And they had, they'd started a tea store, they were selling green tea out of their house. So I didn't know very much about I mean, I'd made websites, but I didn't know anything about databases, and all that sort of stuff. So it gave me an opportunity to learn at the time was Magento, I built the site on and it gave me you know, even though they're my parents, it was still like, you know, here's expectations about what the site's going to be doing and stuff like that. It was like a nice ease into working with a client, because that client is, you know, can only be so angry at you. Yeah,
+
+65
+00:37:19,400 --> 00:37:20,400
+Wes Bos: yeah, absolutely.
+
+66
+00:37:20,880 --> 00:37:50,730
+Scott Tolinski: You know, so the, you know, the work went well, and, and then I did, I did the Craigslist thing I like went to craigslist to find clients. Yeah. And this was when I was in college, and I got a client, and I somehow got a client, I'm going to say that I have no idea like Craigslist is is not a great way to get clients. At least not valuable clients. This one worked out really well. And it turned into a long relationship of designing and building sites for them. It's true, those
+
+67
+00:37:50,760 --> 00:38:38,150
+Wes Bos: those repeat clients are are amazing, because you don't have to work or you don't have to have meetings or anything like that, to actually sell them on that work. You can just sort of have an ongoing relationship with these people. Right? They know what they're getting already. And you just meet those expectation Exactly. Another big one for me was was conferences anytime that there was a conference in, in Toronto, I would take people out for lunch, like all these speakers are flying in like hours or a day early, and they're just sitting in their hotel, so offered to take them out for dinner. And that led to many good referrals because these speakers often work in in very high, highly regarded companies. And those companies have huge budgets, and can really bankroll you when when they're looking for help.
+
+68
+00:38:39,030 --> 00:38:59,010
+Scott Tolinski: Yeah, and that one is, uh, I can't like that sounds like a great tip. But like, I'm not I guess I'm not that socially inclined. Yeah. Like, I feel like I would have a really hard time reaching someone for dinner. Yeah, yeah, yeah. Um, so you know, power if you can do that, like, do it. Yeah, that's a skill that not everyone will always
+
+69
+00:38:59,010 --> 00:39:04,710
+Wes Bos: say that to me like, Oh, yeah, of course. You're super outgoing. You can do that. No problem. Well, yeah, I guess.
+
+70
+00:39:07,170 --> 00:39:13,110
+Scott Tolinski: Yeah, I am not i'm not i guess we get both ends of the spectrum. There have always been like the opposite end of that that social spec. Oh, yeah.
+
+71
+00:39:13,440 --> 00:40:45,780
+Wes Bos: Yeah, make sense? Um, all right, let's talk about contracts, communication not getting screwed, because another thing that I find with people is that it's when you talk to them about freelancing. It's always them versus the client. They're always mad at their client for like, going over whatever and you're on your clients team. They're hiring you to to help them it's not you versus your client. It's it's you with your client to finish that end goal. And there's a lot of stuff that can be done in order to sort of like manage that relationship between your client and obviously contracts is one of them, but quite honestly, a lot of my stuff, never had a contract, and I've talked to Quite a few lawyers about this, and they'll tell I'll tell you the same thing that is like, yeah, you can, you can have contracts that, like, they're very important to have that spell out what will and will not happen. But like when push comes to shove, you're not going to take someone to court for five grand, you're not going to hire up a lawyer to lawyer up for, for a $10,000 website, because it's you're gonna it's gonna blow that all away. And what's I think, much more important is having very open lines of communication and managing expectations with your client, because that will go way farther in, in understanding what needs to be done and what isn't going to happen and, and whatnot, then an actual contract will, will do.
+
+72
+00:40:45,809 --> 00:41:44,520
+Scott Tolinski: Yeah. And like you said, if you're if you're talking about your client, like you're fighting them, yeah, that's, like, you could say that's like a code smell. Right, that's like that that's a good indication that those lines of communication on both ends that there's an issue there. Yeah. And those type of things are difficult to, you know, it's you, they're difficult to fix, right? If you have that poor communication from the get go. Yeah. And, you know, managing expectations and talking to your client is, is really the best way to make sure that everyone is satisfied with what's going on. I don't know, I think that's just such a tremendous, tremendous topic there is, is, is being able to say, this is what you're getting, this is what I'm doing. This is what I expect from you, you know, everyone's on the same page. Everyone should be happy. Yeah, if someone's not happy, then there is some breakdown in communication or expectation.
+
+73
+00:41:44,550 --> 00:42:35,250
+Wes Bos: Exactly. And it's, it's your job. Often I people, I hear people being like, like, there are terrible clients out there. I've had many of them. But often, it's the developers job of doing a poor job at talking to the client and squeezing out the requirements from them. Because you How often have you heard of like, at the last minute, before we launched, they asked for all these features, right? And that's, that's your fault for not understanding business requirements, asking the right questions and squeezing out, like, doesn't need to do this? Or did you? Did you even think about geo locating based on the GPS? Or did it? Do you need to print a list of stores or all these things? Right, and that stuff comes with time, but you definitely need to learn how to squeeze out proper requirements before absolutely anything starts.
+
+74
+00:42:35,849 --> 00:43:40,020
+Scott Tolinski: Right. And in managing that, so that it doesn't get to the end of the product. And they think that they can say, let me add this and this and this. I mean, you need to be very upfront, earlier on in the project, that this is what you're getting, and maybe nothing else, you know, to some extent, because if they're thinking that they can add, you know, there's, there's two sides of that, maybe you didn't know that they were expecting to add all this stuff, or they thought that it would be easy to add this stuff. So they could just drop in at the end and tell you to do it, you know? Yeah. So just making sure everyone's on the same page about what exactly they're getting, you know, you're not gonna you're not like, let's say you have a, you're getting a room remodeled or something like that, you're not going to go into the whole process. And let's say, you know, there's a hole sink or something they needed to add, yeah, you're not going to get to the end of the process and be like, oh, let's add a sink here. Now, you know, everything needs to be defined before. Yeah, yeah, exactly.
+
+75
+00:43:41,340 --> 00:43:41,880
+Unknown: Um,
+
+76
+00:43:43,740 --> 00:45:04,560
+Wes Bos: I want to talk about this isn't on our list, but maybe like some tools that are helpful for running a freelance business. Because that definitely, like running the business side of things is, is huge, right. And if you, there's this thing, like it's working on your business versus in your business, and you want to be, I don't know which one you want, but you don't want to spend all of your time doing the stuff that actually runs the business, which is bookkeeping and email and all of the like, sort of busy work that some people think that they're actually being productive. You want to get away from that and actually do the stuff that's making your money at the end of the day. So I don't know if you have any, but I've got a couple that I used over time, which is a project management system, as much as they hate things like Basecamp and, and whatnot. Having absolutely everything in a central repository, rather than all through emails that you have to sort of piece together when you want to like look back at it. That's that was super helpful. I used generally my clients would have their own version of Basecamp and you just use theirs which is great, but For smaller clients, you have to sort of supply that because they're not that type of business.
+
+77
+00:45:05,280 --> 00:45:42,270
+Scott Tolinski: Yeah, I take a lot of like, actual physical, a pen and paper pages to write out all that stuff. Yep. drilled into my head that way. You know, as far as just keeping track of assets and everything, you have to be very diligent about your, your organization, so folders with inspiration folders with, you know, assets that you need for the project, or any of that, that code stuff or whatever, keeping everything absolutely together in an organized manner, instead of just like random files on your desktop or something like that is is absolutely essential. Yeah, you know, that organization?
+
+78
+00:45:42,539 --> 00:45:47,160
+Wes Bos: Yeah, writing everything down, having it all in some sort of places is super key.
+
+79
+00:45:47,849 --> 00:45:52,110
+Scott Tolinski: Yeah, so whatever that tool is, as long as you have a system in place,
+
+80
+00:45:52,289 --> 00:46:29,670
+Wes Bos: right, um, Trello is huge for that as well, especially if you have clients who like to go nuts with Excel, they'll open up in like a Google Doc excel sheet. And then they'll like start putting like a list of bugs that need to be fixed or whatever. And then like, you'll fill like reply in the next cell, and like, it's terrible. So Trello, will, you can just create a card for what needs to be done. And then you can drag it into the doing column. And then once you're done, Dragon done, you can have conversation tacked to each card. So I almost prefer that entirely over something like Basecamp.
+
+81
+00:46:30,360 --> 00:46:55,740
+Scott Tolinski: Yeah, the hardest part about those things is if the clients not already using them, yeah, I don't know if you can expect the client to use them, right. Like I've had a hard time. You know, if you set up a Trello, and you have the intention of it working like that, but the client is not already using Trello. chances are they're not going to be super into it. But if they are into it, then that you know, that can make your Yeah, totally, much much. But it's
+
+82
+00:46:55,740 --> 00:47:12,960
+Wes Bos: funny to look at, like the progression of my last 10 years where as I got into higher end clients, and more expensive clients, they were much better at this whole communication, there was a lot less hand holding in the business side of things versus actually communicating with them.
+
+83
+00:47:13,650 --> 00:47:28,350
+Scott Tolinski: Yeah, and a lot in agencies and industry sort of stuff like that. I've already used these tools and other things or with other other or they're, you know, freelancers, and contract workers and stuff like that anyway, so that can definitely be a big help.
+
+84
+00:47:28,380 --> 00:47:30,180
+Wes Bos: Awesome. Yeah,
+
+85
+00:47:30,180 --> 00:47:36,030
+Scott Tolinski: I use, what do you what do you use for your accounting and stuff like that? invoices? Yeah,
+
+86
+00:47:36,060 --> 00:47:53,820
+Wes Bos: I've been on Freshbooks for probably 10 years now. Big fan of it. My accountant loves it. You can just do a dump of all of your invoices at the end of the year. You put all your expenses in there. So been a big fan of fresh books over over the years. Cool. What about you?
+
+87
+00:47:53,850 --> 00:48:03,840
+Scott Tolinski: I use a wave. Yep. Wave apps calm. Yeah, I used to exist free up. I've never looked back. I really like it.
+
+88
+00:48:04,080 --> 00:48:18,360
+Wes Bos: That's pretty cool. I think wave does a little bit more in terms of like you can you can run payroll, and do direct deposits and stuff like that. Whereas Freshbooks more geared at like a freelancer I think wave is more geared at a small business.
+
+89
+00:48:18,780 --> 00:48:19,290
+Unknown: Yeah.
+
+90
+00:48:19,290 --> 00:48:41,520
+Scott Tolinski: What's cool about WAV though, is the the free tier stuff. Yep. Like keeping track and sending invoices is probably the like, I don't know, I've used a lot of different invoicing software. And it's just been really great. I mean, it keeps track of everything. But the interface for building invoices and managing clients and stuff like that is really just as good as it gets. That's cool or free. You know?
+
+91
+00:48:41,520 --> 00:48:42,690
+Wes Bos: Yeah. Can't beat that.
+
+92
+00:48:43,470 --> 00:48:44,160
+Unknown: Yeah, right.
+
+93
+00:48:44,160 --> 00:49:43,740
+Wes Bos: Awesome. Um, what else we have to talk about? Being a freelancer? I think one of them. For me, at least, this might be a little bit different in the States, which is, like health insurance, like, what do you do and you're not covered by an actual company? It could, because you need to pay for those things by yourself. So in Canada, I pay for my own health insurance and some disability insurance. And I know a couple others, and it ends up being about 300 bucks Canadian for the entire my entire family per month, which I know is a lot more expensive in the US. But you definitely have to have those things in place. And that's opt in figure out how those all work. Because that's one reason why I see people don't want to go out on their own because they just don't know how to put it to get their own health insurance and to to get involved with all that.
+
+94
+00:49:44,640 --> 00:50:13,140
+Scott Tolinski: Yeah, and that's one of those things I wish I could speak more on. I've been like, lucky enough. Like I said most of the time that I've been freelancing I've had another job so I haven't had to worry about it. And now that I'm doing full time, you know, my wife works. She works like 75% time. So she gets Oh, yeah, lover or health insurance. So, you know, it's tough for me. I've never had to deal with that. And I know it's it's just a complex hassle. You know, it's just one more thing you got to worry about. Yeah,
+
+95
+00:50:13,140 --> 00:50:46,830
+Wes Bos: yeah, absolutely. It's, it's nice if you can have a partner that you can sort of go under their own and not have to pay your own because it can add up like, I know, it's pretty cheap in Canada, but you pay a couple other like disability insurance and whatever other things that you need to pay on a monthly and before you know it, you got five 600 bucks a month in all the different things and that's many thousands of dollars per year, whereas your employer would just totally swallow that you don't you don't take that for granted.
+
+96
+00:50:47,550 --> 00:50:55,320
+Scott Tolinski: Yeah, absolutely. All right. So now's the time in the show that we get to talk about our sick
+
+97
+00:50:56,160 --> 00:50:57,150
+Wes Bos: sticks.
+
+98
+00:50:57,510 --> 00:51:04,890
+Scott Tolinski: Yeah, I got a really sick pig. Today, it's like truly sick. what's what's your what's your sick pick today,
+
+99
+00:51:04,920 --> 00:53:01,800
+Wes Bos: my sick pick is an app for OSX called Karabiner elements, KA are a bi n er. And what this is, is an application that will allow you to remap keys on your keyboard. And what I use it for is the caps lock key Caps Lock key absolutely useless. It's it's precious on your actual thing, especially at the new MacBook Pro, or you got the stupid Escape key. That's like like a little screen there. So if you want to make use out of your caps lock key, you can use Karabiner elements to remap it to another key combo. So what I have done is I've mapped capslock to the combination, because you'll have only so many modifier keys on your, on your keyboard, you have control option Command and Shift and like Command S command x or whatever those are all taken. And then you have like shift a and you have all these different key combos in there generally taken by some app. So if you remap your capslock key to what's called hyper, which is just a fancy word for saying, mashing your hands on the Command Option Ctrl Shift key. So you just press caps lock, and then Caps Lock a Caps Lock q caps look arrow, any you can make up your own key combos now, and they're not taken by any application. And that's really cool. So you simply just use Karabiner elements to map a map your caps lock key to those four key combos to hyper and then you use any other app, whether it's Alfred, I use one called better touch tool. And then you can you can then say when somebody hits hyper arrow, maximize, maximize your window to the right, or when somebody hits hyper s, open up Spotify. And it's amazing. You make all these different key combos.
+
+100
+00:53:02,880 --> 00:53:04,620
+Scott Tolinski: What was that app that you said you use it with?
+
+101
+00:53:04,650 --> 00:53:30,900
+Wes Bos: It's called better touch tool. And then in better touch tool, you just better Touch Tools amazing. It's maybe that would be my pick next time. But it's it's got a whole bunch of different things that it's a window manager. It's an application launcher. It has all kinds of stuff. But what I use it for is launching applications and and moving around my Windows based on hyper keys.
+
+102
+00:53:31,770 --> 00:53:32,790
+Unknown: Cool. Oh, yeah,
+
+103
+00:53:32,790 --> 00:53:39,030
+Scott Tolinski: I love this and love this. This is gonna be in our we have our like productivity episode. Yeah, we're gonna talk about this. Absolutely. And also,
+
+104
+00:53:39,030 --> 00:53:53,100
+Wes Bos: I should say, don't tweet me about every other window manager ever. I know. I've tried them all. You see what happens is when I tweet about something is like Why not? X, Y or Z? And so they're right. I got
+
+105
+00:53:53,100 --> 00:53:57,630
+Scott Tolinski: it. Right. Because Because when you start using one thing, you know, it means you automatically hate
+
+106
+00:53:57,660 --> 00:54:04,230
+Wes Bos: Exactly, exactly. Yeah. What about you? pick pick?
+
+107
+00:54:04,290 --> 00:54:30,090
+Scott Tolinski: A Yeah, my sick pick. I'm going something we haven't gone before. I'm going with a TV show. Whoa, we have we have not allowed or Yeah. You tell me. I'll allow it. Okay, cuz, you know, I don't watch a lot of TV. But like, Man, this is my favorite show on the planet. And it is Thrashers, King of the road. Oh, yeah, I've
+
+108
+00:54:30,090 --> 00:54:34,050
+Unknown: been watching it. Yeah, it just started back for it well, so
+
+109
+00:54:34,050 --> 00:55:47,850
+Scott Tolinski: actually skiing the roads been going on for a while in the in the skate culture, skateboarding. But now it's a TV show on vice land. And it's it's awesome. So basically, you could think of it like the show jackass meets any skateboarding video ever. So it's it's two or three teams, three different professional skateboarding teams going across the country completing ridiculous changes. lunges from, you know, from totally non skate related challenges to adding extra sets of wheels, double skateboards and then just really really hard tricks. So they're all professionals and they're all amazing and they're hitting these giant rails and giant stuff and and just absolutely doing some of the coolest skating on top of doing just outrageous stunts and whatever it's a it's like it's yeah it's like a reality show meets jackass meets skateboarding video so and so this Yeah, it's so good. And I've like even I've been watching all the old ones because a lot of the old ones are on YouTube now just like the ones before was a TV show and just like yeah threshers king of the road definitely my my favorite.
+
+110
+00:55:47,910 --> 00:56:16,290
+Wes Bos: Oh man. I'm gonna spend the rest of my day watching this it's so funny that just it's just dying like they they dropped into a half pipe on a rack of ribs last season. Yes. All kinds of curries and they take some pretty big slams because they a lot of these guys are like street skaters. And then they do this like crazy like ramp work which they're not there they don't know how to do that right? So right they just fly all over the place
+
+111
+00:56:16,950 --> 00:56:25,560
+Scott Tolinski: yeah, yeah. So sorry for going off the board there I'm sure you can watch it elsewhere he's had to YouTube king of the road Yeah, it's uh it's why advice advice land
+
+112
+00:56:25,560 --> 00:56:34,890
+Wes Bos: is is a really cool show as well are really cool channel as well like I feel like as like an aging hipster it's like the perfect channel for yeah I
+
+113
+00:56:34,890 --> 00:56:40,920
+Scott Tolinski: pretty much don't turn it off I if I'm if my TV's on it's typically on vice land. So
+
+114
+00:56:41,490 --> 00:56:58,170
+Wes Bos: big fan that that maybe that'd be my pick next week as well. Just the vice land channel in general. They're their website at least in Canada. They're what their website has quite a bit of stuff for free. They have they've this one Matty Matheson as this dead set on life. You watch that one? Yeah, it's like a Yeah,
+
+115
+00:56:58,170 --> 00:57:04,980
+Scott Tolinski: he's a he's a Canadian guy. Right? Yeah, we don't know much about him in the state. I never heard of his name until that.
+
+116
+00:57:05,309 --> 00:57:21,210
+Wes Bos: He's big in like, the like Alexisonfire like punk scene growing up and then, you know, he's like a chef and does all this hilarious stuff. So cool stuff that that is that is the sick that is the sickest pic I've ever picked.
+
+117
+00:57:21,270 --> 00:57:26,100
+Scott Tolinski: Or it's by definition of everything. I mean, it's it's as sick as it gets. Really
+
+118
+00:57:26,130 --> 00:57:46,620
+Wes Bos: think about it, you know? Awesome. Well, that wraps up the show. Thanks so much for tuning in. Make sure that you do all the things that you're supposed to do. leave a review whether it's nasty or not, let us know what you think on Twitter. I'm at Wes Bos Scott is at S kolinsky or at level up to cool until next time, see.
+
+119
+00:57:47,580 --> 00:58:01,680
+Scott Tolinski: See? Head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you liked the show. Until next time,
+

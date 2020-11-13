@@ -1,0 +1,676 @@
+1
+00:00:01,290 --> 00:00:12,180
+Announcer: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to linsky and West boss. Okay,
+
+2
+00:00:12,330 --> 00:00:24,360
+Wes Bos: welcome to syntax. This is the show where we talk about tasty treats and web development. And with me is Scott Tolinksi. Hi, Scott, how you doing today?
+
+3
+00:00:24,360 --> 00:00:26,880
+Scott Tolinski: I'm doing good. How are you?
+
+4
+00:00:26,970 --> 00:01:23,700
+Wes Bos: Good, I'm doing pretty good, pretty good. Today we're gonna talk about what are we talking about this is gonna be like the, we call this the totally not coding show, where we're just gonna talk about ourselves and things that's going on in our life and some hobbies that we have. So we're kind of gonna break it down into different hobbies that we have and sort of explain like, why we're into them. Different YouTube channels we watch, I always find that interesting to see like, what do what noncoding things you actually watch online? And what are you working on personally right now. So like, what are you sort of trying to tackle and improve in our life. So break it down into those three things, and maybe we'll get some some nice, nice content out of that cheap, cheap, cheap, we've got this super cheap, cheap, we got this soundboard sorry, to those 15% of you who hate it, we'll try to tone it down a little bit. But we got some nice new sounds on it, which is I was pretty excited about we had
+
+5
+00:01:23,700 --> 00:01:27,000
+Scott Tolinski: a hard time starting this podcast because we were just playing with the sound
+
+6
+00:01:32,640 --> 00:02:10,740
+Wes Bos: blazon. Alright, we'll stop fooling around. Now this episode is sponsored by fresh books, fresh books, cloud accounting software, especially as tax time is coming up, it's going to be something that you need to be able to run your business into manage your incoming money and your outgoing expenses and all that good stuff. So I'll talk a little bit more about them partway through the show. So let's say let's kick it off, I guess we'll chat with Scott about we'll talk about I will go back and forth between different hobbies that we might have in we both have a couple different noncoding hobbies. And let's hear from Scott. What years is the first one? Yeah, yeah, so
+
+7
+00:02:10,740 --> 00:04:30,720
+Scott Tolinski: I get some, the probably the biggest hobby I've had in my recent life would be dancing. So if you don't know if you haven't heard from any of these episodes, I've been breakdancer for a long time B boy for those in the know. But this is like basically something I've been doing since high school I saw like a music video was the crystal methods name of the game music video where it was like a guy with a giant nose, breakdancing. And I was just like, Ah, this is just really cool. I have to learn this. So I started basically sneaking into the dance building at the University of Michigan. Why because there was a club that taught breakdancing at the University of Michigan, even though I was in high school, so I didn't have access to the recreation building so that I couldn't get in right so they do this thing where the where the somebody would distract the guy at the door, somebody else would pop open the exit door and then I would run in the exit door and then we'd all run down the stairs really quickly because the guy at the security counter couldn't catch us he couldn't leave his post. So that's how I would sneak into this place. Week after week as these guys didn't even know me and they decided like they wanted to just help me sneak into this place you know for fun so so that's how I started picking it up and I just started going to practice there eventually went to school and became part of the club eventually became the president of the club and just submit breaking forever and ever and ever and ever. And then at first it was just like hey, this is cool. I want to learn some cool tricks I want to do some cool stuff. It wasn't a good dancer at all I'm terrible dancer. And even for a long time in in the scheme of things I've been a terrible dancer was never like my role. Usually you enter like a competition which are called battles. There's like a bracket right usually maybe like 50 teams enter and then they'll break it into like a top 16 and then it'll just be like a straight bracket you go and you face the the one one crew and then you go all the way to the finals and the winner of that wins some sort of prize or trophy or whatever. So my role in the group was always to be the guy that came out and did the spins right? So that was like my my thing was movie The more the gymnastic stuff so we had a guy that was like our flavor guy he would come out and just do some some fresh poses and stuff like that he was a good dancer.
+
+8
+00:04:30,769 --> 00:04:43,170
+Wes Bos: Is that where you like kind of like I'm I'm I'm coming at this from like seeing a couple movies is that where you kind of go on your head and you put your you put your legs in weird situations and you hold it there for a bit.
+
+9
+00:04:43,199 --> 00:05:06,389
+Scott Tolinski: No this this guy is like, he's more like he comes out he's he's dancing really like he's a really good dancer. And he's more or less like posing but like not upside down. We have another guy who's like this Really strong dude. And his sort of role was to be the guy who did the upside down for example. Okay,
+
+10
+00:05:06,419 --> 00:05:10,980
+Wes Bos: so that's not flavor then so flavor just just closing with your feet on the ground
+
+11
+00:05:11,009 --> 00:06:43,800
+Scott Tolinski: flavors more like style. Okay, some people like would say it's like I don't know your it's just like it's hard to express because braking is so interesting there there's so many different capacities in it. There's this whole the musical there's there's the whole flavor component where you have to be. Yeah, you have to be like you have to have style is the best sort of way to describe it. So there's the style component, the musicality component. Then there's also the acrobatic component, the gymnastic stuff. And then there's the, the creativity involved. And then there's the strength component and stuff like that. So we had guys who would do all these different things, and it was primarily my role to come out and just to start doing like some of the crazier spins and stuff like that. So that's always been been my role until recently and I got a concussion in 2012 from breaking, throwing some some tough stuff on a some tile floor I should not have been throwing tough stuff on got a little bit of head bounces, it was not so good. And since then, I've been I've been focusing more on the just having fun and working on the musicality and, and that sort of thing. So so my, my career in dance now is like, just purely to go out there and dance and have fun, and just to experience the music, more artistic side of things. So I've been breaking a really long time, right? So we we've, uh, you can find various clips of me on YouTube and stuff like that. Some notable performances, I guess you could say is that we did a halftime show for the lions Thanksgiving halftime
+
+12
+00:06:43,800 --> 00:06:45,209
+Wes Bos: Super Bowl.
+
+13
+00:06:45,209 --> 00:06:53,399
+Scott Tolinski: No, not the Super Bowl. Yeah, just the Thanksgiving Day thing it was. I forget who it was. We backed up some popstar but we didn't. We didn't
+
+14
+00:06:53,399 --> 00:06:54,720
+Wes Bos: realize that Justin Timberlake.
+
+15
+00:06:55,500 --> 00:06:56,850
+Scott Tolinski: It was not Justin Timberlake.
+
+16
+00:06:56,940 --> 00:06:58,290
+Wes Bos: Okay. You're sure?
+
+17
+00:06:58,560 --> 00:07:04,980
+Scott Tolinski: Yes. He was. He was like he was like a one hit wonder guy. I forget who it was. But Shaggy.
+
+18
+00:07:05,009 --> 00:07:09,240
+Wes Bos: Maybe you're more shaky, or was back. He's back. He's back. She didn't
+
+19
+00:07:10,019 --> 00:07:12,329
+Unknown: know he didn't bring this up knowing that he's back.
+
+20
+00:07:12,389 --> 00:07:17,490
+Wes Bos: No, I didn't I just thinking of the old days when shaggy was the thing? Dude,
+
+21
+00:07:17,490 --> 00:07:29,610
+Scott Tolinski: he's got a he's got a new hit with sting. There's a shaggy instincts. Oh, shit, you know, it is actually really good. I'm confused. I'm very confused.
+
+22
+00:07:32,279 --> 00:07:33,269
+Unknown: But yes, me.
+
+23
+00:07:33,300 --> 00:07:49,199
+Scott Tolinski: Yes. Did halftime shows for the pistons and stuff like that? Oh, yeah, we did traveled all around the the US entering competitions. And, you know, I have a giant check in my office that I won from one of those competitions and really a dream of mine to win a giant check. So
+
+24
+00:07:49,649 --> 00:08:01,230
+Wes Bos: amazing. Yeah, that's a left Did you have you ever like just like met somebody in the streets? And instead of fighting, you just broke? it? Is that a thing? You do broke against somebody? Or do you brake against you?
+
+25
+00:08:01,350 --> 00:08:02,579
+Scott Tolinski: You brake against a buddy.
+
+26
+00:08:02,639 --> 00:08:03,630
+Unknown: Okay.
+
+27
+00:08:04,230 --> 00:09:11,610
+Scott Tolinski: I can't say that hasn't happened. But it doesn't happen in like, the regard that you're probably thinking, I think it would be probably that you'd like, knew somebody is fighting over a girl and like the way that you decide. It's actually like, way more accurate than you you want to believe here. It's because because the people in the dance culture, it's so like hantai fighting. Yeah, and there there are fights that happen. But like I've seen situations and things for people who are getting up in each other's faces and they're like mean mugging and getting up really close and like just super aggressive. And you're like, oh shit fights about to break out and then two seconds later, like, let's let's dance it off, man. And like, that's how it happens. It's actually it's 100% serious and like everyone is like I've seen like close to Bose being thrown danced it out. Instead, I actually have seen that's a that's the difference between Chicago breakdancing battles and other areas as in Chicago, they will fight you so do not like push it I've seen like someone get headbutted before, just like all around madness. So Chicago is a bit rough.
+
+28
+00:09:12,050 --> 00:09:21,870
+Wes Bos: Wow. That's that's a very interesting subculture area life that I've never had any experience in. It's kind of cool to hear how things go down.
+
+29
+00:09:22,109 --> 00:10:14,420
+Scott Tolinski: Yeah, it's cool. And it's getting a little bit more and more put together every single year, I would love to see it a little bit more like I mean, so to be honest, there's this under a whole underground side of things where you don't want to dilute the culture, you want it to be very raw, you want it to be very rough, you want it to be like very aggressive. And then there's like the commercial side of things like, hey, this could be in the Olympics, and this could be on the X Games or whatever, if people like really took it seriously in that kind of way. But the problem is, is that like no one wants to dilute the culture at the same time like it. I don't know the right people need to do it. And it's sort of happening right now but at the end of the day, be Boys will be boys and everyone will be late to everything and jams won't run on time. And there's like a certain aspect of the culture that needs to like grow up before Oh, yeah, that next step. And it just, it's just not happening.
+
+30
+00:10:15,780 --> 00:10:18,390
+Wes Bos: That's interesting. Cool. Yeah,
+
+31
+00:10:18,390 --> 00:10:20,490
+Scott Tolinski: let's hear let's hear about one a year how to use
+
+32
+00:10:20,520 --> 00:14:39,480
+Wes Bos: so probably my, one of my most treasured hobbies is his barbecue. And I've only gotten into it and maybe the last about four years, I've been super into eating barbecue, a large a large portion of my life. But over the last, I think maybe about like five years ago, we I've like developed this like love with the south, which is like, down south in the states and my wife and I've traveled down there a number of times, we've gone to all the different big barbecue cities and try the different types of barbecue that is down there. My wife and I are also super into yard saleing, which is just walking through other people's junk and haggling. I love the whole haggling part of it and whatnot. And so we went on this a couple years ago, we went on this thing called the world's longest yard sale, which is there's there's this highway called highway 127 I believe it is. And it's just like a week long from I think from Georgia up to Michigan, this highway sneaks through and it's like an old obsolete highway, it's been obsoleted by bigger highways. And it just goes through all these tiny little towns. And you know, we basically just like in January, it's in like August or something like that in January, we book hotel rooms in these tiny little towns, and then we just like drive up this highway, yard sale on our way through all these different antique vendors and just like random people selling their stuff on the side of the road. So part part of that was like I really got to experience some of like this, like real, just people have a huge smoker on their front yard. Or people I don't know selling ribs out of a church parking lot or something like that, I really got to experience the like whole barbecue culture. Like there's I've also been to like, just outside of Austin, there's this place called Salt Lake, which is apparently it's not the best barbecue in the world, but it has the best barbecue experience I've ever had. It's like outside, it's a dry County. So you have to bring your own beer. And there's like, you get to sit under these nice little awnings. And there's a band playing and like you feel like it's just like a really nice barbecue experience. And I sort of fell in love with both obviously the deliciousness of smoked meats, as well as the the barbecue experience that is like, it smells great. And it's sort of an all day thing. And you just hang around with your family outside and whatnot. So when we got our own house about three or four years, no, five years ago, we got our own, we finally got our own house and I had been renting up until then. And one of the first things that I did when we when we got our own houses, I ordered a smoker, which I really sometimes people don't understand what this is. So the idea is that you you buy this thing called a smoker, and you put charcoal and wood in it and you you control the temperature and then you put meat on it whether it's pork or beef or chicken and then you the the smoke and the low temperatures will slowly but surely cook the cook the food right. And it tastes delicious. And it's really good. So I got a what's called a Big Green Egg, which is one of the I don't know, it's it's one of the like cult following barbecues out there. It's super overpriced versus like other stuff that's available out there. But it's amazing because you can cook pizza sauna, you can do all kinds of smoking on it, it also works as a regular barbecue. And I just got super involved with it, I really liked the whole aspect of learning how to do something and then learning how to sort of perfect it by just scouring the internet and reading a lot and watching lots of it's very similar to how I learn a new coding technique, which is just like I just sort of immerse myself in that culture and immerse myself in learning all the different things and being a sponge to all the information that is out there and then going and applying it myself and I've had it now for three or four years now. And I'm starting to get pretty good at it. And it's just it's just a really fun hobby to have because you can you can have friends over and you can make a really nice meal and it's it's like better we don't go out for barbecue now especially in Canada barbecues. Very good. We obviously do down south where it's where it's like legit, but it's way better than having that our house then then at a restaurant. Nice.
+
+33
+00:14:39,720 --> 00:14:48,300
+Scott Tolinski: Nice Yeah, we saw the green egg whenever we go to Home Depot or something. It's got like the felt felt on the underside like where it closes right? Yeah,
+
+34
+00:14:48,300 --> 00:14:49,170
+Unknown: yeah. The
+
+35
+00:14:49,170 --> 00:15:44,700
+Wes Bos: funny thing is about it is like you with anything you people become such gearheads so that like that felt that felt ring around the inside. That's a That's just like a seal to keep the smoke out. But that's widely regarded as garbage amongst gearhead. So I of course had to go out and buy this thing called the Rutland seal. You got aftermarket, aftermarket seal. It's like a Honda Civic, you get all these upgrades to it. And you're just like super into all the different like plates and grates and different ways to light your charcoal quickly. And it's, I also I kind of love and hate the gear that comes along with hobbies because because it's such a simple thing. It's like this caveman thing of smoking meat, but you can get so into it and it can get so expensive into all these different things. It's kind of kind of fun, though.
+
+36
+00:15:44,760 --> 00:16:02,100
+Scott Tolinski: So are there like are there like they're like hobby centers where people are like, showing off their customized smokers and egg like where people are like, as you know, like mechanical keyboards. Yes. Like endless amount of sites or people look at my soup deaths. It's pretty big on mechanical keyboard.
+
+37
+00:16:02,610 --> 00:16:06,800
+Wes Bos: Instagram is really where all the the meatheads hang out
+
+38
+00:16:06,840 --> 00:16:09,990
+Scott Tolinski: of meatheads. Is that is that official terminology. No,
+
+39
+00:16:10,200 --> 00:17:57,450
+Wes Bos: I guess meatheads is the guys at the gym. But there's a pretty big culture of barbecue online. And that's another thing that we'll do is when I'm like getting super into anything, whether that's smoking or into cooking keto, or anything like that, I will just go on the hashtag on Instagram, and scroll my night away. Yeah, looking at what other people are, are building or other people are smoking with different tips that they have and asking questions, because there's this whole thing like, do you go low and slow? Or when you when you're cooking something? Do you? Do you wrap it? Or when do you apply the salt, I've talked about this earlier is that like people get so crazy about these little things that really don't matter all that much. And it just reminds me of programming so much, because people say like, Oh, I would never wrap a brisket. And other people are like it's called the Texas crutch or you win Yeah, because your your brisket hits like 170 degrees, and then you want to, you want to like get it up to 200 or you're pulled pork, we need to get it up to 200. And you hit this thing called the stall where at a certain point your meat hits a certain temperature and then it starts expelling water because you've hit this evaporation, temperature, and then the the evaporating water starts to cool down the actual meat. So you stall out at 170 degrees or whatever it is. So a way around that is you can either wait it out, or you can wrap it in like a foil or a butcher paper or something like that. And that will contain the contain the actual thing and then that that's called a Texas crutch. And then you'll that'll get your extra 30 degrees to where it's like falling apart and being nice and juicy. And people are like so divis of on whether you should use the Texas crutch or not, it's so funny to look at it. That's hilarious. I
+
+40
+00:17:57,450 --> 00:18:42,480
+Scott Tolinski: love that though. And that's like part of the coolest thing about the modern like time we live in is that you can like fully immerse yourself in stuff like that. I mean, even like when I started breaking, you couldn't do that. There was no such thing as any of this stuff. Like when I started dancing, I've learned primarily off of flash animation, there was like a website that had a flat like maybe like a seven frame per move flash animation of different breakout moves, right. And like I was like trying to learn these techniques for like a sense, essentially a stick figure doing them. And like nowadays, nowadays, these young kids are all learning off of YouTube. And they can just totally immerse themselves in Instagram and YouTube and see all these like World Class B boys and learn these techniques really easily and all sorts of stuff. It's just amazing.
+
+41
+00:18:42,630 --> 00:18:54,630
+Wes Bos: Yeah, it's everything that amount of access to the best people in the world. Right? Well, let's, uh, let's move on. Let's hear another one of your, your love is there. Yeah. So
+
+42
+00:18:54,630 --> 00:21:49,860
+Scott Tolinski: moving on. I've been writing recorded music for a long time. And this is something I've been wanting to get into quite a bit more lately, because for a very long time, you know, I was playing drums in a band for a long, long time. And I played piano for a long, long time. And, you know, in college, I just started writing and recording music myself, under the name of a domestic robot was my band name, although, I have to admit, like my singing is awful. I'm very aware of that my singing is not any good. I just had to take a singing class in college, and I nearly flunked the singing class. Because I have like a one octave range. I can. I can go really low, but it's like a one octave range. And I remember my singing teacher, he would like sit down with me at the piano and he'd be like, you really can't hit this note. I'd be like, Hey, no, I can't hit it. No. Okay. So yeah, my singing is not good. If you're interested in not good singing check out domestic robot but I really liked making music regardless if people liked it or not. So So I did that for a long time. And I just started this new idea of a new band here in a band, I mean, a one person musical thing, where I want to start doing music at least once a week. And that's sort of the goal is every Sunday night from like, six, or after, after laying in goes down. So maybe like 730 or so onwards to just work on music. And I have this new band named called shift, period forward slash super period. So shift super, which is obviously like a keyboard shortcut. Ah, like, yeah, and the genre of music is, I don't know what to say. It's like electronic music with samples, you could think of like kid koala, or avalanche avalanches or something like that. Very, very sample heavy. I'm going to be taking a lot of snippets from my favorite documentaries, because I watch a ton of documentaries. So I'm going to be taking a lot of audio samples from documentaries and essentially using them like similar to how we use the soundboard to actually like, I don't know, sample collages and stuff like that. So I'm really excited about it. I don't have to worry about singing, I don't have to worry about writing lyrics. I can take these ideas and stuff like that and put it down and just tweak it a little bit. So I have a song I'm working on right now. I'm pretty excited to share it whenever I can. So it's not done yet. But maybe pretty soon. But yeah, shift super. And then I have this whole design aesthetic around shift super, that's I'm calling ski wave, which is sort of like a vapor wave style, but based off of at ski movies and stuff. Ah, yeah. So if you want to think about this visual art style, all you have to think about is like a full body neon like bodysuit in the skier, like maybe upside down, but like definitely hitting off a cliff doing some like tweaked out pose. Yeah, that's, that's the whole aesthetic that I'm going for overall,
+
+43
+00:21:49,860 --> 00:23:25,200
+Wes Bos: I can't wait to see that. So I've got a follow up question that's related. I'm sure a lot of people are asking, obviously, having these these hobbies are super important, I think especially in web development, as it is very easy to become overwhelmed or burnt out or, or anything like that. And I was actually thinking about this the other day, where I think about just being competitive in our industry. And I find that there's a lot of people who they really just aren't putting in the amount of effort that needs to happen in order to get over that hump and get really good at coding. But then there's also like, on the other side, there's this like, oh, there's a lot of people that are really maybe overdoing it and, and just giving it too much. And that will eventually lead to to burnout, right? And I'm very aware of burnout with myself, because I don't want that to ever happen. I know that I have a good thing going right now in terms of my work life balance and doing something that I really enjoy. And I want to always make sure that I don't ever get to that burnout point, because I see a lot of people do it. And they either get extremely cranky and irritable online, or they just rage quit and they're done. And they sort of ruin a really good thing. So I'm always like trying to figure out like, Where's that sweet spot in between, like working super hard, but also not burning out. And I think that these hobbies are super important. But my question is like, like, where do you find the time for it? I think that you're great at having these. You're dancing, and you have a little kid and you're making music. And that's good. But like where do you find the time for that? Yeah, so
+
+44
+00:23:25,200 --> 00:25:12,630
+Scott Tolinski: at this point, it's it's largely when Landon goes to sleep. So he goes down at like 730 now, and even before Landon, these things were the same, I think the biggest point is making it part of your schedule, and making it part of your schedule and keeping it there. So it's hard for me because I've been breaking for maybe like 14 years now. So for 14 years, I've been going to dance practice to two times well, now it's like two times a week. It used to be like three or four times a week. But even when I when were when I was first dating my wife, she was getting your PhD. So like she is really busy all night long. So she's not expecting me to hang out. So I can go to dance practice two nights a week. No biggie, right? You know, and even even now, it's just been something I've been doing for so long that go into dance practice for two nights is no big deal. So like having that that schedule and that expectation of like, okay, Tuesdays and Thursdays from 730 to 930. I'm going to go breakdance and I'm going to go practice, I'm going to go whatever, and, and that's going to be cool. And I will have that time available for my wife whenever she needs it as well. Right. So for instance, I work out monday, wednesday Fridays, from 330 to 430 is when I work out I do it that time because Courtney gets home at 430 with Landon and then I watch Landon for an hour while she gets that time to work out. So yeah, keeping that hard schedule and like making sure that it You sort of freeing up this time to do this stuff like scheduling in your hobbies is like just as important as being I don't know, just being consistent with it, but like actually scheduling it in Yeah, is the main thing for me. And
+
+45
+00:25:12,630 --> 00:25:29,430
+Wes Bos: I think having that what you said is important having that like understanding with your significant other, where you you both understand that you both need it otherwise, like, You're both going to be worn too thin. And that's not good for for anyone and it's not good for your family either. Right, right.
+
+46
+00:25:29,550 --> 00:26:08,400
+Scott Tolinski: Yeah. And it definitely, I mean, you got to see it that way. Because, especially if you're working long and hard on a coding project or something, it's really nice to go and do something that lets some of that, that tension out, right, because I have had tension from, you know, trying to get something working or whatever. And it feels great to go to dance practice and just like, work it out, Let it out, let that you know, sweat it out a little bit and forget about it for a while when you come back to it. Your brain is in a totally different space and you're ready to tackle stuff and you're not so high strung on some of these issues that can really pop up and keep you just shoot. What am I supposed to do here? You know?
+
+47
+00:26:09,120 --> 00:26:10,620
+Wes Bos: Yeah, I totally agree.
+
+48
+00:26:11,250 --> 00:26:15,390
+Scott Tolinski: Yeah, so just making time and scheduling it because it's important. Yeah. Good.
+
+49
+00:26:16,290 --> 00:26:23,610
+Wes Bos: Cool. Thanks for that. Um, hopefully some people find that helpful. I know I get that question. All the time. Where people? Yes, I
+
+50
+00:26:23,700 --> 00:26:37,020
+Scott Tolinski: mean, I get that all the time where people don't even ask that question. But they just say I can't do all of this stuff. I can't go. I don't have time for the gym. I don't have time to do XYZ. Yeah, you do. You're just bad at scheduling. Yeah, yeah. I think I think
+
+51
+00:26:37,020 --> 00:27:56,340
+Wes Bos: bad scheduling. And also, like, you have to work up to that point. Like, I had a workshop on Friday. And I had to get up at like, 545 in the morning, I arrived at 630 train, didn't see my kids as they were still sleeping. And then I got home from the train. It was just a nine to five workshop. And I got home from the train at like seven o'clock at night. And I just saw my kids before they went to bed. And I was like people do this every single day. Yeah. And I luckily enough, like I remember having the talk with my wife when she quit her job two, because my wife works from home as well. But she used to be a shoe designer. And and I remember her being like, like, this sucks having to do it. And thankfully, we had the foresight to to try to build something for ourselves before we had kids and before we had a house and stuff like that, so we could take those risks. Because it was a lot easier. I'm not saying you can't do it now that you have kids but I'm glad that we did it because we saw had like we want to start to design our life in a way that we don't have to commute and we want to have time for for hobbies and working out and and all these good things. Right. So it's also I think it takes years and years to work up to that point, but it's it's well worth well worth those risks and well worth putting a little bit of extra effort in to get to that point. Yeah,
+
+52
+00:27:56,340 --> 00:28:37,440
+Scott Tolinski: I know I remember having like an hour long commute both ways. So I used to I used to work in Detroit area so I would drive from was it Dexter which is Ann Arbor area Southeast Michigan and be like an hour to get to Detroit or so every single day with traffic and you would get home you know, like six o'clock ish or something and you would just feel like totally spent and it would be like and and you know, I guess at that point we didn't we didn't have a baby so it was a little bit easier for me to eat dinner and then two hours later go to to practice or something but it wasn't certainly easy. He definitely had to like force yourself to do it. But yeah, it can be super tough. I totally get that.
+
+53
+00:28:37,440 --> 00:28:39,690
+Unknown: Yeah. All right.
+
+54
+00:28:39,690 --> 00:29:06,960
+Wes Bos: Um, what is it mine that my turn? Yeah, all right. I'll talk about when I got here. Oh my other I talked about my barbecue in the yard sales that's in the summer we go in yard sales all the time. I've talked a lot about working out I wouldn't say that's necessarily a hobby because it still is hard for me sometimes I really look forward to it. But more often than not I'm I have to really be like I don't feel like going but I'm gonna go
+
+55
+00:29:08,550 --> 00:29:11,010
+Scott Tolinski: today I'm feeling like that just my gym day and I'm like,
+
+56
+00:29:11,640 --> 00:31:21,720
+Wes Bos: I don't want Yeah, I went this morning thankfully and I'm testing out this new thing where I I go from nine to 10 miss the first hour of work and go to thing and see if it gives me a bit more of a boost the boost in the morning. So far it's working pretty good but that might also be the copy I had on the way home. What am I talking about? Um, date night, my wife and I go on a date once a week. Usually Thursday nights. We're lucky enough to have my wife sister living with us. In exchange for living with us. We she does a bunch of babysitting for us. And she's also she also works for me as well as my assistant which is pretty cool. So if you ever email me and get an email back from someone that's not me, it's likely her but a date night, once a week. We we live in the second in city called Hamilton which is an old steel town sort of the the Pittsburgh or the buffalo of ham of Canada. And it's it's crazy how much how many new restaurants are opening up and many like, nice new donut shops are opening up like the stereotypical hipsters gentrifying the area, which it has its own problems as well, because we have a big issue with affordable housing in our city now. But what's kind of cool is that we go out for date night, once a week, and we get to try all these different restaurants and absolutely love it. And it's kind of a nice time for my wife and I to chat about work and chat about what we're working on and chat about whatever's going on in our life because I kind of ever since we started doing it, it's just been so good for just our own sanity and your marriage and everything like that. And I've been like saying like the government should like mandate that you have date night once a week because date night, mandated a mandate mandated mandated night. Yeah. I don't know it's a it's not really a hobby of ours. But I just thought I'd mentioned that that's a pretty big part of our life. And we always look forward to it on Thursday night, where you're just about second the week, and then you get a you get to go out and and then the next day is Friday, and everything starts starts looking up from there.
+
+57
+00:31:21,960 --> 00:31:36,540
+Scott Tolinski: Yeah, no, that's great. I wish we had some better babysitting options here. That was the hard part about moving across the country from the rest of your family is that you instantly lose all of those, those support networks here. So we're slowly building some of that back.
+
+58
+00:31:37,260 --> 00:32:06,990
+Wes Bos: There's a couple startups in the area that are trying to solve this. People have money, but they don't have anyone to take care of their kids. You know, like, lots of my friends are like I would kill to have somebody that I could reliably have come over once or twice a month even to babysit my kids so we could go out on date night. And there's some people trying to figure out like, how do you do this like trust thing, where you can just like have an Uber for babysitters but also not just like have a random stranger. Yeah,
+
+59
+00:32:07,710 --> 00:32:29,580
+Scott Tolinski: I know. Yeah, that stuff is scary. It's like we take land into daycare every day. It would be sick if that daycare was open until you know 10 o'clock. Yeah. Just some nights it'll let him let him hang out there while you got to have a date night so that yeah, that's super awesome. I agree. That's super important. Yeah, totally jealous about that one.
+
+60
+00:32:31,170 --> 00:32:54,930
+Wes Bos: Yeah, that's good stuff. Um, so that's all my my my soda. Oh, a homerun. Oh is another hobby of ours. We moved into 140 year old house a couple of five years ago we've slowly been renovating different areas we did our whole main Florida the whole get rid all the walls because yeah, open concept. And we're just about to start another round of rentals wherever our whole house is plaster which
+
+61
+00:32:54,930 --> 00:32:57,180
+Scott Tolinski: sucks. And yeah, just two
+
+62
+00:32:57,209 --> 00:33:17,940
+Wes Bos: cracks. And once we've done all these Reno's you shift the weight of the house around, and when that causes the house to move a centimeter or two in either direction, and then that cracks the plaster and then this the ceiling starts cracking. So we're getting a whole bunch of drywall done, which is miserable, but much needed. Wow.
+
+63
+00:33:18,150 --> 00:33:26,730
+Scott Tolinski: So are you are you like I know you've you've referred to yourself as you know. The was it chip and Joanna like
+
+64
+00:33:27,570 --> 00:33:30,450
+Wes Bos: Joanna the chip and Joanna JavaScript? Yeah, yeah.
+
+65
+00:33:30,450 --> 00:33:34,290
+Scott Tolinski: Are you coming in there with a sledgehammer? Like No, no, I'm
+
+66
+00:33:34,290 --> 00:34:53,130
+Wes Bos: coming in there with the checkbook? Yeah, I do. I'm, I would say I'm, I'm fairly handy and I'm able to look things up. We also have a rental property as well. So when things break at the rental property, I generally try to get in there and fix it before I have to call someone to fix it. It's just good. So like, I feel like like also, we had like this weird issue at a rental property where there was like a weird smell coming from the basement. And I paid like a plumber like 350 bucks to come fix it. And they didn't fix it. Like he just like is like all sneak it out. But I can't guarantee that's the problem. And I was like that there is why people aren't successful because they're they don't want to be they don't have like a problem solving mentality. Whereas like, I'm like, Alright, I'm gonna figure this out. Like, I don't know anything about plumbing, but I can debug this smell pretty easily. So a couple hours of sniffing around the basement and trying different things and coming back a couple days later, like, figured out where this random smell was coming from. And it turned out it was like a random pipe that was no longer used and some rat climbed up, or something like that, or a mouse climbed into, probably died. I don't know what it was, but we fixed it. And I was just like, Okay, how, how am I better at debugging this plumbing issue than an actual plumber?
+
+67
+00:34:53,310 --> 00:35:19,380
+Scott Tolinski: Yeah, so this is actually hilarious because my dad would refer to this as doing quote, a downtrend. Job, which is hilarious. We always my brother and I, and now my wife, we always crack up about this downtown job thing because one time we were like, We got hired by our neighbor when we were in middle school to mow their lawn. And so, like mowing their lawn and whatever my dad's like, don't forget to do a downtown job. Wait, so
+
+68
+00:35:19,380 --> 00:35:24,710
+Wes Bos: what does the downtown job look? Like? Good job. It means it means it.
+
+69
+00:35:24,710 --> 00:35:38,940
+Scott Tolinski: It means like an extra extra light on the job or something. Yeah. So like, oh, if they hire you to mow their lawn, don't just mow their lawn, but weed whip and pull some weeds and young and make it like truly, like, perfect shine on that thing.
+
+70
+00:35:40,440 --> 00:35:42,060
+Unknown: So I've always said this, it's still good.
+
+71
+00:35:43,170 --> 00:36:08,480
+Scott Tolinski: To do a downtown job at the end, like yeah, if it is like, yeah, I'm not I'm gonna debug that, like, I'm gonna figure out I'm not just gonna patch it up and call it a day or something like that, or, or Yeah, I have the same exact mentality is that it's like, I guess it is that just a debugging mentality. It comes from deep seated, wanting to do a downtown job
+
+72
+00:36:08,730 --> 00:36:33,980
+Wes Bos: is that I always see developers in other aspects of their life. And it's funny how many barbecue guys are also developers in their real life, because it is this like, very simple thing. But it's also you can get very technical, and there's a lot of like moving parts to it. And you can get really into it. And I think that developers are, are well suited to that because they like to get into the nitty gritty and the whys in the house of it. Yeah,
+
+73
+00:36:34,020 --> 00:36:43,710
+Scott Tolinski: I think the problem solving aspects are just so thoroughly embedded into being a good or a programmer or any of that stuff. You want to solve these problems. A downtown
+
+74
+00:36:43,710 --> 00:36:54,380
+Wes Bos: job. I know I use that in my tutorials. Like let's not just leave this here and assume it's going to work. Let's write a couple error handlers and, and do a downtown job. Yes.
+
+75
+00:36:54,420 --> 00:36:57,540
+Scott Tolinski: Yeah. See that? The the rock kolinsky special right there
+
+76
+00:36:58,200 --> 00:36:59,400
+Wes Bos: is your dad's name.
+
+77
+00:36:59,420 --> 00:37:15,920
+Scott Tolinski: Yeah. His name is rock. Yeah, yeah. It's not sure for anything. It's spelled ro ch. So a lot of people mispronounce it. Roger Roger, something but no, it's rock Rocco. It's Giza. He's probably be psyched to know that the downtown job is making it under the power to make a lot of like,
+
+78
+00:37:15,920 --> 00:37:24,090
+Wes Bos: Do you smell? when you're a kid, did you make those jokes? We did not. I don't know why
+
+79
+00:37:24,090 --> 00:37:33,060
+Scott Tolinski: cuz we even we even watch the rock and stuff like that, which is I think it was just like so oddly normal to us that his name was rock like it was it? I have no idea.
+
+80
+00:37:33,480 --> 00:37:55,800
+Wes Bos: We I got another funny story. We just got new pots and pans. And we got these new pots and pans called the rock. And it's like this like, kind of like this new nonstick surface where it's like kind of beveled it's really interesting. And they're awesome. And they're called the rock and it says the rock right on the pan. I taught my daughter to say Do you smell his cooking?
+
+81
+00:37:55,800 --> 00:37:59,520
+Scott Tolinski: That's awesome. That's great. That's super good.
+
+82
+00:38:00,780 --> 00:38:04,050
+Wes Bos: All right, do you got any more hobbies you'd like to talk about here?
+
+83
+00:38:04,109 --> 00:38:14,130
+Scott Tolinski: I do but maybe want to hear from the freshest breakdancing managing your your, your books, that's a fresh hobby of mine.
+
+84
+00:38:14,460 --> 00:39:53,150
+Wes Bos: Managing your books is a very very important so if you're running a business, I always talk about when you have a business there's two things you can work on your business and your homework in your business and there's stuff where like you're learning a new skill, you are creating a new course or you are doing some marketing that's that's important business to me. But then there's this whole other subset of it which is unimportant business working in your business which is just like doing the books and doing email and doing this busy work that has no end like result and working on it. And to me that is that is accounting and I hate doing it and that's why I've been using fresh books for maybe about eight years now. And I love it because it just makes my makes my time spent tracking invoices, tracking expenses, tracking, profit and loss and doing my taxes at the end of the year. It's just very minimal and it doesn't get in my way so I just jump in. I'm able to see who's paid the invoice who's seen the invoice like right before the show we're supposed to have another sponsor, but they haven't paid us yet. So I just jumped into Freshbooks check that saw I'm like hey, I can see that you saw the invoice clearly they click the link but they did not yet pay it and you can pay via credit card so like what's going on here? How can you unpaid yes I was able to I can I did a comment right on the invoice and it shows up as as a history on that so that's why I love fresh books and I definitely recommend that you sign up go to fresh books calm for slash syntax and use syntax into the How did you hear about a section? Because that will keep Scott Nye creating these hilarious syntax episodes?
+
+85
+00:39:53,190 --> 00:43:27,600
+Scott Tolinski: Yes, hilarious. Yeah, so another hobby of mine. This is a we can get this one quickly. But I love kung fu movies. I like all kung fu movies, but of particular, this studio, the shot brothers, which existed from like, 1960, something to like 1980 something, though, basically, the shot brothers was like the precursor to golden harvest, which is where Bruce Lee and Jackie Chan both found their initial fame and stuff like that. So I love these movies, they're awesome for a variety of reasons. They're there, the studio in like, I don't know, like 30 years, so span produced, like 700 films. So they were just cranking out films. And because of that, they ended up having this like, a lot of experimentation, a lot of like, really interesting, sort of non conventional plots are filming and stuff like that. And these movies can get really artistic in every sort of different sort of way. And oddly enough, they're just totally odd. Some of them are just totally odd by American film standard. So like, you could watch this whole movie that just huge struggle, and the main character, like, at the very end of the movie, like finally is going to prevail, but then he doesn't. And then he kills himself. And that's the end of the movie. Like, there's no follow up. There's no like, epilogue or something. Yeah, that is the end of the movie. So like you, you can't really predict what's going to happen in any of these movies. They're just totally off the wall sometimes. And I really liked these movies, because so many of them follow these themes of life self progression, which is is like a huge deal, like, and some of the plots are just like way over the top, like where this guy, or a bunch of people were in like a Shaolin Monastery and they're trying to become more powerful or whatever. So they put like, you know, five pound ankle weights and say, Hey, jump out of this pit, and then Okay, jumps out of the pit. Now, here's 10 pound ankle weights, try to jump out of this pity jumps like 1000 times until he finally gets out. Okay, now, here's like 20 pound ankle weights or whatever, and it keeps going until he's got like 1000 pounds on his ankles. And then the Shaolin monks like, okay, now take off all your ankle weights and he just jumps over a building. It's like totally outrageous, but like, this idea of like self progression, that if you work really hard on these like areas of yourself, you can you can grow them to sort of unworldly proportions. us. So I've always loved the fact that those themes are so prevalent in so many of these movies to like an outrageous point, is one of the reasons I've always been been geared to this, I wanted to give my top five, well, in no particular order, but top five favorite shot brothers movies, okay, with a tiny little description, I'll be quick about this, for anyone who doesn't care about these movies. But if you have any bit of interest in some of these are going to be really good. I really love some of these movies. So okay, one of the classics is the 36th Chamber of Shaolin, which is, you know, inspired a Wu Tang album. And the 36th chamber is all a sort about this guy who gets into the Shaolin Monastery and he sort of goes through and works harder than everyone else and eventually invents his own Chamber of this Shaolin Monastery at the same time, he has to fight this this sort of oppressive force that's coming in. So 36 chambers really excellent. My favorite film is the five deadly venoms, which is a classic, absolute classic. It's basically a mystery about
+
+86
+00:43:29,880 --> 00:43:30,650
+Unknown: it.
+
+87
+00:43:31,080 --> 00:44:06,210
+Scott Tolinski: Yeah, there's these five, five kung fu artists that all have different specialties. They're all based up there's like the toad, and the scorpion who has these like devastating leg kicks, or the gecko who can like run up walls and stuff like that. It's these like five deadly venoms it's inspired a ton of modern film and all sorts of different ways of even like a modern American film. So the five deadly venoms Awesome, awesome mystery film, five fingers of death is a great sort of a very in if you've seen Kill Bill, you know, they're like that siren right before she goes off and starts killing people.
+
+88
+00:44:07,080 --> 00:44:07,710
+Unknown: Where
+
+89
+00:44:08,970 --> 00:45:26,760
+Scott Tolinski: that light comes from that movie. There's like a lot of really like famous things, five fingers of death was like one of the very first Chinese Kung Fu movies that found fame over in the US It was like a precursor to Bruce Lee and all that stuff being popular in the US. The Secret Service of the imperial court is sort of an odd film. It's not on most people's lists. It's a really large it's a large movie very epic. And then the last one on my own a boxer from shantung here is also inspire or Kill Bill like aspects of Kill Bill were inspired pretty heavily from boxer of shantung. It has a super awesome violent ending. Oh, these films are exceedingly violent. I'm going to say that right now. Like a lot of like fake blood like arms cut off and stuff like that. And then the last one is human lantern. Which is a also is exceedingly violent film but insanely artistic every single shot in this thing is just sort of mind blowingly beautiful even though it's like a horror film. So it's certainly a bit gory and a bit like disturbing. But the film itself is just an absolute masterwork of just sort of unconventional like beauty shots. You'll never see another film like this composed or whatever. It's pretty sweet.
+
+90
+00:45:27,750 --> 00:45:54,120
+Wes Bos: Cool. I've never seen a kung fu movie in my life. I'm not super into movies at all. I've it's part of my like, claim to fame with people is that I've never seen anything like foundational movies in life. Like I've never seen Star Wars or Harry Potter or Lord of the Rings, or any of these movies that people like, Oh, they always make like jokes. They're like, use the four sounds like I don't get it. But maybe we ought to check out one of these kung fu ones.
+
+91
+00:45:54,210 --> 00:46:09,090
+Scott Tolinski: They're there. They're interesting. I think the five deadly venoms is probably the best film and 36 chamber is probably the most famous. They're they're good. I don't know. I really liked them. They're just sort of they're bizarre, in a sort of a great way.
+
+92
+00:46:09,930 --> 00:46:10,470
+Unknown: Yeah.
+
+93
+00:46:10,980 --> 00:46:29,550
+Scott Tolinski: So that's my kung fu movie fandom. If you ever see these, my office I have like kung fu movie posters all over everywhere. Yeah. And these are like ones that were actually hung in like Chinese theaters in the 70s when these films came out. So I've been doing a bit of collecting there, but
+
+94
+00:46:29,730 --> 00:46:39,690
+Wes Bos: that's pretty neat. Yeah. Cool. All right. Let's switch gears then to just some other stuff about us. Real quick one, what kind of car do you drive Scott
+
+95
+00:46:40,319 --> 00:47:22,950
+Scott Tolinski: drove a Ford Focus ST, which is like their souped up version. It's a little fast and furious. It's got a 250 horsepower engine and stuff like that. It's uh, only comes in a manual so I got this car cuz my grandpa worked it for this whole life. So we got like the a plan. And basically, it was a I could get a really awesome price on a really sweet car. knowing what I know. Now about how many Ford's I've owned. I'm probably not going to buy another Ford. But I've liked this car. I've had I've had it since 2013. And it is it has served me well. Before that. I had a Ford Fiesta, which was like a lemon. So I had to like give the whole car back after like, oh,
+
+96
+00:47:22,980 --> 00:47:24,360
+Wes Bos: like through the lemon law.
+
+97
+00:47:24,360 --> 00:47:25,200
+Scott Tolinski: Do the lemon law. Yeah.
+
+98
+00:47:25,440 --> 00:47:27,180
+Wes Bos: I was interesting. I had
+
+99
+00:47:27,180 --> 00:49:09,660
+Scott Tolinski: a Ford Fiesta and like I had it for about one week started leaking oil. So I take I take it into the dealership, and hey, it's leaking oil. And keep in mind this is one of the first Ford fiestas off the line at this point this is right after they brought it back so like the press for this would not have been good if like they were having problems yet. But instead of doing anything about it Ford actually made it much worse. So their their technicians like like, actually like wrecked the interior of the car. There was like oil stains on the carpet. They like scratch part of the car. Like these texts, absolutely did a number on the car. And this I get the car back. And it's like trash, kind of like usually when you get it back from the dealership. It's like nice, but the car was like kind of trashed. Yeah. And it started leaking oil again in like two days. And like, so I take it back in there. I took photos of the salt I documented at all. And Ford was like not doing a whole lot for me. They were like not sympathetic. They're like, yeah, we're gonna replace your engine. Now I'm like, the car is like one week old. Like it's give me a new car man. Like, yeah. So I ended up just I you know, I went off on Twitter a little bit. Yes. started tweeting and I got in contact with the line director for North America. Wow, they were basically just like, yeah, this is not good. Like so. We're gonna fix this. So they eventually, to their credit, they got me a new car. The car worked fine. That dealership I never went back to that dealership. I actually got banned from that dealership for leaving a one star review on their Facebook page. I actually went to go back for like a simple oil change. And they were just like, you're not allowed here. Really? Yeah, seriously. I was like, because I gave you their like because of comments you left on social media. I was like I
+
+100
+00:49:09,660 --> 00:49:10,680
+Unknown: allowed I
+
+101
+00:49:10,680 --> 00:49:22,890
+Scott Tolinski: gave you a truthful like, description of what happened. One star review and then DEP that didn't like it shady. Yeah, I got shut off. Crazy. Twitter Hayden.
+
+102
+00:49:23,129 --> 00:49:27,720
+Wes Bos: Well, I drive a Subaru Forester, which is a
+
+103
+00:49:27,960 --> 00:49:29,700
+Scott Tolinski: like, we have a forester to
+
+104
+00:49:29,730 --> 00:49:31,530
+Unknown: this. All right, I
+
+105
+00:49:31,530 --> 00:49:32,190
+Scott Tolinski: love it.
+
+106
+00:49:32,280 --> 00:49:33,120
+Unknown: What year do you have
+
+107
+00:49:34,140 --> 00:49:38,040
+Scott Tolinski: the latest 2016 or seven? Okay, we're using it but
+
+108
+00:49:38,040 --> 00:51:21,510
+Wes Bos: it's the new they just released the new. The new like kind of it looks a little different. Yeah, we have a 2010 so it's starting to get on and it's yours. We had the summer we're down south in as we do. Yes. And we had the head gasket blow which sucked. So we had to have the whole thing tow thank goodness I had. We have ca Which is like a in triple A in, in the States, the CEUs for Canada. Yeah. Luckily that translates in the states as well and they had a drive with a they put the car on a flatbed This is the downside of four wheel drive is that you can't just tow it with any tow truck, you got to put it on a flatbed and or put some wheel dollies underneath the wheel. So they towed it two and a half hours to Asheville, North Carolina, and it was so expensive to fix it. But whatever, it's everywhere. Other than that, it's been pretty, pretty solid car. Starting to get up in the kilometers. We're thinking about the next year to what our next move will be. We also we've got two kids and the car seats are massive. And I don't know in the States, but in Canada, they make you rear face the car seats and they don't make you but they suggest you rear face them until they're like 14 years old or something like that. Yeah. So the when they're rear facing like you're like pretty much kissing the dashboard on an SUV, which is silly. So we were looking at something that has like three rows, just so that we can have a little bit more room for all our gear. And and the kids and friends or whatever. So we're looking at what like three, we don't want a van like where those people were? Yeah, I live downtown and we're kind of cool. We were cool.
+
+109
+00:51:24,600 --> 00:51:26,370
+Scott Tolinski: Cool, cool jeans in a van.
+
+110
+00:51:26,580 --> 00:51:59,490
+Wes Bos: You can't know like I like I might as well start wearing Kirkland jeans. I understand every all of my friends that have vans are like Dude, get a van the best like I understand the functionality of it, but like I just can't can't bring myself to it to jeans. So we're looking at I really, really want an electric car. But for the size that we want. There's just not not much there. Like the biggest one that the biggest electric car that they have right now is the Model X, which is like $150,000 Canadian, so yeah,
+
+111
+00:52:00,060 --> 00:52:35,130
+it is all bad. And also it's it's not even that big in the in the with the third row. BMW has a hybrid x five. But so they it's kind of like the the Prius right, so you can like drive in town on the electric motor. And then if you need to recharge or you run out or whatever, you can flip over to the electric one. But the the one that the the hybrid doesn't have a third row, so you can't get that. No, we're thinking like, the next car we buy will likely be the last gas car we ever buy, which is pretty exciting. Yeah, I
+
+112
+00:52:35,130 --> 00:52:53,010
+Scott Tolinski: know. That is like a, I told myself, I don't think I would buy another car unless it is like an electric car. But at this point, yeah, I think the options are still growing. Right? You know, obviously, you'd love to have a Tesla, but the cost is just so expensive. They're beautiful. I would love to be able to afford a Tesla, but not yet.
+
+113
+00:52:54,540 --> 00:53:13,860
+Wes Bos: Pretty soon though, I'm super excited, especially with the GM and all these companies coming out with electric versions, apparently, like there's gonna be a electric Jeep Wrangler in 2020, which is pretty sweet. So I'm pretty excited about the future of electric cars, and I just not ready to pull the trigger on something like that just yet.
+
+114
+00:53:14,010 --> 00:53:29,940
+Scott Tolinski: Yeah, for sure. Yeah, well, in Colorado, you kind of need a electric super out here that would probably like it would probably blow that like I think everyone out there is a electric super released. I think everyone would just go home early from work to go buy an electric Subaru. They're
+
+115
+00:53:30,810 --> 00:53:54,090
+Wes Bos: now putting out a three row they just announced this new Subaru that has three rows, and it's being built in the USA. And they they haven't said whether they're gonna have electric version or not, but that would be pretty sweet as well. But I also don't buy brand new cars though because that's, I don't know, we just I've only ever bought one car in my life and we just pay cash for it at the time.
+
+116
+00:53:54,090 --> 00:54:45,000
+Scott Tolinski: So I bought a shockingly amount of like I bought that Fiesta and then like Joe that was a new car and then like two years later I bought the focus. But it was you know, I had the the four day plan and stuff like that. Yeah, the before that I had a Acura Integra too fast too furious about that when I was in high school. And then after that I had a Lexus IS 300 that I had for like one year and then sold it because I that car was actually permanent kind of sick investment because they were kind of rare. So I bought this this is 300 it was a manual and it could not hang in the winter. We're rear wheel drive. Totally so yeah. And then I ended up selling it for more than I bought it like a year and a half later because they were like the model I had in particular was kind of rare. And so I drove it for a whole year essentially for free because when I sold it I made all that money back.
+
+117
+00:54:45,000 --> 00:54:45,660
+Wes Bos: Oh man.
+
+118
+00:54:45,750 --> 00:54:56,970
+Scott Tolinski: Yeah, it was kind of a sick deal for me but we got lucky on that one. Okay, so well. Okay, what what YouTube channels do? You eat? This is an interesting question.
+
+119
+00:54:57,030 --> 00:56:28,770
+Wes Bos: I watch a lot of YouTube just because it's I find it really Interesting to see what other people are working on and all over the place like I've been watching this one guy restore old Kawasaki motorcycles called genius garage, I'll link to it. And he's just got a really great personality and explains how small engines work. Like I don't really care, right? Like I can bring it to bring my lawnmower to somebody if it needs to be fixed. But I just find it interesting to dive into different topics that are totally unrelated to things that I work on. So I was pretty good. I watch bone appetit has the series called it's alive with Brad. And he just goes through different types of fermentation, which I love because like I've done fermented honey and kombucha and all these different sauerkraut kimchi, I just love the whole, like gut bacteria and delicious fermented foods. So and he is a how like, absolutely hilarious. What other ones do I have here? This one called Big Clive comm where he buys this like shady electronics off of eBay. And like cracks him open and and sees it sees if they're safely made or not. So he'll buy like a buy like a $40 LED floodlight off eBay and crack it open. It'd be like there's no ground. And then he's he's British. So he calls it he calls it Earth, which is like, you know, you like have like the third prong in the US and Canada is around. Yeah. And in the UK. They call it the earth.
+
+120
+00:56:28,830 --> 00:56:30,090
+Scott Tolinski: I had no idea about that.
+
+121
+00:56:31,980 --> 00:56:48,690
+Wes Bos: So charming. What other houses made is on YouTube. Remember how it's made? Yeah, done. The best part about how it's made is they always start off with a pun. Like if they're building light bulbs. They're like someone had a great idea. Or something like that. Yeah.
+
+122
+00:56:49,440 --> 00:56:54,330
+Scott Tolinski: Do you listen, there's there's a lot of podcasts from from how it's made. Yeah.
+
+123
+00:56:54,420 --> 00:56:55,710
+Wes Bos: Oh, no, I have to.
+
+124
+00:56:55,710 --> 00:57:08,160
+Scott Tolinski: I might I might I might be tripping. I might have made that up. That, like, stuff you missed in history class. Is that how? No, that might actually be something else. There. I might be thinking of something else.
+
+125
+00:57:08,400 --> 00:57:10,380
+Unknown: Oh, yeah. I got a couple
+
+126
+00:57:10,620 --> 00:57:12,270
+Scott Tolinski: stuff. How Stuff Works is what?
+
+127
+00:57:12,270 --> 00:57:19,740
+Wes Bos: We're not how it's made. Yeah. How Stuff Works was I love that that website when I was a kid How Stuff Works. Yeah,
+
+128
+00:57:19,830 --> 00:57:22,140
+Scott Tolinski: it was killing in the podcast sector.
+
+129
+00:57:23,100 --> 00:58:42,330
+Wes Bos: Check it out. I also watch Alex French guy cooking. He's just got this. He's kind of got the Casey Neistat vibe of his vlogs but for cooking and absolutely love it. His stuff is really, really good. Casey Neistat. And then my favorite by far is Mathias, Mathias Wando. So he has two ones, he's got one just as own where he's just putzing around his house fixing stuff. And he's a he used to work for rim here in Canada, which is they made the BlackBerry and he was like an engineer for them. And he's just genius. And all of the stuff he does is woodworking. But he just solves all these problems around his house with pieces of plywood. And it's just so interesting. And he has another one called wood gears. And he makes all these gears and I've seen these Yeah, I so he's just anything he does, I'll watch it, whether it's replacing a door at his house or making an extension for a table or he makes these like he's like really obsessed with how mice learn right now. So he's making these mazes for the mice and the shrews at his farm. And he just like does like a time lapse of a mouse trying to move through a mouse. And it's interesting how the mouse learns how to do the maze after like two minutes or so. And he just has like such an engineer brain, but applies it to his life.
+
+130
+00:58:42,390 --> 00:59:01,320
+Scott Tolinski: Yeah, some of this stuff is amazing, like the panto router stuff, where he's developing these machines to make some of his woodworking, like, easier or whatever. But he's like creating these just really complex machines. Yeah, I have no interest in this stuff at all. No, I could sit and watch these for hours just because they're so incredibly cool.
+
+131
+00:59:01,710 --> 00:59:27,690
+Wes Bos: Totally. Yeah, definitely know him. And my other part is that he he uses drywall screws for everything, which apparently is a huge No, no, in the woodworking world. You're supposed to use different kinds of screws. And he's like, I like drywall screws, they work well for me. And I was like, Thank you like because sometimes in web development, we get like that as well. And it's like, this guy is just living his life and doing cool, good stuff. So those are my YouTube channels. I watch a lot of YouTube I really like it. And some of my favorites.
+
+132
+00:59:27,870 --> 01:04:05,040
+Scott Tolinski: I know I watch a lot of YouTube too, for being like a well, you know, I've been to VidCon I've done the the YouTuber thing and I'm not like trying to I'm not trying to be a YouTuber, you know, I just want to put out good content on YouTube, you know? Yes, it's sometimes that YouTube stuff is a little I don't know, I'm not I'm not super into the vlog vloggy sort of sort of stuff, but I watch a lot of YouTube myself. For a long time I watched the bro science life, which is the dumb marzetti he's doing like skits where he's playing this character of like this gym bro. Oddly enough, the guy himself is actually kind of a gym bro. But he's like very self aware. Yeah whole thing is hilarious. I like he was one of those videos for a long time where every time he would come up come out with a new one I'd have to watch it he mmediately they're hilarious. He's super super funny guy you have a hard time understanding if he's acting at some points, but he's definitely acting because like his normal personality is like pretty chill guy. Yeah, there's a YouTube channel called stance, which has all of the largest B boy battles on it and they have like the major competitions and stuff like that. They'll do like highlights, like the best sets from these competitions and stuff like that. So Stan says a really high production value for breakdancing on YouTube. Just really awesome stuff. I listened to the the needle drop, which is Anthony fantana, his music reviews. He's really I you know, I, I grew up being a huge fan of music reviews overall. Yeah, we would get spin and rolling stone and all these magazines and they would all come in and we would just go to the reviews immediately and read these music reviews. And that's just something I grew up with. So like having a music reviewer on YouTube, I feel like it's really fair, most of the time, I totally agree with them. So I really like his channel he doesn't he does his thing very, very well. And there's like enough little artistic elements in his channel that I find it to just be excellent. Next is RED LETTER MEDIA. These guys got famous for their outrageously long reviews of the Star Wars prequels, which are like way better than the actual Star Wars prequels. Like? So the the first RED LETTER MEDIA video I saw was like maybe it was hit. I feel like it was like two or three hours of just him talking about the first Star Wars prequel. And it's done in like this really like I don't he's playing a character. Mike who's like the main guy in the channel is like playing this, this weird character he calls Mr. Plunkett who's like he's so supposed to be like a creepy guy who lives in his house. I don't understand the character but like the, the critique of the film is so dead on that he's just like diving into. Like, you know, people say that they they don't like prequels or whatever. I'm not a huge star wars person. Either way. I mean, I like the movies. But I'm not crazy about I'm not like a crazy Star Wars fan or something like that. But this This review is just so thorough and more about like, the filmmaking techniques and the story techniques used in the film and why they're, they fail spectacularly and the problems with it and like, he goes down by like technique, by technique, by technique, why they like, are a complete failure and all sorts of ways and the reviews are just so darn excellent. I've like rewatched a two hour long review on a movie, I don't care about that much. That's how good they're so that's how they like got famous originally was through these reviews. And then they've since done the same thing with several other major movies and stuff like that, but they they have since expanded the channel to have several more people doing these things. And they do like half in the bag reviews with a review just new movies that come out and stuff like that. They'll do like best of the worst where they're watching a bunch of really terrible movies and then have to vote on which one is the best. They'll they have started this new thing, which is like a fictional podcast that's making fun of fanboy podcast it's like it's it's so weird because it's there's a ton of effort put into it but the whole thing is a farce. They're they're doing this podcast as if it was like a real Star Wars fanboy podcast and they're all sitting there and they have like all of their their Star Wars toys all around the desk drawer wearing Star Wars gear and like the whole they do the whole thing in character but the character is so deadpan I it's hard to explain it's like a farce within a forest within a forest. The whole thing is like absolutely ridiculous. And I just find their sense of humor to be totally dead on so really love RED LETTER MEDIA, one of my favorite channels. Man, I
+
+133
+01:04:05,040 --> 01:04:10,230
+Wes Bos: haven't heard of any of these, though. Yeah, YouTube channels. Yeah, I
+
+134
+01:04:10,230 --> 01:04:18,360
+Scott Tolinski: mean, if you're not into movies, I'm not I'm not like crazy in the movies. But I took a lot of film in college. So I have like, yeah, like understanding of like, that sort of stuff.
+
+135
+01:04:19,140 --> 01:04:22,800
+Wes Bos: Man, this bro science life.com is janky.
+
+136
+01:04:23,580 --> 01:04:24,230
+Unknown: website.
+
+137
+01:04:24,330 --> 01:04:31,770
+Wes Bos: Yeah, you should do a like a YouTube video about explaining why the animations are so jittery. Oh, man. I
+
+138
+01:04:31,770 --> 01:04:33,270
+Scott Tolinski: did not know he had a website.
+
+139
+01:04:34,500 --> 01:04:40,530
+Wes Bos: Maybe it's just I think it's because he's got a massive animated GIF. looping.
+
+140
+01:04:41,670 --> 01:04:53,430
+Scott Tolinski: Yes. Doesn't Yeah, definitely, definitely a little jank. Speaking of which, we're going to be doing episode on performance stuff and how to get rid of jank. So nobody likes that. Nobody likes a janky website.
+
+141
+01:04:53,970 --> 01:05:11,580
+Wes Bos: janky I'm glad that word has hopefully it's not offensive. I said uh, was it a couple of I don't think it is. I've been Saying it for four years, but something else I was saying the podcast a couple weeks ago, I had unknown to me was was actually offensive. So apologies if you know what that was. Yeah, that's the hard part. If
+
+142
+01:05:11,580 --> 01:05:16,620
+Scott Tolinski: you say something you don't know. It's Yeah, it's it to people like an asshole. Yeah.
+
+143
+01:05:18,630 --> 01:05:22,440
+Wes Bos: I don't think janky is. I don't think jakey is offensive.
+
+144
+01:05:22,890 --> 01:05:24,840
+Unknown: It just sounds like it sounds like it could be.
+
+145
+01:05:25,080 --> 01:05:43,730
+Wes Bos: Yeah, it does. It definitely sounds like you could offend some sort of person there. All right. Um, so we did the YouTube videos. Um, let's wrap it up with our last question, which is, what are you working on mentally, personally, right now that this is kind of an interesting one. Yeah. Yeah,
+
+146
+01:05:43,730 --> 01:08:32,010
+Scott Tolinski: I personally, I like develop this. I have this app, I think it's called habits habits app, I'll link to it, it's or something. And basically, you put in your your habits that you would like to keep. And then you'd say like, what frequency you'd like to do them. I'd like to do this five times a week or whatever you set up reminders and stuff like that. So I have several habits and the URL, track them on your graph. I originally started using this app, because I wanted to be better about flossing, which is ridiculous. But I was never good. Like, I was never good about sticking to flossing. And I always felt bad about it. Like, I just don't like it. I still don't like it, right. But I understand why it's so important. So I was just like, you know what, screw this, I'm actually going to I'm an adult, I'm going to make an effort to floss all the time, like, like a daily, whatever. And I use this app to track my flossing, which is so stupid. But I have not missed a single day. I have not missed a single day since I started this app. And which is ridiculous. But so I use this app to track everything now. So I've been trying to stick really hard on it. So like, you know, I have to work out X amount of days a week, I have to one of the things I have on there now is a daily to do list if I, which I've been failing spectacularly on when I make a daily to do list, I'm always more productive, right? Always. Yeah, so like, I am not doing my daily to do list in the past, like two weeks, I haven't gotten a checkmark on that one. And it's stressing me out a little bit. And I think that Yeah, so things like that. So I'm trying to do a daily to do list I'm trying to do like a daily question, why write down a daily question, something that I want to solve that way I can make sure I'm answering or learning something every single day, even if it's small, like just something that pops up while I'm coding. Why do I need to do this and Apollo with graph qL? I don't know. I'll take some time to research it maybe like 15 minutes or something daily question. I'm trying to cut kill my inbox a little bit, get that totally. You know, we talked about Inbox Zero, whatever. But I'm trying to get it just just totally under control all the time. So I'm fully aware of everything in there. I'm trying to do handstands every day, which I'm not doing. I'm doing them like every other day, but I needed to do them every day. I'm trying to stretch my quads every day. Because I really tight quads. It's like causing me a lot of problems and athletic things. So I also have like a morning face washing and evening face washing routine that I need to do. I have like all these habits I'm tracking. So but yeah, that's pretty much it, man. It's all about for me, it's like trying to get this, these routines in order because like everything else is so chaotic right now, like life wise. So it's like, get this stuff that you don't have to think about. Get it tracking, get your reminders in. And yeah, get it done. So yeah, it's for me just trying to establish better routines.
+
+147
+01:08:32,370 --> 01:08:36,510
+Wes Bos: Let's call that habits. I have to check out that habits up. That seems pretty neat. Yeah, it's
+
+148
+01:08:36,510 --> 01:08:38,180
+Scott Tolinski: beautiful to really nice design.
+
+149
+01:08:39,120 --> 01:09:45,030
+Wes Bos: Awesome. So for me, I'm just trying to I talked about this earlier is finding that sweet spot between working really hard and avoiding that that burnout stage trying to figure out where that because I feel like I've got into a nice groove with my business and how things are going and whatnot. And then I think now it's time for me to maybe turn towards just like other things like obviously exercise and, and whatnot. And I've been also finding myself when I'm at the gym, not all that interested in some of the business podcasts. So I think that maybe that's a bit of a sign that like I listened to the music and music at the gym the other day. And I was like, Oh, this is so nice. I forgot about how much I just love enjoy listening to music or, or even with podcasts listening to stuff that is just not technical, technical or not business related. So that's kind of trying to focus on getting into that sweet spot, both in business as well as sort of the the rest of my life. So I know it's kind of hand wavy, but I'm trying to quantify exactly what that is right now.
+
+150
+01:09:45,030 --> 01:09:46,470
+Unknown: Yeah, yeah,
+
+151
+01:09:46,470 --> 01:10:01,950
+Scott Tolinski: I totally get that. I definitely definitely get that. I can count like so many podcasts that at the time I subscribed to them also. Yeah, I'm so into this and I listen to 100 episodes and then be like, okay, I've gotten everything out of this. You know, that I could get out of this?
+
+152
+01:10:02,370 --> 01:10:42,140
+Wes Bos: Yeah, exactly. And I think that's part of continuous self improvement. Once you've feel like you've got a pretty good handle on something, then you you look other where your other other places in your life and figure out okay, how can I, what can I tackle next? What can I get better at next and then you get those systems and things in place. And then ideally, you you just get better and better at all these different pieces and then you learn how to smoke me and then you move off of that and then you learn. I don't know, maybe I'll try to do a handstand. Next. That'll be my The thing that I tackle. Yeah. I think that's that's super important. I think it makes me a better developer, focusing on perfecting other areas of my life.
+
+153
+01:10:42,720 --> 01:10:52,200
+Scott Tolinski: I think what you're saying is that, you first you do a downtown job, and you just let everything else grow from there.
+
+154
+01:10:52,220 --> 01:11:06,750
+Wes Bos: Yeah, exactly. Yeah, exactly. Cool. Cool. Pretty good. Cool. Cool. Cool. Um, I don't know we're running pretty long now. Do you want to hold off on some some sick pics until next time? Or what do you think
+
+155
+01:11:06,770 --> 01:11:08,810
+Scott Tolinski: I have a quick quick sick pick
+
+156
+01:11:08,850 --> 01:11:10,410
+Wes Bos: a quick pic. Okay, yeah, quick,
+
+157
+01:11:10,430 --> 01:11:30,890
+Scott Tolinski: quick. pic is a new podcast that just came out. For those of you who like history. For those of you who specifically who like hardcore history, which is an excellent podcast in itself, where they do like these long as like five hour long post, like hardcore bands. Yes, like hardcore bands. I love the history of hardcore bands. In
+
+158
+01:11:30,890 --> 01:11:32,910
+Wes Bos: 2000, the chariot became a band.
+
+159
+01:11:33,140 --> 01:11:43,170
+Scott Tolinski: There's a whole episode. Oh my god. This is awesome. This is Dan Carlin, the host of hardcore history. And
+
+160
+01:11:44,850 --> 01:11:50,100
+Wes Bos: George Carlin. Nice. Dan Carlin. Carolyn. No, I said that. I said, George Carlin.
+
+161
+01:11:50,340 --> 01:12:13,830
+Scott Tolinski: I would do that. Okay. And basically these are like, more frequently episodes because the hardcore history ones like take me he gets like two episodes done a year. He's sick of that. So he released new new podcast, Carl called hardcore history addendum, which are going to be more frequent, shorter episodes. And hardcore history is like the single greatest podcast. So I'm so excited to have this new podcast from Dan Carlin here.
+
+162
+01:12:14,600 --> 01:13:46,730
+Wes Bos: Awesome. All right, I'm gonna like pick something as well. So I had a workshop, a react workshop on Friday. And one of my students was Tracy Osborne in she actually just moved to Toronto. And she is a mostly I guess she's mostly like a Python developer and a web designer. She's pretty neat. Actually, she also a business owner, if you listen to the indie hackers podcast, she has one on there. And she just put out this book called Hello web design. And it's it's awesome. It's I'm gonna show Scott right now it's like a nice it's a small enough book that you can get through and not feel overwhelmed. And it's it says this design fundamentals and shortcuts for non designers, which I love because people always ask me like, how do I get better at design and this is actually like concrete things that you can do it goes through things like grid and color typography, whitespace content, user experience, using images, planning, prototyping, coding, your design, it kind of just goes through all the stuff as a non designer if you're in the book is beautiful, it's done in full color it's a nice small size you can throw it in your bag read a couple pages on the subway or whatever so pretty pretty neat and pretty excited to I haven't obviously haven't read the whole thing yet but from from flip flipping through it reading a couple pages and and chatting with her I feel confident enough to recommend it as well and I also tweeted out a bunch of people were like Oh, I love that I love her book. So definitely recommend you check this out if you want to get better at design
+
+163
+01:13:47,250 --> 01:13:48,450
+Scott Tolinski: nice awesome
+
+164
+01:13:49,620 --> 01:13:52,050
+Wes Bos: cool any shameless plugs sick
+
+165
+01:13:52,100 --> 01:13:59,040
+Scott Tolinski: yeah no just a levelup pro new content every month subscribe to level up tutorials comm Ford slash pro suite.
+
+166
+01:14:00,000 --> 01:14:33,020
+Wes Bos: Yeah, my courses you know about them Wes Bos calm for slash courses. pick one up, take a free one. Whatever it is that you like, have a bunch more stuff coming out in the in the coming weeks. Nice. Cool. So I hopefully you enjoyed that. If I would love to hear what you thought about this episode. If you'd like the it's kind of a different not coding show. I think that people are sort of interested in I always like hearing kind of the lives behind the actual people. So if you like that make sure you tweet at Scott and I am at Wes Bos Scott is at s toes in ski s Tillman ski.
+
+167
+01:14:34,080 --> 01:14:35,760
+Scott Tolinski: Just the easiest name to remember.
+
+168
+01:14:37,680 --> 01:14:43,350
+Wes Bos: There you go. You'll find him. Other than that, we will check you next week.
+
+169
+01:14:43,920 --> 01:14:55,590
+Scott Tolinski: check you later. Peace. Please head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

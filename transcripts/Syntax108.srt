@@ -1,0 +1,316 @@
+1
+00:00:01,319 --> 00:00:10,530
+Unknown: You're listening to syntax the podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski and West boss.
+
+2
+00:00:10,559 --> 00:00:43,740
+Wes Bos: Hello everybody and welcome to syntax. This is the podcast with the tastiest web development treats out there. Today's episode is sponsored by two awesome companies. We first we got Kyle Prince Lou's freelancing course which is available at study web development, comm Ford slash freelancing. And we've got dev lifts back to get you in shape for the New Year DevOps that I Oh, they have some special plans running for the month of January. So stay tuned for some more details about that with me as always, today is Scott to Lynskey. How you doing Scott D,
+
+3
+00:00:43,769 --> 00:01:00,270
+Scott Tolinski: it's a new year to new me, and I'm ready to go. This is gonna be our first episode in a little bit. So we're gonna see how it is. I think we're both pretty highly caffeinated though. So hopefully, is turning out that works for us. Yeah, that gets things going because you know, I'm gonna need it.
+
+4
+00:01:00,329 --> 00:01:10,470
+Wes Bos: Yeah, absolutely. I'm actually feeling pretty good. I had a nice time off with the holidays and just long enough, and I was like, excited to get back to work. And it still felt pretty good. So that's, that's good.
+
+5
+00:01:10,529 --> 00:01:11,160
+Scott Tolinski: Yeah.
+
+6
+00:01:11,189 --> 00:01:39,000
+Wes Bos: All right. So today is a potluck episode. A public episode is where you go to syntax.fm. And you can submit your question to us, and we will attempt to, to answer it for you. And these are always fun, because we go through a whole bunch of different topics and spending just a couple minutes on each one. So today, we've got questions for newbies questions about cron jobs, questions about learning stuff quickly, event tracking, all kinds of stuff. It's gonna be a good one. So let's jump on into it. You wanna grab the first question there, Scott?
+
+7
+00:01:39,089 --> 00:04:00,060
+Scott Tolinski: Oh, you bet. First question is, this is from David, no last name here. It says, where's the best place to start with j s coming from WordPress bootstrap scaffold with express or is bootstrap two older now? Okay, so this one is a little bit tough. I wouldn't I wouldn't even necessarily go to bootstrap in general, if I'm looking to learn j s, just because I generally see bootstrap is more of just like a HTML and CSS sort of thing, right? Yeah. So for me, it depends on what you're trying to learn with JavaScript? Are you trying to learn how to build just general little doodads and wickets and things like that, right? If you're just trying to build little things here and there, then, you know, I might take a basic JavaScript sort of training aspect to it and learn sort of the fundamentals of JavaScript. But if you're looking to replace that sort of WordPress flow that you had before building some sites that are maybe for clients in that sort of way, I might take a little different approach to this. And this, I don't know if this isn't necessarily controversial at all. But you know, people tend to say, learn, you know, the foundations first, before you pick up a framework, don't learn the framework until you learn blah, blah, blah. But personally, I've learned quite a bit of JavaScript myself through frameworks specifically react because it's so JavaScript do it now view is pretty JavaScript as well. There's a little bit of magic in there involved. But, you know, if you're trying to replace that WordPress gap, and you want to get some experience with JavaScript, I would honestly pick up react and Gatsby take a basic react course learn, you know, what's doing what, where, and then I would take a Gatsby course. Because gets these really one of those platforms that does eloquently fill the void of WordPress, if you take react and you're not super into it, maybe try a view course, there is a view, comparable version of Gatsby called the grid sum, which is very, very similar, basically borrows all of the ideas from Gatsby. And I personally, I like I like using frameworks to learn JavaScript. Now, I understand that not everybody sees it that way. But I personally learned quite a bit of JavaScript through frameworks. And I don't think it's a bad approach.
+
+8
+00:04:00,329 --> 00:05:32,460
+Wes Bos: Yeah, I agree as well. We've said this many times in the podcast where like most people who learn web development and by learning WordPress, they didn't sit around for a year learning PHP, what they did is they they started just sort of hacking away at WordPress, and through that you sort of struggled through and learn the basics of PHP. And I think that the same can be done with JavaScript, not saying that you should not know a line of JavaScript, obviously, do a little bit of fundamentals get kind of comfortable with how things are working, but then reach for one of these like starters that you get with Gatsby as all kinds of starters. And I think through that you can sort of work backwards and you're gonna find it's gonna be frustrating, but you'll find yourself in a lot of situations where you'll say, oh, man, like what is this thing right here and you have to go and learn that or I need to loop over a list of things or I need to combine these two elements into one and I think that's a kind of a neat way at at approaching it. So if that's what you're looking to do, if you're trying to like replace your WordPress, then I would go with that. Otherwise, if you are just looking to like sprinkle on a little bit of JavaScript into your WordPress websites, I would probably go and look at a, like a vanilla JavaScript course out there also have a free one JavaScript thirty.com. There's lots of stuff out there that you can get it get up and running, which is good, because I know a lot of the WordPress plugins are still based on jQuery, which is not necessarily a bad thing. But if you want to be a little bit more future proof, if you want to learn some more modern stuff, I would probably focus on your vanilla JavaScript skills there.
+
+9
+00:05:32,639 --> 00:05:34,590
+Scott Tolinski: Yeah, absolutely. Super cool.
+
+10
+00:05:34,709 --> 00:05:56,520
+Wes Bos: Great. Next question we have from Daniel holick. Just a general question about cron jobs, how to set them up and the best tools to use? Should they run on their own server? Or can they run on the application server? How does your application server talk to the cron server? So let's back that up a little bit. A cron job is a How do you explain current cron job is something that happens?
+
+11
+00:05:56,819 --> 00:06:13,230
+Scott Tolinski: Do you think we'd like a tie, like an alarm clock, right, and the alarm clock goes off? at a set schedule? Whenever you program it, right? You tell your alarm goes off at 6am? It's gonna go off at 6am. So you could think of it as like, basically, like an alarm clock? Yeah, I don't know. That's, that's what I think of it like,
+
+12
+00:06:13,259 --> 00:08:42,119
+Wes Bos: Yeah, exactly. So if you have something that you need to do every x amount of time, every day, every month, every Monday twice a day at three o'clock, if you need to do something at a set interval, every x number of days, time, whatever. So some examples of that might be might need to backup a database once a day, I have that on my server, I backup my database, once a day, you might want to run some cleanup jobs, you might want to run a daily scrape and a daily email. So I've talked about before, I used to run a daily deal aggregator, and part of that the entire thing was based on cron jobs, because I think once an hour, we would scrape the website for the deal. And then once a day at 7am, we would gather up all those deals and put them on the website as well as gather up all those and send off the data to MailChimp. So you end up writing a lot of these sort of like scripts that need to be run at a certain point. And and then what you have is you have a script. And these scripts can be written in any language, or they can be written in PHP, they can be written in node that can be written in bash, and then you tell your server please run this command every let's once a day. And what you do is you would say like node send emails, j s, or bin bash, backup and once a day, and then the server server will run those for you. So that's pretty much how it works at a very low level. How do you make a cron job should you use it on your own server, at the very lowest level, you have cron built into your server, so all Linux servers will have cron jobs built into them, they'll have a folder, or they'll have a file on there where you can just crack open the cron job and add an extra line, you write this little syntax that is comprised of numbers, forward slashes and stars that correlate to how often they should happen. And then the server will just simply rerun those. So for an example I have on my own server is that once a What is it like once every three months? What How often do you Let's Encrypt certs expire? I think three months, three months? Yeah. every three months, I run this command that's called cert bot renew. And that goes off and renews all of mine, my servers early on a Sunday morning. And then I have another cron job that I don't know, 20 minutes later, or when that's finished, it will reload my nginx config. And I had some trouble with that earlier because I was running them out of sync. But that's kind of how it works. And then Have you ever used node cron there, Scott?
+
+13
+00:08:42,119 --> 00:08:46,260
+Scott Tolinski: I have used node cron. Yes. That's the only one I've used to be honest.
+
+14
+00:08:46,589 --> 00:09:18,049
+Wes Bos: Okay. So you can instead of like writing like a low level cron. in Linux, you can write like a JavaScript cron based job in node, it has this JavaScript interface for it. So that's great, because it's really easy to write them. The only downside I think there is your your node app has to be running, which in some cases, you don't want to have a script continually running. You just want to like start up that script, do your work, and then and then shut it down. But I think that's what I would reach for. Where do you run your do your cron jobs, Scott, or do you have any cron jobs?
+
+15
+00:09:18,089 --> 00:09:20,070
+Scott Tolinski: I have no cron jobs. Oh, there
+
+16
+00:09:20,070 --> 00:09:20,640
+Wes Bos: you go.
+
+17
+00:09:20,659 --> 00:09:42,000
+Scott Tolinski: But, you know, that's it. I have had cron jobs in the past and now for level up, but for other projects, for scheduling and stuff like that. And they typically run for me just on the same server that my application ran on. That said, small application, little user base. It wasn't necessarily too complex. So it wasn't necessarily a danger or anything like that.
+
+18
+00:09:42,020 --> 00:10:13,520
+Wes Bos: So as you get into more and more cron jobs, there's this idea of just running a separate server or a separate service. There's a lot of like GUI services out there that will allow you to log in and have a nice interface for creating your cron jobs. And they will tell you some stats of how many times they ran when they ran last time. They ran the result of that, that thing being run. I did a quick Google and there's like hundreds of different services. The funniest one I found was called dead man snitch calm. There's just like a like a GUI for setting up these cron jobs.
+
+19
+00:10:13,950 --> 00:10:28,860
+Scott Tolinski: I would love a GUI for that. That's something that I would actually use the GUI for. Because you think about like a calendar, you're setting reoccurring events. That's like that's like prime for a nice little interface there, even though I mean, it's not that hard, either. But it would be cool to have that visual of it.
+
+20
+00:10:29,029 --> 00:11:37,529
+Wes Bos: Yeah, me too. I just don't have that much use case, right. Now for cron jobs saying, because I have a lot of stuff is is a lot more event based, like even I think about like, I have a script that will freeze people's accounts when credit card fraud is detected. And that's not based on a check every so often that's based on something called a web hook. And that comes back from my payment providers. And whenever they suspect something fishy is going on, it will ping my server, and that will run a script that will freeze that user's account. So it's not necessarily a cron job, but it's more of a web hook. So do I have anything else to say about cron jobs here, let me just pull this up. Oh, yeah, writing the little syntax for how often something should happen. Like, if you want to run everything at the 10, like 110 210 310 of every hour, but only Monday, Wednesday, Thursday, and Saturdays, then you have to write these really complex cron tabs. So there's all kinds of good websites out there My favorite is corn tab comm where you can just it's a nice little GUI for for typing in when and how often you want it and then it will spit out the crontab for you.
+
+21
+00:11:37,620 --> 00:11:58,289
+Scott Tolinski: And you know, a node cron has a whole examples folder and their repo. So if you want like legit examples, they have they have really nice in code examples to to get that information. So every 30 minutes every 10 minutes between nine and whatever complex examples, simple examples, but in case you want to see it in the context of node, cron, it's right there too.
+
+22
+00:11:58,919 --> 00:12:34,350
+Wes Bos: Another thing you should make sure of is time zones, which is one of the hardest things in the world. But yes, if your server is in different time zone, then your development machine make sure that you're are thinking about that when I was doing that daily deal thing I was in Eastern, the server was in LA whatever timezone that is and then we were scraping like websites and had to send it out at 7am of the timezone that is of the person who was who was viewing the email. So it's so confusing, because you had to scrape it at 7am of the websites. But I had to figure like, okay, translate that it's much better if you just kind of do it all in UTC,
+
+23
+00:12:34,350 --> 00:13:43,169
+Scott Tolinski: I was doing, like a scheduling app. And it was so difficult, because if someone was trying to schedule an appointment, and let's say they're scheduling an appointment in Denver, and then they're in, let's say, Germany, you know, what times do you show them? When do you send them the alerts, and all a good so complex and so confusing so quickly? It's just the Yes, it's just a lot of a lot of date stuff. And you know, one of the things that's so complex and confusing is hitting the gym getting fit. I mean, it's a new New Year new you, and you might not be ready for it. You might walk into the gym and look at all these things like, Huh, I have no idea it's looking like rust Lang to you or something. You don't even know what it is yet. You're just interested by it. So that's where deadlifts comes into play. Now deadlifts have been a longtime sponsor of syntax, and they are the best way to get a handle on what you should be doing in 2019 or whatever year you are listening to this time traveler and you can get fit you can get healthy and you can get a better mind and body.
+
+24
+00:13:43,350 --> 00:14:03,929
+Wes Bos: Yes, I'm glad that you said in mind there because so it's a new year everyone's got new year's resolutions New Year new us new year, my wife and I always joke because all of last year I said that like New Year new me anytime like oh yeah, like it's like a Tuesday night and you crack a beer. Oh, a beer on a Tuesday, my new year new meter. I've been doing that exact same thing.
+
+25
+00:14:04,440 --> 00:14:07,110
+Scott Tolinski: I feel like Courtney is probably super annoyed by it.
+
+26
+00:14:10,110 --> 00:16:20,580
+Wes Bos: But we were celebrating how I successfully did that New Year new me for an entire year. Anyway, it's a new year and it's a new you and you probably have some goals and those might be losing weight and those might be getting a shape but those goals also might be getting better at web development. And this is not really a slant that deadlifts tells me to take I just think that it's very true. If you want to absolutely nail being a web developer, you cannot ignore the mental the physical side of things. So just over the holidays, not going to the gym eating poorly. I noticed that I had such like a brain fog the first week back and after just a week and a half of going to the gym a couple times a week lifting heavy weights and sweating it out. I noticed that like this week and last Friday. I'm like so much more on it than I was the the previous week and I think it's really important just to spend your time focusing on your health if you want to really slam dunk being a web developer, so dev lips has been on in the past, they've got these two different plans, they've got fit start, which is good for beginners who are looking to sort of get back at it. And you got dev lips premium, which is you're going to get like a lot of hand holding, you're going to get a lot of laser focused approach, you're going to get access to JC and dad, who are also web developers and personal trainers getting this thing up and running. However, right now, they've got just for January, just for January, they have back for a limited time, which is their eight week plan. So this is actually something that I went through myself over a year ago now. And I highly recommend it. Basically, you talk to them, you'll do a survey, talk about what your goals are, how you want to work out, do you want to go to the gym? Do you want to just do something at home? How often can you go. And from that, you're going to get a personalized training and a nutrition plan, which is really, really cool. So I went through it myself, I had a little talk with them, I filled out a form. And I said like, this is what I'm looking to do. And they gave me this awesome plan, which is great, because I just had to go to the gym, open up my phone and look at the plan. And I knew exactly what I had to do every single day at the gym. I told them I can only go three times a week. And they have that out. So I'm not going to gush too much more about deadlifts. Because you know that I love them.
+
+27
+00:16:20,610 --> 00:16:22,020
+Unknown: It's great. Yeah, it's great.
+
+28
+00:16:22,049 --> 00:16:56,010
+Wes Bos: If you want to check it out, use the code New Year 19. And you're going to get 50 bucks off the one time purchase price of 199, which is great. And then we also have for their other their fit, start and fit premium. If you're even more interested in those, you can check them out. Use the code syntax, and tasty and those are going to get you 50% off those plans, respectively. So thanks so much deadlifts for sponsoring. I know a lot of you listening have already gone through the dev list program. And then I'd love to hear also anyone who's who's joining in this year.
+
+29
+00:16:56,130 --> 00:17:18,560
+Scott Tolinski: Yeah, yeah, we should have a little like fit. Check in little, you know, progress thing. Because I've been, I've been tweaking my, my fitness stuff and been working hard. So yeah, I'm excited. This this year always brings those kind of energies, you know, New Year sort of stuff. Next question we have is from another West, West, or weird or West? Or
+
+30
+00:17:18,780 --> 00:17:21,630
+Unknown: it'd be cooler for others to Bobby or Yeah, one one name? Yeah.
+
+31
+00:17:21,870 --> 00:19:26,040
+Scott Tolinski: When are you Canadian? What new skills frameworks or projects are you looking forward to learning or attempting this year in 2019. And we kind of talked about this in our last episode by that this was maybe a little bit different than some of the things we talked about in the in the previous episode, where we talked about what we're looking forward to and stuff like that. This is a little bit more specific to what we want to learn. Now I personally am always looking to get better at the things that I'm doing. So I would love to get better at graph QL. Now my whole API is graph QL. And I've been using it now for I don't even know it's been a while. But I think there's always stuff to learn about it, whether that's like optimizing the API itself, making things a little bit more elegant, just improving it. So I am consuming a ton of graph qL content, just blogs and podcasts and whatever, whatever's out there, I'm all over it. I also want to get into more perf based stuff, I spent a lot of time on performance for level up. But with some of the additions to react coming, I think it's going to be even easier. So I will be doing quite a bit more things with code splitting, not that I haven't already. But I want to get into doing more things like prefetching. I want to optimize sort of loading of certain aspects, both database and front end stuff, I want to really get into suspense, React suspense, because I think it's going to be amazing, and how it's going to potentially affect the data loading throughout the entire site. I think it just gives you a lot of tools and flexibility to decide how that data is coming in. Once the server side rendering pictures, and I'm excited to dive in, and then hooks, you know, hooks are going to be a big deal throughout the course of the year. I've already worked with hooks quite a bit, but I am looking to learn more. We mentioned in the hooks episode, the use hooks mailing list, and every single time I get one of those. I love it. I love pawn through already using some of those hooks from that mailing list in the level up site, and I'm loving it. So I think it just want to get better at all this stuff. The stuff that I'm doing. That's it. Hmm,
+
+32
+00:19:26,160 --> 00:21:14,160
+Wes Bos: yeah, the hooks one is interesting, because like I've written a couple hooks myself, but every time I see somebody else write a hook, I like break it down and go, Oh, that's such a neat way to use it. Because it's it's one of those things that I don't think we've totally figured it out yet. And it's this new tool that we're just starting to see lots of new use cases for it. Absolutely. Personally, I am also really excited about the new stuff in react, which is lazy loading, react, suspense and react hooks. I think that's really going to make writing react much easier and much more enjoyable as at the same time. I'm letting us build better websites like I think like, they're going to be faster, they're going to be a better code split, they're going to be loaded on demand, all that good stuff. And it's going to be easy to author because I think that's maybe like that's like one, one theme of the year where, like, we always talk about doing these things like code splitting and, and lazy loading. And in the past, it's just been hard to do that. And that's why most people don't do it. But I think that, as the developer tooling gets much easier, it's going to be way easier for us developers to make better websites. I'm also building a new website on Gatsby, which I'm really excited about as well, for my own website. I'll talk about that a little bit more. I've got a whole bunch of questions about why and what and WordPress and all that good stuff. So we'll maybe do a little hasty treat on it. I'm excited about CSS subgrid, which are going to have a show coming up on that. I'm excited about that the whole rails for node, I think that this is going to be a year where we're going to see significant movement in the kind of batteries included framework space. And then finally, CSS Houdini, which is the sort of the JavaScript API that's going to let you implement Custom CSS properties and values. So a lot of cool stuff, maybe we'll come back to it at the end of this year, and see how much of that I really did work with. But those are high on my list.
+
+33
+00:21:14,190 --> 00:21:34,140
+Scott Tolinski: Yeah. And I'm going to go ahead and move CSS Houdini onto my list, because I'm going to spend some serious time with CSS Houdini, I love the whole look of that. We talked a little bit about it at our live show. But just some of the cool demos, I think there's a lot of growth that needs to happen there still, but just the fact that it exists is pretty darn cool.
+
+34
+00:21:34,470 --> 00:23:52,350
+Wes Bos: Absolutely. Next question we have here is Wesson Scott, I listened to your podcast, there's no name on this one, by the way, I listen to your podcast on a regular basis and wanted to ask you to if you use any particular software for tracking analytics on your site? If so, do you ever use this data to run split tests? And lastly, if you're running split tests, what is your preferred method in doing so to use a third party solution for so I split tests for those who don't know is the this idea of building a website and running a whole bunch of different combinations. And the most simple example is, you have a homepage, that looks one way and then you have a secondary homepage, that looks a different way. And then maybe you see Oh, the picture of Scott smiling with a blue button makes sales go up 10%. And then you start to use that and people get really, really in depth with it. Because you can make a whole bunch of things like the font, the picture, the colors, the size, the price, all of those things that are related to a website, you can make those variable, and then these machine learning algorithms will just play with all of those different variables and come to a which one sells the most things or which makes people stay on the page the longest or, or which specific blue is like I've heard crazy stories about these big companies testing out 40 different shades of blue. And, and seeing that, so it's kind of interesting. And running. In order to do that you need lots and lots of data to look at. So I don't really track a whole lot. I wish I tracked more. What I do track is obviously the standard Google Analytics stuff that comes for free. I track purchases, when so when something buy something, I ping that back to my Google Analytics, and that way, I can see how many people are visiting the website and actually converting at the end of the day, I also have my email provider, which is currently drip, they have a whole bunch of event tracking stuff inside of it as well. So if somebody opens an email and then buy something, I can see like what portion of the people who opened it bought something. However, I almost never look at that analytics just because almost all web developers run ad blockers and those analytics are so far off from my actual analytics that I know how many I'm selling, that it's almost like not worth looking at. Because it's just not good analytics at all.
+
+35
+00:23:52,380 --> 00:24:51,990
+Scott Tolinski: Yeah, I run into some issues with some of this stuff, because it's just sort of it's not necessarily worth it enough for me at this point, right? Because again, you need lots of data points. And I don't have the data points, you know, I have good amount of data. But do I have the amount that it's actually going to be worth my time setting it up, configuring it out, getting it going, doing the test, looking at the results and all of that stuff? Not yet personally, in the future, you know, maybe you'd hire out somebody to do that sort of thing. I haven't done a B tests because there are things that I I know will make a big impact that I don't need a B test to tell me are going to make a big impact that I still haven't gotten to. So it's like until I'm looking to optimize beyond the point of my own visibility. When I'm looking for visibility, then that's probably when I'll go more in that direction. I'm not saying I think it's extremely valid but me personally, I'm not needing it needing needing it.
+
+36
+00:24:52,320 --> 00:25:58,830
+Wes Bos: This type of thing I get emails about and questions about all the time when people are saying like, how should I track this and what should I be tracking And the person hasn't even like built a product or like had managed to market it or something like these, like a be split testing, running analytics, this is what's gonna happen when you're making a million bucks. And for a couple weeks worth of work, you can squeeze an extra, like 70 $100,000 out of it. And you can like, Oh, that's well worth it at that point where you've got so many visitors, you're selling so much, where a one to 5% bump in sales is going to be extremely significant for your bottom line. And that's where a lot of these companies get get heavy into it. Yeah, it's not really something I my return on. It's the same thing with Facebook advertising for me right now, my return on spending time on these things, or hiring it out and having to spend the time in meetings and talking and implementing it into your platform. It's just not worth it in the long run versus just making another course and versus providing good value content.
+
+37
+00:25:59,040 --> 00:26:58,230
+Scott Tolinski: Yeah. And it's funny, we had a question in the submitted for the potluck. That was the asking is I didn't answer this question for a reason. So I'm sorry to the person who asked this question. I don't have it pulled up right now. But there was a question that was basically like, what choices? Can you step through all of the choices that you would make for building an application that scales from back end front end to testing to design to blah, blah, blah to the entire project? How would you make those choices to build an app that scales right away? And then it followed up with I have a really good idea for an app, but I don't have a lot of money to spend on it, or whatever? The answer is, if that's the situation, then I mean, there's a billion good ideas, and it takes a little bit more than that to want to build this thing. Now, granted, you could spend all the time and money to build something that's rock solid to grow. But if you haven't tested your idea a little bit, you haven't actually done that sort of work, then, then you might just be throwing a lot of time out the window.
+
+38
+00:26:58,320 --> 00:28:22,050
+Wes Bos: Yeah, I think I got this question in my Instagram, on my Twitter dm on my ama, I think I got every possible way that I can connect to someone I got this question from this person. And the question was like, I'm going to build this like next Twitter. Yep. And how do I scale the entire thing? What technology do I and like, you're thinking about the wrong problem, you should really be thinking about are people going to use this thing, because if you have scaling problems, you are in a very, very good spot to actually have it. Because scaling problems can be solved to a certain point by simply just throwing more money and more server time at it to an exam. Yeah, to an extent, yeah. And then at a certain point, it becomes like, I am on drip right now for my email. And it's dog slow, like sometimes takes two or three hours to calculate a segment of my list. And now that's biting them in the butt. But they are likely making millions of dollars a month from this thing. And they're able to go hire the smartest people in the world to solve these scaling issues that they have. Nice. So segment.io are actually it's segment.com. What this will do is it will give you one interface for tracking things. And then it will push that data out to Google Analytics. And I don't know hot jar and all these other tracking things out there that are are going to track you across the web. I haven't checked it out. But I know that's what a lot of people use in the big business world word.
+
+39
+00:28:22,680 --> 00:30:11,010
+Scott Tolinski: Cool. Next one is from Kumar appear up if I got a last game that you think that was good, nailed it. Cool. Yeah. Good. I'm glad about it. I just went for it. I didn't, there was no hesitation there. This question is, what's your best tip for young coders to stay productive and not lose time. And my tip is to make it easy on yourself. Because a lot of times, we think that there's some like that, we're going to be good enough to just buckle down and do this productivity stuff. And I've talked about this before, but I use applications like one called focus for Mac OS, and I don't know several for my phone and things like that, that block specific apps that I know I reach for, they block specific websites that I know I reach for, and a lot of these like focus for Mac will shame you by giving you a quote about like wasting time or something. And every time I get one of those quotes, it makes me feel upset that I decided to open up, you know, Reddit or something while I'm should be working. So I highly recommend letting the robot do the blocking for you. It's not like hey, like I don't have the self control. But these things help you build the self control. Another thing you can do is to stay excited about the work that you're doing whether or not it's a problem or a technical issue, or maybe it's a new new thing you're trying to learn. I am always more productive. I'm always more in the zone when the thing I'm trying to learn is something that excites me It gets me going it makes me want to to work on it. And I follow that down the rabbit hole, right? It's like I got to work on this thing. And so for me, that is the most important thing to stay productive is to really Enjoy and be excited by what you're doing. And in those times when you're not excited, you're enjoying it, block of the stuff, take breaks, go on walks to that sort of thing. That's how I do it.
+
+40
+00:30:11,040 --> 00:30:52,920
+Wes Bos: Yeah, totally. I think first of all, you're 17, you could spend 10 years, I still be younger than Scott and I, at this, this kind of thing. So you have tons of time, I know that you feel like you want to rush into it. And you want to be building this like amazing stuff. I remember that all too well, of you're just hungry to build stuff. But your skills are way behind where you actually Wish you you were. And the idea is that you just like how do I like rush through this so I can get to that. And first of all, you can just put in put in lots of time. But second, I wouldn't sweat it all that much. Because you're so young, that you can probably get really, really up to speed and become a very good developer in probably like three, three and a half years.
+
+41
+00:30:52,950 --> 00:30:57,570
+Scott Tolinski: Yeah, I was very productive at that age at the skate park. And that's pretty much it.
+
+42
+00:31:00,660 --> 00:32:06,810
+Wes Bos: Just true. Like I was actually building websites at this point, myself, but I didn't feel like there was so much on my shoulders, it was just sort of a fun thing. And that's what leads me to my next point is that excitement about what you're working on is the biggest productivity hack. So she when you are first starting it on, if you try to like force yourself into it, if you try to put in too much more time, then then you should that's like a great way to to lead to burnout. And that's a great way to start to hate what it is that you are initially excited about. So making sure that you do have good balance, whether that's hanging out with friends, going to the gym, having other hobbies is pretty important as well. Also with that we have a whole show on productivity that are other hacks because like I have that myself, I just deleted the Twitter app from my my computer for this week, just to try it out. Just trying to use the web interface because I find that I probably will spend less time doing that. Nice. So yeah, good luck. Kumar. 17. Seriously, if you keep at it, you could be in a really good spot where you're going to be much younger than then most people would where when they even thought about starting. Yeah, web development.
+
+43
+00:32:06,840 --> 00:32:07,860
+Scott Tolinski: Yeah, absolutely.
+
+44
+00:32:07,920 --> 00:32:20,070
+Wes Bos: Hey, Wes. And Scott, I am 17 and learning web dev. So I might have insinuated that the last asker was 17. You might not be but hopefully you're 17 as well. And learning web dev, I'm
+
+45
+00:32:20,489 --> 00:32:21,990
+Scott Tolinski: concerned coder coder,
+
+46
+00:32:22,019 --> 00:33:49,800
+Wes Bos: a young coder. Okay, that's fine. I'm pretty concerned about my skills and have an I am having imposter syndrome. I am not sure if I should start freelancing. Please tell me if I'm ready to freelance work. So I really like this question. Because I was in these shoes when I was 17. And I remember being like, Am I Is it okay, that I, I do work for other people. Because I don't have a company. And I'm just this guy on the internet. I know how to make websites kinda. But is it okay that I would charge people money for this kind of thing. So I think the important thing to note here is yes, you start taking on freelancing work here. But make sure that the type of works that you take on is low stakes. So whether that's like one of my first websites ever was for a pool company, it was just a friend's dad needed a website for his pool company to go online. And that was really low stakes, because it was just a pamphlet website where we had some photos and some contact information and some information on there. So low stakes, family, friends, volunteer for people who a website is not going to make or break their business, because it is possible that you will hit a roadblock and it'll take you longer than than you think. But I also know that I grew so much in that time myself where I was really because it was for money. And because it was for somebody else, I had to push through those hard times. And I had to I had to make sure that I learned it. Because just shelving it because I didn't think I was there yet was just not an option.
+
+47
+00:33:50,100 --> 00:35:39,650
+Scott Tolinski: Yeah, and at this age, you might not have the best freelance skills, especially if you don't have any prior experience. So don't expect everything to be easy going because one, you might not have great communication skills. That's something that you're going to learn and you're going to practice quite a bit once you actually start freelancing. And two, you might not have these skills to work with clients yet because you haven't had that experience not just talking to clients, but like, actually understanding what a client wants. Because one of the problems that I faced when I first started freelancing is I had this idea in my head of what this site could look like. And that idea did not necessarily match one to one with what the client saw. And because I thought I was the person who had all the answers, obviously I didn't. I was trying to move their direction closer to my direction, when in reality, you want to be working close more closely with what they want to be seeing, right. Like I had this vision, and it wasn't about my vision. You know, it took me a little while to learn. That's not about my vision. It's about their vision. And these are sort of a lot of skills that you need to pick up but again, the low stakes aspect of it is Totally key because you don't want to get in over your head too quickly have a big problem, have a bad experience and feel bad about it or whatever. I mean, everything's a learning experience. But again, low stakes will help you very much so. And if you want to gain some skills to become a freelancer, maybe avoid these potential pitfalls at all, because, well, who likes failing things or having problems, you might want to pick up a course on freelancing. And there's a really excellent course that we recommend over here at syntax called how principles to freelancing course. And this thing is really great. So it gives you a ton of stuff. So with more about this course, is Wes.
+
+48
+00:35:39,780 --> 00:37:19,320
+Wes Bos: Yeah. So Kyle prinsloo, sponsored a bunch of episodes in the past, and he is back for another episode, which is great, which means that a lot of you are buying the course and enjoying it, which is cool. So the thing about freelance is that you don't necessarily like have a mentor or a boss or a company that will help you learn, especially the skills that is like talking to clients and positioning yourself blogging, SEO, marketing, how to get paid how to how to price yourself. So if you want to learn the skills, that is everything surrounding freelancing, you want to check out study web development, comm forward slash freelancing. And this is a complete bundle that includes a freelancing and beyond ebook, a whole bunch of HTML and CSS templates, private Facebook community, which I think those are, I'm part of a whole bunch of these private Facebook communities for different things like I'm part of one for email marketing. And whenever I have a question about something very specific, it's nice to be able to post it in there. Because first, it's private, it's not embarrassing to just ask the entire world. And second, you get people that who are also invested in the exact same thing, you get access to the slack as well portfolio a whole bunch, I'm not going to go through everything that is in here. Because there's all kinds of questionnaires and checklists and whatnot, you can check it out at study web development, comm forward slash freelancing. So pretty cool little package, or not a pretty cool, huge package that we've got here, and you want to buy the bundle. And if you use the coupon syntax, all caps, you're gonna get 25% off that. So go ahead and grab it at study web development, comm for slash freelancing, big, big
+
+49
+00:37:19,320 --> 00:37:21,440
+Scott Tolinski: package. That's what I got.
+
+50
+00:37:24,230 --> 00:37:40,080
+Wes Bos: Next question we have here is about react, native question is React Native. What is it? How do people tend to use it? If you want a native app and a web app? Are they're separate? Or do they share code? Can we start nagging west to do of course on it, David? Hey, all right.
+
+51
+00:37:40,109 --> 00:39:59,340
+Scott Tolinski: Yeah, so React Native. It's a platform for building native apps, how do people tend to use it, they tend to use it a lot like any sort of react based platform where like, create react app or something where it gets you started. But more so than that. They use it to build a full out native app. And sometimes it starts with create react app, and then you move it into an Android environment or in Xcode environment. But typically, I think that when it started in React Native, it typically stays in React Native, if you want a native web app, or native app and a web app, are they separate? Do they share code, they typically do not share code, it's a misconception that it's like a right once publish everywhere sort of platform. And it's more of sort of a, you can utilize the tools that you know, from web platforms to build native apps. So there isn't necessarily code sharing. Now there is something called React Native web, which allows you to use React Native components for the web, which then would allow you to share some code. But I have not used that myself. I know there, there are people that use it, who like to have that aspect of it. And that seems like a pretty interesting Avenue, but just out of the box. Because native environments have very different things like the styling aspects of a native app is very different than web styling. The components themselves, you know, there's no standard HTML tags, you have things like a view and a list view and things like that are touchable area instead of a button. So there are some pretty big differences that sort of bridge the gap but that said that you still get to use all of the React goodness that you know and love, you want to use react as you you know it you can do so. So that's typically why people love React Native now, I personally have a couple of React Native courses on level up, and it's pretty cool platform, I will caution that it is one of the more frustrating platforms that I've worked on. things break for no reason. Occasionally, compilers give you error messages that just restarting the compiler fixes. And sometimes your entire project gets in the red and it's a little tough to get out of it. Now it seems like there's been a lot of progress about React Native being made. And I think this year will be really interesting for React Native in terms of how it's simplified and how it's improved and how it grows as the platform because it seems like every React Native grows quite a bit.
+
+52
+00:39:59,550 --> 00:41:27,150
+Wes Bos: Yeah. I think we should mention like, the idea behind React Native is that the UI like the the interface of your application is native, meaning that on iOS, it's built in the iOS, like Scott said, you have a viewport and you have a text tag, and you have an image tag. So you don't use HTML tags, and you don't use CSS to style it, you use the native thing. And that's why the React Native apps feel good. We've all been on websites where they don't feel like they've been done natively. And then there's also one for Android as well. And then a lot of the business logic is then done in JavaScript. So obviously, you make all of your classes in JavaScript. But if you've got a whole bunch of logic around fetching data, filtering, data, authentication, all that stuff, often, that business logic, it will be written in JavaScript unless it's something that you have to use a native bridge for, in order to talk to it. So I haven't built a whole lot in React Native, just a couple little apps as testers here or there. But I do know that you can share libraries or like shared business logic between the two. But as Scott said, it's not right once deploy everywhere, you still you need to rewrite your your UI once for every platform. So once for the iOS, once for the web, once for Android, if you do have some like logic that's around data fetching or filtering data, or anything like that, that sort of behind the scenes that can be shared between all of them.
+
+53
+00:41:27,230 --> 00:41:38,670
+Scott Tolinski: Yeah, and you could share quite a bit between iOS and Android. And there are even some, like theming libraries that will spit out the human design guidelines and the material design guidelines with the same components. So you don't even have to think
+
+54
+00:41:38,670 --> 00:41:40,130
+Unknown: about it. Oh, that's cool.
+
+55
+00:41:40,170 --> 00:41:54,480
+Scott Tolinski: Yeah, when I write React Native, I'm typically not doing two separate things, unless it's like, okay, now I have to account for the Back button in in Android or something like that. But there is a good amount of reusability there, in my opinion, or in my experience,
+
+56
+00:41:54,510 --> 00:42:30,480
+Wes Bos: that's cool. People ask me all the time about React Native, and I just send them to Scott, because I've looked at it, but the there's a lot of like churn in React Native, and that thing would go out of date so quickly. It does a lot of tooling. I think it's just a bit like hard at least last time I saw it, it's a bit hard. And often when things are like Scott says it's, it's it's frustrating. Often that frustration comes back on me as a tutorial maker, and not necessarily the the framework itself, which it might be me, and in some cases, it certainly can be. But I know in a lot of cases, it's just a frustrating framework to work with, because it's so new.
+
+57
+00:42:30,540 --> 00:43:26,040
+Scott Tolinski: Yeah. And it's funny because I would I would list, my one large React Native course I did is maybe one of the worst professional decisions I've ever made. Now, I don't I don't sell this course anymore. But I always like, Alright, I'm gonna go all in and I'm going to make a huge course it's going to be giant, it's going to be all encompassing. And it was seriously out of date in like, two months, and I spent so much time on it, and it like absolutely crushed me. So that's one of the reasons why I was like, Okay, I'm gonna do smaller, especially if I'm approaching this from React Native smaller tutorial series, they go out of date, I can just redo it. That said, I do have a new intermediate level React Native series coming out in 2019. No total announcements on that yet, but, uh, it's gonna be really cool. I have a lot of interesting ideas going on here. And I think everyone is going to be very excited by it. So that's all that's all I can say. Right now.
+
+58
+00:43:26,040 --> 00:43:50,580
+Wes Bos: Somebody sent me a message on Instagram. The other day, I posted my screenshot on my Google Home app with all my lights and stuff in it. And someone said, Did you know that's built in React Native? And I said, ha, I didn't I didn't really true. I didn't know if I don't know if that's true or not. But maybe maybe somebody knows. It's a good example of of apps that are built in React Native tweet us at syntax FM, because I would love to check some of them out.
+
+59
+00:43:51,030 --> 00:43:59,880
+Scott Tolinski: Yeah, I want to see some cool. Well, I think that's it or do you want to move on to a sick pics? It's been a little bit of a while here. So do you have? Yeah, take for us.
+
+60
+00:43:59,910 --> 00:45:51,660
+Wes Bos: So I've got two sick pics. Is I finished that I've it's what days Today is January 8, and I've done two books in the year already. Like I'm on fire. So I did the book, would you recommend it called Bad Blood which is about theranos Holy smokes. What what enjoyable, twisted crazy did is write a story. So it's it's a book about how the startup in Silicon Valley was going to revolutionize blood testing with the prick of a finger and turns out it was all lies and it's it's nuts. So I recommend that that's just kind of an aside because Scott's already sick pick that but I'm going to sick pick the chip Gaines book. I also read he's got a book. Yeah, it's a chip Gaines is the husband of Joanna Gaines, who and they are the stars of the fixer upper and Magnolia Empire. And me and my wife Caitlin admire them quite a bit. They're about 10 years older than us. They're both entrepreneurs. They're both sort of go getters And we see a lot of hopefully we see a lot of similarities between them. And so I went and grabbed his book and I listened through it, it's it's only five and a half hours on audiobook, I listened to it at like 1.75 x. So it only took me a couple hours to get through it. And he's just got an awesome outlook on life. And in terms of like talking to people talking with employees, how to treat people how to how to take risks, how to love mostly, he's just like family first, it just crazy because they shut down their TV show, which was the most popular show on cable television. And in the height of it, they shut it all down because it was becoming too much to run their business, run their family and do this TV show. So I really enjoyed it. Somebody else told me to check out the other one, which is the Magnolia story, which I'm gonna I'm gonna check out as well. So that's a sick pick for me.
+
+61
+00:45:51,720 --> 00:45:54,630
+Scott Tolinski: Nice. I'm gonna have to I didn't know he had a book. I'm a big fan of,
+
+62
+00:45:54,960 --> 00:45:58,380
+Wes Bos: I forgot to say what it's called. It's called capital gains.
+
+63
+00:45:58,380 --> 00:45:59,100
+Scott Tolinski: That's and the tagline
+
+64
+00:45:59,100 --> 00:46:02,430
+Wes Bos: is smart things I learned doing stupid stuff.
+
+65
+00:46:02,880 --> 00:48:48,360
+Scott Tolinski: Love it, love the title, then they're one of those if it's just too too good to too good. I'm gonna pick pick something that is for the New Year new type of person. And that is going to be the tidy up show on Netflix, if you've got watches or tidying up, sorry, tidying up, yep, with Marie Kondo. And this, I think came out on Netflix, either like January 1 or second, I was like flipping through Netflix, and I saw it. And I had never read her book, I was aware of her book. Her book is called the life changing Magic of Tidying Up. And so we I watched the first episode and maybe like 15 minutes into the first episode, I was like, Courtney, not like you have to watch this. But you're going to love this show. And I think I should stop watching it. So we can just watch it together. And we've since gone through every episode of the show, because it is brilliant. It's like It's like hoarders. But without the shock and horror, sensational sort of stuff. It's like actually useful. It's like, here's some people's houses that are very normal people. And here's the various states that they exist in. And here are the various issues they're encountering. And she comes in and teaches them sort of her method about tidying up and cleaning up. And you might think that there's no way that that could fill up eight shows. But every single show has sort of a different angle, a different story, and only a totally different learning experience out of it. And it's like one of those ones that after the end of each episode, there's like almost like an overarching message about it, about the experience. And I just found that so, so good. I'm sure a lot of people have tuned into this already. I was so good that by the second episode, I bought her book, I read her book in one day. And you should see our house right now our trash bin is full, but filled up for like weeks and weeks and weeks. Now, our recycling, we have two recycling bins and they are just jam packed. Our donations are we had to move them into a whole room of their own because the donations were taking up so much space in our house. And we aren't we're not hoarders we don't really have that much stuff. But we were you just look around and you think, yeah, do I really need this and maybe I'll Instagram a photo of my dresser drawers right now because they are impeccable. And every single day I wake up and I open my drawer and my shirts are all there and this little specific folding method. And I select one out, and it brings me joy. And I'm all in on this. It is like it's so funny, because it's like, we weren't really that messy people but we have a new baby coming into our house and we want everything to just feel so much better. So I'm just, I'm pumped. I love this show. I'm gonna rewatch it. Man,
+
+66
+00:48:48,420 --> 00:49:11,400
+Wes Bos: Caitlin and I were looking at it the other day and we're gonna watch it together and I think tonight is the night that we are yeah both around. So it's so good. We I think we Kaitlyn read the book a couple a couple years ago and we did a huge purge of our house and and now that we've got the next baby coming in now we're just like, getting rid of everything left and right and donating everything. And it's crazy how quick that stuff sort of creeps in.
+
+67
+00:49:11,550 --> 00:49:20,880
+Scott Tolinski: Yeah, I had like a VHS is that us? I don't even have the edges player in the house. It's like, why do I have this? Like, I don't know why I just held on to it because it was one of my favorite movies. So
+
+68
+00:49:21,000 --> 00:49:21,930
+Unknown: I don't know, man. I
+
+69
+00:49:21,930 --> 00:49:25,200
+Scott Tolinski: gotta watch it somewhere else. I mean, it just changed the way I thought it I stuff.
+
+70
+00:49:25,230 --> 00:49:28,290
+Wes Bos: Yeah. Sick pick. What about a shameless plug? Shameless plug,
+
+71
+00:49:28,530 --> 00:50:12,840
+Scott Tolinski: I have a new course on styled components called level one styled components. And this course is all about building a system to grow your design with. So it's all about structuring your styled components, different libraries that work with styled components, how to do sort of bem style work within styled components using various libraries, how to get some of that functionality back that maybe you're missing from SAS, with some other additional libraries, and really just how to structure organize and keep your code in a way that makes it really shine. Makes it spark joy with your stealth components. So check it out level one style components available at level up tutorials, comm you can sign up for the year and save 25% or percent your choice. Yeah,
+
+72
+00:50:12,870 --> 00:50:53,430
+Wes Bos: that's it. Awesome. I am going to plug all of my courses. So I'm just looking at our stats on our podcast is growing every week. So if you are new to the podcast, Scott and I make courses, Scott has level up tutorials I have, I don't have a name for it. It's just the Wes Bos courses. And I have all a list of all of my courses available at Wes bos.com forward slash courses, bunch of free ones and a bunch of paid premium ones. And they are all currently on sale who just for a little New Year, you can use the code syntax for I think it's an extra 11 bucks off as well. So you can sort of stack that on top of the current sale. So enjoy if you want to learn anything about react or ESX or graph qL or you name it.
+
+73
+00:50:53,430 --> 00:50:55,770
+Scott Tolinski: I'll teach it to you. You name it
+
+74
+00:50:55,920 --> 00:51:05,130
+Wes Bos: except for React Native or new j s apparently. That's my new year's resolution is before the end of the year to do a show on view.
+
+75
+00:51:05,160 --> 00:51:06,930
+Scott Tolinski: Oh my gosh.
+
+76
+00:51:07,950 --> 00:51:10,620
+Wes Bos: Awesome. So that's it for today. Anything else to add?
+
+77
+00:51:10,620 --> 00:51:11,160
+Scott Tolinski: Nothing.
+
+78
+00:51:11,160 --> 00:51:14,040
+Wes Bos: All right. We'll see you next week, dude, pace.
+
+79
+00:51:16,020 --> 00:51:25,800
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

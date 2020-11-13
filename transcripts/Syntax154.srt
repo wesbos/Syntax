@@ -1,0 +1,416 @@
+1
+00:00:01,319 --> 00:00:22,859
+Wes Bos: You're listening to syntax the podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski and West boss. Welcome to syntax. This is a podcast with the tastiest web development treats. Today we are going to be talking all about SP GS with Sara. Please say your last name Sarah
+
+2
+00:00:22,889 --> 00:00:23,700
+Unknown: suede done
+
+3
+00:00:23,700 --> 00:00:34,610
+Wes Bos: beautiful. We were just I was just trying to say it before the show. And I was like, You know what, I've got a bad, bad history on this show of goofing up people's last name. So I appreciate that.
+
+4
+00:00:34,680 --> 00:00:36,930
+Unknown: I think the way you said it is the worst I've ever heard.
+
+5
+00:00:39,900 --> 00:00:42,840
+Wes Bos: Oh, that means so much to me. Believe me, believe me. I
+
+6
+00:00:42,840 --> 00:00:47,189
+Unknown: have people butcher my last name all the time. But you've set a record right now.
+
+7
+00:00:47,250 --> 00:00:48,900
+Sudan is what he said.
+
+8
+00:00:49,890 --> 00:00:53,549
+Yeah, it was very weird. Yeah, definitely. completely messed up.
+
+9
+00:00:55,409 --> 00:01:18,330
+Wes Bos: Oh, that's great. So you're probably listening to this saying where is Scott? So Scott was hoping to join us today. But he just had a baby. So big congratulations out to Scott. You had a little baby girl, Brooklyn to Lynskey. And he is obviously super tired right now dealing with the baby. So he wasn't able to make it. But make sure you go and tweet Scott a congratulations.
+
+10
+00:01:18,360 --> 00:01:19,650
+Unknown: Welcome to the world. Brooklyn.
+
+11
+00:01:19,680 --> 00:01:50,130
+Wes Bos: Yes. today's podcast is sponsored by two awesome companies. First one is Sentry gonna do all of your error and exception tracking. And second one is Sanity. It's your headless CMS. Alright, let's get going into the show. The reason why we've had Sara on here is because you seem to be a bit of an expert in everything front end web development, and specifically you do a lot with SVG. So do you want to like maybe give us an introduction as to who you are what you do? all of that good stuff?
+
+12
+00:01:50,130 --> 00:02:24,120
+Unknown: Yeah. First of all, I don't like to label myself as an expert. So I'm gonna skip that part. Yeah, I love that stuff. I've wrote Well, yeah, my name is Sarah swidden. I'm a front end developer from Lebanon, I do freelance. I work with clients across the globe. Most of our clients have been based in the US and Europe so far. I do front end development. So everything HTML, CSS, SVG, accessibility, with focus on performance. Yeah. So that's literally what I do. I also do speaking and I run workshops, both at events and in house. This basically sums up everything that I do.
+
+13
+00:02:24,690 --> 00:02:33,120
+Wes Bos: You do you do a lot of blogging as well, I think the first time I saw your work was probably what maybe like seven, eight years ago on code drops. Well,
+
+14
+00:02:33,150 --> 00:04:01,860
+Unknown: yeah, yeah, I wrote the CSS for the CSS reference for code drops. I do write a lot of articles. And I think most of the people that know me, no me because of SVG. So it all started, when I was introduced to SVG in 2014. I was supposed to give a talk at CSS conf about different ways to create texture text and, you know, graphical text effects. But I was I just lost the inspiration for that talk a couple of weeks before the talk. And at that time, I was getting into SVG. And it was like this new thing. And when I'm learning about something new, I like to write and talk about that thing. So I was just getting started learning SVG. And I thought that it would be a very good opportunity for me to dig deeper into SVG. And then whatever I learned, I could speak about that at my first talk. So I did that. And then after the talk, I started digging a lot more. And then I wrote the go to guide for the SVG viewbox, which I'm very, very proud of. And I think that article is what kick started the whole SVG thing for me. So I started digging deeper. And people started asking me more questions I was I get, I got more interested in SVG and different uses. It's not just an image format. It's a document format. So it can do a lot of things. And I was kind of like the SVG person for three or four years in a row, until I started shifting a little bit towards other aspects of the front end, and recently accessibility. So this is how I got started. And this is how most people know me via SVG, or because of SVG.
+
+15
+00:04:02,009 --> 00:04:24,930
+Wes Bos: Yeah, yeah. I'm just gonna say I love that the way that you approach doing talks is just whatever you're interested in at the moment, and whatever it is that you're learning, you're sharing, like, that's a huge that we get people ask all the time, like, how do I I'm too scared to do a talk because I'm not an expert on it. And the reality is, is no, you should just be learning something and sharing it as you learn. So I think that's really cool. That's what that's what you did as well.
+
+16
+00:04:24,990 --> 00:05:10,520
+Unknown: Exactly, yes. Because when you're learning when when the idea is fresh in your head, it's always like when you have that aha moment, that's the best time to write about that, like how you got to that moment. And I'm pretty sure that a lot of people will find themselves in exactly the same position that you were when you were trying to get to that moment, and you will be helping them we all have different perspectives about things and the way we learn is different. And some people find my way of teaching, teaching approachable, while others will find yours more approachable. So we all have different ways of learning and teaching at the same time, so definitely don't don't like it. None of us, okay, there are a few experts out there. But we're all learning, especially in our field. We're all learning something every single day. And why would you learning? That's the perfect time to be teaching as well.
+
+17
+00:05:10,880 --> 00:05:15,120
+Wes Bos: Oh, this SVG viewbox article that you wrote, where is that located?
+
+18
+00:05:15,630 --> 00:05:16,880
+Unknown: On my website?
+
+19
+00:05:17,160 --> 00:05:20,190
+Wes Bos: Okay. Here's your website, by the way. Sorry. Go ahead.
+
+20
+00:05:20,550 --> 00:05:24,770
+Unknown: Yeah, I was just gonna say you just Google viewbox and Sarah sweat. And you'll, you'll get to that article.
+
+21
+00:05:24,950 --> 00:05:30,330
+Wes Bos: Great. Well, we'll put a link in the show notes for that as well. Your website is super fast. By the way, what's that built on?
+
+22
+00:05:30,660 --> 00:05:38,580
+Unknown: Oh, well, HTML, CSS, a little too non JavaScript. And I'm using service workers for offline. Ah,
+
+23
+00:05:39,180 --> 00:05:46,380
+Wes Bos: that's awesome. I was just just going through the many like, you've got probably a hundreds of articles, or at least 100 articles on here.
+
+24
+00:05:46,530 --> 00:05:48,240
+Unknown: Definitely more than 100. But not
+
+25
+00:05:48,270 --> 00:06:17,490
+Wes Bos: Yeah. And I was just going through the air pagination, which is really cool. On the sidebar here, go to Sara's website. And I was like, wow, this is super fast. And I intentionally didn't look at it just to see what was what was behind it. Um, Alright, so let's let's get into SVG. Do you want to maybe give us a rundown of like a, what is it? Is it an image? Is that a text file? Is that its own thing? Is that HTML? Just explain it to us like we're five years old?
+
+26
+00:06:17,820 --> 00:07:08,700
+Unknown: Okay. Well, I don't think a five year old would know what XML is. So let's let me say five year old 30 year olds, okay. Okay, five year old going going on 30. So SVG is an XML based image format. So it's both a text document and an image at the same time, or in other words, it's an image that you can edit. So the contents of the image, you write those down using markup using XML, which is very similar to HTML, you have all of these conveniently named elements. So if you want to draw a rectangle, you have a rect element, you can draw circles you can you have a lot of stuff you can animate inside of the SVG. So it's basically kind of like HTML, but a different kind of HTML. So you have all these elements that we don't have in HTML. Yeah, that's, that's how I would describe it. You know, it's an image that you can edit. That is the summer.
+
+27
+00:07:08,700 --> 00:07:58,620
+Wes Bos: I think that's a really good explanation of it. Because when you get into it, you first think like, Oh, it's just, it's just HTML. They're like, what are these other? What are these other tags, oh, there's just some tags I have to learn. And then and then you sort of get into it, and you go, wow, this is this own world. And like, it really is this, like, if somebody we talk a lot on the show about how people can like, specialize in something and like, make that their thing for a couple years. And that's a great way to sort of get ahead in this specific spot. And I think SVG is a really good spot, because, like, I'll be saying, like, I know a lot about web development. And it's just not an area that I know a whole lot about. And I would say that's probably true for a majority of our audience. So if anyone listening and thinking like, like, like, what's the area that I could just double down on and get really good at, this is an awesome area, if it's something that interests you,
+
+28
+00:07:58,650 --> 00:08:33,360
+Unknown: SVG is fantastic, especially because it has so many there are so many places in front that you can put it to good use. It's not just about displaying images. It's not just about logos. It's about iconography, and different ways to load and to optimize for performance. And then you have a data visualization. And then you have accessibility. And so many things you can do with SVG. svg, can aid with accessibility. So it's not just making SVG is accessible. But SVG is can aid and making certain things like icons accessible, it's fantastic. And it is definitely definitely one of the most important tools that we have in our front end arsenal.
+
+29
+00:08:33,529 --> 00:08:53,399
+Wes Bos: So an SVG can be it can be used in I guess two ways. Like first, you can just use it as a regular image tag. So if you have an image source equals logo to SVG, and then you can also just use the like an SVG tag and dump all of the XML right into your HTML. Do you want to give us the pros and cons of both of those?
+
+30
+00:08:53,490 --> 00:08:58,470
+Unknown: It's not just two ways. There's almost like seven different ways to embed and really, yes.
+
+31
+00:08:58,860 --> 00:09:00,270
+Wes Bos: Okay, can you give us all seven?
+
+32
+00:09:00,510 --> 00:09:03,210
+Unknown: Did you really don't watch my talks? Do you? What
+
+33
+00:09:04,200 --> 00:09:09,570
+Wes Bos: I ashamed to say? No, I have not seen that specific one. Is there one on YouTube that we can link up?
+
+34
+00:09:09,720 --> 00:11:51,480
+Unknown: Yeah, it's an old one. But it's okay. I mean, I am not a person that watches a lot of talks myself. So I'm not judging. Okay. I was just teasing really. So yeah, there are seven different ways. So you can embed an SVG is just like an either an any other image using the image tag, you can also use the picture element, which is my, my, the alternative to the image, the more modern way because you get to link to the SVG. And then you get to also provide a PNG fallback if you want to do that. And inside of the picture element, you can also use SVG as background images and CSS just like any other image. You can embed an SVG using an iframe. I don't usually do that because I usually use object. So there's also the object element, which is my favorite, especially for very large SPGs. That also requires some scripting. Let's say for example, infographics is my favorite example. You can also embed them Using the old embed tag, but nobody uses that or talks about that anymore. And then you have the inline SVG, which is just throwing the whole SVG tag with everything inside of it inline in your HTML, oh, you have all of these. And each one of them has its own pros and cons. So image and picture, they have the same pros and cons and background image in CSS. Also, they almost share the same pros and cons. So there are limitations. And I always say that the way you embed the SVG very much depends on what you want to do with it. And there are a lot of questions that I asked myself or other people before I decide or to choose one of them budding techniques. So if you want the SVG to be animated if it's just a static image, if you are animating it, is it just a simple fill, color change? Or on hover, for example? Or is it more complex animations? What kind of browser support do you need? What kind of fallback Do you want to provide? So again, if I if I were to talk about infographics or even data visualizations, if you have an infographic, that infographic is a visual representation of some sort of data, right. So for that kind of content, the best kind of fallback is to provide the data itself as text, for example, or as table the object is, would be a fantastic way to embed that because first of all, infographics are usually very, very large in size. So you don't want to embed them inline in the HTML, you would link to an external SVG file, which means that the file is going to get cached, which is the first advantage. And then between the opening and closing tags of the object element, you can put the fallback, which is the actual data, you can put that there. So if the SVG fails to load for any reason, or if there's any error, or if if a browser does not support SVG, we're talking about IE eight and below. I don't know if a lot of people have to support those. If they do, I'm so sorry for them. If they don't, then you don't have to worry about that. But the good thing is that you can provide a completely different alternative or view of that data between the opening and closing object tag
+
+35
+00:11:51,600 --> 00:12:00,779
+Wes Bos: a, like a video tag, if back in the day when Yeah, the video tag used to put the like flash fallback in between the video tags works the same way. Yes. Okay.
+
+36
+00:12:00,809 --> 00:13:30,960
+Unknown: Yeah. So iframe and object have also both have the same pros and cons. When it comes to SVG, image, picture and background image and CSS are similar object can be scripted using JavaScript. Whereas images Cannot you can, you cannot use any JavaScript on SVG is embedded using an image or a picture or a background image, image picture background image cannot be animated or interacted with, whereas the other embedding techniques can be absolutely the absolute most flexible way to embed an SVG is to put it in line. Because you can use JavaScript, you can use CSS from the main stylesheet. If you have an external SVG, if you're loading an external SVG, whether it's using an image tag or an object, you cannot access the contents of that SVG from the main stylesheet on the main page, so you would have to have a separate style sheet for the SVG, you can go into your SVG, and you can link to an external stylesheet. And then you can provide the styles in that. But the most flexible way to embed the SVG, of course is or to use an SVG is to be able to access it and control it from the main stylesheet. For that, you would need to embed it in line. So whenever I Yep, so whenever I can I do embedded in line, if the file size is too big, if it's going to clutter my HTML, I put it externally, if I need to use JavaScript, I use the object tag, if it's just a simple static image that maybe I animate, and on scroll, I use the image tag or the picture. So certainly, definitely different considerations. When you want to make a choice, you will have to ask yourself a few different questions and then choose accordingly.
+
+37
+00:13:31,169 --> 00:13:45,510
+Wes Bos: Okay, I didn't even think about that is that if you have an extremely large SVG, and you are just doing it in line, there's a possibility that that could really bloat your initial page load, because that's just making the HTML really large. Is that correct?
+
+38
+00:13:45,539 --> 00:14:33,179
+Unknown: Yes, absolutely. In my, when I when I bought the front end foundation for a Smashing Magazine, I gave a talk about this. So it was a case study. And in that case study, I showed one of the illustrations that we had. So we have three different illustrations for each one of the smashing membership options that we had, each one of those images was so big, I recorded a video of me scrolling through that SVG, it was huge. And we had three of those. So there was no way I was going to put all of those in the HTML. So I came up with a different way. So I load I loaded an SVG inside of an SVG. That was very, very neat. So if you can check that video out, I highly recommend it. So because as we choose a document, you can use the SVG to load another SVG SVG image inside of an SVG document inside of an HTML document. Pretty awesome. I love that. I love that.
+
+39
+00:14:33,419 --> 00:14:46,049
+Wes Bos: That's cool. And inside of inside of an SVG file, you can also have like style tags as well, and that CSS would be then scoped to the just to that SVG. Is that right?
+
+40
+00:14:46,049 --> 00:15:30,720
+Unknown: It depends on how you embed it. So if you have an SVG image, that's an SVG file, and you have styles, definitely those styles are scoped to that SVG. But if the SVG is inline in the HTML, and you have a style tag inside of that as well. And then you have another SVG, for example, on the same page. And you have. So in SVG, number one, you have a style tag, and you have a set of rules targeting an element with a class name bird, a bird. Yeah. And then in the other SVG, you also happen to have another element that also has a class name bird, then the styles from SVG, number one are going to affect the styles in SVG. Number two. So just because you have a style tag inside of an SVG tag does not automatically scope the styles to that tag, especially when it's embedded in line.
+
+41
+00:15:31,260 --> 00:17:41,430
+Wes Bos: Okay, wow, that's, that's great. I didn't know about the object way of approaching it, I had gone the way of always just almost always in line in them if I needed to attach some JavaScript to it, or if I needed to attach some CSS to it. And then I want the way of just using an image tag or a background image if I didn't need to change anything about the color because like, the one I guess, limitation with using a background image or an image tag is that, like, if you you can't access the parts of an SVG when it's when it's used as an image. Like you can't say, when somebody hovers over top of an eyeball of a smiley face. Just make that one eyeball wink, right? Right. Yes. Okay. That's pretty neat. The other thing I want to sort of move into here is this idea of icon fonts. Because I think maybe when did like Font Awesome come out, maybe like five, six years ago, Font Awesome came out where they took before that everybody was using, like, like PNGs, and sprites to do icons. And it was really tough to do, especially as we're doing responsive design. And then the iPhone came out with the retina screen where all of these icons that were raster based, looked terrible on on these screens, and then all the screens started to get better. So we started to switch to vector base icons, which is amazing, because they're almost always much smaller, you can inline them, you can change the color without having to open up Photoshop. There's all these amazing benefits. Yeah, it's just like, it's such It was such a big win for for the, the web in general, when when Font Awesome came out, but the way that Font Awesome used, sort of rolled it out is they they hacked the the italic tag, they use an eye tag, and then you gave it a class of FA and then you do like FA dash Twitter or FA dash Facebook and it would replace it with an actual icon. So behind the scenes that's obviously using SVG there, but there's been some pushback in the last, I don't know a couple years that you should stop using that way because it's inaccessible, and move the way as just using something else. Do you have any any thoughts on that?
+
+42
+00:17:41,520 --> 00:21:07,680
+Unknown: Well, definitely don't use icon fonts, that's for sure. Do not use icon fonts. There are many, many different reasons not with some of those reasons like SVG icons have advantages over icon fonts, from a development perspective, like styling with CSS, and let me check like I have an article here open here on CSS tricks that are always linked people to but for me, it's it's mostly about users, you know, so when if your user, for example, decides to disable fonts, for example, or block custom fonts, if you're using a font icon, then your icons are not going to load anymore. And if you have an interface that requires those icons to be usable, then you've already lost that. Opera Mini does not support icon fonts at all, because you're not supposed to have icons and fonts. So you it does support SVG, but it doesn't support icon font. So I can fonts are not going to show up an Opera Mini. Also, recently, exactly the month tweeted about how font display does not work with icon fonts. So again, there's going to be a lot of failures. Yeah, so from a user experience, perspective, icon fonts are really, really bad. And I come from a place where the internet connection is not always very fast here. So I see a lot of icon font failures, a lot of them, I visit a website, and for some reason the connection gets interrupted or the JavaScript fails to load or the page is just way too slow. So I have to wait a lot to see the bunch of icons. And sometimes I literally don't see them, I just see a bunch of small rectangles. This is horrible user experience. And the only literally the only reason I hear developers say that they prefer icon fonts over SVG. Okay, maybe two reasons. But the one, the major reason is it's more convenient for them. It's just faster, you know, just like you said, throw a class name on that span, and it's gonna work. It's not about us. It's not about us developers. It's not about our convenience. It's about the user experience. And if you're breaking that, then I'm sorry to say that you're not a good developer, I'm sorry. No matter how many awesome tools you use, if you're not building for the user, then you're just building for yourself. And that's very selfish. And I'm not saying that everybody who uses icon fonts is selfish. Just a disclaimer, that's not what I'm saying. I'm just saying that you need to look for whatever works for the user. And when it comes to icon fonts, they fail way too much. And unless you have a very, very, very strong, good reason to use icon fonts over SVG, then you should definitely be using as well. Plus, there are three different ways that you can embed an SVG there is one, which is the most popular one where you create an SVG sprite you and then you use the use tag in SVG to put the icons and line and which is pretty, pretty great. It's my favorite one. Personally, I just inline the icons, most of the times I don't even use a Sprite. But if you have a lot of icons and spreading them is the way to go. But one of the three different ways to spread an SVG is very, very, very similar to using two icon fonts. There is a tool by the filament group called grant icon, which creates an SVG Sprite. It's very different from the spreading that I mentioned earlier, using the use tag, the way you would embed that sprite is exactly the same as the way you would embed an icon font, you can put a span and empty span, which is not semantic, it's not you would have to put some extra stuff on it to make it accessible. But okay, let's say that you will do that. So you can just throw an A class name on that span, and it will load the SVG icon, a set of the icon font. So you can there is one convenient way to do it. But the only disadvantage in that case is that the SVG is like changing the color on hover requires a little bit of extra work.
+
+43
+00:21:07,770 --> 00:21:08,330
+Okay,
+
+44
+00:21:08,430 --> 00:21:25,290
+yeah. But the all of the other advantages that you get from using SVG are definitely worth it. So it's good to be a lazy developer, because being lazy means that we usually look for the fastest way to to achieve something. But it's it shouldn't be at the expense of the user experience. That's all.
+
+45
+00:21:25,440 --> 00:22:32,310
+Wes Bos: Yeah, I totally agree. Like we're all for, like developer experience on the show and making things easier for developers. But it shouldn't be at the expense of your users. And it definitely shouldn't be at the expense of of your users who you're probably forgetting about people on slow connections, people with different types of browsers that you don't think people actually use, things like that. So it's really interesting, like I definitely was in the camp initially, of like this, it's so much easier just to use a font icon. But what I found is that, like, you just need to put whatever time you need to put in to set up the tooling. So it is as easy as using Font Awesome, exactly. And then thank you, once you have that tooling in place, then it is as using is you can you can set up tooling that is going to just simply inline it for you, if you're using PHP, you can submit just like include that SVG file, or actually in most templating, at the very basic, you could just include an SVG file, and it will just inline it directly for you. And then there's obviously other stuff like this like so grunt icon is not just for grunt Is that true? Well,
+
+46
+00:22:32,520 --> 00:22:56,280
+Unknown: grumps icon is for grunt, but they also have a web tool, a web app. So you can, you can use the web app in order to generate the sprites as well, I don't know if they created something for gulp. I haven't checked in a while because I don't usually use that technique myself. Like I said, I usually just inline the icons. Or if I have to, like if there is a lot of icons and spreading them is more beneficial than I use the use sprite technique.
+
+47
+00:22:56,490 --> 00:24:57,540
+Wes Bos: There's likely I don't know any offhand. But like a lot of our developers that are listening to this podcast, use react or view or something like that, there's probably some sort of component that you can use to inline it yourself. Or I'm sure there is also like, different Webpack configs that you can pop in and it will do it for you. So I think it's probably easier than it was a couple years ago to do this type of thing. Yeah, let's take a quick break for one of our sponsors. And that is a century if you want to know what's happening with your errors, track them, compile them, find out all the information, what browser people are using, all you have to do is install Sentry on your website. And then as your errors happen, they will be caught by Sentry, all that data will be sent off to the dashboard, you can log into the dashboard, you can see how often an error is happening, who it's happening to what devices they're using, what browsers are using all of the information about that. So if you have any sort of website, and you don't even think you have errors on your website, I guarantee you do so go ahead and install. century century@century.io use the coupon code tasty treat, you're going to get two months for free. And that also works for existing users, which is super cool. We've had a lot of people on Twitter recently say like thank Sentry for not just making it for new users because I know a lot of you have probably tried it in the past. And you want to give it a go on another project that you're working on right now. So check it out. sentry.io coupon code tasty treat Thanks so much to Sentry for sponsoring. Next I want to talk about like the actual files themselves. So there's kind of two options or maybe a bunch of options when you want to use an SVG is you have to go off and find an SVG from somewhere that has the thing that you want, or you can design it yourself out of some some sort of program. So let's start with SVG is like if you are working with a vector based editor like sketch or Illustrator or figma, or any of these things, can you just export them from illustrator and just start using them on the web or what does that look like?
+
+48
+00:24:57,870 --> 00:29:24,900
+Unknown: Yes, definitely. But okay. If you're using illustrator, especially the latest one, which is currently the be one, you know, be exported SVG are very, very, very good. And a lot of times you don't even need to optimize them. The people that are working or that have worked on the export options in Illustrator and illustrator are Dirk shazza on and that was German, Dirk scholtes. And Dimitri baranowski. Both of them are SVG wizards. They're amazing people, amazing developers, SVG experts, and they worked on the export options to make sure that the exported SVG is are as clean and optimized as possible. So most of the times, if I'm exporting something from illustrator, I don't need to even optimize it anymore. But if you're not using illustrator, if you're using another tool, then you're probably you'll probably want to optimize them. The go to up to SVG optimization tool today is SVG. Oh, it has a lot of different options. So I use the drag and drop g UI, where you literally drag and drop SVG into the goi and optimizes them for you. You can also use grunt, gulp sketch, Illustrator plugins. They're all available. I have an article on my website that lists all of the different options that SVG o provides. Depending on your workflow, you can choose the one that works for you. I don't usually recommend using sketch for optimizing SVG. And I know other developers who work with designers who use catch to optimize SVG is I don't know about figma. I've never checked out any SVG is exported from figma. So I can't can't talk about that. But I know that the last time I worked with an SVG that that was exported from sketch, it was a pain in the neck to work with. And most of my previous client work, I worked with designers who exported SVG is from sketch and I literally had some of them, we looked, we just had to recreate those SVG s and they recreated the GS and illustrator, yes, because especially if you're going to animate the SVG. So if I'm the developer, usually, and I work with a designer, and I need to animate that SVG, right. So I need to have access to the contents of the SVG, which means that I need to be able to read the contents. And the content needs to be organized in a specific way. So if there is, say, a bunch of dots, and I need to animate those dots individually, separately, then I need those dots to be created as small circles literally like circle element, circle, element, circle element. But when a designer creates that SVG, for example, they would probably like in one of the projects that I worked on, they created a dotted line instead. So those circles were not semantically related like them, then they were not real circles, that there was no way for me to animate them. So they would have to recreate those as circles. See, yeah, so you need to be able to separate the contents of the SVG in a way that makes editing it and animating it possible. So this is one of the main reasons why the usually, you know, designers and developers should communicate, they should talk about everything, when when they're working together. But SVG is one of those areas where they absolutely need to be on the same page. designers need to know enough to create the SVG in a way that makes it easier for developers to work with. And developers should be able to communicate what they need to the designer. So I sat down with I didn't sit down with you, I work remotely. So I talked with a designer, and I told them that I needed, I need to be able to animate these circles separately. And that's why we need them to be created as different circles. And then I need this element to be separate. I need that element. I need this to be grouped with that. So the way you will interact with the SVG also dictates the way the SVG is created. And the way the SVG is created is going to dictate whether or not it's going to be easy to work with. So communication is key. And there are I can also have an article about that for tips for creating creating an exporting better SVG for the web. It goes over a few things like for example, creating simple shapes using simple elements instead of using parts because elements such as a circle, it comes with a few attributes and animating those attributes is easier, versus having a path that doesn't have those attributes. You don't want to convert elements to outlines because otherwise, a shape would be again converted into an A path. And, for example, texts could also be converted to a path and that makes it not text anymore. There are a few things that I highly recommend. If you're a designer working the best pitches, then definitely check these out. So yeah, communication sketch was not the best way to optimize SVG is the last time I checked, if you can afford using illustrator or if you use it in your company, then it's the tool that I recommend for creating and exporting SVG today.
+
+49
+00:29:25,050 --> 00:30:27,090
+Wes Bos: That's good to know. And just for our listeners as well, in the past, I've used some different things. I've used that what's it called image min, which was one of them. And usually if you're using something like Gatsby under the hood, they're going to be using, I think it's sharp what Gatsby uses but image min, there's Gulp image min, there's lots of different things. And under the hood, what they do is they take all of these different libraries that's used for compressing images, including SVG, which is the one that is used for compressing and cleaning up because often people will have like comments or unnecessary tags in their SVG and those can just be taken out And I recommend you go to Jake Archibald, SVG OMG. He has just a GUI on the web that you can drag and drop an SVG up. And you can turn on different features as to how to compress it. And we'll show you what is happening. And it kind of gives me an idea of like, what, what does compressing an SVG even look like when it's text based, rather than like a raster based PNG, where you can kind of see the compression happening in the image itself.
+
+50
+00:30:27,299 --> 00:31:33,630
+Unknown: Yeah, the Jake's tool is also fantastic. Because sometimes depending on the way that SVG was created, like sometimes when I used to get an SVG from sketch, and then I would optimize it with SVG, oh, it would break completely. Because Because of the way SVG, oh does the optimization, sometimes it removes certain attributes that remove certain things that ends up breaking the SVG. And one of the things that SVG Oh used to remove by default is the view box. And then it was changed, because the view box is very, very important without it never ever removed the view box as the rule, usually. So what's good about SVG OMG, is that you can choose what you want to remove from the SVG and you get to see the result of that optimization live. So say you want to remove extra ideas that are not used on used ideas, then you can see if that's going to break anything, it's probably not because they're unused. Although sometimes if you create an SVG in Illustrator, and you add a few ideas in it yourself, because you want to use those in your animations, then running it through SVG. Oh, is probably not a good idea, because SVG O is going to remove those IDs for you.
+
+51
+00:31:33,630 --> 00:31:34,950
+Wes Bos: Oh, yeah.
+
+52
+00:31:35,010 --> 00:31:42,030
+Unknown: And that case, if you use SVG OMG, it is good, because you can tell it not to remove those IDs. See, so yeah, definitely. Yeah. Because
+
+53
+00:31:42,030 --> 00:32:16,740
+Wes Bos: you can turn on the IDE, you can turn on and off the little features of SVG. Oh, depending on what you do want to strip out in what you don't want to strip out. What about getting SVG. So like a lot of us aren't designers. And we're not able to work with a designer, but we do want to go off and like if I'm building any sort of website, it's likely that you need to go off and grab an SVG. In the past, I've used the noun project, which you can either pay for it's pretty affordable, if you're only using like, I don't know, 1020 different I think they're $1 each, or you can just credit the the author as well. And I think they're, they're free in that case.
+
+54
+00:32:16,860 --> 00:33:08,160
+Unknown: Yeah, I I do use the nonprofit I also use I come on, I come on also come it does not it doesn't only just provide you with a bunch of icons, but it also can generate the SVG sprite for you. So you can use it not only for choosing the SVG, but also it facilitates or you can skip a complete step in your workflow if you use icons, because it generates the things for you. And all you have to do is just include them in your project. So I use icon moon, I use the non project if I use if I need to some sort of more complex illustration, for presentational purposes only I use free pick com free key ik.com. It's one of my favorite resources. It's also saying also the same as the non project, you can either either credit the the author or just pay a monthly fee if you can, I don't pay the monthly fee, because I don't use it that often. So I usually credit the author in my work. There's a lot of different options. Yeah,
+
+55
+00:33:08,360 --> 00:33:55,560
+Wes Bos: people think that the the credit needs to be like, like a huge, like banner over top of every single time you use an icon. But if you read into it, there has to be a page on your website somewhere that that says who has made it. So it's actually pretty reasonable only thing I don't like is that if I'm designing in sketch, and I download an SVG from the noun project, it always has the author's name in it, and you have to go and go ahead and delete that. I always use that as a time to put that in, like a running list of authors that I have. And then I can always just credit those when I need to. Because it's easy to download it and then forget who made it? And then good luck finding that one again. Right? What else are we gonna say here? What's the view box? I've heard this a couple times. What is What is that for? Why is it so hard to work with? What does it do? You only
+
+56
+00:33:55,560 --> 00:33:57,660
+Unknown: have to work with if you don't understand it,
+
+57
+00:33:57,840 --> 00:33:58,920
+Wes Bos: I don't understand it.
+
+58
+00:34:00,660 --> 00:34:19,290
+Unknown: It does take some time to get to wrap your head around it. But once you do it literally you level up your SVG skills, or go up to the next level. So the viewbox is, did you know that an SVG has two coordinate systems, not just one? No. Okay, so the SVG has two coordinate systems, not just one?
+
+59
+00:34:19,770 --> 00:34:20,460
+Wes Bos: No, I know.
+
+60
+00:34:22,170 --> 00:37:55,500
+Unknown: So you have the width and the height of the SVG, just like any other HTML element, it has a width and a height and that width and height creates a coordinate system would be top left corner or the origin of that coordinate system being at the top left corner. That coordinate system created by the width and the height of the SVG is called the viewport core. No, it's not that you work. Well, the width and height create the viewport. I call it the viewport coordinate system, the initial coordinate system, that's the official name. So the initial coordinate system is created by the width and the height of the SVG. But the only thing that this coordinate system does at first or by default is determine how that SVG behaves in the context of its page. So just Like any other HTML element, but when it comes to drawing inside of that SVG, you need the view box. The view box is the coordinate system that is used on the canvas inside of the SVG. So the SVG has a width and a height that creates a viewport that's kind of like an iframe and has a width and a height. But inside of that iframe, you can have a page that is much longer than that width and height. And SVG Canvas is conceptually infinite. So you can, I usually think about it in terms of layers. So I have this window or the HTML page. And then behind that, I have an infinite Canvas for the SVG. And drawing on that SVG requires a coordinate system and that coordinate system is created by the view box. So the view box has four numerical values, that's usually 00. x and no width and height, the width and the height and the view box are usually identical to initially identical to the viewport. So when you create an SVG in Illustrator, for example, and you exported the viewbox as 00, and then value value, those two values are equal to the width and the height of the SVG, because by default, when you create an SVG, you are creating it so that the content is all contained within the viewport. So the coordinate system of the canvas is identical to that of the viewport. And then when you start changing the values of the view box, what happens is the canvas inside of that viewport inside of that window starts to change, it starts to move around, it starts to zoom in, and then you zoom out. So this is literally what the view box does its coordinate system. Yeah, it's a coordinate system on the canvas and changing those values, changing the value of the of the top left corner. So I set for numerical values. 00, which is the top left corner, which is the origin, if you change the origin, you would be moving the canvas around inside of the viewport, you can move it around, if you change the value of the width and the height of the of the coordinate system inside of the SVG, you end up zooming in or out of the content and showing only specific areas at that at a time. So viewport fixed width and height. And then you have the view box on the canvas, which you can stretch, expand a shrink, zoom scale and out, move around. That's what the viewbox does, it gives you superpowers. And it's very, very useful. Cool. Like one of the ways to create an SVG Sprite. So I mentioned the grant icon way I mentioned the spread that everybody uses usual using they use element. But there's also a third one that I only usually talk about in my workshops, it uses the view box. So you would have an a canvas that has a set of icons on it. And then you change the value of the view box to only show one icon inside of the viewport at a time. This is one of my absolute favorite ways to create an SVG sprite is very similar to the way we used to create sprites using PNG sprites. But only this is SVG. And it's more powerful. But it also does come with a limitation because using this technique in particular, using the viewbox, you would be embedding the SVG using an image tag, which means that it's limited. It's it's the the icons are going to be static.
+
+61
+00:37:55,670 --> 00:38:10,940
+Wes Bos: Oh, yeah. Yeah. Oh, that's pretty. That's pretty nice. So like you could and I'm sure this is what used for a lot of times, you can have stuff outside of the view box that you're maybe creating or, or building up. And then you can just animate that thing on it or bring it into the view when you want to show it Right.
+
+62
+00:38:11,010 --> 00:38:12,000
+Unknown: Right. Correct.
+
+63
+00:38:12,000 --> 00:40:36,230
+Wes Bos: Ah, pretty nifty. I like that a lot. That that was like a really, really simple explanation of I totally, I think I totally understand what it is. Because I often see that like, you open up an SVG. And sometimes I just want to like change the color of an SVG, if I download like an icon from the noun project. And I'm like, Okay, this is great. But I just want a white, I'll just open it up in the in my editor and change the fill color or something like that, and over to white. And then I'm just like, what is this view box thing doing here? Can I can I remove it? No, there is no, don't ever do that. Oh, that's good. Let's take a quick break for one of our sponsors. And that is a headless CMS called Sanity, Sanity is a just set it a headless CMS. And what that means is that you sign up for Sanity. And you can create a sort of a back end. So you can create your different content types, you can assign different types of inputs and fields here different types of content, you can relate them to each other. And then you get an API that allows you to sort of access all of that data via any way possible, whether that's a react application, whether it's a vanilla JavaScript, whether it's a statically generated thing like Gatsby, or, or next or knucks, or and pretty much any way that you can fetch data, you can use it in it, they also have some really cool integrations with Gatsby that allows you to have instant updates, which is pretty nifty, because like if you're updating content in your CMS, you want to see that live, you want to see that live on your actual website before you actually have to do a redeploy, you don't want to have to sit there and wait for the thing to regenerate. So if you want to check out Sanity, I suggest you go to sanity.io forward slash syntax, they're going to double the usage quotas of their free plan if you use that, so don't just go To sanity.io and sign up, go to sanity.io forward slash syntax and try it out. They've got lots of kind of things over there. They have an example of podcast, they've got a migration tool. They have our entire syntax website that they rebuilt using Sanity, which is pretty nifty. Check it out. Thanks so much to Sanity for sponsoring. All right, let me Maybe I'll ask you what you want to talk about, because we probably won't get to all of it. So I wanted to talk about text accessibility filters, animation. Yeah. Is there one you'd like to talk about?
+
+64
+00:40:36,359 --> 00:43:28,080
+Unknown: Yeah, I can give a few tips about SVG animation, because we got a lot of questions about that on Twitter. So the most recommended way to animate SVG is if you have very few, if you have very, very simple animations, like you're just changing the color of an SVG on our then the CSS will do. But whenever you have any kind of more serious complex animations that requires cross browser support, then definitely use JavaScript, you will not want to use vanilla JavaScript because it's a pain in the neck. So you will want to use a JavaScript library, in which case I would recommend green sock, which is my go to animation library for SVG s, or you can also use snap SVG GS app is more powerful than snap SVG, because it comes with a lot of plugins that make animating SVG is a lot lot lot easier. And believe me, if you're looking for developer convenience, then g Sap Green sock is the way to go. It's easy to learn fairly, fairly easy to learn. It has fantastic documentation, fantastic help forums. JACK, the people behind green sock are amazing people, they are amazing. People, they are very helpful. They they share resources, they share demos, they share experiments. Green sock is the way to go. So if anyone ever asks me, what is the go to JavaScript animation library for SVG, then it's definitely Greenstock. For me learning about SVG animations, I would recommend Sarah dresner as SVG animation book. I don't know of any other book that is just about animation and SVG, other than this one. So I would recommend that. You just look into a couple of other questions that we have about animations, performance, just like with anything else, I always say you need to test it. svg animations are not hardware accelerated. As far as I know, I think there they were, there were a few optimizations and edge if I'm not mistaken. But that's just about it. So they are not hardware accelerated if you have very complex svgs. And you are using a lot of JavaScript, and you will need to test the performance, especially on mobile, just like with everything else. svg tips for performance in general. So just like okay, with animation, animation performance, I would say use a performance library. Green sock is a very good candidate there. Test up animation animations, always make sure that they're not too heavy. I also have an article from 2014 that I tweeted about, like 45. Before, right before we got on the show. It's still valid today. So you can there are a few things that you can do. And we already mentioned, some of them like optimizing the SVG using SVG. Oh, you can also the way you create the SVG in the editor also affects the size of the SVG when it's exported. You will, you will want to enable SVG jesup on your server, there are few things that you can do to to optimize SVG delivery, try to cache the SVG is use a cacheable. sprite, although sometimes it's recommended to inline the SVG if you need more accessibility, which I could not use to jump into the accessibility topic if you want. So
+
+65
+00:43:28,109 --> 00:43:43,200
+Wes Bos: yeah, we had a lot of people ask about that like, like, because you can put like SVG could be an image, but it also can be this interactive thing. And all also can have like content, it can have text inside of it, right? Like, how do you make sure that that's accessible?
+
+66
+00:43:43,260 --> 00:43:48,420
+Unknown: Well, the text, the sound of the SVG is accessible by default, if it's text, if it's real text, like if you don't come up
+
+67
+00:43:48,420 --> 00:43:49,950
+with a tag, right,
+
+68
+00:43:50,039 --> 00:45:01,290
+right, exactly. Okay. So working with text inside of an SVG is a pain in the neck, because everything is totally completely absolutely positioned. So we don't have like you, you don't have text that automatically breaks into a different line unless you use a foreign object wrapping. Right, right. So unless you use a foreign object, so you could have a foreign object, which is literally a foreign object inside of an XML document, which means that you would be able to put HTML inside of your SVG and the HTML text does wrap. But for an object is depends on the browser support that you need, because I don't think it supports it. So there are a few things that you can work around with text. Someone also asked about a font face inside of an SVG, what I would recommend is instead of linking to an external stylesheet, that contains the font face there, I usually put the font face declarations inside of my SVG file. And then I apply those inside of the SVG. So put everything inside of the SVG if you count. But again, if you have a lot of fonts, and you will need to test for performance, just like with everything with SVG, there is no silver bullet. There is no just one way to do it, particularly with SVG because, like I said, it's a world of its own and there are a lot of things that Take into consideration there.
+
+69
+00:45:01,500 --> 00:45:45,300
+Wes Bos: I don't even know if we'll get into this today. But like there's this whole world of just like data vis right, which is you have maps and graphs and charts and just taking like data like I've, I've done many workshops in the past where it's just journalism majors or people who are in the journalism section. And they say, like, I don't want to build a website, I just need to take this data that I have and tell a story about it. So I need to know, JavaScript or Python in order to get that across. Yeah, it's it's such a big, it's, it's funny, once you get into it, it's just such a huge, huge area, which again, that's why I'm recommending to people like this could be it could be your specific thing. Have you worked in in using like d3 or anything like that before?
+
+70
+00:45:45,540 --> 00:47:14,310
+Unknown: No, no. But when it comes to accessible SVG, like graphs, for example, I have read, I've done some light reading. Laney Watson has a website, fantastic website, she writes about accessibility. And she has a couple of articles about creating accessible SVG charts, for example, there are no elements, semantic elements inside of an SVG that describes something as a graph or as a chart, there is no way to say to tell a screen meter that this is a bar chart, for example. So semantically speaking, it is very, it's not easy to do that. So one of the things that she recommends, like if you have a line graph, for example, you can work around it by like, by adding a few Aria roles. So basically, you turn the content inside of SVG semantically speaking, as far as cleaner is concerned, what they see is a table. But what's visually represented as a chart, I'm not real as a line graph. I'm not sure how that would work for more complex SVG is I don't think it would. And she even mentioned in her article that this doesn't really work across all browsers, or across all screen readers, if I'm not mistaken. So the high level, the best recommendation that that I see other accessibility experts recommend is, make sure you provide two separate views to consume the content. So not just the graphs, not just the visual data, provide the data as simple tables, for example, or simple text and let the user choose which view that they want to view it with.
+
+71
+00:47:14,550 --> 00:48:32,850
+Wes Bos: I'm just looking up this foreign object tag that you mentioned a couple of minutes ago. So it's a tag that you can just put in your svgs. And then inside of that, you can put just regular HTML, paragraph tags, writing tags, you get the point. And the support is actually pretty good. There's obviously like you said, there's no IE support. But there is there is edge support, which is great. I think that goes for almost half of the stuff we talked about on the show where it doesn't support the foreign object. It looks like it looks like edge does support it. No Opera Mini and no UC Browser so that that could be an issue but not or it could not be it depending on what your audience is like. I had no idea that that was a that was a possibility inside SVG. What about filters, this is the reason why we have you on the show here is because Scott and I were talking about filters on on the CSS, the cool parts episode that just went out a couple days ago. And we're talking about like one way to do different types of blurring and filtering is With CSS, you can link out to an ID that is associated with an SVG filter, and it will apply it and Scott had no idea and I had used it just like once or twice. Can you explain how that works? I think probably a good chunk of our audience has never heard about this. That
+
+72
+00:48:33,030 --> 00:50:18,360
+Unknown: was that was actually that was very, very convenient timing, because I had just given my talk about SVG filters at an event apart. And I actually thought that you requested this because of my talk. So no. Yeah, that's very convenient. So I gave him a whole talk. And I have a bunch of articles about SVG filters. They are fantastic. So CSS filters are nothing compared to SVG filters. And I'm not even exaggerating as CSS filters are shorthands a few shortcuts to some of the possibilities that SVG filters comm can do. So CSS filters are imported from SVG. And they are shortcuts fairly optimized versions of of the SVG filters. But SVG filters can do a lot more than CSS. So in CSS, for example, one of the examples that I give in my talk is, so the blur function and CSS, it is exported, as it's important from the Blur, Gaussian Blur filter and SVG. Okay, so it's a shortcut. It's important from there, but it's, it's very limited. So it doesn't do everything that the SVG blur function does. Because when you apply a blur function and CSS, it applies a uniform blur along the x and y axis, so the whole image is blurred uniformly. Whereas if you use the Gaussian Blur function, and SVG, you can choose if you want to blur the image or the content, whatever it is, you want to blur it uniformly like you do with CSS, or you can apply a blur horizontally only or vertical only a vertical blur horizontal blur. Wow. Yeah. If you haven't rosental blur, for example, with a bunch of other effects, you can create motion blur, for example, CSS filters are very, very limited, very limited compared to SVG filters, a lot of things, they can do a lot of things. So do you have anything specific that you want me to talk about? Or ask or would you like me to just go on and on about that?
+
+73
+00:50:18,390 --> 00:50:29,700
+Wes Bos: Well, I'm just like, just saying, like, it's probably worth, if you need to do a filter, it's probably worth writing it in an SVG, and then you can reference it by CSS. That's right, correct.
+
+74
+00:50:30,120 --> 00:51:09,660
+Unknown: It's correct. But browser support for some of the like, if you have an SVG filter, and then you reference it in an CSS, it means that you're applying it via CSS to an HTML element. And sometimes browser support for SVG filters applied to HTML elements is not very consistent depends on the filter and the effect that you're trying to achieve. So yeah, currently, the best way to use an SVG filter is to apply it to elements inside of an SVG. So if I have text or if I have an image, and I want to apply a filter effect to that, I put that text or that image inside of the SVG, I create the filter inside of the SVG, all of it in line, of course. And then I apply the filter and within the SVG to my element.
+
+75
+00:51:10,050 --> 00:51:12,840
+Wes Bos: I can couple that with the foreign object tag we just talked about.
+
+76
+00:51:13,020 --> 00:51:19,680
+Unknown: Yes. Oh, man, I haven't tried. But yes, I would say yes, definitely.
+
+77
+00:51:19,710 --> 00:51:45,570
+Wes Bos: But like it should work, right. And most things in web development, that should work just work. So I, if you, I think some of our listeners will probably make some code pins after listening. So So tweet us at syntax FM with your examples, I would love to see how it because it seems pretty simple. You just pop up an SVG, you write your filter in there, and then you have a foreign object tag, and then you keep going with your HTML,
+
+78
+00:51:45,629 --> 00:53:39,270
+Unknown: it's not simple, oh, SVG filters can be very intimidating. At first, the syntax is very intimidating. So the way I got into them, I had been postponing, learning them for a couple of years. And then when one of the engineers at Netflix requested my SVG workshop about 18 months ago, he specifically asked for SVG filters and SVG filters, were not part of my workshop. So that was my chance to finally start learning them, and then including them in the workshop. And that's when I did and there aren't a lot of very good resources about SP. Well, there are a few very, very good resources, but there aren't many resources. So I had to do a lot of digging and a lot of concepts. And SVG, you can, it's not just about simple image blowing, you can generate texture, you can distort content, you can apply 3d or kind of 3d effects. So you can distort a text. One of this is one of the demos that I have in my talk. So you can apply, he literally recreate Photoshop effects using SVG, using almost exactly the same steps. You can have displacement maps, to displays text and kind of 3d, you can generate texture, not only can you use texture, but you can generate texture, you can use lighting effects, you can generate things like cloud texture, marble fire, you can distort things in very, very creative ways to start text and distort images. What else you can create more, you can morph objects, you can do blobbing effects, so many so many amazing things they can do with SVG filters. And learning them is not was not very easy. For me, it took me a couple of months of like, I only I did nothing. I learned nothing in those eight weeks, except SVG filters, a lot of thinking and research. And I only barely scratched the surface of what's possible. So hopefully, the series of articles that I wrote for car drop co drops a couple of months ago will help anyone who is planning to get into SVG filters now, because I explained everything that I've learned myself and those articles.
+
+79
+00:53:39,270 --> 00:53:48,990
+Wes Bos: That sounds awesome. Is this workshop that you have, is this something that you go into different companies and can offer to people as I'm sure some people listening right now would love to have you in?
+
+80
+00:53:49,050 --> 00:54:03,300
+Unknown: I would love to do that. Yes. So I can run either the SVG workshop, or I'm currently focusing on accessibility accessible UI patterns. So I do run workshops in house. Yes. Awesome. Yeah. I have two workshops. Like I mentioned SVG and accessibility at this time.
+
+81
+00:54:03,540 --> 00:54:14,400
+Wes Bos: That's great. So I think I got through most of the stuff. I wanted to talk to you. But there's a couple little things here and there. But I'm sure we'll have you on again, at some point, because SVG is a huge thing.
+
+82
+00:54:14,580 --> 00:54:15,240
+Unknown: Sure, yeah.
+
+83
+00:54:15,240 --> 00:54:20,250
+Wes Bos: Is there anything else that you wanted to cover before we move into some shameless plugs?
+
+84
+00:54:20,370 --> 00:54:43,530
+Unknown: I had not sure if there's anything I missed. There. There was a couple of questions about CSS for styling SVG, but that is a whole like, we could go on for hours of me. We got a few questions about react apps using SVG. I I've never used react. I've never been a fan of it. So I don't have enough context to answer those questions at this time, unfortunately,
+
+85
+00:54:43,560 --> 00:55:34,170
+Wes Bos: oh, yeah. One thing I have run into somebody the other day tweeted me an example of the SVG filter that used react state data, and then that filter was being applied to another element, and it wasn't triggering a rerender and likely was just a bug. Because I had rewrote it in vanilla JavaScript, and it worked fine. So it was just like a weird thing where react didn't like react knows about SVG. But like, there's probably some intricacies there about what to render. And when a filter is changed, should it really render the thing that it's putting a filter on. So the the fix there was just to put a put a different key on each element and that forced to re render of the whole element there. So it was it was it wasn't a great fix, but until react fix that it was there.
+
+86
+00:55:34,170 --> 00:55:35,790
+Unknown: I have no idea what that means.
+
+87
+00:55:38,580 --> 00:55:41,160
+Wes Bos: It's a it's just like a whole nother it's funny.
+
+88
+00:55:41,400 --> 00:55:42,810
+Unknown: It's a whole different world. Yeah,
+
+89
+00:55:42,840 --> 00:56:28,170
+Wes Bos: it is. It's the web development is so huge, like you think you have like a pretty good handle on web development. And then you go deep into one topic. And you could spend your entire career on like half of se SVG, or just react, right, like, Yeah, I think that's probably some encouragement for people listening as well that you can become an expert at probably 100 different things in web development and make a career out of it. So we're gonna move into the end of the show, which is our sick pics and the shameless plugs. The sick pick is a is described it as ticks that are sick. These are different things in our life that we quite enjoy and find joy out of out of using I'm not sure if you came prepared or not for a sick pick. Do you have anything for us?
+
+90
+00:56:28,800 --> 00:56:30,450
+Unknown: You said it could be anything, right?
+
+91
+00:56:30,900 --> 00:56:32,760
+Wes Bos: Absolutely anything? Ooh,
+
+92
+00:56:32,760 --> 00:56:47,670
+Unknown: I'm a minimalist. So I don't use too many things, at least not in real life. So when it comes to web development, one of my favorite things like if I if I want to look at recommend something, I would say that Netlify use Netlify It's amazing.
+
+93
+00:56:48,060 --> 00:58:13,800
+Wes Bos: I don't know. That's good. We love Netlify. Here, actually, they they've just come on to sponsor a bunch more of our episodes. And it's such a such a beautiful thing to be able to deploy to. Yeah, so it's, it's pretty nifty. I am going to sick pick these sensors called the wise sense. So a couple episodes ago, we did the, the Smart Home episode with. And I recommended these wise cameras, which I've been absolutely loving. They're like $20 Wi Fi cameras. And they just rolled out these contact sensors, which tell you when doors are open or windows are open or, and they also rolled out a motion sensor when so when someone walks by it, and I've been testing them out for about three weeks now, I put one on my garage door. So I can tell when the garage door is open or closed. And I put another one on, I've been just kind of moving it around just on different things, there's some people are putting them on their mailbox, and you can use them to trigger recording on the camera, when somebody opens, opens a door. Or when somebody walks past the motion one, I think it's pretty cool. It's 20 bucks, you get two little little contact sensors, one motion sensor, and then a little bridge that plugs into the back of the camera. So you don't have to go and buy a separate bridge yourself. And they just run on coin cells. So you don't need to, you don't need to run power to them or anything. So I think it's pretty cool. They are rolling out light bulbs Pretty soon, which I'm super excited about. I haven't tested those yet.
+
+94
+00:58:13,950 --> 00:58:25,020
+Unknown: Do you do like videos about these things? Like when you look these thick pics that you that you usually recommend in Europe because I was they look like very good material for videos like reviewing the things.
+
+95
+00:58:25,170 --> 00:58:44,700
+Wes Bos: We haven't done videos. But I think that that would be kind of cool. I do want to do like more like the stuff from my office or stuff from around around my house because it's not necessarily totally web development related, although you can control them with JavaScript, but they is like 100% overlap of the interests of developers? Because it's like, oh,
+
+96
+00:58:45,360 --> 00:58:46,770
+Unknown: you know, and we're okay. Yeah,
+
+97
+00:58:47,010 --> 00:59:17,250
+Wes Bos: exactly what everybody loves this stuff. It's pretty nifty. And the fact that it's so cheap now, and there's no monthly, like, there's all these like people rolling out these like $20 a month things. And there's no monthly charge with these with all the wise stuff, which is what makes me love it so much. You don't have to like buy the thing once and then get billed for the rest of your life and using it. Let's move on to the next section, which is the shameless plugs. You can plug anything that you'd like to send people to do you have anything you'd like to plug
+
+98
+00:59:18,230 --> 00:59:42,540
+Unknown: my workshops, probably yes, so I'm running workshops at conferences, probably by the time this episode is released, the workshop in the Netherlands is already going to be done. So I'm running my workshop on accessible UI patterns. That's smashing conference September. I'm also I might also be running it for a couple of other conferences, but those haven't been confirmed yet. So if you can come and attend one of my workshops, then highly recommended,
+
+99
+00:59:42,690 --> 00:59:45,600
+Wes Bos: beautiful and people can find those on your website.
+
+100
+00:59:45,660 --> 01:00:00,810
+Unknown: Yes, on my website, I have a list of my speaking engagements. I should probably just add a note of where at which one of these were conferences. I'm running workshops yet, so that's a good point. But if anybody follows me on Twitter, I keep tweeting, tweeting about them all the time.
+
+101
+01:00:00,840 --> 01:00:01,920
+Wes Bos: What's your Twitter handle?
+
+102
+01:00:01,920 --> 01:00:03,300
+Unknown: Sarah sweat on my name.
+
+103
+01:00:03,330 --> 01:00:44,190
+Wes Bos: Beautiful. All right, I'm going to shamelessly plug all of my courses Wes Bos comm forward slash courses. And you can learn JavaScript or CSS Grid Flexbox. There's a bunch of free ones, a bunch of paid ones there. And I will soon have a vanilla JavaScript for beginner ones out as well. I'm pretty excited about that. So thank you so much for coming on the show. This was very selfish, ask for you to come on just because I wanted to learn about svgs and my father, thanks so much for having me. Absolutely, really appreciate it. That's it for today, and we will catch you in the next episode. Oh, and we also and the show was saying peace, peace, beautiful peace.
+
+104
+01:00:46,140 --> 01:00:55,920
+Unknown: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

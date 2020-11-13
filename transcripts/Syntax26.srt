@@ -1,0 +1,160 @@
+1
+00:00:01,290 --> 00:00:02,790
+Announcer: You're listening to syntax,
+
+2
+00:00:02,790 --> 00:00:10,619
+Unknown: the podcast with the tastiest web development treats out there, strap yourself in and get ready. Here's got to Lansky and Wes Bos.
+
+3
+00:00:10,919 --> 00:00:11,430
+Hey,
+
+4
+00:00:11,430 --> 00:01:14,939
+Scott Tolinski: welcome to syntax. This is Scott litski. And as always, Wes Bos is here. And today we are going to be talking about Redux. In this mini Sodor. Snack episode, we haven't decided the title. So we need someone to settle this debate for us. This episode is sponsored by dev lifts. And if you've been listening to syntax, you've heard us rave about deadlifts. And it's a plan to help you get into shape and it's focused for developers. So JC in bad the guys behind devilish will give you an interview here and learn a little bit about your, your, you know, your current state of working out or any of that stuff. And they'll develop a plan for you so that you can actually make a actual effort to get into shape and be more healthy and all sorts of great stuff. So we'll talk a little bit more about them later in the show. But dev lifts is definitely a super cool platform for actually getting in shape with, you know, people who understand developers and developer lifestyles.
+
+5
+00:01:15,000 --> 00:01:47,489
+Wes Bos: Exactly. Big fan. So well, we'll have lots to say about them partway through. So today, we're talking about Redux. What is it? How does it work? And hopefully, you're coming into this. And you've probably heard of Redux yet, not necessarily know exactly what it is or why you might need it. And then we're, we're gonna we're gonna attempt to explain it. So Scott and I both have have built apps with Redux. And I've actually touched it in about a year now. But I'm a I'm a big fan of Redux. And Scott, you recently just put out a course with Redux, right?
+
+6
+00:01:48,030 --> 00:02:17,000
+Scott Tolinski: Yeah, well, it's actually in the editing right now. It's gonna be out this this month, for the level of pros, or for purchases. It's focused on react and Redux. So it's react and Redux for everyone. And it's basically teaching you Redux, as if you don't know what the heck Redux is, and what it can do for you. And it shows you in the context of building a real app, we hit API's, we do all sorts of cool stuff. So look out for that. It's going to be up pretty soon, hopefully, by the end, well, definitely by the end of the month. So yeah, as soon as possible.
+
+7
+00:02:17,060 --> 00:02:31,560
+Wes Bos: So Redux is a state management a way to basically just like take care of your data. And I don't want to take a stab at like, like, why do we need something to deal with state when react has its own state built in?
+
+8
+00:02:32,130 --> 00:03:48,780
+Scott Tolinski: Yeah, so there's, you know, some, several different reasons. But for the most part is how many times have you worked with local state and then wondered, well, how do I access or modify this state from another component, and then you have to get into this pattern of having a parent that contains the state management for both of those two instances. But maybe you have a login window or something like that, that lives somewhere else in your HTML, and then you have an action that needs to open the login window from the header? And then you start to have these issues of where does this live? That toggles everything right? How does this actually manage the application state from outside of this in particular component. And that can even be like reusing that, that toggle all sorts of places maybe you want, or when the user logs in, you want that toggle to fire in the menu to close. And basically, having something in place like Redux allows you to have a state for your application that can be accessed or modified from anywhere rather than just that particular component. And that seems like it could get out of hand. But Redux does it in a way where things are just very, very organized. And that's really one of the benefits to using something like Redux.
+
+9
+00:03:49,470 --> 00:03:50,010
+Unknown: So a lot
+
+10
+00:03:50,010 --> 00:04:51,199
+Scott Tolinski: of the things that people like to talk about in Redux. Such as it's, such as how Redux doesn't modify the state, it returns a new object each time and stuff like that is great. But it's not necessarily super important to understanding what Redux does. And at the end of the day, it's a big object full of the current version of all of your data for your application. Like, for instance, on level up tutorials, you'd have the state of the navigation, the state of the, the login window, you'd also have all of the tutorials on the tutorials page, or the particular active tutorial, all of this stuff is living within this giant global state that you can pull out at any given time. But the way that Redux does it by having things broken up, and is basically just a nice way to organize your your code state and the Redux Dev Tools allows you to see that state at any given point. So you can monitor and see the changes and updates made to it. Exactly.
+
+11
+00:04:51,259 --> 00:05:09,120
+Wes Bos: And Redux calls it a they call it a store, but there is Yeah, the whole idea is that it's just one object full of your application state and you can inject that at Level deep. You don't have to do the whole song and dance of passing, like hot potato, your your data down 14 levels deep to get it to where you want it. Right?
+
+12
+00:05:09,480 --> 00:06:14,670
+Scott Tolinski: Yeah. And and there is definitely like, do I need Redux? Well, I mean, the answer to if you need Redux is whether or not you need to do stuff like that Do you need to be able to access your state modified over the course of your application. And some people might think that you always want to use Redux for everything just because it makes things nice and organized. But I honestly don't think you do need it for everything. But applications with state or, or anything like that, it could come in very, very handy to get yourself organized in this way. So I mentioned before that some of the concepts in Redux can trip people up because, well, that there's a lot of new jargony things kind of thrown at you, there's a lot of just just overload a little bit when you're learning about Redux. And one of those things is that the object itself, your state is not modified. And so that's like a big point. But it doesn't necessarily have a lot to do with how you how you actually interact with your store, right? Every time you make a modification to your store, instead of modifying that object, it's creating a new object and returning that new object. And that new object is now your data store for your entire application.
+
+13
+00:06:14,670 --> 00:06:39,600
+Wes Bos: That's the whole idea behind immutable, right, like, if you go back to the buzzwords episode that we did, we talked a lot about mutations and immutability. And that's the whole idea is that you do not access the store directly, you just create an entire new state. And you you change the one piece ease or take a copy of state and change the piece that you want, and then re implement it into into that store. Right?
+
+14
+00:06:39,990 --> 00:09:15,000
+Scott Tolinski: Yeah, and this allows for some of Redux is cooler features, like the time traveling with the dev tools, where you can go back into any particular moment of your application and reload that state from that particular moment. And so because a new new state object is generated each time so let's talk a little bit about some of the the jargony words in Redux, we have things like actions, action creators, we have things like reducers, and I kind of hate all of these words, I'm sorry. It's nothing personal or anything. I just don't like, to me action sounds like it's a function. But in Redux in action is an object. And that object just describes the action going on, essentially. And so you have to dispatch an action. So instead of just running a function, what you have to do is dispatch an object, which is an action. And that action then will match up with a reducer. And that reducer sort of takes the old state and takes the new state and merges them together. So you know, and then you have words like action creator, which an action creator is just in my mind, it's a, it's a function that dispatches your action somewhere else, right? It's basically, an action creator is a way to organize your actions and another file and use them instead of having to use your action directly in your code. And, again, this creates more boilerplate, I understand the actual, the need for action creators is I don't know if I would write Redux without an action creator. To me, if you're looking at it, it makes a lot more sense to run a function called load tutorials than to dispatch an object with a constant string named load tutorials or something like that. Yeah. So. So you know, in Redux, what we're doing here is we have this store that can change, you have actions that go and either fetch data or make modifications, and then they merge it with the old store in a reducer, and then it returns that new store. And that's your entire new state of your application. That's pretty much Redux, right there. I think a lot of the time people get mixed up is with all of these jargony words and the reducers and the immutability of it all does add for some complexity that well, that maybe you don't understand why you have to dispatch an object that just runs another function that returns a modified object state lay
+
+15
+00:09:15,050 --> 00:10:06,510
+Wes Bos: exactly, I mean, if you wanted to increment a number by one, you would have to dispatch an action called increment. And then you would have a reducer that would take in the current state, which would be one and it would take in the action which would be increment and then based on the current state and based on what happened like increment or decrement or add a comment, remove a comment like a like a tweet, than you would change you take a copy of your existing state, modify it, and then return the entire new state from it and it seems like a like a really crazy way to go about it. Like why can't I just do store dot likes plus plus right? But that is the the pathway to a lot of hurt in your application where if you modify if you mutate state you modify it directly. That can, that can lead to a lot of issues down the road.
+
+16
+00:10:07,350 --> 00:11:51,930
+Scott Tolinski: Yeah, yeah. So that's one of the reasons why my course I taught it in the context of Redux because like, if you look at that increment example, like to me, like that example is used a lot to teach Redux incrementing, or something like that. But it seems like so much code for something that you could just do with a simple function and set state or something, right? Like, that example to me is, so I don't know it out of the context of a real world application, it's difficult to see why Redux makes your life easier for doing something like that. So that's why in this series that I did, we do a lot of real world stuff, hitting API's grabbing data, or toggling on and off a, you know, navigation element or something like that. But I think that's an important part for learning Redux is, is, is sticking with it past those sort of examples that make you be like, Why the heck am I writing so much code to do so little? Once you get into the more complex stuff, and once you actually start to use it in a real world application, the benefits are gonna definitely pop up. And you're definitely going to just totally get it there will be aha moments along the way. But if you're looking at it from purely a increment this value in a single JavaScript file, it's going to be like code overload for what you have to do. And I guess that's the biggest critique of Redux is the amount of boilerplate code. And honestly, I am a fan of a little bit more magic. And that's kind of maybe a controversial opinion. And I might like something with a little bit more magic than then than Redux. But for what it does, it gets the job done in it, it makes your code nice and organized and makes your state nice and organized and saves you a ton of headaches down the line.
+
+17
+00:11:52,410 --> 00:13:10,410
+Wes Bos: Yeah, absolutely. I'm a fan of it. I don't, I think I'm more citing and we'll talk about this in the future. I'm more citing towards a library like Apollo, which will do a lot of the that for you. And there's not as much boilerplate code, you don't have to create three new files every time you want to add a new piece of state. But that said, it's Redux is very explicit. And once you do grasp the concepts and the sort of this new way, I think, I think the other thing is like react and Redux, it's the first time for a lot of people that they have to structure their application in such a way, a lot of the people are coming just from slinging jQuery and data attributes all day long. And then you're, you're thrown into this, like, much more structured way. And it's just a different way to learn how to do applications. And I also then people, people that are building smaller applications might not necessarily have run into the issues than not having good code is and you just don't understand like, Why Why do I have to do it this way? I didn't have problems with my other way. When it's kind of like the BAM what we talked about is like you kind of have to feel that hurt a little bit before you understand why people go about it in such a roundabout way.
+
+18
+00:13:11,070 --> 00:14:05,100
+Scott Tolinski: Yeah, definitely. Yeah. And it's one of those things you might not even necessarily know you're having the problems you're having until you make that change or make that modification, then all of a sudden, you're like, Oh, this is way easier for a lot of reasons. And it's saving me this kind of hassle that I didn't know I had. So yeah, Redux is great. Another thing I like about Redux is their documents. I don't know if it's redux.org, or something. The document page for Redux is just, if I had to put it in the document, like Doc's Hall of Fame, yeah, Redux would get there because they have complex examples, simple examples. They answer all of your questions they have paid for best practices, it's not necessarily a great resource to start learning from. But when you've gotten your hands dirty a little bit, it's the best place to really solidify concepts and stuff like that. I'm with you on the Apollo tip. I've recently, definitely, definitely been hit by the Apollo,
+
+19
+00:14:05,730 --> 00:14:07,080
+Wes Bos: get bitten by the bug,
+
+20
+00:14:07,260 --> 00:14:11,460
+Scott Tolinski: get bitten by the bug here. And I'm just head over heels for Apollo right now.
+
+21
+00:14:11,610 --> 00:14:57,300
+Wes Bos: That's a neat. So what else do we have to talk about Redux? I have a series myself on Redux is learn Redux, calm, I built it but a year and a half ago. So it is built with create class and some of the older react stuff, it's a bit of a problem with react is that it moves so quickly. But that said, I still hear from people every day who who took it, who take it and they say like, like Never mind, the fact that it's a bit of an older react API. Redux hasn't changed at all. And the it's more the ideas. It's a very short tutorial. And it's more the ideas and the behind how Redux works that you have to get down pat, because past that you can write the JavaScript code. It's not very hard JavaScript code. It's just like those those fundamentals right?
+
+22
+00:14:57,990 --> 00:14:59,010
+Scott Tolinski: Yeah, definitely.
+
+23
+00:14:59,700 --> 00:18:28,500
+Wes Bos: Um, Should we just sponsor? Yeah. So our sponsor today is deadlifts. And deadlifts is on a mission to to get you healthy as a developer and I myself have went through this, we had a whole episode on fitness if you want to go back and listen to how that worked. But essentially how it works is that you, you talk to deadlifts, and you fill out a questionnaire about where you're at what your goals are, what you want to do, if you want to get healthy, if you want to put on some muscle, you want to lose a little bit of weight, and you just sort of like, give them all this information. And what they will then give you is, will come back to you with a personal training plan that tells you based on your current situation, how much time you have what you want to do, the plan that will will get you to where you want to be. So for my case, I wanted to lose 20 pounds, and I wanted to put on some muscle and I wanted to do it in about four days a week, because I don't have a whole lot of time. So based on that they recommended a workout routine, they recommended a nutrition plan, you get access to the slack, you get a talk with a whole bunch of other developers who are also sort of in in a similar spot where they're trying to put on some muscle or trying to lose some weight or whatever, you're getting more flexible, whatever it is that you're trying to do. And I've been a huge fan of this, because like, I don't really need a personal trainer, like I can go to the gym, I can watch YouTube videos and figure out how to do it, I just don't know what to do. And so what you do is you you pay the right now it is 250 bucks. And if you use the code syntax, you're gonna get 50 off. So it's gonna be, it's gonna be 199 for you right now. And for that you get this really customized personal training plan. And you also get that they will follow up with you every single week and see how you're doing if you need any tweaks to your plan. And then you have this plan and you just might not always says like have your plan, work your plan, right? Like you get you get the plan and then just go and do it. So for me, it's I go to the gym four times a week for 45 minutes. I lift the weights this many times I lift this heavy away every single time. And it's works. It's amazing if you just like stick with a plan and work through it. And amazing. Yeah, that works. Yeah. It's really funny how, how simple it is. It's, that's the thing people say like getting in shape is is easy, or it's simple, but it's not easy. And having a very clean cut plan like this is it makes it a lot easier for you. So this episode is I think it's coming out on January three, which is probably everyone's trying to get into the new year's resolution. And let me tell you, we went back to the fitness episode. getting in shape is massive for being a developer just because of the mental clarity and amount of energy that you're going to get from from being in shape. It's like the ultimate hack, like forget text, expander and keyboard shortcuts, the ultimate hack is getting in shape and being able to put in an extra or not necessarily put in an extra hour, but get more out of the limited time that you do have on there. So no big fan. Yeah, yeah, that sounds dev lips.io. Let them know that syntax has sent you. It's I frankly, they're amazed at how many syntax listeners have already joined up and then signed up for these plans. So it's it's kind of neat. The the chat room is almost entirely syntax listeners. And it's kind of cool to see everybody getting in shape together.
+
+24
+00:18:28,890 --> 00:18:30,780
+Scott Tolinski: Yeah, love it. I absolutely love it.
+
+25
+00:18:31,650 --> 00:18:36,390
+Wes Bos: Let's move on to a listener question. We need a funny name for the listener question.
+
+26
+00:18:36,800 --> 00:18:39,270
+Scott Tolinski: I don't know if it's a funny name, but we've just called the mailbag. The mailbag
+
+27
+00:18:39,270 --> 00:18:42,990
+Wes Bos: snack bag, though. Yeah.
+
+28
+00:18:43,170 --> 00:18:47,220
+Scott Tolinski: What do you what do you keep snacks, or treats in the pantry?
+
+29
+00:18:47,330 --> 00:23:39,510
+Wes Bos: Where it's where someone asks you for something like a bottle? We'll think of something stupid. Don't Don't worry, folks. What What is our our question today, Scott? Oh, it was actually I got it. I remember it now is what is the difference between using cookies and using j WT, which is JSON Web tokens. And I'll attempt to take a stab at what the differences so in the past most if you have application you and you log in, what happens is that your your application will create a session, which sort of like temporarily remembers who you are. If for however long like if you if you click a button that says Remember me for two weeks, what the server does is it creates a session that is good for two weeks, and then after that it will, it'll be thrown out. Now what happens is that you every time you visit a website, every request like if I go to Wes bos.com, and my server will get a request from the browser. And along with that request comes all of the cookies that are currently in your browser for that specific website and one of those cookies is a session And that session ID is a way for the server to remember who you are because servers are dumb, and they don't remember you from page to page. So in order to go from page to page to page to page, it uses that session token to remember who you are. And that's why you're not logged out when you go from one page to another. And every single request, whether it's an AJAX request, or whether it's a visiting a page that is administrative only, it will then check who you are at first. And that's, that's that's one way to do authentication in the web. Now, recently, we've been getting another way to to do this. And this is JSON Web tokens, where when you sign into a website, you get this token back about the user. And first of all, it's like, sort of like a hash, I forget what the encryption value is. But it's it includes information about the specific user. So if you were to decode this JSON web token, it will likely have things like your username, maybe your profile photo, and some other little pieces of information about you. And that's great, because this tokens sort of does double duty, it allows you to authenticate yourself. And then it also contains information about the currently logged in user. Now, these tokens, they can go into places they can go in the cookies, which is sort of like the old session ID version, or I shouldn't say old but this JSON web token that is much newer, or and most likely This is where they go is people put them in local storage in your browser. Now, the thing about local storage is that it doesn't get sent along the way, it doesn't get sent along. And every single request, it doesn't go for the ride whenever you want. So rather than having the server remembering you with sessions, you just have this JSON web token. And every single time that you make a request, you have to send this JSON Web Token along for the ride. And it's sort of like an API key or a secret code that will tell the server, hey, I'm this person, I've been authenticated here is my specific code. And there's upsides and downsides to using both of them. The I guess the one thing with JSON Web tokens is that you need to make sure that you grab that token from local storage on every single request. And if you're using any sort of library, like axios, or Apollo, you can create some sort of like middleware. So every time you make a request, it will then grab the token for you. So you don't have to do it yourself on every single, every single request. And then it'll go along for the ride. So those are sort of two different ways. A general rule of thumb is if you're doing a traditional server rendered application, you still use cookies, because you need to make sure that they they implicitly go along with every single request. However, if you're using if you're doing an entire spa, single page application, like you're doing the entire app and react, it likely makes sense to to go with JSON Web tokens and, and you can take that along for the ride every single time. Because then you don't have to do any page refreshes. When you load in, you don't have to deal with cookies or anything. And there's this whole like, back and forth with like, if you have a secure cookie, you can access a JavaScript, but the browser still sends it along. So there's there's upsides and downsides. And there's also tons of blog posts on either side saying how JSON Web tokens is the most insecure thing in the world. And then there's other blog posts saying it's the best thing in the world. So do your own research on it. But likely, if you're doing a single page app in view, or react or sign you will be using j WT.
+
+30
+00:23:40,170 --> 00:23:51,060
+Scott Tolinski: Nice. Does that make sense? makes total sense. JW T's are sort of like an improved proved upon version of cookies Really? Right. Yeah. Yeah.
+
+31
+00:23:51,510 --> 00:24:00,900
+Wes Bos: Yeah. Because, like, you get the added benefit of it. Like actually contains information about your user in the JSON web token, which is is pretty nifty.
+
+32
+00:24:01,469 --> 00:24:03,360
+Scott Tolinski: Yeah. Cookies 2.0.
+
+33
+00:24:04,650 --> 00:24:26,340
+Wes Bos: I know there's there's a lot more to JSON Web tokens, and you should definitely do some some reading in terms of how it all works. But that's the that's the tasty treat version of the difference between the two. So thanks to whoever sent that in. I don't know. I'll try to remember the names of people ask these questions. You got anything else for me today? Scott?
+
+34
+00:24:26,729 --> 00:24:36,210
+Scott Tolinski: I got nothing. But uh, yeah, I think so. This is it for our mini episodes and then we're gonna be back or we're gonna be back in 2018. Is that when our next full as
+
+35
+00:24:36,210 --> 00:25:02,130
+Wes Bos: well this one should err on January three. So Happy New Year, everybody. We will be back. We're recording this in December because we need some time off. We've we've been worked overworked this year. We will be back on January 10. Back with a full episode and I think we're gonna be doing one on what are we Doing a graph qL maybe
+
+36
+00:25:04,170 --> 00:25:07,290
+Scott Tolinski: Yeah, I think we're I think we got graph qL a sink away.
+
+37
+00:25:07,290 --> 00:25:08,130
+Unknown: Oh yeah, I think we
+
+38
+00:25:08,850 --> 00:25:30,150
+Scott Tolinski: get some really good topic conversations coming up. Also I just realized I mentioned that in this episode that I said the series was coming out this month. I meant it's coming out in December so at the time Yeah, it will be out. So look forward start at level up tutorials forward slash tutorials. I don't know sir. That level up tutorials.
+
+39
+00:25:30,660 --> 00:25:41,220
+Wes Bos: backslash till the till they Yeah, so don't ski. Yep. Awesome. Well, thanks for tuning in. And we'll see in the next one. See it by
+
+40
+00:25:42,360 --> 00:25:51,480
+Scott Tolinski: head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

@@ -1,0 +1,352 @@
+1
+00:00:01,319 --> 00:00:06,120
+Unknown: You're listening to syntax the podcast with the tastiest web development treats out there.
+
+2
+00:00:06,149 --> 00:00:09,600
+strap yourself in and get ready to live ski and West
+
+3
+00:00:09,600 --> 00:00:10,560
+boss.
+
+4
+00:00:10,589 --> 00:00:20,429
+Wes Bos: Welcome to syntax. My name is Wes Bos. I'm a full stack JavaScript developer with me as always is Scott to Lynskey. Hey, Scott,
+
+5
+00:00:20,609 --> 00:00:43,680
+Scott Tolinski: no good. I'm back for my first vacation and who knows how long I don't know. When the last time I've had a legit vacation. And so I when I went up to Winter Park, I got them from three days of shredding in, we had some fresh pow pow on every single day. So I am feeling nice, and I'm feeling nice and sore, but I'm feeling majorly mentally refreshed and ready.
+
+6
+00:00:43,859 --> 00:01:03,720
+Wes Bos: Yeah, man, the pictures you post it so fresh Sasha whatever, Scott that is snowboarding. The pictures he posted are unreal. Like I've only been snowboarding once and I like blacked out because I failed so hard. And I've got a bit staying away from it since then. But the pictures with the mountains in the background looked amazing.
+
+7
+00:01:03,750 --> 00:01:13,110
+Scott Tolinski: Yeah. And that's how far that's like an hour and a half from our house. Just pop on over there for a little bit and hit up some mountains. It was it was an awesome weekend. Perfect weekend to go
+
+8
+00:01:13,700 --> 00:01:54,990
+Wes Bos: check it out. So today we are doing a potluck. We're gonna be talking about all kinds of different questions that you've sent in things from, do you separate your back end and front end to separate GitHub repos, default export export versus named export changing careers are we got all kinds of really good, good, juicy treats for you here today. Today's episode is sponsored by Sanity, which is a boice. Bring Your Own front end, they are a hosted back end service that has some pretty cool features and a podcast called the tech meme ride home, which does a daily podcast, it keeps you up to date on the tech industry. So let's jump on into it. You want to start us off with the first question there, Scott. Yeah, so
+
+9
+00:01:54,990 --> 00:03:17,400
+Scott Tolinski: the first question is from Matt, gee, do you prefer to have your back end and front end in separate Git repos? Or together? What are the trade offs? Okay, so mine are together, but it's largely due because I use Meteor which likes to combine them. And I found there to be quite a bit of benefits for me personally, is that one command builds everything for me. So I just do NPM start, it runs the meteor command, Meteor starts my API and builds my front end. And it just gets everything going for me. So I have one command that gets the whole project up and running, I don't have to separate out my API for my front end, right. It's all one thing. Another thing I love about keeping them in the same repo, and the same everything is that I can use the same tooling. So I use the same Babel configs, same prettier, configs, all that same stuff. And I only have one file for it both back end and front end. And therefore I like never even think about that stuff. So the code style on the API for me is the exact same as the code style. And the front end, in terms of not, I don't have to use the require syntax or any of that stuff. So I like this more unified feel for things. Now, that said, I tried to set the same kind of setup up using Webpack. Once and I wanted to pull my hair out, it was very frustrating. So I think it was a product of just how easy Meteor makes that this sort of combination of back end and front end. That makes it really nice for me.
+
+10
+00:03:17,670 --> 00:04:02,190
+Wes Bos: Yeah, I also use there's just a term that people use is called a mono repo. And a mono repo is that you have one repository for your entire software platform. And we're we're approaching at a very simplistic level where you have a front end and back end. Whereas like companies like Google and Facebook or whatnot, they have like probably thousands of different services, each which have their own dependencies, each have their own often config files inside of them. However, they keep it in one big repo. And Google is famous for this, where if you want to make a change to Google, like the entire company, it's apparently just one huge repository. I've heard of these companies having to take things like Git and miracle and how do you say that miracle
+
+11
+00:04:02,250 --> 00:04:03,780
+Scott Tolinski: miracle real material
+
+12
+00:04:03,810 --> 00:04:05,630
+Wes Bos: carrier, I always goofed that up.
+
+13
+00:04:05,759 --> 00:04:06,960
+Scott Tolinski: I don't know if that's right, either. So
+
+14
+00:04:07,319 --> 00:05:05,130
+Wes Bos: they literally have to, like fork it because their code bases, gigs, and gigs and gigs of history in order just to folk to fork that thing. So it's kind of interesting. I like to use a mono repo myself. There's lots of tooling out there, if you have many, many, many, something like Babel, which has thousands of plugins and uses a mono repo often to keep multiple plugins inside of a simple single get single GitHub repo, but I just have a front end and a back end, I like to keep it all in one, my history stays there, I can have one set of config files, I can often put a like a very light layer of like a start command, which will go into both of those folders and start them on up and whatever it is that they need to do. So I don't have to have two different tabs open in my node course we use something called concurrently, which will run both the web pack as well as the node server to run it. So it's kind of cool. I prefer that Obviously there's upsides and downsides to to each of them. But I prefer the mono repo approach.
+
+15
+00:05:05,130 --> 00:05:25,290
+Scott Tolinski: Yeah. Yeah, I think it's a cool thing. So next question here is from john mayer, that is probably not your real name. But if it is, cool. The question is in web in web dev, what's the difference between a freelancer and an independent contractor?
+
+16
+00:05:25,560 --> 00:05:26,820
+Wes Bos: Its price? Yeah,
+
+17
+00:05:26,850 --> 00:06:28,980
+Scott Tolinski: I mean, yeah. And the answer is, it's really not not a whole lot. Really, I mean, it, they can mostly be referred to the same thing as a freelancer, you could just call yourself an independent contractor. At the end of the day, that's like, legally, what you are, you're getting paid independently as a contractor. But I think the way that it's most commonly used to talk about somebody who is either working for themselves with many clients, or they're working for a larger company, for instance, when I worked for the Fords advertising agency, team, Detroit, I was an independent contractor for them, I was paid as a contractor, they did not take out taxes for my paycheck, I had to be responsible for my taxes and stuff like that. I was paid as a contractor, although I was under a two year contract and had a essentially a salary or an hourly wage with them. So I didn't take on additional clients, that was my only bit of work. I was expected to be in the office and expected to be working for them, you know, eight hours a day.
+
+18
+00:06:29,100 --> 00:07:24,930
+Wes Bos: Yeah, that's certainly how I see it, as well as that a consultant will often take on large projects for a single company at a time, this is not always true. as a freelancer, it seems more of the add on, I feel like it comes more from like the design artistic point of view, where you might have a couple different clients. But at the end of the day, there is no difference between Freelancer contractor or consultant in Canada, they're starting to crack down on companies who hire these full time contractors, like there's been people who worked for a company for four years, as a contractor, I'm doing air quotes here, and the government comes back and says, No, that's called an employee, and you have to pay taxes on that employee, and you have to give them health benefits. And, and all of that kind of stuff is, a lot of times people will hire contractors, and just skirt around having to deal with the headache of HR and taxes and payroll and stuff like that. And just say you deal with it yourself
+
+19
+00:07:25,080 --> 00:07:45,300
+Scott Tolinski: now, and sometimes you there's agencies, the recruiting agencies that will actually pay you a salary and handle your benefits, and handle all of that stuff. And you're still contracted through the parent company, but you're a full time employee of this recruiting agency, if that makes any sense. Yeah,
+
+20
+00:07:45,330 --> 00:08:20,730
+Wes Bos: yeah. And I've certainly done as well, like lots of my clients in the past have just sent me up an email address at their company COMM And you have everything that the employees have, except for, you generally get paid a little bit more, because you there's the possibility that when things get slow, you're cut right through it, and they don't have to pay your severance or anything like that. So it's a little bit more risky for me going in there. Because I know as soon as they don't need me, they can stop paying me. And they don't have to pay me anything at the end of the day. But because of that you get you demand a much higher amount per hour per per contract.
+
+21
+00:08:20,760 --> 00:08:35,580
+Scott Tolinski: Yeah, my biggest salaries have all been contract. And, and sometimes it's the thing, you can look at your options and say, well, it's a hot market, I'm going to be able to have a job in two years via my skills. So therefore, maybe it's it's worth it to take this sort of opportunity.
+
+22
+00:08:35,580 --> 00:08:48,960
+Wes Bos: Yeah, yeah. at the same point, if you're looking at doing that you should also way like you have to say for your own retirement, a lot of employers do I think in the in the states is called a 401. k, is that what your retirement savings is called?
+
+23
+00:08:48,990 --> 00:08:50,760
+Scott Tolinski: It is called a 401. k,
+
+24
+00:08:50,820 --> 00:09:18,390
+Wes Bos: there you go. So in Canada, it's called the RSP, a Registered Retirement Savings Plan. And it's the same thing where a lot of companies will match a certain amount or however much you put into your own they'll match or pay like 30% as much as you pay. That's huge. Because it's like getting a no like Google does this, you can get an extra 20 3050 hundred thousand dollars a year just into your retirement savings. Because the company is matching it for you.
+
+25
+00:09:18,480 --> 00:09:20,490
+Scott Tolinski: Yeah, definitely, definitely something to think about.
+
+26
+00:09:20,760 --> 00:11:09,779
+Wes Bos: Oh, and parental leave, that's a that's a huge one as well. That's one thing you don't get as a contractor as well. So it's important to think about that as well. If you want to take some time off or you have to take some time off when you have kids. It's important to think about that, because then you don't have anyone that's willing to pay or match for you and use those pennies. pennies. That's great. All right, next question. We have Thank you, john mayer, that was good. Next question is from Jay low. I think we've answered this before, but it's a hot topic. So we'll go over it again. Default export versus named export. This is with a JavaScript module. You can export one thing as a default export and as many As you want as named exports, the differences is that when you import something that has been exported as a default, you can name it whatever you want. So you could export default, Wes. And then you could import it as cool guy or dude or anything you want, right. Whereas named exports, you have to know the name of the thing that has it was exported from the file. So sometimes that requires a little bit of tooling to scan the file and figure out what that is. Sometimes that's much better, though, because the tooling will scan the file for you. And it will automatically suggest what your imports should be. So there's camps on either side of it saying that you should only use named exports. There's other people saying like default, exports are handy, because you don't have to know what it's called. I'm of the opinion of just use default exports for the main thing that that file exports, like, if it's a react component, I'll just export the React component from there. And if there's other things like multiple functions, multiple libraries, multiple helpers, I export those as named and I've never had an issue. I've run into that, but I certainly see both sides of it.
+
+27
+00:11:09,960 --> 00:12:55,649
+Scott Tolinski: Yeah, I pretty much everything for me is the default export. Unless it's like, you know, my styled components, utilities, like you said, more than one thing in a particular file, by file with several function, they're all going to be named exports. And actually, it'd be really helpful for testing, right, just export everything, as the named export, you can import whatever, test it up, get all that good and going. Cool. So uh, yeah, let's get into the next one here, which is from Johnny sins, Johnny sins is asking, I'm looking to change careers. But I'm 41 this year. Is it too late? No, I don't know. I don't think it's ever too late. I mean, this stuff, all it takes is dedication and practice to get an age shouldn't matter. All that should matter is like what you're able to create as a developer and the stuff you're able to do and produce. I interviewed for a job in Tokyo once. And the guy who interviewed me gave me this like really great story, because they were basically turning me down from the job. And they turned me down from the job because I couldn't speak Japanese not because I couldn't dev it was it was it was actually a flash dev job, which is going to be interesting. But he was so interesting. He was maybe 50 something and he was like, You know what, I don't want you to get discouraged, because like, this was a good interview. And he's like, when I was 45, I was mowing lawns for a living. Like, I was the landscaper. And I just decided I wanted to do development, I wanted to do all this stuff. And like now he's the boss of a major agency. He's like, well, I just decided I was gonna go for it. And he went for it. And you you can make these changes that anytime you can do this stuff, all that matters, is if you have the skills to pay the bills, you know what I mean? You just have to get that practice and work hard. And you can do it.
+
+28
+00:12:55,799 --> 00:14:02,429
+Wes Bos: Yeah, I don't think that 41 is is too late as well, this stuff moves so quickly, that the beauty of it is that if you jump into the stream, and you sort of hit your wagon to whatever is moving quickly, whether that's react or view or whatever framework comes out in the next couple of years, then you can get up to speed and you can become an expert at that thing fairly quickly. I also think that, like I look back to when I started when I was really young. It took it took me so long, because I didn't have any of the soft skills that are also important that many older people often do have time management, communication, problem solving, just like a general attitude towards being able to approach problems that we have in software development. I had to like learn all of those things very slowly through some painful experiences before I could could actually get into it. And I feel like I've even talked to people who run agencies and they say, we prefer to hire older developers, just because they just lived a lot of life. And they they are much more able to to handle any problems that come their
+
+29
+00:14:02,429 --> 00:14:24,779
+Scott Tolinski: way. Yeah, definitely. And some problems that you might have, if you are working on front end code you might be running into where the heck do I store my data? Because that's definitely a problem that is sort of in the modern, headless space that we live in. And well, one of the coolest solutions that that we really love over here at the podcast is Sanity over at Sanity dot i O
+
+30
+00:14:25,199 --> 00:16:09,000
+Wes Bos: yeah, so Sanity calls themselves structured content dunrite. We call them a Boyce, which is bring your own front end. And the idea behind this is that you love that acronym, you sign up for sanity.io. And you automatically get this back end where you can start to structure out your content. So you can create all of your data types, you can create all the fields that are inside of those data types. You can create relationships between those data types, you can create different types of inputs for those data types. You can also upload your own react components. If you have a specific type of input. Maybe You You want to have a special type of media uploader that is specific to your business, you can just create your own input, which is kind of cool because like it really bridges this like self hosted versus totally custom, you can kind of do both with this. And then the idea is that you you come at it with anything, react, angular Gatsby, any any front end service that you want to do, and you consume their query API and just pull in all the data, you let them take care of all of the security, all of the doing real time, all of the scaling up and down, if this thing just blows up, because it's on front page of Hacker News, no problem there. So if you are looking to build a website, web app, anything where you need a back end, someone can log in and manage all the data, you take care of the front end, building it out, check out sanity@sanity.io forward slash syntax. And if you use the sanity.io forward slash syntax, they're gonna double what you get on the free plan. You can sign up still zero dollars, no credit card required, and you can start trying it out today. So thanks so much just entity for sponsoring
+
+31
+00:16:09,270 --> 00:16:10,470
+Unknown: ice. Cool.
+
+32
+00:16:10,500 --> 00:16:11,010
+Yeah,
+
+33
+00:16:11,070 --> 00:17:46,820
+Scott Tolinski: yeah. All right. Next one, from Ken, from Maryland, as from from Maryland is not his last name. That's probably where he's from. The question is, have you guys made much use of multi column layout? If so, only for text or have you come up with any interesting out of the box uses, it seems like something you could do a lot with, but I haven't seen used very often. Now, for those of you who don't know, there's a CSS property that allows you to specify columns. And this was pre CSS Grid. This was pre Flexbox is one of the things that came in, I believe in like the CSS three era of stuff. And one of the cooler things that it allows you to do is sort of newspaper style layouts where the text automatically flows from one column to the next. It's different from something like CSS Grid, in that you don't have your items individually in in different columns, your your items flow from one column to the next, aka, if you're resizing the browser, and the height of the container is staying the same and the width is changing, the text is going to go and snake on to the next line. Now I've actually used this to do a Pinterest style layout. But it only works if you have like a select amount of items, right? You have 10 items or something. And you could tell it all right, just filter into three columns. And it'll create the Pinterest esque style I that's not anywhere near like the exact same because but the actual content order doesn't exactly fall in line correctly with the DOM. But no, I have used it in the past for just multi column text. But really, that's it and I haven't been using it since Flexbox. And grid really came on the scene.
+
+34
+00:17:46,950 --> 00:19:58,200
+Wes Bos: Yeah, I think CSS columns is often underlooked. I think it's like the it's it's a buddy that goes along with Flexbox and grid, and they're not competitors. So it's very perfect for text that needs to be in multiple columns, it will take care of wrapping, there's a bunch of break before and break after properties you can use in CSS, so that if you if you want like an image to always break on to the next column or break before, that's great. If you want that Pinterest layout, this is currently the only way you can kind of do it. You can do with CSS Grid, if you have a you can do with Flexbox. Sorry, if you have a fixed height, but that's almost never the case. CSS Grid is not made for Pinterest style layout. And the the downside to CSS columns is that the layout of the items goes top to bottom. So it let's picture we have nine items in three columns. It will do first column 123, second column 456, and third column 67789. And how do you count I'm trying to picture this now. And the downside of that is most people want item one, column one, item two, column two, item three, column three. And then to start again, item four, column one. And I actually asked Rachel Andrew, who is who worked on the CSS Grid spec, and knows everything about CSS. I'm like, how do you do Pinterest style layout in CSS Grid. And she says that's not what it's for. That's what CSS columns are for. It would be really neat to have something like a column direction property in CSS, where you can decide how the layout very much like Flexbox and grid have columns versus rows, you should be able to control how you add items to these different columns currently not possible. You can do it with a little bit of math, if you know how many items you have. And you know how many columns you have, you can sort your array in such a way that the items are added in that specific orders. But you still have to know the height yourself to know the height of your elements. And it's it's a pain in the butt. So yeah, it's cool. I think it's super underused, and I would check it out. If you've never used it before. It's very well supported. It's been
+
+35
+00:19:58,440 --> 00:19:59,790
+Scott Tolinski: it's been in a while now. Yeah.
+
+36
+00:20:00,000 --> 00:20:09,150
+Wes Bos: Yeah, let's let's go to Can I use real quick been in since iE 10. And everywhere else has had it forever. So yeah, it's been around for years now.
+
+37
+00:20:09,150 --> 00:20:09,690
+Scott Tolinski: Cool.
+
+38
+00:20:09,720 --> 00:23:07,440
+Wes Bos: Next question we have here is from Alex long, long, he says no problem for mispronouncing my last name. Thank you, Alex. Hi, Weston. Scott, I have a question for you. I have a question for Wes. And I guess God as well, because I asked him this before we started, as you publish your courses, source code on GitHub? What do you think about people who use that to learn instead of buying your courses? Is it an intentional decision? Or is it the compromise you're willing to make? Just wondering, thanks so much for the podcast. So what this is asking is that all of the code for all of my courses paid and free. I put it up on GitHub. And when I'm building the course, I also put it up on GitHub. And a lot of people ask me like, well, aren't you sort of like given throwing the baby out with the bathwater? Are you giving it away your secret sauce for free? And I think No, I think that if you can learn everything that it is to learn in one of my courses, without having to watch the course, just by looking at the code that I put to GitHub, then you are a fantastic developer, and you don't need my courses in that regard. So I've never worried about that there certainly are lots of people who read through the code, or just need to like figure out how I did a specific piece of authentication or, or rolled the JW T, and they just jump into it, like, Oh, I know what's covered this. And of course, I didn't buy it, but I'm just gonna get to pull it out of there. And I'm happy when people do that. Because, like, I think that's the whole idea behind this amazing community is that you can open source, like, I don't have a lot of libraries to open source. But I do have tons and tons of example content, which is helpful for people to learn, and to pull out and put into their own application. I'm happy when people do that. So that's fine. And then I also get huge benefit out of having it on GitHub open for free, because it's often referenced, the code is often pulled and put into other projects and reference back many people that the code so before they buy it, they're like this is West guy even know what he's talking about. Answer is probably not. But I'm gonna go on GitHub and read through the code just to make sure often, like a more senior developer on the team will vet the course first. And part of that will be them reading through the code that is in the finished folders and making sure that it is of quality that they would like to see implemented in their own company. So that that's really important as well. Also just little bugs, sometimes I will spell something wrong. Or sometimes I will have like a tiny little error in the code. And having someone who's in the headspace taking the course and realizes the bug, having them send a quick pull request to fix it, where it doesn't ripple through and break the rest of the course is so easy. And I really appreciate that. And then also it just goes like trending like I've got lots of stars and stuff on my courses. So often what will happen is when I launch a course, it will go into like trending GitHub repos. And that's free advertising for all of my courses. So very intentional that I opened it up. And then I asked Scott about this as well, do you do this? Sometimes I don't usually
+
+39
+00:23:07,590 --> 00:23:20,070
+Scott Tolinski: get Bernie necessarily reason other than that's just how I haven't been doing it. That's something that I would explore. If I get a bunch of messages after this that says, a one year code on GitHub, then, no worries, I'll put it up on GitHub.
+
+40
+00:23:20,310 --> 00:23:43,410
+Wes Bos: Yeah, I also like being able to, like people often ask me like, hey, Wes, how do you handle errors with the async await. And I'll always link to that example, in my Express node course of error handling, it's just nice to be able to have everything open and be able to just link to it and show people. This is how I've done it. So we're interesting question. Next one, I'm gonna let you try to do the Oh, yeah,
+
+41
+00:23:43,440 --> 00:25:16,200
+Scott Tolinski: I wrote down this pronunciation. But this, this user did not send a pronunciation. This is my own attempt at this. So if this is wrong, please let me know this is from accent to alexandrou. I think I think I did that pretty good. If that is correct, at least, this question is, when is a certification needed for both jobs and side projects? Um, my answer is never. I don't think unless you're you the job that you're applying for specifically says in the job description that you need a certification, I have never had a certification in anything other than setting up skiing bindings. That was when I was 16. I installed ski bindings and I needed a certification. Now I in web development, I've never had any certifications. I've never taken any tests. I've never paid to take a test, which is really sort of the angle. If somebody says, Well, you got to pay $200 to take this test and become Magento certified. I would go ahead and say that's probably a big waste of money. Because usually the this is the second time I'm saying this in this episode. If the proof is in the pudding here, like if you can have those skills to do the work, then I don't think anybody is going to be like, Well, what about that $200 certification. You didn't Pay to take. So I don't think certifications are a big deal. And I would almost say don't do them unless it is explicitly required. And if it is explicitly required, so you can get the company that makes you doing it, pay for it, right? Say, Hey, pay for this thing, and I'll do it, I'll get certified.
+
+42
+00:25:16,440 --> 00:26:32,640
+Wes Bos: Yeah, the certification is such a weird thing. And you see a lot of companies coming out with like degrees and certifications in specific web tech. And I think it's because you need to appeal to other industries that are on there. Because I often get asked if I can make a certification for LinkedIn, because people want to flex on LinkedIn with their node course or something like that, or I have a certificate of completion. And just because people need those from their company, like in their reimbursement strategy, it says, If you pay for a course, you must complete it and show that you have successfully done it with a certification. Like it's just part of the getting so I have to create this like cheesy little certification, which is funny because a lot of people print them out and put them in frames and put them on their wall. Like they're like it's like an MBA or something. Oh, yeah. And that's really weird. Because like, we all know, listening to this, that it doesn't, it doesn't really mean anything to you, but it means a lot to people who are potentially hiring you. So I would say don't ever pay for one. But a lot of places like myself that that give the course they will give you some piece of paper just because of these reasons. Yeah, we have certifications as a pull request in the level of touch right now.
+
+43
+00:26:32,640 --> 00:26:35,910
+Scott Tolinski: I just haven't I haven't attached it correctly. So I haven't
+
+44
+00:26:35,910 --> 00:26:37,470
+Wes Bos: haven't merged it in. I haven't
+
+45
+00:26:37,470 --> 00:26:41,190
+Scott Tolinski: merged it and for good reason. But they're coming for that as well. Yeah,
+
+46
+00:26:41,220 --> 00:27:14,970
+Wes Bos: yeah. I think as myself as a web developer, I know I would never go and get a certification in it. Because like, Why? Because I've taken web development courses at school. Like I took two or three and there were a joke. They weren't and I know, as as like if I was hiring someone, and they said like, I have a certification in VS code. And I'd be like, Oh, yeah, right. Like, come on. That's what that probably means. That means nothing to me as a hiring. What I want to see is proof in the pudding. What did you make? How good are you at being able to build something with with web technologies? Yeah. And
+
+47
+00:27:14,970 --> 00:27:27,870
+Scott Tolinski: I also have pretty sure my wife who has an actual PhD, if I were to have a certification on the wall or something, I'm pretty sure she would just be like, come on my show. Yeah, I actually worked hard for this. And you took a you paid to take a test though.
+
+48
+00:27:29,190 --> 00:28:25,980
+Wes Bos: There's also like, there's just like Google Developer experts, which people on Twitter, I often get misled that people work for Google and their Twitter bio, because they're like I work for at Google Developer expert, or I'm at Google Developer expert. And I know, I'm not sure what a Google Developer expert is. But I know that a lot of people have it. I'm just on the website here. It doesn't, it's kind of flaky as to what you actually you get acknowledgement by Google invitation to our yearly experts summit, huh. access to Google teams, invitations to exclusive projects with Google access to global network of professionals, and invitations to event that seems that sounds like the same two things, said four or five times. I don't know I might be trashing this and actually is extremely valuable for your career. If you are a Google Developer expert, tweet us at syntax FM, tell us besides being able to put at Google in your Twitter bio, what benefit do you get from this?
+
+49
+00:28:26,009 --> 00:28:36,720
+Scott Tolinski: Yeah, I'm interested. One way that you can stay up to date and current rather than having to do certifications is to listen to the technium. ride home podcast.
+
+50
+00:28:36,779 --> 00:29:31,680
+Wes Bos: Yes. So tech meme is a podcast sponsoring our podcast. So what they are is a daily 15 to 20 minute long podcast Monday through Friday at 5pm. Eastern, they run through what's going on in the tech industry. So everything from hardware to software as a service to Facebook and Google and whatever's going on in our tech industry. And it's kind of cool, because you could just throw this thing on, listen to it for 1015 to 20 minutes, or seven and a half to 10 minutes. You've listened to it at two x every single day and sort of keep up with with what's going on. You don't have to read a whole bunch of blogs, you don't have to be on Twitter for four or five hours a day. You can get up and running. So it's called the tech meme ride home. If you just go to your podcast app, overcast, iTunes, whatever it is, you're using search for ride home and subscribe to it. You can also they have an entire publication at Tech meme.com. You can also read that as well. So thanks so much to tech meme for sponsoring.
+
+51
+00:29:31,830 --> 00:30:47,790
+Scott Tolinski: Yeah, super cool. All right, cool. Let's get into this next one. How do you deal with spammers filling out forms? This is from Alex went and Thank you Alex, because I would have pronounced your last name. When did D when did t there's a lot of extra letters in here. So thank you, Alex. Yeah, so there's there's several options for this kind of strategy. And sometimes if you're working in like a CMS, like if you're working in WordPress or Drupal, sometimes their contact form things are just going to do all these for you. So you don't even have to think about it. But one of the most common ones is what's called a honeypot field, derive from the, you know, got your hand in the honeypot sort of thing, sort of a situation where they set up a situation that is like designed to fail for the wrong type of person. So if you haven't hidden input field, that is the known as a honeypot, the chances are the user will not see this input, but the robot will see the input and fill it in. And then you can say, hey, if this input is filled in, then therefore, the thing that's trying to submit this is, in fact, a robot. And I should not allow this to go in. Because again, if the input is hidden, there's not a whole ton of ways for people to go ahead and find that input other than diving into the DOM and enabling it themselves. So that's definitely one way to do it.
+
+52
+00:30:48,000 --> 00:30:59,160
+Wes Bos: Yeah, that's I think that's the very basic I don't even know if that works all that well anymore. Because like, you could if you're a spammer just spin up a, like a phantom j. s, or Google headless, good ideas,
+
+53
+00:30:59,190 --> 00:31:02,250
+Scott Tolinski: man, you're and you're, you're, you're leaking the source.
+
+54
+00:31:02,580 --> 00:32:51,210
+Wes Bos: Yeah, there are some podcasts I was listening to where they're talking about how like the bad guys have just as many smart people working for them as the guys. And it's just this constant battle between the brains trying to fight each other. So I don't know if that hidden form field really works all that much anymore. So what you have to do pass that as like, the next step, is asking a secret question, what is two plus eight? And you'd be able to only a human? Or is water wet? Yes or no? That's fairly simple. But again, with machine learning, people are being able to answer those, or if it's a huge operation, you can easily farm those questions out to what's the Amazon Mechanical Turk, you can easily get those answered for a cent or two, by someone who is just like running through all these. So that's an option as well, if that's still being defeated, I talked to somebody at a conference recently who ran a like an email forum software as a service. And he said, like 98% of all of the submissions are spam. And they have hundreds of thousands of clients. So they just get millions and millions a day of the spam submissions. So it's like almost entirely everything that comes through as spam. So if that's the case, you have to reach for the big guns. And the kind of the two big ones that most people rely on is first CloudFlare will detect bots. So if someone's hitting your website repetitively, or if they are sneakily coming from known IP addresses, CloudFlare will just block them and shut them down. Or, and then the big one is reCAPTCHA, which is the Google, you just have to type in that terrible like our add, and then it wouldn't work. And then it wouldn't work and it wouldn't work. And it's the most frustrating thing ever filling up those recaptures. I hate it's gotten significantly better in the last like two years year,
+
+55
+00:32:51,330 --> 00:33:10,080
+Scott Tolinski: sometimes. Sometimes it got significantly worse. Yeah. Again, so I get a lot of those for even like, oh, googling, it'll be like, all your IP is got weird behavior and like, Okay, well, it's not my I mean, it's a VPN. But to then you have to click the ones that are like, click all the ones with the stop sign. And then you
+
+56
+00:33:10,710 --> 00:33:16,140
+Unknown: have the stops. You know, they're like self driving car, dirty work. And they never work. They never work.
+
+57
+00:33:16,140 --> 00:33:19,110
+Scott Tolinski: Like find all the cars found them. No, you didn't. All right, do it again,
+
+58
+00:33:19,110 --> 00:33:20,100
+Wes Bos: find some more cars,
+
+59
+00:33:20,280 --> 00:33:22,710
+Unknown: and a stop sign. Oh, my God, it drives me nuts.
+
+60
+00:33:24,330 --> 00:34:03,570
+Wes Bos: So that's probably your best way. I don't run a VPN very often. And that's that button. I am not a robot. That's Google's reCAPTCHA. And if it detects that you are likely a bot via some underground magic, it will throw up one of those, show me where the cars are or answer these questions are click all the cats. And it will it'll send you through a few of those. So that's how you have to do it. Unfortunately, like the good old days used to be able to just fire up a PHP script and send an email those days are done just because of spam. You absolutely have to use some sort of form field validation or CAPTCHA on there. Yeah,
+
+61
+00:34:03,630 --> 00:35:52,170
+Scott Tolinski: word. Cool. So the next one is from page neigbouring. house. And thank you page, it also gave us really good pronunciation. That wasn't the one that I would have also had trouble with. So thank you page. This question is Hey, Wes and Scott, love your podcast. Well, thank you page. I was wondering if you could better explain what a slug is. I've heard the term thrown around a number of episodes, and I don't really know what it means. Thanks. Okay, slug. slug is a concept that is derived for SEO purposes and being able to easily access content via the URL. So I don't know if you you have used WordPress or Drupal, but a lot of times in these systems, you know, they give you a really basic URL that's like the ID of the post. So let's say you have a post like a blog post, it could be like forward slash post, forward slash 123. Right. That's the ID. And then in that ID is then used in the database to look up the post content and generate the actual page right? Well, a slug is a basically, and a, an indicator that can be in the URL that is attached to the post. And it's typically something that you want to be URL friendly. The most common way to do a slug is to do a lowercase hyphenated version of the page title. That way, instead of a Ford slash post Ford slash ID, your URL ends up being Ford slash posts forward slash Hello hyphen world. Again, it's better for SEO, the search bot can read that those keywords end up being searchable, it also is way easier for your users to type in if they're typing in something. Rather than throwing in an ID, it's going to be the page title, the post title, whatever. So a slug is basically something that's derived from the title. And you can have these generated, I actually saved my slugs in the database, do you save save yours in the database when you use them?
+
+62
+00:35:52,190 --> 00:36:19,500
+Wes Bos: Yeah, you can't like so if someone's visiting your website via a slug, you need that slug needs to be unique enough, or it has to be unique, so that it can just look that up in the database. And if you don't have the slug saved in your database, there's going to be no way for you to find that post. Because the slug is not attached to it in the database, you can't run like a show me posts that would the title would look like this, if it were slugged and then you all you
+
+63
+00:36:19,500 --> 00:36:23,130
+Unknown: could, it would just might not be it would be really, really slow. Yeah,
+
+64
+00:36:23,130 --> 00:36:28,530
+Wes Bos: because you would have to run a conversion on your entire database, keep that in memory and then find it.
+
+65
+00:36:28,730 --> 00:36:32,960
+Scott Tolinski: So and and it's indexable. If it's in your database, or actually
+
+66
+00:36:33,000 --> 00:40:21,170
+Wes Bos: I that's I listened to the code pen podcast once and they said that they had perfect issues, where they were looking at people by the email address they signed up with, which will sometimes have capitals in it, and then the email address that they have on file, and if they were looking up, the email address was someone's capitals, then they would have to convert the entire database to lowercase first. So they ended up just saving two versions of the email address the one they signed up with and the lowercase version. Yeah, and that sped it up quite a bit. So I guess that it is possible, but I always save them in the in the database. If we go that way, when we're talking about react with slugs as well, because it's forward slash posts forward slash hello world, you'll often need something server side that will take those URLs and not just like what's happening on most servers, this is looking for a folder called post and inside of that a folder called hello world. That's actually how a lot of static site generators work as well. And you need something like Apache config or nginx config that will just point people to the index and run your react app and pick up the pick it up from there on out. So that's what a slug is. I think Scott did a awesome job at explaining it. Next question we have here from Chuck Reynolds, I'm going to I'm going through some currency conversion stuff for a project. What would you recommend to use for international conversions? And then how would you handle input string to number persistence, including currencies that are comma delimited. So the currency is one of the pains in web development, it sort of comes along with time zones, because there's this whole idea of, you've got different languages and different currencies, but the language of the browser is not necessarily correlated to what currency they're shopping in, because they might speak one language but live in a country that has a different currency. So that's frustrating, and then formatting it and dealing with the fact that in North America, we use decimals, we use decimals for like, half a number, what do you call that? I, for a fraction, int integer. For half an N, and other other countries the the opposite where it's the US commas for those. So it's frustrating. So I'll tackle that first bit, I used to use a API called fixer.io. And what fixer IO does is, it goes off to I think the World Bank or something like that, and scrapes the exchange rates. And then it gives you this nice clean API to interface with it, they recently went paid. So there was like a rate limit on it. But the thing about it is that it just scrapes free data. So there's a whole bunch of drop in replacements that are available for fixer.io. I'm using exchange rates api.io. But I think there's like four or five different alternatives that have popped up that are totally free. They asked you to cache the the values when when possible. So there's that you can you can use that to pull in the latest rates. Although if I was like running a business, I would probably scrape those directly myself, because I wouldn't, I wouldn't rely on some random dude on the internet who built this currency conversion API to not Screw you. And like if you're selling a car or something like that, they could just change the exchange rate. And then they could they would get you on that. Other things to think about is that if people are buying in different currencies like my courses are in us, but if like somebody buys it in Canadian, then some The the exchange rate is different, because the your credit card will put on an extra percent or two for currency conversion. So it's a bit of a pain. So for that reason, I never show the cost in local currencies. I just show what the cost is in USD and people can figure it out from there, although I've been considering showing it though, because some people have asked for that.
+
+67
+00:40:21,650 --> 00:40:28,260
+Scott Tolinski: Yeah, I don't do much of this. It's something I probably should be getting into more but no, I mean, I think you nailed it.
+
+68
+00:40:28,500 --> 00:41:37,560
+Wes Bos: Yeah. In terms of how do you show it, there's a really good API in the browser I MTL number format. And you can pass it both the language code and and set it to currency in which currency. So you set it to which currency you'd like to display it as, as well as like, Where in the world are they coming from. So it'll take both of those. And it will show the proper currency code, whether it's a yen, or euro or US dollars, and then it will, it will do the decimals and commas appropriately for whatever language that person is currently viewing it in. So that's really good. The API is fairly well supported. In node, it's a little bit weird, because it doesn't come along with all of it by default. So if you do need it on the server side for lots of different languages, and lots of different currencies, is some legwork that needs to be done in order to include all of those, I assumed that the dictionary for how to handle all of these different currencies and languages is fairly large. And probably for that reason, no doesn't bundle it by default. Although not not totally sure about that.
+
+69
+00:41:37,800 --> 00:41:48,840
+Scott Tolinski: internationalization is hard. I think we actually want to do an episode, we're going to try to maybe get an expert on or something like that. But the internationalization is certainly not easy.
+
+70
+00:41:49,020 --> 00:42:39,650
+Wes Bos: Yeah, I asked on, I asked on Twitter the other day, what are some problems with doing a language or a website or a web app in different languages, but also languages that read right to left, and also just things like like local, like, if you're running Airbnb, just things like somebody said, tipping I work for, like, just eat or something like that one of these like food delivery companies, tipping is different from from locale to locale, some people tip in Canada, we have to tip but in Europe, most people don't tip at all. And there's just all these different things that you have to take into account, which just increases the complexity. And German words are very, very long. And Chinese words are very, very short, different design trends from different country to country. So I'm in chats with somebody right now that we're going to bring on the show to sort of talk about that, because that's just something I've never had to do myself. Yeah.
+
+71
+00:42:39,810 --> 00:42:54,780
+Scott Tolinski: Yeah, I am. I have had some experience with this myself. And it is our system was elaborate, prone to breaking and exactly the most fun to work in, especially once you get right to left. So yeah, definitely some interesting stuff going on there.
+
+72
+00:42:54,920 --> 00:43:20,430
+Wes Bos: So that's all the questions we have here today. Thanks so much for everyone for submitting them. If you have a question you'd like us to cover on a future show, please go to syntax.fm. And there is a button in the top right hand corner says ask a potluck question. You can go ahead and submit a question however long or short, some of them are really long, and we will just turn them into entire episodes. So feel free to dump whatever you want into that button that you have there. Should we move into some sick pics?
+
+73
+00:43:20,430 --> 00:43:21,150
+Unknown: Yeah,
+
+74
+00:43:21,170 --> 00:44:18,390
+Scott Tolinski: I have a sick pic here. That's a little cheap little Amazon thing. I don't know about you. But I have a lot of devices and a whole bunch of different the torques screws and stuff like that. And I'm doing a lot of hard drive disassembly right now because over the years, you acquire so many hard drives. And it's like, I don't know if my Social Security's on them or whatever, I just want to open them up to take the discs out and destroy them, right. So I don't want my my personal information out there for that to be accessible. So I bought this really cheap little screwdriver set off of Amazon and is 23 bucks and includes basically every single device or anything that they're like really branding it as like, Oh, you want to repair computer devices, like get this kit. It's 65 bits. So every little bit you could possibly imagine a really nice screwdriver or a little miniature screwdriver, like a prying device so you can pry things open like phones or computers.
+
+75
+00:44:18,420 --> 00:44:38,310
+Wes Bos: Oh man. Yeah, by Can I interrupt you right now I'm going to tell everyone go and buy one of these plastic spudger tools right now. Because if you ever need to open any sort of electronics and you try to use a butter knife, you will butcher that thing and regret it. So just have it on hand for when you need to open something. I use mine all the time.
+
+76
+00:44:38,460 --> 00:44:59,040
+Scott Tolinski: Yeah, so this this kid is great. And I've already used it a whole bunch of different ways. I even needed I needed to fix Courtney's glasses the other day and the bit was there nice little tiny bit to fix some glasses. So you can't beat having a really flexible screwdriver set like this around again. It's got like 65 bits in it and it's 23 bucks. These things are really great. And I'm happy to have this around. I've been using it a ton
+
+77
+00:44:59,280 --> 00:46:56,130
+Wes Bos: awesome. I'm going to I've been finding some gems of YouTube channels lately. So I'm going to sit pick another one. And this one is called technology connections. And it's this guy who goes into a lot of vintage technology and explains how they worked. And I love it, because I just grew up with it and assume that it worked. But then he goes into, like, let me just go through a couple examples of my favorite video. So the first one I ever watched was led traffic lights, this is actually not vintage. But he said, there's a problem with LED traffic lights, because what happens is that they switched the regular traffic light bulbs, which were halogen and they burn out and it causes lots of people to have to take down the intersection, they got to get a lift up there, they got to replace the bulb. And if you put an LED bulb into a traffic light, it will last for like five or 10 years. And there's just everything is better about these LED, except that they didn't realize that when it snows, the old light bulbs got hot enough that it would melt the snow off. The new ones, they don't get hot enough. So they would these LED lights would just be covered in snow, no one could see what's going on. So they fixed it. And he just like went through this incredible history. And it's so fascinating how it works. Here's another one on how closed captioning works. So in old TV, what would happen is that there would just be like one little strip and if you watch it, he's like, you probably couldn't remember your old TV having this little black and white strip, sometimes you thought it was glitching out, that's the captions and your TV can can read those and turn them into captions. And it's still used today. And I was like, Yeah, right. So I downloaded a movie and played it on my 4k TV. And the captions just worked because they were baked into the actual video file because I always thought captions were like a separate they can be Yeah, I think they are like I have them for my own classes. Yeah, but you can you can bake those into the video file directly. Yeah, just
+
+78
+00:46:57,540 --> 00:46:59,250
+Unknown: even Really? Yeah,
+
+79
+00:46:59,250 --> 00:47:58,830
+Wes Bos: it makes sense that I should do that with my courses because then I don't have to like have a separate file. It just comes with the video file. Yeah, other ones they went that his most popular video is how the PlayStation one copy protection worked. And how mod chips worked. I was wondering like how to mod chips work like what are my chips doing? Yeah, super interesting. And then the last one I had was led printers, so not laser printers, but led printers or there's just all kinds of LaserDisc VHS copy protection. I remember when I was a kid, one of my friend's parents would rent movies, and then they had two VCRs and then they would type one VCR into another he then then it would like go wonky. And I was always like, how do they know like, what's the copy protection in a VHS tape? And he explains how that all works. So man, absolutely love this. this YouTube channel. It's a nugget. It's like 250,000 subscriptions right now. So I'd say it's relatively undiscovered so far. Technology connections.
+
+80
+00:47:58,860 --> 00:48:17,730
+Scott Tolinski: I'm gonna be this is right up my alley in terms of stuff. I like to watch it I hate to like wine down. I've been watching like a channel that just does every single Super Nintendo video game. They talk about it. It's so boring. It puts me to sleep every night. They're just like talking about some video game I don't care about this looks like something I'm going to be watching every night.
+
+81
+00:48:17,850 --> 00:48:35,700
+Wes Bos: Yeah, there's literally hundreds of them or not hundreds he probably has 70 different ones. And then he just put out one is why does the Secure Digital you know like your little memory card. Yeah, why is the D on the Secure Digital have a disk? It's not a disk. I'll let you watch that one's kind of interesting.
+
+82
+00:48:35,850 --> 00:48:39,840
+Scott Tolinski: Well, I just I just smash that subscribe button so hard I think magic the dumb.
+
+83
+00:48:42,270 --> 00:48:44,340
+Wes Bos: Alright, shameless plugs today What do you got?
+
+84
+00:48:44,520 --> 00:49:25,740
+Scott Tolinski: I have a new courses on level up tutorials. By the time this is coming out the course for January 2019. The first course of January 19 shall be released. So head on over to level up tutorials.com forward slash pro sign up to become a pro and you will get access to every single course that's available on level up tutorials as well as any course that is released this year. If you sign up for the year you save 25% and you will get 12 additional courses over the course of this year. And let me tell you, I got some doozies planned. I'm starting 2019 off right and many can do it that way all year long. So check it out, level up tutorials.com forward slash pro
+
+85
+00:49:25,740 --> 00:49:45,360
+Wes Bos: awesome. I'm gonna pick all of my courses. Wes bos.com forward slash courses. If you want to learn JavaScript CSS just want to start off 2019 it's probably this is in February so you're not starting it off but if you want to learn anything head on over to Wes Bos comm forward slash courses and I will hook you up bunch of free ones bunch of paid ones
+
+86
+00:49:45,420 --> 00:49:46,740
+Scott Tolinski: Yeah, New Year new you
+
+87
+00:49:46,800 --> 00:49:49,740
+Wes Bos: New Year new you and anything else for today?
+
+88
+00:49:49,860 --> 00:50:06,060
+Scott Tolinski: I got nothing else. Right? Yeah, ready to go. Please. Head on over to syntax.fm for you full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show
+

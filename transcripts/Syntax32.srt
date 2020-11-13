@@ -1,0 +1,528 @@
+1
+00:00:01,290 --> 00:00:10,650
+Announcer: You're listening to syntax the podcast with the tastiest web development treats out there. strap yourself in and get ready to linsky and West boss.
+
+2
+00:00:10,830 --> 00:00:21,450
+Wes Bos: Welcome to syntax everyone. This is the podcast where we dish out the tastiest web development treats with me is as always is Scott to Lynskey. Hello Scott, how you doing today?
+
+3
+00:00:21,480 --> 00:00:38,040
+Scott Tolinski: Hey, I'm doing a pretty good I'm off to like a fresh start today I applied the update that's been bugging me in the top right corner of my MacBook for like, a solid district a month. And now it's like do you want to do this? No. Do it. I'll do it next. Tomorrow. And then are you?
+
+4
+00:00:38,310 --> 00:00:40,680
+Wes Bos: Yes, you upgraded to High Sierra? No, this
+
+5
+00:00:40,680 --> 00:00:50,670
+Scott Tolinski: is this is just a standard update. They're just so bothersome on OSX or Mac OS. They're just like, that little pop up pops up Yeah, times and won't go away.
+
+6
+00:00:50,970 --> 00:01:09,390
+Wes Bos: I went hunting for a way to like disable those annoying pop ups are so bad. I couldn't find anything. It's so annoying. It's I don't want to update my computer right now. Because it's gonna take it reminds me of the old windows days where you would like update and then it'd be like, four hours remaining. You're like, damn it. There's my entire day.
+
+7
+00:01:09,420 --> 00:01:17,549
+Scott Tolinski: I know I did it right before the show. And I was sort of, I thought it was gonna be kind of quick. And then it was like it will be 20 minutes and has like 20 minutes.
+
+8
+00:01:17,549 --> 00:01:18,299
+Unknown: Are you serious?
+
+9
+00:01:18,299 --> 00:01:22,890
+Scott Tolinski: Okay, I guess yeah. Hey, no, baby. Whatever How you doing though,
+
+10
+00:01:23,159 --> 00:01:58,310
+Wes Bos: I'm doing pretty good, pretty good. I've been working away on my graph qL course which sick I've been really I've had some like, I don't know, it's, it's a bit hard to to get your head around everything and all the different moving parts, getting it all working together. And I feel like I've hit a stride now with all the different pieces. And I feel like I can just like, I'm really confident in being able to teach all of the stuff that I have set up right now. So now I'm just kind of wrapping up the the app that we're gonna build, then I have to style it and design it and, and then it's time to record it. So I'm pretty, pretty excited about that.
+
+11
+00:01:58,379 --> 00:02:11,750
+Scott Tolinski: Nice. Nice, nice, nice. Yeah, I definitely helped that I rebuilt my entire platform with graph qL before I tried to start teaching good cuz I like any sort of bump in the road, I would have hit a hit along that way first, and
+
+12
+00:02:11,780 --> 00:04:21,660
+Wes Bos: yeah, yeah, just for those listening. Actually, maybe we should talk about this real quick is um, so in our graph qL episode, we talked about graph cool. And then how graph cool open source their thing. And then it got, it got kind of switched over to Prisma, which is an Prisma. And yoga. So instead of what you can still use graph, cool. But if you want a little bit more control over the resolvers, meaning like how does your data come out of your database, they've sort of split it into two pieces, which is Prisma, which is the back end database for you that it comes with a built in schema, and all of the mutations and queries and everything, you need to be able to have a full blown graph qL server up and running. But the thing is, it doesn't have any authentication or any custom stuff. So if you want to add authentication or custom stuff, which everybody does, then you you slip a thin little yoga server in front of it. And then you can add your sprinkle on your little custom stuff on top with you could do authentication, you can do custom queries, it's like just an express server that sits in front of Scott's dog barked just a little Express server that sits in front of your Prisma and I really liked it it was a little bit to get up and running a little bit to understand like what are all these moving pieces but well worth it? I think graph qL has a bit of a learning curve that is well worth going through. Before we get started today, Scott, I want to talk to you about a little bit of a contest that we are running and we're going to run a contest both on Twitter and on Instagram. So the way that you want to first of all what are you gonna win Scott you're gonna win either one of my courses or one of Scott's courses you choose whatever course you'd like to learn next. And the way that you enter is you got a screenshot yourself listening to the syntax podcast so and then post it up either to Twitter and or Instagram so screenshot yourself listening to syntax posted up on Instagram and tag Scott and I so on Instagram, I'm at Wes Bos and Scott you are at s
+
+13
+00:04:21,660 --> 00:04:22,740
+Scott Tolinski: to Lynskey.
+
+14
+00:04:24,019 --> 00:04:46,680
+Wes Bos: Awesome and on Twitter I'm at Wes Bos and Scott you are s Tolan ski. So we're the exact same thing on both and what we're going to do is we're going to pick one winner both from Twitter and from Instagram and award you a free course. Nice and also hashtag TC treats please because people are doing that anyway.
+
+15
+00:04:47,790 --> 00:04:50,509
+Scott Tolinski: Is that a requirement? Are you making that a requirement?
+
+16
+00:04:50,699 --> 00:04:53,190
+Wes Bos: Yes hard requirement hashtag tasty treats hashtag
+
+17
+00:04:53,190 --> 00:04:54,660
+Scott Tolinski: tasty treats.
+
+18
+00:04:55,170 --> 00:05:52,410
+Wes Bos: All right on with the show. So this episode is brought to you by tu tu Awesome companies xojo xojo is, is a cross platform development tool for creating native apps for desktop, mobile web and Raspberry Pi and fresh books, the cloud accounting software that I gush about almost every single week on this podcasting on this podcast. So today, we're gonna be talking all about email and not actually dealing with personal email. But we're gonna be talking about sort of the flip side, which is when you have an application, or when you have like a business like Scott and I do. What's the email story? There's a lot that really goes into it in terms of sending email and compiling email and applying styles. And what's the difference between transactional email and marketing email, and there's all kinds of rules around both of those that you need to follow. And it's, it's a bit of a complicated space. So hopefully, we're gonna simplify the different pieces around sending email. Yeah,
+
+19
+00:05:52,440 --> 00:06:26,190
+Scott Tolinski: and to be entirely honest, you know, email is not one of my favorite things in the entire world between spam folders and MX records, and HTML templates, all that sort of stuff. I mean, there's just so many aspects of it that are not a lot of fun to work on. But I mean, there are a lot of fun aspects as well. And I'm sure I'm speaking from my perspective, you might be the the email, the email person who's out there who loves it, it's this. I just don't love it. I don't love working with email any sort of way. But it's one of those things you got to do.
+
+20
+00:06:26,610 --> 00:06:38,160
+Wes Bos: Yeah, yeah, absolutely. So why don't we start off? just explaining how do we use email in our apps as well as in our businesses? So you want to give that a shot? Yeah. So
+
+21
+00:06:38,160 --> 00:07:21,930
+Scott Tolinski: I have a couple of different email situations. Basically, through the level of site, you need to send emails, anytime you have user accounts or sales going out, if somebody signs up for a subscription or purchases, something email needs to send out from the site itself. Yeah, so I'm sending email anytime. Yeah, anytime someone places an order makes a subscription, that stuff. But I'm also sending an email from the marketing side of things to let the users know whenever there's a new course out, or whenever there's potentially new stuff on YouTube, or there's new features on the site. So there is this like sort of two sides to the thing where the application needs to be sending emails, and then I'm going to be triggering and sending emails myself through a third party.
+
+22
+00:07:22,920 --> 00:09:23,520
+Wes Bos: Awesome, I'm pretty much the same. So whenever anyone buys a course for me, it automatically sends them a magic link, which they can use to click over to my course platform because I have many courses on the same course platform every single time that you buy something it sends over magic link, and that will detect if you already have an account, and it will ask you to sign in. If it does, if you don't already have an account, because I don't want to make people sign up for an account before they buy it. I just want them to buy it. And then that sends a magic link, they click it, they can register a password, and then they can sign in. So that's the transactional email part of it. And I also have a couple other times password resets, obviously, the ability to merge email addresses or merge accounts on my platform, because the most bizarre thing to me is that there's some people out there that have like 15 email addresses, and they never know which one they use. Yeah, yeah, to sign up for it. And I just don't know how you live your life like this. But there's people out there that have all kinds of or people that use, like modifiers on their email every single time, which is something I kind of wish that I built into my platform at first, which is there's some, there's some libraries out there that will strip modifiers off an email. So if somebody signs up with like, Larry, plus Wes Bos, or Larry dot, Wes bos@gmail.com, then it will just strip out those modifiers, it'll still it'll still keep that email on file. But if they use another modifier down the road, it's always going to sign them into the same account, they don't have to remember which modifier they use. But that's not something I did from day one. So it'd be a bit of a task, I think, to go back and change that. So I do that. And then on the marketing side of things, I have a huge email list that I send, I don't send out email very frequently, maybe once or twice a month, just little updates as to where I am. And that is done. I'll talk about that that's done through my drip account.
+
+23
+00:09:24,020 --> 00:10:09,390
+Scott Tolinski: Yeah, in addition to that, like the modifier thing, or the extra emails, when I was working at that startup, there wasn't an exorbitant amount of people who would sign up for an account. And then they wouldn't do this, the whole like, connect your Facebook account or whatever, they would log out at some point or go to a different device, and then click, you know, sign up with Facebook, and they would just expect it to be on one account magically, like it would it would expect it to know somehow that whatever email they used, and their Facebook account that they signed in were the same account even though they never linked them or didn't The sort of process there? Oh, it's just it was so like, Oh, wait, what do you mean, your your stuff? Isn't there? Oh, you you made a new account? Yeah, that's
+
+24
+00:10:09,390 --> 00:10:21,390
+Wes Bos: always, always confusing with like, did I sign in with GitHub or Facebook? And ideally, what would happen is that when you sign into Facebook or GitHub, these places already have your email address, and those are confirmed. Right?
+
+25
+00:10:21,780 --> 00:10:24,920
+Unknown: So what if the emails different on lately, right,
+
+26
+00:10:24,920 --> 00:10:47,520
+Wes Bos: likely is and then you have all this like, I don't know, it's such a such a mess. And I hated having to change people's accounts and merge them. So I just built a whole merging process where you can give it your new email address, and then it has to email that new address to confirm you're actually that person. And then once you confirm that, it'll flip you back to the site and merge everything into one big account.
+
+27
+00:10:47,640 --> 00:10:48,360
+Unknown: Slick.
+
+28
+00:10:48,510 --> 00:11:57,060
+Wes Bos: Yeah. So that's, that's the difference between the first path we talked about, that's called transactional email, you send somebody a password reset, or, or receipt or something like that. And then you have marketing email, which is, you send more like bulk email to somebody saying, hey, buy my course. Or here's an update I did. Or here's the latest syntax podcasts that we've done. And we're going to talk about both of those today. So let's start with the the first half, which is transactional email. And there's a whole lot that goes into this like, generally, transactional email is you send one at a time. And a whole bunch of stuff needs to happen, you need to template out the email. So you, you have some sort of template where you have some sort of variables like the person's name and an ID. In my case, it's a magic ID that they need to click, how much they paid, what course they bought, all those variables need to be put into your template and then compiled, and then then they need to be styled. And the downside to HTML email is that your CSS needs to be inlined. So it needs to be all done via style attributes. And,
+
+29
+00:11:57,480 --> 00:12:00,720
+Scott Tolinski: and we'll be talking a lot about more about email templates
+
+30
+00:12:00,810 --> 00:12:25,800
+Wes Bos: later on, in just a sec. And then, and then obviously, it needs to be sent. So you need some sort of service to send your email because you can't just use PHP mail function or, or the built in mail function in any of these libraries anymore, because that was 100% chance of getting marked as spam. So do you want to break down what your sort of flow looks like for sending a transactional email?
+
+31
+00:12:25,890 --> 00:13:59,400
+Scott Tolinski: Yeah, so for me, I actually, my data comes in directly from the database, I then compile it into a template using handlebars. So I basically just take all of my my JavaScript data, I compile it into HTML, using a handlebars, templating language, basically throw all my data into the template itself, I have my templates all saved as external HTML file. So I basically just merging the JavaScript with this HTML file in the template that's already defined. Then I'm using a built in core package for Meteor called email to basically send out the email to or to the email provider, which my email provider is mandro. So mandrill is the one taking care of all of the sending. So basically, at the root level, I've just connected my API keys and everything with mandrel. So that way, with the meteor email package, when it sends out the email and knows to use mandrel, mandrel takes care of sending out getting those to where they need to go, basically. So yeah, that's my setup, it's really pretty much night, nice and lightweight. The reason I'm on mandrill is because I was on there when they had the free platform. And when they started making you pay, I was already using MailChimp for my for my marketing email. So at that point, I was just like, well, I'll just, I'll just pay for mandrill. And, you know, bite that bullet right now. So who knows, we've talked about this before, but maybe that could see that changing in the future off of manjal.
+
+32
+00:13:59,430 --> 00:14:08,250
+Wes Bos: Yeah. And here's a question for you is, do you first I've got two questions. First, do you do you have to inline any of our CSS? Or does the meteor take care of that for
+
+33
+00:14:08,250 --> 00:14:50,970
+Scott Tolinski: you? I have basically have built and designed all of my HTML email templates, as if they were just standalone HTML email templates, the only thing I'm doing is inserting data. So the CSS is all inlined in the templates themselves, okay, so I built the templates as like does design are platform agnostic, it doesn't necessarily matter. And most time these are really pretty bare bones. Most of my like fancier emails are done through my marketing email campaign. So a lot of this stuff is pretty much just like set up to look like a receipt or, or here's your information or whatever. But yeah, I have all the CSS in lining in the HTML template. It's really just two pieces of HTML template. JavaScript coming in, merging together,
+
+34
+00:14:51,000 --> 00:14:59,970
+Wes Bos: send it out. Awesome. And then my other one is to connect to mandrill or using mandrels API's. Are you just using SMTP
+
+35
+00:15:02,010 --> 00:15:03,840
+Scott Tolinski: I'm using mandrels API's?
+
+36
+00:15:03,870 --> 00:15:57,570
+Wes Bos: Yeah, okay. Interesting. Okay, because that one one thing that I learned was that, um, I guess it's better to or for my case, at least I was using Amazon SES to send email. And they they pulled it at some point because I had someone run a bunch of spam email addresses through my system, which is before I had any, any sort of anti spam measures in place. And I was I'm using smtp. Sorry, Oh, you are okay. Good. Because Luckily, I was like, shoot, I can't send any emails and people are buying stuff. And then people okay, never got an email. So luckily, I was using smtp. And I was able to flip it over to another service provider. Yeah. Which is great. So don't ever use any sort of proprietary email sending API's. Yeah, just use straight smtp.
+
+37
+00:15:57,720 --> 00:16:01,200
+Scott Tolinski: This is one of those things I set up like two years ago, and I haven't thought about it since.
+
+38
+00:16:03,150 --> 00:16:06,930
+Wes Bos: That's good. That's, that's nice when you can just set it and forget it with something simple like that.
+
+39
+00:16:06,990 --> 00:16:18,570
+Scott Tolinski: Yeah. And for me, like I said, I hate I really just don't like working in the email that much. So I guess it's not necessarily been neglected, but it's definitely not the thing I spend my my most time on.
+
+40
+00:16:18,800 --> 00:20:08,400
+Wes Bos: Yeah, yeah, I spent some time maybe like a year ago, making mine look a little bit nicer. Just because anytime something like looks a little bit weird on someone's like, bizarre email client that I've never heard of that I get all kinds of email. So let me really run through what mine looks like. It's pretty similar. Just use a couple more packages. So my own thing, my course platform is built in pug template. So I also use pug to template out my emails. So I template those out. Except for instead of using like divs, and paragraph tags, I actually use sort of an abstraction on HTML called it was called inky at the time, but now it's called zurb, foundation for emails. And it's kind of like react. And we'll talk about an alternative to this in just a second. But the way that it works is instead of having like a paragraph tag, or a image tag or anything like this, because aligning these things are like a, like you're trying to have a table two pieces of data side by side, then you have to, like have tables in HTML, because you can't use floats or, or grid or Flexbox, or anything in CSS emails, so you have to use these old school tables. So what zurb foundation for emails does is it just gives you these tags that are things like column or row, or I'm trying to figure out what the Let me pull up, maybe you can pause Just a sec, let me pull up the actual. So they essentially have this these different components, like rows and columns and buttons and rappers and spacers. And these are just like tags called column and row and button, and then they get converted into whatever the nasty table equivalent is to that thing. So it's really nice, because you don't have to think about like, Okay, how do I design a table because I totally forget, within a table within a table. Exactly. It's just nasty how, how ugly the markup is for emails. And you don't have to think about that at all. You just use a column tag, and then you put two column tags beside each other. And that will convert it to whatever the terrible call span table markup is. So that's great. And so what I do is like, I code my emails in pug with these like tags that aren't really HTML, then I run it through the Serbs NPM package called Anki. And Anki turns it from these beautiful tags into the terrible table HTML. Then I run it through a package called juice. And what juice does is it takes your CSS, I just write my CSS and a style tag. And then it will figure out what the what the CSS should be applied to which elements. So if you have 14 paragraph tags in your email, it will take your P selector and inline it on all 14 of your emails are all 14 of your paragraph tags. And if you have a div with a class of wrapper, it will take all of your styles from dot wrapper and apply it to your wrapper, right? It will inline all of your CSS for you. That's what juice does. And then finally, at the end of the day, I have this ugly HTML table email with all of its CSS in lined and I haven't had to write either the two terrible things that will email which is inline CSS and table markup. And then finally, I use node mailer node mailer is a package that can connect to smtp. And then I use what do I use postmark, as usual, yeah, post sender, and that's like an alternative to something like mandrill. And then they will actually do the delivery of the email. So there's a whole bunch of steps but if you look at my code, and this is a Exact same way we do it in my node course. It's it's only like four or five lines of code converting from one to another. And that's so
+
+41
+00:20:08,490 --> 00:20:42,750
+Scott Tolinski: here's the, here's the template at the current state pass. And then the next step, here's the template now pass in the next step. Shoot that thing out. Yeah, that's pretty much how mine is, in a sense, just a little bit different. So I've been there. I guess the major, major differences are I have inline my CSS because I don't really have that much to be honest. Yeah. And obviously, the the pug, that sort of stuff. So yeah, that's really super interesting. I mean, what other sort of senders are there? There's, you said, postmark. I use mandrel. There's also is mailgun,
+
+42
+00:20:43,410 --> 00:22:15,060
+Wes Bos: mailgun, sendgrid. sendgrid. Yeah. There's also Amazon CMS, which is dirt cheap. I've used that for a long, long time. But I did find that my deliverability was not as good with that. Like, so what happens is that often an email will be undelivered it will either. There's a couple of reasons why an email cannot get to somebody could bounce the wrong email address. It could be blocked by the ISP. So often, I'll have, like corporate users, they'll have some sort of thing where it will block it because it's they don't know who Wes Bos comm is it will, might be. So I don't know, there's a bunch of different arrows. I can't remember all of them right now. But with Amazon MCs, there's no way to tell what happened to it unless you actually build your own dashboard. And that sucks. So when I moved over to postmark, I was so happy because they allow you to just like search for someone's email address. And I have this like, hooked right up into my reporting dashboard. So someone says like, scott@scott.com, I didn't get an email, all I have to do is click a button, and it will tell me when the email sent, I'd be able to preview the email that that did get sent. It will tell me if it bounced or if it was blocked by the ISP, or if it was open, or if it wasn't, so there's all kinds of stuff that you can look into and almost always I can tell exactly what had happened. And we can figure it out for the user immediately which is great.
+
+43
+00:22:15,150 --> 00:22:47,670
+Scott Tolinski: Yeah, I love that stuff. You know, the sort of those tools and for me, I guess that's one of the reasons why I've never left mandro is that I've never really had a huge like issue with deliverability there's never but never had a big issue and I've had issues with deliverability with mailgun before pretty heavily in the past so yeah mandrill has never had any problems for me I've never really had to deal with that so I guess that's a plus one from Andrew for me but also I haven't used postmark which looks pretty fantastic so
+
+44
+00:22:47,880 --> 00:23:24,900
+Wes Bos: yeah I was I was super happy with it and also with postmark there's a couple things you need to do when you when you need when you need to use a new sender is you need to verify that your your domain name so if you're sending from Wes Bos calm there's a couple different ways that these companies verify that you own Wes Bos calm and can send email from that and most of them do it via What's it called? Is it like a DK Im on your domain or something like that. And you have to like set a DNS record on your domain name and then wait for that to propagate and then you get verified
+
+45
+00:23:25,169 --> 00:23:43,890
+Scott Tolinski: sometimes the the domain registrar's all have like a different way they want you to paste that. Yeah, and then there that could be a total mess like whether you have to wrap it in quotes or whatever. The thing that they tell you to paste in there is like not absolutely how you should do it. And you have to like sort of try a few times before recognize
+
+46
+00:23:43,919 --> 00:24:30,390
+Wes Bos: try something wait a couple hours. It doesn't seem to work. Maybe it didn't propagate. Yeah. Or maybe it's such a pain so yeah, that's a huge pain. postmarks a verification is just an email initially, and then you can get sending right away. And then you can go forward and and verify via your domain name, which I believe gives you a little bit more of a boost the boost in terms of like Gmail, not thinking that you're spam, because you have taken these extra steps to actually verify your domain name and the actual email address itself. Like one stupid mistake that I made is I always sent from West Wes Bos calm and then one day I sent out a new email and I'm like, oh, use this new email address. Wes Bos calm, total mistake, my email open rate just dropped
+
+47
+00:24:30,390 --> 00:24:33,660
+Scott Tolinski: like, like 40% or something is untrusted.
+
+48
+00:24:34,020 --> 00:24:53,100
+Wes Bos: Yeah, you got it. You got to like build up to to that. And you got to have people actually opening these emails, like the first thing I did was sent 200,000 email addresses, email, emails from the thing, which is stupid mistake. But you got I guess you gotta have a little bit more reputation behind a specific email address at first.
+
+49
+00:24:53,160 --> 00:25:23,580
+Scott Tolinski: Yeah, that's a weird thing. I remember in the mailgun dashboard specifically, there was a whole like email reputation meter. And it would like telling you how golden this email was, or whatever how trusted it was amongst clients with this a lot of tricky stuff, because it's not an easy fix. And a lot of people want like a fix this right now sort of thing, right? But like, if your email gets marked as being untrusted, that's not necessarily an easy thing to come out of really quickly.
+
+50
+00:25:23,970 --> 00:25:53,790
+Wes Bos: Yeah, yeah, that's part of the reason why I don't email a whole lot is because I want my emails to feel good. And I want people to be excited to get them. And especially with developers, they get real cranky about marketing real quick. So if you're sending way too much like that, the developers are very quick to hit the I noticed myself, I'm very quick to set hit the spam button on someone who's annoying me being like, Hey, I didn't I this is too much. I didn't say that you could do this, right.
+
+51
+00:25:53,820 --> 00:25:54,750
+Scott Tolinski: Yeah, definitely.
+
+52
+00:25:55,860 --> 00:26:09,450
+Wes Bos: So that's, that's transactional email. In in a nutshell, sending all of it, maybe actually, those, there's a couple more, one more service that he used, and it's called mail, catch, mail, trap,
+
+53
+00:26:09,900 --> 00:26:13,860
+Scott Tolinski: mail job, you ever use this, I have never heard of this failed trust.
+
+54
+00:26:14,010 --> 00:27:14,760
+Wes Bos: So if you are developing locally, and testing things, oh, you, there's always the ability where you would accidentally write some code that would loop through all of your users and email them a test email. And that's a nightmare. So what we want to do is use mail trap, which is like a kind of a fake SMTP server, where you set your credentials when you're developing locally to be mail trap, traps, SMTP instead of postmark or whatever. And then any email that gets sent will not actually ever reach the user. But it will be trapped in this like fake email inbox called mail trap. And that will, that will show you all the emails that were sent and what they look like in text and HTML. And it's great. I love it. I used it my node course. And it's great because you don't have to for tutorials as well, because you don't have to like have the user go through the whole domain name validation thing. You can just use mail trap. And there's no validation there because it's a fake email inbox. Nice.
+
+55
+00:27:14,910 --> 00:27:36,810
+Scott Tolinski: Yeah. So it's great, because it looks like you can actually open the email and experience it like an inbox, which is nice, because what my system does is it just console logs, the HTML when an email gets sent out locally, so it just doesn't ever doesn't ever send it that's just like a the built in functionality for the meteor email package. But having actual email to open on development would be kind of nice.
+
+56
+00:27:37,380 --> 00:27:55,950
+Wes Bos: There's, there's some local versions of this as well. So you can host your own. I believe it one's called mail hog. And it looks like it's a Ruby. So if you want to install mail hog, locally brew, install mail hog, you can run a local version, but I've been happy with the free version of mail trap.
+
+57
+00:27:56,010 --> 00:28:00,330
+Scott Tolinski: Yeah, looks like you get 50 messages. So you just gotta like clear out that inbox all the time is that
+
+58
+00:28:00,750 --> 00:28:02,370
+Wes Bos: it just deletes the old one. So
+
+59
+00:28:02,400 --> 00:28:07,710
+Scott Tolinski: nice. Oh, doesn't worry. I don't need anything more than that. Nice, super nice.
+
+60
+00:28:07,950 --> 00:29:33,110
+Wes Bos: Yeah, so big fan of that, I would definitely check it out. If you're looking at doing email before you accidentally email all of your users. Sometimes I get like a push notification from an app being like test. And I was like, oh, someone screwed up, then we'll we'll talk about that. Let's take a quick break for our sponsor. And our sponsor today is xojo. With xojo, you can really just write one version of your application for a Mac and say you can write it on a Mac or Windows or whatever it is, you click a button and it will be compiled down to native versions on Windows on a Raspberry Pi on the mobile on mobile on the web. It's kind of one of these right? Once it works natively everywhere. It's not something where it's kind of just HTML j. s running absolutely everywhere. It's actually native xojo lets you abstract yourself from specific platform details. So you can focus on what makes your app unique. All Apps have completely native controls, even if they weren't developed on that. That platform just used to drag and drop interface with one language to program all the functionality. Users include fortune 500 companies, citizen developers, professional developer, it hobbyists, and students, anyone who wants to build apps faster, listeners can get 20% off with the coupon code syntax, and you can check it out at xjo.com, forward slash syntax. Thanks so much to xojo for sponsoring.
+
+61
+00:29:33,450 --> 00:30:53,610
+Scott Tolinski: Thank you. Yeah, so we touched on this a little bit in the last section where we sort of talked about our inlining, our CSS and stuff like that. Let's talk a little bit about designing emails. We mentioned that there's tables within tables within tables, because, unfortunately, all of the awesome layout features that we have in CSS and even some of the layout features of the past and CSS that weren't so awesome. We never had access to in the first place. Like if you could use CSS says grid and HTML emails, my life would be amazing. So in HTML emails, you're largely expected to one inline all of your CSS and to use tables to layout everything. And this can cause some headaches. Luckily, there's a lot of different packages out there that can help you sort of tame the system or make it so you don't even have to interact with the system. And they run their interim like goi sort of drag and drop stuff to write in one language compile to HTML template. There's all sorts of nice starter kits, too. We mentioned the zurb Foundation for emails, which can give you some really nice basic starter templates that are responsive and stuff like that. They're going to look nice on your, your phone, email client. So yeah, let's talk a little bit about your your process for designing an HTML email, like where do you Where do you start?
+
+62
+00:30:54,270 --> 00:32:01,080
+Wes Bos: Yeah, usually what I'll do is I'll start with an existing existing template, just because like, I'm not doing anything all that complicated, I try to keep my stuff to just one column, top to bottom. But even then, like I just once I just tried to have a button with padding, and, and a background color, and like, the whole thing was just like garbled, I was like, really, I can't use padding and background color on, like, whatever this crazy thing is. So that's when I switched to using zurb foundation for emails, just so that it could use like a button tag, and then it will compile it over to whatever the equivalent is because like, honestly, there's there's people out there that are full time, email writers, and they're really good at this, but I just don't have the time or the interest to learn what the equivalents are. So I wouldn't say that anyone should really learn what those things are, just because there is the alternatives out there, right? Like you can get a template and just change what you want. Or you can use it. There's also this other one MJ ml. You've seen this one, Scott, we've talked about it on the show before.
+
+63
+00:32:01,140 --> 00:32:17,160
+Scott Tolinski: Oh, yeah, I love MJ ml. Because it's basically, I don't know if you'd want to call it like Gatsby for emails, but it's a static site. It's a static email generator for for react, you get to write your stuff in Oh, wait, am I thinking about the wrong thing?
+
+64
+00:32:17,190 --> 00:32:18,860
+Wes Bos: No, no, you're right. It's written in react.
+
+65
+00:32:18,900 --> 00:32:23,010
+Scott Tolinski: Sorry, I like opened up this the MG ml page. And it didn't say anything about react. And
+
+66
+00:32:23,580 --> 00:33:08,400
+Wes Bos: I think that there may be, I think that there may be hiding, not hiding, but going away from the fact that it is react, because as an end user, you probably don't care that it's react. Yeah, you're right, you just care that I'm writing these tags. So they have tags like MJ, body MJ container, MJ, column MJ image, and then those are behind the scenes, those are just react components, right. And then as we know, React components have a render method, which will, under the hood, render out the the equivalent gnarly HTML that you care about. So it's just like zurb foundation for emails, where you can write in their tags in their flavor, and they'll take care of converting it over to to whatever the equivalent is.
+
+67
+00:33:08,429 --> 00:33:37,500
+Scott Tolinski: Yeah. And you know, what's cool about this? Is that it, I don't know, it makes it makes writing your templates a lot easier. The problem I have with this, the only problem I have with it is that it'd be really nice if you didn't have to use this as a command line utility. Like, I would really like to be able to use this template code in my actual setup on the server and have it output directly while I'm sending to be maybe dynamic, like create dynamic templates and stuff like that.
+
+68
+00:33:38,550 --> 00:33:46,950
+Wes Bos: Is that not available? I actually haven't used it before. But what I assumed it would be I'm just looking at their docks right now. It looks like they have like an API that you can hit.
+
+69
+00:33:47,100 --> 00:33:53,820
+Scott Tolinski: They might not. When I was looking at it, it was just a command line utility, which is simply just taking in the template spitting it out.
+
+70
+00:33:55,020 --> 00:33:56,430
+Wes Bos: Let me pull this up. And
+
+71
+00:33:59,610 --> 00:34:04,740
+Scott Tolinski: it could it could have evolved from since then. Or it could be mistaken. Oh, yeah,
+
+72
+00:34:04,770 --> 00:34:51,000
+Wes Bos: they say inside no j so you import m j m l to HTML, the import your your package. And then you feed it a bunch of MG ml, which is the special tags that they've created. And then that will kick out your HTML. So in theory, I could swap this out in my pipeline for it with zurb Foundation emails, or zurb foundation for emails, and it will kick out HTML. So it's not just a command line tool, you can use it in line in your actual application. I think that they just do they they show the API and they show the the command line utility because a lot of times people are just copying and pasting it from their local computer to like their their MailChimp or drip or whatever it is are using.
+
+73
+00:34:51,150 --> 00:35:06,060
+Scott Tolinski: I might be tripping but like, I swear, I found an issue on GitHub and someone was like it'd be really great if we could use this on honors node server and They're like, yeah, maybe in the future. I like again, last time I looked at this was maybe about a year ago or
+
+74
+00:35:06,090 --> 00:35:07,770
+Wes Bos: Oh, I guess probably implemented now.
+
+75
+00:35:08,280 --> 00:35:27,030
+Scott Tolinski: Yeah. If I'm totally wrong on this, and you're a creator of this, and it's always been able to do this, please let me know. Because I feel like I'm living in an alternate universe right now where this couldn't do this a little while ago. And now we can. So either way, that's exciting. I'm actually going to start using this in more capacity, then. Because this is exactly what I want.
+
+76
+00:35:27,420 --> 00:35:41,790
+Wes Bos: What I think is cool about this, I don't know if this is this is probably possible, like, could you use your own components? Like, for example, if you had like a product component on your website? Could you also use that to render out the product into your email? But then maybe you'd have to worry about
+
+77
+00:35:42,840 --> 00:35:51,900
+Scott Tolinski: HTML styles, and inline styles like because with this, this wouldn't know because all of its components are outputting, specifically to HTML email.
+
+78
+00:35:52,260 --> 00:36:01,460
+Wes Bos: Yeah. But if you if you use like a styled components, would it just kick the CSS? people screaming at us right now being like,
+
+79
+00:36:01,460 --> 00:36:06,900
+Scott Tolinski: read the docs? Yeah. And with that, with that CSS actually look good on email?
+
+80
+00:36:06,980 --> 00:36:14,420
+Wes Bos: Yeah, that's a good question. That's the that's the dream, right? Is Yeah, well, to use your components wherever. But maybe not.
+
+81
+00:36:14,730 --> 00:36:20,250
+Scott Tolinski: I'm gonna, I'm gonna start implementing this, I'm gonna start doing it right now. I absolutely love this. Yeah,
+
+82
+00:36:20,820 --> 00:36:28,880
+Wes Bos: it's kind of neat. They also have an API as well. So you could, you could even make like an online editor, where you Oh, they even have that they have it all my editor,
+
+83
+00:36:29,210 --> 00:36:33,150
+Scott Tolinski: and j ml. What we can do next.
+
+84
+00:36:34,830 --> 00:37:19,800
+Wes Bos: Probably everything that we are thinking about right now, they already had. Um, let's talk about testing email. So one of the frustrations with email is that you'll often get a screenshot from a user being like, this is messed up on this bizarre email client or two versions, old iPad, and you're like, cool, but I can't inspect it, and I can't see it. And I can't test it. Like, the really frustrating thing about email is that every time you want to see what it will look like in an email client, you have to actually send an email. And then even then you have to have that email client to be able to view it. So there's a solution to this. And it's a service called Litmus.
+
+85
+00:37:19,950 --> 00:37:22,830
+Scott Tolinski: Oh, actually a different one. So we can talk about Oh,
+
+86
+00:37:22,880 --> 00:38:25,940
+Wes Bos: cool. Yeah, I'll have to hear what yours is. Yeah. And what I do is anytime that I used to do email design for clients, and anytime I would do one, I would bake in one or two months worth of Litmus, because I think it's like 90 bucks a month or something. Let me pull it up, bro. It's so expensive. Yeah, the basic is, is 79 bucks a month billed annually. And the plus is 160. So it's super expensive, but they know that that people need it. And they know that email is where most company's money is, so they're willing to pay it. And this will just give you screenshots of your email in all of the different clients from some bizarre iOS email client to old versions of Outlook, and so on. And it's pretty fast. It's pretty quick. It used to be built into MailChimp, I think it still might be built into MailChimp. And the only frustrating thing is that there's still it's just a PNG image, you can't right click inspect element. So if something's broken, you just got to keep guessing until it starts to show up.
+
+87
+00:38:26,609 --> 00:40:28,830
+Scott Tolinski: Yeah, okay. So I use something called the email on acid email on acid calm, which is they used to have this ridiculous design style. I mean, they still breathe. It's actually they've cleaned up the design quite a bit. But if you go to their website, you'll see the sort of like green splatter. It looked like the slime from Nickelodeon or something everywhere. Yeah. Oh. And so this email on acid, we started using this back in the day, when I worked at an agency, we were doing a lot, a lot of different email marketing and stuff like that. And their pricing is pretty good. I have 44 bucks a month for their, yeah, their unlimited tier again, it's going to show you all your screenshots and stuff like that on all of your different devices. The free tier is actually pretty decent, you can test it out on a few different browsers just to get an idea. Some of like, the more common ones. And the ones they give you for free are actually pretty good. I mean, it's not giving you access to all of them, but it's giving you access to enough to see that. Well, it's not going to look bad and some of the major ones. So I definitely like that. They're also they'll give you potential warnings. So when you upload your your template and stuff like that, it's going to tell you if like there's better ways you could be doing things or more compatible ways. So it gives you that saying, hey, we've identified these things that are potential issues and here, here's the what you can do to fix them. So I've used email on acid. It used to be sort of like a paid person. There used to be like a pay per cent. here where you could say, I'm gonna do 10 tests, that's going to cost me like 20 bucks or something. And that was really nice. If you had like a one off gig, you could just build a client for those tests. It looks like I don't know, if they still have that I'm not seeing it. But it was those pretty nice. Overall, I definitely really liked working in an email on acid, I never had any reason to try any other ones. So I guess I didn't look. But so I don't know the comparisons between this and littmus, or anything like that. But it's pretty nice platform here. And not when you hear talked about a lot, I think,
+
+88
+00:40:29,900 --> 00:42:30,630
+Wes Bos: awesome, I had no idea about that. So I'm gonna have to check that out. Because I always was doing the whole sign up for a month of lateness and then make sure you cancel it before they renew it for another month, just because like I only needed it for it's one of those tools that is just so expensive that you can't pay for it month to month, unless you're doing quite a bit of it. One little tip I can give you about designing emails is images, sometimes people don't turn their images on. And generally that will hurt your open rate or hurt your perceived open rate. Because the way that most of these email clients track that the person has opened the emails, they have a little tracking pixel. And then when that when someone turns images on on the email, it'll automatically send a ping back to the server saying this person opened the email. So one thing that I do to get better stats is you have alt text on your images. And when you have an image that is not shown the alt text shows. And what you can actually do is you can style, the font size and any of the text attributes of the alt text. So you can say like font color, yellow text, Shadow, whatever, font size 100 pX, and usually what I'll do is I'll just like have a funny alt text being like a super hunky men typeset a computer. And then I say turn your images on. So and that really helps my open perceived open rate. Because people are like, Oh, I have to see this hunky man in front of a computer. So you can style everything about an alt text. And this works both on your computer as well as are both on in the browser as well as in emails. Another fun thing you can do is if an image does not load, you know how you have before and after pseudo elements on most elements, right? But you don't have before and after pseudo elements on what what are the inputs I got? What are the elements like input? image? Yeah, select
+
+89
+00:42:30,689 --> 00:42:35,940
+Scott Tolinski: a lot of ones you want to use on and then forget that you can't and then you'd Yeah, and then you're like, why isn't this working? I
+
+90
+00:42:35,940 --> 00:42:37,530
+Wes Bos: think button maybe?
+
+91
+00:42:37,880 --> 00:42:39,480
+Scott Tolinski: I don't know, I need a list. Yeah,
+
+92
+00:42:39,480 --> 00:43:16,650
+Wes Bos: the reason the reason that you can't use before and after on some of these elements, as they're called, they're what are called replaced elements, meaning that the the browser will take them, and then actually replace them with their their native equivalent and image is one of those elements. But if an image source fails, or does not load, which is the case, when someone has images turned off on their email client, then it is not a replaced element. And you can use before and after on it. So you can you can put these little bars on top and the bottom of your actual image being like image download failed or turn your images on.
+
+93
+00:43:16,709 --> 00:43:17,790
+Scott Tolinski: Yeah, so give him a little
+
+94
+00:43:17,790 --> 00:43:23,150
+Wes Bos: image shaming. And you can put emojis in there too. So pretty.
+
+95
+00:43:25,230 --> 00:43:26,310
+Scott Tolinski: Does it all? I mean,
+
+96
+00:43:26,630 --> 00:43:36,090
+Wes Bos: yeah, I have a little tip from like two years ago that I posted this all I'll tweet this out, put it in the show notes if anyone wants to see what I'm talking about.
+
+97
+00:43:36,110 --> 00:43:38,790
+Scott Tolinski: Nice. Yeah, let's see some code for this. I like this.
+
+98
+00:43:39,030 --> 00:44:55,140
+Wes Bos: Let's take a quick break and talk about fresh books. Fresh books is a cloud accounting software, which I'm using quite a bit because it's tax time right now. And I'm just getting all my taxes wrapped up before I send it off to my accountant. And what one thing that I really like about Freshbooks is that it basically has everything to do with my business. So anytime that I send off an invoice to someone for the show, one of my favorite things about Freshbooks is that I get to Bill Freshbooks from Freshbooks for this show, because they sponsor it all of my expenses go in there all of my different types of currency that I have is in there all of the different different types of taxes so anytime I bill somebody from Canada I have to charge them their provinces tax rate. And it's great because it keeps track of everything that I could possibly need in there and then just takes and then I could just do a single dump off to my accountant and he loves it he says I often refer my my own clients to use fresh books because at the end of the year, it makes my job so much easier. So if you are a small business looking to get some sort of accounting software in place, I definitely recommend you check out fresh books at fresh books calm Ford slash syntax, and of course use syntax in the How did you hear about a section
+
+99
+00:44:55,200 --> 00:46:49,440
+Scott Tolinski: nice, super cool. Yeah, so Okay, so we talked about Designing emails we talked about marketing, or transfer. So we talked about designing emails and transactional emails, we have not talked about marketing emails, which is a huge thing. And a lot of people are very interested in marketing emails, I take a little bit more of a, I guess I don't want to say relaxed approach than you do. But my approach is definitely bit more simple. I have a MailChimp account, I've designed my emails through MailChimp, which actually is just a beautiful interface, right? I mean, let's face it, MailChimp is one of those online platforms, that is a great place to go to for inspiration. In general, as a developer, there's a lot of great tools and stuff in there to make sure your emails are working fine, they can compress your images and resize them and everything like that. So the MailChimp, like email builder is just super nice. I take care of all of my marketing emails through MailChimp, I AB test everything. So I send everything out to you know, 10% of my audience or something with different titles, the winner open radios title sends out to the other percentage, that's the only thing i a b test, honestly, is titles. I probably could get into a more but like I said, I take a pretty relaxed approach to marketing emails. And it's something that I actually I don't know, I have some some guilt about emailing people, like, I don't know, I know how full my inbox is. So I you know, I don't try to send out a ton of emails maybe one or two a month if that and try to keep it pretty light and say, here's what's going on, here's what could interest you and whatever. But everything comes directly out of MailChimp tested all love the interface, love everything like that. I've recently been doing a little bit of research into seeing maybe where else I could go other than MailChimp. And I found the prices for a lot of these platforms to be actually more expensive, which I wasn't expecting to be honest.
+
+100
+00:46:50,490 --> 00:49:38,340
+Wes Bos: Yeah, it's, it's super expensive. I think the the big thing right now in an email is what's called like marketing automation, meaning that instead of it, I mostly just do blasts right now meaning that I'll just send out a big email to everybody on my email, email list, and it'll go out. But the big thing now is that you have this automation where, let's say somebody, I don't do this right now. But it's clearly something I should be doing. If someone were to watch, come to my website, maybe watch a video, and then you can tag them as like, watch the JavaScript video, and it clearly shows that they're interested in JavaScript, and then you can send them a follow up email, like, like six days later be like, hey, how's JavaScript going? And, and then give them a coupon code or something like that. And the idea is that you have like, sort of this machine where you've got all these levers and trips, and when somebody trips specific amounts, then you can, you can shoot them off and email and that's the I have this thing called, I use drip. It's that great, get drip calm, I actually think it's just drip calm now. And it's super expensive. It's by far the most expensive thing that I pay for a monthly it costs hundreds of dollars more than my mortgage to run, which it it makes me cry. But the the sort of the thing that you need to know is that like, regardless of how much your email lists costs, you should be able to get, like, I don't know, 510 times that back if you're using your email stuff properly. So it's kind of neat, I have everything set up and drip, I record everything. So if you watch a video, it will log that your last watch the video into my drip, or it will. So what I could do is I could this all bundles down to segmentation of my list. So if, for example, I sent out a little Hello, I'm Wes Bos email to everybody who signed up for my CSS Grid course, in the last week. But how or had never had never signed up for a course before. So I could segment my list right down to that. Or I could also say like, show me that people who have watched at least half the videos, but then stopped and I could send them a little email being like, Hey, keep going. You can do it. It's pretty neat. It's the the amount of segmentation in like, just the very fine greenness is amazing how how deep you can get, because then you're not sending unnecessary emails to people. Like I'm not sending. Hey, my react course is on sale to people who have already bought my react course. Because then they'll be like, I don't need this. I already bought it. I'm happy with it, right?
+
+101
+00:49:38,790 --> 00:50:13,590
+Scott Tolinski: Yeah, for sure. And I think that's something I'm definitely missing in my whole process. But in all honesty, I think MailChimp has really just started adding a bit more of those automated Automation features and stuff like that. I just haven't had the time to dive into it. To be entirely honest, I would really like to learn more about that stuff, but it seems like so it seems took a lot of a lot of a lot of setup a lot of work, a lot of knowledge and a lot of specific knowledge, right? Like this stuff is going to be very worthwhile if you put the effort in, but I'm not sure I have the time to do it.
+
+102
+00:50:13,830 --> 00:51:33,750
+Wes Bos: Yeah, I took me, I probably spent two weeks integrating drip into my own platform, by from everything, like when you sign up for a course, it doesn't add you to it right away. It's only when you watch a couple videos, then it adds you to my email list. And there's all kinds of stuff that I had to integrate into my platform. And it is just so much work to get the stuff and conveying all the data from my database into it like which courses they have bought, or if they're a customer. And then there's also the whole concept of conversion. So when somebody buys something, it tells them how much that thing was. So you get sort of like a lifetime value of a customer. And then after a while, you can start saying like, oh, if I spend, like three months working on a CSS Grid course, and then I put out a paid course, this percentage of the people who bought the free course or who got the free course, will then turn into real customers who buy it, and you can start to put some numbers to what your time is worth. But again, it's almost the reason why I don't do it as much as I should be, is because my time is better spent just making more content, right? Like you could probably squeeze an extra little bit of juice out of that rock, or you could just keep making more awesome stuff, which will likely sell a lot better. Yeah, I
+
+103
+00:51:33,750 --> 00:52:03,390
+Scott Tolinski: think that is the the main reason why I haven't spent more time on it. Because I mean, that is my platform is there's a new course every month and stuff like that. And that's what I'm advertising. And that's that's what I'm putting out there. And I am going for more more more content. And you know, honestly, I probably be would be in my best interest to spend more time on it. But that's definitely one of those things that Yeah, I there's only one of me. So recording videos, improving the site, all that stuff is taking precedence.
+
+104
+00:52:03,870 --> 00:53:45,360
+Wes Bos: Yeah, I should also talk about this thing called sendy. So there is sort of a host your own email platform called sendy out there. And I think there's another one called email octopus as well. And these, what these things do is they charge you a small fee for either access to the code base, he hosts it yourself, or I think it's a I think email octopus is a hosted version. And then what it does is it hooks up to your Amazon SNS account, and sends out the bulk email through Amazon SNS, which is extremely cheap. Like, I think I could send 10,000 emails for $1, which is is way cheaper than any of these other platforms. And it was good, I use sendy for maybe two years. And I was pretty happy with it because it gives you good stats as to who opened it, who didn't open in how much bounced and whatnot, allows people to unsubscribe, it does all that stuff. But the the huge thing that is missing, and they're starting to implement this is the ability to segment your list. So what I had to do previously is I would have to export my whole list, you go into Microsoft Excel, and like and then export the list from Microsoft Excel and re upload it as a new audience. And that's suck because I if I ever wanted to send a quick email off, then I couldn't. So I would say anyone who's just getting started and is weary of costs, definitely check Cindy out. I was happy with it for years. But once you start getting going in the email game, you realize that the cost is negligible to what your extra bringing in in terms of email, because email is by far the biggest moneymaker for I would say everybody,
+
+105
+00:53:45,420 --> 00:54:33,810
+Scott Tolinski: yeah. Have you heard of this? mautic.com m. AU. t IC or sorry.org mautic.org? No. This is kind of interesting. I just want to do a little hunt for sort of open source email providers. Yep. Because it's definitely something that's out there. And this one looks really interesting. It's open source marketing, automation. Email automation. Looks like there's a nice, like visual editor for writing these sort of segmentation flows. It sort of looks like a line chart, like if the user does this thing go here, but it's all very visual. I have not seen this. It looks like it's something somewhat popular. It looks kind of nice.
+
+106
+00:54:34,020 --> 00:54:49,830
+Wes Bos: That's cool. I actually went down down this road after I was looking at getting off of sendy. And Andrus, who runs who's the developer behind node mailer? He came out with something similar to this. Let me find out what it is real quick.
+
+107
+00:54:52,080 --> 00:55:05,100
+Scott Tolinski: Yeah, the caveat here is that I have not used this or even heard of this until just now. I just did a little little search but it looks they have a nice website. be worth your time to check out. That's it, I have no idea how nice it is actually.
+
+108
+00:55:06,629 --> 00:56:18,240
+Wes Bos: It's called mail train. Okay. I gotta check this out. Because that's always very interesting to me, especially if you're using something else to send email the the sort of gotcha with all of these sendgrid and postmark is that the thing you can't do is send bulk email. Because if you're sending bulk email, you have to be using some sort of service, or you use Amazon SNS to send all of those big bulk emails, which is great. So the other one is called mail train. And I used it about six months ago, and it was in pretty good spot pretty good space. It's based on Express and MongoDB. And I was pretty happy with it. I donated a bunch of money because I was I was very, I was very much invested in this thing being built, because like, why isn't there an open source MailChimp out there, right? But at the end of the day, it just really wasn't where I needed it to be in terms of segmentation, I really need to get nitty gritty with, with how fine grained I can get with my list. So I just moved over to drip and it's been well worth my money even though how expensive it is. But I've never seen this mountain modoch map mouse click
+
+109
+00:56:18,360 --> 00:56:20,760
+Scott Tolinski: mouse, mouse, mouse, it's
+
+110
+00:56:20,880 --> 00:56:22,200
+Wes Bos: it's probably like automatic,
+
+111
+00:56:22,230 --> 00:56:29,520
+Scott Tolinski: some magic. That makes our sense that that makes way too much sense. So it's just,
+
+112
+00:56:29,760 --> 00:56:31,560
+Wes Bos: it's open source isn't on GitHub?
+
+113
+00:56:31,560 --> 00:56:33,060
+Scott Tolinski: I don't know.
+
+114
+00:56:33,540 --> 00:56:35,100
+Unknown: Let's look for it. And let's see.
+
+115
+00:56:36,120 --> 00:56:44,100
+Largest open source. But but but not they're like little social tags. Yeah, it is on GitHub. And it's
+
+116
+00:56:44,100 --> 00:56:53,880
+Wes Bos: built in PHP. Interesting. Interesting. be pretty easy to to host this yourself.
+
+117
+00:56:54,540 --> 00:57:03,540
+Scott Tolinski: Yeah, it's funny if you if you just Google open source, email marketing, there's a decent amount of stuff popping up. might be worth a little a little dive in sometime.
+
+118
+00:57:04,019 --> 00:57:06,990
+Wes Bos: Yeah, I should check that out. Yeah, do
+
+119
+00:57:06,990 --> 00:59:27,980
+Scott Tolinski: you have a favorite a provider in any sense out there, whether it is open source or or like a service, let us know what you're using. I'm very interested. I'm doing a little survey right now. So I'd be very interested in hearing what everyone likes to use and what you're using maybe a little bit about why and if it's whatever it is, I want to hear. Okay, and I guess it's time for sick pics of which I have a sneak peek of an app slash platform, that platform that I've been really into lately. If you've used mint.com before to do sort of your keep track of your financial accounts right all your checking and your your credit cards and all sorts of stuff. I have found a platform that I like much better than mint called personal capital. I don't know how well known this platform is I've heard of it. Yeah, I have been really really into personal capital I found mint has started to get a little bit well they they haven't really progressed I mean men sort of stayed the same the interface kind of stayed the same they this stuff they did add was not necessarily always super helpful. I had a lot of accounts not connecting things that should be working and didn't and I was just getting kind of frustrated with it. So then I went looking and I found personal capital. They have a nice looking website. The app works really nicely there's like Android widgets and stuff for it. So the whole thing works really nicely login via fingerprint all that good stuff. And yeah, I've just been really liking this especially the sort of advice it's been giving me has not been in your face like mints advice, and the advice is often good. So for me, I found that the app and the service were really nice. It gives you some really interesting charts like basically your expenditures for the month so you can see like in two overlaid charts This is how much I spent on this day of every single day of the week from comparing this month to last month so you can see oh crap we're already over where we were this point in last month, so we have to dial it back or else we're obviously going to be over our our total budget or stuff like that. I found the budgeting tools and everything to just be excellent. So personal capital is my sick pick. I really really really been liking it if you are feeling maybe a little bit not into mint lately, then I would check out personal capital looks really nice app.
+
+120
+00:59:29,370 --> 00:59:36,270
+Wes Bos: Pretty sweet. I'm gonna have to check that out. Actually, I did check it out. And it's like most things it's not available in Canada.
+
+121
+00:59:36,270 --> 00:59:37,770
+Scott Tolinski: Oh sucks.
+
+122
+00:59:37,770 --> 01:00:00,480
+Wes Bos: I'm just looking at another one called wealth, aka wealth. Yeah, I don't I don't know if this does bank accounts or just investments. Interesting. That doesn't look like my bank. My bank is never available on any of like, we have four banks in Canada. And they're never available on these like link your bank account things which is always frustrating. But
+
+123
+01:00:00,690 --> 01:00:24,210
+Scott Tolinski: yeah, and that's why it's because I'm a part of like a really small credit union. And it's on all of them for some reason. The funny thing is, is credit union they, they've always had like a really progressive app, like they just released a new version of the app. And it's all material design. And that like, looks awesome. Like, how are you guys doing this? This looks really nice. Meanwhile, their website is terrible. So they have a really good app developer and a not so great web developer.
+
+124
+01:00:27,210 --> 01:00:38,430
+Wes Bos: That's cool. So I don't have a sick pick today, just because I don't have any I was struggling to find one. And I don't want to recommend anything that I'm not super stoked about. So I'm gonna pass on the SEC pick today.
+
+125
+01:00:40,110 --> 01:00:40,800
+Unknown: sick,
+
+126
+01:00:41,220 --> 01:00:45,510
+Wes Bos: sick, any shameless plugs for you today, Scott? Yeah, I'm
+
+127
+01:00:45,510 --> 01:01:28,770
+Scott Tolinski: gonna plug, again, my subscription service level Pro, I have a new series that's going to be coming out this month that I am officially announcing as pro Gatsby. So what are we doing is a lot of interesting Gatsby stuff. I asked Twitter, you know what you wanted to see in it, unfortunately, like, there's way too many things to cover in a series to hit all those stuff. But I really want to be able to, what we're going to be building is sort of like, how you can build a really nice blog using Gatsby and have this thing be blazing fast with all of the nice Gatsby graph qL features there. So pro Gatsby is going to be available at the end of the month. So sign up. Now, if you want to have access to all of that and more.
+
+128
+01:01:29,940 --> 01:01:55,110
+Wes Bos: Wow, my, I'm just gonna plug my upcoming, I think I'm gonna call it advanced react and graph qL course I'm really excited about it, it's going to be a massive course just because it's going to include all kinds of stuff from styled components and graph qL and, you know, all that good stuff. Um, and it's gonna it's gonna be a big course, but look forward to it, because I think it's gonna be a good one. Nice.
+
+129
+01:01:55,140 --> 01:01:55,950
+Scott Tolinski: I'm excited for it.
+
+130
+01:01:57,000 --> 01:02:00,330
+Wes Bos: Sweet. All right. With that, we will see you next week.
+
+131
+01:02:01,410 --> 01:02:10,560
+Scott Tolinski: Peace pace, head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop
+
+132
+01:02:10,560 --> 01:02:12,540
+Unknown: a review if you'd like to show
+

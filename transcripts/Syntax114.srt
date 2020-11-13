@@ -1,0 +1,372 @@
+1
+00:00:01,319 --> 00:00:09,900
+Announcer: You're listening to syntax podcast with a tastiest web development treats out there. strap yourself in and get ready. Here is Scott and Wes Bos Welcome
+
+2
+00:00:09,900 --> 00:00:38,250
+Scott Tolinski: to syntax in this tasty treat. We're going to be talking all about part two of the freelance client lifecycle, we're we're going to be going through the design part of your working with freelance clients, the development part, feedback and revisions, deployment handoff, bug fixes and support and what happened, what to do when things go wrong. You are listening to syntax. My name is Scott Tolinksi. And with me, as always, is Wes Bos, how you doing was,
+
+3
+00:00:38,250 --> 00:00:52,890
+Wes Bos: I'm doing fantastic. I'm really liking this whole topic of freelance client lifecycle, I think it's, it's fun to look back at all of the stuff I've learned of doing freelancing. And I think it's going to be helpful for anyone who wants to start a business or just earn a little bit extra side money.
+
+4
+00:00:52,919 --> 00:02:01,290
+Scott Tolinski: Yeah, and there's so much info here. I mean, we had to break it out into two was to do it justice. And you could probably break it out into like four or five episodes of even more stuff. So if you are loving this freelance stuff, let us know. And we will continue to expand upon it. This episode is sponsored by Sanity, which is an amazing back end solution to your front end sites. It's a sort of a bring your own front end platform that really makes entering your content and content management in general a joy. There's some really crazy new features that we're going to be talking about in these when we talk about Sanity more. And it's also sponsored by longtime sponsors, which is Freshbooks. And Freshbooks is cloud accounting software, which is going to be extremely important. If you are wanting to keep good communication with your clients and be working as a freelancer in general, this platform is made for you. So let's get into it and start talking about the design phase of the freelancing project. And this could be whether or not you are the designer yourself or you are working with another designer either way, there's most likely going to be a design phase, you are working with the client on what this thing will look like that you can then build it.
+
+5
+00:02:01,469 --> 00:04:42,630
+Wes Bos: Alright, so let's talk about the design, the first thing you want to do with the design of your client is first collect all assets from your client. So part of the requirements is if you do in the design, you will be gathering information about what you want to look like any any inspiration that they have things like that. But at this point, you need to make sure that you collect all assets from your client. So that might be their logo. If the client has a brand guideline in place, that's important. If they don't, even sometimes even with the logo. I've had clients thinking that like a website comes with a logo, right? Yeah. So that's important to specify that very early in the requirements process, and then a list of likes and dislikes, because there's kind of two parts to the design, the major point of the design is to get across whatever it is, that is the purpose of the business or the purpose of the website. So I think that's probably the most important part. But there's also this other part where you have to give off a feel for the company and convey the type of company that it is as well as make the person who is getting the website happy with how the website looks and, and the overall vibe that the website gets gives off. So getting all of that information up front is really, really important. And then once you have that, it's time to create the initial look and feel. So generally what I would do for this is take their logo take any like brand colors that they might have take any brand guidelines, often I would get this huge PDF of brand guidelines from from the client. And they would say, these are our colors. These aren't primary colors, these are secondary colors, here is our logo, here's things you cannot do with the logo. So things like putting the logo in a box, things like putting borders too close to the logo, things like tilting the logo, things like overlapping the logo, there's often list of do's and do nots that come with a logo, which is which is extremely helpful, because you know what you can do to maintain their brand guidelines from their website all the way through to any other thing that their logo goes on. And then I would just kind of go through and mock up an idea that it happened, I never really did a whole bunch of different ideas. So at least for me, this was not something where I would like come up with six or seven different layout ideas, I would just come up with one, maybe I usually just design the homepage. So that's the header, maybe whatever's on the homepage, what text looks like, make sure you're hitting all of your things like typography, colors, all of your like think like your global styles, getting all of that out on the page. So you can get an overall look and feel of the website. And then I would I would present that to a client. We'll talk about presenting in just a second. But how do you tackle something like this if the clients asking you to design something?
+
+6
+00:04:42,689 --> 00:05:49,350
+Scott Tolinski: Yeah, I like to do just sort of general boards like this is sort of the feel of things, right? We're going to go for this we're going to go for this we're going to go for this and make it very explicit that this is not the layout. This is not the website. This is like this is the overall big picture sort of look we're gonna go with and again, I know why you To work for an agency that would do three fully fleshed up, like fleshed out designs, like just total complete designs at this point, and then present them to the clients, they pick one. And then the client always pick the worst one. Like it was without fail. If we were to look at those, we'd be like, we're like this one the least, they're always going to pick that one. So I don't like to do that. Personally, I don't like to give the client that much control, because they're not the designer, obviously, they want to have something that represents them. But you know, you want to be able to have the ability to create something they you know, you're proud of his good work rather than just, you know, a hodgepodge of things that they like. So, I mean, I think I personally like the idea of creating boards. And you could call them sort of like mood boards, a design boards of just sort of general feel ideas, sort of textures, maybe things like that you're working with, yeah, and then go from there.
+
+7
+00:05:49,380 --> 00:07:27,270
+Wes Bos: I really like that is why I never did that. But I think that would probably work better. Because you don't get hung up on I don't like that this is in this place. And you just focus on colors and look and feel. And I should also say that like I'm, I wouldn't call myself a designer, I design a whole bunch of websites. But I know that people who are full time designers have a much more elaborate process than this and, and go much more in depth into it. But the one thing I will say is that it's important to back up the whys of what you did. Because if you just design something and give it to the client, they might just take it as like a pretty picture. And they might show somebody in their family who has good taste, and get their feedback on it. And looking good is really just a small slice of actually a good design. So I think that because they're hiring you as an expert, you need to back it up and say, This is what I did behind it. This button is teal, because it's your call to action. And we're trying to get the most leads, we're trying to sell the most widgets at the end of the day. Or if they come back with some some suggestions for it, like, Oh, I would like to use this color and whatever you need to say, okay, we can try that. Or that's not a good idea. Because of accessibility, that's not a good idea. Because it's hard to read, you might be leaving people out, you'd be might be selling less things because of this. Because at the end of the day, we say this a couple times that you are the expert here, they're hiring you. And you need to tell them, this is the design. And this is why I've done it because I think that we're going to be able to sell more things, or I think that it's going to be clearer to people if we approach the navigation in such a way.
+
+8
+00:07:27,510 --> 00:09:36,720
+Scott Tolinski: Yeah, yeah, absolutely. And then getting into some of the like, I don't want to just think about all the times I've shown a client work that's like too early, and say, Okay, this is what I'm sort of thinking. And in my mind, I can see that this thing is unfinished, or this is not totally complete, or these ideas are like general ideas. And the client will be like, well, this button is no good. This is wrong, this is off by half a millimeter over here. And you're just thinking like, Ah, this is not like this is not finished. And here, you're evaluating it, I think about even just like, for some reason, when you have a design and you're showing off a design to somebody and it's not quite perfect, they're always going to look at the one thing you don't want them to look at. I always just think back to this. This is like a sort of a decent example. But like, I think back to this A B testing, we did it forward. And we showed them this design, and it didn't have all of the cars in it, it only had like three or four Ford cars in it rather than their whole lineup. And it was like for a showroom component. And we asked a bunch of people to tell us like what they thought about this design, you know, what are your thoughts is just general not not working with the client, but just general AB sort of like, you know, pre designed sort of how does this feel to you? And you would not believe how many people got hung up on the dumbest things. This guy was just like, yeah, it's okay, there's no Mustang. And I only liked the Mustang. So therefore, I hate everything about this. I hate the layout. I hate that there's no Mustang, man, it would be really better if you had a Mustang in this, and we're just like, doesn't have anything to do with the design or the Yeah, like that has nothing to do with it. And I just remember being like, so upset by that, that like, you know, all of the hard work that went into producing this thing was just out the window because of one little thing that the person got hung up on and your clients will get hung up on if they see things that are imperfect. So I think I would be cautious about showing things too early in the creative process. Things that they can't, you know, wrap their head around as being maybe theoretical or sort of like a group thing. So be careful about when you show what because unfinished work will not necessarily represent what you want it to represent or what you thinking it's going to represent.
+
+9
+00:09:36,799 --> 00:10:02,539
+Wes Bos: Yeah, I even have that now anytime I tweet, like a half finished design because I love to to show my work and I love to show what I'm working on. Anytime I show anything related to design, you get people jumping on every little thing like it's got most of finished polished design, which is so frustrating because it makes me not want to share things because I know I'm gonna have to spend the next hour being like yeah, I know I'm not done it yet. I'm just saying To show what I'm like my work in progress, right, right.
+
+10
+00:10:02,539 --> 00:10:21,210
+Scott Tolinski: And I actually showed like a new design fairly recently. And it was like, really, the design itself was like, basically there. But then everyone was hung up on the spelling of one word, or like you wrote the word Gatsby on two different cards. But there's clearly a react logo on the one card and a Gatsby, on the other column. Like it's just mock data. This is just fake data.
+
+11
+00:10:22,710 --> 00:11:31,260
+Wes Bos: Oh, it's so frustrating that kind of, that's why it's important to, like Scott says, Don't show it too early. Another little trick I had back in the day, before we had any of these things like envision, or these apps that would like show the design is I would just export the entire thing as a PNG. And then I would embed it and center it on a website. And and then I would send people to a link and and then it would feel like it's in the browser. And not like opening it up on like Windows File preview, or the thing is, like, way smaller than it will actually be and whatnot. And even then I would get people being like, but the sides are cut off. I'm like, well, it's not zoom. So I would have ended up making the PNG like 4000 pixels wide, just so people wouldn't complain about the sides being cut off. And just little things like that you can think ahead to people getting distracted. Where or and even just game like, Look, this is not done. Don't worry about the little fussy details. We're gonna get into that. But what I'm really like, when you see this, what is your emotion? How do you feel about this? What are your initial thoughts? And I'm not looking for you to come back with a laundry list of little bug fixes that that were there? We're not nearly there. Yeah, well, I
+
+12
+00:11:31,260 --> 00:11:33,840
+Scott Tolinski: feel like I would really like it more if it had the Mustang though.
+
+13
+00:11:35,970 --> 00:11:38,279
+Wes Bos: about it? Oh, that's great.
+
+14
+00:11:38,309 --> 00:12:42,480
+Scott Tolinski: I think it's important to I mean, you when you're working with clients is that you know, you are the expert. And they typically don't know very much about our craft in general. So be prepared for non standard feedback, a lot of people who are designers, or went to art school, and they had a whole entire classes about proper critique, and how to talk about art and how to talk about design. And your clients don't have any of that. And they may think that they're savvy, and they may think that they know it all. Or they may think that they're good at it. But at the end of the day, they don't have that. So be prepared for some really odd feedback. I've been told this feels cloudy, can we make it more sunny? I'm sure many people have heard about, can we make it pop more. And it's going to be your job to really get to the heart of what they're actually talking about. And to be honest, this kind of stuff is frustrating for me. And it's actually very difficult for me to really get through to that. But it is important. Do you have any like little tips or tricks for when a client says make it pop? Or make it make it more sunny? Like how do you how do you get through that Bs and actually figure out what they're talking about?
+
+15
+00:12:42,570 --> 00:13:21,090
+Wes Bos: Yeah, my first emotion to that is just to rage. But my second is that they're trying to tell me something and they can't quite get it across. It's like my two year old. She can speak but not well enough. And when she gets frustrated she screams and what you have my first reaction is rage. Stop screaming. And my second reaction is she's trying to tell me something, but she can't quite get it across. So you have to do the same thing with your client as your two year old. Did you poop your pants? This year? You hungry? Like what's going on? And you really have to do
+
+16
+00:13:22,380 --> 00:13:24,360
+Unknown: amazing that that word? Is it that
+
+17
+00:13:25,710 --> 00:13:26,760
+algae escape?
+
+18
+00:13:28,169 --> 00:13:32,220
+They're like if you want more money, please Did you poop your pants?
+
+19
+00:13:32,370 --> 00:14:24,630
+Wes Bos: Did you want to watch Papa troll. But obviously, the thing we need to get across here is that something is bugging them. And they can't quite verbalize what is going on with them. So they're trying to figure out, I don't like it, something is wrong with it. Here are my ideas on how to fix it. You need to dig and find out why that's wrong. And then come back and say what I hear you saying is that it's too too dark, or you get a weird emotion from that. And here's how I think we can we can fix that. Right? Like it's not my job when a contractor comes into my house. And they build something and I don't have to come in and start with like maybe if you cut a couple of two by fours and bang them up here and then lift the house here. No, I just say like I feel like this space is a bit too cramped. You solve it. Yeah, it's your you're the expert here right is that
+
+20
+00:14:24,630 --> 00:14:36,799
+Scott Tolinski: that's so dead on. Can you just love a we have a we just throw a little little just put a brick here. And that's just got worse. they'll fix it. I can imagine the clock because the contractor just be like I quit. Let's see you later.
+
+21
+00:14:36,840 --> 00:14:48,929
+Wes Bos: Yeah, yeah, exactly. Like we have no idea. So it's funny how those, the actual contractor people coming to your work to do physical work is the same thing as doing this digital work that we have here.
+
+22
+00:14:48,960 --> 00:14:50,909
+Scott Tolinski: Yeah, it's important to think about it like that. Yeah.
+
+23
+00:14:51,049 --> 00:15:14,460
+Wes Bos: I think also we need to make sure that you don't get offended by feedback. So especially in design, this is your craft. This is your art and you're putting yourself out there. And you will be met with criticism, feedback, we have a whole show on feedback and criticism you can go back and listen to, but it's just be prepared for that and know that it's they obviously hire you because they like your work. But feedback and criticism is going to be part of the process.
+
+24
+00:15:14,490 --> 00:15:55,950
+Scott Tolinski: Yeah. Yes. Cool. So all right, you are designing, you are ready to go into development. And potentially you need a back end. I mean, maybe you have to find out. But maybe you need the backend for this thing. Because you know, there's a lot of options for front end code. But what do we do now that we're doing a lot of headless sites and one of the cool services that we both love here at syntax is Sanity. Now Sanity, is this bring your own front end solution at that sanity.io. And they say it's structured content done right. And they have some insane new features that specifically work with some of the platforms that we love on this show like Gatsby, can you tell us a little bit about some cool stuff they have coming out?
+
+25
+00:15:56,070 --> 00:17:52,580
+Wes Bos: Yeah. So the thing with Gatsby is that you need some way to get data into Gatsby. And these are called source plugins. So you can get a WordPress source plugin, you can use a markdown source plugin, you can any anywhere that can hold data, Gatsby can source that data by reading it. And one of the downsides I've had actually with WordPress is that I tried to source my own website. And it took like, like 15 minutes, because it has a read every single thing. And then it broke like 12 minutes in and I had to fix it. And like it was like trying to debug before we had Firebug. And One really cool thing about Gatsby, or sorry about Sanity is that they have a plugin called the Gatsby source plugin. And it's the only source plugin in town that gives you a real time preview of your data. So that's really cool. Because as you are updating your data, in the back end of sanity, you're going to see real time this thing updating on your Gatsby site, which is often a downside to static site generation where you need to redo the whole generation just to see your your data changing. So if you have a client that needs a back end, in a nice interface to be able to input their data we've talked about before you can create your own interface for Sanity with react components, you can just use Sanity as the back end and the Gatsby source plug in to pull in your data. It also integrates with Gatsby image, you've got blazing fast builds, and it just works. So this is pretty, pretty cool. I'm gonna try this myself. I think that's probably one of the coolest ways if you want to just try out Sanity is I know that a lot of you are looking for Gatsby projects right now. So grab Sanity, grab Gatsby, try whip up a quick little site and see how this thing works. So you want to check it out is that sanity.io forward slash syntax as s a n i t y and you they are going to double what you get in the free plan. So thanks so much just handy for sponsoring,
+
+26
+00:17:52,710 --> 00:18:49,070
+Scott Tolinski: sick, sick, sick, sick, yes, entities doing big stuff. I'm really psyched about that. So let's get into the dev process now. And sometimes you are the dev and the designer. And they're sort of like a Alright, the designs now done, let's go ahead and get into the dev process. Sometimes you're working with a designer, sometimes you're working with an agency, sometimes you're working with a bigger group. And these things can either be sequential one happens, the other happens, sometimes they start at the same time. And you need to be able to know what you can work on right now. And what's maybe not determined by the design, maybe you can start building up some structure stuff. Maybe if you're working with the CMS and you know, sort of what kind of content is going to be there, you can start building out your custom post types, that sort of thing. But even before that, what are some of the tools that you like to use to make sure that the whole process around development goes? Well, because it's so technical, and it's most likely that part of the process their clients are going to know the least about?
+
+27
+00:18:49,290 --> 00:20:12,990
+Wes Bos: Yeah, and I think the dev process maybe is even easier than the design process, because so much of design is subjective. Whereas if you have very clear requirements in your development, it's like writing good tests. You know, if you've done that correctly, obviously, there's a lot of like, especially with UI design, and things like UI development, it might be a little bit mushy there. But knowing if you have clearly specked out what these functionalities should do, how it should work and all of that, then actually developing to that spec should be somewhat easy or somewhat clear. I shouldn't say easy but but clear. What I also like to do is just like design is the only show that your your dev progress if your client is capable of understanding the dev process. So that's really important because if you show them something that's half built or or breaks in certain edge cases, then they're going to start raising flags, you know, yeah, I haven't haven't done that yet. This is just the the process so far. So I really like to just show them when that feature is done. I'll push that to a staging and have them go through it. We'll talk about feedback in just a second. But that's really the process I do is when a feature is done. Push it up. And that way I can move on to the next feature. Well, they're trying it out. And, and providing feedback on it trying to just like break it and and see how it works for for their actual process.
+
+28
+00:20:13,310 --> 00:21:55,860
+Scott Tolinski: Yeah, and just like design, you don't want to show things too early. Or if you do make sure that there's clear expectations around what you're showing pacifically. Like, again, with CSS, write CSS in your design process can cause so many troubles. Because you know, things are in flux, you're still creating things, you're still putting things here and there. And maybe things aren't just right. And if things aren't just right, and you show it to your client, and they think that they're looking at something that's further along than it is. Or maybe they look at the design that you have done, and they don't understand that, oh, it only takes five seconds to style this navigation, but it's totally unstyled right now. And they're looking at that thinking like, Oh, my God, the navigation is not even styled This is this project is nowhere near and where it's going to be finished, clients have no understanding of the length of time it takes to do any of this stuff. So I think it's important when you are showing work, if you're showing it early as development work that there is clear expectations, what should you be looking at, when I'm looking at this here, okay, you should be able to click through all the pages, that's the only thing you should look at, you should be able to use the home page as expected, it's gonna look nice, it's gonna do what it's supposed to, here's what's not working, okay, the navigation isn't styled most of the CSS isn't there. I mean, they don't know CSS, but most of the design isn't there. And make sure that they have those clear understanding and expectations, because just like the design thing they're going to look at and see the only thing that's not working in your project, they're going to call it out. And then we're going to give you a huge laundry list of a bunch of stuff that you already know that you need to do. So you don't want to tell your client, I'm not accepting feedback right now on this, I know what I need to do, things are moving here, I'll share an update again with you next week. And then we can go from there.
+
+29
+00:21:56,160 --> 00:22:25,830
+Wes Bos: I think that's probably the most important part is tell them do not give me feedback just yet. still in the works, I just thought I would let you in to see how far we are. And that's good, because the client will often just they'll feel at ease knowing Okay, things are getting done. Obviously, it's not done yet. So I'm not gonna give any feedback. But I just feel good knowing that this is the progress that we're making. And we're going to hit our goals, because more often than not the person who is talking with you, they have a boss or a fortune, they need to give some sort of feedback as to how things are going as well.
+
+30
+00:22:26,040 --> 00:23:42,330
+Scott Tolinski: And I think along with that, too, is giving like specific regular updates. And this is sort of goes along with their scheduling part of it. But if you want to say like, okay, there's going to be a new version out on Friday, here's what's changed, here's what's new, and make it onto a schedule, stick to that schedule, so that your client knows when they're gonna see the next update, when they can expect to hear from you again, that way. They're not wondering, is this project in limbo? Are they even working on it? Is it even making any sort of progress. And sometimes, there's a lot of technical stuff that goes on behind the scenes. And when you send them the next version of the site, it doesn't look any different. And they might interpret that as Nothing's going on. So you do need to have these regular interval check ins you can establish every single Friday afternoon, you're going to get an email is going to be a brief, here's what I'm working on. Here's what I spend time on. It doesn't have to be the most in depth thing. But here's maybe what to look at. And another thing is your clients don't know technical jargon, and they don't care, right? You don't want to tell them like oh, I added this component. That's a stateless functional component, and blah, blah, blah, none of them care about any of that. So just say, Hey, I worked on that the foundations for building the slideshow system, I worked on the post custom post system, I worked on this or that or whatever, just to give them some sort of idea about what's going on
+
+31
+00:23:42,450 --> 00:25:19,980
+Wes Bos: awesome tips. So once the dev is at a point where you can get feedback. So some stuff, you don't wait until the whole thing is done, you might want to let them in a little earlier at a certain point. And then it's time for feedback and revisions. So in my quote, I always make sure that there is time for I usually did three rounds of revisions. So what that will be is that you present the website to the client, and it's time for them to go through it and let you know all of their feedback. And it's important to me. And for everyone's schedule, that you provide all of the feedback in one, I usually say one email, so it's written down, and then a follow up call. So we'll go through all of the things together. Sometimes it's just minor, little nitpicky stuff. Other times it's, I was expecting it to be able to upload multiple images at a time or as expecting a preview of the image or as expecting the user to be able to sign something on this contact form all these like little things. And that's good because then you just have this laundry list of things where you can bang through it. Usually for smaller projects, I found that email or some sort of project management software was was more than enough, or like something like Basecamp or whatever. But as the project's got larger, I always lean on more project management software that's, that has things like bug tracking and email replies and maybe like things like con mon boards and, and tickets, and that was better and usually more technical clients loved using that because then they can just like log a bug. And they can quickly chime in and see what the status of it is or, or if there's questions that need to be asked, you can always go back to that one issue and see what the back and forth what's going on on that.
+
+32
+00:25:20,010 --> 00:25:59,340
+Scott Tolinski: Yeah, again, don't introduce that into clients that aren't going to need it, or aren't technical enough, or any of those things. Because if you were to give your client who, you know, can hardly use Facebook, access to your bug tracking system or whatever, they're going to be like, Okay, what do I do with this, and likewise, don't give that same client a back end that's based in GitHub, because I hear about that all the time. My client gave me this thing called GitHub, I don't really quite understand it. But I have to go here to enter this and do that like No, don't do though. No, not GitHub is not a content management system. It can Yeah, yeah, I don't know. that's a that's a pet peeve. Totally.
+
+33
+00:25:59,400 --> 00:26:11,040
+Wes Bos: I hear that all the time from people where it was good until like, my client wanted WordPress and and that's why so many people use WordPress is because it's an awesome back end, for people to use that. Yeah.
+
+34
+00:26:11,070 --> 00:27:03,390
+Scott Tolinski: And typically, they're used to it, they may be used to before, you don't want to have to teach your, your client new thing. So yeah, I mean, feedback is gonna come in, and it's not always in the same way that the design feedback comes in, it's not always going to be helpful. But a lot of times, it will try, like, they're not going to know, you know, they're gonna say this is not working, this is broken. This is, you know, they're gonna use language like that. And again, it's up to you to figure out what they mean, when they say the slideshow is broken, right? Maybe it's just that the slideshow doesn't loop around when it does one loop? Or maybe it just the slideshow doesn't automatically go after 30 seconds? They don't know. So it's up to you to say, Okay, what are you expecting this to do that it's not doing if something technical in your mind is working? And they're saying it's not working? Maybe it's even a browser issue? I mean, all this. Yeah. It's just it's, it's, it's frustrating. But it's one of those things that it is. So going to clear communication channels is going to solve everything for you.
+
+35
+00:27:03,630 --> 00:27:39,210
+Wes Bos: Absolutely. And I think getting them on a screenshare. If the client is not able to voice what the problem is, is really helpful. Because opening up the screenshare, you can see simple things like you forgot to tell them to reload the CSS or you didn't bust the cache. And they're seeing the old version, or things like they're using an older browser that's not supported, or all kinds of different things can happen. But if you see them in their own screen, as they're experiencing it, they can usually voice what's going on. And that's a lot of back and forth and being like, What do you mean, it's glitchy? What does that mean? That, you know,
+
+36
+00:27:39,690 --> 00:28:30,570
+Scott Tolinski: yeah, I know, glitchy broken, not working. Yeah, all that stuff is a very, very important to establish clear lines of communication. And again, we talked about in the first episode about money being important. And one of the things that you could do to establish a clear line of communication regards to money, invoices, and all that good stuff is to use some really excellent modern cloud accounting software, something that you might say is fresh, maybe perhaps fresh books. Fresh books is one of our sponsors, they've been sponsoring syntax for a long time. We absolutely love fresh books for a number of reasons. But they're going to make your life in some of these regards and some of the money stuff when you're working with freelance clients and customers and things like that, to establish clear lines of communication so that expectations are always met in terms of where money is, who's getting paid and how they're getting paid.
+
+37
+00:28:30,810 --> 00:29:40,320
+Wes Bos: Yeah, so I'm gonna highlight two features of Freshbooks. That is perfect for someone who's doing what we're talking about today. First one is project deposits. So when I start a project, I will usually take a non refundable deposit of 25% 50%, depending on how big it is, actually is for the project. And then you can sort of like hold on to that money via Freshbooks. And they can log in anytime and see how much of the invoice they've already deposited. And then also you can submit late payment reminder. So for me, I'd always say 50% of front 50% on before launch. So usually, as soon as everything is ready, get me paid. And then and then we'll launch the sucker that doesn't happen every time because people take longer to pay at some point. But if you do have a late payment Freshbooks will automatically send out a late payment reminder, which will often bump the client and remind them and that's really nice, because sometimes you're still working on the website, when the late payment reminder needs to go out. And it's not you that sending the late payment reminders. So you don't like tarnish that relationship. It's Freshbooks that sends it out. It's your accounting software. So it's like you kind of like make the robot do the dirty work of reminding your client that they didn't pay.
+
+38
+00:29:41,640 --> 00:29:42,780
+Scott Tolinski: That's why we have robots.
+
+39
+00:29:42,860 --> 00:30:06,210
+Wes Bos: Yeah, they have it here if your client forgets to pay you on time. Freshbooks takes care of the awkward reminder with customizable late payment reminders. So I love fresh books for that kind of stuff. They get all kinds of different features for freelancers, small businesses, or someone that's doing a side hustle, go to freshbooks comm forward slash syntax and intersects syntax and how did you hear about a section to get started with a 30 day free trial, no credit card required.
+
+40
+00:30:06,300 --> 00:31:10,710
+Scott Tolinski: Cool. So let's get on to the next part, which is going to be deployment. So you have know you've designed you've dev did the dev is pretty much done. Sometimes I get into deployment before the design is done. So that obviously you have like a staging site that they can look at, or have potentially a an entirely like a hidden URL. So I'll typically personally, I'll deploy pretty early on in the process, and have whatever the clients name dot Scott tolinksi.com, that they can go to look at it, it's not going to be crawled, if it's sensitive information, consider putting some sort of like brief password protection on it or something like that. I typically don't do password protection on it, I usually just do some robots nofollow stuff, so that it's not indexed. But that's pretty much what I do I keep this up, and I have it regularly deployed to this, even if I'm not telling my client to go look at it right now, hey, there's been an update, I'm still sort of deploying to it all the time, just so there's the latest version up there that I can see working in the browser or working at a host or just seeing it in action and a greater sort of way.
+
+41
+00:31:10,740 --> 00:32:30,330
+Wes Bos: Yeah, I always have like, on my own website, I would just have like clients that Wes Bos calm and then I would have like a URL, I usually didn't put author in front of it either. If I did, I just use basic auth, which is just a URL based username, password, that'll get you through it. Otherwise, you put it in a robots. txt, like Scott said, important other notes here is make sure you get your client to pay for the domains and the hosting, it might seem like a good idea to charge an extra five bucks a month on top of what you're paying for hosting. But it's not worth it. Because when you pay for the hosting, then your client comes to you, when there's issues with the email, they come to you, when there's issues with the the hosting, like maybe the host goes down for a little bit. And then also sometimes that a lot of times with this stuff is you just want to do the project. And you're done with it. And you say See you later to the client, cuz they have somebody else to actually manage the website. Whereas like, I still seven, eight years later, is still every year have to renew a domain and hosting for one of my past clients. And then I have to send them out an invoice via Freshbooks, which is super easy, but it's still a pain in the butt to actually have to send that off. So yeah, yeah, yeah. And like it sucks to own something that is not part of your business. It should be their it's their intellectual property, they should own the domain name and the hosting for that. And then they have to pay for that thing. Everything. Yeah,
+
+42
+00:32:30,450 --> 00:32:43,770
+Scott Tolinski: you don't want a hosting company, you want to GoDaddy. So like, you don't have the the secretaries and whatever the business managers to go ahead and like keep track all that stuff, or even manage it. So it's just it's just too much to extra manage.
+
+43
+00:32:43,860 --> 00:32:48,240
+Wes Bos: This is a bit of an aside, did you see the stuff GoDaddy was doing this weekend that went up, I saw
+
+44
+00:32:48,240 --> 00:33:02,460
+Scott Tolinski: something about GoDaddy doing something to people's adding scripts into PS sites and that like they were adding my surprise face was like the you know, this is my surprise face. I'm not surprised at all, because GoDaddy is always like that.
+
+45
+00:33:02,520 --> 00:34:02,250
+Wes Bos: Yeah. So for those who didn't hear GoDaddy was injecting JavaScript on top of everybody's website that was likely doing just like following people around the web, similar to how Facebook and Google ads and everyone on the web is doing it. But because you like if you host a pool website with GoDaddy, they were injecting that data on top of it, which is so sketchy that they were doing that because they should not be touching your code and the outputted software. I had a little heart attack the other day even CloudFlare does this intentionally. they inject a little bit JavaScript to a few skate your email. And I was just like viewing source on my email. And I was like, What is this? What is this? Like? What is this code? Did I get hacked? And it was like, Oh, no, this is just cloud flares. thing but GoDaddy does that as well. That's so dumb, obviously should not be hosting with GoDaddy ever, but a lot of people are I've still my my domain name is still with GoDaddy from like, 15 years ago. I need to move it but it's just such a pain. Terrible, terrible company.
+
+46
+00:34:02,670 --> 00:34:13,940
+Scott Tolinski: Yeah, I know. I know. And then I think they got bought by somebody else. Or they had different management newer, like sort of wondering, they did this whole like, we're we've changed campaign. I did. Yeah, I don't I don't, buddy.
+
+47
+00:34:14,009 --> 00:35:34,350
+Wes Bos: Yeah, you can probably find an episode of me. Like saying GoDaddy is a new company. I think I said that on this podcast, because they got rid of all their sexist ads, they got rid of their elephant killing CEO. They seem to have been cleaning everything up. But it's just things like that, that were the same with Bluehost. They just touched the Bluehost was like adding caches to your WordPress without asking you anytime they touch your code for you, especially when it's for the greater good of the company. Whereas GoDaddy was adding tracking ads to to all of your websites that's so sketchy and I don't like when companies do that sketch. Anyways, while we're talking about deployment, other stories from the trenches here, if you are moving servers, it's best to just point the a record of your the domain name at the new server. So the cutover time will be almost instant, what most people will do or maybe not most, but they'll just change the name servers of the domain name. And then that takes a while to propagate. And that's not the end of the world because sometimes the cutover to the new server will be instant. But for a lot of people who need to migrate a WordPress, they needed to be at that domain name first, especially if you need to, like set up an SSL certificate, something like that. So there could be some downtime there. And I think it's important to make yourself available during this time. Like if you have a deployed day, you know, do it early.
+
+48
+00:35:34,350 --> 00:35:36,750
+Scott Tolinski: So that way you do have time to for everything.
+
+49
+00:35:37,110 --> 00:35:38,040
+Wes Bos: Good afternoon.
+
+50
+00:35:38,070 --> 00:36:04,610
+Scott Tolinski: Yeah, don't do a Friday afternoon. And just like if you're switching over that DNS, make sure you are available for when something potentially doesn't go right. Maybe you forgot to tweak something in the URL. So all your URLs aren't formatted correctly, or something like that, but just be available. Because the worst thing is that it's like, yeah, okay, I switch DNS over, everything should be good. And then you go on, you know, vacation or something, and then the whole thing blew up. And the process,
+
+51
+00:36:04,670 --> 00:36:41,360
+Wes Bos: one little little tip I can give you is, if you are setting up a website, where you're going to hot switch over the domain name, you can go into your Ford slash, etc, for slash hosts file, and you can set up like a map on your host file, which will will point that domain name to a different server. So you can you can temporarily view the website with the new domain without actually having to cut it over for the rest of the world. And that's how I usually set everything up and make sure everything is working for me. And then at that point, when it's working, you remove it from your own host file, and then make that that cutover, just make sure you
+
+52
+00:36:41,360 --> 00:36:44,670
+Scott Tolinski: remember to move it. Because you may Yes, working for me,
+
+53
+00:36:45,150 --> 00:37:33,230
+Wes Bos: works for me Have a good weekend. Other things is make sure that the client's email is not going to be disrupted at all, I've seen many people switch over a domain name without any regard for other DNS properties that people have set up. So there might be things for sending transactional email, there might be sub domains, there might be MX records for the email that all of that stuff, if you're switching name servers needs to make the move over and almost all DNS providers with the exception of CloudFlare will not suck up all of those DNS records for you. So that can be a nightmare situation if you accidentally bring down entire company's email, which is, thankfully has never happened to me. But it is the scariest thing to move domain names where email and stuff is involved.
+
+54
+00:37:33,300 --> 00:38:27,000
+Scott Tolinski: Yeah, right. I mean, keep the perspective that you're working with the business. And if they're losing time, they're losing money. And you don't want to be the one responsible for that. Because it's Yeah, that's a, it's a lot of responsibility, I think, is an important thing, we also have to make sure you have some sort of backup strategy in place, your client is not going to back things up. So it's important to talk about maybe the risks of things, maybe you have your code all saved in GitHub, and that's good enough, but maybe they have a database system or something like that, it's important that you are the one who configures and setups backup, you know, maybe that's a cron job that's doing database backups, or a plugin in WordPress, or a plugin in Drupal that's doing these, these backups, your client is not going to do that. And when the thing goes down and breaks or something, you might get blamed for it. So it's nice to set up the backups make it easy for them make it so it has no potential for them to lose data.
+
+55
+00:38:27,210 --> 00:40:02,790
+Wes Bos: Yeah. And at the same point, you also need a restoration strategy. So just having the data is one point. But if you need to rebuild the server, and and restore all of that data, you need a strategy for that. And I used to work at an investment bank and twice a year they'd have these like, like worst case scenarios, where they would test their actual backups and make sure that like, Okay, if everything went awry, if like a bomb blew up the server room, how can we get back as fast as possible? Probably not a big deal for my restoration strategy for all of my clients was just use jetpack and click the Restore button. And it was all said and done. But for more complex applications that have custom servers, it's important to know how how would you get back up and running as quick as possible? should something go down? Or are you even responsible for that, right, that's something to put into your support. We'll talk about that in a second. Other things I've run into make sure a lot of times clients use their server as an FTP, a place to dump files. And those files are often linked to internal documents, maybe or emailed around. So if they have like a folder on their website that has all of these documents that often needs to be moved over as well, if you are moving servers, and in a lot of my cases, I tried to stay on their own server because it sucks to have to move over. These people had gigs and gigs and gigs of zip files and documents and everything that's not so much of an issue anymore, that people are moving away from using FTP and into things like Basecamp notion or whatever internally? Yeah, definitely.
+
+56
+00:40:03,330 --> 00:42:23,630
+Scott Tolinski: Cool. So let's talk about handoff. Now, because this is a big one, because a lot of people just think, alright, I did the work, I put it up, see you later. And that's it. But I think this is important because i, this actually used to be one of my jobs at most of the agencies I worked at, in fact, people would specifically, even if I didn't build the thing, my project managers would request that I do this, I guess it is a testament to my tutorial ability or something like that. It's so funny, because I didn't think I was necessarily good at it. But I got so many positive comments from this, that my agencies would always be like, Alright, we need Scott to go in and do this. So the handoff component of things is important. And it often will involve training, right? People don't know how to use this thing. Maybe they've never seen WordPress, or maybe they've seen WordPress, and they don't know the plugins or things like that. And one of the biggest things that I like to do for the pre handoff is to turn off anything that they don't need. Now WordPress is a little bit less awesome at this than Drupal is, Drupal gives you a lot of like, turn off everything sort of situations. But a lot of times your client is not going to use most of the stuff in the content management system. So I like to even restrict their access to a lot of things via you know, you can make one person on their team who maybe is their IT person, maybe make them the administrator, or maybe you reserve an administrator account, but the accounts that you're making for your users should really be just so that they can do what they need to do. And that's pretty much it, obviously, give them access to an admin account and all that stuff for when they need it. But if they need to only add posts, don't give them the ability to delete users and blah, blah, blah, and see this and see that and add custom post types. Now they don't want to see all of those links, they want to see the button that says ad post, okay, ad post, click here, do this. So setting them up for success is a big one for me. And then two, I really like to do in person trainings where you show them exactly Okay, now you log in here, I want to go and create a new post. So to create a new post, you go here, you click here, you do this, that's your new post. And then in that same regard, you outline Okay, I gave so and so access to the administrative account, you don't need this account. But in the event that you have somebody else working on the site, or maybe you want to expand it, or maybe you, you know, you have somebody who has experience in WordPress, here's the admin account, it gives you full access to do anything you want.
+
+57
+00:42:23,880 --> 00:43:35,880
+Wes Bos: Yeah, locking it down is such a good point, I would always lock it down as much as I can, because only takes one client who thinks they know a little bit of what they're doing, or the ability to get a little bit, have a couple glasses of wine and go through the WordPress plugin directory. And they can really goof things up by it by doing that. So locking it down as much as you can obviously give them access, if they're technical knowing that, hey, you probably shouldn't be doing this in production. But like, go for it, I guess. And the other thing I do is I will always make a video detailing how to use the entire site. So most of my clients were remote, couldn't meet them in person. So I would make a screencast on how to use every feature of the website. And that was awesome. Because the type of person who works and updates a website, that's often the entry level job at a company. And those people move through that role all the time, or somebody needs to update the website. And then they they never really email you asking how do i do X, Y, and Z. So I just sat down recorded just like my tutorials. This is how you use the entire website. And they have this video. And years later, people just keep coming back to those videos. And they understand how to use it. And they can if they have an intern or a new hire, send them the video and then they can get up and running with with how it all works. And
+
+58
+00:43:35,880 --> 00:44:21,840
+Scott Tolinski: that's just a good point. I haven't started doing that recently for people working on level up tutorials, right? I know that my like process for doing testing with graph qL and jest and all this stuff like that is a little bit intense. So what I did is I made a video explaining here's the types of tests you're most likely to write, here's how to write them. Here's how to get it to work. Here's the common errors you're going to face. Here's how to do it. And now if anybody wants to write tests for the site, or they want to learn how I'm doing it, hey here, just watch this video you consult to it, it has every single use case you're going to encounter, it frees me up from having to do a lot of like in person teaching moments. Because, again, that's what we do. There's a ton of free screen recording software, you can screen record and record your mic with QuickTime if you have a Mac. So you don't even need any extra software, you can just do it if you aren't used to this kind of thing. I think
+
+59
+00:44:21,840 --> 00:46:12,570
+Wes Bos: the final thing we have here before we wrap it up is our show got two things. Sorry. The next one is bug fixes and support. So it's it's common for things to break. The kind of bummer thing about websites is that they have a lot of moving pieces and they tend to just rot over time. So there needs to be some sort of agreement in place where especially with like CMS is that need to be updated for security purposes. Sometimes those security updates in those plugin updates because you're relying on them. You also need to upgrade them with caution because things can break at any given time API's can break. It's just like a node module. You can't just upgrade Read it and know that it's going to be okay. So it's important to say like, Look, I what I would tell my clients that said like, for the next year, if anything breaks, because of my own doing, I will fix it for free, whoever, if anything breaks because of external, external things, maybe the host upgrades, the version of PHP on the thing, maybe some WordPress upgrades and totally nukes, the tiny MC for Gutenberg, like all kinds of stuff can happen, right? It's just a moving part. If it's outside of my control, I let them know that that will be billed at either an hourly rate, or I'll quote it ahead of time to let you know how much it will be to fix it. And that's good, because then they sort of know ahead of time this thing, this is website that you paid me for once, I'm not going to babysit it for the rest of my life, unless you want to get some sort of what do you call that a retainer in place? Yep. They're letting them know, okay, you can you can reserve like I had many clients that did this. They said, Give Just give me 10 hours, 10 hours a month. And I might not use all 10 hours, but it's worth it to us to actually have you on hand, just in case something goes. And you have to fix it within 24 hours. Yeah, absolutely.
+
+60
+00:46:12,570 --> 00:47:43,500
+Scott Tolinski: I mean, clients are just famous for wanting to add things after the fact. So it is important to establish like, What's there? I like to think about emergency bugs too. Right? Emergency bug? Yeah, depends on what your if they are paying you on a retainer for emergency bugs with it agreement is that one needs to be established beforehand? It depends. Did you break something? Or did they break something, maybe you went in and tweak something and you broke it? You need to fix that right away? That should be obvious, right? So emergency bugs that you did, you got to treat them as an emergency, if your client went in there and goofed around with something or tried to do something on the server, and maybe they didn't know what they were doing. And they deleted something. It depends, right? I mean, if you are knee deep in another project, then you can't always drop what you're doing and fix that for them. And they need to know that. So you could give them a realistic expectation about when you can have it going up. But again, be careful because the last thing you want to do is get a call and say, Hey, this thing is going, I broke it and you need to fix it right now. No, I don't need to fix it right now. Because you broke it. And I will fix it. When I'm doing it's possible for me to fix it, that it's an important thing to tread lightly on it depends on your relationship with your client. But that could be something that could potentially sour a relationship if they broke it, and you're not able to fix it. And they might think, well, I should be able to have access to you 24 seven, again, stablish, those guidelines at the forefront of the project. But again, don't treat an emergency that they created as your emergency.
+
+61
+00:47:43,649 --> 00:47:57,750
+Wes Bos: Yeah, and good software ahead of time can prevent that as well. Yeah, whether it's jetpack or get or whatever, you should be able to just roll it back, at least for the time being before you can get in there and actually fix it. But obviously, that's ideal. That's not always the case.
+
+62
+00:47:57,780 --> 00:49:08,610
+Scott Tolinski: Yeah. And well, okay, what happens, do what happens when the entire project blows up? And the client didn't get you assets on time? And well, maybe they didn't, you actually, you know, you establish that clear line of communication, and you email them once a week asking for them, and they still didn't get it to you. And now the deadline is passed, and they're mad at you. There's a whole ton of reasons why these projects can totally fail. They can be your fault. They can be your clients fault. They can be, you know, maybe outside forces, maybe there's a hurricane or something right? You know, I mean, there's a lot of reasons why a project can fail. So it's important to understand how things are failing. And as long as you do your part to establish these clear lines of communication. And to continue this communication, you will most likely not be at fault for this stuff, right? If you established a good timeline, and you kept all your dates, and you emailed them when you're supposed to, it's going to do most of the way to ensure that the project won't go bad. And when it does go bad, your client can be mad all they want. But as long as you did your things correctly, and you're not delusional about it, then it might be time to look at potentially firing your client or seeing what other solutions are available.
+
+63
+00:49:08,669 --> 00:50:12,270
+Wes Bos: Yeah, these things don't come out of nowhere that like these big bombs that happen, you should be able to see them coming along time away and be able to mitigate them when they're small problems. Don't wait until there are massive, massive problems. But that said, you can get into lots of the project can be way behind. That's a communication problem on your on your own side, it is going to be behind that you should let them know, way ahead of time that hey, you know what, this is taking me much longer than I had hoped. Or these are the reasons why. So we're gonna have to push the dates to the following X, Y and Z and then people everybody's everybody's on board with that. Other things that can happen is the products not met with acceptance so that that's a problem where they say this is not good enough. This is garbage. It's not what we wanted. Again, that's a problem that should have been recognized way earlier, both on the client I should have told you that and you should have been able to pull it out of the client in the feedback and revisions part of this other things client not paying. Have you ever had to chase someone down for money? Yes.
+
+64
+00:50:12,450 --> 00:50:43,320
+Scott Tolinski: And they didn't pay. And I had a contract. But it's like, at the end of the day, the legal cost of pursuing that did not they paid the deposit. And I got to keep yahsat said that it was infuriating, because I would send them an email maybe once a week, hey, well, you know, this invoice is overdue. And it was very cordial about the whole thing. And they just never responded to a single and they never responded to a single email, not one, not a single one. And it's like, at that point, what am I gonna do? I'm gonna send dog, the bounty hunter over there to break their legs or something.
+
+65
+00:50:45,150 --> 00:52:57,360
+Wes Bos: Yeah, it's funny I've made a couple times in my career for past students of mine, I've made phone calls, because my wife always dresses me about this, because she's like, you can confront people for not paying a bill in like, find their alternate phone numbers and send them letters in the mail. And like, you can do all this stuff. And it's no problem. But if like, someone screws up my restaurant order at a restaurant, I like oh, it's okay. Don't worry about it. It's fine. Yeah, you know, like, go full Canadian on them. So I've definitely had to do that. But again, having phone numbers, having addresses, things like that of the people that are trying to screw you is important, because you can you can find them. At a certain point, you have to be okay with just losing the money, because you just have to let it go. And I think you can kind of find peace with that. Every time I think about this, I think of you know who Mike Birbiglia is, yeah, he's like this comedian. And he has a story on This American Life way back of where he got into an accident in a rental car. And the cop screwed up his the police report that showed him at fault. And he owed like, 15 grand to the rental car agency. And it wasn't his fault. And he spent like a year trying to get this thing corrected. And a certain point, he just said, You know what, I can't do anything more about this, I'm just gonna walk away. And he just like felt such relief, even though he had to eat that 15 grand, and it was is significant in his life. At a certain point, it's just not worth your mental well being to have to chase these people around. Obviously, if you get to that point, you've got deposits, you should have access to the server, it's very unlikely that the client would change all of your FTP credentials and whatever, as well as any of the code. But if you get to a point where they can, they can lock you out of your website and just take the website and run with it, then you probably should have have put some more steps in place. In order to do that. I once in mine, I'm sure if this is legal or not, but I once could not get paid for the life of me. And I finally just put up a blank HTML page with an h1 tag, please contact billing. Yep. And like, like not to shame the client. Don't just like oh, shoot, like something ran out. Like I forgot to put a quarter in the meter. Right. Yeah. And guess what? I had a check later that day.
+
+66
+00:52:58,590 --> 00:53:50,880
+Scott Tolinski: That worked? Well. I like that approach. Because so many times you see these things like glorified on on like Reddit or the internet where they're Yeah, they're like, Oh, I put a background that's a bunch of lewd photos of my client that didn't pay. It's like that is like not admirable right way to get sued. Yeah, great way to get sued, but it's not being a good person. And that's not doing like good things for your career. If I ever interviewed for somebody, and I found out they did that, I would like immediately shred that that application. That's not professional. That's not how you handle yourself in that situation. So again, the contact billing is a great way to have that without being like her. Somebody didn't pay their design or like blah, blah, blah, you know, like that. Just it's not a good solution at all. So again, don't don't shame your client. Don't do anything illegal, don't like DD OS them
+
+67
+00:53:51,810 --> 00:54:12,900
+Wes Bos: or even like a coating a backdoor into the CMS. That's not allowed either as well. That's that's against the law. Many times I've thought about doing that. But I never have just because I don't think that's allowed by the law. Yeah, because also it's a security issue as well. If you were to leave any backdoors in the software. Yep,
+
+68
+00:54:12,930 --> 00:54:38,550
+Scott Tolinski: yep, yep. And if everything you did everything fine. And you know, they're not paying blah, blah, blah. Make sure that you have the ability to fire them written into your contract and fire client only had to fire a client. I think once at an agency I worked at and they were just insufferable asking for more than what we had agreed upon. They you know, broke the contract several times. We gave them more than enough chances to get on track. fire them felt great about it.
+
+69
+00:54:38,850 --> 00:55:37,800
+Wes Bos: Yeah, I think once or twice I've had to finish a project and tell the client I'm done with them. But I've usually have a good vibe for if this person is going to be a bad client and it's generally how scatterbrain they are when you're talking to them. The the thing to me and I saw this on Kijiji when I was selling a chair the other day is the person sends like hello still available, I need a chair and like they said like seven or eight like scatterbrain ideas through many emails or text messages or chats or whatever it is, you know, that person is way too scatterbrained to actually to work with. And it's just a huge red flag. Whereas someone who is able to compose themselves in an email, they can use paragraph tags, which seems to be increasingly rare and email. That's a good they can get points across quickly paragraph tags are, you wouldn't believe how many emails I get from people who just barf their thoughts into a single not using a single paragraph and it just drives me crazy. Such a good indicator
+
+70
+00:55:37,830 --> 00:55:39,000
+Scott Tolinski: it's such a good
+
+71
+00:55:40,110 --> 00:55:52,350
+Wes Bos: immediately if I haven't replied to one of your emails go back and see if it's because you didn't use paragraphs. Yeah, right. That's likely it. So that's it for today. What about sick pics today, Scott?
+
+72
+00:55:52,380 --> 00:55:56,250
+Scott Tolinski: I've just sick pic I just got a new NAS drive, which is network area storage
+
+73
+00:55:56,310 --> 00:56:00,120
+Unknown: area area storage that would expand Yeah, yeah, attach, attach No, attach
+
+74
+00:56:00,120 --> 00:57:17,610
+Scott Tolinski: attach. I was gonna say that doesn't sound right. I don't know why I'm saying that. But this is a you know, we we work with a lot of data. And it's important to have backups of your data on site, off site, all that good stuff. And I've been currently using this old Western Digital NAS drive, I have four four terabyte drives in it. And so I have been looking to upgrade it's becoming more and more finicky. I'm grow more increasingly worried about my data on it every single day. So I ordered a new Synology diskstation dS 918 plus all linked to us in the store. This thing does so many cool things. It's like less of an just an hour's drive and more of a computer with NAS capabilities. It does 4k video transcoding on the fly. It's has a billion apps built into it. So if you're into like the home automation stuff with which Wes and I both been talking quite a bit about, we're going to be doing an episode on that there's a lot of cool things like like server for surveillance stations, all sorts of built in apps, you can use it as like a Google Photos type of thing. It is surprisingly cool. I asked on Twitter, which NAS people are using it and this was the overwhelming winner. So I'm really, really excited to really dive into all the cool stuff that this thing has to offer. So I'm excited about it, check it out at Amazon's knology any of this stuff. We'll link to it in the show.
+
+75
+00:57:17,820 --> 00:57:27,330
+Wes Bos: I've got some questions about this thing. So it four gigs of RAM, which means you can run apps on it pretty quickly, which I guess that's why it can do transcoding so nicely. You can upgrade widow,
+
+76
+00:57:27,630 --> 00:57:29,250
+Scott Tolinski: you can add some Oh, really? Yep.
+
+77
+00:57:29,370 --> 00:57:32,640
+Wes Bos: It's so tough four bays. And did you fill them with hard drives?
+
+78
+00:57:32,760 --> 00:57:45,900
+Scott Tolinski: I thought yeah. 444 terabyte drives? Whoa, you wouldn't do. The way I'm doing it is 16 or I mean eight terabytes available space. And then the other eight terabytes is backups. duplication. Does redundancy.
+
+79
+00:57:45,930 --> 00:58:10,230
+Wes Bos: Yeah. Okay. That's awesome. Wow, I think I want to especially now that we're talking about these security cameras and stuff like that, and all those home automation stuff, I know that you can also run like web servers on this thing. I mean, there's this there's this one, like home automation, think it's like a Python app where you have to host it yourself, but you need like a server in your house to actually run it. So I bet you could run it on something like this. How much was it?
+
+80
+00:58:10,230 --> 00:59:02,460
+Scott Tolinski: It's like five, five, something 549 without discs. And since I already have drives, the tracks are pretty reasonable. Yeah, they are. I mean, in terms of storage space. And the cool thing is you can get a couple drives, you can get one drive at a time or whatever. And just keep on adding to it. One of the really like you mentioned it being like web server capabilities and things like that, you can actually use it as like your own personal Google Drive access to anywhere, have your phone and camera sync to it and all that stuff, and share files from it and have a whole like user file sharing system. So I'm going to start using it instead of my Google Drive and set up my Dropbox for all that sort of thing. That way I have like ownership of files, and then you could even pay for an offset back back up to like backblaze b two. And then that way, your data is not living on Google servers. It's not living on Dropbox, but it's living with your disk and then a backup somewhere else.
+
+81
+00:59:02,480 --> 00:59:30,000
+Wes Bos: Yeah, I love the idea of mirroring it to backblaze b two, you can't you can even though backblaze gives you unlimited data, they do not support network attached drives, because then you could just like people have terabytes and terabytes, but you can mirror it to be to which is there like cloud storage? Yeah, I bet that wouldn't be that expensive, because most of the the cost of backblaze is not in just holding data. Most of the cost is in bandwidth. Once it's up there, you're not doing much with it,
+
+82
+00:59:30,000 --> 00:59:39,690
+Scott Tolinski: right? Yeah. And Synology is like a support partner for backblaze. Like they have a whole setup to do with backbase be to just like a one click easy setup.
+
+83
+00:59:39,870 --> 01:00:00,780
+Wes Bos: That's awesome. I got an email from backblaze the other day where they bought every year backblaze does like they talk about like their hard drive failure stats, because they are probably one of the biggest harddrive users in the world. And then they give you stats on like what's the best hard drive to buy, like what percentage of them fail, in etc it's backed by such a cool Company Yeah,
+
+84
+01:00:00,810 --> 01:00:03,060
+Scott Tolinski: super cool. What's? Yeah,
+
+85
+01:00:03,150 --> 01:00:05,070
+Wes Bos: let's hear sick tech, um,
+
+86
+01:00:05,190 --> 01:00:05,790
+Unknown: oh man.
+
+87
+01:00:09,719 --> 01:01:04,410
+Wes Bos: My sick pick is gonna be backblaze. I'm a big fan of backblaze, both as a way to mirror your computer. So it's like kind of like Dropbox, but for your entire computer, and it just runs in the background doesn't seem to be really resource intensive. And I just have my entire one terabyte laptop hard drive mirrored to the cloud, anytime something changes, and that's great. And then I also use backblaze b two, which is where I store all of my zip files to download my courses. And it is so cheap. And it's been rock solid, no complaints about speed or anything like that. I used to use Amazon s3, with cloud front in front of it. It was so expensive. And I got lots of complaints about speed from Germans and stuff like that. So now, I'm on v2. I've talked about this before, but I just love the company. So I'm going to sic pick backblaze as a company, blazing Blaze. And what about shameless plugs today? Yeah,
+
+88
+01:01:04,439 --> 01:01:43,620
+Scott Tolinski: I'm going to shamelessly plug level up pro there is a new series every single month for level of pro and January Series is going to be a nice little surprise, I'm not nothing just yet I'm very, you're gonna be very excited about it too. So tip number two level up tutorial, level up tutorials.com forward slash Pro, sign up for a year, one year save 25%. And I get access to all of the premium tutorial series that are up there. And every single one that is going to be released over the course of this next year, which is going to be 12 new series, some free series in there bunch of free videos and stuff as well. So check it out, level up tutorials, comm
+
+89
+01:01:43,829 --> 01:02:20,970
+Wes Bos: I'm gonna pick my advanced react course just put it out a couple months ago, at that advanced react.com it's going to teach you how to build a full stack application react on the front end Apollo graph qL on the front end, and Prisma graph qL yoga on the back end, we do authentication from scratch, it's not just we don't just use a module, we build the whole thing from scratch teaches you all about react, graph qL and some some node back end stuff as well. So check it out at Advanced react.com. Use the coupon code syntax, you're going to get 11 bucks off your course word. Cool. That's it for today. Anything else? Nothing.
+
+90
+01:02:21,570 --> 01:02:24,690
+All right, I'll talk to you later. Thanks for tuning in.
+
+91
+01:02:24,980 --> 01:02:26,640
+Scott Tolinski: Thanks for tuning in peace.
+
+92
+01:02:26,759 --> 01:02:27,300
+Unknown: Please.
+
+93
+01:02:29,310 --> 01:02:39,090
+Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

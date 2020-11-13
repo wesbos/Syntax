@@ -1,0 +1,220 @@
+1
+00:00:00,359 --> 00:00:24,450
+Announcer: Monday, Monday, Monday, open wide dev fans yet ready to stuff your face with JavaScript CSS node modules, barbecue tip workflow breakdancing, soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA, Bob and Scott Tolinksi ski.
+
+2
+00:00:26,010 --> 00:00:38,880
+Scott Tolinski: Oh, welcome to syntax. This is the podcast with the tastiest web development treats around. And I am Scott winsky. And with me as always, is West boss say with a
+
+3
+00:00:39,150 --> 00:00:40,500
+Wes Bos: Hello about em.
+
+4
+00:00:40,530 --> 00:01:08,700
+Scott Tolinski: Hello. This is a Monday edition of syntax also known as a hasty treat. So let's get ready for this hasty treat in which we're going to be talking about course curriculums, a lot of people ask us how we develop our courses, which they can range from short courses, to long courses, to monthly reoccurring courses to all sorts of stuff. So we're going to talk all about how we make our courses and some of the insights and how we develop our content.
+
+5
+00:01:08,730 --> 00:04:30,630
+Wes Bos: So this episode is sponsored by century, which does error tracking for pretty much any language, I'm gonna specifically use it myself for JavaScript react applications on the front end, I also run it on my node server. And what happens is that anytime there's an error in your users browser or on your, your server side, what it does is it collects all of those errors, and provides it to you in a really smart back end, that will allow you to peer into a why those errors happen. What happened to the errors? When are they happening on what kinds of browsers and where in the world? Are they happening, you can, you can attach specific data to a user. So you could say like, Oh, this specific user is only having the error, let me reach out to them and say, Hey, I noticed you you stumble upon this exception, sorry about that, we've already fixed it. So being able to like know when errors are happening on your clients computer is really, really important. And they're not always going to email you telling you exactly what has happened. So if you want to know what's going on with your errors, you check out century some points that they try to hammer home is that you can cut your time of resolution on errors from five hours to five minutes. Because if you have all of this amazing look into the actual error that's happening, you can know right away, and they also support source maps, which is really cool. So if the error is happening in minified, it will show you where the error is actually happening in your maxify and your authored JavaScript. So if you're if you authored it in TypeScript, and that got compiled to JavaScript, it'll, it'll show you everything over there. They have noise free notifications tied to the commit. So if there's only an error that specifically happens to one person only that they are alerted, says I know, sometimes you can get just hammered with alerts, and then all sudden, it just becomes noise. And, and it doesn't seem as important for you. They have SDKs for every platform, we talked about that. So if you have like a PHP back end and an Angular front end, no problem. They've got you covered. They've tight integration with code repository, GitHub, Bitbucket, get lab, all of the different ones tight integration with Slack, JIRA pager duty. So if something automatically is happening, maybe 10,000 errors that start coming in, over and over and over you better, you better bet that that thing is going to be pushed to whoever's on pager duty at that time. And probably the most important thing that I want to stress here is that it's 100% open source, which is my favorite kind of service where you pay him to use it. But if you really want it to go and host your own, and run it yourself, it's 100% open source. So it's kind of a neat way to run your business where if they go away, for whatever reason, you know that the source code is out there, you can run it yourself. So check it out@sentry.io and got a special credit for syntax users, which is two months for free. Usually, you can sign up for the free one, and you get you got a handful of error reporting, but you can quickly burn through that if you have a lot of errors like in my case or a large application. So what's cool about that is you can get two months worth of credit, which apparently is good for even if you already have a century if you're already a customer, you can just apply this code which is tasty treat one word and you're gonna get those two months for free. So they are one of the two companies I've ever allowed to sponsor one of my free courses them in Firefox, so big fan of them. I think they're really cool company. I use them myself. So check it out@sentry.io use tasty treat. And thanks so much to Sentry for sponsoring.
+
+6
+00:04:30,810 --> 00:04:38,880
+Scott Tolinski: Yeah, so let's talk all about our courses. I know you've produced I don't know how many courses you've done, like, what is it? Like?
+
+7
+00:04:39,000 --> 00:04:46,350
+Wes Bos: I think maybe seven or nine were on there. Yeah, eight, something like that. Yeah. And then lots of little YouTube videos as well.
+
+8
+00:04:46,380 --> 00:05:07,740
+Scott Tolinski: Yeah. And I've done a lot of courses on YouTube in both levelup pro so we have we both have a quite a bit of experience developing courses in in sort of building these educational materials. So I don't So if you want to talk a little bit about your process first, and then I can talk about mine, and then we can maybe discuss some similarities or differences or stuff like that. But yeah,
+
+9
+00:05:07,740 --> 00:06:10,920
+Wes Bos: let's Yeah, let's get totally Let's all jump into mine. Feel free to chime in whenever you have anything to say about as well. So it's a question we get a lot is like, how do you build curriculum? What's your process for tackling something? If you want to teach a topic? Like what does that look like when you're sort of brewing it up? So first thing is like, how do you choose what to make a course on? Usually, I like to think of that as marketing, because a big part of marketing is actually just listening to your users listening to the pain points, listening to the things that they're not specifically asking questions for. They're not specifically asking for x, y, and z. So if I talk about my JavaScript thirty.com course nobody asked for, I would really love 30 days of building things with vanilla JavaScript, but what I heard from people over and over was there, I do feel like I just need practice, where do I get the word out? do more stuff. I don't feel like I have a total good grasp on it. And you have to sort of work out what would be the solution to that problem. Rather than then what are they directly asking for? That's like kind of Apple always says, like nobody asked for if people knew. What's the question
+
+10
+00:06:11,580 --> 00:06:13,620
+Scott Tolinski: about Henry Ford quote, if people not
+
+11
+00:06:13,620 --> 00:06:15,960
+Wes Bos: apple? Yeah, but Apple uses a horse.
+
+12
+00:06:16,020 --> 00:06:20,730
+Scott Tolinski: Yeah, the faster horse thing. But I think Apple, Apple references that Apple, yeah.
+
+13
+00:06:20,760 --> 00:09:10,980
+Wes Bos: Because like, nobody asked for the iPad, right. And everyone laughed when it came out. And now it's a it's a huge part of their market. So it's pretty interesting. So that's really what I do first is I listen to what my users want. And then also, I sort of overlap that with what I'm interested in as well. Because if I'm not interested, if I'm not excited about it, it's not going to be something that I'm going to spend any time on. Because otherwise I'd have like a Java eight tutorial and some sort of like Angular tutorial, which is like, there's huge markets for that stuff. And I could for sure, sell the hell out of a course like that. But it's not something that I really have an interest in. And I don't think that I want to create it cuz they only have limited time, and I want to enjoy what I'm doing, right. But then what I do once I decide like, okay, like, first, I'll give him my advanced react course, because that's one that I'm totally, I'm totally in right now. And I'm working on it. So once I decide I want to make an advanced react course, what I do is I'll keep always keep markdown documents open. And for years, I just kind of opened them up for 20 minutes at a time and just type in or if I get like an email from somebody, and they specifically say something like I asked on Twitter a couple months ago, what what was the hardest part about learning vanilla JavaScript for you. And then I just combed through that for words and phrases that you hear over and over again. And specifically in that one, people kept saying a synchronous over and over again, that they always tripped up on that one. So I made lots of notes on making sure that we spend time on what a synchronous means, how it works, what, what are possible downsides and upsides to it. Then when I have a good idea of what I want to cover for my react one, I wanted to cover some advanced react concepts I wanted us to do Apollo and to do back end, I always get people asking, How do I do credit card transactions. So I wanted to include stripe in there, I wanted to do a node back end. So all of those things I say, Okay, this is what I want to teach people, all of these different topics, what could I possibly build that would would cover all of these topics, right? And what can I possibly build, that would be fun to do. And if we look back at my react for beginners course, I remember thinking like, okay, React is really good at like updating data. So I need something where the data is represented many times throughout the application in different ways. And that was the price of the fish, or the price of the fish would change. And it would just ripple through the application. And I just kind of like riff on a few different ideas of things that I can build. And then I'll sort of settle on something in the case of my advanced react course, we're building a store where you can sell your stuff, you can upload photos, that's that's one aspect using external cloudinary. To upload the photos, I want to be able to touch on all these different advanced react concepts, we're going to be able to buy stuff, we're going to charge stripe credit cards, we're going to be a sending email. So this is a front end and back end aspects to it. And I was pretty happy with the application. Then I go, I set off and I build the thing that we're going to build
+
+14
+00:09:11,010 --> 00:09:52,230
+Scott Tolinski: actually hold on before you build it before you build your thing. I'm gonna I'm just yeah, jump in here. Do Yeah, how many failed ideas for projects do you go through because I personally, I know that I run into a situation where like, I'm gonna build X, Y, and Z in this course. And then when I start to get into it, and I start to like, really develop that idea. I'm like, Oh, wait, that's actually going to involve some some additional things that are maybe out of the scope of what I'm interested in teaching. And I don't necessarily want to just provide it like, oh, here's this huge chunk of the application that you're not going to be coding. I want to give people everything so do you ever have like totally crash and burn ideas?
+
+15
+00:09:52,280 --> 00:11:10,170
+Wes Bos: Yeah, sometimes it's it's just way too involved. You don't think it's gonna be a big deal and then before you know it, it starts to unravel a specific In my, my last one I wanted to do sending emails because you need to send emails to reset the password and you need to send emails when somebody buys something, right. So I was like, oh man, like, do I have to Should I just provide it I don't like doing that. Because then people are like, Oh, I don't like when you give us code, right? Like too much boilerplate is something that people always resist. So I don't want to do that like is that in the On the flip side, sometimes it's just way too simple, right? Like, then people are like, this is not real world enough. So I always try to try to go down the middle, it's not going to be a full production ready application, but it'll give you the ideas of how it works. And in my rack course, I ended up or we write all the email stuff ourselves, it's, we don't go into templating, and all that stuff. But it's really not that much extra work just to send some simple text based emails with with links in it. So I would say I usually come up with like three or four ideas and kind of riff through them, build them myself, because part of building a course is also making sure that you understand the topic like rock solid. So I'll usually build a couple things myself before I before I settle on the one that's in that sweet spot of involved enough, but still not like too much where people are going to drop off because it gets too complicated. And there's too many moving parts that the thing will be out of date in six weeks.
+
+16
+00:11:10,170 --> 00:11:35,790
+Scott Tolinski: Yeah, definitely. I do one time I did a large course on React Native. And that was like the problem. There was so much stuff. And there were so much like this was earlier. And it did it like one little tiny thing in the middle of it got outdated, like the way that one navigation library work. And that like totally invalidated like a gigantic tutorial. Because all the sudden, there was this huge thing. And it was it was a big, big problem.
+
+17
+00:11:35,880 --> 00:16:25,890
+Wes Bos: It's a frustrating, it's a frustrating thing, which first makes it good for us that we if we keep it up to date, then you're you are at the top of the industry, because it's very hard to keep it up to date. But when it is out of date, it's really annoying because like my react for beginners course is three years old, three and a half years old, and every recorded it three times now. And it takes a couple weeks, probably three weeks every time I want to re record the entire thing. So we've talked about this in the past, it's a it's a hard thing, but it's just part of the industry. It's one of the the pain points that you need to enter and figure out how to solve word. So once I have it built, I have it reviewed by experts. So specifically in the advanced react course, I sent it over to Peggy who works at Apollo, or works on Apollo. And she reviewed all of the sort of the front end code which is which is really, really great. And then sent all the backup backend stuff over to the graph. qL folks, and they reviewed it, make sure that it's up to date. And they love to do that. Well, I'm thankful that they do it. But it's great, because then hopefully it will stop any support on there. And where if I were to teach something funky, and then people like 10,000, people start building applications in a funky way, then that's, that's really gonna put a burden on them. So they absolutely want to have me teaching stuff in the in the way that they would they would recommend it. Then when I have the application, this is probably the trickiest part. And it's because building this application is not a linear thing. You're jumping around, you're going in and out of files, you're refactoring parts, you're you're going back and forth. And then what you have to do is you have to take this application, which has been built as sort of a spiderweb of you jumping around. And you have to make that linear, because software development I wouldn't say is linear and but video is right. So it to figure out like how do you how do you build this thing in 1015 minute videos that are easily digestible, but without being way too confusing, touching 15 different files in a single video. So that's probably the hardest part. And part of actually building the application is being really aggressive with simplifying the codebase. Because the more files that you have, the more abstractions that you have, the easier that it is that someone gets lost or forgets like sneezes during part of the video course. And then they get frustrated. And that's something I hate when people get frustrated with with a course when they miss a part or they're confused about apart. And it's never fun, because you've paid money, you've invested maybe six hours of your time so far. And then you're at this crossroads and need to jump into the Slack channel and get a little bit of help. So what I do is I create a markdown document and I kind of put every video out so I say video one, we cover this, we build this video to cover this topic. And then under every single video I have what we're going to build in that specific video different things that we need to cover. Sometimes when it's a fairly technical explanation, like for example, like what is graph qL? Or what isn't enough things like that? Well, I'll I'll write out a little explanation because I'll think it over six or seven times in my head, how can I best like what stupid explanation Can I come up with in my head that I can make this easier to someone so I'll write that down any gotchas that I had when building it because like, it's easy for me just to say just type this and it works perfectly, but there may have been six or seven tripping points up until I figured that out myself when I was building it. So I'll make sure to note those gotchas and explain them in the video because that's that's helpful for people. Who at some point might might stumble upon it themselves. So usually for a 1020 minute video, I'll have like five or six different or five to 10 bullet points of things that we need to touch on in that specific video, I'll often put the code that we're going to write in the markdown document so that because because it builds on each other, like, if we're building a function that builds an Apollo client, I'm not just going to like start from the top and write the entire file, we're just going to build the very basic of Apollo client, and then we're going to come back when we need to do authentication and modify it. And then we're going to come back when we want to do local storage of data in the Apollo client, right? Like, we're gonna keep coming back to that, that file, and I'll usually put the diffs of the of what we're going to build in the markdown file. So I can just like look at my one monitor to the left of me, and know exactly the pieces that we're building in that video. I think that's it, I don't have scripts, I don't have PowerPoint slides, which those two things are fairly popular in, like the corporate training in Linda, in the lindo world, people will, like sit you in front of a PowerPoint and have bullet points all day long. I'll often make a diagram, if it's a little bit confusing, or I'll just draw something out on Microsoft Paint to, to sort of visualize it to the user. But I don't have any sort of like script or any sort of PowerPoints that I go off of nice. That's it for me. Yeah. I'd love to hear what you have to say for that. And if it's similar or not, yeah,
+
+18
+00:16:25,920 --> 00:23:16,110
+Scott Tolinski: yeah, I mean, as as you probably know, I record a ton. Like, just yesterday, I recorded six tutorials and the day before I recorded for, and I'm 10 videos deep already into this, this month's pro series, which is on react testing. So if anyone's looking for testing information, keep your eyes open for that one, a little small plug on that it's coming this month here. I'm really excited about this course, though. So this course I'm like, right in the middle of recording this course, I have a pretty good handle on my process so far, like so really, you know, starts with choosing the course. And choosing the course for me is pretty difficult considering I have to choose a new course every single month, I record these things, the month that it's released, I'll spend the first two weeks of the month re planning and recording a tutorial series. And then the next couple of weeks, finalizing and producing, I have my video editor working on it, and then releasing it because I do a course every single month. So it's difficult to come up with these topics. But the idea is is for me personally, I pick a topic based on one what my platform needs, right? So I have a subscription service that has content. And if the subscription service needs a particular tutorial to complete something, right? Well, I have like I want to do react course and I want to do maybe a react and graph qL course and maybe missing in there is some sort of react intermediate course, I'm going to do the intermediate course, right. But there's also the fact that the pro community that people who subscribe and pay to be a subscriber and level up tutorials, they actually get to vote based on topics that I've presented as being possibilities. And then so I definitely I highly take that into account, because it's the visibility of what the people on my platform actually want to see. But it also has to be something that I'm good at, and something that I'm capable of providing quality material on. So I'm not going to give them the option to vote on something again, like a Java whatever tutorial series because again, I'm not the right person for that and, and maybe in the future, I can, you know, hire the right person for that if people are demanding it right. And so that that's pretty much it. I also decided on things like what's hot, right? I had a plan for one of my series one month, and I had already started recording. And then a Gatsby was picking up a lot of steam. And I was like, You know what, I i've been building sites in Gatsby, I really like it. I really enjoy it. You know what I'm going to drop what I'm doing, and do a Gatsby series right now. Because I think the community will enjoy this better than what I'm doing right now. I have a lot of flexibility. I'm the person who gets to choose this stuff. And because I can produce the content fairly quickly. Again, I can I can get that little bit of agility there, right. So one of the first things I do is I make sure I'm always picking a topic that I've spent a lot of time in, that's a big thing for me, because because I'm doing these courses quickly, I don't want to pick a topic that I'm going to have to do endless amounts of research on for instance, I did my level up tutorial site is using Apollo and graph QL. And all this stuff. It's using all the new the new hotness with Apollo client two and Apollo server two and all sorts of cool stuff, right? So I'm gonna, I'm gonna do a tutorial on Apollo client two with react because I have built a substantial amount of code in that and I'm going to be able to talk about it without even reading the docs. I've already spent the time in chat rooms. I've already spent the time in the issues. I've already spent the time in the documentation. And if I need additional little things that I haven't done, I'm going to scan the documentation. And I'm going to do those things in level up tutorials before I ever do them in the series. The next part for me is building the thing and then when you talked about building the thing you talked about how difficult it is maybe to take something That needs to be linear and build out your code. For me, I actually when I write my thing, I almost write my thing as if I'm stepping through each video. Like, I don't build the thing to build the final thing, I build the things step by step as a default. And what that does is it gives me sort of like a dry run through the tutorial series without even talking about it. And it lets me adjust things. And when I do this, it's not planned. It's not like I'm I'm, I don't make an outline or anything like that I'm sort of exploring, like, here's maybe what I'll do for this, oh, this and this, and then this, and then it sort of all falls together, because I can see how long X, Y and Z took me. And I can think about how long x, y and z is going to take to explain. But again, I don't work with any formal hotlines, I'll usually make a to do list Board of like major topics I want to hit, and then just check them off as I go. After the thing is built, I have the final code, and I'll put notes in the final code. But I won't have like each videos, code is just like the final code. So I'll have the final code up on my monitors, as I'm recording at all times. So I can have a viewpoint of what's like a reference point to like what I'm trying to hit at all times. And at that point, I almost, I have like ideas for each individual video. And I maybe have like bullet points for each individual video. But what I don't have is like an outline or a structure for it. So I'll just start recording. And that's again, that's one of the reasons why I can move so quickly is I can record a video. And I can say okay, over the course of the next few videos, I want to get to this point, for instance, yes, you might like react testing, right, I wanted to do a line of just skills before I moved on to react testing library. So I said, these are the skills I guess you need to have. And maybe I'll take a video to talk about writing a basic unit test, the basic integration test, that maybe what like mocking and understand mocking and fake functions, and all that sort of stuff is, and I'll go from there and see how much I can accomplish before. And then by the time I feel like all the knowledge that we've needed to get to at that point is sufficient, then I'll move on. So I'm really building the outline as I go. Because if something's not working out in the middle of the course, or something needs more explanation, I want to be able to feel like I can veer off course a little bit and spend that extra time. And sometimes it's funny because like sometimes you do have these like linear goals, right? I'm building. Let's say I'm building a, like a basic movie site like we did for our react react 16 course, where you're just hitting an API and getting these movies. Well, you could have started with some aspects of that. But you'd be missing some of the topics that I wanted to hit. In a basic react course, I feel like you need to have things like how to build a taco like a basic toggle, just even working with state in that regard. But it doesn't make sense in the context of that application that we're building. So I'll do this little veer off. And it's like unrelated to the final project to show, hey, this is how you do this kind of thing. These are some baseline skills that we need. And even though it's not part of the final project, it's still something that you need to have. And then maybe you can use those skills in your own project of this. And you can extrapolate extrapolate, I guess that might be the right word, extrapolate on your own. Yeah, yeah. So that's sort of where I go there. So basically,
+
+19
+00:23:16,110 --> 00:23:47,250
+Wes Bos: they often do that as as well with the just if you use a method in react, and I find this a lot when I'm teaching workshops, well, I'll say how do you loop over something in JavaScript, we use map and you kind of get a bit of a puzzled look at from the crowd. And then I'll stop. And we'll do an example outside of the context that we're working with. Because that will help people understand Oh, that's all map does, it takes in something returns a new thing. And then then if you apply that to looping over and returning a component, then then it starts to make a little bit of sense. So I think it's helpful to have those little cutaways as he, as you said,
+
+20
+00:23:47,280 --> 00:25:00,510
+Scott Tolinski: Yeah, yeah, definitely. And sometimes I don't love to do that. Because again, it's not always like part of the context. But it's definitely, like totally necessary a lot of the times, yeah, so that's pretty much it, I just go through and then I don't again, I since I don't have a strong outline, I don't have that this videos, this series is going to be 20 videos long. But I've done this enough to know how much content I can fit into anywhere between 20 and 30 videos. And that's where I aim, I basically have this, I have a target over on the wall, not a literal target a metaphorical target. And I'm thinking like, yeah, I have to get this series between 20 and 30 videos, because that's my sort of sweet spot for what I like to do with these. And I think how much can I get done, and I just imagine it and take that shot. And if the series ends up being like 25, you know, 26 videos, then cool if it ends up being 2021 videos cool, as long as the amount of content I want to get is in there. Now obviously if I'm way under or way over, then I messed up in the planning stages. And I haven't that hasn't happened to me yet. So fingers crossed that it doesn't but yeah, that's pretty much it. Yeah, I just record record record record, and I usually record an entire series in about four days, maybe five videos a day five, six videos a day. Yeah,
+
+21
+00:25:00,630 --> 00:25:23,670
+Wes Bos: you're a machine. It's funny that we're very different in how we approach these because for me, it takes at least six or seven months to build a course from from start to finish. And in the case of my react course, it's my advanced react courses is taking even longer than that. But a lot of that is due to changes in the industry and vacation time and speaking at conferences and stuff like that, and, and you come out with something every single month.
+
+22
+00:25:24,000 --> 00:25:59,430
+Scott Tolinski: Yeah, it's, it's not easy. But I've had a lot of time, like, you know, since 2012, I've been producing a ton of content, I was doing, what, 300 videos a year on youtube for free. So I have the ability to produce this content quickly. And I have my process down to the point where like, yeah, a 20 video series in a week, as long as that's on a topic. I know, if it's on a topic, I don't know, I'm going to be taking much, much longer. But yes, this is stuff I'm using every day. And that's sort of the reason why I can just hammer through it. And explain it in a way like these the issues that I had when I was learning kind of thing.
+
+23
+00:25:59,520 --> 00:26:23,640
+Wes Bos: Awesome. That's kind of interesting to hear two different approaches. I know a lot of other people build curriculum as well. So if you if you do this yourself, make sure you tweet us at syntax FM with any any additional tips or things that you have because I always love hearing other people's workflow and approaches to this thing because I'm really happy with the the workflow and the cadence and, and everything that I have down pat, but you can always pick up little tips here and there.
+
+24
+00:26:23,700 --> 00:27:01,410
+Scott Tolinski: Yeah, I know I have a one of my favorite things is with my current setup is this ultra wide monitor, because I can have the code that target code, the docs for whatever I'm working on, and like a like a Google Notepad or something for notes. And then I can have all that stuff open. And if I ever need to reference something, I don't even need to like move my head, I just look up and be like, Oh, yeah, okay, so this is that that thing, and you never even if you've done something 100 times, there's a chance you might miss remember a method or mystery member x or something for something. So, you know, when you're on camera, and you're recording, it's always nice to have those little bits, little bits open for you.
+
+25
+00:27:01,440 --> 00:27:25,080
+Wes Bos: That's another thing I didn't mention is that I often when I'm designing the thing that we're going to make, I often make sure that the thing that we're making will look good at a very thin like almost mobile or tablet with because I like to have the code and the thing we're building open at the same time. It's not always possible, but if I can have both of them open at the same time, and the design of the application definitely plays into that. Yeah,
+
+26
+00:27:25,080 --> 00:27:49,380
+Scott Tolinski: I think it's one of the things your courses again, the you know, your courses are definitely they have that level of like Polish in the visual design. I wouldn't not all of my courses have that level of polish. You know, I haven't thought about that stuff. And some of them do have, you know, design and things built in for that. But mostly, I think that's one of the reasons why I'm able to produce so quickly is because your courses really do have such a high level of design. Oh, yeah.
+
+27
+00:27:49,410 --> 00:28:18,300
+Wes Bos: Yeah, I love love spending time on that I really would like to do a like design part or like build the application with the CSS parts as well. My upcoming advanced react course probably does 30% of the CSS along with me because part of learning the course is styled components, right? We have to write the CSS ourselves, but then the other other 70% comes along with it. And that's just because of sheer time being able to it would be a 70 hour course if I included all of the CSS in there as well.
+
+28
+00:28:18,360 --> 00:28:19,230
+Unknown: Yeah, sure.
+
+29
+00:28:19,260 --> 00:28:21,270
+Wes Bos: Cool. I think that's it anything else to add?
+
+30
+00:28:21,330 --> 00:28:21,900
+Unknown: No,
+
+31
+00:28:21,960 --> 00:28:48,930
+Scott Tolinski: no, I you know, one of the things that I I really want to stress is that like if you want to do this stuff, because a lot of people like ask me about just getting started making video tutorials and stuff, just do it like just start making some stuff when a lot of my first tutorials I didn't have a plan at all and even for my YouTube ones, I would just crank out a couple of videos and then that led to a couple more and that led to a couple more and there was no overarching script or plan or anything like that for them. So just try it Who knows
+
+32
+00:28:49,080 --> 00:29:19,650
+Wes Bos: if you go on anyone's YouTube channel doesn't even have to be like a coding channel but go on anyone's YouTube channel and go to all their videos and sort by oldest first and look at their first three videos they're probably not very good the quality is not very good but there's the heart The heart is there the the ability to want to teach someone something is there and then you can see as they go on over the years there the quality gets mad much better their enthusiasm always goes up so it was interesting to see that yeah. Yeah, I
+
+33
+00:29:19,650 --> 00:29:24,570
+Scott Tolinski: know my video my early videos are terrible and like when people still watch them I like want to get rid of them but like
+
+34
+00:29:24,600 --> 00:29:29,400
+Wes Bos: they're still good a lot of me look it up people still can I look it up on YouTube right now. Sure. Yeah, you
+
+35
+00:29:29,400 --> 00:29:30,780
+Scott Tolinski: go back to 2012
+
+36
+00:29:30,870 --> 00:29:33,630
+Wes Bos: Oh, you're still level up tut's on I yeah, there's
+
+37
+00:29:33,630 --> 00:29:34,710
+Scott Tolinski: something about that.
+
+38
+00:29:35,880 --> 00:29:38,040
+Wes Bos: Oh, you just broke 250,000
+
+39
+00:29:38,130 --> 00:29:39,750
+Scott Tolinski: I did. Congrats. Thank
+
+40
+00:29:39,750 --> 00:29:56,580
+Wes Bos: you. All right, here we go. I'm gonna sort by oldest Yeah, I wonder if you go on my oldest You see, like my wedding video and things like that. If you want to see if you want to see my wedding video, go check it out. A separate job or that stuff. I'm going to look at your first SAS tutorial. Hey, what's
+
+41
+00:29:56,580 --> 00:30:00,000
+Scott Tolinski: up? This is Scott with level up tuts and today I'm
+
+42
+00:30:00,359 --> 00:30:03,060
+Wes Bos: You still got the what's up all these years later?
+
+43
+00:30:03,110 --> 00:30:04,110
+Unknown: Oh yeah, dude.
+
+44
+00:30:04,679 --> 00:30:13,890
+Scott Tolinski: Well it wasn't it and I never intended that to be like a thing. But you know youtubers end up having like that. Hey guys, you know so yes and that just it's that's
+
+45
+00:30:13,890 --> 00:30:34,860
+Wes Bos: funny the the guys thing is is you know how it's sort of a thing that you're not supposed to say anymore in our industry. I notice it like crazy in there's funny enough that the fashion tutorials that my wife watches they all start off with Hey guy. And I'm just like, don't do that. That's a microaggression you know,
+
+46
+00:30:34,860 --> 00:30:47,460
+Scott Tolinski: I was I was out to lunch the other day with a couple and I kept saying guys like, oh, what are you guys doing? And every single time my internal dialogue was like, Oh, don't do that man. Yeah,
+
+47
+00:30:47,490 --> 00:30:54,000
+Wes Bos: yeah, it's a it's a funny thing. I've totally whether you agree with it or not. I've totally stopped saying it. Because of
+
+48
+00:30:54,060 --> 00:30:57,510
+Unknown: I'm having a hard time stopping saying it even though I yeah, and
+
+49
+00:30:58,080 --> 00:31:05,460
+Wes Bos: yeah, I have a text expander that automatically corrects guys to folks just so I don't slip up and get in trouble.
+
+50
+00:31:05,520 --> 00:31:09,210
+Scott Tolinski: And what do you say it in person though. Hey, folks, like what are you folks doing? That
+
+51
+00:31:09,210 --> 00:31:37,080
+Wes Bos: sounds sounds sweet. Folks, folks, folks. I say folks, just because I think it's fun to say yeah, but I I don't know I should I should see if I don't think I say God but it's funny because my my daughters say guys, and we don't say that at all. And I'm just like wondering like, Where's this coming from? Maybe just from other people that they've been interacting with from YouTube? Yeah. All right. I think that's it for today. We'll see you folks later. Thanks for tuning in.
+
+52
+00:31:37,230 --> 00:31:39,630
+Scott Tolinski: Nice. brought it back around.
+
+53
+00:31:39,810 --> 00:31:40,890
+Unknown: Already. Please,
+
+54
+00:31:40,980 --> 00:31:41,550
+Wes Bos: please.
+
+55
+00:31:43,290 --> 00:31:53,070
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

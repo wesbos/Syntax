@@ -1,0 +1,264 @@
+1
+00:00:00,359 --> 00:00:24,480
+Announcer: Monday, Monday, Monday, open wide dev fans yet ready to stuff your face with JavaScript CSS node module BBQ Tip Get workflow breakdancing, soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA boss and Scott Taylor. Totally at ski.
+
+2
+00:00:25,980 --> 00:00:55,350
+Scott Tolinski: Oh, welcome to syntax and this Monday hasty treat. We're going to be giving you an Ask Me Anything we did this couple of weeks ago, where we took some of your personal and non technical questions. And we talked about them a little bit about our lives and stuff that we do outside of this podcast. So we're going to be bringing to you some of these questions here. And we're going to be answering these the best that we can I think some of these are pretty fun. So my name is Scott Flynn's game, a full stack developer from Denver, Colorado, and with me, as always, is Wes Bos.
+
+3
+00:00:55,440 --> 00:00:56,370
+Unknown: What's up everybody?
+
+4
+00:00:56,549 --> 00:00:57,479
+Scott Tolinski: What's up? Wes,
+
+5
+00:00:57,479 --> 00:01:31,110
+Wes Bos: not too much excited to answer some of these amas I think it's, it's fun. It's because when you go to a conference, these tend to be the questions that you get. It's people like once you start talking to someone for 10 minutes, you get past the normal, whatever, then people start to dig a little bit more personal. And I always find it really useful. That one thing I hate is when you listen to someone online, or you follow them on Instagram, and you're just like digging through, like what do they do for a job or like you're trying to figure out all this stuff? I'm like, why are they so intentionally obtuse about all these parts of their life? And I think it's kind of cool to be able to share these things.
+
+6
+00:01:31,260 --> 00:01:38,130
+Scott Tolinski: Yeah, absolutely. This episode today is sponsored by clubhouse. So can you tell us a little bit about clubhouse West? Yes.
+
+7
+00:01:38,130 --> 00:02:55,350
+Wes Bos: So if you want to make good software, you have to have probably a team of people. And in order to manage all of those people that are working on the software, you need some sort of project management software. And you probably have dealt with Project Management Software before and you probably absolutely hate it because project manager software is really frustrating, especially for developers who want to just get stuff done. And in the people who are managing the project, it's really frustrating for them, because it's hard to see where everything and then they have to have more meetings and stuff like that. So club house is our sponsor for this episode. And they are a fast, lightweight and powerful approach to project planning and product creation. It's really cool. Because anytime you can kind of take a look at your clubhouse dashboard, it's beautifully designed, you can see where you're at what's being worked on right now what needs to be worked on what issues are, are being raised and have to be worked on. And I think it's just a better way to work on software and to to work towards releases and quarterly goals and things like that. So if you want a better project management software, if you want to try it out on your project, go to clubhouse.io forward slash syntax, and you're going to get your first two months absolutely free. Thanks so much to clubhouse for sponsoring.
+
+8
+00:02:55,709 --> 00:04:36,770
+Scott Tolinski: Cool. So let's get into it. The first question here is what do your wives do? My wife, Courtney, she is a she's an educational psychologist, she has her PhD and in psychology. And she does a couple of things she will currently and this this can change a little bit as we go here. She teaches social skills to kids with learning disabilities. And she tests for different disability she works at a private school that is only kids with special needs. And it's very, very, very focused on on those kids. People come to this school from all parts of the state and or surrounding states because the school has a reputation of being very good at what it does. So she tests children for different learning disabilities and different things. And yeah, it's it's pretty amazing what she does. I couldn't do any of it, just some of the things that she does at work and has to deal with. It's just absolutely astounding to me. And I'm just like consistently impressed with the work that she does. She also ends up writing extremely long papers all the time. So each time she tests so she runs all these tests, she she, you know, has to basically submit a report and these reports can be like 20 to 30 to 40 pages long. And she writes all of those custom every time Wow. And I'm like holy cow. And because obviously you have to write a lot for your dissertation to get your PhD you got to write a lot in general in that program, but the amount of stuff that she writes in general and has to analyze the data and do all this stuff. I'm just like, holy cow. That is seriously Yeah, seriously, it's the crazy stuff.
+
+9
+00:04:37,050 --> 00:06:08,460
+Wes Bos: My wife has a background in fashion check. She went to school for fashion design. She spent a couple years designing shoes for one of the big sports stores here in Canada, which is pretty cool job. And she now does just fashion blogging, fashion videos on YouTube, lots of stuff on Instagram, and just a lot of stuff around like sustainably sourced good quality stuff that you're going to have a long time. And I think it's really cool. She's sort of found this little niche of women who are not necessarily caring about the fast fashion of Zara and stuff like that, but care more about fabrics and how things lay on you and, and whatnot. And she's created this huge list. She's been working on it for probably two, two and a half years now. And she's getting some really good traction on it right now, which is really cool. Because I think sometimes people think like, she's just shopping and posting on Instagram, what she bought shopping, and I think from the outside, it can look like that. But on the inside, it's really interesting people talking about talking to her about loving these clothes, and she's making pretty good money, the way that she makes money is through affiliates. So she'll, she'll go out and buy a bunch of dresses and talk about how they, how she likes them and what she's wearing and things like that. And then if people buy the dresses through her links, she'll take a pretty good cut of that. So she does great stuff. Kate Bos KITB Oh, s.com or she does a lot of on YouTube and Instagram as well.
+
+10
+00:06:08,579 --> 00:06:25,710
+Scott Tolinski: Yeah, it's funny because Courtney loves content in time, some of those new lines head or whatever, Courtney's all over that. And it's fun, because, you know, I don't know her content is is really just well produced. I mean, it's really well made. And I'm always just super impressed with it.
+
+11
+00:06:25,829 --> 00:06:37,770
+Wes Bos: Yeah, if if you have, I know that it's not all men listening to this podcast. But if you do have a wife who is interested in fashion and good quality clothes, definitely tell them about that.
+
+12
+00:06:37,949 --> 00:08:23,070
+Scott Tolinski: Yes. So okay, let's get into this next one here, which is that a lot of people ask this question. It's really funny, we got this one over and over again. So I'll read a couple of them that we got if you both had to give up making courses and get a nine to five job like most folks describe what your perfect job would be ours company tech, location, vibe, etc. This question was also asked in some different ways, if you could pick a different career outside of web development. So the first one is a little bit more in web development. And then if you weren't developers, what would you be doing to build a tasty Empire? So first, we can answer the one is if you had to give up making courses and aka, you're just stole a developer, what would you do? So for me, my perfect job and fit and whatever, you know what I really loved working at an agency to be honest, because the metrics that came in the doors were different, you almost working on something different almost every other month or so you could largely determine your own tech stack, the agency that I worked, at first only had like 12 or so employees, and only two devs. So if something came in the door, we would almost like not like fight over it. But we'd be like, Oh, I want to take this one. Or the other person would say I want to take this one. And it was really cool. Because the client didn't necessarily care what the tech stack was, or what the front end stack was, you could use sass or less or stylist or whatever you wanted. And the client doesn't care as long as the workbooks fine. And it gave me a lot of freedom to learn a lot of new things and try a lot of new things. And I really enjoyed it. So you know it I like the small agency, I liked showing up to work at this little company. And the work that I did had a direct impact on the growth of the company and the sustained income of the company itself. So I guess that's what it would look like for me, maybe not the money pit, but vibe and feel and everything work. It was really nice.
+
+13
+00:08:23,189 --> 00:09:50,220
+Wes Bos: I probably would either go to agency because of all the reasons you just said I like being able to start new projects every so often, I could definitely do without the chaos that is crazy to deadlines and being overworked as most agencies are. Or I would go towards like a some sort of company that uses technology to change the industry or change the bottom line. So obviously, that's most companies out there. But something like an online booking website or something like Airbnb or somewhere where you're like, this has been so hard forever. How can we then use technology to make this a lot easier? So that's what it would be if it was tech. If I wasn't in web development in general, I probably would. I was thinking about these like, what's called like unsexy industries where there's somebody making like, near my house, there's this like broom factory, there's this huge company and all they do is make brooms and brushes and bristles and things like that. And I'm like, that is such a crazy little industry and like I wonder what that is like, right? And sometimes I go to trade shows and there's some guy selling this like roller in the roller you roll it on your lake bed, and it gets rid of all the weeds in your lake and I'm just like that's a kind of a cool little industry to get into. So I probably would find some sort of little random industry, learn all that you know about it and then also see how can I use technology to forward this this business?
+
+14
+00:09:50,369 --> 00:11:48,510
+Scott Tolinski: Yeah, you're a lot more hands on than I am, I think. Yeah, because I will probably still do something on the computer. Like I think I would probably do motion graphics Which is what I wanted to do before I wanted to be a web developer. I'm really into animation and I got really far into motion graphics. And for a long time, that was going to be my career. So if I had to pick one, I would probably pick motion graphics or 3d graphics. I was never super into 3d, but 3d has gotten a lot better than it was when I was learning it. So you know, 3d motion graphics commercials or whatever like that, you know what, I would love to design, the sort of visual motion graphics that they're doing and in sports now, I think some of that stuff is fascinating. I don't know if you've ever watched UFC or anything but and UFC in the pay per views. Now they do this. It's like this huge tail of the tape, whatever. 3d thing with photos that's like, it looks like it's physically hanging above the ring. But it's all fake. Right? You know, the people in the audience can't see this. But this looks like a giant jumbotron thing. And then they pan the camera down and it still stays in place. And like the tracking and the 3d motion stuff without that is like so fascinating to me. Every time I see stuff like that. I'm like, Man, I wish I was doing that. So I'll do that. Or I guess this is a part two. This is this is always my answer for what would I do if I could like retire right now. I would make video games. There's a lot of video games I have in my brain that I would love to make. Some of which would have an audience some of which have like no audience at all. Like one of my video game ideas is basically a sequel to cruise in the USA. Like, who wants a crappy racing cruise in the USA I do. I love cruise in the USA and I would love to play more levels on cruise in the USA because I've exhausted all of the ones from cruise in the USA cruise in the world and Curzon Exotica, I've exhausted them. So I would love some original levels and I would create those myself. I would I would create that video game just for myself and if anybody else wanted to play it cool, that's fun.
+
+15
+00:11:48,719 --> 00:12:03,390
+Wes Bos: All right, next question we have from Paul is we're gonna do these rapid fire name your favorite color number movie smell fictional character commercial brand emoji item on your desk and animal so ready to go favorite color?
+
+16
+00:12:03,540 --> 00:12:05,010
+Scott Tolinski: Purple should be no surprise.
+
+17
+00:12:05,370 --> 00:12:16,230
+Wes Bos: Mine is MFC 600 it's that yellow that it uses an absolutely everything. My favorite color is actually blue, but I use that yellow. absolutely everywhere that I have a shortcut just for the hex code.
+
+18
+00:12:16,469 --> 00:12:34,200
+Scott Tolinski: Nice. Nice. My brain is purple. I love purple. I don't like a lot of colors. I like like yellow colors are good. Yeah, Steelers are great. Like black. I like a lot of colors. Alright, lucky number 258 for no reason in particular movie.
+
+19
+00:12:35,880 --> 00:12:45,390
+Wes Bos: I would took a second to get all these I was laughing I was like I don't watch movies at all. Either Virgin Suicides or Christmas vacation are probably my two favorites.
+
+20
+00:12:45,600 --> 00:13:07,530
+Scott Tolinski: Cool. My favorite comedy is how high featuring red man and Method Man, which is great movie. I've seen it like 10,000 times or five deadly venoms which is a kung fu movie from the 1980 early 1980s sharp brothers film I love short films. I love kung fu films five deadly venoms is definitely sort of the peak for me. It's one of the very best
+
+21
+00:13:09,120 --> 00:13:10,080
+Wes Bos: favorite smell,
+
+22
+00:13:10,440 --> 00:13:21,210
+Scott Tolinski: smell. I like Christmas smells but I'm not like a huge Christmas person. I'm not like I'm not a Christmas person. But I like the cinnamons and that sort of stuff makes you feel like a cabin or something. Minus campfire I
+
+23
+00:13:21,210 --> 00:13:35,370
+Wes Bos: actually found some incense that smells like campfire and it's amazing because it's something about campfire that makes me feel relaxed and I also have a smoker in my backyard and that kind of gives a similar feeling when you put a bunch of wood in it so now by far my favorite smell
+
+24
+00:13:35,610 --> 00:13:36,780
+Scott Tolinski: fictional character
+
+25
+00:13:37,110 --> 00:13:40,380
+Wes Bos: Adam from workaholics, which is I love that. Yeah,
+
+26
+00:13:40,440 --> 00:14:08,790
+Scott Tolinski: there's like a GIF of him doing a dab It's like my favorite thing in the entire I love workaholics great. My favorite fictional character is Sam Tate from from several kung fu films, but in particular 36 Chamber of Shaolin he's very inspiring character because he is like basically going through all of this stuff and in growing himself physically until he can accomplish his goals. It's very, very inspiring to me. Next is commercial brand.
+
+27
+00:14:09,209 --> 00:14:39,330
+Wes Bos: I say right now it's Yeti just because they have a Yeti mix of high quality product, many would say overpriced, high quality product mix with like, just a vibe, everything they put out has a specific vibe and I think that's really cool that they're able to do that. And there's somebody listening to this podcast, I forget who it was apologies off the cuff, but they sent me a whole bunch of Yeti stickers because they work on it as well. Never so I got a cute Stacie any stickers. I'm super excited about it.
+
+28
+00:14:39,510 --> 00:15:24,540
+Scott Tolinski: Nice. My favorite is scotch and soda. We have a scotch and soda at the mall here in Denver. I love scotch and soda. It's a clothing brand. For those who don't know, it's expensive, but it's all very high quality and all the stuff is unique. You can go into scotch and soda and find like, you know 50% of the things are like too ridiculous or not your vibe and I can still find 50% Some of the things that I'm like, ah, I wish I had more money because I would just buy a lot at the store. I wore this shirt to this wedding last month and as a scotch and soda shirt and they had this built in pocket square into it and everybody at the wedding everyone's like, wow, I love your pocket square was like built into the shirt. there and then like you didn't have to I didn't have to pick it out and it just made me look more stylish. And I was I'm a big fan. What's your favorite emoji?
+
+29
+00:15:25,049 --> 00:15:27,600
+Wes Bos: Either the okay hand or a fire?
+
+30
+00:15:27,989 --> 00:15:46,890
+Scott Tolinski: Oh, my favorite is the well with with slack incorrectly calls the call me hand. No, it's not the call me hand it's hanging 10 it's again hang Manning. Yes. If you tried to. There's no hang 10 if you do you do call me it's like a little hand that looks like you're on me. Yeah, call.
+
+31
+00:15:47,189 --> 00:15:49,290
+Wes Bos: Like, yeah, it's hang 10 is like, What's up, bro?
+
+32
+00:15:49,319 --> 00:15:53,880
+Scott Tolinski: Yeah, I use that all the time. Somebody says great work. I say hang 10 brother. That's what I got.
+
+33
+00:15:55,110 --> 00:15:56,520
+Wes Bos: What about item on your desk?
+
+34
+00:15:56,880 --> 00:16:58,860
+Scott Tolinski: I have this little tiger eraser. I'm not I think I got it in Tokyo when I was there. And it's a little head moves. It's it's like several different parts. It's tiny. It's like an inch big. And it's this this little cute little tiger eraser. I've had it for a long time. And actually, I take that back my favorite thing on my desk because that this wasn't visible at the time I picked this. I have this note that my wife wrote to me when we hadn't been dating very long. But she like just slipped it on my computer. And I it was on the back of a fortune cookie. And I've had it for I mean, ever since. And it says, excuse me, it's in German and says dubis they're tall. And I think that means you are crazy or you are mad. I think he's not mad. But it's like a an endearing kind of thing. And as a little smiley face. She wrote that on the back of a Panda Express. Fortune Cookie. I have it right here. And the fortune cookie says Ed Meyer is too shy to greet you. So I love this thing. I keep it with my speaker. I kept it in my computer for a long time. And I'm just impressed that I still have it to be honest.
+
+35
+00:16:59,160 --> 00:17:15,180
+Wes Bos: Wow, that that is adorable. And mine is a piece of tack. Mine's the Cal digit. Doc that makes everything my MacBook Pro is single cable, all my monitors USB, charging everything single cable. We've talked about it many times on this podcast.
+
+36
+00:17:15,300 --> 00:17:20,700
+Scott Tolinski: I love my my cape or my caldigit as well. What's your favorite animal minds a penguin?
+
+37
+00:17:20,700 --> 00:17:22,550
+Wes Bos: Dog hate cats.
+
+38
+00:17:22,920 --> 00:17:25,340
+Scott Tolinski: I love dogs too. I love I love dogs.
+
+39
+00:17:25,580 --> 00:17:29,730
+Wes Bos: And they're good. Why do you like penguins because of the hockey Teamer? No, I
+
+40
+00:17:29,730 --> 00:18:08,040
+Scott Tolinski: like that. Well, to be honest, I think I like the animal first. I had, like, you know, Penguin Books when I was a kid. And that might have been one of the reasons besides Mario and me that I'm such a huge fan of the hockey team growing up. But the animal is just so funny to me. I love like funny, ridiculous things. If I'm picking a character on a video game, I'm picking the most absurd ridiculous character because it's, it's ridiculous. I'm picking the obnoxious ones and I kind of feel like penguins are are both adorable looking and kind of obnoxious. They're kind of ridiculous looking. You know, the way they waddle around the colors. The white, black yellow is all great. I would rock those colors any any time of the day. I just love penguin man. They're just they're just cute. They're super cute.
+
+41
+00:18:08,220 --> 00:18:24,420
+Wes Bos: Next question we have here is hi Wes. Can you tell us about people who inspire you what you noticed and what may be reflected on your personality from them? So I was joking with Scott earlier I was like what Scott's gonna say like Jackie Chan at this point. Like Jackie Chan.
+
+42
+00:18:25,340 --> 00:19:16,680
+Scott Tolinski: Yeah, Jackie Chan for for so many reasons. Jackie Chan has this amazing documentary about his fight team, and his choreography team, and all of the different like tips and tricks and stuff that they do. And besides just being a physical superhero, the the kind of stuff that he's done throughout his entire career before in the 80s and the golden harvest up into like his American stuff. He is just brilliant. His knowledge of film, the history of film, his knowledge of these film techniques, and how he treats his bike crew, how he treats people in his life, and just how amazing he is that like literally everything he does, he's so insanely inspiring. So Jackie Chan is one of these people that I look up to an insane amount. So you have a couple more here too. I have some other Do you want to go back and forth here?
+
+43
+00:19:16,860 --> 00:19:31,530
+Wes Bos: Oh, sure. Yeah, I don't really like look up to a whole lot of people that are sort of in the public scheme. Anytime someone dies everyone's all upset. And I'm like, Who? Who is that? I'm not very up on like, cuz I don't watch movies or anything I'm not really up on.
+
+44
+00:19:33,210 --> 00:19:39,540
+Scott Tolinski: That's the funniest thing when we're recording this and you're like, I don't know, I don't watch movies. At least watch some movies.
+
+45
+00:19:40,170 --> 00:19:58,920
+Wes Bos: I do watch some. There's a couple people I have here. Anthony Bourdain is one. He was the first person that when he died, I was actually like, that's ox like I really enjoyed watching all of his shows Anthony Bourdain was like a TV host of no reservations and parts on knowns and he had another show called The layover and
+
+46
+00:19:59,190 --> 00:19:59,970
+Unknown: they're all great.
+
+47
+00:20:00,320 --> 00:20:10,340
+Wes Bos: Yeah, just awesome overlook at like food but also culture and like What does food mean and specific cultures and interacting with people, I thought that was really neat all of his outlooks on that.
+
+48
+00:20:10,469 --> 00:21:20,670
+Scott Tolinski: Yeah, I have a sort of off the wall one where most people aren't going to know who this is. This is a guy, his name was his real name. This is not his real name, but his stage name is Steve dangle. Those of you are hockey fans might have heard this name. This guy's about probably about my age, or maybe a little bit younger. And he started a YouTube channel and a podcast. And now he's on Sportsnet. He's on actual TV, and what's like equivalent of the NFL red zone. And just by coming up through doing YouTube videos, and having his own thing, and the content really gripped me a few years ago, just because he's hilarious. He's a really funny guy. And you could tell just by watching one of his first videos that you know, he's a really dynamic personality. But I've been following his stuff for so long. And the point now is that he has worked his way up from being, you know, on YouTube, or just doing his own thing to being a legit correspondent is that what they're called on a television network. Not only that, but like one of the biggest ones in Canada. It's pretty darn inspiring and amazing. And just by doing something that he loved, so it just really can show you that you can take your passions so far and really make a career out of it.
+
+49
+00:21:21,050 --> 00:21:49,740
+Wes Bos: Next one I have here is Adam Savage. So he's probably most well known for being a mythbuster. But he does a lot more. He's got tested, calm. He has this really awesome podcast. He has a book coming out, he's working on like a kid's version of the mythbuster. And he just is such a positive guy who is constantly working hard, and constantly learning new things and sharing what he knows. And I just look at him as like a great way to sort of shape my career around someone like that.
+
+50
+00:21:50,189 --> 00:23:06,210
+Scott Tolinski: Cool. I have one last one that another one you might not know. But he's worth a look up. Ken Swift is one of the he's not like an original B boy. He's one of the like he was that when the rock steady crew blew up in the 1980s. He was a member of all of that. So he was in Flashdance and all other things. But they describe Ken swift as the quintessential B boy. And I can swift to me is one of these people who he took something like braking, which wasn't anything at the time and really developed it in a way that he wasn't necessarily the most gymnastic guy. But he is essentially always embodied the attitude of what it meant to be a B boy. And he's always kept that he's kept level that level of integrity into everything. And if you google him, just like watch some of his YouTube videos, those of you who are used to sing the acrobatic stuff of his or not of his of breakdancing might not even recognize this being the same sort of dance, but he is the quintessential B boy in the terms of style, foundation skill, and in, in all honesty, you know, I would watch every single thing that he ever put out, because he's just endlessly inspiring dancer and human being so really great person to check out. Their
+
+51
+00:23:06,449 --> 00:24:16,290
+Wes Bos: last one I have here is Mike Rowe. He's probably the most well known for the show dirty jobs where he will go on TV and like just get dirty, right. But he in these hilarious of things, he would often have very insightful things to say. He also has a podcast himself. And he does a lot of work with like trades and getting kids into trades. But one of the things that stuck with me, I just looked it up. This is from 11 years ago, where he talks about this thing called the reverse commute. And he says the reverse commute has always been a big part of my adult life, my aversion to stalled traffic in lines of any kind is profound. And I often forego any activity that requires me to go shoulder to shoulder with the masses. And I think that's just really cool. Like my whole life is built around like not doing exactly what everybody else does are the exact same thing. So whether that's taking the job that everyone else thinks you should do, or moving to the city where everyone is moving right now. And I'm always trying to think like, what can I do? That's the opposite of what people are doing right now. That will work out for me. And I thought that it's funny that it's 11 years old, and it's stuck with me for that long. Dang. Yeah,
+
+52
+00:24:16,319 --> 00:24:55,380
+Scott Tolinski: I didn't know but that but I mean, I don't intentionally do that stuff. But I often do that stuff out of like spite. Essentially, my, my wife Courtney's always, like, I know why you're doing this, because she knows that I'm just trying to do the opposite to either, like, not make people mad, but just to like, do the opposite. And it's so funny because like, I don't really think about it, but it's just like something that is innate, that I feel like I need to do, you know, I don't want to listen to the I don't if some movie is being popular right now. Like I don't want to watch that movie. I want to watch the other movie or something. I have a really hard hard time latching on to that stuff. That's like in the in the mainstream.
+
+53
+00:24:55,409 --> 00:25:14,820
+Wes Bos: I have that all the time where my wife wants something popular and there's something mean that the it's like the deep hipster gene in me? Yeah. Yeah, just the fact that it's popular makes me not want to make me not want to enjoy and that's silly and a lot of silly. Yeah, there's a reason why these things are popular
+
+54
+00:25:14,970 --> 00:25:38,640
+Scott Tolinski: early somethings. Yeah. Like I'll give them some things like I've, I've watched you know, every episode of Game of Thrones, and I'm very, you know, into that, but like, a lot of things I'll just build. I don't know, right. Yeah. And sometimes I'll watch it finally, because I'll be forced to. And I'll be like, okay, it was really awesome. I shouldn't have you know, held out but there's so many of them where I'm still holding out.
+
+55
+00:25:38,910 --> 00:26:16,140
+Wes Bos: Oh, yeah, it's probably the I remember, in high school, we had a bunch of video assignments. And I used all this like, really obscure local scene music in my video. And then they're like, popular kids in school, put some simple plan into their video. And they won the like, best video and I was so mad. I was like, they use simple plan. Yeah, that's like the, that's the most normie poser music you can possibly get in your video. And I still think about like how silly I was to think that because the fact that everyone loved it because they had this awesome music that was so big and popular. And that probably will never leave me. Yeah,
+
+56
+00:26:16,140 --> 00:26:17,130
+Scott Tolinski: I feel you on that one.
+
+57
+00:26:17,400 --> 00:26:18,030
+Unknown: All right. Last
+
+58
+00:26:18,030 --> 00:27:55,590
+Scott Tolinski: question here. What's your ratio of client work learning new tech, teaching new courses that talks syntax FM, you guys seem awfully busy. It makes me feel kind of lazy. So West tonight, we record syntax on Monday morning. So by Monday at noon, we are done with syntax. So Monday, every single week, or noon to me, I don't know what time it is for you. I'm sorry, I'm not in Canada. But Monday, before noon. For me. That's it. And then I don't think zones in Canada. I don't think about it until the next week. But for learning new tech, I like to learn on the job. So I'm developing a lot of stuff for level up tutorials myself in the code base all the time. So typically, I'll be learning while I'm coding the code base, I like to do that. But that said, I record a new tutorial series every month. So I usually spend maybe a one week recording each tutorial series. So that's one whole week of each month done recording a tutorial series, the rest of the days, I'll be working on the code and learning new tech. As far as talks go, I don't do a ton of talks, I've done a few. And those who usually end up being on the weekend. So usually fly out and do this stuff on the weekends, developing the talks, maybe a different story, client work, I don't have any client work right now I have taken on some client work during lows in my in my output and things like that. And I always sort of regret it. So I'm not doing any client work right now, just because I have too many other things to work on. But not there's not I take one week to record the series, the rest of the time I'm delving and learning new stuff, preparing the next month series. And that's it.
+
+59
+00:27:55,860 --> 00:28:47,520
+Wes Bos: For me, I don't do any client work anymore. So zero, learning new tech in generating content is probably all grouped into one for me. And I would say that's probably like, I don't know, 65% of my days, syntax takes half a day per week to record each two episodes. So it's not that significant, we have a pretty good process in place right now, teaching courses, it really depends on like, if I if I'm recording, then it's like all of my time. And if I'm not, then I'm generally helping people out on chat room or generating new new types of content. So but I would say overwhelming majority of my my time goes towards generating new content and researching new and learning new stuff. So if it makes you feel lazy, it's just because almost everything both of us do is in public, whereas most other people's stuff is not in public. So just we're just posting everything we do online, right? Because we
+
+60
+00:28:47,520 --> 00:28:55,080
+Scott Tolinski: can we don't have client obligations. We don't have word obligations, our work obligations are to learn and to teach. That's it.
+
+61
+00:28:55,110 --> 00:29:26,790
+Wes Bos: Yeah. So I think that's it for today's ama. Thanks so much to submitting these questions. We will probably do another one in I don't know, maybe six months or so. And we will maybe we'll try to get the link out beforehand. We I just tweeted this one out. And we got like 70 questions in which was great. So thanks to everyone who voted on those thanks to pigeonhole for giving us the interface for these questions. It's pretty cool, a little live interface for voting. We used it on our live podcast as well as anything else to say there, Scott. Nothing.
+
+62
+00:29:26,790 --> 00:29:27,360
+Scott Tolinski: Thank you.
+
+63
+00:29:27,360 --> 00:29:29,670
+Wes Bos: All right, talk to you next week. Peace, peace.
+
+64
+00:29:31,980 --> 00:29:33,930
+Scott Tolinski: Head on over to syntax.fm for
+
+65
+00:29:33,930 --> 00:29:36,330
+Unknown: a full archive of all of our shows.
+
+66
+00:29:36,539 --> 00:29:41,520
+And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

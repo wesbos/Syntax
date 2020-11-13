@@ -1,0 +1,364 @@
+1
+00:00:01,319 --> 00:00:22,109
+Scott Tolinski: You're listening to syntax, the podcast with the tastiest web development treats out there. strap yourself in and get ready. Here is Scott solinsky and West boss. Welcome to syntax. The podcast with the tastiest web development treats around with me, as always, is Wes Bos say What's up?
+
+2
+00:00:22,229 --> 00:00:23,520
+Wes Bos: Hey, everybody,
+
+3
+00:00:23,669 --> 00:01:24,420
+Scott Tolinski: hey, this episode, we're gonna be talking all about array methods and object methods, we're going to be doing some of the ones that we feel like are very, very usable things you should be using, you know, somewhat frequently stuff that's going to improve your life stuff that's going to make your code more readable, easier, all that good stuff that comes along with these methods, we're going to be going just a little bit about what they do, maybe why you might want to use them, what they return, what the benefits are all that good stuff. And this episode is sponsored by Freshbooks credit, which is amazing. And cloud accounting software, as well as Netlify, which is honestly one of the, you know, possibly one of my favorite services of all time here at this point. I tweeted about it the other day, and someone was like, Yeah, but they're your sponsor. I was like, Yeah, but I, you know, found Netlify first and then reached out to them and was like, I love your service. I absolutely love this thing. So any words or comments you hear from me talking about Netlify? Is 100%, my .js.
+
+4
+00:01:25,500 --> 00:01:49,830
+Wes Bos: funnier, I would say probably about half of our sponsors are companies that we use ourselves. We praise like I have no no problem tweeting out being like this company is amazing. Like it's super good. And then they often say, Oh, we just got a bunch of signups just from you like that happened with cloudinary and a couple others. And then they come on and sponsor full time because they realize that this audience is awesome.
+
+5
+00:01:50,010 --> 00:01:57,840
+Scott Tolinski: Yeah, for real. And we're just genuinely excited about this stuff most of the time. So yeah, that's really just did so how are you doing today? Wes,
+
+6
+00:01:58,230 --> 00:02:16,160
+Wes Bos: I'm doing great. I am going to New York tomorrow morning. For generate cough I'm doing a react like an intro to react to workshop on Wednesday, and I'm doing a talk on Thursday. And then we got a day on either side to to hang out and enjoy New York.
+
+7
+00:02:16,169 --> 00:02:42,870
+Scott Tolinski: So I'm pretty stoked about that. Beauty. I'm actually heading to SF San Francisco, this weekend to talk at Site day. Talk on learning on a lot of people ask me like, what's up? How do you learn a lot of stuff so fast. And we'll be doing an episode on that too, after this talk, maybe cover a little bit what I go over in that talk. But I'm really excited to be out there. So if you're outside day safe, just go. Come say hi, I will be there and hanging out.
+
+8
+00:02:42,990 --> 00:04:17,880
+Wes Bos: Yeah, wicked, man. We are world travelers, or at least United States travelers. Yes. Wicked. Alright, so let's get on into it. We've got I think I've got I counted like 20 different things. And I think that this episode is going to make you a better JavaScript developer. In my wiscon, I always talk about our love for all the array methods. And often we get people being like, what are they can you do an episode on it. So this is the episode where we're going to rattle through 20 different methods on arrays and objects that you should know. And it's gonna make you a better developer, you probably know a handful of these, hopefully, there's a couple that you either didn't know about, or a couple that we can use in a way that you never knew about. And they'll just make you a better, more well rounded developer. So let's open it on up. And maybe that we should talk about that real quick as well. Like, why are these methods so great that we're all talking about. And I think that it really boils down to two things. So you can kind of keep this in mind as we go through them. First, all of these are chainable. Meaning that if you need to first filter a list, and then transform it, which we're going to talk about in just a second via map, then you can chain them as as long as you want. And it's great because often you need to do three or four things and sort of pass them through, talk about the machines, again, pass them through four or five different machines. And you don't have to do it all in one big confusing loop, you can sort of think through your process in six or seven chained methods.
+
+9
+00:04:18,200 --> 00:04:29,970
+Scott Tolinski: Yeah, and many times you end up using Yeah, you end up using them, either just one or a couple, but it doesn't matter. Because once you start chaining them, you start really seeing how powerful they can be back to back to back here,
+
+10
+00:04:30,360 --> 00:05:20,880
+Wes Bos: totally. And then the other benefit is immutable. And we've talked about this on the episode before but I mutation is when you reach into a object, an array, a string, something and you reach directly into that variable, and you directly change the data. And that's called the mutation and in functional programming, it's very popular in react land. It's the reason why we call dot set state instead of just reaching directly into state and changing values. And that is because we know ever want to modify the data directly, you always want to just make a, like a copy, or you always want to return a new data and then put that into state or you always want to return new data and put that into Redux store. And, and and that's what's beautiful about everything we're talking about today is that they never hurt the original data. They just make new data that is the modified version of it.
+
+11
+00:05:21,120 --> 00:06:34,380
+Scott Tolinski: Yeah, yeah, absolutely. I like the first one on the list here that we have is filter. And I love filter for a number of reasons. But I use filter primarily, as you tweeted out, it's like a poor man's search, where you can have a dot filter method on an array, you could have some sort of state coming in from your search. And as you're typing, you could have it filter through a number of items in your array, and I use this on the level of tutorials site for anytime I need to search their data that's already there. If I have the 50 to 60, some tutorial series on the on the channel, if you start typing in there, it's just using a filter method to filter which items are shown. So filter is a method on the array that has a callback and in that callback, you get to determine what is the the item that is going to be either filtered or passed through, you can do any sort of conditional anything in there that just returns a true or false. And that basically allows you to and what it does is it outputs a whole new array based on whether or not those conditions are met. So you end up having a brand new array at the end of it that has been filtered by whatever these conditions are.
+
+12
+00:06:34,680 --> 00:08:46,669
+Wes Bos: Awesome. Yeah, that's a great explanation. I always tell my students when I'm teaching filter, it's it's sort of like a little machine where you a lot of these array methods are sort of like a machine where your your raw material goes in one end, and then the machine is the method itself. And in this case, the filter is just a sort of like a paddle where you that you can you can run a conditional you can check if something is there, you can check if the number is greater than 100. You can check if a property has a specific property that you're looking for. And then you can either keep it or return true or return truthy, maybe we should talk about that real quick. What does truthy and falsy mean? Because in JavaScript, if you have an if statement, you can obviously check if something is equal to true or you can also check if something is greater than 40. And that will return a true Boolean but you can also use truthy, which means that there are other values in JavaScript that are equate to true meaning that like a string, with text in it is truthy, it's not true itself, but it's there. So it's truthy, a string with no text is not necessarily false, but it's falsie. Right? Same with a zero is false. See a one or any other number is truthy, there's a couple other ones that are undefined is falsey. No is falsey. So it's good to good to have those things. All right, next one up we have is map. and if we talk again, about the whole machine map, we'll take in an array, let's say you have an array of four items, and it will modify that array and spit out an array on the other end, that is your modified item. So basically, what you're doing is you're taking in a list, I always like to give an example of you take in Scott, and Wes and Snickers. It's an array of three strings, it goes through your map. And then at the other end, it's going to return an array of three things. And the map could add is cool to the end of each one. So you take in Scott West Snickers it will spit out Scott is cool West is cool. Snickers is cool. So any single time that you need to do a little bit of data massaging changing the data, changing what it looks like removing items from the data, it's always the same amount of items that's being returned. But they're always massaged or changed in some way.
+
+13
+00:08:46,740 --> 00:09:39,330
+Scott Tolinski: That's what map does. Nice. Yeah. And again, we see this a lot in react. Because, you know, again, people sometimes think that you use dot map to loop over your data and react because that's essentially what you're end up doing. But all you're doing is you're creating a new array full of your data with the JSX in it and returning that array. And then react is just outputting that array. So you're not really doing like an mg four or something like that. It's it's actually making a new array. And that's why it's useful in that regard. So you know, dot map is one of those ones you use a lot for stuff like that, but you end up once you just realize that well hey, if I have an array, and I have a need a new array, and it needs to be based on the previous array, but different for some reasons. Yeah, map starts thinking like the right option for you. Right about then. I use map a whole heck of a ton. So definitely one of my most used array methods here.
+
+14
+00:09:39,630 --> 00:09:42,360
+Wes Bos: Yeah, I would say it's, it's my top used one. I would
+
+15
+00:09:42,360 --> 00:11:20,340
+Scott Tolinski: say it's my top use one too. Yeah. Next we have one that's really important and very useful, but often overlooked in mostly just because I think people can find it to be a bit confusing. Just because of it's a little bit I would say it's more complex is not really that much more complex. Once you get Use to it or use it. But I'm talking about reduce. Now reduce is going to be something that it doesn't necessarily return an array. I mean, it can return anything, right? Yep. Yeah, so reduce, unlike dot map or filter that are automatically returning arrays. This one's a little bit different. And I think the best way to think about this is to look at some of the properties, one of which is frequently referred to as the accumulator. So this thing is accumulating based on the information you're passing into it, I use reduce to generate totals and subtotals. From shopping cart values, right? If you have an array of five totals from the last five orders, or whatever, you can reduce that number down by simply adding the value to the new value to the old value, whatever, and then getting the the total value out of that. And so that's what I used to reduce a lot for, it's basically taking in an array of information with its objects, whatever, and then accumulating or using that information to return a single value. But that I mean, that value could be anything, it could be an object, it could be array that you create yourself, or something like that. But I like to go back to the example of a subtotal or a total from subtotals isn't the nice way, I like to think about it the most
+
+16
+00:11:20,370 --> 00:13:03,899
+Wes Bos: Yeah, you take in an array of products. And for each one, you just take the price off of that product, and then you add it to the sort of the running tally of that one. Another thing I like to use it for Is it let's say I have a string. And that is a transcript of this podcast. And I wanted to know how many times I said sweet in the entire podcast or how many times they use specific words, what I would do is I would take the entire string of this podcast, I would split it, which turns, it would split it on a space, meaning that it would turn every word I've said into an array of a huge array, and then you can reduce over it and start with an empty object. And then for every single item in that array, you sort of log how many times that word has been saying. So you take the you take that empty object and the first time I say hello, so you say hello is equal to one. And then I say my, and then you say, on that you on that object, you put my is equal to one. And then if I say hello again, then you just say, Oh, I already have that key of Hello, let's just increase it by one. And then you run that through the entire array. And then at the end of the, at the end of it, you don't have a number, you don't have an array, you have an object where every single word is a key in the object. And then every single value is how many times those words have been saying. So if you ever want to tally how often something has happened, reduces perfect for there's all kinds of use cases. For this, I've even seen people use it in if you want to sequentially run promises, you can take like, let's say you had an array of data, and each one needed to happen one after another, you can reduce each of those into a promise. And then and then just fire those off one after another, which is pretty, pretty nifty. So there's all kinds of great use cases for it.
+
+17
+00:13:04,140 --> 00:14:30,270
+Scott Tolinski: Yeah, and I think a good place to go. I mean, even just the developer.mozilla.com. And then just looking at the the array function, or the array methods here and seeing the reduce, they have a plenty of different examples. So if you're thinking like, I guess I get stone, I just don't know why would use this, check out these examples. Because these are a lot of very real world examples, including that promises, example, Wes was just talking about, but also a lot of really cool other stuff, too, that could get your mind working. And sometimes you might be trying to do some code, and it might seem complex, and then all of a sudden, you're like wait, would reduce work here, maybe reduce work here. And I think at that point, you should just start trying it. Because honestly, this stuff will save you so many lines of code, I actually went back and looked at some code that I had written for a project maybe like maybe like three or four years ago, and it took up so much space, it was hundreds of lines of code in JavaScript. And I swear I just demolished that into a couple of lines, array methods. And I just remember being like, dang, I was really bad at this. But I guess, you know, these things weren't out there, you had to use lodash, or any of that stuff underscore to, to really take advantage of a lot of this stuff. And that's actually one of the benefits of these methods, too is they're removing the need to use a library like lodash to do a lot of this stuff now that they're native into the browser. So that's just a advancement, advancement advancement
+
+18
+00:14:30,539 --> 00:15:34,260
+Wes Bos: you had to fall. Next one we have is dot for each now a filter MapReduce, these are all loops, they all loop over all your items in an array, however, for each is also a loop that does not return anything. So in all of the previous examples, we've always wanted to take in data, do something with that data and then return some other sort of data we've got for each is great when you have what's called a side effect when you need to actually do something with each piece of that data and the most simple example I can think of is if you're selecting a list of buttons in vanilla JavaScript, you do document dot query selector that will return you what's called a node list. But it's kind of like an array. We can talk about that later episode. And you can call dot for each on that node list. And you can loop over every single element. And then for each of those, you can attach an event listener saying, like when this thing is clicked, I can run it. So if you don't need to return any sort of data, then you need to reach for each. However, if you do need to return some sort of data, then you reach for filter MapReduce.
+
+19
+00:15:35,250 --> 00:15:41,370
+Scott Tolinski: When was the last time you wrote like a for loop? Like ever since for each came out? I have not touched for loops.
+
+20
+00:15:41,370 --> 00:16:08,520
+Wes Bos: No, I think anytime you find yourself doing like you set a variable that's empty, and then you open up a loop, and then try to reach outside of that, that function and updating that external variable, there's probably a better way that you can do it with filter MapReduce, because that's one of the big beauties of all of these array methods is that they're self contained, meaning that they don't ever have to reach outside of their own function to get data that that needs doing.
+
+21
+00:16:08,909 --> 00:17:39,540
+Scott Tolinski: Yeah, absolutely. Cool. Yeah, I mean, I love and use for each all the time. Again, anytime I would have thought of making a loop, I just jumped to four h so much easier, it's less code, it's more readable, a lot of good stuff about it. And Okay, so the next couple of ones, in my mind a little bit deceptive in their name. Like that, we have some and every which are kind of similar. I'll talk about some specifically. But some seems like it should be doing something a little bit more, I guess. But that's some what it does. Here's a perfect example, if you have, let's say an array of five numbers here, you do dot sum on that array, and then you have a condition to check whether or not those numbers are even, it's going to tell you if some of those numbers are even, it's going to return a true or false. So if you have an array, that's five values that are all odd numbers, and you do some and then you have your condition to check if it's even, it's going to return false. If you have one item in there, that's an even number, it will return true. So this is some, and I don't really find myself using some very much, but maybe I could find some ways, every is the exact same thing except for it's going to make sure that every item in your array passes that condition. And again, it's just going to return a true or false. So in this case, if you had an array that was four numbers that were odd, and then one number that was even and you were doing a check to see if it was even, it would return false because not every one of those is going to pass that condition.
+
+22
+00:17:39,800 --> 00:18:50,940
+Wes Bos: Yeah, here's an example of when I used it on my upcoming react course, I have a list of permissions that are available for someone to update an item, you can either be in a minute at an administrator, or you can have a permission on your profile called can update item. And then what I did is I would loop over the allowed permissions and check if the user matched some of the items, they don't need to have all the permissions, they just need to have one. So another good name for some would have been contains at least one or or not contains, but is at least one because you can you can run like you can run code inside of it to either return true or false. So in my ESX course, I use an example where we check if at least one person is over drinking age. So you have an array of people, they all have their birth dates of when they were born. And for each one, you can calculate how old they are. And you can return true or false whether their legal drinking age and you can you can make a variable says is at least one person legal drinking age. And that will be true or false, depending on the data that's passed in similarily. Every will check if every single person is of legal drinking age. Interesting.
+
+23
+00:18:51,080 --> 00:18:55,350
+Scott Tolinski: Yes, yeah, these are definitely ones I need to use quite a bit more, I guess, Oh,
+
+24
+00:18:55,350 --> 00:20:03,860
+Wes Bos: I thought I wouldn't. I because I've tweeted a lot of these out, I always find these generic or these kind of edge cases. And some can be used as what's called a short circuit for each, which is kind of nifty. Because sometimes you have an array of data and you're looking for one thing in the array and you want to you want to run some data on the first thing that you find. Like let's say for example, you want to you have a list of people and you want to appoint the team captain for the first person who is 20 years or years of age or older. What you can do with some is you can just loop over every single one. And as soon as you find that first one that is going to be true, some will stop running on the rest of the data because it doesn't care. It's some is just looking for at least one that is true. So you can use it as a for each loop that you can break out of early because a for each loop. If you've even even if you found the piece of data that you're looking for in your for each. There's no way to stop the for each from running whereas dot sum, you just need to return true And then the rest of the, the array will no longer be iterated over.
+
+25
+00:20:04,290 --> 00:20:08,360
+Scott Tolinski: Interesting. Cool. Yeah, I haven't I haven't used that before. That sounds uh,
+
+26
+00:20:08,430 --> 00:20:10,770
+Wes Bos: sounds pretty cool. Pretty nifty.
+
+27
+00:20:11,460 --> 00:21:46,980
+Scott Tolinski: Cool. Yeah. Pretty nifty. You know what else is really super nifty is Netlify, which is one. Today? Yeah. So Netlify is again, I tweeted out the other day, I mentioned this in the intro, I think I tweeted out that Netlify if if I'm going to host anything at this point, Netlify is the first place I'm looking to. And I'm going to strongly back that statement, because Netlify over the past few weeks, if I want to host anything, I think I don't even think anything else, I think now's the time that I fire Netlify and get this going. because let me tell you Netlify is the most seamless easy to use host that I have ever used. You can connect it right here repos, you can have automatic deployment, it works great with sort of front end code, static site generators, and that kind of thing. But the best part about Netlify is they have all these additional features that sort of remove any of the friction for any kind of server side stuff you might want to do. For instance, they recently launched something called functions, which are essentially AWS lambda functions without configuring the API gateway coordinating documents or setting up an AWS account, which let me tell you, that barrier to entry to AWS is enough to keep me to not want to use it. So the fact that Netlify has completely removed that now opens up serverless functions with absolute ease using Netlify functions. Now, in addition, they also have something new called identity, which allows you to manage signups logins, path password recovery, Oh,
+
+28
+00:21:46,980 --> 00:21:48,450
+Wes Bos: I know that,
+
+29
+00:21:48,480 --> 00:23:04,200
+Scott Tolinski: yes, it's authentication without having to have a back end. So now you can instantly add authentication to your front end code. Again, you don't have to have a server, it does it all with JSON Web tokens. Basically, easy, easy, easy stuff to allow you to work with user accounts. Now there are plenty more of these, we've talked on things like forums and stuff like that before to the best part about Netlify is it's free to get started. So you can check out Netlify get started, only pay for the functions, or the identity, or the forums for the actual work that you need to use. You're not paying for all these extra features, if you're not using them. So head on over to netlify.com forward slash syntax and sign up for Netlify. Today, tell them you came from syntax, if they're ever talking to you tweet at them, or let them know that you heard about it on this podcast. And yeah, I absolutely love this service. Again, this is 100% genuine, I don't think I could be this excited about something. If I if I wasn't legitimately this pumped about it. So I love Netlify I use this service myself all the time. In fact, my slides that I'm using for my talk this weekend will be hosted on Netlify. So too fast, too furious. netlify.com
+
+30
+00:23:04,890 --> 00:23:26,610
+Wes Bos: Beautiful. I'm really excited about this whole serverless functions thing, because I've tried a whole bunch of different serverless things and they all seem like a little bit more work than they should be. On Netlify I haven't tried it yet. It might be a lot of work, but I kind of doubt it because of their whole I don't know, they just they seem to make everything very easy. So I'm gonna have to check that out pretty soon.
+
+31
+00:23:26,640 --> 00:23:54,810
+Scott Tolinski: Yeah, yeah, the the barrier to entry is usually just like too much for me if I'm looking to be doing a hobby project to just say, yeah, screw it. I'm not I'm not gonna bother with it. But yeah, definitely some really exciting stuff going on Netlify. Also, they launched a in between the time of the last episode in this one, they lost a really do site design. That is beautiful. So check out that site design. I'm a big fan of it as well. Obviously, it seems like I'm a big fan of everything they do. But this is some some great great stuff going on.
+
+32
+00:23:55,260 --> 00:25:22,860
+Wes Bos: Wicked. Next up, we have array dot includes and this will simply check if you have an array and you want to check if a value is in your array. So you have a list of letters and you want to check if a W is in there, then array dot includes will check if it's in it. A lot of people always ask why is it not dot contains, like almost all other programming languages are. And it's because mootools you remember mootools from back in the day, remember mootools there's a lot of stuff going on with the mootools naming collisions going on to that was some high drama for a little bit. Yeah, they because they there's a kind of this thing in JavaScript where you say never touch the prototype, meaning like don't ever mess with built in, built in, like jQuery never touched anything that was built in. But what mootools modified an array prototype, and added this dot contains method. And if you if you're fairly new to JavaScript, modifying the prototype will allow you to add additional functions on to any array. So you can just call like, you could You could make a method called is West cool that you could call on any array. And you would just say like array is West cool. And it would always return true, right? So mootools did that, which was super handy. But now, they can't, JavaScript couldn't add it, because it would break a whole bunch of existing sites that have mootools on it, because it works in a little bit of a different way. So it is included and not contains.
+
+33
+00:25:23,190 --> 00:25:45,510
+Scott Tolinski: Nice. And so and also, if you are wondering, what's the difference between something like sum and includes right, because they're both going to return true if something's in an array, sum is based on a condition that you're writing yourself where includes is simply just you're passing in a string or a value, and it's checking to see if that value, you don't have to do any sort of condition checking or anything like that, instead of includes,
+
+34
+00:25:46,560 --> 00:26:21,150
+Wes Bos: I keep thinking of this, like, crazy thing, since I've done talks on this. And I always think of what questions came up, a question that always comes up is if you have an object, and you want to check if that object is in the array, it will not do what's called the deep check for equality, meaning that if you create two objects that have the same exact values, those are not the same values, that those are two separate objects. So it will only check if that original object is in the array. And it will not check if an object that looks exactly the same is in that array. If you need something like that, that's when you reach for something like lodash with some some custom methods.
+
+35
+00:26:21,450 --> 00:26:31,140
+Scott Tolinski: Yeah, yeah, I, these things have been totally invalidated lodash. For me, I still use lodash for some of their little bit more complex methods and stuff like that.
+
+36
+00:26:31,140 --> 00:28:10,320
+Wes Bos: Next one we have is array dot from. And this is what's called a static method, and not an instance method. A static method is something that lives not on every single array that you create everything we've talked about. So far, these are methods of any array that you've created. However, this one is on the mama array, the capital A array, and it's just array dot from, and what it will do is it will take anything that is, has a length, or I think is an iterable. And it will convert it to an array, meaning that if you pass it an object with just the length property, it will create an array with that many slots. And that's really handy. Because if you've ever wanted to say like, Okay, I need an array with 10 slots in it, you can just say array dot from pass an object with a length of 10. And then one other thing I know a lot of people know is the second argument to array dot from is what's called as a map function. So you can create in one fell swoop, you can create an empty array with 10 slots. And then you can fill each of those 10 slots with anything that you want, because you use the map method, or the map argument works exactly the same way as the the map method to fill those slots. So I've done this before, where if you want to create a leaderboard, and you want to just like leave them empty, or if you want to, I don't create an array of a couple promises, each of them using the incremented number, there's all kinds of use cases for it. And it's one of those you keep in your back pocket. And it just replaces a lot of those kind of older tricks that you've had with slicing and splicing arrays.
+
+37
+00:28:10,710 --> 00:28:29,880
+Scott Tolinski: Nice. I have not, I've not really used this, I'm not going to lie here. This is not one that I've spent much time with. So there is a lot of use cases where you do need to create an array of a certain length. And it's always nice to see a way to do that. That's nice and seamless. Super cool. Okay, nice. Did you have anything else on that from?
+
+38
+00:28:30,270 --> 00:28:56,490
+Wes Bos: Ah, I don't think so there also is array.of, which will take as many arguments as you want and turn it into an array. So if you have you just you call a radar of and you give it six arguments, it will return an array of of those six arguments that it sent you, I don't use that. I don't think I've ever used that. But you could, because you can, you can combine that with the the spread, and the rest operators for some some nifty stuff.
+
+39
+00:28:56,730 --> 00:30:26,430
+Scott Tolinski: Nice, nifty, nifty, nifty. Okay, so the next three are going to be some object methods here. And people often they want to work with objects occasionally, like they want to work with arrays. So some of these can help with that. The first one being dot values, which is simply just going to return an array of the values, right. And so if you need to get every single value from an object, right, just the values, then you would use dot values. And then you would have access to now an array full of just the values. And likewise, a keys dot keys is going to work the same, giving you just an array of all of the keys for each item in your array. Now there is a third one, which is going to be entries, which basically is going to put the key and the value into an array for your object. And you might be wondering, well, what's up with that? Why would I need to do that well allows you to easily do object data entries. Put in your object, then you do a dot for each on that. And then you have access to the key and value, essentially allowing you to iterate over an object, which is a question that gets Google the surprising amount of times how do I loop over an object? Well, this is how you use entries. And then you do a for each on that array. And then you have access to the key and value and you can use that key and values to do whatever you would like.
+
+40
+00:30:26,700 --> 00:31:11,100
+Wes Bos: Yeah, so it's, it's not something that you could never do before. But the beauty of entries is that you don't ever need to reach outside of that function, that for each or that map or whatever method you're calling after the entries, you don't need to reach outside to the original object to to use that as a reference. Because what used to happen is like if you had like keywords, where you say, hey, was said three or three times and sick was said 100 times, you can just dot entries over a keywords. And it will give you both the keyword that you said, sick. And the number of times that it was said 100. Right. And you don't need to do that whole like keyword square bracket key to reference the actual value of the object. Nice.
+
+41
+00:31:11,400 --> 00:31:20,010
+Scott Tolinski: Yeah, it's definitely one of those ones that will save you a couple lines here make your code a little bit more readable? Totally, I think sort of all of these are to be honest.
+
+42
+00:31:20,100 --> 00:33:25,500
+Wes Bos: Yeah, I think so as as at first, there's there's always pushback to these things, because people are used to doing a specific way. But almost all of these newer ones that we're talking about AR are brought to the language because of obscure ways that we used to do it. And a good example is next up is called array spread. And this isn't really a method per se, but it's a new thing in JavaScript, where you see those three dots most of the time, that can also be a rest, there's two things, there's a rest and a spread. But what a spread will do is convert any sort of iterable into an array. So if you have an array, and you have a.dot.an, actual array or any iterable, it will convert each of those items to items in the array, which is really nice. So what are some use cases for that, if you want to concatenate a bunch of arrays together, you can open up a blank array, and dot dot dot, the first array, dot dot dot, the second array, dot dot, dot, the third array, and if each one of those original rays had five items, you're going to end up with one array with 15 items in it, and it will sort of just concatenate them all together. Whereas with dot concat. Previously, if you want to concatenate more than two arrays, you're starting to add a lock B unless you use like a some obscure dot reduce with it. So I'm a big fan of concatenating them. Another big one is removing an item from an array. So if you have an array of comments on a blog post, and you want to remove one of the comments, how do you take an item out of the array? Well, we said earlier, don't don't splice your array, don't mutate the original data, return a new array, right? So what you could do is, I do this a lot in my Redux course, where you can open up a new array called like new comments, and you can slice everything before the comment that you want to get rid of, and slice everything after the comment you want to get rid of. And that will just take both of those things, put it into the new array, except it's a brand new array without the the comment that you're looking for. So big fan of that one.
+
+43
+00:33:25,830 --> 00:34:44,190
+Scott Tolinski: Yeah, these these end up making your code look at first, when you don't really know what they're doing, I think they can, they can make your code look a little bit more confusing. And once you really start to use them, and start to see how nice they can be. You want to use them all the time. And I find myself using these spread operators so much that because it does it makes your code way easier succinct. And once you understand what's going on there, it definitely makes it easier to read actually thought these used to create a, an array of strings, like an array of characters from a string on Reddit yesterday. I don't know if you Oh, yeah, do that. Yeah, I thought that was kind of I thought that was kind of fun. I don't know if I'd end up doing it. But uh, I thought it was kind of a fun use case, to see that you could even use the spread operator on a string like that. Now, the next one is going to be very, very similar. But with objects this time. It's with objects. It's the same thing, right? It basically allows you, you can concatenate objects, you can do all of the same stuff where you're grabbing all of the properties from one object and being able to put them into another object or do something like for instance, I frequently will use this if I'm passing along data into my server into a new object, maybe in an Apollo query or something like that. I find myself using this probably more than array spread. I think I use this more than a race Brett, I think,
+
+44
+00:34:44,210 --> 00:35:53,880
+Wes Bos: yeah, the the object spread is is amazing. And it just made itself into node and it's in all the browsers now. And it's it's really great because previously if you had wanted to merge two objects, a one example I have is somebody So you have like a function that has some default arguments. Or if you have something that has a bunch of defaults, like, let's say we're writing animation query, and you have like, you have speed, and length, and number of items that need to be animated, those are all defaults. However, if you wanted to overwrite one of them, what you can do is you can say like var options equals, and you can dot dot dot defaults. And that will take every item from the array, or sorry, that will take every item from the object and spread it into the new object. So take a copy of every top level, it doesn't do nested copying. So be aware of that. And then if you just write anything after that any properties that you're right later on will just overwrite any duplicates that have previously shown up in that object. So it's great to to merge things, or to set some defaults and overwrite anything extra that you'd like,
+
+45
+00:35:54,270 --> 00:36:32,520
+Scott Tolinski: nice. I love all this stuff I love. Again, it can look very foreign if you're not using it. And some people might look at that and start to not want to use it or not want to to explore it any further. But I definitely recommend you start trying these things out. Because once you feel like very comfortable with these things, you're going to really start to write some really, really nice code. So again, I'm just such a such a big, big fan. And so a lot of this stuff is we're accounting for our data here. But let's talk about another type of accounting. This is going to be our actual accounting. So let's hear a little bit about fresh books from Wes.
+
+46
+00:36:32,730 --> 00:37:33,780
+Wes Bos: So it is tax time and high five to all you freelancers who have filed your taxes on time this year, we've got a couple more days here in Canada to get ours in. If you are not on your taxes, you should listen up because freshbooks is awesome cloud accounting software for that. So I'll spare you the ounce of prevention, prevention cliche. But really, if you think ahead with these sort of things, what you can do with freshbooks is you can link up your credit card in your debit cards to your Freshbooks account, you can import all of your expenses, you can categorize them, no problem inside of your Freshbooks. And then once tax time rolls around, all you need to do is just export a nice tidy summary of all of your different expenses. There's no dreading tax time and spending evening upon evening importing all of your expenses and manually putting them in one by one. So to claim your 30 day unrestricted free trial of Freshbooks. Go to freshbooks.com Ford slash syntax and enter syntax into the How did you hear about a section. Thanks so much to Freshbooks for sponsoring.
+
+47
+00:37:33,780 --> 00:37:34,880
+Scott Tolinski: Thank you.
+
+48
+00:37:35,190 --> 00:38:47,690
+Wes Bos: So we talked about spread on arrays, we talked about spread on objects, those are those three little dots. But we also have a rest, which is fantastic when you're using destructuring. So if you have an array of 10 items, and you want the first one to be I always I use an example of you have an array of people that are on a hockey team. And the first person is a captain, second person's assistant captain and the rest of the people are just team players and you you want the captain, you want the assistant captain and then you want an array of the rest of the team players, what you can do is you can say you can use a destructuring in ESX, where you say const, square brackets captain, assistant captain and then dot dot dot team. And what that will do is it will take the rest it will take anything that comes after it, you've destructured the first two items, and then anything that comes after it will just be sort of collected into the rest of the array, right? Similarly, you can use a function rest as well where you can make a function, you say arc one, arc two, and then dot dot dot the rest of the arcs. And so if anyone were to pass a whole bunch of arguments past that, you could collect them all into a nice tidy array with the rest. So they look exactly the same, but they are totally different arrest and spread. Nice.
+
+49
+00:38:47,730 --> 00:39:06,360
+Scott Tolinski: Yes. Again, love these use this all the time. Okay, the next day are ones I don't necessarily find myself using that much, or at least this one in particular, which is freeze on an object. And this is going to do like what you would expect like Mr. Freeze and Batman Returns, I don't know is that Batman Returns Batman and Robin, I
+
+50
+00:39:06,360 --> 00:39:09,840
+Wes Bos: don't know, I don't know anything about or anything like that.
+
+51
+00:39:10,050 --> 00:39:50,460
+Scott Tolinski: These are from the 90s with I other than that those are like the only superhero movies I've seen that are the old old Batman ones. Okay, so object dot freeze is going to freeze your object and basically preventing you from being able to add or modify it. So you have an object you call object freeze, you pass into your object into the the argument there the parameter, and then you basically if you were to try to change a value, let's say you were to do object property, your property equals a new value, it would throw an error in strict mode. So basically not allowing you to modify it's turning your object in sort of an immutable object, right? It cannot be changed.
+
+52
+00:39:50,670 --> 00:41:14,310
+Wes Bos: Yeah, it's what most people think that const does. But const doesn't freeze your object. If you have a if you have an object or an array. You can Still modify the contents of that array with cons. But object dot freeze will freeze the entire thing, and will not allow you to to add any properties to it or change any of the properties which is. So I again, I haven't I don't think I've ever actually used this myself. But if you were like trying to do something an application, you want to make sure that a third parties do not directly reach into it very much like like maybe even react could do that with state where you don't want people to reach directly into state you want to call other functions, then you could use dot freeze on that. Similarly, we have object dot seal, which is not like Earth seal. It's like soundboards. Okay, I can't wait till soundboard, the seal is added to the soundboard. Yeah, object dot seal will stop any new properties from being added to an object but will not stop you from editing existing properties on that object. So if you had a const, Wes equals name, first name, last name, and favorite movies, and you never you want it to be able to change the properties on that great, but you don't want people to just start willy nilly adding extra stuff to it. That's where you use object dot seal.
+
+53
+00:41:14,520 --> 00:41:49,260
+Scott Tolinski: Nice. We wouldn't want willy nilly anything, especially around seals. Let's go ahead. And lastly, we have one that you might not be using too much anymore, just because of our object spread fanciness nowadays, but object dot assign is going to basically allow you to combine some objects, we got two objects here you do object dot assign, you put in your objects together and you get a new object with your objects together. Again, this is what we could do by concatenating objects with just simply using our spread operator. So again, I'm not sure if this one's going to be as useful in the future here.
+
+54
+00:41:49,650 --> 00:43:07,350
+Wes Bos: Now and if you actually look at the babble output of when you use object spread, it actually just uses object dot assign under the hood. So it's one of those useful ones, you are going to see it quite a bit through existing code. But over the next couple of years has ever moved to using object spread, it's a probably see less and less of it, I should say, again, both with object spread and object dot assign, those do not do deep cloning of your your properties. So if you have an object inside of an object, it will, it will of course, take that sub object along for the ride. But it will not take a copy meaning that I have a link it up in the thing, I have a little YouTube video on copying versus reference, and meaning that those that sub object is just a reference. So if you were to have two objects with that same sub object, if you were to change either one of them, the corresponding one would change itself as well, which is sometimes not what you want, because you want a true copy. And if that's the case, then you need what's called a deep clone. But again, and in some cases, you don't want that that can be a bit of a performance hit, especially if you have very nested data. So you want to be careful. And know that when you reach for a deep clone, you actually do want a deep clone.
+
+55
+00:43:07,670 --> 00:43:21,480
+Scott Tolinski: Yeah, anytime I do anything like diva object or deep array, anything, honestly, I reach for lodash. Because there's so many methods in there, they're just going to help me and I know that those methods are going to be more performant than whatever I would try to write anyway. So
+
+56
+00:43:21,810 --> 00:43:56,400
+Wes Bos: beautiful. Well, that's our show. We've got some sick pics and some shameless plugs coming up. But we didn't even think that we could fill a whole show with this. And then as we started riffing on the ideas are like, man, there's an entire episode just on these things here. Because there's there's so much to them. And sometimes they take for granted just knowing these these methods really well. But if you're first getting, if you're just learning to program or you've been doing it for a long time, there's there's often going to be methods in here that you didn't realize that you could reach for it and make your code a little bit simpler or, or more readable.
+
+57
+00:43:56,760 --> 00:44:30,300
+Scott Tolinski: Yeah, sometimes I think that when you're working on something and you feel like your solution that you have is feeling a little complex or overbearing or just a little difficult to read or parse or any of that stuff. Chances are, if you're using a lot of arrays and objects, these methods can come in handy in different ways to really make your code way more readable. So again, if you're if your stuff is looking and feeling very, very not so good, perhaps start looking into changing some of these array methods and see your code start to maybe get a little bit nicer and cleaner.
+
+58
+00:44:30,600 --> 00:44:44,580
+Wes Bos: Alright, so my sick pick today is a s o g folding knife. So I am one of those weird guys that carries around a knife at all times. Do you carry around a knife ever? Let me tell you a knife. No.
+
+59
+00:44:44,670 --> 00:44:51,060
+Scott Tolinski: Yeah, so don't don't try to mug I shouldn't I shouldn't say that on air. Nobody tried to mug me. None of our viewers I don't want to get mugged here.
+
+60
+00:44:51,629 --> 00:45:34,230
+Wes Bos: So I just find especially our spring is here. I find that having a knife on you is so handy from opening up packages to I was running Pairing a hose the other day to cutting up your kids Chicken McNuggets when you're out on the road, I just find that having a knife on you at all times is always just comes in so handy all over the places and I had kind of a had a pretty nice one that was what's called spring assist so it's it's in Canada, it's not legal to have a switchblade, which is where you press a button in it. But I had a spring assist one from I forget what will come. What's that gun company that has the, like the hunting company with the deer on it. Colorado
+
+61
+00:45:34,260 --> 00:45:35,160
+Scott Tolinski: idea.
+
+62
+00:45:36,630 --> 00:46:08,340
+Wes Bos: Anyways, I had one in the spring assist, which opened in my pocket once and I was like Nope, never gonna carry that again, because that's kind of scary. So I went on Amazon and I didn't want to spend a whole bunch of money on a new knife just because like, I don't really care about it all that much. Like, there's these knife guys on YouTube, but they spend hundreds of dollars on it, but I just wanted something decent that you that fit into my pocket was kind of low profile and you can just put the clip on your jeans. So I found on Amazon this S o g SOG folding knife. It's pretty nifty on your show, Scott. Look at this thing.
+
+63
+00:46:08,700 --> 00:46:10,530
+Scott Tolinski: Oh, yeah, that's a nice, pretty
+
+64
+00:46:10,560 --> 00:46:20,400
+Wes Bos: pretty nifty and it's not spring assist. It's centrifugal force. So you have to do the flick of your wrist open it up so it doesn't open up your pocket.
+
+65
+00:46:20,460 --> 00:46:22,860
+Unknown: So you get a badass to Yeah, yeah, sometimes
+
+66
+00:46:22,860 --> 00:46:52,710
+Wes Bos: it just like, and now it's funny because my daughter in public is like, Dad your knife. Like we need to cut something. I was like, No, I can't bring out a blade like that. But yeah, it's pretty, pretty handy. I would definitely check it out is about 25 bucks, I think when I bought it, and I've had it for about six months now putting it through the paces. And it just sharpened it for the first time. The other day so good knife. If you're looking for a cheap folding pocket knife, check this one out.
+
+67
+00:46:53,040 --> 00:46:57,540
+Scott Tolinski: Where do you sharpen it with just like a like a kitchen knife sharpener kind of thing? Yeah,
+
+68
+00:46:57,540 --> 00:47:36,510
+Wes Bos: well, I've got a stone that has two different kinds of grits. And every I don't know every four months, I'll take the stone out and take every knife in our house and and give it everything a sharpen. And then you flip it over and it's a very fine stone. And then it's pretty nifty. It's you can also get those those kitchen steels where you choose and those are for there's a lot of like confusion over that those are those are good, but they're not they don't sharpen it, they just hone it so you use that in between sharpening to to to get a nice sharp edge on it, but every couple months you need to make sure that you give it a proper sharpen You should also
+
+69
+00:47:36,540 --> 00:47:40,770
+Scott Tolinski: yeah posting posting your sharpening Glock I don't need to put like that.
+
+70
+00:47:41,040 --> 00:47:44,910
+Wes Bos: Yeah, I think it's a Hinkle I got it. It's like 100 bucks or something. It's
+
+71
+00:47:44,910 --> 00:47:49,020
+Unknown: pretty expensive, but I gotta hang on that that's gonna be a good purchase.
+
+72
+00:47:50,130 --> 00:48:31,800
+Wes Bos: Yeah, definitely check that out. It's It's now my like thing where if I visit family members, I bring my stone along because just like I can't stand it when people don't have sharp knives. And it's just like, just like destroying a tomato. Trying to cut it with this. Like my parents my entire life. Never sharpen an entire knife in their house. And I didn't know the the joy of having sharp knives in the house until I until I started getting into it myself. And now I just kind of kind of like public service just go to people's houses or like if you rent a cottage, I'll bring my stone and just sharpen all the cottage knives because no one cares at a rental if the knives are sharp. Except for me or I'll bring my own.
+
+73
+00:48:32,790 --> 00:48:38,370
+Scott Tolinski: Yeah, right. So it's like what you're staying over at someone's place and they come down in the middle of night you're sharpening knives.
+
+74
+00:48:40,320 --> 00:48:43,470
+Wes Bos: I'm sorry, but you can't live this way. It needs to be sharp.
+
+75
+00:48:45,060 --> 00:48:55,020
+Scott Tolinski: That's awesome. That's great. I'm excited to check this stuff out. I gotta get a knife. I apparently I got a third sharpen. I sharpen my knives, but I thought I did but apparently I just honed them. Oh, you
+
+76
+00:48:55,020 --> 00:48:56,910
+Wes Bos: do steel? Oh, yeah.
+
+77
+00:48:56,940 --> 00:48:58,890
+Scott Tolinski: Oh, yeah. I thought that was sharpening them.
+
+78
+00:48:59,010 --> 00:49:12,150
+Wes Bos: No, you use that before you like cut a chicken. You own it. You give it a couple. But you still need to do proper maintenance on your knives and give him a proper sharpen every couple of months. Yeah,
+
+79
+00:49:12,150 --> 00:51:22,080
+Scott Tolinski: I know what I'm doing this weekend. Yeah, okay, so my sick pig is going to be a another tea shop. I recommended what ciab before and what Chai is great for really rare and exotic teas. You're getting black teas and I'm not black teas are getting dark teas like pouvoirs and yellow teas that you're not going to find anywhere else right? Yeah, I know there's a pool or joke in there. I see West gearing up. Oh, yes. Oh are occasionally some Kumar's tastes like poo. So they're real, real dark and smoky. So my favorite tea store is tea house.com. It's H. Au s. This is a shop in Ann Arbor, Michigan that I used to go into like once a week because it was right across the street from where I worked, and I was just so lucky. To be about one of the best tea shops in the country. So tea house is so good. It's not necessarily as good for those rare teas. But what it's great for is a huge variety of like classic greens, scented greens and stuff like that, or all sorts of different kinds of teas, they take very, very fine care of their stuff. Everything is like tripled tested in Germany and they really spend a lot of money making sure that they're teaser like the highest quality and I've been going in there for years and years and years. And now that I moved to Colorado, I have I'm still ordering from tea house all the time. This is this is the place where I love to get my tea. So if you are a fan of tea, check out tea house, they have all sorts of herbal teas as well as green teas, black teas, and all that good stuff. And again, I'm just such a huge fan of everyone involved at tea house, they they're always they sent you like a they send you like a personalized video whenever you order from them, which I think is just ridiculous and amazing. They always write you a little handwritten letter, and they'll they'll pick you out some samples that they think are like based on your order, like oh, based on your order, we might give you a you know, like these as well. Were like some places like David's teas or some of these other places. They're just like here are some samples and toss them in a bag. These are like always geared towards what you ordered. So I'm just a huge fan of this place for a lot of reasons but tea house.com easily my favorite tea shop in the country.
+
+80
+00:51:22,380 --> 00:51:40,320
+Wes Bos: Impressive they have an x an E v certificate, which gives you the the name of the company you know when you you see a website with the name of the company in the certificate in the URL bar. Hmm. Impressive. That's nothing to do with T but they're clearly serious about t if they're willing to shell out the cash to get one of those certs.
+
+81
+00:51:40,620 --> 00:51:44,700
+Scott Tolinski: They They do everything right in my opinion they they do all the stuff right?
+
+82
+00:51:44,730 --> 00:52:02,010
+Wes Bos: So yeah, big fan looks like it impressive. All the check that out. Do they ship to Canada? Probably not nothing ships to Canada. Except for you sent me some spices at Christmas time? I did. I've been I'm almost done them. I've been going nuts on them. They've been great. Good. Well, that was a place
+
+83
+00:52:02,010 --> 00:52:29,100
+Scott Tolinski: called that. The savory spice shop. Yeah, we like whenever people come into town, we're like, we're gonna take you to the spice shop. And they're like, What? Why would you do that. And then they go there. And they're like, this place is amazing. Because there's like a billion, billion spices I have my favorite spice from the savory spice shop is the togarashi which is a Japanese seven spice, which includes a whole bunch of stuff, I put togarashi on everything, making eggs togarashi anything togarashi it's funny
+
+84
+00:52:29,100 --> 00:52:58,500
+Wes Bos: i was i was thinking about that. This is totally you can tune out if you want. But I was thinking about how I'm a big fan of spice blends. And I don't mind somebody else figuring out the spice blend. I was like, this is very similar to my picking of JavaScript frameworks. You know, like, I don't mind when someone does a little bit of work for me, so that I can look like a hero when I just sprinkle on some spice blend. And everyone's like, this is amazing. What did you spice it with? And like I shine? Yeah, spice blend.
+
+85
+00:53:00,480 --> 00:53:03,960
+Scott Tolinski: That's great. I never thought about that. Like that. But very appropriate.
+
+86
+00:53:04,260 --> 00:53:07,290
+Wes Bos: Awesome. So what about shameless plugs? For me today?
+
+87
+00:53:07,620 --> 00:54:06,540
+Scott Tolinski: Yeah, so by the time No, not by the time you're listening this. By the time you're listening to this, this course will almost be out my headless WordPress course. Basically, what we're doing in this course, it's going to be I haven't decided to name yet it could be called modern WordPress, could be my headless WordPress, it could be all sorts of stuff still in that phase right now. But this course is going to be all about working with the WordPress API in different sorts of ways with react. So we use a really, really brilliant WordPress starter kit that we mentioned in the last episode. And we go through and we, we start to rewrite a WordPress style theme using react using a lot of good stuff. And it's using next JS primarily. Now we all are so going to get into some Gatsby stuff. But it's not like a definitive Gatsby plus WordPress course. But we will be showing you how to work with Gatsby and WordPress as well in this course. So all stuff headless WordPress, headless WordPress, plus react, and just sort of working with API's in that way.
+
+88
+00:54:07,050 --> 00:54:56,430
+Wes Bos: Awesome. I'm just gonna give a little update on my stuff right now. So I've been probably for about six months been working on my advanced react course, because it's a beast, and it's gonna be amazing. I'm super excited about it. And once that one is done, and it's pretty much almost done, I was just had a little meeting with the Apollo folks to talk about how to best test everything on Friday. So that's the last little little bit that I'm finishing up. But after that, I'm sort of looking forward now as to what comes after that. And if you look back at Episode 23, when we talked about this year, I've got a couple that I'd like to do a beginner JavaScript course a beginner CSS course and I want to do a VS code course. So I'm curious what you want to see next. So tweet me at Wes Bos with which which of those three you would most prefer to happen next.
+
+89
+00:54:56,700 --> 00:54:58,500
+Scott Tolinski: Nice. I'm excited as well.
+
+90
+00:54:59,010 --> 00:55:04,200
+Wes Bos: Sick. All right. Right. That's it for today. Thanks for tuning in. And we'll see you next week.
+
+91
+00:55:04,590 --> 00:55:17,460
+Scott Tolinski: Peace base. Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

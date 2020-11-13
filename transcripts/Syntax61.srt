@@ -1,0 +1,232 @@
+1
+00:00:00,359 --> 00:00:24,480
+Announcer: Monday Monday Monday open wide dev fans yet ready to stuff your face with JavaScript CSS node modules barbecue tip workflow breakdancing soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA bombs and Scott Taylor. Totally at ski
+
+2
+00:00:25,920 --> 00:03:01,050
+Scott Tolinski: Oh, welcome to syntax in this hasty treat episode where we bring to you a bite sized topics. We're gonna be covering NPM we're gonna be covering yarn. We're gonna be covering all sorts of things involving NPM yarn, like package files, lock files and all sorts of good stuff. And with me as always, is West boss, Barracuda. Bah. Yeah, Barracuda boss in the house. And I am Scott otoro loco to Lynskey here we are ready to go. And yeah, today's episode today's hasty treat is sponsored by Netlify. Now, many of you who have been listened to this podcast have tried Netlify after hearing it on this podcast, and the reaction is always the same. The reaction is seriously. Wow, I can't believe I haven't tried this yet. So many people tried Netlify for the first time and are endlessly impressed with the initial experience was one of the reasons why we first reached out to that because we love Netlify. So much. This service is a hosting service for front end code, allowing you to build deploy manage modern web projects, it takes care of all sorts of the painful parts of hosting. I mean, you you could list out the most painful parts of hosting. And this thing takes care of nearly all of them. For instance, it takes care of continuous integration, right? You push up to a repo Netlify takes care of the rest. It takes care of certs SSL certificates, who you know, you need an SSL certificate and Netlify has got you for free. And every single site you deploy automatically gets an SSL. So there are just endless amounts of awesome little things about this Netlify platform that Netlify hosting that are just endlessly amazing. Now in addition to that, there's also some really nice additional features like functions, which is a simplified interface for working with AWS, serverless functions. It's incredible. There's identity, allowing you to manage your own setups, logins, password recovery, and more all sorts of that stuff. And there's even a forum system. So anything that you could possibly think of needing a server for Netlify has got you covered. And you can go ahead and roll out your front end projects with Netlify. Again, just try it because when you try it, you're going to love this experience. There's nothing greater than a static site running on Netlify. The Jam stack on Netlify is one of the ultimate new web experiences. So check it out. netlify.com forward slash syntax, let them know that you heard about Netlify on syntax, again, one of my absolute favorite services, we're so happy to have them as a sponsor. So that said, let's get into some NPM. Some yarn, some package. Goodness,
+
+3
+00:03:01,230 --> 00:03:46,620
+Wes Bos: yes. So this episode was spurred on by actually a potluck question. So if you have a potluck question that you think might be a bit large submitted anyway, because we can turn we can do what we want. We can turn them into full episodes. This question was from JC Hyatt who, who runs deadlifts and he said, Can you explain what package slash yarn lock files are? Why were they introduced? Why? Why are they useful? Why would I want one? Why wouldn't I want them? Why would do I put one in Git? Do I not? So we're gonna kind of go into that work. Explain what NPM is where the package dot JSON file is? With the dependency tree is what cember sandbars Ember, I want to say sandbar Ember, but it's its semantic. versioning so some for timber doesn't say
+
+4
+00:03:46,649 --> 00:03:53,460
+Scott Tolinski: summer, December September. Yeah, I know if we were just talking about this before the show. That is a word I have never said out loud.
+
+5
+00:03:54,060 --> 00:04:13,110
+Wes Bos: So lots of words I've never said out loud and I always butcher them. So yeah, whatever. Anyways, we're gonna talk about that. And then we're going to get into the the kind of recently introduced package dot lock dot JSON file and, and what that is. So first, let's talk about what endgame. You want to take a stab at what NPM and yarn or?
+
+6
+00:04:13,200 --> 00:05:18,360
+Scott Tolinski: Yeah, NPM and yarn are basically a ways that you can interact with packages, right. We all use different libraries and packages and our websites. And so yarn and NPM are package managers, there's these systems that go and grab the packages that we need, when we ask them to write from various locations. So when we need a package, we tell NPM, or we tell yarn to go fetch this package by a name, that name then goes ahead and grabs the actual package. So it's sort of a registry, right? So it's a package manager registry of where you can find these packages and automatically keep them up to date with the correct versions for your application. Right. So at the end of the day, you end up using A bunch of different things, you tell your package manager, which packages you'd like to get, it grabs them, or potentially at what versions, you can use it to keep your packages up to date, but it stores them away inside of a node modules folder. And it kind of keeps them out of out of sight out of mind and allows you to use them in your application.
+
+7
+00:05:18,600 --> 00:06:01,110
+Wes Bos: What's the difference between NPM and yarn? Well, they at the end of the day, they do the same thing. They take in your package, JSON file and your package. json file is a list of all of your dependencies. So if you're building a react application, you might have react and react DOM and react router DOM and then you might have like axios, and a couple more dependencies. And these are just libraries that you need in order to build your application. And you import them into your application. Now, when you create an application, you don't actually take all of your dependencies along for the ride, because that would be very large. You actually, all you have to actually do is just keep a list of dependencies that you want. And then you go ahead and, and npm install them now yarn came around, I don't even know maybe a year ago,
+
+8
+00:06:01,140 --> 00:06:06,630
+Scott Tolinski: year and a half ago, maybe maybe long year and a half ago. It's it man. Yeah. moves by an old Yeah,
+
+9
+00:06:06,659 --> 00:06:14,460
+Wes Bos: yeah. But it came around because NPM was kind of slow. They didn't really have this idea of a lock file
+
+10
+00:06:14,880 --> 00:06:15,930
+Scott Tolinski: type made in.
+
+11
+00:06:16,560 --> 00:07:48,600
+Wes Bos: Yeah, and it was it was kind of painful, because you would both it would be slow to install things. And also, you could get into trouble, we're going to talk about the semantic versioning in a second, you get get into trouble where something could change from out from under you without you changing any of your code. And that's bad when you want reproducible builds, right? So yarn is a bunch of folks at Facebook and a couple other companies a couple, really, a couple people in our industry who are who are really well respected, sort of got together and built this thing in private and then sort of came out and said, yarn, here's yarn, what it does is it sits on top of NPM registry. So this is not a secondary registry. If you if you publish a package to NPM, you don't also need to publish it to a yarn, but a yarn will also add some caching on top of that, so that it's a little bit faster, it does some stuff where it doesn't have to also duplicate. If you download a package once and then you npm install again, it will just take that from locally, there's a couple things about it. And it was great when it came out and it still is great. I find that a lot of people still use it, although it sort of gave NPM a kick in the pants of things that they needed to fix. Because when it came out, I was a little bit I was happy that these things were being fixed. But I was also bummed because I don't like it when now Oh good. Now we have two different ways to do it, especially as a tutorial creator. Yeah. Now there's like, okay, there's yarn. And now there's NPM. Now I have to like support both of those. And they're
+
+12
+00:07:48,600 --> 00:08:28,170
+Scott Tolinski: slightly different in how you do things. They're not that far different. But they're different enough where you can't just say swap the word yarn with NPM. And you're good to go. Right? And I guess that is Yeah, that's the concern is that the people who are creating this content, now you have to worry about which one we use. And even in myself, you see my tutorials, I sort of bounced back and forth between NPM and yarn in the tutorials themselves based on what the project itself is calling for, for instance, create react app uses yarn. So every tutorial that I do with create react app, I use yarn, but other tutorials that were the system itself, the default is NPM. And their docks also used NPM. Because I'd like to keep it as close to their documentation as possible, you know?
+
+13
+00:08:28,380 --> 00:10:19,550
+Wes Bos: Yeah, we barely talked about this. Someone had a question about, like bootstrapping applications. And they asked if someone used the Yeoman generator. And it turns out that yarn had this kind of awesome generator where you could I forget what the command is. But you could like set up a kind of a create react app for all kinds of other examples. And NPM has now rolled that into NPM. So you can like NPM, I forget what the command is. I wish I knew it off offhand. But you can you can set up a simple example really quickly by just saying NPM, create graph qL example or something like that. And then it will go off to GitHub and download the latest. And it's good, because you don't have to tell people to like fork a repo and download it and then CD into the directory? Yeah, you can just go ahead and do it. But it seems like NPM has has added a lot of these things I have stuck with NPM all along, just because I haven't found the speed to be that big of an issue, primarily being on a very fast internet connection. It hasn't affected me all that much. And I also don't want to introduce a new thing into my tutorials, which I don't know, maybe it will eventually fold back into NPM. Maybe it won't. It's just kind of like the future is kind of unknown. For me at least I'm sure if you talk to the developers behind it, they would say that's not true. But I don't really want to delve into something that's not totally necessary, because from what I see, it tends to be more advanced developers who are using yarn, and if people who are doing my tutorials are using yarn they already know how to use Use it. And it's not a problem for them. Like you can do anything you can use create react app with NPM. Or you can do it with yarn, it doesn't doesn't matter at the end of the day, what you're using. And the people who want to use yarn are intelligent enough that they they know what change, whereas some people just want to follow me typing npm install.
+
+14
+00:10:19,590 --> 00:10:22,500
+Scott Tolinski: Yeah, yeah. What do you use personally, on your own projects?
+
+15
+00:10:22,910 --> 00:10:42,900
+Wes Bos: NPM. I've never never used yarn myself, I installed it. And that was pretty much it. I do like the interface of it. Because often, if you do a create react app under the hood, it uses yarn. Yeah. And I do like the interface that shows you much better. And I do find that it's faster. It's just never, never been too much of a pain that I've switched.
+
+16
+00:10:42,920 --> 00:11:05,160
+Scott Tolinski: Yeah, I used yarn. Personally, for some good reasons, and some really dumb reasons. So good. So good reasons would be that it's fast. And I like it. The bad reasons. Oh, actually, here, actually does NPM do this. Now. I've been using yarn for a little bit. So I don't know when you add a package by default, does it add it to your package? JSON instead of that? Yeah,
+
+17
+00:11:05,160 --> 00:11:08,100
+Wes Bos: so annoying. dash dash save?
+
+18
+00:11:08,130 --> 00:11:11,550
+Scott Tolinski: Yeah. So that is an NPM. Now? Yeah.
+
+19
+00:11:11,610 --> 00:11:12,870
+Unknown: Oh, yeah. It's been in for
+
+20
+00:11:12,930 --> 00:11:41,010
+Scott Tolinski: six months now. Okay. Yeah. So I'm just so used to that in yarn, you didn't have to do save. So that's one of the things that caught me really quickly, and then I just haven't left. And so yeah, yarn has been really fast. And the dumb reasons that I use yarn is that you don't have to type run on your scripts. So you can just do yarn, start yarn, slides that have run, you're saving three characters. And you know me, I love that. So that and also the yarns use of emoji in their their build process. Yeah, those are two dumb reasons why I love it.
+
+21
+00:11:41,040 --> 00:11:43,770
+Wes Bos: Those are very valid, very valid reason I also Yeah,
+
+22
+00:11:43,770 --> 00:11:51,990
+Scott Tolinski: but it overall, it is fast. And again, it came out with a bunch of features initially, that made my life a lot better. And I've just stuck with it. So that's pretty much why I'm using it.
+
+23
+00:11:52,380 --> 00:14:14,640
+Wes Bos: Awesome. So before we get into the next section, we need to maybe explain what semantic versioning is. So when you download react, let's say you've got react version 16 point 2.1. Like, what why is there always like something point something point, something like what do those numbers mean, and that is a standard way of declaring the version of your software. And those three numbers mean something, the the first number 16 is that a major version. And when you bump from 16 to 17, that means it's a major version change, and there's likely going to be breaking changes. So you know that when you update from 16 to 17, you need to be aware that something might change on you, right, and then the second.is, the minor version, and that is a new features can be added, but it's still backwards compatible with all the other versions. So you go from react 16.1 to react 16.2 or 16.3, you'll know that you don't have to worry about us, you can probably just upgrade that thing without sweating it. Obviously, that's not always the case. But as a developer, you should never remove any or introduce any breaking changes or remove any API's, you can only add in a in a minor patch. And then the the third version is what's called a patch, which is just like a bug fix. So you might have react 16 point, 2.0 and then they're like, oh, shoot this, like this is breaking on iE 11 then what they'll do is they'll they'll release, React 16 point 2.2 and then that will that will be a patch, it will not introduce any new features, it will not remove any API's, it will simply just be fixing it as it was expected to work. And that is what semantic versioning is. And the hope is is that or the way that NPM and yarn work is that if you have react 16 point 2.0 in your package, JSON, it's not going to download react 16 point 2.0 it's going to download the the most recent version of that value. So it might be react 16 point 2.4 right, because that's the most recent I do believe that it will I'm not sure I'm not sure about this we'll have to look it up do you do you actually know will it go up a minor version which is the number in between
+
+24
+00:14:14,670 --> 00:14:48,300
+Scott Tolinski: so in your NPA in your package file if the dependency is listed with a carrot, carrot version 3.9 point two then therefore, you'll be able to up or it will install the latest minor change. So it could be three dot whatever dot whatever, where if you have a till day right you sometimes see that till day 3.2 point nine is the latest patched version as in 3.9 point whatever right? So So yeah, till day verse carrot is the difference there.
+
+25
+00:14:48,720 --> 00:15:38,220
+Wes Bos: And the default for NPM when you npm install something, I'm just looking at axios right here, so the latest version of axios is zero point 18.0 Then, because I have a carrot in front of that, that's what NPM does by default, if zero point 19.0 were to be released, and I typed npm install, it would, it would go ahead and install zero point 19.0, or zero, point 19.1. Whereas if you just have a Tilda, you say stay on this minor release, but only give me bug fixes. And if you don't have anything, if you remove a carrot or a Tilda, then you will you will never change from you'll never change from that exact version. Now, any anything to add to that before we go on to the the next part, which is a bit mind bending, no, I
+
+26
+00:15:38,220 --> 00:15:40,410
+Scott Tolinski: think the next part is the important part here.
+
+27
+00:15:40,710 --> 00:16:24,600
+Wes Bos: Yeah, so the, that's great and all where you could say like, okay, I only want version 1.2 point three. And and, and a lot of people want that consistency. Because people make mistakes, open source authors will introduce bugs and breaking changes. And you say, Okay, I get it. But I don't want to deploy this thing to my server, have it npm install a patch, but it actually that patch introduces a bug or a breaking change or API by accident. And then my whole application is broken. So they want to say, if I'm working with version 1.2, point three, locally, I want to install version 1.2. Point three on the server not version 1.2 point four or 1.3 point zero
+
+28
+00:16:24,630 --> 00:16:29,670
+Scott Tolinski: or on any other users a computer for that matter if you're working with that's true, it
+
+29
+00:16:29,700 --> 00:16:51,990
+Wes Bos: works on my machine. Yeah, not yours, right. So the solution to that is you can just set the versions. But the problem is that with NPM, you have what's called the dependency tree where you have a dependency like react, but react might have a dependency of this is a dumb example. But it doesn't actually have it, it might have a dependency of axios. And axios might have a dependency of
+
+30
+00:16:52,290 --> 00:16:54,270
+Scott Tolinski: jQuery left jQuery.
+
+31
+00:16:55,320 --> 00:17:59,810
+Wes Bos: dependency of backbone. Yeah, and like a dependency as a dependency as a dependency has a dependency and as a dependency that has a dependency, and it will just go on forever. And that's part of the reason why your node modules folder is usually six gigs. Big is because these things are installing, installing slowing. And one of the big benefits to yarn is that we would flatten that as much as it could, but it can only flatten so much because of different versions that are required by by different modules, right. So it's a problem where even if you clearly define the version number, it might not be that your dependency clearly defines the version number, it might use the tilde, or the carrot saying this general version. So what a package dot lock file will do is it will go all the way down through your entire dependency sometimes 40 levels deep and lock in those actual versions that you've NPM installed, and making sure that when you run npm install, and there's a lock file present. You're actually getting the exact versions, and not the some fair versions where it's, it's it's good enough.
+
+32
+00:17:59,840 --> 00:18:35,220
+Scott Tolinski: Yeah, this is one of the things that Yeah, absolutely. I mean, basically, the lock file is a treasure map for what your package is great, right? It's everything. It's the list to everything. And you know, when this this, these lock files initially came in, I mean, the lock files have existed in other systems for a long time. Like we're Ruby package manager has locked files. It's not like a new concept overall, right? But yarn NPM, for a long time didn't have lock files. And that's one of the things that yarn brought to the table when it came out as like, Hey, we have lock files. And people I think before that, whether using like shrink wrap, is that what the shrink wrap was used for?
+
+33
+00:18:35,360 --> 00:18:52,800
+Wes Bos: Yeah, so NPM has this thing called shrink wrap, which people were using at the time. There are some differences if you're a package author, but there's not a whole lot of difference if you are just a user. So you can look into the the difference of that. But it seems like the lock file is the way forward.
+
+34
+00:18:52,820 --> 00:19:44,250
+Scott Tolinski: Yeah. So either way, yarn, bra lock files. And then NPM came out with lock files pretty soon after, once they had their big update with all their extra new cool features. And now we have our wonderful lock files. So these lock files, again, are things that you should be basically keeping with your application, as long as you want it to work somewhere else. For instance, I think it was like a couple episodes ago, I mentioned that I actually didn't have these lock files in my version control. And it's because I'm the only person working on this thing. But that's actually not a good excuse. Like I needed to remove that really quickly and get these lock files in my repo like ASAP. And it's only because I hadn't had any issues with it that I've never really cared. And, again, I never had anybody else working on the code base. So it's like not like, yeah, that it's working on my system never really happened to me before. So yeah, you'll want to keep these lock files with your code base in your version control. Absolutely.
+
+35
+00:19:44,460 --> 00:19:56,570
+Wes Bos: Yeah, I agree. I always commit them as well. And what's kind of nice about that is if you ever do do an upgrade, like NPM update, or I use a module called ncu node check update,
+
+36
+00:19:56,570 --> 00:19:59,730
+Scott Tolinski: I use ncu to yellow update and see you all the time.
+
+37
+00:20:00,320 --> 00:20:30,990
+Wes Bos: Yo, check. I tweeted the other day that I YOLO updated a WordPress install with 20. plugins. Yeah, work. So YOLO update is the only way to live your life anyways, it's kind of cool because you can see exactly the different pieces that have been updated not just your top level packages, but maybe dependencies dependencies of what package have changed. So that is package dot lock NPM yarn. Hopefully that will clarify a few things.
+
+38
+00:20:31,019 --> 00:21:08,790
+Scott Tolinski: Maybe we should talk about some of the coolest new features in NPM that have ever arrived lately. For instance, NPM just drops, like ever since yarn came out. NPM has been dropping features left and right, which is a great thing, obviously this competition, right, a little bit of back and forth of who's doing what, but NPM like recently, so somewhat recently, they have a new thing that's NPM outdated returns, if you have outdated packages, sort of like an NC NC you still more featureful Yeah, but there's also things like NP x, have you used NP x yet? Because I used the NP x recently. And I was like, I like this.
+
+39
+00:21:08,840 --> 00:21:14,840
+Wes Bos: Yes, I have used it before I forget. I used it on create react app, I believe. Yeah, that
+
+40
+00:21:14,840 --> 00:21:59,940
+Scott Tolinski: what is recommended now. Yeah, so NP x is built into NPM. Now, if you have the latest version of NPM installed, you have NP X on your computer MDX is simply just the command NPM x instead of NPM. And then you can type in a package name, and it will run that package without ever installing it on your computer. And this is particularly useful for things like create react app, that's a generator, right? Like why do you need create react app installed on your computer, if you're on the network currently, or whatever. So instead of running NPM, install, create react app globally, and then running create react app, create your app or whatever, you can just run NPM create react app, and it's going to run the command as if you were running it locally. And it
+
+41
+00:22:00,029 --> 00:22:01,620
+Wes Bos: was talking about
+
+42
+00:22:01,649 --> 00:22:13,560
+Scott Tolinski: Yeah, I love this is it I mean, I actually use NPM. Even if I'm using yarn. I do like this a lot, especially for anytime I need to run a script immediately. without installing it. It's a new feature that's hot, hot,
+
+43
+00:22:13,679 --> 00:23:26,940
+Wes Bos: cool. Also new in NPM is security warnings, which is a huge issue. People ask me this all the time, like, how do you know that? If you're if you have a dependency that uses a dependency that uses a dependency dependency that takes your entire hard drive and emails that to somebody like how do you know that's secure? Right? So there's a node security project that will, I don't know, there's I don't think they audit every single module because that's impossible. But if there are security issues, when you do an npm install now, or you run NPM, audit, and or NPM, audit dash fix, it will tell you of possible security issues, as well as the severity of them. And then it will also give you the ability to link out to the node security project and read the problem with that module. Because sometimes it's like it's a it's a major issue, but only if you use it in this really bizarre way that very few people actually ever do. But it's good to know because it kind of keeps you on your toes. And it also makes you update your your modules more frequently. Because it seems like anytime you do an npm install now it's like 480 critical security issues. Oh, good. Yes,
+
+44
+00:23:27,239 --> 00:23:27,900
+Scott Tolinski: yeah,
+
+45
+00:23:27,900 --> 00:24:38,460
+Wes Bos: there was there was a big bug that came out in a dependency, it was like a regex DDoS attack. And almost every package out there had it as a dependency. So almost every package that you install would have a security warning, because it's a dependency, right. That's the problem with some of these really small dependencies. Same with the there used to be this package called left pad, and left pad, all it did is if you had a string, that was like five characters, and you wanted it to be eight characters to the left, you would just add an extra bunch of spaces to the left of the text, right. And it was like this is like six lines of code. And the guy who wrote left pad is angry for some reason. It was it was justified his anger. But he took it down, which was a bit of a not a cool move. And then it broke, like most of the internet, because almost every package had depended on these, like six lines of JavaScript. And you can no longer do that you can deprecate a package. But you and you can your next version can be nothing. But you can never remove a package entirely unless there's a justified version reason for it. Yeah,
+
+46
+00:24:38,460 --> 00:24:46,350
+Scott Tolinski: I'm sure there were a lot of people freaking out at that moment in particular, I remember when that happened. And there were a lot of people freaking out.
+
+47
+00:24:46,859 --> 00:24:50,190
+Wes Bos: Yeah, yeah. All right. Anything else to add to this?
+
+48
+00:24:50,279 --> 00:25:17,970
+Scott Tolinski: I don't that's pretty much it. Yeah, I love again, I love this competition. I love the new things. If there's any features of particular that we didn't shout out of NPM or yarn that you would happen to particularly Like, let us know. We'll retweet you out. And we'll share that with the community here. Because, you know, this stuff is great. And it's hard to know everything. So we'd love to hear what anyone else is using with this stuff just to do you know, scripts or whatever. I wouldn't even talk about scripts. That's that's one of the things we didn't talk about at all. I mean, we briefly Yeah, we'll have
+
+49
+00:25:17,970 --> 00:25:24,180
+Wes Bos: to do an entire another show on on NPM in general, or NPM scripts. Yeah, and because
+
+50
+00:25:24,540 --> 00:25:26,610
+Scott Tolinski: there's a lot to it. There's so much there. This is
+
+51
+00:25:26,610 --> 00:25:28,950
+Wes Bos: becoming a not so hasty tree either.
+
+52
+00:25:28,950 --> 00:25:37,170
+Scott Tolinski: Oh, yeah, right. Knows man. We got to do a part two. Okay. But yeah, it is. I think this is pretty good. Again, let us know what kind of stuff you're using with this stuff. We want to hear it.
+
+53
+00:25:37,410 --> 00:25:54,450
+Wes Bos: Yeah, we're at syntax FM on Twitter. The Twitter has been on fire lately. So many good tips. People have been tweeting them at syntax FM and then we'll just retweet them so the community can get it. We've got almost 12,000 followers on our Twitter account now. So you'll you'll get some decent eyeballs on your tips, which is great.
+
+54
+00:25:54,480 --> 00:25:56,220
+Scott Tolinski: Yeah, absolutely. All right. I
+
+55
+00:25:56,220 --> 00:26:00,750
+Wes Bos: think that's it for today. Thanks so much for tuning in. Uh, signing off. This is West Barracuda boss.
+
+56
+00:26:00,960 --> 00:26:03,390
+Scott Tolinski: That's Scott El Toro loco to Lynskey
+
+57
+00:26:03,930 --> 00:26:04,860
+Unknown: say please
+
+58
+00:26:06,660 --> 00:26:16,410
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

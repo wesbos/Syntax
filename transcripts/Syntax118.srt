@@ -1,0 +1,524 @@
+1
+00:00:01,319 --> 00:00:10,530
+Unknown: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready. Here is Scott, ski and West boss.
+
+2
+00:00:10,530 --> 00:01:00,960
+Wes Bos: Welcome to syntax. This is the web development podcast with the tastiest web development treats. Today we're talking all about the Smart Home things that go in your house and connect to the internet. I've been researching and testing out devices over the last about a year and Scott has as well. So we're excited to bring you today sort of a breakdown of what it is all the different devices, how they work with each other, how to control these things. And then we're going to ask for your feedback on what you've been using in your own house. And we'll do a follow up episode in a couple months, because there's certainly a lot of stuff that I haven't tried yet. And I wanted to dive into. So today's sponsors are two jamstack companies. First one is Sanity, which is a headless CMS. And the second one is Stackbit, which is going to help you integrate a bunch of these different jam stack pieces all into one. We'll talk about both of them partway through the episode with me as always, this is Scott tomsky. How you doing today, Scott? Hey, I'm
+
+3
+00:01:00,960 --> 00:01:19,620
+Scott Tolinski: doing super good, I got a bunch of these new devices Lately, I've been loving setting this stuff up tweaking it, having fun with it. I'm really interested in the sort of intersection between this stuff and our web work, and maybe how you can use some of our skills to make even better things. I'm pretty interested in that.
+
+4
+00:01:19,829 --> 00:02:24,900
+Wes Bos: Yeah, most of these things have API's. What's really cool about it is you're able to interface with these things and send them data and turn them on, turn them off. And I had a student once a couple years ago, one of my classes built a kind of html5 video player that took the dominant color out and then sent that to a light bulb. Yeah, turn the shit out. Oh, that was so cool. So cool. Let's say let's get into it. We're gonna break it down into the tech of like, like, what is the different tech? What are the different decisions that you can make from the initial phase, sort of the bummer thing about the Smart Home stuff is that all doesn't work together. So you've got all these different devices and different apps, and a lot of it will work together. But you kind of need to make these decisions early on, then we'll go into controlling it. So whether you want to control that with sort of a central hub or a service, or you want to just use your voice or something on your phone, there's that and then we will go into the actual hardware. What are the different pieces of hardware that you can use in your house? lightbulbs and blinds and plugs and power strips and cameras and thermostats and all that good stuff. So you want to kick it off there, Scott?
+
+5
+00:02:25,160 --> 00:02:46,169
+Scott Tolinski: Yeah. So I think the first thing we want to talk about is devices that connect directly to your Wi Fi. And these are devices that probably have their own app, their own system without requiring a hub. And they'll typically make these things very known by saying on the box, like no hub required. And yeah, how many of these devices do you have in your setup?
+
+6
+00:02:46,229 --> 00:03:07,650
+Wes Bos: So I don't have a hub in my house? So maybe we should talk about the other one as well. Yeah, real quick, generally, these devices are either Wi Fi based, or they are like radio frequency, and then they talk to a hub, like the hub connects to the Wi Fi. And there's benefits to both of them the benefit of the other one, I think they're called ZigBee. The ones that require a hub.
+
+7
+00:03:07,739 --> 00:03:11,370
+Scott Tolinski: I think ZigBee is just one of the protocols. I think there's several other protocols, a
+
+8
+00:03:11,370 --> 00:03:14,669
+Wes Bos: couple different protocols, then, okay, what are some of the other protocols?
+
+9
+00:03:14,759 --> 00:03:17,130
+Scott Tolinski: I'm not sure, but ZigBee is like a very popular one.
+
+10
+00:03:17,309 --> 00:03:19,139
+Wes Bos: Oh, yeah, there's like z wave.
+
+11
+00:03:19,259 --> 00:03:28,080
+Scott Tolinski: Yeah. And a lot of the hubs, they work with a lot of the different protocols. So it doesn't necessarily matter, you just make sure that it works with x, y, z on the box, you know?
+
+12
+00:03:28,349 --> 00:04:40,920
+Wes Bos: Yeah. So at first I thought like, that's dumb, like, why do you need a hub. But then I realized that a lot of these ones that communicate to a hub, a hub is like 100 bucks, so you have to invest in that. But a lot of the devices, they require low power, which means that you can run them off of like a coin cell, like once a year, you have to swap out a coin cell or a little battery. And that's great, because you don't have to run power to them in you can like little things like sensors for your windows, little things like temperature monitors, little things like a motion detector, all these things require a little power. And there's even some that run on their own power. So there's like a button that you can get in you press the button. And the button is powered by the energy that is created by simply pressing, pressing the button, which blows my mind, that's wild that you can have that and no wires required no batteries to have to do it. And then the flip side is a Wi Fi device where you just get it you plug it in whatever it is, and then it connects to your Wi Fi network. You don't have to worry about having some sort of intermediary hub in there. And that's sort of I think those are sort of the gateway drug to using a something with a hub because you get a plug or a light bulb or switch or something. You're like, Oh, this is really nice. And you can kind of get addicted and start buying more and more stuff.
+
+13
+00:04:40,979 --> 00:05:04,010
+Scott Tolinski: Yeah, yeah, definitely. And I mean, you see, you have no hubs. I have two hubs. I think two Yeah, I have two hubs actually had to buy an Ethernet switch the other week when my bulbs were coming in because I had a new hub coming in and I didn't have enough Ethernet ports because the Google Wi Fi only gives you one so I had to get a little bit Have a little Ethernet switch going on. But uh, yeah, no, I'm living the hub life.
+
+14
+00:05:04,050 --> 00:05:07,200
+Wes Bos: Wait, so why do you have two hubs then what's the point of having two?
+
+15
+00:05:07,350 --> 00:05:15,870
+Scott Tolinski: So I have a SmartThings. hub. And then I have a hub for the hue bulbs, the Philips Hue bulbs, which have their own little deal.
+
+16
+00:05:16,140 --> 00:05:21,020
+Wes Bos: Oh, so the Philips Hue don't work on an existing hub, you have to buy your own hub for it.
+
+17
+00:05:21,140 --> 00:05:33,120
+Scott Tolinski: As far as I understood. Yeah. The Philips Hue hub is like specific just for the bulbs. And it's okay. I mean, I got like in a three pack or a five pack that that cost about the same as much as a bulb would anyways. Okay.
+
+18
+00:05:33,330 --> 00:05:36,870
+Wes Bos: Yeah. Okay. And what about the hub is has to be wired, then?
+
+19
+00:05:36,930 --> 00:05:42,660
+Scott Tolinski: Yeah, the hub is has to be wired to your Ethernet. Yeah. To your router? Yeah.
+
+20
+00:05:42,690 --> 00:05:55,140
+Wes Bos: And then I'm always curious about that. Because like, like, if I have to put the hub where my router is, because you need Ethernet, and does it reach across your entire house where regardless of where you put the, like, how far does that frequency go? Oh, yeah, it
+
+21
+00:05:55,140 --> 00:05:58,140
+Scott Tolinski: goes everywhere. Yeah, yeah, it's just on the Wi Fi network.
+
+22
+00:05:58,200 --> 00:06:04,110
+Wes Bos: Okay, but the bulbs don't connect to the Wi Fi, the bulbs connect to the hub, and then the hub connects here.
+
+23
+00:06:04,200 --> 00:06:06,960
+Scott Tolinski: Yeah, I actually don't know how that that aspect of it all works.
+
+24
+00:06:07,650 --> 00:06:09,540
+Wes Bos: Okay. It just works for you. Yeah,
+
+25
+00:06:09,630 --> 00:06:13,080
+Scott Tolinski: yeah, yeah, I plugged it in. And I followed the instructions. And it works. Yeah.
+
+26
+00:06:15,240 --> 00:06:31,860
+Wes Bos: So there's some pretty interesting stuff there. I don't have a hub yet. But there's a lot of like little sensors. I'll talk about them later. But just things like water sensors. And if you leave a window open, you can get door sensors. And these sensors are cheap, like 10 bucks, 15 bucks, easily add them to little spots on in your house.
+
+27
+00:06:31,920 --> 00:06:52,860
+Scott Tolinski: Yeah, I got the smart, the smart things hub, specifically, because you could use all of these cheaper products that don't have their own apps that can just connect to smart things. And then smart things can connect to Google Home. And then it's nice and easy. And in reality, I haven't actually ended up buying that many things. So I have like two or three things connected to smart things in the app drawer, I'd like to probably change that hopefully get a little bit more use out of it.
+
+28
+00:06:53,040 --> 00:09:10,830
+Wes Bos: Oh, yeah. And then sort of in between Wi Fi, and ZigBee is this idea of the iOS home kit. So you can buy a lot of devices that are compatible with home kit, and you don't need a hub for iOS home kit. But if you want to access your devices, when you are outside of your Wi Fi network, then you do need some sort of hub, which doesn't really make a whole lot of sense to me. And I think that the home kit is probably the worst out of all of this stuff, just because like Apple requires like very strict, like in order to make your thing homekit compatible, it has to go through the entire process of it working like Apple does. And because of that the stuff is generally the most expensive stuff. And you're you're sort of locked into iOS at that point. And then if you want to have if you want to be able to access it while you're outside, you have to have an Apple TV or an iPad that stays in your house in order to have it as a hub. So yeah, like I know, people go all in on it, I'm sure it works really, really smoothly. When you go all in and there's other there's like a, there's this thing called a home bridge where you can, you can make things that are not compatible with iOS homekit, you can make it compatible. If you have like a Raspberry Pi, we'll talk about that as well. But I've sort of steer clear of all the homekit stuff just because I want it to all be just like Wi Fi base or like an open standard base. And I don't want to have like a light switch that's not going to work in six, six years because they've stopped supporting my light switch, because that's the whole sort of laughable thing about all this stuff is that you put something so simple, like a light switch that connects a current and you put that in your house. And now you have to like update your light switch and you got others bug fixes or security holes, you got to babysit this thing is the ability of being able to turn off your entire house with a single command. Is that worth the trade off? So I've been thinking about that a lot in the future. And that's that's one of my rules is that all of these devices must be at the very basic the dumb devices, meaning that if I rip the entire smart thing out if I turn my Wi Fi off every time we tweet about the stuff people get really snarky. Oh What if your internet is down can't turn your lights off. And obviously you can turn your lights off it's it's a it's still a lightweight Yes, still a plug at the end of the day. But it's added added features. It should make my life better not make me run around and do weird stuff.
+
+29
+00:09:10,909 --> 00:10:12,510
+Scott Tolinski: Yeah, for sure. Cool. All right. So let's get into the controlling aspect of these things I'm really sort of interested in in this area because there's a lot of fun things you can do here and you can set up you know routines you can set up all this sort of stuff and each thing sort of has its own merits so I personally am sort of all into the the Google side of things so I have not used Alexa we don't have any Alexis in the house or the apple ones. We have just about 500 Google minis though because Google keeps sending me emails for some reason they want to give me one like oh you your Spotify. Here's a free Google Home mini Oh, you pixel here's a free Google Home Mini. I've bought maybe one or two Google Home minis and we have one all over the house. So it just just so happens I got one of my office. I want in the gym now eat everywhere. So it I think we should maybe probably out. I don't want to say any of the trigger words for these devices on this episode, just in case. So maybe we should have some sort of like a slang to refer to Yeah, the commands like
+
+30
+00:10:12,649 --> 00:10:15,870
+Wes Bos: it will say, okay, gargle. Okay, gargle.
+
+31
+00:10:17,029 --> 00:11:01,590
+Scott Tolinski: I'm in a mountain sold on IR go. So I primarily control my all of my things through the Google Home minis, which is nice, but also through my phone, which is superduper. Nice in a lot of different ways. So I have all of my devices, even if they're the Philips Hue bulbs, if they're the smart thing stuff, or if they're their own Wi Fi things, all of those end up being connected into the Google Home app for me. Yeah, the Google Home app allows you to set up different rooms, so office bedroom, all the thing and you can just set your devices into those rooms. And the best part is, is the Google Home itself is typically set into that room. So when you give it commands, it can understand contextual things like what room Yes. And it's incredible.
+
+32
+00:11:01,679 --> 00:11:43,140
+Wes Bos: Yeah, we so we have a Google Home and our main floor, living room dining room, and then we just added one to our kitchen, which is surprisingly helpful, because we have the lights in there that are going we use it for timer a lot when we're cooking. It's amazing that you can Spotify and you can sync music between two Google homes, and the whole house will will have that music. I do that all the time. Just so darn cheap. I can't believe it. Like it's like the good the big one. It sounds amazing. And the little one sounds like I'm not an audio file, but I enjoy like good quality music. And I was pretty impressed that how that just the like $50 little mini or I don't even know how expensive isn't to say it's like 35 bucks or something. Yeah,
+
+33
+00:11:43,140 --> 00:11:43,860
+Unknown: how good
+
+34
+00:11:43,860 --> 00:11:46,919
+Wes Bos: that sounds, with all the different features that have it.
+
+35
+00:11:47,159 --> 00:12:03,179
+Scott Tolinski: I think he'd be running the software engineering that goes into making those speakers sound good. Because it's a little bit more than just like a speaker. It's a lot of software behind the scenes. That's that's tweaking that, that speaker to sound that good for how tiny that little thing is,
+
+36
+00:12:03,239 --> 00:12:47,039
+Wes Bos: yeah, it's, that's unreal. So we use that we will not buy any hardware that does not interface with Google Home. And then we have our phones as well, because you don't want to just have to use your voice all the time to talk to it, because one of the weird things about it is if you tell it to turn off the lights, it says okay, turning six lights off. And that's like, I know you're turning six lights off, because I can see the six lights are turning off. So we had to set up a routine in Google Home to turn down the volume, turn off all the lights and then set the volume back up. Because otherwise, sometimes if we're playing music, and then it's like, it's like 11 o'clock at night, we're going to bed and we're like, okay, garco a turn off. Okay, turn all the lights off.
+
+37
+00:12:49,020 --> 00:13:49,230
+Scott Tolinski: My dogs Hey, gorgos. So they're like always barking like crazy. Whenever we say we say anything to gorgo gorgo goes, Oh, bah, bah, bah, and the dogs don't who is here who is in this house right now. They don't love it. I actually as a way around this aspect of it. I use I use Google Assistant on my phone like a fiend. I use it like constantly. So one of the things that the pixel does, which is like low key, one of the best features on the Google Pixel is that you squeeze it to trigger the assistant. Oh, yeah, light squeeze, you just squeeze the sides of the phone. So I squeezed the phone and I'll just say turn the lights on. And the lights turn on. I like set up nice little we'll talk about If This Then That later. But I set up nice little If This Then That thing. So I could say I just squeezed my phone I can say get comfy. Or let's get comfy. And then gorgo out of the little speaker girl girl will be like getting comfy. And then the lights will dim.
+
+38
+00:13:51,779 --> 00:15:13,950
+Wes Bos: Oh, man. Yeah, yeah, we absolutely love the the Google Home. So we use that for everything. The amount of integrations that Google Home has is unreal. So whereas like iOS homekit will only allow certain people in that are very high quality, Google will let anybody in. And if it doesn't work, that's because you bought a crappy product or whatever. And I guess that's a bit of a bad experience. But I've really, really enjoyed that. Other things you can do with this is obviously you can get the individual apps for each of your products. And you generally have to do that anyway just to set them up. But after you set them up, I'd never use the individual apps for each of the products. It's all done through your single Google Home application. And it's been getting better if you tried it maybe six months a year or a year ago, the app was pretty much non existent. So the only way to integrate with it was via voice and not having something to look at is frustrating because you can't see what's going on and I can't wait for the day that they come up with a just basically like an iPad. They have something right now that's like a Google Home and has like a tablet on the front. Yes, but I want something it has a big speaker on the back. I want something that I can just mount to the wall. Hmm and maybe tap off of a light switch. power source and, and then be able to see the temperature sensors, all the lights that are on or off what's playing on the different speakers what's playing on the TV, all that stuff, I'm looking forward to it getting a little bit further than it is right now.
+
+39
+00:15:13,980 --> 00:15:51,029
+Scott Tolinski: Yeah, I'm actually very interested in that sort of tablet space I've been considering more and more, I've been considering more and more the aspect of that little mini tablet device for like the kitchen or something to have one in there. I recently hung out with a friend who has one and they were talking about how useful it was to even like in their, in their in their kitchen, and they can tell it to put on a recipe for this on YouTube or whatever and have it right there or maybe even put on youtube tv or see all that sort of stuff. No, I'm very interested in that space. I'm gonna I'm definitely monitoring it. I think I might actually end up picking one up at some point in the future.
+
+40
+00:15:51,179 --> 00:17:04,529
+Wes Bos: Yeah, yeah, I'm looking forward to that as well, just once they get a flat one that I understand that they need a speaker in it so that it has to sit on a countertop. And that's like a no go in our house. Because countertops faces is limited. So yeah, you I want something that will go flat. And you can also like we have a old security system that like we don't run it anymore, I probably should be a podcast. But we have like the the wires in the wall for the security and there's power right there. And if we could just rip that thing off and put iPad on the wall. But past that, there's other things you can do. So if you don't want to use Google Home or whatever there's like, if you have a SmartThings Hub, and you all of your devices are SmartThings compatible, then you can just use the smart things app or the website for that. There's this thing called home assistant, which is a sort of a like an open source version of that. It's pretty nifty. It's built in Python. And the way that it works is you install it yourself on a server and then you add all of your your different devices in. It's very hackable. So there's usually somebody has made like a hack to make something that's not supposed to work with it work. I tried it out, and it works pretty well. It's just like one of those things where I don't want to have to babysit it, you know, you know, want to host your own stuff.
+
+41
+00:17:04,679 --> 00:17:16,550
+Scott Tolinski: I mean, it would be one of those things. I think that you know, it would be fun if you had the bandwidth to babysit it to hack it to play with it to mess around with it. But if you Yeah, it seems like it could be a lot of trouble.
+
+42
+00:17:16,709 --> 00:18:15,300
+Wes Bos: Yeah, it the it's just not there yet, like the the amount of polish on Google homes app, and then you open this thing up, and it just doesn't feel great. It feels like it's a little rougher on the edges, there was a bunch of bugs with it, where like, half the time, all of my stuff would just disappear when I refresh the page. And I had to refresh it again. So it's like stuff like that, where if like, if I gave that to my family members and said, like, here's how you you view our cameras, and here's how you turn the lights on, they're gonna be like, I don't like this thing. You know, it doesn't work that well. So I'm really hoping that that that gets a bit better. I'm gonna probably come back to it at some point. There's another one too, that somebody recommended openhab open AB seems to be another open source version of this. This seems to be focused more on like, cameras and stuff like that. But I'm not sure I haven't I haven't looked into too much. And the idea is that you install it on like a Raspberry Pi or something. Have it running inside of your house with all the stuff that you have. Interesting.
+
+43
+00:18:15,330 --> 00:19:14,090
+Scott Tolinski: Yeah, this is a very, I mean, these this is sort of the intersection between us as developers and these sort of things, right. I mean, there there are open source platforms. I think that's a really interesting space. But if I want my entire house to be on schedules and routines, I might want to put it on a yellow like an established platform. But you know, that's just me. Me personally. In addition, I've heard really awesome things about Alexa. I have a friend of mine, who I definitely trust his technical opinions on things, has an Alexa setup instead of a Google Home setup. And he Yeah, he really likes it. Although he did mention that he was considering Google Home for I think there was a couple of small reasons. And there was one small reason I think it was like an audio line out on the Google Home not existing that he was like I if they if they put an audio line out on this thing. I'm moving over, but I've heard yes about the interface and sort of Alexa overall that said, You know, I haven't used it. I can't necessarily speak too much on it.
+
+44
+00:19:14,250 --> 00:20:08,880
+Wes Bos: Yeah, we have one it's built into our thermostat. So we have an eco B thermostat and it comes with Alexa Yeah, and I don't like it I find that the Google Home will almost never trip accidentally because it listens to everything you say and we find that the Alexa probably at least even our kids notice a Alexa sheesh because it goes off all the time. And part of that probably about half the fall strips are because my daughter's name is Lux, and we say a Lux Could you come over and and trips so there's that you can I think you can change that if you want but the half of the other time we're talking about random stuff, and it trips so we've started giving up on it. I haven't figured out how to turn it off. You can turn off the microphone on the Eco be but I don't know we still I think we just want to tick it off entirely. If you turn off the microphone, it has this big red strip on the top, which is ugly. So we haven't figured out how to totally turn the Alexa off just yet.
+
+45
+00:20:08,910 --> 00:20:33,720
+Scott Tolinski: This is funny because when I bought my ego B there was like the Ico before and the Ico v3 light. And I was like, Yeah, oh, well, what are the differences? And they're like all the Ico before comes with Alexa. And like, Is that the only difference? Yes, that's the only difference. I can pay you $100 less and not have to get an Alexa. That that's so that's I ended up going with was was that. So I do have the Eco B as well. But it's a it's not the one with the Alexa on top? Oh, yeah,
+
+46
+00:20:33,750 --> 00:20:57,780
+Wes Bos: yeah, I got I kind of regret buying that, especially how cheap it is to just buy a separate Alexa. But it's still a good thermostat. At the end of the day. If you just take the you don't use the Alexa part of it. Because we can control. We'll talk about our gear in just a second. But you can control it via Google Home, you control the eagleby with Google Home or the app or pretty much anything you want. I'm sure you could send a smoke signal up and the folks that would change that. Change it for you.
+
+47
+00:20:58,260 --> 00:21:12,150
+Scott Tolinski: Yeah, he could be. I'm a fan. Cool. So yeah, I guess that's pretty much it for controlling. We have Google Home, we have Google Assistant, we have Alexa, is that the trigger word for that device? are we are we saying that trigger word,
+
+48
+00:21:12,510 --> 00:21:15,240
+Wes Bos: again, probably triggered Alexa codes. That's okay. I'm
+
+49
+00:21:15,240 --> 00:21:19,820
+Scott Tolinski: sorry, we're gonna change that we're gonna, let's just call it a
+
+50
+00:21:19,850 --> 00:21:23,550
+Unknown: yucca yucca. I don't like yucca. Gorka. Gore
+
+51
+00:21:26,940 --> 00:21:28,650
+will just not say that word anymore.
+
+52
+00:21:28,650 --> 00:21:29,940
+Wes Bos: The Amazon one,
+
+53
+00:21:29,969 --> 00:22:11,970
+Scott Tolinski: the Amazon one. Yes. The Amazon. There you go. The Amazon device. Cool. Yeah. So there's a I mean, there's a lot of options for controlling these things. And a lot of these things, which we'll get into in a little bit, have maybe like a web hook interface, or a way to ping them from an actual site. And this might be a good opportunity to try out some of these headless sites in backends. So one of our sponsors today is Sanity and Sanity is the coolest both bring your own front end, back end CMS, this is going to be like a really cool thing. For this type of project, you could start to build your own automation system with a full on database using something like Sanity, I think that's a really cool little fun side project.
+
+54
+00:22:12,150 --> 00:23:46,890
+Wes Bos: Yeah, so Sanity is is the back end as a service. So if you want to build a website, and you don't know where to put your data, the Sanity is one really good option. And it comes with this incredible interface. So you yourself, your clients, everyone who uses the website is able to log in to the website, you can create all your schemas in the back end, and they give you an interface to edit it, you can also create your own interfaces in react. So that's kind of like a neat one. Because like, generally when when something is hosted for you, you have very little control over what the backend actually looks like. Because it's hosted for them. That's that was the whole thing is like wordpress.com is hosted for you, but you have no control over the back end how it looks. Whereas wordpress.org, you host it yourself. And you can make your own back end however it is that you want. This is kind of like the sweet spot right in between there where they take care of scaling and performance and security, but you still can customize your back end. One little thing I want to focus in on here, because we've had them as a sponsor a lot here. One thing is this updated in real time. So you can set up your subscriptions with all of your data, and everything will just be immediately updated. There's no pinging for new updates, there's no refreshing every 20 seconds if you set these subscriptions, it will all update in real time. So if you need something to host your back end of your data, your building your front end and react or view or JavaScript or anything that you want you could check out sanity@sanity.io forward slash syntax that's gonna get you double what you would normally get on the free plan no credit card required. So check it out. Thanks so much to Sanity for sponsoring.
+
+55
+00:23:47,160 --> 00:24:51,240
+Scott Tolinski: Awesome okay so let's get into some more software stuff but maybe this this stuff is gonna be applications and things that you can use in coordination with maybe your Google Home your devices to control them set up routines, and this is to me one of the coolest areas of this stuff because I I've been really having a great time in this area. And I've personally been using the website if this than that. And if you've ever seen if this than that before, it might not even be for smart home things. Maybe you're doing something like posting something to social media. When you post one thing to Instagram, it automatically posts to Twitter, or I have if I post a YouTube video, it automatically tweets out my YouTube video, a little things like that. Basically, the premise is if you do one thing, then something else happened and it connects two services together. So you can say all right, if something happens on my Google Assistant, then it something will happen. Now if this then that has a ton an absolute ton of pre made recipes. But if you can't find what you're looking for building a recipe is super duper easy.
+
+56
+00:24:51,360 --> 00:25:50,430
+Wes Bos: Yeah, I'm a big fan of if this and that I don't use it for any of my home stuff. I use it more for like Twitter and Instagram things, saving photos, posts. from Instagram, to Twitter, things like that, but I know that it's pretty popular. There's also another one called string a fi, which will you take all these different whether it's the lock to your house, or your air conditioning unit or anything, pretty much anything you could think of as well as it'll take inputs like the news. So if there's some new news that is matching a string of Trump, then dim the lights to a dark red, or something like that, right? Like, yeah, you can do all these crazy things where you string them together, I haven't found much need, the very basic, what's it called, the very basic routines that are built into Google Home will allow you there's not a lot of scheduling built into Google Home. So if you want to do some sort of scheduling, like every morning at 715, turn the coffeemaker on and slowly graduate the lights up to 100%, then you would need to reach for something like string phi, or if this and that,
+
+57
+00:25:50,460 --> 00:26:57,900
+Scott Tolinski: yeah, and If This Then That isn't like complex enough, like you're only you need to do multiple actions, there's what's called a makers account, which gives you two pretty it's it's sort of funny, because it's almost like an advanced sort of programming interface for If This Then That. It's almost like they looked at this interface. And they're like, well, this is really neat. But I don't know if all of our customers will be able to understand what's going on. So they made it sort of like an opt in thing. And if you're a programmer, you're going to feel right at home, because it's just conditional statements in a way that makes it superduper. Easy. And like it almost looks like a children's programming interface or something like that. It's definitely like, if you're a programmer, you are going to get this stuff, I don't think my parents would be able to figure it out. But if you're a developer, I think that makers account is going to be really cool. There's also really, really easy ways to set up you know, like a web hook to you could hit a If This Then That web hook to trigger literally tons of things like I could trigger a web hook that anytime you know somebody is at the front door, my lights start flashing, or there's all sorts of custom integrations you could do. It's pretty darn slick.
+
+58
+00:26:58,020 --> 00:27:31,980
+Wes Bos: Yeah, that's what stringify looks like as well, where if you want to go a little bit more complicated, like someone rings your doorbell, turn the lights on and start recording the camera in the living room or things like that. Someone rings the doorbell turn the fireplace on, you could do some really like this is probably home alone for where like Macaulay Culkin comes back and uses smart things. And all these like different apps to like string all these like different things together. Because you got a couple servo motors that would when someone rings my ring doorbell, open the server motor and drop a pail of water on them.
+
+59
+00:27:32,070 --> 00:27:35,280
+Scott Tolinski: Yeah. Oh yeah, that's a good one drop a pail of water.
+
+60
+00:27:35,910 --> 00:28:12,810
+Wes Bos: That's good. I do want to mention homebridge as well, real quick. So the stuff with iOS homekit is is really nice, because you can use Siri on your phone if you haven't like I have an iPhone. So I don't have like the slick integration that Android does, even though I am all in on Google Home. And then the kind of cool thing about homebridge is you can just swipe down from your phone and change the temperature of the thermostat or turn your lights on and off. And that's really cool. But there's there's things that don't work, most stuff doesn't work with homekit, you can fire up a Raspberry Pi and run homebridge on it. Apparently, it's not something I've done myself. But that seems like a good option to make those devices work.
+
+61
+00:28:13,020 --> 00:29:01,470
+Scott Tolinski: Yeah, cool. So let's get into some of the hardware here. This is the fun stuff, man picking up stuff, installing it playing around with it. Like I feel like a kid with some new toys. Whenever this stuff comes in, you get to see what you can do with it and see what kind of events and results you can get out. So let's get into it. First and foremost, with light switches, I have a smart light switch that I bought that is sitting in the in the hardware bin because my house doesn't have the wiring for it. And I I kept on wanting to find ways around this or to get the wiring done. And then it's like past the return date. So I just have a smart switch sitting around and I haven't used it yet. So I'm really interested to hear your thoughts on this. I ended up going with the bulbs, the Philips Hue bulbs, which I'll talk about afterwards. But I want to hear your thoughts on the switches and how they're working out for you.
+
+62
+00:29:01,560 --> 00:31:36,840
+Wes Bos: Yeah, I love the switches. So we did our main floor, we have potlights can lights like you know those little lights that go into the ceiling, our living room in our dining room, which is connected, we have different lights, which is for both of those rooms. And they have each one has I think like eight different led spotlights on them. Nice. So it when that's the case, you can't use bulbs because they're custom LED lights that go in the ceiling. And especially if you've got like a nice light fixture or things like that you can't go for the bulbs, because it's they're specialized bulbs and they're already on a switch. So we opted for the what is it the lebreton levithan light switches that have a dimmer built into them. And the kind of cool thing about that is because our both of those are three way switches meaning you can turn them on and off from either one. And then the problem with it when you put a dimmer on a three way is that if you've dimmed it at one and then you go to the other switch and turn it off or on then you have to like go to the other one to adjust the depth. And the way that these things work is that they use the this is getting a little electrical, but it uses the traveler wire, instead of like completing the circuit, it uses the traveler wire this to send data between the expensive Wi Fi switch and a much cheaper sort of secondary switch that was able to dim from that one. So that's really cool. You can dim from either one. So we install those in our house. And we love it because you can tell Okay, Google, dim the lights to 30%. And it will dim both of the rooms to the exact same, the exact same dimness, which is great, you can turn them all off at once. So we almost never actually touched the light switches are so obviously they are dumb switches at the end of the day. But we almost always just just use our voice. We have those for about a year. And I was a big fan of that. And I decided to buy more. And we will put them in our kitchen, we put them in our hallway, and we put them in our upstairs, and I went on Amazon and bought a bunch more. And I realized that hey, I installed them. And I was like, Alright, done installing them ready to hook them up to my phone. And the levithan sells two different versions, one for home kit and one for for Wi Fi. And I had bought the home kit ones that don't work with Google Home. And I was so mad because I had spent like all this money and all this time wiring these things up. And the fact that you have to think about this ahead of time, whether you want to use homekit or you want to use Google Home is so silly, because it should work with both right then there's no reason it can't because eco B does it eco B works with homekit eco B works with Alexa with eco B it works with
+
+63
+00:31:36,860 --> 00:31:44,880
+Scott Tolinski: most things I have worked with everything. So that makes me Yeah, I have some some beef with some of the Levittown stuff that I'll get into in a little bit. But
+
+64
+00:31:45,029 --> 00:32:20,160
+Wes Bos: yeah, so that sucked. But I got them all switched out. And and they work great. It's super fast. Some of these, like I've had a WeMo switch before. And there's like a one second delay in when you press the app to turn it on and off. And when the relay and the thing actually turns on and off. And the left on ones for me have been been super, super fast. So just full disclosure, I paid my hundreds of hundreds of dollars for those myself. And then people are asking on Twitter and then love with ons like thanks. And then they sent me some plugs, which for me also worked really, really well. But Scott had you've been having some serious grief with it.
+
+65
+00:32:20,219 --> 00:32:38,040
+Scott Tolinski: Yeah, their Android app is awful. Just jack You're awful. If you like go to register. Well, first you have to register for an account. Okay, that's fine register for an account. They need a lot information, first name, last name, that sort of stuff. Like why do you need this kind of information to turn on a smart turn a
+
+66
+00:32:38,040 --> 00:32:38,610
+Wes Bos: light on?
+
+67
+00:32:38,640 --> 00:34:30,230
+Scott Tolinski: Yeah, so here's the kicker. So the, the password field does not have the requirements listed. It's just a password field. It doesn't say you must have this. But if at some point you goof up one of the requirements that are many requirements, you need punctuation, you need capitals, whatever, right? Yeah, if you goof up one of them, the field, that's the retype your password becomes completely inaccessible. And you have to start the entire process over again. So I ended up just even filling out the second register Password field first, just in case it became inaccessible. And then I did it was it was an absolute total nightmare. And then you get to the next step. And it's like, what's your location? And you can say use my phone's location, enter my zip code or skip, you click skip. It says you didn't enter your location. Or both of you told me I could skip it. So I you can't skip it, but doesn't let you So then I'm like, Okay, I'm gonna enter my zip and surprise it saves the zip doesn't let you advance past that screen. Okay, so then I use the third option use my location fine, you can use my location. Okay, usually your location is your Okay. Yes, it is okay, still won't let me pass that screen. Like close, quit whatever reopened it and all of a sudden, I was past that screen. So the app is a total nightmare. I went to connect it to Google Home. And there. My dot Levitan site was for foreing like all of their scripts and just totally a white screen on the website. Their web yet completely down on I tried like five different browsers. I tweeted at them no respuesta so just not super happy without it. Yeah, that's it. The switch is connected to the app right now. And I have it to my studio lights, which is actually really super useful. Have that switch connected to my studio lights, because when I'm recording, I can just hit a button and turn them on. But man, that app is rough.
+
+68
+00:34:30,330 --> 00:34:59,480
+Wes Bos: Yeah, I often see this with these companies that have been like this is like a electrical company that's been in business probably for 100 years. And they've been making light switches for 100 years and all sudden they're they get forced into being a tech company. Yeah. And and you get these like, and I just didn't feel like usually the good experiences that I've had with companies are there a tech company first that then figures out how to build hopefully safe light switches or plugs or something like that, right?
+
+69
+00:34:59,520 --> 00:35:05,730
+Scott Tolinski: Yeah. Because the Design interfaces ended up being so much better, which is like a huge thing in this right? It should be easy.
+
+70
+00:35:05,880 --> 00:35:13,080
+Wes Bos: Totally, totally. I get that. So, that's one option there. People also said you can use the Lutron casita,
+
+71
+00:35:13,130 --> 00:35:18,710
+Scott Tolinski: yes, I want this casetta because they have a seat, I don't know, it's not a nice so it's not casita,
+
+72
+00:35:19,110 --> 00:36:04,260
+Wes Bos: okay. This one apparently does not need a neutral wire, which you generally need a neutral wire to get good, a good dimmer on an LED light bulb, which in Canada, you can't even buy, like those other kind of light bulbs anymore. So it's all LED. And that's so I don't know how this works. There's like this, like StackOverflow question about, like, how is Lutron doing this without a neutral wire, and it seems to work. So if you have an older house, it's code now to have your house wired with a neutral to every box. And luckily, our house was rewired just a couple years ago. So we have neutrals everywhere. But a lot of the other older houses don't have neutrals. And if you want the smart stuff, you have to look for products that work without a neutral wire.
+
+73
+00:36:04,590 --> 00:37:10,530
+Scott Tolinski: So I don't have a neutral wire, which is why I have a smart switch that's not installed. I didn't really looking closely at these Lutron caseta has, yeah, I think I might pull the trigger on one or two of them. We have a lot of these the floodlights, the big dome lights in the top. And even though I'm like really bought into the Philips Hue environment, right now, those bulbs, those ones in particular are expensive. And we have like four of them in Landon's room alone, he's got a tiny room, we got eight in the basement hallway, we got like a billion of those bulbs, we probably have 30 of those bulbs, and wow, you know, 24 bucks a pop, No, thank you. So I'm looking at a smart switch for some of those areas, I have those big floods, and I'm not going to do any fun color stuff in those areas anyways, so I'm going to pick up one of these Lutron caseta, I've heard great things about them. I'm pretty interested in how this is gonna work. One of the beauty of all of these things is as long as you all connect them to Google Home, or your devices, they it doesn't matter the interface, because it's not like you have to pull up an eight different apps to control these things, you can control them all one interface. So I really like that.
+
+74
+00:37:10,860 --> 00:37:51,860
+Wes Bos: Yeah, actually, I'm the opposite in my basement. Right now, my basement has these like little light switches everywhere, like you've got these little tiny little cords that you pull. And what's annoying is that you realize you forgot one off, you have to walk all through the basement. So I want to go to bulbs that are Wi Fi for that, so that I can control the entire basement on one switch, rather than than having to do it because like my entire house is wired great. And I can use the switches there. But when if you want to combine them, you can go to the bulbs and then you can you can get these switches that just go in the wall. And they don't connect anything because they run on like a coin cell. And then they send the signal over Wi Fi which is kind of cool.
+
+75
+00:37:51,930 --> 00:38:17,190
+Scott Tolinski: We'll talk about combining things. One of our sponsors today does an amazing job of combining a bunch of different things such as any theme static site generator, or CMS without complicated integrations. stackbit.com allows you to build modern jam stack websites in just minutes. Now this is the first time Stackbit ever sponsored syntax. So we welcome Stackbit as a new sponsor to syntax. So a little bit more about Stackbit is Wes.
+
+76
+00:38:17,420 --> 00:39:40,290
+Wes Bos: So this is a new sponsors Stackbit. so new that they aren't even open to the public just yet. And I think this is really cool. First time we've had a sponsor, just want to ask you to sign up for their early beta program@stackbit.com forward slash syntax FM. So I had the opportunity to meet the folks from Stackbit at jam stack calm a couple of months ago where Scott and I did the podcast. And I talked about kind of what they're looking to doing. So what they're looking to do is to provide themes for the modern web. And what that means is that much like you would normally just go ahead and grab a WordPress theme. There are going to be offering themes for all of the different platforms that are sort of next generation things like Gatsby Hugo Jekyll, headless CMS is for St contentful, Netlify CMS. And they are quickly expanding into all kinds of different things. And it's kind of neat, because instead of just specifically looking for a theme for one platform, you'll know that these seams will work with all of them. So we've talked about jam sack a lot. It stands for JavaScript API's and markup they're really fast because the way that jam sack websites work is that whenever your content changes, they rebuild and then you deploy a new version. So if this sounds interesting to you, then check it out@stackbit.com as sta ck bi T Ford slash syntax FM Thanks so much to Stackbit for sponsoring, I'm really excited to check out this beta.
+
+77
+00:39:40,560 --> 00:43:02,690
+Scott Tolinski: Cool so thank you so much for Stackbit for sponsoring. Now in addition to combining different CMS is blah blah, blah. We can also combine lights and switches, which is something that I'm looking at doing in particular because I have bought into the switch or I mean the light sort of thing. I bought a Philips Hue hub and I bought Four white bulbs and four colored bulbs. I think that's correct how many I have. So I have eight of these Philips Hue bulbs. I got two colored ones by office, we got two colored ones in our nightstands. And we have some in the living room and then the dome lights in the bedroom, and Philips Hue. If you want to talk about somebody who has some quality engineers on their team, their app is incredible. Not to mention, you can hook into Philips Hue with a ton of different apps. So you can install a bunch of third party apps as well. One of the things I really like about the Philips Hue app, in particular is that there's whole this whole labs section, which is basically just experiments, so you can install really quickly. One of them is like living room where it changes the colors of the bulbs in a room over the course of 30 minutes and you like hardly notice them changing and all of a sudden, you look up and the colors are completely different than they were before. I've been having an absolute blast with this thing. There's a whole bunch of presets, like you could say, I'm gonna turn my office right now into Savannah sunset. And it's gonna be really nice. It's It's so dang cool. Not to mention the routines that are built into this app are really, really easy. I mean, there's one that's like wake up and you can tell your stuff to turn on at sunrise, you can give it a specific time, you can say gradually turn on these lights over the course of 30 minutes and turn them to this color. So we have our our bedside lamps turning up slowly in the morning, up to the point when it's like time for us to wake up they'll be at full blast. I also have like nighttime routine setup so that our bedroom lights and lights in the living room all dim at a certain time. Then they get a little bit red shifty that all the lights that can change color they turn a little bit red. Get some of that blue filter for romance, right? Oh, yeah, read for romance. Yeah, good. Oh, just give me a nice and ready for bedtime. I such a huge fan. I got sold on these recently, I picked these up. And let me tell you if you thought they were expensive, the white bulbs are really a lot cheaper than they were. Who knows, like last time I looked at these things, I was looking at the prices even for the light bulbs. And we're like, gosh, I can't swing that. But I bought a four pack of the white bulbs for 50 bucks. So it's not that bad anymore. I was expecting it to be a lot more expensive. And so I'm gonna use a maybe a couple more of these based in different spots. I have some some situations that would be really nice for this. For instance, our front porches is glassed in, right? Yeah, so front porches glassed in. And we have one switch that turns on both the outside light Yeah, like front porch outside light as well as the entire front porch. But we don't want the whole indoor part of it lit up. Because we have you know furniture out there we know of people looking in there. So we this is a good solution for me because that outside bulb could stay on the inside ones could not be on and we don't have to change it in the wiring because it's all set up on that one switch. So I'm going to pick up a few more of these. I'm really really liking it the Philips Hue that they knocked it out of the park.
+
+78
+00:43:02,730 --> 00:43:24,420
+Wes Bos: You know where these are really helpful is if you are rocking a baby to sleep, and you want to turn the lights down or up and you can't move. I can't tell you how many times my wife would text me. Can you sneak into the room and turn the lights off or dim them or make it a bit brighter? I can't move right now baby sleeping. And you could just do it right from your phone which is cool.
+
+79
+00:43:24,510 --> 00:43:50,880
+Scott Tolinski: Yeah, that's a that's a big one. Yeah, I'm excited to try some of the stuff out in that regard. Another thing that exists are blinds. I haven't used any smart blinds. They seem like a big investment blinds are already expensive. Yeah, but at the same time, I would love this in my life. I don't know if I'm going to ever get any but I would really love to wake up to you know, natural sunlight as the the sun's rising. The blinds are slowly opening I would be sweet.
+
+80
+00:43:50,910 --> 00:44:44,220
+Wes Bos: Yeah, I've many times consider just building something that would spin the blind you know, you get that little stick on your blind that you spin. And then just like slowly spin that from like 6am to 7am as you're waking up and just have the natural light wake you up instead. I haven't gone that far. Just because blinds are so expensive already. And we we did our house a couple years ago, but it'd be kind of cool to check out. I also use a Chromecast just for obviously the Chromecast is helpful because you can you tell you tell your kids what what we use it for all the time is if we're talking to the kids about tobogganing, we say okay, Google. Oh, sorry. Okay, gargle. Show us photos of tobogganing from Google Photos, and it hooks into your Google Photos or show us photos of grandma or show us photos of Lexan Poppy and then it will just like create a collection of photos and then put them on the TV, and then the kids eating breakfast. So just looking at the photos. It's really fun.
+
+81
+00:44:44,310 --> 00:45:00,330
+Scott Tolinski: Yeah, I used to Chromecast you know, you can head Chromecast to groups now. Like with Google Home Mini. Oh, if you're playing audio in a group, as long as the Chromecast is the second generation or later, you can have that audio also coming out of your TV via the Chromecast I didn't
+
+82
+00:45:00,330 --> 00:45:36,060
+Wes Bos: know that we have the first Chromecast maybe I need to update mine. What we use it for a lot is if you have a newer TV and newer I mean last like maybe three or four years and you supply outside power to the Chromecast it can turn it on and off for you. So instead of finding the remote, and we have a routine, they'll say, okay, Google shutter down, and it turns all the lights off, turn the TV off, and it gets us ready for bed. And it's awesome. Because especially with the kids, if the kids aren't listening to you, and they're watching TV, then all you have to do you don't have to find the remote. You can just be like, okay, girl, turn the TV off, and
+
+83
+00:45:36,360 --> 00:45:38,640
+Unknown: go. Oh,
+
+84
+00:45:38,820 --> 00:45:49,110
+Wes Bos: well, we already doing so just turning the TV on and off is so helpful to be able to do it with your voice. In a Chromecast is cheap, cheap, cheap to be able to do that.
+
+85
+00:45:49,950 --> 00:46:57,000
+Scott Tolinski: Yeah, definitely. No. Okay, let's get into plugs. We talked a little bit about the plugs before I have one plug setup for my studio lamps, which actually just got some led studio lamps, dang, there's like 100 bucks. And these things are awesome. Yeah, they're a nice little investment here. But I also have another one that I got a DJI one that's ZigBee. And it was like cheap, it was like 12 bucks or something. And both of the outlets, it's like a full on outlet. So you have to install it like an outlet, right? There's a button on it. But it also connects to smart things, which is like that was the first smart things purchase I had in my entire desk in my studio monitors my monitor, my entire desk itself is hooked up through this switch. So I have a routine that turns my my desk on, it turns it on at like seven in the morning, it turns it off at like eight o'clock at night. So I'm probably not in my office at that point. So that way, my entire desk that all of the power that's connected through there is on off whenever I am working, but I don't even think about it, it just shuts it on and off. It turns off so many devices, I probably have like well 15 devices hooked into that outlet that will turn off and on.
+
+86
+00:46:57,030 --> 00:47:37,740
+Wes Bos: Yeah, I've got I started off with the I think the plugs is a good gift to get someone as like a sort of a gateway drug into this stuff. Because you can just plug a lamp into it. And then you can turn it on and off with your voice or with the app or whatever it is that you want. So I started off with the sawn off, I talked about this earlier. And the sawn off is like a Chinese $5 Wi Fi based switch, which you can snip an extension cord and wire in on either end yourself and then you've got a very, very cheap plug. The downside to that is that you're giving a random Chinese company your Wi Fi password. And it's only rated for 10 amp,
+
+87
+00:47:37,980 --> 00:47:39,030
+Unknown: I think 15 amp.
+
+88
+00:47:39,300 --> 00:48:29,940
+Wes Bos: So you have to do the math like you don't plug a heater into it like I wouldn't we did it for our Christmas tree and our Christmas tree is well well under it. But just do the math on what what is the draw of the load taking because you could you could blow through this thing. So I don't know it makes me a little uneasy of making your own switch. It's been working rock solid for forever. There's they've sell millions of them. They're super cheap. But we also have a WeMo and a now that love athon sent us a couple of them. And it's great because he's hooked up the things that are hard to get to we have got a couple lamps hooked up to them. I like the idea of doing your desk because somebody told me like if you just turn your desk off for the weekend, you could save like 3040 bucks a year on like your standard, just like phantom power things like the battery topping itself up, I've got all these monitors that sometimes like leave themselves on. So that's actually a really good idea of just being able to have a kill point.
+
+89
+00:48:30,330 --> 00:49:41,520
+Scott Tolinski: I have Yeah, I have one one cable coming out powers the whole desk into a thing. And I absolutely love that. I also have a power strip which is in the same sort of realm as these plugs. And the power strip is sweet because it has like two USBs and four normal plugs on it. And you can turn off any of the plugs individually. Oh, same with the USBs. So yeah, I have like in our front porch that I mentioned was glaston we have some like little teeth. You know those little like dangly lights back and forth. And then we have a Bluetooth speaker while the Bluetooth speakers always turned on because it always is charging. And then we have I forget some other stuff that's always turned on. And then we have those lights but I don't want those lights on all the time. So when I'm out there I can say turn on the lights lights turn on, and a big fan of that. It's also a Chinese company and I'm not super duper boys about Xiaomi No, it's not a company you've heard of. Okay, definitely. Yeah. Jin Woo. I think Yeah, I some of that stuff is a little a little dicey. Yeah, the app was nice enough. The device is nice enough. They sold nice a lot. I think I'm probably a little too trusting of it. But you know, that's next we have thermostats therm thermo stats thermostat.
+
+90
+00:49:41,520 --> 00:49:42,090
+Unknown: Yeah, yeah,
+
+91
+00:49:42,090 --> 00:50:20,700
+Scott Tolinski: we both have the Eco B but I've used the nest extensively as well as the Eco b we got the Eco B specifically because we didn't have a common wire on the Eco B has like a conversion kit that you can install on your furnace. Oh, cool. I actually really liked the nest, but we couldn't get it because it did not work with our wiring setups. So instead of trying to have someone install a common wire, we just went with the Eco B and I've been a fan, the little Draggy interface isn't nearly as nice as the twisty interface thing. There's no learning of your habits. But you can set up schedules, which I've done extensively. So you know, when it gets night time, it gets a little bit cooler in the house, things like that.
+
+92
+00:50:20,880 --> 00:50:46,410
+Wes Bos: It doesn't learn your habits, because we have the Eco B as well. And then they give you like a secondary thermostat sensor that you can it runs on a coin cell, and you can stick we stick that in our upstairs and I've never actually really checked into whether it's figuring out that we're not home. Because when you walk by it every single time it says Oh, someone's home, and then you put one upstairs and it says, oh, someone's home. And you just say there's more learning in the nest one. Okay.
+
+93
+00:50:46,410 --> 00:50:50,190
+Scott Tolinski: I think there's the Yeah, cuz I did a little bit of research on that when I was picking them up.
+
+94
+00:50:50,430 --> 00:52:02,490
+Wes Bos: Okay, so um, I've actually never ever really looked into it. But I like it. I like the app a lot. The interfaces is pretty good. I know. We said at some point, the interface for their mobile app was really terrible. it's since been updated. And we said that on the podcast, and then I heard from a lot of people that work at eco be about that. So I'm glad that the the app is much better now. So yeah, I've been I've been a big fan of it. The Alexa integration is kind of cool. If you want like a free Alexa as well. NASA also has a new thing called a nest II, which is like the cheaper version of it. And it seems pretty cool. My dad has it in their house with all these things, at least in Canada, for until we've we recently have some terrible premier coming in Ontario. But there's often like hundred dollar rebates on these things. And you can, that makes these like really nice thermostats, sometimes free, sometimes 50 bucks, sometimes 100 bucks. So if you look into especially if you're in Canada, he looked into some of the different rebate programs. If you buy a nest or an equal b or any of these smart thermostats, they will often send you a check for 100 bucks just because you're obviously saving energy at the end of the day, these things are a no brainer in your house, just because they save you energy at the end of the day. And it's the interface for
+
+95
+00:52:02,490 --> 00:52:09,900
+Scott Tolinski: it is great, as long as you're using it that way, right? If you haven't set up to be like 70 degrees in your house all the time, you're probably not saving too much money. Yeah,
+
+96
+00:52:09,900 --> 00:52:29,250
+Wes Bos: no, what we use it for as well mostly is if we're out of the house, and we want to get it nice and warm for when we're coming. Or if we leave for the weekend. And we go Oh, I forgot the air conditioning on your Oh, I better call the neighbors Come come in the house and turn the air conditioning off. Or you can just do it from your phone. I think you do that three or four times it starts to pay for itself.
+
+97
+00:52:29,340 --> 00:52:48,630
+Scott Tolinski: We're cool. So let's get into cameras. I have the ring doorbell. And that's pretty much it. We have wireless cameras, which we'll talk about. Yeah, a little bit more. But I like the ring. You haven't mentioned here that the app is super slow to open and I agreeance. With that, I get a little message, I click the notification. And then by the time the app loads, nobody's there.
+
+98
+00:52:49,500 --> 00:54:43,380
+Wes Bos: Yeah, I bought the like the cheap ring, the very first one. And then the snow plow was setting it off every time it goes by. And if you want to be able to select because because our camera can look onto the street. So if you want to be able to select like areas, you have to buy the ring Pro, so full disclosure, they sent me a ring pro in a ring security camera. So we've got two ring, doorbells, one or backdoor one on the front door. And then we have a security camera with a LED floodlight on the on the driveway. So it sees if anyone's coming into the garage. So all of our points of access are being monitored. And it's good. But the app is so slow, when you look it up they're like that's because you're not getting good Wi Fi. And I was like no, we have mesh network in our house. Our entire house is awesome, it's full coverage, I can get really good speed test when I put my phone beside the doorbell and then you open this thing up. And I went through the trouble of hard wiring and everything to get fast response types. And it sometimes still takes like 10 seconds for you to actually see the video feed, which by that time whoever's at the door is gone and you miss them so a little bit disappointed with that if I had paid money for the ring pro I probably would have returned it and tried something else I know that there's a nest doorbell there's a couple other like those locks as well you can get that have doorbell cameras built right into it. So that's good. The LED light is awesome. It's like I think like the more expensive you go the more tech they put into these things because that that light is a couple hundred bucks and it's really really good. The video quality is really good the LED light is spotlights the entire driveway. It's funny every morning my daughter's asked me to look for cats because the cat said there's cats in our neighborhood that come pee in our yard and the cat set it off every night. Nice The only thing that I hate about it is or other than the fact that takes forever to open is that it costs like three bucks a month so you're paying nine bucks a month three devices
+
+99
+00:54:43,410 --> 00:54:44,730
+Scott Tolinski: we don't we don't pay for that.
+
+100
+00:54:44,820 --> 00:55:21,030
+Wes Bos: Oh yeah, you want the the footage if you want to be able to access the footage after the fact you have to pay for it and then it doesn't do consistent recording. So like there's nowhere to put like a 30 gig card in it and for it to just record two days worth of stuff. So like if something happened like I had a bike stolen. I luckily got some footage of the guy coming in and stealing it. But I wanted the entire event and I couldn't because it only records like, I don't know, a minute and then it turns off. So I would say if you are looking for a doorbell, it's a good doorbell. If you're looking for security camera, look for something else. Like first and foremost a security camera word.
+
+101
+00:55:21,270 --> 00:55:31,740
+Scott Tolinski: Yeah. Okay, cool. So we both got some wise cameras and full disclosure, why sent us a couple of cameras, but I also purchased them before they even sent Yeah, these things wide angle lens.
+
+102
+00:55:31,740 --> 00:55:32,490
+Unknown: Wow,
+
+103
+00:55:32,580 --> 00:56:07,140
+Wes Bos: yeah, they're really, really good. I bought a so there's this Chinese company called Xiaomi, which has tons of stuff. And yeah, they came out with this camera called the daft Fang and I bought one from China and had it shipped here. And then I realized that they also just rebrand them for the American market called wise wy Zed E. So don't buy the Chinese version, because the setup instructions are in China, Chinese. And I didn't understand it took me forever to set it up. And then the app is also in Chinese. So that was a bit of a silly thing. But these things are like, I think it's like 30 bucks. And like how much was the little wise for you?
+
+104
+00:56:07,470 --> 00:56:10,050
+Scott Tolinski: It was cheap, like $24.
+
+105
+00:56:10,080 --> 00:57:17,580
+Wes Bos: Yeah, and it's super crisp. So we put one in my daughter's room we are baby monitor kept flaking out. So we just put a Wi Fi camera in her room and the super wide angle, you can pop an SD card or a USB stick in it. So if you've got like an old like 20 gig or 28 gig USB stick, you can just pop it in the back, it will detect motion, you can do time lapses on it $30 one, which is the expensive one will rotate a full like 270 degrees or something like that, which is more than enough. There's some stuff on Amazon you can buy that will make it like an outdoor camera. I haven't done that just yet. And then the app is free. So there's no like monthly payment thing that you need to do to pay for this thing. Really the only thing it doesn't do, which is what we're trying to scan are trying to do right now. It doesn't give you an rtsp stream, which is a real time streaming protocol. And if it does that most IP cameras do that. And you can run your own server for security cameras. And you can stream that right off of that there are a bunch of hackers out there that have figured out how to flash these super cheap cameras. So if you had any headway on that, I haven't tried it yet. I
+
+106
+00:57:17,850 --> 00:58:14,850
+Scott Tolinski: it is a rough going. I'm gonna tell you that right now. I've been working on it for a couple days now. And I am so close I have the firmware flashed, it loads up the the web interface, I can connect to it. But the rtsp stream Yeah, it says that it's it's running. But I don't get I get like one frame of video I like don't get continuous video, try to connect to the rtsp stream. It doesn't connect. So I am so close. I have the web interface up that like the custom firmware is clearly installed. I've been poring through the logs. I've been tweaking settings in config files. And I'm so close. I issued it, you know, on the GitHub, I have a GitHub issue open for for my problem. Yeah. And then the most frustrating thing is somebody responded to it. And they're like, I have the same problem. Here's my problem. And you're like, No, your problem isn't the same issue. This is this is not the same problem
+
+107
+00:58:15,060 --> 00:58:39,630
+Wes Bos: yet. I'm really curious to see, because you also just bought the Synology, which you can run your own local surveillance system. You could Yeah, like I think like a 32 gig card will give you like at least a couple days worth of saved footage. So you could put a 500 gig hard drive in there and save every second of every day for multiple cameras for years. And I think that'd be so cool.
+
+108
+00:58:39,690 --> 00:58:41,610
+Scott Tolinski: I got 16 terabytes in that thing.
+
+109
+00:58:41,640 --> 00:59:52,170
+Wes Bos: Yeah, if there's anything and I'm saying this as someone who spent my own money on it, and then they we asked them for some more so we could review them on the show. If there's anything to spend your money on, I would for sure pick up one of these wise cameras right now this I'm looking at right now. 25 bucks, 38 bucks for the one that tilts and pans. They run on USB, and they come with a super long USB cable. So you can you can plug it in anywhere the cable is nice, good quality. And you can daisy chain them because there's a USB in the back of it. So you can daisy chain them as long as you want because they all they need is enough power. I don't know if as long as you want, but I did two off of each other and I've heard of people doing four or five. So it's pretty cool. I think I think I would check it out. I'm really interested in checking out the outdoor enclosures for them to see how they fare in the Canadian winters. Just because I would love to mount one of these on like a garage or something like that. Or I don't figure out how to get a tower. Yeah, everyone's like what kind of neighborhood do you live? I don't live in too bad of a neighborhood. I just love No, I just love the idea of having like lots of cameras outside just because I have had a bike stolen and I'd like to be able to check what's going on at the house when I'm not there.
+
+110
+00:59:52,380 --> 01:00:45,000
+Scott Tolinski: Yeah, you can occasionally get a little weird things. I mean, we live in a city so yeah, it's it's safe, but it's like it's a city still. Nonetheless, we had one of our neighbors It was like right down On the street, we're gonna save neighborhood and is like some random guy walking around in our backyard. Here's the footage. And it's like, sure enough, some random dude walking out of this backyard. And we're like, Well, that doesn't sound great. I don't want random people hanging out in my backyard and middle the night. Yeah, that doesn't, you know, so it's super cool. I like the idea of this. I'm gonna keep trying to flash this hardware. I got people on the GitHub helping me out. There's a getter too. So cool stuff. Next, we're talking about mesh Wi Fi. I have a Google Wi Fi, I got three little pods. I think you have a Google Wi Fi. This is like the app for Google Wi Fi is so good. It's so good. You can monitor devices, you can turn them off, you can kick things off the app, you can test all your your network strength all over the house and see your blankets and stuff. It's good. My big fan,
+
+111
+01:00:45,030 --> 01:01:46,230
+Wes Bos: I have the amplify mesh network, which is from ubiquity. ubiquity is like a corporate. Like they do commercial stuff. And then they made a for home one, and it works great. They have these little, the only thing I don't like about it is that the access points obviously need to be plugged in, they swivel so you can like you can tilt them and get like you can really see what the strength is. And that's great. But my daughter's friggin love twisting them because it's it's based on a magnet. And you can just you can yank the whole thing off if you want, which is like it's a great product. But it's so fun to play with that my daughters always do it. And they're like, Oh, stop touching the Wi Fi. And then yeah, it's pretty good though. I'm a big fan of that one as well mesh network. If you're doing any of this stuff, you definitely need a mesh network unless you live in like 1000 square foot house. We don't have a huge house but just like old plaster, multiple levels. weird thing, let's make the make the internet drop off and corner. So especially if you want to do cameras, you need Wi Fi outside your house and in your garage if you want to be able to be running these things.
+
+112
+01:01:47,190 --> 01:02:11,190
+Scott Tolinski: Word cool. So fire alarm co2, there's a Nest Protect the app, which is the big one, but those are expensive. I know my parents have the Nest Protect and they really like it that said we have no smart fire alarms or co2 detectors. We have a bunch of kitties all over the house kitties. Yeah. Because the brand and then just some really dumb annoying fire alarms that run out of batteries all the time.
+
+113
+01:02:11,220 --> 01:03:03,060
+Wes Bos: Yeah, we've got the couple NES protects, which I was really excited about getting them and we had the first generation which was susceptible to dust. And I lost it and went off in the middle of the night one hats up there smoke and I like kicked down the door of my daughter's bedroom at like 2am and I was like where's the fire? And I could not sleep the entire night. And yeah, because you think it maybe there's a fire somewhere? Yeah. And then I realized you can't put regular alkaline batteries in them. Because after a month, it thinks that the batteries are dead. You have to put like Energizer lithium in which are super expensive. And like who wants their smoke detector hooked up to the internet. So I think that that it's dumb to buy a smoke detector co2 detector that's hooked up to your Wi Fi. Yeah, you can get alerts when you're not there. But like what are you gonna do? If that's happening? I guess you could you could call the fire department.
+
+114
+01:03:03,690 --> 01:03:04,290
+Unknown: Fire Department. Yeah,
+
+115
+01:03:04,530 --> 01:03:19,290
+Wes Bos: that's that's thing but I don't know, I'm kind of underwhelmed, especially by the amount of like babysitting these things need they need to be updated. I think just a is a smart co2 detector and fire alarm to and one is probably a better buy
+
+116
+01:03:19,530 --> 01:03:20,610
+Unknown: word. Okay, so
+
+117
+01:03:20,610 --> 01:03:23,310
+Scott Tolinski: next is garage door opener. I don't have one of these Do you
+
+118
+01:03:23,370 --> 01:04:35,940
+Wes Bos: know I've been looking at it. So all garage openers made in the last like 810 years or so or 15 years operate on a certain frequency that is harder to crack than the earlier ones. So you can go online and find somebody like uses like a diary, like this girl's diary to open up all these garage doors, it's a bit harder to out but they're all based on this radio frequency. You can buy like $100 attachment that will work with most I think it's called like my link or my home or Chamberlain my my whatever, there's things online that will also like you can just buy like a like a 510 dollar ZigBee IR sensor and hook it up to that you could do it yourself. So that's kind of something I want to go with next the other the other thing you need to think about though is that that will just send the data but you also need data if it's open or closed. So in that case, you need another sensor on the door itself. I'm actually really interested in this because if our hatch of our cars open the door will scratch the hatch. So with a very careful that you close the hatch first and then close the garage door. So it'd be cool to like have a sensor on the car and a sensor on the door and a sensor on the closer and say do not close if the car is in open state. So it probably will never actually do that. But that's just a thought I yeah,
+
+119
+01:04:35,940 --> 01:05:22,320
+Scott Tolinski: that sounds like that sounds like a lot of work. Yeah. Next we have a couple of non connected smart items. I have some solar powered lights that are awesome. I also have some USB powered lights that are awesome that are also motion detection. But I've won that solar powered outside motion detection walk it goes on and off. That to me is a smart device because well you don't have to touch it. You set it up. It does things automatically for you but it's not connected to the internet. No doesn't need to be, I really don't care if this thing is on or off, but I want it to turn on or off. When I walk outside, I've actually been looking at some of those dangly lights that connect via solar power as well. That way you never have to find a plug in, you never have to look for a plug, I got a lot of stuff that isn't near a plug outside that is like not super ideal. Also looking at solar powered Christmas lights for next year, a little bit of fun stuff there.
+
+120
+01:05:22,350 --> 01:06:19,860
+Wes Bos: Mm hmm. On the same idea locks, we looked at the smart locks when we were replacing our doors. Like what first they're super expensive, we replaced three doors. So they're 200 bucks a locks, it's $600 right there. And the other thing is that it sucks to open your phone to have to unlock the door, if that's what you want. I know there's proximity ones that you can do with like a like an apple watch that be kind of cool to have. But we opted just to go with the dumb version of that, which is just a PIN code, you can load in code. So if you've got a cleaner or a tradesman coming over, you can add a code for them and then take the code out later. It's not like a nice slick app interface, but it works well enough and then we never touch our keys have been on it. Like I've said we I hate carrying keys I haven't used the key for my door, since we put these things in is simply just a nice little code that you punch in. And the only thing is, is that if the battery dies, you have to use a key. So it tells you probably two weeks before the battery totally pooches out which is good. So just something to think about there.
+
+121
+01:06:21,060 --> 01:06:27,780
+Scott Tolinski: We get locked out a lot so we've had a locksmith come to the house twice now. Oh, it might be time to get us some air lock totally
+
+122
+01:06:27,810 --> 01:07:30,980
+Wes Bos: we also have two roombas one on each floor I found one of them at a yard sale for really cheap and and then we bought the other one there. Okay, the Roomba you have to we joke all the time because we turn the room bond before we leave to like go to the mall or something. And then we come home we're like let's play find the body. Because it what happens is that it like not on the literal body not with the Find the Roomba Where Where did it go because it sometimes will like suck up like an iPhone cord you forgot to pick up or it will often get stuck on one of the heating grates, which is silly. So it's okay. It's nice for a little quick clean. But sometimes we think like, we just spent 15 minutes picking up everything off the ground, all the toys, all the little things that might get stuck in it. And then every time we come home, we find out that Oh, Roomba sucked up something that we didn't find and only cleaned half the house, just get the regular vacuum. Nice. So I think that's it, we would love to hear from you. But what you have suggestions, and then uh, Scott, what are you looking at doing and maybe the next one before the next show,
+
+123
+01:07:31,260 --> 01:08:03,720
+Scott Tolinski: I'm looking at motion sensors, door sensors, you know, to be able to determine if doors or windows are open just like some of the main ones one of our front doors like if it's not shut locked, I can just open on its own, which isn't great. Yeah, that's not a great thing. So I'd love to be able to know when that door is open. I have on here blinds but I'm not gonna buy a blinds. I think that's just an interesting idea. I'm going to be picking up more bulbs. I'm going to be picking up some, some light switches. And who knows, maybe based on the suggestions that we hear from our audience what people are using and liking. Maybe I'll be looking at something else.
+
+124
+01:08:03,749 --> 01:09:53,850
+Wes Bos: Yeah, the one that I'm teetering on right now is fireplace remote that is at least smart home because the what we do is we say like, okay, Google, I'm watching a movie or sorry, okay, Google, I'm watching a movie or Okay, Google shutter down and it turns off all the entire lights house, it's like eight different light switches, and it turns off the TV and then what we're hoping to do is then dim the upstairs light to like 10% so we can walk up and go brush your teeth. And then the one thing we have to do like a sucker is walk over and get the remote for the our natural gas fireplace and turn it off manually. So I don't like the idea of connecting fire to the internet. So I'm kind of out on that. But I do like the idea of it being all one command before we could I know this is this is very first world problem but I live in the first world and these are my problems. So I've been looking at hooking our fireplace up I want to get constantly recording camera so that these wise cameras seem to be it especially because you don't even have to hack them to constantly record you can just pop a SD card in the back and it will record a couple days for you which is nice you can go back and review all that footage and then the sensors so there's this Chinese companies show me that has tons of stuff if you go on this website called gear best you can import it they're the ones that make those scooters that you can ride in San Francisco and they make all kinds of smart stuff and they've got like $10 sensors galore. So I think I am going to get one of their hubs the Xiaomi hubback I would love to like have like a TV somewhere in our house that has all the temperatures and and everything like that That's the dream at least so we'll see. Other than that, I'm think I think we're going into the hub stuff which is what we're life hub life yeah. So that's it for today. Do you got any sick pics real quick? I know we're way over on time right now.
+
+125
+01:09:53,909 --> 01:10:11,790
+Scott Tolinski: Way over no my I'll just use sick pics the Philips Hue bulbs to keep it on brand here on topic. I really loved those bulbs. I did not really consider them and then when I got them based on a recommendation from a friend, I've totally blown away by the experience. I'm a huge, huge fan. And I'm gonna continue to acquire more
+
+126
+01:10:11,790 --> 01:10:18,390
+Wes Bos: awesome. Yeah, I'm gonna just everything I talked about today's is probably suspect. Shameless plugs, shameless plugs,
+
+127
+01:10:18,390 --> 01:10:29,479
+Scott Tolinski: levelup pro level up tutorials, comm forward slash pro a new tutorial series every single month, new features are going to be added to level up tutorials constantly This year, we're working on a lot of great stuff. So check it out.
+
+128
+01:10:29,699 --> 01:10:58,140
+Wes Bos: Awesome. All my courses, I make web development courses are available at Wes bos.com for slash courses, you can check that out and learn JavaScript, CSS, whatever it is, there's lots of free ones also paid ones. So check it all out. That's it for today. Thanks for sticking with us. If you have suggestions for your own Smart Home stuff, let us hear it or at syntax FM. I'm at Wes Bos WS POS and Scott is at stilinski sto LN sk II. Yeah, awesome. Nailed it. That's it.
+
+129
+01:10:58,170 --> 01:11:15,960
+Scott Tolinski: Also let us know what you're doing with web stuff in here. Yeah, using any fun web stuff. If you're, you know, hacking this stuff in any sort of way, and writing your own interfaces. I want to see it. I want to hear about what you're doing. I think that's interesting. So maybe we'll get into a little bit more of that in the part two, when we talk about this in a couple of weeks. All right. That's it
+
+130
+01:11:15,960 --> 01:11:19,140
+Wes Bos: for today. Thanks for tuning in. We'll catch you next week. Please.
+
+131
+01:11:21,140 --> 01:11:30,890
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

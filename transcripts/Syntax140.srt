@@ -1,0 +1,328 @@
+1
+00:00:01,319 --> 00:00:10,560
+Announcer: You're listening to syntax the podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski and West boss.
+
+2
+00:00:10,589 --> 00:00:48,090
+Wes Bos: Hey folks, welcome to pa syntax Welcome to syntax. This is the tastiest web development podcast out there. Today we are having a potluck which is submitted questions by you. If you ever have questions that you want us to answer related to absolutely anything you can go to syntax.fm in the top right hand corner, there should be a ask a potluck question. You can submit your question in there. If you have a hard to pronounce name, please give us pronunciation as well, because we tend to butcher it with me today, as always, Scott Tolinksi ski. Hey, how's it going today, Scott? Oh,
+
+3
+00:00:48,090 --> 00:01:10,500
+Scott Tolinski: I'm doing good. It's a little it's a little rainy out here. I'm ready to go. Ready to kick this week off. I just finished recording my latest course. So there's a little bit of weight off my shoulders. I have a built in deadlines that I just hit nyama. And good rage start Devin. I'm working on a full rewrite of the CSS for level up tutorials. And it is fun. It's actually a blast. I'm having a great time.
+
+4
+00:01:10,649 --> 00:01:49,350
+Wes Bos: Oh, man, that's awesome. I've been just chugging away at my JavaScript course over like, I've had so much travel and workshops and conference talks. And little things pop up here and there. No, yeah. Last week, I've had nothing, not a meeting, no, nothing that could get in my way. And I've just have been having such a productive week, I even got sick. And I still feel like I got a lot done that week. So it's just like a, it's just a good reminder that like, these things are really fun to do. But like at the end of the day, my business is just like making courses. And it's really nice when you have time just to like, focus in on what it is you've been wanting to do for so long.
+
+5
+00:01:49,499 --> 00:02:30,360
+Scott Tolinski: Yeah, absolutely. I know in my last courses on animating in react, and it's the thing that is like, really love with react spring. So because I just did all this work to to dive into react spring and get like really, really comfortable with it. And sure enough, I get to turn around and on level up tutorials, just use all of that stuff I just taught, I don't have to look at the docs, it's so fresh. In my mind. I'm just like breezing through some nice little animations and transitions. So I'm having a good time with it. And I'm using custom CSS properties for it, which is fantastic. I'm gonna show you that. I love it. So you want to get into some of these potluck questions here. Yes.
+
+6
+00:02:30,360 --> 00:04:11,490
+Wes Bos: First, before we get into that we are sponsored by two awesome companies. First one is century going to do all of your bug errors and exception tracking. And the second one is Freshbooks, which is cloud accounting. So our first question today is from Mike. The question was media queries. I recently started a static site. And I want as much of the site as possible to change layout with just CSS first sponsor design. I'm comfortable media queries, but often find times the design is very different between sizes. It is easy to tame the complexity of repeated data for different component views by keeping everything in sync. But is it good practice to put two completely different component level views in a single HTML file? Does the repeated data in a static HTML have any effect on SEOs? I like this question a lot, because I just did a YouTube video a couple weeks ago called like, the impossible CSS layout where somebody tweeted a picture at me and said, like, hey, like this layout? Like, how would you do it? It was like, paragraph, image, paragraph, image, paragraph image. And then at a certain breakpoint, it went, all the images went to the left and all of the text went to the right. And you think like, No sweat grid can handle that. And then you get into Oh, no, like, grid isn't good at doing that. Because you have grid rows to think about? And you're like, oh, Flexbox, like, Oh, no, it doesn't really do that. Either. You can't really reorder them into columns, you think, oh, CSS columns, and then you can't you can't really put items into specific columns, they go floats on like, Oh, no, there's no like clear fix issue where the text is longer than the image. And it turns out was just not possible to do it at all. So the solution at the end of day was either to do some JavaScript or to just duplicate the HTML, like, output it twice with whatever CMS you're using. And question is like, Is that fine? Or do you think about that?
+
+7
+00:04:11,939 --> 00:04:36,540
+Scott Tolinski: I don't think that's fine. I don't think it's fine for a couple of reasons. And they say it's not good for SEO. But I don't know the specifics of this. And I'm going to need some accessibility people to bump me up here. But if you have something in the HTML twice, and I don't know if it's if it's display none if this comes into effect here is the display none. On the element itself. Is it gonna get picked up by screen readers? It won't be it won't be okay.
+
+8
+00:04:36,569 --> 00:04:57,950
+Wes Bos: No, well, I think if something is hidden, visually hidden, either by display none, or visibility hidden, or you just have like the hidden attribute on an element, both at Google won't see it. And accessibility readers won't pick up on it either. So I think it's fine. If you ever have to do duplicate content like that, then it's it's totally fine to do that.
+
+9
+00:04:58,169 --> 00:05:15,890
+Scott Tolinski: Yeah, I just It feels weird to me. For some reason I have does Yeah, duplicate navigation and level up tutorials, because the nav is so different from the main now. Yeah, however, I'm actually toggling it via, like it's mounting and unmounting out of the DOM, depending on the browser width. So Oh, yeah,
+
+10
+00:05:15,930 --> 00:05:50,940
+Wes Bos: see, you add and remove it with react, it's super easy to do something like that, because it will just add and remove it. But if you're not using that, if this was me, I would probably pop a hidden attribute on the DOM element by default. And what that will do is it will ensure even if your CSS doesn't load for whatever reason, or if Google crawls it without CSS, the hidden attribute will make sure that it's actually visually hidden. And then you can just add and remove that attribute yourself. Because I think that's even better than than CSS because like the hidden attribute describes the the DOM content, regardless of, of what CSS is being applied. Interesting.
+
+11
+00:05:51,210 --> 00:06:02,250
+Scott Tolinski: Yeah, I don't know. It still feels wrong to me. But at the end of the day, if you got to do it, you got to do it. Some of this, like wording in this question leads me to believe that like, maybe the design needs to change a little bit.
+
+12
+00:06:02,400 --> 00:06:10,500
+Wes Bos: I was just gonna say that. Yeah, like, part of being a good designer is knowing your your limitations, like part of being good designers pushing your limits, right, but also knowing
+
+13
+00:06:10,500 --> 00:06:35,220
+Scott Tolinski: them, but also so like, the website, or the app that someone is using on their phone? Like, how is it going to be that much different from the desktop app? Like, do you want to have the experience be so much different? That it's like an impossible? Like, if it's just layout, I guess? Yeah, I don't know. To me, it still feels really, like there's an issue here with the initial thought process in the design. But that's just me. Yeah,
+
+14
+00:06:35,460 --> 00:07:06,300
+Wes Bos: yeah, I agree. I've done it maybe four or five times over the last couple of years where you do duplicate content, just because it is totally different. Maybe it's like a gallery or something like that. And you just can't make it work with CSS, or you're doing some really funky stuff with CSS where the other day, it's probably better just to make two different components or two piece of HTML. But I would probably take another look at your design and figure out because I think the flexibility of grid and Flexbox is pretty flexible. And if you still can't do with that, then maybe reevaluate the design.
+
+15
+00:07:06,570 --> 00:09:13,890
+Scott Tolinski: Cool. So let's get into this next one is here is how should a mid level developer know when it's time to leave the current company, his tech stack, a decent reason, even though he or she is happy at the place, but feels like they are not growing enough? Yeah, this one is tough, because again, you don't want to leave a company, in my opinion, without having something else lined up. Like, every time I've quit or left a company, it's because a better opportunity showed up, someone was willing to pay me more to do something that is actually interesting to me, or a company that was a nice, nice change of pace, or everything that everything that they had, this is something that I wanted. And that's why I would leave a company. So I've never been afraid to interview while I had a job. Because even if they offer you the job, you can always say no, right? You don't have to accept any sort of job that you've been hired. So if you interview for a job, you learn a little bit about the company culture and all this sort of stuff, and it doesn't seem to be the right fit will then just abandon it. And if you interview for a job, and it seems like the holy grail of jobs for you, and they're gonna pay you more, and your commute time is less, and there's like a lot of positives here, then it's a tougher choice. But you know, I would never limit yourself to say, Hey, I'm looking for a job, or Hey, I'm not looking for a job, I would say my ears are open to opportunities that are going to be good for me in my career. So is the tech stack a decent reason? Yeah, it depends. I was working at a job that was just doing straight up WordPress sites, and an Drupal site. And it's not like I didn't like Drupal. But we were limited to using a certain version of older Drupal that I did not particularly like. And there was just like a lot of limitations on the stuff that we were able to write. And so for me, it did feel like I was sort of drowning in and not advancing my career at all. And that was the reason why when a job came along, I was happy to accept the job for a number of reasons. But again, yeah, I would just keep yours open apply for stuff that's interesting to you. And then if if it's not good when you get there, you don't have to take it.
+
+16
+00:09:14,010 --> 00:10:40,110
+Wes Bos: Yeah, that's a really good answer. I like it because you don't have to accept the job right? The thing that sticks out to me in this question is that they say he or she is happy in their place so think like being happy in your job is very underrated because oh yeah, there's probably a lot of people that make really good money in are absolutely miserable at their job, or they have a brutal commute. And like I see that personally a lot where I live we're live about I don't know, like an hour commute into the the big city and there's lots of people that live in these huge houses and they're absolutely miserable and their job but they've got this like sort of lifestyle creep that they have to sort of keep up with and it's really frustrating to see people like that because they feel like they can't make some sort of change because of that. So I think that's one reason maybe if you're happy that's that's a reason maybe to stay in and just To keep looking at it, if you don't think that there's room to grow, maybe talk to the person who Who's your boss and say like, hey, look, I feel like I'm just stagnating in my skills, this is ever moving industry, maybe we should move up other opportunities, shorter commute time is probably well worth it. Money, obviously is a big factor. They're working on things that you are passionate about. So maybe you're not super stoked on like real estate websites, maybe you are, maybe you're not, but you get the opportunity to go ahead and work for a business that saves cats all day long. And that would be like really fulfilling for you. So there's just so much that really goes into it. But I think pretty much what Scott said is most important. Yeah, and
+
+17
+00:10:40,110 --> 00:11:12,299
+Scott Tolinski: I personally left a job that I really liked for one that I ended up not liking, it had a worse commute, it had, the pay was better, but like the work was not as good. So you know, you can always make those changes and possibly regret those changes. But at the end of the day, just take it out, get a new job, move on, you know, this is one of those things that there is if you hit a crossroads like that there is a potential that your new situation isn't going to match your old situation. And that's okay, too, even if it is a bummer. A little bit. So
+
+18
+00:11:12,419 --> 00:11:14,279
+Wes Bos: yeah, you might goof it up,
+
+19
+00:11:14,279 --> 00:11:15,210
+Scott Tolinski: you might move it up.
+
+20
+00:11:17,429 --> 00:13:24,270
+Wes Bos: Next question we have here from Chris is should I worry about critical vulnerabilities when installing an NPM package? So right now, when you install, I think, as of NPM, was it six or something like that, when you npm install something, it also does a security check to see if any of the package versions that you are using, or if any of the dependencies down the tree and we all know as as node modules and NPM installs works is that sometimes you can go 400 levels deep have dependencies have dependencies having dependencies and if anywhere down that tree, there's any sort of vulnerability, it will report to you that there's like 400, mild, or I don't know what they're called, there's a critical, low, high, mild text max version of vulnerability. And the question is, should you be worrying about that, specifically, the critical ones? And I think he absolutely, first you should check out what's going on. But I think what's really important is that you should figure out it, can I easily upgrade this, if so, why not go for it, if it's an easy upgrade, you get rid of that Father ability, then you can sleep easy at night, sometimes it's a whole version bump, they fix it, they don't like patch, the older version that you're working with, and they bump it to the new one. And I specifically have this with my courses, sometimes where the course is built on a specific version. And the next version up API is slightly different. It's not really any new features. So we'll just stick with the version we have so that people don't trip up. But then when people npm install, you get critical vulnerability in the thing, and that's not great for being scared. But if you go and see like, what is this vulnerability, almost always it's just like this super weird edge KC thing where like, if you use this and a certain way with a regex, then there's a slight possibility that if you have logs that are viewable, there could be a big security. So go ahead and look at how would you have to use this thing? Because there might not be a use case where like, Oh, I didn't actually use it in this specific way. And it's it's not actually a vulnerability to me. And it's kind of scary to think about, but of course, just go ahead and review your code. See how you actually are using that specific package?
+
+21
+00:13:24,330 --> 00:14:24,000
+Scott Tolinski: Yeah, definitely. And also, like, what are the stakes of this packet like this? What are the stakes of this project? Is this client work? Is this public facing work? Yeah, this is some like private, just exercise that you're doing for yourself. I like wouldn't even necessarily as long as there's no, like, security concerns there. Like if it's just a mess around sort of thing. I don't know, I might not worry about it. But for the most part yet, you do want to you want to check this out. One of the things that I wanted to mention here about like upgrading your packages was do you use yarn or NPM? I use NPM. Okay, well, yarn has a really sweet upgrade interface called the upgrade hyphen interactive, and it'll give you a green, yellow or red letting you know if it was like a major version change or breaking change. And so that way, like you can Yeah, you can see quickly all of your packages, it's sort of like the there was an NPM package that did some same thing. But this gives you an easy thing. You can see all your green ones, this should be cleared update, you can update them, and just move on. And hope that fixes it.
+
+22
+00:14:24,210 --> 00:15:02,909
+Wes Bos: Yeah. And on NPM we also have something called NPM outdated. So you just run it and it will show you what packages you have what current version, what current version you have installed, what is being matched by the what's the called with the three dots? What's it called sis seven, their semantic versioning. And then what the the latest version is, I specifically use an external package called NPM. Check update. Yeah. And then I just run ncu on my repos all the time, and it'll, it'll show you what needs to be updated and you can either just push it to the package JSON and accept them You mainly can go through and update them as you need it.
+
+23
+00:15:03,049 --> 00:15:52,710
+Scott Tolinski: Yeah. ncu is the one I was I was trying to come up with. All right, next question here. I've had the idea for styling one side, two different ways professional slash artistic, and giving visitors a button to toggle between the to, to gimmicky. And a secondary question, how did you pick your brand color? Well, okay, so the first question is, they want to build the site and have a button that's going to toggle the visual interface, take it from professional to artistic, and they want to know if this is too gimmicky. I don't think this is too too gimmicky. I think this is cool. I think this is fun. And like it again, because it's like sort of none. It's not important, really, it gives the user the option, and they'll see the button, maybe they click it. And as long as everything is cool, and fun and good, then I think it's gonna be kind of cool. I think this is great.
+
+24
+00:15:52,890 --> 00:16:59,010
+Wes Bos: Yeah, I think it's really fun as well. I remember back when I was just getting into web development, there was this band called the junction. And they had this song called Good morning. And what they did is that they had a different design for Good morning, good afternoon, and good evening. And then depending on the time of day, it would load the different CNS. And I thought that just blew my mind at the time was like, how do they know what time it is in the website, and I just I couldn't even fathom how that could possibly work. And I'm like, they must be running PHP. Like that. And there must be a way in PHP. Like, I just like, I have such fond memories back then. Because I like I just remember thinking of like, all the possibilities of web development back then. And now like, I'm just jaded old man, like, of course, you could use PHP to check the time, depending on what server the located in. But I thought that was was really, really funny. I think it's cool to go ahead. And that's sort of the idea behind the whole CSS Zen garden as well, where you have the same markup, and you should be able to style this thing differently. Given that you have nice semantic markup,
+
+25
+00:16:59,100 --> 00:17:09,720
+Scott Tolinski: I still love CSS and Zen Garden. I remember being just absolutely blown away by some of those examples at the time just being like, how can you do all of this with CSS? Yeah, this is amazing.
+
+26
+00:17:09,959 --> 00:17:23,490
+Wes Bos: We should do like a syntax garden or something like that, where we come up with some markup and then see how everybody styles that differently. It's a great idea. That's Yeah, if you want to see that tweet us at Wes Bos goddess asked Alinsky.
+
+27
+00:17:23,840 --> 00:18:16,470
+Scott Tolinski: Yeah. Okay, secondary question. How did you pick your brand's colors? I didn't pick my brand's colors personally, despite loving purple and teal. I think for some reason, the designer just sort of telepathically knew that purple and teal were some of my favorite colors. So now we worked with a designer, he came up with the logo and the brand's colors. And we went from there there was originally sort of like a neon greenish involved to that we have not been using, just because there's a lot of colors going on. But yeah, so purple, and teal. You know, I used to like, I used to have a ton of purple and teal stuff growing up. Obviously, I had the Charlotte Hornets starter jacket, like a lot of kids did, and just have like, t shirts and all sorts of stuff. So now it's just the colors fit me very well. I saw them I was instantly like yes, this is where I want to go.
+
+28
+00:18:16,550 --> 00:19:02,160
+Wes Bos: That's funny. Actually, mine goes back to basketball as well. I when I was a kid, I loved the Lakers, and they were purple and yellow. Yes. And I've always stuck with a specific yellow regardless of where I'm going. With my design very early on, I did purple and yellow than a my current website is like, like a kind of a light black in yellow. Obviously, I've my cobalt to everything, which is a very specific blue, those colors came from there's the original theme called cobalt, which was it looks fairly different. But it was based on being blue. And then I sort of tweaked in pick the perfect blue that I like, and I've always kept that yellow. And then my new website again is going to be like sort of a black and yellow grungy. So. I don't know, I just always stuck with it. It just I feel like regardless of where I go that specific yellow always looks good.
+
+29
+00:19:02,489 --> 00:21:54,510
+Scott Tolinski: Yeah. Cool. I like your colors. Thank you. Speaking of purple, one of our sponsors today is also purple. And they're gonna make you not feel purple, they're gonna make you feel very green, and good and happy. Because this century here, is@sentry.io is going to be the place where all of your bugs and exceptions live so that you can solve them. Right now I'm staring at my century, and I'm seeing a couple of instances of some errors that have been popping up overnight since the last build. And I know what I'm going to be doing this afternoon, I'm going to be taking care of these issues. I'm going to be referencing them to GitHub issues, we're going to be tracking them, we're going to be completing them. I'm going to be assigning my build to be a new build and century so that when the new build goes up, I can see if there are regressions. So this is one of those tools that again it makes your life so much easier. If you have a project that people are looking at people are using. You're going to want to use century head on over to century.io And use the coupon code tasty treat all lowercase all one word, and you will get two months for free. That's more than enough time to find out that why Sentry is so, so awesome and why we like it so much over here at syntax. So head on over to sentry.io coupon code tasty treat. Alright, next one, any sick tips on a career change. I'm a full time employee with two kids and a lovely life who wants a fulfilling career. I throw as much time as I can to study but I feel like there isn't enough time there isn't enough to apply for jobs. I've always been the one to cast a pretty wide net. When it comes to this sort of stuff, I apply for a lot of jobs, I just go for it. I apply for jobs that are above my league. I go into do interviews for things just for the experience to get better at interviews. I think some of it is if you aren't getting callbacks and you aren't getting advancement in sort of interviews, you might need to look at your process, what are you doing to make yourself stand out, I always bring or do a personalized cover letter. For every single job interview, I do a little one page personal cover letter, I tune my resume for each thing that I apply for. And so my sick tips on career change is cast a wide net talk to a lot of people, a lot of times these jobs, they show up or they're being presented and things like meetups, and if you will have an actual personal connection with somebody at a meetup, they used to say, Hey, hi, I'm here, I'm a real human being, then that could help you get your foot in the door a little bit. So I would make myself visible, I would talk to a lot of people tell people that you're looking for a job change, go to those meetups and hopefully try to get this this get this career change going because trust me, once you're over once again, once you have a dev job, it's easier to get another dev job. So just just hustle for that first one,
+
+30
+00:21:54,539 --> 00:23:12,300
+Wes Bos: you got to get your foot in the door at some point, planning just thinking of people that I have seen who have made that sort of jump. And even like I might workshop, I forgetting his name, apologies if you're listening to this, but he is working at the Apple store as a genius right now. And he's looking to make the jump into web development, which coincidentally is also the exact path that Tom Dale is of ember fame has taken as well. So I thought that was pretty cool. I let him know that. But he's just like, perfect. Like I always see him on Twitter, I always see him on Instagram, I always he's he was all over the conference, first row of the workshop. And obviously putting a whole lot of time and stuff into this, I think as much time as is putting into the actual skills he's putting into the actual like meeting the right people and getting in front of people and all that good stuff. So I thought that was a pretty cool way. I also think that we should probably get somebody on the show that is like, like the hires, not like a, I don't know, someone that has hired a whole bunch of people. We have somebody lined up that we're gonna talk about hiring juniors, Mm hmm. But also some someone that knows about making this jump because it is frustrating when you only have like an hour or two a day to devote to this stuff. And you you want to make the switch. But you might have to sort of keep at it for a couple years before you can get your skill set to where you want it to be.
+
+31
+00:23:12,419 --> 00:24:08,820
+Scott Tolinski: Yeah, I mean, I've been hiring. I've been a part of the hiring process. Courtney's hiring somebody right now. So I'm like, really experiencing some of the things that she's experiencing with this hiring process. And let me tell you, there are some bad, bad resumes, candidates, interviews, you name it. And I just, there are so many times we had a, I don't want to call out too much about this, because I doubt this person that's listening. But we had a job interview one time, and it was at a computer store. And we asked the guy, okay, here's the situation. You're repairing somebody's MacBook, your hand slips, he'd knock a capacitor out the logic board or something, right? You break their logic Park, what do you do? Like what what is the what is the step? And this guy comes back with this. This is an interview. And he says I would order a new one from Apple and pay out of pocket and not tell anyone.
+
+32
+00:24:09,779 --> 00:24:10,500
+Wes Bos: Oh, my God,
+
+33
+00:24:10,500 --> 00:24:14,880
+Scott Tolinski: but never you man. Like that is the worst answer possible. Like why
+
+34
+00:24:14,880 --> 00:24:15,630
+Unknown: would you just
+
+35
+00:24:16,109 --> 00:24:45,780
+Scott Tolinski: tell somebody and get it taken care of and apologize? Like, I just couldn't believe that, like what the thought processes that would go through somebody's head to give that question. So if you struggle with confidence in interviews, I know some people struggle with confidence in interviews, just remember that guy. Remember the person who said that they were going to unethically you know, sweep it under the rug, and know that that's who you're up against a lot of these times. So just know that there are bad candidates and you're probably not a bad candidate if you're putting in the time.
+
+36
+00:24:46,019 --> 00:25:48,360
+Wes Bos: Next one we have from anonymous. Within the next two years. How well do you think Web VR and web xR? What's web xR? It's a great question. Let's look it up here, head to the Google Web. xR device augmented reality Oh, this is Oh, this is the augmented. The specification describes support for accessing virtual reality VR and augmented reality AR. So xR must be the spec. That's from the W three C. Oh, yeah, this is just updated two months ago, the spec for the API on the web. That's, that's pretty nice. Pretty neat. Yeah. Anyway, so Web VR and web as xR technologies would fit into mainstream development in a frame spark AR react 360 in normal websites and applications. So I'm very curious to see what you think about this, Scott, cuz I've always not gone into this at all. Hmm, primarily, because I've never been a gamer. And it doesn't appeal to me really all that much. There's a few augmented reality, like the measuring app on the
+
+37
+00:25:48,810 --> 00:28:21,780
+Scott Tolinski: a lot of augmented reality stuff that would I think it's gonna change your life, I think, yeah, reality will change your life. Yeah. So I guess that's my thoughts on it is so VR is really cool. And I'm really interested in in VR, in general, for a lot of reasons, like the thought of it. And this is sort of this is sort of terrifying, like feature sort of thing. But like being able to put on a VR headset, turn on the little misting fan, and this little lamp and pretend you're on the beach. Like, if you can't go to the beach, that's probably just pretty second best for like meditation wise, right, you could meditate on the beach. And there's like a lot of like practical applications, or one of the cool things I was looking at when I was getting into speaking was using a VR headset to practice speaking in front of crowds, because you can put on a VR headset, and see yourself in front of an audience, right. And there's a lot of like, really practical applications beside or be beyond gaming for this sort of stuff. But I think AR is one of those ones, that's going to just really just sort of blow everybody's mind once they're using it all the time. And once the the VR, or the AR implementation that comes out, that's like perfect, I think things are going to be really wild. So imagine this, you're you're at the you're at the store, you see several bottles of wine, you could just point your phone at them. And all of a sudden, you're getting user reviews just sort of hovering over them. You're it's almost like you're getting notes, tasting notes, because how much can you have on that little card that tells you about the bottle of wine, this can give you like maybe unbiased user reviews or whatever you just holding up your phone places, or visualizing a tree or landscaping in your backyard or visualizing furniture inside of your house. I mean, there's just so many interesting practical applications for AR and I know a lot of companies are doing it already using the native implementations on on iOS on their eyes. Yeah, like their IKEA like putting items in your your house or and things like that. I don't know, I think this is super cool. I haven't heard of WebEx before I really want to play around with this. Web VR is something that I've been really keeping keeping my eye on, there's a react VR for those of you react fans, I don't know, this stuff is really interesting. So within the next two years, how well do you think these technologies would fit into the mainstream? You know, I think they're going to be more mainstream. I don't think VR websites are going to take over normal websites anytime soon. I think AR is more likely to slowly creep until we're doing a ton of AR because again, that measuring up the furniture stuff, all that stuff is like creeping in. And I think it's gonna continue to creep until there's that like, perfect implementation of it.
+
+38
+00:28:21,960 --> 00:29:36,690
+Wes Bos: Yeah, I think Web VR is gonna be a little much for people to strap on some goggles. And I think that's that's a whole nother thing. But I think something like when we got GPS in our phone, that was like, Man, that's so handy. It's so handy to be able to have maps and be able to point where I want to go or figure out what stores are close to me and think like the Web VR or VR AR augmented reality is going to increase that handiness a whole lot more though. So IKEA Shopify, if you want to buy like a lamp, you can already do this on their app, you can just look at your room, and it will place that item, you can see what it looks like in there. I just measuring so things like I do a lot of online classifieds. And I sometimes see people use the measuring app on the iPhone to just measure like a desk or something like that. So much easier than having to just like measure it yourself and then write it down. And then for the person to figure out okay, the they have to like superimpose those measurements in their head on top of the actual thing. I think that's going to be extremely handy directions to items inside of stores. I know you can like Like Home Depot. If you want to know where something is. It'll tell you what I'll things like that. But imagine just like holding up your phone and telling you to go left, right straight.
+
+39
+00:29:36,930 --> 00:29:50,700
+Scott Tolinski: And Google Maps is sort of doing that right now. I don't know if it's in all of the versions of Google Maps, but there is a versions of Google Maps, whether it's like a beta or something where you can hold up your phone now and you're getting augmented, like really? pathfinding. Yeah, that's
+
+40
+00:29:50,700 --> 00:29:56,250
+Wes Bos: what I want. Yeah. Oh, that's awesome. I can't wait to get that. I don't think it's on iOS. Yeah,
+
+41
+00:29:56,580 --> 00:29:58,950
+Scott Tolinski: I just my Google's just triggered
+
+42
+00:30:01,740 --> 00:30:28,410
+Wes Bos: That's awesome. Yeah. So I think that it's going to be really cool. I would watch that web xR, which is the the API for bringing VR and augmented reality to the web, just because like, like, like all things when there's something new, it's just ripe for conference talks in YouTube videos and blog posts about how these things work. And if you want to sort of hit your, we always say this wrong, hit your dog to that wagon, or whatever
+
+43
+00:30:28,800 --> 00:30:30,390
+Scott Tolinski: you want to hit if you're a good
+
+44
+00:30:30,390 --> 00:30:33,600
+Wes Bos: wagon to hit your horse to Yes, we're hitting
+
+45
+00:30:33,600 --> 00:30:34,410
+Scott Tolinski: horses.
+
+46
+00:30:34,830 --> 00:31:55,050
+Wes Bos: We're hitting horses here. All right, next question. What do we got here? This is from TC, should I learn full stack JS or jam stack for freelancing? So we'll go through it real quick, full stack JavaScript means you do the front end, whether that is statically rendered, whether that is something like react or view, then you also do the back end, which is something like like a no jazz on the back end, or PHP back end, Laravel, whatever that's that's kind of the idea of full stack. Jam stack is the front end is just a static generated site. It's JavaScript API's and markup. And you can have react on the front end, and then that that will talk to a bunch of API's via back end. So the thing about jamstack is that you still need something on the back end. And there are plenty of companies that are willing to give you some sort of service, that will be that back end for you. But at a certain point, you're going to need to implement some sort of custom functionality. And if that's the case, you're gonna have to build up some sort of server side, or you're gonna have to spin up some serverless functions, you're still going to write some node. So I don't really think that there's all that much difference here. It's just sort of an implementation or a cool name. But the whole jam stack phrase is trying to be pioneered by these companies, because it's a good name to sort of encompass this new way of building websites.
+
+47
+00:31:55,050 --> 00:32:57,600
+Scott Tolinski: Well think about that, you know, my, my first inclination is just always say, go with whatever you're the most comfortable with. So learn Jas deck, or full stack for freelancing. Yeah, if you're learning in both from scratch, I would just pick the one that calls to you the most, maybe dip your toe in a little bit of jam stack stuff, and maybe you're feeling like there's too many pieces to it, or dip your toe into full stack, and maybe you're not feeling comfortable all the way up the stack and down the stack, whatever, I would pick the one that's easiest for you to build things quickly, fastly, especially if it's for freelancing, a lot of the things that freelancing is going to be about saving you time, you don't want to spend a ton of time on your projects, you want to get them done, you want to get them, you want to get them to be excellent. And you want to get it out, you want to push it out, so that you can cash in and move on to the next one. Because freelancing is one of those gigs where you always got to be moving on to the next one, you don't want to spend way too much time on one project here. So again, you want to do something that you're efficient in. And that's pretty much my my outlook on that.
+
+48
+00:32:57,860 --> 00:33:26,760
+Wes Bos: While we're talking about this jam stack. Do you see that Netlify you obviously saw this because I was at the conference where they showed it to us Netlify announced this thing called dev MX, which is going to allow you to sort of run all of the things that Netlify runs in the cloud locally. So it will make your sort of development process a lot smoother. You can run things like serverless functions locally, and you can without having to deploy them to the cloud in order to test them out. What do you think about that?
+
+49
+00:33:26,850 --> 00:33:33,750
+Scott Tolinski: Yeah, not only have I seen this, Wes, used it? I've already used it. Yeah, no, it was probably
+
+50
+00:33:33,750 --> 00:33:35,850
+Wes Bos: converted your whole platform to it already.
+
+51
+00:33:37,980 --> 00:34:36,270
+Scott Tolinski: was talking to Sean a little bit about I had, I had an issue where like, I have a site on Netlify. And the contact form is like more complex than just like, Alright, here's the form, send it to somebody. Like there's a lot of steps involved in like, if it goes to this person than these emails need to get fired off. And so I dove into functions. And so one of the things is when I was first looking at it, john was just like, oh, you should use Netlify dev to try it out. So I tried it out. I wrote my functions. I tested it, I pushed it up. It's a it's still in beta, right? It's not quite there. There were like a couple little weird issues. And it could have been with my platform or my setup. And like right now sort of the deploy sort of scheme for things is quite quite right for me. But the system was really nice. And it was really easy to get going once I I used one of their their templates, I just did like emails have lit and it just threw a bunch of code. And now I have it. It's great. It was very smooth.
+
+52
+00:34:36,380 --> 00:35:10,230
+Wes Bos: Yes, one problem I have with sites now right now I'm actually working on moving my course platform over to sites now and they don't have any sort of solution. They say they're working on it, but I don't have a solution for running it all locally. So if you want to like run it locally in here like make you have to like replicate the entire like server locally with your own custom Express and just hope it works exactly the same as before. ploy, which is odd. So hopefully, it'll come out with something like this because I think the whole like serverless thing is a little bit too hard. And there's a lot of companies working on it right now to make it a little bit smoother.
+
+53
+00:35:10,400 --> 00:35:39,170
+Scott Tolinski: Yeah, I like it. Because it does, it reminds me of my own platform, because I have my server side stuff sort of side to side with my UI stuff. So yes, my API just lives in a folder, and then I only have one start command, I don't have to worry about anything, and it just just works. So yeah, I had a pretty good experience with the nullify Dev. I can't wait to see what it's done. Okay. Here's the next question from Leo. And this question is front end development dying? No, it's not it's not dying? No,
+
+54
+00:35:39,330 --> 00:35:45,210
+Wes Bos: I don't know why. What kind of question is that? Why would it be dying? Like, what is it being replaced with my interface?
+
+55
+00:35:45,230 --> 00:35:50,460
+Scott Tolinski: Yeah, I know, people will be like it's being replaced with wisdom. No, you don't know what wisdom is, if you're saying that.
+
+56
+00:35:51,510 --> 00:35:59,190
+Wes Bos: We should do a wazzle show. Just to get out what that is. We haven't done one yet. Have we know what web assembly?
+
+57
+00:35:59,210 --> 00:36:44,130
+Scott Tolinski: Yeah, we should know, we should we should put that on the docket. The ad, no front end isn't dying. It's getting better and better. And it's, you can now have a progressive web application in the Google Play Store. If that tells me it's like more than not dying. It's it's flourishing. As this typing, he's typing. Are your books dying? As a segue for me to get into Freshbooks advertising? I love it. I love all the exclamation points and question marks you put here was, yeah, are your books dying? is a good question, because maybe you should be looking at new, fresher books. And Freshbooks is one of our sponsors. Today, they've been a sponsor of syntax for a very long time. And fresh books is the amazing cloud accounting software that will keep you and your books organized.
+
+58
+00:36:44,399 --> 00:37:27,230
+Wes Bos: Yes. So if you have any sort of small business that you're trying to run, it takes up a lot of time, just sort of managing the books, inputting expenses, taking photos of receipts, following up on late payment, reminders, all of that stuff takes away from your actual business. So I suggest you that you sign up for Freshbooks, with his cloud accounting to manage all of that for you, it will automate a lot for it, you can hire somebody else, just to input all the receipts for you. That's specifically what I do, just because that's, that's probably the biggest task for me, and I have someone else do it right into the Freshbooks team account. It works really well go to freshbooks comm forward slash syntax, you're gonna get a 30 day unrestricted free trial. And thanks so much to Freshbooks for sponsoring.
+
+59
+00:37:27,650 --> 00:39:06,110
+Scott Tolinski: Thank you. All right. Next question here. How do you deal with CSS and .js, when you have one off stuff, a couple of components, selectors, like CSS Grid container, and a grid child, CSS feels very verbose for this use case, this is from Ben greenhouse. Now, I, I basically organize my stuff like this, I have my elements that I'm going to be using over and over again, it's my reusable stuff. And then if I ever have any individual one off styling, those live in the components where that component is used, that's pretty much it. I think some of this stuff with CSS, once you get into it, and you have, you're noticing you have a lot of one off stuff, you have too much one off stuff, maybe there's something with your system that's worth looking into, maybe you're just tacking on a bunch of stuff to your system, typography, I think that's actually like a thing for me. Now, if I noticed that I'm defining font sizes, then I need to do something. Because my font sizes should be part of the system, I shouldn't have to have a one off component to define font sizes or something. So for me, again, I keep all of my reusable elements in one place and an elements folder. And then if it's a one off thing, this this design, this layout, this is only used in this particular space, I define it in the file and just use it as a status component. And that's that's that there are a lot of other ways that you can go about it with like the CSS Prop, or maybe the style prop that comes within react, and you can just have it as an object for CSS. There's a lot of things but yeah, does it feel for both? Maybe, maybe it feels verbose to define these components in this way, but I don't mind it. That's just me personally.
+
+60
+00:39:06,570 --> 00:39:40,230
+Wes Bos: Yeah, it's specifically mentioned, like think of a grid area, where you just have one element needs to go in a specific area, if that's the case, like Scott said, use inline CSS. So on react, you can have a style prop in any other thing. I'm sure you can just use style equals, and then just apply it directly to the element. There's nothing wrong with that. It's sort of sometimes people think like, oh, if you put CSS as an attribute on an element, that's a bad practice. And it's not it's like, obviously bad practice if you're doing that a ton, but that's exactly what it's for is when you need to just directly attach it to something because that's a one off.
+
+61
+00:39:40,460 --> 00:39:46,740
+Scott Tolinski: And if you want to get on that note, have you used the the CSS prop and styled components,
+
+62
+00:39:46,770 --> 00:39:48,330
+Wes Bos: the CSS prop?
+
+63
+00:39:48,359 --> 00:40:02,970
+Scott Tolinski: Yes, this was recently added because it was a feature of emotion that people really liked. And they they brought it out. What does it do? It basically allows you to write a CSS string directly prop rather than Oh, okay. Yeah.
+
+64
+00:40:02,970 --> 00:40:06,030
+Unknown: So I weigh on a styled component. Yeah.
+
+65
+00:40:06,090 --> 00:40:20,280
+Scott Tolinski: So it differs a little bit because it keeps it all within stuff components that way, rather than having it be a little bit of style components and then a little object. As soon as you have an object, then it's outside of style components, you lose any, like pre processing, or whatever you
+
+66
+00:40:20,280 --> 00:41:18,300
+Wes Bos: have set up with that. Oh, that's so I would probably reach for that. other stuff. I think that like one off CSS is is awesome for style, CSS, and js. Because I think of anything like landing pages or marketing one off pit sites, or sign up boxes, things like that. Those would always just be added to my CSS and then never again, like the other day, I found some CSS in my own course platform that says Black Friday 2016. I was like, Dad, this is so old. And if I had to use styled components for that, the, the sheer fact that I don't have my 2016 Black Friday banner on the page anymore, means that that CSS would never make it into the final bundle. So there's huge bloat that comes with one off CSS. And if you can have some sort of system that will automatically call the CSS that you don't necessarily need, then that's great. So if it's more than just adding a great area, and it's like, oh, I just need to like write some custom CSS just for this thing. I think CSS in jazz is perfect for that.
+
+67
+00:41:18,650 --> 00:44:28,860
+Scott Tolinski: Yeah. This is one of these things that I'm really loving right now, as I'm rewriting my entire CSS of my site, I the amount of stuff that I'm looking at, because it's been it's been years and years and years of just patches, and additions and changes. And the site is so incredibly different right now than it was when I started coding it. That is like, that's why I'm ripping everything out. Because you're patching on top of a patch, the system itself is no longer the system, and you're trying to make it all work. And to me, it's so funny to see some of this stuff. I'm having an absolute blast, deleting CSS, I'm like, Why is this here? Later deleted? Alright, extra components deleted? I did like a find for font size and line height and all this stuff. And I just deleted them all. It was great. felt very good. Next question here. It says Scott always talks about Meteor. I think it's really cool to what's the future of it? And why didn't it take off? It seems to have slowed down, they seem to have moved on other projects like graph qL stuff. Yeah. So I think the thing with Meteor was, is that when they initially launched, they didn't have NPM support, I think that really made a lot of people weary to try it, because everybody's so used to NPM. And Meteor soon after added NPM support and sort of by then I think the hype cloud had already even passed over it. But Meteor makes it really super easy to get started with things. And they also had their own front end framework, which I think was a bit of a thing for people when they first started, right? meteors Blaze is sort of like a view ask framework at the time. And it was really cool. I really liked Meteor Blaze. But then I don't think they moved quickly enough to support react out of the box and get it out of the box, that sort of thing. And maybe that's why it sort of has progressively slowed down. That said, I still really like it for building a meteor and react site with react on the back end. I really like it for building an Apollo site, because it makes getting set up with a database and authentication all that stuff very easy. That said it is it is slowing down. I think the community with Meteor, they think one of the big problems that they had was that they didn't give community open source access to do pull requests fast enough pull requests were just sort of sitting there. There wasn't like a big emphasis on like the community submitting code. And that said, there's still updates coming on the the most recent update to Meteor has been really good. There's been a lot of new features added to the build tool. It's been progressively getting better. But again, yeah, I do think it has slowed down. So you know, I don't know what my status on recommending it is. It's definitely really great. If you were planning on a project that you're planning this to be like your project for now until whenever maybe not pick it. But if you're looking to get up and going on something fast, there's no reason not to pick it. It's really nice. But yeah, that's pretty much all I have to say about that. You can always the meteor forms are usually pretty going or whatever. I'm usually hanging around there. So that's all I have. Yeah, part of the show is when we get into something called our sick picks. And our sick picks are the picks where we pick anything and seriously, it could be anything a podcast, a movie a book, and we tell you if they're sick, or what we like, do you have a sick pick today with
+
+68
+00:44:28,950 --> 00:46:13,020
+Wes Bos: I do, I'm going to sick pick the DeWalt oscillating tool or any any oscillating tool really it doesn't have to be the default one. And for the last like I don't know, three years every Christmas and birthday have been asking for a new tool because these I have a whole bunch of batteries and you have to like once you buy into a battery of a specific tool, you have to stick to that battery. Otherwise you have all types of different batteries and whatever. And I got for Christmas the oscillating tool which is this like maybe it's you have to Google exactly what it is. But it's this tiny little blade on this tool and it vibrates back and forth really quickly. And it has like cutting blades that you can put on top of it kind of like a saws, all but much more precise and somebody wants to refer to it, it's their like, get out of jail free tool, where anytime you don't have this specific tool to get into something, this is probably the one that's gonna save you. And I've been doing some work in my garage this weekend. And I had a cut off a whole bunch of stripped bolts that couldn't come off and I had all these nails in the wall that the heads had been like, my garage is like 100 years old, there's all these like old timey square nails in it, and I just couldn't get any of them out. And I needed to get them out of there. So this little oscillating tool gets into little nooks and crannies, if you need to cut a little piece of wood or trim something. It's amazing. So it's just a handy little tool to have around. And I got it I don't know, for Christmas a bunch of months ago. And I've used it a couple times since then I've bought a couple bikes that had stripped bolts on them, and I just cut them off with that. But this weekend is like the first time that it used it like 15 times like man, this thing is handy. So it's one of those tools that you just wait until have it and then wait until you actually need it because you're gonna need it at some point and it'll save you tons and tons of time. It looks awesome.
+
+69
+00:46:13,260 --> 00:46:28,020
+Scott Tolinski: I can think of a ton of things I would use this for right now. But I can't add any tools. I can't I can't add any more tools. I need I have nowhere to store them. I need to build a like a shelf first like a tool. Do you have like a tool rack shelf thing?
+
+70
+00:46:28,050 --> 00:47:06,450
+Wes Bos: Yeah. Garage I have this like tool bench? Did you buy the old man No, like it was in our garage when we got there. And it had like a bench grinder and a vise and a pipe cutter and all of those things were old and I couldn't get them off. So I just took this little zip thing and cut the bolts, right like I went in between the the workbench and the bolts and cut them right off and then and then I can get rid of them. And now I have this nice like, open workbench and I have a little shelf that I could throw all of my all of my tools on. It's not great because I have to bring them in in the winter because the cold in Canada is not great for the batteries. But oh yeah, it works well for the the summer.
+
+71
+00:47:06,510 --> 00:47:18,990
+Scott Tolinski: You know, it's like I have I have 100 year old garage. Why? Why couldn't somebody have built a tool bench over the course of those hundred years? And then I would have it like now I have to build it myself. It's been 100 years Come on, somebody should have done
+
+72
+00:47:19,470 --> 00:47:25,350
+Wes Bos: somebody up and at what, what has happened that is leading up to me having to build one right now.
+
+73
+00:47:25,410 --> 00:49:01,560
+Scott Tolinski: Exactly. There's no remnants of one, it's clear that one has not been there. So yeah, I'm jealous TJ and I gotta get one, my sick pick is going to be a book. This is a book that I really enjoyed, especially, it's brand new, it just came out I had it pre ordered. So I got it the day of it's called the making of a manager. What there's a little subtitle here, what to do when everyone looks to you. It's by Julie's Ooh, if I mispronounce your last name, I'm sorry, Julie. This book was so good. She worked at Facebook. And she basically was put into a managerial position. And basically, this book is sort of about lessons that she learned while becoming essentially a manager, the making of a manager. And I just found it to be really, you know, some books are just like really authentic sounding, I guess that's the right word to use. You know, she doesn't come across as somebody who's trying to sell you anything, some of these times these books, you can into this stuff. It's like a whole system and blah, blah, blah. And this is just very sort of, it's personal, but it just feels very authentic and genuine. So I really enjoyed this. If you're any sort of position where you need to manage people I found it is a nice little way that you can learn from lessons that she learned in her career so far. And I've just absolutely really, really enjoyed this book. I've heard that the actual book version has some really great illustrations in it. And unfortunately, I got the audiobooks. I don't get those. But I'm a huge fan of this book. And I think if you're in any sort of managerial position, you'll be interested in it again, it's not like a son of dry read or anything like that. I found it to be pretty entertaining and fun. Awesome.
+
+74
+00:49:01,590 --> 00:49:03,720
+Wes Bos: That sounds pretty interesting.
+
+75
+00:49:03,840 --> 00:49:11,700
+Scott Tolinski: Yeah. Okay, so now is the point of the show where we talk about our shameless plugs, shameless plugs West but you got what do we have to plug Today,
+
+76
+00:49:11,880 --> 00:49:35,790
+Wes Bos: I am going to shamelessly plug all of my courses at Wes Bos comm forward slash courses, I realized I forgot to give up my coupon code for last like three months. So if you use a coupon code syntax that's going to get you an extra 10 bucks off any of my paid courses. And of course, I've got other ones CSS Grid, JavaScript 30. Those are all absolutely free. Check it out at Wes bos.com forward slash courses. Cool.
+
+77
+00:49:36,090 --> 00:50:22,230
+Scott Tolinski: I have a new course on react spring that's called animating react and it we cover not only how to use react with react spring because react spring can be really confusing in their Doc's are great, but at the same time, there's just it's such a powerful library that it's sort of impossible to really get everything from the docks. So what we do is we show you the syntax and how to use react spring but in the most important part, we do these really practical examples, we build a menu that slides over, we build the shopping cart animation for level up tutorials, we build a model, we build an animation that triggers on scroll, and then at the same time we get into some really interesting stuff as well. So check it out at level up tutorials.com forward slash Pro, and become a pro at animating react with react spring.
+
+78
+00:50:22,500 --> 00:50:24,930
+Wes Bos: Awesome. I think that's it for today. Anything else to add?
+
+79
+00:50:24,930 --> 00:50:26,850
+Scott Tolinski: I got nothing. All right. Thanks
+
+80
+00:50:26,850 --> 00:50:35,550
+Wes Bos: for tuning in. As always, follow us on Twitter at Wes Bos at St Lynskey and at syntax FM, and we will catch you next week.
+
+81
+00:50:36,720 --> 00:50:37,320
+Unknown: Peace.
+
+82
+00:50:39,240 --> 00:50:49,020
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

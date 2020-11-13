@@ -1,0 +1,180 @@
+1
+00:00:00,359 --> 00:00:21,329
+Unknown: Monday Monday Monday open wide dev fans yet ready to stuff your face with JavaScript CSS node module BBQ Tip Get workflow breakdancing soft skill web development hasty as crazy as tasty as web development treats coming in hot. Here is Sarah CUDA, Bob and Scott
+
+2
+00:00:23,610 --> 00:00:24,480
+Tolinksi ski.
+
+3
+00:00:25,829 --> 00:00:43,860
+Scott Tolinski: Oh, welcome to syntax in this Monday heastie treat. We're gonna be finishing out our old browsers fallbacks. polyfills episode series by talking about transpiling and poly filling. My name is Scott winsky. And with me as always is Wes Bos.
+
+4
+00:00:43,890 --> 00:00:55,650
+Wes Bos: What's up? How's everybody doing? Hopefully you're doing fine and enjoying this three parter. hasee treat? Well, I don't know, what do you call a hasty treat? That's three parts. Oh, by three course.
+
+5
+00:00:55,650 --> 00:00:56,790
+Scott Tolinski: a three course meal.
+
+6
+00:00:57,030 --> 00:02:15,330
+Wes Bos: Yeah, that's good. Hopefully you're enjoying this three course meal. Today we're gonna be talking all about transpiling and poly filling. This is mostly going to be focused on running modern JavaScript in the older browsers that don't support it. Today's episode is sponsored by view school, a few school sponsored a whole bunch of episodes so far. So obviously, it turns out that a lot of you are buying the view school course, they sponsored a couple of months ago and they had the Vue JS masterclass, which was a way to learn Vue js, you can now get the entire view school course catalog for just 12 bucks a month, that's over 160 lessons in Vue JS as well as the entire Vue JS masterclass that we talked about last time, the new lessons are published every single week, you're gonna learn best practices form validation, advanced component patterns. So many people ask me all the time, like, I know how to write JavaScript, but like, I don't know, if I'm writing good JavaScript, or if I write a lot of it, how do I make sure that it's, I'm writing it in a correct way like patterns are, are a whole nother level to learning how to code. So if you're interested in learning view, check out view school.io, four slash syntax. And as the syntax listener, you're going to get the first month, just for five bucks. It's got industry experts and core team members from view. So check it out at view school.io, forward slash syntax, and thanks so much to them for sponsoring.
+
+7
+00:02:15,380 --> 00:03:17,700
+Scott Tolinski: Thank you. Cool. So let's get into it. And I think we wanted to start off with a little bit of talking about I guess, in this episode, we're going to be really getting into polyfills and transpiling your code into something that modern browsers can read. So I guess, the first thing we have in here is the difference between what a polyfill is and what transpiling is now. transpiling is when you take your code, like right now we're writing our code with features that are either in modern browsers are assumed to be in modern browsers that aren't in all these other browsers. And then we run it through some sort of build process that transpilers that into JavaScript that is readable by more browsers. And in some cases, you're determining which browsers you're supporting. So maybe you're getting not all of the features are actually being transpiled. And some of them are coming through as their actual the way you're writing it. But really, it's taking code that does not essentially make sense to some browsers. And making it makes sense to all browsers by essentially changing the code to have it do the same thing with the more supported syntax.
+
+8
+00:03:17,730 --> 00:04:55,050
+Wes Bos: Yeah, I think it's important to note that transpiling is just for syntax. And that's what Babel does, right? If you have a VAR or sorry, if you have a const. Or let or if you have a class or you have all of the other new syntax, you have a sink await in there. That is syntax that is an addition to how the language actually looks. And if an older browser were to try to parse that it would just trip on the word and the entire JavaScript file would would be broken. The other side to that is is what's called poly filling. So that is where it's not necessarily new syntax, but it is new additions to the language, whether that's something as simple as using like the new dot scroll to in, you can take an element, you can call a method called dot scroll into view, right? That's a new thing in the browser, not all the browsers have it. But if you want to have all browsers to have it, you can get something that's called a polyfill. Same with with promises can be polyfilled. Whereas this is a perfect example. Promises can be polyfilled. Because promises is just syntax, right? You've got your capital P promise, it's just a variable that's in the window, you have your dot then methods, those are just methods that's just regular old JavaScript, you can recreate those new API's with the polyfill. Whereas a transpile something like a sink await, because the actual words a sink and await have been added to the language that is new syntax, you need to make sure you transpile it. So as a general rule of thumb Babel is for transpiling. Although they do have a little bit they do do a little bit of poly filling. And then there's some other libraries out there that will do the the poly filling for you. And we'll talk about those in just a second.
+
+9
+00:04:55,070 --> 00:05:57,450
+Scott Tolinski: Yeah, I like to think of poly fill is like there's like a gap right and you're filling in that gap. With something that doesn't exist in some browsers, there's just a hole here, whatever this variable is supposed to be, or this function is supposed to be in the polyfills gonna come in and fill in that gap where one particular browser doesn't actually have that information there. So yeah, so we had, what are some, like polyfills that have been used, and you have like a little back in the day section. And these are really funny, because I remember so many of these. And I don't know how many people were trying to do fonts before, we had web fonts. But it was such a tremendous pain. And there were so many different polyfills and methods to do web fonts, such as using Flash, we used to have a flash replacement that would essentially take your text, turn it into like, a SWF or whatever, and replace it so that you could have custom text and submit like, imagine running flash just for a custom. Yeah, font. And then there was also the whole coupon and I don't I actually don't know what coupon did I never used coupon myself. So
+
+10
+00:05:57,450 --> 00:06:06,570
+Wes Bos: did the flash thing. Oh, it took your tax and replaced it with a embedded swiff. That was your actual font. Oh my god.
+
+11
+00:06:06,570 --> 00:06:17,790
+Scott Tolinski: Yeah, that's the thing. That's how it worked. And everybody used it. It was great. You know what, I just used images instead. And I'm, like cringing so hard at that for all those extra images I had just for custom fonts.
+
+12
+00:06:19,110 --> 00:06:52,680
+Wes Bos: Another one we had was IE six didn't support PNGs that had transparency. So if you wanted to like the big thing was like used to have like a Twitter bird. And a little Twitter bird would like sit on top of the like div that had the tweets in Oh, yeah. And that Twitter bird was like I had like a transparent background. And if you open it up in iecex, it would just be white or black or something like that. So there was this hack called PNG fix, or you gave it like a one pixel transparent GIF, GIF GJ if or sorry, g i have
+
+13
+00:06:53,010 --> 00:06:55,920
+Scott Tolinski: both will just a piece both of the sides. I don't even
+
+14
+00:06:55,920 --> 00:07:12,660
+Wes Bos: know I would love to go back and see how this actually worked. But this PNG fix would basically take that transparent GIF and put it into every single pixel where the transparency should have gone. And then it actually made it work, which is crazy. See what the border? Do you remember this one border radius? Yeah, we
+
+15
+00:07:12,660 --> 00:07:27,810
+Scott Tolinski: used to have HTC. I don't know if this is what you're referring to. But we used to use like an image on the top that had the rounded edges and the background color and then an image on the bottom that also had the rounded edges in the background color. Is that what you're referring to in this because that's how we know rounded edges,
+
+16
+00:07:27,840 --> 00:09:33,390
+Wes Bos: those were the days as well, where you you would have like a one of the color, like sliding doors where you'd have nine different pieces, you'd have like a border, right? top or the bottom corner, the corners, the sides, and then the middle. That's not what I'm talking about. There used to be this thing in IE, called behavior. And you would link out to these separate dot HTC files. And that would make border radius work in I think it was IE seven, ie eight. And you would just have to I don't even know what is in this HTC file. I wish I could find it. I'm just looking around right now, I can't find it online. But that would somehow I used to have all of these little proprietary hacks that you could use to make these things work. But that was always fun, you load this HTC file are not fun at all. And yeah, so those are just like some some of the the old ones that we did back in the day. But more modern ones are things like methods like object dot entries, object keys, some of the new array methods, array dot from array.of, fetch, fetch, these are all new JavaScript API's that come default with the browser. But because of the way JavaScript works, because the way that you can modify anything in JavaScript, you can modify prototypes of built ins, if you ever hear people saying, Don't modify built ins. And what they mean by that is, if you have an array, you can actually modify the the prototype of the array so that every single array that you create could have like a like array dot Scott, and you could like if you called it, it would just replace every single one with the word Scott. Or you could just make your own methods on an array. And in general, that's bad. But the fact that we're able to do that means that we can go into older browsers that don't have dot map, or we can go into older browsers that don't have any of these new array methods. And we can backfill them, we could polyfill them with just regular JavaScript. And almost always, if you just go to MDN, Mozilla Developer Network, you'll see these new features, they'll often provide you with a little polyfill that makes it work in all of your browsers.
+
+17
+00:09:33,410 --> 00:10:12,240
+Scott Tolinski: Yeah, yeah, I think for me, like the most used of these is the fetch one because I use fetch on everything. And well, you want everyone to be able to access your API and just dropping in a little fetch polyfill is the easiest way to go. I actually found this really great list on modernizers GitHub, it's on github.com. I'll have the link in the course notes, but it's it's a list of HTML five cross browser polyfills and there is a tons of stuff in here. So if you're like looking for a big old list of polyfills, this thing is massive list of polyfills that exist here is pretty cool links to all of them and tells you a little bit about them.
+
+18
+00:10:12,290 --> 00:11:39,030
+Wes Bos: I'm just looking at the IE eight local storage, there's a polyfill. for local storage, I don't I wonder how it works. It just says this is done using a lot of different techniques that enables persistence, synchronous storage in one way or another. So that's kind of the the nice thing about it. And even when we first got webcam, there was a polyfill for the get user media API, that would just fall back to flash and you still use JavaScript to to work with it. But the API would just talk to a flash camera thing that was on the page at the time. So let's talk real quick about like, what are some of the different ways to get polyfills in it, the very basic way to get a polyfill in is just go to MDN, find the polyfill that you're looking for copy, paste it in somewhere into your application. And what that will do is it will go off into the window or into the prototype of all the built ins. And it will create these things like capital F fat or capital P promise, or it will go into array methods, or it will go into object and put a static method called entries onto it. And that's a very basic way. But likely, you're going to want to use something like core j s is a listing of all of the different polyfills. You can import them as you need them, you can use polyfill.io, which will do a browser detection. And based on what your browser's user agent is it will deliver those polyfills to you just kind of nice, you just pop a little script tag above your other scripts, and it will first load all of those before you load your other ones.
+
+19
+00:11:39,060 --> 00:12:28,860
+Scott Tolinski: What exactly a dream for me because like, I remember we used to talk there was like an error. I think I mentioned this on the show before but there's like an April Fool's joke one time and they're like, this is it's this magical polyfill, where all you do is include a script and it takes care of everything for you. And it had all these things that it fixed and this polyfill that IO like does everything that that joke said it did. And it's real. So I I love. I love our community, because everyone just creates things to make our lives easier. I just I transpile. And I'm aware of what things need to be polyfilled. And I polyfill them by installing via NPM. And then just including that, like one of the first things in my startup process. So I don't really I don't use any services like this. I don't have a ton of stuff to polyfill. Yeah, and yeah, that's pretty much it. I think the only thing I'm probably filling is fetch to be honest.
+
+20
+00:12:28,949 --> 00:13:41,760
+Wes Bos: Yeah, I will use polyfill.io on more like client like, because of my audience is web developers, I don't use it a whole lot. But I do know that other websites that I work on, I usually just put up polyfill.io in there, because like performance is not really a huge issue for us. For most people, it's going to be a.js file with nothing in it because there is no polyfills to load. And then you just have peace of mind that it will work regardless of what browser the user is using. I've also used it on my own back end, I've used polyfill.io, because I specifically use the new form data API, which is a if you're about to send a request. And you need to convert an entire form into an object to convert that form into an object. It's actually a bit of a pain. But the new form data API is a great way to get key value pairs of all of the inputs of a form. It was great, and I love it, but it wasn't available, I think on iOS 11. So it just popped in polyfill. That IO, I had to do a little adding because it doesn't come with polyfill.io by default, because that's not a that's not something that most people use. That's not something that most people are going to be using on a website. So you need to make sure that I modified my polyfill IO script tag. But once I had it in there, it just immediately started working interesting.
+
+21
+00:13:42,210 --> 00:14:20,940
+Scott Tolinski: Yeah, so Okay, so we talked a little bit about poly filling. Let's talk a little bit about transpiling. And I personally mostly rely on transpiling. For all my stuff. I use Babel. Well, in addition to Babel, preset envy basically allows you to determine which browsers you want to support and will compile your code into code that those browsers are going to read themselves. I do use any Babel plugins for maybe features that aren't inside of any of these things. Because I definitely I use a few Babel plugins specifically for like class properties. So I can use that whole static class properties and stuff and react. But what kind of stuff do you use?
+
+22
+00:14:21,000 --> 00:15:43,530
+Wes Bos: Yeah, I use the Babel preset Nv. And what that will do is it will it will check a list of browsers that you have specified and it will just say I'm supporting these browsers arm supporting node, and it will know what to transpile and what to just keep as vanilla JavaScript because at a certain point, maybe we'll never have to transpile anything, it will just all be native, right? Yeah, so I use the preset EMP. I use the class properties as well. Most people who listen to this probably won't be familiar with that. Because you're probably using something like create react app, or Gatsby or next and I know both create react app and get sorry and next have their own Babel preset that has all of the these things included for you. Because maybe I should explain a little bit more. Babel has this idea of plugins, and a plugin will transpile a specific feature. So if you have a sink away, that's a feature. If you have generators, that's a feature, if you have, what's that what's another feature class properties, classes and any part of ESX, those are all plugins. And then they're grouped together into what's called a preset. And you can have different types of preset, like you used that we used to have like a, an es six preset and things like that. But we've since moved to just preset E and V, which means Tell me what I need. These are the browsers I'm supporting. I don't want to have to figure out what I need. And what I don't need you tell me I just tell you what browsers and services I'm supporting. So those are the only ones does this Gatsby have a Babel preset for you as well?
+
+23
+00:15:43,860 --> 00:16:17,520
+Scott Tolinski: Yeah, let me see if it's accessible. No, if it is accessible out of the default, it might just be on the config. Yeah, I think it's just in the config here. I'm not quite sure what theirs is to be honest. But it does that allow for usage like it's the latest version of Babel. So it allows for usage like, well, at least Gatsby two, I should say, allows for things out of the box like fragments? Yep. I haven't tried to do static. I haven't tried to do class properties in Gatsby for some reason. In fact, let me even see that I have a Gatsby site open? Well, I don't know this might be too much work. Yeah, sorry. Scratch that. That's gonna say I'll just try it. But it's not up and running or anything.
+
+24
+00:16:17,910 --> 00:16:45,360
+Wes Bos: I'm just on their website. They say Gatsby supports default, the two latest browsers of IE nine as well as any other browser, and then it tells you to do so it looks like they just use Babel preset Nv with IE nine and up and that will just automatically pull in whatever it needs. I would be surprised if they're not using the custom properties. Because that's such a almost like a standard in the React world, even though it's not in the language just yet. Almost everybody uses a class property. So I would think they would do that.
+
+25
+00:16:45,390 --> 00:17:51,480
+Scott Tolinski: Yeah, I don't know where I'd be without that. I also use a plugin for react loadable as well, to make sure that my code splitting does everything it needs to be. I also use a plugin for styled components. Oh, yes, yeah, for server side rendering, essentially, and styled components. So there's like a lot of like interesting little things that you can have for your code to make your the translation of your code more aware of like what's in the code, so it can better determine or change it into something that's either more optimized or just functions better. I also should note that the latest not the latest version. But the second to last latest version of Meteor, which is what I'm running actually has a way to I mentioned this in a couple episodes now bundle based on different browsers on demand. So you don't have to transpile the code that doesn't need to be transpiled to some browsers that don't need it, saving you, j s base and all that good stuff. So there's this some really cool little features and, and how modern JavaScript is, is being read by the browser as things are being supported and whatever, because it would suck to have everything transpiled and have these larger bundles, when the browsers or some browsers are actually supporting this stuff, you know,
+
+26
+00:17:52,020 --> 00:19:32,910
+Wes Bos: some stuff can be polyfilled, but you need to watch out for performance. So don't always just go willy nilly grabbing a polyfill off the shelf and going ahead and using it because what is happening with these polyfills is someone is figuring out how to make it work in old browsers with the given JavaScript that we have. And like, let me give you an example of intersection observer intersection observer is a new JavaScript API that will allow you to monitor DOM elements. And when they come on screen partially or fully, or when they go off screen partially or fully, it will tell you when that happened, right. And the way that we used to do that is we just have to run like a set timeout or listen to window on scroll. And whenever someone scrolls, you check if those elements are on the page or off the page. And the reason why everyone's really excited about intersection observer is because the browser knows when your DOM nodes are on the page, because it's doing the painting, and it will be able to efficiently tell you when things are on the screen. Whereas if you're just manually checking every 20 milliseconds, or if you're checking on every scroll, you could, I'm not saying you always well, but you could run into some performance issues, where you're just overloading the scroll or, or running too much logic at once. So same thing with resize observer, there's currently only one way to know when an element is resize if when the window gets resized, or every second or so check the size of all of your elements, whereas we now resize observer will tell you when something is being resized. So just be aware of that if you are reaching for some of these other polyfills just know that they could potentially introduce some performance bottlenecks. And you should test the application on a browser where you are using the polyfill and not the native.
+
+27
+00:19:32,940 --> 00:20:22,850
+Scott Tolinski: Yeah. Cool. And let's talk about some stuff that can't be polyfilled because not everything you can just drop in a one liner of JavaScript and have your your everything be fixed. And you know, it's funny, because I always thought, well, I still think this but that that grid CSS Grid couldn't be polyfilled. But I on that list of the GitHub thing I found two separate grid polyfills. Now I haven't tried either of these, and I'm guessing Okay, I'm gonna go ahead and say this. Okay, this one's defunct it last commit was 2014 I saw this up And I was like, Huh, I never heard of this CSS Grid polyfill. And then it's like 2014. Oh, nevermind. Okay. So yeah, there's some things that you can't just do it in one of those. We talked about this in the last episode with CSS, like things like variables or custom properties or CSS Grid. Unfortunately, you'll you will have to write your own custom fallbacks for those rather than just throwing in a JavaScript.
+
+28
+00:20:22,920 --> 00:21:15,590
+Wes Bos: Yeah, a lot of the CSS stuff cannot be we talked about this last episode, it cannot be polyfilled. Even when there is a polyfill, they're doing some funky stuff with absolute positioning. Because this is lower level, whereas JavaScript will happen in the browser, you do get access to be able to at least recreate the logic that's that's happening there. Other things device access can't always be mimicked something like a geolocation, sometimes you can fall back to like an API that will use the IP address to find the geolocation inline video on old iOS. So it's, it's been a couple iOS has now that we've had this plays in line attribute you can put on a video, and as long as it's muted, you can autoplay it as well, that can't be because old iOS only lets you play video if you kick them off to the external player. So there is no solution to that I ServiceWorker. I actually don't know, is this true? There's no polyfill for serviceworkers back,
+
+29
+00:21:15,660 --> 00:21:16,380
+Scott Tolinski: I haven't tried.
+
+30
+00:21:16,580 --> 00:21:38,640
+Wes Bos: I was talking with someone on Twitter the other day, and they said, Can I put templates in local storage? And I said, Sure, but like, what are you doing? And he said, like, Okay, I need to like, I need this to work offline. And I need to store them somewhere. And I was like, well use a ServiceWorker. for that. That's what it's for. I said, Oh, I'm supporting older browsers, and I can't get the ServiceWorker working. I'm going to look now
+
+31
+00:21:38,700 --> 00:21:44,250
+Scott Tolinski: I see something about it on developer.mozilla.org.
+
+32
+00:21:44,310 --> 00:21:50,850
+Wes Bos: I don't the cache API is not supported in every browser use Google's to pekah demo. Yeah. I
+
+33
+00:21:50,850 --> 00:21:52,200
+Scott Tolinski: have not heard of Topeka.
+
+34
+00:21:52,380 --> 00:22:32,070
+Wes Bos: I don't know. Yeah, yeah, I know. I'm I'm so if you if you've if you've worked on a ServiceWorker where on older browsers tweet us at syntax FM, I'm sure we could figure it out here. But we're not gonna stick around and do too much research. Let us know your real world experience with it. Because sometimes it's as quick like Google is there a polyfill available. And it's it looks like there is but once you get into the nitty gritty of it, it doesn't work so well, or it doesn't work as you had hoped. So usually, what I like to do is I'll put the word out to Twitter, and you get people who have actually built a project with it and say, it was great, or Yeah, it works. Okay, but watch out for X, Y, and Z.
+
+35
+00:22:32,160 --> 00:22:37,890
+Scott Tolinski: Nice. Cool. Well, that's pretty much all I have. I don't know you have any additional polyfills and transparent? No, I,
+
+36
+00:22:38,130 --> 00:22:48,780
+Wes Bos: I think that's it. I think the I think the reason why we have such a good uptake of JavaScript is because of things like Babel, or do you remember when it used to be called 625? Yeah, 6258.
+
+37
+00:22:48,780 --> 00:22:49,560
+Scott Tolinski: Yeah,
+
+38
+00:22:49,560 --> 00:22:50,310
+Unknown: yeah. Can
+
+39
+00:22:50,310 --> 00:23:05,520
+Scott Tolinski: we just give a big, big round of applause everyone, if you're, if you're except for if you're driving, if you're driving, don't do this, just start clapping wherever you are for the Babel team, because everyone who commits and works on Babel is just a brilliant, brilliant human being. So thank you so much for the boundary.
+
+40
+00:23:05,520 --> 00:23:34,950
+Wes Bos: Oh, yeah, like the amount of amazing stuff that Babel has done for JavaScript. Because if Babel did not exist, we really wouldn't be able to like we'd be sitting on our hands and being like, oh, can't wait to us. Yeah, can't wait for promises. And like, we will be so far behind for this kind of stuff. And it's pretty amazing. something new comes out in JavaScript, you flip on a Babel plugin, and you're using it and you can still support older browsers. So it's pretty amazing that that it works like that.
+
+41
+00:23:35,130 --> 00:24:08,700
+Scott Tolinski: Yeah, I know it is. It's a dream compared to where we were in the past. So yeah, huge, huge fan. Again, unless you're driving, give them a round of applause. Thank them on Twitter, or whatever, but appreciate it all the hard work. So that's it for me. I don't have anything else here. Yeah, I think that's it. That wraps up this week's hasty treat. on a Wednesday, we're going to be talking all about a checklist for browser launching for when you're launching your application, we're going to be giving you all of our tips and tricks for stuff that you need to make sure you do before you launch something.
+
+42
+00:24:08,760 --> 00:24:26,940
+Wes Bos: And Scott and I are also just about to get on a plane in about a week. Yeah. And we're heading off to San Francisco for jamstack cough by the time you listen to this, it will be over but just a heads up that we are going to have a live episode out pretty soon, which would be really fun. And Scott and I are going to be meeting each other for the first time.
+
+43
+00:24:28,860 --> 00:24:37,470
+Scott Tolinski: Nice. Yeah, you'll get to hear that too. Because that's also we're recording the episode live so it will be on the normal stream as a normal episode for those of you can't make it to San Francisco.
+
+44
+00:24:37,650 --> 00:24:40,170
+Wes Bos: All right, that's it see on Wednesday, boos bass,
+
+45
+00:24:42,120 --> 00:24:51,930
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

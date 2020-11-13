@@ -1,0 +1,260 @@
+1
+00:00:00,359 --> 00:00:24,600
+Announcer: Monday, Monday, Monday, open wide dev fans yet ready to stuff your face with JavaScript CSS node module, BBQ Tip Get workflow breakdancing, soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA boss and Scott Taylor. Totally in ski.
+
+2
+00:00:25,920 --> 00:01:19,950
+Wes Bos: Welcome to syntax. This is the hastiness, the tastiest web development podcast out there. Today, we're gonna be talking about the costs of running a business. One of the podcast I love to listen to is Chris coiour is code pen radio. And they always dive into different aspects of actually running a startup in a business like that. And they just did, did one called software we pay for and just went through all the different subscriptions and software that they pay for. And I thought it was kind of interesting to see like, what does a big business like code pen or I don't know how many employees they have. But it's more than just Scott and I, which is just one. So I thought it'd be interested to also share sort of what does it cost to run a business when you're trying to do the solo print printer type of thing that Scott and I do. So looking forward to that today's episode is sponsored by contentful. And they've got some sweet socks coming your way. You want to talk a little bit about that, Scott?
+
+3
+00:01:19,980 --> 00:02:57,270
+Scott Tolinski: Yeah. So content Ville is one of those services that makes working in the sort of modern web just super duper, duper easy, because a lot of times, what we're working with is front end code. And we really struggle with some place to not only hold our data, but access it easily. In relational data, just sort of all sorts of things that you might be working with. It's it's beyond just like sort of blog content or something like that. It's really the answer to the modern CMS. So content fall is, as they say, it's beyond the headless CMS, it basically allows you to store all of your data and access it very easily from whatever your front end code may be, whether that's a native app, whether that's a watch, whether that is a website, or literally anything, maybe it's a drone, maybe it's a drone that's hitting this API and doing something with it. It's just the the beauty of this sort of decoupled sort of modern stack. So content, fall is a great place to keep your data, the interfaces amazing. And it just makes working with data super duper, duper easy. So for those of you who have worked in something before, like a CMS, Drupal or WordPress or something, and you're wondering, how does this all fit into sort of the modern headless stuff, check out content fall at content fall.com forward slash syntax FM, if you sign up to content full with this URL, you will get a free pair of socks so you just don't enter your name and stuff like that you need to have a content full account before you do this. So sign up for content full collect a free pair of socks and Wes and I both have these socks. They're amazing. I was wearing Ahmed syntax ly
+
+4
+00:02:58,560 --> 00:02:59,280
+Wes Bos: very cool. Yeah,
+
+5
+00:02:59,310 --> 00:03:16,200
+Scott Tolinski: yeah, I'm a big fan. They they look really super cool. So either way contentful again is a great way for you to store your data in open source of flexibility involved there. So again, content fold.com forward slash syntax FM or check the show notes for a link to more information there.
+
+6
+00:03:16,440 --> 00:03:35,700
+Wes Bos: Yeah, we should also say this is not one of those you have to sign up with a credit card and then cancel it signups This is one of those to sign up for it try it out. See what it's like and grab your pair of socks. Yeah, that is seems to be the swag recently seems to be overtaking t shirts. At the last conference. I got more socks than I did t shirts. Yeah, just an interesting t shirts got
+
+7
+00:03:35,700 --> 00:03:40,290
+Scott Tolinski: lots of socks, but I'm pumped because I got too many t shirts now that sucks.
+
+8
+00:03:40,380 --> 00:04:16,110
+Wes Bos: There you go. Alright, let's jump right into it things that we are running business we're just going to kind of go category by category and talk about we have the first one is email I personally use G Suite to run my own email and I actually signed up for it before it was like a paid product same or before you knew paid for it like at the very small level I think now it's about five bucks a month per user. I really like it because you can like have multiple domain names so I have Wes Bos calm I have my wife so main name I have our business name and you can just alias those and have Wes at all of these different names that you have. You use G Suite as well Scott
+
+9
+00:04:16,130 --> 00:04:24,750
+Scott Tolinski: Yeah, I think it would might have been after it was even cost money but at the time I purchased my domain It was like get a free G Suite account with every domain you buy.
+
+10
+00:04:24,870 --> 00:04:25,860
+Wes Bos: That's for life.
+
+11
+00:04:25,880 --> 00:04:27,300
+Scott Tolinski: Yes for life. Yep,
+
+12
+00:04:27,300 --> 00:05:49,830
+Wes Bos: that's really good. I know you if you also are a not for profit, you can get validated. In Canada there is a thing called TechSoup which will validate you as a not for profit. And then you can take that TechSoup number and apply for a free Google Apps account which it took me a couple months to get through all the paperwork but well worth it for that nice also with email I use something called missive. So I have an assistant who tries to process most of my email. I get emails probably my biggest pain point in my life where I just get so much of it. I probably get like 300 a day. And a lot of it is just a quick little questions that my assistant can answer. And what we do is we use this thing called missive which hooks into your email inboxes. And it sort of provides this chat interface that allows you to talk alongside email, my assistant and I can comment on emails sort of right in line with them, like this person had bought it, but they forgot to put the coupon code make sure you refund them or, hey, I talked to this person on the Instagram make sure you send him a pack of stickers or something like that. And and then they will then reply. And it's cool because they can reply from their own address. They can reply as me which we don't really do because i don't i don't think that often sounds good. So it just it gets sent off as as my assistance name under the support email address. So I pay for that monthly looks nice, too. Yeah, it looks nice. It's really nice.
+
+13
+00:05:50,039 --> 00:06:06,450
+Scott Tolinski: I it's funny because I met their website right now, just get checking out some features because you know, I might need to look at something like this myself. And right up there. Right below one of the first images is a quote from Wes Bos. Is it really I've been loving missive app for email. Yeah,
+
+14
+00:06:06,659 --> 00:06:52,380
+Wes Bos: I didn't even know that I was on this. It's fantastic. That's I guess I tweeted that out about a year ago after I had been using it for about a month. And I do really love it. It's great. It's built by like actual very technical folk, like, obviously the developers that build it. But I think like everybody at the company, I think it's built in react. So you can run it on the in the browser or on the desktop. There's a nice iPhone client for it as well. So I've been been liking it a lot. A lot of people also use one called front front app. The one thing that does that I wish it did is it hooks into Twitter, DMS, that's one area that is just a nightmare for me is I have open DMS and I'll get like 30 a day and I can't I can't possibly make them all and missive doesn't do that. But I just love Missa for everything else. So if that's a good one, what else for email?
+
+15
+00:06:52,530 --> 00:07:26,580
+Scott Tolinski: Yeah, for well for like sending emails like this is the next category which I personally am just using MailChimp and mandrill still, which we've talked about this like a year ago, and I mentioned I was yet looking to get off of them. I just don't have the time to migrate any of that stuff. And you would told me about mandrel rewriting URLs. And now like totally freaks me out. Like, I'm totally freaked out about getting off mandrill because my URLs have been rewritten. So like, bite that bullet right now? Or do I figure out some sort of a fix for it? I don't know, I'm just mad about that.
+
+16
+00:07:26,760 --> 00:08:15,180
+Wes Bos: I just say like, the problem I had with mandrill is that I moved away from them. And then they close their free account, right. And all of my URLs stopped working. But the fix was to formally close my account. And then the Euro started working again, interesting. Like they still respect those like four or five year old URLs that I sent out. And they still work now. But I had to formally close my account to get it working. And now I intentionally don't use like, I use postmark for sending my transactional emails. And they have the ability to rewrite your URLs to track if people have clicked on them. Yeah. And I don't think I use that just because I'm a little bit scared of a company like this going under right and then breaking all of my past URLs because that's a huge support nightmare. It's amazing how many people go back to five year old emails and reply to it like, hey, this link isn't working or something like that.
+
+17
+00:08:15,210 --> 00:08:25,590
+Scott Tolinski: Right. That makes me a lot less concerned. And I think that opens up. I like postmark anyways, I've been eyeing postmark, I haven't a postmark account. So yeah, I needed to just move over.
+
+18
+00:08:25,650 --> 00:09:27,990
+Wes Bos: Yeah, postmark is good. It's so postmark is very cheap. Most of these things, sendgrid, mailgun, all of them are pretty cheap. I think for 1000 cents, it's like $1, or something like that. So transactional email is not really a line item in the budget, what is really expensive, by far my biggest cost is sending marketing email, which I use drip for. And drip is awesome, because it It allows automation, as well as very fine grained control over emailing people who have watched certain videos or have watched a certain amount of time or all that kind of information. So I really like drip. I'm currently pruning my email list just because I think it cost me like, like $26,000 a year or something like that, just to maintain my email address is like, insane. It is. But they say, you should never complain about your email list cost. Because if you have an email list that big, you should be making at least that much back from it. So yeah, I'm calling the list right now just to get rid of 40,000 people or something that will save me a couple couple thousand dollars a year. So I'm excited about that.
+
+19
+00:09:28,229 --> 00:10:03,290
+Scott Tolinski: Yeah, I'm still on MailChimp for sending those kind of marketing emails out. I don't love it. They've been changing the interface up, you know, and I'm typically not one to complain about interface changes being good or bad or whatever. And it's not a problem. But I'm just just like, I don't know. I don't know. I don't know how I feel about it. I mean, I like MailChimp To be honest, but I'm not like head over heels about it. So I'm looking for something maybe different. I don't know that the whole email list thing is is expensive and it's a big big time sink and having to reenter To use all my templates and stuff like that, so I don't know, we'll see.
+
+20
+00:10:03,570 --> 00:10:34,040
+Wes Bos: It's really frustrating this stuff because I don't like spending time on this stuff. I'd much rather just make more content. And as a business owner, you sort of have to spend at least some time on it because it works so well. But you're right, I kind of rather just just spend my time on making more content. Like I could see people email me all the time, like, why are you not doing Facebook and putting way more automation into your email list? You could be like, I'm like, Ah, yeah, I could. But also, I love just making stuff. So I'd rather just build more courses,
+
+21
+00:10:34,040 --> 00:11:26,730
+Scott Tolinski: I just want to pay an expert to do it all for him. Yeah, you just take care of it. Because seriously, it's one of my least favorite things to do in the entire world. Okay, so next, we have sort of transitional costs, which we both we both work with payment processors. So basically, anytime you're accepting money on the internet money comes in, and the fact that your credit card needs to be processed or charged, or PayPal has server fees, or things like that, these companies make what's called like a merchant fee. So the merchant fee comes out as a percentage of whatever's coming in, whether it's a few cents here or there, it adds up. And it's one of those things that well, you you just sort of accept because that's the only way to get paid via credit card. It's been this way before the internet, when you have physical machines do accept credit cards and anything like that. So it's not like a big fee, it cuts in just a little bit. But again, you know, it's just a line item in your budget sheet at the end of the year. So
+
+22
+00:11:26,970 --> 00:12:15,060
+Wes Bos: it doesn't hurt as much because it comes off of the money coming in, you never have to pay it out. But it does. If you add it up at the end of the year, it is quite a significant amount. So stripe and PayPal are both 2.9% plus 30 cents of every transaction, I also pay a higher fee than that on paypal. So if you ever like sitting there wondering, should I use PayPal? Or should I use stripe? Please use stripe on my website. PayPal is I think at least 1% more expensive unless you're from Canada, because I'm a Canadian merchant charging us to everybody else. So they they get you on that which is pretty, pretty expensive. But I understand people people still like to use PayPal, because their credit card is saved inside of their PayPal. So they a lot of people still pay by credit card, but use their paypal account to check out.
+
+23
+00:12:15,360 --> 00:13:25,470
+Scott Tolinski: Yeah. And Braintree has got 2.9% at like a 30 cent fee per one. And again, same thing with me. I mean, I noticed that a lot. A lot of credit cards are done through PayPal itself. It's not just like your PayPal budget. Next is software. This is actually a big one for me, I end up buying a lot of software. I guess that's one of the cool things about having a tech company is that you sort of I don't know me personally, I know what kind of work goes into writing good software. And so when somebody makes good software, I don't hesitate to buy it really quickly, and then see if I like it. I don't spend service for frivolously on software, anything, but I definitely I like to take extended trials with things and oftentimes that means purchasing it. So what kind of stuff do do I buy? I think we both have a design software on here, actually have a couple of design software's that I've purchased. I've purchased sketch, you know, I subscribe to it. I've purchased figma. And those are my two main users. I use figma pretty much 24 seven. I don't know when the last time I've opened sketch was it was probably two, it was probably to check on something and one of my tutorial series or something like that. But for the most part, I just don't even think of sketch. It's not even in my my dock anymore.
+
+24
+00:13:25,650 --> 00:14:14,310
+Wes Bos: Yeah, I'm on sketch right now, I really like sketches model because you pay for one year worth of updates. And then it just you're just stuck on that last update. So I actually ran out of updates, but I was just happy with with what was going on with sketch. I wasn't using it heavily. And then I just sat on the an older version, probably three or four months. And then I renewed for another year, just last week because I wanted some of the new features. So I love that pricing model pay once get it forever, or get it for get updates for a year. And if you want updates fast that Yeah, I'm not a huge fan of the monthly payment. I know that a lot of businesses need to do that to stay afloat. But something like I use text expander and text expander like over two years ago moved to a monthly purchase wheel on an old version of text expander it seems there's no way I want to pay like eight bucks a month to spend snippets.
+
+25
+00:14:14,310 --> 00:15:01,170
+Scott Tolinski: It is weird for an app like text expander. That's an app where like so figma is free to just flat out use. Like if you want to use figma like you use sketch, it's free. And you get full featured, you can do everything you want to do, what you end up paying for is the team sharing in like sort of cloud storage between teams features, like it like I can have shared component libraries between my team and draw these files and you can have a whole bunch of people on it. And at that point, you can understand paying monthly because it is it's it's hosting content on their servers. It's doing all that sort of stuff that is is less of using it like an app and more of it like a web service. Where like text expander man it's it's just an app. Like Yeah, yeah, I can't imagine they're paying too much to store Anything if they are
+
+26
+00:15:01,200 --> 00:15:45,660
+Wes Bos: Yeah, they have like a, like a cloud off, which is used to be able to just sync it with Dropbox. Yeah. But now they have like some sort of cloud thing, which, which stores like that. Yeah, I get it because they have to update it every time there's a new operating system, they have to update it and release bug fixes for it. And something like things, I use things for my to do list manager, and on things version three, and I think I was on things version two for like, seven years or something. And I finally just paid it and something like that. I paid for that thing. Like, like 30 bucks twice in my life. And it's, it's an app I use every single day. And I feel like they probably don't charge me enough for that. Yeah, it's kind of those weird, weird spot where you want to charge people as much as you possibly can. without pushing too hard on there.
+
+27
+00:15:45,689 --> 00:17:01,980
+Scott Tolinski: Yeah, for my to do list app, I used to do it I've been using it forever and ever and ever. I also pay for that just gives you a little bit extra features. It's it's like one of the they do a really good model where they give you like a full app out of the box for free. And then like the the additional features that you pay for are good. But they're not necessarily like the most incredible things in the world. It's almost like you're paying for it to help support and get some extra stuff. I also use an app called notion which I had as a stick pick, I actually don't know if that episode has aired yet. So a notion is an notion is an app that basically is like sort of like a database. For web developers, it feels very much like creating web pages, because you can link between documents and stuff like that. You can import a whole bunch of default templates from to do lists to cabanne boards to database tables and things like that. You can do like references and calendars. And it's like a playground for general note taking application is just super cool. It currently runs my entire life. So yeah, check out notion have a link in the what's it called in the description. And yeah, again, it's my new favorite app. It's sort of like living in this app. Right now. I'm just a big fan.
+
+28
+00:17:02,250 --> 00:18:31,050
+Wes Bos: Next up, we have services, just one thing under here, I pay for a peel box every year, he has about 300 bucks. And that's just because if I want to put my address on something, or if I want to my stickers get sent back to the Pio box. So that's just like one little cost that you have there. Next up, we have domains, where do you register most of your domains got nearly all of my domains are at name. COMM. So yeah, mostly hover. Although Pretty soon, I have a couple at name calm, I have a couple on Gandhi the.af. One, you can only register there. So if like a couple like in weird spots, because you can only register them in some places. But I've been a big fan of hover, although I am going to be moving them all over to CloudFlare. As soon as I get accepted into the CloudFlare domain. If you haven't heard CloudFlare is becoming a registrar. And they're going to do the Mac cost, which is amazing. A bit of a deathblow to a lot of these domain companies, maybe we'll see what that's like, I think people will still just buy their domain name wherever they buy their hosting. But for someone like me domain names is one of the most expensive things I have to pay every single year because I have probably like 40 or 60 of them that I just sit on. Some of them are common misspellings of my courses. Some of them are possible courses that I might want to do at some point. Like I own all of the for beginners calm Angular, for beginners, Ember for beginners, I just like grabbed them when I when I put out react for beginners, just because if I ever did want to venture down that way, I wanted to keep that. That naming conventions. Yeah, domain names are pretty expensive one. But
+
+29
+00:18:31,070 --> 00:18:49,850
+Scott Tolinski: yeah, if I'm like if I have a side project that I'm thinking about, or if I've had like, a couple of beers, and I've like brainstorming on something, and I'm shopping for domains that you best believe Oh, yeah, I'm buying a couple domains just to sit, like, Oh, this is a great idea that I'll never have time to do and let's just scoop it up.
+
+30
+00:18:49,920 --> 00:18:56,190
+Wes Bos: Someone wants tweeted that. Domain renewals are such a good reminder of things. You are almost really excited about one year
+
+31
+00:18:56,190 --> 00:19:07,710
+Scott Tolinski: ago. Yeah. So it's perfect. It's perfect. It's exactly correct. And sometimes, like I feel like it's almost like spring cleaning to get rid of them. And I'm like looking at it's like a T shirt that I have in my closet like, hmm, am I ever gonna
+
+32
+00:19:07,710 --> 00:19:08,430
+Unknown: wear this?
+
+33
+00:19:08,430 --> 00:19:13,260
+Scott Tolinski: I don't know, am I gonna wear this or not? Like, maybe I should just get rid of it. Okay, let's get rid of it. You know,
+
+34
+00:19:13,440 --> 00:19:23,160
+Wes Bos: I'll turn off the auto renew on domain names that I'm not super excited about. Oh, yeah. When it comes up for renewal, then it's a gut test of whether actually want to keep it or not. Yeah, that's a good one and like
+
+35
+00:19:23,160 --> 00:20:26,910
+Scott Tolinski: turning it backwards. Okay, so let's get into the next one, which we had sort of backups. And we both store a lot of data. I personally keep a lot of data because video files are huge. And I do a new course every month. So I think even like first and foremost so we're going to the the big things I have for data is like off a service data backup. So like a NASS drive. So I have a NASS drive in my office that has 16 terabytes of data availability, so I'm not running out anytime soon. It does like double redundancy, backups, so there's no chance of losing any of my content ever. So I store all of my raw video files, all of my produce video files seriously everything on my NASS drive takes care of everything. I host all of my stuff, though, for download and backup and whatever, on both backblaze as well as Amazon s3, I use both because I'm sort of transitioning to backblaze. But at the same time, I have some systems in my site that rely on s3. So I haven't had the time to move everything off just yet.
+
+36
+00:20:27,050 --> 00:21:35,550
+Wes Bos: I'm almost exactly the same. So I unpopularity run all of my code out of Dropbox. And then people get mad at me for that, because it it spins up your CPU and goes crazy with your node modules when you install, but I don't notice it because I have a very fast computer. And that is a nice little like passive backup for me. If I accidentally nuke a code file, in between get commits, I can always bring that back, which is great. And then for my whole entire computer, I pay for backblaze every single month that is kind of like Dropbox for your entire computer. It works really well it saved my butt more than a few times I've accidentally deleted something or I've accidentally corrupted an entire video project, I was able to just go back to backblaze and download the archived version. I also use back backblaze b two which is their kind of like Amazon hosting. Yep, competitor. It's extremely cheap. I think Scott is moving over to it because it's way cheaper, cheaper than what it used to use, which was Amazon s3. So if you want to download the zip files of any of my courses, they are almost all hosted on backblaze. I still maintain a couple on Amazon s3 just because I'm a bit lazy to move them over.
+
+37
+00:21:36,420 --> 00:21:48,000
+Scott Tolinski: Yeah, it's it's not like not the super most easiest thing ever. Although, I don't know how you put things up under v2. But I just use FTP. It's like the only thing I use FTP for that in s3. Yeah, I
+
+38
+00:21:48,000 --> 00:21:50,970
+Wes Bos: use a cyber duck. Oh, yes. Cyber duck. I
+
+39
+00:21:50,970 --> 00:21:52,710
+Scott Tolinski: use transmit because I bought it.
+
+40
+00:21:53,640 --> 00:21:56,700
+Wes Bos: Oh, I have transmitted does this support? Yeah, please. Yeah, there's
+
+41
+00:21:56,700 --> 00:21:58,770
+Scott Tolinski: like, like a shortcut for it.
+
+42
+00:21:58,980 --> 00:23:01,950
+Wes Bos: Oh, shit. Well, why am I using cyberduck I've paid for transmit like 40 years ago when I was doing WordPress ever has another application that I still use panic man, Muay Thai great abs. Yeah, panic is awesome. Yeah. Next up, we have labor, which is paying for people. I have an assistant who works for me part time does all of my email does all of expenses, pretty much any any like kind of stuff that takes me out of working on the business and makes me working in the business. So anything that I don't feel like doing, I'll just pass off to her. And she'll take care of all that. And then I also have a part time developer for the last little bit been working on some improvements, my course platform as well, that's working pretty well. So that's fairly new to me in the last year or so having the increased cost of paying these people, which is always a scary thing, because you have to make sure that the business keeps going in order to pay these people as well as the whole like management aspect of it. And, and hardware as well. I bought my assistant like a laptop, things like that. So nice. I know, people have huge companies and do this as well. But it's the first time I've ever had a foray into that.
+
+43
+00:23:01,980 --> 00:23:59,670
+Scott Tolinski: Yeah. So I have one developer working on level up tutorials. And he works on it part time and does freelance part time otherwise. And so yeah, he's one contract developer, I'm also contracting out some design work, although I'm also doing quite a bit of design work myself. So just to get some, like extra help here and there, because some of the stuff I think in the site needs more work. So that's pretty much it. I what I really need is an assistant like I really need an assistant when it comes down to because of email, and just sort of managing things like I'm I'm good at creating content. But that's, that's my strong suit. My Strong Sense isn't necessarily communication and things like that. So if I had somebody to help me with that, I think things would be a little bit more complete. I would also I think I'm, you know, looking to do more of like social media help, or even marketing help and stuff like that. Because, again, yeah, I spend so much time creating content that I don't get to spend the time on the other things that I could do, if I had the time to do it.
+
+44
+00:24:00,090 --> 00:24:24,060
+Wes Bos: We'll do a hasee tree on things I've learned as an assistant. And maybe you can go through that that whole process as well. Because it was a whole idea of making what's called SOP, standard operating procedures, and like taking all of the ideas out of my head. Yeah, building lots of tooling so that somebody else can manage these things. And yeah, it's kind of interesting. Yeah, maybe we'll do an entire episode on them
+
+45
+00:24:24,060 --> 00:25:06,510
+Scott Tolinski: with a custom system like ours, you know, it's like in my back end system. There's no reason for me to build in certain features when I could go look things up in a database query myself, yeah, just take care of it, rather than like, Okay, well, you needed an interface for this now, which is, you know, again, just more more work. So I'm actually having our developer I'm having him work on some of those interfaces right now because they're not essential and like they're going to be paying dividends in the long run. Next, you have insurances, my insurance sort of stuff is really simple. I use Courtney's insurance for everything for medical And all that good stuff. So I don't buy insurance separately, we just use her her professional insurance through work,
+
+46
+00:25:06,599 --> 00:26:37,800
+Wes Bos: that's good, I have to pay for all of my own insurance. But in Canada, it's that much easier. So health insurance in Canada for my entire family is like, they're under 50 bucks a month or something like that, I know that it's probably like 567 times that in in the US, which is a such a frustrating thing for entrepreneurs who want to go off on their own, they can't do that in Canada, we get health care, so we get the doctors for free, but you don't get prescriptions or the dentre, dental optical things like that are often much more expensive. So we pay into that, and then we try to use, we try to use that all back. Yeah, by going to the dentist as much as possible and getting new glasses as frequently as we possibly can and, and things like that, or you need to dip into it. So I've done the numbers, and we almost always just use everything back that we pay into it. So it's pretty efficient system. Other things we have here is my home insurance is I think 1500 bucks a month higher because I run a business, it's so silly, because I don't have people coming to my house that are gonna slip on a slip on something, or whatnot. But there's still a just because I run a business from my home, there's still an increased elevated sense of risk from the insurance companies. So my house insurance is quite a bit more than it would be if I didn't run a business from here. So that's just like another added causes. It's kind of like the interesting thing about running a business is so nice, super like, oh, it must be nice to just like run this thing and make your own hours and whatnot. But like there's added costs to running a business at every single corner
+
+47
+00:26:37,859 --> 00:27:37,350
+Scott Tolinski: added costs and added stress that literally every corner. Yeah, I mean, like your weekends, it makes it very difficult to claim your weekends. I know it's important to do, but it makes it more difficult. Okay, next we have professional fees, which again, running a business, you you end up having a lot of professional fees, I have an accountant, I do have a lawyer on retainer, and help with both entity things as well as just general questions or legal privacy policy, that sort of stuff. I also have a bookkeeping service because my books are complex enough that I have to, they make sure that I get all those little deductions like the merchant fees and stuff like that listed as expenses and things like that, rather than just you know, sort of however the sort of caveman ik way I would have tried to do my own accounting. So that's pretty much it for me I just haven't a lawyer and accountant and a bookkeeper I think the bookkeeper is the only one I pay like actually monthly for it because they they keep my books up to date they have full access to everything and yeah, he informed
+
+48
+00:27:37,499 --> 00:29:06,540
+Wes Bos: my accountant is worth or however much they spend I think it's a couple thousand dollars a year I pay for my accountant but takes care of everything answers all my questions regarding to to like how to pay yourself at the end of the year Whoa, whoa, whoa, look at like our both our personal and the business and figure out how to do that through him I have a lawyer that does corporate stuff that you need to do make sure that you're all on the up and up with that. And then I have foreign effects. So I build everything in almost everything in us and I need to convert that to Canadian to go to the store and buy food. And in order to do that I if you go to your own bank and try to convert currency, they're going to nalia and if you go to paypal and try to convert your own, they're going to take most of it so there is smaller companies that you can find I got referred to it's a big thing here in Canada because a lot of people run businesses in us and and convert it so it pay them or I don't pay them but they take a cut a very small cut of everything it's anytime I talk about transferring money people always email me and say you should check out transfer wise or etsy.com or any of these things and those transferwise is very very good. It's much better than it's much better than just using your bank or PayPal or something like that buy like a couple cents on the dollar. But I is still using a private firm to do this yourself. You still get the by far the best price ever I've because my entire income comes in in us like half a percent or half a cent is like a vacation for me and some use cases. So I pay I'm figuring this out and I'm very happy with that my setup that I have now.
+
+49
+00:29:06,569 --> 00:30:19,560
+Scott Tolinski: Okay, next we have hosting. Moving right along. And this is good a lot of hosting. I mean, we mentioned that I use B two for video hosting download hosting s3 for download hosting. The level of tutorials is hosted on Meteor galaxy, which is just tuned to be a little bit easier to work with Meteor and stuff like that I have considered moving it off of galaxy it used to be hosted on Heroku before that, and Galaxy was cheaper and easier. So I've moved it. I think that's pretty much it for me for hosting. I don't host my video anymore. I guess I do pay for a CDN via CloudFront but other than that I might have one thing on digitalocean still I don't very good a ton of stuff Yeah, cuz I pretty much the stuff that was on digitalocean for me is now on Netlify. So I was like managing my own you know server when I needed to do was maintain some front end code. So Netlify saved my bacon there. So yeah, that's pretty much it for me. I don't really pay very much in hosting I think oh, db hosting, I do pay I my database is hosted at composed, composed IO. I believe it's owned by IBM. Now I've considered moving off composed several times. But like anything, it's been there since the inception of level up so it worked fine
+
+50
+00:30:19,560 --> 00:30:20,520
+Wes Bos: works. Yeah,
+
+51
+00:30:20,549 --> 00:30:30,930
+Scott Tolinski: yeah, it works fine. There's really no practical reason other than I have lots of other things hosted at Atlas already, or M lab. So well, what was m lab? So yeah, that's pretty much it.
+
+52
+00:30:31,109 --> 00:30:50,550
+Wes Bos: Awesome. I use Vimeo to host all of my streaming videos. I talked earlier about how I was on the Vimeo like their business plan, which was like four or 500 bucks a year. Yeah. And I was streaming it directly into my own HTML player. And they said I was using 40 terabytes a month. And you can't do that will be
+
+53
+00:30:51,029 --> 00:30:58,610
+Scott Tolinski: totally changes which video they're serving, right? Whether they're serving the right quality for the right network and stuff, or no, yeah, it was
+
+54
+00:30:58,610 --> 00:31:59,520
+Wes Bos: because I was just serving up straight mp4. Yeah, I did use their compression on it, which is good because Vimeo, especially is a very good writer, the Vimeo player will auto degrade based on speed and device and all this amazing stuff. So I switched over to using Vimeo I'm on the $800 a year plan currently, which is I had to upgrade that more recently, because whenever I post a big course, they only allow you to upload so much in a week. So I had to upgrade that I probably I could probably downgrade it at some point. But that's a big one for me. I host my own website on Digital Ocean. So that's a I think I paid probably 40 bucks. 50 bucks for a couple different droplets and a floating IP there. Yep, I host the syntax website on now. Sh, which is on now just rolled out there. Yeah, now too. And it was kind of interesting. They're moving more towards serverless. But they have this idea of you can take any existing application that you have, and it will automatically serverless it, which is kind of cool. Yes. I love sites so much. But it doesn't work.
+
+55
+00:31:59,550 --> 00:32:10,610
+Scott Tolinski: Yeah, I'm skeptical because like I had dreams of moving level up to now. And then like this new platform makes that totally impossible. Yeah, it makes it totally impossible with my setup. So
+
+56
+00:32:10,680 --> 00:32:57,540
+Wes Bos: I'm in the process right now of moving it to now. And then they rolled this out at the at this time, because I was moving my I love I love their hosting platform. It's amazing. And I had done all this work to host and move all of my domain names and over to them, and then they rolled out this 2.0 you can still use 1.0. But for how long? I don't know if it's worth it or not. I do have faith that they will fix the issues that we have with it currently. But yeah, I'm just kind of looking for where do I go now? I know there's something like Heroku. But these kinds of things, they they get expensive really quickly. Especially when you're trying to just host a lot of like silly little node projects that you're not necessarily making any money off of right we have a whole nother episode will do on I was on Twitter asking for recommendations, and people recommend Doku or Doku. Have you heard of this? Oh, no.
+
+57
+00:32:57,600 --> 00:32:58,470
+Scott Tolinski: I saw it listed.
+
+58
+00:32:58,610 --> 00:35:25,400
+Wes Bos: No posted Heroku Oh, okay. Yeah, really cool. I saw a whole episode on it. Because it's pretty cool. I also use Bluehost to host my own website. That's WordPress. I've signed up for that when I was like six years old and still have it. I don't love it. What happens is that if I email out a link to my own website, I will crash my server and then two minutes later, they'll they'll scale up. Yeah, the scaling up in that two minutes. I have 40,000 people emailing me that my website is down. And it drives me crazy, because I have all this unnecessary email of people sending me screenshots of a broken WordPress, I'm redesigning my website right now I am looking at doing it in Gatsby which I'm pretty excited about. So that will probably be deprecated at some point from my Bluehost it's not cheap. I think it's like a couple hundred bucks a year which is frustrating. And especially if you want to like host your own SSL certificate, they make you pay for like a Yeah, that's rough your own IP address, which is is frustrating. I don't really like Bluehost as a company anymore. They did some shady stuff with their like aggressive caching that wasted a couple days of mine. So that was that. And then database hosting was I host on M lab, which is now owned by MongoDB Atlas big fan of M lab probably will just stick with with them when they move over to Atlas just because I've been so happy with it word last up we have just travel this is kind of somewhat related to to the business as well. So I do a lot of traveling. I go to conferences and and do a lot of training and workshops. So in doing workshops and training and speaking at conferences, you usually if you speak at a conference, they'll pay for at least the hotel and your travel which is your flight but it's I was like thinking about it like this is still pretty expensive. If they're not paying you anything past that because you have to pay for a taxi or someone to drive you to the airport and then you also have to pay for like an Uber from the airport like San Francisco Airport to downtown was like 30 bucks. You do that twice. That's 60 bucks. It's not cheap. You have to often pay for a couple other meals that aren't covered by the conference, all that kind of stuff that surrounds Speaking at it, which is often while honest, I will still ask for not every conference but off to ask for like a little bit of money for conferences I don't mind speaking for for free because I really enjoy it. But those added costs on top of it are are a little bit inaccessible. Especially like I have a business and I make the money for it. But some people want to speak at conferences, and they don't necessarily have an extra two 300 bucks to spend on this kind of thing. So there's that added expense to running a business as well.
+
+59
+00:35:25,460 --> 00:35:30,330
+Scott Tolinski: Word. Well, this has been a big old hasty treat. This has been a Yeah,
+
+60
+00:35:30,840 --> 00:35:33,690
+Wes Bos: yes. 30 minutes. Yes. Okay, cool.
+
+61
+00:35:33,690 --> 00:36:01,400
+Scott Tolinski: Well, I have nothing to add to there. So we can wrap this up. As you can see, here, they're running a business is not easy. There's a lot a little thing there is a lot of things, I don't know, would sound like we're spending a crazy amount of money here. But it adds up. And there's certainly a lot of things to consider and whatever. So yeah, just hope this gave you a little bit more insight into sort of what it takes to do what we're doing and some sort of financial regard or even organizational regard. It almost feels like we just did a complete outline of running our businesses.
+
+62
+00:36:01,460 --> 00:36:31,350
+Wes Bos: Yeah, it's good for you. Because what it usually do at the tax time as I go through all my expenses, I'm like, seriously, I'm spending that much on domain names, or Yeah, and that really got it that really added up or that came out of nowhere, especially a lot of these surfaces that don't email you when they renew, because they don't want you to cancel them. I've had a few like that where I'm like, ah, shoot, I forgot to cancel that thing. And they billed me nine bucks for eight years. And it sort of gets away from you. With all these like little death by 1000 cuts with these type of things. So gotta keep an eye on it. Sure.
+
+63
+00:36:31,380 --> 00:36:32,820
+Scott Tolinski: Cool, man. All right. Well, that's it.
+
+64
+00:36:32,940 --> 00:36:36,090
+Wes Bos: All right. Thanks for tuning in. See you Wednesday, use pace.
+
+65
+00:36:38,040 --> 00:36:47,820
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

@@ -1,0 +1,548 @@
+1
+00:00:04,440 --> 00:00:09,020
+Wes Bos: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:09,480 --> 00:00:21,300
+Scott Tolinski: Hey, everybody, welcome to the syntax podcast where we give you some tasty treats on a web development and life topics. Here today is Scott and West as always. Hello, everybody.
+
+3
+00:00:21,300 --> 00:00:22,770
+Wes Bos: Thanks for coming out.
+
+4
+00:00:22,949 --> 00:00:39,630
+Scott Tolinski: And today we're gonna be talking about CSS preprocessors and sort of overall CSS structuring sort of what we like, what we don't like, what's hot, what's not that sort of stuff. But basically, I think we wanted to kick it off with Wes, what are you working on right now?
+
+5
+00:00:39,720 --> 00:01:24,990
+Wes Bos: Yeah, right now I am, I'm thinking about what my next course is going to be. I've got a, I've got a couple that I'm interested in doing. And near the top of that list is doing sort of intermediate advanced react course. And along with testing, and Redux, and all that stuff, I'm looking at doing one in graph qL, which, for those who aren't, aren't totally up on it. Graph. qL is sort of like the next steps from rest, where you just have one endpoint, and I'm sure we'll do a whole show on it. So I just been just been researching different graph. qL packages, different services, writing your own. We talked a little bit a little bit more about this in the React show as well. So it's one thing I'm diving into right now. What about you? Yeah, so
+
+6
+00:01:24,990 --> 00:01:43,140
+Scott Tolinski: I just hit up the dinosaur JS conference, which was in Denver this past weekend. And there was just an abundance of excellent speakers from like Tom Dale was there Laurie Voss, Myles borns. Just a lot of great, great people working household
+
+7
+00:01:43,140 --> 00:01:44,280
+Wes Bos: name. Yeah.
+
+8
+00:01:44,880 --> 00:02:22,740
+Scott Tolinski: Yeah. Yeah, I think it was one of the it was short and sweet. Right. It was one day. Yeah. Just back to back to back of great talks. And I can't remember last time I was at a conference where every single talk either inspired me engaged me. And I like that. Even the ones that were technical weren't like overly technical. They weren't Yeah, taking the time to go heavy into the code, because that can just, you can slow things down. It was more of this. Like, if you want to look at the code, the codes on the repo like I don't need to show you all the code. Yeah. here's, here's what, you know, my thoughts behind this in this in this way. That's awesome. But no, it was a great, great, great conference.
+
+9
+00:02:22,830 --> 00:02:26,460
+Wes Bos: So today we're talking about or anything else on your end.
+
+10
+00:02:27,470 --> 00:02:55,230
+Scott Tolinski: Now I've been I've been working on some some projects here. And there, I'm working on an app for B boys are breakdancers to share them keep their moves in basically a bunch of little tools that you would use for practicing. I'm actually building in like a jukebox in there that pulls from a B boy playlist on SoundCloud. So you can have your music playing through your speakers without leaving this app. Oh, that's amazing stuff. A bunch of minor little features here and there to make this thing better.
+
+11
+00:02:55,530 --> 00:03:02,520
+Wes Bos: That's cool. scratching your own itch is the best I love building. We should we should do a whole episode unlike stuff you've built for yourself.
+
+12
+00:03:03,180 --> 00:03:03,990
+Scott Tolinski: Write it down.
+
+13
+00:03:04,019 --> 00:04:17,510
+Wes Bos: Yeah, add it to the Edit to the left. One of my first big Angular apps was I used to buy and sell rode bikes and and the way that it would work is you go on the classifieds. Whether it's here it's something called Kijiji it's like sort of an eBay subsidiary, but like Craigslist, or whatever. And what I would do is I would just like look for bikes in the suburbs, and buy them up, and then bring them back to Toronto and sell them for quite a bit more. And I did that all for a whole summer of university. I make quite a bit of money. Yeah, what I had built was I built this app in Angular, where in the node it would node would scrape. Kijiji, because they have an RSS feed, but it was only updated like once a day. So this would scrape the the classifieds every, I don't know every two minutes or so. And then it would send me a text message as soon as there was something new that matched my query. And then I would I would message them and before most people could even ever see the ad I was already conversing with the person that would buy it. And I like I learned so much from that just because like I was like, just scratching my own itch of like how do I get these bikes before other people buy them and it worked out super well for me.
+
+14
+00:04:18,420 --> 00:04:51,120
+Scott Tolinski: Yeah, it's oddly enough they mentioned that because my my homie Ben chef who started the level up tutorials with me back in the day. That's exactly how he learned Angular two, but the same like same thing but with baseball gloves. Apparently there's like a huge market really like really high end baseball gloves. And so he was like buying and selling these these rare or hard to find or expensive Japanese baseball Really? It was Yeah, it was it was totally wild. But yeah, same thing. He wanted to pick up Angular and dove into it that way. Sure.
+
+15
+00:04:51,140 --> 00:05:06,360
+Wes Bos: That's that I love those those stories because it's not like you start off doing like FUBAR and Angular. It's like, no, I yeah, I need I need to get texted when these things hit. Kijiji before everyone else gets them, so that's pretty good. Pretty good reason to learn Angular.
+
+16
+00:05:07,010 --> 00:05:09,810
+Scott Tolinski: Yeah. Using your powers for good and evil. Yeah.
+
+17
+00:05:10,530 --> 00:05:50,400
+Wes Bos: Cool. So today we are, let's kick it off, we're going to talk about sort of the big three, which is style of sass. And last, we're going to talk a little bit about what post CSS is, and hopefully clarify like, what it is and what the differences are, and, and whatnot. We're going to talk about storing your CSS in different files, extending class names, sharing CSS, we're not going to be diving into like, styled components, or using BAM or anything like that, because we were going to, but then we realized, like, this is an entire show in itself. So we're just kind of gonna stick on like tooling and sharing CSS, and then we'll, we'll have another one on like approaches to writing maintainable.
+
+18
+00:05:50,550 --> 00:05:56,520
+Scott Tolinski: So yeah, otherwise, this would be like a three hour a marathon have a podcast.
+
+19
+00:05:56,760 --> 00:06:05,310
+Wes Bos: Why don't we Why don't we kick it off by just saying like, what are our own personal preference? If we were to start a project today, what would you write it in? I don't know. Why don't you kick it off, Scott?
+
+20
+00:06:06,000 --> 00:06:38,910
+Scott Tolinski: Yeah, my, my personal CSS stack I always start with is stylists and post CSS. I love stylists, for its simplicity. You know, some people get put off by not needing the brackets. But in all in all reality, you could use stylist the same exact way that you're using sass, and it's going to work fine. There's just some little features and stylists that I like a little bit better, which we can go into. But yeah, so personally, I like stylist for the pre processing. And then I use post CSS for all of my auto prefixing. And that good stuff.
+
+21
+00:06:38,970 --> 00:07:54,600
+Wes Bos: Cool. I'm I'm pretty much the same way. I absolutely love stylists. And what I've found is that most people don't know what stylist is, it's sort of the like, the little guy in the room. And for those who don't know stylus is, it's like sass exactly same as sass, except the the brackets around your code block are the curly braces, the the semi colon, but after your property value in the colon in between your property, your value, those are totally optional, you can have them, which is great, because then you can just paste regular CSS into your file. But it can also be done indentation based, which comes back to the whole pug and Jade thing versus something like ej s, I absolutely love it. A lot of people don't like it. I have stopped using stylus for my own tutorials. Just because of it's just too much of a headache. People get hung up on it. People are very messy with their indentation when they're first learning to code. And it's unnecessary hang up for them to get into. So I've switched to using sass for all of my coding all of my tutorials. I use sass for most of my client work. And then any personal project any stuff that I'm doing where I'm the only dev on it. It's hundred percent stylists.
+
+22
+00:07:55,260 --> 00:08:24,300
+Scott Tolinski: Yeah. And what are your thoughts on maybe like a stylist style? I know some people have very specific like, I don't use the brackets. And I don't use the semi colons but I use colons. I always use a colon. And I picked that up from shoot. I picked it up from Cory Simmons is the creator of last grid as well as what was the other major grid? He did? He's done some of the best grid systems out there. And last grid was just as like latest one. Well, I think
+
+23
+00:08:24,330 --> 00:08:28,740
+Wes Bos: Yeah, so what's the idea behind only doing that and not the other ones? Well, there's
+
+24
+00:08:28,740 --> 00:09:11,899
+Scott Tolinski: some instances where you have like, either like a transparent mixin. Or you're using a Datsun tax on a variable. Yep. Like if you're using objects in stylus, which function for people who don't know, they function exactly like an object in JavaScript. So you build your your object with nearly the same syntax. And then you can access it with just so you could have your colors object colors, dot Facebook, whatever. And that gives you the Facebook color. And if you are using that dot notation, you need a semi colon or else the whole thing breaks. Yep. So you know, my my view is if the code is going to break sometimes without a colon, just use a colon every single time and you don't have to worry about it. It's sure you shouldn't have to
+
+25
+00:09:11,899 --> 00:09:14,730
+Wes Bos: maintain like these like edge cases where it doesn't work.
+
+26
+00:09:15,409 --> 00:09:22,590
+Scott Tolinski: Yeah, exactly. So that's my my thoughts on it. I mean, I love not having to have brackets and all that stuff. So yeah, you know,
+
+27
+00:09:22,620 --> 00:09:47,149
+Wes Bos: yeah, I'm I'm a totally naked kind of guy. I don't do any of the any of the semicolons, colons, brackets, anything like that. I just go all in on, on doing in it do every now and then. But like maybe three or four times I've actually run into issues. Other than that it's been been perfect for me. And the actually, the compiler is really good as well. It'll yell at you when you do something wrong.
+
+28
+00:09:48,210 --> 00:10:00,049
+Scott Tolinski: So what's your what's a killer feature for you on any of the CSS preprocessors I have one for stylist for me which is like the reason why I use it but look, what's your killer feature? Yeah, like really draws you I
+
+29
+00:10:00,049 --> 00:10:47,820
+Wes Bos: think so for stylists, sass and less. At the end of the day, it doesn't really matter which one you have I get email from people all the time, like, which one should I use? It doesn't matter use any of them. Really, for me, the killer feature for, for me and for everyone is variables, obviously, mix ins, which are really, really handy, and nesting your selectors inside of each other. So those are sort of like the big three for me. It's funny, because I also have been bitten by nesting. And I've also been bitten by the mix ins too many mix ins too many custom stuff where it starts to become a bit hard to reason around. But I think used appropriately, all three of those things are absolutely a great reason to use styles less or sass.
+
+30
+00:10:48,509 --> 00:11:45,149
+Scott Tolinski: Yeah, yeah, absolutely. And, and one of the things I like most about any of the pre processors really is being able to take some of that stuff with you. For instance, like on instead of using a CSS framework, I have, like several things that I take with me from project to project, whether it's just a just a set of shadow variables, you know, and anytime I want to use a shadow, I don't have to think about it. I have an easing package named Eazy E's. That allows me to just like toss into all of my easing, like so you don't ever have to think about easing and I have to bring in anything else. Right? Like, here's the stuff I like to use. Yeah. So for me, like being able to just take those things with you from project to project, and in developing sort of repertoire of your own sort of common patterns and code stuff is is so useful. Yeah. One of my favorite features, it's stylist that doesn't get enough credit. Is this bubbling up variable? Have you used this? No,
+
+31
+00:11:45,419 --> 00:11:46,559
+Wes Bos: I haven't told me about it.
+
+32
+00:11:47,039 --> 00:13:05,850
+Scott Tolinski: Yeah, so this is really one of my favorite features. And it's probably the only thing keeping me from using SAS on a regular basis. Because I can't I can't live without it. Basically, the way it works is it has to do with it bubbles up in your nesting. So let's say you have a parent and the parent has, let's say, let's think of a good example. Let's say the parent has a background of black, or Okay, maybe a button is a better example here, sorry, let's say the button has a background of black, you would also want the border to have a background of black maybe in the initial state, maybe it changes on hover or something like that. But let's say instead of having to say what you do is you essentially are able to use a value of another property as a variable for a value. So if you want the border to be the same color as the background, instead of saying border equals black, you can say border equals at background Ah, and that makes it so the border is the same color as the background. And regardless, if you change that, it's always going to pull that value from the background. And it bubbles up by you could be in a nested selector all the way down. And if you were to say at background, it looks up the nesting tree until it finds a background and then gets that value. That's
+
+33
+00:13:05,879 --> 00:13:30,899
+Wes Bos: super cool, I actually haven't used that before, what I would do is I would just set a variable and then use that variable three or four times over. But that's really neat. And I'm assuming you can also feed that into some of the functions that Silas gives you. Meaning that like you can throw it through a transparency function or an opposite function. So if you if it's like a certain read, and you want to get like a complimentary or an opposite color, that red, you can just feed it a function
+
+34
+00:13:31,559 --> 00:14:02,399
+Scott Tolinski: is super useful when you have use cases like Like I said, with buttons, right where maybe your button color isn't a theme color it's going to color using throughout your site, maybe your cancelled button has this red color that you only use on that button, you can just encapsulate it there, or I use it. I use it all the time. I use it for all sorts of different weird cases where you're sort of like, well, this needs to be the same as this. Maybe if you're creating a square, you can say the height is equal to the width. And that way, they're always staying in tune that way.
+
+35
+00:14:02,429 --> 00:14:30,659
+Wes Bos: Yep, exactly. Or if you're doing like, like a ratio, you can say, take the height and multiply it by 1.6. And then it will, it'll always be you don't have to redo the math for each of those every single time. It's one thing I always do is I'll take like the the background color, and then I'll put like a slightly darker border around a button. And then I'll just feed that background color straight into the darken function and darken it by 10% or something like that. And then it'll, it's just automatic.
+
+36
+00:14:31,350 --> 00:14:35,490
+Scott Tolinski: Yeah, so do you use you use things like the the functions the darken and light Yeah,
+
+37
+00:14:35,610 --> 00:14:47,850
+Wes Bos: I use I use darken, lighten alpha, which which which takes a hex and then we'll convert it to RGB and then put the alpha right on it so you don't have to manually do that yourself. I'm a big fan of those color ones.
+
+38
+00:14:47,850 --> 00:14:56,789
+Scott Tolinski: Instead of that I use the just RGB a function. So RGB a will also take a hex Oh is RGB, a stylist?
+
+39
+00:14:56,789 --> 00:14:57,779
+Wes Bos: Right.
+
+40
+00:14:58,409 --> 00:15:01,019
+Unknown: And I think in sass as well. SAS Yeah, yeah.
+
+41
+00:15:01,169 --> 00:15:02,549
+Wes Bos: Oh, I didn't, I didn't know that.
+
+42
+00:15:03,029 --> 00:15:15,840
+Scott Tolinski: So just because the only reason I do that is because it's short RGBA rapid hex comma, year opacity level, whatever. Yeah. And then instead of light and dark and I use the plus and minus a lot, I don't know if you use those no other Tell me
+
+43
+00:15:15,840 --> 00:15:24,419
+Wes Bos: about that. This is great. This is like, why I want to do this stuff, not because I know what I'm talking about. But because I just want to like pick up little tips and tricks from people like Scott.
+
+44
+00:15:25,019 --> 00:16:31,590
+Scott Tolinski: Yeah, so so this is what I've been doing. Since I started SAS, instead of using a lightened function in a darkened function, you don't get necessarily the percentage, you're you're actually adding to the color value, you know, the 255 to zero value. And if you were to say, the hex value, let's say you were to have, you know, any given hex value, you could say plus, and then a number, let's say plus 10. And it's going to bump up all the values by 10. So that that becomes a complimentary later. Ah, so I'll use it all the time on hover states for buttons just by saying, on hover, it's the same hex or variable minus 20, to make it darker, and then you That's it, right? You I'm not saying it's 20%, darker, it's just Hey, it's 20. Darker, I usually do it by eye. I'm sure there's, there's ways you could do it with the science of numbers. You just say, hey, nit minus 20, or minus 10, or something is good for me. Yeah. But it's a nice little shorthand. You don't have to work with the function, you can just throw it in anywhere also works. And stylists not quite sure if that works, unless I haven't had enough experience. Yeah,
+
+45
+00:16:31,590 --> 00:16:51,929
+Wes Bos: usually what happens is, if there's not something built into the standard library of sass, or less than somebody will go out and make a function or a mixin, or whatever it is that you call it in your language that takes in a value and then you can do a little bit of math with it and return the values from that mixin or from that function.
+
+46
+00:16:52,799 --> 00:17:08,809
+Scott Tolinski: Yeah. So yeah, I guess maybe we should dive into some of those core features, like what makes CSS preprocessor sitting worth it overall? We mentioned variables, mix ins and function. Yep. So maybe if we want to touch on each of those maybe just very briefly for the people who are uninitiated
+
+47
+00:17:08,809 --> 00:18:00,180
+Wes Bos: Yeah, exactly. So variables should be fairly straightforward. You declare a variable like red, and then you set that red to be your specific red because then when the client comes around, or you change your styling, you don't have to do a huge Find and Replace. That's kind of like a general rule. In programming. If you're doing a massive Find and Replace, there's probably something that you can do to improve your workflow. And in my case, I will always set up I'll have like a variables file, which I put all of my my variables into. And then I have the specific red and yellow and everything that I'm working on. One neat, one neat thing about stylist is that you can overwrite built in colors. So the built in blue, and red and yellow, those are terribly ugly. So I always overwrite them with my version of blue. And then I don't have to remember what the variable name is, I just know that it's
+
+48
+00:18:00,240 --> 00:18:29,060
+Scott Tolinski: blue, or yellow. Right. And that's another great feature of stylist I know, this is like a stylist. Pump up our like that you don't have to have the variable declaration in front of it sound like $1 sign. Because of that, you can just use the word blue, like you said, overwrite the blue. And that's primarily how I define my colors and stylist. It's just by using the common like word version of them without, you know, like, my black is what 111? Yeah, exactly.
+
+49
+00:18:29,060 --> 00:18:49,099
+Wes Bos: I always write the D flat black. And that's something I take with me to project product. If you look at Scott or II sites, you'll notice that they always have like these like, little details about them that you don't necessarily look see at first. But once you look into it, and that's because those little details take some time, but they they come along for free on every single project that we do.
+
+50
+00:18:49,770 --> 00:18:59,130
+Scott Tolinski: Yeah, exactly. They take it with you. So we have variables mix ins are essentially just reusable chunks of code, right?
+
+51
+00:18:59,790 --> 00:19:15,390
+Wes Bos: Yeah, so if you've got For example, I it's funny because I use mix ins in both in my pug or Jade, as well as when I'm doing my cuts looking at his water like what's in my water.
+
+52
+00:19:16,310 --> 00:19:27,829
+Scott Tolinski: It's I've got the giant booze giant like German boot full of water. It's like it's made, it's like two liters. absolutely massive. Okay,
+
+53
+00:19:28,099 --> 00:20:03,800
+Wes Bos: anyways, mixins. Like, let's say for example, you have like a generic styling that you do to a button where you set the background, you set the padding, you set the width, you set some, a whole bunch of different stuff needs to happen on that button. And rather than either reuse that class name over and over again, or rather than copy, paste that code over and over again, you can create a mixin that is sort of like a function it can take in an argument if you need it, and then it will return to you a bunch of bunch of generators. code for that specific selector and and apply it to that selector.
+
+54
+00:20:04,440 --> 00:20:28,530
+Scott Tolinski: Mm hmm. Yeah. And functions similarly are sort of, can be used in the same way where it's either spitting out code, but you can also be manipulating values, functions very much like a function in JavaScript, where you're, you're passing it in something, or maybe nothing at all. And it's returning something else. Yeah. So like I said, you can have it spit out code, or you can have it manipulating a value. Whereas
+
+55
+00:20:28,609 --> 00:21:21,660
+Wes Bos: a mixin will always return CSS, or other stylists, right. Yeah. So that's Yeah, they can be used interchangeably. But functions can be any value at all, return a string or a number, or anything, it is actually one fun thing I've used it for is when I do when I do my conference talks, the way that I make my my conference talk slides look decent is that I take a whole bunch of random photos. And then I have this SAS function, or sorry, the stylist function that will generate a random gradient. So I have a whole bunch of like complimentary colors. And then it goes through that array, and will generate random gradients at different angles and different values. And it always looks really good. But every time I generate my slides, it gets a fresh set of different gradients and different photos on it. So it's kind of like computed, but also looks designed at the same time.
+
+56
+00:21:22,410 --> 00:21:42,630
+Scott Tolinski: Yeah, and that's part of the brilliance of this stuff, right? I mean, it doesn't matter which CSS preprocessor you're using, but you can do stuff like that with it. And there, you're developing a system where it's always going to look good. And it's always going to be different, but you don't have to touch it, you know, you set it and forget it. And I love that stuff. That's a great example.
+
+57
+00:21:43,230 --> 00:21:50,060
+Wes Bos: That's true. Yeah. What are what else? Do we want to talk about these things? Obviously, maybe nesting real quick.
+
+58
+00:21:50,910 --> 00:22:53,790
+Scott Tolinski: Yeah, so and nesting, basically, it functions where the output CSS is what it would be if you're the class thing? Well, okay, let me start over on this one. So the way nesting works is basically, you have your normal CSS, which typically inside of a given class distinction or distinction, you would have your properties, right, but inside of nesting, you can have another class or another identifier in there. And that identifier is going to be as a child of that parent. So let's say you had x as a as a parent, why as a child, and you would have the nested in your CSS, the output and CSS, instead of being the x and y as two entirely separate declarations, or would be you have the X the code with x, and then you'd have X space dot y or whatever, and then the code within there. So it allows you to essentially scope your code together over like a parent selector.
+
+59
+00:22:53,910 --> 00:23:49,349
+Wes Bos: Yep. And it's pretty neat, because you can do Parent Child selectors, you can also use and this is true in both sass, and stylus, probably same in last as well. Or you can do ampersand. So like, let's say you have like a hero. And then you want to do a direct descendant selector, which is the the the opening or closing angle bracket. So you want to say like hero, and then the direct h4 of that not any direct descendant of it. So you can do an percent angle bracket h4, and then that will generate you a direct descendant CSS selector inside of it. Or you can do, let's say you have button and you can say, button and then nested inside of that you can say button and ampersand dot large. And then that will select anything with a class of button and the class of large like it has to have both of them to be able to be true.
+
+60
+00:23:50,069 --> 00:24:36,450
+Scott Tolinski: Yeah, and that ampersand is something that you use constantly, is one of the greatest features being able to access the parent selector through that. Yeah. And another thing that people sometimes use, but I found can be a little bit a little bit troublesome here and there is actually using the ampersand in your class. Oh, I do that, right. Yes. Yeah. So let's say you were to have your parent, which would be let's say, hero, and you want your child to be hero hyphen, blue, or I don't know, blues, a bad example, Hero hyphen, large, right? You have a larger version of the hero. You would use the actual ampersand in the declaration. So you'd say dot ampersand or not. Wait, would you say dot there?
+
+61
+00:24:36,480 --> 00:24:40,800
+Wes Bos: No, you would dot and you put it in the where the hero would go. So
+
+62
+00:24:41,010 --> 00:25:36,660
+Scott Tolinski: Oh, right. Yeah, because it already has it. So you would just say ampersand hyphen, large, and that would give you the hero hyphen large as your other class name. And then you don't have to write out the word hero over and over again. Yeah. And the only which allows you to have really nice scoped Like very directly scoped thing, the only bummer is, is that if you're looking for hero hyphen large in your code, you can no longer find it. Because it doesn't exist. generated. So then you would just maybe find hero and then scroll down to you find here are a hyphen large or something. Yeah, yeah, I ended up having I did that, like on a large project. And I did that, like 100%. And then when I was and having to change stuff, I was like, gosh, darn it, I can't find anything. So I've said stop doing that. But it's definitely like a really cool technique.
+
+63
+00:25:36,690 --> 00:26:54,240
+Wes Bos: Yeah, maybe, maybe let me talk about my, my pros to doing that. So it's really big for those who write them. And we'll talk about Batman in the future one, but one of the downsides to nesting in these languages is that your selectors get extremely long. And that is terrible for specificity. So if you've ever like by convenience, just ness that a whole bunch of stuff inside of something, and then you come back later and try to override it, and you're like, damn it, the selectors so specific, I have to use important everywhere to actually get it to work. So and that's the last thing you want to do exactly is important. So if you've got, let's use a hero, for example, if you say dot hero, and you give it a padding, and a background, and then you say ampersand underscore underscore title, that's going to generate you a selector called dot hero underscore, underscore title. And that selector is not going to be inside of your hero, it's not going to be dot hero, space, dot hero, whatever, it's going to just be a top level selector, which really cuts down on any specificity wars that you're going to have. And then all of your selectors are all one class deep, and you don't have the only specificity that you're going to get is if you have code that comes later in the actual document than earlier.
+
+64
+00:26:54,990 --> 00:27:25,829
+Scott Tolinski: Mm hmm. So yeah, another just a one of the reasons why those those things, bam, and all of those they can be tough to use is because you have those really long selectors. And this is just one of those great things that saves you a little bit of time here and there. Yeah, it's really what these are all about. Right? It's just saving you this time. So we talked a little bit about features. Maybe we should just talk a little bit about a comparison, we express that we both like and use sass and stylus. What about less? What's your experiences there? Yeah,
+
+65
+00:27:25,890 --> 00:28:56,069
+Wes Bos: so actually, my own personal Wes Bos calm runs on less, because I think I built it back in 2010. And at the time, the whole idea of like a build pipeline, I'm sure it was around, but at the time, it was like, make files. So I was like, that's a pain in the app. I need something that's PHP. So I built my site in WordPress, and then I code a little function into my functions dot php That said, if the person is logged in, then just use the there's a less PHP library, the default ones written in JavaScript, but there's also a less library. And it will just recompile it right on the server for me, which is pretty neat. And I was I was pretty happy with that. Obviously, I've much more sophisticated build pipelines now. But at the time, that was a nice way to do it. I don't sure what the the core differences are, I think variable star within an app sign instead of $1. or nothing in Silas. What else it's it is written in JavaScript, which was a big plus. Because SAS was initially written in Ruby, which a required Ruby in your pipeline. And B, if you had a big, big sass project, it was like, I remember we had one that was like six seconds every time you saved. And it was brutal. Yeah, but But what happened is they rewrote sass in C. And now you can use it in mostly most of your tooling is done in JavaScript anyway. And it's super fast.
+
+66
+00:28:56,069 --> 00:29:30,859
+Scott Tolinski: Yeah. And my experience with less was, I feel like it is less full featured, there would be things that I was trying to do. I can't give explicit examples here, because I don't remember that there was a time when we were diving into it a little bit. And I was just a little bummed out at the stuff you maybe couldn't do with it. I think it they hooked a lot of people early because one of the when people were still confused about the build process thing when that wasn't really a huge thing. Right? Yeah. In standard projects, there was a what were the real time on?
+
+67
+00:29:31,680 --> 00:29:35,849
+Wes Bos: It was like a JavaScript file that you just paste into your, your head.
+
+68
+00:29:35,880 --> 00:29:38,880
+Scott Tolinski: Yeah. And so it doesn't compile it compiles it on runtime, it'll compile
+
+69
+00:29:38,880 --> 00:29:42,930
+Wes Bos: it in the browser. Yeah. Which, unfortunately, a lot of people shipped to production.
+
+70
+00:29:43,530 --> 00:30:50,220
+Scott Tolinski: Right. Yeah, right. Exactly. And they said, Oh, you shouldn't do this or production. But like, sure enough, people were just like, Oh, it's easy. Just toss the spotland here and it works. I don't have to think about it. Yeah, so I think that and even bootstrap was originally unless for a little bit before they move to sass and I actually Actually strongly petitioned against using less on a major project we did for the forbes.com. redesign. Yeah, they were like when I got on the project they were using, they were using less than me and this other developer were just basically we went to our boss's office and we're just like, Listen, like, we need to, we need to use sass. Like, we neither of us are comfortable and less and we were the main core developers on it. So yeah, like I said, I can't speak enough on the the differences. I've never just I never got into it. I started with sass personally. Back when sass and Hamill were like, Oh, you don't say sass without saying Hamill. Yeah. And that was like the Ruby thing. Everybody's using sass and Hamill. So, for me, I started with sass and never really looked back. And yeah, stylists and pocius. I
+
+71
+00:30:50,220 --> 00:31:09,420
+Wes Bos: think I think it is I'm just looking at the website, and it looks pretty full featured. I'm sure there's some like little like nitty gritty things that will you would run into Yeah, but it's like, it's still actively developed. So I, I would probably be pretty happy to join a project on it. And these days, if it already was using last I'd be like, that's fine. We can we can figure Yeah.
+
+72
+00:31:09,420 --> 00:31:17,609
+Scott Tolinski: Right. And I'm sure now all these things have have grown. Yeah, you know, I guess that that experience is several years old. So you know.
+
+73
+00:31:18,420 --> 00:31:43,890
+Wes Bos: So let's, let's switch over to talking about post CSS. Because when this came out, people were a little bit confused. There's a little bit of uproar, where people are like, seriously, I just learned sass. And now you're telling me to switch to something different. And I think there's a bit of miscommunication as terms like, what is post CSS and when you might use it, and do you use them together? So I know, what do you want to explain what it is? Yeah.
+
+74
+00:31:44,099 --> 00:32:07,109
+Scott Tolinski: So post CSS is really just like it declares itself a post processor. So instead of a pre processor, and that might just be like a little bit of syntactic Oh, you know, way to differentiate itself. But it's really the last step in your CSS pipeline. And you can definitely think of it like Babel for CSS. Do you say Babel by the way?
+
+75
+00:32:07,800 --> 00:32:12,060
+Wes Bos: It's, I say Babel, but it is baulk. But I just for
+
+76
+00:32:13,170 --> 00:32:13,890
+Unknown: I'm to
+
+77
+00:32:13,890 --> 00:32:14,490
+Wes Bos: invest. I've
+
+78
+00:32:14,490 --> 00:32:51,480
+Scott Tolinski: always said I know how that is I get it. I know, like things MySQL or MySQL, whatever. You know, everyone has their way of saying things. But yeah, so basically, it's it's taking your your CSS code, it's not taking your stylist code wherever it's taking your CSS code and augmenting it. So the best use case for it really is Auto prefixing. And anyone who's been around before autoprefixer is new, how much fun it was to always have to type all of the different CSS prefixes. I remember back in the day, there was CSS three for me is that the site when backward,
+
+79
+00:32:51,720 --> 00:32:55,200
+Wes Bos: CSS CSS three please doc Lemos, Paul Irish,
+
+80
+00:32:56,069 --> 00:33:03,540
+Scott Tolinski: right? Where you would go to this website to copy all of the browser prefixes, because you don't want to type them all out. And, and
+
+81
+00:33:03,900 --> 00:33:15,750
+Wes Bos: Mozilla had it backwards, like if you wanted to do top right? border radius, it was like WebKit, top border, right radius. And Mozilla was like, WebKit border, right?
+
+82
+00:33:15,840 --> 00:34:02,190
+Scott Tolinski: It's like opposite and those just terrible nightmare. So you, you are always writing these prefixes. And your your code was just ugly, because it was just just endless amounts of properties that were like taken up in prefixes. So what post CSS does it allows you to forget that like those things ever existed, and you can just write your CSS with border radius. And with autoprefixer, and post CSS, you can say, hey, just give me you know, CSS that's compatible to the last three versions, or last two versions of major browsers, and it's going to spit out the appropriate prefixes for you. Like I said, you know, you can pretend that they never existed at all. But it's basically a way of extending core CSS features. And it just changing the way that your CSS is output overall.
+
+83
+00:34:02,910 --> 00:36:15,980
+Wes Bos: Yep, exactly. It's, it's, it's kind of like Babel for CSS like you can any whereas like sass lessons, stylists are entire libraries. And if you want a feature to be added to your library, you have to petition the the people or you have to submit an issue and you have to talk about I would like to get this feature to be added. Whereas with post CSS, it's just a framework where by default, it does nothing. And then if you want it to do something, you need to get one of these transforms a plugin for post CSS to do what it is that you want. So one hilarious one I've seen is like Canadian style sheets, yeah, because we put it we put it in color. And so if you just want to write your CSS, like you were British or Canadian, you can and then it will take your ncss in you again, you could you could write this in sass, it'll compile the CSS. And then once it's at the CSS time, then you put it through one of these post CSS s transforms, that's going to turn it back into the regular CSS. So regardless of what weird thing your team is trying to do, whether you're writing your CSS in a specific way, you don't have to like hope that there's a plugin for that. In sass, you just write your own. in there, you're all written in JavaScript, you can write your own transform, right? And they're cheap. I mean, they're small, cheap little plugins you can add in, there's already a gigantic library of little ones. And they all just yeah, work together. And you hardly have to think about it, you just install? Exactly. Yeah, I'd say that. The one downside to it is that some people do use post CSS, plus 50, plugins in place of sass, lesser styles. Because there is a nesting one, there is a variables plugin that you can get there is anything you can think of, you can just sort of like come up with your own syntax, and then it will transform it to standard CSS for you. The one downside to that is like you have to bring everything yourself. Whereas with sass, less and sass, you know, all the features that are available to you, and you can just go ahead and use them. Whereas with post CSS, you must include a plug in, do the research, figure out if they all work together as you go
+
+84
+00:36:15,989 --> 00:36:43,170
+Scott Tolinski: along. Yeah, which is one of the reasons why I think a lot of people use x preprocessor with post CSS, right, because then you could all those core features that you're used to using, you don't have to add it all. And then you also can then throw in anything you want that exists in post CSS. And if you look at the post CSS GitHub repo, there's a ton of links to different plugins. So there is just an absolutely massive amount of stuff out there that you can transform your CSS with.
+
+85
+00:36:45,150 --> 00:36:50,420
+Wes Bos: That's awesome. So is there any plugins that you yourself, uh, aside from using
+
+86
+00:36:51,420 --> 00:38:16,080
+Scott Tolinski: autoprefixer, I use a one called rucksack, which is, it's sort of like a package for stylists are one of those where you get a whole bunch of just new new powers. You know, some of the stuff I don't use, like, it gives you access to all the easing curves. So you can use the word ease in cubic or whatever, to get the easing q curve, cubic, instead of having a variable for that. There's a lot of different automatic prefixing says there's different quantity pseudo selectors, so that it gives you new pseudo selectors, like at least at most between, so you can say exactly four, or if this is, at most four, then you know, do something, there's, there's some really cool shorthand positioning stuff that I use a lot. So if you want to give this like a position fixed at zero, and zero or something, instead having to do long form, position fixed, you can say position, position, fixed, 00, whatever, all in one line, similar, like you would with like a border radius shorthand. So it's basically it's not giving you a ton of crazy features, but it's giving you things that you know, are cool and nice to have in in CSS.
+
+87
+00:38:17,850 --> 00:39:02,040
+Wes Bos: That's pretty neat. That that quantity queries one, I think, is pretty neat. So if you're hearing this for the first time, you can use at least or at most, or, you know, you have like any child and whatnot. But somebody figured out that if you have a combination of nth child selectors, you can say like, if there's four items in this div, then make them 25% wide. But if there's three items, make them 33% wide, or, or you can do all these crazy combinations together. And the writing of them yourself is is nuts. It's all like these, like sibling selectors. But you can you can use the quantity queries, pseudo selectors, which are not part of CSS, but it will just convert them into whatever the equivalent CSS and child selector is.
+
+88
+00:39:02,069 --> 00:39:11,690
+Scott Tolinski: Yeah. And that's really the the strength of this this stuff, right? I mean, sass and stylus, they, you know, they they don't give you things like brand new pseudo selectors.
+
+89
+00:39:12,780 --> 00:41:04,130
+Wes Bos: Yeah. And what's kind of neat about that is that CSS is is changing. We're getting a whole bunch of new stuff added to CSS, whether it's, we're getting variables, so we already have variables added to CSS, or getting our RGB ba or actually hasn't been confirmed yet. It might be a R. And what that is, is you can use alpha, like you can put opacity on a hex code, meaning that like if you do pound, whatever block is 000000. You can also add some opacity to that by either putting FF or 00 on the front and FF i think is totally transparent. Yeah, I think so. Yeah. Something like that. But you can if you understand how and how to count and check as a decimal, you can apply a value that will convert it. And that's cool because there's this thing called CSS next, which is just a whole bunch of these post CSS plugins put together. And they are trying to take everything that is coming to CSS, and convert it to whatever the the equivalent that we have it today, much like baybel, takes ESX ESXi 78 s 100 code and converts it into es five code that works in all the browsers. We're trying to do that with CSS next. Obviously, not everything is doable, because the browsers don't have to support things like variables before a little work. But you can start coding with all these new color functions, media query ranges, like you can do media query ranges, what I'm just looking at the the website right here, custom properties, overflow wrap, system, UI font, it'll do all these new things that are coming to the browser and then compile them down to whatever the equivalent
+
+90
+00:41:04,130 --> 00:41:34,830
+Scott Tolinski: Yeah, and that's really I mean, the benefit of modern tooling for the web, right? It takes us stuff that, you know, I remember sequin CSS three features came out, I remember working for an agency that was just like, oh, there's not a chance we'll ever be able to use these, you know, yeah. And it takes us stuff that we had to worry about all these different edge cases and old browsers, and it makes it way more accessible to us on on more projects, because you can write the code the way it's intended to be written and without having to worry about what the actual browser is reading, you know.
+
+91
+00:41:36,600 --> 00:41:45,060
+Wes Bos: Cool. Well, let's, let's move on to talking about do you want to talk about these libraries? Or do you want to go into structuring,
+
+92
+00:41:45,090 --> 00:43:15,860
+Scott Tolinski: let's go into structuring with any of these preprocessors it's really nice that you can break out your files a lot easier. And Long gone are the days of like importing CSS files, which was like never super performative are a great idea anyways, so with this, you can import your your files, and instead of having an import at runtime, and possibly having to, you know, download another file, it imports it on compile time unifies, it brings everything in allowing for being able to just break out your code, right, like Wes said, keep your variables in a file, keep your functions, and Nixon's and maybe your typography rules, I like to personally I have sort of, I have an elements file, which is like base styling for all elements of a foundation style, which is like a base styling for all of my foundational stuff, I guess, where you put your CSS reset sort of stuff, and how you'd want to just sort of base styles. And then sometimes it depends on the project, split things up into, like, if we're working in reactive per component file, some people like to keep those per component files with the components themselves further. So that way, you have that structure, sort of like a Ruby on Rails sort of thing, where you'd have your, your template, your CSS, and everything all in one directory. So that sort of style of keeping your styles close to your components is really, really nice. But how do you keep track of yours? Do you do a per component? Do you have like a one big file? Do you have lots of little files? Yeah,
+
+93
+00:43:15,860 --> 00:43:58,080
+Wes Bos: I've been in the last little bit, probably last year or so I've been totally componentized everything. So I will have a underscore hero dot CSS or underscore store dot CSS and underscore widget. And then what I do is I write all of the code that is associated with that component in that file. So when it comes to editing piece of my website, I don't think about what page is that on, I think about what component Am I trying to edit. And then I crack open that actual component CSS, and I've really been liking that you have a lot more files at the end of the day, but each file has maybe 20 3040 lines of code. And it's much more manageable to be able to do that
+
+94
+00:43:58,080 --> 00:43:59,520
+Scott Tolinski: you can find it that I do. Yeah.
+
+95
+00:43:59,969 --> 00:44:10,620
+Wes Bos: Yeah, it's it's super easy to find all the things that you're looking. And if you have source map set up, your browser will tell you which partial you have written that actual piece of sass in.
+
+96
+00:44:11,550 --> 00:44:15,989
+Scott Tolinski: So do you want to talk about what a source map is? I think this is actually good. Yeah. So
+
+97
+00:44:16,110 --> 00:44:58,500
+Wes Bos: a source map, I always like to say source map is your treasure map for bugs, where you're authoring your code in a file, like a sass file, a stylus file, a JavaScript component, a react component. And then the browser doesn't understand sass or anything like that. It only understands CSS. That's why it gets compiled. So source maps will sort of tell the browser, I know that you think the error is on line 11 of style dot CSS, but really, they authored this in underscore hero dot sass. And when somebody sees it in dev tools, or when there's a console log or console error, show them where they authored it, not where the browser actually ends up seeing it.
+
+98
+00:44:58,920 --> 00:45:22,650
+Scott Tolinski: Yeah, and that's pretty crucial. I mean, when you have a large CSS project, and maybe you're not quite sure where something is, or properties being defined, maybe it is something like up the chain and an elemental or something like that you can use just always know where to look for, it just saves you a little bit of time, but definitely something you want to have in your build your build process.
+
+99
+00:45:23,640 --> 00:45:59,070
+Wes Bos: Yep, I've got a question for you. And this is not in our notes. But I'm just curious. Now I thought about it. How do you handle media queries, because something that SAS allows you to do and Silas is that it allows you to write your media queries in a selector. So you say I have a hero, and you background red color blue, whatever it is. And then you can say, at media min width 500 px, and you can say like, when this hero is less than 500 pixels, then change the padding or the width or whatever it is that you need to change. Yeah. And I've sort of been bouncing between the two, I want to hear what you have to say
+
+100
+00:45:59,070 --> 00:47:22,739
+Scott Tolinski: I use my nested so I keep it all in the component. So if I have the parent component, you know, this is the header or something like that, I would then immediately have all of the header specific styles. With a simple breakpoint, I use a library to make it really easy for me called rupture for stylists. And it's really nice because the media query syntax instantly becomes way less verbose. And you don't have to worry about having 1000 really long statements, it's just it's plus below, and then a pixel value or plus UI, like above, and then a pixel value, or I think you can do in between two, which I don't often do to be honest. But you you just end up having plus above your, you know your variable for your breakpoint. And so because of that being such a simple one liner, I sprinkle it in anytime, I tend to not rewrite selectors, so I'm not going to have the break point. So if I have the break point for header itself, I'm not going to have all of the children rewritten in each break point, I'll have the children underneath header, and then the children will have their own break point. So yeah, basically, I err on the side of using a lot more media queries in my actual stylist than using less and having to rewrite selectors and that kind of thing.
+
+101
+00:47:23,580 --> 00:48:14,130
+Wes Bos: It's true, I find if I used to rewrite all my selectors, because I like to have them in a separate file. But it was a nightmare of trying to like re structure all of my CSS again. So I to write my my selectors. And sometimes people are like, oh, but that's too many media queries. But it doesn't matter how many media queries you have. There's no rule that that says that you need to only have six, or like iPhone media query only. Yeah, you can go bananas with them if it's simple. To do. So with something like a plus above or plus below. It becomes really, really simple. Yeah, and, and sort of on that point, I find myself writing a lot less media queries ever since I've picked up Flexbox as well. If you write really good Flexbox code, and hopefully grid code pretty soon as well, my immediate my, like, mobile styles are pretty, pretty small. Yeah.
+
+102
+00:48:14,130 --> 00:48:28,290
+Scott Tolinski: And that's, and it's got to be the Flexbox has to be like one of the single greatest additions to my life in coding, like, I can't express just how much easier it makes life constantly
+
+103
+00:48:28,410 --> 00:49:30,570
+Wes Bos: cool. Now, I want to get your your hot take on extending versus adding class names. So this is if you've ever looked at a website, and you've used source, and you see like dot column, column, 12, column, small six, column medium, seven, and it's got like 7000 classes on the div. That's because they are writing a whole bunch of CSS selectors, and then applying them to your markup by just just by giving it a class name. And then the other way around that is that you can, you can write some CSS like a button. And then you want to write another button like button large, you could either give that button, a class of button and button large, or you could just give it a class of button large. And then your button large selector would extend button, it would take everything that it has, and then sprinkle on like font size 100, or padding. 20 pixels would just boost it up a little bit. So those are sort of two different classes of thought. I'd like to hear what you think about that.
+
+104
+00:49:30,570 --> 00:50:14,670
+Scott Tolinski: Yeah, the heartache is that I don't use them. And I don't worry. There's so many like, I guess there's so many other ways to do that stuff. Like I if I'm going to be reusing or extending that code. I oftentimes just throw things in a Nixon and like if I have a button mixin and you can use a transparent mixing in stylist where you hardly even know it's there. Right. So it's like that base coat. I would just I would throw in a mixing. I don't never see a super need for it. I don't I err on the side of less classes personally, then more micro classes, and just rely more on the features of the preprocessor. But half the time where I'd want to maybe use extend, I probably just make a mixin instead. And don't even think about extend.
+
+105
+00:50:15,300 --> 00:50:59,070
+Wes Bos: Yeah, I did it on one project. And I regretted it just because debugging was kind of tough. One thing that it does do is if you extend something, like if you have a button, and then you extend it on button large, and then you extend it on whatever, then your your selectors start to look like dot button, comma, dot button, large comma, dot button, blue comma, and it just goes over and over and over again. And it's not the end of the world. It's not, it's not going to make your CSS any bigger. Some people think that that's that happens. But that's what jesup does. If you have, if you have a same selector eight times over, then it's going to just jesup it into small and you it's the equivalent of only writing at once. So it's not a big deal. I just haven't been a huge fan of actually using it. Yeah.
+
+106
+00:50:59,070 --> 00:51:18,719
+Scott Tolinski: And again, it's like tooling, right? It's like tooling, like jesup. And all this stuff is CSS preprocessors or post processors, whatever. It just lets you work, how it makes sense to you and your team, and lets everything else get out of the way. So you don't have to worry about things like how many class names are on something, you know?
+
+107
+00:51:18,960 --> 00:52:36,840
+Wes Bos: Yeah, exactly. All right. Um, let's talk about sharing CSS. And this is something I haven't figured out yet. Maybe Scott, not either. But I've worked on a handful of teams. But one thing that I haven't figured out is like, what's the best way to share CSS in like a node module? Or if you're working on like an open source project, like flippity, which is a slider plugin, and it comes with some CSS as well, like, Well, how do you include that in but also keep that up to date. So some of the options are is you can just copy and paste it, I can go into GitHub, view raw copy, paste it into your own mixin. And sort of try to keep that up to date. You can use something like Webpack, where you import the CSS into your JavaScript when you need it. And then your web pack will compile that out to a CSS file for yourself. There was a project called eyeglasses, by Chris who built compass back in the day, that was a really popular SAS project doesn't seem to be in active development anymore. I'm not totally sure where that's at. I don't know if it got any uptake. This is a whole bunch of different stuff. I don't know, Scott, you have any thoughts or solutions on
+
+108
+00:52:36,840 --> 00:53:08,219
+Scott Tolinski: this? I have zero solutions. And my thoughts are that I'm not I'm not doing it a good way. Right? Yeah. Right now. Yeah, you have a project. And half the time these projects aren't using anything special. And we'll just say, head into the, you know, the dist folder and grab the CSS and node module. You aced it. Yeah. And and that's what I'm doing. And I don't like it. You know? Yeah. So I don't know if there is a better solution out there. If anyone out there has a better solution for this. We want to hear about it.
+
+109
+00:53:09,420 --> 00:53:36,449
+Wes Bos: It's true, especially if you are breaking your your code into smaller things. I guess the React community sort of has the solved because they they coupled their CSS with their components, which is really nice. But then even then, I was trying to use a component that didn't. Didn't couple it, but I was using style JSX. So like, I was like, how do I import somebody else's CSS? That's not the same way that I'm doing my CSS. So
+
+110
+00:53:36,510 --> 00:53:37,170
+Scott Tolinski: yeah,
+
+111
+00:53:37,170 --> 00:53:39,030
+Wes Bos: I ended up just copy pasting. Right,
+
+112
+00:53:39,090 --> 00:53:47,370
+Scott Tolinski: exactly. And that's why you do that, because it's like, at the end of the day, you know, what's the better option at this point? I guess. So,
+
+113
+00:53:47,489 --> 00:53:52,290
+Wes Bos: if you've got thoughts tweet us, I'm at Wes Bos esbls. Scott is at
+
+114
+00:53:54,030 --> 00:54:02,310
+Scott Tolinski: S kolinsky. Or the easier at level up, tuts. That one's easier, then you have to deal with the Polish last name.
+
+115
+00:54:03,570 --> 00:54:05,699
+Wes Bos: Well, let's jump into our sick
+
+116
+00:54:05,699 --> 00:54:06,660
+Scott Tolinski: pics.
+
+117
+00:54:07,920 --> 00:54:23,340
+Wes Bos: This is the section of the show where we tell you some sick things that we're working with right now. And I'm actually just going through building a entire new laptop I just got a new MacBook and I opted not to Time Machine over everything but but set it up fresh. That's the
+
+118
+00:54:23,340 --> 00:54:25,770
+Scott Tolinski: only way. That's the only way to do it.
+
+119
+00:54:26,100 --> 00:54:32,520
+Wes Bos: Oh, I was about nine or 10 YEARS OF TIME MACHINE upgrades. But I there's just I
+
+120
+00:54:32,520 --> 00:54:52,320
+Scott Tolinski: had all these like random dot file application support folders from apps that haven't used in eight years. So every time I have my hackintosh and every time I upgrade the OS like when I upgrade to High Sierra, I'm gonna wipe it fresh clean and start over and Oh yeah, I'm a little obsessed with that. That fresh, fresh startup.
+
+121
+00:54:52,380 --> 00:56:11,340
+Wes Bos: It feels great and a lot of my like random like Bluetooth issues have stopped. So I don't know if it's related or not. So my pic today is I had been using something for my OSX menu bar called bartender, and what it lets you do is hide icons behind a drop down, it was pretty great because you could just keep your, your OSX you could keep your icon bar nice and clean. And for me, I often plug into a projector, and, and teach. And often I have too many icons that I can't even click them because they're they're hidden on a small screen. So I've moved over to this new one called vanilla. It's by Matthew Palmer, he's he actually built this really sweet emoji picker that you probably see me use in my tutorials. And it's just so simple. It's it goes into your, your menu bar, it's a little dot, and you hold down Command and drag the icons to the left of the.if, you don't want to see them. And to the right of the.if you do want to see them and then you get this little Chevron that you click and it will show you everything. And you click it again or leave it for a couple seconds and it will close again. It's they have a free version. And if you want it to start up on on boot of your of your laptop, or if you want it to auto hide, then you pay I think like four bucks or something like that. It's totally worth it.
+
+122
+00:56:11,430 --> 00:56:16,710
+Scott Tolinski: Yeah, I love I love stuff like that. I'll pay for apps like that any day of the week. You know?
+
+123
+00:56:16,739 --> 00:56:27,150
+Wes Bos: Yeah. Oh, yeah. Any day that I actually think it's a little bit cheap, like I probably would have paid 1740 for it. Go grab it. It's called vanilla by Matthew Palmer
+
+124
+00:56:27,180 --> 00:57:55,469
+Scott Tolinski: though. What do you got sick nice, sick pig is a power blocks, which their website says it's the world's best dumbbell. And I like have to agree with that I'm going real world here I've done some digital sick picks. Power blocks basically is a way that it it's the smartest solution ever. It combines like a dumbbell, that would typically, you know, if you want to have a whole bunch of dumbbells, you've got to buy a giant set. And they take up a ton of space. And they're all heavy and all this stuff like that this combines all of that into a single dumbbell. And you can change it in five pound increments all the way from like 20 pounds, or two, I think it goes down to 10 pounds, actually 10 pounds all the way to 90 pounds at five pound increments. And it's all it takes up the space of one single dumbbell. There's like me Yeah, it's amazing. And they're so they're a little expensive, right, but the amount of one space and just I do you can do a billion exercises with them, because you suddenly have every single weight from 10 to 90 pounds, and you can change them out in a matter of seconds. We my wife and I share these things. So we'll both be doing two entirely different workouts with two entirely different weights. But it's the change out is so fast that you can change the amount of weight and just pass it back packet passing back and forth. And you're not like spending a whole bunch of time you buy one set of them, and you can extend them by adding more and more weight to them.
+
+125
+00:57:56,219 --> 00:58:00,780
+Wes Bos: So how much is a set of these? For someone who wants to get super buff?
+
+126
+00:58:00,810 --> 00:58:40,290
+Scott Tolinski: Yeah, if you want to get super buff Man, these things? Yeah, these things will take you there. Let me see. I'm on Amazon right there. Let's see. They go anywhere from this is 129 to 500 bucks, but let's see. Oh, these are the expansions? Yeah, it looks like if you want like the 50 pounds set, your it's gonna cost you like 300 bucks. I can't imagine that. This is I think they have several different versions of that. I don't remember paying three, we have a 70 pound set. And I definitely didn't pay $428 for it. But you can buy it in very different various different sizes.
+
+127
+00:58:40,680 --> 00:58:48,870
+Wes Bos: And you can buy expansions because like, there's no way I need a 70 pound immediately or ever in my life. Yes, you
+
+128
+00:58:48,870 --> 00:58:53,730
+Scott Tolinski: do. You need you need this. If you want to get buff, what do you need the 70 pound that
+
+129
+00:58:54,000 --> 00:58:55,920
+Wes Bos: that truly is a sick pic.
+
+130
+00:58:57,989 --> 00:59:02,640
+Scott Tolinski: Thank you. Thank you. Yeah, I wanted to get real world with it. This time I've been to digital.
+
+131
+00:59:03,630 --> 01:00:45,510
+Wes Bos: Awesome. I need to get I did my backpack last time. So all right. Cool. Um, let's round it off with the shameless plugs. This is the part of the show where we shamelessly plug stuff that we're working on or stuff that needs attention. And obviously, we both build video courses. So I'm going to plug one of my free ones right now. It's called JavaScript 30. It's been sort of, I'd really say about six months ago, and I've been really, really happy with what it is I spent about two years collecting different JavaScript exercises that could help people get better at JavaScript, because that's how people would always ask me like, hey, why site like understand FUBAR bars, and I can loop over? Like a list from one to 10 but like, how do I actually build stuff like what I want to do stuff in the browser, and I want to learn I just want to like sharpen my sharpen my tools. I want to get better at JavaScript. So I put together 30 different exercises that take you between 20 minutes and an hour to build and they're all really fun. They're all real world, they all touch upon different stuff from working with the webcam all the way through to some browser API's. It's no, the whole thing is that there's no compilers, no frameworks, there's nothing that needs to be done. You just open up an HTML file and get coding. So are you using it? Yes. Six in that? Yep. Yeah, it totally everything is done in EF six, up to the latest standard. So it's pretty cool. It doesn't work in older browsers. But like, that's not what this thing is. I have other courses that explain how to do that. But this is just how do we get up and running? Oh, wow, I just have 200,000 signups for 101, or 1109 100,000.
+
+132
+01:00:45,510 --> 01:02:06,980
+Scott Tolinski: That's a ton. Yeah. So my shameless plug here is a series I it's actually a combo deal that I just released. Basically, I have a new sketch series, my sketch videos on YouTube are like the most popular sketch videos on YouTube. So they were really old. And I'm pretty embarrassed by them for how old and old they are. So I re recorded the whole series, it's now the sketch course, or the sketch guide, depending on which image you're looking at. Apparently, I have it, this type here, but it's the sketch course. And then it's a combo with that, and UX prototyping with principle, which is another series I've built on a tool called principle. So it allows you to get up and running with sketch app. So you can design some really cool apps. And then it allows you to get up and running with principle, which allows you to take those sketch designs and make interactive animated prototypes. So you have literal sketch documents or web apps that you can click on the menu and see the menu slide out and then save that as a gift or a video or something like that. But so either way, it's total UX design and prototyping series. So that's on store dot level up tutorials, comm it should be on the homepage, sketch course and UX prototyping with principal.
+
+133
+01:02:08,640 --> 01:02:16,170
+Wes Bos: Sweet looking forward. I should check that out. I actually did your sketch one, like probably three or four. When did you release your sketch one on YouTube,
+
+134
+01:02:16,199 --> 01:02:20,010
+Scott Tolinski: your initial 2013 or 14? Yeah, a lot of Yeah,
+
+135
+01:02:20,040 --> 01:02:35,969
+Wes Bos: it was a long time ago. And it's great. It just got me like up to speed on all the different hunks of scash. And in, in how to how to use it sketches like a kind of like a Photoshop replacement for it's only on the Mac, but it's, it's amazing. I use it every single day.
+
+136
+01:02:36,150 --> 01:02:38,699
+Scott Tolinski: Yeah, I literally use it every single day.
+
+137
+01:02:39,930 --> 01:03:05,400
+Wes Bos: We will have actually we should have a whole episode on designing or whatever, something like that. Awesome. Well, let's wrap it up there. We're just about hitting an hour. So until next time, we'll see you on the next syntax. Head on over to syntax.fm for a full archive of all of our shows. Don't forget to subscribe in your podcast player and drop a review if you like the show. Until next time, peace
+

@@ -1,0 +1,360 @@
+1
+00:00:01,319 --> 00:00:10,530
+Unknown: You're listening to syntax the podcast with the tastiest web development treats out there, strap yourself in and get ready to live ski and West boss.
+
+2
+00:00:10,559 --> 00:00:59,009
+Wes Bos: Welcome to syntax. This is the long awaited view episode. So today we're gonna be talking all about view and I don't really know all that much about view and Scott is going to be telling me all about views. It's gonna be kind of a fun episode instead of us both having insights into it. It's going to be me asking questions, and Scott schooling me on how all these things work. Today, we are sponsored by a century, which is going to do all of your error, exception, aggregation, tracking all the information about what went wrong on your website, and on your server. In a new sponsor today is called clubhouse, which is some pretty nifty new project management software. That won't make you cry. We'll talk about that a little bit, partway through the episode with me today is Scott Tolinksi. ski. How you doing today, Scott?
+
+3
+00:00:59,189 --> 00:01:53,550
+Scott Tolinski: Hey, I am doing great. I'm doing great specifically because I never thought today would come I never thought we would get to do the Vue JS episode. So I'm really psyched. Because I've been pushing for this for a long time. I like view. I'm a fan. So that's it, I think we'll try to give you a pretty good overview of view itself without necessarily getting too in depth. And then you can go in and check it out a little bit more. And I think we'll answer some of the high level questions, some of the the basic stuff and get into the syntax. So again, if you are a Vue JS expert, and you want to share some additional tips and factoids, go ahead and tweet those out at us. Because, you know, it'll be a nice little addition to this episode. But I'm just excited. I'm excited to talk to you about view, I actually have a new view course coming out. So I've been I've been working in a lot lately. So uh, so yeah. Do you want to get into it admin? What do you want to just kick this off?
+
+4
+00:01:53,579 --> 00:01:54,210
+Unknown: Yeah.
+
+5
+00:01:55,410 --> 00:02:24,690
+Wes Bos: I don't even know what to ask. But yeah, like, so maybe for people who are jumping into this as their first episode, she explained that I'm entirely a react developer, I use no to the back end generally reach for react on the front end, I have a previous life as an Angular developer. And Scott is very much the same way. However, he has dipped his toes and built a couple he has got some courses on view as well over the last, I don't know, six months or so. Yeah. So like, what is view? Scott, tell him Tell me what it is? Yeah,
+
+6
+00:02:24,720 --> 00:03:57,690
+Scott Tolinski: well, I think you are one of the perfect types of people to understand Vue really well off the bat. Because more so than people who just like if you picked up react and react as your first front end framework, you're going to be a little bit more confused by view than somebody who has that Angular experience. Because there's so many nods to Angular one, I would even say that view itself is sort of this like hybrid, in my opinion, I don't know if they like to be described as this. But in my opinion, it seems like it's a hybrid of ideas from Angular, one point, whatever react and meteors framework Blaze. And so there's a lot of little things here that that both address the sort of modern workflow that we're used to now with react, but also sort of the simplicity and some of those wow factors you've got with Angular one. So the things that are Angular one esque, for those of you who aren't diving into Angular one, it may be a little hard to visualize this. But we have things called directives in view, which are essentially properties on elements that do things, whether they bind data, or they perform events, or they do loops, that same stuff from Angular one is in view. So your Yeah, so you're not writing JavaScript in a template like you are in JSX. You will are writing directives to do things like loops, right? Or show if then that conditionals and things like that, you have the V hyphen if to show something on an element, rather than some conditional code, wrapping something.
+
+7
+00:03:57,780 --> 00:04:25,860
+Wes Bos: So there's if statements in view, unlike react in react, you have to use like a Okay, I'm gonna have to say the word again. Turn or Turner, ternary ternary. operator. That's one thing that I think is so really missing from from react is the the niceness of Angular and I guess view as well as you have these nice little v dash, is it a v dash? If and yeah, how do loops work? Can you tell me about that?
+
+8
+00:04:26,070 --> 00:05:07,070
+Scott Tolinski: Yeah, loops. If you have used Angular loops work the exact same. So you have a V hyphen for and then inside of a string or inside of double quotes, you could say I guess it's not really a string, you would say V hyphen for item in items. And then inside of that, you just have item dot available or whatever, you have item dot Hello, right. So just like in Angular, you would have that directive on the wrapper. And then inside of the wrapper is the thing that you're going to be looping over. But unlike Actually, I don't remember this video. in Angular or not, it's been so long, but like react, you do need keys for your items. So you do need to bind some keys. Yeah,
+
+9
+00:05:07,320 --> 00:05:20,700
+Wes Bos: I don't remember that. Meeting keys. No, I think keys came along because they realized that the whole virtual Dom thing, I think keys allows them to quickly render just that piece of the DOM. Yeah, and being able to track it very easily
+
+10
+00:05:20,850 --> 00:06:39,420
+Scott Tolinski: track a single item. So I mean, so that it begins to peek into some of the aspects that are like react. So we have the aspects that are like Angular with your directives, and your templates and tax and things like that, that really feels like Angular. But the stuff that really feels like react is components and props, you're passing in props, there's this whole parent to child relationship, like you have in react. And you have generally creating components and the flow of creating components feels very much like react, you, you create a component, you import it, you use it pass props that way, okay. So that those aspects are very react similar. And then to tie it all together. There's little bits of magic here. And there. Sometimes we use things like the bind syntax, which we'll get into where you have quotes. And just like in directives, it seems like it shouldn't be JavaScript, because it's within double quotes, but it ends up being a JavaScript expression, or a variable or a value that you can use straight up. So that is something that is a little confusing for newbie, people who have come from react where everything is so explicitly JavaScript here that not everything is so explicitly JavaScript, there's a lot of view syntax stuff, that will seem just a hair different. But a lot of the times once you get the basics of it, it all feels very, very nice.
+
+11
+00:06:39,510 --> 00:07:02,880
+Wes Bos: Okay. And at the end of the day, the the core idea behind view is that you're just making components that render stuff, they have templates, they have logic as to what should happen when they load and when, when people clicks. And and they have, maybe you can talk about CSS or styling approaches as well. But the idea is, is a component driven framework, much like Angular or react was correct?
+
+12
+00:07:02,940 --> 00:08:24,020
+Scott Tolinski: Yes, absolutely. And so aspects of it, like I said, they feel very much like Angular. And as long as you have that Angular experience, it's going to feel like riding an old bike. And if you have that react experience, those things are going to feel like riding a bike as well. So it's just like, it's a combination of these great ideas. And I think that's why it's taken off so much, because it includes a lot of the best parts of react with a lot of the simplicity of Angular one that people like so much. And sort of that combination of the amount that you're able to accomplish easily plus simplicity equals total view magic. So that's definitely why people like it, and I can see if you've never learned react at all period, and you came directly from Angular one to view, it would almost seem like this was Angular two, you know, it almost feels like this is what Angular two should have been. Because it has that feeling of an upgrade upon what Angular one was, well, having all these new features. So one of the things that kind of gets me here is in the view Doc's, they often show sort of a syntax that you're never going to use a whole ton. In my experience, at least, they're often showing this whole creating a view component, just as a, like a very like, oh, here's how you create a component, but not necessarily how you do it. Even out of the box. If you're using the CLA. Let me get a good example here. I'm trying to pull up some code.
+
+13
+00:08:24,150 --> 00:08:34,619
+Wes Bos: Yeah, I'm just looking at the docks right here. And it just says like var app three equals new view, right? Is that how you mount it? Yeah, create a new view. And you give it a mounting point.
+
+14
+00:08:34,649 --> 00:09:11,130
+Scott Tolinski: Oh, yeah, that makes sense. So to create an application, you do you have a new view instance. And then you bind it to an item, or an ID, I should say, in your DOM, and that generates the actual code, right? But in the actual component, creating syntax, the way it ends up really working in the real world is that you have a file, that's your component. Within that file, you have a templates tag, inside of that template tag is all of your code stuff. So all of your your your view, your front end code, your when I say view, I mean, the i EW, not the you, ie,
+
+15
+00:09:12,630 --> 00:09:16,590
+Wes Bos: your HTML, your templates, what it looks like, right? Correct.
+
+16
+00:09:16,649 --> 00:11:16,590
+Scott Tolinski: Yeah, yeah. And then you have your script tag, typically, where you'd have your JavaScript if needed, the kind of stuff that you put in your JavaScript we'll get into it's kind of interesting, especially coming from react land where the whole file is JavaScript, a view file, you typically have the template, you have the script, and then you have the style. And then there's some other stuff occasionally as well. But the style tag is where you put the CSS. Now one of the cool things about some of this stuff is we'll we'll die first at the template, we'll go down to the JavaScript section, we'll go to the style section. In the JavaScript section, you have a template syntax that feels very much like handlebars, you have the double brackets, and then you have your JavaScript variable expression, whatever, right? And so that aspect of it feels very much Like Angular or any of these things, and then you have your components, which feel very much like react. inside of this, you have directives. So one of the most commonly used directives is the V hyphen, bind, and then a property. So this is how you bind a value to a property. So unlike react where you have a property is equal to a bracket, and then inside of those brackets is a JavaScript expression. This you have V hyphen, bind colon, the property is equal to double quotes. And then the JavaScript is inside of double quotes now inside of a bracket. So to me, that always feels very weird when I'm doing it. It feels simplistic, but when I'm looking at it, it doesn't feel great. That said, the the syntax highlighting were all highlighted to make it not look like a string and look like a JavaScript expression. That helps a lot. But v bind is one of these things you use pretty much constantly. And then because you use it constantly incomes, some of the view niceness where view knows that you're going to be using v bind all the time. So they give you a nice little shorthand, which is simply just a colon. So if you say colon, SRC equals to, and then a variable, that horse is going to be automatically bound to that variable.
+
+17
+00:11:16,799 --> 00:11:34,350
+Wes Bos: Okay, wait, I'm not sure I understand this. So if I've got a movie object, and I want to, I want to display that movie object, it's got a title, a description and image, do I just need to template it out with curly brackets? Or like, what is bind? I'm not
+
+18
+00:11:34,350 --> 00:12:35,909
+Scott Tolinski: sure what is bind for them. So bind is a directive that you would put on to an element. So in the idea of maybe you have an image, right, so your image tag has a source property, and you want to use essentially a JavaScript variable on that soar on that source property, what you can't do is sources equal to brackets property, because that just, you know, to use the bind syntax, like a prop in react would be like, source equals curly brackets, movie dot image, correct on this, it would be like if I want to make any custom Prop, or any custom directive, as it's called an in view, is that true? If you are passing props into a component, you don't need to use the bind. It's only for dynamic stuff. If you're passing in a thing that never changed, you could just say, the prop is equal to this string attached to a variable or an expression, then you would need to use the bind.
+
+19
+00:12:36,210 --> 00:12:53,250
+Wes Bos: Okay, so if I have a movie, and I want to pass down the the title and the description, if that would never change, I could just pass it down as a like an attribute, like a regular HTML attribute. But if I need to be live, like I'm using quotes here, then I need to bind it sort of,
+
+20
+00:12:53,819 --> 00:12:59,909
+Scott Tolinski: because what I mean by static is like that string is coming in as a hard coded string, not as in
+
+21
+00:13:00,179 --> 00:13:24,450
+Wes Bos: Oh, if you Oh, yeah, you were just manually typing it. But if you wanted to pass a variable or an expression that is, is calculated, correct, you need to pass it okay? Because in react, there's no difference between those two things, right? You either pass it as a string, you just type it in quotes, or you just give yourself a curly brackets, which tells JSX that this is a piece of JavaScript that needs to be run or and watched for future changes.
+
+22
+00:13:24,510 --> 00:15:15,899
+Scott Tolinski: Yeah, exactly. So that aspect of view is a little weird at first, for those of you who are coming from react to just think, Okay, I'm going to throw some curly brackets here, like my first inclination, when I wanted to pass in a data property to a source or something, I wanted to do equals double brackets, like the template syntax, because that's how you're displaying it in the template syntax, right. But that doesn't work. But the good thing about view is, is that when you make that mistake, they're aware of that that's going to be a common mistake. And the error message is saying, hey, use v bind instead, because work. So that's the first thing that comes up. So props, just like anything else, like we mentioned, can get passed down to another component. However, the big difference here is in react, you have access to the props via the function or class, right, they come in as this dot props dot whatever, or they come in as an argument or parameter to that function as props. The difference is view doesn't have that because they have this template syntax, right? It's template, your template code, script, whatever. So if you want to actually bring in a prop and use it, even if it's been passed down into your template, you have to inside of your script tag, you export a default object. And inside of that object, you have a props property, and that props property is an array of all of the various props that you're going to be using in your template. This is, like sort of foreign if you look down I have we have some code examples. We'll try to get these into the show notes too, that you can look at as well. Yeah. So this basically by declaring this props in the array, you can now free for all use it in your template just to simply bracket bracket the prop name, you don't have to pass it in, you don't have to have any. You don't have to make it available via function or whatever it just has to exist in what is this default object for the component.
+
+23
+00:15:16,169 --> 00:15:50,070
+Wes Bos: So in order to use data that's been passed into a view component, you must first specify what you're expecting to be passed in much like a like a, like arguments on a function or in react, I guess somewhat similar is prop types. Yep, yep, prop types, you would go ahead or if you're using like a typed component, or something like that, you would specify what you're expecting to have come in, and you can go ahead and use it. But in react, that's not explicitly necessary, you could just kind of willy nilly props that whatever gets passed in. Ah, okay, man, I am learning.
+
+24
+00:15:50,520 --> 00:17:59,550
+Scott Tolinski: It's you're getting you're learning on. And what's cool about this is you can define, instead of just saying like, here's the props and array, and you have like an image or something coming in, you can define what that prop is like, like, sort of like prop types where you can say, Okay, I have this prop coming in, and it's a string. So you can definitely specify, like the exact prop types that it needs to be just like react, it's just there is a shorthand to say these are the props that I'm expecting. Okay? So, props, that's how they work, no big deal, pass it in, tell us expecting, you can throw it in your your template tag as bracket, bracket, props, and then use it just like that. So inside of this script tag is really where all of your JavaScript happens for a lot of reasons. And this is this part is going to feel kind of foreign to people who work in react, because we're so used to having all of our imports at the very top of our file, do everything like that, and then have the view code itself. In view, you have your template tag, and then you have your script tag, your script imports. Anytime you import another component or anything into your view file, you import it within the script tag, which could be in the middle of your page. So this, this, to me always felt a little weird that my imports weren't at the top. But again, it's just like a thing that you got to get over. So if you wanted to, let's say use another component in your component, you import it inside of the script tag. So let's say import latest posts from blah, blah, blah, your view file, then inside of that same function, which is essentially the construction of the view component, where we define what props we're going to use, you also have to have another property named components. Now components is a property that accepts an object. And then you can say, All right, I'm using latest posts inside of this. So just like props, you have to let the view component know which components you're going to be using inside of the template. Because the template like in react, your template is part of a JavaScript function, right? But in view, the template sort of adjust its own thing. So you always have to like register your stuff to say, Okay, this is what I mean. Yeah. And after you do read that register, you have access to that component, just as if it was like important,
+
+25
+00:17:59,570 --> 00:18:37,310
+Wes Bos: okay, so in in react world, if you are creating a component, and you want to use another component inside of that one. So let's say I have a title component inside of my movie component. In react world, we just import the title component and go ahead and use it in in view world, you must go inside of your script tags, import that thing, and then almost export it, it's not exporting, but it's it's sort of surfacing it to the templates, like if you if you want to get it outside of the script tag into the template tag, you must import it and then surface it via the components property on this, this export that we have.
+
+26
+00:18:37,380 --> 00:19:15,050
+Scott Tolinski: Yeah, and that's very true. So that's anything that you're using in your template tag that's not just straight up HTML needs to be defined, essentially, somewhere in your script tag. And that that's true for data. That's true for components. There's even some things called computed properties, which are essentially just functions where you can have a function that uses data to calculate things on the fly, right? Because instead of having a JavaScript expression in your template, like we kind of often do in react, the preferred way would be to maybe have a computed property that does it inside of the script tag, just to know cleaner. It's
+
+27
+00:19:15,050 --> 00:19:21,150
+Wes Bos: almost like a property. But under the hood, it will be it's like a function that will get run. It's like a getter and setter in JavaScript.
+
+28
+00:19:21,239 --> 00:19:26,880
+Scott Tolinski: Yeah, you can almost think of it as like having a function in your render or something in, okay, because you
+
+29
+00:19:26,880 --> 00:19:36,540
+Wes Bos: can't just use JavaScript anywhere inside of a view thing, you have to put it inside the actual JavaScript part, which will then surface it via to the templates.
+
+30
+00:19:36,779 --> 00:20:01,200
+Scott Tolinski: Yeah, so a lot of these things that we're running into is really just a result of the fact that the template is separate from your JavaScript. Yeah, I mean, it exists typically in the same file or can exist in the same file. But it's still separate your JavaScript isn't there for your templates. So you can't just write JavaScript in the template like you can in react. So it feels a little bit different there. But some of the things I really like about view worthy. I
+
+31
+00:20:01,200 --> 00:20:02,460
+Wes Bos: don't mind this at all.
+
+32
+00:20:02,520 --> 00:21:04,230
+Scott Tolinski: No, no, no, it's very, um, it's very elegant when you get into using it. So we talked about data and all this stuff, we have something called actions as well. And actions, they use a directive called v hyphen on so you'd say V hyphen on colon, and then click to do a click event on something. And then that is equal to a double quotes. And then the event like the function that should happen in the event that feels weird to me, considering it's double quotes, and then a JavaScript function, but whatever, that's just how it is, with a lot of stuff in view. Because you end up doing events so much, you end up also having a nice little shorthand. So with bind, we had just colon, whatever the property is, with events, you have the at sign, so you'd say at click is equal to function. And that function will then run when you click it. So it's, again, when you first look at a view template, and you see these colons and add signs, you might be like, well, but once you really get like what's going on with them, like quickly, it's really easy to get a quick look at it and see, you know, what's going on here,
+
+33
+00:21:04,260 --> 00:21:40,850
+Wes Bos: I like that because like in react, you you don't know if something is passing like it's like on click or on on whatever. And in this, it has a an add sign at the front. So you can quickly scan and see, oh, this is an event that will happen. And I could see that. Yeah. So another question I have is how do you pass arguments in react world, if you're trying to like pass an argument to an onClick handler, you have to like put it like a inline little arrow function, or use bind or something like that, in order to just pass an argument to something? How do you do that? In view? Magic?
+
+34
+00:21:41,010 --> 00:22:30,990
+Scott Tolinski: Yeah, some little magic fingers go on here. No, you just do it. And it just works. You just say like, if the function is going to be do something, you would say do something parentheses and whatever the thing you need to pass in to do something. So unlike react where if you were to do that, it would just run the function immediately. Again, this is some of the differences of view. And react is again, that react is actual JavaScript functions and classes were viewed template syntax is a template syntax, right? It has, it has its own things that are are not necessarily rooted in just straight up JavaScript. So the fact that we can say, just have a normal function inside of there that runs in past an argument when you click it, I like that I like it a lot. It seems like there's not a lot of extra fluff in there. Yeah, like, you don't have to have a bunch of extraneous syntax just to make it work with JavaScript.
+
+35
+00:22:31,110 --> 00:23:03,900
+Wes Bos: I was just gonna ask a question of how do you solve the problem of like injecting reusable code, like in react world when we've got templates, and then we have like functionality, you have to use like, or you have data, and you want to inject that thing into there, then you have to use like a higher order function or render proper now we have hooks, but I think that this is very simple. To me, it seems like if you want to inject extra functionality into a component, you just import that functionality, and put it into the methods are the component, computed part, and then you just have access to it?
+
+36
+00:23:04,320 --> 00:24:19,500
+Scott Tolinski: Yeah. And I think I think there is some some view learning going on in terms of like the changes that hooks have made to react and how I think of this, because there's definitely like a lot of talk about hooks in you know, I, I'm not up enough on the view, sort of like what's coming down the line in view. Yeah, but it does say they're planning integration with hooks into view three, but it's going to not be the exact same as reacts implementation. There is some some progress on it. There's a really great CSS tricks article on this, that we can link up in the show notes that you can see sort of status or something like hooks inside of view, but it seems like there are, and this is one of my favorite strengths of view is that the team seems to really understand progress. And the view framework itself is constantly growing and learning and taking advice and taking things from other platforms. And I think that aspect of view is what makes it so so appealing, besides its simplicity. One of our sponsors today is also very appealing because of not only its simplicity, and its interface, but the functionality it's going to get you which is a new sponsor for syntax. And this is clubhouse
+
+37
+00:24:19,710 --> 00:26:51,870
+Wes Bos: Yes. So clubhouse is it's going to, we're just kind of talking about, like how should we explain what this sort of thing is? It's project management software for web development for software development that sort of brings everybody who's on the team together. So you've probably heard us in the past complain about different project management software out there, things like JIRA is out there or Asana is another one and these things are often very frustrating to work with because of just the extra work that it puts on you. And the the confusion and everything is editable input and things like that. So clubhouse is aiming to bring you This like really good project management software that makes your life as a web developer as well as your VPS, your CTO, your actual project manager, their life really, really easy because often, it seems seems to be that the the project manager loves getting in these the software, but the developer hates it so much and makes them want to want to cry. So let's talk about it real quick clubhouse is the first project management software that brings everyone together so that teams can focus on what matters creating products that customers love. clubhouse provides a perfect balance of simplicity and structure. For better cross functional collaboration. I think that's, that's really important, like this thing is beautiful, that the design of it is really, really nice. It's, it's really easy to sort of reason about what's going on in this. Whereas some of these other project management software's, it's just, you're clicking around forever, and you can ever find whatever it is that you want, it's really easy for people on any team to sort of focus on their specific task, we talk a lot about just like breaking down what it is that you have to do into small tasks that are well defined, right? And you can do that and you can really focus in on what you want. But then you can also zoom out and see, how is the team doing? What are we working on right now? What is in progress, what is not done? What is currently being blocked all that good stuff. So if you're looking for a better solution for your project management software, or if you're looking for a solution at all, I know a lot of you are just kind of sending emails and whatnot, check out clubhouse that's at clubhouse.io forward slash syntax, podcast, all one word, all lowercase. And what you are going to get is two free months of clubhouse, which is awesome. That's better than their standard trial. You want to check it out. clubhouse.io forward slash syntax podcasts. Thanks so much to clubhouse for sponsoring CIC.
+
+38
+00:26:51,960 --> 00:27:01,410
+Scott Tolinski: If you don't if you don't need that kind of management, check out their website, really nice interface. I was a loving not only this site, but the clubhouse interface. It's really good.
+
+39
+00:27:01,470 --> 00:27:15,900
+Wes Bos: Yeah, they got one of these, like scrolly websites, where as you scroll, it highlights different things. But it's done very, very well. So you don't feel like nauseous using it. I love it. It's some of our sponsors have just awesome. Do right? That's
+
+40
+00:27:15,900 --> 00:27:18,030
+Scott Tolinski: a common thread. Yeah, that's very common.
+
+41
+00:27:19,530 --> 00:27:21,690
+Wes Bos: Alright, keep talking to me about a few.
+
+42
+00:27:22,020 --> 00:29:13,200
+Scott Tolinski: Okay, so let's get into something that you are familiar with from react, which is the lifecycle. Now we're probably thinking about the life cycle a little bit differently. Now that hooks are in react, because you're not thinking about component did mount will mount all that stuff, you're just thinking about it mounted and updated. And you're using effect, right? Although for those of you who haven't dove into hooks, yet, you're probably very familiar with the idea of a lifecycle method, a lifecycle is method is basically a function that runs at various points during the components life. Okay, a component has a life, it is initialized. So then a method is run called before create, then it's created. So there's before create, there's created, then there's before mount, then there's mounted, then there is before destroy and destroyed. But there's also before update, and updated. So any individual state, whether it's updated, mounted created, there's both that event and the pre before one that you can run. So view gives you a ton of lifecycle methods to basically make it available to do anything at any given point within the lifecycle. Before After the component is a created or destroyed. Like one of my favorite things about view, I think this highlight that very clearly is that they make the common things very, very simple to do. And they make the uncommon things very possible to do. So a lot of frameworks will sacrifice simplicity for, you know, ease of doing the easy thing. They'll do simplistic, easy things. And then it's difficult to do the hard things, I think view makes the easy things easy, like super duper easy, but they also make the hard things available and superduper easy, you're not going to have to be diving really hard into the framework to figure these things out the right there for you. So if you need to use the component lifecycle methods, they're giving you a ton of options for it. So it's all available to you,
+
+43
+00:29:13,230 --> 00:29:21,690
+Wes Bos: and how do you use them? Is it just like a more properties inside of that script tag that we move bet, ah, but you
+
+44
+00:29:21,690 --> 00:29:36,180
+Scott Tolinski: don't have to define them in terms of like, there isn't like a parent lifecycle method property, the property is just that of the name of the lifecycle knob level inside of the obligated, yeah, created, updated, destroyed, that sort of thing.
+
+45
+00:29:36,330 --> 00:29:57,810
+Wes Bos: And what about data fetching? Is that where you would you would go off and fetch some data inside of one of those. That is where you would be fetching data. Yeah. Okay. And then what about like state? Maybe I don't know if you have this on here as well. I'm just starting to think about like, if I were to go off to API and grab some list of things, where do I put those things when they come back?
+
+46
+00:29:57,990 --> 00:31:03,360
+Scott Tolinski: Yeah. So this is funny because It's the same as data, right? So you have a property on your general view object, which is simply just data. Okay? So all of the properties, anything within data is going to be reactive as then when you change it, it's going to update in the template. So you'll have a data property in here, let me see if I can modify this code that we have in here, you have a data property. And if you were to say something like, Alright, I have some initial state which is is nav open or something. Now you could just say is nav open, is equal to false in that's in the data. Now, if you were to have an event that you were to access and modify that data, you access that via this. So let's say I have a method, you click the button, and it's supposed to toggle that you would then be able to have access to that data property, as this.is never open, you can modify it. And again, it's reactive. So it's going to update in the template instance.
+
+47
+00:31:03,599 --> 00:31:11,460
+Wes Bos: And then to set state do or to set data, do you just overwrite the variable? Is there a special function to do it in like a new killer way?
+
+48
+00:31:11,639 --> 00:31:30,930
+Scott Tolinski: Yeah. So basically, setting the value of the property is going to reactively update it. So yeah, so there isn't like a this dot set state. Because in react, we have this this concept of state, and we think about it as state, but in view, it's sort of just like data, right? Here's your data. These things are reactive, it's bound just as an
+
+49
+00:31:30,959 --> 00:31:35,310
+Wes Bos: object, you could just get data in the object and it will update itself.
+
+50
+00:31:35,429 --> 00:31:39,630
+Scott Tolinski: Yep. Again, you have access to that data in all of the methods and everything. Yeah,
+
+51
+00:31:39,749 --> 00:32:01,170
+Wes Bos: I wonder if there's any, like issues with like a synchronous, where like, the data hasn't been updated yet, but the thing re renders that we have like issues like that in, in react, although I think that they're mostly gone now that we've got hooks, I don't know, tweet us index FM, if you know of any of the things. I'm sure there's some like deeper edge KC things, but we're not gonna dive too deep into that right now.
+
+52
+00:32:01,349 --> 00:33:33,570
+Scott Tolinski: Yeah, view pros. If you are hearing me say anything that you think is not entirely accurate, please let us know. I've used view on several projects, but I haven't used it on a project the size of level up tutorials. So yeah, you know, there's so many of these little edge cases and things you get into or ideas you get into when you're building something really huge. So by all means, please share your your view knowledge with us. So next, we're going to get into CSS. And CSS is really cool, because just like anything else, in view, it's all defined on this one file typically. Or you could break it out into its own file, if you really want i like it sort of in this file, it reminds me of styled components, but you just basically have a style tag in the bottom, you can enter all your CSS there. And one of the really cool aspects of you that I just really, really like is that if you want to scope the CSS to that file, specifically, all you have to do is add a scoped property to your style tag. That's it, and then it becomes scoped. And then to me that like really makes the the need for something like styled components much less because do you have a system to have like really tightly scoped CSS if you want it, or you can have global property CSS in here, if you want it as well. So they give you a lot of options, whether you want to lock it down, or something that said, the view docs, like one of the things I like instantly thought it would be really great to just define everything as elements now and not have to put classes but the view Doc's recommend against doing that, because of performance reasons. So they still say recommend styling everything via classes, you just have the ability to scope it to the file.
+
+53
+00:33:33,809 --> 00:33:48,390
+Wes Bos: Okay, I see, that's cool that that like scoped attribute was actually proposed for the browser where you just needed to, like have a scoped attribute, and it was in the browser for a while, but they nixed it and took it out, which is kind of a bummer.
+
+54
+00:33:48,779 --> 00:35:10,670
+Scott Tolinski: Yeah. And let me tell you, I think that's like part of the view stuff here is that it, it really just takes good ideas from a lot of places, make something that's very good. So one of the cool ideas that I've gotten to use in the grid, some course that I was doing, I didn't actually do this in my previous view course. But I discovered how cool it is, while I was doing the grid some. And this might work, people might argue, and this global component registration, which doesn't really sound like a huge deal. But global component registration is you're basically saying view component, and then you pass in a component name. And what that does is it makes that view component available to every single template without having to first register it. So in the poll, we suggested saying import the component, then you have to sort of register it and then you can use it. The way that I found this to be best used is for something like a layout. When you're first starting with grid sum, which we'll talk about in a little bit. And their default code, they have a layout defined as a global component out of the box, and the fact that you could wrap every single one of your files in the main layout without having to import it every single time. was a really, really nice thing you did like the here's a component they use all the time. So therefore, you should just be able to register it globally makes it available act access to every component ever.
+
+55
+00:35:10,880 --> 00:36:19,050
+Wes Bos: It's kind of nice. Yeah, you know, you know where I used that myself is this is actually something that I got added to Gatsby MDX where I was writing my blog posts in markdown. And I wanted like, like the equivalent of WordPress shortcodes. In Gatsby. So I made these like YouTube components, where I just say, like YouTube component, and you pass it the ID. And then, and then I just wanted to, like use that anywhere in a markdown. And the way it was, was that I had to like, import it every single time, I wanted to use it and was like, that's a bit of a pain in the butt because I have to, like write an import statement for every blog post that wants to embed YouTube. I just want this idea of like globally, available shortcodes or whatever, and I and they added it into Gatsby MDX. And now there's this ability just to globally make things available. Like imagine you had to import an h1 tag every single time you wanted to use an h1 like that. There's like, there's already a concept of global things in the browser. It's called HTML. So if you are using these things over and over again, maybe it wouldn't make sense to to make them globally available. I know that people think that global is bad, but it makes sense to me, right?
+
+56
+00:36:19,350 --> 00:37:18,510
+Scott Tolinski: Yeah, there's definitely some some specific areas where I think it was excellent. And like I said, I, when I first started using it in a grid zone, which is a static site generation, I was just like, Ooh, this is cool. I like this, I like not having to like not having to import this. So it just felt really nice. Some of the cooler things that that view does is they have a really great COI to get started. And you know, they've had it the whole time. So or at least in some regard, when I first started using the view COI, it's I mean, it's view, create my project, whatever, it makes it really easy. It's a lot like create react app, obviously. But I think it was sort of create react app before create react app is what it is. Now they did a really good job with it. And I think that was one of the first things that will tie people to Vue js is because they'll use the COI, they'll see how easy and nice it is. And they'll get hooked by that sort of like a lot of the stuff that the simplicity of getting going with it is just so easy that it's gonna make it's gonna draw people in
+
+57
+00:37:18,510 --> 00:37:32,480
+Wes Bos: totally, that's why I think Angular one as well was just, it was so easy to get up and running. And then they showed you this little mg bind, and then the variable changed and the UI updated. And you're all coked up on how amazing that was.
+
+58
+00:37:32,820 --> 00:38:07,670
+Scott Tolinski: Yeah, when you don't have any, you don't have any issues or bugs getting going right. You're just getting going without any issues. But let me tell you, if you do have some issues in your code, you're done. Thank you. super smooth. That's what I'm all about. I had a Nitro cold brew today. So I'm feeling I'm feeling smooth. So century@sentry.io is the bug and error tracking service that you're going to want to try? because let me tell you, we've both been using this since I last for me long before they were a sponsor of syntax. I know Wes, you've been using Sentry for a good amount of time as well.
+
+59
+00:38:07,859 --> 00:38:15,150
+Wes Bos: Yeah, probably like three, three or four years now. And they when they sponsored my Redux course, I think about three years ago,
+
+60
+00:38:15,540 --> 00:40:02,460
+Scott Tolinski: yeah, I've been using just because I was looking for initially at a time bug tracking services. And Sentry really stood out to me for a lot of reasons. And I'm really glad I chose them. Because honestly, this is a service that I can't live without, I look at my bugs all the time I get the error messages, I assign them to GitHub issues, we go and tackle them that way. Or I can see if something that's happening on the front end or something is maybe a one off thing, something a little interesting, I have some occasional bugs with the YouTube player. For instance, I have a bug that says the YouTube player is not attached to the DOM. I honestly don't I think this is an issue that comes up because of people's blocking software or things like that. But again, it's not an issue with the code. And so what I can do is I can go ahead and select this error, and I can click ignore. And guess what, I never have to worry about that bug popping up again in my system, because I'm ignoring it. And so the fact that Sentry gives you full control over how you can organize and track your bugs is such a killer feature for me, you can look at things in the last 14 days, the last seven days, the last 24 hours, you can see how many times and how many users these these bugs occurred for. So if I can see that I have one error that's occurred for one person in the past 365 days. I know that that is not something I need to spend my time on. There's something that's hit, you know, 12 people 12 times in the past five minutes, I'm going to be drawing my eyes to that immediately. There's beautiful graphs to show you everything stats and activities. just brilliant, brilliant stuff. So check it out@sentry.io use the coupon code at tasty treat all one word all lowercase and get two months for free, which is something you're going to want to do. Let me tell you, I'm a big fan of Try it out at Sentry dot i Oh,
+
+61
+00:40:02,690 --> 00:40:07,350
+Wes Bos: beautiful. Alright, let's talk about animations in view. What does that look like?
+
+62
+00:40:07,560 --> 00:42:15,210
+Scott Tolinski: it's baked in a lot of stuff in in view is baked in truly nice, really nice and easy. animations. Specifically, if you used Angular kind of feel like the right at home, it's basically mg animate, where you have, it's not mg animate, necessarily, but you it functions the same way. And what you end up having is a transition component. Now, the cool thing about a lot of stuff in view, is we don't have to import this from some library, we don't have to be like import transition from view slash transition, whatever. Yeah, we just have access to transition if we want it, which is great. Because simplicity, right. And so we have transition is equal to and then you have a name, name, or transition is a component that wraps around your code, it has a name, it's equal to you give it a name. And then everything inside of that transition is expected to be some kind of conditional. So maybe you have Vf in the initial one that just toggles that on and off. And then just like in Angular, or even create a react, transition group, or whatever, that item ends up getting classes applied to it based on the name you gave it. So if you gave it a name of accordion, you'd get the classes accordion, leave active accordion, interactive, accordion, enter accordion link, leave, basically all the same class stuff that you get from react animation group, or mg animate those sort of things. So if you're feeling like you've ever used any of those before, it's gonna feel very, very at home. And if you're feeling like you want more control over it, there's also the ability to really dive into custom animations via methods via actions, or a directive. So you could say V hyphen, en, before enter the en, enter, and then have it run functions at various points of the animation cycle. So if you want to do a very basic animation, it takes a couple of seconds, you wrap your code, you have a conditional, you write your CSS, BINGO, BINGO, you have yourself a transition, if you feel like you want to do a ton more than that you have the ability to as well. And that's really just the the core. I don't know, core principle of view, in my opinion.
+
+63
+00:42:15,360 --> 00:42:24,330
+Wes Bos: Yeah. One question I forgot to ask was CSS. Just write regular CSS can use sass stylists, what do you use in there?
+
+64
+00:42:24,630 --> 00:43:41,640
+Scott Tolinski: Yeah, with anything, it depends on your system, your build process. vcli uses web pack out of the box, right? You don't really think about web pack ever, which again, is just great. But you have the ability to use loaders. Okay, so view loader is essentially a package that is a loader for Webpack. Okay, so in my experience, you use something within view loader, like a sass loader itself, and then you would need another library like node sass, so you would install sass loader as well as node sass. And then inside of your Webpack config, you would have to declare that you're going to be using sass, or SCSS. And then inside of your actual style tag, anytime that you wanted to write sass, you would have to say Lang is equal to s, CSS, or whatever it is. So you could have multiple loaders in multiple different pre processors. If that's how you roll, you could have less than one file in SAS, and another if you want to do, but this also works the same way. If you're doing HTML templates, or something like if you wanted to use pug, you would use the pug loader and then you on your template tag would say Lang is equal to pug. And then you can write pug instead of the view template.
+
+65
+00:43:42,060 --> 00:43:47,730
+Wes Bos: Cool. I like that. That's, that's pretty neat. You can just extend it. Yeah, with Webpack loaders.
+
+66
+00:43:48,120 --> 00:44:41,160
+Scott Tolinski: Yeah, and a lot of the libraries, they end up using view loader. So you, you learn how to do it once. And you can do it in all of the different ecosystem packages as well. And just like transitions, animations make it nice and easy inside of view. Another thing that they make really super easy is routing. Now routing isn't baked in to view but there is an official library. So unlike react, there is a Vue JS view router. And so you would have to use that router by installing it separately. But other than that, it is very easy to set up. And since it's part of the core product, it's supported via the view core. There's also third party routers. So if you want if you're not happy with view router, you can install a third party router. So makes it really nice and easy. That said, you know, nothing really crazy there. Just the fact that it exists as an official router is maybe the biggest change.
+
+67
+00:44:41,280 --> 00:45:05,850
+Wes Bos: Yeah, I almost wish that react would be more opinionated about things like these Just tell me what to use rather than us getting a new router every three months. But there's obviously benefits to both sides of that. We've seen some really great changes to the routing ecosystem over the last couple of years. Yeah, there's that too, but it's kind of nice. It's just batteries included, it tells you what to do. It's very friendly, friendly approach to learning all these things.
+
+68
+00:45:06,180 --> 00:45:19,950
+Scott Tolinski: Yeah. And if you're looking for something like Redux and like a flux like implementation, there's forgive me if I'm saying this wrong, but view x view x. It's a view v. View,
+
+69
+00:45:19,950 --> 00:45:24,750
+Wes Bos: Edie, I can't like Tiger Woods drives a Buick and Buicks
+
+70
+00:45:25,080 --> 00:45:27,660
+Unknown: view. us.
+
+71
+00:45:27,810 --> 00:47:29,730
+Scott Tolinski: Yes. Yeah. And then this is a library that's also in the view core repo. And it does try to be sort of Redux. See, there's good dev tools, there's time traveling. So it seems like they like took a lot of the great stuff that said, I haven't used view x myself. I think it is well liked amongst the community. But it is seemed to be officially supported. I haven't dove into it, because I haven't needed that kind of state in any of my view apps. But it exists. And so lastly, let's talk a little bit about the ecosystem because the views been pretty popular now for a little bit. So the ecosystem has evolved right along with it, even though I mentioned like, you know, I said the the routing system they exist is supported the view x, but there's outside third party stuff that's really, really cool. For instance, there's nuxt, which you may have heard of by now, which is basically next j s for her view. And I say basically, I mean, it's a view j s framework that handles a lot of the same stuff that next JS would as it does sir server side rendering, or it can do statically generated, it can be single page apps, it does a lot of things, stuff that you would use next JS for. And I think people really seem to like it. I haven't used it myself. Again, I've only used the views t Li and I've used this next one. The next one is grid, some actually have a course out on grid, some that just came out. And I'm not I'm not just using this as a way to advertise grids. And if you like Gatsby, then grid some is for you. because let me tell you, you know, I saw grid some and I was thinking initially that they were going to be just like ripping off everything from Gatsby, especially if you go to their their website, because it's all graph qL base is a static site generator. It's progressive web app ready. It really looks exactly like Gatsby for view. Like if you have experienced with Gatsby, you're going to be like, grid some is sweet. But let me tell you one of the things that grid sim does way better than Gatsby, in my opinion is simplicity, which is sort of overall message with with with us.
+
+72
+00:47:29,760 --> 00:47:30,930
+Wes Bos: Yeah, yeah.
+
+73
+00:47:30,930 --> 00:49:37,890
+Scott Tolinski: So instead of having to write like in the node file, right. So in Gatsby, if you want to create pages via an API call, you say, All right, let me do the the graph qL query, let's get all the pages, let's loop over them. And let's create that, right. It's a bunch of code in grid segments a little bit more config based, right, we have our config file. And I can say, All right, let me create a new thing called blog posts that's based off of every single markdown file in this folder. Okay. And then once I have that collection created as blog posts, go ahead and just also create a route for me at forward slash posts forward slash slug. And yeah, just go ahead and do that. And just that simple aspect of defining a property of Route in the plugin, config file, allows it to just actually it takes a template name to the same thing and create that route for you with every single page. We don't have to do a query to go grab all those pages and created grits and just does all that stuff for you. So they take a little bit of a configuration approach over explicitly writing all of the code. And it's really for the best To tell you the truth is some of the stuff I actually wish Gatsby would take a page from from goodsam is that they make everything super duper easy. So between that config based generation of pages and the aspect of registering global components, I actually find my code to be way smaller and grid sum than it is with Gatsby is really super elegant. And again, it includes all of the the great features that we love from Gatsby. So as somebody who's a big Gatsby fan, I'm now a big grid, some fan as well, this thing is really super cool. In terms of like lessons learned. It does all the same stuff. Well that Gatsby does too. So it's like Gatsby just a little bit different. And if you're a view fan already, then I highly recommend checking it out. If you haven't used view at all, it could be a good way to dive in a little bit. And for native, we have native script. It's been a sponsor syntax before they can do Vue JS native apps. There's also a view native, but I haven't used view native honestly have no idea how good it is.
+
+74
+00:49:38,370 --> 00:49:48,900
+Wes Bos: Evan, you was working on you know Alibaba, they're big on view. And I thought that they were working on like a React Native equivalent for view, but maybe I heard that wrong.
+
+75
+00:49:49,470 --> 00:50:05,220
+Scott Tolinski: Now that's a great question. If you know of any, like the native situation of view, let us know because I haven't used anything for native for view. I've only used React Native myself personally. So yeah, let us know. But that's pretty much it. Did you? Did you learn about view? Do you feel like you have a handle?
+
+76
+00:50:05,430 --> 00:50:35,100
+Wes Bos: Yeah, it's funny like, even though I haven't written any like, I bet I could, I could whip up a little view project, no problem fetching data and displaying it. And without it, it doesn't seem like there's any gotchas where react is very much full of gotchas, or this is how you do it in react. This is the React way. These are the weird things you have to do if you want to have a space in react or just things like that. Right? Yeah. And it seems like view doesn't have any of those gotchas, and it seems very friendly.
+
+77
+00:50:35,250 --> 00:50:53,550
+Scott Tolinski: It's very friendly. There certainly are gotchas, but the view errors like do a good job of letting you know you had a gotcha like, okay, you tried to use the double bracket syntax and a property, maybe you should think about doing it the right way and use the bind syntax. So there's it's very friendly In my opinion, and I like it. I like it a lot.
+
+78
+00:50:53,850 --> 00:51:04,380
+Wes Bos: Amazing. Cool. Well, thanks so much for explaining all of that to me. I'm excited to try it out. Thanks for the listeners for holding on for what three years in order to get a view episode.
+
+79
+00:51:05,850 --> 00:51:06,630
+Scott Tolinski: You did it
+
+80
+00:51:07,290 --> 00:52:49,590
+Wes Bos: maybe I'll actually build something now and then we'll we'll have a follow up episode talking about what we learned and whatnot. Yeah, yeah. All right. Let's get into some sick pics. I've got a really really sick sick pic today. So my daughter's birthday is coming up in we bought her a power wheel which is like this like Fisher Price like car that you drive and I found it for pretty cheap on Craigslist and the thing about these Power Wheels that they have like lead acid batteries like you would find in your car and they degrade over time they don't last very long on a charge. So I was like looking around I was like I wonder if I could like use my my like drill batteries because I've got all kinds of these batteries these 20 volt batteries that power my drill and I went to YouTube and I went down this rabbit hole of people that hack their kids Power Wheels in all types of ways. And I found this this forum called modified Power Wheels calm so that's my second pick today. And I just like spent all last night ordering all kinds of new projects and I'm like I'm installing I'm gonna try to install like a remote kill switch. And it's really cool because I'm learning a lot about electronics and how it all works I know enough about it but things like pulse width modulator like I want to be able to take the 20 volts and and turn it down so that they don't go like get airborne like that's probably too fast for them and I want to be able to install the remote kill switch and there's just all this like kind of fun stuff that you can do to these Power Wheels and as like a hacker in general I love this kind of stuff so I'm I'll probably make a video of myself hacking this thing if it goes well and just look forward to that. Oh my god
+
+81
+00:52:49,590 --> 00:52:51,420
+Scott Tolinski: that sounds awesome.
+
+82
+00:52:52,890 --> 00:52:54,270
+Wes Bos: I'm gonna get one that Basti I'm
+
+83
+00:52:54,270 --> 00:52:58,320
+Scott Tolinski: super real and have a flame shoot out the tailpipe that would be great.
+
+84
+00:53:00,690 --> 00:53:01,350
+Wes Bos: What am I Oh,
+
+85
+00:53:02,070 --> 00:54:19,260
+Scott Tolinski: my sick pick is going to be easy jeans. By Uniqlo These are my favorite things in the entire world. Actually, it's funny. I had these jeans that I refer to as my sweat pants jeans. That a friend of mine got me in Korea at Uniqlo when they were a Korea exclusive and this was like five, six years ago and I love these jeans. I used to breakdancing them all the time. Because they feel like sweatpants. They're super stretchy. They honestly it feels like you're wearing sweatpants when you're wearing them. And I like held on to these jeans for so long. Because they were so comfortable. And guess what? They are finally in the US and they look way better than the old ones like the old ones. I had had like a elastic waistband. That drawstrings and, and Courtney is always referred to them as my grandma jeans. So she would say, No, you're not wearing your grandma jeans. And I felt so comfortable. Just like they have an elastic waistband. What are you doing? So these ones actually look like real jeans. They look very much like just like real jeans, but they feel like sweat pants when you're wearing them. I got them for my dad for his birthday and he's been living in them just like I've been living in mine. I'm about to buy like five more pairs. So check it out. I have a link in the description easy jeans, you won't regret it. They look like jeans. They feel like sweat pants, the author amazing.
+
+86
+00:54:20,160 --> 00:55:17,070
+Wes Bos: That's great shameless plugs. today. I've been working on some kind of informal YouTube videos of me building a scraper. So we did the we talked about this a couple episodes ago where people are asking more questions about the scraper. I was like, maybe I should just flip on a screen recorder. Next time I build something that's a scraper. And then I thought like I would love to be able to track and get some stats on like follower growth over time on Twitter and Instagram and probably should do YouTube as well. So what I've been doing is just this sort of like, it's very different than most of my tutorials where it's not polished at all. I don't really know what I'm gonna do. I sort of just think it up as we go and I sort of live code the thing. I do some light editing, so you're not sitting there for 45 minutes watching me try to debug something. And it's been been really enjoyable just to be able to do something quick like that and throw it up on YouTube people seem to be enjoying it as well. So I'm Wes Bos on YouTube, you can check out the playlist. I'll also link the playlist in the description below
+
+87
+00:55:17,160 --> 00:56:25,890
+Scott Tolinski: ran shownotes Yeah, I'm going to shamelessly plug my new course if you can't tell I'm excited about this. And I'm, I don't get excited about things just to get excited about them. But I'm excited about grid some because if you ever heard me talk about Gatsby before, you know, I love Gatsby. And so to have this sort of capabilities that Gatsby has in a way that's really really fast using view, then I'm all on board with it. So my latest course at level up tutorials is static view with grid sum, and we teach you how to build really fast, dare I say blazingly fast static websites in grid sum, which is view j s and it's it's really superduper cool, we built a blog with markdown it does all the good stuff you'd want it to do. And yeah, I'm really super excited about we even teach you a little bit of graph qL along the way, so if you don't know any graph qL Don't worry about it. And if you don't know newview there's a Vue JS for everyone course over I level up tutorials as well and you can get access to that along with every other tutorial course for just 19 bucks a month or 185 a year save 25% when you sign up for the year I level up tutorials.com forward slash Pro. That's all I got. Beauty.
+
+88
+00:56:26,010 --> 00:56:35,370
+Wes Bos: Alright, that's it for today. Hopefully you enjoyed it. Let us know your view tips and what you thought of this episode at syntax FM. I'm at Wes Bos and Scott is at s to Lynskey
+
+89
+00:56:35,610 --> 00:56:39,120
+Scott Tolinski: he already that's it face, please
+
+90
+00:56:41,190 --> 00:56:50,940
+Unknown: head on over to syntax.fm for you full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

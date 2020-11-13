@@ -1,0 +1,204 @@
+1
+00:00:00,359 --> 00:00:24,000
+Announcer: Monday Monday Monday open wide dev fans yet ready to stuff your face with JavaScript CSS node module BBQ Tip Get workflow breakdancing soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA boss and Scott Taylor. Totally.
+
+2
+00:00:25,710 --> 00:01:00,840
+Wes Bos: Welcome to syntax This is a hasty treat as means it's a short episode, but it still is jam packed with delicious. I don't know treats of things that we're going to talk about. My name is Wes Bos with me as always is Scott to Lynskey. Today, we're gonna be talking all about dot files, which is, whenever you open up a GitHub repo or, or anything, you see all these dot whatever files and we're gonna dive into, what are they? Why would you need them? What are some tools that you can use to manage your dot files, and sync them? And that'll be it. So how are you doing today? Scott?
+
+3
+00:01:00,870 --> 00:01:05,880
+Scott Tolinski: Doing good. I'm ready to demystify some dot files on a dot. Yeah.
+
+4
+00:01:05,880 --> 00:01:07,980
+Wes Bos: Okay. Do you want to tell us about today's sponsor?
+
+5
+00:01:08,009 --> 00:03:12,210
+Scott Tolinski: Yeah, today's sponsor, as a, as many of you know, is one of my favorite new services, which is Netlify. Now, Netlify is a web hosting company, but so much more. And it's so much better than just saying, hey, they're their hosts, because Netlify is the very first host that I reach for, if I'm deploying anything. It's awesome. It's like their websites as they go beyond static. Because what they do is they host front end code in a way that nobody else does that they make the the startup process, dead simple. I just had somebody tweet me today saying, oh, Scott, you were not joking, this setup was insanely fast. They're one of those services that the very first time you use it, you're instantly smitten with the process. Because the process itself is unlike any other hosts, they make it dead simple. This is the gold standard for what hosts need to be. In addition to just being a darn good host, they offer a ton of excellent features that are more more important in every today's web, like free SSL certificates that are just seriously one click, you just click it and you get a Let's Encrypt certificate, it couldn't be any easier than that. You can do easy domain management, you get to, there's some really slick AP testing features, continuous deployment, one click just sort of all sorts of stuff. Again, it takes the complexity of working hosting out of it. There's also some really excellent features like working with AWS, lambda functions, identity, where you can have your own login system and forms all these sort of server side stuff that you can use without actually having a server and your site inherently making your site way more secure way faster and easier and less complex. There is a ton of amazing things about Netlify. But to learn more about Netlify, head to netlify.com, forward slash syntax, and let them know that you heard about them from syntax because they love to hear that and we love for them to love that. because let me tell you, this is my favorite hosting platform. And yeah, I love sharing it, as you can probably tell by now. So yeah, check out netlify.com forward slash syntax and see what the hype is all about,
+
+6
+00:03:12,450 --> 00:04:41,730
+Wes Bos: again, awesome. So let's get into it. What is a dot file dot file is like it's a settings file for all of these different tools. Whenever you're building a website, or in our case, let's let's talk about it from building a website, you building website, you've got a whole bunch of tools that you need, in order to actually build that website, you might have es lint, you might have prettier to format your code, you might have a environmental variable file that you have, you may have get in there, you might have NPM. So all of these things need to put settings somewhere. And often these settings need to come along for the ride when you you put it in a Git repo or you send some code over someone or, or you have different environments where these, these things can be changed. So the way that we've solved this is by using a dot file and a couple examples of a dot file. If you look in the root of Generally, the dot files will either live in the root of your computer. So if you just do like a open up your terminal, and you type Cat Dog, Tilda Ford slash dot and hit tab, if you're using that sh, you're going to see that there are probably I probably have, I don't know, 40 or 50 different dot files that are in there. Some of them contain access tokens to specific things. Some of them can contain settings for editors that I've used in the past. Some of them use settings for my es lint. There's just all kinds of different ones. So what are some of the more popular dot files that you would see as a web developer? Scott?
+
+7
+00:04:41,760 --> 00:05:33,360
+Scott Tolinski: Yeah, some of the widely the most, most popular one you're going to see is a dot Git ignore, which is basically the file that tells Git which files to ignore because obviously not every file needs to be or wants to be tracked in a repo For instance, if you have private keys, you're going to want to Make sure your private keys are in a file that's not being tracked if your repo is public. Now, obviously, if your repos private, maybe that's a different conversation, but either way, there's typically you'll find things like a d s store files, maybe your node modules folder, maybe some user specific settings, like maybe I want my VS code set up a specific way in a repo. So I have my VS code folder, ignored things like lock files, I have my yarn lock file, not not committed. Yeah, so pretty much that kind of stuff. Anything you want that not tracked by your repo is in your Git ignore file.
+
+8
+00:05:33,570 --> 00:07:08,910
+Wes Bos: Yeah, actually, on that point of putting like, tokens and secrets and stuff in a Git repo, I was the same thing as you or I was like, Oh, it's fine. It's a private repo until I just had to, I'm having a contractor work on my platform. And I have had these get, like these secrets and stuff in my repo for years, right. And you can remove them from Git. But the whole point of Git is that there's a history to it, right? So I had to set up a whole separate, I know, you can go back and scrub the scrub the history of it if you accidentally commit something that sensitive, but what I had to do is create an entirely separate repo and just cut all of my history with that application, because I didn't want them going back and having access to customer data or production. Anything production, right like that's, you know, I don't want to have any data leak out has all the test data for a contractor that's actually working on the, on the platform. So that was a lesson learned there, we're doing something like that. Another one that I like to use is a dot Git keep file. And this is actually not a standard Git file at all. However, sometimes you want to commit a folder to a Git repo. But if you commit an empty folder to something, git will just remove that folder because there's nothing in it right? So one, like little way to commit an empty folder is just to put a dot Git keep file in there. And that will be enough for Git to say, oh, there's something in here better push up the folder. And that's, I use that all the time in my tutorials, because I might have a components folder in a react tutorial, but there's nothing in there. So I have to put an empty get keep file in their word.
+
+9
+00:07:09,030 --> 00:07:22,350
+Scott Tolinski: Yeah. And, okay, now we're gonna get into I think, probably some RC files, right? Is that next on your list is an RC? Yes. Yeah. Rc cola. Yeah, I feel like before we should dive into maybe what the RC was, because I was really curious to know
+
+10
+00:07:22,350 --> 00:07:24,120
+Wes Bos: what RC stands for. Tell me.
+
+11
+00:07:24,240 --> 00:09:09,770
+Scott Tolinski: Yeah. So I was really curious. So I obviously googled RC and dot files, which actually came up with a really nice StackOverflow question, which just says, What does RC mean and dot files. And it doesn't look like there's necessarily a consensus but it looks like it could stand for any one of these things, run commands, resource control, run control, or runtime configuration. They also have a little sentence here that says the RTR c suffix goes back to Unix is grandparent, c t S. S, it had a comment, or a command script feature called runcam. Early Unix is used RC for the name of the operating systems boot script as a tribute to see t s s run calm. Oh, wow. So it's not something that's super obvious. And it goes way back. I mean, that's a way more interesting answer than I was expecting. So it looks like it could be any of those things. This is a nice little history lesson for myself. So the first I guess RC file that I wanted to cover would be one that is well used pretty heavily in modern JavaScript, which is your Babel RC file dot Babel RC, which is going to be where you're configuring your Babel compiler with various plugins or presets to let it know basically what type of code you're writing and what it needs to do, how it needs to output. So inside of your Babel RC file, you might have things like if you're using certain features of Babel, for instance, I have a Babel plugin that what it does is it makes my styles component names, pretty are not like the package prettier, but prettier for testing. So when I'm testing, I don't have to have some ugly styled component name, I actually end up having a component name. That's the name of the actual component that's called Babel plugin styled components.
+
+12
+00:09:10,199 --> 00:09:11,190
+Wes Bos: I use that one as well.
+
+13
+00:09:11,730 --> 00:09:44,220
+Scott Tolinski: Yeah, I also use one to make absolute imports a thing. So I can instead of importing from relative I can import from a root directory as an absolute path, which is super nice, because when you import from an absolute path, and you move one file, you don't have to change that import, just because you move to file. So yeah, plugins are definitely a big part of Babel along with how you output your code using, you know, preset environments and stuff like that. So, Babel RC is probably something that you've came across, come across at some point, if you've been using sort of modern JavaScript.
+
+14
+00:09:44,490 --> 00:09:51,720
+Wes Bos: Next one we have here is the dot bash RC or the Zed sh RC or what's a fish? What's it called an official dot fish?
+
+15
+00:09:51,720 --> 00:10:00,630
+Scott Tolinski: No might be called fish. I think it might be called. Yeah, well, there's a dot config folder. And then inside of the dot config, there's a config dot fish file. So
+
+16
+00:10:00,650 --> 00:11:52,680
+Wes Bos: yeah, that that that dot config folder has been awesome. So sort of, I don't know how when this actually started happening, but because your root directory gets muddied up with the hundreds of these dot files, a lot of these different tools have sort of said, Okay, we're going to put everything in a dot config folder, and then put everything in there. Which is, which is really cool in your bash RC or use that sh RC. That is where you're going to put all of your, all of your shell, you can put aliases in there, you can put different settings that you want. So if you want to change your net sh theme, or you want to change your prompt or any of that information that will go in there. That's all the settings that are specific to it. One thing I will say about aliases, though, you can someone asked me like why are you putting your good aliases in your sshrc file, there is a feature in Git that is specifically for aliases. So I had one where I would run GAC, which would get added and commit all in one go. And then I move that over to my Git config as a as I get alias, and I just say AC equals and then you run the command, git add minus all and git commit minus M, which is really, really helpful. Other times I do do aliases in in my is sh RC, I have one called fix, which will immediately get diff all of my it'll it'll tell me like what files are currently have merge conflicts, and then it will automatically open those up in my editor. So anytime that you you do a rebase, or you do a poll, and you have a couple things that need to get fixed, I'll just type fix. And then it will open all of the merge conflicts in my editor and go through those one by one, which is pretty helpful, although I don't use that as much anymore because of the awesome merging tools that are built into VS code. Yeah, those are myself reaching for those. Yeah, but more
+
+17
+00:11:52,739 --> 00:12:15,900
+Scott Tolinski: I alias a lot of dumb things, a lot of really dumb things. Because like I have, I have like NPM scripts to start my application, which is just you know, yarn start. But then I have yarn start alias to just start. So I don't have to type the word yard, which I admittedly is ridiculous. But I don't know if it saves me any time. But I prefer to just type start because yeah.
+
+18
+00:12:18,210 --> 00:12:20,580
+Wes Bos: That's great. Yeah, what else you got for me?
+
+19
+00:12:20,610 --> 00:12:58,920
+Scott Tolinski: Yeah, another one you might be used to seeing is an es lint RC, if you ever again, use JavaScript, you probably are using something like es lint, which is one of those things that makes finds a billion bugs in your code. And either it makes them aware for makes you aware of them or fixes them or maybe even it's code style things. You know, it's so funny you see those like memes about like people missing a parenthese or semi colon or something like that, and taking hours to debug. And like, man, if you were just using es lint, all your problems go away like it's a two second thing. So if you're not using es lint use es lint and never have issues like that ever again. And
+
+20
+00:12:58,950 --> 00:13:10,920
+Wes Bos: I always see those those means I'm like, Yeah, I don't mean to be a jerk. But you shouldn't take six hours on a semi colon. You should have tooling that will tell you that. Yeah. Okay. Even better fix it for you. Who cares? Yeah,
+
+21
+00:13:10,950 --> 00:13:46,410
+Scott Tolinski: yeah. So I never understood that. But yeah, so I have my es lint setup is based on a it's based on the Airbnb preset of es lint. And then I have things like prettier, which we'll also talk about. And I have I have some custom rules. For instance, I like to use the plus plus so I've turned the no plus plus off. So he doesn't like the plus plus I know there's people that don't like it. So But yeah, I like the plus plus there's a lot of little things here and there that I just tweak to make it make it feel more like how I like to program while keeping the spirit of the Airbnb preset there. Anyways,
+
+22
+00:13:46,530 --> 00:13:48,870
+Wes Bos: I have a massive ESLint file I do
+
+23
+00:13:48,870 --> 00:13:51,810
+Scott Tolinski: too. And I have a long as yours. Let's Let's
+
+24
+00:13:51,810 --> 00:14:38,790
+Wes Bos: Lau let's let me tell you what spot so I put my dot files online because I get all the time people messaged me saying, what are your dot files? What are your settings and I didn't put them online for the longest time because I don't think that you should just, like assume that I'm the best at this and that you should use whatever I'm using, I think that you should figure out yourself. So with a little notice they're being like I'm constantly changing them. I don't really have like, really good explanations for why I use every single one. Like sometimes people want me to like die on the sword of using a specific ESLint rule. And I'm just like, I don't know, like I this is probably this is what I like. And I've turned it off because it annoyed me or I turned it on because I find that it's good this way and I don't really care all that much past that. So mine is 124 lines.
+
+25
+00:14:38,850 --> 00:14:44,430
+Scott Tolinski: Well I thought I was mine. Really longer. I got 87 lines. I was like long. Yeah,
+
+26
+00:14:44,520 --> 00:14:49,980
+Wes Bos: so I extend Oh, but here's the question. Do you use prettier in your es lint file?
+
+27
+00:14:49,980 --> 00:14:51,390
+Scott Tolinski: I have a separate prettier.
+
+28
+00:14:51,420 --> 00:15:02,370
+Wes Bos: Yeah. Okay, well, I put all of my I use prettier and prettier react through es lint. So it's all in one file. So all of my prettier settings, which is not that many
+
+29
+00:15:02,370 --> 00:15:08,370
+Scott Tolinski: more lines of prettier settings, single quote, true and tailing comma to the s5
+
+30
+00:15:08,700 --> 00:15:36,270
+Wes Bos: does and that and then I have that. And then I also have print with 100. Because I know Hmm, prs go for 80 characters. Wow. Can't live that life. Yeah, that as an as Lynn setting interesting, but I've got all kinds of different eastland ones that turn on and specific ones for the type of like node work that I do and whatnot. And that's why people tell people not to just copy paste it, because like, you don't necessarily work on the exact same kind of projects that I work on.
+
+31
+00:15:36,390 --> 00:15:57,750
+Scott Tolinski: Yeah, and you should. One of those things that involved in there's the J sx, Li, if you're using Airbnb, you should leave all of those on. Yes. Like, it's really easy to just turn those off. And they're like accessibility issues, let me just turn off those es lint errors, and boom, no accessibility, No, leave those on fix those accessibility issues. That's a big deal. So just a little aside there,
+
+32
+00:15:57,960 --> 00:16:29,490
+Wes Bos: I've been thinking about just like publishing my own ESLint settings, so that when I do a tutorial, I can just extend the Wes Bos ESLint settings, because I find that I have too many in here. And then if I make a change to one, then I have to like, go through all the other projects. I because I work mostly on my by myself on projects, I just have like one global ESLint rule. And then if I have a project where I'm working on it with someone else, we'll make sure that we have a local eastlink file to that specific project,
+
+33
+00:16:29,640 --> 00:16:30,750
+Scott Tolinski: word boss lint.
+
+34
+00:16:31,080 --> 00:18:22,610
+Wes Bos: Next one I have here is a dot E and V file. And if you've taken any of my courses, you may have seen this one, environmental variables are an interesting thing where if you have like a password to a database, or you have some specific information that is specific to your environment, and this might be API endpoints, this might be API tokens to YouTube or Vimeo, things like that, that change from environment to environment, and also stuff that should never end up in your Git repo because that sensitive information. So what we'll do is you put them in a variables or a dot E and V file, and then you in your entry point of your note application, you run this package called V and V. And I think there's something for Ruby as well. And it will parse that Nv file and populate those environmental variables throughout your entire application, which is great. I don't use.nv. And, in general, I hate dot files because they are hidden by default. And as someone who is teaching a tutorial, I get an unknown. I don't I haven't used them in years, and it's great, the email stopped. But I used to get so much email of people who would not they would like download it and like Windows wouldn't show it to them or on OSX dot files are hidden by default, and they would copy paste it and then the dot file wouldn't come along for the ride or they they wouldn't be able to see it when they LS unless you pass a specific flag or their editor wasn't set up to show dot files and just a nightmare. So I always change mine to variables.nv just so that it's a proper file. And same thing with Babel. I never used Babel RC, I always put it in the package JSON, which is great because then again, it's one less file to overwhelm the people who are learning as well as it's never going to get lost as a as a sort of a hidden file.
+
+35
+00:18:22,740 --> 00:18:38,640
+Scott Tolinski: Yeah, I don't necessarily do that. I used the hidden files I actually found that there's a really easy way to toggle like before I don't know if this when this was a thing, but I felt like before you had to go into your terminal and the Mac OS to like turn the files on and off yet,
+
+36
+00:18:38,670 --> 00:18:40,260
+Unknown: but on vault writes thing
+
+37
+00:18:40,290 --> 00:19:39,150
+Scott Tolinski: Yeah, yeah. On Mac OS, you can do shift command period and that is finder that just shows and hides them instantly. Shift command period ease Hot Tip Hot Tip. Oh, yeah, I was just googling for this for this define that terminal command and then somebody said shift command dot i was like, What? And then turn off it works really easily. In Windows it's a little bit Well, I think it might I don't know if you could say it's easier because I don't know if there's a shortcut for it now but you pretty much just go to your your taskbar and you select show hidden files and folders from the search results that can be searched just search for show hidden files and folders, it pops up in something in advanced settings as to show hidden files and folders, you just let okay. So it's really easy to turn these things on. And I usually had just left them on but now that I can toggle them really quickly just gonna leave them all off for the most part that way, they're not like cluttering up my vision when I'm trying to nor use my finder like a normal person.
+
+38
+00:19:39,509 --> 00:19:46,550
+Wes Bos: So yeah, totally sick. You know, my favorite da file is the DS underscore store file. Yeah,
+
+39
+00:19:46,580 --> 00:20:41,330
+Scott Tolinski: screw that file. It's the What is that? It's a it's a Mac OS file that like let's I'm gonna butcher this without having a reference but I'm pretty sure it's it's just for like, like a reference of the file system or something. Okay. Mac OS operating se DS stores a file that stores custom attributes of its containing folder, such as the position of the icons, the choice of background image, the name abbreviation, so it's basically a, hey, what like the properties of the stuff in this folder, which everyone knows that like, there's nothing more frustrating than doing a commit, and then realizing you forgot to put DS door and your Git ignore, and then all sudden, DS store files, all of your Git ignore or your your repo and then you have to go remove them from the repo. It's just giant pain. In fact, if you google remove DS store files from repo, there's going to be a lot of results. I wonder how many upvotes that Stack Overflow post has on it?
+
+40
+00:20:41,360 --> 00:20:44,520
+Wes Bos: Yeah, I've done it so many times. That's funny.
+
+41
+00:20:44,810 --> 00:21:06,110
+Scott Tolinski: Yeah. I'm gonna I'm not answer that question right now. It has, okay, get this okay. This was posted in 2008. Sometime around then, the years ago, 10 years ago, the answer has seven tene, nearly 1800 upvotes on StackOverflow, which is probably more than I've seen most have ever.
+
+42
+00:21:06,590 --> 00:22:19,860
+Wes Bos: That's awesome. Other files that we have here is the editor config file. So if you're using vim someone else is using sublime and another person's using VS code and you want your editors to all be set up in the proper way, you all want to use the same kind of tabs, or you all want to use spaces and your line break is at a specific, specific size, you don't have to have a specific sublime settings file that you share with everyone, you just use editor config. And then you can install install extensions for all these different editors that will ingest that setting and then adjust the settings to your editor as their I don't specifically use that one myself, especially now with prettier is a lot of people use it for like tabs versus spaces. So you didn't accidentally make a commit where you know, sometimes you see it where somebody like changes one thing, and then they've the entire repo has had a change because they they have formatted it in tabs or they they added a new line at the end whereas the author originally didn't. There's all kinds of like things like that. But now with prettier, you don't have to worry about it. He's authored as you want. And then often what people will do is they'll set up a git hook, where right before you deploy or push to get you will it'll like format the code in the way that that repo was, was hoping to do.
+
+43
+00:22:19,860 --> 00:22:37,620
+Scott Tolinski: Yeah. And I just have it unsafe for myself. That way, I'm always doing those updates. Yeah, it's actually super useful when you're doing a course like, right, you're just typing your code, and just be like, give me one second, save this and everything looks pretty everyone gets to see it looking pretty. And yeah, prettier. Yeah, that's a very
+
+44
+00:22:38,820 --> 00:23:16,920
+Wes Bos: a whole bunch of people on Twitter, tell me that, like, you shouldn't set it on Save, just do it before you commit. And I was like, how do you live your life without prettier? Say, like, I always have indent? Like, do you actually spend time reinventing your code? And I type man when I'm typing my code, and then I just hit save all the time. And it just fixes it for me? Yeah, it's amazing. Yeah. Like the the amount? How much faster? I am, I think prettier is like the tool of the last couple years. For me. It's amazing. Yeah, yeah. Anyways, what other any other files you have that are specific? Or should we go into sinking them? Um, no, I
+
+45
+00:23:16,920 --> 00:23:42,510
+Scott Tolinski: guess nothing. I have some like free dot E and V. Meteor has a settings file, which is a settings dot JSON. So it's not necessarily a dot file. I have a dot Meteor ignore file that tells the compiler which files to ignore if you have stuff, because Meteor has the ability to do eager loading for things. And that's really, that's it, I have a.vs code folder that has my workspace specific settings. But yeah, nothing else. Nothing crazy. Cool.
+
+46
+00:23:42,540 --> 00:24:19,500
+Wes Bos: So you can also share and sync these. So people often have multiple computers, maybe a vor computer and a home computer and you want to keep your settings in sync. So what a lot of people do is they create a repo called dot files, and then they will just put all of their dot files in there, I have a tiny little one, which is I don't put all of my dot files in there. But I do put my ESLint my Git ignore my hyper dot j s, and then my VS code settings, and I just kind of keep them up to date. Some people will actually use them and get but what I'll do is whenever I make a change to one, I'll just copy paste it into GitHub, so that people can can see the latest version of what I have
+
+47
+00:24:19,710 --> 00:24:29,310
+Scott Tolinski: word. Yeah, I don't do anything like that. I just start a new project, copy it from an old project. Not necessarily the most efficient, but yeah, that's how it is look good. All right. I
+
+48
+00:24:29,310 --> 00:24:45,000
+Wes Bos: think that's it for today. Hopefully, that gives you a nice little overview of what dot files look like and why we have them and how to use them. Let us know if you've got anything to add at syntax FM tweet us your tweet us your Hot Tips. Anything else to add there, Scott? No, that
+
+49
+00:24:45,000 --> 00:24:47,610
+Scott Tolinski: was a nice little hasty treat. I really enjoyed that one.
+
+50
+00:24:48,120 --> 00:24:51,420
+Wes Bos: pasty. All right. We'll see you on Wednesday. All right.
+
+51
+00:24:51,420 --> 00:25:04,980
+Scott Tolinski: See ya on Wednesday, please. Head on over to syntax.fm for a full archive of all of our shows. Don't forget to subscribe in your podcast player or drop a review if you like this show
+

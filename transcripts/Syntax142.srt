@@ -1,0 +1,356 @@
+1
+00:00:01,319 --> 00:00:02,820
+Unknown: You're listening to syntax
+
+2
+00:00:02,849 --> 00:00:04,590
+the podcast with the tastiest web
+
+3
+00:00:04,590 --> 00:00:06,120
+development treats out there.
+
+4
+00:00:06,149 --> 00:00:10,560
+strap yourself in and get ready to live ski and West boss.
+
+5
+00:00:10,589 --> 00:00:18,510
+Wes Bos: Welcome to syntax. This is the podcast with the tastiest well, drama treats out there got a little bit of a woody, would you call this cut today a special treat,
+
+6
+00:00:19,439 --> 00:00:21,300
+Scott Tolinski: special treats and extra special ones coming
+
+7
+00:00:21,300 --> 00:00:55,350
+Wes Bos: over for dinner. Today we have Travis Nielsen, who is a developer designer at Google. He's got a popular YouTube channel, all kinds of really interesting stuff. We're excited to talk to him today. Before we get into anything even saying hi to Travis Lowe, we are sponsored by to to actual jamstack companies today. First one is Stackbit, which is going to be themes for your jamstack website. And second is Sanity, which is going to be your headless CMS on your jamstack. So welcome, Travis. Welcome, Scott. How you guys doing today?
+
+8
+00:00:55,350 --> 00:01:06,330
+Scott Tolinski: I'm doing good. I'm so excited to have Travis on the podcast here because Travis and I have known each other for quite a little while through YouTube, stopping up at conferences hanging out a little bit. So Travis, how's it going?
+
+9
+00:01:06,980 --> 00:01:16,760
+Unknown: It's really good. Thanks for inviting me to be on the show. And good morning to everybody listening or, you know, evening or whatever. You're listening to this. Yeah. Excited to be here. Thanks for inviting me.
+
+10
+00:01:17,220 --> 00:01:43,110
+Scott Tolinski: Yeah, dude, you're our our second ever guest on the show. And I think you're one of these people that we've been talking about having on the show for a very long time, because of your experiences, not only on YouTube, but podcasting. And through design, I think you have an absolute ton to offer our audience. So for those of you who don't know, Travis, is been a designer and a developer for how long now, Travis? Oh, I
+
+11
+00:01:43,110 --> 00:01:53,550
+Unknown: don't know. I mean, I guess I got my start. My first websites were back when I was a teenager, you know, making websites for my band, like my rock and roll band need a website? Yeah. That's how I got into this thing.
+
+12
+00:01:53,940 --> 00:02:02,520
+Scott Tolinski: That's a interesting little connection, because both Wes and I started our sort of paths as developers. Yeah. Via creating websites for our own
+
+13
+00:02:02,520 --> 00:02:05,970
+Unknown: bands. It's really common, like you talk to people. And I really, yeah,
+
+14
+00:02:06,510 --> 00:02:09,360
+that's my hustle. Like, that's how I came up.
+
+15
+00:02:09,379 --> 00:02:15,120
+Wes Bos: Yeah, it's the punk rock DIY scene. Everyone just grows up and has to get a job. Yeah.
+
+16
+00:02:15,120 --> 00:03:07,319
+Scott Tolinski: So you're you had a very popular YouTube channel, which was dev tips for designers for a long time. And that's how Travis and I first met. Now you're working at Google, you're doing talks, you're writing a book, you you work on a podcast, the method podcast, you've also done another podcast traveling laws. I mean, it seems like you've done a ton of different variety of things. Yeah. But they all have like a really nice connection in general. So I think I wanted to talk a little bit about your career path to start off, because both Wes and I have had probably what you consider a typical career paths. And, you know, we we got into it a little bit, just now talking about creating a website for your band. But I want to know a little bit about the very start of your career. When did it start essentially, like, when did you know that you were going to do this for your career? And like, what were your ambitions initially?
+
+17
+00:03:07,590 --> 00:05:18,890
+Unknown: Oh, man, um, I mean, yeah, I kind of like always was like an artistic kid. And that all that stuff. When I had my band, it was like, the first time that I was able to, like, apply creativity to a business. And I kind of realized that there was a business behind like managing and running a musical act. And so not only was I like singing for the band, but I was like booking and like organizing concerts with other bands and kind of like just putting things together quite a lot. And so making t shirts and like album covers, and, you know, websites for my band became a thing that I did for other bands as well. And I kind of realized, like, wait, this is like a thing. People need commercial art. And so fast forward, I was kind of like, in my early 20s, not really knowing how to, like, make that leap. And I was, I was doing sales I did door to door sales for quite a while I did like sales on a sales floor. And I was always like, pretty good at it. Like, I'm a pretty good presenter, I'm, like, easy to kind of like, understand and listen to, I think. And so I was I remember one time, I was on the sales floor, pitching this whatever to this guy. And he was like, Man, you should come work for me. And I was like, What do you do? And he's like, I'm doing sales and blah, blah, and, and I went over to his office, and I was like, talking to him about, he's like, Well, what do you want to do? Like, like, what's your long term goal? And I was like, I just want to make websites. He was like, What? I was like, I want to be a designer, I want to think about type holography. I want to like, like, talk to people about color. And he was like, I don't understand. Like, in the middle of a job interview, I kind of realized that I didn't want like, I want that career for myself. And so I was like, Okay, this is like, what I'm doing now is like, if I can go into a job interview and pitch myself as something entirely different, that's not what I want to be doing. And so like, what are the skills steps I need to take to kind of realize that career. And so I started like hustling, like making things on the side making logos for people just like everybody does, you know? And then yeah, there, it's just like in the back door. Like, I sit here at Google now and I meet people and they're like, Oh, yeah, here's where I went to school. This is like, I did my masters here. And I'm like,
+
+18
+00:05:18,890 --> 00:05:19,470
+Yeah,
+
+19
+00:05:20,250 --> 00:06:07,650
+I mean, I, I saw school once. It's like, I really had to, like sneak in the back door is just like, I took the long Route, Route long. I took the long route. Yeah, you know, so yeah, after, after deciding that I wanted to be a designer, I kind of like just started answering Craigslist ads, and just like doing whatever I could to get work making fake companies. I think, Scott, we talked about this a while ago, like, like, I would just like make websites for fake companies that didn't exist, so I can put them in my portfolio. Yes. Awesome. You know, just like hustle, hustle, hustle. And yeah, and eventually, I mean, I remember my first like, well paying gig was for this Male Performance clinic. Which, if you guys understand the industry, you know what I'm talking about? Yeah,
+
+20
+00:06:07,650 --> 00:06:09,270
+Wes Bos: like muscles and stuff. Yeah.
+
+21
+00:06:09,270 --> 00:08:06,270
+Unknown: Not muscles, man. Yeah, so they would like just, you know, work with erectile dysfunction. And so I made all these websites and brochures and like, like everything logos for, for like clinics that helped dudes with EDI. And it was interesting. Like, that was like a big thing in my portfolio. And I finally started working in like, like working for agencies and such and getting that type of work like leveling up. And he was kind of like, stand on the thing that you did before. And then you kind of get the better thing, and then you show that off, and then you kind of get the better thing after that. So I was living in Las Vegas, and I worked at a few design agencies there. And then my wife and I wanted to get out of Vegas. So I started working in in Oakland with this agency that did like a lot of entertainment brands, like I worked on the killers website, Janet Jackson. Some like Taylor Swift stuff, things like that, like really, really fun, Bon Jovi kind of things. It was great. I didn't like pay very well, because it was still like production work. But while I was there in Oakland, I realized that this company was also doing something else. And it was like it was called, you know, using air quotes. And I was like, these are called product designers. And I learned about making products and the idea of, you know, making something for yourself, not just for a client, and to answer their needs. And so I got kind of into this idea of product design, and then moved around in Silicon Valley for maybe eight or 10 years, doing startups. And that was a really great experience. Eventually, Google found me and asked me to kind of interview here. And that was all documented on my YouTube channel, the whole interview process. So it's kind of funny, I'll be at my desk these days, and somebody will come up and they'll be like, Hey, your videos on getting hired at Google were really helpful to me. Oh, yeah. It's kind of nice to like, meet people that are here, because I really need them to get here. Yeah.
+
+22
+00:08:06,720 --> 00:08:19,860
+Wes Bos: Did you have to ask Google permission to document all of that, because I actually hired I interviewed at Google many years ago, and assigned all these MBAs and there was a bunch of stuff I couldn't necessarily say about it. In the blog post I wrote after,
+
+23
+00:08:19,860 --> 00:08:45,480
+Unknown: I was careful to say and not say certain things. But I mean, at that point, I wasn't an employee. And I was super naive, as well as a few of the things and later on, I went back and edited quite a few things. But yeah, I think that was something I was aware of, but also was just like on this like is it comes back to that, like whole punk rock thing? You know, like, I was just like, yeah, you won't do what you tell him or like, you know?
+
+24
+00:08:47,760 --> 00:09:35,399
+Scott Tolinski: Yeah, hey, as long as I've always known you, Travis, you're like, design aesthetic has always been really polished in even I mean, when you had your YouTube channel, everything, everything looked exceedingly good. And and no, you know, one thing that I've always been impressed with is just how your aesthetic has always felt. So there and realized, I'm really interested in in sort of the early days as your growth of a designer, and you mentioned really hustling. You know, Wes, and I both really gone through periods of like, really strong hustle in our careers where we've just really focused on on growth, right. So I'm interested in some of the things that helped you in that early stage when you were trying to grow like, what kind of content Did you consume? What kind of things made the overall like biggest impact in your design journey?
+
+25
+00:09:35,640 --> 00:09:39,899
+Wes Bos: We get questions about this all the time. So I think people are really gonna enjoy this answer.
+
+26
+00:09:39,919 --> 00:09:41,130
+Scott Tolinski: Yeah, well,
+
+27
+00:09:41,189 --> 00:13:00,149
+Unknown: I think the way it works for me personally, is that I'm a pretty obsessive person. And I'm not just go ham on one idea for like, a long time until I've kind of feel like I've exhausted that question or that interest. And when I was learning design, again, I didn't go to school, so I didn't have like an instructor. giving me a curriculum to follow or something like that. And in the whole idea of like YouTube, education and podcast was not really as developed as it is now. And so my design education was very, very much self taught. And a lot of that was just going to like Barnes and Nobles and borders and just buying design books and like going on Amazon and just buying design books. So Mike, my physical design library is quite, quite large. And I would read every single paragraph it wasn't like I would flip through things and just in browse and look for inspiration, I would like, read the history of design. And I would like read biographies of designers and people that are that I was interested in. And this is not just like, kind of like people that are popular right now. Like, this is like a historical look at things. And I remember one, remember that Helvetica documentary. Yeah, I watched Yeah, like 300 times, and I just fell in love with with Massimo Vignelli, and David Carson and, and Erik spiekermann. And I just fell in love with like these, like tight minded people. And I was really, really big into, like, understanding and collecting all of the typefaces that I could, and I would be able to recognize them and talk about why they were important and historically, and like where they came into informing each other and the context in which they work. Just this weekend, I was watching a video on YouTube, and they were talking about Trajan Pro, and how it's like the font of a movie posters and kind of in it and like where it sits in the historicity of typefaces and how it was. It was designed for Adobe, and it was like one of the first ones that launched with, with Photoshop, and that's when they made the movie poster. So like, understanding, like how all these pieces fit together and stuff was really, really thrilling to me. And so, yeah, I guess that's like a part of my, the way that I develop myself is that I just get like enthralled in understanding the mechanics of a thing. I feel like I'm really, really stupid, like really dense. And so I have to understand everything in order to understand a part of something. So like, when I'm learning a new coding language, or I can't just like watch a tutorial, and understand that part and be good with it. I'm like, so wait, who wrote this code base? You know, like, who invented this framework? And why, like, that's, those are the questions that I'm kind of asking when I'm like, trying to understand a new concept. And I think that serves me well, because like, again, I'm so dense that like, I really need to have a foundation of knowledge in order to build the things I actually need to know on top of it, or else like I have, like this shaky, kind of, like, you know, you know, foundation of, of education that will just slide out from under me if, if I don't really understand the thing. And often that comes down to a historical context. I'm asking like, Who are these players in this in this world? And how did they get there? And why did they build these things that I need to use?
+
+28
+00:13:00,659 --> 00:13:03,179
+Scott Tolinski: Did you ever read the book, just my type?
+
+29
+00:13:03,689 --> 00:13:05,970
+Unknown: No, just my type. No, I didn't.
+
+30
+00:13:06,510 --> 00:13:25,110
+Scott Tolinski: You'd be fascinated by that book. I think that's right up your alley. just my type is, I think it's like 12 chapters. Each chapter is on a different typeface. And it's about the history of that typeface. They get into like, was it Gill Sans? Is that the actual name? Yeah, his whole life and but it gets into
+
+31
+00:13:25,140 --> 00:13:27,090
+Unknown: he was weird writing press.
+
+32
+00:13:27,240 --> 00:13:35,940
+Scott Tolinski: Oh, yes. super weird. And the book is great. It's absolutely fascinating it. But it's all about history and typefaces. If you haven't read that, I think you're gonna love it.
+
+33
+00:13:36,059 --> 00:13:37,710
+Unknown: Just my sight. All right, I'll write that down.
+
+34
+00:13:38,340 --> 00:13:49,559
+Scott Tolinski: Yeah, I'll make sure I'll make sure you get it. So one thing I wanted to talk about real quick is, is they talk about, like, the gap. Are you familiar with the concept of the gap in class video?
+
+35
+00:13:50,309 --> 00:14:30,240
+Oh, yeah. where it's like, sort of like, where your tastes don't match up with your skill level. And like, this is something that I've really struggled with, because I can identify, like, excellent design, and I know what I like, and I know what I like about what I like, but my ability to create the things I like, is was you know, not there for a long time. And it's still like, maybe one of the things I struggled most with personally, is that sort of gap between, like that part of your career when when you had things that you like, the way they looked? Was that something that you personally experienced in at the time did you understand that? And did it frustrate you in any sort of way?
+
+36
+00:14:30,449 --> 00:17:24,590
+Unknown: That's a great question. So the gap is the difference between what you want to create and what you're actually creating? Correct? Yeah, being able to see that gap is is kind of great. Being able to see that gap is the first step in in like closing that gap. Because there's people that like don't know that they they're not great at something like you've made me like seem like, like the American Idol like auditions where people just get up there and belt their hearts out but like what comes out of their mouth is just like the worst thing ever. But they don't know it, they don't understand they don't see the gap. Sure. So being able to see the gap is that is like a gift. It's like a really good skill to have. And I think that I, I'm still seeing it, you know, of course, and I run into it all the time, but like, you could either despair at the gap, or you could be invigorated and motivated by it. When I was a kid, I wanted to be a comic book artist, and I would like read all these comics and just draw all the time. And like, the best things I ever made were, like, almost like one to one copies of what was good, you know, and I could never, like, come up with things on my own that were great. And, and that that gap certainly was there. And it filled me with like, a lot of despair. And I and I feel it now to like when I when I tried to make music or, like pursue a new venue of create creativity. But I think that it could either. Yeah, like it could either bring you down or kind of motivate you. And I think that they're those early days when you're just kind of like trying to understand the boundaries of what a thing is. Yeah, they're the most like exciting moments. Like I remember. Like, for example, Scott, I started a new YouTube channel, like three months ago, maybe two or three months ago, and I have like, 70 subscribers. I haven't really talked about it publicly. But it's it's like in a different. What's it called, like, a different content vertical? Like, it's, it's music. Yeah. And so like, none of my, like, coding design audience would like, I don't know, maybe they would like it, but it's not like I haven't told them about it yet. But I'm in those days where like, every single subscriber is hard to get, you know, like, yeah, like, you're in those days, guys, where you're publishing things. And like you, you post a video and it's got like, like, 1000 views in the first hour, you know? And it's like, yeah, and people are writing Scott, you're amazing West, this is so great. I want to give you all my money, and those are good. Let's have babies. And and I'm like posting a video and nobody sees it. And then three hours later, there's like a one next to the video counter. And I'm like, Yes. What they were so like, like, I feel like those first subscribers, those first views are like, way more thrilling and exciting, then when you when you actually build something, and it is successful, and you're kind of like just keeping the engine revving. Like building building it. Yeah, ours is more exciting than driving it to the grocery store. Sure.
+
+37
+00:17:24,630 --> 00:17:46,260
+Wes Bos: What What would you say? Like, a lot of people I know that listening are probably in that spot right now. They're thinking like, this spot sucks. And like, I see where I want to be. And I recognize the gap, but like, like, what is something tactical that I can do in order to close in on that gap? Or like just motivate myself to sort of enjoy the process that is building this thing?
+
+38
+00:17:46,610 --> 00:20:37,070
+Unknown: Yeah, I think this is kind of maybe not a great, satisfactory answer. But I think that like, yeah, appreciating the struggle is the best part, like learning to, like, step back and be like, Ah, I'm so excited that I'm frustrated that nothing is working. Wow. Like I get to struggle with this. You know, it's it's a privilege to to be able to have something that's not working that you can work hard at that will work. I mean, how many people in the world just have nothing there, there's no hope. So if you're struggling for something, that means you have hope that means you have a goal, a destination, something to work for. And that in and of itself is a huge, like, I don't know, like a like, you're so fortunate to have that. And then yeah, so like, if you're listening to this podcast, that means you've already chosen some really great mentors, and some in a really great community to join. So like you have so much opportunity and kind of like runway in front of you space to grow. Sometimes in like the startup business world, we talk about headroom. We talk about market share, and like, how much space Do I have to grow. And if you feel like, you know, like you're building your business and then like there's not much room to move around in. There's not much headroom, that's a claustrophobic feeling. But if you're young and when I say young, I mean like new to an idea or new to a practice or business. I'm not talking about age, when you're like young to your your career or your Are you making a switch. And you're looking at ahead and you see this huge runway, and maybe it's a little intimidating, sure. But you see it, you know where it is, you know what the next steps are? And usually the next steps are just grind, just do the hard work like every day. Yeah, start doing it. And a few of the principles that will accelerate that are like if the things that you're doing to grind and to educate yourself are beneficial to other people. If you can share and lift others, then you're going to start being not only like a creator or a generator of work, but also a leader in thought and the layout like a social kind of what do they call it like they call a thought leader, but I'm talking about even more than that, like you get to be a place that people would gather around, which is more valuable than being able to teach a new idea or accomplish a new work or publish a thing. Just being a safe place for other people to gather around and feel seen and feel heard and feel. Welcome, is is so valuable. And something that we don't talk a lot about is, as community builders, those people are so valuable, kind of like in in generating opportunities for others. And then that's kind of like how you get to the next level. I think when I started sharing, I mean that that's how I met Scott. And now Hi, meeting us is like, because I decided to share.
+
+39
+00:20:37,170 --> 00:21:36,150
+Scott Tolinski: Yeah, that's such a huge thing. And we often talk about just, again, sharing your work sharing your content, all that stuff. And it is it's, it takes a lot for the ego to let yourself put yourself out there in a way that shows like a way that is still in like growth mode rather than in like complete mode. And I think it's just so important to embrace that embrace those feelings of like this, maybe I'm not the best at what I'm doing right now. But the the sharing of it, and the being open of it is going to make me better faster, it's going to, you know, put that out in the out in the world and do really good things for both myself in my career. And I think that's something all three of us have experienced Personally, I think right now, we want to take a quick break to talk about one of our sponsors, which is Stackbit. Here, and Stackbit is going to allow you to build modern jam stack websites in just minutes. You can combine any theme site generator or CMS. Without complicated integrations, do you want to talk a little bit more about Stackbit? West?
+
+40
+00:21:36,390 --> 00:23:05,370
+Wes Bos: Yeah, I just just got back from jam stack cough, New York. So I'm all swimming in ideas about giemsa. Jam stack, if you don't know is this idea that you have a website that is JavaScript API's and markup and you sort of have this like, very static based website that is generated at some point and kicked out to a server. So there's different like portions to that you have your CMS layer. It's actually one of our other sponsors today, which is Sanity. And then you also have your hosting layer, which is things like Netlify, or GitHub Pages, but there's this sort of like third layer, which is like, how do you get it to look like what you want, right. And of course, you can build your own website, but Stackbit is the sort of the theme part of your your headless CMS chant jamstack website. So Stackbit is just in beta right now. So they're writing syntax listeners, because you're technical, you love to try things out to join the beta@stackbit.com forward slash syntax FM, you can join the beta, you can try it out. And it's pretty cool. They got like a neat little video on their website here, where what they do is they create a project, you select one of the themes that they have there, you hook it up to your static site generator, whether that's Gatsby or Hugo or Jekyll or, or view press, and then you go ahead and pick any number of the headless CMS that they support. And then finally, you deploy that sucker off to GitHub Pages, or Netlify, or something like that. So check it out@stackbit.com forward slash syntax FM, and you're gonna be able to join the beta and test it out before this thing is ready for primetime.
+
+41
+00:23:05,520 --> 00:24:06,030
+Scott Tolinski: Sick. So Travis, I came across one of your notes, you're compiling a book full of notes. Yeah. And one of your notes is on being all in. In you talked about it in this in your post that was like work life balance is a joke is the name of the bus. So I highly recommend just going and checking that that's on Travis's website. We'll link to it here. And you talk about the importance of diving in completely and focusing on one single task. I know a lot of our audience has trouble really just finding the time and energy to continue growing. That's like a common theme we hear is like I just yesterday got a message on Instagram, because I was posting about how I was recording a new series and someone messaged me saying, How do you have all of the time and energy? Or how do you how do you have all of the time to do this stuff? And I just said it's not about time, it's about focused energy. Right. And I thought this was like something when I read your post it it resonated with me so much. So could you talk a little bit about that concept of diving in completely?
+
+42
+00:24:06,660 --> 00:27:21,360
+Unknown: Yeah, so the post is kind of like, you know, maybe were three or four years away from when I wrote it. So I do realize that like it's a little bit hard, it's a little bit naive, and at times, life changes and shelves, and you kind of switch your ideas, but I think the principle behind the idea is true, that it's impossible to have balance in kind of anything. And so I think the metaphor I used was like a tightrope when somebody is walking, balancing, they're they're balancing on a tightrope. But I'm like, just jump off the tightrope and just choose left or right, just jump all in and go ham on that one thing for a while. And then when you've exhausted it, or when you've come to a good place, jump into the other side and just really immerse yourself in that experience. And so, one of the common kind of like paradigms for work life balance is like my day job, and my family life. You know, how can I help I spend time with my children and my spouse and my, you know, do my civic duties and at the same time, how can I kill it in my career? Well, if you're taking your work home, you're not doing either one. And if at work, you're answering your phone from your friends, and kind of like, if you're on Twitter, and you're being social or whatever, you're not doing that, either. So you what people are doing is they're not trying to balance they're trying to blend. And, and the concept of this article was to say, you know, don't blend just be all in on the one thing that you're doing right now. And that's kind of like the the concept but but to speak to you, Scott about your, your, your insight about people saying, Well, how do you have the time? And you're saying, well, it's the energy and, and I totally agree with that. And you said focused energy, which is like another level? Right? Yeah. Right. But I think a lot of it is about intention as well. And ritual. Yeah. So some people will come home, and then you know, they'll have their evening meal. And that evening meal is a ritual and it signals to their brain that it's no longer time to work or, or that now, now is the time that we do watch Netflix or relax or kind of wind down. And it's not because you need to wind down, it's because you have a ritual in place that like enables that. So my ritual is that I put the kids to bed at 730. And I talk to my wife and hang out for a while we usually have things that we're doing. And I say, Okay, I'm going to go record or I'm going to go do my go do some writing or whatever it is, and, and so I get up at 6am and I'm heading out to work, I'm on the bike at 630 come home and hang out with the family and like have intentional good moments with the wife and kids. But you know, around 830, I'm intentional about I'm trying to achieve something like I have a short list of things that I want to do. And I look at my mood and I say Do I have the energy to like be on camera right now? I kind of don't. Okay, so what can I do? I'll start writing, you know, or whatever it is. And it's about managing that focused energy, but also being intentional with your time if I get if I get into a place where I'm like, okay, every day, I'm watching a show or whatever, then I realize like, wait, I'm not taking advantage of these moments. I'm letting somebody else take advantage of them for me.
+
+43
+00:27:21,600 --> 00:28:50,190
+Scott Tolinski: Sure. Yeah, I think that's all really interesting. I mean, the intentional about doing what you're doing is something that is very tough. I mean, it's tough, it takes a lot of effort to be intentional about that. Because so often, you know, me personally, I end up just sitting down to work on something without even thinking about what I'm working on it. When I'm starting, it's sort of like, oh, I'll have the my design app open, I'll have my coding open, I'll have this open, I'll kind of bounce my email, and being able to look at all that and close the tabs and say, Alright, screw this, I'm just doing this right now. And, and maybe you're not feeling that, and maybe you want to move to something else. It's funny because there's so many, I like to draw like parallels a lot between my work in the dance stuff that I do. And in in breakdancing, you have a lot of different types of skills, you have creative skills, where you're you're working on movement with the music, and you have like very physical technical skills. And then you have very, like, you know, like the gymnastic stuff that takes a lot of like, really difficult practice. And sometimes I'll go to practice with the intention of practicing some of the gymnastic things, I'll do a couple of rounds and say, Hey, this, this isn't working for me right now. But I am noticing that I'm really interested in the music today. So for me, I'll show up. And I'll have the intention of working on one thing. And it is very obvious that that's not where my brain is at right now. And my brain wants me to do something else. So I think it is just so important to be able to recognize and have the intention to do that sort of stuff. I just think that's fascinating.
+
+44
+00:28:50,340 --> 00:29:00,510
+Unknown: Yeah. And you're building in opportunities to listen to your body as well and listen to your energy. But your ritual is putting you in a place to do some work, whatever that work is, right?
+
+45
+00:29:00,510 --> 00:29:02,100
+Scott Tolinski: Exactly. Yeah,
+
+46
+00:29:02,100 --> 00:29:26,160
+Unknown: you don't have to, you don't have to solve the problem today. You just need, you don't even need to move the Boulder. You just need to go and press against it. Throw your body against it, because that ritual will make sure that you show up tomorrow again. And that's where the real growth happens. It doesn't the real growth doesn't happen. today. I did it. The real growth happens is I did it this year, every day. Exactly. Wow.
+
+47
+00:29:26,190 --> 00:29:53,160
+Wes Bos: Yeah. Huge. I really like that. I have a question about how you choose what to work on. Because I'm sure you have thousands of ideas popping up. You have lots of different things you probably want to work on at any given time. And how do you choose what it is that you you put yourself into in the focus? Do you have a process? Do you have any specific applications that you use to actually narrow that in on so that when you do sit down when you do have that process of sitting down? What does that look like?
+
+48
+00:29:53,340 --> 00:32:24,150
+Unknown: Yeah, maybe I don't have a great process for figuring out what I want to work on because I just like as I said earlier, I'm pretty obsessive. And so like the thing that occupies my mind throughout the day, when I finally get that moment to decide what I want to do on my own, like without another person's due date, or, or, you know, kind of like request, driving the thing that I do when I sit down, and it's my own thing, it's usually that thing that's just in the back of my mind all the time. And sometimes that thing is, like, less, like, career oriented than before. Like I mentioned, I'm doing this YouTube channel, it's called little music boxes. And I just recently got obsessed with like, these little synthesizers and, and guitar delay pedals and stuff. And I'm just making this music that just has nothing to do with like my design career air quotes, you know, but it does, like it informs all like, like, you're talking about your dancing, Scott, like, everything comes back, everything informs. And so again, maybe more important than like, what I'm doing, you know, like, Am I doing this course? Am I making this website, but maybe it's just the fact that I'm showing up to do something. And I and I'm respecting that, that kind of like ritual and discipline, you know, just to show how everything comes back. So I'm like studying these, this music and how to make music. And I have this little like a sample sequencer. And I started using it in my talks. And now like I was in Tokyo, giving this talk to all these kind of Japanese designers. And I pulled out this little beatmaker. And I made a beat in front of 300, kind of like people that don't like, I had a translator and everything. And he was like, What are you doing? And I was like, I was trying to show a principle of like, sometimes to be creativity. to be creative. We have to make a mess. And so I showed them a really, like really simple four on the floor like boop, boop, boop, beep. And then I was like, let's just, let's just mess this up. And then so like, I just left the, the snares there on the, the the two and the four. But then I, I took the, the bass drum, the kick drum and just threw it everywhere. It's like, you know, in reverse, like, well, that's messy, but also it sounds good. So I think there's like this principle that I was trying to illustrate of, like, meskin sound great when it's anchored by organization, and kind of like structure. So one of the things to do is to allow mess into your process, and kind of like showing that point. But it was all informed by this idea of like, I've been studying music, and it has nothing to do with design, but actually, hey, it does it all comes back.
+
+49
+00:32:24,180 --> 00:34:35,100
+Scott Tolinski: Yeah, I almost find that, that everything that you do in any sort of capacity can be used to grow yourself in that way, if you if you look at it through a different lens. And I think that's really important. I mean, especially because a lot of us like to get bogged down in what we're doing. And especially once it becomes your career, right, when being creative becomes your career, or being a designer becomes your career, it's hard to always be motivated in the same ways that you were when it was your your passion, right? Yeah, it is still, you know, a passion. But it is different. Now that it is a career, especially, you know, I think that happens for pretty much everything, I think it's like an actual point of motivation is that once you start getting paid for something, the motivation sort of goes down a little bit. So being able to access those areas of your brain via creativity, and other sort of ways. And bring it all back around is such a huge important lesson, that I think that that you you illustrated there, especially with that organizational design stuff. And it's just really, really fascinating. I think we want to get into a little bit of your work at Google really quickly. And I think this kind of can be tied into some of that will we were talking about one of the things that to add bring back some of the music stuff is I was a music major in school and one of our assignments was to create a composition using six seconds of audio. So you had to record six seconds of audio. And then you had to use that to create a composition. And that's like a big constraint, right? That's really cool. So it was a really cool assignment, I ended up using like a lighter flick and me tapping on my desk and stuff. And I made this polyrhythmic thing. And like, I want to hear a little bit about some of the the constraints that come about in design when you're working at a company like Google, because typically, you know, when you're working for yourself, you're doing your own thing. There's no constraints, you can do whatever the heck you want to do, right, you have total freedom. But when you're working for such a company like Google, the big company, they have their own design aesthetic, how does that affect your work? How does it affect your creativity? How does it make you feel working with the system that exists that you have to work within?
+
+50
+00:34:35,210 --> 00:37:52,920
+Unknown: Yeah, great question. I think immediately, you might think that the design expression in Google is really constrained. Because, you know, we have material design guidelines. And in fact, we have an even more constrained version of that called Google material that we use internally to inform the way that Google does its own products. And it's really, really defined right and I would also say robust Because that's like, like, when I'm learning a new coding language or a framework, I spend so much time in the docs, you know, just like learning how it works, so that I can learn what it can do and where I can push. And it's the same with like any design kind of structure or design framework. And so here I am, find myself on Google search, which is like a product that everybody already knows what it looks like, you know, it's 10, blue links, and, and how can we kind of push on this. And that's what I spend so much time looking at Google material docs, so that I can understand, like, what its intentions are, when it says like, something should be this big, or this color, or whatever. And I'm saying like, okay, that's what they are describing for the kind of like the average, you know, the baseline, but where can I stand on top of that, and build, and that's like, I think that's really exciting to me. And then also, I get to work with a cup with a bunch of people that understand this stuff so well, that I'm often just like, spend a lot of my time just learning from other people, how they think about the product, and how they think about the way that our users use it. And I'm fortunate in that I have access to a lot of like research that's been done in the space that I work on. And also, we have, you know, like data logs that I can just log in and be like, oh, when people, like, for example, if people look for, you know, what's a good example? So a lot of the work that I do personally is on crisis. So crisis responses in Google's Let me try that again. So the work that I do, I'm on the Crisis Response Team in Google. So I design for earthquakes and hurricanes and just things like that. Well, yeah. And so if somebody does a query that says hurricane, and then they quickly do another query that says, Hurricane danger near me, you can tell that they're modifying what they're asking Google. And so now I can look in that. And it's like, if that happens all the time, I can jump in there and say, like, I need to design things to answer that question right away, and save people that additional interaction, right. And so my job, officially, I'm an interaction designer, so I try to think about how to people interface with the work, not necessarily so much what it looks like, although I do decide what it looks like. But my job is to say, if this button is here, or if this result looks like this, do they find what they want quicker, or slower. And if it's quicker than do more of that, you know, kind of thing. Yeah, there's a lot of constraint, but also so much opportunity to to innovate on those constraints, and to push them, sometimes material is telling me how to do this thing. But also, sometimes I'm generating an idea. And then I'm telling the material team, this is what I found really works. And our feedback from our users says this, and then they can kind of incorporate that into the next version of material. Nice.
+
+51
+00:37:53,010 --> 00:38:37,460
+Scott Tolinski: Yeah, I've always found that I mean, to be honest, like that, that constraint exercise that we had to do, it was probably my best piece of the entire time, because you have a system in place. So you have this content that you have to work with. But there is so much opportunity, like you mentioned, there's so much opportunity to do so many different things that like you aren't really constrained in that way you can do anything you want, it almost opens up a lot of that, that opportunity. You're working now on like a big, big team. And you mentioned really learning from other people. It has it been a challenge to work with a lot of people on a project, or has it been just sort of enriching and sort of ways or what have been the challenges? or what have been the the parts that have made you just really evolve as a designer?
+
+52
+00:38:37,830 --> 00:39:29,900
+Unknown: Yeah. So when I first joined Google, I had been kind of like in startups for nearly a decade. And in startups, you're, everything's very fast, and you're scrappy. And you know, when you're joining a startup of six people, you are the designer, you're not just the designer, you're the container of truth for how things should look and act. So it's bigger than just making marks. It's like you if people have a question of how does this work? You're the answer. You know, you are the answer. Not you have the answer. It's a whole this mind state right. And so you you get a little bit cocky. I don't know what it was. I don't know how to say that. But you get a little bit like, Oh, yeah, I am. I know the interaction. I am the interaction for this this thing. When I came to Google, I had so much ego, and so much like, kind of like, swagger, I guess. Yeah.
+
+53
+00:39:30,000 --> 00:39:35,790
+Scott Tolinski: Yeah. I always had a lot of swagger. I mean, that's definitely one thing it absolutely had.
+
+54
+00:39:36,150 --> 00:40:08,520
+Unknown: Yeah, so one of the things that happened early on was like, I just kind of broke, because I was not the important thing anymore. I was like just this little fish in this huge pond. And I had to learn how to operate within a system where I was not critical. Yeah, you know, and that was hard. emotionally. That was really difficult. I was used to being like this really quick. Cool designer, he kind of, you know, like, like, things would fall apart if I went on vacation for two weeks, you know? And then sure,
+
+55
+00:40:08,550 --> 00:40:09,420
+Scott Tolinski: yeah, now,
+
+56
+00:40:09,420 --> 00:41:14,420
+Unknown: I'm just like this little fish. And, and I got a lot of I was worried about that for a long time. And my wife was like, when I was, you know, doing the interview, she was like, Are you sure? Like, I don't know if you can thrive in a place where there's so much constraint and like, you know, you need freedom, you need power. And I was like, Yeah, I know, I know what you're saying. But like, this is different. I've never experienced this before I want to go for it. And we kind of like made that decision together. But it was, it was really difficult. And I think one of the things that I learned was just to like that, it's not about me, and that it's about the team and about what we can achieve together. So like this, this idea of synergy and kind of like collaboration comes through. And I learned to think a lot more, instead of like, when you stop believing that you have the answer, you get a little bit more desperate for learning and education. So I started, like, you know, really, really relying much more on like the knowledge of other people and research and kind of like having to justify and have rational explanation, explanations for my creation. So I think, yeah, there's a lot of lessons, but they were often difficult ones.
+
+57
+00:41:14,760 --> 00:42:21,030
+Scott Tolinski: So this episode is also sponsored by a longtime sponsor of syntax, which is Sanity. Now Sanity is the bring your own front end service that allows you to have a back end for your website. Now Sanity is one of the services that they put together a little demo for Western AI when we first started talking to them. And let me tell you, it really blew us away, because you have the option to actually manage and create essentially your own back end, while Sanity gives you all of the tools that you need to make it super easy. So you can check out sanity@sanity.io and see how they can make your website much easier. Because with their hosted back end, they're going to give you a nice API to access your data allow you to have your own custom back end. It's scale ready, its scale ready, its enterprise ready. And let me tell you, it's really super cool. And it's also open source. So all of the things that we love here at syntax, so check out Sanity at Sanity dot i O.
+
+58
+00:42:21,300 --> 00:42:51,440
+Wes Bos: Yeah, I didn't even tell you the Scott I met up but the Sanity folks at jamstack cough in New York. And they're saying like, Can we sponsor more podcasts because every time we do an ad read, we get so many syntax listeners, and they're staying, they're actually really enjoying the product. So I thought that was just like a kind of a really cool testament that a lot of you who are listening are trying it out, and are really enjoying it and are building your own Gatsby or whatever websites with this as a back end. So thanks so much to Sanity for sponsoring,
+
+59
+00:42:51,440 --> 00:43:49,380
+Scott Tolinski: yes, and as always, you should use the sanity.io forward slash syntax. And that doubles your usage quotas for the free plan. So if you want to get started, make sure you do that forward slash syntax when you're heading to sanity.io. And check it out. Okay, so now what we're going to be doing is getting into a couple of quick questions, Travis. So these are just going to be sort of little fast, quick things that might be like tasty treats for our listeners here. So these are to flip the script on the name of your YouTube channel, these are going to be design tips for developers. And so Okay, here's three quick little questions. Okay. So many developers have a hard time loving the look of their work, right? They start working on something, and it just feels a little bit off. I know, definitely. I've always been in that category myself, where you can you look at something you just know, it's not right. What advice would you give the developer who wants to make their stuff look nice, but just can't get it there?
+
+60
+00:43:49,650 --> 00:44:21,720
+Unknown: I think that I would try to find somebody who does know what they're doing and knows the answer of why it's not looking right. And kind of like, ask them to help, you know, a collaboration with somebody who has a, like an opposite or a complimentary skill set can take you so far. Sometimes you'll see that like that people will team up for a project and then realize that like the other person is just like filling in so many gaps that they have. And it becomes like a really great long term collaboration. There's a good opportunity there. I think.
+
+61
+00:44:22,200 --> 00:44:33,000
+Scott Tolinski: I think you're right. Yeah, I think that says, I asked for advice all the time. And it's always like, it's always one of the most most helpful things. Mm hmm. What's your take this next one? Yeah,
+
+62
+00:44:33,030 --> 00:44:49,740
+Wes Bos: this is one question we get a lot is people's thoughts on CSS frameworks, both from a development standpoint of getting up and running. And as well as like a design point of view where everything tends to look the same if you don't come if you don't really customize it. So like, what do you think about CSS frameworks? Yeah,
+
+63
+00:44:49,740 --> 00:46:24,480
+Unknown: I've made a few ranty videos about them. I don't use I don't use them, specifically the ones that provide visual kind of like cues as to what they are. Like if you can look at a website and be like, Okay, this is foundation or this is bootstrap or material or whatever, yeah, I tend to stay very far away from that stuff. But granted, that's because I'm a designer and like, I kind of, I feel very comfortable in generating those things myself, that doesn't mean that everybody has to feel that way. But here's the thing that I kind of will go pretty hard on is I think that if you're going to use one of those things, you're going to grow a lot more if you read the docs and and read the code and understand why and how they achieve a thing like I, I've learned a lot of great tricks from using foundation and bootstrap and you know, yada, yada, yada, all these different frameworks. I've just learned from them their approaches their tactics, like how do you make like a flexible video? Like, I've learned that from foundation? How do you make, you know, a really great drop down? I learned that from Bruce bootstrap, you know, and like, and I'm like, oh, how did that how does this framework do a modal and just doing that helps me to be a better coder. But it doesn't mean that. I don't know that, that I have to use it. And I have to stay with it for every moment like you, you can use, you know, use bootstrap just for its grid. Why not? Or you can there's like different tools where you can like export different portions of the framework as well, or just try different frameworks all the time. So you don't get lazy and comfortable into one aesthetic.
+
+64
+00:46:24,720 --> 00:46:36,600
+Scott Tolinski: Yeah, I think making yourself uncomfortable is a good way to grow in any capacity. Just because that that point of where you're feeling uncomfortable, you're going to work hard to make yourself feel comfortable.
+
+65
+00:46:36,600 --> 00:46:37,470
+Unknown: Mm hmm.
+
+66
+00:46:37,470 --> 00:46:43,650
+Scott Tolinski: Last one, what is one thing developers often get wrong about design? Wow,
+
+67
+00:46:43,680 --> 00:48:19,830
+Unknown: I feel like it's one thing that I often get wrong about design. And then developers are like, did you think about this? I'm like, Oh, my goodness. What I like about partnering with people who are really strong in development with design questions is, is they tend to have these insights. And they know how opportunity they know, like, what opportunities are available with the code that they're using. And so they really, really helped the design be better that way and bringing up opportunities and in maybe like corner cases that you didn't consider? Is there. So very close to everything they're seeing at work and be built. But to answer your question, Scott, what is one thing that developers get wrong about design, I would think that like to feel that they're not in control of the design, that they are not a designer themselves. I think that everybody who is involved in in the creation of a thing, whether they're the secretary answering the phone, or the help desk, or whether they're kind of like staffing or whatever, like everybody is contributing to the product. And so in that way, everybody as a user experience designer and developers kind of sit right on that line where they are designers like they are creating, and they're designing. And I'm not talking about they're designing a codebase I'm, they're, they're designing the thing that that somebody is going to use. And in what I did, before they started before they sat down, I was just drawing pictures. I was just drawing pictures of what might happen. And they're taking those those like squares and boxes and drop shadows that I thought maybe this would be good, and they're making it real. So they're the actual designers. I'm just a proposer of ideas.
+
+68
+00:48:20,700 --> 00:49:00,510
+Scott Tolinski: Yeah, I think some of the best teams I've ever been on are the ones that have been the most collaborative between the designers and developers. I've always felt like there's a large portion of designers or developers who complain about the designer not understanding the constraints of web. And now that there's less constraints of web than there were in the past, developers would often claim complain about like, well, I got this design from the designer, and it's impossible. I can't do it. Mm hmm. They don't know how the code works. And to me, that's like a failure of the team itself. Because you should have been more collaborative, you should have been talking and just that very act of knowing what's possible and not, like you said, makes you a designer.
+
+69
+00:49:00,660 --> 00:49:09,780
+Unknown: Yeah, I think it's like a really, really important point that you dress there. It's fun to say a strong developer at that point, Scott would educate the designer. Exactly.
+
+70
+00:49:09,810 --> 00:50:13,890
+Scott Tolinski: Yeah, exactly. And I think that's so so important. I was I've talked about before, on a one of the projects I worked on, one of the designers and I we sat down for an hour maybe, and talk to just about easing curves, just the designer. And that's all we talked about easing curves about this animation, we tried a whole bunch of different things. And it was so fascinating because he didn't know about eating curves themselves, but he knew about what he wanted it to look and feel like so we could share that moment and say like, Okay, this is this is how we get it to look like this is how we feel it look like this. Let's try a whole bunch of different stuff. Let's see it in action. And let's let's build this thing together. And I think that is is just really, really important. So what we're going to be getting into now is the section of the show we like to call sick pics aware we just share something that we think is sick. It can be literally anything a product, a podcast, a YouTube channel I shared once the functionality in the Google Drive app to scan photos. So I mean, it could be literally anything. So Travis, as the guest on the podcast here, would you like to go first and share what your sick pic is?
+
+71
+00:50:13,980 --> 00:51:00,660
+Unknown: I kind of like have to one is kind of silly. I watched this documentary on Colts this weekend. And I'm like, really into understanding cults. I'm thinking I might start one now. Yeah. But um, so that's it. That's on Hulu. But actually, no, seriously, cults are serious. And they're not, I shouldn't joke about them. They're dangerous. Anyway. The other one is like my podcast called on Google. It's called the Google method. And I interview people around the company and talk about what they make and how they do it. And it's really exciting. And coming up next month, we're doing an episode about hiring. So if you guys are interested in tips on kind of like getting that next job, we're going to be talking to everybody in Google about how they got hired, and what are the steps and processes involved with hiring users?
+
+72
+00:51:00,930 --> 00:51:48,300
+Scott Tolinski: Yeah, I had a bunch of questions planned about the method podcast, and I'm bummed that we couldn't get to them. But I mean, we got a lot of good. So I think there's, there's so much to talk to you about Travis that, you know, if you're ever keen to coming on again, I'm sure we have a lot more questions for you. And we can talk a lot more about that the the method podcast is just really great, because it is sort of Google based, but I have so much value in it as a non Googler. It's not like it's not like it's for Google, you know what I'm saying? I find so much value in the way you do it in. It's just like a very highly produced wonderful podcast. So definitely check that out. My sick pick today is going to be the Sony wh 1000 x mp3. That's a terrible name. headphones. Like how am I supposed to? Yeah,
+
+73
+00:51:48,330 --> 00:51:51,990
+Wes Bos: all right. Love them do much better than the XM sixes Yeah,
+
+74
+00:51:51,990 --> 00:51:52,500
+Unknown: right.
+
+75
+00:51:52,500 --> 00:52:33,930
+Scott Tolinski: These are our serious business noise cancelling headphones. These are by all accounts the best in class noise cancelling headphones or Bluetooth. I got the silver ones I have been wearing them like seriously every day, I dogs barking baby crying, I just put my noise canceling headphones on and don't even have anything on just so I can save my ears a little bit. But now these things are really awesome. And let me tell you the battery lasts forever. I've been using them almost every day, Wes and I have not charged them since before I went to San Francisco for the jams or for the reactor wow friends. So the battery life on them is insane. And I've just been a huge fan using them every day. It's
+
+76
+00:52:33,930 --> 00:53:37,290
+Wes Bos: amazing. My sick pick is going to be a book series for kids. It's ones that we've been collecting them over the past year or so. It's called Little People big dreams. And each book of the series goes into somebody in history that I would like to tell my children about so Oh, wow. There's one on Rosa Parks. There's one on let me just pull up the list of my not here. Amelia Earnhardt, Coco Chanel, I think we have all the ones that we have our women in history, which I think is really cool. There's like, I think there's one on Stephen Hawking, Muhammad Ali, rocking Muhammad Ali. They're very much skewed towards the women in history, which is really cool. Because as a dad of two little girls, and we read them to them, and they have lots of questions as to like, What happened to them? And then why was why were they treated this way? How did they overcome any adversity that they they had faced and it's just such a cool way to introduce them to the people of history that were very important. So check it out. It's called the little people. What is it called?
+
+77
+00:53:37,320 --> 00:53:38,700
+Scott Tolinski: Little People big dreams,
+
+78
+00:53:38,790 --> 00:53:45,150
+Wes Bos: little people big dreams book series. And you can click them all. There's I think there's probably dozens of them. We have about eight of them.
+
+79
+00:53:45,780 --> 00:53:48,900
+Scott Tolinski: So I'm gonna actually, I'm gonna I'm gonna pick these up.
+
+80
+00:53:48,990 --> 00:54:05,160
+Wes Bos: They're pretty cool. All right. Last part of the show, we'll wrap it up with shameless plugs. This is where you plug anything where we want people to see I will just shamelessly plug all of my courses at Wes bos.com for slash courses, as well as my YouTube channel. I'm at Wes Bos on YouTube.
+
+81
+00:54:05,190 --> 00:54:41,790
+Scott Tolinski: I will plug when is this episode being released? Let me double check. Okay of May. Okay, so I'm going to plug my new series on react spring called animating react. It dives into everything you need to know about physics based animations in react. We build complex animations, we build practical animations, and we build interactive animations. It's pretty sick. So you can check that out at level up tutorials comm forward slash pro my shameless plug is something I did for Scott I created a video series about learning how to use Adobe XD
+
+82
+00:54:41,790 --> 00:54:45,480
+Unknown: and it was really fun. I did that for you. Maybe in January or February.
+
+83
+00:54:45,630 --> 00:54:46,560
+Scott Tolinski: Yeah, January.
+
+84
+00:54:46,710 --> 00:54:49,470
+Unknown: Cool. So check that out on level up tuts comm
+
+85
+00:54:49,980 --> 00:55:20,700
+Scott Tolinski: Yes, levelup tutorials.com forward slash Pro, but you can check out the first five or six videos that are free to end. Let me tell you Travis, like when you submitted that the first thing That I thought of when I saw your videos is I gotta step up my production game because you're you're set the whole vibe everything is just so good. And you know it just really top notch stuff as always. So thank you so much for putting that together. But I just want to say thanks, Travis, thanks for coming on. I we had a great time. I think our audience yeah ton of stuff.
+
+86
+00:55:21,030 --> 00:55:21,870
+Unknown: Thanks for having me.
+
+87
+00:55:22,290 --> 00:55:33,570
+Wes Bos: You've got such great insight into everything I know walking away. This was just like the work life balance and going all in. There's so many little things I've taken away from this conversation. So thank you so much for taking some time to talk to us.
+
+88
+00:55:33,720 --> 00:55:35,400
+Unknown: It was my pleasure. I'm honored to be on the show.
+
+89
+00:55:35,670 --> 00:55:51,510
+Cool. Well, we'll finish it off with a piece so piece PCs. Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

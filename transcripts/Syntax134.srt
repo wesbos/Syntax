@@ -1,0 +1,340 @@
+1
+00:00:01,319 --> 00:00:40,710
+Wes Bos: You're listening to syntax, the podcast with the tastiest web development treats out there, strap yourself in and get ready to live ski and West boss. Today's Live podcast is brought to us by two awesome companies. The first one is the armory men's clothing retailer at the armory.com ar m o u r y. It's a proper British spelling. They are an awesome men's clothing retailer from New York City. And they also have a really great online store. We'll talk about them partway through the show, as well as century which is going to do all of your error and exception tracking. We'll talk about them partway through the show as well.
+
+2
+00:00:45,900 --> 00:01:46,590
+Unknown: Syntax FM is one of the top you know I can't do this. I was backstage watching EAS concession speech. And she called me divisive, is honestly one of the nicest things she's ever said about me. I really can't believe that she thinks I am influential enough to be divisive. You know, it was our dream to host a tech conference together. We do everything together. We ski together. We write books together, we learn new languages together and and we let crowdsourcing terrorists apart. You know, the internet is a wonderful idea. It's a great place until you people got on it. Your web developers, I think that there can be two hosts. I don't think we should have ever split this thing up Eve. If Can you come back out and host with me? What are you doing? Where's your normal clothes?
+
+3
+00:01:47,040 --> 00:01:50,280
+These are my normal clothes. Okay, well,
+
+4
+00:01:50,280 --> 00:01:57,450
+I'm really glad to have you back. And I think that we should both host this show together. Really? Yeah, cuz I can't read this card. Can you read this card for me?
+
+5
+00:01:58,380 --> 00:02:00,690
+Totally. I'll hold it with my
+
+6
+00:02:03,360 --> 00:02:14,370
+syntax. FM is one of the top podcasts for web developers. Its hosts are two amazing teachers and entrepreneurs. Please welcome our very special guests. Wes Bos and
+
+7
+00:02:14,370 --> 00:02:17,610
+Scott solinsky. Yeah.
+
+8
+00:02:22,220 --> 00:03:41,039
+Hey, folks. How's it going? Yeah, okay. Yeah. All right. Yeah, just sit down. Let's do it. Got it. Cool. Uh, thank you so much for everyone for coming out. This is really, really cool. Um, for those who don't know, Scott and I are on a podcast weekly. On Monday, we have something called tasty treats, which is like a, we try to keep it to 15 minutes. Sometimes it goes to 45 minutes, but supposed to be like a small, applicable piece of bite size. Yeah, I'm on a Wednesdays, we have tasty trades. And these are our longer hour long episodes where we deep dive into a topic we we spread it out over the course of an hour and really, really get in there and get some tasty treat. Yes. It's stupid to call everything tasty. On the podcast, anyone who listened to the podcast before? Ah, awesome. Um, go ahead. I'm not Scott, you're not Scotland ski. I'm a developer from Denver, Colorado. I am on the Twitter and Instagram and all that stuff at stilinski and a level up tutorials. My name is Wes Bos. I'm from Canada, which is why I say JavaScript funny or correctly. Anyone else from Canada? Any like real Canadians, not the ones that move down here for the money. Now.
+
+9
+00:03:43,740 --> 00:03:44,340
+All right.
+
+10
+00:03:46,350 --> 00:06:19,500
+Today's a live podcast we're gonna be recording it here. Obviously, with you, there's a lot of interaction. Pretty excited about it will also push this out on the regular feed as well. So today, here's the plan. First, we're going to start off with who's snacking on react, we're going to go through a bunch of different websites and you are going to guess via your phones, which website is built in react. Next, we have hooked on hooks where we're going to give you some sick tips and some of these things with hooks that we really like. Then we have this that are both so a little game where we actually even describe it. It's it's frickin hilarious. So get excited for that. It's pretty fun. After that we have this is gonna be really exciting. We're gonna explain a little bit more when we started but we have a a tag team coding challenge, where Wes and I are going to attempt to code something live I'm so nervous about and yeah, on one computer. It's gonna be a blast. And my computer as it's a MacBook so sometimes the keys go double, you know, like you forget Yeah. And I was eating in nature Valley bar earlier. So it's crumbs every it's done. Up Next up, we have stumped interview questions. So we're going to invite you The bravest folks in the crowd to come up and answer some some heart some very easy interview questions. If you win, you get some prizes. After that, we're going to be talking about unpopular react opinions. I wasn't sick of that. Yeah, yeah. Right. Yeah, that's that's the the hidden hip thing right now the hot thing. Finally, we'll end it off with a q&a with Scott and West. So if you have any questions about breakdancing or barbecue, or actual web development stuff, you can ask us those. So what we need you to do now is take out your your mobile phone out of your pocket, and visit this website pigeon holed.at Ford slash tasty or just go to pigeonhole that at type in tasty or scan the QR code there? No QR code when there's no Oh, can I please get the my screen on this screen? There we go. It's black. It's a good start. Don't worry. We're getting it fixed. There we go. All right. Hey. Yeah, five participants going for snacking? snacking. So click on the one that says who's snacking on react? You'll see like, there's two different one. Yeah, don't click on the other one yet. Not yet. That's really yeah. 4648
+
+11
+00:06:20,940 --> 00:06:22,410
+Yeah. kliman.
+
+12
+00:06:23,700 --> 00:07:09,240
+While we're waiting props to the folks that pigeonhole this like wicked web app, that's like, all built on WebSockets. And it's like, all instantly live. And they hooked us up with their software to do these live shows, which is really cool. And amazing. Yeah. All right. We got almost 100 people at 100 the cake arrives and we'll start it Yeah, but you you can continue to join in anytime. Yeah, don't type it pigeonholed that at Ford slash tasty. A well, keyword tasty? Yeah. Big old. All right. All right. started up Scott. 99. Hey, all right. All right. So um, the question is, whose website is built on react? elton john, or ariana grande de
+
+13
+00:07:14,340 --> 00:11:28,529
+man. Oh, man. We got hundred 30 people in here. Yeah. All right. All right. reveals coming in lock those votes and right now. What's that from? locking? Who Wants to Be a Millionaire? Yeah, the audience. Oh, yeah. lock them in. All right. Let's see it. All right. Everybody's voted. Yes, I want to reveal. Whoa, incorrect. elton john. JOHN. Is Is he isn't react ariana grande de probably. Viewers viewer something crappy? Yeah. Next. Next up is ferrari.com or lamborghini.com. Who's using the blazingly fast alright. Hundred. All right, locker man. Ready to reveal? You gotta give me the confirmation every time. Oh, 50% 7%. Thought Lamborghini, which is correct. Why was 5050 guests okay? tight race. That's Starbucks or dunkin donuts. Who is using react to order your coffee or razor cards title? I can see the stats on dunkin donuts. All right, here it is. That one came in at the last second row. The correct answer is Starbucks at 50.7% is using react. Wow. kind of surprising. That's surprising. I probably would have wanted to know dunkin donuts. This is Dunkin. Now, yeah, but their website is still Dunkin Donuts, calm. We don't even have Dunkin Donuts in Canada. He's got a Tim Hortons, which Tim Hortons uses react, by the way. Next one, please, Scott. All right. Is it wayfair or IKEA? I think people know this one. Do you? Hmm. So wayfarer is like a family. Yeah. IKEA is the you know what? IKEA? Yes. Yeah. And it doesn't need IKEA. All right, my lock this in cash. 73.6% of you are correct. wayfair.com runs on react. It's actually a massive react application that runs many, many properties. So it's kind of interesting. tables and chairs and tables, chairs, blankets, throws. Yeah. Next is cvs.com or Walgreens or Walgreens. Oh, it's the double RS because of my crummy cable. Did you while we're waiting? Did anyone see the code pen the other day of someone who made the infinite scrolling receipt? So yes, sir. See? And like as you got to the bottom of the receipt, it would just kept loading it longer. Oh, I was howling. So funny. And oh, wrong. 47% of you guessed correctly. Calm is using react file. All right. All right. That's it mess. Some somebody got five out of five average score. 2.47. Who got five out of five? Wow, that's impressive. That guy view sources. All right, we're gonna continue going on. Now we're gonna talk about hooked on hooks. These are some spicy tips for our Hot Tips. And they spicy, spicy. Well, for working with hooks. How many of you are using hooks already in production? Oh, that's like half of you. Yeah. I guess that's the kind of person that goes to a conference on react though. Yeah. Okay. Go for it. Oh, yeah, we have that. Here. You go. Scott. Press the button to go next. Oh, no, I'm trying to get that. Oh, we go. Yeah. So this is really super easy to use something like local storage as if it was just set state. I mean,
+
+14
+00:11:30,149 --> 00:16:09,419
+in the past, it wasn't, maybe it wasn't necessarily difficult to use local storage. But now we have a hook. And it really functions and feels just like you state, throw it into a storage pullout of storage. Yeah, I don't know I could. So we basically just have a function that takes a key and initial value. We're using use state inside of here for the stored value and set stored value. But really, there's nothing crazy here because we're just setting it with window dot location, get item and then we pass the key in. And the same thing with set value, we can just do basically the same thing here until we're returning our stored value in our set value. It doesn't get any easier than this. Except for mine, except for yours. But by the way, Did anyone see the new standard lib key value storage. It's like a synchronous or asynchronous local storage. I don't see that. No, there's like this, like new thing coming to the browser. That's like standard lib. Because you know, JavaScript has nothing. And with me MPM install everything. We're starting to get like standard libraries. And the first standard library added to the browser is an a synchronous API for local storage. Seems pretty cool. Next one is I is for socket, io WebSockets. This is one that I was working with a drone, I was flying a drone with JavaScript, because that's a dumb idea. And the drone was I set up a WebSocket server that would send me the data from the drone, to my front end via WebSockets. Because if something with blades is flying at you quickly, you should be able to stop it quickly. And WebSockets does that. So what I need to do is capture the state of what the different data as to what the what the drone was doing, how high it was the tilts, the yaw all that stuff. So I have some internal state in this use drone socket hook. And then I simply take my socket, which is the socket IO connection, we listen for a specific message coming in on that web socket. When that comes in, you set that data to state when the socket is or when this hook is removed, then you remove your event listener clean up after yourself. And then finally just return that actual drone state, then you just got this object full of drone state, you can use that anywhere inside of your app component. Nice. Next up, we have use click on outside or use click outside and this one actually comes to us from use hooks comm site ever is the best site ever, especially if you're diving into hooks right now. Because there's so many like really practical examples. And to me just pulling through these, maybe you have a better understanding of how to write hooks myself. So this is a really great example because all it does is take a ref and a handler. And so many times we have like menus that you have the menu, you want to click outside the menu anywhere and you want the menu to close. So by simply throwing this hook, you're testing to see if the thing that you're referencing, and where your click is, are or where your click is, is in the same places where the thing you're referencing, so therefore if it is, then don't do anything, and if it's outside of that run whatever handler whatever event that you're passing in here. This is a really great example too, because it also shows adding an event listener and then removing the event listener on cleanup. So you'll probably end up doing quite a bit. Yeah, this little contains pretty much jQuery is in the browser now. Yeah, I guess Yes, yes. No, but contains, start using it today. Yeah. Next up, we've used key press. So I saw this one on use hooks, and they said, I'm going to write it myself because I find that the easiest way to grasp what's going on, very often my applications they need to know is somebody currently have a key down. And right now, if you want to know, if somebody if a key is currently down, you have to like, you need the event, right, you need to be able to access it, and then you set a variable outside. So this use key press hook, it's pretty simple. When somebody presses in down the key, you set it to true. And when someone releases that key, it sets it to false. And here, let me show you how it actually works here. So we've got the use key press hook here, you pass it a letter H, for example. And that will return a Boolean, whether it's currently down or not. And then your developers, you know what to do with Booleans, you can, you can do things like style them a little bit differently. Here, I'm using a CSS variable where I'm just setting it to different colors. And then we go ahead and set the the color of the actual thing on the component to be that specific color. So it's pretty cool. It uses internal state as well as use effect, which cleans up after itself, and then finally just returns the actual key.
+
+15
+00:16:11,340 --> 00:16:54,600
+Yeah, and lastly, I don't know how many people here have used react measure. wreck measure is extremely handy library for measuring things. But now, with hooks, you can build your own mini react measure, and then like absolutely nothing at all. And just really the bulk of it isn't resize observer, which is browser API that basically does everything for you. So nothing fancy here, we're just simply able to now have a use measure where we can measure literally anything we want, in how many lines of code is this is like less than 15? No. 11 994 minus 15. Yeah, yeah. Yeah, no, no 1111
+
+16
+00:16:56,940 --> 00:16:57,720
+jobs.
+
+17
+00:16:59,220 --> 00:20:18,240
+With no one hired us. This is really cool. Because we also have new intersection observer in the browser, intersection observer will tell you whether an element is currently on screen or off screen or slightly scrolled into view or slightly scrolled out of view. And that's really cool. Because now you could make like a hook code, like, it's probably already made, like use is visible or use is on screen. And that will be able to give you a Boolean of whether it's currently scrolled into view or not. And then or it'll it'll give you like a what's called the intersection ratio it's it's currently half scrolled into view so do one of those annoying things where the swoops in from the side or something like that. Yeah. I think that's it for our hugs. Hopefully you guys enjoyed those. We're gonna play another game called this that are both to take out your phones again and go to pigeonhole at Ford slash tasty tasty and this time select this that or both, but although we actually have a neither option this time, some of them have neither some of them have neither. It gets a little tricky. Oh, yeah, it's climbing. It's kind of way faster. Oh, there we go. Everybody's arrived. All right. Fair enough. Scott, starting this one up. So first one first one. Gutenberg isn't a WordPress gooey plugin for creating react based Gutenberg blocks. A 90s budget TV show about sideboards who read both or neither. Oh, yeah. How many of you are WordPress? devs. No, one, one. Formerly, okay. Congratulations. I joke. I joke. All right, Scott. lock those in. lock them in revealing Oh, neither only 27 of you. So 40% of you thought it was a WordPress GUI for creating that's you're allowed to take that if you want. Yeah, create a WordPress nobody picked the 90s TV show. Next up we have nashorn Is this a JavaScript array Java based JavaScript engine developed by Oracle or a popular rock climbing spot in Denver, Colorado National Park. I'm gonna go grabs national national. Let's see it's got revealing whoa 6% of you guessed wrong. It is not a rock climbing spot. It is a Java based JavaScript engine developed by Oracle. So anyone ever used it before couple of you do We got the server side rendering in Java with nashawn Yeah, it's a cool name. It's cool name probably succeeds stokin Next up is easy peasy. Is it a react state library or a children's dish set?
+
+18
+00:20:22,530 --> 00:20:23,760
+hundred votes
+
+19
+00:20:25,200 --> 00:21:01,710
+let's see it lock a man. All right. This is an upset I think Landon has one of these. Oh, it is a react State Library. It is right it is okay good. I'd like did I get this wrong? No, it is not a children's dish that 70% of you that's a good one. The good track in peace with it. Yeah. All right. Next up we have use boxman Is this a hooks library for box model dimensions? Or a puzzle based flash strategy game for kids?
+
+20
+00:21:03,390 --> 00:21:05,130
+Use boxman
+
+21
+00:21:06,660 --> 00:21:07,800
+lock those votes in.
+
+22
+00:21:13,580 --> 00:21:48,860
+cabinets. Get those locked in. All right, here comes the reveal. Oh 6% of you were wrong. or right. Sorry. Yeah, most of you are wrong. is a flash game for kids. Not a box model. You should have known that because Scott just showed you a hook that you could do it with resize observer. Next up is toggs Is it a lightweight styleable toggle component for react or rain resistant outdoor gear?
+
+23
+00:21:55,650 --> 00:22:08,220
+Almost none of these people know me didn't there was a couple that like almost everybody knew Yeah, I thought Easy peasy was big enough. Yeah. All right. Here comes the reveal.
+
+24
+00:22:13,710 --> 00:22:15,630
+The perfect tie
+
+25
+00:22:18,000 --> 00:23:01,050
+That's amazing. That's amazing. So 50% were cracked rain resistant okay here although that would be like such that's such a react component names somebody takedowns blazing fast poggle library for react. You know as good as gone. Somebody is like I like I found togs like rain gear, and I was like, that's gotta be a react component to it wasn't so sorry, somebody get the GitHub get NPM get GitHub. Get the GitHub. We're here. All right, next up we have the landwind Is this a set of react components for using tailwind CSS, or is it a Chinese knockoff Land Rover SUV? Oh,
+
+26
+00:23:04,470 --> 00:23:05,040
+alright.
+
+27
+00:23:06,600 --> 00:23:07,830
+Get those votes in?
+
+28
+00:23:10,470 --> 00:23:11,940
+Here comes the reveal.
+
+29
+00:23:16,050 --> 00:23:44,610
+said only 30% of you knew that this is actually a Chinese knockoff of exactly a Land Rover SUV looking off it's hilarious. Yeah, I think it broke some people's streaks. Next up is free flow. Is it a state management library built on state context and UX? Or a California based hot tub company?
+
+30
+00:23:48,540 --> 00:23:49,470
+All right.
+
+31
+00:23:50,850 --> 00:23:54,330
+Get your vote in locker man folks lock them in
+
+32
+00:23:55,710 --> 00:23:56,220
+lockup.
+
+33
+00:23:57,780 --> 00:24:49,800
+Oh, these are hurl It is indeed a California based hot tub company at 40% of you guessed that it is not a state management library built on state contracts and books. So again, please feel free hooks is almost cruel, because it's so nice. It's so new that probably people haven't haven't heard of it yet. Alright. Lastly, we have overgrip in Is this a popular rock climbing spot in Denver? Or is it a client side video stabilization framework built on the file reader API? Oops. I should have we should have put like, like, like on Uber like Uber, Uber, Uber open source. Doesn't? Yeah, good. Yeah, that'd be good. Let's get the answer here. lock those votes in.
+
+34
+00:24:51,630 --> 00:24:52,710
+Oh
+
+35
+00:24:54,000 --> 00:25:18,180
+2% guess it is a rock climbing spot in Denver. So Uber gripping is what was the other one Oh, seven out of eight who got the Seven, eight, the same guy. That's impressive. That's impressive. Wow, quizmaster, not two people got seven out of eight. That was very good, very impressive, beautiful.
+
+36
+00:25:19,560 --> 00:26:19,020
+Wes Bos: Let's take a quick break for one of our sponsors. And that is century. Thanks so much to Sentry for sponsoring, Sentry does all of your error and exception tracking What that means is that you install Sentry on your website, you install it on your JavaScript, you can install it on whatever backend, you have PHP, Ruby, node, you name it, they support it, which is awesome. And what it does is it collects as much information about what went wrong. And then it will aggregate all of the that information and put it into this nice, nice dashboard that will allow you to see what was the error who did the error happened to how many people that this error happened to what were the maybe what was a stack trace that happened on the way to this error happening just gives you incredible invaluable insights into the actual errors that have happened. So if you want to try it out on your website for free, go to century.io and use the code tasty treat all one word, and you're gonna get two months for free. Thanks so much to Sentry for sponsoring.
+
+37
+00:26:22,110 --> 00:29:17,760
+Unknown: Alright, let's go on to the next section. Who here watches this is Gordon Ramsay show called master chef, master chef who wants his master chef, only like three people, okay, so on master chef, what happens is that they have tag team, and one person has to cook and the other person has to stand there and not well, you can say stuff but you can't like actually. And then Gordon Ramsay stands there and yell at you. So we thought this would be funny to try and build something with me and Scott, where every 30 seconds, we switch. So we're gonna have a timer on the screen. And every 30 seconds, we need you to the audience to switch. And we'll have to switch out and keep coding. So the idea of the application is that it's going to pull a dad joke from API I can has dad joke calm. It's is going to start. Yes, no, it's going to display the joke on the page will have a button to fetch a new joke. And then it must use hooks and state to do all of this. So I've got 35 minutes maximum. Do you think we can do it? We actually don't know because we have not talking and then I was like, oh, maybe we should? No, no stop because it would be more her later. He kept on shrinking and we're like it's gonna be 10 minutes. We're gonna get a minute for like, about 30 seconds each. Yeah. How about five minutes? Because I think it'd be funnier if it fails. Yeah, it could fail catastrophic. Lee that is so we are going to flip a toonie we gotta get this, which is a $2 coin in Canada. And if it's heads, Scott will start first. If it's tails, I will start first. Tails. Oh, you started. I'm starting. Alright, so. Oh, wait, we gotta keep we gotta keep some some running room in here. Yeah, so you're gonna need some coding room. Now. We got a hunch. Okay. Yeah, the hunch gone. Okay. Here we go. As soon as I click this, it starts ready. Oh, by the way, we have create react app. This is the base create react app ready to go pass that we've not NPM installed Anything else? and ready to go? Ready? Go. Alright, so we've got I can has dad joke calm? I don't know what API you should do. The API grabbing first. Okay. I'm not familiar function use dad. And up here we'll say const. Co nostos. const. API is equal to that. That's the API endpoint. Yeah. And then in here, we'll say const. Import use state. We're not even having a
+
+38
+00:29:20,250 --> 00:29:23,130
+functional component finished yet. I have a functional component.
+
+39
+00:29:24,540 --> 00:32:34,920
+can also use state Oh, I typed us okay. Oh, okay. Oh, yeah. This is state k data and a data set set date. Okay. State and object. Yes. As a loading state, I don't think that's gonna make a function called fetch. Joke. Yeah. And I'm going to make that a sink. Yeah, it's got to be a thing. And const responses equal to a weight fetch API. And I know that this API needs a header header, you got to do the header part. Okay. headers, not use this API did a forward slash on headers. Okay. Okay. It doesn't need to be working right now. Wait, why is this lowercase? No. Don't use dad. What is a functional component called my joke? Oh, man. We got three minutes. Okay, here it is. Is it isn't working, except is not defined? Oh, that's because I never finished writing my header. Yeah. Except in the doc say, it needs to be application JSON. So, Oh, come on, man. Stressing. Okay. So we await that. And then yeah, we need you to convert the response to JSON. await Yeah. brez await dot JSON dot JSON. And then console log the data just to see if it's working. We don't got time for that. It's working. Okay. Now go inside your joke. Yeah. and easy to use the hooks. Oh, wait, why? Why are we? Why are we doing a custom? Why don't we just put this inside of the component? So from here, we need to return? Oh, my gosh. Oh, my gosh, return the data and the Set Data function because we want to have a button. Set. Oh, my God. Set Data? Why? Okay. And then hook What's going on here? Why don't we make a custom hook? Yeah. const. We could just done in the component. Data. Set Data, which is equal to use hook use dad, we're using dad here. All right. Okay. How does the data come into? I don't know, with the console. log in or put a breakpoint in. Why don't we have an extra bracket?
+
+40
+00:32:36,420 --> 00:32:37,140
+New Crump.
+
+41
+00:32:40,680 --> 00:32:46,350
+It's not in there. Can't get
+
+42
+00:32:48,120 --> 00:32:48,690
+a
+
+43
+00:32:51,720 --> 00:32:52,950
+good property.
+
+44
+00:32:55,170 --> 00:33:37,950
+Is anyone in the car? Does anyone see why this isn't working? I didn't the fact we didn't actually run it. Use? No, the point is that, yeah, we forgot our effect. We just defined the function, but it's yellow because we never used it. We need to use a fact right? Yeah. Yeah. Inside the hook. Yep. No. Oh, inside the inside the hook. Why not inside the component? Man. I'm used to doing so get the good. We didn't talk about how we did this. Yeah. No neuro below the inside of the what? fetch joke? No.
+
+45
+00:33:43,500 --> 00:34:14,480
+Keep going one more minute over time. In here, we're going to use effect. And this is an arrow function. Yeah. And then and here. We actually call the fetch joke. Yeah. endpoint. Okay, and then inside of here, data set.
+
+46
+00:34:18,390 --> 00:34:19,050
+Now the button.
+
+47
+00:34:24,230 --> 00:34:37,190
+It's not called set data. That's a bad name for it. But it's destructured. So it doesn't matter. We just need to use that. No, no. differently. All right. It's fine. I'll fix it.
+
+48
+00:34:40,140 --> 00:34:41,340
+You shouldn't have started first.
+
+49
+00:34:50,279 --> 00:35:02,880
+What's it called? Us, dad? Yeah. Us dad. And then that was refetch and you delete here is really Fetch. No. And then add click
+
+50
+00:35:04,440 --> 00:35:05,360
+the button text.
+
+51
+00:35:18,270 --> 00:35:19,590
+Click the button. Yeah, yeah.
+
+52
+00:35:21,660 --> 00:35:24,810
+No. Dispatch dues.
+
+53
+00:35:31,080 --> 00:35:36,510
+Oh, in that return data. Oh, no. Oh, yeah. In the array. Yeah.
+
+54
+00:35:38,420 --> 00:36:07,770
+Yep, safe. It doesn't need a custom hook. Whenever using this open source. Oh, that was fun. It could have been so much easier.
+
+55
+00:36:10,020 --> 00:37:38,580
+Oh, man. Well, thank you so much for us. I thought that was pretty fun. All right, let's keep. Next up is stumped. We need a few brave souls to line up right over here that will be willing to answer or attempt to answer some react questions or prizes. For prizes. We have stickers, and we have some t shirts that will be mailed to you. Come on, there we go. How many how many questions we got here. I think we got like six questions or so. Okay. Okay. Oh, yeah. Come stand over here. Come grab the microphone. We can we can pass it over. Yeah. All right. We need a few more brave souls. Go. Come on. Come line up over here. All right, please. are. We promise, Kyle. Thanks for being the brave first, Kyle. So the question is, what is a react pure component for? I don't even know. There's a couple of these. The answer to say component that always returns the same thing. If it's props for the same glass. That's that's like a pure function. So let's give it to him anyway, who wants to? anyone from the audience? When I answer Yeah.
+
+56
+00:37:44,580 --> 00:39:33,210
+No. Yeah, so should component update does a shallow compare meaning that if you pass it a string or a number, that thing will always change. But if you pass it an object and the the properties of that object change, then it won't cause a rerender. Yeah. And come see me after I'll get you a T shirts. I got the T shirts, but they're not here here. Next one question. Why might you use a callback with setstate? Oh, because after set state, it's something that runs synchronously. So you want to make sure that something runs after that state was set. Beautiful, great. By the way, I was curious, before this, I was curious about like, like, how does that work with hooks? Right? Because there's no callback with the hook set state and I read into it. And if you want to do something when state changes, then use an effect. And I thought that was kind of interesting. So obviously, we didn't we didn't do that there. But if you do run into that problem, you probably want to reach for an effect. Question three. How am I you reverse an array without mutating the original array? You can use a spread operator and just the reverse. Bang, bang, bang. Got it. So some way to copy the array spread array from what's the way we used to do it before? like google it every time you need to do it. Yeah. Beautiful. Beauty. Yeah. All right. Yo, Hey, yo, hey. Alright, question number four. Can you explain what a downtown job is?
+
+57
+00:39:37,730 --> 00:39:38,310
+What?
+
+58
+00:39:41,400 --> 00:39:50,340
+I want to come run up and answer this one. This is the idea here. You
+
+59
+00:39:53,690 --> 00:40:29,690
+know, it's not a job where the commute makes the hate your life. Hell Yes. All right. This is science Gods dad came up with please explain Scott do a downtown job is just doing a really good job on something when we used to mow the lawn for our neighbors. He always used to tell us, you better do a downtown job on this. which apparently his dad told him like a really good job. We got a really good job. So yeah. We need some more people. We got to Mark Yeah. All right. What's your name?
+
+60
+00:40:29,900 --> 00:40:30,980
+My name is Shannon.
+
+61
+00:40:31,730 --> 00:40:40,670
+Thank you, Shannon. Question number five. When would you use use reducer in react hooks? So I had asked about it.
+
+62
+00:40:40,730 --> 00:40:52,980
+Um, as someone who has no experience with hooks, or react 16? I would say you would use use reducer when you want to make a
+
+63
+00:40:54,090 --> 00:40:55,050
+state.
+
+64
+00:40:55,130 --> 00:41:04,460
+I actually googled this yesterday, when when you would use use state versus use reducer and I didn't read the thing, but it's on my laptop right now.
+
+65
+00:41:06,840 --> 00:41:08,460
+The tab is open. So I'll get to it.
+
+66
+00:41:10,730 --> 00:41:13,020
+Something about changing data? Good.
+
+67
+00:41:13,169 --> 00:41:47,280
+Yeah. Sky you want to fill in? basically use use reducer when your your state needs are more complex than just a simple set state. Yeah, arrays, objects, you got stuff you got to deal with. That's more than just simple steps. Or you feel like just using a reducer for whatever reason? You want to answer a question. Oh, beautified I just pointed out someone. What's your name? Oh, number six. What makes use layout effect different from use effect? I don't know. But it affects the layout. Beautiful.
+
+68
+00:41:54,300 --> 00:42:14,340
+Yeah, use use layout effect. When you need to wait for the the DOM updates to finish before rather than just use effect. anymore. brave souls. Yeah, come on up. What's your name? Then? I think we got? Um, I think so. Yeah, I never know.
+
+69
+00:42:17,210 --> 00:42:40,380
+Number seven is what prop type would you use for an object that contains a number in a string? You would use prop type dot one of type, I believe and then you pass in an array, which would be a prop type number, our pop type, comma prop type string. Or you can use node,
+
+70
+00:42:40,380 --> 00:42:41,070
+I believe.
+
+71
+00:42:41,519 --> 00:42:43,190
+The key word here is object
+
+72
+00:42:43,260 --> 00:42:45,210
+an object? Oh, okay.
+
+73
+00:42:45,230 --> 00:43:05,460
+Not either, but an object with both of those inside of it. Hmm. I think there's, there's a prop type that allows you to do objects I guess it's object and you probably think you can pass it keys for the object keys close enough its shape. But yeah, you pass the keys. Are you remember? Thank you. One of type is also very.
+
+74
+00:43:08,850 --> 00:45:48,720
+Alright, folks. Now it's time for a segment that we like to call unpopular opinions. So the creator of JavaScript recently tweeted unpopular opinions, React JS edition. And this caused everyone to tweet their unpopular opinions. So what we're going to do now is go through some of these unpopular opinions. We're going to go through some of the more popular unpopular opinions and and give our thoughts on them. First, unpopular opinion is from Alex R. Anderson. 1993. Does anyone else feel super old when people have 1990 in their username? Oh, um, React life primitives should be included in browser engines, JSX, virtual Dom reconciler, scheduling etc. In other words, reaction become the platform. Whoo, spicy opinion. There is a bit we saw, who's been a developer for more than, like, eight years. When did we see this before when people had this opinion of it should just be included in the browser? jQuery out, everyone's and last two LS should just be paired with almost everything they say they should just be part of the browser, just ship it with the browser and browser, so yeah. What do you think? I don't know. Maybe they should have some sort of like components on the web or something. I don't know. They could call it web components. Next up, we have a tweet from Ryan Florence. And he says the majority of logic people write and react for data loading and hooks makes it more confusing for people than classes. The suspense maybe it should have come before hooks. This one's kind of interesting because it's like in one hand hooks have been this like, revelation in terms of writing really clean, simple code. The other hand, we're still missing this big component of it, which is going to be suspense for data loading. So, yeah, yeah, I think so I'm really excited about suspense for data loading, because it's gonna make fishing data easier. The code we just wrote. You'll notice right here, why did I do an anonymous function here? Why did I not just pass it fetch joke? Anyone know? Yeah, you can't pass an async function to use effect, because an async function returns a promise, which if you return something from us effect, it's a, like a teardown function, right or a willen mountain function. So that's it's a little bit funky. It works. Scott didn't like my solution. But well,
+
+75
+00:45:51,390 --> 00:47:25,800
+Wes Bos: maybe we should do a v2 after. Let's take a quick break out for one of our sponsors, which is the armory the armory is a men's clothing and accessories retailer. They have an awesome online store, as well as a boutique in Tribeca. They actually just launched their spring, summer 2019 lookbook. So you'll want to go to the armory comm and check that out. So what's the big deal about the armory, they make awesome quality clothes, you're not necessarily going to know the brand name where you pay extra for that. But if you care about getting high quality clothes, things that are going to last you for many, many years, you want to check out the sort of curation of the clothing that they have. They're actually on this trip alone. Scott and I were practicing for this live show and Scott threw his sweater across the across the hotel room and said like, Yo, check this out. And oh man, the little cardigan that he had was so so soft and such good quality. I'm loving the the stuff that I got as well. I got a nice hat from them. I got a nice sweater, and a really really soft a buttoned up. So check it out at the armory calm, highly recommend the clothes if you are looking to up your fashion game or maybe just buy a nice piece for like a wedding or maybe upcoming coming interview that you have. It's going to look good on you is scan the armory.com and check them out on Instagram as well. They are the armory NYC.
+
+76
+00:47:29,250 --> 00:49:07,890
+Unknown: Next one we have from Prismic react as a framework. Bernie devil emoji. So yes, no, well, actually us spicy opinion there. Next up we have for Aaron Garcia. hooks are harder to understand for beginners than classes. It also takes time to do things with hooks, mentally mapping them to what we'll do in classes. For example, when using use effect. You always think about which lifecycle method. And this is actually kind of true, because even when I'm teaching hooks, I don't say this is what the lifecycle method is. But what I'm teaching them I say, Well, if you've used lifecycle methods, you kind of have experience with how these things work. This is how it sort of correlates to that. Yeah, I don't, I don't think it's more difficult or harder. I would like to hear like, like a beginner who comes at it fresh without it without knowing lifecycle methods. And just knowing when this thing goes on the page, here's where you put your code. When this thing updates, this code will run again. And when thing goes off the page, here's where you put the other code. So as you can see, we got baggage. Yeah, yeah, it's baggage. Yeah. Next one from Sebastian. You know, I always goof up names on podcast. How do you say his last name? was really good. Thank ya, React affricate and delete things quickly enough. Really, I think if react, moved any quicker than it already does, there would be a lot more tears. What do they add? Yeah. Just think about the React router every time it updates, and you go to a new one today.
+
+77
+00:49:14,130 --> 00:53:43,440
+Next up from Jared Palmer, the learning curve is still too steep for folks with just basic HTML and CSS skills. I think this one's interesting, because we do see like frameworks and platforms like Gatsby come about where you really even have to know that much to get a basic HTML site up and running. I mean, you don't even have to have any interactive JavaScript in there or hooks or any of that. So you don't need management or whatever. You don't need state. Yeah, that's pretty easy. And that's what's so cool about Gatsby is it's at the very basic, it's just templating. And you can just get up and running. And that's very much how probably half of this room learned web development was they just got up and running with templating through WordPress. And then they learned a little bit more and then they learned about custom queries and then they learned about plugins and then before you know it, you're your friend On PHP developer that grew up on WordPress, so and when you need it, there you go. So I'm pretty excited even things like view as well. I think it's a, they have less of a steep learning curve. But I think Gatsby is doing a lot in the space to make it very beginner friendly. Yeah. Next up, Sergei resolve, we replaced Redux with use context and use reducer combination in many middle sized project, we are fine. So I did, I did a couple projects as well, big fan, I'll say not total replacement. But for a lot of use cases where people just want global state, or at least stayed a little bit higher than than where they haven't, then they can. Yeah, people will be like I'm writing a blog. It's time to use Redux or something. But no, I mean, to be superduper useful in the right, in the right use case. And next one is from Sophia Alpert. And she says, most people make react apps more complicated than they need to be. Yeah, I agree with this. Yeah, I think they do. Everyone's adding like 100 files with one line of code to do one little Yeah. And then just getting spit out. We love to over patterns and, and to overcomplicate higher order component, render prop everything and premature hook. Hook ization. Yeah, like apparently I used the hook when I shouldn't have today. Oh, yeah. Well, okay. Wait, time. What did I do wrong? No, you didn't do anything wrong. You overcomplicate it, I overcomplicated it. We could have put this whole thing you could have just had a use effect. Yeah, basically, it did mount. And then you could have had the function inside of the component. Think about reusability. Scott, we're not reusing. But imagine you and we could compose it into all kinds of different kinds of jokes. That's why you hear me off framework. Yeah, yeah, a dad framework. So you got to think about the future Scott. Next one from Parker McMillan. I like view simplify, looping over a range of numbers better than all of the hacks people using react. Woof. Do you think? I don't know. I think we should have loops in JSX. I think if we had him, I don't know if I'd use the map still. One person was later. Just use Matt, what about if statements who wants if statements in JSX? It might be six people we can hang out later. Yeah. I don't know if I need them. But yeah, it'd be nice. Like, I know how to do it. But you know, other people. All right. Now we are gonna end off the show with a q&a. So if you've got questions about whether all men are thoughts on anything, react in general, just let us know. We've got a mic here. You can also just stand up and shout them out. Yep. What was the first applications we worked on? Ever? Oh, that's a good question. Yeah, this has been really good from like, like a website, but like an actual application. Um, you know, first application, I built the car picker in for.com. So it's like this thing where there's like a billion cars, and you have to tell it what you want. And I tell this story, because it's hilarious about QA. Every time we queue and ate it, we only had like five or six models, because it was just like a prototype. And we took it to QA. And this one guy was like, I hate it. We're like, Well, why do you hate it? He's like, there's no Mustang, like,
+
+78
+00:53:45,120 --> 00:58:31,230
+what does that have to do with anything? Mine was a daily deal aggregator when Groupon and livingsocial and 40 of those other sites became popular, I created a an aggregator through like a Ph. It was this library that implemented all of jQuery methods in PHP called PHP query. Because at the time, there was no there was no node. And there was no like virtual Dom where you could like load the DOM. So somebody wrote like a thing where you could scrape a page and then like, use these like weird selectors. It's one of those like XML selectors called XPath. Yeah, you had to write these like XPath selectors, and then aggregate it into one big page and I made a bunch of like, like Groupon bucks like they gave me 10 bucks every time you refer a friend and I had like, like, $4,000 in Groupon, this woman and man we went on sushi dates and massages for forever. But that is gone. Yeah. What react problems stumped us for the longest time. Great question. Um, server side rendering with code splitting and data fetching in a custom thing, it was just like I couldn't get any, I couldn't get all three of them to work, get two of them to work. It's like any two of them, pick two of them, I could get them all to work. It was like, please just work just come in data. I think the biggest hump for me was when Redux started to come out. And this idea of like, pure pure functions started to get popular. Getting like started like trying to like switch my brain from thinking like, you want to take an item from out of out of an array, or you want to take the I just pop it off the array or unshifted, you know, and moving to know you can't mutate the original array, but you can create a new one, and then just take that out and put the rest of the items back in the new array and why. And then I got bit by it, and then like, like all developers, like you can read as much as you want about these topics. But it's only until you get pepper like, Oh, that's why everyone's talking about this. Yeah. Every every. Yeah. Oh, what's the most expensive coding mistake? Yeah. Pretty decent one, but it's not involved in the coding itself. But I really get clean on the home directory of my computer and erased a bunch of animations I had been working on for clients and I had to like spend a whole nother week re animating. And this wasn't like after effects. So it was so much work I like erased an entire weeks, maybe even a month worth of progress with I get clean because I thought I was in the the project directory. I one time I thought I nuked 40 person, companies email, because I changed I transferred their domain. And by transferring it away from their hosting provider, it removed all of their email addresses. And I was like, oh, shoot, I have nukus 40 people's email addresses. And it turns out that those were old and they were using Google Apps for their email and I just had to reinstate the MX records and everything was back. But that was very scary. And then also like, who used like Kota, back in the day where they had an FTP built right in so many times, I would just like live at it or Oh, yeah, on a server wide screen. Yeah. Or one at one time, I paid somebody like 200 bucks to like, fix something. And they just SSH into the server and fixed it for me. And they, they they worked like for a couple hours on it. And then I had the file still open locally. And I overrode it. And it's gone. Right? Like talk about that. That like a built in FTP was responsible for so many bad, like bad practices that nobody talks? Like? Let's just all be honest, right here. How many of you like live edited off the server at some point when you were first starting? Like everybody? Terrible? Yeah. When I first started, I like white screen to Magento site. And I didn't know about airlocks. And it was my first time working in PHP. I was like, well, it's a white screen. I might as well just start over. Yeah. Other questions? Yeah. Scott, breakdancing way hit like a handstand or something. You find some space here. This spot right there. Yeah, but that's not enough space. Do you understand what? I don't know anything about breakdancing? No. Yes, a wave find some space.
+
+79
+00:58:33,450 --> 00:58:36,030
+Other questions? Yeah.
+
+80
+00:58:37,980 --> 00:58:45,900
+was writing more class components?
+
+81
+00:58:47,670 --> 00:58:48,900
+As my opinion?
+
+82
+00:58:59,160 --> 00:59:37,560
+Do you think we need is it the question is do you think we need classes in JavaScript? Oh, yeah. I used that. I ran a poll on Twitter. And I said, Do you use classes in JavaScript? And I think about 9000 people answered it. And the result was 5050. Exactly. 5050, not 4753 or whatever. Exactly. 5050. And that is a topic that people will go blue in the face talking about forever and ever until we all die. So I say Ben, can we have them? Sure. Do you have to use them? No. If you don't want to just don't use them. If you do want to use them keep keep going with it.
+
+83
+00:59:39,390 --> 00:59:39,900
+Yeah.
+
+84
+00:59:43,830 --> 01:04:10,380
+How do we explain to our mind watching right now? Yeah, I think she I think she knows Mrs. solinsky where's the camera? Yeah, um, no, she actually, one of my very first projects was working on a site for my parents. So they're very familiar with With sort of what goes into building stuff, and making they ran an e commerce shop for a long time, so they're they're very familiar with the amount of work that goes into what we do. And then the YouTube stuff, the the podcast stuff, they're there. They're our biggest fans. They listen all the time. I don't think my mom knows like the the nitty gritty. She knows I make websites, and she every now and then she thinks I should get a job. You should get a job. Your dad had a job for 40 years or whatever. But yeah, I just say make it's really easy. You have you've been to a website. Yeah, I make those. Cool. Right. But that does often get people coming to you with their ideas for websites, which is unfortunate. Yeah. I'm sure you all get that as well. We got a couple of minutes left. Yeah. How do you explain to me I go, hey, you've got a Lego here. You got Lego here. You put them together, you make something you make a dinosaur. By the way, did you know one of the companies it didn't make the thing, but one of the companies that uses react is Lego. And I asked the guy that works at Lego. It's like how often do you like talk about react components like their Lego blocks? Right? And he said, unfortunately, never. Like a very huge missed opportunity. Yeah. In Lego, how would I explain react? Um, live variables? Maybe? A variable is? Don't know. that's a that's a good question. Wait, my, my daughter is only four. So the extra babies react for babies. I would do well. Has anyone ever bought that? Like HTML for babies? And like, it's terrible, right? It's not like it's full of mistakes. And like, yeah, like, has like typed JavaScript. And I'm like, modern, you sound like me, taking the Disney Channel. Whose babies the good parts? What made me start wanting to learn how to code. I'm oddly similar stories, I think. Yeah, it was I was like a hardcore kid making t shirts and CDR and stuff like that. And MySpace came around. And people wanted MySpace is to match their CD art. So I learned learn CSS from that. And I've always been like, super into computers, though. Yeah, it's inevitable, I think. Yeah. Wait, wait, we had a band as well. And we went Angel fire. This is Yeah. And so we hooked into angelfire. And then we're like, oh, we have to have some animations on this thing. So then we went to flash. We're like, for some reason, we need the matrix things coming down so that we throw in some JavaScript flaming tax cuts that have animated GIFs. Yeah, yeah.tk domains, anyone have a.tk domain. They're like.tk. At some point in their life, they offered free.tk domains. And you could just like I had Wes Bos tk, and it's like, I don't know what how can you even get a.tk domain anymore? I don't think so. I don't know about that. That was Yeah, I had a had a pretty sweet tea kid domain. Other questions? Yeah. What's the happiest thing we've ever done, I hacked together, like maybe the one because I only have a very limited amount of time to do this. This is pre Angular pre. I hacked together, putting up the world's worst like voting system with jQuery in about a couple hours that was then used onstage at a breakdancing competition in front of 20,000 some people in the South Korea, and I just like went to town on this thing. And it was so bad. The code is absolutely superduper brittle. And I'm sure I was like watching this live stream just like please don't break. But that's funny. I don't know. Like, I look back at all the code I've written in my early career, and it was all extremely hacky. But at the time, I was very proud of it. I thought it worked great. Yeah, yeah. It's like whatever you wrote last week, yeah, KS CO, I've written a lot of
+
+85
+01:04:11,790 --> 01:06:03,330
+probably my first ever integration, I wrote this massive for that daily deal site I was talking about, wrote this huge integration with Yeah, with MailChimp. And I didn't know that there's this thing called transactional email where you could like each person wanted to get a new email with their local daily deals. So I wrote this huge thing that would like take people's emails in and put them into like a bucket of like MailChimp, subscribers, and then filter that and then for each city, find the equivalent bucket and loop through those people and then send out a mass email to those people. And that would have been so much easier if I just like use cues and transactional email, but like I didn't even know that that was the thing at the time because I was just like, brand new to building this stuff. So that was, I'm surprised at that word. I made like good money off of it, but it was Then one more. Yeah. Where do we see ourselves in 10 years? Last? Um No idea. I don't know. Yeah. Yeah. I can't even predict like five years. No. And I always say this is like, I don't predict anything. I just follow the follow the trends. I thought Jake react was dumb when it was first announced, like everybody else. And here we are today at a react thing. So there's much smarter people predicting that stuff and trying to figure out what that looks like. And I'll just kind of play along. Yeah. Awesome. Well, thank you so much for coming out. This was a lion syntax FM. We love to come say hi. We'll be around later. And we're at syntax. Thanks, everyone. Yep. Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

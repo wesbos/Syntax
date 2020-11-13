@@ -1,0 +1,412 @@
+1
+00:00:01,319 --> 00:00:10,560
+Announcer: You're listening to syntax the podcast with the tastiest web development treats out there, strap yourself in and get ready to live ski and West boss.
+
+2
+00:00:10,949 --> 00:00:19,820
+Scott Tolinski: Welcome to syntax the web development podcast with the tastiest treats around with me as always is Wes Bos.
+
+3
+00:00:19,889 --> 00:00:21,390
+Wes Bos: Hello. Hey, Wes.
+
+4
+00:00:21,390 --> 00:00:45,479
+Scott Tolinski: My name is Scott Tolinksi. And today we're going to be talking all about nine of our favorite top 18 new JavaScript features. Basically, we have a top 18 List of new JavaScript features that we absolutely love use all the time, and we're going to be splitting it up into two episodes. Because this is too tasty for one episode. It's just jam packed. And we're gonna
+
+5
+00:00:45,479 --> 00:00:50,909
+Wes Bos: have a sponsor between every single one like one of those, you know, those like Forbes articles?
+
+6
+00:00:53,070 --> 00:00:54,210
+Scott Tolinski: Yeah, okay, we're
+
+7
+00:00:54,210 --> 00:00:54,869
+Unknown: not going to do
+
+8
+00:00:55,590 --> 00:01:21,540
+Scott Tolinski: like a 15 minute YouTube video where they like inserted like 15 ads. She just got an ad every couple of seconds. No, thanks. We're not doing that. This episode is sponsored by to a very excellent sponsors Freshbooks, which we all know is amazing cloud accounting software that Wes and I both love and use, and M lab, which is the perfect place to store your database in the cloud as another service that both West and I have been using for a long time.
+
+9
+00:01:22,680 --> 00:01:27,780
+Wes Bos: Today, our longtime user, and they also came on a sponsor, so it's pretty cool.
+
+10
+00:01:27,810 --> 00:01:39,030
+Scott Tolinski: It's really cool. Yeah. So we'll be getting into Freshbooks and and lab a little bit more on in the episode. But yeah, let's let's kick it off with a little bit. How you doing? It's a Tuesday today.
+
+11
+00:01:39,240 --> 00:02:38,310
+Wes Bos: Yeah, I'm doing pretty good. Just got over a little bit of a cold. It might sound a little Froggy or boomy to today, but just got getting through that and pretty excited that I've got like so much stuff that's almost done. I've got an intermediate react workshop that had been cooking out for last like week and a half, I've got a talk on what's new in react that I'm going to be giving next week. So I've got a talk and a workshop in Toronto. And then I also am just, I'm having my course reviewed by everybody right now, which is really exciting. There's a couple people have gone through the whole thing, getting some really good feedback, just to some small little edits, little hiccups, little things where I left myself, like a like a false start, you know, explain something and then I go back, I left a couple of those in. So at that point, then it's done. Like I'm like right on the verge of finishing, like my life's work for the last like, month, and I'm so excited to get it all out. And then to move into some some new exciting stuff. And for people to get access to the content, let them been working on for so long.
+
+12
+00:02:38,520 --> 00:02:55,860
+Scott Tolinski: Yeah, it's it's funny, because no matter how many times you listen, when you're editing, you missed some things like that, there's almost it's inevitable that you're gonna miss stuff like that. And I've edited now, like two and a half thousand videos or something. And I still miss those things all the time. And I pay close attention what I mean like, it's just so easy. Yeah, I
+
+13
+00:02:55,860 --> 00:03:12,630
+Wes Bos: don't know how I luckily didn't I left the F bomb in one. So it's just funny because like, I don't swear a lot. But I was so frustrated once in a video and I was like, damn it. And I let one fly. And I left it in. And luckily someone who was cool, caught it nice and early. And I was able to cut it out.
+
+14
+00:03:13,289 --> 00:03:26,669
+Scott Tolinski: Yeah. And on another episode, I left a scream into my microphone when I have a guest editor. Yeah, he's pretty shocked. As always, it's always good to be careful about what you're, you're putting out. Yeah.
+
+15
+00:03:27,330 --> 00:03:30,509
+Wes Bos: So you just did a talk yesterday at what startup
+
+16
+00:03:30,509 --> 00:04:43,470
+Scott Tolinski: Denver, it's a Denver Startup Week, which is awesome. If you're in the Denver area, or in Colorado in general, should check out Denver Startup Week, next year, because by the time you're listening, this is gonna be over. But it's an entire week of free conference talks is seriously Monday through Friday, full days. And it's all over the city. And there's like six different tracks. There's like an entrepreneurial like a marketing, like design, track and development track, all sorts of stuff, right. And the fun thing is, is that this is all over the city. So it's not like you're just like sitting in a conference hall and just watching a bunch of talks like the conference room that I talked that was the only talk of the entire day at that location. So it like forces you to spend time in all these different startups offices around 10 verse, so you're just walking around downtown, hitting up all these different places and getting to check out different offices, different situations, and just seeing a ton of good talks. And the best part, it's like totally free. So Denver Startup Week was just awesome. I talk about my I was basically like the learning episode we did here on syntax, and I met a lot of awesome syntax listeners at Denver Startup Week. So shout out to all of you. Thank you for checking out my talk.
+
+17
+00:04:43,560 --> 00:05:07,170
+Wes Bos: That's cool. I always love seeing people's offices and kind of the the snacks and the like stuff that that we should actually ask if you work in an office and you have good snacks or something like that. Tweet a pic and at syntax FM hashtag syntax snacks and we want See what your office snack Hall looks like? Yes, I'm always jealous. I have a tiny little wine fridge that I put my Lacroix in. And that's it.
+
+18
+00:05:07,170 --> 00:05:18,260
+Scott Tolinski: It's such a good use for a wine fridge. I caught some trail mix that had some dried mango in it and stuff. It was kind of good. Yeah, that's pretty good. And this place had some good snacks.
+
+19
+00:05:20,190 --> 00:05:57,060
+Wes Bos: Awesome. All right, let's stop goofing around and get into this. We've got man, this is a huge list of the Top 18 things that are new in jazz. So over the last, what, maybe two, two and a half years, obviously, we've had ESX. That's where most of these things are coming from. But JavaScript in general has has really evolved. And I think over the last like, like, obviously, they've been out for a couple years. But we've been seeing like serious momentum and people picking up these features in the last, I don't know, a year, year and a half. So really excited to dive into all the different parts. So let's kick it off. You want to grab the first one there, Scott?
+
+20
+00:05:57,090 --> 00:07:14,550
+Scott Tolinski: Yeah, this is like maybe the most the good intro, it's the most basic sort of new feature in JavaScript recently, which is constant let, which are the new variable declarations that allow us to have some variables in my opinion, that are just a little bit easier to control because they they're sort of a little less overreaching. In some ways, for instance, both constant let, they can't be redeclared. So you're gonna see an error. If you define a variable with let Scott is equal to I don't know a number, maybe it's my age, right. And then if you try to define it again, you're going to run into trouble because you can't read declare another variable and const in particular can't have its value changed as in you can't assign a variable with, let's say, const. Scott is equal to my age. And then you can set it to Yeah, 42 though Debbie wild if I was 42. But it didn't you then you can't go ahead and then do Scott is then equal to something else, you can't do it. That said const isn't immutable as then it's not going to like complain, if you're mutating something like the array or the object or whatever, it just can't be rebound. So you can still change properties in it, you just can't, or you just can't like rely on it as being like totally immutable.
+
+21
+00:07:14,910 --> 00:08:12,060
+Wes Bos: Yeah, that's it's custom sort of the confusion to people. And the example I always like to give is, if you make a const, Wes is equal to an object properties on websites like my name, my age, my hair color, my height, all of these properties are on Wes, and they can be changed. But if another West was born, it would not be possible to wipe out my variable called West and replace it right? So the binding to the object or the binding to the array cannot change, but the properties inside of that can change and, and when it's the case of like a string or a number or Boolean, then it's just a value. And in that case, you can't change anything about it. One other thing we said about constantly is that they are block scoped instead of being function scoped like var is. And it's kind of interesting because of our like function scope is also a block a block is anytime you've got curly brackets, or I like to think of them as little fences, right? And they keep your variables in
+
+22
+00:08:12,060 --> 00:08:13,620
+Scott Tolinski: a secured analogy. Yeah,
+
+23
+00:08:13,650 --> 00:09:04,710
+Wes Bos: yeah. So any, anytime that you have like a block, if statement, a for loop, anything like that, if you declare the variable inside of that block, then you cannot reach it outside of it. So because of that, sometimes you have to, outside of the block, declare a variable as let, and then you can go back and update that inside of a block. So it's kind of interesting. I think it solves a lot of accidental scope hoisting with variables and it I myself use that maybe we should talk about this, like what do you use in your everyday I'm personally, I use const by default, and then I use let only when I need to re declare it, and I feel like that stops me from accidentally overwriting x. I'm a bit of an idiot. I do stuff that I can't think of variable names, and I could Yeah, accidentally overwrite it. Yeah,
+
+24
+00:09:04,740 --> 00:09:21,600
+Scott Tolinski: I always use const pretty much like I pretty much I'm trying to think of when I even use let, it's not very often but if I do need something that's not a const I will use let rather than var. I've pretty much eliminated var from my vocabulary usage entirely at this point.
+
+25
+00:09:21,919 --> 00:09:49,399
+Wes Bos: Yeah. And that's not to say that you should do that as well. You do your own research and yeah, I'm sure you can write perfectly fine. There's a lot of people out there that say like, var is dead it's a terrible it's like a go as far to say it's harmful. It's a bad practice and like Meanwhile, we were writing perfectly fine applications before we had cotton Lutz So yeah, I trust you. You're probably if you are still using var that's not bad. You probably can get in use it and be perfectly fine with with it.
+
+26
+00:09:49,500 --> 00:11:02,760
+Scott Tolinski: Yeah, I know. I would be weary of anybody with extreme views on anything like that, like never do this or whatever. Just do your own research in that regard. Cool. So let's get into it. Number two, which is actually I love this one, because this is one of those features that makes your life easier. And just a little bit of ways constantly. And this is template literals and template strings. And this is basically through the use of backticks, to allow you to insert variables into your strings via dollar sign, curly bracket, then your variable name, bracket, as opposed to having to have one string, a plus sign, another string, a plus sign. And one of these things that this kind of low key fixes is the, you know, sometimes when you had a variable, and then you had a space, like a string space, and then another variable, you had to do like a plus. And yeah, I've been string with this space. And then a plot like this just saves so much of that by allowing you to use your variables directly into your script. And this is one of those things that like when it was in CoffeeScript, I remember being like, I love this feature. And then obviously now that it's in JavaScript, I can't can't not use it enough.
+
+27
+00:11:02,850 --> 00:11:28,950
+Wes Bos: I can't believe how handy This feature is for myself, because concatenation was always so hard just because you have to open and close your quotes. And another upside to backticks is that you almost never actually have to type a backtick. Whereas if you use single quotes, sometimes you need a single quote inside of that. And you got to, you got to like escape it or vice versa with the double quotes. I've met some people that only use backticks. I haven't gone there. I'm not sure why I haven't gotten that. Like,
+
+28
+00:11:29,220 --> 00:11:34,380
+Scott Tolinski: there's any I like I like linters that change all of your quotes to backticks. I like that.
+
+29
+00:11:34,439 --> 00:12:42,330
+Wes Bos: Yeah, maybe I should, I should take a look at that. The reason why we love this so much is because the concatenation operator, the plus operator is so loaded, because it's for concatenating strings, but it's also for adding numbers together. Yeah, same thing. So that's a little bit weird. I'm a big fan of having to do that. And the other thing that we have is tagged template literals. So along with using template literals, which is backticks, you can also put a You can also tag it, which is kind of like a function, the way that will work is that style components uses this. So you can say like style dot div and then backticks. And the style, that div is kind of like the function name. And what that allows you to do is you can define a function. And when that runs, it's going to give you the entire template string and all of the pieces as well as all the variables that were given to you. So if you want it to not just interpolate your variables directly, but you want it to perform some sort of no special work on them, like creating a styled component, then you could totally do that. I don't use that all that often. But I have seen some some clever use cases of it, especially in stock components.
+
+30
+00:12:42,360 --> 00:13:18,450
+Scott Tolinski: Yeah, yeah, stock components was the first time I saw that technique. And I remember being like, Oh, this is kind of cool. And again, I don't necessarily write that much code that uses it that myself other than the things in stock components or libraries that are using it, but it isn't really neat feature. So just realized I had a little bit of a operational, if you could call it that issue, I said, I can't not use it enough, which I guess is like to know, like, if this was JavaScript, I'd have to write that out. I can't use it enough. I was just, I was just trying to be clever. And I ended up shooting myself in the operational foot.
+
+31
+00:13:19,590 --> 00:13:51,390
+Wes Bos: One other thing I want to while we're talking about quotes here is there's this toggle quotes extension that it used for VS code, and it will toggle you between single quotes, double quotes and backticks. And you just set up a little, you set up a little keyboard shortcut for it, and it will just kind of cycle you through all of those. So I use that all the time, especially when you have a single quote and you go, Oh, I need to interpolate something here now had to switch it back to back ticks from single quotes, which is maybe a an argument for just always using backticks. But I use this little keyboard shortcut all the time. You know,
+
+32
+00:13:51,390 --> 00:14:07,529
+Scott Tolinski: I just love my I love that when my linter fixes it all for me. Because sometimes it's even faster to just write like, if you're just concatenating one at the end. Yeah, just variable plus and then your variable, and then you click Save, and then it automatically puts it interpolated like that. I like that a lot.
+
+33
+00:14:07,590 --> 00:14:11,220
+Wes Bos: Yeah, prettier. So prettier does that if you have prettier, I was
+
+34
+00:14:11,220 --> 00:14:14,940
+Scott Tolinski: not sure if it's es lint or prettier. That's doing some things for me. Oh,
+
+35
+00:14:15,690 --> 00:14:26,820
+Wes Bos: yeah, prettier is awesome for that because I agree. Sometimes it's faster, just to quickly concatenate something on the end of a string and then just save it and then it will convert it for you. I just funny that I do the exact same thing.
+
+36
+00:14:27,120 --> 00:16:00,570
+Scott Tolinski: Alright, let's see. Number three is object D structuring. And this one gets a lot of use, for me, particularly in my front end react code. But pretty much anytime I'm doing any sort of, I don't know any sort of work with objects, which is very frequently and even through use of of passing in named parameters, which we'll get into, I think down the line here. But really, object destructuring is basically I like to think of it as you have an object and you're pulling things out of the object. Without having to be you don't have to you don't have to read it click I mean, you're essentially declaring a variable. So basically, here's the syntax. Let's say we have an object, which is hosts. inside of that there's a property Scott and a property. Wes right. And we wanted to pull out Scott, in particular from that object, you could do const, curly brackets, and inside of those curly brackets, Scott is equal to and then hosts. And this is going to save you from doing Scott is he or const, God is equal to host stat Scott or something like that, and basically allows you to pull out properties from your object in a really nice, concise syntax. And again, it just gets so much use for me because you end up your code ends up just being so much more readable. If you're looking at Scott, Dodd, whatever the properties rather than hosts that, Scott, whatever, it cleans up your code just a little bit, it makes things a little bit more explicit, in my mind just a little bit more clean.
+
+37
+00:16:00,750 --> 00:17:47,280
+Wes Bos: Yeah, having top level variables instead of an object where you have a property inside of it is often really clean for templating. So I'll often have a function that returns an object, and I need to pull like it returns a person. And on that you have a name and age and a height, and you only want to pull the name and the age, you can just say const name, comma age equals get person and because that get person function returns an object, you can just immediately D structure the result of that into their own top level variables. And while we're on that as well, often I'll have a Ajax function that's like a get hosts, and what the what that will return axios does this they return you a data, right, and I hate having like a variable called data. Yeah. So you could if you think it's like a response dot data is what you have. So first of all, I want to I don't care about the response, I just want the data. So you can D structure data into a tupple variable. But then again, data is not a great variable name. So you can also when you're destructuring, something, you can rename it at the same time. So say const, curly brackets, data, colon names, equals get hosts, it's a little bit much to like, look at the syntax for this because it's there's a lot going on there. But if you really break it down, okay, okay, this is a function that returns an object. This is destructuring data, and then I'm just renaming it immediately into a variable called names. Because often, like, if you try to destructure something into a variable name that is already in scope, then you have a problem, because you are are overwriting it, or you run into an issue where you have the same variable name in a different scope. Yeah. And that's, that's not that's gonna be confusing, right? I have an excellent rule that makes sure I don't do that.
+
+38
+00:17:47,300 --> 00:18:32,160
+Scott Tolinski: Yeah, I know, that could be like, for me, personally, when I use Apollo, your data comes in as data, right. And if you have to multiple queries, or data coming in from two different places, they're intersecting there, that's definitely a big time way to rename things, or I do I use this a lot in I mean, I use destructuring, all the time to pull out the properties in from this dot props, right. So you don't have to write this props, or from states, you don't write this dot state in react, all that sort of stuff. I'm, I'm a huge, huge fan. And I'm also a huge, huge fan of one of our sponsors today, which is Freshbooks. Makes cloud accounting software just so incredibly easy, and they have some of the world's best customer support. It's one of those things that people just talk about, because of how good it is.
+
+39
+00:18:32,460 --> 00:19:46,310
+Wes Bos: Yes, so freshbooks.com forward slash syntax is where you're gonna want to go to sign up for a free trial. I think it's a 30 day unrestricted free trial. And this is something that you need if you're sending an invoice if you're trying to keep track of expenses for anyone, whether you are a small business, you got a couple employees, whether you are a freelancer, or someone that's just doing a couple little side jobs, you need to keep track of it. Because we all know how stressful that is, at the end of the year when you need to do your taxes. And you know that you've had income from a couple different sources, but you don't necessarily have invoices for them. Or maybe your invoices were done in Microsoft Excel, and you can't really find them. Freshbooks will keep all on the up and up nice and clear. You know, always it's kind of neat, because like at the end of the last time we recorded this, Scott and I went into my fresh books because I do a lot of the billing for the sponsors. And we just kind of went through them all and said, okay, who's paid, who hasn't paid? What do we have? And then I sent Scott over or sorry, Scott sent me over an invoice so we can split the income from our sponsors. So if you are looking to do any sort of invoicing, billing expenses, check out fresh books, and make sure you enter in syntax in the How did you hear about us section?
+
+40
+00:19:46,550 --> 00:19:47,940
+Scott Tolinski: Nice. Nice.
+
+41
+00:19:48,000 --> 00:20:57,180
+Wes Bos: Yes. I got one more thing about object destructuring here. Yeah, no, it's okay. That you had a smooth transition. So we can't we can't get in your way. When you've got those The fallback values. So when you destructure, something, it's possible that value will come back as undefined. And if that's true, you can always set a fallback value in there. And this is kind of similar to default function arguments. But this is in destructuring. So you don't have to have an if statement, or you check if there's nothing in there. And then you set it to the default, you can simply just say const, curly bracket data. And then inside of that, you can say, like the data equals and set that to your fallback value. I don't go too deep with this, just because it gets hairy really quickly with lots of like, you can do fallback values, multiple levels. But at that point, it's too hard for someone, myself included to get up to speed on what's actually going there. And I think you're just trying to show off at that point. Yeah. So I, I tend to just like, prefer, if it's more than one or two levels, I'd prefer more explicit if statement that sets some fallbacks.
+
+42
+00:20:57,209 --> 00:21:32,360
+Scott Tolinski: Yeah, yeah, I'm and this is one of those things that can save your butt a whole bunch of this along with sort of the the default parameter values, or default arguments, it just, it makes it makes your code just way less verbose sometimes, because you don't know that like variable checking and stuff like that you are doing before it just goes out the window. And to me, I it makes me write less buggy code, less code that runs into less issues. But again, you do want to be cognizant all the time of what you're doing in that regard. Okay, number four, here, numbers are so messed up here, what is going on?
+
+43
+00:21:33,350 --> 00:21:36,830
+Wes Bos: We use Dropbox paper, and it cannot figure out
+
+44
+00:21:37,049 --> 00:21:52,350
+Scott Tolinski: it got to do 1235123. Okay, so number four here, is going to be array D structuring. And this is pulling out values from an array
+
+45
+00:21:52,559 --> 00:21:54,900
+Wes Bos: as basically their index, right? Yeah,
+
+46
+00:21:54,959 --> 00:22:33,480
+Scott Tolinski: yeah. I don't know how much I end up using this. To be honest, I use it occasionally. But I don't feel like it's one of those things like object destructuring that I'm using all of the time. And maybe that's just because I'm dealing with maybe more object based stuff, I'm not quite sure. But I don't find myself using this, this is useful. If you want to say like, let me just get the very first item out of the array or something like that, or let me pull out the first two items. And then along with the use of the spread operator, which we'll get into, you know, maybe you can do something with their the rest of them. But for me, I don't know, what sort of ways do you find yourself using this one, it's basically again, it's just being able to pull out the items via their index.
+
+47
+00:22:33,539 --> 00:24:09,240
+Wes Bos: Yeah, I, I use this a lot. When I only care about the first item, I'll give you an example. In my advanced react course, we have two queries item in items. And the item query can only be used with unique values, which is the ID of the item. But if I have a query where I want to find something else based on maybe its slug based on its price based on the title, and I know that if I want to be able to query that I can't query it based on the single item, because there's a possibility that there'll be multiple matches, and the query just doesn't support that. So I need to use a query that will is items with an S in that will return almost always in my case, I knew that it would always return to me an array of one thing, or if they return multiple items, I just wanted the first one. So I'll often say const, square bracket item equals and then you write your query and then that will immediately take the first item that was in the returned array, and throw it into a variable called item. So I thought that's, that's pretty much where I use it. And the other option that I'll use it is with the rest, which we're going to be talking about what the rest is, that's the three little dots that you often see, that's that can be a spread or can be a rest. We'll talk about that. Oh, I just got one more swapping array values. I don't use this all the time. But sometimes you have two variables that need to be changed, like swapped between the two, right? Like so. If you have like two people that are currently playing a game, and somebody is serving and somebody I don't do you ever play volleyball? What's the name for someone that's not serving?
+
+48
+00:24:09,779 --> 00:24:15,660
+Scott Tolinski: Oh, I guess you'd probably say I there might be an official name for it. But I would have just said receiving Yeah, okay, well
+
+49
+00:24:15,660 --> 00:25:07,650
+Wes Bos: come server and receiver. And you can have like, we'll say like, let server equals Wes and let receiver equal Scott. And then a certain point, we need to switch those, right. And what we could do in that case is you can swap values by destructuring. It and this might be a little bit this is we're trying to code on the podcast here, but you say let square brackets server comma, receiver equals to array receiver comma server and what they'll do is you just you make a quick array, the opposite values, and then you can just destructure them immediately into it and they have to be lat because you have your reassigning the value there. But I thought that was a pretty neat way because before you had to have a third variable that would like temporarily hold The other person, the other one, and then it's a bit of a pain. I don't I very rarely actually run into having to do that, though.
+
+50
+00:25:07,680 --> 00:25:34,050
+Scott Tolinski: Yeah, I think that's one of those ones that like when I would hit that I would look it up and be like, Oh, that's clever and then not use it again for a little while. I think for me, the, the like the the time I find myself using it is like when an API brings back data, and sometimes like, it gives you a success message, maybe first or foremost, and then the data second or whatever, and then maybe some other stuff that you don't care about, necessarily. Maybe that just the data comes back that way, you could pull that first item out.
+
+51
+00:25:34,260 --> 00:26:09,090
+Wes Bos: That's a perfect example is object dot entries, and promise dot all both of those return. Let's talk about promised all if you promise dot all and array of three promises, one for the weather, one for sports scores, and one for your GitHub promise that all is going to return to you. When did they all resolve it's going to return to you an array of three pieces of data. And you could destructure those three, it's always in the order at which you passed it. So you could just destructure that into weather sports and GitHub variables immediately. Interesting. Bam,
+
+52
+00:26:09,120 --> 00:26:19,320
+Scott Tolinski: bam, man. I don't use the data. I don't use the all promises. Really. I don't know why I don't I just don't ever find myself needing to do that. Maybe I will at some point.
+
+53
+00:26:19,650 --> 00:26:34,800
+Wes Bos: It's awesome for when you need to wait on multiple pieces of data that are not related. Yeah, they fire off at the same time. Because if you were to a sink await it, then then you'd have like this kind of waterfall that's unnecessary. Yeah,
+
+54
+00:26:34,920 --> 00:26:55,260
+Scott Tolinski: it's so weird. Because like a lot of some of these things, even like race conditions with data and stuff a lot. That stuff has been totally evaporated for me because of Apollo and graph QL. And I'm so sad. It's like the server's handling it. And I just, I mean, I wrote the server code. But still, it's like, I don't have to think about any of that stuff anymore. I just tell it what I want. It gives it to me. It's so nice.
+
+55
+00:26:55,290 --> 00:27:17,070
+Wes Bos: It's interesting to like, it depends on like, the type of stuff you're working with, right? Because Oh, another good example of array destructuring is you're working with Canvas. And if you loop over Canvas pixels, you get RGB a right. So you could destructure them in two variables called red, green, blue alpha, because they are sequential.
+
+56
+00:27:17,160 --> 00:27:19,650
+Scott Tolinski: Nice, man. Fine. Yeah. Fine on this exam line.
+
+57
+00:27:19,650 --> 00:28:29,640
+Wes Bos: Yeah, tons of examples. All right, next one we have is number five, yes, is function puram D structuring. And or maybe this is called function argument destructuring. Because a parameters when you define the function in a argument is when it's called. So function argument. destructuring is when you get, you have a function, and it gives you like a payload. And this is something that happens in Apollo all the time, the Apollo will give you a payload and inside of that payload, you'll get a data property, you'll get an error property, you'll get a loading property. And then you can also get some like methods inside of there for re fetching data and pagination and whatnot, right. And often, you don't want the entire payload, you just need a couple things, you want it you want the error state, you want the loading state, and you want the data that came back, right. So when you define the function, you can immediately destructure that payload into three separate variables, data loading, and error. And then that will is much nicer. Same with like props, if you have a stateless functional component and react. Your function gives you props, but you can destroy it. Sorry, it is pram, it's not, it's not arguing.
+
+58
+00:28:30,510 --> 00:28:31,740
+Scott Tolinski: I was gonna say something. But
+
+59
+00:28:32,280 --> 00:28:44,790
+Wes Bos: yeah, I don't know I'm doing you take your prop. And you don't say like props dot name, or props dot age, you can just restructure props into name and age variables directly when you do define your function.
+
+60
+00:28:44,970 --> 00:30:10,410
+Scott Tolinski: Yeah, I use this 24 seven, seriously 24 seven, every single file that I write, because I'm almost never passing in arguments anymore, are into functions like I never have parameters, essentially, that aren't named parameters anymore, and maybe not never. But a lot of the time, I'm using a named parameters, which we'll get into in a little bit. And like, this just makes that process so easy. Everything is named, everything comes out named, you don't even worry about there being an object. You don't care about the order, and you don't care about the order, it just is so much more organized, and in my opinion, so much more readable. I use this again, constantly, especially because I'm using Apollo. And these render prop functions. It's like the perfect use case for that. A lot of the libraries I use the stuff that makes it like react spring is what I use to do all of my animations and react spring spits out essentially you have a transition component or a spring component or whatever. And then you have your render prop. And that function just spits out essentially your CSS values that are animating. So instead of having well if you're animating all values for one thing, you just use the styles object that gets spit out there and throw it on your component and animates all those styles. Or if you only want like the x value, you could D structure the x throw it in your style, specific And watch it like animate. I use this 24 seven. Yeah. Um, okay, so let's get into the next one, which I would say this is a pretty big this is this is a big one right here.
+
+61
+00:30:10,410 --> 00:30:11,400
+Wes Bos: That's a biggie.
+
+62
+00:30:11,400 --> 00:30:44,880
+Scott Tolinski: It's a biggie. Yeah. And this is promises. Now, promises are one of those things that if you're a new developer, you might not understand the necessary like the why. It's only when you run into situations where you have code that needs to run asynchronously that you run into why I need promises, or maybe you've done a couple callbacks. And you're like, I don't see what's so bad about callbacks. Like they're like, could they say callback hell, but this is this is just swell. You know? What? Yeah, it's pretty good. I came up with that just now.
+
+63
+00:30:45,270 --> 00:30:47,190
+Wes Bos: make that up. You bet. I should be a sticker.
+
+64
+00:30:47,250 --> 00:31:16,080
+Scott Tolinski: There should be a sticker. Yeah. But it's not very long in your dev career before you hit a situation where you have a callback instead of a callback, and you have a callback. And you're trying to figure out how the heck to get that data out of those callbacks to go do something else with it or something else? And and you're just sort of like, Huh, well, I gotta return, like, what do I do with all this, this nested functions inside of a function is out of a function inside of a function. And that, my friends is callback hell. So income promises,
+
+65
+00:31:16,170 --> 00:32:50,430
+Wes Bos: yes, promises are sort of like an IOU for something that's going to happen in the future. And the reason why we need promises is because if your function will not immediately return a value, either have to you can't just like that function won't stop, right? Like if you need to, if you have a function that needs to return a value in three seconds, or it needs to go to an API or return a value. After it's returned from the API, those functions don't wait, I always say JavaScript waits for no one, right? Because Because of its a synchronous nature, so what you can do is you can return a promise immediately, if you give them like a little IOU here, I promise, I'll bring you something back at some point, or I'll drop the ball and reject it. And then you can, and then you can listen for that promise to the words that we use our resolve, that's when it went right or reject, something went wrong. And you can then listen on those promises with a dot then. And what's so nice about that is that you can chain these promises at one level deep, and then you can if you have a bunch of like sequence sequences that need to happen, you can just kind of keep chaining, then then then at one after another, I have a talk if you go to YouTube and search for a sink. Oh, wait, Wes Bos. Yeah, if you search a sink await Wes Bos and the first one that comes up, I believe there's a talk that I did a conference, it's 15 minutes long, I'm actually pretty proud of that one. And it goes into what promises are, what the ideas are, and then and then further into a sink await. So it'll give you a kind of a good idea of what this really is. Nice. Again, I
+
+66
+00:32:50,430 --> 00:33:27,750
+Scott Tolinski: love the the whole, like we like the word promises can like scare people. But until you think about it as an actual promise, it makes so much sense, hey, I promise I'm gonna do this tomorrow. And you're either gonna do it or you're not. But you either resolve that promise, and everything's all good. Or again, like you said, you reject it, and things aren't all good. And then you you know how you can move on from there with the cat, right? promises are one of those things that they came first in like several different libraries. And everyone was using them almost immediately, the libraries got huge, and then it got added to JavaScript. And everything's been all good since and it's just been getting better and better.
+
+67
+00:33:27,810 --> 00:34:04,560
+Wes Bos: Yeah, it's one of those things that we've had promises for a long time, we had lots of libraries that did promises, but it never really caught on huge until it got into the language because it required actually with the sink await specifically required, like a change to the language and new syntax, the language and as well as with promises. They're all they're all interchangeable. Now. If you just use standard ESX promises, then the fact that somebody else has a library, all they have to do is return a promise, and you don't have to worry about what type of promise is this? Is that a bluebird promise or some other library? That's great. Everything works in harmony?
+
+68
+00:34:04,590 --> 00:34:26,880
+Scott Tolinski: Yeah. You know, I think the biggest use case for this is when you're doing anything that is asynchronous. And primarily when we're doing that sort of stuff, it's usually working with like API calls or calls out to another library or another service that's maybe fetching us some data performing some action, like charging a credit card. And these are probably primarily the the most common like day to day use cases for this.
+
+69
+00:34:27,150 --> 00:34:29,280
+Wes Bos: You know what else I use promises for?
+
+70
+00:34:29,280 --> 00:34:33,920
+Scott Tolinski: You could have said for sending money, and that would have been a good transition into Freshbooks.
+
+71
+00:34:34,110 --> 00:34:49,170
+Wes Bos: Oh, but we did the Freshbooks one already. I know. So we gotta save this. You know, what else I use promises for querying databases. Do you know okay, I I should not be allowed to do this transition.
+
+72
+00:34:49,830 --> 00:34:51,000
+Scott Tolinski: It was it was
+
+73
+00:34:51,440 --> 00:36:16,460
+Wes Bos: pretty good. All right. Well, one of our sponsors today is m lab and M lab hosts your MongoDB database. So if you are doing Anything in MongoDB, and specifically myself is a node package called mongoose. And what mongoose will do is it'll allow you to define your models and define what your data looks like. And then you can have like your customers or your users or your items. And then based off of that, you can then query things. However, those queries aren't going to lock up your entire server while they're happening. So if you query a list of items, the rest of your web server should still be working at the same time, right? So what mongoose will do is it will return to you a promise. And then you can listen for that promise to resolve you get your data back or reject something went wrong. And then you can you can work with the data. So if you're using MongoDB, I highly recommend that you use a service called m lab and they will host your MongoDB database for you. They have free ones that you can use just in development mode, and then they have production ready ones that will handle all of your your scaling, all of your performance, all of your security, all of your backups for you, it's great just takes the the stress of having to have a database behind your application totally outside of it. So check them out at em lab a.com. Sign up for a free one. Whenever you do your next little project as well as if you need to put one into production. Check them out for that. Sick.
+
+74
+00:36:16,500 --> 00:36:21,030
+Scott Tolinski: Yeah, one of my very most favorite services been using it for a very long time.
+
+75
+00:36:21,330 --> 00:37:47,730
+Wes Bos: Totally. What else do we got next. So next, we have a sink away, and we've done a whole show on a sink away so you can check it out. It's episode number 28. That goes into the ins and outs of how a sink await works. But a sink await is just we call it syntactic sugar on top of promises, so promises the whole idea behind promises of something like an IOU that comes back in the future, it either resolves or reject. But using them can be a little bit clumsy, because the way that you listen for a promise to resolve is you chain a dot then on the end, and then if any code needs to happen after the promise resolves, it needs to go inside of your job then. So it's it's not the greatest syntax. So we have a sink await, which allows us to mark a function as a sink. So you just type the word a sync in front of the function, or there's a couple different ways to type it in case it's an arrow function, or if it's a method on an object. And then you have inside of that you can simply just type the word await, which means a synchronous way, meaning that it will kind of like pause the function from running while it waits for that promise to resolve or reject itself. And then it will continue on. And the benefit of that is you can say something like const Scott equals await, get Scott's info. And if get Scott's info returns a promise, you can await it and wait for it to resolve and then you can just stick it in the variable. It's probably my favorite thing that's been added to JavaScript. Yeah, ever.
+
+76
+00:37:47,730 --> 00:38:43,730
+Scott Tolinski: It's same same here. You know what, like, my very most favorite thing about a sink await is how transparent it is. Because it's not like it's it's not like it's hiding itself. And you don't know that the function that's returning is returning a promise, like, because you have that await keyword in front, it lets you know instantly that that's going off and doing some async stuff, right. But at the same time, it uses the same syntax that we're used to, to defining variables. Like if I say cons data is equal to await and then database call like that, to me is just so much easier to parse easier to understand, easier to read. And it just makes so much more sense in the context of normal JavaScript, then using a dot then or a dot catch. And I mean, I like a sink await so much that I almost don't find myself using that beginner catch really ever anymore. I'm just such a such all in on a sink await that, you know, that's where it is, for me.
+
+77
+00:38:43,920 --> 00:39:52,190
+Wes Bos: Totally. One cool thing about async functions is that they themselves return a promise. So you can actually await and a sync function. And then also, there's error handling is like one of the ones one of the things that is not as explicit as just regular promises are because regular promises was kind of nice, where at the end of all of your events, you just put one single catch, and if anything goes wrong, anywhere along the line, it'll fall to this catch. And you can deal with the promise there. With a sink await there's a couple different there's trycatch that you can use, you can still use cash, but also use a weight on it. So that's that's one I use, you can use higher order functions. And we're actually going to do an entire, probably a hasty tree, diving into some of the different ways that you can handle errors, because it's a pretty interesting space. And you can do some pretty neat stuff by depending on where you need to handle the errors if you need to handle them at call time. If you need to handle them at function definition. If you need to handle them at like a middleware and express it's kind of cool. There's some some really neat options that just take away the messiness of having to think about errors in the code that you're writing and just just ship them off somewhere else and deal with them
+
+78
+00:39:52,190 --> 00:40:11,310
+Scott Tolinski: somewhere else. And yeah, and I'm interested in learning a little bit of different practices for error handling because I do use just try catch and It's fine, it works great. And it's nice. But I do feel like it adds a little too much like additional stuff. And it adds like another layer deep. I don't know. Yeah, it also
+
+79
+00:40:11,460 --> 00:40:53,550
+Wes Bos: creates a new block, right, the try catch, like we just talked about constantly, our block scoped try catch is a block. So in most cases, that's you don't sweat that it's not a big deal. You just wrap all of your code in a try, catch. But there are some pretty nifty, nifty little things in my upcoming advanced react course, we specifically use a wait for the result value and catch for if something were to go wrong. That's just, it's just pretty cool. So we could just catch and throw up an alert box or throw up a modal. So I won't give too much a mark. Because that's, that's an entire show. And I often want to do just an entire conference talk on a sink away error handling, because I think that there's a lot to learn. They're
+
+80
+00:40:53,610 --> 00:40:56,690
+Scott Tolinski: sick, absolutely sick. Yes, definitely.
+
+81
+00:40:56,820 --> 00:40:58,460
+Wes Bos: All right, what do you got next,
+
+82
+00:40:58,460 --> 00:42:53,400
+Scott Tolinski: next object, computed property name, a lot of these things have like, really, you know, it's funny because they have scary names. Like all this stuff, when you look at the new features in ESX. And you didn't know what they were like, I can imagine a lot of new developers looking at that. And being like, Man, these are some big, big scary things, right? Because they have big, long, scary names that are full of jargon. This one is not scary at all, it's basically being able to define a property name via a variable in your objects for a very long time. If you were creating a new object, and one of the properties had to be named off of a variable, you had to define the object, then do object dot set of brackets, then the variable name is equal to and then your value, right, it's almost creating a second declaration, because you would create your object, then you add that property to that object. And now you can do all that in one fell swoop by adding just simply bracket variable name, a bracket or not. And then there there the flat bracket, square brackets, I'm doing bracket I'm gesturing over here with some bracket shapes, I forget that this is not a visual medium. And so basically, it allows us to do that inside of the object. Now, instead of outside of the object in the second declaration, again, this is this one is a Wes mentioned that it's handy. When used in react, people use it all the time for like a generic input on change. Or you can set a value in your state based on maybe the input name or something like that, and the name becomes the property. and the value becomes the thing that you're setting the state to. This is something that you see all the time in form libraries, again, anytime you have a generic method that you're creating. So yeah, this is a really cool one, and definitely one that you probably will find yourself using a whole bunch.
+
+83
+00:42:53,550 --> 00:44:26,280
+Wes Bos: I'm a big fan of the square bracket. Also, when I taught and I showed people the other way, before we had this, people would immediately think it's an array because you have your object square brackets, and they're like, Oh, it's it's an array, it's square brackets, and you're like, no, it's actually, that's how you that's a second way. Because if you don't know, there's two ways to access properties on an object, there's the dot notion. So you have my object dot name. And then you have the square bracket notation, which is my object, square brackets, quotes, name, and those are the exact same thing. And the reason why we have square brackets is because if you know if name in a string is not actually name of a string, but within a variable, then you can, you can pull it out via that sick. Last one we have here before we we break, and we've got nine more after this is the object methods syntax. So this is just a sort of a nice little syntactic sugar. If you have a method inside of an object, so const, Wes equals curly bracket, so I have an object and then want to put a method on there that says, say, Hi, normally, what you'd have to do is you say, say, Hi, colon, and then you have the whole word function, and you have your whole function set up there. Now you simply just need to say const, West equals curly brackets. And then inside of that, we just have, say, Hi, parentheses, and then you open up your function block. So a lot of people confuse that with being an arrow function. It's not it's a regular function, with all of its regular scoping and binding. It's just a sort of a shorter syntax to be able to do that. I'm a big fan of that one.
+
+84
+00:44:26,340 --> 00:44:40,410
+Scott Tolinski: Yeah, I love how a lot of these features are just making our lives easier. It's like more concise syntax to do things that we do all of the time. Anyway. So I think that that, for me is somebody who likes that sort of thing. It's it. These are all just big, nice things.
+
+85
+00:44:40,530 --> 00:45:24,870
+Wes Bos: I wonder if you can combine those last two? No, you cannot combine the last one, which is computer property name, and the new short syntax, method syntax. I was hoping you could but that would be weird. I don't know when you would ever need to use that but so that is the first time Nine coming up next week we've got spreads rest arrow functions arrow functions and scoping of this default function arguments named params. Modules classes as well as a couple things that we never use that are new to the language but it just never comes up for me to use in Scott it be curious to hear what what things you were maybe excited about but never ended up using. Tweet us at syntax FM.
+
+86
+00:45:24,930 --> 00:45:29,820
+Scott Tolinski: Yeah, spoilers. Those are some spoilers, Wes. Just spoil the next episode.
+
+87
+00:45:30,330 --> 00:45:32,280
+Wes Bos: All right. What about sick pick today
+
+88
+00:45:32,310 --> 00:45:35,130
+Scott Tolinski: sick pick. I'm looking around.
+
+89
+00:45:35,160 --> 00:46:59,670
+Wes Bos: Alright, my sick pick today is going to be a coffee machine. So we talked we talked about coffee, but how about like these machines do a pretty decent job at making coffee. We have an I was just like thinking the other day about like the machine that we have. And I ran the stats on our machine that said that we've poured almost 9000 cups of coffee on it nice and I thought like holy smokes, this thing is put in work for us. So the coffee machine we have is a Jura impressa. And it's like a it's one of these things where you put the beans in you put the water in. And then when you want a cup of coffee, you just hit the button and it will pour you a cup of coffee or make you an espresso and there's a milk frother line on it. We never use that. It's not one where you like pour the milk in it keeps it cold and stuff, but we caught it for like 200 bucks on Craigslist. This theater like 3000 bucks new so that part of what I love to do is just have running searches for very expensive stuff that people just want to get rid of quickly on Kijiji, and this was one of those, we bought it maybe four or five years ago. I got it for 200 bucks. And it's been just amazing for us. And we've been we're thinking like it when this thing goes. And we're not able to find a used one. Like would we want to spend the money on it? And it's it's a tough pill to swallow, but we just love this thing so much. So it's the Jura impressa. The what we have is called like an ad, but I don't think they even sell it anymore. But you can you can look it up online. See all the different models.
+
+90
+00:46:59,730 --> 00:47:04,320
+Scott Tolinski: Nice. That's pretty sweet. That like tells you how many cups of coffee you've been bird.
+
+91
+00:47:04,620 --> 00:47:05,250
+Wes Bos: Yeah, it's
+
+92
+00:47:05,250 --> 00:47:06,060
+Scott Tolinski: pretty sweet.
+
+93
+00:47:06,180 --> 00:47:23,190
+Wes Bos: I found somebody online that was selling like a commercial unit. And they're like 15 1015 grand. And it like keeps the milk cold. And you can have many different types of beans and they had like something like 6000 cups on it. And they were still selling it for like six grand. Nice.
+
+94
+00:47:23,550 --> 00:48:56,760
+Scott Tolinski: Nice. Well, I have a pretty sick sick pick today. This one is like legitimately sick. So every single year, there's what is the largest breakdancing competition for one on one as in the 16 best in the world and the breakdancing world here that they compete in a different city than this year. Where is it this year, it's a new city every single year. And it's rarely in the US. So let's see where it is. This year, it's in Zurich. So it's going to be just amazing. And it takes place on September 29. So it's going to happen after or before you listen to this episode. But all of the videos will be available. So I'll have to make the video links available on YouTube or whatever, so that you can find these easily. These are the 16 best break dancers in the entire world. There's people from Morocco, Holland, the United States, Venezuela, Korea, just all sorts of places to competing for essentially, the coolest breakdancing competition. I don't know if there's like a an old clip. It used to be like super viral, where there was this guy who was doing the push ups without his legs on the ground and stuff like that. It was like a Nike commercial or something. So that was actually from this competition like 10 years ago. It's basically the most insane stuff you'll ever see the 16 people in a bracket style tournament to compete for the world's best.
+
+95
+00:48:57,120 --> 00:49:00,000
+Wes Bos: Awesome, that sounds pretty gnarly.
+
+96
+00:49:00,210 --> 00:49:03,480
+Scott Tolinski: It's super gnarly. Yeah, it's amazing. All right, what
+
+97
+00:49:03,480 --> 00:49:58,230
+Wes Bos: about shameless plugs, I've got some today, I'm gonna actually plug some of my conference talks that I've done in the past, because a lot of times you spend like, a week or so building a conference talk and you give it I don't know, four or five times to couple hundred people each time, but I'm big on just letting people like everybody get the content, right. And I've often thought about, like, just doing my conference talks. But yeah, luckily, sometimes they are recorded. And I'm gonna just gonna shamelessly plug two of those right now. So my CSS Grid talk I did at layer con is I called it CSS Grid and 45 minutes, versus the like many hours that my actual courses. And so that's there that'll be link in the show notes. And then as well, my async await talk that it did back in December of last year, but still very, very relevant. pretty proud of both of those talks. So if you are looking for a little bit of extra tasty treats, check out those talks.
+
+98
+00:49:58,410 --> 00:51:18,180
+Scott Tolinski: Yeah, that's great. Definitely. especially related to what we're talking about today. Now also related about to this episode I'm editing right now it should be out by the time you're hearing this, of course, I'm tentatively titling better JavaScript, I don't have the time it's not locked in yet, I'm thinking that it's going to be called better JavaScript. And the whole purpose of the course is to use some of these new features. So we go over a lot of the features that we even talked about in this episode. But we also go over a lot of other things like how to properly name things, and some functional programming concepts like pure functions, and why those things are important and why this idea of functional programming isn't some big scary concept, but it's actually very simple. And some of these things that we can do in our programming to make our JavaScript in particular, less brittle, less error prone, and more likely to just make you a better developer easily more easily testable, all those good things. So again, I'm tentatively titling this course better JavaScript, it's going to be available at level up tutorials.com forward slash store. Or if you want to become a levelup pro get access to this along with the other 300 plus pro videos available right now. You can sign up for an entire year, and then get access to a whole year's worth of pro videos as well. As they come out. Save 25% when you sign up for the year at level up tutorials.com forward slash Pro. Thank you so so much for that. Check it out. It will be out later this month.
+
+99
+00:51:18,390 --> 00:51:19,110
+Unknown: Sweet. I
+
+100
+00:51:19,110 --> 00:51:21,600
+Wes Bos: think that's it for today. Anything else to add?
+
+101
+00:51:21,780 --> 00:51:24,090
+Scott Tolinski: Nothing? Nothing, right? Yeah.
+
+102
+00:51:24,090 --> 00:51:28,350
+Wes Bos: All right. Thanks for tuning in. We'll see you next week whose face
+
+103
+00:51:30,210 --> 00:51:39,960
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

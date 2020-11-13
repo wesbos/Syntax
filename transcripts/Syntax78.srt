@@ -1,0 +1,516 @@
+1
+00:00:01,319 --> 00:00:03,660
+Unknown: You're listening to syntax, the podcast with
+
+2
+00:00:03,660 --> 00:00:04,590
+the tastiest web
+
+3
+00:00:04,799 --> 00:00:10,530
+development treats out there. strap yourself in and get ready to live ski and West boss.
+
+4
+00:00:10,559 --> 00:00:31,289
+Wes Bos: Oh, welcome to syntax today is a potluck episode where we answer your questions. I love these episodes, because it's a we're gonna be covering all kinds of stuff JavaScript questions, React questions. A lot of them are actually JavaScript related, but web development in general. I'm really excited about it. Welcome, Scott. How you doing today?
+
+5
+00:00:31,319 --> 00:00:44,880
+Scott Tolinski: Hey, I'm doing super good, ready to get this potluck going. I love these episodes, we get to cover a lot of ground. And yeah, if this is your first time listen to this podcast. By the way, we never do this. But this is the syntax where we? Well, once a month we
+
+6
+00:00:44,880 --> 00:00:45,600
+Wes Bos: do these
+
+7
+00:00:45,689 --> 00:00:58,799
+Scott Tolinski: potluck episodes where users are listeners, they go ahead and they can submit their questions on our website. syntax.fm. And if we deem your question to be good enough, we will put it on air.
+
+8
+00:00:59,369 --> 00:01:03,479
+Wes Bos: And we're sure well, do you do anything fun this weekend? No,
+
+9
+00:01:03,509 --> 00:01:41,070
+Scott Tolinski: no. Landon was sick. Again. He had a he had a fever for the second straight weekend. I have this like tailbone injury that is just not healing. And I'm just going nuts about it. I hurt my tailbone like months ago, and it's just not healing. So I'm just, I'm just not getting to sit down a whole lot. That's really just did. So we didn't do a whole lot. No. And we just took it nice and easy. I actually it was actually pretty nice because I have a hard time not working on the weekends. And I didn't work this weekend, although I did deploy on Saturday, but I didn't work a lot this weekend. So that's pretty good.
+
+10
+00:01:41,579 --> 00:02:31,050
+Wes Bos: Awesome. Yeah, I went to I live downtown Hamilton, which is kind of this up and coming half a million people it's like a people call it the like Pittsburgh or the buffalo or the the Brooklyn which is a bit of a stretch of Canada. Kind of like it used to be old steel town. And now it's full of artists and musicians and stuff like that. And breweries and beards and stuff like that. So we have this once a year, or once a once a month we have this thing called Art crawl where they the main strip is just like all of the artists are out showing their wares. And all the galleries are open. And there's bands playing. And then there's super crawl once a year, which which was this weekend, and there's bands playing and vendors and cool restaurants are all open. It was awesome. So we went out a couple times and enjoyed that I was big, big fan of that cool.
+
+11
+00:02:31,280 --> 00:03:13,740
+Scott Tolinski: We actually got out of the house for the first time and who knows how long cuz we don't we don't have a lot of support out here like our families don't live out here. And we don't know a whole lot of babysitters. But we we had one of Courtney's coworkers babysit for us and we got to actually go out. And we went to this. It was like a charity concert for the foundation that is like so Courtney is She's the director of this Testing Center for Mental Illness and mental disabilities. And so basically, she The foundation is putting on this like Big Show. So we got to go this VIP party and have some open bar sort of stuff. And yeah, it was pretty good. The concert was interesting. I'll just leave it at that. Oh, that's
+
+12
+00:03:13,740 --> 00:03:42,090
+Wes Bos: awesome. Today's episode is sponsored by two awesome company. The first one is sanity@sanity.io n m lab, which is a MongoDB. database hosting and Sanity is a sort of back end as a service. We'll talk a little bit more about them partway through this episode. So first question we have is Scott and Wes, would you ever considering doing a live syntax show? grant? Well, Grant Yeah, absolutely. We've been saving this question forever. Yeah.
+
+13
+00:03:42,090 --> 00:03:45,630
+Scott Tolinski: Was this question asked? That's what I forgot. When this question.
+
+14
+00:03:46,169 --> 00:03:46,830
+Wes Bos: Pull it up.
+
+15
+00:03:46,880 --> 00:03:48,720
+Scott Tolinski: It was asked a couple months ago.
+
+16
+00:03:49,380 --> 00:03:54,060
+Wes Bos: Oh, 107 28. July 1, first of July. Yeah.
+
+17
+00:03:54,090 --> 00:04:01,530
+Scott Tolinski: So we've been looking at this question for a little bit. Because we certainly known about this live show since this question was asked Netlify.
+
+18
+00:04:01,710 --> 00:04:25,640
+Wes Bos: We are doing a live show at jamstack calm, which is put on by our friends at Netlify. Scott and I are going to do a live show there which is going to be really fun. We've got some really fun stuff being cooked up right now for it. So if you are free, October 29 to 30th, head on over to San Francisco and grab your tickets at jamstack. Coffee calm. I think it's gonna be really fun to hang out and to meet everyone. I've heard from a lot of people already that bought their tickets.
+
+19
+00:04:25,680 --> 00:04:28,110
+Scott Tolinski: Yeah, I'm so pumped. I'm very pumped.
+
+20
+00:04:28,320 --> 00:04:46,980
+Wes Bos: Next question we have is what are your thoughts on flutter? Does React Native have some solid competition now? And my answer to this is what is flutter one back 10 years ago, flutter was a WordPress plugin that was like the first the UI for custom fields, which I'm assuming that's not what it is. So Scott, what is flutter? Yes.
+
+21
+00:04:46,980 --> 00:05:19,440
+Scott Tolinski: So flutter is basically Google's answer to something like React Native. Basically, it allows you to build native apps using flutter which is like Mobile App SDK here. It's not using react or anything like that. It's its own thing. It's basically a nicer, more friendly environment for building cross platform applications. I believe the language is Dart. Yeah, yeah. Is it just Dart though cuz it looks like
+
+22
+00:05:19,640 --> 00:05:32,010
+Wes Bos: make your app come to life with platform API's. Third Party SDK is a native code flutter lets you reuse your existing Java swift and Objective C code across native. That's the same as React Native, you can use native stuff on the native platform.
+
+23
+00:05:32,040 --> 00:05:48,300
+Scott Tolinski: Yeah. So it, it converts to native code. And both both platforms. I believe the language here is pretty much is just Dart, it says you don't need previous experience with Dart or mobile programming. So it sounds like the the main way of using this is with Dart.
+
+24
+00:05:48,510 --> 00:06:27,030
+Wes Bos: And we should explain what it what Dart is really quickly. So Dart is Google's like many, probably five or six years ago, Google came out with this thing called Dart, which is a their hope to replace JavaScript. It's a typed language. And it sort of fixes it looks a lot like JavaScript. But it sort of fixes all the stuff. And it never really had huge uptake, specifically in the web development world. Their hope was to put the Dart VM right into Chrome, I think it even was for a little bit. I don't think it's any longer. It does compile the JavaScript if you like. But it's kind of the same idea as TypeScript, except that TypeScript has really taken off in web development world.
+
+25
+00:06:27,060 --> 00:07:19,770
+Scott Tolinski: Yeah. So we'll let her take React Native seat, I don't know, I actually think something like native script, who is actually one of our sponsors. Now, this is not a sponsor spot here. They're not paying for me to say this. I feel like it has to be said, but I think native script might be a lot closer to taking that role than something like flutter. flutter looks awesome. I don't know what the numbers are like, I haven't dove into the numbers of how many people are using what All I know is that I do hear people talking about Native script a little bit more than I hear people talking about flutter. And maybe it's just because of the Dart barrier to entry vers JavaScript thing. But in my opinion, yeah. A tools that allow you to build native apps with web tech is it's sick. It's sick no matter what. I love it. So this looks great. I might try to use it at some point here. We'll see. Yeah, keep an eye on it.
+
+26
+00:07:19,830 --> 00:07:58,860
+Wes Bos: Yeah, it's it's pretty interesting to me as well. But I don't think especially in like our circles, which is very JavaScript heavy. And you you have the option to use TypeScript. If you want some type, things like that. I don't think that there is a huge benefit to it unless you see something huge come out of it like, like performance gains, or any of the any of the problems that maybe a React Native has in some situations, but I tend to find that people either use React Native, or if they don't, they have problems with that, then they just go and code the actual native thing. So I will keep an eye on it. Who knows? In a couple years, it might be but also Google just shut down some more stuff. So a couple of weeks ago,
+
+27
+00:07:58,890 --> 00:08:28,140
+Scott Tolinski: yeah, I had that note on here. Yeah, I would be potentially worried about Google being the forefront of it that said, like, I don't think they've dropped other things like they haven't dropped Polymer. They haven't dropped some ones that have been around for a little bit. But you know, with Google's, I don't know, their frequency of killing off projects. It's one of those things that yeah, if Google stopped maintaining flutter, would it ever get off the ground as an open source project? I'm not quite sure. So who knows? Yeah.
+
+28
+00:08:28,320 --> 00:08:54,120
+Wes Bos: Yeah. It's something to think about before you pick it. I've definitely been burned. And he definitely seen the people who were on what's the alternative to Firebase parse. People were on parse for the longest time that got shut down. People are a little bit. Firebase seems to be going really strong. And it seems to have huge a push from Google. And it seems that they're always pushing people towards Firebase. I wouldn't be too worried about that. But there's always that kind of, what if this goes away? Yeah, they
+
+29
+00:08:54,120 --> 00:09:05,370
+Scott Tolinski: just shut down fabric. That was, what was fabric Fabric is a platform that helps mobile teams, build better apps, understand your users and grow your business? That's pretty much what I know about it was
+
+30
+00:09:05,580 --> 00:09:06,090
+Wes Bos: just that me?
+
+31
+00:09:06,090 --> 00:09:16,159
+Scott Tolinski: Yeah. Right. I know, you think that people would get better about doing these homepage sentences to tell you what the thing actually is. Like, that's marketing fluff. That's some fluff.
+
+32
+00:09:16,200 --> 00:09:40,909
+Wes Bos: Yeah. I don't know what it does. But they shut it down. Not cool. It says we're integrating the best of fabric into Firebase to give you a powerful platform. So I think that they had some sort of Crash Reporting built into it. And they're gonna push that into Firebase. But I don't totally understand how that all works. But who knows? We'll see I don't you generally use a whole bunch of Google open source stuff, but we'll see. We'll see where it goes from there.
+
+33
+00:09:41,190 --> 00:09:49,320
+Scott Tolinski: Word. Okay, cool. We next one we have here is from Alan from Falmouth. Mouth foul mouth. thau.
+
+34
+00:09:49,350 --> 00:09:53,070
+Unknown: Model mouth sounds like foul mouth. Yeah. So foul mouth.
+
+35
+00:09:53,659 --> 00:10:45,720
+Scott Tolinski: He does. Yes. Ellen. Ellen asks, What are your website Security Essentials? For static and dynamic sites, what's the deal with forms? Is it bad to put a form on my site with no server side validation? Yes, it's bad to put a form on your site with no server side validation, because client side validation is great for users. But it's not like preventing anything all it does the pert like, it makes your life better for the users, right? Because now they can get like a validation messages on the front end without having to actually even hit the API or take that time to hit the server. Right? So client side validations are great. They're nice little like fence here. But you can still hop the fence. And if you can hop the fence and submit a form with anything in it that no good, so you need to have server side validation on your forums.
+
+36
+00:10:45,840 --> 00:12:41,640
+Wes Bos: Yeah, you can't even do anything with those forms. Unless you have a server side, right? That was the thing when we were teaching HTML, people would build a contact form and they go, Okay, now, how do I how do I make it work? And then the sad answer was always like, we'd have to sign up for something like wufu, and then make a wufu form and then try to like, surgically move the pieces of wufu over to the form that they had built without taking any of the styles and in logic along with it, it was always kind of interesting there. So forms are a bit of a tricky one. I know there's a bunch of services out there, if you are building just even past sponsor Netlify, they have a form solution as well, because that's one of the sticking points if you're building a static site, forms are often one thing that you will need there. In terms of security, what are things, some things you can do, we actually have a whole security show coming up just on like little things that you can do to protect yourself, but real quick things like limiting requests per IP address, I specifically do that on my signups for my my free courses. So if someone starts hammering it from an IP address, then it will only allow I think it only allows you to do like two requests per 10 minutes or something like that, which is sometimes a problem because I often get emails from people who are trying to make their entire class of 30 students sign up Oh, and they can't, because it's all in the same IP address to stage opt in for if you're doing an email list. CSRF CSRF tokens if you want to ensure that requests are actually coming from a webpage, rather than just a random API captures is another really good one, Google has this invisible CAPTCHA now, which is pretty good. Or you can just click, I'm not a robot, and most of the time, it won't make you do any of its machine learning for you. Except if you're on a VPN, and every single time It makes you do it. And they're super slow. Because if you're on a VPN, for some reason, it just assumes, like, it just assumes you're a robot. So then they it gives you a really long fade out. And it's like 10 second fade out, and
+
+37
+00:12:41,640 --> 00:12:49,110
+Scott Tolinski: I'm just like one to throw my computer out the window. But yes, but when it works, it's worked. And when it doesn't work, it makes you very upset. Yeah,
+
+38
+00:12:49,110 --> 00:12:50,309
+Unknown: sir. Some other ones that
+
+39
+00:12:50,309 --> 00:13:26,610
+Scott Tolinski: I had a good one, while you're thinking is just to obfuscate what the platform is one of the things that I remember, I went to like a Drupal conference back in the day. And they're like, the best way to make Drupal not get hacked is to one Besides, you know, keeping everything up to date, but it's to hide the fact that it's Drupal. Because if your attackers know what they're trying to attack into, then they have a whole list of tools in their tool belt to get into something. So if you hide the fact that whatever the platform is, if it's a WordPress or whatever, if you hide that it's WordPress, then you give those people less ammo ahead of time to even know where to look.
+
+40
+00:13:26,760 --> 00:14:28,860
+Wes Bos: Yeah, you still have to make sure you're secure. That was one of the thing people didn't WordPress as they just removed the WordPress version meta tag, and then they thought they were safe. But you're still gonna get hacked. If you have unsecured website in there. I can't forget what the other Oh, CloudFlare that was it? No, yeah. CloudFlare will, will often block they have this CloudFlare is really smart about knowing who CD actors are or bots. And they will often block that. Or if you are hammering a website, they'll often like put a little breather 10 seconds in between, for you. So if you use CloudFlare, which is I'll explain what it is real quick. The way that CloudFlare works is that instead of pointing your DNS to your server, you point your your name servers at CloudFlare. And then you tell CloudFlare what your server is, and it sort of sits in the middle. And will it'll give you HTTPS, but it will also stop DDoS attacks, which is one of the more common errors that you can have, or one of the more common things and CloudFlare has a really good free, free tier.
+
+41
+00:14:29,070 --> 00:14:36,899
+Scott Tolinski: Yeah, cloud cloud flares. That's a hard thing to say cloud flares free. flare is a excellent Yeah, absolutely. Excellent.
+
+42
+00:14:37,140 --> 00:14:46,200
+Wes Bos: Hey, we should we can all stop putting the word cloud in business names because every time I need to type in cloud flare, I sit there for two minutes being like cloud something. What was it again?
+
+43
+00:14:46,799 --> 00:14:50,549
+Scott Tolinski: cloud front cloud flare? Yeah, yeah. Yeah, absolutely.
+
+44
+00:14:50,880 --> 00:15:35,039
+Wes Bos: Okay. cloudinary Yeah. Next question. We have from Dan Boswell. Cool. Last Name Dan Boswell. Do you have a goatee? to stack when building new web apps? If so, how would you go about choosing the right stack for the project? pS syntax is my favorite podcasts to listen to on the way home from work. Thank you. Oh, thank you, Dan. Boss. Well, it's actually I'll mention really quick, it's cool to see people post photos on Twitter or Instagram, have them listening to syntax, like what they're doing. So sometimes people are sitting at their desk. Sometimes people are taking it, they take a screenshot of their phone. Sometimes people are sitting in their car. I always like the car ones, because I like to see, what does the syntax art look like on your car's entertainment system?
+
+45
+00:15:35,279 --> 00:15:37,320
+Scott Tolinski: Yeah, definitely. Love it.
+
+46
+00:15:37,549 --> 00:15:39,480
+Wes Bos: So Scott, what's your go to stack?
+
+47
+00:15:39,659 --> 00:16:43,649
+Scott Tolinski: A Miko to stack is so it depends. If I'm doing like a client site that I might have used WordPress before. They may might maybe they need a back end. Maybe they don't need a back end. But either way the contents not going to update that fast. I'm going straight Gatsby every single time. I love I love the static site generator. I love how fast the sites are, I get so many comments about how fast certain things are with Gatsby. So if I'm building sort of like a static site, I'm going Gatsby, even if it's like a blog or whatever. Yeah, if I'm doing a site that needs like dynamic data, db stuff, user accounts like a little bit more intense, my stack of choices, probably a little bit different than a lot of people's but it's a meteor with Apollo with react, and it uses Mongo on the database, I haven't found a stack that is as fast to get up and running with a lot of essential features is this, because account systems baked right out of the box, everything sort of just works TMS, you know, trademark just works. I like it,
+
+48
+00:16:43,649 --> 00:18:52,380
+Wes Bos: I like it a lot. I'm somewhat similar. I usually in the last probably two years, I always reach for next .js on the front end over something like create react app, just because next jazz is a it's a react platform. So you can build a react application in it. And you just get up and running immediately. There's no tooling setup, which is like the bane of my existing is getting tooling set up. And then it also comes with a router. So you don't have to configure a router, it's just you just go to a page and you make that folder reminds me much of my PHP days where if you wanted a forward slash about you created an a folder called about and or you created a file called about dot PHP is very similar in next chasse. On the back end, I'll I'll reach for Express. And either I will just use MongoDB, or I've been using this package called disk DB a lot lately. And it just saves the files to a text file. Because a lot of the stuff that I do it just cook up a quick little example, I'm working on a workshop right now for fitc conference in Toronto in a couple of weeks. And the workshop, we're building a react application. And I needed like a back end for something really simple, right? But didn't want to have to go through all of the pain of setting up a database, or in the case of MongoDB, I would actually use something like m lab, but then you got the spotty conference Wi Fi, which you can't guarantee that the Wi Fi is going to work. So if that's the case, then you're screwed because you have no database. Yeah, so I like to run something local that is not hard to set up. And that case, I'll reach for disk dB, which is just a text base. And it has like the find, and save and update and all of the methods that you're used to from MongoDB. Or if it's something that's like a production, I'll either just use MongoDB and express or I'll use Prisma like in my upcoming react course I use Prisma and graph qL yoga, which gives you a graph qL back end. So that's that's usually what I reach for. It always revolves around react and express. Yeah, it because I love Express, there's so many middlewares available for it. I know it really well, that's a huge one. I just know a cold. So I'm really comfortable in it.
+
+49
+00:18:52,469 --> 00:19:21,350
+Scott Tolinski: Yeah, I know, I actually have the copy of my production DB locally for Mongo as well as in the cloud. So if I ever want to work on my dev site, without the internet connection, I can just fire up the local DB rather than the the remote one. But if I am using the remote dB, you can best believe I am using em lab, which is one of our sponsors today. And yeah, that was the easiest transition of all time.
+
+50
+00:19:21,989 --> 00:19:23,360
+Wes Bos: Because I was not even planned.
+
+51
+00:19:23,400 --> 00:19:54,540
+Scott Tolinski: Yeah. I mean, honestly, Wes and I both use em lab to host MongoDB databases. And it just makes everything so so easy. Going along with some of those security concerns that some of these questions that we'll even get to later on in this episode, go. If you're not hosting the DB yourself, there's just so many less things you have to worry about. Right? You don't have to worry about how you're setting it up securely. All you have to know is that how you can connect to it securely. So with a little bit more about him lab is Wes.
+
+52
+00:19:54,830 --> 00:21:43,440
+Wes Bos: Yeah. So if you are building an application that needs MongoDB like I just said It can be a little bit tough to get MongoDB running on your local computer. In my own node course, I use m lab just because like I show people how to get it up and running. But then I say just use m lab because it shouldn't get in your way. Because you're trying to learn react, or you're trying to learn Express right here, we're not trying to learn how to like, set up Docker containers, or set up the proper permissions or how to get brew installed, and oh, no, you're on Windows, just sign up for em lab, they give you a string, you can create a username and password and they can connect to that directly. So if you're building anything with MongoDB, I definitely recommend that you check out MongoDB. And then in production, I highly recommend you use something like MongoDB because of backups, security performance, like have you ever wanted to be in the situation where your database doesn't scale. And that's someone else's job, right, and you're a full stack Dev, I don't think that that's really going to be in your wheelhouse as understanding how to scale up databases, right, they have this really cool slow queries analyzer. So every week, I get an email from them. And it tells me, these are the queries, here's how many times you've run them in the last week, maybe you should add some indexes here, here's how to add the indexes. And then and then it'll speed up your actual website, they have a telem entry tool, which it gives you real time and historical data about your databases and the underlying VM, things like connections, number of operations, index efficiency, CPU usage, all of that stuff is is brought to the surface for you. So again, check it out at m lab.com ML ab.com. If you are trying to host some sort of MongoDB database. Nice, Cool, thank you for Emma for sponsoring it again,
+
+53
+00:21:43,440 --> 00:21:51,150
+Scott Tolinski: it always goes back to services that we know and love and use ourselves. So I'm really always just happy to see those services sponsor the podcast.
+
+54
+00:21:51,570 --> 00:23:42,360
+Wes Bos: Next question we have here is from Anthony Campos, what are your thoughts on the 100 days of code challenge? A big fan of this, I actually didn't know about it until people started tagging me on Twitter. So if you got 100 days of code calm, it's pretty simple. It's the official challenge for someone who wants to code for 100 days straight. And there's only two rules a code a minimum of an hour a day for the next 100 days. And second, tweet your progress every single day with the 100 days of code hashtag. So I love this because it it basically follows exactly in my whole mantra to getting good at web development, because people ask all the time, like how do I get better at x, y, and z? How do I get it? And the answer is always just Just do it. Just put in the time. Just keep building stuff, whatever it is that you're going to be doing. So the hundred days of code, what it does is that you commit for the next just over three months, every single day, I'm going to at least one hour, I'm going to learn something, I'm going to build something, I'm going to read an article, whatever it is that you're doing. And then you're keeping yourself accountable and commit creating community by tweeting out with the hundred days of code hashtag. And it's really cool because I get tagged every single day, I get probably like 2030 people tag me and say like, today, I watched a Wes Bos YouTube video today, I worked on the Wes Bos react course today I and the reason why I got hooked into it at first is because I think at that about the same time that I launched my JavaScript 30 days of learning JavaScript, this also launched and people were like, perfect, that's 30 of the hundred days already. I just have to do one of these a day. And I thought it was amazing. Because it's right along with anything. Like you just have to build stuff every single day, even if it's an hour, even if it's just an hour, and you're involving yourself within the community around your thing. It's just the best way to get better at this stuff. So yeah, what do you think, Scott?
+
+55
+00:23:42,420 --> 00:24:24,570
+Scott Tolinski: Yeah, I think the the key terms out of this, there's the consistency and the accountability. Like if if I'm looking to accomplish anything in my life, consistency, and accountability are two of the core things that need to be there for me to actually do it. Right. You want to be consistently working towards your goal, you take these little steps at a time, and eventually you get there, right? And then you have the accountability to say, Hey, did you take your steps today, blah, blah, blah. So it's awesome. It's it's inspiring, and it's awesome. And it is definitively if you adhere to it, it's going to make you better at whatever you do. So 100 days of code challenge, really super cool. Yeah, a plus.
+
+56
+00:24:24,690 --> 00:25:00,930
+Wes Bos: I'm just looking at who's behind this is Alexander Calloway, who is from Toronto. And it looks like he also was involved in Free Code Camp, which is pretty cool. And a dev at pilot, which is pilot is a like an agency from Toronto. And it's actually one of the companies I tried to get a job at when I was first starting and I didn't so if you I don't know if you hear this Alex let them know that they really let me down and never gave me a job when I was trying to get a co op in school. That's actually cool. That's a local local connection there.
+
+57
+00:25:01,200 --> 00:25:01,890
+Scott Tolinski: Nice.
+
+58
+00:25:01,890 --> 00:25:02,460
+Unknown: Cool.
+
+59
+00:25:02,460 --> 00:27:35,220
+Scott Tolinski: Okay, so this next one was asked by a couple of people, which may be the first time that we've had people ask me nearly the exact same question here. So this is by Eric, Eric Zorn. And the question is, I have been learning a lot about react recently and wondering, what's the difference between next js and Gatsby verse vanilla react? And then another question from Alex Nielsen. It says, plain old react next, Gatsby, etc. When and when to use each one. I'm confused exactly what they do with their use cases are, can you give me some ideas about the best choice? So nearly the same question of vanilla react versus Gatsby verse, next, j s. So out of the box, vanilla react using create react app is just front end code allows you to build sort of dynamic react sites get up and running easily is a great starting off point. That said, I think there's probably better platforms for building production applications immediately, which would be something like next j s, which gives you all sorts of additional features into react along with sort of like built in routing, and server side rendering. And it's a really great like full stack, well, not necessarily full stack, but server side and client side, React platform, right. And then lastly, you have Gatsby j s, which is a static site generator as and you write all your stuff in react, and adjust spits out HTML and JavaScript, and you end up having some blazingly fast sites, a hashtag blazing. But when you would use each one, personally, if I'm going in production applications, I would probably choose if it needs to be dynamic. If the content needs to be dynamic, it's changing a lot. It's more maybe more interactive sort of stuff, I would probably pick next js, if it's a blog, if it's a site that's not changing all the time, or maybe even something like the syntax website, where content comes in twice a week or something like that it could be triggered with a web hook rebuild Gatsby is is pretty sweet. Because you don't have a server side component loading your stuff. It's just loading HTML and JavaScript. It's super duper, duper fast. And you get all of the benefits of a server side rendered application. It's a little bit more simple. Not to mention Gatsby has that suite graph qL built in integration. So for me, I would probably reach for next j. s, if it was a little bit dynamic. And the site was the content was a little bit more dynamic. And I would probably reach for Gatsby if it was a little bit more static.
+
+60
+00:27:35,400 --> 00:27:54,900
+Wes Bos: Yeah. And that's not to say that you can't do dynamic stuff in Gatsby either, because a lot of your logic can happen in the browser. And if it happens in the browser, then you can still do it in react. Yeah, that's right. That's true. Right. Actually, Scott, just run that by you is that Gatsby still ships react, or does it just ship HTML to the browser shift?
+
+61
+00:27:54,900 --> 00:27:55,620
+Scott Tolinski: react?
+
+62
+00:27:56,040 --> 00:29:11,790
+Wes Bos: Yeah. Okay. I think so. Yeah. So you can still have all of because with a lot of these static site generators, it just spit out HTML and CSS. But this will still spit out react, which means you can still do a lot of the a lot of your logic in it. Um, yeah, so I'm a big fan of next JS myself. But it's still a fan of Gatsby cuz it gets me as a lot of adapters. It has this whole like community of adapters, where you can like pull from WordPress or something like that, which is pretty interesting as well. Next, jazz isn't really anything all that special, like, it's my go to thing, but it doesn't do much past routing, it comes with it for free. And server side rendering, or it has this specific lifecycle method that adds called get initial props, and we'll get initial props will do is it's an a synchronous lifecycle method that will wait until that resolves, like let's say you needed to fetch some data. And that will not go from the server and send it to the browser until that data is back until that is resolved. So they do have a bit of overlap. But again, like Scott said, a little bit more dynamic. Next even has its own export feature available as well, like Gatsby does, but I think Gatsby is just the the king of or the queen of doing what's called static site generation. Yeah, yeah. It's
+
+63
+00:29:11,790 --> 00:29:13,680
+Scott Tolinski: a it's a sick platform. It's really great.
+
+64
+00:29:14,160 --> 00:31:01,980
+Wes Bos: I got these wicked Gatsby stickers sitting right here, Gatsby. And by the way, we should try sell these out. Gatsby has this like, amazing online store. You buy them? It's like very. Yeah, I bought the stickers and the T shirts were like 10 bucks, and they get shipped to Canada. Yeah, it's like a really nice t shirt. Like, even if you don't like Gatsby but you'd like high quality t shirts. Just buy one because it was like black on black, which is my jam. And the stickers were really cool. Yeah, they got 10 bucks for like a wicked Gatsby t shirt. two bucks for a six pack of stickers. Yeah, I think they're pretty shipping. Free. Yeah, the socks to what and and they also if you if you contribute to Gatsby open source, you get free swag. Uh huh. But usually Login with your GitHub account all that's the best. You log in with GitHub and it checks if you've committed to Gatsby and then get free swag. That is such a cool way to do it. I love that you integrate it into the store, and also the store owner what they're using for for their checkout. I think it's Shopify. Yeah, it's Shopify. So anyways, that's a bit I'm going to click the Gatsby stores is something to look at. If you're interested in learning how to build a store. It looks like it's open source as well. And the checkout, the checkout portion seems to be done in in Shopify. Nice. Cool. Yeah. Super cool. birdie sick. All right, next question we have, what are WebSockets? And when should they be used? Yes, I like this question. And WebSockets are pretty interesting to me. And it's I think WebSockets is the reason why node initially got some of its popularity is because WebSockets and node both came out around the same time. So a WebSocket. You can think of it if you think of the internet as a series of tubes. And
+
+65
+00:31:02,010 --> 00:31:02,910
+Scott Tolinski: yes, please do.
+
+66
+00:31:04,920 --> 00:32:00,480
+Wes Bos: You let's say you've got a REST API. And you've got, you've got Wes on one end of the tube, and you've got a dog API and the other end of the tube, what I'll do is I'll shout down the tube, oh, can I have some dogs, and that is my request down to the API. And then what will come barking back up the tube is is the the dogs, right? And those are considered two separate requests, I initiate the request, I have all the headers that go along with the requests, and then I send it and then the vice versa when the request comes back. So that's your standard pinging of, or pushing and pulling of data to an API with WebSockets. What it does is it allows you over TCP, it allows you to just maintain an open connection, which is just like you think of it as a pipe where you can at any point in time, send or receive data through this. I mean, picture me with my two fingers up right now and just yeah.
+
+67
+00:32:01,019 --> 00:32:03,360
+Unknown: Mmm. It's like your air drying with two fingers.
+
+68
+00:32:03,660 --> 00:34:25,650
+Wes Bos: Kenny? Yeah, picture me air drumming right now. Yeah, those are requests coming back and forth over there over. The benefit to that is that it's it's instant. Meaning that we don't have to, we don't have to do the whole request building base every single time that you have a request, there's this overhead of creating the request, setting all of the headers on that request and then sending it whereas with WebSockets, that that connection is always open. And you can send and receive data at any time. So it's instant. It's it's real time, there's not the overhead of having the headers on there. And I think the most important thing is that you don't have to wait for data. It's based on events. So what you'll do and check out socket IO, if you're if you're interested in learning about WebSockets and node, it's really easy. But you essentially just say like, you have a chatroom, you say chatroom WebSocket, on message. And as soon as you get a message, it's like a it's like listening for a click on a on a button, except you're listening for data on a WebSocket. And you'll immediately get that data, you can immediately push it and then other people who also have a connection to that WebSocket will be able to you still have your server in the middle. But you built a funnel data from one web socket to another almost instantly. Yeah, I've used it in the past with real time drawing. So I did a I think I've told that I tell you the story about the dentist No, in the past No. So I built an application once where we dentists would upload x rays. And then we would draw on the the dentist would draw on the X ray. And then you would have a an expert like a specialist dentists on the other end drawing on it and they'd be on the phone. And they'd be drawing on top of those extra cool. And what we did is we use website, I actually got the job because I did a little YouTube video of real time Canvas WebSocket drawing, and they're like, Hey, we need this for teeth. So it was cool, because you would have two people on the exact same time. And if the internet connection was good, like there's there can be latency. If you're on really poor internet, then everyone would see whatever I was drawing in real time on top of this. And I was just sending data about where the user's mouse was. And if they were drawing what type of like all of the stuff that is related to Canvas. I just sent all of that back and forth between the WebSockets. And then they would be drawn onto the diagram in real time and then saving it to a database. Nice.
+
+69
+00:34:25,680 --> 00:34:51,920
+Scott Tolinski: Yeah, so basically, the answer is for when is real time you need to do real time. Yeah. WebSockets real time is one of the it's like one of the coolest aspects of the web, I think is this real time thing. And I remember back when Code School was cranking out content, they had a really good course on WebSockets. With node we built like a chat app. And it was just really, really exciting to be able to do stuff in real time like that. So yeah, that's pretty much it.
+
+70
+00:34:51,960 --> 00:35:13,500
+Wes Bos: I should say Firebase is based on WebSockets and that's why in my my beginner react course react for beginners, calm check it out. The reason Why it's instant is because that's built on a WebSocket. So we simply just save some data to state. We use that rebase package that mirrors it to Firebase. And then Firebase is a WebSocket connection and will immediately update it wherever else it's used.
+
+71
+00:35:13,710 --> 00:35:59,460
+Scott Tolinski: Yeah. Cool. So this next question is from Seth winters. And this is going to be a really quick answer says, Hey, guys, I love the podcast, I would love to hear your take on progressive web apps. I have done some research. And I'm curious if either you had any experience with building or using them. And Wes is currently manipulating the paper here to try to get me to try to throw me off my game can throw me after the game. I'm in the zone right now. The answer to this question is listen to Episode 50, progressive web apps, which pretty much answers all of your questions. So syntax.fm, forward slash flow, show forward slash 050, forward slash progressive web apps, just just do a command find for progressive web apps on the page yet, Episode Number 50. And,
+
+72
+00:35:59,460 --> 00:36:00,300
+Wes Bos: yeah,
+
+73
+00:36:00,300 --> 00:36:02,760
+Unknown: just just listen to that. That's the tip,
+
+74
+00:36:02,940 --> 00:36:19,130
+Wes Bos: fun tip on the on the syntax website, you can just go to forward slash show forward slash 070. And you can put anything as a slug, and it will still work because the slug is just there for SEO. And it's not actually specific to to the URL and finding the show when you visit it. Oh,
+
+75
+00:36:19,190 --> 00:37:15,810
+Scott Tolinski: okay. Word Up. Now, you know, now, you know. So sorry, Seth, for that quick answer. I mean, there's a whole episode devoted to it. So you'll get a longer answer there, we made a made quick work of that one. And if you want to make quick work of hosting your data, and having a back end, you're gonna want to check out sanity.io. Sanity is, as they say, structured content done, right. So it's sort of a bring your own front end content, you could call it a content management system. But it's really just a back end for your data. It takes care of all of the stuff that no one likes to do. Like it takes all of the complexities out of setting up an API, and allows you to just get going with some work. It's lightweight, pluggable, it's real time it's open source. And it's it's just like a it's a joy to use. They they're just they put together a little demo for us with this thing. And let me tell you is slick.
+
+76
+00:37:15,900 --> 00:39:21,650
+Wes Bos: Did you see the most recent addition to it yet? Scott? No, I'm gonna do it. Right just opened it up. Oh, my gosh, Kay, sign in. While I talk I talk a little bit more about, it's not just another content management system, because we all have 1000 different CMS is in and it will spit out something on on the front end. And you're good, right. So what it allows you to do is you can create all of your different content types. So for our podcasts, we created, episodes, hosts, sponsors, and actual podcasts. And then each of those are have their own content types, they all have their different types of input. So you have your text input, and URL input and rich text input and an image output. But you can also make your own inputs because it's all based on react, you can just drop in a react component and use that as the input. So it's kind of cool because it is a service that allows you to host your own, but you can also customize what the actual inputs look like past just doing your standard image, text, rich text, all of those, you have relational data. So you obviously we can have a podcast that's related to episodes which each episode will have hosts and sponsors. And then they have this like query language called groke gr o q, which allows you to query your back end and you can use any of the standard things that you're looking for. So you can do things like fuzzy matching or greater than less than includes the text, you get the point right. And kind of the best part about that I had is that if you go to our syntax studio, which is the what they created for us to show, show us how this works. If you click on the logo, it pops open the it pops up in a when App Player Oh, quiches. Yeah, this is so it basically they pulled in every single episode. They also have CLA import. So if you have data that's somewhere else, like an RSS feed, you can import that into Sanity, which is what they're doing here. But he basically just rendered out the entire winamp skin. And then just like the query the list of episodes, and you can you can listen to the entire syntax episode from this when app react component, which I think is hilarious. It's
+
+77
+00:39:21,650 --> 00:39:35,360
+Scott Tolinski: awesome. Yeah, I even just when I hovered over the logo on the logo to this little shake, I was like, all these gets the best. And then I clicked on it. And I was just like, this is just great. So love this Sanity is just awesome. It's a great service.
+
+78
+00:39:35,360 --> 00:40:01,770
+Wes Bos: Yeah. So if you're building any type of front end website, and you just slap together back in really quickly, or you want to build a production ready application, check it out. sanity.io we actually just got an email from them, saying they want to sponsor more episodes, which means that many of you are checking it out, which means that many of you are actually sticking around and using it so you are clearly liking it. So Thanks so much to Sanity for sponsoring.
+
+79
+00:40:01,860 --> 00:42:33,920
+Scott Tolinski: Yeah, I Oh, and also it goes along a little bit with some of the stuff we were talking about with Gatsby. There's a Gatsby source sanity plugin. So if you're using Gatsby, it's gonna fit right in there to then make it nice and easy to query off your stuff. So that's pretty cool. So this next question is from Jared Keown. Thank you for Jared. Because he he wrote us a little note, it says, it's like you own a key. So I appreciate that. Because I own several keys. And I know how to say the key. So it's Jared Qian, thank you. And the question is, I'm a nervous newbie who's concerned about doing a web app that accepts payments and sensitive information? How can I know I've done everything to create a secure website, I'm also trying to protect myself from being sued by the client. If the website gets hacked. I'm trying to be a jam stack developer. So I'm looking for things like looking at things like snip cart, and stripe. I think one of the best things about this question is that Jared says he's concerned about doing things the right way. He's concerned about sensitive information. And I feel like that is the sign of somebody who wants to do everything the right way. And that's such a valuable skill to have. Because you know, how many websites are out there storing emails and credit card numbers and plain text and not being PCI compliant, and all that sort of stuff. It's like, some people just don't care. So Jared, thank you so much for caring, because that's how these things go away as being problems. One of the things that I liked about your messages that I'm looking at things like snip cart, and stripe, I think these are the best things to do, especially if you're new and concerned. Because companies like stripe, they want to make it easy for you to be PCI compliant and follow the rules. So things like their their hosted forms that are like I framing in it's like their own windows sort of thing. Rather than you writing the form from scratch, it really makes it so you're not touching their information, right. So as long as you have like HTTPS and all the things on your inputs, even though I think with the iframes, their iframes might be HTTPS anyways. But you'll want to just make sure that you're you're secured on your end. And, you know, use the services that make it easy to be secure. Use the services like don't don't write your own account system from scratch, for no reason, use an account system that's vetted, and has been used by many people. Same with this sort of thing. If you don't know what you're doing, use the, I guess the stand on the shoulders of giants sort of situation and use the tools built in that that make it easy for you.
+
+80
+00:42:34,170 --> 00:45:50,400
+Wes Bos: Totally, I always err on the side of caution with just store only what you need. If I ever need anything more than I will always just reach back into stripe and grab it. But I don't like to store anything that I don't necessarily need past the information that's needed on people's invoices just to show them like what they've what they've purchased and whatnot. So again, like, like Scott says, use other use the services for you. They are employing lots of smart people to make sure that they are doing this properly. There's a lot of situations where you probably shouldn't be doing it yourself. And if you are, then it's up to you to look into all of the different Pepita and all of the different rules in all of the different countries that are out there in terms of what do you need to do in order to mean to responsibly hold your users data word. Next question we have here is from JC Hiatt of Devlin. Every question we have, we've mentioned a past sponsor, JC is the proprietor behind deadlifts. He asked what is a JavaScript generator? I heard that a sink await creates a generator under the hood. Okay, this is a good, good question. So the way that it works is that when you define your function, you put a little asterisk in after the word function. And then inside of that you you do what's called the yielding. And yielding is the ability to return multiple values from a function. So you might have a function that is a funny quotes generator. That's a good example, because it actually is a generator. And inside of that, that function, you would return a funny quote. And then if somebody were to call next on it, then it would return to you the next quote, and then if you call next on it, and you can get the next quote. So you can essentially run it yourself by calling next, next, next, next and every single time that you need one, you can pull it out. And it's actually funny because in my six course, I use the meat counter as an example. So you know, when you go to the grocery store, and you have to stand around like an idiot for half an hour to get like three pieces of prosciutto. Yeah, and there's there's kind of two things going on here where every single time someone pulls a number, it increments it by one and then gives you a number. That's what a generator would do. You pull a number, it'll increment the value and give you your your number 67, your number 68, your number 69 but then at the same time, you also need to know Is there should there even be aligned because there could be known in line and you could be the next number and the Generate have to return that. So that's the idea behind generators where you can sort of pause the function and return multiple values from a single function. In practice, I've never used one in past creating examples for my actual course. Because so soon after generators came out, we got a sink away. And I think a sink await approaches this being able to because you can also return promises from generate, like that was another example I had, where if you want to fetch one thing, and then fetch another thing, and then fetch another thing, then you could use a generator for that. But a sink away handles this so much nicer that I can't think of a situ there probably are situations here or there. But I myself, I can't think of a situation where you would want to use a generator over a sink away.
+
+81
+00:45:50,429 --> 00:46:07,350
+Scott Tolinski: Yeah, shout us out. Shout us out if you if you know, that perfect use case for generators that we're overlooking, because I'm really interested myself. So let us know if there's something that that we're not seeing here and that you think is like generators are the the thing to use?
+
+82
+00:46:07,589 --> 00:46:52,620
+Wes Bos: Yeah, I think if you had a situation where you'd need to like keep, whenever you needed something from the function, you would call it, and then it would give you the return value, I could see that being possible option, but I just couldn't think of so many other ways to code a function that would do that as well. The other thing he had here is I heard that a sink await creates a generator under the hood. And I think where that comes from Babel, or Babel, if you if your funny, babble will transpile your cinco wait to browser, browser supported code. And there was a there was some time where most browsers did support generators, but did not support a sink await. So what it would do is it would convert it to a generator for you. I'm not sure if that's still the case. I guess it depends on what your Bible browser support is.
+
+83
+00:46:52,949 --> 00:49:00,780
+Scott Tolinski: Nice. Cool. All right. Let's get into this next one, which is from Emanuel Siriano is pretty good job. Yeah, this question is, this is the first time I send a question to the podcast. I hope you understand it. First of all, a great job with the podcast. I love it. Well, thank you, Emmanuel. And the other day, I had a discussion with a co worker about the state of web components in late 2018. Are they worth it? Or are they not? The idea of writing component that could be shared between multiple frameworks is awesome. I found a web components.org, which is a library of web components with a lot of information about them, and also with a community. I'd love to hear your thoughts. Hey, my thoughts are web components are pretty sweet. You know, I don't know what the answer is. We know i think i think there's a world where lots of technologies are coexisting and have different approaches to things. So I don't think web components are going anywhere, I think they're probably going to increase in popularity. There's a lot of like, really interesting libraries that use web components. They're used in production on sites like YouTube. So they're not necessarily not going away. And the polymer is a very popular, it's a polyfill for web components built by Google. polymer is pretty sweet. There's also spelt I think that's how you pronounce it SV LTE svelte. I've never said that out loud. So I'm hoping that's correct. But it's basically, they called the magically disappearing framework, it like compiles down to straight up JavaScript, rather than into a framework. But they also have a little flag that you can throw onto your components. And that outputs actual web components, instead of just straight up JavaScript. They say you obviously need a polyfill to get that working on a lot of browsers. But I think there is a lot of room for web components to continue to grow and become more mainstream and used in all sorts of different ways. Again, I don't think react is the number one, you know, best solution 100% of the time for every single person on the planet. That's it. I love react. So yeah, I think web components will continue to grow, their communities are strong, the communities are probably getting stronger. And then the amount of tools around them is probably getting to be better, too.
+
+84
+00:49:01,049 --> 00:49:48,060
+Wes Bos: Yeah, maybe we should talk about what well come on, sir. Real quick. It's sort of the idea behind web components in polymer is that you'll be able to make your own HTML element components, right? You'd be able to make your elements app, which is the idea behind Angular and Ember and react and all of this stuff, right? You make these components. And the idea is that it would just be native to the browser, and you won't have to use a specific framework. In the meantime, you have to use a polyfill, something like Polymer. So I actually have never ventured down the Web Components route. But that said, I've met many people at conferences who built their entire product on it. So I think it's just the you and your team needs to take a good hard look at what are the options out there, not just because Scott and I say use react because it's up to you to make the right decision for your projects. Yeah,
+
+85
+00:49:48,060 --> 00:49:48,630
+Unknown: yeah, absolutely.
+
+86
+00:49:49,649 --> 00:49:52,110
+Wes Bos: Let's talk about ticket nerves.
+
+87
+00:49:52,589 --> 00:49:54,750
+Scott Tolinski: The question is Exactly, yes.
+
+88
+00:49:54,779 --> 00:50:32,010
+Wes Bos: How soon will designers replace react developers with the invent of tools like framer x. So the question is, are our jobs in jeopardy with the invent of these tools that seemed to do a lot of the work for us? So we looked at things like framer x, or we looked at things like seven years or 10 years ago, Dreamweaver coming out. And we're, we didn't have to hand code anything anymore. And we're laughing here, because this question comes up all the time, where people say, this is a new tool, our jobs are going to be gone forever. And what is that going to look like? So what do you think about that? Scott? Yeah,
+
+89
+00:50:32,250 --> 00:51:28,080
+Scott Tolinski: no, I I just wanted to ask if people remember the grid, the grid data. Yeah, like the site tool that was going to like build your entire site for you with AI and everyone is machine learning. Yeah. Yeah. I don't think it worked out that way. No, I the answer to this is not soon. Also, I think you're misunderstanding framer. x because framer x does not output react components. It allows you to create components in react to be used in your design. So it's actually more of a case for react developers being more important because the designers you would have to know react first. It's not the other way around. So it's not that you're designing components. And it's spitting out react code, it's that you are writing react code to build design components. So if anything, framer x makes the case that developers are more relevant, less than less relevant. So yeah, that's my thoughts. Yeah, it's not it's not happening soon.
+
+90
+00:51:28,320 --> 00:53:41,130
+Wes Bos: Yeah, it's, I think that the industry will continually evolve in how, how we use these tools and what our job is, we'll always continually use, we're not always going to be like, we might not always be hand coding some of the stuff, we might be using some sort of tool to do some of the work ourselves. You never know what it's going to be. But I think the only thing that you do know that will happen is that things will change. And he should not stick to this idea of what your job is and what your job is going to be forever. Yeah, we did see that with way back. People would always brag like hand coded HTML websites was the big thing when when Dreamweaver came out, because Dreamweaver would generate a whole bunch of HTML for you and kick it out. At the end of the day. I think that this our jobs are going to continually change and I saw this screenshot the other day of some guy on Facebook was going off on the new iPhone because the new iPhone now has the ability to change what is it f stop an aperture or Saturn or something about photography, I don't really know much about photography, but I do know that allows you to take a kick ass photo without just knowing much and just kind of pointing and pressing a button. And you see this guy he's like, Whatever happened to real photographers, where we knew how to set up lights and knew how to set white balances and stuff like that. And then the technology is just doing that for you. And I don't think that the job of photographers going anywhere because it's the job of the photographer is changing. And it's like my sister is a photographer and she's super busy. People want more and more photos and I think that just like family photos and wedding photos in the last 10 years have gotten so much better than they were if you look at like your parents or even someone who's been married for 10 years, their wedding photos are like a joke compared to like modern day wedding photos same with coffee I always I love when technology can come along and do something really really well or almost as well as some of their teas and stuff because you see things like like I love going to like the local hipster coffee shop where they hand pour or they have these like vacuum things where like they have like these beakers
+
+91
+00:53:41,880 --> 00:53:42,960
+Scott Tolinski: Yes, yes like Yeah,
+
+92
+00:53:42,990 --> 00:53:50,370
+Wes Bos: yeah, I forget what it's called but they like it like pulls a vacuum against the pulse device not the like it's dressed down one
+
+93
+00:53:51,030 --> 00:53:53,190
+Unknown: person doesn't chemex it
+
+94
+00:53:53,310 --> 00:54:11,970
+Wes Bos: no like it's this like thing that's built into the built into the countertop. Right? Yes. Like it shows you these bubbling beakers and, and it's like some of the best coffee I've ever had. But then again, the Nespresso you pay 200 bucks for a little Nespresso pop in one of these little pods. Nevermind the environmental harm those things are doing
+
+95
+00:54:12,000 --> 00:54:18,600
+Scott Tolinski: you recycle. We recycle our Nespresso yellow bag you put them in the bag you ship off the bag, like awesome.
+
+96
+00:54:18,690 --> 00:54:25,110
+Wes Bos: Oh, yeah, yeah. Oh, I didn't know that. We have just like a espresso machine grinds beans and does it for you we
+
+97
+00:54:25,110 --> 00:54:27,420
+Scott Tolinski: have an espresso and you do recycle them.
+
+98
+00:54:27,630 --> 00:55:09,000
+Wes Bos: Okay, good. Well, people turn their nose up at these things because it's not there's not as romantic as like grinding your own and roasting the beans and everything that goes into that but it actually is pretty good coffee at the end of the day and a lot of people like to use these types of things right? So it's, I don't know it's interesting and the baristas job is not going anywhere. If anything, people have more fallen more in love with the whole barista experience and where the beans are sourced from and, and all that stuff so I wouldn't freak out anytime. New Tech comes along sort of challenges and it's gonna we talked with Scott and I were joking about that South Park earlier. They took her journey. Yeah, these robots, man,
+
+99
+00:55:09,420 --> 00:55:56,670
+Scott Tolinski: these robots using machine learning to generate sites. Now you notice actually, I think a good point too is also like his site builders have gotten better. I mean, the things like Wix and Squarespace are light years ahead of what those same kind of tools were way back when. And so if anything that just makes, like, gives you more opportunity to build easy stuff easily. And it allows you to build more complex stuff easily, and it makes your lives better. I mean, I've never, in my entire career, I'm the most empowered I've ever been with tools. You know, I cannot picture another time in my entire career where I felt as in control of what I wanted to do on the web, just because of how modern and excellent everything is. So yeah, Bring it on, bring on the robot uprising, whatever. Yeah.
+
+100
+00:55:57,090 --> 00:56:45,090
+Wes Bos: Yeah, it's, it's just our job will will continually be shaped Actually, that's kind of interesting. I would love to talk to someone who's been doing just like content based CMS websites for 10 years and ask them has has like the $2,000 WordPress scene changed because of things like Wix and Squarespace. And I'd love to see that because I think what we're starting to see now is that people are, are starting to need to specialize. If building is very simple website on Squarespace is doable, then clients start to ask for stuff that's a little bit more complex. And you do need custom programming for word. So I don't know if you are have been in that space. If you have any ideas. Is this space changing? Because of of tools? Let us know what you think at tweet us at syntax FM.
+
+101
+00:56:45,210 --> 00:57:52,320
+Scott Tolinski: Nice. Cool. So we got one last question. If you're cool with that this episode is running a little bit long, but this question should be easy to answer. It's JP Jeter, like Derek Jeter. Thank you, JP, we love these pronunciations, because everyone knows how bad we are this. The question is, have you or anyone you ever known thought about quitting the industry? Because of difficulties that have you've come up to? So the question is really like, have you ever ran into a bug so powerful that you rage quit and just quit the profession entirely? I don't, I have not. And I don't know anyone that has although I've heard stories about technology developers who would maybe just go become a hermit or something for a few years or, you know, just disappear from the internet entirely. But no, I love I love this stuff. I love what I do. I love programming, and the difficulties and the problems and the bashing your head against the keyboard is all part of the game. And it's some of the stuff I love most about it is is solving that problem that really outsmarted you for a long time. And the fact that you were able to overcome that and create something so no,
+
+102
+00:57:52,350 --> 00:58:45,510
+Wes Bos: yeah, in my early days, I very much had lots of rage quitting times I talked earlier about just like thinking like, I will never get JavaScript, it's so frustrating. It never works. I'm just not the kind of person that's going to ever understand JavaScript. And like very many times I thought like this is just not for me because like now I look back at it and I are now I'm like comfortable in my skills. And I know that it's going to be okay, but when I was first getting started, there's a lot of doubt being like I don't know if I'm any decently good at this, but the thing that kept me at it was that once you chill out, once you come back to it in a day, I always came back hacking on stuff and it was always just the thing that just like wanted me to I always wanted to come back and build more and more stuff. So I did have like little one little hopes for rage quitting, but never anything that was sustained more than a day or so.
+
+103
+00:58:45,540 --> 00:59:30,090
+Scott Tolinski: Yeah, speaking of rage quitting. I don't know if you've know anything about American football but yesterday the Buffalo Bills are pretty pretty terrible. They've lost both of their games so far this year, and they both of them they just got annihilated. And in the middle of the game, one of their best players just quit and retired in the middle of the game yesterday. They were doing so badly that vontae Davis just just said alright, you know that's it. I retire in the middle of the game. Just like that's it for me. Okay, I don't need to do is his entire career he just retired. Yeah, he just no way retired in the middle of the game because the team is so bad. It's like the ultimate No way. Yeah, that's hilarious.
+
+104
+00:59:30,090 --> 00:59:35,190
+Wes Bos: No, I didn't I don't really follow football that much. But that is really funny.
+
+105
+00:59:35,370 --> 00:59:36,330
+Scott Tolinski: Yeah, it's great.
+
+106
+00:59:36,980 --> 01:00:02,520
+Wes Bos: Although that the the bills come to Toronto every now and then because like the Toronto doesn't have a football day we have the CFL in Canada, which is a bit of a joke. So people want an NFL team in Toronto. And there's there's always been talk of moving the bills to Toronto, and having a for the first Canadian NFL team and every now and then they come I think once a year they come play A game in Toronto. Oh, nice.
+
+107
+01:00:02,549 --> 01:00:11,760
+Scott Tolinski: Yeah, that's that's sort of like that our outreach the trying to make it so it's not just the the US and they've been doing games in Mexico in London and stuff like that cool.
+
+108
+01:00:11,789 --> 01:00:12,480
+Unknown: Have they really?
+
+109
+01:00:12,509 --> 01:00:26,280
+Scott Tolinski: Yeah, they did like one a year in London I think are a couple of year because the sometimes they would send the teams over they weren't very good. And so the lions who are my favorite football team, unfortunately, yeah, yeah, the lions get to play in London or stuff like that. Yeah.
+
+110
+01:00:26,909 --> 01:00:30,230
+Wes Bos: Interesting. That's cool. What about our sixth pick today
+
+111
+01:00:30,299 --> 01:02:29,310
+Scott Tolinski: sick pick. So my sick pick is for anyone who needs to maintain a yard or a lawn and you don't have like a service come and do it. I recently had this lawn mower that I've had since Well, my dad had since the early 80s it was a Honda lasted forever, and it died Finally, and you know what I was like, You know what, I'm gonna go go something a little greener this time and and not put out those chemicals into the world that that gas No thanks. So I went with this brand ego. I think it's a Chinese company, but they're produced in Michigan. So that's pretty cool. And I first got the weed whacker. And then I got the lawnmower. And then I got the leaf blower and I progressively got all of these things because each one of them was so darn good. They take a battery and you just plug the battery in so no gas, it doesn't smell like anything. I got the lawnmower, you just plug a battery in and it is awesome. Besides a ton of power. I read some review about this before I bought it and they were like you know what people like always talk about fresh cut grass. But like when you're mowing the lawn, you always just smell fumes. And, and this was actually so pleasant because one it's way quieter. So my headphones aren't cranking I'm not getting that like, I'm not having to turn my podcast way up to here, whatever I'm listening to and mowing the lawn. And you actually get to smell the grass as you cut it which is awesome. Which is a totally like a game changer. So the brand is ego. I'll link to any of the any of the appliances but I have the leaf blower the weed whacker and the lawn mower and I just they're awesome. I bought each one because each one before it was better than the last. So these things are pretty serious. And if you associate like battery powered lawn tools with no power, no, that is not true. The leaf blower like pulls my arm back. It's so powerful. They think there are serious business. So check it out it you can get them on Amazon or Home Depot. I'll link to them on Amazon in the comments. But it's ego agio Pretty cool stuff.
+
+112
+01:02:29,339 --> 01:03:04,560
+Wes Bos: Cool. I was just thinking about like when I was a kid, I had a lawn mowing business, my first business and I hated using the electric lawn mowers with a huge ass cord and run over it and I still have one on my house now because my backyard is tiny. And I hate having to make sure you don't run over the cord with the electric lawnmower. And I was just thinking like my daughters are never going to know the pain. That is like not having enough extension cord to hit a specific spot or the pain of running over an extension cord and having sparks fly at you. Which is or even like oh funny or even like just
+
+113
+01:03:04,560 --> 01:03:16,320
+Scott Tolinski: the pain of having to start up a gas powered one because we oh yes powered ones and you're just like pulling the cord and like it's not starting after the winter. Now you just push a button and it turns on it's it's pretty amazing.
+
+114
+01:03:16,589 --> 01:03:56,790
+Wes Bos: I really like this whole everything going electric because there's there's all that always I'm really looking forward to first electric pickup truck because there's all these good old boys that think you need like a diesel rolling coal thing to tow anything when the reality is is that if you look online and look at reviews for electric chainsaws, these things have crazy torque because of the way that electric motors work right. And I think it's it's gonna be so good when there's like a tractor haul at some back Country Fair. And the guy with the electric truck is just gonna blow everybody out of the out of the water everyone's Cummins is gonna be smoking and this guy's just gonna be winning.
+
+115
+01:03:56,819 --> 01:03:59,520
+Scott Tolinski: Yeah, no, seriously Yeah, this sick anyways,
+
+116
+01:03:59,549 --> 01:04:11,370
+Wes Bos: I did see a review for that that ego blower on one of my favorite YouTube channels AV and he always takes things apart and looks at the inside of it. So if you want to look at another review that is kind of interesting.
+
+117
+01:04:11,459 --> 01:04:14,400
+Scott Tolinski: Oh, he wrote Yes, it blows. He didn't like it. Oh man. I
+
+118
+01:04:14,400 --> 01:04:32,820
+Wes Bos: love that. This guy is like, industrial like he wants all top quality. Like he takes apart Makita and DeWalt stuff. And then like some of the stuff he says is really good. And then some of the stuff he says but like he took he took a part of like a Dyson vacuum cleaner. It was like this thing is garbage like Dyson's are awesome. Yeah,
+
+119
+01:04:32,849 --> 01:04:41,910
+Scott Tolinski: yeah, I was gonna say I had some credit I've owned gas powered. I've on electric powered leaf blowers. And this thing's way better than anything else I've ever owned before. So it's cool.
+
+120
+01:04:42,089 --> 01:06:12,230
+Wes Bos: My sick pick today is going to be a another YouTube channel and the two channels called B is for build. I don't really have an interest in cars. But for some reason, this guy is rebuilding cars on his YouTube channel and he he's uses an X software and engineer so and he looks to be about my age so it's I guess there's there's some some parallels there and it's really interesting because he's very much of the figure at out mentality he's not like a mechanic or anything like that but he quit his I think web development job and is now having full time YouTube channel building cars and right now he's swapping out of M five engine into a 240 z or something like that. And it's really interesting to see how do you take a modern car like a BMW M five and swap it into a into like this tiny little car and he's basically building like a rocket Go Kart. It's just a very interesting channel, not because I necessarily care about car stuff, but just because I like I like his his candor and, and the way that he explains things to the audience. And when he hits he hits problems and how he solves them. So it's just like a very entertaining and informational way on on how to problem solve. So it's called B is for build nice. So he took one of these like Toyota FJ cruisers, which are a little bit funky looking and he built like a, like the most gnarly thing ever. I can't imagine it's good on gas. But I thought it was pretty, pretty cool. So check it out bs for build.
+
+121
+01:06:12,270 --> 01:07:38,220
+Scott Tolinski: Cool. All right, shameless plugs, I'm going to be plugging level up Pro, if you subscribe for the entire year, you get access to the dining, there's like 21 Premium series on level up pro right now. I mean, there's a lot of content. And there's a new kind of new series every single month. So if you sign up for a year, it's essentially $15 a month, but you sign up for the year, it's like 185 bucks, you save 25% by doing that, and you get access to all of the 20 some series that are out there that are all premium series, and you get access to 12 additional full series now the series each have like anywhere from 20 to 30. videos, they're full in depth, we dive into all sorts of different topics from the latest one was react testing for beginners level to react is a really popular course level one electron, we even get into react basics, we talk a lot about things like Gatsby with pro Gatsby, there's a headless WordPress course a modern CSS course, which is all about CSS Grid, and Flexbox, layouts, React Native, you name it. If you are interested in learning any of these topics, check out level up tutorials, comm forward slash pro sign up for the year save 25% get access to the 20 plus premium series that are there plus 12 additional series over the course of the next year. I have some big, big, big, big, big plans for level up tutorials this year. So in these next 12 months, you should be seeing a lot of content and a lot of new stuff on the site.
+
+122
+01:07:38,460 --> 01:08:29,789
+Wes Bos: Cool, I'm going to plug my upcoming advanced react course is done. I'm so excited to not burn. This has been like my entire life for probably eight months, almost full time. It's been such a huge course of learning it and all have had a whole bunch of challenges in getting it up. But now it is done. I'm so excited about it. And it's going to be at Advanced react.com. I don't know if it will be launched by the time you hear this. But I have I put it up for early access. I have 400 people going through it right now. And all that's left is any feedback that comes from the early access users. I make a couple little changes to the videos, and then it goes live. So pretty stoked, be in the command are on your advanced react.com because it will be out pretty soon. Nice.
+
+123
+01:08:29,810 --> 01:08:32,369
+Unknown: I'm excited. I'm excited to see that launch happen.
+
+124
+01:08:32,550 --> 01:08:51,720
+Wes Bos: Yeah, I'm feeling really good about about this one. Because it's a it's a huge course like I think so it's 11 hours of just regular and then the testing alone is five and a half hours, which is why you don't see a lot of people add testing to their courses, because it's it's almost as big as the entire rest of the course. Yeah,
+
+125
+01:08:51,959 --> 01:08:54,749
+Scott Tolinski: I have a whole 20 Yeah, do testing course on testing react. So
+
+126
+01:08:54,749 --> 01:09:14,010
+Wes Bos: yeah, I'm really excited about how I've taken such a huge topic and being able to distill it into something that is reasonably like it's still going to be a feat for you to to undertake this course is going to take you a lot of effort to actually to go through it. But if you want to learn this stuff and you want to be at the top of the industry, then it'll be well worth your time.
+
+127
+01:09:14,220 --> 01:09:38,430
+Scott Tolinski: def cool, so I didn't have anything else. If you like to submit your questions for the next potluck episode, head over to syntax FM and click that button. The ask a potluck question and let us know what you want to hear about in the next potluck. We are excited to have your questions. The last batch is really good. There's so many good questions. So keep them coming. We'd love to get those and we do a one of these every
+
+128
+01:09:38,459 --> 01:09:53,930
+Wes Bos: three episodes every four episodes. We do yeah, every four episodes Yes, once a month dope, so answer them. We really appreciate you taking the time to submit your questions because it makes these really fun shows. That's it for today. Thanks so much for tuning in. And we'll see you next week booth pace.
+
+129
+01:09:55,739 --> 01:10:05,479
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show
+

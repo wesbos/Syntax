@@ -1,0 +1,444 @@
+1
+00:00:01,319 --> 00:00:04,590
+Unknown: You're listening to syntax the podcast with the tastiest web
+
+2
+00:00:04,829 --> 00:00:52,619
+Scott Tolinski: development treats out there, strap yourself in and get ready to live ski and West boss. Welcome to syntax. In this episode, we're gonna be talking about fitness. Now those of you who are longtime listeners will know that one of our first couple of episodes was actually about fitness. And it was one of our favorite episodes. It was a really popular episode that we did pretty early. And now that it's been over a year, we figured that we would come back with an update on all of our fitness stuff and talk about how it's going in the year 2018 in October, how everything's evolved, how we've done essentially keeping up with their fitness goals and maybe some of the things that you can do to become more fit and healthy yourself. So my name is Scott to Lynskey. I'm a full stack developer from Denver, Colorado and with me as always is West boss.
+
+3
+00:00:52,649 --> 00:00:54,420
+Unknown: What's up everybody? What's up, Wes,
+
+4
+00:00:54,629 --> 00:00:55,140
+how you doing?
+
+5
+00:00:55,349 --> 00:01:12,980
+Wes Bos: I'm doing pretty good. Just got through Canadian Thanksgiving, which is funny. I tweeted out Happy Thanksgiving, everyone. And everyone's like, Wait, what? What's it's not Thanksgiving yet. So Canada has Thanksgiving in October, which apparently has nothing to do with American Thanksgiving other than being thankful.
+
+6
+00:01:13,049 --> 00:01:21,720
+Scott Tolinski: Yeah, I'm wondering a lot about that. Because Courtney came up to me and was like, so what's the deal with Canadian Thanksgiving? Like, I would know the answer is that I don't no idea.
+
+7
+00:01:22,409 --> 00:01:54,090
+Wes Bos: Yeah, it's just being thankful for the harvest. Which is funny because my brother in law's actually a farmer. And he couldn't come because he was too busy actually harvesting. So we. So we had Thanksgiving without the only farmer in the family. That's hilarious. Yeah, but uh, yeah, I don't know what the deal is. It's a little bit early. I saw one person tried to have like a cyber monday sale for Thanksgiving. But we still do now Canada still does Black Friday, at the same time as the American Thanksgiving.
+
+8
+00:01:54,090 --> 00:01:58,140
+Unknown: Yeah, just because the corporations are too lazy to try to set that up twice.
+
+9
+00:01:58,140 --> 00:02:14,250
+Wes Bos: Yeah, yeah, we just piggyback on all the hype that comes from from down there. But it is a fun time to get to hang out my family. My sister has a bunch of kids. She came down and just enjoyed some good meals. Fun, man. That's great. Yeah, yeah. How's it going with you?
+
+10
+00:02:14,250 --> 00:03:01,229
+Scott Tolinski: Oh, I just, I'm sick. Apple has had my computer for a whole week now to fix the keyboard. Seems a little outrageous to me. So I'm a little I'm, I can't say I'm necessarily struggling. But I have to get this next series done before the end of the month. And I haven't started recording even though it's all planned out. I just need my computer back. Because this one can can't even have like it can't even handle development, not let alone development and recording on it. It's it's an old laptop, and it is it's struggling. So maybe it's struggling and I'm struggling because of it. And the universe decided to get me sick on top of that. So you know, I've had that I've had better weeks, but uh, I'm positive man, I'm feeling the strength, I'm ready to, to just keep it going and turn things around here. So I'm excited.
+
+11
+00:03:02,789 --> 00:03:33,240
+Wes Bos: Awesome. Today, we have two awesome sponsors. First one is dev lifts, which is going to get you fit as a developer and the second one is Freshbooks. Which is going to get your business finances in, in shape. Is that a good? A good one they do they do cloud accounting. We'll talk a little bit more about both of those awesome companies partway through the episode. Let's kick it off and just talk about like, why is it important to pay attention to fitness as a developer? Maybe give it a shot? And then I'll follow up with my thoughts.
+
+12
+00:03:33,300 --> 00:04:43,230
+Scott Tolinski: Yeah, so I mean, really, we spend so many times like in offices and chairs in the people's sometimes do standing desks, maybe you're sitting and standing. But the web development is a career is by default, not the most healthy career, right? Some jobs, you're you're picking things up, you're moving around, you're active. In other jobs, you are potentially sitting in a cubicle all day, and maybe eating some snacks, having a couple pops here, or sodas or whatever you call them. And it's not always the the best career for staying in shape. So we think that the healthiest way to be essentially a developer or even like a productive person is to take care of yourself. because trust me, when you're not taking care of yourself and you're not feeling good, everything is going to suffer your your performance at work is going to suffer, your mental health is going to suffer and you're going to feel less positive overall about the work you're doing. So I really think it's important to be active to be to be healthy in that regard. Because you want to be the best you can at what you do. And I think that's just a large part of it that sometimes people overlook.
+
+13
+00:04:43,440 --> 00:05:51,930
+Wes Bos: Yeah, I agree. I think that all jobs have have their aspects of stress. But I definitely feel that being a developer there is a lot of stress going on. There's a lot of stress with learning what you have to wait you have to keep up what you have to build working with coworkers supporting iE 10 There's loads of these things coupled with, like, I know that a lot of people that listen to this podcast are actually in really good shape and are very healthy. But there is that there is a stereotype of developers who eat Cheetos and slam cokes. Because it is partly true. A lot of us computer nerds are not the most healthy people in the world. And I think that there is a huge benefit to being healthy being in shape, because of the things that being a shape will do for you, it's sort of a huge productivity hack, where you're gonna, your focus will improve, you're going to have a lot more energy, and you're going to be in an all around better mood, when you are in good shape. So we've sort of outline this, we're gonna give some updates as to where we're at both in terms of working out as well as nutrition. We'll talk about some supplements, and as well as our plans for the future. So anything else to add to that before we get rolling? Scott?
+
+14
+00:05:52,050 --> 00:06:20,610
+Scott Tolinski: No, no, I don't think so. I just want to echo everything, man, we basically said a lot of the same stuff, just that you will be a better version of yourself mentally, if you are putting your body through work physically, as well as mentally so yeah. So let's get into it. I know that you're working out update has taken a bit of a different path than maybe what you would have expected. Can you give us an update, and maybe talk a little bit about what you were doing before and where what you're doing now?
+
+15
+00:06:20,640 --> 00:06:56,400
+Wes Bos: Yeah. So last time we recorded this, I was working out about three or four times a week, I was feeling really good. I had lost a bunch of weight, I had gotten a lot stronger. And I was pretty happy with where I was at. And I'm actually still pretty happy with with where I'm at right now. But it hasn't taken the the best approach forward or hasn't taken the it hasn't gone as well as I had hoped to go I've had a couple little setbacks. So I'll talk about what those are and sort of where I'm at right now. So the first one is I had a little bit of pain in my shoulder, which I thought I tore my rotator cuff and I was googling like from
+
+16
+00:06:56,520 --> 00:07:01,650
+Scott Tolinski: rotator cuff did it happen from benching because that's like a really common injury, that shoulder impingement.
+
+17
+00:07:01,710 --> 00:07:18,090
+Wes Bos: Yeah, I'm not sure what it happened from. But what had happened is I had pain in my shoulder when I lifted my my arm above my head, which is benching. And then I also had like a click in my shoulder when I did it did exactly what it was
+
+18
+00:07:18,090 --> 00:07:29,310
+Scott Tolinski: I had the same injury. Yeah, it's very common and often kind can come from maybe like overloading the bench, or just like maybe not being warmed up. Or that's not to say that that is how it happened. But it's very common. Yeah,
+
+19
+00:07:29,310 --> 00:12:43,830
+Wes Bos: yeah, yeah. So I immediately stopped because I've always heard these, I've watched enough documentaries in my day and talk to enough people who have like blown out their shoulder and then they can't do it for the rest of their life. And never mind lifting weights just like helping your buddies move or during your kids in the pool or things like that. I was like, I don't want this to get into something bigger. So I stopped immediately stopped lifting immediately and headed off to physio to figure it out. And he first of all, he's like this, you did not tear your rotator cuff. This is like the most common thing that happens all the time. So the physiotherapists gave me a bunch of stretches, I went, I think I went weekly for about two months or so. And he gave me a bunch of exercises, he did some acupuncture on it, which is really cool. He did an ultrasound on it and I think the both stopping for a little while as well as the the physiotherapy totally healed it and I feel really great right now and I am back to the gym since that so I was really happy about that, that was probably about three months where I just stopped going to the gym entirely because it was really hurting and it was it sucked because I wanted to lift my kids and I didn't want to have to do that. So that was set back number one. And then the other one is just like life has just been kicking me in the butt lately in terms of energy just because my kids have not been sleeping at all and I totally was not prepared in life for how tiring being a parent would be and I know like so many people listening to this have gone through this and I know there's probably people with teenagers right now just shaking their head being like yeah, you're learning but brother but my kids are I've got two kids one's three years old and one just turned turned two years old and the three year old actually sleeps pretty well but the two year old in the last six months or so has been going through all the you get the sleep regressions when you have kids where everything's going fine and then all sudden they wake up in the middle of the night and they have you up for a couple hours and just like even if they're only out for two hours just having that like split in between your sleep really makes the mornings really really tough. And then sometimes my wife is off and then I start work late because I let her sleep in which is the best benefit ever of working for yourself. But just that whole not sleeping as well as they're going to bed really late. It's hard to get them down to sleep. It's just been we used to go to the gym in the evenings and now we don't have time for that. It looks like things are getting better and I'm really looking forward to it. The plan with my wife is to be able to like right now we both take a kid and put it put each one to bed but the age Yeah, is that we take turns and putting them to bed right now, it's just not possible with how much attention that they need. But the end game is that we'll split our evenings and then we'll get back those those evenings. The way that it worked is I used to go twice a week at night, and once a week during the day, I would take time out of my work schedule to go. But given that the evenings have been gone, and then often starting late, I found it really hard to break away in terms of trying to get my work done, but also pay attention to that. So those have been my two big setbacks, which is been frustrating, but I've learned to sort of be okay with it just because like life is full of setbacks, and I initially was not okay with it. Because I haven't had a whole lot of like, huge setbacks. In my life, I've always had very good momentum in most things that I pick up, whether it's my career, or whether it's things like that I've always had really good momentum and be able to keep it up once I pick something up. But this was definitely a bit of a setback to me, which was frustrating at first, but I know that like, obviously, my family comes first. And it that's not to say that I had unraveled all of the work that I had done, because I was very cognizant of being like, Okay, this is I'm not going to be able to get to the gym as often as I want. And I'm going to be much tired, which often leads to poor eating habits, but I don't want to lose all of the hard work I have done. So I'm still really proud that I still feel very strong. Like before I started working out, I would often have like a sore back when I woke up just carrying the kids around and stuff like that. But ever since I started working out I have no I haven't had a sore back or anything like that, which is great because I don't want to have to have that from from carrying my kids up and down the stairs or, or wrestling with them on the floor or something like that. And then I also still have a good stamina. So in place of working out at the gym, I've I've replaced that with just a bunch of cardio in the summer, I really like to do cardio because it's beautiful outside, I live right near the water, I can jog down the water, we often go to Kota cottages, and I do a lot of swimming there. So I've sort of replaced that with trying to do as much cardio as I want. Last thing where I'm at right now I'm back to lifting weights. I am hoping Fingers crossed, my kids are starting to sleep better. Nice. Yeah, it's been last night wasn't a good night. But it's down to about twice a week now that we have to get up in the middle of the night. So I think we've talked to a whole bunch of other parents about similar instances they have and they said don't worry, it'll it'll end in a couple months. So I'm back to it. Lifting weights, I'm doing a lot of hit I've been really enjoying the just how I feel after doing it is high intensity interval training, where you just give or whether you're on the cardio or whether you're on a bike and you just go go go as hard as you possibly can take a 62nd break and then go go go as hard as you can. I really like that just of how it makes me feel I've really good energy after I do that.
+
+20
+00:12:43,890 --> 00:12:46,440
+Scott Tolinski: It's really an interview is really effective.
+
+21
+00:12:46,470 --> 00:12:47,850
+Wes Bos: Yeah, yeah. Big fan of that.
+
+22
+00:12:47,880 --> 00:13:33,870
+Scott Tolinski: Yeah, I'm a big fan. I mean, we used to do the insanity videos from Beachbody where they would, it was like always, that's like one of the things that really brought in like hit was one of the first times that was like really super popular. So we used to do those and just get our butt kicked. But even Courtney still does like a couple of hit videos a week on fitness blender, I think and and that stuff. Every time I joined in with her, it's always kicks my butt. The coolest thing about those those hit stuff is you can do the workout. And you can do it on sort of lightly and they can kick your butt. And then if you're feeling like particularly like strong that day, you can do the exact same workout, but just with more intensity. And so it's like they scale really well, if we're like talking like, if this was a database, this database would scale so well. It's as hard as you want to do you know?
+
+23
+00:13:34,049 --> 00:14:02,220
+Wes Bos: Yeah, that's awesome. Yeah, I'm pretty interested. And there's this thing that opened up near me called function 45, where it's like, it's just like this 45 minute crazy hit workout kind of interested in trying it out. It seems to be pretty expensive, though, like 200 bucks a month where I'm pretty sure I could just do that by myself or talk to the guys at deadlifts and and they could put together a sort of something like that. Or you can do that in your house or do that just at the gym that you only pay a 20 3040 bucks a month for?
+
+24
+00:14:02,399 --> 00:14:07,169
+Scott Tolinski: Yeah, cool. Well, I mean, that sounds positive and positive, despite the setbacks.
+
+25
+00:14:07,200 --> 00:14:34,529
+Wes Bos: Yeah, it's true. Like that kind of stuff happens. But I think what's important is just kind of keeping at it and not letting it unravel too hard. Because it's easy to feel sorry for yourself. And it's easy to feel like just pooped and exhausted at the end of the day. And then you just want to eat garbage and, and not go to the gym. But always remember that like yeah, if you just keep at it, it just kind of keep your head above water for now, so that when you do get back into it, you're not going to feel like you had wasted all that time before.
+
+26
+00:14:34,549 --> 00:15:55,500
+Scott Tolinski: Yeah, it makes such a big impact. So yeah, for me, my update is, is I'm probably in maybe not right now. No, but for the past like month or so I probably in some of the best shape I've ever been in in terms of working out because I've maintained three times a day at the gym schedule for a couple months, three or four months I had it going without missing a date despite like a ton of really awful setbacks. So So if you've been listening to the show For a little while you you would have heard in some of my crazy stories about weird infection that I got into that like, like, Yeah, well after that, what I haven't really necessarily talked about on the show is that I got strep throat four times in two months. But who knows why it just wouldn't go away. And I was just basically on antibiotics for maybe like two and a half months, I was pretty much on antibiotics. And that sort of came to a head when they were sort of like, well, we're gonna have to take your tonsils out. And I was great. Okay, that that sounds terrible. But what they did, instead of taking my tonsils out, they're like, well, we can do one last hit where we basically give you prednisone, and we give you three weeks straight of antibiotics and just see if we can just like hammer it into the ground, right? Just knock this thing out. And ever since then, I have not gotten strep throat. Now that's been maybe like two months since that happened. And I I still wake up every morning, like, do I have strep throat? Like
+
+27
+00:15:55,529 --> 00:15:56,490
+Unknown: I don't, man, it's
+
+28
+00:15:56,490 --> 00:17:14,810
+Scott Tolinski: so I'm so paranoid about it. But on top of all of that, I have found time to go to the gym somehow. And because of that my lifts have improved all of my stuffs improved sort of constantly, I'm changing my workouts, I do three lifting three times a week. So I'll do like chest and triceps on Monday. And then I'll do shoulders and biceps on Wednesday. And then I'll do back and legs on Friday, I sort of just made up this routine. It's not like a really solid routine or something. But it's all compound lifts, I'm doing overhead presses and squats and rows and bench press, all the big stuff. And I'm not keeping it crazy heavy on weights, I'm not like hitting my maximum weights, I'm more or less focused on form and making sure I hit the weight, okay. And if it felt bad this week, then I'll do the same way next week or until it starts to feel good on my one lift that's been going really well as my overhead press. I'm up to like 150 pounds on the overhead press, which is pretty good. For me, it's pretty much the highest. I've been on that. And I'll do three sets of five for 150. So overhead press is definitely like where it's at for me. But I spend a lot of time in handstands and stuff. So that's probably to be expected. I've also been switching things up a little bit and some of the body weight regards to my workout, I have what's called Swedish style bars, which look like a giant sort of ladder. And I'll do these hanging leg raises. If you want to see me do these I have video on Instagram where Oh, I
+
+29
+00:17:14,810 --> 00:17:16,170
+Wes Bos: saw that that's insane.
+
+30
+00:17:16,199 --> 00:20:18,390
+Scott Tolinski: Yeah, well, it's taken a while because even just doing the normal leg lifts, it sucks at the beginning. And like eventually gets easy, and then easy. So you just tried to make it harder. And that's the cool thing about the Starburst is you can consistently make these leg lifts harder. So now the way I do it is only my shoulders are resting against the back bars. And I'll do these leg lifts. And so you end up getting even just, it's so core intensive. But I'll do toes to the bar now instead of just lifting them or I'll do these like circles. Or I'll do this sort of like sort of suspending myself sort of stuff. And it's just it's gives it another level because it's now just not an exercise where I'm trying to hammer my core. It's like, Oh, I wonder if I can do this. It's like a challenge to me, can I get this can I do left five circles without you know, screaming or something, you know, so the light glows there have been really good. I've been doing a lot of pull ups, a lot of dips, I have some gymnastic rings. So I do dips on the gymnastic rings ends up being pretty, pretty tough, but overall just hitting the gym a lot. And my cardio has taken a little bit of hit I have been able to go breaking on top of all of my strep throat I let's see, in December, I hit my tailbone really hard. And then I hit it again snowboarding. And then it was sort of Okay, my tailbone was just sort of aching here and there. And then I flew to Iceland. And on that plane trip by the end of the flight was like eight, nine hours or whatever. By the end of the flight. I was just screaming in pain because of my tailbone. And so essentially, I have a stress fracture in my tailbone, which makes the sitting on anything awful. So I haven't been able to do a lot of things like deadlifts or whatever, where it's going to be irritating that tailbone area. And just like you have been seeing a physical therapist for it. So I've been seeing a physical therapist just because I've now had this tailbone injury for almost a year. And they just like weren't sure what to do it and I actually just went got a CAT scan and an MRI in the past two weeks, and everything sort of looks good. So they're sort of they were concerned that it wasn't healing because maybe something was pushing on it that shouldn't be pushing out of there something and now it's just Well, it's just not healing. So I guess you just have to deal with it. So just I'm dying over here with my my tailbone injury, which is just so stupid, and snowboarding seasons coming up and I'm just I already have my Season Pass. And the last thing I want to be doing is like having a season pass and not being able to go out to the mountains. So I just got to get this thing healed between the sickness and the injuries. I am able to continue to go to the gym and stuff like that. But it's not nearly as awesome as it's as it's been in the past that said, Our son Landon, he sleeps really well. So I don't want to brag about it and it but it's like I understand because sleep is maybe the one thing more than an injury or sickness that can just put you on your butt for the rest of the day mentally, physically or whatever. And me personally Since I've had a concussion, if I don't get my sleep, I'm just totally worthless, I end up having all sorts of brain fogginess and such a bad thing. So I really need sleep. And I'm just endlessly thankful. Hopefully he doesn't have any sort of regression anytime soon here. But so far, he's been good man. He's been he's been pretty solid.
+
+31
+00:20:18,479 --> 00:20:51,300
+Wes Bos: That's good. That's it's funny. Like if me and my wife get like three nights of not being woken up where she's jogging in the morning, and we're feeling great. And we're like doing projects around the house. And like, you know how, like, when you're down and out, you feel like everything is just like, piling on you. And then and then as soon as you get a couple good days in, it's funny to start thinking about side projects again, and going for a jog and cooking these really nice meals. It's Yeah, it's crazy how how sleep can affect just like, absolutely everything in your life. Yeah, absolutely. You
+
+32
+00:20:51,300 --> 00:20:54,540
+Scott Tolinski: might even start thinking about getting a deathless subscription.
+
+33
+00:20:54,989 --> 00:20:58,100
+Wes Bos: Or so there you go. Nice intro.
+
+34
+00:20:58,140 --> 00:21:06,300
+Scott Tolinski: Yeah. Yeah, so sponsoring today's episode is the sponsor Actually, we had last time we did a fitness episode, one of our first sponsors, deadlift,
+
+35
+00:21:06,350 --> 00:24:45,690
+Wes Bos: deadlift is responsible for getting me into shape and getting me excited about being working out as well as nutrition in the first place. So what develops is it's JC and dad, both of them are super into fitness. And JC is also a developer as well. And they've put together a whole bunch of these plans that are tailored towards different lifestyles of developers that want to get fit. I went through it myself, I went through the devilish premium, I'll talk about the plans in just a second. But it was awesome. Because what they did for me is that they sort of talked to me the ask you what your goals are, if you want to lose fat, if you want to get stronger, if you want to do it at home, or if you want to do it at a gym, sort of like what does your life look like? And what are your goals, and then they just give you like the recipe to make that happen, which is exactly what I need. And I think exactly what a lot of developers need, where they say, go three times a week, here's on Monday, you do this on Wednesday, you do this on Thursday, you do this, here's how many times you lift, these are the different exercises you need to do, here's what we recommend for your nutrition. And it was exactly what I needed, because like I don't necessarily need like a personal trainer at the gym, because I can figure this stuff out. But I just need someone to spell out exactly what I should be doing. And then you just sort of work your plan, you just sort of follow exactly whatever it is that you need to do. And that's exactly what what deadlift is going to do. So deadlifts has two options. Now they've got the fit dot start plan, which is 19 bucks a month is tailored towards a goal, whether you want to get lean, or you want to lose some body weight, or sorry, not if you want to lose if you want to lose some, if you want to train with body weight, or if you want to get strong you're doing doing compound lifts, all of those plans are 100%, beginner friendly, they'll give you a nutrition guide, as well as a workout guide for this. One cool thing that they do is that if you are a contributor to their open source projects, they're also doing Oktoberfest right now you get it for free. So if you contribute anything on the dev list, GitHub, you get access to this for free. It's also free for students, which is super cool of them, because they see like the the benefit, I first got into working out when I was in school. And I'm really thankful that I did that if you use the code syntax, you're going to get 50% off your subscription forever. So that's the fit start, then they have the premium. This is the one that I went through, it's 199 a month. But if you use the coupon code, tasty, you're going to get 50% off your subscription. It's only 10 spots for that. So if you're interested in grabbing that one, go ahead and run it. So Delos premium is for people who want a maximum personalization, maximum accountability. You can you can book calls with JC and dad and have check ins you get a private slack. So I often had questions about specific exercises that I've been doing, or like maybe one of the machines wasn't available at my gym, and I took a picture of the one that I thought I could swap out Oh, that's a good substitute. That's not a good substitute, because you're essentially working the same muscle twice now. So I want you to do this. And just like little things like that, where I would have never have known that and I would have not been working one of the muscles and twice as much working the other muscles. So pretty cool. If you are looking to to get in shape, I recommend you check out deadlifts@deadlift.io if you're not sure which plan, maybe just just talk to them and say, Hey, this is what I'm looking to do. And they'll recommend something as exactly for you. I went through it myself, I lost a lot some weight, I got much stronger. I think most importantly, just like the focus overall focus in the overall energy that you get from even just like a month or two of working out and being on solid nutrition, I think is extremely helpful to your career as a web developer. So check it out, Dev list.io.
+
+36
+00:24:45,750 --> 00:24:54,600
+Scott Tolinski: Yeah. So speaking of tasty, let's get into some of our nutrition. Here. A little bit transition back here we transition back
+
+37
+00:24:54,780 --> 00:24:56,940
+Wes Bos: to starting to transition in and out.
+
+38
+00:24:56,940 --> 00:25:03,690
+Scott Tolinski: I don't know that's the first time and I'm considering it. Step up the game gotta gotta keep evolving. You never stop evolving.
+
+39
+00:25:03,930 --> 00:25:30,000
+Wes Bos: Awesome. So here's my nutrition update. I really like the nutrition part of fitness because I love cooking. And I also think that it's a, it's a very easy thing to do with nutrition because it's not about doing stuff, it's just about not doing bad stuff is not about it's about not eating a garbage food. And I think that it's pretty underrated in in having energy and losing weight, it's the nutrition, I think, is what we say at least half of it.
+
+40
+00:25:30,150 --> 00:25:46,650
+Scott Tolinski: Yeah, it's just a big portion of it, because it is going to change the game. And if you if you get one of those two aspects, the the movement or the nutrition part, you're going to see improvements. And if you could double of them, you get you get double improvements that much faster. So it is it's a big, it's a big part of it.
+
+41
+00:25:46,920 --> 00:28:15,240
+Wes Bos: So my nutrition update was so I was doing keto, which keto is a sort of a high fat, low carb thing. It's becoming a really, really popular I think, because of the the Joe Rogan podcast, he brings on a lot of people who who are big for that the idea behind keto was that you eat things like fatty foods like bacon, and sausage and steaks and chicken thighs, and most of your macronutrients are coming from that and you eat very, very low carb, so you don't eat a lot of bread, a lot of pasta, and even things like like peppers will have a lot of sugars, which are then carbs in them. So I really, really enjoyed that just because of the way that I like to eat, I really liked how it made me feel I have switched since to just doing low carb, it's actually Devlin initially said just go on low carb or what's called modified keto in with that I think it's like 80 carbs a day, which is tons like and I went full on for four or five months, something like that. And I felt great, it really really worked well for me. And I've switched transition just into low carb just because of the way that it makes me feel. Some of the benefits that you get from keto or low carb is that you get a The idea is that your body will run off of its its fat storage rather than having to work off of carbs. And some of the benefits is that you get much more consistent energy burn, I definitely felt that I had like I had no energy spikes is just kind of a smooth burn throughout the entire day, as well as I found that I had really good focus while I was at work. So because of those things, those things are pretty important to me, I've sort of stayed on that. I definitely did enjoy the summer, though, I think that's kind of one of the things that I really enjoy is that when summer comes around in Canada, you crack the beers, you have burgers and all that stuff. So definitely didn't let that affect any of like barbecues with friends. But when it's just time to eat at your house, I definitely make sure that it is sticking low carb just because when I do and I am so happy that I actually did this keto, like full time for four or five months because it really gave me enough time to realize when you do switch back to eating a lot of sugar eating a lot of carbs, or you have a bunch of pizza or something like that. It definitely does make you feel like garbage. And it's crazy how how different you feel. When you you go from one thing where it's not eating very many carbs at all to eating a whole bunch and you just feel sluggish and you're grumpy and you just don't have an overall good outlook on things. Yeah,
+
+42
+00:28:15,480 --> 00:28:53,910
+Scott Tolinski: it can really have an overall effect of sense sometimes, like if you're having a bad day, and you're gonna go get like a crappy meals make you yourself feel a little bit better. Whatever it Let's go. Yes, never like it temporarily helps while you're eating, but it almost makes things worse in the long run. And I'm so guilty of that, like after, like, Major, you know, things in life, I would be like, Alright, I need to go get a Big Mac or something because I'm feeling really down about Dell life right now. So I'm gonna go get a Big Mac. Like, yeah, it would almost always make me feel worse, almost always. So like, I don't know, just being able to be present with that state of mind. Just like how you feel about this stuff is is always important. Really.
+
+43
+00:28:53,910 --> 00:29:14,340
+Wes Bos: Yeah, I think that that's an important point is like you shouldn't reach for that stuff. When you're reaching for it as a comfort. It's totally fine to like you're out with your friends. Oh, yeah. After the bar. Go get some McDonald's like you enjoy life. It's not good for you, by far, but you also want to enjoy life while you're at it. So that's important one.
+
+44
+00:29:14,520 --> 00:29:17,820
+Scott Tolinski: Yeah, yeah. Nobody's gonna follow you for a cheat day here. And they're
+
+45
+00:29:17,880 --> 00:32:21,270
+Wes Bos: totally thought it just goes through some of my like, what sort of stuff I've been eating breakfast every single day. I have eggs for breakfast. Nice. And then along with those eggs, I'll either have smoked salmon. I'm been really loving lately, and my kids have been absolutely loving eating smoked salmon for breakfast, which is like amazing. They stink a bit, but it's super good for you. So I've been super happy when they have that every now and then we'll do sausage bacon for breakfast as well. But usually it's eggs, I don't know three days a week and then eggs plus salmon sausage bacon, two or three other other days a week. That's pretty awesome. Yeah, that's been it's been a nice breakfast. Luckily, I absolutely love eating eggs so that that's been good for lunch. Usually we have like an awesome salad bar around the corner from us at one of the grocery stores. So usually at lunch, I'll need a break anyway. So we'll just walk the 10 minutes it takes to go get their makeup, a nice little salad. Sometimes I'll reach for the the shimmy that they have, they're nice or if it's a special day I'll reach for the full sushi I love eating sushi but the white rice isn't the best stuff in the world for you. So I'll try to just go for the the straight to see me What else do we have here. Other than that, it's pretty much just eating lots of meat, lots of wheat mostly chicken at our house with pork and pork and steak every maybe once or twice a week. And then along with that we do lots and lots of vegetables just got through an awesome summer of brussel sprouts Asparagus those things are have been in season tasting super good. A lot of chicken salads at our house as well. Really really enjoying those I'm a huge into barbecue. I know a lot of people already know that but I love barbecuing stuff smoking stuff in my backyard. So it's it's really fun to be able to do that. I've really enjoyed the whole cooking part of it because I'm huge into it. And I think that also going low carb has has introduced me to this whole other flavor profile that is sort of like how can you get things that taste amazing without them being terrible for you. So that's really opened up this whole like sour, crunchy fermented area for me. I've always been a huge fan of like kimchi, which is a kimchi is like a Korean fermented cabbage. It's spicy and crunchy and has a bit of a tang to it kombucha pickles been super into all of us lately. And then just like finding finding like alternatives for like barbecue sauce is a big one for me where EPO barbecue sauce on a lot of stuff but it Berkey sauce is full of sugar is not good for you. But you can make some pretty tasty stuff I've been big fan of. If you buy the no sugar added ketchup. I usually buy that and mix it with equal parts apple cider vinegar and mustard. And it makes the best like mustard barbecue sauce that you're seeing really really good for you. We call it Lily pop because it's named after my kids. My kids love it as well because they are loving the whole like apple cider vinegar shows asked my daughter always asked me Can I have some applesauce vinegar and she just has like a little shot of it's
+
+46
+00:32:23,040 --> 00:32:50,160
+Scott Tolinski: I like that stuff for some reason. I know I really like it does mean a lot of good personally, but for some reason. Yeah, the taste of it. I can't do it. And like if I need like sometimes I'll need like a neutralizer for my stomach or something and I'll go straight for the ACV and I'm just like Yeah, no, Oh, come on. And like corny doesn't think it's bad at all. But no, I'm just I had to really just I have to psych myself up for it for some reason. I don't know what it is that I'm talking about the the taste.
+
+47
+00:32:50,190 --> 00:33:11,160
+Wes Bos: Yeah, it's funny that I'm really thankful that I've been able to like years, maybe five or six years ago I went black coffee. I just drink my coffee black. Yeah, that's what I do. And I was really happy that I could acquire a taste for that. And And ever since going there every time I find something that is maybe a little bit like weird tasting like, I eat a lot of sardines as well who
+
+48
+00:33:11,280 --> 00:33:12,300
+Scott Tolinski: actually would like Dan.
+
+49
+00:33:12,390 --> 00:33:21,030
+Wes Bos: Yeah, sardines are awesome. You can find them in all kinds of different flavors. You've got to make sure that they're some of them are packed in like sunflower oil, or like canola oil I use
+
+50
+00:33:22,290 --> 00:33:24,860
+Scott Tolinski: in cooking, so I get that sardine flavor and a lot of stuff.
+
+51
+00:33:25,020 --> 00:33:29,940
+Wes Bos: Oh yeah, man fish sauce on brussel sprouts. Yeah, with a little sesame oil.
+
+52
+00:33:31,230 --> 00:33:32,010
+Scott Tolinski: Please. Yeah.
+
+53
+00:33:33,480 --> 00:34:02,430
+Wes Bos: What was I gonna say? Yeah, I think if you're listening to this, and you're like, oh, man, I would love to like eat a bit better. But I hate the taste of anything that is not pizza. Oh, definitely. Like slowly we're it might take like three or four years but slowly work yourself up into acquiring these tastes for things that are not necessarily full of full of calories are full of carbs. And I'm really happy that I've been in this whole fermented pickled sour, crunchy area.
+
+54
+00:34:02,460 --> 00:34:05,100
+Scott Tolinski: Yeah, there is so much there. Is that it for your year?
+
+55
+00:34:05,130 --> 00:34:34,440
+Wes Bos: Yeah, I think so. I've got a couple more points here. Avocados. I eat a lot of avocados. I really like to put it on anything. A lot of sour cream. Put that on anything, as long as you like are fine with like not having the same like if someone's having tacos. Just make a taco bowl. Or if you're having a burger at a restaurant, ask for it wrapped in like a lettuce wrap or put tons of veggies on top of it. It's just it's a little bit weird at first to figure out how do you order something that's a little bit more low carb but well worth it in my experience.
+
+56
+00:34:34,530 --> 00:36:37,380
+Scott Tolinski: Yeah, and you get acclimated to it for anyone who doesn't love it like you might not love it for a week or so. But like just with anything once you learn to love the the nuances or you learn to love the flavor, you're going to like realize that everything else is just overly either overly sweet or overly this or that. I mean, Courtney and I have been really dialing back on sugar a ton and we got some Halloween candy. We just like put it in a bowl for when the kids come and we're like oh girl Have a little bit of Halloween candy here. And we're both like this is too sweet like this, I can't even handle this this is this is. So it's funny how your palate just changes when you get used to stuff. So for my, my nutrition I was doing Last time we talked, I was doing intermittent fasting, I was exploring that a little bit. And I took a break from intermittent fasting for like six months or so just two, maybe even longer than that. But really just because maybe travel was hectic, or it's difficult to keep up with it. And in the past couple of months here, I just read out into intermittent fasting. And the rules are for me is that I'm not going to eat after dinner, and I'm not going to eat before 10 o'clock. And this intermittent fasting has shown just so many incredible benefits from life extension to you know, better train of thought you suppress your, your need and want for for your appetite. You know, like some people get like, they get like blood sugar spikes or spikes when they're not eating and it makes them really hungry, right like that's like a biological hungriness. Well, like training, intermittent fasting can remove all of that. And last time we did this episode, I mentioned that Courtney was saying, keep me away from intermittent fasting. I'm not doing that. Don't make me do that. I don't want to do it. And I was like, Okay, I'll do it. That's cool. And since then, she tried it for a couple of months. And you know what she said, it's not hard, and that it wasn't a big deal, and that she got over it in no time after thinking that she was going to crash and burn. So intermittent fasting for her. I was really impressed that she was just like, Yeah, well, this is way easier than I was expecting it to be. There's only like, I think there's like a week or two of where you're just like, well, I really like to have something to eat right now. Here. Yeah. Yeah. But yeah, there's
+
+57
+00:36:37,380 --> 00:36:53,130
+Wes Bos: that couple weeks that you need to get through. That was with keto as well. They call it the keto flu, where you're just like, I'm so grumpy and dizzy, and I don't feel good. But that's just your body trying to like put you back into that state that you were in. But if you can get past that sounds like the benefits are amazing. Yeah.
+
+58
+00:36:53,130 --> 00:37:37,320
+Scott Tolinski: And it was like it was even like some days, like a Saturday, I'd been up since like, 637 o'clock. I'd been up for a long time. And it was like rolling into 1112 o'clock. And I was like, Oh, I haven't eaten anything today. And I didn't even think about it. Keep in mind is not starving yourself. You're still eating full meals. When you eat meals. That's just restricting the window in which you're eating by restricting that window. It trains your body in all sorts of different ways. It's really, really cool. The science behind it is really interesting. And there's a ton of material look up if intermittent fasting if you want to learn more about that. Another thing I've been doing I've been having salads for lunch, I put a salad with some chicken in it. We buy rotisserie chicken from Costco, and then we buy big bags of lettuce and then we just make salads for the week. And
+
+59
+00:37:37,880 --> 00:37:38,550
+Unknown: I love it.
+
+60
+00:37:38,609 --> 00:38:58,500
+Scott Tolinski: I didn't think I would ever like salads. For lunch. I was definitely a lunch salad kind of person or maybe a Panda Express for lunch kind of person. I used to just send one of my coworkers, Panda emojis, or panda images, sometimes like a panda eating a GIF. And he would know that it was time to go to Panda Express. So I have transformed as someone who's been dying to go to Panda Express is someone who eat salads every day for lunch and I love it. I just absolutely I'm looking forward to my salad right now actually, which is it's hard to believe for me exactly. So we didn't eat like I mentioned a lot of low sugar. So we're looking for stuff that has no too low sugar, we got these great protein bars from Costco that are they've a decent amount of protein in them and they only have one gram of sugar and so I've been going nuts on those I'll usually have that as my first little thing of the day just to you know once I hit that 10 o'clock window to just have something so been going very low sugar very very low sugar note no sweets or whatever and then we've been really loving they opened up a new poke a place which is it's kind of a thin walking distance but we drive it's a I've been loving okay because we just go in there and we say hey give give me the tuna or whatever and then give me everything just give me all the toppings and it's you know seaweed and whatever and you know I've always been a big fan of sushi but
+
+61
+00:38:58,530 --> 00:39:04,110
+Wes Bos: you want to describe what polka is because I'm going to talk about pokey as well yeah all right. was
+
+62
+00:39:04,110 --> 00:39:13,500
+Scott Tolinski: okay is its origins I mean it's it sounds like a Japanese where it's a white lion Yeah, yeah, so it's it's sort of like a Roth fish salad is that
+
+63
+00:39:13,530 --> 00:39:16,740
+Wes Bos: yeah it's it's basically a bowl of sushi
+
+64
+00:39:16,740 --> 00:39:17,250
+Scott Tolinski: Yeah,
+
+65
+00:39:17,280 --> 00:39:31,500
+Wes Bos: so instead of having sushi all wrapped up, they usually have like a rice bed and then on top of that they'll put your your fish tuna or whatever it is that you want to eat and then and then all kinds of toppings like at a mommy and jalapenos and kimchi
+
+66
+00:39:31,500 --> 00:39:32,250
+Unknown: have and
+
+67
+00:39:32,280 --> 00:39:33,920
+Wes Bos: pumpkin seeds oh yeah and
+
+68
+00:39:33,920 --> 00:39:35,550
+Unknown: Monday we tons of seeds Yeah,
+
+69
+00:39:35,609 --> 00:39:42,300
+Wes Bos: so good. The place near me does it on cucumber noodles which is amazing because you don't even have to have it on rice. Yeah, we
+
+70
+00:39:42,300 --> 00:42:05,280
+Scott Tolinski: get these Korean glass noodles that are really good. I like I said we just go there and tell them to put every single topic they have on it and it's awesome. And you feel so good eating it because it's a salad it's all fresh and light. And I was just so it's like sort of occasionally like citrusy depending on the cabbage dressings you get on it. I was just so blown. Run away by how good it was. And now I want to go there all the time. So I'm a big fan of okay. I've also become a huge fan of fermented drinks. So I drink keefer. I have a glass of keeper every day, which is really it's basically like a yogurt drink that gets you a lot of good stomach bacteria and stuff like that some of the benefits of having maybe like an Icelandic yogurt or something, but it's really nice. You can get a bunch of different flavors, low sugar, low dairy, all that stuff. And I've been drinking a lot of kombucha lately. We have a really dope farmers market, like a block from our house that we walk to every every Sunday, although now it's getting, I think there's only a couple left, or maybe it's done by now. But we'll just take our little jug, we'll get it refilled. It's like a local, local place, local beach place. And so I've been drinking a lot of booja a lot of Kiefer. And recently, this is a new update. Because I've been having a lot of just man, I've had a lot of weird issues, just in general, like, health wise, right. So I decided because my mother has a gluten intolerance. She's been to the doctor about it. And I've even been tested for celiac before. Out of all the things if I keep a food journal, it's like if I'm eating gluten, or wheat, or gluten or wheat it like it really kind of messes my day up or the next day up, I should say. So we did all those things where you keep a food journal. And yeah, it turns out, I might have a gluten intolerance just like my mother. So for anyone who thinks that like the gluten thing, or the gluten free lifestyle is, I don't know, some people think it's BS. Let me tell you this. I do not want to be eating gluten free. Like, I can't imagine anybody who has to eat gluten free wants to do it. Because it's not fun, man, I can't have beer. I love beer. I can't have you know, any of my favorite breads or sandwich places. And I did gluten free for a whole year once when I was in college. And now I'm going to be doing it again. I've been on it for maybe like a three, three weeks right now. And it's been fine, right? It's been fine. But man, it sucks. And it sucks that it makes me feel that much better. That's the thing hate is that,
+
+71
+00:42:05,790 --> 00:42:08,100
+Unknown: that affects that at work. Yeah, it sucks that it works because
+
+72
+00:42:08,100 --> 00:42:23,460
+Scott Tolinski: I really was hoping that it wasn't that and we'll see how I'm gonna do a couple of weeks as an experiment here. I'm seeing a gastro doctor about it. And it's like, man, I just want I want to I want to eat normal stuff. But yeah, here I am gluten free. And that's the way it is. So yeah,
+
+73
+00:42:23,730 --> 00:43:17,130
+Wes Bos: it's funny. There's a ramen place around the corner from me and they have a gluten free version of ramen. And it's instead of just noodles, it's it's cabbage. They just like shred cabbage. And it's actually really, really good. And then they recently just renamed it from the gluten free option to the keto option, because you can tell it's like bouncing on the tide. The tide is changing, which I thought was hilarious that they did it but I got it and it was actually awesome. Because I love cabbage and I love ramen. But the thing I always hated about ramen and pho is that it's just like such a it's mostly noodles. Yeah, and that's that's not the greatest for you. I miss mine we also got an instant pot and we've been doing every now and then we do our own yogurt. My kids love yogurt and we don't buy the stuff with the sugar added we just buy them the plain stuff and put like what is it?
+
+74
+00:43:17,790 --> 00:43:22,290
+Scott Tolinski: Oh, just granola or like honey or something? Because we do that yeah,
+
+75
+00:43:22,320 --> 00:43:43,740
+Wes Bos: yeah, we book granola honey, cinnamon on top and they really like that. I really like that really thick Greek yogurt and I also use I use that to make a lot of sauces when I'm cooking because it's super good for you just have yogurt. Yeah, like lemon, a bunch of salt bunch of spices and you have like an amazing crack sauce that is good on flip flop as my buddy got
+
+76
+00:43:46,770 --> 00:44:18,300
+Scott Tolinski: funny we have a dropper on our house is that is that Courtney is paid for by the by the yogurt big yogurt flowers to say Where's big Where's big yogurt sending the check this week because she not only puts yogurt in everything, but she'd never like she never takes and like she never leaves an opportunity on the table to talk about how good yogurt is. Oh, and then she's she's given our son yogurt every morning and she's given teaching me the benefits of yogurt. I'm like, man, how much do they pay you right now? Big yogurt. She's in? She's in their pocket. That's for sure.
+
+77
+00:44:18,510 --> 00:44:20,220
+Wes Bos: Oh, that's hilarious. Yeah,
+
+78
+00:44:20,250 --> 00:44:27,510
+Scott Tolinski: well, let's talk about money and yogurt. And let's talk a little bit about our sponsor today fresh books. They're gonna make sure that you get your money in your pocket.
+
+79
+00:44:27,810 --> 00:45:22,830
+Wes Bos: Absolutely. freshbooks is cloud accounting software for anyone trying to run a small business you're just a freelancer running a small business you had a couple clients anytime that you need to invoice someone freshbooks is there anytime you need to manage all of your expenses, maybe import them from a credit card freshbooks is their intermediary to follow up on an unpaid, unpaid invoice. freshbooks is there so if you are any type of small business that needs to be sending out invoices and stead of chasing after clients and doing all keep it all inside of Freshbooks and it will make your life so much easier. You'll get paid Faster, and you'll be able to have more time to spend on your actual business rather than spending time working in the business, which is doing your books because let's face it, that's not moving your company any further ahead. So check out freshbooks.com for slash syntax and use syntax in the How did you hear about a section, you're going to get a 30 day unrestricted free trial. Thanks so much to Freshbooks for sponsoring.
+
+80
+00:45:22,950 --> 00:45:41,880
+Scott Tolinski: Thank you. Cool. Okay, so we've gone over our fitness stuff, we've gone over our nutrition stuff, and then we have a couple more this episode's running a little bit long. I think that's okay. We can talk about supplements and then we're going to talk about plans for the future and we can sort of go quickly and these things is not superduper deep topic. So what kind of supplements are you supplementing with right now? Yeah,
+
+81
+00:45:41,880 --> 00:46:03,510
+Wes Bos: right now I am on just the multivitamin, just making sure that you get everything especially as The Winter's coming. So in the summer, it's easy to forget about taking it but I hate getting sick, especially in the winter, whenever it's all sniffily and stuff like that. So definitely taking the multivitamin fish oil, so just like salmon oil or something like that. I don't know. I don't know specifically which one that is what
+
+82
+00:46:03,510 --> 00:46:05,550
+Scott Tolinski: was the fish's name that the oil came from
+
+83
+00:46:05,580 --> 00:47:15,360
+Wes Bos: the oily the oily the salmon dumped upstream? Oh, got all oily. The multivitamin that I'm still taking is called the Vita, Jim, J y m, which is a, I was talking to JC and he said, some of these vitamins don't really have much in them. They're just a little bit of everything. But he's like a good vitamin used to make your stomach hurts if you take it without really liking that when still, whenever I am in the gym, I take the bcaas is just a block chain amino acids. And that is supposed to, to assist in sort of like taking away the soreness and repairing the muscles. I really like it, I use one called amino energy. Because what it does is it has caffeine in it. And I'm drinking water all day long. I've got this huge Yeti thing. So I'll usually put a scoop or two in there and sip on it makes it taste great. And it gives you super good energy without having to it's got caffeine in it, but I drink rather than drinking coffee all day. I might as well throw it into my water.
+
+84
+00:47:15,390 --> 00:47:16,650
+Scott Tolinski: Nice. Cool.
+
+85
+00:47:16,800 --> 00:47:23,940
+Wes Bos: I think that's it every now and then I get coke done before a workout. I'm super tired. What's I forget the name of it.
+
+86
+00:47:24,450 --> 00:47:26,730
+Scott Tolinski: It's like a pre workout. Oh, yeah,
+
+87
+00:47:26,760 --> 00:47:57,780
+Wes Bos: mutant killer coke up. It's they usually have like an O like not all these things have not nitrous oxide in it. And it really just gets you pumping and makes your skin itchy. And then you go to the gym with the Bros. Yeah. So every now and then it's it's all of these supplements are so hilarious, because they all have these like, like brought out bro he names to them. And it seems really silly. But if you can get past that and sort of pull back the curtain and understand what is in these things. You can find some pretty good ones.
+
+88
+00:47:57,810 --> 00:47:58,740
+Unknown: Yeah, yeah, that's
+
+89
+00:47:58,740 --> 00:48:58,440
+Scott Tolinski: funny. I actually make my own pre workout. I just bought the things individually. Because a lot of people like have the Yeah, because I have enough caffeine from other stuff in the day to day like tea or whatever. I just didn't want to have an extra dose of caffeine but I wanted all the other stuff. So I basically I bought the citrulline malate I think de citrulline malate which is one that's in all of them. That's the nitric oxide stuff. I get the bait okay to alanine individually, which is the stuff that makes your your skin tingle a little bit that stuff is really clinically just shown to be improved muscle memory and muscle recovery. It's great. And then the creatine so I have three of the ingredients commonly found in a lot of pre workouts and I just scooped them myself. I have you know my little scoopers. I know how much of each to put in. And I'll take that as a pre workout just the same thing without caffeine not because I don't like caffeine, but because, you know, I already get supplemented caffeine in my my day to day. So the last time we had this episode, we actually talked a little bit about how I was taking caffeine via like a pill, which like
+
+90
+00:48:58,530 --> 00:49:02,670
+Wes Bos: sounds like a sleeping bag of it on like sketchy supplements.
+
+91
+00:49:03,390 --> 00:51:41,160
+Scott Tolinski: It was bulk supplements, it was on Amazon and it's like, eat Okay, 200 milligrams of caffeine. Now, granted, that's a good amount of caffeine. But that's like a couple cups of coffee. And if you were to have one of those pills a day, you know, it's pretty, it's pretty darn easy and cheap as far as like caffeine supplementation goes compared to like coffee and all that stuff. But I'm going to say I have stopped doing that I was reading a lot about like caffeine without coffee or without tea. And it's not well one caffeine isn't great for you anyways, but the fact that you're supplementing without those things, it's, it's just really not good. So I've gone to different lengths to get my caffeine I now just pretty much drink straight green tea, or I'll drink a brew or a cold brew. So I've been doing a lot of cold brew, I can't do normal coffee, my stomach can't handle the acidity. So that's why I go cold brew. So I've been doing my own cold brew or I'll go get one at the coffee shop or I'll make a ton of green tea to get my caffeine. So I am staying caffeinated. Not like I'm dropping caffeine but I've dropped that 200 milligrams spike of caffeine in the morning, I just don't think it's the best thing in the world for you. So I've dropped it, I had granted, I still have the caffeine here, I'm just not, I'm not going nuts on it, I don't find it myself, I need it. I've started also taking ashwagandha. And I don't take this daily. But ashwagandha is like really good for focus and anxiety, I have a lot of high level of just sort of general anxiety. You know, it's just like a, it's hard to sort of chill out sometimes. So the ashwagandha, I found, if you do a little bit of reading about ashwagandha, people have different experiences with it. And for me, it adds a perfect level of like rounding off that top sharpness of somebody anxiety, and some of that stuff and just helps me improve focus and mood a little bit. Now, other people, I think, respond differently to it, you'll see all sorts of like sort of response patterns all over the map work. But I really like this supplement. It's when I've been taking for a few months now. And I found just nothing but great improvement on it just really, really positive for me. I'm also taking a probiotic with dinner every night. And I actually started taking probiotics along with the Kieffer and stuff like that, because I was on antibiotics for three months, right. And so that wipes out your gut bacteria. So I've just been really working hard to make sure my bacteria has been at a good level. So I know there's a lot about probiotics, both good and bad, whether or not they're effective or not. But I've done my research. And I feel like the probiotic I'm taking is good for me. And it's doing positive things. And on top of that, I'm just taking a lot of water, just lots of water. I've always drink a lot of water. But yeah, just keeping hydrated is such a big thing. And it's really easy to just not do it. But it's also really easy to do it. So that's pretty much it for supplementation for now, for me,
+
+92
+00:51:41,370 --> 00:53:53,130
+Wes Bos: awesome. Let's finish her off with plans for the future. So like maybe we'll do another follow up episode in six, eight months, kind of see where we're at. And because this is like a like, we're not experts, the reason why we're doing this podcast is not because we've got it figured out, obviously, but the reason why we're doing this podcast is that we can share our life and how we're journeying through these things, because I think it does, it is such a huge part of you and part of your life. And I think if you're trying to really slam dunk being a web developer, you're going to have to figure this out at some point in your life. So we're just sharing what's going on. So plans for the future I'm looking to as it gets to get colder, I'm almost I probably got a couple more weeks of jogging outside, and then I'm back at the gym, it's kind of a nice little change of pace, where I went back to the gym last week for the first time and a couple months. Because I was just outside doing doing jogging, and I was like, Oh, it's nice to like, have a bit of a switch up in what you're doing. So I'm going back, hopefully three times a week to the gym routine. I'm looking at twice during the week, once at night, fingers crossed if kids start sleeping. The biggest thing for me is I just keep forgetting how amazing I feel. I always come back from the gym. And I tell my wife like Oh man, I feel amazing. Why don't I do this every day. And like I know, I know in my head that it always makes me feel good. But actually going is a very hard thing to force yourself to do when you get out of it for a week or two. You're like, oh, shoot, get back into this. And then as soon as you're you're in it for a couple weeks, it's very hard to break that continuing going low carb. It's been working really well for me. I feel great. I feel great. I love the food. been really happy with that. So that's that's my plans for the future. Oh, the last thing is, I want to get into deadlifting that's one thing I don't do. I know you do that as well. Yeah. Although I haven't been I've always been a little bit like, yeah. I've always been a little bit like afraid or like, like it's it's kind of a scary spot in the gym. Where Yeah, yeah, I need someone to like, I needed to just like grab someone at the gym and be like, Hey, can you show me how to do this for I don't want to hurt myself. And I just need I need someone to like Come with me at the gym, maybe do it a couple times, or just watch some videos online and get into it. So it's that's maybe my thing for the winter is I'm gonna get into deadlifting
+
+93
+00:53:53,160 --> 00:54:51,390
+Scott Tolinski: Yeah, do it. It's one of those things that well, it can be over quickly, because you're typically going pretty heavy with it. So it doesn't take very long and it's so it's like maybe the most like the biggest bang for your buck exercise as in like the amount of time you put into it and the amount you get out of it. Yeah, the most I've ever deadlifted was one set of five, or 300. I've never done like a one rep max. So the most weight I've ever done is 300 pounds, but I did it for five reps. So I just remember like, every time I got done deadlifting you just feel wiped out. But it feels it's like the fastest way to getting that like excellent wiped out feeling where you just like Yeah, I just put on some serious, huh. It's not that hard. Once you get like the mechanics of it and you understand like the little form things. And after that, it's like once you understand how not to hurt yourself with it, the little tweaks in your form are just going to make it so you can lift more weight with like less effort, essentially. So it's a sweet exercise. I wish I was doing it right now. I might have to get back into it soon. We'll see how I started healing up here.
+
+94
+00:54:51,810 --> 00:54:53,190
+Wes Bos: What about your plans for the future?
+
+95
+00:54:53,220 --> 00:56:57,630
+Scott Tolinski: Yeah, I'm gonna continue my three days a week lifting. I'm just gonna keep on with the numbers. I like the progress and seeing like everything that I'm sorting Seeing out of it. I'd like to get more cardio and breakdancing in for those of you don't know, I've been breaking for like 15 years now or something. And the tailbone stuff, the injuries, the sickness, it's all been like very difficult to go to practice. And so I'm just really dying to get back there I went on Tuesday last week, I felt really slow and old. But you know that once you continue to keep it up, it's gonna be easier and easier. So I need to make sure that I stick weekly to breaking weekly to cardio just to keep it up. And then I want to I want to start doing more yoga when I had my concussion in 2012. One of the things that like the only things I could do to workout was yoga. And I joined like a yoga group and I went twice a week. And I felt great. And like now that I'm having all these weird injuries in the tailbone stuff, I think yoga might be a great way to start healing and a nun way where I'm going to I'm not going to be putting pressure on the way that's going to be damaging it. And I think it will stretch things out in that area and stuff like that. So I think I might join a yoga yoga gym or yoga group over here, maybe something I can walk to and, and maybe do a couple times a week, we're gonna see I'm sort of spying him out right now. I like to do yoga where you do a lot of handstands. So it for me, it's like finding the right class. You know, I always I had a class in Michigan, that was like really good, because the teacher knew what I was capable of doing. So she would be like, Alright, everyone do this. And then Scott, you can go into a headstand if you'd like, like, okay, now, I can't do this, if you'd like an O. And Scott, I have this, this move for you. If you want to try this at home, like, I want to find something that will challenge me like that, rather than just doing the same old stuff. Because I've been doing yoga for a long time. And you know, the the sort of general moves are great, and they make you feel good, but I like to be challenged a little bit. So the whole, the whole plan for me is to get healed to stop getting hurt, which is, you know, a tall order for me. I get hurt all the time. So just take it easy, and try to heal up here and keep on schedule. Keep making those gains.
+
+96
+00:56:57,810 --> 00:57:03,240
+Wes Bos: Oh, man, there's one thing I just thought of is around the corner from me. There's a float tank place.
+
+97
+00:57:03,300 --> 00:57:09,450
+Scott Tolinski: Oh, yeah, I tried that. But I want to try that. And the freezing stuff for you. Yeah, no cryogenic freezing chamber.
+
+98
+00:57:09,480 --> 00:57:41,520
+Wes Bos: So the float tank is just like little pod that's full of like 6000 bags of salt, and a little bit of water. And it's all diluted and you just lay in it and because it's so salty, you float. And then it's like a sensory deprivation thing, because you can't hear anything. You can't see anything. You're just alone with your thoughts. And seemed pretty cool. Yeah, I definitely want to try it out. It's like so close to me, though. I just need to find like an hour that I can can go try it out. If you've tried it out yourself tweet at syntax FM. I'd love to hear your experiences. Yeah,
+
+99
+00:57:41,550 --> 00:57:47,190
+Scott Tolinski: absolutely. Cool. Do you have any sick picks other than the exception of vegetables?
+
+100
+00:57:48,540 --> 00:59:49,440
+Wes Bos: My sick pick is Dr. Peter at tea. So there's a lot of like podcasters out there that talk about this sort of stuff, whether it's ketones in your body or aging or cholesterol or cardiovascular disease and intermittent fasting. And there's a lot of podcasts that talk about it. And most notably, the probably the two big ones are Tim Ferriss, and Joe Rogan. And Kevin Rose is the big guy. He also talks a lot about him, I really like him. And these are great, but these people are not doctors, they're just, they're just people. And sometimes if you talk about them, people start rolling their eyes and start chanting bro science because it's just a bunch of dudes talking about what's worked for them. Right. So this Peter T is actually the doctor for a lot of these guys. And he has his own Instagram, he has his own Twitter and he has his own podcast recently. It's called the drive by Dr. Peter atea. And it's really interesting, because he'll always answer questions on Twitter. He'll also always show what he's eating on Instagram. And then he just he dives deep into the whys in the house of it and he's actually a doctor so if you if you want to check out more information, rather than just people sharing their experiences where he actually has researchers and and this is his entire life's work. You can check out his podcast it's called the drive by Dr. Peter T. He's really cool. He's really down to earth sometimes like especially Tim Ferriss I find will come off as very I don't know he's a bit much you know, like and a lot of the things how he talks about it like he comes off a little much where this guy is he's really down to earth he talks about it. He has got kids himself, which I always find find helpful going he talks about like like I often find that Tim Ferriss is just in this like this like ideal world where he has control over absolutely everything. Whereas that's not the situation where most of us are in so they have a diary like a personal doctor that they can check with every other day about their levels. Yeah,
+
+101
+00:59:49,470 --> 00:59:51,330
+Scott Tolinski: yeah, I know. Exactly. Yeah.
+
+102
+00:59:51,450 --> 00:59:54,810
+Wes Bos: So big fan, check out Peter atea on everything cool.
+
+103
+00:59:54,840 --> 01:00:45,930
+Scott Tolinski: My sick pick is going to be fitness blender.com Fitness Blender comm so I said this is We're corny goes for all of her like cardio workouts or HIIT workouts. There's a lot of great stuff on here for free. There's workout programs, there's meal plans, there's videos, and it's insane amount of content for free is all I gotta say, the amount of stuff on here is perfect for sort of any level, any skill level, and they can sort of approach any area you want to approach. And you could probably get your entire workout done just via fitness Blender videos, seriously, there's more on here than you could possibly account. So if you're into the video thing, which you know, can be really motivating and really excellent, check out fitness blender.com we're not associated with them in any sort of way, but they just have great, great content. And like I said, my wife, Courtney absolutely loves this stuff. And every time I do one of these videos with her, it kicks my butt.
+
+104
+01:00:46,290 --> 01:00:49,500
+Wes Bos: Awesome. Mine is to check that out. Sounds like some some good resources there. Yeah,
+
+105
+01:00:49,500 --> 01:00:52,080
+Scott Tolinski: cool, man. Any shameless plugs,
+
+106
+01:00:52,260 --> 01:01:23,280
+Wes Bos: I'm just gonna shamelessly plug my advanced react course it might be up by the time you see this depending on I'm hoping to get it up. It'll be at Advanced react calm depending on when you're listening to this. It's not Everyone listen to it. On the launch day, it's going to be my latest course on all things, advanced react and graph QL. So we build a full stack application that is a online store, it has a cart that has actually checking out with real credit cards using stripe, really, really proud of this one, it's going to be at Advanced react.com. So check it out. If you're interested in that.
+
+107
+01:01:23,520 --> 01:02:24,120
+Scott Tolinski: Sick, I'm really excited for it. I'm going to shamelessly plug my level up pro accounts where you can go level up tutorials.com forward slash pro and get access to like 350 plus video tutorials premium video tutorials with a new video tutorial series being added every single month. The most recent series added at the time of recording this video, or this podcast is better JavaScript and se series that we focused on writing better JavaScript code. We talk a lot about functional programming concepts functions with single responsibilities. How do we even name things like in your code? What are good ways to name things right? And what are bad ways to name things. We talk a lot about different clean code philosophies. And we talk a lot about iOS six plus stuff to make your life a little bit easier. So we focus on writing less brittle, more testable, stronger JavaScript code and better JavaScript. Check that out today at level up tutorials.com forward slash pro sign up for the year and save 25% so that's pretty sick. So check it out level charles.com forward slash Pro,
+
+108
+01:02:24,480 --> 01:02:26,160
+Wes Bos: wicked. I think that's it for today.
+
+109
+01:02:26,190 --> 01:02:26,850
+Scott Tolinski: That's it for me.
+
+110
+01:02:26,850 --> 01:02:29,820
+Wes Bos: Thanks for tuning in. I'll see you next week whose face
+
+111
+01:02:31,650 --> 01:02:41,400
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

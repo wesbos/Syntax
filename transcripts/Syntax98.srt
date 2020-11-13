@@ -1,0 +1,840 @@
+1
+00:00:01,319 --> 00:00:02,820
+Unknown: You're listening to syntax,
+
+2
+00:00:02,849 --> 00:00:10,530
+the podcast with the tastiest web development treats out there. strap yourself in and get ready. Here is Scott, ski and West boss.
+
+3
+00:00:10,530 --> 00:00:47,009
+Wes Bos: Hello everybody and welcome to syntax the podcast with the tastiest web development treats out there. We today we're talking all about the state of JavaScript, which is a survey that goes out every single year. And the results were just released. And we're gonna kind of go through some of the more interesting web development or front end related results and then just talk about what we think about them and what that might mean for our industry. This is definitely something you probably want to pay attention to if you are looking for a job or looking for that next tech to move on up. So uh, with us, as always, is Scott to Lynskey. We always have him Yes, you do.
+
+4
+00:00:47,039 --> 00:00:48,420
+Scott Tolinski: Yes. Yeah. Today,
+
+5
+00:00:48,629 --> 00:00:59,430
+Wes Bos: we have our first ever guest on the podcast. We don't we're not really a guest podcast. But so we have with us as Sasha Greif, who is the proprietor or the What do you call yourself Sasha behind this thing? the
+
+6
+00:00:59,430 --> 00:01:01,590
+Unknown: originator I guess, the founder,
+
+7
+00:01:02,549 --> 00:01:03,360
+Scott Tolinski: the webmaster?
+
+8
+00:01:03,449 --> 00:01:05,550
+Unknown: Yeah. Well, that sounds good. I'll take that.
+
+9
+00:01:06,620 --> 00:01:14,640
+Wes Bos: So Sasha is here today, just to help chime in on some of the ideas behind a best he's been doing this for you been doing this for three years? Right?
+
+10
+00:01:14,670 --> 00:01:17,700
+Unknown: Well, two years. And this is. So this is the third year, third edition.
+
+11
+00:01:17,760 --> 00:01:29,970
+Wes Bos: This is the third year. Okay. So he has data now from three years. And we are interested to see his thoughts over time, as well as like the tech stack behind this thing. Like because it's just a lot of data, right? There's
+
+12
+00:01:29,970 --> 00:01:40,440
+Unknown: how many people have taken the survey. So this year about 20,000? So yeah, that's a lot of data. And each entry has many, many questions, like maybe a couple hundred data points.
+
+13
+00:01:40,470 --> 00:01:48,510
+Wes Bos: Wow. So why don't you just give us a little bit of an introduction to who you are, what you do. And then we'll, we'll dive a little bit more into the survey and the stack behind
+
+14
+00:01:48,510 --> 00:02:44,430
+Unknown: that. Sure. So my name is Sasha Greif. I'm a developer designer, kind of solo entrepreneur. And I currently live in Japan in Kyoto, originally from Paris, France. And I've been doing this a lot of different projects, mostly on my own for a while now, a while back, I wrote a book about the meteor JavaScript framework, I also have my own JavaScript framework called Vulcan j. s. And then I ran this survey the state of JavaScript survey every year. And yeah, originally started this survey by myself. But since then, I've been joined by two other also French, also living in Japan, developers. It's kind of a coincidence. Right now and Michael. And so yeah, this year, we just published the last edition of the survey results. And there's lots of pretty interesting data. We also did a lot of work on that data visualization, and data processing and all that.
+
+15
+00:02:44,610 --> 00:02:55,259
+Wes Bos: Yeah, I have to say that this Yours looks amazing. It's incredibly easy to digest. And just look at these graphs are beautiful. The whole website is amazing. It's a nice dark theme. Yeah,
+
+16
+00:02:55,259 --> 00:03:16,979
+Scott Tolinski: it's beautiful overall, is the biggest is the first thing that I saw immediately, just and there's so many fun little cool things like when you click the little elements, when you're on one of the pages, and they just sort of flutter and bounce around your screen. There's so many like awesome little elements to the design of the site that it makes the whole thing like a joy to pop through
+
+17
+00:03:17,009 --> 00:03:18,990
+Wes Bos: some Asian traits in here for sure.
+
+18
+00:03:19,020 --> 00:03:34,380
+Scott Tolinski: Yeah, in addition to the data in the presentation of the data itself, the presentation of just everything about it is just beautiful. So just cheers on that. It's just looks great. It looks great every year, but this year, in particular, You've outdone yourself. It looks awesome.
+
+19
+00:03:34,560 --> 00:04:07,979
+Wes Bos: Oh, thanks so much. We should say that it's at state of .js dot com. That's where you can follow along from home, we're not going to get to nitty gritty into the actual numbers, because you might be driving and be bored. But we're just talking about the overall kind of ideas and oh, wow, this thing went way up, or this thing seems to be declining year over year. So do you want to? Let's just talk about the tech behind it. Because I'm quite frankly, I'm very interested in like a How did you collect all of this data be? How did you process all of this data? How did you analyze it? And and then finally getting it out to the web?
+
+20
+00:04:08,130 --> 00:04:59,760
+Unknown: Sure. So I guess yeah, like you said, the first step is collecting the data. And for that, we use the type form, which is a survey or form service, kind of like wufu. Another one is Survey Monkey. But type form is really cool, because they have a great UI. They have keyboard shortcuts that let you answer the survey with just using your keyboard. It works pretty well. Now, because we have such a long survey, we actually ended up not using the actual type form dashboard to create the form, but I made like a small command line tool that just takes a yamo and then translates that into a type form survey. And that helped us a lot because before that we if we wanted to change like one word, and all the questions, basically you had to do it question by question. And now you can just Yeah, yeah, change the YAML and rerun the script and it does it for you. It's true.
+
+21
+00:05:00,000 --> 00:05:01,170
+Wes Bos: For our work right there.
+
+22
+00:05:01,880 --> 00:05:13,560
+Unknown: Yeah. And you know, a lot of the time I, I'm a big proponent of doing things manually first and not trying to automate everything. But this was a situation where really it wasn't doable by hand anymore.
+
+23
+00:05:13,680 --> 00:05:29,040
+Scott Tolinski: Yeah, I think collecting this much data on this kind of level is like, it's one of those things that you don't want to, I don't know, you don't want to put in jeopardy of luck. You want it to be easy, so that people when they get there, everything just works. And they don't have to think about it. So I think that's like a very important point there.
+
+24
+00:05:29,160 --> 00:05:49,650
+Wes Bos: Yeah, I hate taking surveys. And this is one that I actually did myself, because it's it's so easy to to glide through it. Yeah. Take a survey. And you're like six questions, any, like, how long is this thing through this? Yeah. So once you've you've collected it, how do you get 20,000 people to actually respond to this thing? You I guess you have an email list, right?
+
+25
+00:05:49,680 --> 00:06:39,720
+Unknown: Yeah. So we have an email list accumulated over the years, we have some people like yourself, who helped us retweet the survey and kind of reach broader audiences, we post it to like Reddit Hacker News every year as well. So altogether, you know, it's kind of an organic way of collecting responses, which I guess we should say, because some surveys, they will like pick specific people to answer the survey, if they have a specific like gender breakdown or demographic breakdown in mind, they'll take care to target that. But that's not what we're doing. Really, we first for practical reasons. Like, we don't have the logistics to do that. And also, just because the goal is to reach as many people as possible. And this year, we had 20,000. But hopefully next year, as we keep increasing and reach every single person that has ever wrote a line of JavaScript in their life.
+
+26
+00:06:39,870 --> 00:07:12,180
+Wes Bos: Yeah, well, that would be ideal, right? Because sometimes you hear people like yeah, the survey is really weighted towards react developers or really weighted towards back end devs or something like that. You're like, well, like you've spread it out to the masses as far as you possibly can. Yeah. And it's, it's hard, unless like, every single developer who's ever written a line of code in JavaScript can answer this thing. It's hard to pin it down. But I think that that sample size of 20,000 is fairly large enough. Yeah, seriously. So once you've collected all that data, what is the analyzation, and the creation of the graphs look like?
+
+27
+00:07:12,210 --> 00:08:09,630
+Unknown: So the next step, again, we have like a small script that will actually download the data through TypeScript API. And then actually a Raphael, who's the creator of the data visualization library that we use. He's also in charge of processing the data using Elastic Search. So because the first year in 2016, I did it myself and like a Google spreadsheets. Wow. And that was that wasn't very scalable. So I know very little about, like, actual data processing. So he's been a huge help to kind of streamline that effort, kind of make it a lot more automated, although there's still a lot of like manual normalization. Because, you know, sometimes, when we ask people, what other library Do you use, somebody will type in whatever Angular and somebody else, angular two and angular three, and we want to normalize them to the same answer. Maybe Angular is probably a bad example. Because it's confusing. And we can talk about that more. But you get the idea. Like for other things, we have to kind of massage the data to make it coherent.
+
+28
+00:08:09,660 --> 00:08:14,130
+Wes Bos: Yeah. Even just spaces, capitals. Yeah. spelling mistakes, things like that.
+
+29
+00:08:14,160 --> 00:08:28,830
+Scott Tolinski: Yeah. So speaking of the visualization library, I think that's one of the cooler things about this site in general is the visualizations are just so well done. You mentioned Raphael is using his own library, what what is he using to do this? Or what are you guys using for this?
+
+30
+00:08:28,860 --> 00:08:44,249
+Unknown: So it's their library is called nivo. And it's built on top of d3. And then the really cool part is that it can render to like SVG or canvas or even sometimes, like just HTML elements, depending on the type of chart or what do you need to do.
+
+31
+00:08:44,420 --> 00:08:47,270
+Scott Tolinski: So how do you spell that? nivo and IV? Oh,
+
+32
+00:08:47,279 --> 00:08:52,440
+Wes Bos: cool. It's at nivo dot rocks. This is beautiful. I had never, never heard of this.
+
+33
+00:08:52,470 --> 00:09:03,480
+Scott Tolinski: d3 is one of those things that I pick up over and over again. And then like, never get anywhere with like, I'll make like a basic chart with it. And then they're like, okay, but how do you make something amazing with it? This looks awesome. Yeah, it's
+
+34
+00:09:03,480 --> 00:09:22,140
+Wes Bos: really I like the fact that I like the fact that you can render out to what SVG or canvas or sometimes HTML elements, because that's always the the trade off that you have, you're like, well, Canvas is nice, and like portable. But SVG is like is a bit better. Because you can like actually get into it. That's pretty neat. I'm gonna check this out. nivo dot rocks.
+
+35
+00:09:22,140 --> 00:09:23,730
+Unknown: Yeah. And it's all react.
+
+36
+00:09:23,850 --> 00:09:59,299
+Yeah, it's a really cool library. And it's pretty flexible. And I guess especially since you know, Raphael is the author, so he can add features. It's pretty handy layout. So some charts we like, sometimes add HTML elements, or like tooltips inside the chart, which doesn't work hundred percent of the time, but it's still cool to be able to do it. And overall, I just think like react works really well for charts, because each in a bar, each label can be a component, and you can, that whole component based approach works well. But yeah, it's just a cool tool. Like if you're looking for a visualization library, you should definitely check it out.
+
+37
+00:09:59,399 --> 00:10:01,260
+Scott Tolinski: Yeah. Yeah, like in the looks,
+
+38
+00:10:01,380 --> 00:10:07,669
+Wes Bos: the site itself is you said it's just a static site generated, like, what's the tech behind that? Is it a react site?
+
+39
+00:10:07,679 --> 00:10:43,039
+Unknown: Yeah. So we're using Gatsby. So react side. And Gatsby is pretty cool. So of course, you have the whole static site aspect. Also, like all the blowing optimizations that Gatsby do, like where you can load the homepage, and it will keep loading the other pages in the background, and kind of speed up the whole process. And also, like the whole data pipeline with graph QL. So I wouldn't say it's like, perfect, there's still some limitations. Like I found out, you can't really do like a dynamic graph qL query for a specific component. So it has to be like at the page level, just, you know,
+
+40
+00:10:43,260 --> 00:10:47,659
+Wes Bos: the data from that's being served from Elastic Search. You said, Oh, well, first,
+
+41
+00:10:47,669 --> 00:10:49,140
+Unknown: we convert it to Jason's.
+
+42
+00:10:49,140 --> 00:10:49,740
+Okay,
+
+43
+00:10:49,740 --> 00:10:58,740
+we're YAML files. So it ends up as static files. But then yeah, that does get translated into a Gadsby song. You own it. You've
+
+44
+00:10:58,740 --> 00:11:05,039
+Wes Bos: hosted it on Netlify. Yeah, we do. This is like Scott, love child of technology.
+
+45
+00:11:06,659 --> 00:11:11,700
+Scott Tolinski: I'm a huge fan of everything. That was just all those words. I just throw those words in my basket there. Yeah.
+
+46
+00:11:12,600 --> 00:11:24,570
+Unknown: Yeah, I think it's a stalking. It's pretty trendy these days, like having your data kind of be separate from your static from then, like the whole jam stack? I guess you guys would know something about that.
+
+47
+00:11:26,070 --> 00:11:39,000
+Wes Bos: Yeah, we just got through the whole jam stack conference. So Wow, this is actually a really good example of a like a jam stack website, then yeah, that a lot. Cool. Anything else you want to tell us about the stack? Or should we jump into into the
+
+48
+00:11:39,390 --> 00:12:16,080
+Unknown: Well, one thing that's that's pretty cool is how we generate like a screenshots or or images for each chart to make them shareable. So yeah, we have, yeah, puppeteer scripts that just runs like locally on our own machines, and generates previews for each image, or each chart. And then we upload that. And we actually create like fake pages that only contain meta meta tags pointing to that image, and then that's the image or the page that gets shared. And then that page redirects to the actual chart in the survey. So it's kind of the whole like, process that's called redirections. And meta tags.
+
+49
+00:12:16,230 --> 00:12:50,760
+Scott Tolinski: I think that's like one of the coolest like parts about this, it adds so much when you see somebody shared on Twitter or something and the charts, right, they're like, there's nothing like if somebody was just sharing a link with some, some text about a chart or something like that to me, like when I see the state of .js charts pop up in a tweet, and there's discussion about it. I think that's like one of the coolest things about this, it's so makes you want to dive in to whatever is being like talked about a little bit more. I think that's just whatever effort that you guys did to make that happen was well worth it. I think that is like one of the cooler aspects. Yeah,
+
+50
+00:12:50,760 --> 00:12:54,330
+Unknown: I did take a little bit of work. But I agree, I think it was worth it. Alright, so
+
+51
+00:12:54,330 --> 00:13:09,120
+Wes Bos: you want to just give us a quick rundown about how you like what questions Did you ask to actually collect this data? And know that when you go through it, there's all this like, never heard of it heard of it not interested? Just so we can sort of have some context for what the data actually means coming up?
+
+52
+00:13:09,149 --> 00:14:03,659
+Unknown: Sure. So you know, when I started the survey in 2016, I looked at other surveys, of course, and I noticed a lot of them asked questions like, Well, what do you use? Are you using like, React right now? And that that was a good first step, but they didn't really tell you like, okay, people are using react, but are they happy with it? Like, is it worth Yeah, investing my time into this? Is it going to be around like two years from now? So that's why I wanted to ask people, not only what they use, but would they keep using it. And that's how we ended up with like that the five questions or the five options you have for each technology. Number one, you've never heard about technology at all. Number two, you've heard about it, but you're not especially interested in learning it. Number three, you've heard about it and wants to learn it at some point. Number four, you've tried it, but you wouldn't use it again. And finally, you've tried it, and you would happily use it again. So those are the five choices.
+
+53
+00:14:03,750 --> 00:15:48,120
+Scott Tolinski: Yeah. So I mean, now that all sounds pretty cool. And the surveys were you're doing obviously a lot of data collection and sending it back to one particular place to analyze. One of our sponsors does a really good job of that as well. And it's century century allows you to track all of your errors and bugs in your own software and it categorizes them, catalogs them and makes them easy to solve amongst your team mates and easy to understand what the heck is going on in your application. One of my favorite features about century is the ability to take an issue on century let's say you have some sort of blank is undefined bug century captures that and it gets sent in logged into century, you can then look at that blank is undefined, whatever is undefined. And you can click directly in there to turn that into a GitHub issue. So even if you are the person who's pawing through century doesn't mean that you have to be the person who's trying to fix the problem, maybe that's somebody else's problem. So what you can do is you can then create a GitHub issue directly from that century issue, and assign it to whoever you want and track it both within your normal GitHub or whatever sort of version control software you have. It's just one of those things that's totally invaluable. I use this all the time, whenever I find issues, and I don't want to do them myself assigned to someone else, or I just want to take keep track of it for later. So if you want to check out century, head on over to sentry.io, and sign up with the coupon code, tasty treat, where you will be getting two months for free, that is a tasty treat. All one word, no spaces. So head on over to century.io Sign up today and get two months free with tasty treat. So thank you so much for a century for sponsoring.
+
+54
+00:15:48,270 --> 00:15:56,250
+Wes Bos: Yeah, we're just talking to Sasha before the show. And he is telling us how many of our past sponsors he's used. And you said, You are a user of Sentry now.
+
+55
+00:15:56,279 --> 00:16:05,490
+Unknown: Yeah. And I have to say, I really hate it. Because now I have to see every error, everything is tracked, and I can't pretend my app works anymore.
+
+56
+00:16:07,980 --> 00:16:09,960
+Scott Tolinski: You can't hide from your bugs. Yeah,
+
+57
+00:16:10,049 --> 00:17:04,680
+Wes Bos: there's some blissful ignorance, when you're not tracking it, it seems like everything is working just fine. Alright, so this survey has like the stats behind it is there's tons of tons of stats that you could go through, I recommend that you take grab a coffee go take 20 minutes, half an hour to read through the entire thing, or we're going to do now is we're going to go through some of our favorite parts parts that we think that relate best to our audience and and kind of talk about it. So first thing is you asked about JavaScript flavors and the possible flavors that you asked about. We're ESX TypeScript flow reason, Elm and closure script ESX. Having in 86.3% have used it would use it again. So it's by far the most used in there and following probably about half of that 46% is TypeScript, and then pretty much Peters off with flow reason, Elm and closure script past that.
+
+58
+00:17:04,770 --> 00:17:13,230
+Unknown: Yeah, I think actually, next year, we probably stop asking about ESX. Because, you know, yes, it's up to what s nine or it's just
+
+59
+00:17:13,919 --> 00:17:15,180
+Wes Bos: an array. Yeah.
+
+60
+00:17:15,180 --> 00:17:24,240
+Unknown: So I think what we'll do next year, is just ask about each features like, are you using, you know, async await are using the three little dots whose names I always forget to spread?
+
+61
+00:17:24,830 --> 00:17:26,910
+Scott Tolinski: Which I always get backwards? Yeah.
+
+62
+00:17:28,169 --> 00:17:38,790
+Unknown: But yeah, TypeScript is certainly doing really well, this year, I was just at an event where like, half the talks were about TypeScript. So it really feels like you know, it's the latest big trend.
+
+63
+00:17:39,350 --> 00:18:08,250
+Wes Bos: One of the cool things you have here, if you if you click through to each of the JavaScript flavors, if you take a look at ESX, you see from 2016 to 2017, ESX got a large amount of adoption, but from 2017 to 2018. There was a Oh, it dropped in adoption. I'm assuming that's because of TypeScript adoption. Is that true? It went down? Very few, that's probably just a few people said they aren't using it anymore. But do you think that's because of the adoption of TypeScript?
+
+64
+00:18:08,360 --> 00:18:18,240
+Unknown: It could be? Or maybe people are just like, well, I'm on EAS nine now. So I'm not using ESX anymore, you know, that's dropping is just maybe a little bit confusing as a nomenclature.
+
+65
+00:18:18,420 --> 00:18:46,850
+Wes Bos: Yeah, that's true. And then if you look at TypeScript from 2016, to 2017, it went up 13%. And then from 2017, to this most recent one, and went up again. 13%. So it's, it's growing steadily year over year, we're starting to see a lot of people adopt it. And that's, I'd say, That's true with what I'm hearing from people ask me about as well, because I, I feel like I've got a pretty good thumb on the pulse of what people are looking for and what people are using, and definitely hearing a lot of TypeScript in the last year or so.
+
+66
+00:18:46,890 --> 00:19:05,600
+Scott Tolinski: Yeah, absolutely. I've been I've been personally looking at reason, a ton myself. And it was really excited to see the bump up and people who are interested in learning reason. It's something that I've considered teaching at various points. So reason is one of those things that I've had my and I've tried out a little bit, and it's, it's really pretty cool. So do
+
+67
+00:19:05,600 --> 00:19:08,300
+Wes Bos: you want to if you want to give a explanation, what is reason?
+
+68
+00:19:08,430 --> 00:19:53,760
+Scott Tolinski: Yeah, I can go region is basically another flavor of typed JavaScript. It's not really JavaScript. It's like JavaScript mixed with Oh, camel, which is another programming language. And so basically, the combination of these two sort of ideas, at least did this really sort of interesting syntax that looks a lot like JavaScript in some aspects and doesn't look like JavaScript and others. I think the Facebook team said at some point that react was originally planned to be in reason or something I don't I don't want to state that as fact. There's rumblings about that or something. But reason reason react. It's a it's a basically another way that you can have typed JavaScript, but it's almost like a new ish language rather than a superset of JavaScript like you would have in TypeScript.
+
+69
+00:19:53,910 --> 00:20:35,730
+Unknown: Yeah, I think that's gonna be a big trend. Like, I think there's a future where we don't even write actual JavaScript anymore. We're Everybody has their own flavor or different language altogether that compiles to JavaScript or to things like, you know, webassembly. Obviously, for now, JavaScript is still here. But I find it really interesting to see that people are not really limited to, you know, that one language anymore. Yeah, I think it's, I think reason specificly is gonna do pretty well, for a number of reasons. Like it has super high satisfaction. It's from Facebook. So it's a good team, they have lots of resources they have, or they already have, like two hits on their hands with react and graph QL. So I'm pretty optimistic about reason.
+
+70
+00:20:35,880 --> 00:20:45,750
+Scott Tolinski: Yeah, yeah, I like the way it looks. Again, I'm one of those ones, I want to keep my eye on to look at the growth before I like make any decisions about it. But I like overall, the way it looks.
+
+71
+00:20:45,750 --> 00:21:31,550
+Wes Bos: One of the interesting parts about each of these sections is you have a overall happiness graph that shows people's happiness on a score of one to five, how happy you are. And on a lot of these happiness graphs, they've gone up over time. So looking at JavaScript flavors in general, how happy are you? It went from 3.9 in 2016, to four in 2017, to 4.2. And I was thinking about that I was like, I'm definitely much happier than the last. Like, we've had a lot of groaning a lot of aches and pains, a lot of growing pains, a lot of things changing very quickly. A lot of Webpack configs. Mm hmm. And I feel like everything has just gotten like really good. And like maybe even just like last six months or so even things like did you know, parcel is under a year old. He didn't even know that. Yeah, well,
+
+72
+00:21:31,550 --> 00:21:59,670
+Scott Tolinski: we were talking a parcel it came out right around the time that the state of JavaScript survey came out, because I was on the live stream that Sasha did. And I was talking about parcel because it had just been talked about or just released or something. And I was talking about how I think the future is going to be less configuration, write less writing giant Webpack config files, and whatever that means by having tools like parcel that make it really easy to get up and running.
+
+73
+00:21:59,760 --> 00:22:17,190
+Unknown: Yeah, I think parcel did really well this year. So we don't have like a dedicated section for build tools. We have like, other tools page, and it's not quite up there. But I think is gonna go up pretty fast. The next year, I wouldn't be surprised if it's like, you know, second or third after like maybe Webpack. And gulp.
+
+74
+00:22:17,220 --> 00:22:42,510
+Wes Bos: Yeah, and for those who don't know, parcel is a web pack alternative that just works. So you have an HTML file, you've got a script tag, you've got a link tag that links to a sass file, like you just write your HTML, like you were importing as a sass file in some TypeScript or some JavaScript, and then you just type parcel index dot HTML, and it will just compile it all for you. Yeah, and you're ready, you run, parcel build. And that's it.
+
+75
+00:22:42,540 --> 00:23:11,640
+Scott Tolinski: My favorite thing about it, I used it in my upcoming TypeScript series that I just recorded. And like, my favorite thing about it is, yeah, you make an index dot HTML file, it links to a.ts file. And then parcels, like, Don't worry, I got you. And like, you don't get the type. You don't get the type checking on build or something without a plugin. But without a plugin, you do get compilation and building directly into your site. It loads and it's blazing late, quote, unquote, blazingly fast so yeah, no, I'm a big fan. All right, let's
+
+76
+00:23:11,640 --> 00:23:40,080
+Wes Bos: keep going. Then let's talk about frameworks. So front end frameworks, specifically, the the big frameworks that were talked about where react view Angular preact, which is a pre Act is a react compatible clone, not I don't know, like it, basically, it's, you can take your react code, and then just drop in react, and you get some big performance benefits from it. And then we had Ember and polymer from that this one's interesting, because it has salary breakdown as well, which is kind of cool.
+
+77
+00:23:40,080 --> 00:23:58,260
+Scott Tolinski: I noticed a lot of polymer developers make a lot of money. And I was wondering if it's because it's a Google thing, right? Like, if you're using Polymer, maybe you're internally working at Google, and I think they probably pay pretty well. So I don't know, I have no idea if that's, if that's just totally making that up.
+
+78
+00:23:58,740 --> 00:24:11,550
+Wes Bos: Same thing with the free act. As soon as you go over 100 grand pre act starts to become more popular over react. So maybe that's something to say, if you want to focus on perf, your salary will increase, maybe,
+
+79
+00:24:11,820 --> 00:24:49,770
+Unknown: I think, you know, so that's something we know this. And I think what it is, is smaller libraries, like they are used more by more experienced developers, because if you're just starting out, you're not gonna start with preact or polimer. Right? You're gonna start with Yeah, yeah. And react to that kind of drags the average down. And on the other hand, if you're a more experienced, you have maybe a little bit more time to explore, maybe you have more perspective, and you can, you know, you're better able to see the advantages of something like react. And that's why you cannot have these numbers. I don't think it means that if you do start using preact, or polymer now you will earn more money necessarily. Right,
+
+80
+00:24:49,800 --> 00:24:50,460
+Scott Tolinski: right. Yeah.
+
+81
+00:24:50,610 --> 00:25:25,110
+Wes Bos: Another thing I want to talk about is the fact that Angular got pretty beat up on this, this whole survey all around. So we're looking at the overall results for front end frameworks for react 65% would use it again, view 28% would use it again. But overwhelmingly 47% have heard of it would like to learn it. So, you know, a lot of people are like, I've been hearing a lot about view, I'd love to learn it. But Angular got only 23% would use it again, and 34% would not use it again. So that's what do you think about that Sasha?
+
+82
+00:25:25,200 --> 00:25:46,710
+Unknown: So part of it, I think is a true trend. And part of is kind of my fault. So what happened is that in 2016, and 17, we asked separate questions about Angular j. s. Okay, so Angular is like the new I guess, Angular, whereas Angular j. s is the legacy version. And the naming is very confusing, I think. Yeah.
+
+83
+00:25:47,010 --> 00:25:48,090
+Scott Tolinski: It's very confusing.
+
+84
+00:25:48,450 --> 00:26:21,540
+Unknown: But so what happened is this year, we were like, well, angular j. s, is pretty old. Like, it's deprecated, we can probably drop it from the survey, we're not going to have like two anglers forever. So we simply didn't mention AngularJS. We only mentioned Angular. But then what happened is people, all of them assumed that Angular meant AngularJS, I think, and the answer is for AngularJS. So you know, okay, maybe people who tried Angular back when it was Angular j. s, they didn't like it. And they haven't tried it since they still answered the angular question.
+
+85
+00:26:22,110 --> 00:26:26,100
+Wes Bos: Yeah, it's true. Someone might have been like, four years back, right. Yeah. Yeah,
+
+86
+00:26:26,100 --> 00:26:29,250
+Scott Tolinski: I know, for a fact that I did answer it that way, personally.
+
+87
+00:26:29,310 --> 00:26:32,100
+Wes Bos: Okay. So that might be a bit of a bias there. Sorry, go ahead.
+
+88
+00:26:32,280 --> 00:27:30,180
+Unknown: And then what happened, that kind of compound. And the mistake was that we didn't realize that right away. Because, you know, we have all that data. And we're not focusing necessarily on every single chart. And then, so we didn't clarify that in the description. And then when people started asking questions about it, we didn't have like a really clear explanation, like I just told you. So I think it didn't help things that we weren't able to just like rectify the situation right away. And then in the conclusion, we write something about how the, the transfer Angular is a little bit worrying because it doesn't have as much momentum, which I still think is true. But I can see how people would think it's misleading to write that conclusion next to this data, even though the data is not it's not like there's a mistake in the data. It's more like the wording was ambiguous. But at the end of the day, like, Well, what do you call Angular, right? Like, what should we put on this survey? Because Angular is still the official name? So I'm not sure what the answer is here.
+
+89
+00:27:30,360 --> 00:27:59,460
+Scott Tolinski: Yeah, yeah, I feel, ya know, and then the whole, I think the whole situation was confusing for a lot of people. So I think in a survey like this, especially when you're trying to get this data of who's writing Angular, Angular JS, or what they're thinking, I think that's really tough to account for. I mean, even amongst libraries that have changed substantially, I think there's been no other framework that had such a great shift that Angular had from version one to two that I think maybe they would have been better off just naming it something else entirely.
+
+90
+00:27:59,490 --> 00:28:10,350
+Unknown: Yeah, I was thinking about that. I'm sure there must have been people in the Angular team who wanted a new name, and then people who wanted to keep the same name. And then maybe what we have now is like a compromise that makes nobody happy.
+
+91
+00:28:10,590 --> 00:28:35,940
+Wes Bos: Yeah. Any stats you want to talk about for us react specifically, because we're all three of us are react developer. So if you click in through to react, you see upward trend of people using react, which is good to see. You also have lots of things like most liked aspects of react, which is the most like is elegant programming style and patterns, and the most disliked is clumsy programming style.
+
+92
+00:28:37,980 --> 00:28:39,330
+Scott Tolinski: Seems like those are at odds. Yes. Love
+
+93
+00:28:39,330 --> 00:28:43,470
+Wes Bos: it or hate it, I guess. Yeah. And anything you want to talk about there?
+
+94
+00:28:43,620 --> 00:29:40,230
+Unknown: Yeah, maybe those two items are a bit too vague, like when we wanted to capture is, you know, with something like I don't know, functional programming, a lot of people say it's more elegant, or they just like the looks better. And it's hard to put into like actual, you know, data, like what's functional programming is not necessarily faster, but it does make your code cannot, you know, easier to understand sometimes. So that's what we were driving at with those two items. But obviously, it's super subjective. So that's why we have both. And at the same time, I agree that there's aspects of react that are elegant and some that are clumsy like I think JSX for example, a works great, but I do think it's kind of clumsy, like when you write it, it doesn't look super, you know, concise and nice. You have those. You have curly braces everywhere. You have ternary operators everywhere nested inside each other. So yeah, it doesn't look or feel good. So that's definitely like something I would say is clumsy about react.
+
+95
+00:29:40,380 --> 00:30:07,860
+Wes Bos: One kind of cool. Other thing I really like about this is if you look at react usage by country and you look at view usage by country, it's like night and day. So react is extremely popular in Canada, US, Australia, Sweden, Norway, and then you flip over to view it's like the opposite. map. It's like a very popular Mexico, Brazil, Russia, China, obviously, because views very popular with Alibaba, is that true?
+
+96
+00:30:08,040 --> 00:30:13,830
+Unknown: Yeah, yeah, yeah, I think that's the plot of the new Command and Conquer series, it's gonna be react versus view. Well,
+
+97
+00:30:18,510 --> 00:30:43,110
+Scott Tolinski: that's awesome. All right, so this ad transition comes courtesy of Sasha here. And if you want to get your salary bumped up, maybe it's time to start your own business, and the one thing you're going to need, if you are an independent contractor, or you're working or freelance or anything, you want to bring in some of that extra react or react money, like we've talked about here, then you're going to want to go ahead and get yourself to a freshbooks account.
+
+98
+00:30:43,260 --> 00:31:45,990
+Wes Bos: Definitely. So right before this podcast, Scott and I were sitting on slack doing a ledger of which sponsors have paid which sponsors that paid Scott, which sponsors have paid me and trying to like even out and make sure to see who owes who money. And all I had to do is log into my Freshbooks filter invoices by paid, see which ones are paid, I put them into our spreadsheet, see which ones are unpaid follow up on those. And then it would probably wait like 20 minutes, and we had all of our our ledger filled out for us no problem. And we were able to square each other way. So that's just like the perfect example of like, I don't want to do this because it's the business not I rather be coding, I'd rather be working on a podcast or rather be doing like actual tech stuff. I don't want to be bothered by like, oh, did this person pay or not, and things like that. So it's so easy just to log in, see what's going on with your world. Keep it all nice and tidy. I know tax times coming up in a couple months, and I'm ready for it. So check it out@freshbooks.com forward slash syntax for a 30 day unrestricted free trial. And thanks so much to Freshbooks for sponsoring.
+
+99
+00:31:46,140 --> 00:32:27,540
+Scott Tolinski: Cool, nice. Okay, cool. So let's move on into the next category, which is data layers. And this one was really interesting to me as well. And especially because, you know, there's a lot of I think growth in this area, we're seeing with a lot of graph qL libraries and things like that. So we have the Redux, which a lot of people have been using for a long time. And it has a high adoption rate at this point. And even when you think that a lot of people know Redux already, it's there's still 26% that says they've heard of it and would like to learn it. So I thought Redux was amazing. And how many people still want to learn Redux? And how many people have learned Redux already? I think that the numbers are big, big, big for Redux.
+
+100
+00:32:27,570 --> 00:33:02,430
+Unknown: Yeah. Well, I mean, speaking for myself, I have learned Redux. But I still want to learn it because I didn't understand the first time around. So yeah. Yeah, I think Redux is doing good. But I think the number of people who don't want to use it is also increasing. And that might be because it's getting replaced by simpler solutions, and especially things like Apollo, which now handles its own state. And I got a question whether most apps really need something as powerful as Redux. For their state management. I think it might be overkill for a lot of use cases.
+
+101
+00:33:02,580 --> 00:33:23,550
+Scott Tolinski: Yeah, it does look like most of the people have heard about Apollo want to learn it. I thought that was pretty interesting. There's like a very small percentage of people who have heard about it, but aren't interested in learning it and, and even like miniscule percentage of people who have used it and would not use it again. So it looks like Apollo is definitely just shooting up in popularity to
+
+102
+00:33:23,580 --> 00:33:53,430
+Wes Bos: Yeah, I'm impressed to see that I think that the only hurdle that we're gonna see over the next couple of years is people actually implementing graph QL. back end, yeah, in order to actually have to use it. Because I think that kind of stuff where it doesn't require a rewrite of your back end, because you, you certainly can stick a graph qL server in front of your existing REST API or something like that. But definitely does require a lot more involvement than just slapping in something like Redux where the back end team doesn't care what you use that you're pulling in.
+
+103
+00:33:53,580 --> 00:34:10,110
+Scott Tolinski: Yeah, and there's the Apollo rest stuff. I haven't used it before. But it looks really slick. So I mean, there's a way to consume a REST API easily enough with Apollo for those of you who are scared of having an Apollo back end, I actually have users in the level of slacker movies did and it seems okay, slick. So
+
+104
+00:34:10,130 --> 00:34:39,570
+Wes Bos: I haven't tried that either. If you have tweet us at syntax FM, tell us your experience with Excel. I always like to hear real world stories. What other data layer they had graph qL, Apollo Redux. Those are the big three mob x relay, modern relay, or some of the two other ones, they don't seem to have a whole lot of traction, but when they do have traction seems to be in the high income. This is very much like some of the other ones where they're very small, little bit unheard of. But the people who do use them are in the high income earning bracket.
+
+105
+00:34:39,920 --> 00:34:50,250
+Scott Tolinski: Yeah, and I think again, relay is used pretty heavily at Facebook. I mean, it's their own product. So again, maybe that's a Silicon Valley salaries right there. Yeah.
+
+106
+00:34:51,380 --> 00:35:26,070
+Wes Bos: Moving over to back ends. This one is just dominated by Express, express this kind of like seeing this just because there's been fairly steady back end in red are in JavaScript land for a couple of years now and it's been expressed, there's some other there's koa Meteor sails feather, you can talk about Vulcan as well. But Express has definitely been around for a long time. Huge user base. And a lot of people are just happy with how it's working. It does show next j. s showing up on here quite a bit, which I don't know if I will call that a back end framework or not. But it's definitely seems to be gaining popularity as well.
+
+107
+00:35:26,310 --> 00:36:10,830
+Unknown: Yeah. So usually we try to avoid featuring tools that are specific to one ecosystem. You know, like next year's is only for react. Yeah. But we really wanted to capture, we think it's kind of a new development to have these. Yeah, maybe they're not backends. But there's all they're also not like static site generators. So next door. Yeah. We were curious to see like, what that represents in the ecosystem. So we decided to include Max, we didn't include Knox, maybe we should have, I'm not sure that that's something you know, sometimes we can add new things just to test the waters a little bit. So that's what next was. And it does turn out that a lot of people are interested in it, or even use it like it's the second most popular option after Express, even though it's react specific.
+
+108
+00:36:11,729 --> 00:36:21,420
+Scott Tolinski: Hmm, wild. Yeah, this is one of those ones. I've been wanting to dive into a lot just because it seems like a great platform, but I haven't yet. It's on my list of things to just mess around with.
+
+109
+00:36:21,510 --> 00:36:30,920
+Wes Bos: It should check out the syntax website. It's built the next No, I was talking about nuxt. Oh, knucks. Not next. Yes. Is the view equivalent of next? Yeah,
+
+110
+00:36:30,920 --> 00:36:38,340
+Scott Tolinski: I've used next in a lot of stuff actually, like in levelup tutorial series. So now I'm very familiar with next very popular.
+
+111
+00:36:38,490 --> 00:37:13,320
+Unknown: Yeah, I think it makes sense to to do like one thing and do it really well, like next or next do. And it's also very clear, what those tools are for maybe a problem with the other like back end frameworks is they don't make it clear enough what their advantage over Express, for example, would be like cola or sales. And like Meteor, I think had a really clear story in the beginning. But these days might be less, you know, less obvious why you should use it. It's a little bit less differentiated, which is a shame, because it's still really cool. And probably more powerful than it was before. But yeah, I
+
+112
+00:37:13,320 --> 00:37:20,820
+Scott Tolinski: think they got a I think people probably have the wrong idea of what Meteor is at this point, just because of how much it's changed since when it was released. Yeah,
+
+113
+00:37:20,879 --> 00:37:42,060
+Wes Bos: you know, what I'm bummed about is Keystone j s only got 12 votes on this entire thing, which I was big on Keystone a couple years ago. And it didn't, it seemed to have fizzled out. It was like a react base, full stack Express based CMS with authentication built in. But that's also what you're working on with Vulcan as well. Right? Sasha?
+
+114
+00:37:42,090 --> 00:37:53,550
+Unknown: Yeah, exactly. I also really liked Keystone. I looked at what they were doing a while back. And I think max from that team went on to create a style components, right? Oh, yeah.
+
+115
+00:37:53,580 --> 00:37:59,730
+Scott Tolinski: Yeah. I wonder about like ghosts, or something like ghost fits in there. Are you guys familiar with that?
+
+116
+00:38:00,230 --> 00:38:04,020
+Wes Bos: Yeah. Ghost is the like WordPress but built in Node. Right.
+
+117
+00:38:04,050 --> 00:38:11,360
+Scott Tolinski: Yeah. I'm wondering where that fits in here. If that would fit in this kind of thing or not? I'm surprised to not see it show up, at least in some regard.
+
+118
+00:38:11,580 --> 00:38:17,460
+Unknown: Yeah. I don't know if it's, yeah. Like, there's always this difference between backends. And CMS is on frameworks.
+
+119
+00:38:17,480 --> 00:38:21,810
+Wes Bos: Yeah, yeah. I would say it's a CMS. Yeah, I think so.
+
+120
+00:38:21,920 --> 00:38:23,210
+Scott Tolinski: I suppose that is true.
+
+121
+00:38:23,550 --> 00:38:27,230
+Unknown: So just to bring it back to volken. Like, yeah, I think,
+
+122
+00:38:27,270 --> 00:38:37,830
+Wes Bos: yeah, you want to you want to tell us like what Vulcan is because previously on the podcast, I said, like, why don't we have a Ruby on Rails for JavaScript? And you said, we do I make it. It's called Vulcan.
+
+123
+00:38:38,420 --> 00:40:02,190
+Unknown: Yeah, so that's really the goal. And I think I keep hearing that, like, oh, graphical is too complicated, like setting up a server is hard. And we need a Rails for graph QL. So I completely agree. And that's what we're trying to build. So like at the stack level, Vulcan is built on top of Meteor. So you know, we were just talking about Meteor, but I think it's better than ever, as a build tool and kind of as a as a delivery system for for apps. But we don't use the actual Meteor data layer anymore, because we use graph QL. And that's a really good combination, also, with react on the front end. So the goal is really to deliver this whole package, this whole stack that just works out of the box. So you don't need to do any of the plumber, you know, plumbing, sorry, and duct tape things together and configure Webpack and do this and that. And the other thing that Vulcan does is because we have that whole view on the whole stack and that control over the whole stack, we can give you premade components for things like data loading forms, showing data tables search, and that makes for a really good developer experience, in my opinion, where you can just, you know, use premade components and have something that works really quickly. So it's kind of the original vision of Meteor where they wanted to give you lots of things that just work but adapted for a more modern ground. qL slash react stack.
+
+124
+00:40:02,400 --> 00:40:04,050
+Scott Tolinski: Nice. Yeah, I love it,
+
+125
+00:40:04,170 --> 00:40:36,650
+Wes Bos: putting it on the list of things to try. That's great. All right, so we're gonna move into the section, which is other tools, I thought this was actually kind of cool because like, as far as if you don't listen to this podcast is you're only like outlet of stuff. Not everything is built in JavaScript. And you might just use JavaScript for parts of your application, or just the front end or just a specific piece of it. So you also asked about other utilities that you're using day to day, and it looks like over a quarter of the people are using either Python or and or PHP, which I thought was pretty interesting.
+
+126
+00:40:36,810 --> 00:41:05,630
+Unknown: Yeah, so this question wasn't worded in the same terms as the other one. So it's just asking people, you know, do what do you use? So they might not necessarily use Python? Like, as much as they used JavaScript? Or PHP, but yeah, it's like, I'm definitely still very present. And I think that makes sense. Like, it's rare to find developers that only do TypeScript. Maybe there's more and more of them. Yeah. But especially on the back end, I think you still need a mix. Sometimes.
+
+127
+00:41:05,670 --> 00:41:16,710
+Wes Bos: I'm surprised that Python I would have, I would have guessed that at least a quarter of the people also write PHP, but I'm surprised that Python as well, I guess, those circles I've done yeah, I
+
+128
+00:41:16,710 --> 00:41:24,480
+Scott Tolinski: don't think I'm that surprised about it. I mean, it's used a lot in enterprise and all sorts of stuff. I mean, there's a lot of amazing stuff built with Python. So
+
+129
+00:41:24,600 --> 00:41:47,610
+Wes Bos: yeah, it's it's used a lot in enterprise. And it's used a lot in like academic circles. It's one of the weird things about my sublime text book, it's still sells really well to Python developers that work at universities that are just doing data analysis, which is amazing. Like, they're not web developers at all. They're just analyzing data with Python, and they need to know how to use Sublime Text. That's the editor for Python.
+
+130
+00:41:47,630 --> 00:42:34,230
+Scott Tolinski: I used it for 3d stuff when I was in school. So yeah, I think Python is pretty versatile. Oh, yeah. I mean, I think one of the not so shocking ones is the text editors, one where you can see that nearly like the sheer amount of people using VS code just absolutely dominates the charge vs. Code is what is the I don't even know what the percentage here but is like 14 and a half thousand percent? Yeah, it is absolutely crushing it. And it's not surprising if you use VS code. You know why if you don't use VS code, you should maybe take this chart as a little bit of a hint, because it is really, it's pretty darn slick. So I didn't think that was that surprising. But I think it might have been a little bit surprising just how dominant it was.
+
+131
+00:42:34,290 --> 00:42:41,630
+Unknown: Yeah, I actually started using VS code. After listening to you guys podcast. True story.
+
+132
+00:42:41,760 --> 00:43:10,770
+Wes Bos: I don't want to toot our own horn. But I think we've converted quite a few people after that podcast, which is why but a year and a bit ago, we converted a lot of people because like, that was always the thing. We were like, What's so much better about it. And it's hard to talk to someone like you need a full hour to sit someone down and be like, these are the freakin awesome pieces of VS code. And this is why it's so much better than anything out there. It's It's It's insane how popular it's become in just like two years. It's It's funny, because there's like stages of VS code usage. There's
+
+133
+00:43:10,770 --> 00:43:47,610
+Scott Tolinski: the well, I'll check it out. People are talking about it. Okay, I hate it. I quit this forever. Let me go back to sublime or atom. And then you're like, oh, okay, we were still talking. Maybe I'll try it again. Oh, I get it. I feel like that's happened to like most people who picked it up because they're so used to whatever they're using, but it's like ID light. I mean, it's like using something like WebStorm with having a nice interface and more customization options and stuff like that without maybe some of the overhead. And it's free on top of that as a pay supposed to like a paid ID. So I think it's once you use it and understand it's easy to see it takes off. It's a great platform.
+
+134
+00:43:47,640 --> 00:43:53,550
+Wes Bos: I had zero qualms with Sublime Text. I was like, I'm so happy of Sublime Text.
+
+135
+00:43:53,550 --> 00:43:58,560
+Scott Tolinski: I had problems with you using Sublime Text, because I knew I knew how much better vs. code was. And I
+
+136
+00:43:58,560 --> 00:44:12,990
+Wes Bos: just tried it. I was like, Where has this been all of my life? What if I've been missing this amazing, and but it really frustrates the vim people, because they've had that for since like, 1920, or whatever. But it's amazing.
+
+137
+00:44:13,379 --> 00:44:24,780
+Unknown: Yeah, I like that I still discover new things like every week, like I'll get a random key combination, and then a little menu pops up. And he's like, do you want to eliminate old bugs from your code? Yes,
+
+138
+00:44:24,900 --> 00:44:36,330
+Wes Bos: yeah, you just mash your head against the keyboard or like, That should be your thing, like once a day, open up the command palette and find one thing in there that you don't know what it does and figure out how to use that because it's so helpful.
+
+139
+00:44:36,570 --> 00:45:22,890
+Scott Tolinski: I think one of the I don't know if this is surprising. We did talk a little bit a little bit about at the very beginning, but how most people seem to feel that JavaScript is moving in the right direction. Most people feel like JavaScript, I would say less people than the past two years feel like JavaScript is overly complex. So people are really starting to come to terms with the complexities of building apps in JavaScript. And I think The the enjoyment has gone up how much people agree with that they enjoy building apps with JavaScript. Yeah. And, and to me, I don't know if any of these things are surprising, because I feel the same way. I feel like things have gotten better. But at the same time, you know, you see online and people complain about things and whatever. So it's nice to see that overall, look, community feels like things are getting better.
+
+140
+00:45:23,040 --> 00:45:48,360
+Unknown: Yeah, and I think JavaScript developers, like we always have this complex are always another real language it was created in a week. And when you look at that, it kind of tells you that Actually, no, people do like it. And it's you don't have to be ashamed of using JavaScript, like, especially now with all the new developments in the field. I think JavaScript is just really like a real language. Like, there's no, there's no way around it. it's here to stay. You know,
+
+141
+00:45:48,660 --> 00:45:52,200
+Scott Tolinski: again, we got types, we got types now in TypeScript. So there, yeah,
+
+142
+00:45:52,470 --> 00:45:53,010
+Unknown: yeah.
+
+143
+00:45:53,010 --> 00:45:54,270
+It's a it's a
+
+144
+00:45:54,270 --> 00:46:01,050
+real language unless it gets replaced by like, you know, an evolution of diverse bit like reason, but it is pretty cool.
+
+145
+00:46:01,140 --> 00:47:12,630
+Wes Bos: Yeah, yeah, it very well might happen. And but it's not something to people email me about this all the time. They're like, what if it changes and all of my all of it is out of like, what if I'm obsolete and all this, like, we will for sure, see it happening like three, four years, like we saw react coming for versary or four years, and at the time it became popular, then it's just time to pick it up. So I don't think it's really something that you need to sweat because if something like reason pops up, you'll hear about it on the show quite a bit is the same thing with like, I was thinking about that the other day with electric cars, where people are like, oh, all those technicians that work on these, like old cars are gonna be out of a job in two years. And it's like, no, like, they're probably just gonna move over to servicing, like, the good ones are just gonna learn to service electric cars, some of them are going to move into doing other stuff that is somewhat tangentially related to the automotive industry. And then the ones that like dig their feet in and and forever, hold on, there'll be a couple of them that maintain the old gas cars for the next 80 years. And then the other ones will just probably fall by the wayside. But there will be plenty of time that you will see that sort of thing coming. Yeah, those
+
+146
+00:47:12,630 --> 00:47:17,340
+Unknown: guys will go work as a high paid consultants for large enterprise companies.
+
+147
+00:47:17,370 --> 00:47:29,640
+Wes Bos: Yes. That's true. I often wonder about that. That's one thing I was like, like, how many people out there are slinging like Angular one. I know. There's lots and lots of Angular one app still out there.
+
+148
+00:47:29,670 --> 00:47:30,870
+Scott Tolinski: Yeah. If you're the expert,
+
+149
+00:47:31,020 --> 00:47:44,520
+Wes Bos: and there's some x there's a couple experts out there that are because some of these apps are huge. There's no like he entire banking websites have been built on Angular. You can't just switch that whole sucker over into Angular two. It took them years to build this thing.
+
+150
+00:47:44,700 --> 00:47:45,690
+Scott Tolinski: Yeah, word.
+
+151
+00:47:46,590 --> 00:47:50,100
+Wes Bos: last little section I want to go to is the award section. I really like this so
+
+152
+00:47:50,100 --> 00:47:53,280
+Scott Tolinski: cute. I'm gonna just gonna say it's super cute off the top the
+
+153
+00:47:53,280 --> 00:47:59,190
+Wes Bos: cutest thing I've ever seen. Yeah, why don't we each pick a couple and just wrap it? Well, let's each pick two of our favorites.
+
+154
+00:47:59,220 --> 00:48:40,350
+Scott Tolinski: So for the people who aren't looking at this screen, there's like little boxes with question marks and you hover over it, it gives a nice little pause. And it sort of like a reveal. Like I have all this stuff that makes it like fun to look at. Because it's like a reveal. In the end, I think awards are one of those things that are always like nice to have a nice little celebration or presentation. So highest satisfaction award, the awarded to library with the highest percentage of satisfied users goes to jest with 60 or 96.5 percentage of users will use it again. And I'm adjust user I love just I moved over from mocha, and I used react testing library with jest and I couldn't be any happier with it. So I'm part of that. 96% right there,
+
+155
+00:48:40,380 --> 00:48:50,880
+Wes Bos: the runners up, Express 94.3 in graph qL 94.2%. So some very satisfied users on Jess, express and graph QL.
+
+156
+00:48:50,970 --> 00:48:55,710
+Scott Tolinski: Yeah, I am not really surprised on any of those to be honest. Maybe Express No, not the other ones. Yeah.
+
+157
+00:48:55,980 --> 00:49:05,190
+Wes Bos: What's another one that we got here? Most mentioned awarded to the library. I mentioned the most in the other libraries view x. I don't know what is view x?
+
+158
+00:49:05,250 --> 00:49:07,350
+Scott Tolinski: Is it a redex view? Yeah, type thing?
+
+159
+00:49:07,380 --> 00:49:14,010
+Unknown: Yep, exactly. It's the view state management library. That's pretty neat. It's pretty neat. Talked about
+
+160
+00:49:14,010 --> 00:49:17,790
+Wes Bos: you have any ones that really surprised you here Sasha.
+
+161
+00:49:18,030 --> 00:49:28,770
+Unknown: I thought the highest interest one was neat like graph qL and then runners Ops, storybook and electron like graph qL I kind of expected that storybook took me by surprise storybook.
+
+162
+00:49:28,830 --> 00:49:39,090
+Wes Bos: Yeah, that does Yeah. Wow. And storybook is the React component tool where you you write your components in isolation and you can view them in their different states
+
+163
+00:49:39,330 --> 00:49:42,720
+Unknown: it's not just react actually no it works for view then I think
+
+164
+00:49:42,840 --> 00:49:43,440
+Wes Bos: Oh really?
+
+165
+00:49:43,440 --> 00:49:46,860
+Scott Tolinski: Yeah they it's no longer react storybook. It's storybook. Sorry,
+
+166
+00:49:47,100 --> 00:49:48,150
+Wes Bos: it works with what now?
+
+167
+00:49:48,959 --> 00:49:51,600
+Scott Tolinski: Anything react Angular view, Ember.
+
+168
+00:49:51,749 --> 00:50:23,460
+Wes Bos: I did not know that. All right, with anything you're you're gonna get some some criticism. One thing I saw there was a whole YouTube Video devoted to how Angular was not properly represented in here. Yeah. And that very well may be the case, it's hard to like get out of the React circle, I find myself hard to get out of the React circle, because that's my thing. I teach people how to learn react, and I kind of get into the React circle. So added, I'll just put the video in there for for their own sake. I think we talked a little bit more about that as well.
+
+169
+00:50:23,550 --> 00:50:41,880
+Scott Tolinski: I almost left a comment on the video about how react routing is not bad or confusing. He seemed very confused about react routing. It's like, you don't have to use react router one, but two, like it's not confusing at all. Like, I don't understand that complaint. But I held back. I did not know leave a comment.
+
+170
+00:50:42,480 --> 00:50:45,510
+Unknown: Yeah, I haven't seen that video. I'll take it out after
+
+171
+00:50:45,840 --> 00:50:52,800
+Wes Bos: Oh, it's some hot drama. It's gonna get you again, get you real spicy. Make sure you go for a cool down walk right after?
+
+172
+00:50:53,460 --> 00:51:04,530
+Scott Tolinski: Yeah, there's some hot takes. I mean, I think there are probably valid points. But like, at the same time, it's not like you limited the survey in any sort of way to the React community. It was it was definitely spread far and wide. So
+
+173
+00:51:04,680 --> 00:51:40,560
+Wes Bos: yeah, I'm also on Twitter can see dodge just as ask about what they're going to do to make it representative of the community and not just the involved slash Twitter community? I don't know, I think we kind of talked about that. I've emailed about this thing before to my list. And my email list is definitely not just Twitter users, because it's much larger than that. And like, I think that it does a good job at I do a good job of raking in people who are not on Twitter every single day at the end are it's sort of hard to like, what are you gonna go start knocking on people's doors or making it part of a government mandated poll or something like that?
+
+174
+00:51:40,590 --> 00:51:46,950
+Unknown: Well, I just tell people, it's your fault. Like, well, all the people came from West his mailing list to ask him.
+
+175
+00:51:49,560 --> 00:52:01,500
+Wes Bos: Yeah, and I don't know if you have stats on how many people have come from my mailing list or not. But like that would also probably skew it a little bit more in the React direction as well, since that's kind of my thing as well. That being said, like,
+
+176
+00:52:01,620 --> 00:52:17,850
+Unknown: I think Laurie vos from NPM was saying on Twitter that our stats match, there's so it's not like, you know, that's like we are showing 90% for react and then everybody else is showing 50% I think all the different surveys kind of show similar numbers.
+
+177
+00:52:17,850 --> 00:52:18,540
+Scott Tolinski: Mm hmm.
+
+178
+00:52:18,810 --> 00:52:36,300
+Wes Bos: The other stat that everyone's talking about is the gender breakdown. This happened to the StackOverflow survey as well, where it comes out and it's overwhelmingly male. So I don't really know, too much to say about that maybe with three white dudes on a podcast can try to figure this out together.
+
+179
+00:52:37,110 --> 00:53:56,400
+Unknown: Yeah, I was surprised to be honest, like I knew about the gender gap problem, obviously. But I thought it was more like, you know, 90% women or 15%. But in our result, it's like 5%, and stack overflows, results, it's six or 7%. So it's really tiny. And I think, even if you know not to get political, but even if you believe that, oh, women are not interested in coding, or it's not their thing, and I don't believe that, but even if you do you have to admit that 5% there's got to be like other factors, right? Like, that seems really, really low. Yeah, it means that there's definitely things we can do. There's, it's kind of gotta be like low hanging fruits to get that up to at least 15 20% as a as a first step. And, like, I don't know what that is. And another thought I had about this is like, I think it's kind of a paradox, in a way, because all the events, recently have been doing a really great job of promoting diversity, women, minorities, and so on. So I kind of had the problem in the overall ecosystem, because like, yeah, most of the conferences I go to, or I see on YouTube, have a lot of women, speakers and a good chunk of women in the audience as well. And then you see stats like this one, and they can kind of brings you down to back to Earth. Like, Oh, actually,
+
+180
+00:53:56,400 --> 00:54:12,810
+Scott Tolinski: we're not doing so great. After all, well, maybe it's maybe it's a problem, too, that we are addressing in a better way now, so that in the future, it's better. And we might not see the results of the efforts until later, you know, maybe a couple years down the line. But yeah, no, I totally agree.
+
+181
+00:54:12,900 --> 00:54:30,960
+Wes Bos: I'm just trying to look for my stats on Twitter and YouTube, my Twitter audience is 80% male and 20% female. So that's good to see. It's, it's, it's not perfect, but it's it's much higher than the respondents to the survey, and I don't know what they look like on YouTube. I don't know where to find it.
+
+182
+00:54:31,020 --> 00:55:15,420
+Unknown: Well, Wes, I think you do a great job of being like, approachable and like, you know, welcoming to everybody. And I think that's super important. Because often people think, well, if you want to have more x people, you have to tailor your content to x. And I think that's not true. Like if if you want more minorities, women, you have to make yourself more approachable. You know, not use jargon. Not use words. Like you know, obviously it's easy to see that to do this and that that's kind of already targeting your contents to people who are in the know, in a way. And all these little things I think are super important. And they're not so much about targeting a special group of people who you want to attract, but more about making yourself more friendlier. And, um, yeah,
+
+183
+00:55:15,600 --> 00:55:39,480
+Wes Bos: yeah, I firmly believe that being friendly, being approachable. That's one thing I learned. When I first got my start in teaching was was through ladies learning code. And it wasn't about like, trying to cater or something like that. It was it was just about like, be a good person. Listen to what people are saying and try to be as helpful and approachable as you possibly can. Yeah, exactly. Be excellent to each other.
+
+184
+00:55:39,600 --> 00:55:44,640
+Scott Tolinski: Yeah, I think that we said that so many times on this show. Just be cool. Just be cool. Come on.
+
+185
+00:55:45,030 --> 00:55:50,610
+Wes Bos: Alright, let's move into our last section, which is sick pics. Sasha, did you bring a sick pic for us today?
+
+186
+00:55:50,850 --> 00:55:51,360
+Unknown: Oh, yeah. So
+
+187
+00:55:51,360 --> 00:56:26,970
+my sick pick would be like, just DIY stuff. And woodworking because I've always done stuff on the computer. And I think it's different in the US. But like, living in a big city in Paris, it was really not common to have a garage or a shop and house with Well, you have no garage, you have like a tiny apartment. So woodworking or any kind of DIY stuff isn't really common there. And recently, I've started picking that up mainly to build myself like training equipments for climbing like climbing boards, stuff like that. Yeah, I
+
+188
+00:56:26,970 --> 00:56:28,530
+Scott Tolinski: see your pegboard behind you.
+
+189
+00:56:28,560 --> 00:56:29,910
+Unknown: Yeah, yeah, I
+
+190
+00:56:29,910 --> 00:56:31,470
+Scott Tolinski: wanted to make one of those.
+
+191
+00:56:31,530 --> 00:57:21,720
+Unknown: It wasn't hard to make. But it was a Well, except that I messed up, like every single step will actually it's kind of interesting, because when you code or when you design online, on the computer, you have undo. And it really makes you work in a way, at least for me, that's very like, free form. And I can just start hacking and fix bugs later. And then when you do woodworking that doesn't work at all, like, you know, if you draw them in the wrong place, like that's it, you're screwed, like you have to start over with a new board. And it really forces you to to slow down and make plans and measure things. And be sure that you're doing the right thing at the right place at the right time. And I think that's that's almost like therapy for me, because it's like helping me shore up my weakness in that area.
+
+192
+00:57:21,899 --> 00:57:27,300
+Scott Tolinski: Yeah, you're like working with intention? Yeah. Rather than just like yeah, going for it. That's this cool.
+
+193
+00:57:27,540 --> 00:58:03,690
+Wes Bos: My sick pick is just because of your French accent. So there's a YouTube channel I watch called Alex French guy cooking. And he's a x engineer turned like YouTube cooking personality. And he always goes into the actual science and, and building of the tools that he needs to cook it. And also, it's funny that you say that because like running around Paris, he is in Paris. And he still manages to make these things work out of his tiny little studio. So fantastic recommendation. It teaches you a lot about cooking his presentation as well as great as well as the actual things that he builds to help him cook. Yeah,
+
+194
+00:58:03,930 --> 00:58:10,140
+Unknown: I love his channel as well. Of course, I know him very well, because we're both French so as you can imagine, yeah.
+
+195
+00:58:11,310 --> 00:58:12,930
+Wes Bos: Neighbors you went to school together?
+
+196
+00:58:13,170 --> 00:58:17,190
+Unknown: No, I didn't know him. But I liked his series on ramen, and passed on.
+
+197
+00:58:17,430 --> 00:58:18,030
+Wes Bos: Oh, yeah.
+
+198
+00:58:18,210 --> 00:59:39,870
+Scott Tolinski: That was amazing. Nice. My sick pick is since you did YouTube, I'll do YouTube. This is something that took place a couple of weeks ago, probably by the time you're hearing this, like at least a month ago. And this is the silverback open is a B boy breakdancing battle. There was like the best in the very best in the world in a, in a just an awesome competition, maybe some of the greatest physical stunts you're ever see. And so there's a playlist that has all the videos from it. But some of this stuff's amazing. And if you really want to see some amazing stuff, it's probably going to be maybe a little less impactful for those of you who have never watched breakdancing before. But there's a the B girls the the women's competition, just saw an absolute explosion of talent this year. And like, there was basically one B girl who you just assumed she was going to win because she's dominant. And then all of a sudden, there's like people coming out of nowhere who were like 16 years old and just unbelievably good. And the competition's great. It's some of the most extreme athletic stance, you'll see. If you don't watch anything in this watch the amazing moments at silverback open video, I'll post that in the thing here, the amazing moment that silverback open is absolutely mind blowing. So definitely something to check out if you're interested in human movement at all.
+
+199
+00:59:40,410 --> 00:59:42,420
+Wes Bos: Awesome. What about shameless plug Sasha?
+
+200
+00:59:42,540 --> 00:59:59,850
+Unknown: So I think I already applied like Vulcan js, my framework, so I'm going to go with that. Yeah, it's pretty ambitious. I think what we're trying to do, but I would really love for people to try it and tell us what they think. You know, it's free open source. There's a tutorial that you can do in like 30 minutes, so you don't have too much to lose. Yeah.
+
+201
+00:59:59,850 --> 01:00:09,570
+Wes Bos: I'm just gonna shamelessly plug all of my courses Wes Bos calm for slash courses. If you want to learn anything about JavaScript or react ESX node, it's I will teach it to you.
+
+202
+01:00:09,930 --> 01:00:37,560
+Scott Tolinski: Yeah, I'm gonna plug my yearly subscription level up pro level up tutorials, comm forward slash pro sign up, you get access to all of my tutorial series. There's a new one every single month including the latest one, which is going to be level one TypeScript for those of you who have seen TypeScript, epic rise in popularity inside on the state of JavaScript and want to learn coming from somebody who maybe has never even considered learning TypeScript. This course is for beginners. So level one. TypeScript is available level up tutorials for pro subscribers.
+
+203
+01:00:37,800 --> 01:00:56,760
+Wes Bos: Awesome. So that's it for the episode. Thank you so much to Sasha, for taking time out of your Wednesday. This is recording this on a Tuesday night. It's 10pm. My time obviously Sasha is in Japan, we've always tried to link up but it's it's almost impossible just because of the huge time difference. But thanks so much for coming out.
+
+204
+01:00:56,940 --> 01:01:03,210
+Unknown: Yeah, thanks so much for having me. I know you guys don't usually have guests so I really appreciate you making room for me.
+
+205
+01:01:03,510 --> 01:01:05,370
+We don't absolutely have guests this is
+
+206
+01:01:05,400 --> 01:01:42,150
+Wes Bos: we've never before. If you liked this tweet us at syntax FM if you don't like it also tell us because we are thinking about not if you just don't like Sasha don't tell us that but we are thinking about having guests on in the future. But not like your typical the same guests talk about the same thing. We're actually interested in like interesting stories like, like Sasha told us about how did you actually build this thing? So we've got a huge list of possible one. So if you're interested in that, make sure you tweet us let us know your thoughts. Word. That's all I got. That's it. All right. Thanks for tuning in. See you next week. Hey, space,
+
+207
+01:01:42,390 --> 01:01:43,740
+Scott Tolinski: can we get a piece Sasha?
+
+208
+01:01:43,740 --> 01:01:45,600
+Wes Bos: Can you say peace, peace?
+
+209
+01:01:45,630 --> 01:01:47,880
+Unknown: Yeah. See ya.
+
+210
+01:01:49,980 --> 01:01:59,670
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

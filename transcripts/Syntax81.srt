@@ -1,0 +1,180 @@
+1
+00:00:00,359 --> 00:00:01,350
+Unknown: Monday, Monday,
+
+2
+00:00:01,350 --> 00:00:02,160
+Monday,
+
+3
+00:00:02,160 --> 00:00:21,660
+open wide dev fans yet ready to stuff your face with JavaScript CSS node module, BBQ tip workflow breakdancing soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA, Bob and Scott Taylor.
+
+4
+00:00:23,610 --> 00:00:24,450
+Totally at ski.
+
+5
+00:00:25,890 --> 00:00:57,930
+Scott Tolinski: Oh, welcome to syntax in this Monday heastie treat, we're going to be talking all about hack tober Fest, which is a great way to get into the open source community. We're gonna be talking all about it some of the cool things that you can do to participate in hack tober fest. Now this is syntax. And like I said, we're on the Monday episode, which is the hasty treat. So these are maybe like a little 20 minute episode here for you somewhere around there. And my name is Scotland's gay. I'm a full stack developer from Denver, Colorado. And with me, as always, is Wes Bos.
+
+6
+00:00:58,020 --> 00:01:01,020
+Unknown: Hello, everybody. Hey, yeah. So
+
+7
+00:01:01,020 --> 00:02:38,060
+Scott Tolinski: this episode, this hasty treat is sponsored by native script. Now native script is the great way to build real native apps using your JavaScript skills. And you went west, this native script in between the recording of this episode and the last episode, they got the website, they Oh, nice, new, nice new website. So that's even if you check native script out last week, check it out, again, because they got a fancy new website. And it's looking really good. So like I said, scrip is a great way to build real native applications using JavaScript, TypeScript, view, Angular, all that stuff, you know, and love. And again, these are large some sort of web view application like, like PhoneGap, or something like that. It's not like a website, in a browser in an app. It's an actual native app, just like, it basically allows you to take your code and it converts it into real native code for both iOS and Android. So you're not leaving any platforms out when you're coding with native script. So check it out native script.org, forward slash syntax. Again, it's the great, awesome, just a easy way to pick up with the skills you already have for front end Dev and get into building native apps, get that app on that app store, Google Play Store, make some make some sweet cash with that stuff. So head on over to native script.org forward slash syntax again, check it out. Again, if just check it out. They're cool new website, they have a lot of really great documentation here. Easy to pick up. Love, love, love this stuff.
+
+8
+00:02:38,370 --> 00:03:49,230
+Wes Bos: Alright, let's get into it. Let's talk all about hack tober fest. And I actually listened to a really great podcast last night on the change log podcast, which is another really good one, if you're looking for some more web development, listens. And how Oktoberfest is, it's apparently in the fifth year. And what it is, is put on by digitalocean. github in Twilio. And the idea is that you submit five pull requests to open source projects on GitHub, over the month of October. And if you do that, and you're one of the first I think, 50,000 people to do it, you're gonna get a free t shirt. Now, we're not sponsored by digitalocean, GitHub, or Twilio, this is something that's put on by a company. But I think that it's such a cool thing that they're doing. And I think like last year, myself, I saw a huge influx of pull requests on my repos. And they were extremely helpful, as well as it really gets people into open source. Because there's a lot of people that are kind of maybe uncomfortable with, with diving into open source, and this Oktoberfest is going to, I think, really push people to do it. Because like t shirts and stickers are the currency for for web developers, aren't they?
+
+9
+00:03:49,320 --> 00:04:42,060
+Scott Tolinski: Yeah, absolutely. And again, anything that will get you to push you over that that sort of comfort barrier, where you're like, I don't know about submitting pull requests these projects, well, if somebody is dangling a carrot in front of you, it might get you to make that jump a little bit easier. And once you do it once, you're going to see Oh, well, hey, this isn't so hard. And this is pretty fun. And now I have some work that's in this project. And maybe it's a small time project. Or maybe it's a big time project, but you your contribution just did something to that project that push it forward in a sort of way. I always like to think about this as like you have like a circle. And if everybody nudges the edges of that circle out just a little bit with their contributions, the circle continues to grow. So every single little nudge is going to grow that circle. So don't ever think that your little nudge is insignificant, or something like that.
+
+10
+00:04:42,060 --> 00:05:42,570
+Wes Bos: Absolutely. So if you want to pull up the website, it's hack tober fest dot Digital Ocean Comm. The way that it works is that you sign in with your GitHub account, and then it will track your pull requests that are on public repos over the month of October, and they will not by default, they don't get access to your GitHub repo except that you Your email. And by default, the checkbox for Digital Ocean signing you up for info about Oktoberfest and they say Digital Ocean products. They are a company trying to advertise their own products at the end of the day that is unchecked. So you don't have to worry about them having access to your code base as well as you don't have to worry about them, emailing you, if you're if you're not interested in something like that. Yeah. So that said, let's let's dive into kind of like the ideas of it. So they said last year, they had 30,000 shirts that they shipped in this year, they're gonna do 50,000 shirt, which blows my mind, that's like 10 bucks a shirt. Plus, they'll ship them anywhere in the world, that's probably at least half a million bucks that they're spending on T shirts. Yeah,
+
+11
+00:05:42,570 --> 00:05:46,980
+Unknown: to send them all over the world to promote open source. That's what it's all about.
+
+12
+00:05:47,130 --> 00:06:24,690
+Wes Bos: Yeah. So the way that you can, you can make pull requests to any open source that they are October 1 projects on the website, oktoberfest@digitalocean.com. So you can look on there, you can also look on GitHub for issues that are tagged with the Oktoberfest tag, right before this podcast this morning, about two, two and a half hours ago, I went on to the syntax podcast in a route I rattled off like six issues that could be possibly done. Like these are things that need fixing. And like before we could even do the podcast they were all spoken for, and the people are already working on them. And there's some pull requests in already. for them.
+
+13
+00:06:24,780 --> 00:06:55,260
+Scott Tolinski: my inbox is slammed from people Boric was this morning. So it's already exciting to see, I'm actually it's funny, because of this, I'm bummed out that level up tutorials or the front end of level up tutorials is an open source. That might be something it might be worth looking into in the future for me open sourcing some of that platform, because it's just awesome to see how many people are wanting to contribute things. And so thank you to anyone who's submitted a pull request this syntax. I mean, that's just awesome to see. Yeah, it's,
+
+14
+00:06:55,260 --> 00:07:31,710
+Wes Bos: it's really cool, because like, obviously, we are our podcast, we should be taking care of our own website. But it's kind of cool to see people chipping in their own expertise, fixing things, especially I love having the show notes up on GitHub, I do this with all of my blog posts, as well as all of my captions for my videos, I try to put almost everything on GitHub, because rather than somebody taking the time to email you to tell you that there's a spelling mistake, or maybe a possible clarification that you made, they can just fix it for you and submit you a pull request. And then that's the beauty of open source is that everyone can chip in a little bit, and it makes it better for the whole.
+
+15
+00:07:31,919 --> 00:07:53,910
+Scott Tolinski: Yeah. So let's talk a little bit about what are some things that you can contribute to like, if you are lost? And you're thinking? I don't know, I don't I don't know, this is all seems a little bit overwhelming to me. What are some easy things or maybe not even easy things? But just things that are? I don't know, low barrier to get into? Like, what are what are some fun stuff that you can PR?
+
+16
+00:07:54,450 --> 00:10:07,620
+Wes Bos: Yeah, absolutely. So what we did on the syntax is we had one for adding a skip to content accessibility link, which is that's the easy, that's a quick one. Obviously, there was one for making the scrubber bar of the audio player accessible with the arrow keys. Because currently, that's the one thing we talked about that in our accessibility podcast. That's the one thing that's not keyboard movable. So there's that there's a couple other things of like the mobile layout, now that we have so many podcasts, the mobile layout is unusable on the on the syntax website. So somebody is working on that. Just little things like that, that I explicitly went and asked for, it's nice when you can find something that someone is specifically asking for. But if you don't have any, anything to do, obviously code changes you can do those can be a little bit intimidating if you don't necessarily know the project. If that is your project, if it is and you're unsure about how to make a pull request, there's usually a contributing MD file or something in the readme that will tell you how to submit a pull requests if there's a specific process to doing. So that might make it a bit better. Otherwise, things like documentation is always needed in all projects. We talked about that on our documentation, one, grammar mistakes, typos, little things like that accessibility features, often even the syntax site itself, there's little things that get overlooked. And all you could do is go to a website that you know is open source, throw the x thing on it and and it'll spit out a list of things that are wrong. And you can go ahead and go ahead and fix them. Or even just adding tests, clarifying tests, adding extra tests, to different repos is well needed. So really, you can pull requests almost anything. Scott has some some notes here on things you should probably shouldn't pull requests, but it's not bound by the list. I should say this as well. There is also a tag. If you are a like an author of a repo, and people are requesting just like nonsense just to get their five and get a free shirt. You can invalidate those with a special tag on a pull request because it the pull request does not need to be merged in order to make it worth it. You just need to open the portal Because like I know this myself, all of my projects have many pull requests open, and there's just not enough time in the day. Yeah, to do that. I
+
+17
+00:10:07,620 --> 00:11:45,960
+Scott Tolinski: know that is actually, the hardest part for me about maintaining any sort of repo that's being worked on by multiple people is like the managing of the pull requests. So it is it is nice that they don't have to be marched. But again, I think the some of these things, you know, are worth reinstating, like that accessibility one is the easiest one, in my opinion, because again, you can just run that checker, and it's going to give you a checklist of stuff that you can do. I mean, that's almost like a to do list right there. But you don't need permission to go run that on someone's site, and then just see, oh, maybe, you know, this could be better these sort of ways. I think one of the best poll requests I've ever gotten for level up tutorials, was, it took my assessed ability score from like a 60%, to like a 95%. And it was just like, this is the easiest improvement that I'm ever going to make to this site. And like, thank you so much, Jamie, for doing that. So it was really just it. Like those kind of things they make you they make it just really nice, right? So again, people might think grammar mistakes, and typos are meaningless to fix. But those things they pop up all the time. And oftentimes maintainers, like don't even want to think about that stuff. They don't care. Or it's not that they don't care. But they have other things to worry about, like maintaining the actual code of the project. So if somebody else is going to say, well just fix that stuff, instead of asking to fix that stuff, then it's just going to make the whole repo and everything better. So don't hold back on that sort of stuff. Even if it feels like it's cheating, because it's not code or something. It's much appreciated, people are going to love it, if you use and it's a pull request to fix a typo or something or fix a broken link, or something like that.
+
+18
+00:11:46,290 --> 00:12:32,430
+Wes Bos: Here's another good example of what to do is a JavaScript libraries are constantly becoming out of date. And often there's lots of examples pushed up to GitHub. And then those examples are just left and right. So that's a big one. Yeah, if you just do a search on GitHub for next j s 6.0, upgraded to seven, do a search for react 15 point, whatever. And then you'll find projects that are a couple of versions old out of date, usually what you get to do is you clone it locally, you upgrade the thing, and then you test it out, run the tests, or just test it yourself to make sure it still works. Sometimes you'll have to look at the change log of the the version bumped to see if there's any breaking changes. That's a huge, huge one. And I bet that's a huge help for people that are looking for example code.
+
+19
+00:12:32,520 --> 00:14:17,250
+Scott Tolinski: Yeah, I know. Because maintainers, they, they create this new version, the new version comes out. And then all of a sudden, all of their examples are maybe invalidated just a little bit. And then somebody comes I did the example code, and it's not working. So yeah, it's a huge learning tool. And something that is very important to keep up to date. So people will love it if you update their examples. I did have a note on here of things not to PR. Again, we mentioned that there is this tag to invalidate your pull request if it's not following the rules, because you know, there are going to be people whenever there's a system like this, there's going to be people who try to game the system. And that's not what this is about this, this whole hack tober fest is not about the T shirt. It's about contributing to open source, right. So if you are just in it for the T shirt. Yeah, that's that's a little bit of a bummer. But these are things that are not going to fly, I think as as pull requests, like let's say someone adds, well, some meaningless bit of code, like some code that essentially does nothing, or even worse, maybe just like comments, or something like that. They're adding something to the code base that does nothing that is not going to fly, right? Because obviously, you're just submitting something to submit something, not to mention, let's say you have a feature that you're working on, and you submit it into five separate pull requests, like, Hey, I'm changing this button to be blue and one poll request for each line of CSS. There's something like that to add, like, That's not good. Yeah, either. That's, that should be I mean, again, you want to keep the spirit of this thing which is contributing and and being a part of the community and working on open source work that everyone can take advantage of. So yeah, just Don't be a jerk about it and submit stuff that's actually worthwhile.
+
+20
+00:14:17,459 --> 00:14:42,510
+Wes Bos: Totally. Because this this whole thing is very game mobile, you could get a friend, you probably make your own repo and pull requests your own repo to get them they probably have some some checks in place at some point but it's worth trying to do what you got four weeks in October. Do do one today and then one for the rest of the weeks. I guess this comes out next week. So by the time you hear this, you better a better start hustling.
+
+21
+00:14:42,540 --> 00:14:43,500
+Unknown: Yeah, do do a couple.
+
+22
+00:14:44,370 --> 00:16:14,340
+Wes Bos: Yeah, you get your you'll get your five in the 50,000. I kind of feel like those that will go if they did 30,000 last year. I bet the logo pretty quick on on the 50,000 because this is the fifth year and this is only the the second year. I've actually heard of it. Last year. I heard of it. Just because people people are sending me messages, hey, do you have anything that I can fix? Or do you have any any little issues and I've got tons of these little repos, like I have keyCode dot info, which shout out to palash Mondale, I might have butchered his name, but he recently just like totally revamped the entire key code. He went through something like he's one of these like issue warriors where, like, I have some pull some repos that have like 100 issues and 100 pull requests on them. And then he's one of those people that will just go through every single one, give him access to my repos, and they'll go through all of them and be like, this is good, he'll merge it in. This is no good, could you refactor it a whole whole deal with merge conflicts, which is so cool. And I don't know if he got to start doing this in Oktoberfest. But it's exactly the kind of attitude that you need to have, as I see that I can help out here, it's, it's actually kind of a shame that this doesn't work towards, like somebody also chipping in to manage our repo. Because even if you're committing code, there's often repos that are overwhelmed with issues and pull requests. And that's kind of the unsung heroes as well as people that can wade through all of that and keep on top of it. Yeah, it would be amazing if someone could go through my repo,
+
+23
+00:16:14,939 --> 00:16:43,320
+Scott Tolinski: merge pull requests, and then do a little once over a manual test, run all the tests, confirm, everything's all good. I have ci setup. So it's not like, I'm not getting those tests run automatically. But to have all that confirmation. So because of that, you know, that takes a long time. I actually, like I said, that actually was one of the biggest times things for me is managing and merging code, because I have these features that just sit there like oh, ready to merge. Shoot, yeah, you gotta wait for it. Yeah. Would it be worth
+
+24
+00:16:43,350 --> 00:16:51,960
+Wes Bos: having? Because I'm sure there's people listening to this podcast right now who are like I would kill to be able to spend a few hours helping Scott out would like, would that be something you'd be interested in?
+
+25
+00:16:52,200 --> 00:17:05,250
+Scott Tolinski: Do would be Yeah, I think it would have to be somebody would have maybe a little bit of experienced testing that stuff is, you know, oh, yeah, we're both of the same where, where it's hard for us to go up control of our little totally, or our babies. So
+
+26
+00:17:05,430 --> 00:17:07,230
+Wes Bos: I feel the same way.
+
+27
+00:17:07,260 --> 00:17:24,930
+Scott Tolinski: Yeah. And I have contributors to level up tutorials, you know, I have, like a 50 50% time dev working on it. And like, it's great, but I know, I know, his code style. And I know what he's gonna do and everything like that. So like opening it up a little bit more scares me is definitely Yeah, yeah,
+
+28
+00:17:25,290 --> 00:17:55,310
+Wes Bos: totally finding someone that you trust on this stuff is, is invaluable. So we've went through finding pull requests, things support requests, if you are an author of repos, maybe spend a little bit of time going through all of your there's this other thing, like there's like a tag, it's like what first timers welcome or first pull request, because often I'll get messaged me, they'll message me and say, Hey, that was my first pull request. Thank you. And I love hearing that, because that's the gateway drug. Helping out?
+
+29
+00:17:55,610 --> 00:18:04,710
+Scott Tolinski: Yeah, I think there is a little bit of a mist of mystery around pull requests if you've never done one. And I guess we didn't kick that off this program off with a little bit
+
+30
+00:18:04,710 --> 00:18:06,660
+Unknown: about how that works.
+
+31
+00:18:06,900 --> 00:19:27,800
+Scott Tolinski: Yeah, so typically, what you're going to be doing is forking the library or whatever you're working on, right. And what that does is it basically makes a copy of it that you're in control of, and you have that on your local machine that you can make modifications to. And then when you are ready to submit your poll request, you basically on GitHub, that you create a new poll request, you say, hey, use my code base as the code base to draw the changes from and merge them into this code base. Right? Now, what that does is basically creates what is called a pull request, which is basically all of the commits that have had gone in to those changes description of the changes, because it's like a, it's almost like filing a GitHub issue where you get to write your own description of it. And it allows the contributors or allows the maintainers, to sort of see exactly what code was changed, and allows them to write back and forth, maybe you can request changes on some stuff, like let's say, someone didn't follow the rules of formatting, they weren't using prettier, something, you could go ahead and say, Hey, run prettier on this, and then resubmit and all approve it. So basically, it allows you to get code merged into a project. So once the maintainers sort of see that all of your code is all good, and everything works, then they can just go ahead and merge that in. And they go
+
+32
+00:19:27,860 --> 00:20:34,710
+Wes Bos: awesome. A couple more things I'll add to that is when you fork a repo, this might be like totally beginner stuff. But if you don't know that a lot of people don't totally understand the process of it. When you fork a repo repo by clicking fork on it, you get your own copy, and you can make commits and push your own changes up to your own repo and the owner of the main repo will not be notified of those until you actually create a pull request. And that's generally when you're looking at the main repo, there'll be a button that says make a pull request and you can say pull it from the Master of my branch to the master of the master of my repo to the master of their repo. So that's the one thing. The other thing is like, Don't sweat it, if you feel like you've committed too much, sometimes people are working on it will have seven or eight commits. And if those commits are meaningful, and they each clearly do one thing, you can leave it like that. But if you find like, Oh, it's just like a whole bunch of stuff. And I would like it to just be one commit, you can look into what's called Git squashing, you can squash that down into a single commit before you make a pull request. And then that way, it will show up to the repo author as just one commit that will be put in their history.
+
+33
+00:20:34,770 --> 00:21:03,390
+Scott Tolinski: Yeah, I mean, I'm not saying no, don't do a bunch of like, don't do Don't touch a bunch of different files in one pull request, if they're totally unrelated. Like, yeah, for the most part, keeping things in related. Because like, sometimes you're like, Oh, I, sometimes you'll, you'll commit something. And people want to use one part of it. Oh, I added these accessibility features. Great. Oh, but I also redesigned this button. And now it's hideous, no, but I don't want that. Yeah, so keep those sort of things separate, right?
+
+34
+00:21:03,590 --> 00:21:49,470
+Wes Bos: Totally, that that's a really good point as well as you can make. If that's the case, you need to look into branches. Because sometimes, if you have one pull requests and your pull requesting your master to their master, and then you make and then you start making more changes on your master branch and you push those up, those will automatically flow into that same pull request. So if you have to separate generally, what you'll want to do is you want to branch off of the work that you just did into a new branch, and then make those changes. And then when you make the pull request for that second feature, it will still show that first commit until it's merged. And then you'll you'll see your your new commit. And by having branches, you'll be able to do that word. Cool. I think that's it any repos you want to shout out, you could use some help on
+
+35
+00:21:49,770 --> 00:22:25,830
+Scott Tolinski: a No, not necessarily. I, I don't I have some some repose on level up tutorials. But sometimes I'd like to keep those reposts like, the exact same as what's in the video, even if it's outdated. And then yeah, no, redo the video. So yeah, I would, I would say not necessarily No. But if you are interested in working on level up tutorials, you can reach out to me, I do just have a little bit of an agreement and operators agreement assigned. But other than that I do like and let people work on the site, especially if you have stuff to contribute. That said, I don't think you'll be getting hacked tober fest points for because it is a private repo. And I'll look into open sourcing the front end of it at least
+
+36
+00:22:26,010 --> 00:23:40,770
+Wes Bos: Yeah, for mine, my ESX course I had every single video turned into a blog post. And those just have mostly been reviewed. And I've posted most of those to my blog, but there's still 20 or 30 of them that that have to have like a good read through just to make sure that like code is good, as well as just any like grammar or whatever mistakes. So because the way that it worked is that I had them transcribed by a professional. And then I had a technical author, turn them into blog posts, but they just need like one more, one more set of eyes to, to read through them. So if you're interested in learning ESX, for free, you could just read the articles. And if there's any issues, you can edit them directly on GitHub, and you still get points for that. So the syntax show notes, we said is really good. I've got just a whole bunch of little repos as well. keyCode dot info is up on GitHub, CSS cursor dot info is up. It's just a website that shows you all the different cursors I don't sure if there's much there. But you can just take a peruse through all of my repos. And there's likely some stuff that could be updated or fixed or whatever. And, but if not, take a look at the Oktoberfest hashtag or the label on GitHub, because there's likely people that need need a helping hand as well.
+
+37
+00:23:40,890 --> 00:23:53,490
+Scott Tolinski: Yeah, it's a great way to get experienced go forward, I highly recommend diving in and even if you've never done it, do it, do it, do it. It's a lot of fun. And if you need that T shirt as a little push over the edge, go for it. Get that T shirt.
+
+38
+00:23:53,970 --> 00:23:55,590
+Wes Bos: Are you gonna get that T shirt, Scott,
+
+39
+00:23:55,680 --> 00:24:17,190
+Scott Tolinski: I probably not. I have a lot of things to do. I have a lot of, I have a monthly tutorial series to record, I have level up tutorials to work on. I would love to trust me. I would love to get under this mountain of stuff I have to do, but I didn't know right now. And maybe next October.
+
+40
+00:24:17,340 --> 00:24:27,600
+Wes Bos: I'm gonna do it. I'm gonna try to do it all on. Maybe I'll try to make it all code examples or like all documentation focus or science that we'll see. I'll report back. Yeah,
+
+41
+00:24:27,600 --> 00:24:34,140
+Scott Tolinski: I think Courtney would actually she would actually not allow another t shirt. Oh really my
+
+42
+00:24:34,140 --> 00:24:54,210
+Wes Bos: way this house hate. My whole family is like clothes and tech t shirts. And then you bet. Yeah, I have like hundreds of them. But I will always accept another one because I love them. Yeah. Also, when you're at the I wear them to the gym all the time all the time. You get a little head nods from the other developers at the gym. You're like, Hey, we're part of that. It's like wearing a band t shirt.
+
+43
+00:24:54,240 --> 00:24:59,130
+Scott Tolinski: Yeah. Hey, oh, you're wearing a Rackspace shirt. I'm wearing a Digital Ocean shirt. Yeah,
+
+44
+00:24:59,160 --> 00:25:08,550
+Wes Bos: hey, yeah. Look up. We know we know servers. Yeah, right. Alright, that's it for today. Thanks for tuning in and we'll see you on Wednesday.
+
+45
+00:25:11,040 --> 00:25:20,790
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

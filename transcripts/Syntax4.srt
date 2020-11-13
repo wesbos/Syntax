@@ -1,0 +1,440 @@
+1
+00:00:03,810 --> 00:00:09,090
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:13,080 --> 00:00:57,360
+Wes Bos: Welcome to syntax episode number four. Thanks so much for joining us. Today's episode is going to be all about JavaScript tooling. We're going to dive into a bunch of the different things in the tooling landscape and sort of explain what they are and what you when you may use them. There's been a lot of new stuff has come out lately, and I think that this is going to be great to catch you up to speed with with whatever's going on. Um, this episode is sponsored by delicious brains. We're serious podcasters now that we have a sponsor and delicious brains has a plugin called WP migrate DB Pro, which is great. When you want to move a WordPress we're going to talk a little bit more about what it is a little bit through the show, but thanks to them for sponsoring. Hello, Scott. How you doing?
+
+3
+00:00:57,360 --> 00:01:03,869
+Scott Tolinski: Oh, doing good. Getting over cold here. But feeling good today feeling a feeling like normal? How about you?
+
+4
+00:01:03,869 --> 00:01:19,890
+Wes Bos: I'm doing really, really well. I am in in between vacation right now I just had, I was down in Georgia for vacation, and back for a week to cool things off. And then I'm gonna go back to another cottage with my family. So pretty excited about that.
+
+5
+00:01:20,090 --> 00:01:20,700
+Scott Tolinski: Nice.
+
+6
+00:01:22,020 --> 00:01:58,260
+Wes Bos: Yeah, so um, let's, let's talk a little bit about our podcast launch. Because the way that we did is we recorded three episodes. And then we launched it and now we're recording the fourth in the fifth episode. And it's it's gone surprisingly well, it's I've been super happy with the numbers, the response from people, just sort of everything that's been around the launch. So I want to say a huge thanks to everyone who helped spread the word tweeted out, leave a review on iTunes, whatever it is, a lot of people don't use iTunes, but they booted it up anyway, it's just
+
+7
+00:01:59,760 --> 00:02:37,310
+Scott Tolinski: Yeah, seriously, thank you. I mean, the responses even on Twitter, and all that stuff has just been extremely positive. And it's just such a, it's so great to see. Just so many, you know, positive things said about the podcast so far. And it's amazing knowing that, you know, we did these first three episodes. And, you know, they're only going to get a little bit better, a little bit more cohesive, a little bit more polished every single time. So it's like we did these three episodes. And this thing's only gonna get better from here on out. So I'm excited to see where it's gonna end up. Absolutely. Like,
+
+8
+00:02:37,350 --> 00:02:59,760
+Wes Bos: I I'm a professional explainer of things. But when I record my own screencast, I can just like, oh, that was a poor explanation. So I can cut it and redo it. But it was a podcast, it's a little bit more. We don't do a whole lot editing on it. So I'm excited for this podcast to make me better at sort of just casual conversation and, and doing things in a single take.
+
+9
+00:03:00,060 --> 00:03:02,310
+Scott Tolinski: Yeah, likewise. Cool. So
+
+10
+00:03:02,310 --> 00:03:04,530
+Wes Bos: what are you working on these days? Scott?
+
+11
+00:03:05,520 --> 00:04:43,620
+Scott Tolinski: Yeah, so a whole ton. Yeah. So basically, I had some issues with my two sites, the level of store and the level up site. And these, these bugs or these issues were coming with package versions and stuff like that they were getting just harder to manage over time. And the last thing I wanted to do is just to string these bugs along forever and ever and ever. So I decided to do this giant merge of the store in the site. So they used to be two entirely separate sites they used to an iframe and a JSON web token to manage reactive logins between the two sites. And it just got really complex. So I moved it off of store dot level up tuts comm to level up tutorials, comm slash store. And that was a huge process. Because of both routing, I had to merge, like, I don't know, like 40 plus react components into an entire new site. The good news is they already shared a database. So it was just mostly about moving that that front end and those that backend methods and stuff like that, and making sure everything still worked, but it was a absolutely major major migration. And definitely caused, you know, a little bit of you know, headaches here and there. I also moved off of an apex domain to www after like seeing that there's a lot of positives to being on www over, you know, just level up tutorials. COMM really, what
+
+12
+00:04:43,620 --> 00:04:45,420
+Unknown: are they? Um,
+
+13
+00:04:45,810 --> 00:06:14,850
+Scott Tolinski: you want to go to like, there's a yes hyphen. www.org. Yeah, is a is a pretty long explanation about why you would rather use WD WW, but it has to do more with like sites growing in size. There's a lot of things with cookies and with sharing things from basically, if you were to use a sub domain, like if I were to use, you know, forum dot level up tutorials, comm it's going to be easier for me to integrate that into the site with, you know, things like cookies with using www then it would be the apex. In addition, like a lot of services like Heroku in the service I moved to the site deploy to, which is meteors galaxy service, they're hosting service. Yeah, they, they, they definitely they, they both recommend not using Apex domains just because of how their systems work. But they they link it to a whole bunch of good stuff. But after reading through it, I was just like, well, this stuff isn't isn't a huge deal for me, but they be will be and if it's going to make my life easier to move to www on these hosting platforms and just buy again, bite the bullet do it all in? Yeah, yeah. So it was a huge process. I ended up having to write out like a nginx config on a Digital Ocean box to handle redirects for eight. Oh,
+
+14
+00:06:15,120 --> 00:06:27,270
+Wes Bos: that's always just a nightmare. I got a whole bunch of emails because I sent out your email your website when you relaunched it and a whole bunch of people said that the link wasn't working, because I guess you were in the middle of that.
+
+15
+00:06:27,510 --> 00:06:50,100
+Scott Tolinski: It was the day of Yeah, and like, bad timing on my part. 100% bad timing. But like, yeah, it was funny because HTTP worked. But HTTPS did not redirect because of the SSL was saying it was invalid. So yeah, it was it's a whole thing. But it's all good. Now everything's up and running. So you know, in hindsight, it was the right decision.
+
+16
+00:06:50,130 --> 00:07:01,650
+Wes Bos: Yeah. That that should be another episode is like, we'll talk about like, clearly uninformed, two guys trying to manage servers or like, Oh, God,
+
+17
+00:07:01,650 --> 00:07:10,320
+Scott Tolinski: yeah. Which is one of the reasons. My, my digitalocean config, it's just like, I just got tired of managing it, you know, to be honest.
+
+18
+00:07:10,680 --> 00:07:50,820
+Wes Bos: Yeah, yeah, I'm actually in that sort of in the same space as well, where I have. I have one server myself. And I'm like, What if this like thing goes down, like I can just deploy my application anywhere, but in the setup is really, really easy, because it's, it's all in node, and I can just npm install NPM start and get up and running. So I'm sort of in the process of making it a little bit more flexible. And the first thing that I did is moved to like a floating IP address, so that I can like deploy to another, another box or droplet and then just cut over the IP address to that. Which is pretty, pretty neat. So um, yeah, the process of that.
+
+19
+00:07:51,240 --> 00:07:53,400
+Unknown: Yeah, like that. Cool.
+
+20
+00:07:53,460 --> 00:07:53,970
+Well,
+
+21
+00:07:53,970 --> 00:10:25,040
+Wes Bos: let's talk about JavaScript tooling. We're gonna go into not everything. There's all kinds of different JavaScript tooling, but some of the stuff that relates to front end JavaScript development. So we're going to talk about modular bundle, talk about module bundlers. And then things like baybel linting, prettier Bailey Babli, pre pack all kinds of different stuff were like, you might have heard people talking about this. And you probably know what what pack is, but some of these other ones, you might not necessarily know what it is. So we're going to take our best stab at explaining what they are and why you might want to use them. So let's kick it off talking about our module bundlers, we'll start off with web pack. That's sort of the the big one in the room. Now, previously, before that, there, there's a couple other ones who have browser fine roll up and whatnot. But web pack seems to be really winning that race right now. And it does a whole bunch of stuff. And I think that's why there's a lot of confusion around what it actually does. But at its core, it's what's called a module, bundler, where it will take your JavaScript modules, whether you write them in Yes, six source, unlike common j s, and it will compile them into either one JavaScript file or many JavaScript files. And it has this concept of it has a whole bunch of different concepts has a dev server built in and all these other helpful things. But probably the biggest one is it has a concept of loaders where your JavaScript modules can import any type of file, whether you're importing JavaScript or whether you're importing CSS, and then the loader is instructed how to or what to do to that actual, that actual module. So it CSS it will convert it in line or convert it and put it into a separate CSS file. So that's really the big one. And a lot of the stuff that we're going to be talking about today is is something that you would use with Webpack. So yeah, I know what Pac is, I'm not a huge expert at it. I've been using it for a couple years now. And every single time that I try to build my own Webpack config, I end up very confused. So I know that there's some some big stuff happening right now around education around Webpack, just to distill it, because it is the super powerful tool. But it also is this like, very complex thing. And it's really hard to reason
+
+22
+00:10:25,040 --> 00:11:27,270
+Scott Tolinski: about. Yeah, and there's a lot of, you know, there's a lot of copying and pasting going on, when you're doing your Webpack configs. And for me, I honestly feel like, I feel like a lot of that confusion is I you know, I hate to drop the word syntax, but it's, I think it's all syntax related. You know, I mean, they use a lot of jargony terms, like loaders and stuff like that. And I think when you get into some jargony stuff, yeah, it inherently makes it a little bit more difficult. I always felt like other, you know, simple tools, like Gulp had things a little bit more like transparent what was going on? Exactly, yeah. Not only because it was just state, you know, straight JavaScript. You know, that said, it's one of those things that if you look at a Webpack config long enough, you're going to understand what's going on. If you obviously know it's, you know, the the root of everything and what's happening, it's it's easy to pick up. But at first glance, it's definitely not necessarily the most obvious at first glance, I would say but you know, that's just how it is.
+
+23
+00:11:27,390 --> 00:12:28,560
+Wes Bos: Yeah, exactly. And and while we're talking about that, let's let's talk about like, what's the difference between Webpack and something like Gulp or grunt, because what I hear from a lot of people is like, I was so happy with gold. Yeah. And now you're making me change to Webpack. And I'm extremely frustrated, because I don't understand what's going on. So like, like, what are the the main differences between the two, I guess that grunt, and Gulp, were what you call a task runner, for they are task runners, I still use Gulp quite a bit, I really like it. Yeah, and by themselves, they, they don't do anything there. They're actually the one thing that you can do with Gulp on its own is his get a file and then move it to another folder. That's all that is, by itself. But then you go ahead and you go out and you get all these different plugins that you sort of pipe your your content through, you transform it, maybe you have sass, turned it into CSS, and you run that through autoprefixer. And then at the end of the day, you you actually
+
+24
+00:12:28,560 --> 00:12:43,800
+Scott Tolinski: output it, right, it's a very much you put it in something, you get something out, right, you put your car your sass, your stylus, and you get CSS out minified whatever. It's it's simply just taking your files and transforming them, you know,
+
+25
+00:12:43,800 --> 00:13:27,930
+Wes Bos: exactly. And, and Webpack does that as well. But it also is a first class module bundler. So if you have JavaScript modules, or if you have CSS, then it will know how to handle those things. And via loaders, it will encounter a type of file, and it will know exactly what to do. And that was a big hang up for me, because I was always like, like, Where do I put the files into web pack? And the big changing moment for me was that you don't put files into web pack and get something out. It's that web pack will encounter different types of files in your modules that you imported. And then it because it knows about loaders, it will know actually how to handle them.
+
+26
+00:13:28,350 --> 00:14:06,840
+Scott Tolinski: Yeah, yeah. And I think it's just really a, you know, it's, it's the next next step here. Because primarily when gulpin, in grunt, were getting popular, you were building single page apps, but they weren't these like giant monolithic, like, huge JavaScript files, essentially, at that point. And if they were, you're probably doing a lot of more custom tooling to get that into a better situation. And now, you know, I mean, everyone's writing big react or Angular apps. And in just this module, loading overall becomes so much more important aspect of the build process itself.
+
+27
+00:14:07,110 --> 00:14:54,180
+Wes Bos: Yeah, because you can do bundle splitting and tree shaking, and we'll have a whole episode explaining what all those things are. But there is a lot more to what Webpack can do in terms of building a performant website that is, is really, really going to help you out. So I would say to those who are are still really frustrated at web pack in I don't think that Webpack is going to be something that absolutely everybody needs to learn. I think that what is going to and what is happening is that you're going to start to use tools like next j s or create react app or whatever it is, and you're just going to use the tool that sits on top of it and someone much smarter than you are I is going to build that tool right and it's just going to work for
+
+28
+00:14:54,210 --> 00:15:01,410
+Scott Tolinski: the purpose that we need it to and you won't have to touch it unless you need something Right, exactly. Yeah,
+
+29
+00:15:01,440 --> 00:15:16,860
+Wes Bos: I like how next .js does it where you, they will expose the next config that will sort of fold into the underlying web pack. But they don't they don't drop the whole thing on your lap and say good luck. It's tough to get up and running with Right.
+
+30
+00:15:17,129 --> 00:16:58,590
+Scott Tolinski: Yeah. So I, you know, I've mentioned Meteor a couple of times on this podcast so far. And it's one of the things I really like about it is their their build tool, which, you know, many times in the community, they were trying to get them to move over to Webpack. But they're built to was actually, really one of the most unique exciting things about it is a sort of zero configuration build tool where you, you get things. Basically, if you want to use sass, you just do Meteor add sass in your terminal, it adds the sass package, and you never think about it, you don't write a config file, you don't say, hey, look at the style style files or whatever. In addition, like you have things like die, like exact code bundling. So if you're using these dynamic imports, and stuff like that, there's no overlap and your JavaScript bundles, they're like exact exact sizes to your bundles, it does all that bundling for you, you don't have to write a single line of config, and never have to think about it. So like you said, I think that's, you know, where a lot of this stuff is going is these really opinionated tools that sort of handle all this stuff, basically, for you. And then if you need to expand upon it, obviously, you can, you can write your own ISO build, which is meteors build tool, if you if you, you can write your own ISO, build plugins that do all this stuff for you, and expose all that if you want. But for the most part, you just flat out don't need to. And, you know, I think that's that's, that should be where things are going. Because you know, there there's a certain type of person that loves to write a ton of config files and stuff like that. And I am to some extent, but man, I can't, I can't get into it for too long.
+
+31
+00:16:58,800 --> 00:17:30,560
+Wes Bos: Yeah, we're not doing stuff that's all that unique. So I don't sort of see the reason why every single person needs to make their own own build. Right, right. Exactly reinventing the wheel every time. Yeah. Cool. So once you have a build tool in place, then it's time to sort of run around and start picking up all these different tools that work with your build. And probably the biggest use of that is Babel or Babel. Whoever you say it. It's, it is. Yeah,
+
+32
+00:17:30,690 --> 00:17:31,580
+Scott Tolinski: I say Babel.
+
+33
+00:17:31,890 --> 00:17:37,770
+Wes Bos: So do you want to take a stab at explaining what it is? And why you might want to use it?
+
+34
+00:17:38,040 --> 00:18:30,080
+Scott Tolinski: Yeah, so I mean, my understanding of Babel, and correct me if I'm saying anything incorrect here is is really that it's it's transforming your your JavaScript into essentially JavaScript that will be readable by most browsers. And so if you can write JavaScript of tomorrow, today, you can write S six, you can write ies 2017, or however you're defining your ies builds. Yeah, you can, you can write that that next year of ies code and use features that might not be totally finalized, or even stuff that is finalized and not in a browser yet. You could write that code and not have to worry about the head not working on some browsers here or there. It's basically just making that code. You know, you can write the code you want to write without having to worry about it working.
+
+35
+00:18:30,690 --> 00:20:12,320
+Wes Bos: Yeah, exactly. And actually, Babel used to be called back in the day, I think it was three or four years ago, it's called six to five, where it would take your ESX code and compile it down to Yes, five, and they actually moved away from it being just that one thing. And it's it's now sort of like a general JavaScript compiler, where you can pick how you can pick the different transforms that your JavaScript will be compiled down to. So the the biggest use case is react where you can write JSX, which is like kind of like write HTML tags inside of your JavaScript. And obviously, that's not valid JavaScript. But by running it through Babel with the React preset turned on. It will then compile down your JSX to the equivalent, whatever react create element is. And the when it really clicked for me, is just a couple of weeks ago, when I saw that somebody had written a PHP to JavaScript transformed in PayPal. And the guy I wish I could find the tweet, but the guy who said like, I'm like, he obviously it was a huge joke. But it just really solidified the idea that you can write anything, even if it's PHP, and we talked about this with post CSS kind of the same idea. You can literally write anything like and then writing preset are a plugin that will interpret your PHP and then the preset will transform it into your your end JavaScript that you're actually looking for.
+
+36
+00:20:12,350 --> 00:20:54,350
+Scott Tolinski: Yeah. So yeah, and I, I actually had a moment the other day where I was always doing something. And I felt like I was just typing the same thing over and over again. And I was like, really, for a second, I was like, should I just write like a plugin to just somehow write a shorthand that that converts this for me, and then I obviously decided against it. But it was like a couple of moments where I was like, was this a good idea, or is a terrible idea, you know, it's easy to have those when you're the only person on a code base, you deal with other people's like, looks at you about these one off, you know, plugins you might make, you may say, so PHP to JavaScript.
+
+37
+00:20:56,600 --> 00:22:45,300
+Wes Bos: One thing I wanted to say about Babel is that, so there are plugins, and then there are like, there's plugins to support template tags, there's plugins to support. The new for loops, and ESX has plugins to support classes, and they'll all compile them down. And then collections of those plugins are called presets. And the big ones that everyone was using was preset 20, es 2015, and preset react. But what is moving to now in the Babel team is trying to get everybody to move over to this is using just preset m, e and V. And what that will do is is much like autoprefixer with CSS where autoprefixer of CSS you say like, Hey, I'm supporting these versions of IE in Chrome. So apply the CSS accordingly. So the free set em for baybel? Will, you can tell it, okay, I'm, I'm compiling to react, or I'm compiling to the last two versions of the browser, or I'm converting to react or node. And then it will figure out for you, let's say you, um, supporting the last two versions of every browser, it will say, oh, okay, well, we don't actually need to compile some of the stuff, you can just run it straight away in ESX. You don't need to have to compile everything down. And then you also don't have to do that whole dance where you figure out like, do I need to compile this or, or don't tie and sort of whatever I was doing is they just compile absolutely everything. See, right, think about it. But this will will do the hard work of figuring out what needs to be compiled and what doesn't need to be compiled without installing all the plugins yourself.
+
+38
+00:22:45,420 --> 00:22:50,640
+Scott Tolinski: Yeah. Another another move towards less configuration, right?
+
+39
+00:22:50,790 --> 00:22:54,570
+Wes Bos: Yep. Yeah, exactly. So I was pretty happy about that.
+
+40
+00:22:54,780 --> 00:23:04,710
+Scott Tolinski: Are there any plugins you have to live with? Oh, you can't live without in. In Babel? Yeah. Is there something that you have to have on every project?
+
+41
+00:23:05,910 --> 00:23:34,470
+Wes Bos: Um, no, actually, I used to dive into like the stage zero, stage one, stage two, which is like stuff that might be coming to JavaScript isn't like I was like, super into decorators like, like a year or two ago. And then like, it kind of got yanked back. And like, Oh, we might actually not get Yeah, yeah, I sort of hold off on on touching stuff until it is totally, totally set definitive language. Exactly. Do
+
+42
+00:23:34,680 --> 00:24:13,380
+Scott Tolinski: I still use decorators, I use decorators to bring in all my data. So I'm pretty set on on enjoying decorators. Still. Other than that, I pretty much I use this transform class properties plugin for the static declaration of Prop types and default props in react. So that or even just state equals object instead of having to do it in the constructor. I prefer that syntax for my react components. So yeah, for me, it's nothing too wild. It's pretty much those are it transform decorators, and class properties.
+
+43
+00:24:13,950 --> 00:24:35,280
+Wes Bos: It's, it's worth if you want to, like see what some of the the good ones are, or what the ones that people are using is start up a quick create react app, and then inject from it and then take a look at which presets that create react app is using because it does have some of this these more edge cases stuff that makes writing react a lot more pleasant.
+
+44
+00:24:35,370 --> 00:24:53,310
+Scott Tolinski: Yeah. Yeah. And that I love all those the new syntax changes and stuff like that. I know some people can get a little overwhelmed when even you are moving from the React create class to, you know, the class syntax, but to me, those are all upgrades, you know, that's a nicer way to write the code, I think.
+
+45
+00:24:53,730 --> 00:25:09,870
+Wes Bos: Yeah, yeah, exactly. Cool. So let's, let's move on to the next one, which is linting. We're going to talk about linting and then we're going to talk about a new, it's not really a linter. But it's, it's something called prettier. So let's talk about linting es lint, what is linting? Scott
+
+46
+00:25:10,020 --> 00:26:22,590
+Scott Tolinski: linting basically looks over your code and finds bugs, it finds things that are based on your configuration, stuff that it might be concerned about stuff that it definitely should be concerned about. You can basically set all these rules to say, Hey, I always want to use semi colons. So that way, when you're writing your file, and the file doesn't see a semi colon, or the linter, doesn't see a semi colon where it thinks there should be one, it's going to warn you, it's going to warn you through your your code editor, it's going to warn you visually, maybe I'll do like a red underline or something like that are added to a list of issues in your code. You can even set your depending on your text editor, you can set it to auto fix, which I do, you know, if you haven't to auto fix everything I'm save, you save your thing, it doesn't have a semi colon, it's going to know that it needs to add one and add one for you. So linting makes it you know if there was a time in my life before linting, where you would save a file and you wouldn't know if it would work because you'd think it would work. And then you'd refresh the page and there'd be an error or something like that. And and that's just a bad way to do things, right?
+
+47
+00:26:22,620 --> 00:26:29,310
+Wes Bos: Yeah, it started catches, it catches the possible errors before you actually hit the browser,
+
+48
+00:26:29,430 --> 00:26:55,830
+Scott Tolinski: right? It catches all those those errors that people just despise when you're writing code, right? It's the stuff that shouldn't be breaking, because it's Yeah, it's not an issue with your implementation, or of the code itself. It's an implement, it's like an issue with it. Maybe just a typo or something like that. here and there. Yeah. And yeah, I rely on linting. very heavily. My Yes, lint is a serious business for me, I think.
+
+49
+00:26:55,980 --> 00:28:35,610
+Wes Bos: Yeah. So the way that you have it is you Yes, lint is the big one there. There was before that there was j es lint and j s hint, yeah, and every language out there has a linter. And all of these linters and enforce both formatting, which is like, make sure you use two spaces, or you didn't indent this properly, or you started your variable with a capital. So those are all just sort of like nitpicky formatting thing, which is great when you're on a team to enforce some sort of consistent styling. And then it also has like code quality things, things that will actually break your code, which is improper scoping, forgetting some sort of syntax, maybe forgot a curly bracket is going to, you're going to catch that before you actually hit the browser. You use the variable name, twice, whatever, all these different things. And you have an es lint file, where you turn these rules on and off. And what I find with a lot of beginners is that they turn it on, and then it what it tells you that like, all of your code is garbage. Like I remember turning it on for the first time and I was like why do people do this? But I what you do really have to spend some time putting together a list of rules that you do and do not want because by default, if you turn them all on, you might think like that's that's totally fine. I'm fine with like leaving off a semi colon or I'm fine with I can't think of which ones I should just open up mine.
+
+50
+00:28:35,790 --> 00:28:59,010
+Scott Tolinski: Yeah, I have mine open right now. Yeah. And but there are there are presets that you can you can get where like Airbnb is a big popular one. That's the one that I sort of based mine off. I use Yeah, I extend to the Airbnb one. And then I have several rules overriding it. But yeah, Airbnb, s lint config is, is definitely a good go to.
+
+51
+00:28:59,370 --> 00:29:12,660
+Wes Bos: Yeah, and it also includes a whole bunch of rules for writing react as well. So like some formatting things like which order do your lifecycle methods come in? Like, do you put the render before component should mount? It'll yell at you?
+
+52
+00:29:13,080 --> 00:29:22,290
+Scott Tolinski: Yeah, and and whether or not you've defined your prop types. So if you haven't defined your prop types and a prop, it's gonna, yeah, and let you know. And
+
+53
+00:29:22,710 --> 00:29:29,360
+Wes Bos: if you write this stop props dot name. It'll be like, hey, you did not declare a prop type. You do that first. Yeah,
+
+54
+00:29:29,400 --> 00:29:33,540
+Scott Tolinski: I know. It shames you into writing prep dives. Exactly.
+
+55
+00:29:33,570 --> 00:29:38,190
+Wes Bos: Cool. So I don't know any other stuff about linting that you're a big fan of?
+
+56
+00:29:38,340 --> 00:30:08,400
+Scott Tolinski: Yeah, like I said, I'm a big fan of having an auto fix everything. If you have your rules set up very tightly, you save your files, it formats it for you. Everything looks very nice. And then you have to worry about that less, right? Like when you save a file, you don't have to worry about whether your line was tabbed correctly. Because the moment you hit save, it's going to tab it correctly for You, you know exactly that. Yeah, this little time saver stuff. It's little bug removal stuff that it makes it just totally invaluable.
+
+57
+00:30:08,820 --> 00:31:23,550
+Wes Bos: Yeah, yeah, absolutely. So we're gonna take a second and talk about our sponsors is the first Super sponsorship read I've ever done. Think, I don't know, they gave me a little thing to read. But they said, I can also sort of riff on it. And the, the company that is sponsored is called delicious brains. And they make a product called migrate DB Pro, which is a WordPress plugin that will help you get your WordPress from one location, whether it's localhost or a server to another location, which is most likely a production or development server that you need to get it up and running. And I've actually been using this for years and years, which is pretty cool. I thought they wanted to sponsor the podcast. So the way that it works is that when you have a WordPress or when you have any CMS, your, your links are all hard coded to the URL of that thing. So you might have localhost 3000, just in your database 20,000 times, and the way that we used to do it in the olden days was you take a dump of your database, and you run some sort of big Find and Replace on your database for localhost, and you replace that string with whatever it is on your production,
+
+58
+00:31:23,640 --> 00:31:24,990
+Scott Tolinski: and you have your breath,
+
+59
+00:31:25,380 --> 00:31:37,230
+Wes Bos: and you hold your breath. And then you screw it up because you forgot a colon or a forward slash, and then the whole thing comes crashing down. And you just, you start thinking about maybe just going into a different Yeah,
+
+60
+00:31:37,260 --> 00:31:37,920
+Unknown: career.
+
+61
+00:31:40,020 --> 00:32:48,300
+Wes Bos: So I, what I've been doing for the last year, I've done quite a bit of WordPress in my past is that your theme goes in Git and you can deploy that. And that's nice and clean. But there's sort of this area where your data needs to go from one server to another? And how do you actually migrate that from one to another when you have all these paths? So migrate DB Pro, will you install this plugin on your remote WordPress in your local WordPress, and then you can either push or pull the data from one install to your other install. And it's going to take everything along with it's going to take all of your data all of your users all of your passwords, and do all of that Find and Replace for you without you having to export a file and import a file and do the Find and Replace by yourself. So it's amazing. It used to take me like an hour or an hour and a half to migrated WordPress. And now I've got it set up on tons of websites and you just you hit the migrate button in it it does it does this thing in a minute or two or not even a minute or two. And it's up and running.
+
+62
+00:32:48,479 --> 00:32:51,510
+Scott Tolinski: Yeah. timesavers like that. Amazing.
+
+63
+00:32:51,540 --> 00:33:19,680
+Wes Bos: Yeah, pretty, pretty happy. But they also have this like media files out on which is because like, I always say like your code goes in Git and then your your data is in the database. But then you have this like sort of gray area, which is like when you upload a file to the WordPress back end, right? Like does that going in? You're good, but like what happens if you like upload a file locally, and then you need that local file on remote? But then there's like remote files that can't get overwritten. FTP drag
+
+64
+00:33:19,680 --> 00:33:21,210
+Scott Tolinski: and drop? Yeah, that's,
+
+65
+00:33:21,210 --> 00:34:03,270
+Wes Bos: well, that's exactly and then you're like, like, keep both. And so what this will do is, it will also push up your media files, all of your uploads that you've uploaded to the WordPress back end. And then if there are unnecessary media files on any of the servers, it will also remove them, which is pretty neat. So huge. I think that a lot of people who do WordPress are already using this plugin, but if you're not check it out. They've given us what 20% off. Delicious brains calm for slash syntax, get you 25 or 20% off your order. Oh, cool. How How was that first sponsorship read ever? Did I convince you Scott?
+
+66
+00:34:03,689 --> 00:34:07,260
+Scott Tolinski: Yeah, I think Well, I think the tool convinced me.
+
+67
+00:34:08,760 --> 00:34:09,980
+Wes Bos: Not good. Yeah.
+
+68
+00:34:09,980 --> 00:34:18,060
+Scott Tolinski: No. I know. I thought it was an excellent, excellent description of delicious brains migrate. Cool. Awesome.
+
+69
+00:34:18,060 --> 00:35:53,280
+Wes Bos: All right. So let's talk about the next one, which is prettier is this just came out? I don't know, a couple months ago. And it's kind of cool that Scott was just talking about, yes, lint fixing his code. And there are a number of things that yes, lint will do like add in a semicolon if you forgot it, or re indent your code. But when you're when you're talking about prettier, prettier is kind of like es lint, except that it only does the visual formatting part. So it doesn't do any of the scoping issues or any of the actual bug stuff that comes up. But there's a sort of second half to two link Which is you spend a lot of time, like, Oh, I forgot to space in front of my curly bracket or Oh, we don't put a space between the colon and the property. But we do after and all these little nitpicky stuff, when you submit a pull request, and your team goes through it, and they're like, oh, nitpick, sorry, but I put a, you have to put a space there. And it's just super unnecessary. So what prettier will do is you set all those different rules, and then you run your code through it, and it will just fix it all for you. So there's, it's not going to tell you what's wrong, it'll just fix it for you. So if your line length is too long, or if you have a function with too many arguments, it will just put it on to the next line and all of these different visual formatting issues, you can code in whatever format you like. And then before you check it into get, it will just format it to your team's standard prettier style.
+
+70
+00:35:54,480 --> 00:36:23,940
+Scott Tolinski: Yeah, these kind of tools are in there, timesavers. Because now you don't have to, like you said, you don't have to go back into that poll request and say, Hey, fix this minor formatting issue, you know, that you overlooked. Because everybody on your team is all using the same tools to auto fix your code in these different ways. It's, it's just one less thing you have to worry about. And not to mention, you'll open up someone else's file, and it's going to look like your file. Exactly, you know.
+
+71
+00:36:24,900 --> 00:37:07,020
+Wes Bos: And I think this is huge for beginners, I think a lot of people are like, Oh, I don't, I'm just learning to code. I don't need a tool like this. But I think it's even better. Because a lot of times, beginners, the code will be really messy. And then you're like, my feedback is always like, clean this up. It's a little bit messy. But like if if there's a tool that will just immediately make it a lot cleaner for you, without you having to figure out how does indentation work? And what do you put on a new line, whether versus not, it will really help you out. So you can set it up with all of your code editors so that every time you hit save, it will just immediately format it to your liking.
+
+72
+00:37:07,230 --> 00:37:37,110
+Scott Tolinski: Yeah, and there's an es lint plugin, so it drops right into es lint. And if you have your es lint, config and everything like that, you don't even have to touch any of that stuff. It's all it's all good. But like I mean, even like you said there with new, like new new coders, right? I mean, the sooner you get used to looking at pretty code or code that's formatted in the same way that all these other companies are, the better it's going to be for you, because that's training your brain to read that code in that specific way.
+
+73
+00:37:37,590 --> 00:37:38,460
+Wes Bos: Exactly. Yeah. It's
+
+74
+00:37:38,460 --> 00:37:42,210
+Scott Tolinski: up, though, if something looks weird in the future, you know.
+
+75
+00:37:43,290 --> 00:37:50,940
+Wes Bos: So check that out. It's called prettier. Next up, we got bat, bat Babli. Baby, babe, I
+
+76
+00:37:50,940 --> 00:37:52,560
+Scott Tolinski: don't know Babli believe
+
+77
+00:37:53,630 --> 00:38:45,030
+Wes Bos: this one is, is very simple. It's before what we would do to minify. Our code is we use uglify. And uglify would just like, if you have a variable like first name, and you use the variable first name like six or seven times, then that could possibly make your code very long. So what it will do is it will take out all the it'll take out dead code, it will take out using that first name variable and replace it with a variable called a it'll minify your code to be as small as possible. The problem with uglify is that it doesn't understand Yes, six code. And as we're starting to actually ship, yes, six code to the browser. People are running into this issue where uglify can't handle arrow functions or something like that. So basically, is it's built on a table, and then it will just minify your ESX code for you.
+
+78
+00:38:46,730 --> 00:38:56,280
+Scott Tolinski: Yeah, sweet. Pretty sweet. Yeah, yeah, it's another one of those things. You use it, you got to use it. It does what it's got to do. And it uh, it does, uh, well, cool.
+
+79
+00:38:56,280 --> 00:39:10,730
+Wes Bos: Um, Next up, we have one called pre pack, which is, again, it's one cool thing about Babel is that all of these different JavaScript tooling projects are growing out of Babel. And pre pack is another one that sort of came out, have you you've seen this at all, Scott,
+
+80
+00:39:10,730 --> 00:39:14,210
+Scott Tolinski: I've seen it, but I don't know too much about it, to be honest.
+
+81
+00:39:14,760 --> 00:40:21,920
+Wes Bos: So they call it a let me open up the website. It's a pre packed IO. They call it a tool for making JavaScript code run faster. And essentially what it is, is that it will run your JavaScript code and figure out anything that could be run beforehand, in a compile step. So as simple example, is like let's say you had somewhere in your code where you're like, var dog age equals 10 times seven, and then every time your JavaScript runs, it will have to do 10 times seven and then put it into the age variable. What pre pack will do is it will just say var dog age equals 70. So it will be like oh, that that's simple. Why would I have to run that every single time The end result will always be the same. Why don't I just stick that into an actual variable? So I guess JavaScript can be a little bit slower when you've got all of these little things that need to be run every single page load. And it will figure out what those things are in random and then just make it into a variable for you.
+
+82
+00:40:22,020 --> 00:40:55,170
+Scott Tolinski: Yeah. So it's, it's optimizing your code for how the browser likes to read and handle JavaScript code. And I didn't realize it says that the related technologies closure compiler is a related technology, in Closure Compiler, for those who don't know, is that project by Google that does essentially the same kind of thing. But the benefits are pretty unreal. I mean, you know, you just get better code efficiency overall. So either of those projects, definitely,
+
+83
+00:40:55,350 --> 00:41:07,730
+Wes Bos: it looks like in a lot of cases, that also makes your code much smaller, as well, which is great, because you don't need to calculate these things. So just throws out that code to calculate it. And it just saves the actual end result of it.
+
+84
+00:41:09,030 --> 00:41:26,310
+Scott Tolinski: Yeah, yeah. And I, you know, I think tools like this are going to be more common. They're going to be more used just because anything that is going to get you performance boosts and efficiency boosts is going to be worthwhile to add to your project.
+
+85
+00:41:27,480 --> 00:41:48,720
+Wes Bos: Cool. So that I believe is all of the tools that we're going to talk about today. I actually, I have a whole tooling talk that is things like image compression and dead code elimination. So we'll have to do another one of these that are not so JavaScript focused, but more website tooling focused or web app tooling focus. Yeah,
+
+86
+00:41:48,720 --> 00:41:49,860
+Scott Tolinski: there's so much there.
+
+87
+00:41:50,100 --> 00:42:04,730
+Wes Bos: Yeah, yeah. image compression alone. I there's just so much to learn about that can really boost up your website. So well, we'll put that on the list for sure. Easy, free gains right there free performance gains, free gains comes for free.
+
+88
+00:42:04,800 --> 00:42:06,180
+Scott Tolinski: Yeah. All right, let's
+
+89
+00:42:06,180 --> 00:42:23,340
+Wes Bos: talk about sick pics. Okay, this is the section of the show where we talk about we pick something that is sick, and that we like to recommend to you. So I don't know, Scott, why don't you start us off?
+
+90
+00:42:23,520 --> 00:44:29,460
+Scott Tolinski: Yeah, my sick pick is a figma. So you get to do figma.com to check it out. So what is figma? It's basically like, you've used illustrator, you've used sketch, you've used all these other illustrative apps for doing web design, UX design and stuff like that. figma is actually browser based. So the good thing about it being browser based is that it's cross platform, you can use it on any platform, there's an electron app, it functions very nicely. But you could think of it as just a design app for web stuff. No web stuff, mobile stuff, pretty much anything, I use it to design my thumbnails for my YouTube channel. And it's awesome. It's basically they took a lot of the features that people really liked in something like sketch and, and built upon them. So you have a component based design flow, where if you used to meet if you're like me, and you're used to thinking in react components and stuff like that, or just component based development figma handles design the same way you're making these components, you can make versions of these components, you can modify these components, you can set, you know, sort of rules on them, like this components always going to be pinned to the top left, whatever. And then when you do your mobile design, or whatever, you can stretch the canvas, and the component stretches with the canvas. So it's basically a very powerful web, UI design, all that sort of stuff platform. And it's become my main design tool. And I'm doing a freelance project full my first full time freelance project design in figma right now, and I just didn't so I'm so into how nice it works like, wow, moving between layouts and pages and stuff like that. So a big big fan. There's a lot of lot of features I didn't touch on there's like, shared components and styles throughout your team. There's some really, really, really cool stuff there. Oh, I
+
+91
+00:44:29,460 --> 00:44:31,350
+Wes Bos: have to check this out. I had never heard of it.
+
+92
+00:44:31,500 --> 00:44:46,320
+Scott Tolinski: Yeah, I hadn't. And then when I when I, when I did hear about it. I was like, okay, you know, I'm happy with sketch and then I started using it. I'm like, I'm happy with figma like, this is really sweet. So I've been on it pretty hard lately.
+
+93
+00:44:46,710 --> 00:44:53,670
+Wes Bos: Wow. So what what would you use sketch for that this doesn't do or doesn't Nothing?
+
+94
+00:44:56,580 --> 00:45:37,200
+Scott Tolinski: Nothing really. Yeah, this even has some like built in prototyping. Features where you can like, set up hotspots and do like a presentation view and click between your designs like you would an envision or something like that. So it's replacing sketch in my toolbox right now. I am a big fan of it, I mostly just use the electron app. But the browser version is great, too. It's pretty much the same thing. It's really it's pretty inspiring to see this as a browser tool, just how, how awesome it is. Looking at this application in the browser, makes me feel like the browser is capable of so much.
+
+95
+00:45:37,290 --> 00:45:43,020
+Wes Bos: Wow. And that's really cool. Because like the one downside to sketch for me is that there's no windows so
+
+96
+00:45:43,560 --> 00:45:45,030
+Scott Tolinski: yeah, cross platform, man,
+
+97
+00:45:45,060 --> 00:45:49,800
+Wes Bos: I would love to see a class a cross platform thing come out, like sketch.
+
+98
+00:45:49,860 --> 00:46:07,080
+Scott Tolinski: Yeah, everybody can use and there's a you know, it's a little bit different things aren't necessarily where you'd expect them to be in certain in certain places or whatever, if you're coming from that. But yeah, the moment you get used to it, and it starts to feel comfortable. Yeah, it's feeling very comfortable to me right now. I'm really liking Oh,
+
+99
+00:46:07,080 --> 00:46:10,530
+Wes Bos: awesome. We're gonna check that out. Take my
+
+100
+00:46:10,770 --> 00:46:13,890
+Scott Tolinski: si GMA document. Yeah.
+
+101
+00:46:14,280 --> 00:48:12,240
+Wes Bos: So my sick pick today is a docking station for my new laptop. So I got the the new MacBook Pro with the all the USB sees and live in the dongle life. And I have a pretty complicated setup here I've got two external monitors, I've got some external USB audio equipment, I've got a printer, I've got a couple of hard drives, I've got I don't know all kinds of stuff. And what sucks about that is that you have to plug all of the stuff in when you throw it on your your desk and you want to work from your monitors. So one of the promises of Thunderbolt three and USB sees that you can have one plug for charging for monitors for USB for for absolutely everything. And it's finally coming to fruition where I got this thing called the Cal digit Ts three, I believe it is. And it's it's super expensive. It was I think it was like 350 bucks, and then I got hit with duty it was it was probably about 400 bucks, Canadian at the end of the day. Which is ridiculous because that's you can get a Windows laptop. But, uh, it finally has happened where I put the stock on my desk, I plug in all of my USB stuff, I also plugged in another USB hub. And I plugged in all of my monitors, and then you plug that thing into the wall. And then you have one single USB three, or I guess it's technically Thunderbolt three, and you plug it in and all of your USB stuff works, the laptop starts charging and both monitors are powered, which is incredible that it actually works. And I'm amazed that there's no like, I don't know, I feel like my entire life. I've had to plug USB stuff in and out in and out.
+
+102
+00:48:12,480 --> 00:48:28,800
+Scott Tolinski: used to make it work. Yeah, you don't want to see my desk right now I have like, you know, it's one of those things the cables get. So over time, you know, you plug them in, and you plug them out whatever. And then you have to eventually just like rewire the whole thing because yeah, it's just so much. Yeah.
+
+103
+00:48:29,310 --> 00:48:42,120
+Wes Bos: So I've been super happy with it so far. It does have a SATA ports, which I guess means you can plug a hard drive or an external GPU directly into it, which was pretty cool.
+
+104
+00:48:42,120 --> 00:48:45,990
+Scott Tolinski: Yeah. And that external GPU would be sweet for video editing.
+
+105
+00:48:46,169 --> 00:49:09,300
+Wes Bos: Yeah, I'm just like, I hate waiting for exports. So wondering like, how that works. But it's called digit Doc, check it out if you're interested and you have tons of money to burn. But I'm really happy to finally just have a single plug. I can I can get up and go whenever I want. Just have to plug this one thing in.
+
+106
+00:49:10,110 --> 00:49:13,680
+Scott Tolinski: Awesome. Yeah, it looks cool. Well, that's it
+
+107
+00:49:13,680 --> 00:49:26,760
+Wes Bos: for this episode. Make sure you like subscribe. Let's YouTube. What do you do on a podcast you review? you subscribe. In Follow us on Twitter. I'm at Wes Bos to be esbls
+
+108
+00:49:26,760 --> 00:49:31,380
+Scott Tolinski: I'm at St olinsky or at level up tut's.
+
+109
+00:49:32,190 --> 00:49:35,100
+Wes Bos: Awesome. Until next time, we'll see you then
+
+110
+00:49:35,730 --> 00:49:51,690
+Scott Tolinski: see who's bass. Head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you liked the show. Until next time,
+

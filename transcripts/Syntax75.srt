@@ -1,0 +1,244 @@
+1
+00:00:00,359 --> 00:00:01,350
+Unknown: Monday, Monday,
+
+2
+00:00:01,379 --> 00:00:02,160
+Monday,
+
+3
+00:00:02,219 --> 00:00:06,990
+open wide dev fans yet ready to stuff your face with JavaScript CSS
+
+4
+00:00:06,990 --> 00:00:08,820
+node modules, barbecue tip
+
+5
+00:00:08,820 --> 00:00:21,660
+workflow breakdancing, soft skill web development hasty as crazy as tasty as web development treats coming in hot here is Sarah CUDA, Bob, and Scott l.
+
+6
+00:00:26,010 --> 00:01:03,120
+Scott Tolinski: o Welcome to syntax and this hasty treat, which is the Monday edition of syntax where we take a small topic and we dive into over the course of let's say, 23.5 to 32.5 minutes or something around there, we had some people timing some of our episodes in the past. And this episode is all about feedback and criticism, which is a topic that we have to deal with a lot as both creative and technical developers, designers and anything in this industry. My name is Scott Tolin ski and with me, as always, is Wes Bos.
+
+7
+00:01:03,330 --> 00:01:05,340
+Unknown: Hello, everybody. I am a
+
+8
+00:01:05,550 --> 00:03:32,400
+Scott Tolinski: This episode is sponsored by one of our very most favorite services, which is Sentry, and you can get to sentry@sentry.io and sign up using the promo code a tasty treat. Now, Sentry is the amazing way of keeping track of your bugs and errors in your codebase. They say that you can cut your resolution time down from five hours to five minutes. And this is based on the fact that it gives you a ton of information around all of your errors. It lets you know the operating system, you can attach some data like maybe the user or what browser they're using, or any sort of that stuff that you need, right, they'll give you the stack trace, they'll give you any of the stuff that you need to solve the hairs that are taking place on your site. That way you can take care of them and even be aware of these errors before your users start coming at you with emails, right? You might be getting some emails saying hey, I tried to do this on your site, and it's not working. And maybe you would know that if you had Sentry installed, you get that error sent out to you ahead of time get the alert, go and fix it. You could reply to them and say, Hey, I know about it, it's taking care of you're good to go. So Sentry is just it's such a great service I was I have both been using them for a long time. Again, they have things like noise free and notifications tied to the commit. So you can make sure the right team or person is alerted. There's a really great SDK and API for every single platform. Literally every language, anything you can imagine is taken care of that you can plug into century. So if you're a PHP Dev, you're a no Dev, whatever your react dev get in there, you can use century everyone can use century, it also exposes like I mentioned expose, it exposes the source alongside the context about how they were using it. There's tight integrations to all this stuff, you know, and love like GitHub, Bitbucket, get lab, all that good stuff. And you there's even integrations into services like Slack, or JIRA, or pager duty, all that sort of stuff. And the coolest thing in our minds about Sentry is that it's 100% open source. So it's really, really awesome, then this company exists to really just help us have a better experience for our users. So again, head over to sentry.io sign up using the promo code a tasty treat, and let them know that you came from the syntax.fm. And again, there is a free plan there too, I might as well add, the free plan is a great way to give Sentry a try and not necessarily have to commit to anything. So check it out@sentry.io again, promo code is tasty treat
+
+9
+00:03:32,579 --> 00:05:06,420
+Wes Bos: wicked. So we're talking all about feedback in criticism today. And we're going to go through on first we're gonna go through getting feedback and how to properly accept feedback and how to parse that cuz it could be coming from very good places, it also can be coming from from bad places. And then we're going to be going and diving into giving feedback, which I think is really, really important. As a developer, you're working with lots of other people. So let's let's jump right into it. I think the first tip that we have, we just got all kinds of tips here we're gonna expand upon the first one is don't assume no malice from someone, I think that this is really important because tone on the internet is very, very easily lost. So whether you're on the internet or slack or email, it's often easy to think that someone is being very terse, or someone is trying to be aggressive towards you, you take it in the wrong way that it that is meant to be given. And I find that especially to be true on on Twitter, because Twitter is you are limited to the amount of characters that you have or people are just typing really quickly. As well as the web development in general is a very international community. And I would say more than half of the web development community is does is using English as a second language. And I think that when you combine both being on the internet and not having English as your first language, often some of the kind of softness of being able to to approach someone and reply to them in a nice way is often lost. So that's one thing I always have to remember myself.
+
+10
+00:05:06,540 --> 00:06:23,940
+Scott Tolinski: Yeah, it is, it's a big thing is oftentimes even if you're feeling some type of way, right, you're, you're in like a mood, right? Maybe you're like an aggressive mood, or maybe you're an upset mood, or maybe you're just down, you can look at people's feedback in a specific way and look at it differently. Like, you know, it is important to know the lens that you're looking at this feedback from as well, I think it's an extremely important to always take like a neutral tone, or neutral understanding, unless it's implied otherwise, very directly from the person giving that that feedback. Another one is just don't take it personally, even if the person is like, trying to be personal with it. You know, that's, that's a kind of a hard thing is to not take it personally. But chances are the people who are giving you this feedback, they're not intending to make you feel bad. And if they are, then then they're a terrible person. But you know, they're not intending to make you feel bad. And so therefore, they're not criticizing you, yourself, or your abilities in general, they're not saying you can't do this, or whatever. They're basically they're trying to make it about a better product, right? It's not about you, it's business, it's about a better product, it's about a better, better code, better something. And it's about the team making everyone better, right.
+
+11
+00:06:24,000 --> 00:08:27,570
+Wes Bos: Yeah, it's, it's easy to get wrapped up in being like I wrote this code, you're saying this code sucks, therefore, you say, I suck, and I should not be doing this. And, and you kind of spiral out of control. And some people are much more that way than others. But I think we all have a bit of a tendency to attach ourselves to the things that we make. Because at the end of the day, we're makers, and if you put your stuff out there, you're putting yourself up on the ledge and being like, I'm getting paid for this. I'm an expert at this. And and you're saying it's not good. And that can really hurt. So I think, important thing is to understand the why behind the feedback. And this is, this is gonna be one of the tips and giving feedback and try to tell the person why not just this, like, when I was designing websites, and I was building websites for clients, I would go through lots and lots of feedback from the client. And at first, you would be like, the client will say, I don't like green, or this layout feels busy or, or things like this. And at first I took it like, Oh, they don't like, they don't think that I'm good at this. And I don't feel like I have really have a skill at designing these websites. But if you try to understand the why is that, okay? This person is building a website. And they are trying to clearly communicate something they're trying to sell something they're trying to get more leads. And they feel like this is not the best way to communicate what it is that they're trying to get across on the page. And they feel like it's not getting them across. So trying to understand if they say if they say something like the the logo needs to be bigger, or if they feel that's like the classic one, make my logo bigger, or make the font bigger, or the all of these things that they're trying to tell you make it brighter, make it happier, you have to like sort of like your job is to figure out what do they actually mean behind that? Why are these things coming out? Why are they saying it this way? And then you got to like say, Okay, I from, from what I'm hearing, I think that maybe we should try adding a little bit more padding a little bit more spacing, let's try a different color a different color schemes and understand the why behind it all.
+
+12
+00:08:27,600 --> 00:09:58,320
+Scott Tolinski: Yeah, and I have that note here is to like look through, look at the situation through the reviewers eyes, like what are they looking at this for they're looking at it, like you said, to increase conversions to do this or that, or maybe even if it's code, they're looking at this code to make sure that it runs correctly, that it's not going to create problems. So you want to look at the problem through your reviewers eyes, and know that they're giving you this feedback for these reasons or reasons that that they're they have problems that they're trying to accomplish or are trying to solve. And you're being put in place to solve those problems. And if you're not solving those problems for them, then that's going to lead to this kind of criticism. So again, it's nothing personal, they have a goal in mind, and they're looking for you to help solve this goal. Another good one here is like, even if you don't agree 100% with the feedback, a lot of times, people who will think they did things the right way I did this the right way. Therefore I'm going to ignore any of the feedback. The fact that there is feedback at all, you know, criticism or feedback or whatever it is mostly just because there's truth in it, and you need to look for that truth. So even if you feel like I 100% knock this out of the park, chances are, you're you're going to be shutting yourself out to the important stuff to the truth. You're going to be overlooking this truth and maybe you don't see it right now. Or maybe you don't want to see the truth right now. But without looking for those kernels of truth and whatever they're saying you're never going to grow in your abilities or your specific assignment.
+
+13
+00:09:58,550 --> 00:11:50,550
+Wes Bos: Next one I have here is B I open to feedback. So I'm gonna approach this one specifically at someone who sells courses and I put myself out there, I charge people money for these, these most of these courses or half of these courses that I have out there, and I get my fair share of feedback on absolutely everything I do. If I send out a tweet, you get, it's 10, DMS and 30 replies to it, you put up a YouTube video, you get a couple hundred comments on there, you put it of course, people are gonna email you many times a day with their thoughts on on how it went. And it's very overwhelming because sometimes it's negative, often it's it's positive, sometimes it's people who have sort of missed the point or missed the boat, or there there's, there's a lots of feedback that you sort of have to figure out, like, what's good feedback and what's bad feedback. But I've learned just like, be open to absolutely everything. Because in in that huge amounts of feedback, there often is really, really good information that comes in there. And I feel so privileged that people care enough to to be able to take the time out of their day into write up an email, with their thoughts about what they really enjoyed, as well as what they had trouble with and what they stumbled upon. Because that is extremely valuable. And that will make my next course even better. And just little things like I wish there were more examples in this specific topic, or I don't like that there is Intro music at the start of all of your videos, that's really good feedback, because then I can The next one is going to be even better and even better. That's extremely valuable. You don't get that from from anyone and you don't necessarily get that when you ask as well. Like if it just go like Hey, what did everyone think you'll often just say, I loved it great. It was amazing. But if somebody like unprompted, comes and sends you an email that often is the very best feedback.
+
+14
+00:11:50,700 --> 00:13:40,650
+Scott Tolinski: Yeah, absolutely. I mean, in there some time is feedback that you you can ignore. But it's, it's only when that feedback comes in. And it's non relevant, right. For instance, I had somebody messaged on one of my videos saying that they weren't going to watch the entire series because of how I pronounce the word console. And I'm just like, okay, that's bad feedback. That's not like that's not gonna help me. I'm not going to alter my my speech patterns just because you know, whatever intonation that you don't know, liking is there. So I mean, there is there is certainly some feedback you can ignore. But there is a lot of feedback to again with these courses and stuff like that, that maybe hurts at first, like the war, like this guy's rambling on for two minutes before this content starts. And at first I'm like, Well, whatever, man, like, I thought this was videos good. But in reality, like, man, I did ramble on for two minutes before this before I got into the topic, and maybe it would have been better off to put those ramblings in a separate video that was titled like ramblings about this. But when somebody comes into a video, right, they watch a video that's like how to install WordPress, and then you talk for Yeah, and it's about WordPress, and don't talk about how to install WordPress, they're going to be very upset. So again, like that's a that's something I learned pretty early, because I got a lot of feedback for YouTube comments. And as crass and aggressive as YouTube comments can be there, there certainly can be some truth. And then somebody, somebody just left a comment on my video, like 10 minutes ago on a performance web video, or I was talking about reducing HTTP requests. And you know, like, you can't give a one size fits all answer to that. It depends on what your platform is, right? If it's like WordPress, there's a setting somewhere, right? If you're doing like a web pack, you have to you know, pack everything together, right? Well, this guy writes, you never said how to reduce sucking video. Thank you, man. Like, I really appreciate that feedback.
+
+15
+00:13:41,280 --> 00:14:29,400
+Wes Bos: Yes, I got a comment from our last live pod, or we did the podcast live. Oh, and someone comment it was it was on the 11th Yeah, it was like on the 11 things that you can do the 11 habits of a developer and he said like, this is better served as a blog article is too long to watch. I was like, Okay, what are you doing watching this video? Watch it man. Don't walk out with it by which is like it's such a there is like lots and lots of useless comments. I often wonder like, I'd love to meet some of these people that spend their day writing these these useless comments. I think that's another skill is being able to differentiate between random trolls on the internet, who are so out to lunch on how it works versus the actual genuine feedback that you can you can understand the whys behind it. Yeah.
+
+16
+00:14:29,520 --> 00:15:09,570
+Scott Tolinski: And I guess even if even if, you know, here's some here's, you do want to even look for little grains of truth in even those most aggressive absurd comments, right? Because maybe there is grains of truth for instance, that one I just brought up, you know, that guy thing you never said how to reduce it sucking video? Well, you know, maybe would have been better off in that video. If I would have said, hey, there's too many ways to do this. There's too many different platforms to how you might want to explore Marta do this on your platform. It'd be like a one sentence would have prevented somebody from being that rude and aggressive towards me. Again, even in the most asinine sort of responses like that there is grains of truth.
+
+17
+00:15:09,600 --> 00:15:12,750
+Wes Bos: Yeah, totally. All right, let's move on giving feedback.
+
+18
+00:15:12,780 --> 00:15:32,400
+Scott Tolinski: Yeah. And this one's really important because part of accepting feedback, right, is that the person giving it knows how to give it in a way that makes it easy to accept, right? If you want people to improve, or if you want people to take things correctly with little effort, then you need to put effort in how you give feedback.
+
+19
+00:15:32,490 --> 00:17:16,230
+Wes Bos: Yeah, I feel like I've done a pretty good job at this because I taught in person at hacker u in Toronto for 75567 years. And I've taught hundreds and hundreds of students and, and gone through their code with them and help them help them fix problems in their code base. And you're very vulnerable when you're learning to code. And if somebody, especially with someone, like who is the expert, I'm the teacher, I know how to how to do this stuff comes in and tells you Oh, that's not the best way to do it. Here's another way, you don't really have to approach that in a specific way. So one, I put out a tweet asking for any tips from for managers and developers on Twitter and lots of good information on there. I'll link up the tweet in the show notes. But from Dan Blundell, he said, criticize in private praise in public share your own failings, not the failings of other keeps culture and teams respectful. But also I think that I really liked that as well. Because all too often, like on Twitter, I think, because I have a lot of Twitter followers, people don't see me as like actual human. Yeah. And often, people will just sort of start blasting you like, hey, at Wes Bos, so it's meant to go to their entire following. Why is this broken on your website? Or why is this unaccessible? on your website? Do you hate blind people? Yeah. And it's like, Okay, um, thanks. But I would have preferred like a private message or email or even just a direct tweet so that the entire world doesn't have to start throwing their three cents in on this issue is like that's as sometimes I think people get get feel like superior by criticizing in public because this shows that I, I know what I'm doing. I'm an expert in this and look at this guy. He's charging for courses, he doesn't even know what he's doing. Yeah, I
+
+20
+00:17:16,230 --> 00:17:22,100
+Scott Tolinski: know that. There is like a whole whole army of people that are just waiting to shoot down whatever you say,
+
+21
+00:17:22,380 --> 00:17:48,320
+Wes Bos: slip up. Yeah, I often put, I put little funny things in my code comments. Because if anyone views source on any of my applications, or, or they, they drill into my like Git repos, or things like that always put, like funny commits and stuff like that, because I think it will, like defuse any situations where people are trying to look coming out swinging and looking for you to mess up and there's plenty, plenty of places I've messed up that you can you can catch me on.
+
+22
+00:17:48,350 --> 00:19:39,690
+Scott Tolinski: Yeah, it's funny. I mean, Reddit is like the worst place for that where if you say anything, people are gonna be like, ready to jump at you at the well actually. Yeah, it's like there was like a, you know, the latest react, I think was react fire. Is that like the that react? Am I remembering that correctly? The the new version of react Dom that they're talking about? Where allows you to use class instead of class name. And I posted on the Reddit original, I posted that I was looking forward to the demise of class name. And people were just like, hammering me about like, what about, what about the protected name, class, and D, structuring the word class and all this stuff? I'm like, Listen, I didn't I didn't make any comment about that. Like, I didn't give my thoughts about that. I just like that. You don't have to write the word name. And it's similar to HTML, like you can chill out about Yeah, right. like everyone's jumping at the opportunity to one up there. So let's talk about giving feedback, some of the best ways you can do it. I know I think a big one is don't give unrequested feedback. And this is a big, this is big, and like this sort of situation. But like when you're in an organization, where you have the dev who's like trying to be the expert Dev, like, I'm the smart dev here. So I'm gonna go out there and be like, hey, that's wrong, right? So if you're in a code critique, or a code review, or something like that's the perfect time to give someone a critique or a review of their code, but it's not your job to review someone else's code. And they're not asking for help with something, I wouldn't necessarily go out of my way to insult someone else's work or give them feedback. Because maybe, just maybe you're not looking at the final project, right? Sometimes people write things sloppily, or create things in a sloppy way firsthand, just to get it done and then refine it, right? Maybe you're looking at that sloppy one, and boom, ooh, what are you doing? But yeah, you'll just like wait it out and see maybe this mess is going to become something wonderful.
+
+23
+00:19:39,830 --> 00:19:58,920
+Wes Bos: Yeah, that we it with kids. You see that all the time and unsolicited advice from people like me and my wife were walking to the park one day, and some lady turns her car around, calls us over and says your kids should have hats on and go away. I know what I'm doing here. I
+
+24
+00:19:58,920 --> 00:20:59,670
+Scott Tolinski: didn't I didn't solicit Your your feedback or your advice here we so we have we have a dog that has dreadlocks. If you watch the live stream of the last episode you would have seen her she's she looks like a white mop. And that's like the breed standard, right? This is the way she's most comfortable being because like with normal dogs with their their formats of immense up to the skin with our dog, it only mats up like an inch away from her skin. So it's really breathable, it's how she how she prefers to be, well, we were taking her for a walk, like one of the first weeks we lived in Denver, and some lady on a bike goes, you're mistreating your dog, your dog. And we're just like my wife, Courtney who's not normally one to speak up in these type of situations. She's just like, that's the braid. Like just like, defending our dog like, because we take very good care of our dog. And it was just like extremely upsetting to have somebody again give us unsolicited feedback on something that they didn't know anything about. Right? She just thought that we were being a hipsters or something like dreadlocks? Yeah,
+
+25
+00:20:59,880 --> 00:23:27,330
+Wes Bos: yeah, I could see that. Next, no, you know who you're giving feedback to. So this is something when, when you give feedback in like a classroom setting, you really have to make sure that you know the personality of the type of person that you're giving feedback to. Because some people they want, they want everything, they say, Wes, tear this apart, tell me what I'm doing wrong, I really need you just to tell me every single little thing. Whereas some other people are a little bit more fragile. And you can't just come in swing in and give them a laundry list of 80 things that don't necessarily matter all that much. And the probably will learn that at some point. So because there's a lot of people who are very, I'm just speaking in, like when people are learning how to code. They're, they doubt their they doubt themselves so much. And they don't think that they can do it. And they don't think that they're any good. And you sort of have to tiptoe around. And when you when you approach someone like this, you have to know that you can absolutely ruin somebody's day. And I've had my day ruined many times just by snarky comments that people come by, and they don't phrase them the right way, and you just feel like garbage the entire day. So know the type of person that you're giving feedback to. And I think some some ways that you can do that is, is phrase in positives. So I have some examples here. Instead of saying something like this website is totally unusable by blind people, you can say something like, one little tip that I like to use is making sure that all of my images have have alt tags in them. And just by saying like both by by phrasing in the positive, as well as giving examples of your own screw ups. That's another thing I do a lot when teaching is I don't say, Oh, your slider won't be able to be used on mobile, because of xy and z or don't absolute position everything because you're going to be in a world of hurt when you when you go to mobile, I'll say oh, I once built a website. And I absolutely efficient positioned everything. And I was so excited. And then I resize the browser and the entire thing was all off. Or I'll give a little examples of Hey, maybe you should make a reusable component for your social media icons. Because once I had a client where I hard coded the Twitter icon and Seven Spots, and I forgot to update one of them, and they were really mad about that. And just little examples of like, oh, man, I totally dropped the ball here. Don't do what I did. I'm the dummy Haha, that's kind of a nice way to to give feedback but but place the blame on yourself and say don't do it. I did.
+
+26
+00:23:27,420 --> 00:24:44,820
+Scott Tolinski: Yeah, I mean, that leads perfectly into my next one is don't be an asshole, don't be rude about it. Like Don't be out there collect skulls, your that's not your job, right? You're not it's not your job, to be the predator to go in there in just hammer on everybody, your job is to improve the codebase or improve the design or meet these product goals. So if you're going to be rude to your, your, whatever the person that you're critiquing, right, and one it's going to make you look bad in the eyes of your coworkers, they're going to look at that, that person and be like, hey, Oof, that's the that's the person who doesn't know how to give good feedback. But that's also the person that's just a dick. They're just rude, right? They're just angry, it's also going to not get you any right. Because when people are insulted, personally, they shut down and they don't listen. And when they shut down again, you're not accomplishing any of those goals that you set out to do. And also, if you say something, you might not be able to ever take it back. Right? You might regret what you said. And you might have permanently damaged that relationship with that person. So you need to keep in mind that these are people that you're talking to and don't be rude. There's no reason to be rude. And it's it's if anything, it's making things worse and you're not making things better.
+
+27
+00:24:45,120 --> 00:25:46,410
+Wes Bos: Next one is to embrace the robot uprising. This is using tools and standards for things like code quality. Yeah, and even like I'm even thinking about like Freshbooks which is not sponsoring this episode, but they have like an automated late payment reminder. And it's so much better when like an automated email robot says, Hey, you didn't pay this bill versus you having to be like, hey, like what's going on? Why are you not paying us? Because it's it's not you, it's somebody else. And I think encoding a lot of feedback, especially in code reviews is this formatting is off this, this is code is messy. So instead of telling someone that their code is messy, or unreadable, first use tools like es lint, and, and prettier to to format the code. So it's automatically in a way, and also just then it puts the blame on someone else, hey, we use these code standards and these tools in our code base, I can show you how to get these things set up so that we're all started coding on the same page, we all code on the same way.
+
+28
+00:25:46,530 --> 00:27:30,660
+Scott Tolinski: Yeah, I think that's an easy win, right? Because Yeah, now you're not, it's not no longer a problem with you know, what one person is doing these just just removed so many variables. And in my like, experience, when you have a lot of complex things, it the more you can remove that variable, like the better. So if you're removing code, style, code, quality, all that stuff, or even like tests, right has to pass all your testing, you must have this amount of coverage or whatever, if you have these rules in place, that are smart and remove some of those variables, it's going to be a big opportunity to remove any of that opportunity for even, you know, something negative to come up like that. And another big one I have is given opportunity to improve. Sometimes, some people just have off days, or maybe they had the wrong idea. And if they come to you with a review, and you review it really harshly, and then you hold on to a grudge, maybe saying oh, this person can't do this, or they're not good at this, I'm going to stop giving them those projects entirely. Or maybe I'm going to always view that person as this in this in my mind, no, give them an opportunity to rise to the occasion, maybe even throw another one their way. Like let's say they had an issue with CSS specificity spell, gosh, darn it, that word. I think I think I butchered it. Let's say people had an issue with that, and they didn't know, right, you can review their their CSS code and say, Hey, your code could be better if you did this, and this and this. And then instead of not giving them projects that involve that, give them another one and see if they come up big, because chances are people want to do a really good job. And if you if you present it in the right ways, then well, you're gonna make it a better opportunity for everyone to grow as a group.
+
+29
+00:27:30,750 --> 00:30:01,530
+Wes Bos: Next one I have here is explained the why behind your feedback. So in the getting feedback section, we said try to understand the why. But it's even better if you can just explain the why to somebody. So we want to style our dialog boxes in this this way. Because it's more accessible to everybody on our website, or we had in the past, we've had performance issues, doing X, Y, and Z. And if you explain the why behind it, it doesn't necessarily put it on the the person saying your code is bad. It's just saying, this is the way we do it. Or this is the way that I prefer to be done. Because X, Y and Z and there's this link to a blog post, someone tweeted and it goes to manager tools. Which manager tools is a podcast I used to listen to back in, in university. And this is a blog post from 2008. So yeah, it's 10 years ago, I used to listen to in university because I was doing a lot of these like networking and like big business, like how to wear ties all the time to school and shake hands. And there was there was all these like things about like, how do you send someone an email? How do you shake someone's hand? How do you have a meal with people like like, I often will have meals with people and they'll just dice up their entire steak, and then they'll butter the entire bun and then just start eating it like it's like a subway or something like that. And there's like, there's proper ways to eat a roll when you're out in. Anyways, I thought that was really interesting podcast. But this is the blog post manager tools, which is how to provide feedbacks. And it's a four step ask an employee if they are open to feedback that goes back to don't give unsolicited feedback. Second, describe the behavior example jack, when you roll your eyes in a meeting when others talk, when you say you guys don't get it when you do so describe the behavior describe the impact of the behavior. So when you roll your eyes in a meeting, we lose good people or it frustrates other people in the thing. So explain the impact, and then discuss next steps. So when you bring in a whole bunch of third party libraries to do something, which we already have, it increases the bundle size, which is going to slow down the load for slow down the load for our users and we don't want to do that. So what we'll do now is before we add any more third party dependencies, let's go through this process or just just shoot me a slack message to make sure it's okay. And that's kind of a nice way to say like the here's the the why and the reason behind it and here's how we're actually going to fix it. Rather than just saying like don't put so many Third party libraries in here,
+
+30
+00:30:01,560 --> 00:30:02,160
+Unknown: huh?
+
+31
+00:30:02,220 --> 00:31:01,740
+Scott Tolinski: Yeah, again, it's it goes down to like what's being pulled to the team and what's not being helpful to the team are really common saying is to build a sandwich. Somebody even tweeted us that referring to it as a shit sandwich, which I had never heard of it as a shit sandwich before. But it's a sandwich, where you sandwich the negative things in between positive things in this this way, it makes people more receptive to what you're about to say. So you can say, Well, hey, your navigation looks really nice, and it functions really nicely. But you need to have a button for the hamburger menu rather than an anchor tag because of accessibility. Other than that, it looks really great. You know, you could do something like that, where again, the the negative thing is just sandwiched in there. So instead of being like, Hey, man, don't you know that your button is wrong? Like, you know, that's not going to solve any of these problems. So it can you want to make people receptive and open to what you're about to say, before you go and say it.
+
+32
+00:31:01,830 --> 00:32:16,950
+Wes Bos: Someone else tweeted a link to mpj, friend of the show mpj. And he has a really good YouTube video that came out after StackOverflow finally, finally said, Yes, we understand that people are very mean on StackOverflow, which is mean, we've been saying for years, it's so scary to ask it. And he argues that adding civility or people were arguing that removing civility from technical stuff is better. So if you just get to the nuts and the bolts of the technical topic, and remove anything else, it's the best. And he's arguing the other way, which I totally agree of is if you can add civility if you can add being nice, and the skill of being able to clearly and properly communicate something, I think that goes a long way and actually describing the technical topic. So it's kind of all of what we've been talking about today is that you a lot of people, especially in technical, I don't know why it's so big in our technical in the web development community, but a lot of people come off very harsh, very terse. And they think that just spewing out the facts is the best way to get across information. And I absolutely don't believe that. Yeah,
+
+33
+00:32:16,950 --> 00:32:30,570
+Scott Tolinski: I mean, it all comes down to what is the thing you're trying to solve, right? If you're on Stack Overflow, stack overthrow? Are you on Stack Overflow to solve someone else's problem, or you an overflow, Stack Overflow? My
+
+34
+00:32:30,570 --> 00:32:32,670
+Wes Bos: sin stack overthrow.
+
+35
+00:32:35,940 --> 00:33:49,650
+Scott Tolinski: dyslexia has gone too far read. If you are on Stack Overflow, I almost even said throw them and I'm trying really hard to say, hey, okay, are you on it to solve someone else's problem? Or are you on it to gain points and boost your ego? Because a lot of people think that they're on it to solve problems, but get in there and are only trying to either hurt people's feelings or give an answer without necessarily keeping in mind, like, why they're there. They're there to help the person. And if they attack the person, like, Oh, this is, this is some crap code here, you got to do better this way, or whatever, you're not solving that problem. And so by all means, if you want to be a jerk, and you want to be in there for ego and internet points, then someplace like that isn't the best thing. There's, there's other ways you can get ego points on the internet, then a place that's meant to help other people. So just keep in mind, main main thing is always eyes on the prize, like what are we trying to solve here? What are the problems we're trying to do? If you have that in mind here, just keep in mind, like what's going to help these things get solved and what's going to make it worse,
+
+36
+00:33:49,680 --> 00:34:14,420
+Wes Bos: like also one other skill that you can have, and I don't know if this is a good thing or not. But being able to kindly but funnily reply to, to feedback is a bit of a skill as well. So often, every day on Twitter, I'll get snarky replies to my tweets. I just tweeted one out, and somebody people always call me I spelled canceled wrong. And
+
+37
+00:34:15,230 --> 00:34:16,800
+Scott Tolinski: I've been getting a lot of heat for this one.
+
+38
+00:34:17,130 --> 00:34:52,460
+Wes Bos: Yeah, people Hey, you spelled canceled wrong. Thanks. You know, like, I'm sorry, I can't edit it, that deed is done. It's not a big deal. So I just replied, I prefer the British spelling was pretty good. So I don't know. Like, it's sometimes you just gotta like, take a break and walk away from it because you, you can then like, fight back with a snarky reply. And that's the guts good for no one. But being able to defuse defuse the situation with a little bit of a joke reply, I think is a bit of a skill on its own. Yeah, I've been working on
+
+39
+00:34:52,500 --> 00:35:29,160
+Scott Tolinski: Yeah, I've been working on that too. Especially on things like YouTube comments where people just like I know something about YouTube or is Something about I think YouTube specifically, that just brings out the very worst in people in the comments. Because they're just Yeah, they're out for blood, man, everyone's out for blood. Again, if you want to see change on whatever platform you are commenting on or working on or whatever, keep that in mind that you're trying to inspire some kind of change other than I mean, keep in mind that that's that's the word there is inspire. You're trying to inspire change, you're not trying to force change into submission by insulting it or something. Yeah, also,
+
+40
+00:35:29,160 --> 00:35:47,900
+Wes Bos: I think, like, we focus a lot on like negative feedback here. I think it's worth noting that if you if someone does a good something that is good, or if you enjoy something that someone does, send them a little note of positive feedback, say, hey, fantastic job on that. That's it. You don't need a shit sandwich. Just have a Yeah, piece of bread.
+
+41
+00:35:48,150 --> 00:35:54,900
+Scott Tolinski: Nothing but bread. Everybody likes to hear good things, right? Yeah, toast sandwich you you pronounce console really well, in this video, thank you.
+
+42
+00:35:55,830 --> 00:36:01,980
+Wes Bos: Oh, get ready. Can I tell you in my react course, I say schema so many times, I cannot
+
+43
+00:36:01,980 --> 00:36:11,960
+Unknown: wait, you're gonna lose a lot of buyers. Because of that. They're gonna know. schema. schema schema, schema,
+
+44
+00:36:11,960 --> 00:36:15,150
+like schema, schema schema?
+
+45
+00:36:16,530 --> 00:36:22,400
+Scott Tolinski: See, what's funny is that you say it like that. But that's how schema a schema schema?
+
+46
+00:36:24,600 --> 00:36:32,310
+Wes Bos: Oh, you're wrong. I we did a poll on on Twitter many months ago. And it was like, I think like 20% says it my way. I just
+
+47
+00:36:32,850 --> 00:36:38,420
+Scott Tolinski: I don't believe that. Did you click it 20% of those times? Because I feel like you're the only person that says it that way.
+
+48
+00:36:38,630 --> 00:36:40,320
+Wes Bos: Let me let me find this poll.
+
+49
+00:36:41,040 --> 00:36:45,980
+Scott Tolinski: We all know that you're capable of wizardry in the command line two poll results.
+
+50
+00:36:46,110 --> 00:37:10,080
+Wes Bos: I can't say Twitter poll results, because you need like many Twitter accounts. And all I have is my own account and the syntax account? I don't know. But we did have a poll recently at syntax FM, which said, Do you prefer Elon Musk on Rogan? Or Scott's sponsor? segways on syntax FM, and I'm proud to say 59% of you like Scott 69
+
+51
+00:37:10,800 --> 00:37:15,230
+Scott Tolinski: F 59. Yes. And I mean, that face he made when he hit that drawing was pretty funny. But
+
+52
+00:37:15,270 --> 00:37:25,560
+Wes Bos: okay. If you don't know we're talking about I think the whole world knows. But Elan musk went on Joe Rogan podcast and took a hit of a joint which is so funny. I saw
+
+53
+00:37:25,560 --> 00:37:43,730
+Scott Tolinski: some interview because I didn't watch the whole thing or any of it for that matter. But where they were like talking about chimps or something and in Joe Rogan was just like, Are you surprised? Like we're on the Joe Rogan podcast? like we talked about chimps like once a week on this podcast, I was just like, Oh my God,
+
+54
+00:37:44,340 --> 00:37:51,420
+Wes Bos: this should go on YouTube and search for Roe Joe Rogan. And that's all I have to say. That's it for today. It
+
+55
+00:37:51,420 --> 00:37:52,050
+Scott Tolinski: is good.
+
+56
+00:37:53,150 --> 00:37:55,320
+Unknown: All right. That's it for today. Anything else to add? Scott,
+
+57
+00:37:55,350 --> 00:38:01,860
+Scott Tolinski: I don't just you know, again, inspire change, be good. And, you know, give good feedback. Don't Don't be a jerk
+
+58
+00:38:02,360 --> 00:38:04,830
+Unknown: to each other. Be excellent to each other. I'm
+
+59
+00:38:04,830 --> 00:38:08,460
+doing the the bill and Ted posts over here.
+
+60
+00:38:10,670 --> 00:38:13,290
+Wes Bos: Cool. All right. We'll see you on Wednesday. Please.
+
+61
+00:38:15,690 --> 00:38:25,460
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

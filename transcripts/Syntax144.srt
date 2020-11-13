@@ -1,0 +1,568 @@
+1
+00:00:01,319 --> 00:00:02,820
+Unknown: You're listening to syntax,
+
+2
+00:00:02,849 --> 00:00:04,590
+the podcast with the tastiest web
+
+3
+00:00:04,590 --> 00:00:34,820
+Wes Bos: development treats out there. strap yourself in and get ready. Here is Scott, ski and West boss. Hello, everybody and welcome to syntax the podcast with the tastiest web development treats out there. Today we are going to be talking all about side hustles. So you're a developer, you've got some, you've got your tech skills, and you want to make a little bit of side money or you've got some ideas as to something you want to build. And we're going to be talking all about that. So with me today is Scott Tolinksi. As always, how you doing today, Scott?
+
+4
+00:00:35,249 --> 00:00:41,729
+Scott Tolinski: Good, good. For a little something. I think you're getting a little over a little something. I think we're all getting over a little something. So
+
+5
+00:00:41,729 --> 00:00:53,189
+Wes Bos: we are all getting over a little something. But probably what's most exciting is today we have a guest on the show, which is courtland Allen, who runs the indie hackers podcast. Welcome, Kaitlyn.
+
+6
+00:00:53,489 --> 00:00:54,930
+Unknown: How's it going? Wes? How's it going, Scott?
+
+7
+00:00:55,019 --> 00:00:55,860
+Wes Bos: Oh, pretty good. Hey,
+
+8
+00:00:56,009 --> 00:00:56,520
+Unknown: thanks for having me on.
+
+9
+00:00:56,729 --> 00:01:09,450
+Wes Bos: Yeah, thanks for coming on. I'm, I'm a big fan of the indie hackers podcast. And I know Scott is as well. Do you want to give us I just sort of a quick rundown of what is indie hackers, what it is that you do and so on.
+
+10
+00:01:09,869 --> 00:02:08,880
+Unknown: Yeah, Scott said he's getting over something. So am I so apologies in advance if I just devolve into a terrible coughing fit? This episode, nd hackers is an online community of developers mostly who are interested and making money from their side projects, or just making money online, in general. And so we've got a whole bunch of different parts of the website, we've got a podcast, as you mentioned, where I like to feature developers or other founders who've found a way to sort of bootstrap their way to profitability. I had you on the podcast West guy like a year and a half ago now. Yeah, on time going short history. We've got the online community forum where you see all sorts of people, exchanging ideas, reading each other's landing pages, helping each other find the first users and just grow their businesses into something. And then we've got the online interviews as well, where we've talked to you something like 400 people, we've asked how they come up with their idea how they found the first users, how much money they're making, etc, the entire backstory of their business of the rest of us can learn how they did it and do it ourselves.
+
+11
+00:02:08,969 --> 00:02:36,810
+Wes Bos: That's how I actually initially found any hackers was those like, what I love so much about all indie hackers. It's all very tangible and all very real. So yeah, rather than just sitting around and saying, like, share what you know, and be passionate at you, you give actual tactical things that people have done, the nitty gritty. And I love that it's very refreshing to have conversations with people who have done it and who are successful. And you can figure out the little tricks and things they've done along the way.
+
+12
+00:02:37,080 --> 00:02:54,030
+Scott Tolinski: Yeah, and indie hackers is one of those podcasts where you can listen to every episode and know that you're going to walk away with something tangible, which think it is like something, something you cannot hold on to rather than just being okay on inspired. But this is like actionable items. It's one that I find immense value. And so I'm a big fan.
+
+13
+00:02:54,210 --> 00:03:02,789
+Unknown: Oh, shucks, guys, thanks. I really thought at the beginning, like maybe I would just make the whole website full of fluffy quotes that you can't do anything for him. But I decided to get with a
+
+14
+00:03:05,669 --> 00:03:38,250
+Wes Bos: be great. Before we get into any talking about side hustles. And whenever we want to thank our sponsors. Today we are with Log Rocket and Freshbooks will talk about both of them partway through the episode. So let's get right on into it. Um, we've had many, many episodes in the past about freelancing. And we're you sort of offer up your skill as a service. But we don't often talk about sort of the other side of things. Whereas getting into selling products, which is funny, because Scott and I both sell those things. And I think they both sort of started as a side hustles for us.
+
+15
+00:03:38,310 --> 00:03:41,430
+Scott Tolinski: Absolutely as a side hustle for me for four or five years.
+
+16
+00:03:41,789 --> 00:03:51,780
+Wes Bos: So I thought we were a courtland was the perfect person to come on and talk about that, since he's obviously an expert in this sort of was hold on was indie hackers started as a side hustle.
+
+17
+00:03:51,960 --> 00:04:04,470
+Unknown: Yeah, it was, it was my full time thing. So I quit my job in 2016. Now I was contracting, I had a lot of contracts. And I sort of waited for all of them to end at the same time. So it's a little fresh to say that I quit. And it
+
+18
+00:04:04,500 --> 00:04:05,880
+Wes Bos: were you you're a developer, right?
+
+19
+00:04:05,910 --> 00:04:06,990
+Unknown: Yep, I was a developer.
+
+20
+00:04:07,229 --> 00:04:11,310
+Wes Bos: And because you still build all of the the indie hackers infrastructure, right?
+
+21
+00:04:11,400 --> 00:04:15,240
+Unknown: Yeah, I spend three weeks a month coding and one week a month on my podcast.
+
+22
+00:04:15,509 --> 00:04:24,320
+Wes Bos: Oh, that's amazing. I love hearing that. Because like you're a developer first. And the indie hackers form is awesome. It's all built on Firebase. Right?
+
+23
+00:04:24,360 --> 00:04:30,140
+Unknown: Yeah, yeah. It's all custom Firebase database. coding is the fun part. You guys know, things like Yeah, it is.
+
+24
+00:04:30,140 --> 00:04:44,970
+Scott Tolinski: Yeah, I know, the same thing where you batch your content all all in one week or so you work on the code the rest of the time, and that sort of fuels everything keeps you fresh, keeps you keeps you ready to do each thing just by by bundling all up together.
+
+25
+00:04:45,240 --> 00:05:05,040
+Unknown: It made me crazy trying to mix both of them every week, because I wouldn't be like I had so much code to write then I'd have to take time out of my day to like, do this podcast thing and I would try to rush through it like get back to the code. Whereas now with a batch to like one week five or six podcast episodes, I can just take my time. It's fun. It's easy. And then I have three weeks I can code. I'm not worried about anything else. So yeah,
+
+26
+00:05:05,070 --> 00:05:27,480
+Wes Bos: yeah. So that's really interesting approach to it. I really like that as well. Because I often find myself sometimes when I've got like six or seven things throughout the day, I've got a meeting here, podcast record here. And then I'm just like trying to fit code in the cracks. And as we know, it doesn't doesn't work well, that way, right? You have to have large, unblocked time to actually put towards code code does not fit into the cracks.
+
+27
+00:05:28,500 --> 00:05:29,700
+Scott Tolinski: No, that's good.
+
+28
+00:05:30,540 --> 00:05:35,850
+Wes Bos: So would you mind like, give me taking a stab at like, what is a side hustle?
+
+29
+00:05:36,270 --> 00:05:36,930
+Unknown: What is a side hustle,
+
+30
+00:05:37,200 --> 00:05:38,280
+got a side hustle?
+
+31
+00:05:38,550 --> 00:06:48,930
+Well, it really depends. Like, I don't use the term side hustle. Very often I talk to people, we've sort of called ourselves nd hackers. And it's also like, it's other term makers. And I don't know, two years ago, people weren't really saying either of these things very much. But now it's all over the place. What I would describe as a maker is somebody who just really likes making things. And that's the only requirement if you got a computer, open up your your ID and like make something then you're a maker, a side hustle, I would have thought decide, like define something that you do on the side of your normal job, you don't have any, you don't necessarily have the ambition to quit your normal job. Or maybe you do, but you're doing it on the side, as the name implies. And generally speaking, your side hustle is something you want to make money from, you actually want to generate revenue and supplement your income or do what you guys have done it eventually go on to like, make it your full time gig. And then I would say an MD hacker, which is sort of the demon and for the people who come to my website, or people who, from a gecko are like, 100% sure, they want this to be their full time thing. At some point. They really want to make money online. And so a lot of them have side hustles out of them do what I did, and just quit their jobs cold turkey, and start building something while they watch the money in their bank account slowly dwindle down to zero. But that's that's how I would define those terms.
+
+32
+00:06:49,020 --> 00:07:08,490
+Wes Bos: Oh, yeah. So would you say the the people that you have and that you feature on on ad hackers, do you think that like, like, what proportion of them are people who sort of not necessarily stumbled into it, but there are people that were just trying all kinds of stuff? Like, what's the one with the html5 when it was a couple of weeks ago?
+
+33
+00:07:08,520 --> 00:07:09,960
+Unknown: You had AJ from card?
+
+34
+00:07:10,200 --> 00:07:37,980
+Wes Bos: Yes. So yeah, okay. I sort of like just was putting up these html5 websites. And that blew up. And then he sort of saw that, oh, this could be something people are asking for, like e commerce. And then he went ahead and made card. So like, like, what, what percentage of people? Do you think that would? Are people who sort of were just like working on something they're really excited about? And then it became a business versus people who just from the get go say, like, I'm gonna try to make this a business? It's a
+
+35
+00:07:37,980 --> 00:08:56,460
+Unknown: really fascinating question. Because I think about this all the time. In fact, I talked about it on the index form to people, I tell them to watch out for denominator blindness. And I'll get into what that means in a second. But probably the majority of people just stumble into it, they build something they think is fun, they work on a side project that they're just hacking on. And you know, one thing leads to another, they hear some, you know, feedback from potential customers, they add a few features or something, put a price tag on it, and they start making money that happens more often than not, I would say, that being said, a lot of the people that I talked to on the in the actual room are asking how can I do this? Right? How do I have the best chance of taking my side projects or taking a new idea, and making money from it to the point where I can quit my job or at least supplement my income? I think asking how you have the best chance at accomplishing something is not the same thing as asking you how many people do something, because the denominator, most people stumble into things. But the number of people who are just randomly doing things and might stumble on something is vast. Whereas I would say it's more rare to encounter somebody who sat down with a pen and a pad and sketched out an entire business plan or like, you know, some sort of strategy for exactly how they're gonna make money online. Those people are more rare. But there are fewer people trying that. So actually, it's somewhat deceptive because a higher percentage of those businesses succeed, I think, now, even though you see fewer on the numerator side of things.
+
+36
+00:08:56,779 --> 00:09:22,350
+Scott Tolinski: Yeah, I think I personally fell into the camp of falling into something. But once I decided that it was going to be the thing. Yep. Then I pulled out the pen and pen and paper and like, really figured out how it was going to need to work. Yeah, because it was like, Alright, everything is being staked on this. So you have to be smart about it. Would you fall in that in a different camp than either of those two are in your mind is that this sort of stumbling upon it? And then and then realizing it needs to be
+
+37
+00:09:22,440 --> 00:09:28,789
+Unknown: nothing that counts as stumbling upon it like you? I mean, did you start a completely new project? Or did you kind of tank like the same project? And oh,
+
+38
+00:09:28,800 --> 00:09:33,600
+Scott Tolinski: yeah, it was it was a same project massaged into a way that that works falling into it, for sure.
+
+39
+00:09:35,130 --> 00:10:17,130
+Unknown: Man is like I would fall into things that never worked. So I spent years building things, I've never found any traction, there's never a point to which I thought this is going to be the thing. And then I realized, Hey, I'm just gonna, you know, fly by the seat of my pants here. I should have some more discipline. I really should sit down and list all the things that I know that work that don't work. I made sort of a checklist for myself, and I'm like, I'm not allowed to work on any idea that doesn't score very highly on this checklist. Otherwise, it's very unlikely to turn into something that's profitable and so interesting for a few few days of ideation that came up the idea for indie hackers, which scored very highly on the checklist. And so that was sort of a switch for me being, you know, maybe I'll stumble into something, if I just keep coding things I like to let me figure out exactly what I should build.
+
+40
+00:10:17,419 --> 00:10:52,440
+Wes Bos: That's super interesting. I love I love hearing that that kind of thing where, like, there has to be some at least some bit of intention at some point. Yeah, if I think back to all of the stuff I've done, it was I probably wrote 30 blog posts, and then the Sublime Text ones just got we're on fire. And and that's me stumbling into something that worked well, because it's just trying stuff here or there. And then as soon as one did well, you sit down and say, Okay, this is obviously a thing, how do I now move forward with intention and to making this an actual business and, and making some money off of it? And what can I offer people,
+
+41
+00:10:52,500 --> 00:11:19,950
+Unknown: you did it the smart way, which is that you did, you're stumbling through something that had a very quick feedback loop, which was writing blog posts, you can crank out a blog post and a few days, see what the reaction is, and you're done. You can get out 30 blog posts a month, if you're a machine, maybe 30 a year, for more normal person, whereas I was sort of stumbling by writing code, and it takes a long time to build an app. You know, yeah, monster several months to build something and then discover that no one really liked it. So I like the doing things that have quick feedback loop.
+
+42
+00:11:20,250 --> 00:11:37,260
+Wes Bos: Is there anything that you can do to make that quicker? Obviously, there's the classic Tim Ferriss go buy ads, and I kind of done to death. Now I sort of roll my eyes when I hear people say that now, but like, Is there any other like tricks that you can do to what's that called in the biz? validate
+
+43
+00:11:37,260 --> 00:12:59,250
+Unknown: your ideation? Yeah, yeah. business idea, validation. So the whole idea is that like it takes, like I said, a long time to build an app, you don't want to spend time building an app that no one's gonna want. It's pretty surprising for a lot of first time founders, but like, actually, your convictions that your thing is going to work are no better than your mom saying that she believes in you, it doesn't really mean that it's gonna work in the real world. Do you want to validate what you're doing? And like you said, Tim Ferriss has this whole, like, put ads online and see if people click your ads, which actually is underused, even though people talk about it a lot. There are people who actually do that. What I did for indie hackers was I just let other people validate my idea. So I didn't like come up with an idea from scratch based on nothing. I saw what tons of people were talking about on a particular internet forum, and said, Oh, this is super popular. Look at these thousands of people talking about this every week. it's valid, I know, people are gonna want this. So I sort of just skipped over that whole step of having to prove it to myself, and just sort of adapted myself elsewhere and made it better. There's always talking to people. as developers, a lot of us don't want to do this step. I certainly skip it a lot. But you can afford to write a line of code, talk to people you think might be your ideal users, and ask them all sorts of open ended questions and learn a lot more. And you'd be surprised at how much 10 or 15 of these customer interviews will save you time, down the road. Data could go on and on. There's like, there's so many different things you can do. There's entire books written on how to validate an idea. Like I mentioned earlier, I have my own validation checklist where I will work on anything that doesn't match up against all these different criteria.
+
+44
+00:12:59,490 --> 00:13:01,830
+Scott Tolinski: Is this validation checklist open source.
+
+45
+00:13:02,279 --> 00:13:07,350
+Unknown: Um, you know, as you put it on GitHub right now, which is a little doc that I share with people, but I'll work on that.
+
+46
+00:13:07,590 --> 00:13:10,200
+Wes Bos: Yeah. That would be really cool to see.
+
+47
+00:13:10,380 --> 00:13:12,480
+Unknown: Do you guys have shown it? So I'll send it to you guys and put it in there?
+
+48
+00:13:12,510 --> 00:13:31,470
+Wes Bos: Yeah, yeah, totally. We can throw it in the show notes. So let's talk about like different tie types of, of businesses that you can sort of get into, I've just jotted a couple down here. You've got SAS, which is like a software as a service. Like, what's it? What's a good example of a SAS that one person has built up? You have any ideas there?
+
+49
+00:13:31,860 --> 00:13:34,500
+Unknown: You guys were of balsamic? balsamic, Marcus.
+
+50
+00:13:34,529 --> 00:13:37,529
+Wes Bos: Yeah. wireframing tool. Right, exactly. So
+
+51
+00:13:37,529 --> 00:14:15,149
+Unknown: you want to sketch out your whole app. But you know, the best artists, you just sign up for the wireframing tool, you know, drag things around. That was started by one guy, his name's Pelle D. Hilarious guy. I totally recommend him coming on this podcast. But he did this a long time ago, I think 10 years ago, after quitting his job and Silicon Valley. And he just built it by himself and whip it out. And he was making, I think, a developer salary within a year of him launching this app. So then SAS, it's just software as a service. It's on a server somewhere. People log in and use the app and pay him a monthly fee. Now he's got a whole team. And they're making like $6 million a year or something. But it was it was just having at the beginning. Oh, that's
+
+52
+00:14:15,360 --> 00:14:16,770
+Scott Tolinski: the that's the way to do it.
+
+53
+00:14:17,279 --> 00:14:29,909
+Unknown: Yeah, yeah. A lot of us resist building a team, like I've been so loath to hire Randy hackers. It's just like, it always seemed like such a headache. And I started doing it about this time last year, and it's actually like a huge relief. It's really fun to have a team.
+
+54
+00:14:30,179 --> 00:14:33,690
+Scott Tolinski: Do you have full time employees are all just contractors, contractors?
+
+55
+00:14:33,899 --> 00:14:37,409
+Wes Bos: Yeah, that's cool. And what kind of stuff do they work on?
+
+56
+00:14:37,949 --> 00:15:19,020
+Unknown: All sorts of stuff. Like we've got our newsletter that goes out Monday, Wednesday, and Friday. I don't have to write that anymore. We've got community manager and EMS Rosie. She's actually one of the first people that I interviewed for indie hackers. She grew her own community for software testers to something like $1,000,001.1 million in revenue. And then she decided that wasn't her favorite community. And she wanted to be an indie hackers Community Manager. So she works. She makes everybody in the forum feel welcome and helps answer their questions. We've got people who help us put out a lot of our content, because we're doing like, five or six articles a week plus newsletter plus the podcast plus our Twitter stuff. And an Instagram account will be telling stories there too. So I think all told, like five different contractors, and the main my brother,
+
+57
+00:15:19,169 --> 00:15:21,419
+Wes Bos: how do you make money on a community? Oh, God,
+
+58
+00:15:21,419 --> 00:16:27,419
+Unknown: I wish I knew the answer to that question. Before I joined stripe, so I started any hackers in July 2016. I worked on it for eight months, I grew my revenue to about 50 $500 a month by March 2017. And that was enough for me to pay my rent. I live in San Francisco, so right as expensive food etc. bills, I was pretty happy about that. And then any equity is acquired by stripe. So today I don't I don't charge any money for anything, I just work on it for stripe with the goal of making it bigger and better. Yeah, but I've seen a lot of people with communities charge money. And my bias is to charge the people who you think you're delivering value to. So if you have people joining your community, and you think a community is actually useful to them, put a price tag on it, say it's 50 bucks a year to join. And very quickly, people who don't find value in your community will leave and people who do okay. And that'll give you the signal that you need to figure out. Okay, what should you invest in? What do people actually like here. But there's other ways to do it as well. If you can charge businesses to advertise or sponsor, whatever you're doing, that could be a good approach. That's what I was doing with indie hackers. And I think it's probably the primary way that communities monetize, you could also do events, a lot of people like to do conferences, or meetups and make money that way. Yeah, keep everything else free.
+
+59
+00:16:27,659 --> 00:16:55,320
+Wes Bos: Oh, that's really interesting. I never ever thought about that. I think I think back to like, when I was, I don't know, like a kid. And there's all these amazing, like forums that were so specialized for every single topic. And I, I'm sort of sad that Facebook groups has killed off a lot of like, that's why like indie hackers were still like the OG community, and there's still people that are like, really actively involved there. Whereas like, the Facebook group has really hurt a lot of those those communities. Now,
+
+60
+00:16:55,860 --> 00:17:25,980
+Unknown: I don't think it'll last. I think now, I think as time goes on, people, like every one of those Facebook groups will eventually be picked off by somebody who wants to make their own custom thing better, because Facebook can't make the group software specially tailored to every Yeah, use case, like you're always gonna have the advantage if you can create something from scratch. And really, like, I mean, it's called product market fit, right? You want to tailor your product to fit in the market that you're targeting. So you always have the advantage if you go that way. And you just have to do the hard part, which is finding users but once you do your your software certainly be better than Facebook groups.
+
+61
+00:17:26,130 --> 00:18:14,600
+Wes Bos: Yeah, yeah, I mean, thinking of another example of a community I grew up with, which was called Red Flag deals. And it's a huge website for Canadian bargain hunters, so that they would have all the, we have like a black friday thing called boxing day here in Canada, so they have all the Boxing Day flyers. And the big thing was, people would always find these incredible price matching things where like, at the time, Best Buy would like price match down to like, they would beat it by 10%. So there was like an SD card that they had for like $300. And it was on sale for $30 at another place. Yeah, I smash it down to like $8. And that was like the best commodity. And they made tons and tons of money because like, there was lots of companies that wanted to get in front of these hungry buyers. So I guess that's another way is that there's just lots of people that want to get their eyeballs in front of the people of that community.
+
+62
+00:18:14,730 --> 00:18:19,140
+Unknown: Yeah, slick deals on that still going huge community of people trying to Yeah,
+
+63
+00:18:19,260 --> 00:18:30,800
+Wes Bos: yeah, that's awesome. Other other ways you can learn here are applications. So I guess that's similar to SAS, but it's just sort of a one time buy on that sort of thing.
+
+64
+00:18:31,890 --> 00:18:37,820
+Scott Tolinski: When our doing subscription based models for updates, you see that like more and more commonly,
+
+65
+00:18:37,820 --> 00:18:49,440
+Wes Bos: yeah, like, how does how does sketch works, where you buy it for a year, and then you can hang on to that you just don't get updates past the year? You have to buy another year's worth of any other examples of that. courtland.
+
+66
+00:18:49,860 --> 00:19:51,080
+Unknown: Yeah, that's an interesting pricing model. In my mind, I would still consider it like somewhat SAS. I mean, I guess yeah, because you've downloaded it. But it's not too different just to get different pricing model. And you find a different way to charge people and cut them off and pricing as a whole can of worms, where it's like, who even knows what the right price to charge anyone is the right price. Yeah, like everybody thinks they know. But then they change it up. And they're always surprised. So it's hard for things to come to mind there. But I like that you said an application is sort of a thing that you build once. It's something that I don't think it's done enough. Like I interviewed Dave to Sandro he has a company called metaphyseal. And he builds like plugins and libraries for people. And it's really cool because he's putting stuff online. It's not like an application that you download to your desktop or anything. But he just builds it. And then eventually, one day he's done. And he moves on to the next thing kind of like courses West, which is for most people building software, like a pipe dream, like any hackers can be done. There's always like, the more features I build, the more features are to build. Same with a company like stripe, like that's never gonna end or Facebook or Google. But if you build these these little apps, these little plugins, it's kind of cool because you can move on to other things and those things keep making money and you can build something new.
+
+67
+00:19:51,300 --> 00:19:56,840
+Scott Tolinski: Yeah, like that act of finishing something is just totally almost foreign in our industry at this. Yeah,
+
+68
+00:19:56,880 --> 00:19:58,850
+Unknown: I haven't finished anything in years. Yeah.
+
+69
+00:20:00,390 --> 00:20:50,550
+Wes Bos: I would recommend to our listeners to go listen to that one with. Is it Dave? De Sandro? Yep. Dave? Yeah. So he's the developer behind flippity which is like the best carousel out there. Jake are isotope it was jQuery isotope is no longer jQuery. masonry JavaScript as the original masonry stuff. Yeah, all of that. He just built these like wicked plugins, like granted. He's a genius, like, the amount of math that goes into these things is incredible. But it's just like a perfect example of like, we're gonna ask you a little bit later. But like, open source, like how do you make money off of open source where you just, you're giving your heart into this thing that is open for the community, but you also want to make money off of it. And I think I believe he charges if you want to use it production, or if for a commercial product, I think it is, which is,
+
+70
+00:20:51,210 --> 00:21:24,300
+Unknown: yeah, he just has a license on there. And it's like, if you want to use it free for your personal project, you just download it, it's free. And if you want to actually run a commercial, you know, enterprise and you use it, you have to pay, which is something you also never see people feel like you need to have a pricing page and you need to get people in, etc. to sort of just trust based, there's really nothing stopping a bigger company from using it. Like I doubt Dave is out there with a magnifying glass, look at everybody's website, trying to you know, send that lawsuits, but he still makes a lot of money from it, it still works. Because by and large, bigger companies don't want to skirt the law. So I liked his business model a lot. I don't think I've ever interviewed anybody else who does it that way.
+
+71
+00:21:24,450 --> 00:22:20,040
+Wes Bos: Yeah, that's like, I stumbled upon this. The other day, I was on my parents computer. And it was WinZip had that for the years where WinZip would just say like your trials up, and then you just push Okay, and it would still work. And apparently they made like tons and tons of money. And now I tried it the other day and they finally stopped that. Were you it just didn't work after you didn't pay for WinZip. But I thought that was always interesting business model to Yeah. Last type I have here I don't know if you have other ideas is some is just digital products. So obviously things like courses Scott and I sell I don't know if Scott would be considered more of a SAS because he's monthly where I'm a single purchase. But then there's also things like people sell themes that was really big in the WordPress world still is I think as well, but it's sort of a really crowded space. Now. Is there any anyone that you've interviewed, that do that sort of space besides me,
+
+72
+00:22:20,220 --> 00:23:58,980
+Unknown: a few people that I've interviewed that do digital products, I have one coming out pretty soon with this woman, her name is Allie fever. And she is sort of doing like a lot of consulting now. But she is rare, and that she started off doing digital products. And then she didn't like and she decided to like, I don't want to say revert, I don't say go backwards. But she decided to transition into consulting. And most people I interviewed that go the other way around. But I think it's a great business model for kind of similar reasons to what we were talking about earlier, which is having a very quick feedback loop. So for putting out digital products, if you're putting out basically information that people can buy from you, it doesn't take too long to do it if you're committed to doing a quick and dirty version, and you get feedback instantly. And so nd hackers itself, like arguably is a content site. We have a community, and I monetize our community through ads. But also, it started off with just me doing interviews. Another good website is Nomad list started by Peter levels. dejuan, what he did was he got a bunch of people on Hacker News to sort of crowdsource the spreadsheet of good cities to work in as a digital nomad. And he took that and he packaged it into a website is that the same as a course, I don't know that the lines are pretty blurry. It's not as neatly packaged doesn't have an end point like a course does. But at the same time, it's just selling people information, it's helping them learn something that they could find elsewhere online. But it's better if it's all in one place, sort of neatly packaged by a curator who can kind of explain it to people. So I think that's a great way to get started. It's fast, you can always sort of stair step your way from there into something more substantial. It's something I find myself talking to indie hackers about over and over again, because we all have this grand vision of some app we want to build, it's going to take us three years to build a solo developer, very often you can provide a lot of value to people just by putting together information selling digital products. And then once you build an audience from that, you know, use that to build a more substantial SAS product.
+
+73
+00:23:59,130 --> 00:25:49,230
+Scott Tolinski: Yeah, yeah, I found that that feedback loop is like really important for my business because I release a like a new tutorial series every month. Right? Right. And so it's really easy to see month over month, which ones are really resonating, which ones aren't resonating with the course for the future should be in terms of like providing content or building out different things. So I find that that feedback loop to be absolutely essential in determining what content to produce. As far as feedback loops. Go though, if you are having a trouble with your website code, and you need feedback, figure out what the heck's going on. When people hit bugs, you're going to want to check out Log Rocket, because Log Rocket is the best way, in my opinion, to get feedback about what's happening on your website. Those of you who don't know Log Rocket is the really brilliant way to track and record your errors and get a session replay. Now that session replay is going to be an actual scribble video interactive that you can see exactly what your users did to cause the bug Cause the air you can get a full stack trace, you can get your Redux store. It integrates with all the libraries, you know and love. And let me tell you this thing is absolutely essential for shining light on some of these very, very difficult errors. Somebody comes to me and says, Hmm, I tried to do this thing and it didn't work. No longer do I have to ask them for a bunch of information, I can go ahead, get a session replay, see what's going on and fix that thing as fast as possible. So if you want to try out Log Rocket, which I highly suggest you do, head on over to Log rocket.com forward slash syntax, and you will get 14 days for free. And just throw the throw a little code in your app, get started and try it out. Trust me, this is one of those ones that is really super cool. Once you throw it in and see just how insanely useful it is. So Log rocket.com forward slash syntax.
+
+74
+00:25:49,380 --> 00:25:59,610
+Wes Bos: Awesome. So we talked about the different types of businesses, we had SAS community apps, digital product, are there any other like categories of businesses, you might think that we miss your Cortland?
+
+75
+00:26:00,000 --> 00:26:39,270
+Unknown: Yeah, I mean, we didn't really touch on open source as much. But I love open source. I think open source is really cool business model. I think having you from Vue JS came on the podcast and talked all about his opinions on how to start a successful open source business, I recommend people listen to that. We haven't talked about e commerce as much. Ecommerce is pretty cool. It's, it's cool because you can sell products that other people made, which is great if you're just getting started as sort of a founder, because then you can focus your attention on you know, different parts, not necessarily creating the product, but selling it or marketing it or advertising it and that kind of stuff is hard. And as developers A lot of us have that as our blind spot. So I think commerce is up and coming and it's a really great place to get started.
+
+76
+00:26:39,360 --> 00:26:44,790
+Wes Bos: It's an e commerce You mean like like selling physical products or drop shipping or it could be anything
+
+77
+00:26:44,910 --> 00:27:26,880
+Unknown: any all of the above is e commerce there's so many different like and incarnations of ecommerce, you could have a Patreon, you know, that's not even necessarily a business, but it's ecommerce because you're generally providing like products to people that people you know, pay for from your Patreon, I think Yeah, you know, there's Shopify as a platform is huge and growing lots of love Shopify stores, lots of developers, I know have Shopify stores. There is there are platforms like Etsy, obviously, there's drop shipping on Amazon, you can build your own e commerce platform, your own e commerce website, sort of friend from school, somehow got into the business of selling shoes. I think he started on Amazon. And now he's got this whole online shoe store. And it's really cool. Actually, I visited his office, and it's just full of shoes. And it's not what you'd expect them to be doing. But it works really well. So I think e commerce is one that we've missed.
+
+78
+00:27:27,000 --> 00:28:24,090
+Wes Bos: Yeah, it's funny because I love the concept of just even just arbitrage in general. So arbitrage is where you buy somewhere cheap, and you just flip it for more money. And that's the whole business. And I've been somewhat doing that with bikes in this past spring. So I've been buying road bikes on from Kijiji, and Craigslist and all these things, and I've been fixing them up and selling them. But the reason why I'm so good at it is because I've built this like application that will snipe them off of when something is posted, I'll go get it immediately because I have an application constantly watching them. I've used technology to figure out like, Where do I buy, like tires, the absolute cheapest? Can I import them into Canada? So they're like $15 less a tire? And there's like all these things. I'm like, yeah, it's like, it's not really a developer thing. But I've put so much of my like problem solving developer brain into it, that I could think I could make much more money than someone who's just like, buying it and walking over to the bike store and buying the things that you need.
+
+79
+00:28:24,240 --> 00:29:28,530
+Unknown: Yeah, I think a lot of that stuff is really fun for developers because it's we just like problems and challenges and like little tricky things. And yeah, sometimes you don't want to get into things because like the the initial hurdles seems like a tie. But once you sort of break down that barrier, and you get into the world of arbitrage, and you know, whatever worlds you're gonna get into it's, it's fun. It kind of reminds me of sky interviewed Mike Carson A long time ago. He's one of my most popular interviews. I think our headline was something like Mike Carson makes a million dollars a year and he's the only employee. So I think people liked it. Yeah. But he was doing something similar where he wanted to buy a domain name. And he was like waiting for it to expire. I think he wrote a script to try to buy it. And the script last, let me just got obsessed. He's like, somebody else beat me, I kind of made my script better. And just kept making it better and better over time to the point where you could like get these.io domain names pretty quickly when they're going to expire. And so you turn that into a service, we're like, Okay, if you want to buy an IC o that's going to expire. But like, you don't have the chops to build some sort of programming script, you can go to this website and Hill's like, basically get it for you. And you just pay him and so he's making a ton of money doing that. But like for him, it was just a game like a side project of like trying to figure out how to buy these domain names as quickly as possible.
+
+80
+00:29:28,860 --> 00:30:06,930
+Scott Tolinski: I remember that interview because like it really showed specifically how if you feel like the market for something is too crowded, there's like almost always like another angle, typically like the domain registry thing. And He found you know, that IO domains were becoming really popular. I know, Wes and I both probably remember very distinctly when that was happening because I like many other people were trying to snatch up a bunch of IO domains. And so it takes an eye to be able to see this trend that's happening and be able to apply it in a new way. And now all of a sudden you are the person in that market that you previously might have assumed was just way too oversaturated.
+
+81
+00:30:07,260 --> 00:30:46,890
+Unknown: You know, what's funny is I always have this feeling like I'm too late, you know, it's the market saturated, it's already it's already jumped the shark. But like, the reality is probably all of us, like we're in tech or listen to podcast or developers, like we're on the forefront of most things. Things that we think are trends that have already passed are like just getting started and 99.9% of people don't know about them. So it's, it's rarely too late. And usually industries that like take off and have lots of competition, and lots of activity are the best places to go. Like, that's where the most money is. That's where the most value and desire is as evidenced by the fact that it's the biggest market where money is changing hands. You know, it's it's never too late to build a restaurant, it's always gonna be something that people want. Mm hmm.
+
+82
+00:30:47,670 --> 00:30:54,110
+Wes Bos: That's good point. Back to the open source thing. Evan, you who's the creator view? How does he make money? Is that a Patreon?
+
+83
+00:30:54,360 --> 00:31:15,810
+Unknown: Yeah, so is a Patreon set up. I think there's a few other ways he makes money, too, that we didn't get into as much in my podcast. But he makes a ton of money from his Patreon and just enjoys building view. I want to look up his Patreon right now to figure out how much he's at. At this point, I think he was at 16. k when I interviewed him, he said almost $18,000 a month now. Wow. 226 donators. That's amazing.
+
+84
+00:31:16,050 --> 00:31:27,090
+Wes Bos: Yeah, I love seeing when that works is almost always you look up a Patreon. And it's like, $3 a month. And like, every now and then you see a really good Patreon, someone's just killing it.
+
+85
+00:31:28,110 --> 00:31:55,320
+Unknown: Well, the thing is, it's like, people expect Patreon to do everything for them. But Patreon is a platform for releasing, you know, your rewards. And for accepting the payments, you really have to do all the marketing and building your audience yourself. And for me, that's kind of the fun part. Like that's the puzzle part of building a business. How do you get people interested in something, but for a lot of people, especially creatives, they just want to create something. And the marketing and advertising part of it is not that fun? So you see, a lot of a lot of Patreon sets aren't successful.
+
+86
+00:31:55,350 --> 00:32:18,960
+Wes Bos: What do you say to people that don't like marketing, I think developers are almost allergic to marketing, because they think it's deceptive. And they think it's just that you have to trick people. And they do like if you build it, they will come and there's all these developers who are extremely smart, are so good at explaining things and they want to be able to they want to build something, but they're just missing that entire aspect of running a business.
+
+87
+00:32:19,380 --> 00:33:48,690
+Unknown: Yeah, I think it just depends on the way that you look at things, you know, everything is marketing, the way there's, there is no way to talk to somebody without, you know, in some way trying to be persuasive or convincing. And that doesn't mean like you have to go way off the spectrum under the point of misleading people, you know, there's some scummy marketing out there, for sure. And it's unfortunate to me that that gets presented is like the epitome of what marketing is the essential nature of a marketing is it's really not I think a lot of developers are close minded about that. And if you take a little bit of time to read like a marketing book or something, you might understand what's good about it. But in my opinion, it's really fun. It's something that you definitely need. Like there are a few businesses where someone just built something and people showed up. In fact, you can probably find hundreds of stories like that, because those seem to be the most inspirational and interactive stories like I didn't have to do any marketing, like that's what I want to do. But like I was saying earlier, like you can't fall prey to laminator blindness, like you never know how many people are starting businesses that never tried to market and fail. So it's, I would say not the best path to go down. It's really worthwhile to think about the reasons why people use something, the reasons why we all do things, right. If you think about the millions of books, you could be reading video games, you could be playing apps that you could be building people you could be talking to, it's really a miracle at any given time that anyone is using the thing that you've built, right, there's so many options for them to do something. And so to make that miracle happen, you generally need to focus on things like sales, or marketing or distribution, and try to understand like the human psychology of why people go throughout their day, picking individual things to spend time on.
+
+88
+00:33:49,050 --> 00:34:14,690
+Wes Bos: That's great, any hackers, it's generally one person or a very small company. And as developers, we love to automate and whatnot. What are some of the important pieces of being a single founder of a business where it might still be your your side, hustle, like you can't afford to hire people out you can't afford to pay a bunch of people to do stuff is automation delegation? Are those things important? Both
+
+89
+00:34:14,690 --> 00:35:49,260
+Unknown: of those things are crucial. I'm terrible at both. I wait way too long to do both of those things. And then it's painful. There's so many things that any hackers that they want to automate. And I've been saying for two years, and I'm gonna automate and stop doing this little two years, like two minute tasks every week. And then I just never do. But both are incredibly powerful. My bias nowadays is to delegate first, it's pretty surprising how talented human beings can be, hire somebody, they can, you know, accomplish all sorts of things using their width and their intellect that it's really time consuming to get code to account for because there's so many edge cases. So I like delegation a lot. Automation is important. One thing I think that's discussed, not nearly enough, is attacking the problem from a different angle and just sort of reducing the scope of what you're working on. So very often people will be working on a side hustle They'll be working on something on the side of a normal job, and they'll just never finish it. I'll never get to the point where it's actually released and ready because, quite frankly, like what they've bitten off a super ambitious and you think, Okay, what can I automate my way out of this? I can work more hours nights and weekends, can I yeah, you know, hire somebody to help. Like, oh, you can also shrink, what you're working on, like any hackers is, is a huge community nowadays with a podcast and a forum and a newsletter, and all these social media accounts. But like, from day one, it was just like 10 interviews. And like, anybody can do 10 interviews, and like you can use, you can bite off like one small chunk of success, like you could take the first step out of the staircase. And that will give you the height that you need to reach a second step. So I think if you find yourself pressed for time, like consider what's the simplest version of what you're building that provide some value to somebody somewhere, and start with that, and get some attention for that, and then use that sort of momentum to move on to the next thing?
+
+90
+00:35:49,590 --> 00:36:28,800
+Scott Tolinski: Yeah, I found that especially while being a entrepreneur, and one of the low key really like applicable things that we get as developers is that we're typically always trying to, we're trying to solve different problems all the time. And in that regard, we can kind of be jumping around on things, I personally have a problem where I want to jump around on the next thing, the next thing, next thing, but being an entrepreneur gives you that opportunity to jump to the next thing, but have it all be related, because at different stages in your business, how do you take that first step, the problems are very different than that second step, that third step, that fourth step, and you're constantly having to solve different new exciting problems.
+
+91
+00:36:29,070 --> 00:37:03,630
+Unknown: Yeah, that's always more fun of your business succeeds, because then you have like more of an excuse to jump to the next thing, right, like a stable base to jump on. And so I think it's, it's really important to have some discipline for that first phase, you know, build something that's actually going to work that people will like, and trust that, even if it's not like your most favorite thing in the world, a little bit of success gives you a lot of leeway to jump into something better. You know, when I started any acquisition, not want to be an interviewer forever, I want to read a lot of code. I love writing code, like that wasn't a component of my business, I wasn't going to enjoy it. But it took a couple months to get there before I really had the audience and the traction to feel like that was a good use of my time.
+
+92
+00:37:04,110 --> 00:37:19,560
+Scott Tolinski: Yeah, we always talk about little wins small victories just being so important for motivation in general in terms of development, but at the same time, oh, yeah, really anything. And anything, get that that little win, or that little progress, that just, it just fuels the fire that much more.
+
+93
+00:37:19,800 --> 00:37:45,960
+Unknown: And that's the hard thing about being on your own. Now, if you have a job, you're gonna get that regularly, you have assignments that have due dates, you have probably a boss, or managers gonna tell you whether or not you're doing a good job, you have colleagues, you get that feedback loop, but on your own, you're just sort of spending freely, you might build stuff, and no one says anything about it. You don't know if you're doing a good job or not. There's no scorecard. There's no promotions. And so it's, I think, important for you to figure out a way to build in little little moments of success. Yeah,
+
+94
+00:37:45,980 --> 00:38:05,150
+Scott Tolinski: yeah, absolutely. And one ways that you can track those successes when they do happen, is by having really excellent bookkeeping software and invoice so you can get all those good invoices in. That's one of our sponsors. This week, is a longtime sponsor, we're here at syntax. So with a little bit more about Freshbooks is West boss,
+
+95
+00:38:05,250 --> 00:39:17,850
+Wes Bos: Mike McDermott, who is the co founder and CEO of fresh book, he built it in 2003, after he accidentally saved over an invoice. Mike spent 3.5 years growing fresh books from his parents basement, that's probably as good as any example as a sort of a side hustle or an idea of that, like, I have this problem. I'm so frustrated that I goofed up the invoice I want to build a SAS, like Freshbooks is the perfect example of a SAS where it's a software service, you pay monthly for it. And it is a software that they run on their computers. So perfect example there. I really like fresh books myself to organize all of my invoices, all of my expenses, automate all of the late payment reminders just to sort of see where I'm at. If you are a small business, check it out@freshbooks.com forward slash syntax, and you're going to get a 30 day unrestricted free trial. Thanks so much to Freshbooks for sponsoring. So I'm curious about like, obviously, there's people that are doing well, in their business, have you have you had people on the show who have actually sold their business? And if so, I'm curious, like, what does the process of actually selling a side hustler or some sort of business that's gain traction? What does that look like? How do people do that? I've always wondered that.
+
+96
+00:39:18,150 --> 00:40:52,770
+Unknown: Oh, yeah, I've had plenty of people. I sold my business. I talked to AJ coil, who created a business. I interviewed him for his current business g mass, but he'd sold a business before I talked to Natalie meagle of wild bit software, and make a bunch of different products. And she actually spun one of our products out and sold that. I talked to rob walling the creator of drip, oh, yeah, marketing automation software, he sold it to lots of people, so their businesses and what's interesting to me is it's always different. Like there's no two stories where they follow the exact same process. And like a lot of people emailing me who asked me for advice when they're going through this process, and yeah, my situation and story are almost never helpful to what they're working on and I feel bad about it, but it's just so it's kind of like the Wild West. You Yeah, I can tell you my story, and then maybe contrast it with somebody else's. So with nd hackers, it was completely random. I didn't have any ambition to sell the site, I just wanted to, I want any hackers to be my own indie hack. Really, I wanted to make money and survive that way. And I was and then out of nowhere, I got an email from Patrick Collison, the CEO of stripe, and it was called acquire Andy hackers like that. Here it is. Tuesday, March 7 2017. Hey, Colin, I've been admiring what you're doing with indie hackers, would you ever be open to stripe acquiring it? We get in funding and continuing to work on it largely as you are without you needing to worry about revenue models. But you direct the project amplified distribution and potentially do some neat things down the road straight from a service plan globally and build more relationships, entrepreneurs around the world. Just a thought. Happy to discuss more with you, if you like. I think he was thinking that I would say no, because it was called MD. When I read this. I was like, holy crap. But yes,
+
+97
+00:40:52,980 --> 00:40:55,670
+yeah. So that's getting that email. Yeah,
+
+98
+00:40:55,730 --> 00:41:46,020
+yeah, that came out of nowhere. And that deal took like, maybe a week first agree on terms four or five days. And then that's quite another couple weeks of me talking to their lawyer realizing that I should probably hire a lawyer, talking to my lawyer, talk to their lawyer and talk to Patrick and talk back to the lawyer like it's crazy game of telephone. I've talked to people who've had acquisitions that last for a year, and then and talks and then talks fall apart. AJ, who I mentioned earlier, he actively was trying to sell this company for like eight years. And he would go to private equity firms, he would listen for sale on different websites. And he had all sorts of issues of people saying they wanted to buy his website. But then when it came time to buy it, they didn't have the money. And he couldn't put it together until the deal fell apart. I talked to my friend David Spinks at CMS, his company just got bought by another company called Betty. And that went over super well super smoothly for both of them. So there's all sorts of different ways to do it. And it's good when it works out very bad when it doesn't.
+
+99
+00:41:46,230 --> 00:42:01,530
+Wes Bos: Oh, yeah. And is it mostly just, I guess he said, It is all over the place. But it's sometimes companies just out of the blue are like, hey, maybe this would be good for as part of our company. And then other times, it's, it's people actively trying to shop their business around to potential buyers. Yep,
+
+100
+00:42:01,530 --> 00:42:38,480
+Unknown: I think you're in a better situation, if people want to buy you. Yeah, you want to be in sort of a strategic acquisition, you want like something about your business to be a multiplier on the business of the person who's buying you, because a lot more money. If you're sort of trying to shop your company around, that doesn't mean that you can't sell for a lot like that happens. But generally speaking, if you're in that kind of mood, your business has probably gotten to the point where it's not that exciting to you anymore. It's not growing very fast. And that's like, not the best point to sell. Usually from businesses killing it, you're not thinking about shopping around and selling it. And so if you were that would be great. But if you're not, then like it's probably not gonna be the best time.
+
+101
+00:42:38,820 --> 00:42:49,290
+Wes Bos: Cool. Um, I we're gonna go into some listener questions that we have here. We tweeted out at syntax FM on Twitter, do you mind if we just sort of ask you a couple rapid fire questions here?
+
+102
+00:42:49,460 --> 00:42:50,070
+Unknown: Go for it.
+
+103
+00:42:50,310 --> 00:42:57,090
+Wes Bos: So first one is how do you stop the side hustle from affecting your main job in regards to overtime, sleep and commitment,
+
+104
+00:42:57,210 --> 00:45:07,380
+Unknown: I've seen some cool hacks for this, Mike Param, the creator of sidekick like a background job processor for Ruby. He was I think it's the engineering manager at his company. And he was like, our company should use my side project site. So and it was open source, and so you can sort of justify working on it while he was at his full time job. And I think he just spent progressively more and more of his time at his full time job working on sidekick. That worked really well for him. I've heard a couple stories like that. I know a lot of people who've been able to take time off work by asking their boss, Hey, can I work a four day a week, I can get all work done in four days. And I can take a fifth day just myself. And like, I've seen people prove that to their boss, they could do that effectively, and get some time off. I think these creative solutions are really cool. consulting and contracting and freelancing. Like, I think that's a very common stepping stone to starting a business. Because ultimately, if you work for an employer, like you're not always going to be able to do it like Pam did, you're not always gonna be able to do what I was saying you need like a four or three day workweek. But if you're your own boss, because you're a freelancer, then you're kind of able to set your own hours. And you don't necessarily have to work a full week. And so that's a good way to put yourself in a position where you have more time to work on your projects. But let's say you are absolutely trapped in your full time job is no way out of it, you've got a social life outside of that family, kids maybe, and you can't get time off. Like my recommendation is to do what I said earlier, and just try to shrink the scope of what you're working on. If you find that it's taking you forever to release what you're building, and it's really competing for your time, like, built something way simpler. Jason Cohen has this whole concept of an SLC. He calls it like a simple, lovable, complete product, as opposed to an MVP, which is like maybe this grand vision you have of something but you've just built you know bits and pieces of it and never really seems to come together and takes forever. Build an SLC build instead of a car that's missing a steering wheel and missing a seat. You know, build a skateboard build something super simple. It's not crazy valuable to a lot of people but it is valuable to some subset of people and then go from there. So if I was in that situation, I would probably only focus on projects that I could build like a weekend, start to finish, you know, project is complete, see where that goes. If it doesn't go anywhere. I've been to the next one. I would not engage in like some deathmatch project that's gonna take me nine months to finish. Because even though it might work out, it's more likely than not like, I'll get burned out before I finish.
+
+105
+00:45:07,740 --> 00:45:24,360
+Wes Bos: Yeah. Awesome. The other one I had here was from Aaron white. And this is actually kind of Scott versus me here is this, should you frame yourself as a one man band or as a company? And I don't even know if there's an answer to this. But what are your thoughts about that?
+
+106
+00:45:24,420 --> 00:47:15,660
+Unknown: There's trade offs? I don't answer most of these questions, it's just depends on what you want. You know, if you are a one man band, that I think it allows your audience or your listeners and readers to build more of a personal connection with you. It's an audience that you can take with you to pretty much anything that you want to do. So as if you decided tomorrow that you're going to become a science fiction author, you know, like, it probably be easier for you to like, have your manliness and say, Hey, read this book, check it out. Whereas if I did that, with indie hackers, it would be like completely out of left field people be like, why is the hackers proper? Right? Yes, book. There are downsides as well, right? If you put something under your own name, it's harder to sort of build out a team, it's harder to sell, actually, on the nature of like selling your business. I've met several people who have got, you know, their own personally branded business. And it's difficult to leave that because it's built around them. And no one wants to buy it without you. So you can never really get away from it. And a lot of ways like it might be hired harder to hire people, if the business they're working for is your name, because it's less of a team effort. You might seem like a smaller operation. I mean, it's just countless things. I could probably list of 100 pluses and minuses, I'm just trying to name more the exotic ones that people might not think of right now. But there's no one right way to do it. Just do whichever, whichever you prefer, you know, if you want to be Tim Ferriss, and you really like, like, I tell people to think about how they want their business to improve their lives. For the longest time, the only thing that anybody in sort of planted was trying to build something to change the entire world for the better, which I think is like, you know, fine, like, that's cool. Like people should do that. But like people should also try to change their lives for the better, you should think about how your business could affect your life. And if you're the kind of person who really wants creative freedom to work on whatever you want, like build a business, I'll let you do that. If you're the kind of person who really wants, you know, fame and recognition, because you're just as vain Wes Bos guy, it's got to name his business after himself to do whatever you want, like figure out what labs need to pull the trade offs you need to make, and that's what you should do.
+
+107
+00:47:15,810 --> 00:47:34,740
+Wes Bos: That's great. What else whoever This is not on Twitter, I just have a question. You always hear about these entrepreneurs living in Thailand making crazy money and that they're like totally anonymous it are those Is that true? Or is there any like white whales out there that you're trying to chase an interview down for for the podcast or for the website?
+
+108
+00:47:35,460 --> 00:48:33,420
+Unknown: Oh, God, I never even like I rarely asked people where they live. But yes, it is true. There are a lot of people who live in very cheap places that are making businesses from those places. And the amount of money they make is insane. based on where they live. I was in Cape Town two years ago. And I was kind of hanging out with the very first guy that I had on my podcast name is Jason and he's making like, I think 50 grand a month or something from his business. I didn't realize how cheap cape Tablas so I went and I was saying they're like everything there was maybe 15 20% as expensive as it is in SF. So I put two and two together. I'm just like, wow, Jason is killing it. For him to be living over here. Like that's like you'd be killing it in the States. But like where he is, it's like, that's he set for life. There's a lot of people in Bali, or a lot of people just Southeast Asia in general seems to be Yeah, the cheaper, more attractive places for their quote unquote digital nomads to go and work from. So yeah, I mean, we just had an ND hackers Singapore meetup last week. And there's tons of people there. A lot of them live all over Southeast Asia.
+
+109
+00:48:33,900 --> 00:49:06,420
+Scott Tolinski: Yeah, the contractor for level up Eric is a dev for me. I've known him for a long time. But he he's one of the digital nomad types. And he's living in meta gene and he's living in just somewhere different every couple of weeks. And it's like pretty amazing that he can he can do that and feel like you can find apartments you can see the world you can do all this cool stuff. And all he needs is his you know, backpack with a computer. And that's really it. It's it's like the first time in the history of the world where you've been able to do that kind of thing. And it's pretty incredible.
+
+110
+00:49:06,600 --> 00:49:16,650
+Unknown: Yeah, it's really inspiring. just sounds so simple and attractive. You know, I just discovered maybe I'm late to the game hear that there are portable monitors that you can buy,
+
+111
+00:49:16,770 --> 00:49:20,070
+just like a monitor is a new thing. I think it's very new.
+
+112
+00:49:20,730 --> 00:49:37,140
+Yeah, cuz I'm such a homebody. Like I'm sitting here with like, my huge screen in front of me and my MacBook, but I would love to like travel more and work from coffee shops. I'm just like, I want to give it my screen. But if I can bring a screen with me slip it in my bat my like, even my laptop bag or whatever. Yeah, pull it out and connect it. Oh, we're from anywhere.
+
+113
+00:49:37,350 --> 00:49:44,550
+Wes Bos: That's great. So before we get into sick pics, is there any thing either Scott or courtland anything you want to get in talk about?
+
+114
+00:49:44,700 --> 00:49:46,200
+Unknown: Now? Let's let's do the sick pics.
+
+115
+00:49:46,380 --> 00:49:55,710
+Wes Bos: All right, so the sick pics is pics that are sick. We have them every single week. Karlin, do you have anything? I know we kind of sprung it on you. Yeah, I
+
+116
+00:49:55,710 --> 00:50:02,250
+Unknown: don't I like looking around my house like what am I What am I eating right now? What am I using? I like that. post it notes, big fan of post it notes.
+
+117
+00:50:02,250 --> 00:50:02,940
+Oh,
+
+118
+00:50:02,940 --> 00:51:11,400
+that's a pic I like. So I don't know, like, the way that I use post it notes is I follow the sort of Ben Franklin, he had this whole self improvement plan where like, he wrote down 12 ways he wanted to improve himself. And then every month, he would try to like focus on nothing but like one of those particular issues, like draw Max's calendar for every day. And like, I don't know, I'm a sort of a self improvement junkie. I'm always like, how can I make my life better? What am I bad at? What am I good at. And I always have like, 15 different things at the same time that I'm trying to focus on. And I realized, like, last year, like this doesn't work, like you can't focus on 15 different things. And so I cut it down to like one per month. And I'm still doing Ben Franklin saying, and so I just like a post it note of that, like all over the place, my bad on my monitor on my laptop and my bag. So I'm reminded every day like focus on this one thing, and hopefully you'll get better at it. And it'll become second nature with some sort of a habit. And next month, I'll do something else. So super simple, big fan of post it notes where people should be using them. I guess a better pick will be like a book or something. My favorite book poor Charlie's Almanac, huge fan of that book changed the way that I think pretty significantly, maybe seven or eight years ago. So recommend people check it out whether you want to start a business or not. It's just I think a very wise way of looking at the world.
+
+119
+00:51:11,400 --> 00:51:18,150
+Scott Tolinski: Is that would that be your favorite self improvement book as a self improvement junkie? I know Wes and I are both on that. Yeah, I
+
+120
+00:51:18,150 --> 00:51:23,970
+Unknown: would say so. I mean, it's kind of a business book. But I would say it's also a self improvement book. So yeah, that's that's my top choice.
+
+121
+00:51:23,970 --> 00:52:42,300
+Scott Tolinski: Cool. My Sneak Peek today is probably gonna be pretty on brand for this episode in general. But I don't know if either of you guys are aware of this. I'm sure you are because Seth Godin is you know, he's sort of the man, his podcast akimbo if you guys listened to it before a fan or have it, yeah, so Kimbo is really great. Actually, it's funny because I first I first popped on a Kimbo and I was like, whoo, I love this podcast art. It's so minimalist and lovely. And so instantly the aesthetic for me was like already very nice and simple. But I found this podcast more than any other sort of, I don't know if you want you want to call it self improvement e business e whatever. I found it very clear, very focused and very clear. He basically picks a theme for an episode, whether it's Moore's law or something like that, and just goes through and then he answers questions about the previous episode. It's all it's all business improvement based a lot of lot of this stuff is stuff I need to hear kind of constantly so if you are interested in in getting a business going and in your in that sort of space entrepreneurial land besides indie hackers, because that's like a must check out a Kimbo as well. It's a really excellent podcast from Seth Godin.
+
+122
+00:52:42,480 --> 00:53:01,350
+Wes Bos: Sweet. I'm going to sic pick a elastic wallet. I don't even know the name of what wallet I have. So I'm not gonna sit pick a specific one. It's just a piece of elastic with a yellow X on it. And oh, Scott's got the same one kinda. This is like got like a very Colorado pattern on it.
+
+123
+00:53:01,380 --> 00:53:04,920
+Scott Tolinski: It did. It does. Yes. It's very, I picked it that way.
+
+124
+00:53:04,980 --> 00:53:34,170
+Wes Bos: Yes, absolutely. So I think probably a year ago, I asked on the podcast for wallet suggestions because I was sick of mine. And I finally found this sort of just like a sleeve, it's sewn at the bottom and you put all your cards in it, fold up your money stuffed in there, and I've been super happy with it. It's been about a year now of just like everyday use, and I'm super happy with it. So I'll try find a link to whatever when I have I don't know what the name is, but it's just a piece of elastic. Like, like, almost like you have finding your sweat pants.
+
+125
+00:53:34,380 --> 00:53:47,490
+Scott Tolinski: It's amazingly other I love that I'm like all about that. I just like look at my wallet now compared to where it was before. And I felt like I don't know if you watch Seinfeld ever, but I felt like I was George Costanza with a giant wallet. Even though it wasn't that big.
+
+126
+00:53:47,820 --> 00:54:13,500
+Wes Bos: Yeah, I put my wallet in my front pocket. So goof up my back. And I'm here it's so important that you don't goof up your back and but I can't stand like a huge wallet. It's just like such a big bulge. So big fan of this. I can't wait until you don't have to have any sort of wallet anymore. Like the one that I found is the best. It's not our when when waiting.
+
+127
+00:54:15,390 --> 00:54:15,990
+Scott Tolinski: I know
+
+128
+00:54:16,379 --> 00:54:23,400
+Wes Bos: all of my bank cards now do it. But you still have to carry them around because like one in every 10 spots doesn't have tap in Canada at least.
+
+129
+00:54:23,550 --> 00:54:34,410
+Scott Tolinski: Oh yeah, we have like a Whole Foods right by our house like a block away. And I like the whole foods the other day. And I was like I just got my phone ready to do the tap. And then I realized I had beer in my cart. And then they were like,
+
+130
+00:54:34,410 --> 00:54:35,400
+Unknown: oh man,
+
+131
+00:54:35,400 --> 00:54:40,740
+Scott Tolinski: do you care? Where's your ID? And I was like, Ah, this downside? I don't know my ID.
+
+132
+00:54:40,980 --> 00:54:46,380
+Wes Bos: Oh, they did they ID you all the time or just that you look young. I have no idea. Yeah, I
+
+133
+00:54:46,380 --> 00:54:49,620
+Scott Tolinski: had a child with me. My son. He was in the stroller.
+
+134
+00:54:53,310 --> 00:54:58,530
+Wes Bos: Yeah, honey. Oh, that's good. What about shameless plugs, anything you'd like to plug courtland
+
+135
+00:54:59,310 --> 00:55:19,530
+Unknown: obviously I got to play The hackers podcast is a podcast where I talk to founders like us. And I asked you to walk through your story. And just try to get a sense of you know, how you came up with your idea how you grew to what it is today, how others can be the same and the lessons that you've learned. And I've done this with 80 something people now. So every week, new episode, indie hackers.com, slash podcast,
+
+136
+00:55:19,710 --> 00:55:38,760
+Wes Bos: people still like, I get emails still all the time. Hey, Wes found you on indie hackers podcast, because I think it's such a good way to like, obviously, most developers, I'm sort of in that community. But there's like this whole other, I guess, community of just like business minded folks. And they I get emails all the time about that podcast still.
+
+137
+00:55:39,030 --> 00:55:40,320
+Unknown: Cool. Hopefully, they're nice.
+
+138
+00:55:40,680 --> 00:55:45,090
+Wes Bos: Yeah. Oh, yeah, for sure. Scott sick, sick plug,
+
+139
+00:55:45,450 --> 00:56:33,060
+Scott Tolinski: I would like to shamelessly plug my latest course, which is on animating react. And this, this has been very well received by anyone who's taken it thus far. And it's so so cool. What we're doing is all these practical interface animations using physics based animation. So not CSS transitions sort of stuff. But we're using actual physics based transitions with react spring. We cover animating with waypoints, we cover just we build a navigation, we build models, we build all sorts of really cool stuff. And by the end of it, you're going to feel very comfortable with react spring. So check it out at level up tutorials, comm sign up for the year and save 25% get access to animating react, and every other level up tutorials course like react hooks for everyone.
+
+140
+00:56:33,270 --> 00:57:04,350
+Wes Bos: I'm going to shamelessly plug my CSS Grid course if you want to learn all about how CSS Grid works, go to CSS grid.io. It's totally free. You can sign on up it was sponsored by Mozilla, which is pretty cool. That's why it's free. And I'm anxiously awaiting subgrid being released so I can add a couple extra videos onto the end when subgrid comes out. Okay. That's it for today. Thanks so much for tuning in. Thank you courtland for coming on. I'm sure people found that extremely helpful, and we'll catch you next week.
+
+141
+00:57:04,530 --> 00:57:06,420
+Unknown: Thanks, Wes. Thanks, Scott. Peace.
+
+142
+00:57:09,060 --> 00:57:18,840
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

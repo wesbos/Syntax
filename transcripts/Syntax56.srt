@@ -1,0 +1,364 @@
+1
+00:00:01,319 --> 00:00:06,150
+Unknown: You're listening to syntax, the podcast with the tastiest web development trees out there.
+
+2
+00:00:06,179 --> 00:00:08,010
+strap yourself in and get ready.
+
+3
+00:00:08,029 --> 00:00:09,930
+Here is Scott, ski and West boss.
+
+4
+00:00:10,619 --> 00:00:25,649
+Scott Tolinski: Welcome to syntax, the web development podcast with the tastiest treats around. My name is Scott kolinsky. I'm a full stack developer from Denver, Colorado with me as always is Wes Bos stay with
+
+5
+00:00:25,709 --> 00:00:26,880
+Unknown: Hello. Hello.
+
+6
+00:00:27,089 --> 00:00:27,990
+Scott Tolinski: How's it going? West?
+
+7
+00:00:28,289 --> 00:00:35,180
+Wes Bos: It's gone. Great. So the last thing I am doing before I head off on vacation, so I'm super stoked about that.
+
+8
+00:00:35,219 --> 00:00:38,490
+Scott Tolinski: Nice do your bags pack to get your foot out the door Ready to go?
+
+9
+00:00:38,639 --> 00:00:49,049
+Wes Bos: Yeah, actually, no, no bags packed. I got into the hole. Put the hamburger on top of the car. Do you know there's the car topper? Do you have one of those? No. Oh,
+
+10
+00:00:49,079 --> 00:00:54,450
+Scott Tolinski: no, we don't have one of those. But I've never I knew what you're talking about. I've just never heard it referred to as a hamburger before.
+
+11
+00:00:54,479 --> 00:01:03,119
+Wes Bos: Now. Yeah, we are growing up. We always call that a hamburger. It's a great way to like get extra space. Yeah. And we just got like a really sick new one, which I'm pretty, pretty excited about.
+
+12
+00:01:03,149 --> 00:01:18,360
+Scott Tolinski: We always just used to pack the car so that like the kids in the back couldn't move at all. There just be stuff surrounding us, which is actually pretty dope. If there was ever like a car accident, you'd have like a lot of like a built in protection there. You're not moving because you're filled with baby.
+
+13
+00:01:18,389 --> 00:01:18,930
+Wes Bos: Yeah.
+
+14
+00:01:20,060 --> 00:01:21,300
+Scott Tolinski: As long as it's off good.
+
+15
+00:01:21,840 --> 00:01:23,010
+Wes Bos: Like good word. So
+
+16
+00:01:23,010 --> 00:02:36,930
+Scott Tolinski: this episode is sponsored by view School, which is a great way to learn view. If you are interested in learning view j s, which is a hot, hot, hot new framework, checkout view school, as well as Freshbooks. If you ever listen to this podcast screentime, you've heard us rave about Freshbooks. Wes and I both use and love Freshbooks, which is cloud accounting software. So we'll get into those a little bit more later on in the episode. This episode has been highly requested. And one that is very interesting to myself. Personally, I did a talk on this subject in Romania, like a month ago before. Yeah, and this is design systems, we're going to be talking all about design systems are what they are, why you might want or need a design system. Some of the tools that we can use to have design systems be working efficiently. Some of the stuff that as developers, you can use in more of like a techie developer way with design systems as well. And even a place to check out some really excellent design systems for inspiration. In case that is something that you want to learn more about. So yeah, let's get into it. Wes, do you want to talk a little bit about sort of the basics, like what design systems 101?
+
+17
+00:02:37,050 --> 00:06:34,290
+Wes Bos: Yeah, totally. And I'm really excited about this episode, just because I've built a few design systems, but it's been like, it's been like the new hotness for the past couple years. And I think even in the last year, it's gained some some serious traction as people move over to building applications in component ties, like things like react or view design system are starting to become much more popular. So I'm by no means an expert on this stuff. I put out a tweet on Twitter that just said like, send me everything you've know, I've built a few myself, but I know there's people out there that are a lot more knowledgeable. And I got a ton of really good reply. So if you're looking for some extra information, some extra links outside of this podcast, definitely hit up that tweet, I've linked it in the show notes, so you can check it out. So first of all, what is the design system design system is something that your organization have, it's a living, breathing system, a document that will describe both like what things look like, that's probably what people go to immediately, but also like how you approach your product, how you how you talk to your customers, how you communicate ideas, how you handle different aspects, things like accessibility, and I found this really good blog post from envision app, which has a really good quote, and I'm just gonna read that quote, just because it gives me the it gives you the best idea of what a design system is. So it says a design system isn't only a collection of the assets and components that you use to build a digital product. According to Emmett Conley, Director of Product Design at intercom most design systems are really just pattern libraries, a big box of UI Lego pieces that can be assembled in near infinite ways. All the pieces may be consistent, but that doesn't mean the assembled results will be your product is more than just a pile of reusable UI elements. It has a structure and meaning it's not a generic webpage. It's an embodiment of a system and concept. I really like that it's embodiment of concepts. Marco Suarez, one of our product designers here at envision adds that understanding not only the what but the why behind the design system is critical to creating exceptional user experience finding and adhering to standards of how we create understanding more simply put, the difference is that the standards and documentation that accompanies the assets with a guide on why and how to use them design components are easier to use and clearer to discern. So this is this is really cool because I think that As you have a big team as your organization grows, it's really important to spend a lot of time on like making your, your designs your your UI consistent across the board. But just snapping these pieces together is is a big part of it. But it's not all that like, there's a whole big part behind it, which has to do with like, in what tone do you write to your users? How do you use capitals, like there's some really good examples here Shopify has a design system called Polaris. And MailChimp has a design system. And they have a specific part in their style guide that's just called voice and tone. And they say like, MailChimp, voices human is familiar, friendly, and straightforward. Our priority is explaining our products to help our users. So like, you have to be like funny, but not silly, confident, but not cocky, smart, but not stodgy and formal, but not sloppy. And I really like that because everything that you put out to your user has to have a consistent look and feel. And that's not just the CSS that you're right about it. It's how do you handle accessibility? How do you handle icons? Shopify even has like, you need to think about what are people using this on? Are they using it on a Braille reader? Are they using it on a Nintendo Switch? Are they using on a laptop? Or are they using on a phone? What do interaction states look like when you're loading something when you're hovering something, when you something is broken? When there's an error, when there's a non critical error, when there's a warning, right, you need to think about all of these things. And that needs to be consistent across the board. So hopefully, that gives you an idea of of what a design system is for an organization.
+
+18
+00:06:34,320 --> 00:08:30,330
+Scott Tolinski: Yeah, I think one of the key words that you used in your description, one of the things I think that will really drive at home is that concept of consistency. Because these things are really just building consistency among your entire design, right consistency, and an overarching tone, and feel and all that stuff. But it is tone and feel all that everything is just making your design feel cohesive, consistent, accessible, and all those good things that are designed and sort of modern web dev needs to be and again, I you also mentioned that like this is really coming about because of what like more modern web applications, right? When you have a website, that's six pages, and there's a header and a footer and all this stuff, do you need a full on design system, I don't necessarily think so you're more or less just better off with some designs, right? Unless, of course, there is a an existing design system for the brand, or the overarching brand that you're adhering to. And maybe this is like a brochure site a part of a larger project or a larger thing. But now with these applications, and these larger projects that need more consistency, design systems are really the most organized and sort of best way to maintain that. One of my favorite early examples that I saw was the material design guidelines when they first launched those, one of the things that really impressed me about the material design guidelines were they didn't just have what to do. But there was also a large amount of what not to do even as far as animations, contrast and things like that, you can do this. But don't do this. Because if you do this, it's breaking, you know, the contrast rules, or it's breaking the correct feel of how these things should feel. So I've always really appreciated those aspects as well not just like what you can do, but what you shouldn't do and what you can do, what are the restrictions on the system itself?
+
+19
+00:08:30,480 --> 00:09:36,240
+Wes Bos: Totally, I really like that as well. I remember seeing that with my logo that once was delivered to me with a website that I was building in the designer had gone through with the logo and showed me exactly Okay, here's the logo. And but here's the things that you should do. When you place it in the website, make sure that there's at least like 40 pixels of padding on the top and 80 pixels on either side, you cannot put it in a box, you cannot tilt it, you cannot like all these kind of funny things that you you as a someone, you're like, Oh, I have a great idea of of how I could do this, Oh, this looks better to me. Or I think it would look better if I just added a circle behind the logo. But then that might be look good to you. But as I don't know, 1520 different people add in their own little flair to using something, then all of a sudden, it just starts to erode. And by the end of the day, you have like 20 different web properties. And they all all look a little bit different. And they all handle clicks a little bit different and that that inconsistent feel to your user is not something that is that you're going to like
+
+20
+00:09:36,270 --> 00:12:02,159
+Scott Tolinski: yeah, definitely, definitely. Cool. So let's talk a little bit about more of the organizational or visual aspects of some of these style guides or design systems because it's more than just a style guide. I guess we should make that distinction, like what are what are kind of things that you're going to see in these various design systems. And in fact, maybe before we get into that If our users are listening to on a computer, and a lot of people listen to this, while you're driving, don't do this while you're driving. on this show notes, there is a link for a repo called awesome design systems. That is a giant table of a ton of different design systems. And there they have, whether or not these design systems have components voice and tone, designers kid or storybook based along with them. But some of the biggest brands in the world here have their design system listed on this repo. And just go ahead and fire open some of these because they're really a one of these things that's nice about this is to just plow through and sort of see the organization and structure of some of these different design systems. So one of them that I really, really liked, personally, was the Zendesk garden, and the Zendesk garden breaks theirs up into sort of different ways. Do you have assets, right, you have assets would be icons, colors, and typography, these things that sort of like go along, like the core components, then you have things like CSS components, where you're thinking more like actual, you know, almost like react components, where you have more of like an avatars and buttons and tables, and tabs and in those kind of things, menus, and then you actually have a section for react components. And these are interactive react components for you have things like, well, the pagination, the notifications, the buttons, and actual react components, you click on any of them, you're going to get a general usage, you're going to get, here's the props that are available to it in a more of a like a techie sort of way in a less design sort of way. So it covers all of the bases in one sort of thing. If you're a designer, you could come in, and you could look at this button, and you could see how it looks and functions and feels you could read all of the guidelines. But then if you're a developer, you can also look at the Prop, see what it accepts, see the code, see some usage examples. And again, see this thing in action. These are kind of typical, but what are some of the structures that you've seen and enjoyed West?
+
+21
+00:12:02,309 --> 00:14:26,520
+Wes Bos: Yeah, I think that if you just kind of think about like building your own foundation, or bootstrap, that's like a really good start for building the like the style guide, part of style guide part of a design system, I think that what I really like to see is how to consistently handle buttons, how to consistently handle error messages, how to do navigations how to do text, that's a big one where the text will often like a website's won't have like a nice overall text setup. So that you'll see people come in and start to fudge the font size in different pages or, or change the line height or change the font color. And then again, it starts to erode. And using things like sass and whatnot is helpful, because you can put these values in in variables and then change them site wide. But it's it's almost better just to have those things done at a at a global level on your site so that everything is consistent across, you don't have people because I know there's lots of organizations where there's different parts of the website, or there's a couple different applications and you have different teams working on I've even heard of I had dinner with someone I forget who this was, but they were telling me how like there's a team for the header. And then there's a team for the footer. And like there's just teams that have control of different parts of the website. And they all kind of like look differently. And if you want to be able to one team has their own tech stack, and the other team has another tech stack. And I can just see that spiraling out of control. So quickly if you don't have some sort of standards in place. So it's really worth having, having stuff in place. also things like like media blocks, like how do you put in text beside an image? How do you use an avatar? How do you put a price beside something? How do you what is a card, right? Like even after you get all of the base stuff out of the way, which is navigations and buttons and H tags and, and all of that stuff, then you start to build your own components that are inside of your application where you commonly will use a card to show a price or you'll commonly have a form element and having these things stated how they need to look but even better if they're pre built like if you're using a react component. And you can just go ahead and grab your form component like like I'm just looking at the Zendesk garden by the way is that um, Zendesk garden. Is that like a little nod to the CSS Zen garden?
+
+22
+00:14:26,850 --> 00:15:16,919
+Scott Tolinski: No, I think the company is knit Well, it might be Yeah, I mean, the CSS garden, for those of you who don't know, was like one of the coolest, I don't know if you can really call this like early web thing, but it's definitely when I was like learning web. And CSS garden was a basically a page that you could take and style yourself and have it look completely unique in the CSS garden was sort of a way to show off all of the different things you could do with a single HTML structure with just CSS. So people would take the base HTML page And then manipulate it with CSS. And then everyone would sort of UI not some of the cool and beautiful layouts that you could do with Jess CSS. I remember seeing some of them. And for the first time just being like, how do you do that? Wow. And then just inspecting the CSS and being totally blown away by some, like interesting techniques.
+
+23
+00:15:17,130 --> 00:15:46,620
+Wes Bos: That was like the I know, this is a bit of an aside, but that was when I really understood the the kind of separation of HTML and CSS Yeah, like you, you write standard compliant HTML. And then you can usually get it to look like whatever you want, with just using CSS, which is really cool. I think that because it's called CSS Zen garden, and then Zendesk, I think that there's a couple Zendesk ORS that listen to this, if you do, please tweet us, because I want to know if this is a nod to that, I think would be really, really cool. It'd
+
+24
+00:15:46,620 --> 00:15:47,580
+Scott Tolinski: be really cool.
+
+25
+00:15:47,669 --> 00:16:10,110
+Wes Bos: Anyways, well, we're what were we even talking about the different components, the React components, so Zendesk does, like they have all these components, where you can just simply take a nav tag, or a nav item tag or an icon tag, and they've already done sort of the work under the hood. And then like, like it is Lego, you can kind of click it together and build an interface nice and quickly.
+
+26
+00:16:10,260 --> 00:18:17,190
+Scott Tolinski: Yeah, this repo, this awesome design systems is seriously one of my favorite things. Because there's so many on here that you can't really go through them all in one sitting. I mean, you could, but you'd be crazy, you'd be a madman. But like, if you just go and click on any of them, just to see everyone's different approach to trying to solve this problem is really just sort of exciting and interesting, because you can be totally inspired by one little thing here, one there, whatever. And a lot of these design systems themselves are really well designed themselves. So like, there's a lot of inspiration here, especially for how these things are organized and laid out and what they contain Exactly. So yeah, it's one of these things that comes along with this, again, is just these individual components and how they work within your system. Because not everyone is going to be using react or view or whatever. So I think there is this like beautiful intersection that happens between the design team and the development team in these style guides, where you're getting, here's the visual, and the sort of structural and all that stuff of how this stuff needs to work. But here's also the technical code aspect of how to make it happen. And it what it does is it creates this, this single source of truth for both parties involved, it's probably, in my opinion, one of the greatest communication tools between both teams, because you you, you actually have answers to the questions you're looking for if I need to build X, Y, or Z. Well, the dev team has the answers right here. And the design team has the answers right here. The design system itself is the source of truth. And I just one of the reasons why I just love this, this whole new shift to using design systems is that you have less sort of situations where a rogue designer is going to go ahead and do something wild and pass it to a developer and the developer is going to be like, How am I supposed to do this, or a rogue developer is using some once off CSS code or something that doesn't exist anywhere else in the site? And potentially, they'll make updates down the line more difficult, essentially, again, it's a single source of truth. And I really, really enjoyed that aspect of it.
+
+27
+00:18:17,400 --> 00:19:57,300
+Wes Bos: Yeah, the the implementation layer is also really interesting to go through all of these different design systems see, like, how are they actually implementing, like, I'm just clicking through a couple of them. And some of them have implementation in multiple languages. So like, some of them have sketch files, or they might have figma files, or they might have some sort of Adobe file that you can use as a designer, they might have a CSS framework that you can implement. And then via that it's either done via classes, or it's done with something like bem and then some of them are built on react components or view components. And it's kind of neat to see all of the different approaches, because there are no, like, final answers here. You might listen to this podcast and think like, Oh, I must use react components, or bem or I must use stylus and not something but that's that's just what we like. And that's not the the final answer. There's much smarter people working at these companies, especially when it comes to this design system. Because like I don't have a design system for myself, my design systems up in my head and I kind of just like, I just like work on stuff and and make it good. And I probably have a little bit of in consistencies, stuff like that. And it's a much harder task to get hundreds and hundreds of engineers and designers and everybody on board and also keep people happy because I know that sometimes if you if you give a designer like the system, you're like, Oh, don't put me in a box because now I can't like like now I'm just kind of like using these these Lego bricks to put something together. Like I feel like I'm I'm not able to express myself or something like that. So I think that's that's another problem that that might pop up when you have these design systems.
+
+28
+00:19:57,320 --> 00:20:35,310
+Scott Tolinski: Yeah, absolutely. You know, to speak If like how they are organized, right, there was a really awesome documentation library. Dang, I'm like totally blanking on it right now. And I'm doing a whole lot of googling, trying to figure out what this is called. It uses the new MDX parser that we've talked about before that allows you to use JSX and markdown and basically allows you to throw react components into a markdown file for like super excellent, easy documentation and building design systems that way or at least the documentation for your design system, and I cannot find it it is driving me nuts.
+
+29
+00:20:35,340 --> 00:20:39,000
+Wes Bos: The Acura MDX is is just it's killing me
+
+30
+00:20:39,030 --> 00:20:45,210
+Scott Tolinski: Yeah, the accurate MDX please change your name. Change your name and remove yourself from the internet so I can find those a JavaScript What
+
+31
+00:20:45,210 --> 00:20:46,920
+Wes Bos: was it called re bass,
+
+32
+00:20:47,570 --> 00:20:48,750
+Scott Tolinski: re bass
+
+33
+00:20:48,800 --> 00:20:54,860
+Wes Bos: react UI component library and design system built with styled system with support for style components and emotion?
+
+34
+00:20:54,900 --> 00:21:22,920
+Scott Tolinski: It doesn't it sounds like it could be it let me head to their homepage and see no not read bass. I've seen this though. Dang it. I'll remember it by the end of this episode, I will find it because I'm pretty sure I bookmarked it. And one of the 800 bookmarking apps I use. We've been talking a lot about react components and stuff. But another thing you could use other than react is also view j s and a great place that you can go to learn view j s is view school. So more view school is Wes Bos.
+
+35
+00:21:22,950 --> 00:22:53,580
+Wes Bos: So a lot of people are asking me, hey, Wes, why don't you do a course on view? And I really would like to at some point, but I just have so many other courses that I want. And I'm kind of double down on react right now. And I know that there's a lot of people that do want to to learn view. So when view school approached us to sponsor the podcast, I was like, that's kind of a perfect fit, because then people will stop emailing me asking me when to go ahead and get it. So the view dot j. s masterclass is what you should pick up if you are looking to learn if you it's kind of cool, here's a couple bullet points about what you're going to do, you're going to learn Vue JS by building a real world application, which is a form you're going to learn about view and friends, which is vcli view x view router, you can use Firebase RX j s all the best practices. Right now they're at the time recording, there's about 75 lessons, which is five plus hours of content is still being recorded. So you can sort of be on the on the train as that is being created. I I think probably the most important thing that you should like hmm, is is this going to be any good? It's built by Alex Kay nodding an attempt your your last name, but he's a member of the Vue JS core team. So obviously, he knows how view works, and is going to be teaching you the best practices. So go to View school.io forward slash syntax and use the coupon there's, there's 50 people who can use the coupon syntax for 25% off. So hurry over and grab that before they're all gone.
+
+36
+00:22:53,610 --> 00:22:58,890
+Scott Tolinski: Yeah, that's not gonna last very, very long at all. So yeah, make sure you get that coupon
+
+37
+00:22:59,160 --> 00:24:24,210
+Wes Bos: look good. All right. So let's keep going with design systems here. I think we should talk about next is the actual tooling behind how to actually build a design system because we talked about like, kind of the the idea and the the approaches behind this design system. We talked about like the the actual implementation details of like, Okay, I'm building a website, or I'm building an app, or I'm building something, and I need it to look consistent. How do we actually do that with react or CSS? Or what a lot of people are using now? Is this thing called Have you heard this Facebook yoga? Facebook yoga? No, I have not heard of Facebook yoga. So Facebook Yoga is like a they call it a cross platform layout engine which implements Flexbox. So you know how in React Native, you have to use Flexbox? To lay the lay things out? Yes. Yeah. So they are trying to port that to other platforms, so that you can use this this layout to build out application. So that's one way that you could actually lay out an application in multiple, multiple different ways. I don't know if I would, I would probably reach for that when I'm building a website just because I have all of CSS available to me. Yeah. But if I were laying something out in in another application, it would be interesting to try it out. So let's talk about the the tools behind it. What are some of your favorite tools for actually building a style guide? and designing with style guide pieces?
+
+38
+00:24:24,240 --> 00:28:06,450
+Scott Tolinski: Yeah. So for me, I pick up my favorite design tool, which is figma, which is very, for me, figma is sort of the the the top of the line as far as listening to how the developer and designer community actually work, because their component system is so dang good. They have this awesome component system with a component library features where you can publish your component library, and it's all super organized. So you end up with this component library that is organized and catalog and very, very explicit, right? And so I have my own Design System in figma, that is sort of one to one with like an atomic design thing where I have molecules and that sort of thing, where you have the little chunks into bigger chunks into bigger chunks into bigger pages and experiments. And you can just sort of drag and drop components. Now, for me, I don't have like a code version of the style guide, but I keep my, my components in figma, one to one with both style components and react components in this site. That way, again, if I'm designing or experimenting with my design, I can just drag and drop these components into a page in figma, and move it around, modify it and see how these things are going to look and feel. And I have all of my sort of specifications for how these different sections of the site should work. Now one of the really cool things that I've been digging about figma is well, they're just constantly updating it to add new features for developers how they really work, right. So they recently introduced the figma API, and people have been experimenting, outputting. And keeping in sync react components, one to one with figma components is something to keep an eye on is something to play around with. But maybe not necessarily something that's totally ready for primetime. But if you are the type that likes to experiment with that kind of thing, there is a ton of room there, I'd be really, really interested in like maybe like a component library as far as like styled components that maintains a one to one correlation to figma components that you know, maybe it stays in sync. Now figma also just released this new style, or figma, three just came out, and they released a whole bunch of new stuff. But part of that is this whole styles thing. And inside of styles and figma. It's sort of like consistent colors, weight, font styles, and that sort of thing. It's almost just like a CSS class that you can move from things to things. And it's not necessarily a component, but something that you can take and apply and keep consistent. So you can build out these styles that are almost like CSS classes, and apply them to anything in your design. So something that I've been really, really interested in, Brad frost actually just tweeted out today, some interesting stuff. And one of those things is a new application called Relay for figma, which it looks like one of the first real products that looks like it's built on the figma API, where you keep your assets in sync with your design system. So Ah, it's it's awesome. So you, you build everything out in figma, as is. And then if you make modifications, it's actually going to push it into your repo into your, your GitHub repo. And it's going to be alerting of changes and stuff like that. It looks really, really sweet. It's an early access right now, I haven't used it. I just saw it today. They got a real cute website. It's really for figma. I actually had this website open and Courtney came by she's like, well, that's a nice website, just like that. This is a nice website. So yeah, check it out. It's one of those things that I'm really super interested in this space is really growing right now. So yeah, the design and development sort of correlation how they combine together. So those are, those are some stuff that I'm using right now. Yeah,
+
+39
+00:28:06,570 --> 00:29:38,040
+Wes Bos: cool. I'm gonna go into some of the like, up and coming stuff, like you said, the stuff is, is changing really quickly. There's a lot being worked on right now. The whole, like keeping stuff in sync seems to be an issue a lot of people are trying to solve right now. Where if you design something in a program, and then you put it into code, like how do you keep the code and the design things in sync, when you make a change on the code, like we talked about our design erosion, that's gonna, that's gonna happen a lot, right? So a couple different tools that can be used here. From a tweet from Stuart Clark frisbee, one of the cool things that he tweeted was like this video where they built this MAC app that has all of their sketch components inside of it. And if you haven't used sketch before, one of the ideas that you can have with sketches that you can make these what are called symbols. And a symbol could be like, a top bar, or a symbol could be a like a card, and then that symbol can it can take an input like a title and an image and stuff like that. And then these are reusable symbols throughout the entire application. So if you were to make a change to one of these symbols, like the background color, it will ripple through your entire application. That was always a huge pain point for me in Photoshop, where the client would be like, cool. Can I see it in red? You know, like, Oh, goodness, can I please have a variable in Photoshop so that I could just set it to red and not have to select every single layer that has that red in it? That's what these symbols will allow you to do is to make a change quickly or in a ripple through your entire application.
+
+40
+00:29:38,070 --> 00:30:09,660
+Scott Tolinski: Yeah, hope I'm gonna cut you off real quick here. Yeah, because I do want to say that that's what exactly I don't I don't work for figma. Here. I am just a big fan. The figma component system is the same thing, but way better. I'm sorry sketch I used to use and love sketch but the figma component thing allows for overriding in Having like sub and sub and sub components in a way that like the scheduling can even handle it all. I'm not trying to diminish anything about that. I just wanted to put that back. Yeah,
+
+41
+00:30:09,750 --> 00:30:52,200
+Wes Bos: man figma does seem like the best way to go forward, I'm definitely gonna give it another shot for building this type of stuff. And it's it's also frustrating to see people building stuff. And this thing that I'm talking about, it's built on top of sketch. So they built a Mac app that has all of their things in it. And you can just drag the different pieces out like a title bar or button or something like that. You can drag it out from there Mac App into sketch, and then you just immediately have this little component in there, which is really cool. But again, like, it's kind of frustrating to see some of these tools being built on different platforms. And sometimes when they're Mac only, yeah, another like, huge benefit to to figma is that it's cross platform, right?
+
+42
+00:30:52,200 --> 00:31:21,090
+Scott Tolinski: Yeah. And they're, like I said, the component system, when you build it based on like the frame it's in it gives it an organizational structure to it. And you have the shared publish team library that stays up to date with everyone on the team. And so you have like a little book. And when you click that book, it has all of your components laid out in a table and organized by like, what they are the head or whatever. And you can just like that, click and drag and bring him over, you can override and make modifications or that kind of stuff. It's really slick. I'm a big fan, in case you can't tell.
+
+43
+00:31:22,950 --> 00:33:01,470
+Wes Bos: Another tool that I just heard about and this is in very, very early days, so it's it's not ready for production yet. But Airbnb who Airbnb is awesome, they often champion a lot of these like thought leadership things in our industry, obviously, they've been huge in the React world. And they're also huge in the design world. And so they're building this thing called loana, l o n a, it's at Airbnb github.com, forward slash Airbnb forward slash elona. And they say is lona is a collection of tools for a bit building design systems and using them to generate cross platform UI code, sketch files, and other artifacts. So there's kind of three three things here, they first have lona components, where after doing a whole bunch of reading until like, What is this, it doesn't seem that it is actually a replacement for sketch, but it is going to be what's called lona Studio, which is going to allow you to design these components that are pixel perfect. inside of it, I don't totally understand why it's not replacing sketch and how it will work with that just yet, but you make these component files. And then you have a loaner compiler that's going to ideally spit out these component files in sketch files, maybe a iOS layout, maybe in a react component, maybe in a view component, you get the point or this this seems to be like the reoccurring dream in programming in general, where you can write something and generate output for every single other platform out there. But I'm really, really curious, I'm going to be watching this pretty, pretty closely to see how it how it develops. Yeah,
+
+44
+00:33:01,499 --> 00:34:07,380
+Scott Tolinski: so that one that I was trying to remember that platform is called the doc because with the ZD OCZ dot site, dogs site, Doc's dot site, I'm sorry. And this thing is really sick because you write these MDX files, which are markdown, oh, yeah, import your react components from it. And then you can write your your style system, your design system directly with the actual react component that you're using. That way, you're not having like an representation of the React component. And that way, you're not typing out how the component looks and whatever you're actually importing, the actual react component is rendering itself. And then you get to see this thing in action. It's really, really slick. I have not used it, but I am very interested in using it. My team is very small. My team is one person small and I got a couple of contractors right now helping me out and some some development stuff. But as my team grows, I could see things like this and, you know, building out a design system to be very, very appealing for for myself, at least in a guideline system.
+
+45
+00:34:07,739 --> 00:34:16,940
+Wes Bos: That's really neat. Yeah, the fact that you can just import your components into the markdown and then automatically generate a style guide based off of that. Yeah,
+
+46
+00:34:17,009 --> 00:34:29,690
+Scott Tolinski: when when they announced MDX at the site day, I was like, this is really cool. I can't wait to see what comes out of this. And sure enough, like in absolutely no time, some brilliant people put some brilliant things together. And then we have things like this,
+
+47
+00:34:29,940 --> 00:35:43,380
+Wes Bos: man, I'm blown away at how much stuff there is around just style guides in general, how much like amazing, like open source tools are out there. People are really, really working hard to to build stuff and to educate all the different teams on on how to build these things. Because like, what else is there in addition to this, there's somebody sent me this Astrium, which is a lightweight pattern library for any web project. So you can make a style guide based off of that. There's a couple of the other ones here. Oh, so there is Bradford Frost who wrote the book atomic design, he's sort of one of the thought leaders in this space, he came up with this whole idea of when you're designing something, you have atoms, which make up molecules, which make up organisms, which make up templates, which make up pages. And he built this thing called pattern lab. And what pattern lab pattern lab is actually like a, I think it's in PHP, but also in Node. And you can template it in a couple of different languages. And what that will allow you to do is to actually like document all of your all of the different patterns. And in this case, the atoms or molecules, organisms, templates, all of the different components of your application. And it helps you build one of these kind of living, breathing style documents.
+
+48
+00:35:43,500 --> 00:36:44,360
+Scott Tolinski: Yeah, which I mean, the larger your team gets, the more and more important this is, when I worked at Ford, this is all we did, in fact, because this is kind of outrageous, but because they're on every single different market in that project was on their own system. We couldn't build Angular components, because that's we were using, we couldn't build Angular components. And then ship those, well we had to build was a total design system that says this is how these things all need to look and feel, and whatever. So that way, when the developers are actually getting into it, they had a full on rules for how everything should be. So these kind of living breathing systems are extremely important when you have a large team, and everyone needs a single source of truth. Very, very, very important. Something else that's really super important is keeping your taxes and your billing up to date. And to do that Wes Bos and I both use fresh books, is a cloud accounting software that we both love. It's super modern, super excellent, and all around a great product.
+
+49
+00:36:44,400 --> 00:37:43,670
+Wes Bos: Yes, fresh books is awesome. You've heard me talk about it so much on this podcast, I really, really like it. One little feature that I'm gonna focus in on today is the ability to auto import all of your expenses from your credit card. So one problem that I had for the longest time was just keeping track of receipts. And sometimes I would accidentally lose a receipt or a bit crumpled or the thermal paper that they use gets faded after a year before you actually log it and just a bit of a nightmare. So what you can do is you can hook up your bank account and import your credit cards, and it will automatically log all of your credit card expenses as expenses in your thing. So you're not going to miss anything. And that's pretty, pretty nifty little feature of Freshbooks. I really like that. So if you want to try out fresh books, go to freshbooks.com forward slash syntax and enter in syntax into the head here about a section that's going to give you a 30 day unrestricted free trial. So thanks so much to Freshbooks for sponsoring.
+
+50
+00:37:43,710 --> 00:37:45,660
+Scott Tolinski: Nice, cool, yeah,
+
+51
+00:37:45,690 --> 00:37:48,110
+Wes Bos: so what do we got left here? Let's talk about
+
+52
+00:37:48,230 --> 00:38:49,860
+Scott Tolinski: here's a, there's something that I again, I just perfectly timed bread pasta, just tweeted out a link of some of his new favorite stuff. And one of these just happened to be envision Design System Manager, which is kind of interesting. I haven't necessarily gone through this whole thing, but it looks like exactly what we've just been talking about. And it's funny. I've used this word single source of truth, like 100 times in this episode. Here it is in their first heading. I have not I have not read this heading a single source of truth for consistency at scale. That is like such a good way to describe this man. I can't it Yeah, that's, that's awesome that they use that. So yeah, this is, uh, looks like a pretty slick little system. I'm guessing this is when we scroll down here. I haven't really figured out what exactly it is. Because they there's no way. It's not like it doesn't say it's a code platform, or what does it even say it is? I'm not quite sure. It seems like it maybe works with envision studio to build out your design system. But again, there's no plain English description,
+
+53
+00:38:50,070 --> 00:39:10,670
+Wes Bos: in visit, envision design system magic makes it possible for every product team to create and maintain a design system at scale, allowing teams to maintain a consistent user sharing blah, blah, blah, blah, blah, and can now be managed and shared from the Envision platform and accessed and updated in design tools such as envision studio and sketch as well as web view. Okay,
+
+54
+00:39:10,670 --> 00:39:29,580
+Scott Tolinski: so it looks like it's taking your design files and all that stuff and having it on a platform. It looks like it's it's living on envision. So it doesn't look like it's something that would be open sourced or managed by you code wise. So if that's a bummer to you, then that's, I guess, a bummer of this thing. But it looks pretty cute. Looks pretty cool.
+
+55
+00:39:29,670 --> 00:39:50,520
+Wes Bos: Yeah, I've used envision a couple times not with their I don't know, they have their own design tool. I've used it with Photoshop back in the day to talk to people and like it envisioned first started off as sort of like a gift for designs, right? You could upload different versions of your Photoshop file, you can comment on things and it was really great for that. And they've sort of built up from there.
+
+56
+00:39:50,730 --> 00:40:02,280
+Scott Tolinski: Yeah, they've been building a lot of really interesting things lately. I haven't not used envision studio yet. I'm sort of waiting for it to get out of this early phase to see where it goes. But it looks pretty cool. Looks pretty cool.
+
+57
+00:40:02,360 --> 00:40:28,800
+Wes Bos: One other tool I want to mention here, this is from Dennis Riemann. He built this thing called a UI engine, which is a workbench for UI driven development tool for developers and designers to build and document websites and apps. So you can use it to create a living living pattern library, document, your design systems, all that good stuff built in JavaScript as well. It's kind of cool. And there's these open source ones, because if your team has specific needs, these things are very hackable.
+
+58
+00:40:28,830 --> 00:41:25,050
+Scott Tolinski: Yeah, and we would be remiss, I don't know if that's the right word. But we haven't talked about react storybook, which is an excellent one. Yeah, using react. React storybook is another really great way that you you create what are called like stories, which is your components and how they're used. So you're using your real components, you're importing them, and you're getting some like actual usable documentation for all of your components. Again, this is maybe less of a design systems thing, but more of a actual technical implementation of your design system thing. And it's pretty cool, because again, you can see how all of these components work fit together, how they're used. And if you have your entire design system in react components, then you therefore have, again, a treasure map on how to use and access your components is a pretty cool thing. I haven't used it personally, I've used design systems that have used it and really enjoyed when they they have used it.
+
+59
+00:41:25,290 --> 00:42:05,670
+Wes Bos: Yeah, there's a on the awesome design systems GitHub repo, there's a column to tell you which design systems have a storybook as well and quite a few of them have a storybook they also have something for designers kit designers kit includes sketch, Photoshop figma files for designers, and then voice in tone, which is provides guidance on how language should be used. So check out this awesome design systems repose? Well, let's move into like the last portion of this, which is like inspiration. What are some of the what are the link dumps the stuff that we didn't really talk about? But if you want to learn more about this design system stuff, what are some of the places that you can go to obviously, I just mentioned myself, the awesome design systems repo, there are a few more
+
+60
+00:42:05,760 --> 00:42:34,460
+Scott Tolinski: I know that was I actually I mentioned that one earlier too. That one is excellent because of just how much is there and it also breaks down like if they have a react storybook or not. And then if you want to check out some of these that are using react and have a react storybook or whatever you're into, you know which ones to go into. I like that repost simply because every time I'm on there, I can just open one I've never opened before and explore it. So that that is pretty much my source of inspo. If I'm going to look the first place I look for this kind of stuff.
+
+61
+00:42:34,500 --> 00:43:13,860
+Wes Bos: Also there is unrelated to the awesome design systems repo there is design systems repo, which is a really nicely designed website. Really nice. I wonder if it itself has a design system, I hope Yeah. But they just like list out the latest design systems latest articles on this. So you can like you can dive into some medium articles or experts people that know a little bit more than Scott and I about this stuff, the different tools you can use books. So obviously, friends of the podcast, I would say Brad frost has a book called atomic design, Micah goal bolt. gobo godbolt. I always screw up people's names. I'm
+
+62
+00:43:13,860 --> 00:43:18,900
+Scott Tolinski: sorry, everybody. It's like, that's got to be like a staple of the podcast at this point is what's missing.
+
+63
+00:43:18,900 --> 00:43:48,030
+Wes Bos: The names drink drinking game when Southwest can't pronounce someone's last name. Miko wrote a book called front end architecture for design systems. Miko works at Microsoft net right now. And it's I think he's working on Office 365, which they're building in react, which blows my mind, which is really cool. Yeah, a whole bunch of other books in here. those are those are the two that I keep seeing people recommend over and over, which is cool. So if you want to ingest some more content, go to design systems. repo.com. Yeah,
+
+64
+00:43:48,030 --> 00:44:37,710
+Scott Tolinski: and here's one last one design systems.com, which is actually a website that's owned and maintained by figma, which is essentially just a place for excellent blog posts about design systems. Like some of the first, the first blog post up top here is yes, design systems will replace design jobs. And the very next post is no design systems will not replace design jobs. And these are these posts are all like very curated. So these are all like, you know, really high level explorations into design systems written by people who work on companies with large design systems. So I really enjoy this. That's a great place to learn a little bit about design system. Here are five tips from an Airbnb designer on maintaining a design system. So design systems.com definitely a nice little resource there as well.
+
+65
+00:44:37,770 --> 00:45:15,510
+Wes Bos: Last one I want to shout out is the website design dot systems. And specifically if you go to news design dot system this is looks like a weekly email that gets sent out with all of the things just like react or CSS or anything like that is there's a huge community around this design systems and it's helpful to if this is your like your job, it's helpful to stay up to date on it. So recommend Checking out and signing up for the design systems newsletter, you can get that in your inbox. Every it looks like they've been doing it for 60 weeks already. So obviously keeping with it, there's a lot of content you could go back and ingest. Yeah. Other than that, are you got any more links? or things like that? No, no, that's
+
+66
+00:45:15,510 --> 00:45:25,530
+Scott Tolinski: a lot of good stuff that should be enough to keep you occupied with knowing how much content is on all of these links. I'm going to go ahead and say you're not going to be able to get through all of it even with that. So
+
+67
+00:45:26,970 --> 00:46:00,750
+Wes Bos: Totally, yeah, that's what that's what I hope with this, this podcast, I know that there's a lot of people who don't know anything about about design systems. And it seems to be a pretty overwhelming space where there's just so much information and so many tools and so many best practices and things like that, and so many conference talks, like he just searched design systems on YouTube, and you can find probably 100 hours worth of talks that you could you could watch so hopefully this is like a nice overall primer sort of give you an idea of what it is and then if it's something that interests you, you can dig a little deeper with all the resources we've talked about today.
+
+68
+00:46:00,810 --> 00:46:04,680
+Scott Tolinski: Yeah, absolutely. Cool. Do you have any sick pig
+
+69
+00:46:05,340 --> 00:46:18,180
+Wes Bos: pics we should we should mention what a sick back is that are sick that we picked. Somebody emailed me and said that they have adopted the sick pic and shameless plug into their vocabulary at work.
+
+70
+00:46:21,210 --> 00:47:52,860
+Scott Tolinski: Okay, so my sick pick today is I think this is gonna be a first syntax first here and this is a I know we've both doubled up on sick picks that we've done in the past, but I'm going to double up on a sneak peek that West did. And I have just ordered this. It's the Cal digit t s three plus is a thunderbolt dock for your computer. The cool thing about this is that it has every port you could possibly imagine basically a a brick that will both power your computer power monitors and all that good stuff have additional USB, SD card headphone USBC has lots of USBs has display port Ethernet and all that stuff. It's sort of like a one stop shop. And knowing these new Mac books have like you know four ports that are all the same, it gives you access to all of the ports that you're probably going to need with your MacBook Pro or something like that. So check it out. It's this caldigit ts three plus I'm really excited right now I think pick three for this a techie it's just like a mini little hub I guess. But I've been having some issues and I'm not entirely positive they're not coming from this hub that I have so I'm going to beef it up with actually something that is is quite considerably more beefy and I'm gonna see if if all of my things go away all issues I've been having so I'm really excited to get my hands on this Cal digit Wes says his been his has been rock solid so I am hoping for some rock solid performance myself out of this thing.
+
+71
+00:47:52,920 --> 00:48:29,580
+Wes Bos: Yeah man it's the fact that you can just plug in one cable and charge and hook up three different hard drives and all of this recording equipment and a couple of webcams and an all USB hub and all of this stuff and it just works when you plug it in it's amazing I'm a little bit a little bit hurt because I like pre ordered it and I spent it's this thing is how expensive is this thing 299 299 I think I paid like 350 now it comes with an SD card slot which mine didn't Oh really? Yeah I would do that all
+
+72
+00:48:29,580 --> 00:48:33,780
+Scott Tolinski: the time because I do all my my shooting I'm on SD cards Yeah Do
+
+73
+00:48:33,900 --> 00:48:34,500
+Wes Bos: me too.
+
+74
+00:48:34,530 --> 00:48:44,220
+Scott Tolinski: I'm about to get a new video camera by the way to me not about to I'm planning on getting a new video camera so we'll have to update more on that could become a sick pic
+
+75
+00:48:44,940 --> 00:49:28,350
+Wes Bos: sick well that's I'm really happy with that as well it's I'm glad that you're going with it it's super expensive and then I even had to buy an extension cord for it like a long It comes with like a tiny little one foot or two foot Thunderbolt three there's like a specific kind of core yeah needs and you think you could just go online and find any Thunderbolt cord but it has to be a thunderbolt three cord that is rated for 80 watts beefy Yeah, like it has to like you can't if you have like a MacBook Air you can probably get away with a cheaper one but if you want to be able to do all of this stuff it was like a I think it was like a 60 or $70 cable so like I'm in I'm in this thing well over 400 bucks
+
+76
+00:49:28,350 --> 00:49:28,770
+Unknown: yeah for
+
+77
+00:49:28,770 --> 00:49:31,080
+Wes Bos: just this thing but you're always
+
+78
+00:49:31,080 --> 00:49:33,390
+Scott Tolinski: there's like far away from your computer or something.
+
+79
+00:49:33,540 --> 00:50:01,170
+Wes Bos: Yeah, like so the way that I have all my gear is I have this like little shelf above my monitors and it has all my gear on top of it and then I have nothing touching the desk. I have everything on mounts and I love it but in order to have it overhead I needed a bit of a longer cable in order to actually hook up my laptop which is not overhead so I had to go buy another one which sucks but uh like I'm mad about the price but it's been been rock solid been so happy with it. Nice. Yeah,
+
+80
+00:50:01,350 --> 00:50:14,250
+Scott Tolinski: I decided I mean, I have a nice monitor. I have all this stuff. And I like really cheaped out on the docks. Oh, I was like, well, I might as well upgrade this part. Because obviously, it's important. So
+
+81
+00:50:14,310 --> 00:52:07,440
+Wes Bos: yeah, yeah, absolutely. Um, I got a sick pic now and it's going to be for kids. So um, I know that a lot of you listening have kids, God has a kid, I have two kids. For Christmas, my sister gave us these things that are called Picasso tiles. And what they are, are like little squares, either like a two by two or four by four or triangles that have magnets in the corner. So it's kind of like Lego, but you can build things that are a little bit bigger with it. And my daughter is three now. And she's been absolutely loving these Picasso tiles lately, and it's one of those things where like, Oh, yeah, they play with it play with a toy for a week. And then they forget about it. But she's been just on it for like a couple months now and loving it. And as a dad who does technical stuff, I really like to see my daughter be into building things and and having an imagination and building different types of ice cream stores and whatnot. And I just think that it's like really good for the development of the kid to to actually build these type of things. Right. So they are they've been really really good. I've been super happy with it. We just ordered a whole bunch more just because like her creativity is limited by the amount of tiles that we have. So we just ordered a whole bunch more. They're called Picasso tiles. We ordered the as I do with most stuff, I ordered the knockoff version. And they're called play bees. I think there's also ones called Magna tiles. Apparently, from the from the Amazon reviews, they all work perfectly together. They they're all the same size. The magnets are in the same spot. They're not cheap. I got 100 pieces of the knockoff plebes for 60 bucks Canadian, just probably about 50 bucks. American, but but well worth it for I think that the development and the imagination growth in my kids,
+
+82
+00:52:07,470 --> 00:52:24,210
+Scott Tolinski: I think we might have been gifted some of these. He's really yeah, Landon is too little for the app just yet. But I'll have to double check, because we were gifted something very similar to this. And we essentially just put it in the closet until he's older. So I'll have to check on that. It looks very familiar from what I'm looking at. But really cool.
+
+83
+00:52:24,270 --> 00:52:44,400
+Wes Bos: Yeah, we do that with a lot of our toys where we'll put them in the basement. And then we bring them up every couple months and like rotate the toys and fresh. Yeah, it's new and fresh. And also to see if they're they're at the stage where it is. So them and we brought these ones out a couple months ago, and they haven't gone down yet because they've been they've been loved so much. I'm super excited to get this new set, because it comes with the wheels. And we're gonna build some pretty
+
+84
+00:52:44,400 --> 00:53:09,480
+Scott Tolinski: wicked little cars. Nice. Yeah, Landon has been rocking out on this food truck, which is like the hipster version of the classic kitchen that you get your child. It's It's so it's so hilarious, because it's awesome. It's a food truck. And it's the exact same kind of thing that you'd normally have in a kitchen. But instead of building like, you know, normal things, he's building a burger with avocado on it. It's hilarious.
+
+85
+00:53:12,990 --> 00:53:24,450
+Wes Bos: is it's so funny that we're having kids, our generation is having kids and the things that we actually give our kids. Yeah, definitely. All right, shameless plugs.
+
+86
+00:53:24,600 --> 00:55:13,320
+Scott Tolinski: Yeah, I have a new course out. It's an electron level one electron. So if you've never done any sort of electron anything, and you use react, check out this course, what we what we're doing is we're building a journaling application that reads and writes actual files and your file system. So the way the application ends up working Is that you, you know, hit commando, you open a directory, that directory then has access to any of the markdown files in there. But you create files, the files have metadata, you can edit them, you can save them in real time, you can see a markdown preview side by side, it sort of just like a journaling application, a lot like maybe an app like Ulysses or something like that. And it's really, really super cool. There's even a nice little icon. So at the end of the day, you get this application that you can build and having your doc and I'm actually using this application on a regular basis as my normal journaling app now, because well, it's free, and I built it, and I can add on to it where I want to. So the cool thing about this is is you get these skills to learn and read and write and work with files in the actual application. And then you can take this thing and do whatever you want to it, it now becomes your application. So it's a really, really interesting course. It's maybe one of the most exciting courses that I've done because, well, I'm just so excited every single video, you can hear it in my voice when I'm teaching you. I'm just like, Wow, this is so cool. Because it is so cool for me to be able to do that kind of stuff now, and work with the file system and no js, and you get a lot of core JavaScript skills, a lot of react skills, a lot of node skills, and it's really, really cool. So check out love one electron it's for sale right now it's on sale, or you can become a level of pro get access to that, plus the tons of other courses that I've released already this year that you've maybe heard me talk about on this podcast,
+
+87
+00:55:13,410 --> 00:56:07,890
+Wes Bos: wicked, my sick pet or no, not a sick pet, what do we call it shameless plug is just going to be the upcoming advanced react course. It's going to cover everything server side rendering of react, graph, qL, charging credit cards, using pretty much all kinds of new and really, really exciting stuff in the react and graph qL and related JavaScript ecosystem. It is coming up, it's still a couple of weeks out depends on we're recording this in advance, it probably won't be up by the time you hear this, but I just get excited for it. I'm really excited for it, it's going to be available at Advanced react.com. There's nothing there right now. But you can just keep refreshing it until you until you want as well let me give a quick update, I ordered new stickers, they are coming in a couple of weeks as well. So stay tuned, I order tons of tons of stickers. So hopefully they won't sell out this time. Other than that, I think that's it. That's it, check out all those design system links. They're
+
+88
+00:56:07,890 --> 00:56:27,570
+Scott Tolinski: gonna keep you busy. And also share with us some of your favorite design systems. I want to see some of the ones that you guys love, and all that good stuff. Because again, I'm really into this design system stuff as there's a lot of people right now. And it's just really exciting space. So yeah, share with us on Twitter, let us know what you like design system wise, but other than that got nothing. That's it,
+
+89
+00:56:27,690 --> 00:56:28,350
+Unknown: please
+
+90
+00:56:29,970 --> 00:56:30,780
+head on over to syntax.fm
+
+91
+00:56:30,780 --> 00:56:39,750
+Scott Tolinski: for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

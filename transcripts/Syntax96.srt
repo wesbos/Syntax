@@ -1,0 +1,524 @@
+1
+00:00:17,039 --> 00:00:18,570
+Unknown: Oh,
+
+2
+00:00:20,070 --> 00:00:33,030
+Wes Bos: Merry Christmas. Welcome to syntax the podcast with the tastiest web development treats out there. My name is Wes Bos, I'm a full stack developer and with me as always, is Scott tone ski. How you doing today, Scott? Hey,
+
+3
+00:00:33,090 --> 00:00:56,610
+Scott Tolinski: I'm doing super good, really happy to be here. This is just a great time of year, things are starting to feel a little bit more seasonal and things like that. So I'm psyched. And today, we have a really awesome holiday gift guide for you all. So this is going to be a really fun and exciting episode for me, because it's going to be like sick pics on steroids. And I know a lot of people love our sick pics. So you're about to get a whole lot of them.
+
+4
+00:00:56,640 --> 00:02:12,120
+Wes Bos: So these are going to be things that are ideas, experiences, products, things that are good to get a developer or, or maybe just anyone who's techie in your life, it's not going to be all gadgets. But things we've noticed from just sick picking for a year and a half is that even if it's totally unrelated to web development, there's certain types of like little gadgets or little gifts or little experiences that us as developers tend to like. So we're really excited about that this is going to be a gift guide, we're going to kind of explain our thoughts behind all of the different purchases and things here that you could get for people. Or you could send this list to a significant other who's trying to shop for you. And then as well as the list of this is also going to be in the show notes. So if you need like actual paper copy of this to print out, or to find the links to the actual products, they have them in there. Important to note that none of the companies in this in these recommendations are paying us a couple of them are freebies that I've got every now and then Scott and I will get some freebies sent to us, which is for honest review. And we'll always make sure that we're upfront and clear about that. So whenever I have a free product, we'll let you know. And the products that are garbage that gets sent to us or not part of this gift guide. Anything else you want to say before we get into Scott?
+
+5
+00:02:12,530 --> 00:02:50,610
+Scott Tolinski: Yeah, our sponsors today for this episode are going to be content full and fresh books. So to really, really great companies content full is a sort of a back end is a great way to host data to store data and all sorts of stuff, we're going to be getting into that quite a bit more. It's a maybe the perfect place for your front end site, like maybe a headless WordPress or something like that. And then we also have fresh books, which those of you who've listened to syntax for any bit of time know that Freshbooks is one of our longtime sponsors, it's cloud accounting software. And both of those we're going to be talking more about later on in the episode.
+
+6
+00:02:50,639 --> 00:03:49,289
+Wes Bos: All right, so we're gonna break it down into a whole bunch of different categories. We have stuff for foodies, we've got experiences, which is the new hot thing, don't buy stuff, buy experiences, their subscriptions, we've got books, clothes, shoes, working out gear, gadgets, smart home, coffee, grooming and wellness, and then high end where I remember being a kid and like, I would get like, like a pair of gloves and like a like a PlayStation game for Christmas. And like that would be it. And then like you go back to school in January, and your friends would be like, Oh, I got a TV and a PlayStation and Xbox and going to Florida or like, Oh, good. So if you're the type of person who spends thousands of dollars on Christmas, those will be the things for you. But we try to keep all most of the pics here to I don't know, anywhere from a couple bucks up to 5070 bucks. So things that are actually attainable is sometimes you see like these gift guides and it's like, oh great a $600 pair of headphones. Oh, they would love that. Anyone would love that.
+
+7
+00:03:49,319 --> 00:04:34,800
+Scott Tolinski: Yeah. Right. I know. I know. I hopefully there's something for everyone here. So yeah, let's get into it for the foodie in your life. The person who loves food. I think a good one is something to add on to your food, which is hot sauces. Now my personal favorite hot sauce is Murph and Murphy is straight out of Colorado here. And they have a variety for pack on Amazon and my favorite is the electric line. Which tastes exactly like what that sounds like electric. It's slimy. It's awesome. There's also some other good ones like jam berry Sriracha and stuff like that. They're all excellent. I'm a huge fan, I would go with the variety pack specifically for the electric line but so good.
+
+8
+00:04:34,859 --> 00:05:31,200
+Wes Bos: I also have a couple hot sauce here. So one thing I like to do every now and then is go go to the kind of a specialty store near me and buy every cholula so cholula is a really nice hot sauce. And they have I don't know, like four or five different kinds. My favorite is the chili lime, but I don't discriminate. I try them all on my wings and everything. So it's not an expensive way each bottle is just a couple bucks if you were to buy all of them That makes a really cool present I think same with there's this new one that I tried out is called Blue top creamy buffalo. And sounds good. It's amazing. I found it at the local Co Op near me and they make have like five or six different kinds of these creamy hot sauces and I put it up on Twitter the other day that I was really enjoying it. It does have a little bit of sugar in it, which would bum me out because I don't like to have sauces that have sugar in it, but upon tasting it, it tastes great. So check out the blue top hot sauces,
+
+9
+00:05:31,469 --> 00:05:57,839
+Scott Tolinski: blue tap. Yeah, I tend to stay away from sugary things like that myself. We also have another one which is fun, which was the everything but the bagel Trader Joe's seasoning that we talked about as one of my sick picks. This thing is really great. It's basically if you've forgotten everything bagel, it's sort of like a seasoning blend with all of the things that you would typically find on an everything bagel. It's very yummy. I put it on a lot of things. And I love it. Scott
+
+10
+00:05:57,839 --> 00:06:17,370
+Wes Bos: bought this for me. And he brought it to me when we met up in San Francisco and I've been trying to and everything in my favorite so far is putting it in Greek yogurt makes a really good sauce for 13 veggies in and then I also a little unorthodox but I sprinkled in on wings and then smoke the wings and it was unreal. So sounds good.
+
+11
+00:06:17,399 --> 00:06:18,810
+Scott Tolinski: I've been putting on french fries.
+
+12
+00:06:18,870 --> 00:06:20,370
+Wes Bos: Love. Oh, that's good idea.
+
+13
+00:06:20,700 --> 00:07:11,010
+Scott Tolinski: Yeah, yeah. Another one I have here is loose leaf teas. Now I drink tea all day. It's low in acidity, it's lower in caffeine. And you can sip on a cup of the receipt leaves over and over again. So I like to get my teas from a store called tea house tea house, which is TEAH au s and this is a store from Ann Arbor, Michigan. It's my favorite tea store in the country. And they have a ton a ton a ton of different teas there. Or any type of person whether you like actually like classic green teas or things like that. Or if you like more flavored stuff, the only thing is none of these are filled with sugar like they were typically in someplace like teavana, or one of those bigger companies. So tea house teas are my absolute favorite place to get loose leaf teas.
+
+14
+00:07:11,250 --> 00:07:28,800
+Wes Bos: I'm a big tea fan as well, especially when the winter comes around. I like to reach for all kinds of different teas and I have this thing called the Adagio tea steeper, which this is I've had this thing for like probably 10 years because this is back when Kevin Rose was running diggnation Do you remember that podcast?
+
+15
+00:07:29,099 --> 00:07:36,020
+Scott Tolinski: Yeah, so I remember diggnation. And I remember Digg very well, but I don't think I ever listened to it personally, oh,
+
+16
+00:07:36,020 --> 00:08:06,870
+Wes Bos: man, I listened to it for the longest time. And Kevin Rose was super into teas at the time. And he had this like cool steeper mug and I got it like 10 years ago. And I still use it to this day. So it's super good quality from Adagio tea. And I think it was only like, let me just double check the price. 20 bucks for this thing. And the way that works is you put your tea leaves in it, you fill it with hot water, you sit on your desk for a little bit. And then as soon as you're ready, you just pop the steeper right on top of your mug, and it will drain all of the tea right into your mug, which is I really like that so you don't have to deal with like tea balls or anything like that.
+
+17
+00:08:07,290 --> 00:08:29,730
+Scott Tolinski: Yeah, I actually have a different one that I have on here too. So if you're looking for an alternative, mine is more looks like a normal mug. And it has a steeper that sits in the mug. And what's cool about this mug is it has a lid and the lid sort of collects the steeper so you take the lid off and then you set the steeper on the lid and it like makes it so water and tea doesn't get everywhere. Oh
+
+18
+00:08:29,730 --> 00:08:39,480
+Wes Bos: man, this one's really nice. And then you don't have to because the thing with mine is that you've got like a steeper and then you got a mug dirty with this huge Deep End drink out of the same one. Yeah, yeah, it's
+
+19
+00:08:39,480 --> 00:08:47,070
+Scott Tolinski: great. We have a couple of these in the house and, and really like them. I have the black graph model. So it looks really nice. Awesome.
+
+20
+00:08:47,100 --> 00:08:56,010
+Wes Bos: I also have in the past got flavored salts, which is kind of fun. So I think you could just find the mat. It's called winners here in Canada, what's it called in the States?
+
+21
+00:08:56,010 --> 00:08:57,240
+Scott Tolinski: I have no idea what that is TJ
+
+22
+00:08:57,240 --> 00:09:00,650
+Wes Bos: Maxx one of those like home goods stores.
+
+23
+00:09:01,020 --> 00:09:21,650
+Scott Tolinski: We have a we have something that we call the savory spice store here in Colorado. And there's a couple of other locations. That's where I actually sent you your blends from last. Oh, I love those. Yeah, everything you could possibly imagine. So if you want like a lot of interesting flavor, things like that, check out the savory spice shop.
+
+24
+00:09:21,690 --> 00:09:33,840
+Wes Bos: I really like that because you gave me like eight different spice blends and then we get to dry them all. And the funny thing is my cupboard is full of spicy spice blends and I love them but I can never cook with them because my kids and family can't.
+
+25
+00:09:35,030 --> 00:09:36,330
+Scott Tolinski: Nice. Yeah.
+
+26
+00:09:36,360 --> 00:10:59,640
+Wes Bos: Other things I really like is just this idea of rain beers. So go to your your local place that sells beer and get somebody a six pack made up of six different craft brews. And then using pipe cleaners and little eyes, you make them into reindeers and then it's called rain beers. That's a fun one if you have like a gift exchange with some friends, where you don't want to spend more than 2025 bucks. You can put together some really, it's really cool because like if you know about craft beer, you can be like, Oh, this is this is curated by me. And these are some really nice, I've always found that to be an awesome gift, which is like a hand selected bunch of craft beers. Now what else we have here beer making kit, you can grab these off Amazon or whatever, where you can, if somebody is interested in making their own beer, you can get like a kit for 2030 bucks and try it out in your basement. Finally, I've got one more here is called the whoo my dry, dry aging bag. So this is something I haven't tried out, but I've been looking at it or I want to learn how to dry aged steak. And if you want to learn how to dry age, a piece of meat you have to get like thermometers and all kinds of stuff to make sure that it works. But these bags is kind of like a cheating way to do it where you can vacuum pack them in these bags and the moisture will leave the bag but nothing can go in. And it seems like a really neat way to take even like a somewhat inexpensive piece of meat. Ideally, you do with a really nice steak and make it sort of age itself. It just in your frigerator
+
+27
+00:11:00,870 --> 00:11:02,910
+Scott Tolinski: cool. Yeah, that sounds dope.
+
+28
+00:11:03,030 --> 00:11:26,160
+Wes Bos: Yeah, there's a lot of like little little foodie things that are not all that expensive, but really interesting. But you have to like I'm a foodie. And when people try to buy stuff for me, it's often frustrating because they have no idea what's cool or what's neat. So they don't know what to get me. But if you can take some of these kinds of these, like I am a foodie. And these are the things that Scott and I recommend. If you have a foodie in your life, go grab these for them.
+
+29
+00:11:26,760 --> 00:11:50,010
+Scott Tolinski: Yeah, okay, let's continue along. Some of these even fit into almost the foodie space. Some of them don't. But the next one we have is experiences. And a lot of times experiences get overlooked when you're thinking about giving a gift. They think some of this stuff is is just an absolutely awesome, awesome gift. And I see you have some some of your knife skills stuff up top here. Yeah, this is an interesting one to me.
+
+30
+00:11:50,070 --> 00:13:09,510
+Wes Bos: My wife bought this for me, about a year and a half ago, she bought me a class with a local chef and went to their kitchen, she had this beautiful mansion, and we got to go into the mansion. And they had this amazing kitchen. And then they give you a I think an eight inch chef's knife, which is not the best knife. It's like a utility commercial grade knife, but it's good. Like I use it all time, you should make sure you sharpen it properly. They teach you how to sharpen it, how to hone it. And then they have all of these different things that you learn to cut like chicken and hard root vegetables like how do you how do you cut a cabbage without slicing your fingers off? Or how do you hikma how, yeah, exactly like they have all these different types of things. And then they also, once we had diced all this stuff up, she taught us how to like make it into a soup and then how to like figure out what kind of sauces go with the soup. And it was just like, think of my wife paid like 150 bucks for it, you got a knife out of it. And like that was like some of the best skills I have from dealing with knives. There's also a local place that now is starting to do butchering classes, they're a little bit more expensive, because you have to pay for like half a pig or an entire chicken. But I'm looking at doing that as well. Because I think it'd be interesting to learn. If you were to go to a local farm and just buy half a pig. How do you break that down?
+
+31
+00:13:09,930 --> 00:13:19,560
+Scott Tolinski: As long as I'm not picking out the pig when it's alive? I think I could do that. This is not for your vegetarian or vegan friends. Please don't do that.
+
+32
+00:13:19,620 --> 00:13:20,610
+Wes Bos: Don't Yeah,
+
+33
+00:13:20,700 --> 00:14:02,280
+Scott Tolinski: that was a mistake. That would be a mistake. We shouldn't have to say that. The next is a cooking classes. I actually one of the best retreats I ever did for the one of the agencies I worked at, it was the most fun, we went to this house on a lake and we hired a chef and that chef came in and gave us private cooking classes similar to your knife skills classes, or whatever, we made a three course meal and everything we made was excellent. And it opened my eyes to some different ingredients and different techniques than we had used before. They were making sort of interesting things that I wouldn't have thought of personally, and definitely expand your horizons and give you a little bit more of a foundation in case you've just been sort of winging it. Like I have for the most part.
+
+34
+00:14:02,700 --> 00:14:14,070
+Wes Bos: I've even heard people go to Thailand for like a couple weeks and you you like live at this resort and someone teaches you how to how to cook there. I think that would be kind of interesting to do it. So I want my life.
+
+35
+00:14:14,100 --> 00:14:17,490
+Scott Tolinski: Yeah, cuz we we make a lot of Thai food at our house. So
+
+36
+00:14:17,550 --> 00:15:03,240
+Wes Bos: that would be sweet. Oh man. I remember when I was in first in university, like I grew up in like a super white suburb. And I had learned I moved to Toronto and learned about Pad Thai. And my just like blew my mind. And now I look back at them like Oh, that's so cringy what I was doing. Pad Thai. What else float tank, a couple floats in a float tank. So this is something I've been wanting to try for a long time where you you go in the sensory deprivation tanks that you float in salt, and I've just never done it because I've never actually actively gone out and paid the money to try it. But if someone were to give me a gift, that's like three free floats or something like that, I would for sure really enjoy that. So if that's the kind of person that you're trying to For I would, I would definitely look up local float tanks.
+
+37
+00:15:03,690 --> 00:18:17,010
+Scott Tolinski: Yeah. And those seem to be a little bit everywhere in major cities now. So definitely something I'd be interested in trying as well, especially that one's good for the stressed out dev in your life, because things will probably be a nice little meditation space. Another good thing for the stressed out Devin your life would be to get a massage. Now, I actually am a huge fan of getting massages, I've actually been getting professional massages for a long time, just because breaking has like destroyed my body in so many ways. It was actually great. When I used to dance for the Detroit Pistons, we had access to their professional massage therapist. So we could like go to the palace of Auburn Hills anytime we wanted to and just get a massage via like the guy who massages the players. So I'm a huge for this, this is really great for really just anyone who's stressed out or maybe they have bad posture, or maybe they could just again, this is maybe one, you'll want to make sure that they're comfortable with a massage too. Not everyone's comfortable with it, that I personally feel like this is one of the most recharging experiences you can have. So a good massage will go a long ways. And I think this is a great gift here. Another great gift would be potentially, for that person who's trying to figure out where to store their data is a content full, I guess you'd call it a subscription, a content full account. Now content fall is a great way that you can manage all of your data. And in fact, it works like sort of the back end of any sort of CMS, right? It's beyond a headless CMS, it gives you a ton of flexibility, and a ton of reliability. And everything that you need to really build excellent front end content without having to worry too much about the back end of your site, I actually used content fall in one of my tutorial series. And I was really impressed with in general, just how easy it was to not only just to get set up and get started, but to just use it and not even have to like, I don't think I even consulted the documentation more than a couple times because everything felt very intuitive. So me personally, I really, really like using content fall and would easily reach for it again in a heartbeat. So some of the cool things about content fold is that they give you access to different environments, sort of Production Development sort of thing. So you can easily mess around in development without having to worry too much about your production flow. There's also a graph qL API coming very soon, which is going to be awesome. So far, I've been using sort of content flow plugins and things like that to get the data in. So I'm psyched that there's going to be an actual graph qL API coming soon. It's currently in alpha, and might be in beta by the time you're hearing this. But again, something to keep your ears open for sounds really, really cool. So if you want to check out content, I'll head on over to content fold that com forward slash syntax. And if you sign up, you'll get a free pair of content full socks and both Wes and I were rockin our content sucks over at the jam stack calm So these things are really super cool. So head on over to content vault comm forward slash syntax and get your free pair of socks while you're checking out content vault. So thank you so much for kinda fall for sponsoring.
+
+38
+00:18:17,040 --> 00:18:22,260
+Wes Bos: So Scott's got a couple subscriptions here and then I've got a couple at the end. So why don't you just rattle through some of the ones you have here?
+
+39
+00:18:22,530 --> 00:20:34,020
+Scott Tolinski: Yeah, absolutely. I've been given a headspace subscription before and this was an actually a great gift. Add spaces. Again, another one for the stressed out or maybe overly anxious person or Devitt Dev, or pretty much literally anyone, any. Anyone who's getting stuff done could benefit from any sort of meditation practice. And meditation is one of those things that's tough to keep yourself to do it. But if you can have an app with a beautiful interface, let you know exactly what to do when to do it. Listen to this thing and just follow the instructions. It makes it super easy. So headspace is a great one. Next is a Spotify subscription. Everyone loves listening to music. I think headspace is owned by Spotify. Now, I think you can I actually don't know if that's true. But I think you can bundle those subscriptions. So if you're looking to do a headspace and a Spotify, I think you can do those at one price. There's HBO Go, you know who doesn't love hbos content is just always top notch. HBO Go is easy way to sort of just watch it on your phone, your TV or whatever. Courtney and I we actually have all of our TV through YouTube TV and we've been big fans so if you are looking for someone who maybe wants to try something new there TV, YouTube TV is a good good platform. I've been very impressed. Me undies is a good one too. We both been subscribing to me undies for a little while. They don't sponsor this podcast like they do many other podcasts but the underwear is great. It's awesome quality. We both love it. We both have stayed subscribed. So Mandy's this has been a really good subscription for both of us and it could be good for you next is for that high performer and your life that person who's always trying to learn stuff. Memorize is a really excellent learning platform. You could think of it as a Duolingo, or learning anything, you can learn anything. You can learn command line syntax via memorize. And it has this really great algorithm that knows when to give you what timing and stuff like that so that you don't forget things. For the security focused person, or maybe the person who needs to be more security focused, you can get them a subscription to LastPass. Yeah, offers like really nice sharing features, it generates passwords and stores them in a vault, I have an account for this. And they're actually going to be upgrading it so that Courtney and I can start sharing passwords on and stuff like that I
+
+40
+00:20:34,020 --> 00:21:11,730
+Wes Bos: do this all the time. This is something that you should maybe just do for your family who's not security focused, because people just use the same password over and over again, on all their accounts. They write them down in a book or something like that, or on a post it note on their monitor. So if you are there at Christmas, giving them this, it's a great time to set them up and show them how it works. Especially now that the iPhone, Touch ID and face ID will autofill it. Yeah. Which is amazing. So I think it's a good time to people use to say when you're home at Christmas, make sure you upgrade your parents browser. When you're now in your in your home at Christmas, make sure you sign them up for like a password manager.
+
+41
+00:21:12,180 --> 00:21:13,350
+Unknown: Nice. Yeah, that's a good one. I
+
+42
+00:21:13,350 --> 00:22:46,590
+Wes Bos: also like to get people magazines. I know it's a bit of an older thing. But I still like getting magazines. We get my kids get the National Geographic Kids ones, I get my wife a couple homestyle ones and fashion ones that she gets in there usually discounted around Christmas. So might as well sign up, then there's all these different like crates that you can buy for people. Yeah, great. Yeah. I don't subscribe to any of them. But one of the ones that I've been watching for a while and I actually maybe seven, eight years ago, I got asked to build the site for them. It never worked out. But the mantry has these these boxes that are full of food, whether it's like hot sauce, or barbecue sauce, or beef jerky or neat chocolate or anything like that. So for the kind of foodie in your life, check out mantry it comes in this like thing kick. So it comes in this like but like this actual box. When I met them, they were reusing old oyster boxes to ship them out around. I don't think they're doing that anymore now that the scale has been that much. And then there's these kits crates we've been looking at for our kids for Christmas, right now. It's from Kiwi co at Kiwi co.com. And they are stem focused, meaning that science technology, engineering and math and I go to a stem club with my oldest daughter, once a week we go to the library and we we learned about something like gravity or or wind power or electricity, or we just learned about all kinds of different sounds or how flowers work. We plant and we watch the flower grow. And I think that this box would be a nice little addition to that because it does all kinds of like little things that you can make as well as learning something about science, technology, engineering and math along the way.
+
+43
+00:22:46,950 --> 00:22:49,980
+Scott Tolinski: Yeah, that's great. I love that. That's really super cool.
+
+44
+00:22:50,010 --> 00:23:02,160
+Wes Bos: Yeah, there's a whole bunch of different kind of crates for different ages. And it looks like it starts to get really fun at about age five. So even though my daughter's almost, it's just three and a half. I think we might just go for the five year old one.
+
+45
+00:23:02,160 --> 00:23:02,970
+Unknown: Yeah, get
+
+46
+00:23:02,970 --> 00:23:03,900
+Wes Bos: to build stuff.
+
+47
+00:23:04,020 --> 00:23:50,040
+Scott Tolinski: Yeah, definitely. Next, we're gonna get into some books, or maybe audiobooks. I know, I'm an audiobook fan moreso than a book fan, just because it's easier for me. But what are some of these books, the first one I had in here was bad blood. Now Bad Blood was one of my sick pics a couple weeks ago, or maybe last week, it's a book about this Silicon Valley startup that was basically just faking everything. It was like, it's just a really brilliant story. And they became just a billion dollar company and stuff like that. It's absolutely absurd. The amount of people who this company was able to sort of pull one over on everybody. But this book to me was gripping, I thought it was really super interesting. And for those of you who are in the startup scene, I think it's sort of a must read. My
+
+48
+00:23:50,040 --> 00:25:35,310
+Wes Bos: next one is only in book format. And this is actually one of the very few books I ever have read. It's called beat the bank. And this is only for Canadians. But as I'm getting older, I'm starting to think about like, what do you do with all of your retirement savings? And how do you best invest them. And there's this really, even if you start to look around, you're starting to see a lot of these like robo advisors, the robo advisor will manage the money for you, instead of you having to go to the bank and have them take it. And the whole idea behind these Robo investors is using ETFs or index funds and instead of using a mutual fund, which has a what's a high m er which is a management expense ratio, and this beat the bank book explains it really really clearly as to like why you should probably go this way even if you're not young, and they explain that there's like this like thing called a T rex score, which is even if your your mutual fund is taking like a 1% expense fee to to manage your money that 1% compounded over 20 years. 30 years before you retire could end up with you losing millions of dollars or or depends on how much you have invested but it could be as much as like 20 5% of your actual income at the end of the day. So it's a really good thing to be aware of, especially if you are young and thinking about saving for retirement because there's lots of stories of people who just trust their local banker, and they take 1% of your money every single year, year over year. And it's not just that money. It's the the possible interest that could have been earned on the money that they took over 2030 years. So I really enjoyed that. Also, there's a this is a bit off topic, but there's a podcast called the Canadian couch potato, which is kind of talks about this as well. A lot more interesting.
+
+49
+00:25:35,520 --> 00:25:36,540
+Scott Tolinski: Yeah. Cool.
+
+50
+00:25:36,570 --> 00:25:48,090
+Wes Bos: Yeah. I don't know what the the equivalent Sorry, I took it off. I don't know what the interval is for Americans. I know Tony Robbins has one on this kind of the same ideas of index fund. So maybe you could check that one out.
+
+51
+00:25:48,450 --> 00:26:54,600
+Scott Tolinski: Yeah, I was gonna say I needed a the American. The red, white and blue version of the next one I have is honestly my favorite book that I've read this year, which is American kingpin, the epic hunt for a criminal mastermind or for the criminal mastermind behind the Silk Road. If you've heard this sort of the like bare bones story of the Silk Road, that you know, it's a very interesting story. But this book goes so deep. And for those of you who like the dark net diaries, you're going to absolutely love this. Because this is like a long, long, long version of a dark net diaries podcast, it is so dang good. The author goes in depth. The whole story weaves all of the stories of every single person involved in the entire time. It paints a really good picture of the Dread Pirate Roberts life in general, it sort of sets everything up really well. This isn't just like a retelling of the situation. This thing is crafted like a true story. So American kingpin is easily my favorite book the year so I highly recommend this
+
+52
+00:26:54,600 --> 00:27:22,290
+Wes Bos: one. The next one is I'm sick pick this in the past Rich Dad, Poor Dad sounds super cheesy. But again, if you are like, this one is more about how am I going to raise my kids to think about money and things like that, how to how should they be saving and whatnot, I really enjoyed this one. Even if you don't have kids, if you're just thinking about how to how to save your own money. I know most people have probably read this one already. But if you haven't checked it, pick it up for that person, it's kind of it might be a bit of a passive aggressive gift to give somebody.
+
+53
+00:27:23,370 --> 00:27:24,660
+Scott Tolinski: Hey, you're bad with money.
+
+54
+00:27:24,689 --> 00:27:37,470
+Wes Bos: You're bad with money. You should read this, but maybe tread lightly on that one. But if it is somebody who like I for sure would not feel offended if someone were to give me a finance book and be like, this is awesome. I really enjoyed this. I think you will too.
+
+55
+00:27:37,890 --> 00:27:42,540
+Scott Tolinski: Yeah. And it's a classic to me as like a gazillion reviews and it's been around forever. I've
+
+56
+00:27:42,540 --> 00:27:49,410
+Wes Bos: been around forever. And I what I really like about it is that they don't focus on tactics. It's more of a mindset, which makes it timeless.
+
+57
+00:27:49,709 --> 00:27:57,690
+Scott Tolinski: It's a state of mind. This next book really opened my eyes to how many books are named kingpin. And just how many of those books are erotic novels.
+
+58
+00:27:58,830 --> 00:28:00,000
+Wes Bos: Apparently like God,
+
+59
+00:28:00,570 --> 00:28:51,810
+Scott Tolinski: yeah, there's apparently a huge market for drug kingpin related erotic novels. This is not one of those. But if you look for this on Audible, most of the things that come up will be like my love to the kingpin and stuff like I don't know, it's outrageous, but this book is called kingpin. So it's another kingpin title, how one hacker took over the billion dollar cybercrime, underground. And again, for those of you who like darknet diaries, I know a lot of people did This thing is awesome. Hacking stories, apparently is a subclass of nonfiction books that I didn't know that was my favorite thing in the whole world. So this book is great. Again, if you're interested in the hacking culture, or hackers, or the history of some of this stuff that how it went down. This book again, is narrated really well, is told as a story really well. And it's a very interesting book.
+
+60
+00:28:52,080 --> 00:29:42,090
+Wes Bos: I got three more here, I'll rattle through them real quickly. Anything you want is by Derek Severs. He's the guy behind that, quote, if it's not a hell, yes, it's a no. So if you have someone in your life who wants to get into business and run their own show, and not build up a huge thing, that was a really good book. essentialism is a awesome book for anyone looking to pare down their life, maybe a bit too much going on. And then the E myth revisited. So somebody who is looking to start a business or who has recently started a business and needs to divide their attention between being the the worker, which is like someone who's making cupcakes and the manager, which is someone who's actually trying to run the business, I would probably put the E myth revisited at top three books I read this year, so I would highly recommend that one. Nice, I'm gonna have to get that one.
+
+61
+00:29:42,090 --> 00:30:41,640
+Scott Tolinski: Yeah. Next, we're gonna move on to the next topic, which is something a little bit more tangible. We're going to be talking about some clothes. And again, we're both dudes. So unfortunately, I think a lot of these are going to be dudes close. So I apologize. I'm gonna try to keep it maybe a little bit less like that. I personally, I know you have a lot of jeans on here. If I'm buying jeans, I usually I have a hard time going straight raw denim because I like to move around so much in raw denim. Yeah, and always like the most flexible. I remember I bought my first pair of raw denim jeans and I went to a football game and I like couldn't walk up the steps. It was almost like it was like hilarious episode of some sitcom or something. I was like, I can't even lift my feet to walk up the steps. So I really like these unique low I don't know if they're, they're technically raw denim, but they have the raw denim look, you know, you flip up the little the ends of them, they have that little look, but they have elastic in them. So that for me is like a big deal because I need to be able to to be a little bit more agile. So if you're like it feel like need me and need to like move around a little bit more. Check out unique clothes for their elastic jeans.
+
+62
+00:30:41,670 --> 00:31:04,470
+Wes Bos: Awesome. I should say on the this stuff is for dudes. My wife is a actually a fashion blogger. And she's putting together a killer Gift Guide right now. So if you are a woman and would like to find out what are some some good gifts, I'll put a link to that in the show notes as well. Or if you are a dude looking to buy a woman something that would be a good, good place to start as well.
+
+63
+00:31:04,860 --> 00:31:24,360
+Scott Tolinski: Yeah, a coordinate. Thanks. Thanks to your wife, Kate. My wife, Courtney has been just buying a lot of stuff. She loves everything that's out there. Yeah, no, no worries. It's great. It's all nice stuff. That's the thing. It's all it's all nice stuff. So yeah, I've been loving a lot of her suggestions.
+
+64
+00:31:24,390 --> 00:31:40,560
+Wes Bos: She really focuses on like well made reputably made not in a sweatshop. So it's you're not going to find like h&m and stuff like that. And here, it's unfortunately going to be expensive. But it's going to be something where you only have six dresses or something like that. And you have them for years and years.
+
+65
+00:31:40,890 --> 00:31:42,240
+Scott Tolinski: Yeah, that's the way to do it anyways, yeah,
+
+66
+00:31:42,240 --> 00:33:52,260
+Wes Bos: a couple things I've got here. So talk about raw denim, I'm huge into jeans, I'm huge into raw denim. And when I go out and buy a new pair, I'm either buying a pair of naked and famous, which they are made in Canada, some of the best jeans you can buy. They've got a bunch of different cuts. I personally wear the skinny guy, but if you are a bit wider calves, then you could probably go for the weird guy. Both of them have a really good, they don't look that great immediately. And they don't feel that great immediately, as Scott said. But the idea the idea with raw denim is that you you wear them you never wash them. You wear them every day. And then about a week and a half in they become like a like they mold to your body. And they're like the most comfortable jeans and you you also get some really nice fade lines on it. So negative famous is my favorite pair of jeans. I also will often buy nudie jeans. nudie jeans have this really bright orange stitching and this really elaborate detail on the back pocket, which I really like. And naked and famous have none but the whole idea of naked and famous is that they're playing on nudie because nudie is nudie jeans. And they have all kinds of like embellishments on the pockets. Whereas naked and famous is just really good Japanese raw denim made in Canada. And then the folks behind naked a famous the designer, he also has the exact every single pair of naked and famous jeans, like all the different like the the weird guys, skinny guys, super skinny guy, they have a couple different cuts. You can buy the exact pair of jeans, the exact same quality, but made in China, and they're called unbranded, so they're exact same pair of jeans, they're just made in China, and then they are significantly less, I've had a bunch of pair of those. And there's no difference in the actual quality. The only reason I still buy naked and famous is because they always put out these like Chinese New Year or red. They have all kinds of like different like one offs where they'll like though we have a special color into it. And then when they wear the red starts to show through or they'll do like a glow in the dark pair. Those have fun, different kinds of pairs. So that's why I like to buy naked and famous. What else is the custom leather belt? So did you see my tweet or Instagram about my belt
+
+67
+00:33:52,260 --> 00:33:56,280
+Unknown: that I got? Yeah, the JavaScript heads a heads and bass on there. So
+
+68
+00:33:56,280 --> 00:34:57,710
+Wes Bos: there's this website. I love having a nice thick leather belt in my jeans. And in the past, I've bought them at yard sales from unfortunately old men who've passed away because these are they're expensive to get like a really nice leather belt. And my current one is starting to die and I thought okay, Where can I buy a nice good quality leather belt? I stumbled upon this website called gavia leather ga v e r e leather dotnet. And they have made in the USA belts that have all these designs flowers to deer to butterflies to trucks to pigs. These are meant for like your deep south Texas trucker to where Yeah, so I ordered one and I got JavaScript stamped on the back. Then it's got fish and bass jumping out of the water and someone's for catching a fish on the pole. And it was 38 bucks for a very good quality leather belt made in the US. So if you have somebody in your life, you can also get them with like your last name stamped on them. You don't have to do something stupid like at JavaScript put on them.
+
+69
+00:34:58,110 --> 00:35:00,480
+Scott Tolinski: Yeah Office
+
+70
+00:35:01,380 --> 00:35:02,610
+Wes Bos: What else do you got this more?
+
+71
+00:35:03,060 --> 00:35:05,880
+Scott Tolinski: I don't you you sort of rock in the clothing section. All
+
+72
+00:35:05,880 --> 00:36:20,219
+Wes Bos: right, well keep going then the north face has a really nice windbreaker called the fan rack and this is just a really nice pullover windbreaker the whole thing goes into the front pouch and then you can clip it around your waist if you want. It comes with like clips so you can put it on I have a camouflage one that's the one I was wearing when I met Scott but they have them in less Gowdy designs as well. hoodies I'm a big hoodie fan myself. They Adidas has a black on black and Md crewneck if you are big into the black on black, they make a really nice soft crewneck that has I think it says the one with the three stripes in black across the front I'm a big fan of that. And then champion which champion is a funny brand because champion can be sold gym and sold at Walmart and you can get like a pair of champion sweats for like eight bucks. But champion also is a coming up as a like a streetwear brand right now and they make some really yeah, they make some really nice thick high end hoodies and what I like about them is that they're really heavy. The cuffs on them are extra long. The hoods are nice, the strings are really nice and they're all nicely embroidered. So if you want to give someone like a someone who's like a hoodie connoisseur or grab them a Adidas one or a champion one,
+
+73
+00:36:20,219 --> 00:36:20,940
+Unknown: nice sneakers
+
+74
+00:36:20,940 --> 00:36:59,310
+Wes Bos: I know you're super into sneakers. I have bought a few pairs of sneakers this year and my favorite so far have been the new Air Max 270s these are a new pair of Nike sneakers that came out this year and I bought them in a like a white and green colorway I think I'm gonna get the black ones as well once once these ones start to go but they are a brand new pair of Nikes and they are super comfortable. And they're pretty readily available to you don't like these are not like Yeezys are something where you can't buy them or you have to buy them for $100 on eBay. These are just regular sneakers that anyone can walk into footlocker and buy so big fan of the Air Max 270s Yeah,
+
+75
+00:36:59,340 --> 00:37:48,690
+Scott Tolinski: I bought some. I think they're done trip Jordans, they're calling them just done. And I love these things but these shoes aren't for everyone. They're sort of for the Fresh Prince kind of sewer and your life the person who likes that sort of style. They look straight at the 90 so I've been a big fan of these kind of shoes again. The Jordan ones are obviously my favorite sneakers are hard you got to kind of know the person's sensibilities. One of my best friends gave me a pair of Orlando Magic Jordan ones once for Christmas. And like I don't even love I don't even like I should say the Orlando Magic but he shoes were like absolutely tailored for my taste. So don't buy this for someone who you don't know exactly what they're going to love. But I like those kind of shoes myself and you can always go big with some some nice shoes also
+
+76
+00:37:48,690 --> 00:38:17,310
+Wes Bos: pair Ray Ban mirrored Ray Bans I'm really into right now the wayfarer is the kind I wear but you can buy mirrored ones and the aviators if that's your your style, nice underwear. I know Scott sick pick me undies earlier but I also like getting the Under Armour or Reebok boxer jocks, which are super comfortable. And I just want to give a shout out for Travis who runs developer.io d v LPR. He's got a bunch of T shirts and hats and stuff that are developer related. So check those out.
+
+77
+00:38:17,730 --> 00:38:20,280
+Scott Tolinski: Yeah, straight out of Colorado.
+
+78
+00:38:20,310 --> 00:38:24,540
+Wes Bos: Oh, really? Wow, Scott, that sure sounds fresh. Hey,
+
+79
+00:38:24,540 --> 00:38:30,710
+Scott Tolinski: was it Do you know it also is also fresh, fresh, fresh, yes, fresh books is fresh as well.
+
+80
+00:38:30,750 --> 00:39:05,400
+Wes Bos: Fresh books is the cloud accounting software you need. This should maybe be something that you can get somebody. I'm not sure I would really like this as a Christmas Christmas gift but it's something that you can get. So Freshbooks does cloud accounting software if you are trying to run a small business or you're just trying to build a couple people here and there if you need to keep track of all of your invoices, all of your expenses, get paid online, get paid on time, send reminder emails all that good stuff around managing your finances as a business you want to check out freshbooks.com force a syntax for a 30 day unrestricted free trial make sure you syntax in the How did you hear about us section
+
+81
+00:39:05,790 --> 00:39:33,710
+Scott Tolinski: sick. Alright, so the next section is going to be for those of you who love gadgets. I know we all love gadgets here, one of my first ones is going to be taking a look at mechanical keyboards who doesn't love a nice keyboard. I personally use the code keyboard. And although I've been looking at the air go docs, which is like a split it's got two hands like a two hand thing with like extra keys that you can program to every one It looks like
+
+82
+00:39:33,750 --> 00:40:11,460
+Wes Bos: I also just got a mechanical keyboard shout out to Adam who sent it to me because I have always been of the thing that I say these keyboards are too loud for me to do tutorials with and but although I would love to be able to program them myself. So I got the control keyboard. I haven't spent too much time setting it up yet, but that's something I'm gonna hopefully do over the holidays make some pretty sweet keyboard combinations because there's only so far you can go with your custom keyboard shortcuts but if you have access to access Like firmware on the keyboard, which is what all of these mechanical keyboards do, you can set up some pretty sweet keyboard shortcuts. And I know they're mostly for gaming. But I think developers can really take advantage of these as well.
+
+83
+00:40:11,820 --> 00:40:12,650
+Unknown: Nice, cool.
+
+84
+00:40:12,659 --> 00:42:57,780
+Wes Bos: So, a couple other there's a like the W A, S, D, the Ergo docks, there's a couple other keyboards that we have on here, we won't list them all but just take a look at which ones that you have. Next one we have is a wireless charger. I've got two of these now and I can't believe how handy they are. So I got one of them for free in the jam stack swag bag, which is amazing that a conference swag will give you a wireless charger. And then also I got the sovereign one which I sic picked a couple weeks ago, they sent me this one for free. And I tried it out for a month before I said anything about it. And it is awesome. It's working rock solid. The only thing I don't like about it is that the light is super, super bright. So you can't put it in your you can't put it in your bedroom because it'll just light up the entire bedroom. But I have it right here in front of me. And what I do when I sit down at my computer, I just popped my phone on it. And it just charged my phone. Now I'm I'm wishing that my air pods and my Bose headphones also had wireless charging, because I just want to like lay them on this pad when I leave for the day and come back in the morning and they be charged. So yeah, that's a huge, huge one. Actually, while I'm on that as well. Anything USBC is super handy for developers. Just because you need a little USB C adapter USB C memory stick, I don't know USB, AC anything because people don't have anything USB yet. And they're likely having one of these new laptops that are USBC. The Koumas car mount I've picked this before in the past, it's a car mount that is magnetized and it goes into your CD player, which is nobody uses a CD player anymore in their car. So it works great because I've tried all of those event matte ones, and they just don't work in my car just because the way that the events work. And I've been super happy with these magnet car mounts, you do have to put a huge piece of steel on the back of your phone, which I thought would be a problem because that would then interfere with the wireless charging. But if you put the piece of steel at the very bottom of your phone, it still works good because the magnet on this thing is super tough. So happy about that portable batteries, I travel a lot. And I find that I somebody once gave me an anchor portable battery as a speaking gift. And that thing I use all the time because it's small enough that I can just throw it in my bag and but it's long enough to get me like one or two charges of my phone. And I always have that thing charged ready to rock. Next we have a extra long braided cables. So whether you're an Android or iPhone user, you can find these all over Amazon just get these like what six foot long, eight foot long, braided cable, they're extra tough, and we use them personally underneath our couch. So that whenever you need to charge your phone, when you're sitting on the couch, you can just pull this this thing out, and it makes sure that it reaches all the way,
+
+85
+00:42:58,320 --> 00:42:58,829
+Scott Tolinski: say anchor
+
+86
+00:42:58,829 --> 00:44:01,829
+Wes Bos: powered USB hub. I really like this thing, it's a little box that plugs in via two prongs into your wall. And then it just gives you I think, five 710. They have all kinds of different combinations of them extra USB ports. And this is handy because I have to charge at the church, my phone, I have all of my other devices, I have to charge an iPad at the church by headphones. So there's all these different things that I want to charge. And then we also have another one in our living room. Because if there's two or three people sitting on the couch, or we have a baby monitor, and we have a phone, you need to be able to charge multiple things at once you just it's just great to have tons of extra little spots. So instead of carrying around like seven, eight of these nubs, or just switching your cables by one of these, and they also have the option to I think it's like IQ charging, I'm not sure if that's the same thing as fast charge. The way basically the way it works is it will just keep increasing the amount of power that it sends to your phone until your phone says no more. And that used to be the hack where you charge your phone with an iPad charger. This thing will just charge it as fast as the device can possibly take it.
+
+87
+00:44:02,070 --> 00:44:59,550
+Scott Tolinski: Nice. Cool. So I have one here. I shouldn't mention that. They're sending me one of these. But this didn't encourage its place on the list or anything. I haven't gotten it yet. So I don't know how cool it is. But it seems really cool. This is this Tello drone, it has a camera in it. The coolest thing about it is it's based on like some sort of like coding platform uses scratch I believe, which is like a visual coding interface. So not only is it a drone with a camera, but it's a drone that you can at least do some sort of programming with. And since it's in Scratch, it's not like a Python or something like that. Chances are if you have kids or people who are interested in learning how to develop things or even work in basic programming concepts, I really think that something like scratch is a great way to introduce some of those concepts conditionals that sort of things. So I'm really looking forward to for mine to arrive so hopefully this thing is really cool, but it's the this Tello drone with camera and everything like that really super cool thing
+
+88
+00:44:59,550 --> 00:45:16,920
+Wes Bos: is like 80 bucks, right? It's pretty, like $1,000 drone that's going to be able like it only flies for like, like 10 or 15 minutes or something like that 720 p camera. And so it's not like this like high end thing that you're going to be scared. It's kind of a fun thing that you can play with it, I guess it's called a toy drone.
+
+89
+00:45:17,280 --> 00:45:18,210
+Scott Tolinski: Yeah, it looks like fun. Next
+
+90
+00:45:18,210 --> 00:46:35,760
+Wes Bos: up Wi Fi hotspot, this doesn't really apply to Americans, because they know you can get really good roaming. But in Canada, if you go to the states or any other country, it's so expensive. So I have a external Wi Fi hotspot called the skyroam. Solis and I've been loving it, I have like a, I think you just pay by the gig, which is great, because every time you run out of it, you just buy another gig. And it's so much cheaper than using the roaming on actual phone. Another one that I have is a breakaway USBC cable. So I picked these A long time ago, they're still working pretty well. I don't use it to power my main laptop all that often because it's just sitting on my desk and I power that VMI USB hub. But these breakaway USB C cables are really cool. They come with these little nubs that you put into your USB C or USB micro ends, I also have a one on my headphones, and then you have a magnet charge and it will just click into place like the old magsafe would and they're pretty cool. I've been a big fan of of them. The only thing you need to know about these is that if you want one for powering your laptop, you have to make sure that is the special expensive kind for powering your laptop USBC that handles 87 watts, any USB C cable won't work because of the power demands that your laptop actually requires
+
+91
+00:46:36,030 --> 00:46:56,760
+Scott Tolinski: word. So next you had a fun one, this will this is not really that fun. But a high end mini screwdriver said this is one of those ones that I think I personally need. Because there's so many times where I'm like, I wish I had the right screwdriver for this or I have a crappy one that came with my glasses or something and it hurts to hold. So I'm interested to see which ones you're going to recommend here.
+
+92
+00:46:56,790 --> 00:47:55,170
+Wes Bos: Yeah, so there's this one called the max craft seven and one, which I have, it's pretty handy because the bits go inside the screwdriver and just can carry it around. And then I have another one I don't know what the name is. But that one has, I think about 40 different bits in it. And they have all of the Pentalobe and all of the torques. And if you are trying to open any Apple product, you need either Pentalobe or torques. And you need the whole gamut of different sizes. So I've definitely strip bolts before or I've stripped screws before because of having the wrong screwdriver. And it was ever since getting a really nice set that has like 60 or so or 30 different ones in it, it's been so much better. I fix it has a 64 bit set for about 30 bucks. So I think that if you're looking for like a 25 $30 gift, that would be an amazing gift because then you know you'll always have the proper screwdriver. And you're not like just digging through your screwdriver box looking for the the proper bit. Nice, let's just go to smart home. Okay,
+
+93
+00:47:55,560 --> 00:48:55,920
+Scott Tolinski: next is sort of in the same category but a little bit more focused, which is going to be smart home stuff. Now you and I are both pretty interested, we still need to do our whole smartphone episode or something like that. But one of my favorite things in my smart home, if you could even call my house, that would be my Google Home, which is like really sort of the basic of anything that you need to just some sort of smart speaker, whatever to talk, we have these sprinkled throughout our house, we have one in our gym, one of the things I really love about the Google Home is that you can set up in groups. So I have a group of them in the upstairs. And I can Chromecast a podcast to all of my upstairs Google homes. And then I can walk around the house all day and never have to wear headphones. I can listen to this one podcast in every single room. And no matter which room I'm in there it is that music or that music that podcast, whatever is going to be there. So I love the Google Home. It is cheap, cheap, cheap for the Mini. I only have the mini ones. And I love it. So big fan.
+
+94
+00:48:55,949 --> 00:49:48,360
+Wes Bos: I have the full Google Home. And it's amazing. It's I can't believe it's like one of those things along with air pods that it's just like, wow, technology is getting really, really good. It's super cheap. All of my family, even my Oprah who doesn't even have like, he's not even on his computer all that much. He has a Google Home in his place. And one of the cool things is if you get a Spotify family subscription, you get I think five spots for about 15 or 20 bucks a month. And that kind of needs to go along because often we gave him this Google Home and he's like, okay, I don't even have like he doesn't even have a phone like he just has like a regular like, so he's like Hi, I can't set it up. And I can't use it because there's nothing so we had to go set it up with my dad's phone. Then I gave him one of the spots in our Spotify family subscription. And he uses it all the time to check the weather and to play classical music. on
+
+95
+00:49:48,540 --> 00:49:54,659
+Scott Tolinski: Spotify, we always tell our us to play the alphabet song for Landon, and he loves it. So I think that's a great, great thing to get.
+
+96
+00:49:54,690 --> 00:50:01,560
+Wes Bos: We have our Spotify hooked up to my own Spotify. So my Spotify recommendations are awesome. goofed up from Yeah,
+
+97
+00:50:01,590 --> 00:50:05,159
+Scott Tolinski: likewise, alphabet song might like the letter S song.
+
+98
+00:50:06,030 --> 00:51:14,699
+Wes Bos: Smart Home doorbells are really handy we have the ring doorbell, I have a ring doorbell and a ring floodlight. Both of those were sent to me by ring for free. But I also have heard amazing things about the nest doorbell as well, which is from Google, I just love having them as like a security camera because you could do whatever is going on. I had somebody steal a bike the other day, and I had really crisp flooded footage of the person. Oh, wow. coming in and and see on the bike. So I was able to get that to the police, which is pretty cool. What else eco Be smart thermostat. We also really like that sometimes we leave the house and forget to turn it turn it down. Or if we want to crank the heat right before we come home. Or if you're just like laying in bed and it's too hot, you just whip out your phone and scroll it down. I really liked the Eco B because you can buy extra sensors, which will will tell if you're home or not. So we have a sensor on each floor. And then when someone walks by it, it just sends a little signal down to you. And the sensors just run off a little coin cell and they're good for about a year. And it's good because it will automatically turn down the furnace if nobody's home. So a big fan of that. Yeah, I
+
+99
+00:51:14,699 --> 00:51:28,530
+Scott Tolinski: also have an eco B and I'm a huge fan. I like that you can it's a little bit more programmable than maybe some of the other ones. So for that maybe techie or person in your life, the Eco B is a pretty cool little option as excited as one can get about a thermostat.
+
+100
+00:51:29,909 --> 00:52:17,130
+Wes Bos: A little hack that we use it for is we're wondering if my sister in law was home. And because we hadn't heard from her, but I have if this and that to log every time someone walks by the Eco B sensor on the second floor. So I pulled up the spreadsheet and I was like yeah, she's home. She's walked past the sensor at like 870 4pm Nice, nice, nice WeMo plugs. These are kind of like a nice gateway drug to smart home. Because you can just take your existing lamps and plug them into these WeMo plugs and they will you can say okay, Google turn off the lights are okay, we'll turn on the humidifier or whatever. And they'll just switch power back and forth to these things. So they're they're pretty cheap. I think you can get them for 1520 bucks, get make any lamp smart.
+
+101
+00:52:17,520 --> 00:52:26,550
+Scott Tolinski: Nice. I really wish our house doesn't have the wiring for any smart anything really in terms of the the dimmers or any of that stuff. And it drives me nuts. Oh, yeah,
+
+102
+00:52:26,550 --> 00:54:43,079
+Wes Bos: we recently got our entire main floor redone. And I had them put in, they have LEDs throughout the entire house. So you can't just go and buy it like people always recommend these Li FX Li FX bulbs, but you can't just go buy like what 14 or 20 bulbs to put in the year led spotlights. So what we ended up doing is getting these levithan smart dimmers which we have two different sets of spotlights and we hooked them up to our Google Home. And that's kind of my rule with home stuff is that they have to be dumb. Like they just work as normal lights which work without the Google Yeah. And then you can also use the Google Home voice and timers and all that stuff. And the kind of cool thing about the smart dimmers is that if you've ever had a dimmer that's a three way switch. You'll know that if you turn it on on the one switch and it's dimmed at the other one Oh yeah, it's like a sucker. But these these smart dimmers, we had a run an extra thing. I don't understand how electricity works, but they sync dimness. So you can dim from either one or user voice which we use our voice all the time. So nice. Yeah. And then finally the sawn off $5 Wi Fi switch. So if you look online and look for the sawn off Wi Fi switch, you'll find that you can get these little micro Wi Fi microcontrollers that are about five bucks each and then the way that it works is the open it up you have to take like an extension cord and splice it and then take all the obviously the insulation the wiring off and you have to wire this thing yourself and then basically you can go to the dollar store and get a $2 extension cord and you take this $5 sawn off switch and then you make a kind of like a smart plug and I went and bought one I bought one for myself, I bought one for my dad and we wired them up and they've been working great for over a year The only thing you need to know is if it's a grounded appliance, you need to run your own ground pass this switch. So I just use lamps so I'm not using that myself. And then also like you have to be aware that like these are if you're wiring your own things, you have to be aware of the liability that comes along with that but they are pretty popular in the DIY crowd for adding Wi Fi to absolutely anything so pretty, pretty neat little thing that I use there. Second last section we have here is grooming and wellness is there some Scott Lowe has got some nice like makeup and stuff that he puts on so let's see what here we have.
+
+103
+00:54:43,440 --> 00:55:13,619
+Scott Tolinski: Oh yeah. Oh, he's gonna have some good makeup. I one of the things that I really like I know developers, sometimes we can get a little bit maybe you're you work these long, stressful hours. It's nice to have good fingernails, which is actually like a sort of a weird thing to say but I bought some of these Japanese clippers that are made by sechi and the Seki edge Grooming Kit they are expensive 60 bucks for clippers yeah I got mine right here West he convinced me
+
+104
+00:55:13,679 --> 00:55:16,050
+Wes Bos: I'm you lost me the key please convince me.
+
+105
+00:55:16,530 --> 00:56:02,699
+Scott Tolinski: Yeah so for those of you don't know Japanese finger they take their their clippers very seriously. It's almost like a Hattori Hanzo, blade steel sort of thing situation. And so I've only ever bought, you know normal like Walgreens clippers before these things are heavy duty if like not only are they just very heavy, but it's one of those things that I feel like you almost have to try out. I tried out Japanese clippers before that someone else had and I was totally convinced. But for me these things, they've lasted forever, but they just they feel like nothing else in terms of the the clipping. So again, this is going to be sort of a weird one. But I really love these Japanese clippers and the Seki edge is definitely definitely some some nice hardware
+
+106
+00:56:02,730 --> 00:56:08,550
+Wes Bos: here. Awesome. That might be a gift I will ask for at some point when I've run out of ideas.
+
+107
+00:56:10,800 --> 00:56:22,170
+Scott Tolinski: Well, you can get just one of them. I think this they're not usually that expensive like because you can buy one of the individuals in the two pack for $12. Link one of the individuals ones
+
+108
+00:56:22,199 --> 00:56:27,000
+Wes Bos: it says $60 plus 20 import to Canada. So $80 for a pair of
+
+109
+00:56:27,030 --> 00:56:32,489
+Scott Tolinski: Yeah, I'm gonna go ahead and remove the one I have on here because that is probably not a great price, but these single ones for 12 bucks.
+
+110
+00:56:32,940 --> 00:56:33,599
+Unknown: Not too bad.
+
+111
+00:56:33,599 --> 00:57:26,909
+Scott Tolinski: Yeah, definitely worth it. Also, this is one for anyone who has legal marijuana in their state. I have been using CBD balm for my tailbone injury. It's sort of like a chapstick like thing and I just put it on my tailbone. I've also used the CBD tincture. That's how you say that word is that you say that word? I don't know. Sure. It's like the pure oil, whatever you put a couple drops underneath your your tongue and gives you some really nice sort of what is it anti inflammatory properties that aren't like a Tylenol or an Ibu or something like that. So I was using this again, to heal from my tailbone injury, it does not get you high, there's nothing in it that's going to make you feel any different. It doesn't make you feel any sort of high at all. So if that's what you're worried about, don't worry about it. But I personally really liked especially the balm for my tailbone, but I found this stuff if you have pain or anything like that to be very, very useful.
+
+112
+00:57:26,940 --> 00:57:56,820
+Wes Bos: Yeah, even in states where it's not legal, I know that you can buy it. It's weird. It's just like CBD is this weird thing where there's no you can buy it with no THC in it. But it's still classified as like as the same as heroin. It just became legal in Canada, medicinal and recreational. And I didn't even know that you have this, but I just I'm trying out the drops for headaches right now. But I've only been at it for a week so far. So I can't conclusively say if it's worked or not, but I'll be sure to I've been trying out for like five, six months. So
+
+113
+00:57:56,849 --> 00:57:59,280
+Unknown: yeah, a little bit in and I'm a fan. Yeah. Wow.
+
+114
+00:57:59,280 --> 00:58:01,860
+Wes Bos: That's cool. Well, stay tuned for that. What else you have here.
+
+115
+00:58:02,250 --> 00:58:20,520
+Scott Tolinski: I have a nice comb. I got a comb that was made out of a old surfboard. And I trust me I love having a comb on her. I like grew up with cheap combs and stuff like that. But having a nice comb for some reason feels really nice. I don't know what it is to say about it. Other than just a nice comb is is a great gift.
+
+116
+00:58:20,550 --> 00:58:54,300
+Wes Bos: I think my only grooming and wellness since I don't take care of myself is just Burt's Bees lip balm. I'm a big fan of it. I keep it in my pocket all the time, which is people were joking but I had a little I have a little ring in the back of my pocket because it wears ring in and people are like is that so that is that a can of dip or a condom or whatever, but it's just lip balm. I like it in the tin. But you can't buy the tin in US or Canada anymore. But people sent me a link so you can still buy it in UK and Germany. So big fan of that one. That's a nice little stocking stuffers, just a couple bucks. And it's just like the nicest lip balm you
+
+117
+00:58:54,300 --> 00:59:24,150
+Scott Tolinski: can buy. Nice, a nice guy and do some high end stuff. Some big big, big big money stuff. Some of this is bigger money than others so we can kick it off with the air pods which actually have some myself now finally, and yeah, I get a lot of what the hype is. They are easy. They are nice. They feel good in your ears. They sound nice. The battery sucks. I'm gonna just go straight. Battery is terrible. Yeah. How long are you getting on your battery, like five hours or something? I don't know. Like not that long of continuous listening, man.
+
+118
+00:59:24,179 --> 01:00:09,540
+Wes Bos: So well. I thought the battery is awesome. I don't know how long I get probably I get about eight hours out of mine. But the thing is, I never use them for that long. I usually use them for only three or four hours at a time whether I'm at the gym, or like walking to the gym, at the gym, going grocery shopping and then coming home that's like three or four hours and they charge super fast like the case itself has like enough for like three or four full charges. The air pods themselves charge to full I think in about 10 minutes or 15 minutes but like you can usually get like, if you need an hour worth of listening. Just throw them in the case for like three or four minutes. Yeah, I think AirPods is probably one of the best technological improvements in the last like I want to say three or four years it's unreal how how amazing that they are.
+
+119
+01:00:09,869 --> 01:00:27,449
+Scott Tolinski: Yeah, I should say I'm a fan. Yeah, I just the I was listening to him one day I was like a Friday and Courtney was home so I didn't want to be blast and stuff so I just had podcasts on them all day. Yeah, I'm like halfway through my workday they just out Oh, yeah, well surprised. But uh, other than that, they're they've been they've been awesome. Oh, yeah.
+
+120
+01:00:27,480 --> 01:01:21,420
+Wes Bos: Yeah, I guess I just always throw them in the case when I'm not using them even if you just like go to the bathroom, throw them in the case go to the bathroom, grab a coffee and by the time you're back, they're usually boosted back up to 100% Big fan especially how easily they connect on the on the iPhone. And you flip the case open on the iPhone and it will automatically just show you the the battery percentage of each earphone and the thing it's so good I can't believe it. I have a dog on here. That's just chuck don't get well you might want to get your family a dog that'd be pretty cool headphones as well. Bose QC 35 they are 449 bucks Canadian so I bet you probably get them for under 400 bucks American. They are so expensive. But again one of the best things I've ever spent money on in the last couple of years. I've had my pair for probably about a year and a half and they are rock solid. The battery lasts me I think like 1517 hours I probably charge them once every few days and I have them on the entire day.
+
+121
+01:01:21,510 --> 01:01:24,119
+Scott Tolinski: Listen to my kind of headphone yeah battery life.
+
+122
+01:01:24,119 --> 01:01:48,090
+Wes Bos: Yeah, I think just because they have room for it. I am worried a little bit about when the battery starts to degrade because I want to these are expensive headphones. I want to have them for I don't know like at least five or six years given how expensive they are. So I am worried about that because there's no replace replaceable battery. But well I'm sure we'll start to see people figuring out how to crack them open and solder in a new battery. When that's
+
+123
+01:01:49,739 --> 01:02:49,650
+Scott Tolinski: the last one I have on here is the very highest end I figured we'd go out on a bang I recently got a Samsung 4k q LED TV and yeah, a cute I'm gonna say q LED is like a fake word. It's fake. It's just because they couldn't compete with OLED so they were like well just have it be a Q lead even though it's not an O lead or any other technology that's not an LCD LED TV so like okay, don't let the marketing fool you. But regardless, this TV is awesome. I'm just such a huge fan. The picture quality is great. The contrast levels are great. Everything about it's great. The internal software is great. can install YouTube TV, the remotes awesome. Everything about it is awesome, except for Samsung's like want to be Google Assistant named Bixby which sucks. Sucks really badly. accordin used to have Bixby on our phone and we both grown to hate Bixby so that's the only downside about this TV. So if you're the type of person that wants to spend $1,000 on somebody then check out these TVs because they are slick.
+
+124
+01:02:49,679 --> 01:03:15,230
+Wes Bos: Yeah, we have two of them in our house. I initially bought the Costco I don't know some cheap Costco and I'm like whatever 4k TVs a 4k TV. It'll work. Yeah, the the picture wasn't that good. And HDMI kept flaking in and out. And I like didn't even switch my USB or Mm hmm. Cable. And this new Samsung one is amazing. And I know developers love to hate the built in apps on these TVs. But the built in Apps there are amazing. They're great.
+
+125
+01:03:15,270 --> 01:03:25,800
+Scott Tolinski: Yeah, yeah, though. It is like 4k Netflix built in. And it's superduper fast, not even hooking it up with Ethernet. I'm like, how are you even doing this? How is this picture? this good?
+
+126
+01:03:25,829 --> 01:03:48,960
+Wes Bos: Yeah, the interfaces like super responsive. They're just great. We got a big one in our basement. And then about a year later, we bought another smaller one for my wife's office. So yeah, big fan of the Samsung TVs. Although I did I bought a Samsung 4k monitor. And it sucked. So I returned it and bought an LG one. So I guess you always have to do your research on that. Mm hmm. All right. Do you have any sick pics?
+
+127
+01:03:49,590 --> 01:03:53,369
+Scott Tolinski: I have a whole episode of that. So I think we're good here. I think
+
+128
+01:03:53,550 --> 01:03:56,099
+Wes Bos: that's it for today. Thank you for tuning in
+
+129
+01:03:56,280 --> 01:04:37,730
+Scott Tolinski: anything to plug, I have a new course coming out, which is level one TypeScript, and it focuses just on TypeScript. So for those of you who are interested in learning a little bit more about the basics in a non intimidating way. This is the course for you. So we're going to be talking all about the syntax in TypeScript, and basically how to get started with it, how to use it and how to understand it. Again, this is this course is geared for anyone who maybe has thought about learning TypeScript, but even the idea of it is maybe a little confusing, or a little to over their head. So this is all just about syntax and how to do things in TypeScript, how to read and how to use it. So check it out, level of tutorials.com sign up for the whole year and save 25%. So yeah, check it out sick.
+
+130
+01:04:37,770 --> 01:05:10,139
+Wes Bos: I'm gonna go into plug some updates that are coming to my course platform I've been working like for the last three or four months with the developer on a whole bunch of new updates to the player and the back end management, the whole back end is being rewritten in react, which is really cool. The whole checkout experience is written rewritten in react. So it's just going to be fixing a bunch of little bugs as well as rolling out a bunch of new features. So If you already have taken one of my courses get ready for that as well as all of my courses are at Wes bos.com forward slash courses. I think that's it for today's sales guy. Nothing. All right peace. Please
+
+131
+01:05:12,269 --> 01:05:22,020
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

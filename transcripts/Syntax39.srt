@@ -1,0 +1,496 @@
+1
+00:00:01,290 --> 00:00:04,560
+Unknown: You're listening to syntax the podcast with the tastiest
+
+2
+00:00:04,560 --> 00:00:10,590
+web development treats out there. strap yourself in and get ready. Here is Scott solinsky and West boss.
+
+3
+00:00:10,619 --> 00:00:27,480
+Scott Tolinski: Welcome to syntax. In this episode we're gonna be talking about jQuery is jQuery dead, which is the clickbait title. This episode. So as a as always with me is Wes Bos.
+
+4
+00:00:27,660 --> 00:00:28,620
+Wes Bos: Hello, hello.
+
+5
+00:00:28,650 --> 00:00:29,700
+Scott Tolinski: Hey, how you doing today?
+
+6
+00:00:29,700 --> 00:00:43,230
+Wes Bos: I am doing fantastic. I'm all we're recording on a Tuesday instead of a Monday morning right now. So I'm all juiced up and ready to go. Yeah, so is I'm not as sleepy as I was. It would be on a normal Monday. How are you doing?
+
+7
+00:00:43,290 --> 00:00:53,130
+Scott Tolinski: I'm more sleepy, because I didn't get any sleep last night. But I'm highly caffeinated. So get ready to go. Yeah.
+
+8
+00:00:53,160 --> 00:00:57,690
+Wes Bos: Because of because of the baby. Yeah. Yeah, it
+
+9
+00:00:57,690 --> 00:00:58,680
+Scott Tolinski: was just some nights,
+
+10
+00:00:58,950 --> 00:01:11,310
+Wes Bos: just like, most nights for me. But not anymore, though. It's been pretty solid. I had a rough night a couple a couple nights ago. But it's only like maybe once every three weeks that you have a rough night.
+
+11
+00:01:11,340 --> 00:01:14,790
+Scott Tolinski: It's Oh man, I dream of that life right there. It's
+
+12
+00:01:14,790 --> 00:02:05,430
+Wes Bos: it's really it really makes you appreciate sleep. Alright, so today we are sponsored by two awesome companies. First one is a new sponsor Log Rocket and the Log Rocket is sort of it does this guy and I were talking before this, it does all kinds of stuff. And we sort of settled on that it does, it does three things. It does exception tracking, which is if errors are happening on your clients website, how do you know if they're happening happening, it'll log that it does session replay. So how did an error happen, it'll play that again. And that does performance monitoring. So we'll talk a little bit more about all three of those things. But that is a Log Rocket. Thanks so much to them for sponsoring. And the second one is Freshbooks, a success cloud accounting. I'll talk a little bit more about their services partway through the show.
+
+13
+00:02:06,900 --> 00:02:07,560
+Scott Tolinski: sick,
+
+14
+00:02:07,799 --> 00:03:02,730
+Wes Bos: sick. So let's talk all about jQuery. jQuery is I think everybody who has learned programming and or web development in the last 1015 years or so I don't even know how old jQuery is. But it's been around forever. It's got this sort of spot in your heart where you really do love it. That's it sort of you think back to the the old days of jQuery, where you would write your plugins and all this stuff. And it seems that we're migrating away from jQuery. And there's there's a lot of thoughts on either end of this, whether it's it's still relevant or not, if he should still learn it or not. And that's sort of what we're gonna we're gonna try to do today is to tackle whether or not jQuery is still relevant, and tackle why maybe people are sort of moving away from it. But let's take a little trip down memory lane. What is your experience with jQuery there, Scott?
+
+15
+00:03:02,970 --> 00:03:59,520
+Scott Tolinski: Yeah, I mean, jQuery is one of those things that you learned alongside of all sorts of stuff. Maybe you were hacking together WordPress themes are doing that sort of thing. And, well, you needed the slideshow, because every website needed a slideshow. So you went to that? What's the best way to get a slideshow? Okay, well, uh, I guess jQuery, right, you just throw in a jQuery plugin. And if you don't know jQuery, at that point, you just hope you don't have to modify the plugin. Because if you do, you don't know what to do, right. So that was my sort of experience and just learning how to interact with the DOM, right, throwing in on things to animate things or whatever. But at the end of the day, it was really just, you know, tossing in a jQuery plugin, and then saying, oh, how wonder how this plugin works and investigating a little bit more, and then trying to fix maybe issues or add on to things or whatever. And then you just sort of understood a little bit more and more of jQuery.
+
+16
+00:04:00,870 --> 00:05:06,000
+Wes Bos: Yeah, I had a bit of a similar intro to that I would do a lot of WordPress websites. And along with that, you would find different jQuery plugins that you want it and you can kind of sling them and I'll have different functionality to your website. jQuery conference was one of the first conferences I ever went to. I sort of cut my teeth in helping people learn to code via the jQuery chatroom. I met a lot of fantastic people in the jQuery chatter, IRC or the Yeah, the IRC room way back in the day and people would i would post my own questions, and I would stick around and I spent a lot of time in jQuery and I'm very thankful to it. For really shaping my career, my career I was talking to just like, maybe about two years ago, I talked to Boaz, who who works at a company called Boku and he said that he should get a j Cray tattoo because it basically built his career. Yeah. I think that maybe I'll get a jQuery tattoo just because it totally built my career and totally
+
+17
+00:05:06,000 --> 00:05:55,050
+Scott Tolinski: just removed the barrier to entry for a lot of things like I remember looking at the, you know, even back then people would say, well use vanilla j. s for this, and I didn't know JavaScript very well. So I would look at the vanilla j. s solution. And then I would look at the jQuery solution, I'd be like, I think I'm gonna go with the jQuery one, because this is way easier. Yeah. And it did it. It just opened your mind and let you accomplish things, which is one of those things that I think is like a huge thing for learning is actually accomplishing things rather than just sort of, like trying to accomplish things. So if you get things done, you're going to be more likely to want to come back and do more things. So jQuery definitely removed a lot of those barriers. So, so I'm along the same lines, if you ever write any jQuery plugins, and if so what was your first jQuery? Yeah,
+
+18
+00:05:55,380 --> 00:06:20,970
+Wes Bos: I, I'm trying to think back to what my very first jQuery plugin was, because I remember Ben Allman, who was like Mr. jQuery plugin, he wrote a ton like he wrote jQuery BBQ, which did the like, remember, when you had to do like changing the page URL without refreshing the page, you had to use hashes? Yeah. And he wrote this BBQ, which did like back button in query, I forget what it was, but he jacks,
+
+19
+00:06:22,079 --> 00:07:13,410
+yeah. And he built so many amazing jQuery plugins. And he had this sort of boilerplate that had like a set up and a tear down. And once I saw that, my mind was just open, I'm like, oh, I've just been writing tons of jQuery, I could be making it into this nice tidy reusable plugin. And I think that the first thing that I did was jQuery equalize columns, or something like that, where if you had three divs, that needed to go side by side, and they need to all be the same height, what it would do is grab all three divs, it would find the height of all three, it would run it through math dot Max, and then it would apply a dot height to the rest of them nice. And then it would also listen for like a window resize. And when that happened, it would rerun it, you remember, you would have to set like hard widths and heights on things and then recalculate it on on window resize. Oh,
+
+20
+00:07:13,410 --> 00:07:21,269
+Scott Tolinski: yeah. I mean, that's like, essentially, the whole like, Pinterest layout thing is all just, you know, very hard coded. That's, that's pretty dope. Uh,
+
+21
+00:07:21,269 --> 00:07:22,560
+Wes Bos: yeah, yeah. What about you,
+
+22
+00:07:22,560 --> 00:08:11,190
+Scott Tolinski: my first plugin was down down to fade, is what I called it. This is how a plugin was is probably terrible. I would love to find the code and look at it. It's It was probably terrible. But it really just, it was four page transitions. You lit up a page, and it was a lately well, like stagger load, fading transitions, that's all it did. You just you just applied it to a list of things. And when that list loaded, it would slowly fade in each one sort of staggering it. So yeah, that was my first one. I just wanted to have it a nice little like, I don't know, I've always loved transitions, like staggering effects and stuff like that. So it was nothing fancy. It didn't do any lazy loading or anything. It was just purely cosmetic.
+
+23
+00:08:12,540 --> 00:09:30,570
+Wes Bos: Awesome. That's that's always fun to hear what what people think, what their first plugins were and how to use it. And I also think like going back to is Jake, jQuery was such a huge push to move the web forward, because it first like it lowered the bar so that like, almost anyone could get in there and build something like, I didn't learn JavaScript before I learned jQuery. I just like dove straight into jQuery. I think a lot of people did that. And slowly past that, I started to actually learn proper JavaScript, but I was able to, like get things done without really knowing what I was doing. And then I at the same time, it made the experience of the web much nicer because doing a lot of this stuff in in vanilla JavaScript would have been a nightmare. And just not possible. Especially we're talking about cross browser back in the day. So big props to jQuery was also we had jQuery UI, which was sort of like a UI library that had things like drag and drop and resizeable liners and all sorts of sliders and tabs, and all these like fun, like UI things that you would use over and over. But then it also come with some base CSS that just makes you cringe now that when you look at it now, whenever you visit a jQuery UI website, you're just like, oh, did
+
+24
+00:09:30,570 --> 00:09:44,030
+Scott Tolinski: you add did you use jQuery UI? Because I, I, I did not use jQuery UI specifically, because the styles, and I know you override and stuff like that, but I will do different plugins. instead.
+
+25
+00:09:45,000 --> 00:10:19,160
+Wes Bos: I would take jQuery UI, and then I would try to like change the CSS. And that was always a nightmare. So what I ended up doing and I didn't realize you could do this is you just throw out all of the CSS and just use the JavaScript library to give you things like draggable and droppable and All these different UI paradigms, and then you can just add your own CSS on top of that, as long as he knew what you're doing in the CSS realm. So I was very much happy when I realize you could just throw out the CSS part because it didn't need to look like absolutely every single jQuery UI website out there.
+
+26
+00:10:19,160 --> 00:10:57,420
+Scott Tolinski: Yeah. Yeah. There was one it was also a came along at an interesting time, too. And, and right along the time that the jQuery UI came out with jQuery Mobile, and jQuery Mobile sort of made your entire site look like I don't know, like the iPhone, iOS, one interface style of things. And I remember it was like, for a long time, every every meetup or tech demo, or anything that you went to that was about mobile for the web was using jQuery, we'll just throw jQuery UI on this and all sudden, we have an iPhone layout is sort of a precursor to some of these, you know, native libraries now?
+
+27
+00:10:57,990 --> 00:11:07,170
+Wes Bos: Yeah, it didn't really. There's still a couple websites I know, like the Government of Canada uses uses that quite a bit, which is really funny. Every once in a while you'll
+
+28
+00:11:07,170 --> 00:11:10,140
+Scott Tolinski: come across an older mobile app or something.
+
+29
+00:11:10,170 --> 00:11:45,450
+Wes Bos: Yeah, yes. This is jQuery Mobile. Yeah. I it's funny, because I there's a couple times in my career that I sort of like was ready to bet the farm on attack. Yeah. Like I was ready to be the jQuery Mobile Dev. Oh, nice. And it just never really took off. And same thing with numerous Sencha touch. I'm sick. Sencha touch was the cycle, like native mobile framework, or it felt like native and they were doing things like, like, way bad. Like, this is kind of like the old dudes talking about the old days, but you used to not be able to do physician fixed on the iPhone? Do you remember that?
+
+30
+00:11:45,870 --> 00:11:49,050
+Scott Tolinski: I never had an iPhone. Oh,
+
+31
+00:11:49,260 --> 00:12:15,360
+Wes Bos: cuz you just couldn't do position fixed. So if you want it to have like a bar, and scroll a div with a bar on top, there was like a whole bunch of hacks that you had to do Geez. And like it was because there was no like div overflow scroll there, it was just not possible on the phone, like you would have to use two fingers to to scroll and overflowed. So they would listen to touch events, and just emulate this whole scrolling interface. I just we've we've come
+
+32
+00:12:15,360 --> 00:12:40,950
+Scott Tolinski: a long way. Remember when that had like, I honestly don't remember iOS not supporting position fix. But I totally believe it because there's all sorts of dumb stuff like that. I mean, even right now, actually position fixed on iOS, Safari is a total mess. If you do position fixed, and you have an input in there, it jumps the input all the way around, and you can't get around it other than by not making a position fixed. It's like how does that it's fun. Does that still exist?
+
+33
+00:12:43,200 --> 00:14:41,040
+Wes Bos: So the what we're trying to say here is that like, never forget where you come from. jQuery sort of raised us and I owe my entire career to jQuery. However, like my own my own product websites still use jQuery to pop up the little payment dialog and to do a little bit of stuff like that. But if I'm starting a website today, like my free my free course sites, that was built at a later point in my career, and those don't use jQuery, and anytime I'm building a website now I don't reach for jQuery. In even if that's not just because I'm building it in react or something, if I'm just doing a simple little website, I do opt for using just vanilla JavaScript. So we're going to talk about like, why, like, what are the alternatives? Why is jQuery going away? And it sort of go into all the different big pieces of jQuery that it used to do it wouldn't have two selectors and Ajax and Dom traversal. And it had some utility functions. And it did cross browser normalization it did event listeners, it did animation it did like it was just this massive library that just did absolutely everything for you. And I feel lately, too, what's Yeah, it was the best. And I think I feel like what's happening now is that we're going into the sort of like, smaller, not necessarily size, because people tend to complain a lot about the size of jQuery, which I don't I understand it on some situations, but it's really, I don't think it's something that you have to sweat to too much. We talked about that last week. There's a lot of other things you can do for performance. But we're sort of just going for the smaller libraries that if you need something to do Ajax, or you need to do something to do Dom traversal. Or if you need to do something a utility library, you can just pick these small little pieces up and just bring that in when you need it rather than bringing the entire library without it. So yeah, what do you what do you have to say before we get into it?
+
+34
+00:14:41,070 --> 00:15:49,020
+Scott Tolinski: Yeah, no, I think it's just like what you said, like I agree, I didn't, I didn't learn JavaScript. Before I learned jQuery, essentially, alongside JavaScript, but I didn't. I didn't learn JavaScript as a way to interact with the DOM, because the ways to interact with the DOM weren't cross platform weren't, you know, readily and easily available. And that's what you that's where I learned jQuery for, you know, it was like, this is how you interact with the DOM. And, and it made it very nice and easy. And again now, like, people want to hate on jQuery, right? They want to say various things about jQuery, but it's really not jQuery fault. It's more or less that the browser's in the JavaScript tools that we have are getting better and better. And, you know, they just jQuery isn't as necessary anymore. Because the stuff that we can do is is now cross platform, it now doesn't rely on any of the things the reasons why we initially use jQuery in the first place. So yeah, again, to reiterate your point, yeah, jQuery isn't bad. Everything else, as you're just getting better, has just been better, better.
+
+35
+00:15:50,070 --> 00:16:57,050
+Wes Bos: Alright, so let's go through all the different pieces of jQuery and talk about what you might use as an alternative to that piece. So the first one is the selector API, and the return of the jQuery object. So I'll explain what this is really quickly. So one of the beautiful things that jQuery brought to us was this little library called sizzle. And what sizzle did is it gave you the ability to use CSS selectors in JavaScript. And you can select any element based on any CSS selector, that you had used another also even a few that you hadn't been able to use in CSS that you could use in jQuery. Now, that was amazing. However, when document query selector and document query selector all had shipped, it shipped with pretty much the same set of selector options. So any selector that you had previously used in CSS or in jQuery, it's now doable in in vanilla JavaScript, so there's, there's no need to do dollar parenthese quotes, you can use these document dot query selector.
+
+36
+00:16:57,090 --> 00:17:18,210
+Scott Tolinski: Yeah, and I mean, if you if you're still using jQuery for this, and you know, this query selector all is compatible with all major browsers, I mean, it's compatible 911, you know, pretty much anything that you're going to use, the Can I use is like all green for this. So there's really no reason to use the jQuery selector find over the query selector, all unless you're needing that jQuery object.
+
+37
+00:17:19,609 --> 00:19:37,920
+Wes Bos: Um, another kind of cool thing that that jQuery did it sort of along the lines of the selector API is, is when you selected something, what would happen is that it would return to you not the actual elements, but it would turn to something called a jQuery object, and that jQuery object would would have the elements in it, but it would also have all these methods on it that like fade in and fade out and color and dot CSS, and every all of the, I think there's like 360 methods in jQuery. And that isn't as nice in jQuery, because our sorry, in vanilla JavaScript, because first of all, dollar is much nicer than document query selector. Yeah. Yeah. But I like to use this thing called blink dot j s. And what blink j S will do is it will just map dollar sign to document dot query selector. And dollar dollar to document dot query selector all. So this is based on something Paul Irish had put together many years ago. And I even use it in my I even use it in my my note course, it's amazing, because you can just have like a quick syntax for it. But then the other thing that it doesn't do is that if you want to immediately call like add event listener on something and it doesn't exist, that's another pain that you you often have without jQuery is that if you select an element, and that element doesn't exist on that page, in jQuery, you can just call methods on it. Yeah, and it will fail silently in vanilla JavaScript, they will error out. So there is some in this blink dot j s, it will sort of extend the prototype of a node list, which a node list is something that query selector all will bring back to you a list of elements. And it'll allow you to use.on rather than dot addEventListener. And and then it'll allow you to listen both on things that might not exist. As well as if you have an entire array of elements, or a node list of elements. Sorry, it will allow you to listen on multiple elements. So with I think, what is this 15 lines of code, you can replicate two of the best parts of jQuery. Yeah. In vanilla JavaScript. Yeah. Never
+
+38
+00:19:37,920 --> 00:19:39,540
+Scott Tolinski: uses bling. That sounds great.
+
+39
+00:19:39,570 --> 00:19:44,040
+Wes Bos: I mean, yeah, I'll send you a link on slack right now. Yeah, I'll put it in the show notes as well. Nice.
+
+40
+00:19:44,190 --> 00:20:04,200
+Scott Tolinski: Yeah. So I mean, it's just like that, that that goes to show you it's like, right, like jQuery. One of the reasons why jQuery is so large, it has to support X amount of browsers still. It needs to have all this additional stuff, but if you want to just take a little bite out of the funk You just use some of that stuff. It's nice to see little libraries like this.
+
+41
+00:20:05,060 --> 00:20:42,050
+Wes Bos: Yeah, big fan of blink j s, it just makes those little annoyances because I find that vanilla JavaScript has a lot of tripping points, especially when you're learning JavaScript or working with the DOM for the first time. There's a lot of little gotchas. Like, for example, a node list is not a true array. So if you want to use some some of the methods on a node list, like map, you have to convert it to an array first. And jQuery just took care of all those, like, little like gotchas that are so so frustrating when you're trying to first learn program.
+
+42
+00:20:42,050 --> 00:21:36,000
+Scott Tolinski: Yeah, especially because like, Can you explain that that exact concept Oh, it's not an actual like array to someone who doesn't even really, truly understand what the heck they're doing anyways, right? Like that, that just clouds everything so much to the point where, I mean, that would frustrate any new person trying to learn this stuff. And it's obviously one of the reasons why jQuery is so appealing, because it just took all that those pain points away from you. Another thing that jQuery did really well. And then I think this opened a lot of people's eyes when when demos started coming out for Ajax and stuff like that. And jQuery just made working with those kind of Ajax requests. I don't know, just as again, like everything else, it just made it all very easy. And it took something that was instantly complex and made it not as complex at all right?
+
+43
+00:21:37,650 --> 00:21:45,150
+Wes Bos: Yeah, so what was the alternative at the time to dollar dot Ajax, it was new XML HTTP request. And that was,
+
+44
+00:21:45,449 --> 00:22:38,790
+Scott Tolinski: I mean, the amount of code you had to write compared to you know, the, the jQuery alternative was unreal. And now obviously, we have fetch, which fetches like, it's so nice, because fetches is in my, like, in my opinion, right? The jQuery solution for selector finding is still easier than the document, document what to get out, get all select or whatever. It's, it's something that I just never, you know, I have my snippet editor, fill out the rest of those words there. But it's just a selector. All selector, all my memories, not so good. But yeah, so I mean, but like, unlike the vanilla solution for query selector, all right. The Ajax solution, which is fetch, fetch is way easier, right? fetch is as easy as it gets you fetch URL, okay, returns a promise. Got that?
+
+45
+00:22:39,690 --> 00:23:14,220
+Wes Bos: Yeah, I love using fetch. And for use cases where I do a lot of Ajax in an app, what I'll do is I'll install axios. And axios has some of the nice defaults that jQuery is dollar dot get JSON had. And it's just a perfect example of I don't need the entire jQuery library, it just needs something nice for dealing with Ajax requests. And in that case, you just reach for something that just does that. That's the whole idea. That's the Unix philosophy, right? Do one thing. And one thing well, so jQuery does a lot of things. And axios does one thing, it does Ajax requests really well. And that
+
+46
+00:23:14,220 --> 00:23:53,640
+Scott Tolinski: can connect can be a confusing point to a lot of people, right? Like why go to 100 different repos to learn something rather than go to one repo like jQuery and have all everything you need out of that, right. Like, that's just another potential pain point when trying to learn this stuff. And I mean, it's speaking of pain points and running into things and not knowing how to solve them. The worst is being in the dark when you're trying to fix any of your problems in your code. So that's why we want to take a quick break to talk about our sponsor, which is Log Rocket, who's going to totally eliminate any sort of bugs or issues that you having in your code?
+
+47
+00:23:53,700 --> 00:26:36,750
+Wes Bos: Yes. So Log Rocket is a service and Scott and I, like I said, we were just kind of talking about before this, how we're going to explain it to everyone because you may have heard of, like error tracking. And if you haven't Allow me to explain it to you error tracking is. And I run this on all my own websites. This is sometimes even email from user saying, like your website doesn't work. And then what do you do? you email them back? And you say works really? Well? Yeah, it works for me, or what browser are you on? Or like, as a developer, sometimes what I'll do is I'll say like, Okay, can you pop up in the console and let me know, like, if you have anything like weird going on, and that's annoying, because those errors don't happen on your server. They happen on the client and in you might not know when they're happening. So if you have some sort of exception tracker running on your website, they will log all of those and then often what I'll do is I'll go into a dashboard for something like this, and then you can see like, okay, like previously, I've had like, I've had like 300 people on an iPad running more One older version of iOS are all having this issue. And then you can figure out what the issue is and get it fixed. Right. So it's one thing that Log Rocket does. The other thing that it does is is session replay. And this is so so cool. So Log Rocket s, essentially records, everything on the website, the HTML, the CSS, the most moving all of the different cliques and events that are happening. And by collecting all of that data, what you can do is when something actually breaks, you can replay a video of exactly what had happened up until the user doing that. So maybe the user had uploaded an image and then removed it and then uploaded a second image. And that's when the when the actual error happened. And the the user might not know exactly what the steps are to reproduce that error. But if you are watching exactly what had happened to that, then it's it's a fantastic way to figure out what is happening. So it does error tracking session replaying. And then it also does performance monitoring. So if you go to the website and take a look at some of the screenshots they have, they essentially have the, like the Chrome Dev Tools UI, in the back end. And you can you can take a look at all the different aggregate metrics about the the performance of your website. So if you want to know exactly what is causing slowness for a specific user, you can really dive into that and figure out what there is. So this is a pretty unique tool. We're just like looking at it before the thing and I was talking to Scott, I was like, man, I want this on my way. This is fantastic.
+
+48
+00:26:36,780 --> 00:26:44,280
+Scott Tolinski: Yeah, how many times you get your your error and your century? And you're just like, Huh, is there a wonder how this error came about?
+
+49
+00:26:44,850 --> 00:27:33,570
+Wes Bos: Yeah, it's, it's kind of frustrating to figure it out. It does. It does integrate with a lot of existing exception trackers as well, if you're looking to so if you have something like Sentry or roll wire, and then you can integrate with that as well. So check it out at Log rocket.com forward slash syntax. And that's going to give you a 14 day free trial. So you can just try it out and see what it's all about. It can definitely like, I think this thing will pay for itself on your website, if you're accepting any sort of money on your website, because you don't want to have any sort of people not being able to to buy your product or to view your website or use your app word. So thanks so much to Log Rocket for sponsoring get definitely going to be installing this on my site
+
+50
+00:27:34,170 --> 00:27:36,450
+Scott Tolinski: early after this. Right. Yeah, exactly.
+
+51
+00:27:37,440 --> 00:27:47,070
+Wes Bos: Sweet. So let's keep going with jQuery here. We did select our API. We've talked about Ajax, let's talk next about Dom traversal. And what that is,
+
+52
+00:27:47,070 --> 00:28:34,290
+Scott Tolinski: yeah, so a lot of times when your you'd find your item, right with your, your query selector, right, and then you might need to find the the child of it or the parent of it, or the closest one to eight or any of that stuff, right to to identify a particular element on your page. Or maybe you want to grab all of the children of a particular div or something like that. jQuery made that super easy with all of its different methods like, closest, right, so like, we used all sorts of that stuff to oftentimes find all the children or something, find all you know, the parent or whatever. And the native solution is, well, it's a native methods now that that do very similar things, right? We have things like the closest method, which well, you just pass on a selector.
+
+53
+00:28:34,980 --> 00:29:03,210
+Wes Bos: Yeah, they have the browser now has this, like matches API? Or you can, you can pass it a selector, and it will, it'll find the next instance of it. And pretty much any, like Dom traversal API that you need. You just have to Google or go to this. You don't need jQuery GitHub repo. Yeah. And you can see what the native equivalent is for that specific one. I think that's fantastic. Yeah,
+
+54
+00:29:03,210 --> 00:29:12,360
+Scott Tolinski: previous element sibling instead of prief. Next element, sibling, that's a little verbose for me, but still, it's it's their native, it's in the browser, you might as well
+
+55
+00:29:12,360 --> 00:30:22,050
+Wes Bos: use the native versions are always named terribly, but I get why it's like that. But one thing I should also say is, I wrote some absolutely terrible code, because of Dom traversal. thick and I wrote some very, very brittle code. And I find that if you feel like you need to do Dom traversal, like I get like you have something you need the parent but like I used to do things where like, you go up to levels over there you Yeah, and you likely are writing bad code at that point. Because if your application is so based on the structure of your HTML, that's going to break as soon as you change something around or somebody else comes up comes around and and and try To move elements around, so I much prefer just to give things a class or an ID or a data attribute, or go directly to that element. Rather than having to, like assume that these things are in a certain place. So maybe like pause a second, if you're, if you're doing a lot of traversal. And figure out, is there a better way I could go directly to this item, instead of jumping around the the DOM tree?
+
+56
+00:30:22,080 --> 00:30:28,860
+Scott Tolinski: Yeah. And like was mentioned, if you don't want to add a class or an ID to something, that data element is a nice little targeter.
+
+57
+00:30:31,200 --> 00:30:57,510
+Wes Bos: Next one is data and utility methods. So these are things like copying arrays, checking for items inside of an array, pretty much anything that lodash does, there was a whole bunch of like, handy little data utility libraries that lived inside of inside of jQuery. And the answer to this is just use lodash. Or if you can, a lot of cases your MapReduce filter,
+
+58
+00:30:57,540 --> 00:31:05,640
+Scott Tolinski: yeah, are going to be just fine for you. Yeah, MapReduce filter of like, totally, just to replace so many things, because it is an object spread
+
+59
+00:31:05,640 --> 00:31:09,750
+Wes Bos: and array spread. Those have replaced a lot of my need for it as well.
+
+60
+00:31:09,780 --> 00:31:40,140
+Scott Tolinski: Yeah, yeah, I mean, even a lot of my need for lodash. Like, oftentimes, when I'm doing using lodash at all, it's for like the find method, like that's pretty much it or has or, or some of those, but like, I yeah, I'm not using lodash or jQuery anymore for any sort of array methods or anything like that. Yeah, all that MapReduce stuff. It is well worth your time, if you are not familiar to spend some time just going over the basics of MapReduce filter. I know he said that a couple times on here, but it's well worth your time.
+
+61
+00:31:41,520 --> 00:31:56,850
+Wes Bos: We should just do an entire episode on how much we love MapReduce filter. Yeah. But I should also say and In a similar vein to he sort of started get these jQuery naysayers, you also get lodash naysayers. And I'm going to stick my neck out for lodash right now, because
+
+62
+00:31:56,850 --> 00:31:57,860
+Unknown: loaded
+
+63
+00:31:58,200 --> 00:32:50,160
+Wes Bos: lodash is built in a way that you can just import the single piece that you need, and you don't have to import the entire library. So if there is an lodash has tons of like, really weird edge case, use cases for if you have a lot of data, you need to flatten it, or you need to find it in a nested structure or, or there's all kinds of stuff that that lodash does. And if you find yourself needing that equivalent, um, I often will reach for just importing that lodash method versus some random dude on Stack Overflow, because I know john David Dalton, who is the author of lodash. He's absolutely nuts about performance testing. And I know that lodash is always going to be the best pick for some weird, specific array or object search that any to do. Yeah,
+
+64
+00:32:50,190 --> 00:33:20,100
+Scott Tolinski: I mean, I don't even know what the arguments against that at this point would be. It's like, because he said, You can import that function directly without importing into the library. So the size is not a concern, right? Because you're going to be writing that code anyway. So yeah, I do the same thing. I import only what I need from lodash. So you don't get the whole library. And again, in the special use cases, you do know that that solution is going to be good. I wouldn't return anything else. I know there's there's people that are on rammed or or underscore still. I like lodash quite a bit.
+
+65
+00:33:20,640 --> 00:33:36,600
+Wes Bos: Yeah, me too. And I also find myself using lodash more on the on the server, because that's where a lot of my data massaging needs to happen before it gets put in a database. Yeah, or respond to the user. I don't do a lot of my data massaging in the client.
+
+66
+00:33:37,140 --> 00:33:39,420
+Scott Tolinski: Not a lot of massaging in the client.
+
+67
+00:33:41,790 --> 00:33:45,000
+Wes Bos: All right, you want to pick up the next one. Yeah. So
+
+68
+00:33:47,370 --> 00:35:34,650
+Scott Tolinski: hurry out in this list. Oh, okay. Yes. So yeah, so this one is a big one, which honestly feel like this is a problem that's gotten way better across the board. I know, some newer developers might not realize how difficult this has been for a long period of time, but normalized weirdness across browsers. So basically, right, you have your like, cross browser compatibility, it just always just been a giant pain. And it's not just CSS and JavaScript, two different browsers implemented things differently and had access to different features. And, and what jQuery did was totally remove your need to worry about that. I don't remember worrying about browser compatibility doing any sort of jQuery work pretty much ever until jQuery two came out, and they dropped, ie support. Right. So yeah, I think this is one of those things that jQuery just made so much easier on your life. But again, browser, browsers have done a really good job of each, you know, incremented version or whatever got better and better and better. And here we are at the point where JavaScript browser compatibility is isn't necessarily a huge deal, unless you have like sort of like one off things like fetch needs a polyfill for certain browsers and stuff like that. But browser compatibility across the board is is just way, way better. And for, you know, for those cases where you need compatibility, we have things that are build tools like Babel, which is going to, you know, make sure that your code is compiled into something that's going to work with whatever preset environment that you have anyway. So you can just write your JavaScript and forget that browser compatibility is even a thing, which is a wonderful, wonderful world.
+
+69
+00:35:34,880 --> 00:36:10,380
+Wes Bos: Yeah, it's, it's gotten so much better, both with with Babel, and I'm a big fan of using polyfill.io. And what that will do is it's just a little script tag that you pop into the either the head or right before your own JavaScript, depending on your loading strategy that we talked about last week. And it will just do a sniff of your browser, and it will only load in the polyfills that are needed for that specific browser. So I know that if you load up the polyfill dot j s in Chrome, it loads nothing. So that's pretty, pretty neat. Do you remember to do that,
+
+70
+00:36:10,400 --> 00:36:45,480
+Scott Tolinski: um, I don't know if you remember this. This is I don't remember what year it could have been 2011, there was an April Fool's day where someone released the library and it was like magic polyfill or something. And the polyfills documentation was just like, just drop this just just one import in your website. And the browser automatically detect all this and everyone is like, this is incredible. Oh, wait, it's an April Fool's Day joke like, this doesn't exist. And our lives are still difficult. But here we are. And this thing that like, was at one point, a joke because of how far fetched it seemed is right? Yeah, it works perfectly.
+
+71
+00:36:45,510 --> 00:37:19,170
+Wes Bos: It's actually happened. It's actually a real, it's hilarious. I love it. Oh, that's good, big fan of that. So browser, browser compatibility, not so much of an issue anymore. There still are little edge cases, especially when you get into the mobile world, where you have people that with these, like, seven year old Android phones that are being given out for free on a low budget carrier, you do have to still worry about those. But I think it's less of an issue, I don't run into it as much. And if you want to know that if errors are happening, you can use Log Rocket, a
+
+72
+00:37:20,280 --> 00:37:20,850
+Scott Tolinski: bouncer.
+
+73
+00:37:22,590 --> 00:41:12,270
+Wes Bos: What else we got here, event listeners. So another thing that jQuery did very nicely was making an event listeners listening for clicks and double clicks and hovers and all these different elements. It made it very simple across all the browsers, it normalized that across all the browsers. And it also allow you to do two things that I really like first, you can listen on multiple elements. So right now, if you have six buttons, you have to select all your buttons. And then you have to do a dot for each over each of those buttons and attach an event listener to every single one. And with jQuery, it would just you just say.on click, and it would anything that it matched, it would add an event listener to it. So with this blink dodge asked that I mentioned earlier, it will add a.on method to each node and each node list. So a node is one element. That's what query selector gives you. And a node list is sort of like an array. It's an array ish. Yeah, it's it's array ish, because you can't map it. But you don't need to, you just need the dot for each. So you can loop over every single one. I use dot for each on all my JavaScript 30 ones as well. Yeah, so that gets rid of that qualm there. Another one is event delegation. And maybe I should explain what event delegation is real quickly. And I have in my JavaScript 30 course, but I'll go through it real quick. So what event delegation is, is when you listen for a click on let's say, you have a div, and you're that's a bad example, because you shouldn't do that. And that's not accessible. Let's say you have a button, yes, that button, you're listening for a click on that button, right. So when you load the page, you'll select all the buttons on the page, and then you will listen for a click on each one. And when someone clicks it, you'll run some code. But what sometimes happens is that in the future, you might add buttons to the page. So maybe you have a list of items for sale. And then you have a delete button beside each one and you lay on page load, you listen for a click on the delete button, and then you remove it. However, if you were to add a button or add an item after the page has loaded, that new Remove button is not bound. It's not being listened to for a click on anything. So it becomes a bit of an issue because, like how do you listen for clicks on things that are not yet existing, right? It's the existential crisis. So this event, event delegation Now what that does is you listen for a click on something that does exist. So you could listen for a click on maybe like a div that surrounds all of your items, or you could even listen for a click on the body. And then what you can do is you can, you can say, I'm going to listen for a click on something higher, but I'm going to delegate that click to the actual button. And that's because events in the browser, what they're called bubble up, meaning that if you click on the body, you also click on a div, and you also click on a rapper, and you also and it just sort of bubbles all the way down to the actual buttons. So you can sort of like delegate the listening to a responsible parent that exists, I always use the stupid example being like, when you're, I'm an adult, and I'm responsible for my kids now, and I'm responsible for any future children that I might have, even though they don't exist yet, I'm still responsible for any clicks that might happen on them. So it's a little bit tougher to do that with vanilla JavaScript. But I don't know of any libraries offhand of that make event delegation a little bit easier, but it's usually just three or four lines of code to to make that happen.
+
+74
+00:41:13,500 --> 00:41:55,050
+Scott Tolinski: Word. Nice. Speaking of delegation, I always start all of these transitions with speaking of I gotta have a new, it's gonna look transparent at this point. But okay, okay, we're talking about delegation here. Okay. So one of the things that is a, you know, difficult to delegate is your personal finances, in your business finances. And so what Freshbooks does, is it makes it really easy to work with your accounts, your accounting, your invoicing, and anything that you might have the urge to delegate out to someone else. Because while Freshbooks makes it easy enough that you can do it yourself, or you can actually delegate it out to someone else.
+
+75
+00:41:56,550 --> 00:42:50,790
+Wes Bos: Yeah, so I do this quite a bit. We have sponsors for this podcast. And what I'll do is, I'll just assign the sponsor email to my assistant and my system will go into Freshbooks. And she'll create a invoice make sure that it's in the right currency, because they support multiple currencies, they make sure she adds the ability to pay online, they could pay via credit card, that all that goes directly into it. So it's fantastic, because fresh books makes doing invoices in lugging expenses as easy as possible. But then you can also add team members and allow them to go in and do all of the heavy lifting for you creating new customers following up on unpaid invoices and whatnot. So big fan of that go to CES, what is this freshbooks.com forward slash syntax to get 30 day free trial and make sure you enter syntax into the How did you hear about a section?
+
+76
+00:42:51,110 --> 00:42:55,670
+Scott Tolinski: Yes, a big cookie for Freshbooks for making our accounting lives so much easier.
+
+77
+00:42:57,270 --> 00:43:52,350
+Wes Bos: Wicked. Alright, so the last section I had here is animation. jQuery was amazing. Because the way that animation had worked before we had CSS animation, or the web animation API is we literally just changed the CSS very quickly. So what you would do is you would set a div to opacity one, and then you would set it to a pacity, 0.9994. And then 0.9991. And you would just go from you would just rapidly update this the inline CSS of an element from one to zero. And then when that finished, it would like hide or remove the item, depending on what method you did. And that was amazing, because he had all these beautiful things like slide up and slide down and fade in and fade out and animate to and it would, you'd be able to animate the width and the height of an element. And it was so good. But why don't we need that anymore? Scott,
+
+78
+00:43:52,710 --> 00:44:57,180
+Scott Tolinski: we don't need that anymore. Cuz we have lots of stuff. We have CSS transitions, animations, we have the web animations API, basically 100 different ways that we can do animations now that aren't using jQuery, although I gotta say, the slide up jQuery method. It's still probably the easiest way to do a sliding up transition. Yeah, like, like, that's still probably the easiest way. But yeah, I mean, there's just, I personally am a huge fan of the web animations API, which basically allows you to set initial states keyframes, that sort of stuff, and then run animations. You can save them as a is like an animation and tell it to run and stuff like that, or reverse or whatever. The the web animations API is so dang flexible now. That honestly, yeah, I can't imagine going back to jQuery animations despite how incredibly awesome and easy they were for their time. But yeah, that's pretty much it for me or you could you know, swap classes, whatever, do your animations transitions with CSS, which is super common, as well.
+
+79
+00:44:58,890 --> 00:46:00,600
+Wes Bos: Yeah, big fan of that. Oh, So I think people will if you need heavy animation, or if you need light animation, you reach for CSS transitions, CSS keyframe, web animations API, if you need like heavy animation, you might reach for the web animations API or something like green sock. So again, we're getting we're either going native, or we're going specialised, and you reach for those things as you need them. So yeah, I do agree with you there, though. The slide up is still painful. The hack I use now is because the if you don't know the thing with sliding a div up is you can't animate to height auto, are you and you can add them, you can hide it, you can animate from height auto to height zero, or you can animate to is from a max height. Yeah, that is much higher than anything to a max height of zero. And that will cut that's a bit of a hack, because the timing doesn't work perfectly all the time. But it's it's still okay. Yeah, I
+
+80
+00:46:00,600 --> 00:47:20,370
+Scott Tolinski: actually, it's one of my most watched videos on YouTube is how to do that. Is that really, it's, it's from out of forever ago, I think it was like how to do an accordion transition with CSS. I forget the I forget that. Oh, it was Yeah, it's using the max auto trick, which I remember learning that I mean, like, Oh, this is so great. I don't use slide up. And then I was like, This is still a pain in the ass and it feels hacky. But I guess it works. So yeah. I don't know, I'm thankful for libraries now that exist. And I mean, the web animations API and stuff like that. But even like really simple libraries, like we've talked about before, like I used one on called react flip move, or it's just like, you wrap your, your stuff in a react tag, and then pass it along the transition name. And then you can have staggered and delayed and whatever transitions and animations I That to me is pretty dang slick. So I mean, you have your own platform specific libraries, like we mentioned, are getting specific, you have bigger things like pop motion, or green sock or whatever. And then you have browser. browser API is like the web animations API and CSS stuff. So yeah, animations are probably in the best place that you've ever been. I think that is become obvious based on some of the animations that you're seeing take place on some websites that are sort of knocking your socks off these days. So it's all good. It's all good. Big fan.
+
+81
+00:47:21,060 --> 00:48:22,080
+Wes Bos: It's all good Baby, baby, baby, baby bear. Cool. So that is the I guess that was seven things that jQuery did and sort of what we're using now or using as alternatives in the browser. some final thoughts. I don't know if you have any final thoughts about about jQuery here? I still think that jQuery is the best way to to learn JavaScript. And I know that's a bit of a controversial opinion. But let me explain myself. I think, first of all, when you're learning JavaScript, you need to have some fun, and you need to have these wins. And I think what a lot of people do is they say, Oh, you need to learn the fundamentals. First, you need to sit in a room and console log for 40 hours before you even like see a div. Right? And that sucks for people learning JavaScript, what they want to do is they want to be able to click a button and for something to pop up or something to fade in and and get these like immediate. What do you call that?
+
+82
+00:48:22,560 --> 00:48:24,300
+Scott Tolinski: immediate results, immediate feedback. Yeah,
+
+83
+00:48:24,300 --> 00:49:26,160
+Wes Bos: you get immediate result and immediate feedback. And that's what keeps you going. And obviously, you have to you really, I'm a huge proponent of just like nailing the fundamentals before you go into anything. But what I love about jQuery is that you can get up and running with like six or seven lines of code, and you can actually build something that's really fun. And then once you're comfortable with the whole idea of, and when I used to teach JavaScript in person, we would say like, go get something like that's a selector. Listen for something. That's your event, Ella, that's your event handler, and then do something. And that's your callback of when you click it and that whole concept of go get it listen for something and do something that applies to absolutely everything in all of JavaScript, right? That's not different anywhere else. So that can apply to It's fine, then after that you can move into vanilla JavaScript, or react or whatever. So I still think that jQuery has a spot in getting up to speed quickly with what is JavaScript and what is the browser and whatnot. Yeah,
+
+84
+00:49:26,340 --> 00:50:57,990
+Scott Tolinski: and then this all goes back for like one one thing for me, you remember the angular one example the two way data binding and stuff like that. And then immediately, there'll be a whole bunch of people saying, like, don't do this, don't do this two way data. But like, to me, like, if you're trying to get non non heavy programmers, like if, like giving the best practice 100% this is whatever advice is great for programmers and experienced developers, but people who are coming in and don't necessarily understand the specifics or even have that background. I think it's important to have those examples. And to be able to do stuff like that, that like really amazing two way data binding, right? Well, I have no idea what's going on. And that's not necessarily a bad thing. because like you said, it's getting you those wins. It's getting you excited, it's letting you work with the DOM and stuff like that. And who cares if it's not the best practice, because when you're learning, I don't think you need to stay to 100%. This is the most efficient, whatever sort of ways when you're learning and it's good to have a few wins, get that in, get a little bit of understanding, be able to build something cool. And then you can always fix it, improve upon it as you go. Right? I do think that like he said, it is just so important to get those little wins in there for learning JavaScript. And if you're getting turned off of learning JavaScript, because it feels so monotonous, just go easier with it, go easy and make something cool, make something fun, make something stupid, and just go for it. Because that turns a lot of people off learning JavaScript is just sort of the complexities of some of this stuff.
+
+85
+00:50:58,080 --> 00:51:20,700
+Wes Bos: Yeah. And I think once you start getting comfortable with the stuff you have your the natural progression is to just start to look for better ways to do something faster ways to do something better design patterns, and you just become a better developer as you you're you're always looking for better ways to do things. I think it's a natural progression of a developer, so I wouldn't sweat it too much.
+
+86
+00:51:20,820 --> 00:51:39,510
+Scott Tolinski: Yeah, learn the foundations while you're learning some really cool stuff, making some fun stuff. Cool. So yeah, that's pretty much it for jQuery, you said you, you still would use jQuery today in a teaching environment? would you use jQuery today in a production environment? If you were starting a new project?
+
+87
+00:51:39,540 --> 00:52:06,960
+Wes Bos: I don't think so. Because I know vanilla JavaScript well enough. It's funny because like, I don't immediately reach for react or something. But I do usually just reach for your vanilla JavaScript. And that's what my whole JavaScript 30 course is all about, as well. So I don't think that I would necessarily reach for it unless I had some very bizarre circumstances where I had to support a very old browser, or something like that.
+
+88
+00:52:07,170 --> 00:52:10,200
+Scott Tolinski: Yeah, I'm gonna be right there with you. No, one.
+
+89
+00:52:10,200 --> 00:52:11,460
+Wes Bos: Sweet.
+
+90
+00:52:11,460 --> 00:52:14,160
+Scott Tolinski: So is is jQuery debt. Oh,
+
+91
+00:52:14,190 --> 00:52:17,460
+Wes Bos: that's the final questions. Question. Oh, yeah.
+
+92
+00:52:17,700 --> 00:52:18,360
+Scott Tolinski: It's a question.
+
+93
+00:52:19,050 --> 00:53:45,960
+Wes Bos: A question led? And? Oh, I don't I don't know. I don't think so i think that i think jQuery is really just passing the baton over to all and actually, this is one thing I didn't even talk about is that one of the biggest things behind jQuery was this thing called the jQuery Foundation, which the jQuery foundation would they would have run conferences, and they have extreme amount of poll, because they're such a big, a big stance in the JavaScript community. And the jQuery Foundation was used for so much good because it paid people to work on the jQuery project it it, I think that's one of the biggest things, they have had people working for it, they ran conferences, and they would recommend a learning materials to people, it was amazing. And it's since been renamed to the .js. foundation. Nice. And what the .js Foundation does is it since they still have this massive pole that is the jQuery community and everything behind it, they can still run conferences, they provide money to lots of open source projects. So it's kind of cool that they can use the popularity of jQuery, to then parlay that into other tools. Like I think web pack is part of it. Other tools in the community that definitely need the attention and the funding and all the other stuff that goes along with that.
+
+94
+00:53:46,320 --> 00:54:28,230
+Scott Tolinski: Yeah. And while while jQuery might be sort of like dying from your initial project, starting point sort of stuff, right, I think, I think it's important to show respect for what jQuery has done for our profession, and all of the amazing, amazing things that allowed so many people to build. So yeah, I wouldn't say it's dead or sorry, whatever. Like you said, it's a transitioning to whatever. And you know, I might not reach for it on my next project. But that doesn't mean that you shouldn't or that it's a bad idea for you personally. Yeah, I mean, I have the JavaScript tools in my toolbox to take care of the things but not everyone does. And that's not a bad thing.
+
+95
+00:54:29,520 --> 00:54:44,160
+Wes Bos: Now that so rest in maybe jQuery is just being retired jQuery is going down to Florida. Yeah, and got a socks on Drive and a golf cart around and a smile shirt on Yeah, floral shirt. Wearing a floral shirt right
+
+96
+00:54:44,160 --> 00:54:48,570
+Scott Tolinski: now. Oh, yeah. I got my I got It's almost time I would add when I'm
+
+97
+00:54:49,650 --> 00:54:56,130
+Wes Bos: out here to hack in some floral heat the summer so get ready. It's just snowed there. It was
+
+98
+00:54:56,130 --> 00:55:07,230
+Scott Tolinski: out of nowhere. It's been like 70 degrees and sunny here and then we went Woke up this morning and already sun and distant nose all melting but we got like, we got like six inches of snow last night like all of our trees are all like beat down.
+
+99
+00:55:07,380 --> 00:55:09,180
+Wes Bos: Oh, rough.
+
+100
+00:55:09,540 --> 00:55:12,990
+Scott Tolinski: Yeah, right I go shake those trees. Trisha
+
+101
+00:55:13,020 --> 00:55:14,730
+Unknown: Trisha Oh?
+
+102
+00:55:17,160 --> 00:55:18,360
+Scott Tolinski: Whoa. All right.
+
+103
+00:55:18,690 --> 00:55:21,960
+Wes Bos: Let's talk about some sick pics. Do you have any sick pics today?
+
+104
+00:55:24,090 --> 00:55:37,230
+Scott Tolinski: Do That was my impression of the Always Sunny in Philadelphia bird call thing wrestling episode. It's unintentional but, uh, what do they call it? Do you watch that show?
+
+105
+00:55:37,680 --> 00:55:42,960
+Wes Bos: Oh, yeah. Me is probably one of the that's what the death so tasty treats comes from and he actually
+
+106
+00:55:43,110 --> 00:55:44,640
+Scott Tolinski: what was the bird birds of
+
+107
+00:55:44,850 --> 00:55:46,590
+Wes Bos: the birds of thunder birds?
+
+108
+00:55:46,680 --> 00:57:01,200
+Scott Tolinski: Is that what it was? That's what it was it was oh my god, that was one of the one of the best episodes. Okay, so sick picks. I'm gonna go with something that we've touched on in the email episode. We've touched on this in a couple of episodes. But this thing didn't exist back when? Well, I didn't I don't think it existed or didn't exist in its current state. But MJ ML, which was the library for building email templates in react? Yeah, well, they have an app. And it's a little electron app I built on electron and make sense out of electron. But what it does is it's awesome. It saves your templates. It allows you to download and do stuff with pre made templates and edit them. And you can export them out as HTML, you can keep them in MJ ml so that you could copy and paste but what it does is basically gives you a really nice little editor or interface that's perfectly tuned to work with the MJ ml language and give you some really, really nice and easy HTML email templates. I use this recently to redesign one of my emails and was just totally totally psyched about how easy it made working with HTML email, which everyone knows is a gigantic pain. Wow,
+
+109
+00:57:01,200 --> 00:57:02,280
+Wes Bos: this looks amazing.
+
+110
+00:57:02,370 --> 00:57:06,240
+Scott Tolinski: Yeah, the MJ ml app, desktop app desktop app.
+
+111
+00:57:07,320 --> 00:59:05,370
+Wes Bos: nifty. That's a sick pic. Sick. Cool. I'm gonna go. So a couple episodes ago, you recommended these LED bars, which, yeah, sent me off on a little tangent being like my house is too dim. So I was like this one, I was like, our basement is too dim, it's too damn dim and my garage is too damn dim. And like, I have all these like halogen spotlights in our garage. And they're like super, they get super hot and they blow out and they're expensive and they suck power. So I went on Amazon and I found these LED utility lights that are just the best thing ever. So they're super affordable, I got four of them for 150 bucks. It's like a four foot long led utility light. And you can either hang them from the supplied cables, or you can just screw them right into like a joist or something like that. And so I bought four of these things, and there's the brightest hell and they just like lit up my entire basement. And the really cool thing about it is that they are just a regular two prong it's not a three prong with a with a ground it's just yeah prong which allows you to do I don't know if these are legal in the States or not. But you can get these little things that you screw into a light socket and then you put a bulb in it and what it does is it gives you two extra plugs on the light socket. So what I did is I just plugged it into there onto a switched existing light. And now I've just added a whole bunch of light that's already on the switch. I didn't have to to wire in any new stuff in the garage I put them on on our our garage door which has a sensor so as soon as you walk in the garage, the sensor trips and then lights up the entire garage. Wow,
+
+112
+00:59:05,520 --> 00:59:11,010
+Scott Tolinski: yeah, this would be perfect for garage my gym. Pretty much anything Wow.
+
+113
+00:59:11,040 --> 00:59:27,480
+Wes Bos: And the 35 watts which is like their. If you think about it says it's 100 watt equivalent and I would bark into to say it's even more than that because 100 watts is just to have the old light bulb Do you even have light bulbs like glass light bulbs in the states now?
+
+114
+00:59:27,870 --> 00:59:28,980
+Scott Tolinski: What do you mean like
+
+115
+00:59:29,070 --> 01:00:03,230
+Wes Bos: in Canada, a regular light bulbs are are banned. So either banned, you can't go to the store and buy them like I've got like a little stash that I bought before they went out but I stopped using that question because it's all LED bulbs now in Canada, you can't and then the government every now and then they subsidize these LED bulbs because they're like four or five bucks a bulb, but they subsidize them down to $1 a bulb and then you just I just bought like tons of them so I'm doing my whole house and led to Just like the power is very expensive yeah here
+
+116
+01:00:03,540 --> 01:00:34,620
+Scott Tolinski: we have all led we went to this thing called the Denver flea which is this like gigantic hipster flea market in Denver that they do quarterly it's super hipster that we got some like really hip dog bandanas there. But when we were leaving the one time there is like a one of the energy companies was just passing out boxes and boxes of LED lights. And they were they like they seriously I just held on my hands expecting to get a box and they gave me like eight boxes. So like are like okay, well, I guess we have light bulbs for life now.
+
+117
+01:00:35,250 --> 01:01:13,560
+Wes Bos: Yeah, these LED bulbs last, they're supposed to last forever. I had a couple of my office that overheated or something and they started flickering. And I had to replace all the dimmers in my house to be led dimmers because it's a different, different kind of dimmer, but well worth it because they're super bright. They don't use a whole lot of energy. And these things are super sweet that you can either cut the wire and wire it into an existing junction box or just plug it into one of these little tap things. Cool. Select to solid utility led shop light. I'll put a link in the description. anyone that's interested in brightening up their day.
+
+118
+01:01:16,020 --> 01:02:21,510
+Scott Tolinski: Dope, okay. nei sick pay, or Oh, I have a shameless plug I yeah, my view j s for everyone course is going to be out by the time you are hearing this episode. So head on over to level up tutorials, comm Ford slash store and checkout view j s. for everyone. It's basically the easiest way to learn view. It takes you through all of the view fundamentals, its total latest and greatest practices, uses all of the the version of view ccli version three. So everything that you're doing in this is totally up to date and modern view j s. And you'll see why basically, a lot of people are really starting to really love working in view. I know we we keep talking about making episode about it. I have a lot of thoughts on view after spending so much time in to do this series. So yeah, if you want to learn Vue js, which is a really hot framework right now check out Vue JS for everyone, and it'll give you all of the basics up through all of the sort of essential skills that you need to build a real app
+
+119
+01:02:22,020 --> 01:02:30,510
+Wes Bos: suite congrats on getting that launch. That's that's exciting. I know a lot of people have been asking about view content so I'm gonna point them that way.
+
+120
+01:02:31,020 --> 01:02:31,830
+Scott Tolinski: Nice.
+
+121
+01:02:32,070 --> 01:03:09,300
+Wes Bos: Sweet I am going to plug I'm still working on my advanced react course it's looking really good I'm super stoked about it but go to West boss calm for slash courses. matter really good spot right now are all of my courses are up to date, except for my Redux one, which is it's still the Redux part of it is still totally up to date, because Redux doesn't change but he uses react create class instead of extends so I don't know you should be able to switch over from one to another, but all the other courses are totally up to date. I just released my react one. So check that out if you're looking to learn a thing or two.
+
+122
+01:03:09,780 --> 01:03:11,040
+Scott Tolinski: Nice, cool,
+
+123
+01:03:11,160 --> 01:03:14,700
+Wes Bos: sick. All right. Well, that's it. I'll see you next week.
+
+124
+01:03:15,299 --> 01:03:28,680
+Scott Tolinski: All right, who's face head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

@@ -1,0 +1,420 @@
+1
+00:00:01,290 --> 00:00:04,560
+Unknown: You're listening to syntax, the podcast with the tastiest
+
+2
+00:00:04,560 --> 00:00:09,300
+web development treats out there. strap yourself in and get ready. Here is Scott solinsky
+
+3
+00:00:09,350 --> 00:00:55,710
+Scott Tolinski: and West boss, a welcome to syntax. In this episode, we're going to be talking about getting into speaking at conferences, we're going to be talking about the sort of whys and how you can start to get involved, you know, tips and tricks and even some little tasty treats for attending conferences yourself. Yeah, so this episode is sponsored by fresh books, head to freshbooks.com forward slash syntax and enter syntax in the How did you hear about us and check out the modern, simple, easy booking software from Freshbooks. It's as easy and as awesome as they can get. Because who likes doing accounting? Now? Freshbooks makes that super easy and painless. Awesome.
+
+4
+00:00:55,859 --> 00:00:57,630
+Wes Bos: So hi, Dan Scott.
+
+5
+00:00:57,899 --> 00:01:48,420
+Scott Tolinski: Oh, I'm doing I'm doing all right. I don't know. Yeah, just working working away. I've been writing a lot of tests for my site. I'm moving like everything over to Redux right now. It's so funny, cuz we like chatted. And I said in like, what are you gonna do? And you're saying, I'm like, well, maybe I'll do some SSR. Maybe I'll eventually add some Redux. And it's like, no, I like got into that right away is like the moment we stopped recording that I added SSR. Now, to make my data a little bit easier with that server side rendering, I'm adding, I'm ripping out my, my container components and data layer, essentially in form of adding Redux, and then eventually upgrading that to Apollo or something. But because of that, I'm writing a bunch of tests. And so I'm just coding a ton, is really what it comes down to. How about yourself?
+
+6
+00:01:49,260 --> 00:02:13,680
+Wes Bos: That's awesome. I'm doing pretty good. I just added a show to our list called syntax. Where are they now? Where we go back through all the episodes? And if if we have had a change of heart, or we've implemented something differently, or what any, any which way, it'd be kind of fun to give little updates on each of the episodes, stuff that we talked about. But
+
+7
+00:02:13,710 --> 00:02:22,770
+Scott Tolinski: yeah, I know, I feel kind of bad for saying that. I don't love Redux, because I love Redux right now. It's like, All I said was, I don't love it. And now I'm like, but I do love it now.
+
+8
+00:02:23,630 --> 00:03:06,810
+Wes Bos: Now you it's a change of heart, it's fine, it's fine. To do that. I'm doing good. I've been heads down the last week or two working on my CSS Grid course. Having a ton of fun with that. I was I'm also working on my advanced react course. So I'm taking a bit of a break from that while I work on some CSS Grid stuff, and it's a nice little change some of the, the React stuff is pretty pretty heavy duty. And it's fun to to switch to something a little bit more visual base, so pretty happy about that. Other than that, just enjoying it's nice and cold here and enjoying wearing my flannels and down jackets and all that fun stuff that comes along with along with November December in Canada. Yeah,
+
+9
+00:03:06,810 --> 00:03:13,110
+Scott Tolinski: right. I'm getting my immediately following this recording. I'm gonna go get my snow tires put on so
+
+10
+00:03:13,770 --> 00:03:15,090
+Unknown: already, uh,
+
+11
+00:03:15,120 --> 00:03:55,200
+Scott Tolinski: yeah, my, well, we It's weird. So we'll get in Denver here we'll get a snow and we'll get like hammered. And then the very next day, it's going to be sunny and everything's gone away. So we get so much sun here that the snow doesn't stick around. But it can come at any given point. And my tires aren't rated for like under 50 degrees and on dry pavement and like 40 degree weather my tires spin and it's Oh, wow. Yeah, so I'm like waking up really early, like 6am ish to drop my son off at daycare every morning when it's really cold right now and last thing I want to do is be slipping sliding around when he's in the car. So yeah, right now I'm going to get my my grippy grippy tires put on and be pretty psyched about
+
+12
+00:03:55,200 --> 00:04:10,170
+Wes Bos: a question about snow tires. So my sister's from Michigan and nobody there put snow tires on and it's just an absolute sh it show when it snows and she told me that Americans don't have snow tires. Not
+
+13
+00:04:10,170 --> 00:04:34,259
+Scott Tolinski: true. I'm born and born and raised in Michigan. I have lived there. Oh yeah. I lived in Ann Arbor Michigan area for like my entire life. And no, I had snow tires. When I lived in Michigan. I transported them here when I moved here and I know a lot of people do. You kind of have to either. I don't know you Oh, you have to? Well, no, you don't have to have to but like they from
+
+14
+00:04:34,290 --> 00:04:35,190
+Wes Bos: you'll die from.
+
+15
+00:04:35,190 --> 00:04:51,630
+Scott Tolinski: I don't know from November to May you can have like slush and stuff on the ground and people are decent. I don't know that decent drivers, but they're there. They're better drivers and they're out here and I don't know. I knew I knew a ton of people that had snow tires.
+
+16
+00:04:52,740 --> 00:05:44,160
+Wes Bos: Interesting. Yeah, I would hear it. It's actually kind of the law though. If you go into the mountains, there is a law where you have to either have always wheel drive snow tires or chains, or studded tires, or else you'll get pulled over a big ticket in the mountains. Just thing we bought our first car a couple of years ago, they had all season tires on it, which there's four seasons, all the seasons, all four seasons. And we realized very quickly almost crashed on the way home. That all seasons does not mean all of the seasons, it means three of the seasons. Yeah, and you have to go throw down 1000 bucks and buy snow tires. And then you also have to buy an extra set a Hellcat or wheels. I don't even know the words for these things. Because it's it's too much work to take them on and off of the rims all the time. So you got to get some some sick rims for the winter. Yeah,
+
+17
+00:05:44,160 --> 00:05:59,730
+Scott Tolinski: but dude, snow tires are life changing. Like, I remember the first time I drove in the winter with snow tires. It's just like, this is great. This is the best thing ever. You can actually stop and control your car. You actually have control over how you're driving in the snow.
+
+18
+00:05:59,759 --> 00:06:17,160
+Wes Bos: Yeah, yeah, we've got four wheel drive, and some pretty knobby snow tires. And I sometimes intentionally do not shovel my driveway just because how much fun it is to give her up. up the driveway. Yeah. Anyways, what are we talking about today?
+
+19
+00:06:18,389 --> 00:06:20,160
+Scott Tolinski: This episode is snow tire.
+
+20
+00:06:20,160 --> 00:06:24,449
+Wes Bos: This episode is brought to you by Blizzard.
+
+21
+00:06:25,079 --> 00:06:28,980
+Scott Tolinski: I used to have a friend that just deal Blizzard acts whenever he had snow. He's just like blizzard.
+
+22
+00:06:32,730 --> 00:06:56,699
+Wes Bos: Oh, that's good. All right, so we're gonna talk about speaking at conferences, and this is a show where it's not so even like a lot of the other shows that we have is I have quite a bit of experience. I've been speaking at conferences for a long time, and Scott is just getting into the whole conference game. So the hope is that I can give some tasty treats to Scott and then Scott can take those tasty treats and, and implement them.
+
+23
+00:06:56,730 --> 00:07:24,209
+Scott Tolinski: Yeah, I'd like I said before I got my learning cap on, I am ready to just absorb everything. Because you know that I come from the the side of things where it is it is kind of scary. I haven't done a lot of public speaking I did things in school or whatever you do public speaking here and there. And I've given a conference talk before I've given a talk, I'm just not the the man and I'm not I'm not the West boss of conference talk. So to say.
+
+24
+00:07:25,740 --> 00:10:45,920
+Wes Bos: Goodbye, cool. Well, um, let me let me give my my experience in it. I've been speaking at conferences for probably, I don't know, seven, seven years or so. So I've been at quite a few over over the years. And I've grown to really like it I initially when I first started speaking at conferences, it was just like, I would speak at like, a meetup. That was like not even a conference, just a little user group meetup. I had like 30 people. And I just remember being so sick to my stomach that I was going to share. And I spent just like weeks working on this talk. And, and it's definitely gotten a lot easier. I've gotten a lot better at speaking at conferences. And what we hope to do today is to, to dole out a couple of those little nuggets, some of those tasty treats that will be speaking at conferences, so why speak at conferences is sort of what we're gonna kick it off with is why would you ever want to speak at a conference in in web development, there are tons and tons and tons and tons of big conferences, small conferences all over the place. And I get asked to speak at them all the time. And the probably the best part of speaking at a conference is that you you essentially get a free vacation, or you get to travel for free because if you speak at a conference, at a minimum, they should be covering your travel, which is a, an economy ticket book to wherever it is that you need to go. And a lot of these conferences are overseas, so you have the opportunity to go to Europe, or if you're from Europe, you can come to North America, wherever it is that you're from. And they also cover your hotel. So you get to stay in a hotel for a couple days. And often what I would do is I would just take tack on an extra couple of days on to that hotel, the conference would still pay for your flight there and back in the conference of pay for a couple nights in the hotel. And then you can use your own your own pocket money to pay for an extra couple of nights in that hotel and you can go explore whatever city that it is that you're you're hanging out in. So that's obviously one of the huge benefits to being able to speak. It's not it's not related to tech, but it's it's crazy to look at all of the different cities around the world that I've been able to go to absolutely for free, because conferences are willing to fly you out and put you up in exchange for your hard work of, of putting together talk and talking to people. So that's that's one of the huge benefits that I have there. Another huge benefit is good friends and good connections. So I've met some some really awesome people at conferences, I find that like, I meet really great people online and on Twitter, but it's not until you you meet them face to face and you have a meal with them. Or you sit down and talk about them that does that. That bond between you get really, really strong. And you I don't know, I feel like sometimes people, especially on Twitter, people are a little bit aggressive towards each other. And they like to be a little bit mean and stuff like that. And then as soon as you meet somebody in in person at a conference, then all sudden that hostility seems to die down. Because that you're no longer just this avatar online. But you're you're a real person.
+
+25
+00:10:46,790 --> 00:10:49,650
+Scott Tolinski: I don't know, I know human beings have been humanized. Yeah,
+
+26
+00:10:49,710 --> 00:12:24,030
+Wes Bos: I don't need to make this like a Don't be a dick on the internet. But I don't know is there something just about meeting people and going out for drinks, because often these conferences will have like a party and one of the nights or if you show up at night early, you go and go and meet all the other speakers, all the other attendees, you go out for drinks and, and dinner. And it's just an awesome, awesome opportunity to meet good people, and then also make really good connections in this industry. Because I was a freelancer for a long, long time. And all of the very, very well paying jobs that I got came from speaking at conferences and meeting people going out for dinner. Because usually at these conferences, the type of people that are going to these conferences and speaking and they come from really big companies that have budget to send people out to conferences, I know some people that work at smaller companies, you maybe get one, you get some sort of budget per year. And maybe you spend that on Scott nice courses, maybe you go to one conference a year. But some of these bigger companies have budget to send people to a couple of conferences per year. And often when they needed help on a specific topic, then they will call me up. And I would jump on their team for a couple months and be able to, to help them out with whatever it is that they were struggling with. And same thing goes for job opportunities as well, if you're trying to meet people and trying to get in, before a job is even ever posted. And most of these companies, they ask around their developer team and say, Is there anybody that you'd recommend to bring on and that's sort of the sneaky way to get in on the on the ground floor is, is becoming friends with these people at conferences.
+
+27
+00:12:24,060 --> 00:12:48,720
+Scott Tolinski: Yeah. And that seems like parallel to I mean, a lot of industries and stuff like that, I mean, the best way to get a job in the movie industry is just start helping out and being around and making yourself available and making yourself known and seen, right. And then when people think of somebody, I need somebody, right, then we'll think of the person that's there. So I could see that being very, very important. definitely get you on people's minds.
+
+28
+00:12:49,890 --> 00:13:52,590
+Wes Bos: Exactly. Um, and last is the benefit of speaking and also attending at a conference is just renewed excitement for the stuff I sometimes we do it day in day out. And I know there's a lot of burnout in our industry, people get kind of sick, or you're working on the same stupid CSS bug for three days straight and you, you start to get a little bit sick of it. And then often what happens is you go to these conferences, and you see the talks from all these different people. And you there's often like one or two talks that are just really getting me going like I was talking last episode about the flipped David k pianos CSS flip animation, or Nazi s JavaScript flip animation. Talk, like, I can't imagine I can't remember the last time that I was like, Oh, no, you could do that. That's amazing. And I was so excited about I went home, and I learned how to use it with CSS Grid and all this kind of fun stuff. So there's nothing like a good conference, to sort of get you reinvigorated about web development again. And back in the old days when you first fell in love with it. Yeah,
+
+29
+00:13:52,739 --> 00:14:16,110
+Scott Tolinski: I think I mentioned that even on one of the first year second syntax episodes that I just gone to the dinosaur JS conference in Denver, and like, I'm gonna, I'm gonna plug that one again. Because honestly, it was one of the best conferences I've ever been to where like, each talk gives you that sort of like, Oh, this is awesome. Everything's great. And it gets you excited. So shout out to the dinosaur JS Denver, folks. Yeah. Love that.
+
+30
+00:14:16,950 --> 00:17:27,960
+Wes Bos: Awesome. And then what other another benefit to speaking can or cannot be there. And there's all kinds of different conferences out there. There's there's very large, corporately run conferences that charge 2000 bucks a ticket, and they make a lot of money. And then on the flip side, are kind of in the middle, there's conferences that people run, they make their living off of running a couple conferences a year, but they're not getting filthy rich off of it. And then there's there's also community run conferences, where it's just a group of volunteers giving up their day and their night in order to run a conference and you sort of have to know like, what are the different types of conferences that are coming at you and I don't necessarily always ask To to be paid to speak, I have been been doing a lot more paid speaking lately and a couple episodes, I said I haven't. But I'm looking into 2018. And I have a couple of nice opportunities to make some money off of that. Because doing a conference, it takes forever to build a talk. It's one of my most hate things ever making a talk because it takes so long like I think my last conference talk that I did, I spent an entire week, probably 4050 hours working on one talk. And that's fine, because then I'll give that talk five or six times at different conferences, and it helps sell courses. And it's well worth it for me. But it does take a lot of time especially like, that's me, I have I don't have a job during the day, a lot of people are doing this stuff, and their evenings and their actual weekends. So sometimes you can get paid sometimes you get like an honorarium which is a couple hundred dollars on top of your flight in your hotel maid. And then sometimes it's just a community run conference where these things if you don't know a lot of people are bashing conferences online, they are expensive as hell to run a conference and is something like a coffee perk will cost like $100 for a pot of coffee or Wi Fi. I remember talking to a conference organiser, the Wi Fi for, like a three day conference was like 25 or 30 grand just to use the hotel's crappy ass Wi Fi. And it's insane how much how much these things like plugs, you think like, oh, there's no plugs at this conference because they're expensive as hell right? So I don't know it's it's expensive. But that's not to say there's some people that will never speak without getting paid. And then there's there's people kind of all over the spectrum. And usually if it's, I like obviously like to get paid for my time. But I also will speak at some of these community conference for free as long as they cover your flight your hotel and it's fun, you get it, they take you out for dinner, you get free drinks, you get a cup of go into a nice hotel, you get a sort of see the see the the area, some of these conferences that give you like really nice swag bags, they have like, like some cell phone SIM cards inside of them. And it's a give you a hoodie and a T shirt and stuff like that. So it's a, I don't necessarily think the money is the biggest part of speaking, because of all the benefits that I just talked to you about. And in terms of traveling and job opportunities and meeting people and having industry recognition, sometimes they will record your talk and put it up on YouTube. And that will explode. So I think there's there's more than just money being able to speak at these conferences.
+
+31
+00:17:28,169 --> 00:17:56,490
+Scott Tolinski: Yeah. And I mean, I can't tell you how many conference talks I've watched, even for ones that took place two years ago or three years ago on YouTube, because that information ends up being so relevant. And then that's how you'll find out about this person. And maybe this person has a course on it, or maybe they have a lot of great information on their blog. It's a great way to discover people who, who know exciting things. And you know, you can always goes back to the person who who did that that talk, you know?
+
+32
+00:17:57,110 --> 00:20:48,030
+Wes Bos: Yeah, yeah, exactly. So applying for conference, how do you get into applying for conferences? And the first time? And how do you come up with a talk with like, where did these things come from? So when I first started, it was what I like to call brute force. So what you do is, you take some sort of topic that you are passionate about, or that you're really really interested in, and you you create what's called a CFP a call for paper, which it's not a paper, it's just usually like a couple hundred word description about what your talk will be. And then you submit that to different conferences. So often, what I'll do is every year, I'll come up with a couple different talks, like last year, I had this ESX talk that I did, and I came up with a really good, I don't know a couple hundred word description of what the talk will be, what people are going to learn what it's going to cover. And then I go around to different conferences, sort of proposing that I would like to use submit it via whatever submission form that they actually have. Now, when I first got started with this, nobody cared about, like, who I was, or the kind of like the stuff that I like to do. So it was just a matter of brute force being applying to, I don't know, I probably applied to 30 or 40 different conferences in a year. And then like, I don't know, three or four of them actually accepted the talk that that you went ahead and and submit it to them. So that's how you do it. There's some really good websites out there. There used to be this website called lanyard, which seems to be dying a slow death right now. And there was this lanyard calm forward slash calls. And they would have a list of every single conference out there. And there was just all these like really edge KC conferences that you didn't even know existed, like, outside of the whole, like web development, CSS JavaScript community. There's all kinds of different conferences that are like a little bit more corporate II or you didn't necessarily know about them because they're in a lot of different causes. countries, you need to find these honey holes there you go to find, you need to find these honey holes that have all of these things. And for me it was that lanyard website which no longer exists. There's a newsletter that comes out every week called a weekly CFP. And they they do a great job at saying like where it is if they're going to cover your travel if they pay a couple other a couple other things when the when the submission is actually due as well. And then there's a website called paper called IO, which I know a lot of people use now as well, where you can submit these talks to our hundreds of different conferences and really if you want to get into this stuff that's that's where you've got to start is just absolutely posting your your your talk description to as many conferences as you could possibly want.
+
+33
+00:20:48,150 --> 00:21:16,980
+Scott Tolinski: So let's say that seems daunting to someone right? Like to just sort of go off and instantly start speaking at conferences. I know you had mentioned speaking at a meetup group and stuff like that. I think that might be a great tip is to head to meet up is it just been up calm? It's meetup. I always just think about meetup.com Yeah, and check out your well they got a new logo. Like Maria they got a new little red color too. It's like a more samnee red color.
+
+34
+00:21:17,010 --> 00:21:18,000
+Wes Bos: Oh, yes. It's
+
+35
+00:21:18,000 --> 00:21:43,580
+Scott Tolinski: very different. Yeah, almost pink. Yeah, I'm like this i didn't i the other red was a little a little bold. name badges. Yeah. So I mean, yeah, meetup.com is a great place to see irrelevant and you're relevant meetups, and it could be a great place to reach out to organizer and, and try to even, you know, attend a few and then try to get in and in talk about whatever it is you're going to be talking about or want to be talking about.
+
+36
+00:21:45,060 --> 00:23:08,940
+Wes Bos: Yeah, they there are always meetups looking for people. And that's how I initially got my start as well is I would prepare these little talks or what had happened is like, I was working on a lot of like webcam based stuff and a lot of like jobs to kind of experimental JavaScript stuff. And I actually was contacted by what is the O'Reilly like fluent conference, O'Reilly runs this massive JavaScript conference. And they asked if I will come talk about that at the time. And that was sort of my big one. But before I did that, because what had happened is like it got on Hacker News, and I wrote a blog post about it, and I made a YouTube video. And that that's what I would also recommend to people is if you have something cool, make sure you write a blog post and make sure you write a YouTube video or record a YouTube video and post it on Hacker News and all that stuff. Because if it becomes popular, often people who are running this conferences will email you and ask you to come speak. But if you don't have that, go to my local meetups. And I would go there all the time, and just practice my actual talk or just practice like 20 minutes of my actual talk in front of it. And it's really cool, like meetups have a very really good like vibe to them. Because it's like, just like local developers, sort of like a lot of people like looking to learn more. Everyone's eating pizza and drinking beer. So it's, it's a really good environment, just to sort of get the get the nerves out before you do a larger conference.
+
+37
+00:23:08,970 --> 00:23:28,650
+Scott Tolinski: Yeah, I'm from when I found that they're very supportive. local groups, everyone is very just, I don't know, like you said, everyone's there to learn. So everyone has this sort of, you know, ego checked at the door, maybe not everyone. Yeah, there's definitely a lot less egos involved here. And, you know, everyone's just looking to get that and share that information.
+
+38
+00:23:29,970 --> 00:25:50,970
+Wes Bos: Exactly. So let's talk about now, what kind of talk should you submit, and I sort of broke this down into a couple different kinds of talks that I see at conferences. The first one is sort of like a lessons learned talk, where you work on a team, and you have an interesting technical challenge. And you, you try a whole bunch of different things out, and you go through it, and you actually launch it, and you talk about what you tried, what worked, what didn't work, what problems you actually ran into along the way, and how you actually ended up launching this thing at the end of the day. And those are some really interesting talks, because it's often like a one or two years of a developer's time that they've put into launching or defeating this technical hurdle. And once I've gotten over it, you can sort of like see how these different teams, how they work together and how they accomplished any, or how they got past any hurdles that they hit. So that's called the lessons learned talk. The next one is the new concept talk. And this is this is sort of the one that I like to go with, which is, there's something new in web development, and I'm going to tell you about it. So I like to think of my talks as sort of like mini tutorials where you're going to sit down for 45 minutes, and I'm going to try my best to explain this topic, explain how it works, explain when you might want to use it, and then provide a bunch of examples of how that actually works. And then you leave you leave the tutorial or you leave the the conference talk to me like hmm, I think I can use that in a specific different peace of mind. website and specifically my style of talk that I like to do is, is tasty treats. Where, rather than having like a like one huge universal talk, what I'll do is I'll take, like ESX, I'll take 15 different things from ESX. Or my the talk that I'm doing right now is not ESX. But it's like, kind of like future JavaScript where I talk about new browser API's like web payment API, and resize observer, and all these new things. And I sort of explained like, these are coming to the browser, here is when you might want to use it. Here are some polyfills. Here's some examples of when you might want to use it. And then, and then if you're not interested in one piece of that, it's fine. Because like, five minutes later, I'll be on to a different topic, and you sort of leave with like a couple different learn, having learned a couple different things.
+
+39
+00:25:51,330 --> 00:26:29,910
+Scott Tolinski: Nice. Yeah, I mean, I like that, because it's easy to get excited about tasty treats and new fancy things like that. Because at the end of the day, you know, if you're excited about this stuff, that excitement is going to translate. And for me personally, when I use something like, like CSS Grid, and the taught, you know, the last podcast we talked about, it's really easy to get excited about CSS Grid. And that excitement that you have for this, this new kind of interesting thing that's going to make your life easier is going to translate through to the people that you're talking about. And I think just inherently finding that stuff that excites you, as little tasty treats is a nice way to be.
+
+40
+00:26:30,690 --> 00:29:19,050
+Wes Bos: Exactly, exactly be what you're excited about is really where you got to be for for doing these talks. The next one is the my approach to x, y, or z. So this is more for, I don't know, people that are a little bit more prolific than than your IRA, or those those people that are a little bit there sort of I hate to use this word, but the thought leaders in the space where like somebody has a problem, like for example, Jonathan snook has his smacks CSS. So what would he probably would do when he came up with that he would go and do talks on like, here's a problem we have with CSS. Here's how I'm solving that with something that I've this idea that I've created called smacks or I have this idea called bem or Dan Abramov. Learn the flex or flux pattern in react. But he thought that it could be a little bit better. So what is my approach to handling state in react is called Redux. Or here's some ideas called time traveling, right? So like, those are really good talks. Because sometimes you are sitting at the ideation of some of these, like fundamental ideas in the web development industry. So as out to lunch, as sometimes these people think, like always give them time of day because I've told the story before or I was out the React conference, or I was at a conference where react was announced. And I thought it was stupid, but turned out to be amazing, right, for sure. Now, this one is complicated, topics simplified. So you just take something that people don't totally understand. And this is going to, this is going to be playing into my sick pick today. But there's this really good conference talk called how the JavaScript event loop works. And it's just something that like people kind of know about, but don't totally understand it. But if you can just like slam dunk, explain how this complicated thing works in 45 minutes, people always come out with their gushing. And generally, those videos do really well on YouTube as well. And then the last one is just something super interesting. So maybe not something that you're going to be using day to day, but something that is interesting to the audience. So I want to talk about how does mp4 encoding work? And how come sometimes when you're watching mp4 it glitches and you see this like green frame for a couple seconds? or How come sometimes a piece of mp4 sticks on the screen until that part of the movie changes. And he just I this is awesome. Talk a bit just how mp4 encoding works. And it's not useful to me at all, because I don't encode mp4 is. But it was just interesting to understand how it actually worked behind the scenes. So pick one of those kind of talks and and sort of run with it. It really depends on what your personality is like and how you like to explain things. Yeah.
+
+41
+00:29:19,050 --> 00:29:21,780
+Scott Tolinski: And don't pick something that you're not excited about.
+
+42
+00:29:23,040 --> 00:30:07,230
+Wes Bos: Exactly. Yeah, that's, that's really important. As soon as you see people, just they submit six or seven out, talk ideas to conferences, about things that they could do. And then you obviously write the talk later. But I often just, I like to just pick one thing that I know is going to be really good. I'm a bit a bit of an advantage now because I'm at a point now where I don't apply for conferences is that they because I have a bit of a backlog of conferences. I've been around the circuit for a couple years. People often call call on me to come to their conference to to actually speak at it. So that's a bit nicer that I can be able to just pick it up. My talk will be and they will often ask me like, do you have a talk that you would like to give, and then we go back and forth, and talk about that.
+
+43
+00:30:07,530 --> 00:30:08,100
+Scott Tolinski: Nice.
+
+44
+00:30:09,870 --> 00:30:14,190
+Wes Bos: Let's talk about what makes a good talk, what makes a good call for proposal.
+
+45
+00:30:14,820 --> 00:30:15,330
+Unknown: One,
+
+46
+00:30:15,330 --> 00:31:22,770
+Wes Bos: the one pet peeve that I have if talks is that everybody starts off the talk with like the history of X, Y, or Z. So people, because that's like, like the one on one of like, in 2001, or 1994, Brendan Eich was born and he created JavaScript out of the womb, and then let's just like go through the entire history of X, Y, or Z, or like CSS was initially created in like, nobody cares when it was created to get to the thing that you're actually trying, because people always run out of time for their their conference talks, because it always goes longer than you actually think. So skip that initial, like history lesson, and get right into it. People are web developers, they're there for a reason. It's like, if I was to do a CSS Grid talk, I wouldn't start off with like, we used to use floats, or tables, and then we use floats. And then we use Flexbox. And now we have grid, like people know that. And I just dive right into grid. And that's what makes her really engaged, because people often just leave a talk in the first five minutes, if it's not worth their time, because there's other talks often going on on different tracks that they might be able to, to still catch.
+
+47
+00:31:22,800 --> 00:31:28,290
+Scott Tolinski: Yeah, and I've been one of those people leaving before. So I know, you know, you got to get hooked. You got
+
+48
+00:31:28,290 --> 00:33:05,550
+Wes Bos: to you got to get them home. And one other thing is, don't, don't like tell your entire history at the start as well. You obviously have to explain who you are and what you do, but keep it to like, I don't know, under a minute or so just to explain real quick who you are. And then you can you can do more stuff at the end, as you're sort of wrapping up and tell people like where they can, they can find you on Twitter and whatnot. But don't spend too too much time on that because it's, oh, seems a bit weird. I got a point here called Star with a banger, which we just kind of talked is to start with something really good. And I some of the good times I don't do this, but I kind of want to steal it as sometimes people will just start with like a really interesting thing about their topic. And then their like, fifth slide will be introducing themselves, and then you're hooked. Because you got that banger at the start. lots of examples, how fun. So don't put too too much text on the screen. So what I do in my talks is I will often do very short code examples because larger code examples get lost on the audience or they can't see it because the projectors crappy and the font is too small. But if you do really big pictures of very small code examples, that gives somebody that gives them something to look at as you're talking through that specific point. And it sort of helps give people context for where you're at. And lots of examples, what I do is I record my examples on video and put them on loop. Because live examples will always fail, when you're trying to do it and your something will break. And you're not going to be able to be able to fix it on on the web while you're doing it live. And you're all jittery up there. Yeah,
+
+49
+00:33:05,550 --> 00:34:11,630
+Scott Tolinski: I feel like that's like one of the biggest things you always see is like, and now we're just gonna play this video and the audio is distorted and loud and feeding back or it's not turning on or the audio or the video wasn't embedded. So like, there's just so many things that can go wrong. And I'm like, I'm definitely of the type of person. I mean, whether it's at when you're at the airport, or when you're like in a situation where there's a lot of things going on that could be kind of chaotic. In my mind, you always want to keep it as simple and as concise as tight as possible. And adding external variables like that is something that, you know, could could blow up in your face. And well, yeah, could end up in your face. So, so keep the amount of things that could blow up in your face to an absolute minimum. Because I mean, that seems like a really great way to make you feel insecure about how that talk went, right? Your your, your video example didn't work, and you had some issues and people responded negatively to it. And then all of a sudden, this great talk that you had wasn't so great just because of some stupid video technical issue.
+
+50
+00:34:12,210 --> 00:34:35,730
+Wes Bos: Exactly. And it's often because conference, Wi Fi sucks. And so what I always like to do is make sure that my entire talk will run offline and turn my Wi Fi off and run through it make sure that I'm not trying to load any external scripts or images or videos or anything like that, so that it doesn't have to draw on external stuff. Because then it's like awkward having to just like wait for it to actually load. Yeah,
+
+51
+00:34:35,730 --> 00:34:44,850
+Scott Tolinski: and I don't know if you know this, but I before, like immediately out of college. My job at the University of Michigan was running a V for several auditoria Yeah,
+
+52
+00:34:44,880 --> 00:34:49,290
+Wes Bos: I know. That's because I listened to your podcast. Yeah. Scott's origin story, its origin story, right.
+
+53
+00:34:49,350 --> 00:35:48,090
+Scott Tolinski: So like, in that time of running the projector for a couple of years right in an auditorium. I saw more of these videos not working and like weird stuff or like, you know, people not trying their thing offline and stuff like that then you could ever possibly imagine maybe one a day, you know, there was always somebody who didn't think about it. And so definitely, definitely test it in different environments. No, no Wi Fi, slow Wi Fi, you know, any of that stuff, different aspect ratios, even that we had like an issue, oh, there was like aspect ratio several times where you'd plug in a projector and it would just like totally skew everything. And the person didn't know their computer well enough to know how to adjust those settings on the computer, it would be in the middle of the thing. So it's not like the AV guy like I can't run down there in front of everyone and go like go into their computer settings, they just got to deal with it, you know? So yeah,
+
+54
+00:35:48,210 --> 00:36:10,020
+Wes Bos: it is that's a super good point go into, I always go into the projector at lunch or before and plug my computer in, because the resolution is always off. And then you can open up your displays and set the resolution to what you're expecting. And then when you go and plug it in later, it's going to remember that specific projector and reinstate your, your state of what size you had it
+
+55
+00:36:10,050 --> 00:36:14,690
+Scott Tolinski: Yeah, yeah, definitely reduce the amount of technical baggage.
+
+56
+00:36:15,380 --> 00:39:00,650
+Wes Bos: It's because it's, it's so scary. When you're up there and you it doesn't look like you remember, or your fonts aren't loading or you don't know how to fullscreen something or whatever reason is going on or you don't have the other thing is like you don't have the right dongle. Like I carry this little purse around with me that has every dongle converter out there imaginable. Because often you run into this like VGA projector from 1993. And you need to be able to you all you got is USBC. And that stress of not having the right connector, because believe me, the people running AV have not seen that laptop before it always. It always ends poorly. So yeah, make sure you got make sure you got some dongles on hand as well. Tell your audience why they would need to learn a topic so well, one earlier and tell them early because one time I had a guy at a conference, I was explaining how you can you can pipe video into Canvas and modify it. And in the middle of my example, he yells out, when would you ever use that? And then I looked at him and I said, Well, smartass, and I clicked it to the next slide and shown real world example of when you might want to use that arrow died. But it's just a good example of like you, like, obviously tell people how things work. But I think more importantly is like, why would you ever want to know that as a web developer, right? Like, we need to sort of know both both sides of these things. Nice. And then last one, this is not really like what makes a good talk. But it's nice if you can, like have a bit of a draw or help sell tickets to the conference, because I've had quite a few and specifically this year, I think what's happening is people who sponsor conferences are starting to stop that because I don't think it's very good deal to sponsor conferences as a company. So I've had quite a few conferences just pulled out entirely because the sponsorship didn't come through, and they're gonna lose their, their shirt. And, or they're just not selling enough tickets to that specific one. So also, they, they thought that they could sell a lot more tickets, but they can't they couldn't drum it up. So if you yourself, like we'll have an episode on like personal branding and stuff like that. But if you yourself have a bit of a Twitter following or a Facebook following, or an email list or anything like that, that will often like I specifically have a web page on my website that lists my upcoming talks. Because people always ask me, where are you coming to the UK anytime soon. So that's a bit of a draw. And that that allows you that gives you a better chance at being able to, to get into a conference, if you have even if you have an email list of 500 1000 people, that's really good, because I bet a couple of those people aren't going to want to come to that conference so that they didn't know about it before.
+
+57
+00:39:00,710 --> 00:39:02,880
+Unknown: Nice. So So or
+
+58
+00:39:03,419 --> 00:39:04,200
+Wes Bos: so go ahead. Oh, no, I
+
+59
+00:39:04,200 --> 00:39:06,110
+Scott Tolinski: was gonna I was gonna move on to the next.
+
+60
+00:39:06,650 --> 00:39:07,880
+Wes Bos: Yeah, go for it. Okay.
+
+61
+00:39:08,360 --> 00:39:34,050
+Scott Tolinski: Yeah. So I mean, these are a lot of awesome tips for like having your conference talk goes smoothly. And and something that's really difficult for developers and, and designers to maintain sort of smooth usage on is is accounting, right? Like man, accounting is difficult for developers. So the one thing that makes accounting smooth and easy for developers is freshbooks.com.
+
+62
+00:39:35,190 --> 00:41:11,630
+Wes Bos: segue. Well freshbooks.com is a cloud accounting software. So if you are a small or medium sized business, you're trying to keep a keep track of all the people that owe you money, all the different taxes that go into that all the different expenses, that you have all the different expense reports figuring out how much you spend in a specific year. You need to communicate back and forth with your client on how much is owed. To have that all in same space, freshman's is exactly what you need for doing that. Don't, don't delay and use, I don't know, Microsoft Excel and save a PDF and send that back and forth. Because believe me, when tax times comes for me, I always have to prep my stuff in March or so. And I hate it because I have to spend, I don't know, I have to spend like, a couple hours just prepping all my stuff. But the the one, the one part that is really good is that I can just export all of my invoices, all of my expenses, all of my different tax tax stuff that I've had coming in, I can just create a big dump of that and give it off to my accountant. And he's super happy with that. And I don't have to worry about it being done. Same with all of my invoices and all of my receipts, what I do is I snap a picture of that receipt. And that way, if I ever get audited or anything like that, I know that I have pictures of all those receipts that you don't have to go diving in the shoe box that I have of different seats, I can just pull it up really quickly, without without any fret from that. So check out fresh books, go to freshbooks.com Ford slash syntax and interest in text into the How did you hear about us? Thanks so much to them for sponsoring.
+
+63
+00:41:11,670 --> 00:41:34,730
+Scott Tolinski: Nice. Nice. Cool, so Okay, so we got a good information about like, how to get started, how to give a good talk, or how to prepare a good talk? What are some more like technical things we can talk about? So like, what kind of software do you recommend? And I mean, there's there's obviously, presentation software. But there's also code solutions to this as well.
+
+64
+00:41:35,900 --> 00:45:53,430
+Wes Bos: Yeah, creating a nice looking slide deck is often a challenge, because you have to figure out like where things go, you have to fit stuff on the screen, often you want to have syntax highlighted code in your actual editor. So there's sort of a lot going on there. So some of the people who are a little bit more refined, my like presentation style is, is pretty off the cuff. It's kind of like this podcast where we'll take a topic, I'll have some stuff that I'm launching off of, and have lots of screenshots and examples. But I don't have any like speakers notes. And I don't know some people time themselves and go through it. So people that are a little bit more polished with their speaking and, and plan a little bit more ahead. They tend to use like keynote or PowerPoint and they have some nice, fancy animations. keynote is a pretty powerful application. And you can make it look really good. You can do a lot of animations and transitions, you can embed videos and whatnot. So that seems to be pretty popular even amongst the web developer crowd. myself, personally, I use sort of a modified thing Google back, I think it was like, what was the first Google i o? Oh, first Google, like 2011. I don't, I think let's just say it's 2011. So Google i o in 2011. They had this like html5 slide deck. That was like they're trying to like push the the value of the web. And like how amazing it was that you could build apps in the browser. And one of the things that all of the speakers use was the slide deck, that they could build their slides in HTML. And then there was a little bit of JavaScript that came along with it that allow you to advance your slides or build a list of bullets and slide one in after another. And all it did is it just added classes to your slides, called current, next, far next, previous and far prefer, and then you know that with CSS, if things have classes, and those classes change, you can just use CSS transitions, to translate x hundred percent, you can do anything you want with those. And that's how they sort of slide in the slides from the left to the right or up and down or, or whatever it is. Same with the the bulleted list, all you have to do is create an unordered list in the class of build and put anything in there list items, images, or whatever. And then every time you hit your clicker, it will fade in the next element or slide in the next element depending on how you have your CSS. So that's what I use. I've been using that for for years and years. And I've sort of stumbled upon what I like to have my my slides look like. So I took that and I built like a custom Gulp setup where all my slides are done in pug or Jade, all of my CSS is done in stylus, and then this Gulp task will just automatically serve it up live and auto refresh it with browser sync. And what I've done with the CSS is that I take, I don't know 20 or 30 different images, I take 15 or 20 different nice looking gradients, or colors or something, whatever looks good for the slide deck, I always do a different design for every slide deck, I go and find a really nice looking font. And then what I do is I put that background image on there, I put that gradient or that color over top, I use like background blend mode, something so that the the color sort of bleeds into the background image and then I have the have A couple different styles for my my typography. So I have one that's like an h1 tag, it's really huge, it's going to fill up the entire slide, I have like a subheading where I can put underneath that I've got different sizes for images that will span the entire height or the entire width, depending on if it's portrait or landscape. It's all built in Flexbox. So it will automatically center everything on both axes. So dependent no matter how many elements I throw at it, it's always going to perfectly center it. So I don't have to like mess around with adding margin or padding or vertically center or anything, all the Flexbox will just take care of all those children. So like I've sort of stumbled upon this framework for building my slides. And it lends itself really well to the type of talk that I give. And if you're interested, all of my slide decks are up on up on GitHub, I'll link a couple in the show notes. So you can sort of check out the system that I have
+
+65
+00:45:53,490 --> 00:45:57,510
+Scott Tolinski: nice. Yeah, those kind of things I've only used revealed that .js.
+
+66
+00:45:59,460 --> 00:46:00,570
+Wes Bos: Heard that one's really good. Yeah,
+
+67
+00:46:00,570 --> 00:46:15,150
+Scott Tolinski: that was it was a nice one, it does a lot for you, it they have like themes that exist. So if you're looking for like a quick and easy JavaScript solution, one that revealed that .js is, is pretty nice. I've only worked in it a couple times. But I did enjoy it.
+
+68
+00:46:16,020 --> 00:46:37,830
+Wes Bos: Oh, this is the one that allows you to so reveal j s was based on the one Google put out. But it's it's really cool because you can have a slide and then if you have sub slides, you can slide left to right and up and down. Which I thought was was pretty nifty to be able to do that. So I would definitely check that out as well. Maybe not my like janky one that I built. And
+
+69
+00:46:37,830 --> 00:46:45,060
+Scott Tolinski: I like it because it is you know, all the stuff you'd want like keyboard support, and you know, the stuff that you got to have to happen, you know.
+
+70
+00:46:46,770 --> 00:47:14,220
+Wes Bos: So there's also this one called react spectacle, which allows you to build your presentations in react components. And that's pretty neat. Because you can pull in any of the rack stuff that you want has a whole bunch of you can write markdown, right in the slides, and it will convert it. You can put code examples in there. Auto highlight in my mind is code examples as well. But I often opt for just screenshots of the code, so I can stretch it as big as I possibly can go.
+
+71
+00:47:14,430 --> 00:47:15,870
+Scott Tolinski: Yeah, this is really nice.
+
+72
+00:47:17,460 --> 00:47:56,880
+Wes Bos: That's pretty nice. I think that transitions are, are some of the fanciest stuff. And then you can also have speakers notes with it, which is one thing that I don't do. But a lot of people like to have bullet points of stuff they need to make sure that they touch upon, or as I just wing it, and like I know, I practice my talk four or five times before I actually do it. And then by going through it four or five times I get a good sense of what do I need to cover without having a million bullet points up on the actual website. So there's, there's all kinds of slides comm there's a really cheesy one called Prezi that allows you to zoom in and out everyone was bananas for
+
+73
+00:47:57,450 --> 00:48:24,240
+Scott Tolinski: a while, as somebody who worked at a design agency, when Prezi came out, when we were like, We were like, let's knock the socks off our clients, we're going Prezi on this one. And like they were I don't want to make this sound negative or something. But it was like that, you know, if we really want to do impress a client, they spent all night making some Prezi that zoomed in and out on a you know, micro piece of text on that thing and zoomed in out of nowhere,
+
+74
+00:48:24,420 --> 00:48:25,380
+Unknown: stuff like that.
+
+75
+00:48:26,730 --> 00:48:49,500
+Wes Bos: It was all in Flash. And I think like there's maybe even someone listening if you work at Prezi. I would like love to hear. I would love to see a Prezi about the challenges of converting Prezi from flash to transforms and CSS animations and all that stuff. Because it's it's no longer I don't think it's any longer done. And no Oh, it's done in Canada is now
+
+76
+00:48:49,530 --> 00:48:58,680
+Scott Tolinski: Yeah, that seems like the because then you could probably translate a lot of the ActionScript over to just JavaScript. And yeah, it sounds like an easier, easier task.
+
+77
+00:48:59,880 --> 00:50:42,900
+Wes Bos: It's interesting. So if you work at Prezi, I'd love to see a Prezi on that. Let's talk about not speaking but conference training. This is something that I will often do is I'll go do a talk and I'll do a training like the day before or the day after an actual conference because people are in town anyway. And then I'll do a training. One of the big ones that I do is like a react fundamentals training, where we do we build an application in react all the way from scratch. So those are really fun. Those ones pay pretty well often what you can do is you can negotiate with the person who runs a conference where you you get a like a 5050 split or a 6040 split or whatever the split is going to be it's all over the place. Sometimes the ones that are run at hotels have a bit of a bigger budget sometimes. The other ones are a little bit cheaper to run, but in my experience, you can make quite a bit of money running trainings around there. So often it makes the whole trip of doing a talk and doing a training. Well, well worth your time. Nice. So yeah, it's, I don't know if other people are interested in that it's kind of a weird thing to get into. But if you just like put it up on your website and say, Hey, I'd like to do training or if someone asks you to do a conference, I often will say like, hey, do you want to do a training as well. And even if the conference doesn't offer, that, it's something that they will often be into, because it's not that much extra work for them to order lunch, find a projector, and tables, and a place for me to do my workshop. And then they everyone can make a little bit more money. And the people who are going to the conferences Can, can get a little bit more hands on experience, rather than just sitting in a chair for for eight hours listening to talks. Yeah.
+
+78
+00:50:43,170 --> 00:50:50,130
+Scott Tolinski: And that's it is important that hands on, I mean, we talked about in the last episode, this is just on the you got to get your hands in at some point. So
+
+79
+00:50:51,570 --> 00:54:04,440
+Wes Bos: Exactly. So I will end this off now with just some tips about attending conferences, and I guess, being a speaker or an attendee. So it's a lot of work to go to a conference and you have to take time away from your family away from your job. Sometimes people even use their own vacation time to go to conference. So it better well be worth your time to actually go to that specific conference. So I wrote a blog post a couple years ago, called How do you get the most out of a tech conference. And I just wanted to go through and touch upon a couple of the tips that I have from here, and then maybe Scott's got some of his own, you can chime in as you want words. So my first tip is, first to read the code of conduct this is a huge thing in our space lately, is that people sometimes act inappropriately at conferences, and there's no really no excuse for it. But it's unfortunate that we see blog posts and stories and like props to the people who come out and tell these stories, because I'm sure it happens a lot more than we do. But there's just something about developers getting together, or just people in general getting together. And there's always someone that sort of steps over the line. Whether they mean to or not, it's just kind of a bad space to be in. So often your any conference worth its weight will have a code of conduct up online. And they will share. Like what often say these things are so simple, but it's also like, there's it just blows my mind that there's people that don't understand these things. But just like how to talk to people, you get the point on it, let's let's pull one up here code of conduct. So go to code of conduct calm, and that's sort of the base one that a lot of these these conferences do. And it just talks things about harassing people based on anything sexual orientation, disability, physical appearance, body size, race, ethnicity, all these things. Just basically, don't be a dick at these conferences. And you're going to be in a good shape, but take time to actually read through it as well. Just even though it's not gonna, it might not necessarily be you. But if you see somebody acting inappropriately, I wanted these conferences as well worth sticking your head out and being like, hey, not cool, talking to the conference organizers or whatnot, because you want to make sure that these are a space that everyone feels comfortable for going to Yeah, definitely important. Yeah. Next up, is get a nice clicker. This is for speakers. There's one that I use, it's a Logitech something. And it's just a nice, nice little clicker that will advance your slides, it has a what's it called a laser pointer on the end, if you can't, I like touching the screen and pointing to things. But if it's too big of a screen, I like to use my laser pointer to point to things. So that's a big one. Rather than you having to touch on it. I once was at a conference and they had a clicker to advance it, you turn it upside down. And none of the speakers knew how it works, they would turn it upside down and their slides would just go. And they didn't understand how to go back. And you had to like flip it upside down twice to go back and say who made this thing but but just bring your own clicker and something that you're comfortable with? Because if there's enough nerves that you're going to have when you're up there, being comfortable with your clickers is important. Yeah,
+
+80
+00:54:04,440 --> 00:54:08,580
+Scott Tolinski: so how well do those integrate with some of these JavaScript libraries?
+
+81
+00:54:09,330 --> 00:57:08,190
+Wes Bos: Great. It's just a clicker is just a left click to it's just bound to a left clicks on your mouse. So and then there's there's a couple other buttons on there that you can bind to like I think it's like right clicking, and whatnot. And there's a scroll wheel on some of them as well. So they work perfectly with with all these different libraries. Nice. I'm joining Twitter early, so week, a week or two before Twitter, find out what the hashtag is for the conference. And I always like to keep a column up on Tweet Deck to see what's going on. That way you can start to meet the people that are going to this conference, because that's one of the main benefits of going to a conference and not just going not just having these talks, but actually meeting the people and having meals with them and whatnot. So I find that if you go on Twitter, and you you see who else is excited about this conference, talking about it, then you can sort of read out to these people earlier. Next one is have lunch with the speaker. So if you are in a town where the conference is coming often speakers will fly in the day before the actual conference and the attendees as well. So if you can maybe reach out to a couple of the speakers and say like, if there are people that you are dying to have some sort of lunch or dinner with dying to talk with them, often these people, myself included, we're just sitting in our hotel room waiting for the conference to start, because we're in a city where we don't know anybody. So being able to reach out and say, Hey, would you like to go for lunch or grab a beer or whatever it is, is a really good, really good point. Nice. Next one, stay off your phone. This one kills me because I am anytime I feel awkward, you're in the elevator, you're in a group of people, you're sort of standing around and you want to break into a circle of people. It's awkward as hell. So what do you do, you look at your phone. So my thing that I do is I try to just awkwardly stand there, and just like not touch my phone, because if you're in your phone, you're not approachable. And those people, no one's gonna walk up to you and say, Hey, so on that same point, if you're a little bit more approachable, not on your phone. Now with your head down, you're sort of just looking around, what often do conferences I realized is like, nobody knows anybody at these conferences. It's all just a bunch of people that don't know anybody. So what I'll do is I'll just walk up to random people and say, Hey, I'm Wes, where are you from? And and that will often just kick off a really good conversation about what kind of stuff they're working on and whatnot. But everybody's a little bit awkward together, especially in the web development industry. So being able to stay off your phone and just like get past that, and I realized this is a very extroverted thing to do, but being able to just be like, Hey, what's your name, or have we met yet or something like that Is it really helps, because then you start to meet all a bunch of people. And then usually, when it comes around to dinner time, or whatever, there's just like a gang of you, people who have met the last couple hours, and then you just sort of have a little posse that you can, you can do with that
+
+82
+00:57:08,850 --> 00:58:09,960
+Scott Tolinski: you have if you have like the extroverted of the bunch, you know, if you insist that the extroverted of the bunch, you know, everyone goes and does this, then the introverted of the bunch will hopefully get talked to by one of the extroverted and then everybody can talk to somebody because, you know, half and half and just say you'll, you'll find someone to talk to you it just but like, like I said, Don't make yourself approachable and head down. You know, body language in your phone says, like, Don't talk to me. And it's important. And last one I was at, I've met so many great people. And we didn't even talk about web development, we talked about rock climbing, we talked about, you know, the area and the mountains, and all sorts of just stuff like that. And, you know, just from a standpoint of, you know, developers are all into code and all into stuff, but everyone's got hobbies and interests. And sometimes those things are just extremely interesting to learn about or can give you a new perspective on a different people in your industry.
+
+83
+00:58:11,130 --> 00:59:47,760
+Wes Bos: Exactly. I developers always have really cool hobbies and and getting into those hobbies, with people is is really fun. You can you can kind of bond a bit of a closer relationship with people. name badge, make sure your name badge is on at all times. And make sure that it's it's pointing the right way, because people always forget each other's names. So it's silly, but make sure that it is there. Some nice conferences have the name badge name on both sides of the badge. So if it flips around, you don't cover up your name. Some of the conferences, we'll put the schedule on the back of the name badge, what I like to do is just like, I don't know, try to like pin it to like a button so that it doesn't accidentally flip the other way. Because forgetting someone's name is the worst. And it happens a lot of conferences. So having that nice and visibles is important. And then practice your breakaway. So as much as it as great as it is to talk to random people. It also sucks to just sort of stand around with the same person all night or sometimes you meet some real doozies of people who will not let you go. And you want to talk to other people right? You want to you want to talk to as many people as you can. So practice your breakaway. There's a Jerry Seinfeld's comedians in cars getting coffee, he talked about this, or he said, he is really good at saying it was so nice to meet you. Because it's the nicest possible way to say I don't want to talk to you anymore. And then like and the what is the response that is so nice to meet you to see you later.
+
+84
+00:59:47,790 --> 00:59:48,900
+Scott Tolinski: Right? That enzyme
+
+85
+00:59:49,140 --> 01:00:11,010
+Wes Bos: practicing the brick way my brother in law is, he's a pastor at a church and you can get all kinds of people just like tackling your time and it's important to be able to To talk to all kinds of people, right? So he has an awesome breakaway, where you give the people the time that they need, but also you need to be able to break away from that conversation and not overstay Your welcome. Yeah,
+
+86
+01:00:11,010 --> 01:00:11,940
+Scott Tolinski: absolutely.
+
+87
+01:00:13,469 --> 01:00:18,840
+Wes Bos: I think that's it. That's all my my tips any you got any other tips or questions or anything like that? No, I
+
+88
+01:00:18,840 --> 01:00:45,330
+Scott Tolinski: think just be no be happy and excited to be there. And that positive energy is going to radiate outwards. And you know, people are going to want to talk to you, and I don't know, I get I get so much positive energy from from conferences, that I think that's something that, you know, it's just a great way to approach it. And just to be totally open minded, and I don't know, they're just such great places to learn and get excited about things.
+
+89
+01:00:45,540 --> 01:01:34,950
+Wes Bos: Yeah, huge advance for your career. I think like, if you are hoping to speak in 2018, maybe make it your goal in the next two months to put together two or three different ideas for talks that you'd like to give, and, and put together. Like a CFP, a couple of maybe like a couple, I don't know, seven or eight sentences about what the what it's going to include. Because the worst thing is, is when the conference talk is closing in six hours, and you want to submit a talk, but it's just not enough time to accurately pull together a CFP. So put that together in the next couple of months. And then 2018 is going to be a good especially in the next couple months, that everybody is planning their conferences right now, for 2018. So put those together, and then you'll you'll have a really good chance of being accepted to one of them in 2018.
+
+90
+01:01:35,100 --> 01:01:37,380
+Scott Tolinski: Nice good tips, sick tips,
+
+91
+01:01:37,770 --> 01:01:41,340
+Wes Bos: sick tips. You got any sick pics for the sick tips.
+
+92
+01:01:41,640 --> 01:03:49,680
+Scott Tolinski: I do I do I have a I have a sick pic here. And this is an app for your computer for Mac OS, specifically our computer. Yes, I'm so sorry for Windows people. But I think this stuff's built into your operating system. So you know, there's a lot of like window management libraries and things like that. Sorry, hit my mic. Yeah, so there's a lot of like window management libraries available or applications available, whether it's better touch tool or cinch or one of those for like snapping your windows in certain places. And I have found a nice, nice application that is sort of like Clippy, it's open source. So it's called spectacle, you can find it on GitHub, I'll have the link in the show notes, obviously. But um, it's basically Oh, organizing your windows. Now what it doesn't do is it doesn't do the mouse click and drag snap to a side. But it does all the keyboard shortcuts are fully customizable. And the one thing I really liked about it, obviously, other than it being free and open source is that it has things like it, the one the one shortcut to move something to the left half of your screen, if you hit that shortcut a second time, it'll then bisect, then half again, and it'll do a quarter. So I actually don't know if other ones I'm sure are the other ones that work this way. But if you do your shortcut to hit it to the left, it goes half and then you hit it again, it goes to a quarter. And it because of that the simplicity of it is just so nice to be able to snap your windows wherever you want, you learn a couple of keyboard shortcuts and all of a sudden, you can put something in the top left corner or something in the bottom right corner or something on the right side, like just have everything exactly where you want it to a good window management is supremely needed in Mac OS, because even after all of these years and having windows having this feature, it's like they cannot get it together and put this in the operating system. They gave you some like half assed split screen full screen view that no one's going to use. And this thing just really makes window management super easy, free open source all of the good stuff.
+
+93
+01:03:51,390 --> 01:04:27,990
+Wes Bos: That's pretty sweet. have to check that one out my I'm currently using better touch tool, which amongst 1000 other things that also does does window management. And I just got some keyboard shortcuts to snap them. And then I also use Devi, which does the the visual drag and drop of where you want the element to go. What does this spectacle do this one thing where this is what I really liked about better touch tool from the windows days where you would like move a window into the corner. And it would like automatically snap to that side of the screen or you move it to the top and it snaps to the entire screen. No, it
+
+94
+01:04:27,990 --> 01:04:32,130
+Scott Tolinski: doesn't do any it doesn't do any mouse snapping it's keyboard because it's all keyboard.
+
+95
+01:04:32,130 --> 01:04:34,170
+Wes Bos: Yeah, maybe I should be doing keyboard anyway. Yeah.
+
+96
+01:04:34,170 --> 01:04:57,570
+Scott Tolinski: And then once you get once you like that's the hard part is you got to learn the shortcuts. But once you learn, you know, I think it's Command Option F to do full screen or whatever. And it's not full screen full screen. It's like half the window take up the full screen, not the full screen mode. That's kind of unwieldly you know, so once you learn the keyboard shortcuts you're cruising I use this thing Absolutely. On the daily, nonstop
+
+97
+01:04:58,590 --> 01:05:02,220
+Wes Bos: spectacle Or do you get a spectacle app? Calm?
+
+98
+01:05:02,250 --> 01:05:05,610
+Scott Tolinski: Yeah. No. Is it spectral app calm? Maybe?
+
+99
+01:05:05,610 --> 01:05:07,470
+Wes Bos: I believe so. And links to their GitHub. Nice.
+
+100
+01:05:07,470 --> 01:05:21,450
+Scott Tolinski: Okay, so that's gotta be it. Okay, spectacle, app.com spectacle app on GitHub. I just got it from their GitHub page, which is exile journey. ECC z. Or Zed AR n y Zed ethical? Yeah.
+
+101
+01:05:21,450 --> 01:05:23,580
+Wes Bos: Can you please respect Canadian?
+
+102
+01:05:24,510 --> 01:05:27,720
+Scott Tolinski: I've had to learn a whole lot of new vocabulary since we started this podcast. So
+
+103
+01:05:29,010 --> 01:06:55,080
+Wes Bos: yay. All right. My sick pick is a YouTube video from a conference called how what the heck is the event loop anyway, and it this is one of those things in JavaScript. And Scott and I were talking earlier about some trouble he was having with a race condition. And then I was talking about how I found a bug in Apollo, which had a race condition. And the way that I fixed it was by setting a set timeout zero. And, and I always, I've always been using that like set timeout zero every now and then, for years, and I never really understood why it works. If you queue something up for zero seconds, it actually adds it to the end of the the events, the event call stack, rather than exactly where it should be in it's sometimes fixes bugs with race conditions. But there's this amazing conference talk back from 2014 by Philip Roberts. It's got almost half a million views on YouTube already. So you might have seen this already. But I've watched it probably 10 times. And it just explains how JavaScript works. How events are queued up and run. uses words like event loop, non blocking callback, a synchronous single threading and concurrency. If you ever like that stuff confuses you like it did me. This is an awesome 26 minute talk that you can, you can do. And he built this, he built this really cool tool that will help you visualize how events are added to the call stack
+
+104
+01:06:55,110 --> 01:07:13,290
+Scott Tolinski: nice. Love that. Check it out is the best way to learn that kind of stuff. Because like when are you going to devote all your time to it? I mean, just go and watch a video like that and have your understanding widen just a little bit. Now the sudden you learn about something that has existed and you've sort of worked around it without really necessarily knowing the the nitty gritty.
+
+105
+01:07:14,250 --> 01:07:34,590
+Wes Bos: Exactly, exactly. It's well worth your 26 minutes or for those who listen to their stuff at two X. It's well worth your 13 minute works. Cool. All right. That's it for today. Hopefully you enjoyed that. Make sure you tweet us at syntax FM. Thanks so much to Freshbooks for sponsoring and we'll see you next week. See ya. Bye bye.
+

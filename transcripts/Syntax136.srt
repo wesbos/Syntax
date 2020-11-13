@@ -1,0 +1,488 @@
+1
+00:00:01,319 --> 00:00:04,590
+Unknown: You're listening to syntax, the podcast with the tastiest web
+
+2
+00:00:04,590 --> 00:00:06,120
+development treats out there.
+
+3
+00:00:06,149 --> 00:00:09,000
+strap yourself in and get ready to live ski
+
+4
+00:00:09,000 --> 00:00:10,560
+and West boss.
+
+5
+00:00:10,589 --> 00:00:20,190
+Wes Bos: Welcome to syntax. This is the podcast with the hastiness, the tastiest web development treats with me today, as always, is Scott to linsky. How you doing today, Scott?
+
+6
+00:00:20,429 --> 00:00:33,320
+Scott Tolinski: Hello, do good. We just got back from our big live show. We did a live episode of syntax at reactive on this year. And it's super fun. We did this. You're probably aware because you were there as well involved in I was
+
+7
+00:00:33,320 --> 00:00:34,020
+Unknown: there. Yeah,
+
+8
+00:00:34,559 --> 00:00:44,400
+Scott Tolinski: we did this master chef style coding thing where we swapped off every 30 seconds in one computer. And I think it was a I think it was a hit. We got a lot of positive feedback on that. Yeah. segment.
+
+9
+00:00:44,400 --> 00:00:55,439
+Wes Bos: I thought that was so funny. It's funny because I was thinking about it for like a week. And I didn't even bring it up to you. Because I thought like, Oh, that's kind of like dicey. I don't know how well that will go. And then I told you, you're super into it,
+
+10
+00:00:55,559 --> 00:00:57,210
+Scott Tolinski: though. Yeah, the dicey er, the better. Yeah,
+
+11
+00:00:57,359 --> 00:01:06,750
+Wes Bos: it was hilarious. I just like spelling mistakes and rogue syntax errors and trying to fix it. And like we both had different ideas, how to approach it
+
+12
+00:01:06,869 --> 00:01:40,320
+Scott Tolinski: with it. Not only that, but we both we, since we never talked about it. And we didn't really talk about it as we were doing it. We both just heard of assume that each other would approach the problem the same way. So you thought I was thinking custom hook. And I thought you were thinking just throw it all in the component? And yes, we both I was like looking at your code. And I was just thinking, alright, so wait, when's he gonna write the component? And then I didn't realize I didn't it took me way too long to realize you were writing a custom hook, because my brain was just not there. And then
+
+13
+00:01:41,249 --> 00:01:48,120
+Wes Bos: the hook as a component, and they were like, no, no. And then I totally forgot the effect inside of the hook. Yeah, well,
+
+14
+00:01:48,449 --> 00:02:01,770
+Scott Tolinski: I was just thinking, alright, we make a functional component. We throw a use effect in there. We throw a function in there, and we call it a day. And you're just like, well, let's build a reusable hook. It was like it was predictably hilarious. Knowing I still
+
+15
+00:02:01,770 --> 00:02:12,060
+Wes Bos: need to open source are used dad hook, like oh, yeah, right. very particular hook. I should submit it to use hooks. Oh, yes. All right. I wonder
+
+16
+00:02:12,060 --> 00:02:15,690
+Unknown: if they'll accept it. It's your chance for open source fame?
+
+17
+00:02:15,690 --> 00:03:32,310
+Wes Bos: Yeah, totally. All right. Today, we are sponsored by two awesome companies Log Rocket, just going to sort of track what goes wrong on your website and allow you to replay it. So you can actually see there's an error, how did the user get to that error, and Freshbooks, which is cloud accounting software, which I just spent, not very long, but the longest I've ever spent all year, onyx, they just did my taxes. And I spent maybe, like 30 minutes inside of Freshbooks, doing my taxes, getting all of my reports and stuff prepped, and export it for my accountant. So I feel like I'm I know freshbooks really well. Now. I've been using it for 10 years, but I just stumbled across a couple new features myself that had been rolled out in the last, I don't know, a couple months or so. So we'll talk about them partway through the show. Today, we are having an episode called nine ways to stay sane while working remotely. So whether you are a freelance working from home, or whether you just are someone who has a job where you get to work remotely, we were at GitHub for this conference. And I was talking to some people that worked at GitHub, and they said that like, like, like, I don't know, like 60% of GitHub, like the 60% of the people that live in San Francisco don't even go into the office.
+
+18
+00:03:32,310 --> 00:03:36,180
+Unknown: So they work remotely while that office is amazing.
+
+19
+00:03:36,180 --> 00:03:49,620
+Wes Bos: Yeah, yeah, it's unreal. It's, it's really, really cool. But I guess working from home is the dream. So I've been I've worked from home my entire life. Scott has worked from home for how long you were home for like four years or so.
+
+20
+00:03:49,949 --> 00:03:52,680
+Scott Tolinski: Yeah, since 2016. So not quite for you.
+
+21
+00:03:52,859 --> 00:04:08,699
+Wes Bos: Okay, so we've got some tips as to how to stay sane, how to stay focused, how to get the most out of your day, because that's the thing that you hear from everybody's like, Oh, you work from home, that must be hard, or I don't think I could do that I would just be so distracted and watch Netflix all day long.
+
+22
+00:04:08,819 --> 00:04:17,550
+Scott Tolinski: Yeah, you'd also hear that would be amazing, because I could just watch Netflix all day long and not get dressed and just hang out in your pajamas or whatever. Totally.
+
+23
+00:04:17,609 --> 00:04:19,440
+Wes Bos: So you want to kick it off with your first tip.
+
+24
+00:04:19,679 --> 00:05:25,170
+Scott Tolinski: Yeah, let's kick it off. These are all really good. And this one to me, it's very important to me because you work from home long enough. Everything sort of blends together you start to feel like you're stuck in your house right? And this is really important to find the spots around you that you can go to to work and whether or not you could walk to them drive to them or anything. It's important to find the locations that you feel comfortable working in and that you like actually have this the zone that you get into the zone I always say I'm zoning it I'm gonna say hey, Courtney, I'm gonna go to Nixon's which is the coffee shop I go to I'm gonna go to the Nixon's I got to zone it and just means that I have to change my My place of scenery to put myself into this mentality where I'm going to do nothing but concentrate on what I need to get done. So you want to find these places that really bring that out of you that really bring out the focus in you. So whether it's a coffee shop or a cafe, there's a smoothie bowl place right by my house that is oddly enough, like packed all the time with people working on Mike who's working to go get a smoothie bowl,
+
+25
+00:05:25,200 --> 00:05:26,390
+Wes Bos: what's a smoothie bowl?
+
+26
+00:05:26,670 --> 00:05:39,210
+Scott Tolinski: It's it's exactly what it sounds like. It's a it's a convenient, elegant way to eat a smoothie is the best and elegant way, in elegant and elegant and non elegant
+
+27
+00:05:39,210 --> 00:05:41,340
+Unknown: way like a spoon. Yeah,
+
+28
+00:05:41,370 --> 00:05:45,360
+Scott Tolinski: yeah, Courtney made one for me one time, and I was like, why am I spooning a smoothie.
+
+29
+00:05:47,400 --> 00:06:45,600
+Wes Bos: so dumb, that's great. I find this as well, I often will head out to a coffee shop, maybe like once every week, once every two weeks, I'll just be not in the mood to work where I am. And I find that the easiest way for me to snap out of that is to just go in and go to a coffee shop. And I think part of it is just the walk to the coffee shop, we'll talk about that in a second. And then part of is just being in a different environment, you throw your noise cancelling headphones on, you get a nice coffee, and you're sort of just zone it, you just hit that flow state if you lock in, which is great. I've got tons of awesome coffee shops all around me, which is very lucky. And a lot of people have to have like one Starbucks, and then you get there and there's nowhere to sit or like it's a bad environment. But I live in a spot where there's just like dozens of coffee shops that are possible options. So often I'll just walk down the street and peer in the window and see who's got the best spot open for working on stuff like that.
+
+30
+00:06:45,810 --> 00:07:08,280
+Scott Tolinski: Yeah, this is one of the easiest ways for me to complete the turnaround my day, if I'm like halfway through my work day, and I'm like really feeling like I hadn't accomplished a whole lot or I couldn't focus or I'm distracted or I'm just like getting not into it. I will drop everything and be like, you know what, I really need to change scenery up Fine, go to my spot and lock in. So I think this is a really important one.
+
+31
+00:07:08,490 --> 00:07:35,070
+Wes Bos: I think also talking about spots, spending time and money on your your actual office at home is worth it as well. So whether that's buying a big ass 34 inch monitor, or getting a nice standing desk, or investing in a nice chair, something like that, where you feel like you can get a lot of work done, because this is a dedicated spot for you to get work done. You're not just sitting on the couch or something like that.
+
+32
+00:07:35,249 --> 00:07:38,820
+Scott Tolinski: Yeah, and if it's a home office, you can get a little tax write off there for that.
+
+33
+00:07:39,180 --> 00:07:39,900
+Wes Bos: Exactly.
+
+34
+00:07:39,930 --> 00:08:51,360
+Scott Tolinski: We have how to deal with distractions, which this is a big one, right? If there's no boss, you know, breathing over your shoulder checking on your work, like how do they know you're not just browsing the internet all day? or watching YouTube or watching TV or watching Netflix or any of that stuff? How do you get out of that state where Hey, you're home, there's nobody, there's no accountability for not doing this of how do you dial in your focus. And this is a big one for me, I turn my phone face down. So I can't look at it, the screen doesn't, you know, turn on with the notifications, I turn the volume off face down. I'm not looking at it, I'm not thinking about it. It's not in my brain, I closed my email app, I'll often close slack or anything that pings up on me. And I will turn on a focus app using the focus app is called as the one for Mac that I use. And I use these things digital wellness on Android to block all the applications that I would be distracted by Instagram, whatever. And I just cut those distractions. I don't know if I have the self control to not fire these things up or browse the internet or browse just social media. I don't know if I have the self control by myself. So I definitely rely on systems to do it all for me,
+
+35
+00:08:51,450 --> 00:10:01,320
+Wes Bos: I find that this is probably the hardest one for me from from working from home is just I'm sure people that work at offices have this to just the mindless typing in twitter.com, or the mindless opening the Twitter app or mindlessly opening the Instagram app on my phone. So what I found works for me is either just delete the applications for the day and then install them later at night if if you need to go on them or just logging out of them worked well as well. And that just stops you from doing that like accidentally just opening it mindlessly. And then spending however long or you go down at some tweet thread. And it's a tough one because like Twitter is probably like one of the best resources that I use to stay up to date as a developer and to get help from other people. But at the same time, it's also a huge time suck and a huge distraction for when I actually need to get work done. And I think it it comes down to being intentional with that stuff. As long as you're intentionally browsing or intentionally on Twitter, then it's a very different experience than if you're mindlessly on it. And that's something that it's a it's got to be a switch that you have to flip you have to be like Alright, I'm going to browse social media for 15 minutes now and then I'm going to Stop, I'm going to shut it off,
+
+36
+00:10:01,320 --> 00:10:43,909
+Scott Tolinski: I'm gonna turn my phone down and stop. As far as like watching TV or Netflix or something, just don't put yourself in the environment where you can even do that. I mean, I'm working in my office here I have, I guess I have the means to watch youtube tv or something like that. But I just have no desire to do that, or I'll block it on my computer. But I have no, I have no TV in my office to watch. I have no way of putting on Netflix for if I did, I would, I would certainly make sure I blocked that application. That's it, I guess I just don't ever have the desire to work with the TV on the background. And maybe that's just because I do so much audio recording that it would be impossible for me to do that. But again, this is what I know. I know people that work from home, and they'll just put on Netflix all day while they're working. I just can't i can't imagine doing that.
+
+37
+00:10:43,950 --> 00:11:15,450
+Wes Bos: No, no, I every now and then when I'm doing something that's mindless, whether it's taxes or something like that. I will throw in a YouTube video while I'm working. Sure, almost always this just have my windows open and it just coding and I'll have like, I don't think I've ever opened up Netflix or Yeah, or just that. I just love having the just music on and coding like crazy. I also can't listen to podcasts as well. I know a lot of people probably are listening to us right now while they're working. But I specifically just need to throw on some tunes and go up
+
+38
+00:11:15,450 --> 00:11:25,559
+Scott Tolinski: and down what I'm doing To be honest, yeah, I can listen to podcasts while I'm doing sort of administrative work or answering emails or that sort of thing. I'll typically listen to music, if I'm trying to get in the code zone,
+
+39
+00:11:25,799 --> 00:13:04,860
+Wes Bos: code zone, place, the place zone that looks good. Next up, we have prioritization of your tasks. I think that, at least for me, and this is a big one as well, where when you're you're working from home, you sit down in the morning, you don't necessarily always know what it is that you should should be doing first. And when I don't have very specific tasks that I need to do, and I'm not just saying like, work on a course or create some more examples or things like that, it's it has to be a very specific thing of work on drag and drop example. And then I can just sit down and I know when that thing is done, I always have a list of things I want to do in the day. And I'll just reorder them as to which order I'd like to take it. And that works really, really well for me because they don't I never have this time where I'm just kind of not really sure what to work on, or that's a bit vague. So I'm not really sure. And that could be a huge time suck for me as well. So prioritization of everything that I do is key, it is super key for me to do this, especially just because it gives you a roadmap for what you're going to be doing for the day, you're never going to be searching for something to do. And oftentimes when you're searching for something to do is when you start to drift into, well, maybe social media land, or any of that stuff where you're not looking to do something specifically. So I have a couple of apps that I use for this. And I'm sorry, my app recommendations are always difficult because I'm on Android, and I feel like a lot of iOS people lose out on some of my app recommendations. But I have an app called habits on Android. And this gives you like a checklist and one of my habits, it's like for building habits right now, basically. So
+
+40
+00:13:04,860 --> 00:15:00,600
+Scott Tolinski: you check off what you've done every day. So one of my habits is my morning to do list. And so every single morning when I step up to my desk at like 839, whatever below buzz on my phone that says hey, did you make your to do list today, and that lets me know, oh, yeah, I gotta do that to do list if I haven't already. And sometimes I even do my to do list the night before. Or to do list is pretty nice too, because then you don't even have to think about it. So that's, that's an Android app I use. But for cross platform and desktop, I use an app called to do list which I've talked about on here before any To Do List app is really good. And I'll fire this thing up. And I'll set up my two dues for the day. And I'll give them priorities p one through four. This is something that we both got from the Getting Things Done book, which is I highly recommend reading that book, we'll link in the show notes. We talked about it before. But having a system for having these things to get done is just so incredibly key. So for me again, I make my to do list, I have the P one item as in the number one priority, and that is my number one priority for the day, there's only one p one item and that's the thing I have to take care of. And for me, I Eat That Frog, I do that that P one first. That's another great book, if you if you're interested in getting things done is Eat That Frog. So I have the the system where I get the most important thing done as soon as possible. And sometimes that could take me the whole day. Sometimes it could take me an hour sometimes they could take me 15 minutes. But either way that P one thing is the thing I have to get done. And if you assign it your items p one through four, then you'll always know what to work on next. And the cool thing about to do list is they have that system built in to do list so it reorders your to dues based on their priority. So my P one, or the next my P two p three, whatever is always at the top of the list and I always know what to do next. And again, I'm never ever searching for something to do and therefore I always know what's next up. My Plate.
+
+41
+00:15:00,659 --> 00:15:18,049
+Wes Bos: One thing we should mention about getting things done, and somebody tweeted this at me is that I'm just gonna read the tweet after listening to Episode 122 of getting things done. Pro tip, if you're reading an old copy of the book, he incessantly talks about a filing cabinet set up. Your Secretary do
+
+42
+00:15:18,149 --> 00:15:20,880
+Unknown: so there's a new version filing cabinets. Yeah,
+
+43
+00:15:21,720 --> 00:15:29,039
+Wes Bos: there's a new version of getting things done. That's more for the digital age, and probably doesn't talk about filing cabinets or secretaries. Trust me, I
+
+44
+00:15:29,039 --> 00:15:34,320
+Scott Tolinski: got really good at filing cabinet stuff, even though I doesn't totally not relevant to me.
+
+45
+00:15:35,850 --> 00:15:46,020
+Wes Bos: So make sure you grab the the updated version, you can tell because he's wearing a suit in the old version, and he's wearing like a golfing shirt in the new version. So he's
+
+46
+00:15:46,020 --> 00:17:13,050
+Scott Tolinski: made a little bit of money off of that book. So he can, yeah, he can go relax, he's on the beach now. And so that to do list, again, is just one of these things that is key to setting up your productivity. And if you want to make sure that you're constantly knowing what bugs to work on, and how to be productive. Well, we have a sponsor for you today, who's been a sponsor of syntax for quite a bit now, which is Log Rocket. Now Log Rocket is an amazing bug tracking service, that gives you an instant video replay of what happened when your bugs occurred. So then you can see everything about the environment, what the user did, where they clicked, what they saw their error log their Redux state at the time it happened. And this thing works with any of your platforms, it is really super slick, you get all of the information you could possibly need to solve your bugs. I mean, how many times do you get an error? Could you look at that error? And you say, Yeah, well, that's an interesting error. I'm not quite sure how that happened. Maybe it got lost in minification, or something. But either way, it just looks like garbage. So now you can come and look at this error. And you can see what happened and how it was produced. And you can reproduce that error yourself, no, nor can you respond to an email with cannot reproduce, because you can reproduce it all with Log Rocket. So check out Log Rocket at Log rocket.com forward slash syntax and get 14 days for free to really super cool service highly recommend. I'm using it myself on level up tutorials and loving it.
+
+47
+00:17:13,340 --> 00:18:11,550
+Wes Bos: Awesome. Next tip we have here is making time to be social. So uh, one of my favorite parts about working from home is that you don't have to be social. I'm a very extroverted guy. I love hanging out with my friends. But there's just something beautiful about working alone and not being bugged and things like that. But at the same time, every time we just got home from a conference, every time I go to a meet up every time I go to a conference, and get to chit chat about stuff with people and talk about web development in general, I always come back being like, Man, that was so fun. So I definitely think that it's it's important to go to things like meetups or be involved on a Twitter on Slack, or discord rooms. Just being around like minded developers, I think is really important. So you don't tend to go crazy. I think this is different person by person. But I definitely feel like the community online is why I'm able to work from home. What about you?
+
+48
+00:18:11,700 --> 00:19:33,480
+Scott Tolinski: Yeah, I think it's important. And again, I'm probably more introverted than you are in a lot of ways. So for me, it's not necessarily an easy thing to go be social. But I think it's important anyways, because when I or when my wife Courtney comes home from work, I just start talking her ear off. And she's just like, Oh, yeah, I forget, you haven't talked to people all day. So I think it's important to find some way to have that human interaction, you know, when I get a chance to chat with each other about web dev stuff once a week on your podcast, and that's a great way to fulfill that need. But obviously, not everybody has that option. So you know, I highly recommend joining some slack channels that you can, this could be an easy way to get distracted. So don't take this but join some slack channels where with intention, you're you're conversing and talking with people, rather than just sort of using it as a distraction. Because that it is difficult, they pop up in the messages pop up. So like with with intent, sign on to slack, talk with people for a little bit, be a little bit social, even if it's digitally social, it's gonna help you stay sane a little bit. Again, one of the things I like to do about a coffee shop is go to a coffee shop and even just your interactions with people when you're ordering your coffee or you're sitting down you can maybe compliment somebody on their glasses or something or or just try to be, you know, a human being in human space. It's like it can go a long way for your mental health.
+
+49
+00:19:33,720 --> 00:19:53,280
+Wes Bos: Yeah, absolutely. I often find myself whenever I see somebody with like a tech sticker on at a coffee shop or a specific shirt. I'll try to like it's awkward because I don't want to do it but I often just like to say Hey, nice sticker Are you develop or two and it's kind of fun to be able to just chit chat with people like that for a quick second or two.
+
+50
+00:19:53,550 --> 00:20:58,290
+Scott Tolinski: Yeah, and if you are not super socially outgoing, it is very difficult but it's also really good practice because Once you get practice with that, it's really a lot easier to do it, the more and more you do it, the easier it becomes, you'll be able to start striking up conversations with people at conferences and meetups and all this stuff and feeling very comfortable about it. So yeah, it's one of those things you might want to force yourself just a little bit to do, because it could get you better at that is a nice little skill to practice as well. And if none of that stuff sounds great, you can always go to meetups, because there people are going to be, you know, there with the intent of being social and talking about code and learning and going to be like an open environment like that. I love going to meetups. For that reason, specifically, you can sit down and just strike up a conversation with the person next to you, Hey, what are you working on? Where do you work? What kind of stuff do you program and you you probably have a lot in common. And that way you don't have to, like, look for topics. I mean, there's a handful of things that you can strike up a conversation with just about any Dev, and they'll be happy to tell you about their workflow or their code. Because if they're passionate about this stuff, they're gonna like to talk about it.
+
+51
+00:20:58,440 --> 00:21:21,270
+Wes Bos: This conference we just got back from students had a couple conferences, they have topic tables at lunch and after. So instead of sort of like, I don't know, like I even do this myself each kind of just stand around with beer and wait for Yep. Or like when your way into a conversation, start laughing and pretend to love react.
+
+52
+00:21:21,300 --> 00:21:21,960
+Unknown: Yeah,
+
+53
+00:21:21,960 --> 00:21:46,020
+Wes Bos: the topic tables is such a great thing. Because you can just like walk up to a table with the be like, I would like to talk about TypeScript with you, you know, like, it's very clear why you are there. And it's, you're totally allowed to just barge into the circle of people talking because that's what a topic table is for. I think that all conferences should have that because it's just a great way to meet people. And without being like, awkward or weird.
+
+54
+00:21:46,380 --> 00:21:47,040
+Scott Tolinski: Definitely.
+
+55
+00:21:47,300 --> 00:22:25,230
+Wes Bos: Next up, we have get fresh air. This is something that I always need to constantly remind myself to do. Because if I'm having trouble with something, or I'm not feeling like I'm being as productive as it should be, the last thing I want to do is to walk away from my work and not do it. Because I'm like, No, I need to spend more time on this. But the reality is, is a quick little walk, often we'll go get a like a tea or something or a coffee or just go get like a pop from the corner store, just for like a five minute back and forth quick walk to be able to get a little bit of fresh air. And me, I think that will help solve all of our problems that I have.
+
+56
+00:22:25,410 --> 00:23:14,130
+Scott Tolinski: Yeah, it's really a key thing, I think, especially just especially when you are having a bug or a thing that you can't solve or something that's really tough for you, getting that fresh air and getting that like leaving your phone at home and going for a walk around the block. It helps so much we've talked about it a bunch on this show, if you have dogs, your dogs probably want to go outside. So go walk your dogs, I know it's like sometimes I think I have so much to do, I can't possibly take this time to go walk my dogs right now. And that sucks. That sucks for your dogs, it sucks for you. So go do it, go go just out for a walk, go to the walk for a park, get some fresh air, even go grab a coffee somewhere you don't even have to stay in work at the coffee shop, but just just go for a little walk. And then you'll be amazed at how many times you come back to your computer with a fresh set of eyes and a freshly working brain and and all of a sudden, you're just like ready to go is hugely important in my mind.
+
+57
+00:23:14,490 --> 00:23:45,090
+Wes Bos: And that's also I like having a to do app that syncs with your phone. Because often when I'm walking or getting that fresh air, things will start to pop into my mind. And I'll just throw them in the to do app just as somewhere to put them and then want to come back and sit at my desk, I'll be able to like all of the examples of my JavaScript 30 course and any course that I do, they're always come up when I'm just like, walking somewhere or thinking about whatever and then I'll just jot them into my application. And then I'll file them away in the in the correct project in my to do application.
+
+58
+00:23:45,360 --> 00:25:25,890
+Scott Tolinski: Yeah, I have so many epiphanies on long walks, that I'll have to pop up a notion or pop open to do list and just start start hammering away on some stuff that I don't like to get work done. But I do like to think and maybe potentially solve problems or let my mind wander a little bit. It's, it's hugely important for me. And this one kind of goes along with that, which is get moving, do some exercise. And on a larger scale, it's like going to the gym, lifting some weights running on a treadmill doing that some kind of thing. on a smaller scale. It's just, you know, dropping, giving you 20 in your office right here, just to say, oh, every failed test, I got to go do 20 push ups or something. You know, just to having this this thing in your day to break up the monotony of sitting at your desk all day get the blood flowing. I mean, it has been like clinically proven that exercise that does improve brain function. So anything you can do whether it's just you know, push ups or or just anything to get that blood moving, do some some body squats, mer squats, do some lunges, whatever stretch or something I used to is this hilarious. I used to be sort of known as the guy who stretches on the floor and the office at work. And people just used to be like at first. I don't think they knew what to do about it because I don't think they'd ever seen somebody just like pushing their chair away. Insert stretching on the floor in the office. And I had my computer there and working. I think people just thought it was so weird. But after a couple months of it, it was just sort of Oh, there scotties just stretching again, I guess. So this is something you can do. Just do it. Even if you work in an office setting, I don't know, find a way to weird guy way to get you the weird guy and it will be a topic of conversation. Why you stretching? Well, I'm smarter after I stretch. Therefore,
+
+59
+00:25:27,330 --> 00:26:08,760
+Wes Bos: I actually have a perfect example of this is my neighbor knows that I work from home. And a couple weeks ago, I hadn't been to the gym all week. And she asked me to come help her move this like super heavy wardrobe. So I like Oh, sure I ran down and I helped carry and it was it was super heavy. And then after I was done, like I had pretty much like a full body workout carrying this wardrobe up her stairs and pivoting it around the corner. And I felt amazing. And I was like man, like I felt just so much more zone like I didn't have like a jiggly leg. And I didn't have all these distractions going on. But I was like, Man, that's just a testament to showing like just get moving a little bit really helps you focus and zone in on what it is that you want to do.
+
+60
+00:26:08,940 --> 00:26:13,230
+Scott Tolinski: Yeah, absolutely. I mean, this everything here is all about zone in it for me.
+
+61
+00:26:13,440 --> 00:26:15,360
+Wes Bos: You know who else is in the zone? Scott,
+
+62
+00:26:15,480 --> 00:26:18,630
+Scott Tolinski: you come tax time because you're working on your Freshbooks
+
+63
+00:26:20,670 --> 00:28:04,650
+Wes Bos: is very good. Yes. So Freshbooks is the cloud accounting software that I use for all of my invoicing out to clients out to somebody, if I do like a conference, what's actually really cool is like, specifically what the conference is stuff is that I'll pay for my own flight. And then I will log it as an expense. And then what you can do is you can just turn an expense and assign it to a client, and then turn that into an invoice, which is amazing. So you don't have to like maintain like this like double like, Oh, this is my expense. But then I'm also going to build them for the exact same amount listings will be attached, which is at the end of the day helps keep everything much cleaner, my assistant uses the Freshbooks application, I was actually asking the other day like I just every now and then I just take a stack of crumpled up receipts, and give her a bag of them. And she says I prefer using the app on Freshbooks. Because all I have to do is just like lay them all out. And then just open the app and just take a photo, take a photo, take a photo, take a photo input the amount, there's a button that adds a tax. So like if you if it's like 2595, you can just check HST and then it will like it'll work backwards from there. So you don't have to like put the pre amount in plus the tax amount, you just put the full amount in, hit the tax button and it will calculate the taxes for you. So I love it. I just did my taxes. I spent maybe half an hour in it. Just doing a couple reports a couple exports following up on unpaid invoices and things like that, just making sure everything was in good, good shape. And I export it all from my accountant and he goes into does my taxes. So check it out@freshbooks.com for syntax for a 30 day unrestricted free trial, make sure you use fresh books and how did you hear about a section? Because that makes them keep sponsoring
+
+64
+00:28:04,650 --> 00:28:05,310
+Scott Tolinski: sick?
+
+65
+00:28:05,729 --> 00:28:07,440
+Wes Bos: All right, what do you got for me next?
+
+66
+00:28:07,650 --> 00:29:18,060
+Scott Tolinski: Next up, we have have a separate workspace. This is really important. I think people neglect this one because they think hey, I'm working from home, guess what that means I get to work on my couch, get to work at my dinner table, I get to work in bed, I get to work at any of these places that aren't well good or conducive for getting a lot done. They're going to make you nice and comfy. They're going to make you feel good. But they're not going to make you get a lot done. And there's a time and a place. Let's say you're sick and you're working from home by all means work from bed work from the couch, I do that. But in a standard workday, you have to have a separate space that is for work. And I like to use the space only for work. I don't do anything in my office other than work. That is I record my tutorials, I code, I do all this stuff. And I know that if I'm in my office that I'm here to get stuff done, when I'm not at work, I shut my office door and I don't go in there really unless I'm grabbing something out of there. But for the most part, I know that if I'm heading into my office, I shut the door on going to work. And that is my work spot. It's almost like it's like having an office without the commute. And it's hugely important to shift your brain into that type of stuff done mode.
+
+67
+00:29:18,269 --> 00:31:42,390
+Wes Bos: That's the biggest thing is it's just a mental shift of I am going here now. And it's even funny like sometimes on a Saturday only to run up to my office and go on the computer maybe print something off or the kids are super into coloring pages right now or I'll need to find an email or do quick search online because I almost never bring my laptop downstairs. And it's funny because like if I go up there on a weekend or an evening it almost feels like weird because I am like being in the hours Yeah, going into the office after hours like this feels odd. I'm not usually sitting here when it's this dark or this is weird like it's a Saturday but uh, but I'm up here in it. I think that's just a testament to showing having defined workdays obviously that's the really lucky that we both have our own offices, not everyone is able to have an entire room in their house that is dedicated, maybe like a guest room would would work well as well. I used to live in a one bedroom apartment where it's had my bedroom and then just like a kitchen living room space. And what I did there is I just had like a dedicated desk to where I was working and it was very clear that this was the desk. It was a Tiny Desk because I couldn't really fit much in there, but I spent the time making sure that it was like the perfect setup for me and I got the nice chair. By the way, a little little hack I just did is about a Herman Miller Aeron. I have a Herman Miller on but I bought another one on Kijiji, because I can't help myself when I find good deals. And it was busted. Meaning that like the the it was from like, 1996, or something, it was like super old because these, these chairs have been around forever. And I bought it for, I think, like 150 bucks or something like that, because these these are like 1200 dollar shares or something like that. And I bought it and then I went to Herman Miller and bought the replacement parts. And I think for about like 300 350 bucks all in, I have like, pretty much a brand new seat, a brand new tilting mechanism, all the rest of parts were totally fine. So it feels like a brand new chair. It's like 25 years old, but it feels like a brand new chair and for like 300 bucks. And I talked to a couple other people on Twitter who also someone found one for 50 bucks, and then got the replacement parts for like 100. Nice. So I know this doesn't have anything to well, somewhat has to do with what we're talking about today. But that's just like a little hack where like, you want your space to be the best possible space that you can have. And we realize those things are expensive, but there are little things that you can do like that to make sure that you you really enjoy your space.
+
+68
+00:31:42,630 --> 00:32:22,830
+Scott Tolinski: Yeah, meanwhile, I'm trying to maybe potentially get rid of my Herman Miller Aeron, because yeah, it turns out that this chair is like the worst chair if you have had a tailbone injury because of the way it shaped it just like presses right into your tailbone, and there's like no possible way for me to sit in this chair without it pressing on my tail. Oh, yeah, he'll on it. Stand on it. I'm just like, well have a chair. I have a dude saying standing or sit stand standing desk, but I cannot fit my chair because it hurts so bad. So I'm gonna have to get like a saddle or something. I know Joel has this from a kid as a saddle that's sick. I'm thinking about going saddle Yeah, you
+
+69
+00:32:22,830 --> 00:32:37,650
+Wes Bos: should check that out. The nice thing about that Iran is you can just sell it and like these things do not every value themselves Yeah, you can get most of your money back at that time. That's cool a saddle I wonder what other kind of like what about like a ball? Or I guess that was that would push on your tailbone to hey,
+
+70
+00:32:37,680 --> 00:32:57,000
+Scott Tolinski: yeah. Can I ask to be specific with oddly enough? Is that the the wooden bench we have like a you know, one of those farmhouse kitchen tables with like a wooden bench. Yeah, what a bench is more comfortable for me to sit on than this Herman Miller chair, this fancy chair. It's like, oh, what didn't flat wooden bench is more comfortable just because of the shape of it.
+
+71
+00:32:57,780 --> 00:33:15,690
+Wes Bos: My dad had like, back problem once and he had like, one of my parents had surgery. And what they had to do at the dinner table is they had to borrow, like one of these like praying, kneeling things from like a Catholic church. And they put the dinner table because they kneel,
+
+72
+00:33:15,840 --> 00:33:26,360
+Scott Tolinski: they had to kneel at the dinner table for like a month because of whatever surgery they had. So me Let my standing desk all the time I just flip the chair around and then kneel on the seat of the chair.
+
+73
+00:33:26,670 --> 00:33:29,850
+Wes Bos: Oh, man, that's probably good for your core too, because it swivels.
+
+74
+00:33:30,690 --> 00:34:16,380
+Scott Tolinski: It's also bad because I have awful posture. What I do, I just like lean forward fully. But we also have you ever really a hilarious note in here, which is clean your damn office, which is so very true, like your office is you're not a teenager with a bedroom, like clean your office, clean your desk. Even if you are work. I have seen some appalling desks at offices. I've seen appalling desks everywhere. Like, I cannot express how upset that makes me because when you have a cluttered desk like that your brain is going to not work as well as when everything is in its right place. Now I'm not saying you have to be some Steve Jobs in you know, minimalism like white flat everything with nothing on your desk. Yeah, I'm
+
+75
+00:34:16,380 --> 00:34:18,540
+Unknown: not saying my doored Yeah,
+
+76
+00:34:18,570 --> 00:34:42,810
+Scott Tolinski: I have I have a notebook. I have a pencil. I have my phone, but I don't have little things and trinkets everywhere. I don't have stuff that shouldn't be here. I do have some things but they're out of the way and I have a nice workspace and not like if I start swinging my arms around. Nothing's gonna get whacked and fall over. It's a big one. Clean your office, pick up the floor, pick up the bookshelf pick up every man.
+
+77
+00:34:42,810 --> 00:35:10,050
+Wes Bos: My office is such a disaster. And every couple weeks I'll just go and clean it and I feel like such Zen and then I allow you to get dirty again. There's this stickers absolutely everywhere. Just like little little trinkets loonies. There's loonies and toonies everywhere. The pens. So I definitely need to get into some sort of habit. If you've got any tips as to how you clean your office and get into the habit. I would love to hear those.
+
+78
+00:35:10,350 --> 00:35:25,980
+Scott Tolinski: I like to do it on Sunday. You know, that way, Monday feels really nice. My desk right now is a total disaster because we just came back from this trip, I got stuff all over from the trip, some tea came for me. So I got Tisa note, we just refinanced our mortgage. So I got papers for a mortgage sale in there. That's
+
+79
+00:35:26,580 --> 00:36:00,860
+Wes Bos: the hardest one for me, I just went out and bought a whole bunch of different colored file folders. Oh, yeah. Because what happens is that like I've like I technically have three business entities. And then we have, we have our house and we had a rental that we sold, and we just bought a cottage and we just have all these important papers, and it stresses me out, because they can't get mixed up. And they're all very important. And it's really hard to sort of keep them separate. And then for each of these, like nine things that I have every single year, you need another one of those. And I just cannot wait until everything is digital instead of having to be paper based.
+
+80
+00:36:01,110 --> 00:36:48,230
+Scott Tolinski: I know I do. Now, like I mentioned, there's that like scanning app in Google Drive, I will scan things a lot now and then just read them immediately. So I don't have to think about it, I don't have to have that paper, then I have the PDF right up on my NAS server, get a couple backups, I'm not going to lose anything, as long as you have those PDFs. And that's actually like a good thing. There's sometimes like, like paper forms that you keep around that you really don't need. Like, if you read that to life changing Magic of Tidying Up. She's like talking about like throwing out your whole filing cabinet basically. And so if you're the type of person who listened to that and was like, I don't know about throwing away this stuff, you can there's apps for your phone where you can scan stuff. Again, if you're on Android, you can use Google Drive, but there's apps, so scan it with your phone, turn it to a PDF or get like one of those actual scanners scan it. And that's
+
+81
+00:36:48,230 --> 00:36:49,170
+Wes Bos: so much work though I've
+
+82
+00:36:49,170 --> 00:36:49,800
+Scott Tolinski: heard of it.
+
+83
+00:36:50,100 --> 00:36:51,980
+Wes Bos: Sometimes I get I get like a word. And that's
+
+84
+00:36:51,980 --> 00:36:56,880
+Scott Tolinski: if you tried it pages get your back thing. Yeah. Yeah. It depends on what it is.
+
+85
+00:36:56,900 --> 00:37:07,800
+Wes Bos: Yeah. I wish that it was I was better at that. Just as it came in, scanned it throw it in the garbage, because you write most of the stuff you don't actually need.
+
+86
+00:37:08,100 --> 00:37:14,010
+Scott Tolinski: No, no. And she was she says something about like, what are you ever gonna look at the water bill from like, two years ago? Never
+
+87
+00:37:14,040 --> 00:37:38,790
+Wes Bos: seven years? Yeah, at least in Canada, you need to hold on to it for seven years. And then you could toss it in the garbage? Yeah, that's like, if you get like, that's the like, third little utility bills. Yeah, yeah. Like, I'm sure I could like pull them up at some point. But if I ever get audited, I would just want to be able to take a file folder out from 2012. And oh, man, that's not even 2012 2013 what
+
+88
+00:37:38,790 --> 00:37:47,690
+Scott Tolinski: I'm gonna do, instead of pulling out a file folder, I'm gonna say, oh, what's my what's my login to the water website? I'm gonna right click download on the PDF, and I'm going to get it there.
+
+89
+00:37:47,880 --> 00:38:00,690
+Wes Bos: Yeah, I think I need to throw them all away. At some point. Maybe I should try to go paper. If you have tips on becoming paperless like that. I know that that Google scan doesn't work on iOS, a bunch of people were tweeting us that which sucks.
+
+90
+00:38:00,860 --> 00:38:03,170
+Scott Tolinski: I'm sorry. I didn't know. I promised. I didn't know.
+
+91
+00:38:03,900 --> 00:38:08,790
+Wes Bos: Scott, your Android pics are always alienating us. I don't mean
+
+92
+00:38:10,110 --> 00:38:14,420
+Scott Tolinski: I'm sorry. I need to get an iPhone around here just to confirm my sick pics.
+
+93
+00:38:15,630 --> 00:38:40,770
+Wes Bos: Next up we have here is act like you are going to work. I think this is a really good one as well. Dress up. Don't just wear your pajamas or throw the same hoodie on for every single day. I think there's just like a mental model of I don't know, whatever it is for you. For me. It's putting on jeans, putting on a new shirt. Yep. What are other hygiene tips? There's another one doing my hair. Yeah, that is
+
+94
+00:38:42,210 --> 00:40:40,610
+Scott Tolinski: with me because I only a lot of times, I'll only like do my hair up when I'm like gonna be on recording. Like, I'm gonna be on camera. And a moment you'd be like, Oh, you were recording today? I can tell because you're not wearing a hat. I'm currently wearing a hat. And she's like, well, maybe you need to respect your hair a little bit more and and and I'm like, Okay, so I've been trying to respect my hair Mar I've been trying to not wear a hat every day every single day because it's really easy for me to do that. And she's totally right. If I go in and I you know, you don't have to put you know product in your everyday but you can wash your hair and make it all look nice. Just get cleaned up for the day. Make sure you're shaving I have a problem with that too. I'll turn into like caveman where I just won't shave for a couple weeks. That's a big one. I gotta I gotta cut that one out. It's a problem. But it's a big thing. And you do you turn into basically this, you know, I don't want to use the word troll but you turn into a cave dwelling being that is not leaving a house and is not presentable in public. So my my wife would those don't know she's a psychologist. She's the doctor of psychology. She was telling me that when you do those steps, right? When you clean yourself up when you make yourself look good. Not only do you feel more confident, effortlessly like it just it's like one of those things that you happens as you feel more confident. But because you feel more confident, you're more inclined to be more competent in your work, you're more inclined to be just less of down in the dumps or it helps with depressive symptoms. That was hard for me. When I had my concussion, I had depressive symptoms, and I just didn't want to do anything. And she was saying, even if you like, can't feel like you're doing anything, get up, fix your hair, like wash your face, get get ready to go. And you'll feel totally different about the day than you did before then, and it made a big impact. So if you're the type of person who suffers from those kinds of things, just forcing yourself to do that sort of step is a big deal. As Dizzee Rascal would say, fix up look sharp, get yourself ready to go.
+
+95
+00:40:41,550 --> 00:40:43,050
+Wes Bos: Beautiful. Lastly, we
+
+96
+00:40:43,050 --> 00:42:08,940
+Scott Tolinski: have one which is take breaks, I say take breaks. But with the caveat of not too many in for not too long. Because it's really easy to be like, Oh, I'm going to take a break, I'm going to watch this one episode of this one Netflix show is gonna be half an hour break. And then Netflix is like you want to watch the next one. And you're like, Sure, let's watch it. Next one. And next thing you know, it's a two hour break. So don't take breaks longer than 15 minutes or so a lot of people are fans of the Pomodoro Technique. I don't personally, because I think I have a pretty good handle on when to start and stop breaks. One of the things for me that I do is I eat lunch away from my computer, which is actually something I didn't even do when I worked in an office when I worked in an office I always like ate while working at my desk and at my computer. But like now that I work from home, it's like important to spend that time away from my computer. Or if I am at my computer, that's the time that I browse social media and whatever. And it gives you a little bit of separation to say, Okay, now is the time when I'm not working. And I'm just relaxing a little bit and I can go back to work. And in addition to that, like even like we mentioned, there's like a lot of these things work in coordination, right? Because some of these things are closely related, but they're also addressed separately. And if you take that 15 minute break to go, just take a quick walk again. That's it. That's a quick break. Don't take that 15 minute break, and then come in and then take another break or whatever, take a short break, go for a walk, get some fresh air, open up the windows, whatever, do that little quick break and then get right back to work.
+
+97
+00:42:09,210 --> 00:43:16,350
+Wes Bos: Yeah, I love doing this around lunchtime. I just love walking to go get some sort of lunch at the mall that's near us. It's about 10 minute walk from me. So it's about a half an hour round trip. By the time you get there, get your food and come back. And it's just a nice little break for me, because I often too, I love just throwing on some YouTube and having my lunch at my desk because that's like a great little break as well for me. But adding the walk in is probably better. Yeah, right. So those are our tips. Hopefully you learned a thing or two. If you have any of your own tips, make sure you tweet us at syntax FM, and we would like to retweet some of the other tips because I know other people specifically I think like like what are your tips around working remotely? But with a team right? Because for me it's it's just Scott that really the Scott's The only person that I have to answer to and that's just on Monday mornings right out there that I can go for a walk whenever it is that I want. But like how do you do that when you have like a team that like needs you to be on all the time, you need to have slack on the time you need to be available. So let us know your tips for that. Yeah,
+
+98
+00:43:16,350 --> 00:43:26,010
+Scott Tolinski: this is interesting to me. And you know, I want to see other than tips for this if I want to see your desk setups. Let's get out of that desk. Let's see if it's clean or not. Let's uh, let's share some desk setups here.
+
+99
+00:43:26,150 --> 00:43:33,230
+Wes Bos: I'm gonna make mine immaculate. And then that's Yeah, I love there's a Reddit that's pretty much all developers. It's called the
+
+100
+00:43:33,420 --> 00:43:37,650
+Scott Tolinski: battle stations. No, no, that'll say like these like themers Yeah, yeah, definitely.
+
+101
+00:43:37,650 --> 00:43:49,830
+Wes Bos: I think it's Mac setups. Yeah, interesting. It's our Mac setups, which is it was more like the battle stations that people like, Oh, I spent $10,000 on the water cooled, and I put like LED lights everywhere.
+
+102
+00:43:49,890 --> 00:43:53,820
+Scott Tolinski: You're right. Yeah, LED lights everywhere is the description of that subreddit.
+
+103
+00:43:54,090 --> 00:44:27,720
+Wes Bos: But the Mac setups is like a little bit more like, I've got a MacBook Pro. And I plug it into stuff. And here's here's me at work. And almost always there's people that have code on the screen. And I posted mine on Mac setups once and everybody's like, hey, Wes, I listened to the podcast. So I think it's like almost 100% overlap of developers. And I love looking at that just for ideas as to how do people arrange their monitors? What keyboards are they using? How do they handle putting a microphone in there? Some people have musical instruments as well. headphone stands seem to be a big one as well. Which is kind of odd
+
+104
+00:44:28,410 --> 00:44:30,540
+Scott Tolinski: for me to I don't know yeah, I understand that one buddy. And
+
+105
+00:44:30,540 --> 00:44:33,420
+Wes Bos: just put your headphones on on the table when you're not there.
+
+106
+00:44:34,500 --> 00:44:39,870
+Scott Tolinski: They do stand or they people have banana stands to those so I guess I don't know what yeah, it's worse.
+
+107
+00:44:39,900 --> 00:44:54,210
+Wes Bos: Banana stands is odd, too. But yeah, check it out, tweeted a picture at syntax FM and we'll retweet it. Maybe we should do a hashtag for that. Hashtag syntax setups. Who on Instagram and on Twitter so we can see what your what it looks like.
+
+108
+00:44:54,420 --> 00:44:57,390
+Scott Tolinski: I'm gonna use a photo from like two weeks ago and my desk was looking really good.
+
+109
+00:44:59,430 --> 00:45:01,080
+Wes Bos: Beautiful, what About sick picks today,
+
+110
+00:45:01,320 --> 00:46:32,310
+Scott Tolinski: sick picks, I have a sick pick, which is funny because we just talked about this a lot when we were in San Francisco here. So YouTube channel that I really love. And I know you're a fan of too. And you don't necessarily have to be that into cars like I'm not I'm not like a gearhead or like, no our person necessarily I enjoy cars, but I'm not like really crazy about them. This YouTube channel is pretty popular, Doug demuro will have the link in here. You may have heard of this before, because he has nearly 3 million subscribers. He goes through. And he picks out all of these little quirks and features and, and little tidbits about these cars. And some of the videos are like 2030 minutes long, maybe around like 20 minutes is the sweet spot there. And yeah, what he'll do is he'll just like he'll go through the weirdest little things about these cars that you probably never cared about. But to me, it's absolutely fascinating. They'll be talking about here's a car and let's look at the door handles and let's look at how the the air conditioning or the everything is turned on or whatever. It's it's just so dang fascinating. And he's great at it. He's an amazing personality because he's so into it. Like he'll, he'll just like geek out on the funniest little things in these cars and just his go to town on that I've watched I thought I probably watched 100 of these videos by now and there's still so many more to watch. It could be like whatever you're into car wise because he does these exotic cars. He does like SUVs he does weird I think
+
+111
+00:46:32,310 --> 00:47:18,840
+Wes Bos: one of his most popular videos is like a fully loaded Grand Caravan that has like cameras to see the kids it has microphones it has a little vacuum built into the back the how the seats fold unreal this this guy's YouTube channel is the is the best and I love seeing people succeed in like other stuff like that. Because then I can say like, What is he doing? That makes it so much more interesting then all of the other cardio too. I read that he has a bigger audience then what is that like a British one that everyone want Top Gear Top Gear he's got a bigger audience than Top Gear which is nuts and he's just doing these hilarious YouTube videos with the little tripod I just watched the the 2020 Jeep Gladiator which is the Jeep truck this morning and it was so good.
+
+112
+00:47:19,140 --> 00:47:29,550
+Scott Tolinski: It says Funny thing is we probably have different tastes in these videos because I almost always watch the exotic cars or the those kind of ones I feel like you're probably more in the utility vehicles
+
+113
+00:47:29,640 --> 00:47:30,390
+Unknown: territory.
+
+114
+00:47:30,450 --> 00:47:59,190
+Wes Bos: I watch them all you do, I find the funky ones to be the most interesting. So where he'll go like have like an old Jeep or he'll find like a I don't know, all kinds of different these older vehicles and I just find like the the the funky ones that you never would have thought how things work, how the lights work. Those are the most interesting to me, but I'll watch anything he puts out he he has another channel called more Doug demuro where he
+
+115
+00:48:00,630 --> 00:48:25,230
+Scott Tolinski: goes, this is a house and he just like reviewed that this house that had quirks and features. It was so interesting, because it's so he's so good at being excited about the little quirks and features. I think that's really it. It's like the stuff that you never hear people talk about. He is so excited about it and that to me is like really what makes it interesting and excellent. I love it. So yeah, check it out. If you haven't heard of it before, you might love it.
+
+116
+00:48:25,440 --> 00:49:53,040
+Wes Bos: My sixth pick is going to be the Yeti Rambler 14 out so I've talked about a bunch of times on the show but how I love Yeti drinkware and it just doesn't necessarily have to be Yeti because Yeti is really expensive but you can buy it at like Target you can buy like a cheaper one at Target. But the idea is that there's it's a stainless steel cup and there's two layers and then they vacuum out the air that is in between the two layers of the stainless steel and that is one of the best insulators that you can have because there's there's really nowhere for the heat to escape to and there's there's no air in between there. And I have a whole bunch of Yeti stuff. I've got some of the big the bigger Ramblers that they have but they just came out maybe about a year ago with the the 14 ounce mug, which is really nice. So 14 ounces holds. That's quite a bit of coffee. I don't really know what ounces are. Hold on. Let me convert it to milliliters for us sane people 18 ounce ounce, two milliliters 414 millimeters so it's just over a can of beer that would fit in there. I find that it holds enough coffee and it keeps your coffee hot forever. I have a problem of my coffee going cold before I can finish drinking it because I get into some code and I forget about it and this thing keeps it piping hot almost too hot like you have to make sure that's not too hot because it stays hot forever big fan of it. So that Rambler 14 ounce I got the one in Navy and the mug version. Cool like a cobalt to blue.
+
+117
+00:49:53,910 --> 00:49:54,450
+Unknown: It's like great,
+
+118
+00:49:54,570 --> 00:49:55,470
+Scott Tolinski: that's perfect for you.
+
+119
+00:49:55,500 --> 00:49:58,440
+Wes Bos: Yeah. What about shameless plugs?
+
+120
+00:49:58,800 --> 00:50:39,480
+Scott Tolinski: I have a course on grid. Which is a static site building with view j s. So if you are a view j s fan, and we just did our view episode, I have a course that is now out for purchase or for subscription users, which teaches you how to build blazingly fast, fastest static sites using grid some you could think of as the Gatsby for grid some because graph qL is involved. It basically took all of the lessons that Gatsby learned and we're like, well, what if we made this with view and what if we made some of the configuration things a little bit more seamless? So goodsam is a young platform but it's really super cool. So if you are interested in building fast static sites with Vue js, check it out at level up tutorials comm forward slash pro
+
+121
+00:50:39,750 --> 00:50:56,280
+Wes Bos: beautiful I'm going to shamelessly plug my youtube channel again. I've been posting a bunch of kind of code along videos up there. Just search Wes Bos on YouTube and make sure you smash that subscribe button break that trackpad, break the trackpad. That's it for today. Thanks for tuning in. We'll catch you next week.
+
+122
+00:50:58,890 --> 00:51:08,640
+Unknown: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

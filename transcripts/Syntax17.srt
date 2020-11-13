@@ -1,0 +1,396 @@
+1
+00:00:01,290 --> 00:00:16,460
+Announcer: You're listening to syntax, the podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski and West boss. Wow. Yes, I played it again. Yes.
+
+2
+00:00:17,009 --> 00:00:40,590
+Wes Bos: Oh, welcome to syntax, everybody. That is our $15. That was money well spent, which is over the top introduction. We paid I paid 15 bucks for that thing. And I told the guy to make it as over the top as possible. And I think it was a little bit offended. Because I think most people get those that actually serious. But I don't know, what do they get that's got
+
+3
+00:00:40,610 --> 00:00:56,160
+Scott Tolinski: no strap yourself in and that it's, it's amazing. It's everything you could hope for and more. And every time I hear those, those startings and podcasts I'd like wonder if they're tongue in cheek or not? And like, yeah, that's my instant judgment of a podcast.
+
+4
+00:00:56,160 --> 00:01:59,010
+Wes Bos: Are they doing this tongue in cheek? Or is this? Are they serious, serious about this kind of thing. So strap yourself in and get ready. So hopefully you enjoyed that. So today we're back apologies for last week, we didn't have an episode out what happened is a couple of weeks I was I was traveling, which means that we were we were supposed to just record on on Monday. And then I came down with a wicked, I was so sick, and not the good way that I just couldn't, I had a throat infection. And I couldn't put together an episode. So apologies for those who missed it, I was happy that some people actually noticed that we missed a week, which is great to hear. But we're back at it today. And we're gonna be talking about buzzwords and jargons are gonna tackle some of these things where you're like, what does that What does that even mean? Does it mean things? things. So we have Freshbooks today as our sponsor, thanks so much for them to sponsoring Freshbooks this cloud accounting software, they're my favorite. We'll talk a little bit more about them partway through. But let's let's talk to Scott, how you doing, Scott? Hey, I'm
+
+5
+00:01:59,010 --> 00:02:45,360
+Scott Tolinski: doing I'm doing good. I don't have a throat infection. So I'm probably a little bit better. Yeah. And, you know, just working really hard. And I launched a new react course on react 16 best practices and that sort of stuff on Friday. And it's like 23 videos. And it doesn't get into Redux II stuff yet. It's definitely for beginners. It's for that like entry level, React level. But it uses all of the the latest and greatest, like static prop types and async await and the fetch API and there's like a lot of great JavaScript stuff in there and not just great react stuff. So yeah, I think it's a pretty darn cool. I'm gonna be publishing some preview videos on my YouTube channel this week. So keep an eye out for that. Those should be up today.
+
+6
+00:02:46,410 --> 00:02:48,420
+Wes Bos: Wicked. That's good. That's good.
+
+7
+00:02:48,450 --> 00:02:51,960
+Scott Tolinski: Yeah. Other than the cold though, how was your vaycay?
+
+8
+00:02:52,260 --> 00:04:10,500
+Wes Bos: vacation was fantastic. Did we do an episode? I think we did an episode in between then. But yeah, I was just in New York for a little bit. That was really fun. But then I mean, the whole family got sick for a week for about three weeks. And now we're trying to try to crawl our way out of it. Now I have this really nice like boomy radio voice, which is kind of cool. Hey, but uh, hopefully I don't I don't cough too too much through this. But let's, let's jump into it. We've got a dev jargon buzzwords, we're gonna do our best shot at trying to explain what some of these things mean. And then there's some of them, I asked on Twitter for them. Some of them, we just don't know what they mean. Or we just like, I don't want to take a chance at trying to explain it. Because I don't really have a good grasp on how these things work. But we'll we'll go through and hopefully, you'll you'll be able to understand these are sort of these like, come out gunslinging interview process words that people throw out. And you're like, Oh, I actually don't know what that means you do a quick little Google before your actual interview. So hopefully, you can get you a little bit more comfortable with using these words that get thrown out. So you wanna you want to start us off with grabbing one of these, Scott will sort of go back and forth and do our best to explain them.
+
+9
+00:04:10,920 --> 00:05:34,649
+Scott Tolinski: Yeah. So now, if I want to take off the top of the list here, because I'm not sure I'm confident on the first one. But let's let's do we can start with serverless. Because that's a hot one right now. Yeah. serverless is pretty hot, because people are throwing it around left and right. Like, oh, you can do this service service server lessly. And what serverless is doesn't mean that there's no server involved, it means that the server is not one that you necessarily have to manage or worry about. And you're essentially able to write your server side functions off on a service somewhere. So whether that's Amazon's What does Amazon service lambda? It's lambda. Yeah. So whether you're using lambda to maybe hit that Like an API And have that like, one useful feature I've seen as remember that software, we were talking about cloudinary, where it like handles your image, image storing. And yeah, so basically, you could write your own version of cloudinary. So when you upload your image, it's hitting lambda, instead of a server, you manage somewhere, that lambda, that function, that's whatever could process your images and store them somewhere else, maybe in an s3 bucket or something like that. But either way, you're not essentially worrying about that being a server that you're managing somewhere. So it's essentially server less, but it's your server less, you know, it's not your,
+
+10
+00:05:35,190 --> 00:06:52,470
+Wes Bos: it's not your own server, it's kind of like that sticker that people have on their laptop is there is no cloud, it's just somebody else's computer. Exactly. And that's exactly what it is that sort of the draw to to using serverless. Or people call it functions as a service or function. I don't know, there's all kinds of different different words for a describing it serverless is one of the popular frameworks that allows you to sort of sit it on top of all these different cloud like Amazon, obviously, but like, you can also put it on top of Microsoft Azure, and all these different ones out there. The benefit to that is that instead of coding like one big monolith application, you you code these these little functions. And then when that function gets really busy, though, one really good example is code pen does sass pre processing, or babble transpiling. And sometimes, a lot of people want to do sass pre processing at once. So what they do is they just kick that off to a separate function that lives in the cloud. And then if a lot of people are doing it at once, that just that function will spike itself up and then spike itself down. And you really only have to pay for the server time that that one function has done. So it's like sort of like infinitely scalable without having to maintain a whole rack of servers or something like that.
+
+11
+00:06:52,649 --> 00:07:10,649
+Scott Tolinski: Yeah. And that and it also prevents you from potentially or runaway, or just a huge amount of people potentially crashing other aspects of your site, right, it could quarantine an issue, because that one particular issue would be sort of off on its own and wouldn't have the potential to bring down anything else.
+
+12
+00:07:10,680 --> 00:07:22,740
+Wes Bos: So Exactly. Like say, for example, you're selling stickers that were silly for $5, you wouldn't actually bring down the important aspect of your business, which would be people trying to buy $130 courses.
+
+13
+00:07:22,800 --> 00:07:24,000
+Scott Tolinski: So what an example?
+
+14
+00:07:24,089 --> 00:07:34,199
+Wes Bos: Yeah, what if I don't, I just just had top of my head and might it might accidentally happened to somebody where it could really affect their how their business works. But you know, it's a good example, right?
+
+15
+00:07:34,829 --> 00:07:38,790
+Scott Tolinski: Yeah, yeah, no, it's perfect. And all real world.
+
+16
+00:07:41,310 --> 00:09:47,030
+Wes Bos: Let's move on to the next one. Will may find a good one here that we've got here. Um, composition, this is this is a hot one, a lot of the ones that we we've got here are sort of like loosely related to functional programming. And maybe I'll just throw out a little, a little plug for fun, fun function, the YouTube channel, because anytime you want to understand how these things work, and not end up curling in a ball and crying because these are so obtuse examples, go to the funfun function, he does an awesome job at explaining all these things. So what is composition? Well, um, you hear this a lot, especially in react. And what I understand it to be is that if you have a function that does something and you want to have that function, do more stuff, it doesn't necessarily make sense to just like, make your one function do a whole bunch of things, what you rather do is you rather make a whole bunch of little functions that do one thing and one thing well, and you sort of click them together to make one big function. So for example, in react, we often use composition where you might have like a component that fetches your data and displays it, or sorry, you might have one component that that displays your data. And then you might have like another function that will go out and fetch your data and do your caching like something like Apollo, what you would then do is you you sort of wrap the fetching component around your, around your other displaying component, and then together, they make this one sort of super component where the one function eats the other component, and then returns us returns a new component from there. So like the concept of a function, returning a function returning a function and each way along each way each sorry, each step along the way, you're adding some sort of functionality or some sort of value to that specific function. Yeah, so I don't know what do you think, Scott? How was that?
+
+17
+00:09:47,150 --> 00:10:04,740
+Scott Tolinski: I think that was great. I mean, it's pretty much the the main context that I use it in is react that is specifically composing data containers and that sort of stuff. But yeah, and I think that's a better way to I could have described it. So definitely, definitely like the F Exactly.
+
+18
+00:10:04,860 --> 00:10:13,770
+Wes Bos: If you want to function to do more than one thing, you can click together multiple functions. By composing them together. I guess that's the simplest way that we have there.
+
+19
+00:10:14,370 --> 00:10:55,380
+Scott Tolinski: Yeah. So the actual definition of the word composition is the way in which a whole or mixture is made up. And I guess that kind of works very neatly with how you just described it there. So it's nice, sometimes done, I guess, get an idea about like these words and why they were chosen to explain. Yeah, like what they're explaining. Sometimes I have a hard time with that. Like, why the heck is this word being used for this thing? Like, what's the connection there? So that that's one that coming from a music background, you hear the word composition in so many different contexts from that, it was a little bit tougher for me to get my head around, like, what the heck is this actually talking about? So definitely.
+
+20
+00:10:56,160 --> 00:10:57,900
+Wes Bos: Awesome. We got an X for us.
+
+21
+00:10:58,470 --> 00:13:17,940
+Scott Tolinski: Okay, let's do progressive enhancement. This is one that is, is pretty important with all of these new fancy features coming out non stop nowadays. Yeah. So for me, progressive enhancement is sort of taking care of your, your, your audience, or your users that don't have access to the latest and greatest features, at the same time, being able to code with the latest and greatest features. So like I mentioned, the first time I came across progressive enhancement was talking about CSS, when CSS three came out. And it was sort of like, here's, you could do you know all of these great new things with CSS three, whether it's gradients or whatever, but you are fonts, but you might want to have this backup of CSS that handles the older, older people. So what progressive enhancement means is that the system itself doesn't break for people with older browsers, or who aren't using the latest and greatest stuff. But they might not get the same experience, right. So at some point in the past, like IE six, I remember, ie seven or whatever, you develop websites, and you'd have to redo the entire way you were doing your website just to accommodate those people. And instead of accommodating for those people in that way, you are giving them a different experience that just doesn't have necessarily all of those advanced new features. And then the people who can have the advanced new features, get them still. And they you know that you enhance the site or the application progressively with the new features? Exactly. I think another good example, is geolocation. So if you have a map page, where you have a store, locator, you ask the user to input their postal code or zip code, whoever, if they have geolocation available in the browser, you can progressively enhance that experience by by just generating it for them and they don't have to type it in. Right, it's still works at the end of the day, it's just a little bit different for users on older browsers. Yeah. And that's I think it was a nice little shift when people started talking about progressive enhancement, because it stopped you from thinking, Oh, I can't use these things too. Well, how can I make this experience still workable for these people and and still provide this great experience for the people who have the new great features, because the new great features are usually new and great, you know?
+
+22
+00:13:18,930 --> 00:15:01,710
+Wes Bos: Exactly. Next up, I have one called a singleton. And this is actually not something I see used very often at all. But it's one example that does use it is mongoose when you want to interface with your database. So the idea behind a singleton is that when you have some sort of package, and you need to configure it like connecting to a database, you just configure it in a one of your files. And then if you were then to require that package anywhere else in your application, it would already be set up, it would always refer to that one instance where you've configured it. And this is really only ever a good pattern for when you absolutely only ever need one of those in your application. And you don't need multiple router might be another good example of a singleton where you your application will only ever have one router. So you set that thing up in one file. And then anytime that you require that router package from NPM, it's going to be already set up. A lot of people don't like this, they rather import the stuff that they have, do their configuration and then export that configured version of the package. And then and then just use that from now on. But mongoose is a really good example where if you want to reference any of your models, or you want to be able to grab your database without it being configured where it's configured in a different file, you can just require mongoose directly and it already knows about it being it sort of goes, it's sort of counter to what we always do, which is have you shouldn't assume that these things are sort of global and globally available throughout your application. But in some use cases, we do see this sort of stuff. Singleton pattern being used.
+
+23
+00:15:01,800 --> 00:15:11,430
+Scott Tolinski: Nice. That was a, this is one that I was hoping you would take, because I didn't have a good explanation for what it was. And if I got it on that, so
+
+24
+00:15:11,460 --> 00:15:13,020
+Unknown: yeah, no nice I go.
+
+25
+00:15:13,170 --> 00:15:21,960
+Scott Tolinski: Yeah, it's it's a lot of these things you use and you know, and you've experienced, but you don't know you don't combine the name one to one with the tech Yak. And
+
+26
+00:15:22,470 --> 00:15:48,660
+Wes Bos: it's something like, I never really understood why it works that way. I always like I remember, for years, I use mongoose. I'm like, why does it just know like, how come all my other applications I don't, I always have to, like, reconfigure them, or export a configured version of it. And, and with mongoose, I just have to simply require it and it knows about it. Right? It's kind of kind of nice. But also, it could lead to some problems. If you're, if you don't, I don't know how that exactly works. Yeah.
+
+27
+00:15:49,050 --> 00:17:37,980
+Scott Tolinski: Yeah. Okay, so I'm gonna take on API and SDK here, which are great for being jargony. Because they're acronyms. So you know, they're easy to just be like, Oh, that's the API. What the heck is an API like if especially I mean, how many people know the actual acronym for API off the top of their head is Application Programming Interface, which it says what it is right there, right? It's an interface, where SDK is a software developer kit. It's like a kit for for software development. So to get into like an API, an API is a way to interface with someone else's application essentially, like that. You could think of it like YouTube has their website right in their website is all pretty nice. And then they have their API, which is the API is the code that I can write that connects to their system, which is available, right? There's their system is available publicly with a key. So I give them a key to say, let me into your system. And let me grab some information. And that way that that interfaces there is is the API from for me connecting to YouTube to being able to say, on this path, give me this data in this data comes back to me. And API's can be all sorts of different stuff from like I said, just grabbing data, but you can also use API's in a way to like to keep with the YouTube thing, if you want to update, you know, your description on your video, you could do that through an API or if you want to charge payments, you could do that through an API. So an API is the interface that's made available to you to work with someone else's someone else's application, essentially. I mean, it could be your own application as well. Just another another thing that you're interfacing with. Do you have anything to elaborate on that before
+
+28
+00:17:38,189 --> 00:18:43,070
+Wes Bos: I get? Like when I think of API, that's where my mind goes to is like some sort of endpoint that I can ping in work with YouTube or grab a list of dogs or like it's basically it's kind of synonymous with like a REST API, being able to push and pull data from the services. However, sometimes you also hear people talk about API in terms of, I don't like the lodash API, or I love the lodash API. And then you think about like, like, does she have like a REST endpoint that I have to hit? And API essentially means just like, how do I talk to this computer? And if people are talking about a software API, then often what they're they're furring to is like, what are the names of the functions? Or how do I interface with this specific database cache? That's, that's the API. So that's how I actually talked to it as well. So it's kind of one of those like broad things, that means a couple different things. So if people if you hear people saying it, maybe just pause for a second and try to understand like, do they mean like a Data API? Or do they mean being able to interface with this computer? Or what do they mean?
+
+29
+00:18:43,169 --> 00:20:07,340
+Scott Tolinski: Yeah, at the end of the day, it's just how you're interacting with with something. Right, exactly. Okay. So SDK, which is software developer kit. And the software developer kit is actually another pretty encompassing thing. It can include all sorts of stuff from actual programming languages, to libraries, to text editors, and IDs, and common tools and utilities. Like, for instance, I'm gonna keep, here's the and the Android SDK includes an ID, which is Android Studio, and includes the modifications to Java, that you would be using to interface with Android, it would include all of the tools like the command line tools that you would use to, like, let's say, I want to install because because androids open source, I can go and grab it and a modified version of Android from the web, right. And then using these command line tools, I can push that directly into my phone and install a brand new version of this operating system that someone else created. So those those command line tools that come in this are also part of the SDK. So it can be anything like I said, from libraries, languages, IDs, utilities, all sorts of that stuff is included within an SDK. And it's primarily for like its its purpose is to help You build stuff. So it's a software development kit, right? It's a kit of stuff that enables you to build other stuff.
+
+30
+00:20:08,940 --> 00:22:56,490
+Wes Bos: Great, I like it, I'm going to tackle one here, which is pure functions and side effects. So let's start with the what a pure function is, a pure function is that is a function that will always hundred percent of the time return to you the exact same value, given that you provide it the same value. So let's a very simple example, add a MP, if you were to pass it one into that as a pure function, that will always return three, because given that you pass it the same values, it will always and that makes that makes your function very easy to unit test. Because there are no surprises there, nothing, nothing is going to happen 100 years from now you run that function, it's going to do the exact same thing. The idea with a pure function is that you don't ever reach outside that function to modify external data, or maybe display some data or, or anything like that, that function is simply just something that takes in values via the arguments and returns to you some sort of computed result, that will always be the same. Now a side effect is when you need to make some sort of mute, we'll talk about mutation a second when you need to reach outside that function, and change something. So sometimes you see people writing functions where maybe like a plus b, okay, it will return that value. But I'm also going to put the answer in an array that I also have some sort of have outside of this function, because I need to store that value, that that is a side effect. Because when you run that function, it's going to reach outside and modify something, something other than the function that you are working with. And that can lead to problems problems down the road. So another example might be is if you have like a calculate total, where it takes in the amount that you have, and it will add sales tax and tip or whatever. And that's great, because that'll always calculate the value. But if you were to also inside of that function, like grab a div and update that on the screen, that is what is called a side effect, because you're reaching outside and updating and there's a chance that that div might not be there, you're you're sort of not keeping it sort of what's the word for it, you're not, you're not keeping everything nice and tidy inside of that one side, that one function, obviously there is there's a point you have to make a side effect at some point. But it's really nice to sort of code your entire applications library of functions in these pure functions. So that you, you always know that you're going to get a result that comes back. Same with if you're ever working with dates, that's that's not going to be a pure function, because time changes. And you will every time you run that if you're working with the date, if you run it tomorrow, you're going to get a different result. And then what you have today, so that's sort of the idea behind pure functions and side effects.
+
+31
+00:22:56,520 --> 00:23:09,840
+Scott Tolinski: Yeah, and one of the upsides is that they make testing a lot easier. Because if your test case is going to pass and you know, your functions always going to give you the same kind of answer, then you know, that anything you give it is also going to pass Exactly,
+
+32
+00:23:09,840 --> 00:23:46,740
+Wes Bos: yeah. And the idea is that if you ever have anything that is variable, like a date, you should pass that date data in rather than generate it inside of the function. So if you're trying to make a function that calculates how many days until Christmas, you shouldn't figure out what is today inside of the function, you should pass in what is today into the function. That way, when you're testing it, you can always pass it October 15, or whatever date you want. And you will always get a very the same result. Because the difference between October 15 and December 25 is always going to be I don't know, however many days that exactly is.
+
+33
+00:23:46,770 --> 00:24:41,880
+Scott Tolinski: Yeah. And this is also a plug for that date FNS date functions library that Wes told me about a replacement for a moment. Yeah, that was a lot of episodes ago. But yeah, where moment is not pure immutable. And obviously working with date functions isn't. This is and that can save you so much time and headache when working with dates. Because that is a thing is even if you know that working with date functions is going to mutate your date or whatever. It's easy to forget that in the moment when you're coding something and then all of a sudden, you know, something's not what you'd expect it so again, yeah, working with dates. I love the date FNS when I when I changed it over everything just got a little bit nicer. So So speaking of date functions, you know, it's really tough to keep track of is the dates for when your invoices are due. And you know, it makes that really easy.
+
+34
+00:24:42,210 --> 00:25:53,820
+Wes Bos: It rashba sir. Wow, I we've never had a really good segway on this podcast. We're getting good at this. We got to our intro, and now we've got segues. So Freshbooks is cloud accounting software that small businesses, freelancers larger businesses use to keep track of their books. So I've been using myself for, I don't know, eight, eight years or so. And all of my businesses history is in it. My accountant loves it. Because I just take a dump of all of my data at the end of the year, I use it to keep track of invoices, who's paid me who has not paid me I have like four or five different currencies, running inside of that all of my expenses go in there. All of my tax reporting comes out of there at any given time. And if I ever need to see like where I'm at and a business in at a given time, like how much have I been spending this year, I can just run these really nice reports. So if you are a freelancer, if you are a small business just getting started, and you need to send somebody even just one invoice, go ahead and sign up for fresh books, go to freshbooks comm forward slash syntax, enter syntax into the How did you hear about us? And you'll get one month of free with that. So thanks so much to fresh books for sponsoring.
+
+35
+00:25:54,480 --> 00:26:15,180
+Scott Tolinski: Nice. Yeah. So while we're on the topic of, you know, pure functions and stuff like that, I figured I would take a stab at immutable and mutable, which are to meet if I'm being entirely honest, are you while they're accurate words, they're sort of, I don't know, unnecessarily verbose that it meant
+
+36
+00:26:15,180 --> 00:26:26,910
+Wes Bos: like, when I first had it, I thought that like mutable means that you can mute it. Like it can be quiet. Yeah. And I didn't understand it at all. But then when I switched to like Ninja Turtles, I made a bit more sense.
+
+37
+00:26:27,270 --> 00:28:08,010
+Scott Tolinski: Yeah, right. I just I just don't I get I mean, I get it. But like, Man, you couldn't have come up with a, I don't know, makes a sound cool. more easy name. Yeah, yeah. So mutable and immutable. They're, they're fancy words to get thrown around when you're talking about stuff changing. And, and then you know, programming, we're talking about variables, right? So if you set a variable, and then you then let's say we set a variable name, and then I want to reset that variable name is now going to be equal to something else. So first name is equal to Scott, and then I set that same name equal to Wes, what that's doing is that's mutating that string. And so muting that variables. So that string is is mutable, right? That is, it has been changed, that variable has been changed and is no longer the same thing. In addition, you could also say that, like Scott, and then adding on a Y and having it Scotty, but having it set to the same variable that it was set, is also mutating that string, it's modifying it. So I mean, you could, in my opinion, you could probably just change these to like not modifiable in unmodifiable, I don't know any better. But the immutable is the exact opposite, it's constant, it's not going to be changed. And you pretty much at this point, you're going to be wanting to do most things as immutable. So that's why they they mostly give you the advice now with es six is to always use constant variables, because those constant variables are going to complain if you are setting a constant variable or mutating it to something else either than it originally was. So yeah, mutable is chain can be changed or is changed. And immutable is something that is not changed or cannot be changed.
+
+38
+00:28:08,730 --> 00:30:03,390
+Wes Bos: Yeah, that's great. I think sort of the rule of thumb with this kind of stuff is that anytime you're trying to overwrite a variable like variables, then it's not paper, they don't grow on trees, you can make a new variable. So rather than modifying the existing one, just make a new variable for the value that you do have. And then we also talk about like immutable and mutable methods. So if we take our array, for example, we often have things we have slice, and we have splice, which, first of all, like, but second of all, slice is immutable, meaning that you do not change the original values when you modify it. So if I would, if I had an array of 10 names, and I wanted names two through five, I would slice two comma five, and I would get those values where is if I were to use splice, it works very similar in that it'll return a portion of that array. However, splice is mutable in that it goes back and harms the original array, which is generally not what we want to do. Because you don't know what what that are, you might need that value in the future, something else might be bound to it. And that's that's the whole reason in react where why we don't just modify state directly on the state object, where we use this whole take a copy, modify your stuff, and then call set state and you sort of put it back in Facebook has taken it even further with immutable j s. And rather than using arrays and objects and stuff like that, you can use immutable j s, which will give you your own set of array addition object ish kind of things, and it will allow you to modify the values of your data without actually harming them. or going back and modifying that the original data?
+
+39
+00:30:04,020 --> 00:30:51,600
+Scott Tolinski: Yeah, I haven't used immutable JS myself. But I, there's I guess there's no reason why I haven't I just haven't explored it or anything like that. And to me, I think a lot of it came from, like, having an understanding of using this stuff came from starting to use more functional things like, yeah, you know, even in starting to work with lodash. And seeing how you're creating a new array or a dot map, right? You're creating a new array, when you are modifying your array instead of overwriting an array. And to me that practical example of this stuff, why, why it works out well, for you really sort of set me over the edge in terms of understanding why it's important and why you would want to keep things immutable. Exactly, exactly. Plus
+
+40
+00:30:51,600 --> 00:31:29,880
+Wes Bos: it, it helps you like just dance around some of these just annoying bugs, where sometimes you, you forget that you actually removed it, you use splice instead of slice, and you removed it from the original array, and then you're confused as to like where your data went and, and whatnot. And then I guess it comes back to that whole pure functions where you don't want to be modifying your array, you just want to be returning a new subset of the array. And that's why you should go to my JavaScript 30 course and do the array cardio ones, where we do a whole bunch of just map, filter and reduce, because those are all three of those returned you a new array, rather than modifying the original one.
+
+41
+00:31:29,970 --> 00:31:56,010
+Scott Tolinski: Yeah. And if there's some things that are going to, like straight up, make you a better JavaScript developer, like hands down, it's understanding those array functions, array methods, because I'm telling you, when when I learned that stuff, all of the sudden, you feel like you have superpowers, you throw a map and a reduce on here, a map and a filter or something like that, all of a sudden, you're like, wow, that would have taken me so many lines of code before to do this. Definitely makes you feel very, very powerful.
+
+42
+00:31:56,010 --> 00:32:01,830
+Wes Bos: It's amazing. Like, do you remember the days of creating like an empty variable? And then using a for loop? Oh, my
+
+43
+00:32:01,830 --> 00:32:08,310
+Scott Tolinski: god, it wasn't even that was like a couple years ago. Yeah. Like, what? Like it was
+
+44
+00:32:08,310 --> 00:32:20,400
+Wes Bos: when I started react, that my whole, my whole JavaScript, like got a whole big upgrade, because react forces you, I believe into becoming a much better JavaScript developer. Yeah, I
+
+45
+00:32:20,400 --> 00:32:36,750
+Scott Tolinski: know, dot map looks scary for people who have never used it. And if you go into react, you're like, Where's my for loop? Or where's my for each, and then why don't have to use this map thing. And then all of a sudden, you're like, wait, map is awesome. And all of this stuff is awesome. And I totally get it now.
+
+46
+00:32:37,380 --> 00:33:56,460
+Wes Bos: Exactly. I'll take a stab at isomorphic, or universal JavaScript, this is very, very fancy way of saying it also works on the server. So if you're writing any sort of JavaScript these days, it's great if you can take into account that people might be running this both in the client, but they might also be running it on the server. And you hear people talking about isomorphic react, that means that you'd be able to render out all of your react templates on the server with server side rendering, there's really not a whole lot to making sure that your your JavaScript will be universal or isomorphic. Other than sometimes you you reach for a window.on. Maybe sometimes people use Windows set timeout, when you should just be using just set timeout, because you can't assume window when you're in Node land, and other things like event listeners and whatnot, but no jQuery arm then. Yeah, obviously no jQuery, things like that. I've been been billing quite a few universal apps lately. And I do often run into just plugins that aren't server side rendered, or they're not friendly for that. And in that case, you often just have to submit a little pull request where you check for a window. And if it is, if there is a window, then you just skip that portion. Because obviously, you're not going to want to render that piece on the server.
+
+47
+00:33:56,520 --> 00:35:23,130
+Scott Tolinski: Yeah. And one thing actually, I really liked about Meteor is they have a method called is client. And because of that, he made a his client component. And now anytime I have something like that, I can just wrap that component is in his client. And it's not even going to attempt to render that on the server. If it's not essential. I don't have to like, I can worry about that later. It can like save me some headache at the very moment. I also did the same thing with the route, let's say a route is having issues. It's like, here's a client route. And that route isn't going to be server side rendered at all. save you a little bit of a headache there. But yeah, I so morphic stuff is really exciting. I mean, can you imagine writing? I mean, this is gonna sound ridiculous. But can you imagine writing a WordPress site and having that that PHP be, you know, client side as well? I don't know. It's kind of mind blowing to think about because the PHP is generating HTML for you. But imagine that your WordPress application was all of a sudden running the client side. I don't know it's, it's something that we've never been able to do is right. Everything client and server side on one language is you never been able to do it until now really with node and in things like react and stuff like that. So it's just super exciting. And definitely one of those things that is kind of worth the pain in the ass that it can come along with it. But it's definitely, I would say definitely worth it to have that client and server side connection.
+
+48
+00:35:23,690 --> 00:35:29,070
+Wes Bos: Yeah, yeah, absolutely. Next up, I think it's your turn Wait, for me,
+
+49
+00:35:29,150 --> 00:37:17,460
+Scott Tolinski: let's do micro services, because we already touched a little bit on this with serverless. Right? Yeah. And that serverless approach, like let's say, we said, Were you having maybe your image uploading moved somewhere else, right, that image uploading chunk is now what's considered a micro service, it's a service that you're utilizing, that is decoupled from your application, you could go and then use that on another application, potentially, you know. So you know, the whole thing is that microservices are these small little services that you write that are decoupled from your application, and basically, you would write them to small sort of handle one thing, and only handle that one thing. And that way one, you could reuse them, you could have it not bring down your entire application, if it goes down, you could scale this service independently from the rest of your application, potentially saving you a lot of money. So there's a lot of a lot of upsides for micro services. The I guess the downsides would be that there's more stuff to manage and more places that stuff ends up being. You know, I don't know if you could consider, no, you can consider these micro services. But when I had my my store, and my website is both sharing a database and a whole bunch of code and all this stuff, they were separate services for the same the same code base, and no other they weren't micro, they were still sort of separated. And that that approach can like definitely be very nice at times. And other times. Maybe you want things tightly coupled. Yeah, one one huge pain point I'd run into with serverless, and microservices, just being able to reshare data between my different services, and it's sometimes is a huge pain, just to be able to share simple things.
+
+50
+00:37:17,850 --> 00:37:20,420
+Wes Bos: Yeah. Between all of your different functions and services.
+
+51
+00:37:20,459 --> 00:37:51,150
+Scott Tolinski: Yeah. And it I should note that micro services are not inherently tied to serverless. Although I guess I don't know how else you would I mean, you would have your own server and whatever and manage them. Yeah. But it's basically it's the the server lists, or the micro services is just a software pattern. And this is a software pattern. That is I don't think it's I mean, it's definitely not web specific. But it's I don't know, when it was invented or something like that. But it's it's definitely been around for a little bit and exists. Yeah,
+
+52
+00:37:51,209 --> 00:38:28,400
+Wes Bos: I think, I think big companies that move slowly invented it. So they could just be like, micro services is a fancy way of saying, we'll just frickin do our ourselves totally outside of your application, and call it a micro service. Because we don't have to, we don't have any of the technical debt or emotional baggage that comes along with this massive app and whatnot. So you definitely, yeah, it's huge in corporate world, which is such a funny way of saying, like, we you guys are moving too slow, and we need to build our own thing totally outside of what you're building. I'm gonna take a stab at another hard one, which is a closure.
+
+53
+00:38:28,710 --> 00:38:30,650
+Scott Tolinski: Yeah. And like this one?
+
+54
+00:38:30,980 --> 00:41:03,300
+Wes Bos: Yeah. Let me real quick scoping. I realize a lot of people know what scoping is, but scoping is where are my variables available to me and and if you have a function and you make a variable inside of that function, then your variables are scoped. Or I always like to think of the have a function or a block with curly brackets, I always like to think of those as little fences, and they're keeping your variables in they're scoping fences, right? So scoping answers the question, Where is my? Or where are my variables? And where are my functions available to me? Now, what is a closure? A closure is like when you have a function and you you create a function, you have this scope, and then inside of that function, and you make a variable, the variables are only available inside of that. So the idea with a closure is that sometimes you need like just a couple of variables, and then you need a function, it wouldn't make sense to, like sometimes you need to reach outside that function and update some sort of variable. Well, one of the solutions to that is just have a bunch of global variables, and then have your function and have your function reach outside and update those global variables. Well, that's kind of what you want, you don't really want to have a whole bunch of global variables. So what you can do is you can create one function that creates scope for you, you can make a bunch of variables inside of that, and then you can create a second function inside of that original function. That will will then reach outside and update those variables. Now, the benefit to that is that from your source For your parent function, so you got, you got a function, highlight your high level function, then you have your function inside of it, you can return the lower level function from that higher level function. And then what happens is that, you've then created this sort of like, kind of like, I don't know, the space, that is called a closure, where your function will be able to sort of have its own internal scope and its own internal data set of those variables, and then be able to use it. So you can create multiple instances of that function. And each function will have its own scope, and it will have its own closure variables that are available to you. So it's kind of like a, I don't know, it's like you have a box, but then you got to put extra stuff that you need to put in the box. And and then what you can do is you can put the smaller box and your extra stuff, which is variables inside of a larger box. And then you can take that box and nice and cleanly and bring it anywhere without having to worry about bringing those variables along for the ride as well. I don't know if that was good or not. But yeah, that's how I understand it.
+
+55
+00:41:03,330 --> 00:41:33,210
+Scott Tolinski: No, I think it works. And I mean, another thing is, you could go back to the actual definition again of the word and it's basically like the, the range of view something has right. So like this, the scope is the the range of view that a function or you know, your current workspace has right, What can your What can your current function, see? What can it access? What is it was looking at us, right? I guess that would be in my opinion, the scope? When you think of it like a binoculars What can you see? Exactly? Yeah, what
+
+56
+00:41:33,210 --> 00:41:41,460
+Wes Bos: do you have access to? Good? Ah, that was a guy. So we did scoping and closure, what else you got for us, Scott?
+
+57
+00:41:41,480 --> 00:42:27,420
+Scott Tolinski: Yeah, so I'm gonna do another pattern here, which is MVC, which is been around since the 70s. It's been around forever. And it basically the MVC stands for model view and the controller, and it basically is a separation of concerns in your application. So that model handles the data, the view handles what the user seeing, and the controller sort of manipulates the data and handles the connections, right? And it's funny because MVC is used throughout a lot of different software platforms. It's Ruby on Rails is an MVC framework. Django was an MVC framework. And I would you say, I guess, I don't know, there was arguments whether or not Angular was a Angular one was an MVC framework at some point for the front end.
+
+58
+00:42:27,750 --> 00:42:33,540
+Wes Bos: It was like, let's say it was people come in with these PVC, PVC.
+
+59
+00:42:33,570 --> 00:43:39,570
+Scott Tolinski: Yeah, right. I know. And that was always kind of ridiculous to keep track of. But but it's funny because in you know, even though it seems like model view controller is like, pretty specific there, i a lot of the frameworks then kind of took it and made it mean, sort of what they wanted it to me, and I don't know, if you, you worked in Django or rails at all, but they both were MVC, but the, I'm trying to remember which one it was, but one of them had the model as the controller and the controller as like, it was like swapped around a little bit from the other one. So like you weren't defining your data in man, which I'm trying to think of which one it was, whether it's Django or the other one. And so that could make this stuff kind of confusing. Because if you're looking to go from rails to Django, you got to suddenly ever shift, what you're talking about pretty instantly. But yeah, so it's pretty much a way of structuring your application. And it's it's not used in react land too much, because react is just a view, right? So react would just be the view of the MVC.
+
+60
+00:43:39,860 --> 00:43:40,860
+Wes Bos: Yeah, yeah, I
+
+61
+00:43:40,860 --> 00:43:44,400
+Scott Tolinski: don't know. You don't hear MVC talked about as much these days.
+
+62
+00:43:45,450 --> 00:44:38,700
+Wes Bos: Yeah, in my, my node course, is MVC. And the way I explain it is, you've got data, which is your model, you got templates, which is your view. And then you need somebody to like, sort of, like, do the logic and put these two things together. And that's, that's your controller. So I always like to talk about it is everybody has the friends, where you're one of your friends has booze, that's your your data. And one of your friends has like a place to party. But you'll always have those friends that like, or you have that one friend that is always texting and calling and organizing everything. That's your controller, and your controller is talking with your friends with the booze and your friends with the party. Place the party and your friend that does all the texting and calling of everyone is your controller that will sort of get everybody together and pull in the things that are needed in order to make that party happen. Yes, stupid. Example number two today,
+
+63
+00:44:38,760 --> 00:44:40,440
+Scott Tolinski: dude. Those are the best though
+
+64
+00:44:40,470 --> 00:44:49,950
+Wes Bos: those like those. Yeah, you think it's dumb now but then like some couple months down the road, you're gonna be shaking your head and like that last. That's a good example.
+
+65
+00:44:50,520 --> 00:44:53,610
+Scott Tolinski: Those are the ones that stick with you the Exactly.
+
+66
+00:44:54,030 --> 00:45:47,610
+Wes Bos: I got a quick one here which is bike shedding. You hear this a lot of people arguing on Twitter. shedding is where you argue about the color of the bike shed when you have much greater bigger things to actually worry about, like, what material should you be using? how big should the bike shed be? What in how should it be built? Right? So the classic example is people sitting around and arguing about semi colons, or tabs versus spaces. When it does not matter at all. At the end of the day, who cares? It's fun to sit around and bike chat about those things. But we've got much bigger problems, which is trying to understand immutable JavaScript and how to architect and design patterns and things like that we have a bigger stuff at hand that we should probably be talking about. So that's what bike shedding is. Let's don't let's not bike shed on tabs versus spaces. Let's talk about some stuff that actually matters.
+
+67
+00:45:47,640 --> 00:48:19,410
+Scott Tolinski: Yeah. And I joked, when we had, when I found out what bike shedding meant that you should just rename Reddit to the the bike shaft because that's, that's like, the entire purpose of that website is to argue about stuff that doesn't matter. So yeah, bike shedding is definitely one thing that I don't know, I feel I don't know, if people like can are realizing they're doing it while they're doing it, or they don't realize that these things don't matter. They're just arguing for the sake of arguing about something right. But at the end of the day, like I think it's something to be cognizant of, like, is this something that matters in the bigger picture? Is this one little change, in fact, going to have an impact in any sort of way? meaningful way? I guess. So. Yeah. I like bike shedding is a term I just learned today. And definitely, like in that one, let's, uh, I'm gonna keep up with another fun fun sounding one. And just do tree shaking, because it has some great imagery as well. associated with it, I can go into my yard and shake a tree. So really, what tree shaking is, is the removal of dead code that you're not using, right. So like, let's say you have a JavaScript application. And, and there's whether or not like a component. Like, imagine this, you built this component, this component sitting here, and it's being wrapped up in your bundle, but you're not using it. And your your, your bundler should be smart enough to know that you're not using it. But if you're using just something generic, it's gonna just bundle that extra code in there. And it's gonna add on some kilobytes here and there, right? And so a tree shaking does is it goes through, and it's basically a part of your build process that's finding the code that's not being used or being executed whatsoever, and just shakes it out of there. It's like, a bunch of dead. Yeah, yeah, it's a bunch of dead leaves on your tree, you go, you shake your tree, all the dead leaves fall out, and then your tree is a little bit lighter weight. So it's a it's a nice because your tree loads faster, your tree loads faster. Yeah. What's great about it is like in this modern modern JavaScript world are building these giant client side apps. And people don't realize, unless you're going in your your network panel, and you're seeing Holy cow, that JavaScript bundle is nine megabytes or Yeah, you know, just this giant or something, you have this big, old, large image sized version of an application that you could probably shave off a bunch of those by eliminating dead code and making that experience better for your users. So definitely something you should be using if you are have the capabilities, whether that's like web pack or your build system.
+
+68
+00:48:21,030 --> 00:48:39,510
+Wes Bos: Right on, I'm gonna I keep taking hard ones I try to explain a hoisting is. And this is one of those things that I understand it. However, I've never actually used it myself, and our own if maybe Scott has an example. But anytime I look online, I can never find really good examples of why you would ever want to use this, but
+
+69
+00:48:39,510 --> 00:48:41,490
+Scott Tolinski: I kind of hate this word. So I
+
+70
+00:48:42,209 --> 00:51:14,910
+Wes Bos: kind of is like one of those interview questions that you sort of have to be able to explain it. But then you're like, why, so hoisting? Let's talk about scoping. Again, when you are to actually picture of this blank, blank Sublime Text or vs. Code screen. I typed the following code, alert age, new line. var age equals 100. Run that sucker in the browser, what do you get? You get undefined. Oh, why? Well, what happens is hoisting is the idea is that when JavaScript runs, before JavaScript even runs its first lines of code, what it does is it It runs through your entire application, it finds all of the instances of your variables, and it will move them to the top of the application. And then it runs through your entire application, it finds all of your functions, and it will bring those functions to the top of your code. So it hoists it takes your variable declarations and it takes your functions and we'll move them to the top. Scott is showing me I'm moving my hands to the top those things to the top of your application before any of your actual code runs. So the reason why you can alert age before you even define it is because JavaScript will take your variable age, and it will hoist it before that alert even runs. Now the catch is, is that it does not actually, it only does the declaration but not the actual value, meaning that that's why it's undefined and not 100, or whatever I set it to. And then functions as well as you can actually use a function before it's been defined if you do like a proper function like the word function. So you can you can, you can, sorry, you can define them after you've actually used them. So that's what hoisting is. Not all that useful. It's simply the fact that things exist. Things can exist before you actually define them. Because JavaScript will move them to your to the top of your application. And it's not all that useful with let and const. You don't even get undefined. They still are hoisted, but they are not are if you're in strict mode, I believe var will not give you undefined, but it will, it'll error out for you. So what should you do? Well, what do I What do I do I always define my variables defined my functions first, and then use them that makes sense, right? Define your stuff, then go ahead and actually use them. Do you
+
+71
+00:51:14,910 --> 00:51:38,760
+Scott Tolinski: know what I don't do that? There's like a very specific instance, where when I don't do that tell me is with styled components in react, I put my styled components below my component. So I'm, yeah, I'm using it before it's declared. I guess, I don't know if I am using it before it's declared because it's being used within the class. Whenever the class is being I don't know, when the class is being executed? I don't know.
+
+72
+00:51:39,060 --> 00:51:40,110
+Wes Bos: Yeah, that's a good question.
+
+73
+00:51:40,110 --> 00:51:43,410
+Scott Tolinski: That's a good question. Either way it works. So don't worry about it too much.
+
+74
+00:51:43,710 --> 00:52:05,910
+Wes Bos: I've got some es lint rules that tells me Do not use a function or variable before it's been declared. Yes, I have those as well. If you if you do have a useful use case for using hoisting, let us know at syntax FM, and we'll retweet it we've been getting some really good, like answers on there. So it's kind of fun to be able to have the after the watercooler conversation.
+
+75
+00:52:05,940 --> 00:53:41,970
+Scott Tolinski: Yeah, we are using the power of community to to help everyone. Cool. So yeah, here's one that, you know, you hear he is whatever he is 2016, he is six, seven, whatever he is, next is one you're hearing a lot now. And it's, it's sort of, like people get that s whatever 2017 or 2016 brings in new features into JavaScript. But it's really ECMO script it, which is the root of the language that JavaScript is built on, is getting a new version, this new version has new features. So whatever, initially, it was es six, which is the, you know, the sixth edition of ECMO script. So JavaScript obviously going to get all these new features, right. But then, but then at some point, you know, I mean, it does kind of naming conventions are okay, but like, what do you go, as, you know, 34 and stuff like that all the way up there? So they decided excited for that. Yeah, yeah, there's gonna be like a new edition of JavaScript every year, or Ekman script every year. So the they're classifying it by yours now. So if you've ever heard the term, yes, 2016, or ies, six, you know, I mean, now what they're doing is the yearly version of ECMO script. So what s next is is sort of like the features. You correct me if I'm wrong on this, but these are the features that are proposed, but not confirmed for the next few versions, right. Like would decorators be considered as next? Or is that considered a as hopeful? That sort of
+
+76
+00:53:42,000 --> 00:56:17,100
+Wes Bos: is a good question. I don't think it's like, been confirmed what Yes, next actually is, but I just like to think of it as like what is probably coming down the pipe. And in terms of JavaScript, what is what's going to come by in the next couple of years. And to me, that usually includes things that are like stage three or greater looks like the probably going to make it into the language and stuff that is confirmed, going to be in a future version of JavaScript. My last one here is a synchronous and synchronous, which is so confusing in JavaScript because it is means the exact opposite thing that means in real life. So synchronous means at the same time synchronous I always like when I was learning was like synchronous swimming is they're all swimming at the exact same time. So that must mean that if you have a synchronous function, they are all running at the same time. And that is not what it means that all synchronous means one after another, right? If you're coming for a PHP world, PHP is very synchronous, where one line runs a waits for that line to be done. And the next line, the next thing runs. However, JavaScript is built almost entirely a synchronous, meaning that it will fire off a line of code and then the line of code and after it will immediately happen even if that one line of code is not yet finished. So a synchronous means it's things will sort of just fire office As fast as possible, like, if you've got five different Ajax requests and you fire them all off, they're all going to fire off one after another. And they're not going to wait for the the other one to come back at the end of the day, so and then synchronous wouldn't mean that things happen, you fire one off, you wait for that to finish, then the next line when that one's finished, the next line will run. And often in programming in JavaScript, we can't use synchronous stuff, because what that does is it will sort of freeze up the browser. That's what you hear people close it don't block the browser, like an alert or a prompt that will always freeze up the browser and won't let any other JavaScript to run. So if you're making an AJAX request, you should still be able to do all the other stuff on the actual website. So the solution to that in JavaScript is that we want it to look synchronous, because we it's it's very easy to code things linearly. But we don't want to block anything, we want it to run a synchronously So the solution to that is a sink await. And that's why it's called a sink await is that when you mark a function as a sink, you can sort of you can await a value. And it's not pausing JavaScript, it's not putting it off in a second thread or anything like that. It's sort of just like waiting. It's gonna pause that actual function until that promise has then been resolved.
+
+77
+00:56:17,280 --> 00:56:52,950
+Scott Tolinski: Yeah. And that's actually, man, a sink await has been one of the absolute my favorite additions into JavaScript just because, you know, you can use promises or even to some extent, you know, callback hell, but like, a sink await to me is just so much more readable to say like, hey, wait on this thing to finish, right? You need, you need this data. So let's wait on it to finish. And that, to me has been, I don't know the biggest hurdle in understanding asynchronous or synchronous programming overall in JavaScript. So Exactly, yeah, love that those tools know exist for us,
+
+78
+00:56:53,160 --> 00:57:20,910
+Wes Bos: especially because when I do it myself, when you're teaching programming, you use alert, prompt and confirm, which are blocking and synchronous. And then you go into the rest of JavaScript and say, Oh, actually, it doesn't work like that at all. If you want to prompt somebody for their name, and then the next line use that name, you have to use a callback. And then it starts to unravel from there. So using a single weight is it's huge, biggest, biggest change to my programming, in a long, long time being able to use this stuff.
+
+79
+00:57:20,940 --> 00:57:23,940
+Scott Tolinski: Yeah. And it's syntactically cleaner too.
+
+80
+00:57:23,940 --> 00:57:30,180
+Wes Bos: I love it. Beautiful. It's beautiful. Cool. Got any more for me? Are you here ready for some sick pics? I'm
+
+81
+00:57:30,180 --> 00:57:32,220
+Scott Tolinski: tapped out. I'm ready for some sick pics.
+
+82
+00:57:32,370 --> 00:57:39,780
+Wes Bos: Sick pic. So I went way too sick last time and I ended up being so high. You got you got some for me, Scott.
+
+83
+00:57:39,810 --> 00:58:14,760
+Scott Tolinski: Yeah, I have a book I really liked from this. The author is the subject of the book is about in this this guy Kevin Mitnick. It's really applicable to programmers because he's like one of the most famous computer hackers of all time. And it was sort of basically his life story. It's called the ghost in the wires. My adventures as the world's most wanted hacker. He went to jail for a long time. I mean, I think prison Actually, I don't know if it's prison or jail. I guess that distinction kind of matters. But
+
+84
+00:58:15,689 --> 00:58:17,310
+Wes Bos: basically, a lot of trouble. Yeah,
+
+85
+00:58:17,310 --> 00:59:23,400
+Scott Tolinski: he got a lot of trouble. They were worried that he would be able to launch the nuclear rockets via his telephone by some magic, you know, there's no way you could do that, because they were just totally ignorant. But what the story is just so good. And he talks about his hacking methods and all sorts of stuff. Most of it's like social engineering and manipulation. But the story is just like, I don't know, it's it's movie good. You know, it's something that you would sit down and watch and be like, wow, thoroughly entertained if it was a fictional story, and the fact that it's totally real and happened and this this guy did all this stuff is darn pretty amazing. And I just remember every single chapter and listening to stories just being like, wow, this guy is smart. So it's just a really excellent excellent book, Ghost in the wires, my adventures as a most one of world's most computer hacker. I personally did the audio book, which I really enjoyed myself, because like I said, it's a lot of good stories. So it's almost like listening to a nonfiction audio book kind of stuff, but loved it a big fan. Cool, I'm
+
+86
+00:59:23,400 --> 00:59:44,100
+Wes Bos: gonna have to add that one. I've got all these audible credits. And they only audibles dumb in that they don't they don't allow you to hold more than six credits, because it's impossible to store in a number greater than six and a variable, I guess. But they're, they're squeezing me out now. So I gotta find something to buy them. I'm starting to stack up all those audible points. Nice. Yeah,
+
+87
+00:59:44,100 --> 00:59:47,580
+Unknown: this is definitely a good one. Good one for audible. Awesome.
+
+88
+00:59:47,610 --> 01:00:50,480
+Wes Bos: Mine is an iPhone app called it just came out. It's called Apollo. And it's a new Reddit app. And I actually don't like Reddit all that much just because there's a lot of it's a wasteland and there's a lot of terrible people on there. Whoever There are some really good subreddits of people who are like super into a specific topic. So whenever I'm doing anything new in my life, whether it's learning how to smoke me or learning, I'm right now, I've been two months into keto, which is like sort of a diet where you eat a lot of meat. It's kind of fun. So whenever I'm in that, I always just dive into whatever that read it is, and just like, absolutely read absolutely everything. So the Reddit iPhone app is kind of, kind of not that great. So there's a new one that came out called Apollo. And it's just nice and fast. It has nice big images as really good search, just the UI of it. I think it's a couple Apple engineers quit their jobs at Apple and built this thing. So big fan of how it works. It's called Apollo.
+
+89
+01:00:50,480 --> 01:01:17,460
+Scott Tolinski: So check it out. Nice. Super cool. Yeah, I use Reddit for mostly hockey. I follow game day threads on hockey and like, but it's one of those places, if you spend too much time in comments of the reddits that are, I don't know, aggressive or something, you just see bike shedding non stop. Whereas like, it is an amazing place to find a lot of great information in great communities where people are helpful if they I
+
+90
+01:01:17,460 --> 01:01:56,700
+Wes Bos: really, really like our web dev. And it's obviously a web development one. And it seems to skew a little bit more beginner, where people are very hopeful and very happy and not so much jaded. From Yeah, from all that stuff. So I really like that one. That one also helps me like sort of keep tabs on like, how do people think, and I always like to talk to a lot of people who are new in web development, because it helps me make really good courses. So I spend probably most of my time on our web dev, just reading, what people are going on and what people are thinking about what questions they have and whatnot.
+
+91
+01:01:56,730 --> 01:02:26,760
+Scott Tolinski: Yeah, likewise, yeah, and that was a really good one on there. Sorry to get this off track here. But there was like a, there was a taco in there, one of the React conferences lately about state machines. And I just saw this, it was like up yesterday, but you're managing your state think twice. And it was a blog post about state machines about that particular conference talk that I'd have to look at the author's name, to be honest. But it was a really super interesting content. That's a great, great way to find and stay up on stuff like this. It'll blow your mind temporarily.
+
+92
+01:02:28,710 --> 01:02:33,600
+Wes Bos: Awesome off to check that out. Word, I have a link it up in the show notes. So go ahead, I
+
+93
+01:02:33,600 --> 01:03:05,940
+Scott Tolinski: have a shameless plug this time, which is my react 16. Yeah, for everyone course, you can go to level up tutorials, comm forward slash store to purchase it, or you can find my a pro and get access to all the code and all the videos and stuff like that. So 23 videos, high quality stuff, they'll teach you a lot of really cool stuff, we build a movie database application with a pretty sick animation for page transitions. So definitely something that is pretty real world skills. And you'll get a lot of extra little nice new JavaScript stuff, too.
+
+94
+01:03:05,940 --> 01:04:07,890
+Wes Bos: That's pretty exciting. Cool, check that out, I have not necessarily a plug, but maybe I'll give a little update. So I've been working real hard on advanced react course. And I sort of put on ice for a few weeks because there was some major announcements coming out in terms of graph cool, which is a graph qL service as a service. And they recently open source their entire thing, which is great, because you can use this service. However, if they go under, they lose funding for whatever reason, or they start start to just to charge you $12,000 a month, then you just host your own version of it. So there's no vendor lock in there. And then Apollo not bap, I just recommend it. But the React graph qL data library, I guess it's called, they came out with 2.0, which is a nice little upgrade from from where is that? So now that both of those things are out, I'm gonna keep working on that. And then I'm also been been working hard in between on a CSS Grid course, which is going to be free. And I'm pretty excited about that one as well.
+
+95
+01:04:07,920 --> 01:04:24,230
+Scott Tolinski: Nice, nice. I'm also going to be doing a little bit of a not necessarily a CSS Grid course, but like a course that uses CSS Grid coming very soon to level up tuts. So maybe those two will work nicely together. Maybe there'll be a little like a synergy there. I'm gonna have to reach out and
+
+96
+01:04:25,260 --> 01:04:30,180
+Wes Bos: reach out and connect. There's some synergy and activity. Yeah, I'll circle back.
+
+97
+01:04:30,209 --> 01:04:32,280
+Scott Tolinski: We can do a deep dive. All right, let's,
+
+98
+01:04:32,280 --> 01:04:40,440
+Wes Bos: uh, let's end with this hilarious bumper that we got made and let us know on Twitter what you think of it. Enjoy. Say
+
+99
+01:04:42,060 --> 01:04:51,390
+Announcer: you're listening to syntax podcast with the tastiest web development treats out there. strap yourself in and get ready. Here is Scott solinsky and West boss
+

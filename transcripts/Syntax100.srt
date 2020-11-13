@@ -1,0 +1,748 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax
+
+2
+00:00:03,059 --> 00:00:04,590
+Unknown: podcast with the tastiest web
+
+3
+00:00:04,590 --> 00:00:05,760
+development treats out there.
+
+4
+00:00:05,760 --> 00:00:07,260
+strap yourself in and get
+
+5
+00:00:07,260 --> 00:00:09,600
+ready to live ski and West
+
+6
+00:00:09,600 --> 00:00:10,530
+boss. Welcome
+
+7
+00:00:10,530 --> 00:00:18,960
+Wes Bos: to Episode 100 Hold on, let me get the soundboard on
+
+8
+00:00:18,960 --> 00:00:22,440
+Unknown: board coming in tasty, sick pig.
+
+9
+00:00:22,469 --> 00:00:25,770
+Wes Bos: Oh, hell yes, schema, shameless plug.
+
+10
+00:00:31,020 --> 00:00:34,650
+Scott Tolinski: We need a specificity on that soundboard as well, we need
+
+11
+00:00:35,130 --> 00:01:08,510
+Wes Bos: definitely needs to be added. So welcome to the 100th episode of syntax. I can't believe we've been doing it for 100 episodes already, it feels like we just just kick this thing off. But today we're gonna do sort of a meta episode, which is a syntax episode about syntax. We're gonna go through some of our most favorite episodes, some of the most popular episodes which countries are listening in, which apps people are using. We'll talk a little bit about sponsors some questions we have from you regarding the episode, and we just got a whole bag of just random thoughts talking about about the podcast should be a fun one.
+
+12
+00:01:08,550 --> 00:01:17,580
+Scott Tolinski: I should mention that this won't be a clip show. This is not going to be like no family matters episode where you're showing every miracle did or something like that. It's not gonna be Oh, do you
+
+13
+00:01:17,580 --> 00:01:46,920
+Wes Bos: remember that frustration of like sitting down for a nice like, I just happened the other day I sat down for the new Sunny in Philadelphia. I was like, come on. I was like sitting I did chips in a beer. And I was so excited. This is not a clip show. Today's episode is brought to you by Sentry, which does client side server side exception and error tracking and Freshbooks as cloud accounting. We'll talk about them partway through the episode. So Scott, congratulations, one episode, or 100 episodes,
+
+14
+00:01:46,950 --> 00:02:38,060
+Scott Tolinski: we've done one episode for those of you don't know, this is a web development podcast. If this is the first time you're tuning in, you are turning into the 100th episode. My name is Scott Toulon ski with me is Wes Bos. We're both web developers. We both work full stack, primarily JavaScript based stuff, but we've been around the block. So to say, I'm from Denver, West is from Hamilton, Ontario. And we are just, I don't know, I'm personally just pumped. I'm feeling I'm feeling jack today. I'm just excited that this is our 100th episode. I don't know how to else to express that. So thank you, for everyone who's listened to to syntax for all episodes, even if this is your first episode. Thank you for being a part of this. This is the 100th episode. And yeah, I hope it's a lot of fun. Again, not a clip show, I think that should be the title, the title of this episode,
+
+15
+00:02:38,780 --> 00:03:10,800
+Wes Bos: I just thought of a really good coding exercise, I would love to know how many minutes or hours or days are there of us talking because we've done 100 episodes, I think probably about 60 or 70 of those are full, like hour long episodes. And then the rest of them are tasty treats, which go anywhere from 12 minutes to 45 minutes sometimes, but a kind of a cool coding challenge would be download our RSS feed, parse all of the episodes and then do a giant reduce to figure out how long there are in total.
+
+16
+00:03:10,860 --> 00:03:37,380
+Scott Tolinski: And that wouldn't be too hard. You've got no feed. So you have all the data. And with a lovely array methods that we have, it should be too tough. So I think that would be a fun challenge. And one that for those of you who are maybe you know, picking up the array methods or or learning this kind of stuff, I think it would be a good challenge. And one that shouldn't stress you out too much. But at the same time, you might not get on your first try. I think that's a good. That's a Yeah, coding challenge.
+
+17
+00:03:37,500 --> 00:03:43,560
+Wes Bos: The first person that does that, I will send out a free course. Oh, and I'll send you some stickers as well. Dang,
+
+18
+00:03:43,590 --> 00:03:46,560
+Scott Tolinski: he's putting it out there. That's the Yeah, that's gonna get it done.
+
+19
+00:03:46,560 --> 00:03:50,310
+Wes Bos: I think that's going to add syntax FM, and we'll we'll hook it up.
+
+20
+00:03:50,370 --> 00:03:58,199
+Scott Tolinski: Nice. Nice. We should do coding challenges more often. I think that's a nice little invention. You just did just now it just Yeah, yeah,
+
+21
+00:03:58,229 --> 00:04:17,520
+Wes Bos: maybe that's what we should add with 100 wrap. So we have new ideas. That's kind of how am I my JavaScript 30 came across. I used to just tweet out these coding challenges. And it was really fun. And I decided to make them into an actual course and show the answer because people would always be like, Here's mine, but I don't know if it's any good. How would you do it? So that's how my JavaScript 30 came around,
+
+22
+00:04:17,520 --> 00:05:16,260
+Scott Tolinski: I think, let's talk about the podcast. So the first ever episode was about react tools. And when when was that it was July 5 2017. And we released our first episode, where we talked about some really cool stuff. We talked about all the things that make your life easier when you're working react, some other hosts. We talked about some tools, we talked about graph qL, which is kind of fun, because I don't think I was doing a little bit of graph qL at that point, but I think it was still pretty new for both of us. We talked about the dev tools we talked about additional libraries. We talked about react storybook which is now just storybook so things things have changed pretty substantially since that first episode and and here we are talking about react. tools and it took us I don't know however many episodes before we actually had an episode on just react it took a 66 more episodes before we had an episode called the React episode. So our first one started out a little bit a little bit higher level than we eventually got to with react.
+
+23
+00:05:16,470 --> 00:05:47,310
+Wes Bos: Yeah, I think that's one thing I've learned overdoing it is people really enjoy the very concrete. Like, that's kind of the whole idea behind our podcast is that these are applicable things you can take away to become a better developer, whether it's soft skills or hard skills. And sometimes that is talking about different tools. And then sometimes it is just about like, let's just have an episode that talks about how react works. And that was a extremely popular one where we just explained the very basics of how react worked ridiculous, hasty
+
+24
+00:05:47,370 --> 00:05:48,210
+Scott Tolinski: sick.
+
+25
+00:05:48,210 --> 00:06:03,390
+Wes Bos: So this is a this is the soundboard that we have that we removed because it made a couple of people angry that we kept having we seek more data. I don't know if we overdid the soundboard. I would say we did it correctly. I
+
+26
+00:06:03,390 --> 00:06:19,890
+Scott Tolinski: think if we would have continued to do it at the rate that we were, then it might have been overdone. But I still shady. Andre, thank you for making this on board. Because this thing is so funny. We'll have that I love it in the description of the podcast or the notes. But this thing is absolutely great.
+
+27
+00:06:20,850 --> 00:07:28,920
+Wes Bos: All right, let's talk about our first sponsor ever was delicious brains. We started off the podcast as not necessarily a way to make money but just as a way to promote our own courses. So Scott and I, obviously I sell individual courses. Wes Bos calm force us courses. Scott has a subscription Toro service called level up tutorials. And I just love talking tax. That's one thing. And second podcast is a great way to advertise and to reach new people. Because I'm on YouTube, I blog. I'm on Twitter, but there's this whole audience of people who are not necessarily on those mediums, and primarily people who are commuting, and they have like an hour or two every single day and need to listen to something productive at that point. So starting on the podcast gave us access to this whole new audience where almost every week I hear from someone saying, hey, Weiss, I heard I found your stuff through the podcast. I'm so happy when that happens. Because that means like, sometimes you think, oh, there's everybody's on Twitter. That's where everyone is. Right? But no, there's there's people who don't do email. There's people that don't do YouTube, they don't do Twitter. And they just found you by searching web development on a podcast player.
+
+28
+00:07:29,040 --> 00:08:01,710
+Scott Tolinski: Yeah. And at least did stayed first and foremost that this podcast is never and will never, and has never been about promoting our stuff. Even though we do have a section called shameless plugs at the end. There's a reason why that's at the very end of the show. Because it'll you know, if you if you want to skip that part, you can skip that part. It's totally cool. It's it's no, no biggie. But the podcast first and foremost is to provide quality educational material that you can take away something from each episode. So I hope that does come across in every single episode that we do.
+
+29
+00:08:01,890 --> 00:08:30,270
+Wes Bos: Absolutely. So we did have delicious brains, which has a plugin for WordPress called WP migrate DB Pro, they approached us to say hey, can we sponsor the podcast? And of course, we said yes. And we scrambled it didn't know how much to charge we were totally new to it, which is great. Because like we didn't, didn't come into it thinking like, Oh, this could be a money making thing. But we'll talk about this a little later in the episode. But it's pretty cool to be able to surface and work with these cool companies that need to be put in touch with the people that listen to this podcast.
+
+30
+00:08:30,300 --> 00:09:21,169
+Scott Tolinski: Yeah, we were sort of talking before this episode started that. It's less of like, we're we're not trying to sell you things. But more or less, these are services that we want to make you aware of, because a lot of the times, it's stuff that we use every day, and we absolutely love. So it's like a joy to work with a lot of these sponsors, because sometimes you're just like, I think it was Netlify Oh, when I first used Netlify, I was like, holy cow. I want to tell people about this. And so I reached out to them, and was like, Hey, I love your thing. Would you be interested in sponsoring the podcast. So a lot of times, it's not just them coming to us. But it's a two way street. And we're we love these services and products and stuff like that. And again, it's all genuine there in terms of what we're presenting to you as sponsored material here. Again, we want to match you up with some of the services that could help you in your dev life rather than just sell yarns and stuff.
+
+31
+00:09:21,240 --> 00:09:26,029
+Wes Bos: Except for those brushes that you put in your drill, which everybody bought. Yes.
+
+32
+00:09:26,029 --> 00:09:33,390
+Scott Tolinski: Which are incredible. I just used them to clean clean my bath or my shower the other day, and it was awesome. It was just a great,
+
+33
+00:09:33,409 --> 00:10:40,110
+Wes Bos: amazing. I've been using mine all over the house. I love it. Yeah, let's get into the most popular episodes. So this is these stats are a little bit skewed. And that's because on November 1 2017, which I think was about four or five months after we launched the podcast, our podcast rider which is Lipson as well as a whole bunch of other podcast provider like blueberry and a couple other ones. They all sort of standardize on how do you Count a podcast download because everyone's stats were all over the place. And sometimes there was people that use a specific provider and their stats were much higher than, than they should be. So there was like this big thing on November 1 2017, where they adjusted it and a lot of podcasts actually lost about half of their listenership, because of things like pinging, like the headers. If you ping the headers of an mp3 file, it counted that as a download, when it really shouldn't. And like crawlers, thing like bots that crawl mp3, that's not really a listen, all kinds of stuff like that. So we didn't actually know about that happening, because we were just getting started at that point. And our stats were just growing every single episode. So we didn't notice any sort of drop
+
+34
+00:10:40,110 --> 00:10:43,909
+Scott Tolinski: off on there. And we didn't notice the drop off, because we're too popular is what you're saying
+
+35
+00:10:43,980 --> 00:11:01,289
+Wes Bos: no. But you just have to know that these stats might be a little bit skewed from the first 20 episodes or so they might not show up in here, just because the way that libsyn works is that you can't query the old data as well as the new data in one go, which is done.
+
+36
+00:11:01,320 --> 00:11:44,700
+Scott Tolinski: So but yeah, let's do it. We're going to do a countdown from number 10. All the way up to number one. So if you're interested in some of the most recent most popular episodes here, this is going to be a good list to get started. Number 10. Okay, number 10 is oddly enough, when that starts with the number 11, which is 11 Habits of Highly Effective developers. And this episode is all about things that you can do to essentially set yourself up for success is like, here's how you can get a platform for success if you follow these sort of tips and tricks. And that for those of you who are looking to find this in your podcast player syntax FM that was Episode Number 7411 Habits of Highly Effective developers. I really like that one.
+
+37
+00:11:44,850 --> 00:12:14,580
+Wes Bos: Number nine was is jQuery dead? This is a question that we get all the time for people being like, Is it still worth learning jQuery? Should I still be using jQuery? Is it dead or not? There's always that answer is jQuery dead? No. But it's really not used all that often. And we kind of go into it with this less, less of a fiery approach than most of these, like, jQuery is old and antiquated and slow and stuff like that. And we've just dove into some of the ideas surrounding it and why you might not want to be using jQuery in your next project.
+
+38
+00:12:14,610 --> 00:12:21,600
+Scott Tolinski: Yeah. And that was probably maybe is that the most click Beatty title that we have had so far? Maybe? Yeah,
+
+39
+00:12:21,899 --> 00:12:36,659
+Wes Bos: that's funny thing about these podcasts is the more click Beatty title, the more listens, you get to the actual episode. So writing the episode title is always a task in itself to make sure like you spend so much time building this podcast, you want to make sure people actually listen to it.
+
+40
+00:12:36,899 --> 00:13:01,950
+Scott Tolinski: Yeah. All right. Next one is number eight, which is what's new in JavaScript, which is episode number 46. And this was basically a lot of s six s next stuff, that we were just basically talking about new things that have either come or are coming into JavaScript, and should you be aware of them or what you should be worried about, or what you should be thinking of her just to put some of the stuff on your radar.
+
+41
+00:13:02,100 --> 00:13:15,570
+Wes Bos: Number seven was Episode 48. That was VS code round two. So I should say, if the numbers were in line with all the way back since the start of the podcast, I bet that via our VS code show would be very high up in this list as well. Yeah,
+
+42
+00:13:15,570 --> 00:13:18,149
+Scott Tolinski: that was one of our most popular ones to start.
+
+43
+00:13:18,419 --> 00:13:38,190
+Wes Bos: I think that's the episode that converted a lot of people to actually starting to use VS code. And then we did about a year later, we did a VS code, round two, which we updated a whole bunch of the new stuff in VS code, as well as some of the stuff that we love about it. So it kind of rehashing some of the content there. People are so hungry for VS code. Maybe we should do episode round three for that.
+
+44
+00:13:38,220 --> 00:13:57,750
+Scott Tolinski: Yeah, we should. And I mean, there's just so much stuff. It's one of those apps that just evolves 24. Seven, we should also put together a list of what we consider to be our greatest hits that make it nice and easy on the site or something like that. If somebody wants to contribute a new page that's like Greatest Hits or something, maybe we can make like a pared down list of the ones that we think are
+
+45
+00:13:57,779 --> 00:14:09,600
+Wes Bos: excellent. Yeah, we need something on the website that will allow us to surface because we have so many episodes. Now we need there's a couple features that are going to be coming to the site fairly soon, that will be able to make it a little bit more discoverable.
+
+46
+00:14:09,690 --> 00:14:39,179
+Scott Tolinski: Yeah. discoverability. Next up is number six, which is progressive web apps, which is episode number 50. And this was basically a what when, where, why sort of outlook on how you can get started making progressive web apps, what the heck they even are and sort of the tech behind it and why it's important. I think this is a topic that is again, it's no surprise that this one's popular to me specifically, just because this tech is exceedingly more popular now than it was, you know, two years ago or whatever, when it was still just blossoming.
+
+47
+00:14:39,299 --> 00:15:25,500
+Wes Bos: I like those type of episodes where they're explainer episodes, because you hear that term thrown around a lot. And sometimes people just need to be sat down and explained what all the different pieces are so that you're able to have those conversations and not like I'm not sure what all these moving parts are or what a ServiceWorker is, or all these things. So whenever we can have an explainer episode like that. I'm Pretty happy. Yeah, number 18. I'm sorry, number five. But Episode Number 18 is all about CSS Grid. This was over a year ago before I even released my CSS Grid course, which is free at CSS grid.io. We just explained all of the thoughts and ideas behind CSS Grid, what the benefits of CSS Grid are, why you might want to use it, versus Flexbox some of the downsides to it. So that was another really good explainer episode that I liked.
+
+48
+00:15:25,549 --> 00:15:52,649
+Scott Tolinski: Yeah, that was a certainly a good one. I mean, we both love and use CSS Grid. So I think that comes out in that episode. Next step is number four, which is our workflows, design, development, get deployment, all that good stuff. It's episode number 51. And this one was a little surprising to me that it was number four, because, you know, my workflow is refined to a point, but I don't you know, I don't know if it's something that is just incredible, or something like that. I don't know, no, I'm
+
+49
+00:15:52,649 --> 00:15:54,090
+Wes Bos: not proud of my workflow.
+
+50
+00:15:54,210 --> 00:15:58,200
+Scott Tolinski: I think this episode might be more interesting than super useful, you know,
+
+51
+00:15:58,320 --> 00:16:41,490
+Wes Bos: yeah, that's true. People like to peer into how other people do it, or what the ideas are. Number three was Episode Number 66 of the React episode. This is came out in August. So really not all that long ago. And it's it's the third most popular episode that we have. And we just detail into the ideas behind components JSX data fetching props, event handlers, instance classes, lifecycle methods, all that good stuff. So I'm glad to see that that one again, that's another explainer episode where we just take a topic and try to distill it down. It's kind of neat, looking at the top ones, where a lot of the top ones are just explainer episodes. Next one, also explainer Episode 20 JavaScript array methods to make you a better developer. This
+
+52
+00:16:41,490 --> 00:17:22,020
+Scott Tolinski: one also, is there no click Beatty title, Episode Number 43. It has elements of both the usefulness and clickbait Enos in the title, and it's totally accurate. This episode is no surprise that this one's number two, I would expect this one to even be number one. And it's pretty close, to be honest. But this one, we got a lot of feedback that a lot of people said that this episode, open their brain to these array methods in JavaScript and how they're useful. So if you hear the words array methods in JavaScript, and you're not like, Oh, yeah, I know all about that. And you're working in JavaScript put this episode on, because we've heard from a lot of people that it's one of the most helpful resources that they've had on these particular array methods.
+
+53
+00:17:22,169 --> 00:17:52,650
+Wes Bos: I can't believe it probably at least once a week or twice a week we hear I get a tweet from someone saying I refactor my code. And it smells so much smaller or reads much nicer, or I don't have this mutation that was used to be happening with a for loop. And it's just so cool to see people actually take these things because, like, they were things that Scott and I use all day long. But it's something that I noticed from code that other people write just from teaching in person seeing examples online, where the code could just be so much simpler, if you refactor it to use these array and object methods.
+
+54
+00:17:52,680 --> 00:18:52,410
+Scott Tolinski: Yeah, absolutely. Number one, this is a I'm gonna say this is amazing that this is number one, this this episode is my baby. How to learn new things quickly, Episode Number 44. Coming in at number one here. And again, this episode was based off of a talk I did called a too fast, too furious how to learn modern web development quickly or something that you can find that talk on YouTube. It was at Site day, at these eight day conference in 2018. This episode basically took that it just turned it from a 20 minute talk into an hour long podcast where we dove a little bit more into the topics at hand, which is basically some of the stuff that you know, Wes and I were both having to constantly learn new things to present them to teach them to use them in our daily life. Yeah. So this is more or less our tips and tricks as to how we are able to pick things up quickly. And again, I'm really proud of this episode, I can't believe that it's number one, because again, it's based off of a talk I did and all that sort of stuff. So I'm just I'm endlessly psyched about that.
+
+55
+00:18:52,500 --> 00:19:23,730
+Wes Bos: Yeah, I was very not surprised. But happy to see that it was number one, because it's a soft skills episode. And every maybe like, once or twice a month, we'll try to do a soft skills episode, which is things that we've learned as being web developers, or just in life in general, whether it's getting things done, or whether it's just approaching things in a certain way has nothing to do with code, but just how you manage yourself. And number one, which is getting how to learn new things quickly. And number 10, which is 11 Habits of Highly Effective developers. Those were both soft skills, and I'm happy to see them in the top 10.
+
+56
+00:19:23,810 --> 00:21:34,260
+Scott Tolinski: Yeah, I think the soft skills ones are easily my favorite episodes, because I like that stuff. I listen to a lot of books about that stuff. I listen to a lot of podcasts about that stuff. And that's really like sort of where my head is at in a lot of ways. And, you know, I don't know the sort of skills are the skills that you you take for granted a lot, especially in web development, podcasts. And some of the other skills that well you might take for granted might be your ability to solve bugs and to fix those bugs. And this way that you can do that is by using services to help you find Discover all those good things. And the service that we love over here at syntax is century. Now I personally love and use Sentry for levelup tutorials. And it is an invaluable tool in my toolbox. One of the coolest things about Sentry is this ability to mark bugs as resolved. And now it seems like that's not like that amazing. But the fact that you can come in here you can get an output if your bugs, you can select your bug or the error that you're getting. And you can say, Okay, I found this bug, I have fixed this bug, and I've pushed a new release. And you can even attach your releases in here and everything too. But if I marked this bug as resolved, and well it comes back if for some reason, right? Maybe you weren't anticipating it to ever come back? It is now it's now as a distinction as being a regression. And that lets you know that hey, this thing that you did that you thought you fixed well, No, you didn't. And maybe you should be taking another look at this. So Sentry again is basically a bug tracking software that gives you all the great information allows you to attach to GitHub issues allows you to find and solve bugs easily. So check out century@century.io and use the coupon code tasty treat and you will get two months for free. And that's even if you already have an account there so check out use that that to that coupon code a tasty treat, get those two months free. See why Wes and I both love and queues century. It's an invaluable tool in my toolbox.
+
+57
+00:21:34,590 --> 00:21:43,650
+Wes Bos: Alright, let's talk about some of the top countries so this data here is coming from we actually just pass right before we started recording 3 million downloads of our podcasts which is
+
+58
+00:21:43,800 --> 00:21:46,740
+Scott Tolinski: really good that needs a bigger a bigger emphasis than
+
+59
+00:21:46,770 --> 00:21:49,100
+Unknown: Oh, let me get going here note
+
+60
+00:21:54,660 --> 00:21:57,810
+Scott Tolinski: 38 inches man because it's long, cheap.
+
+61
+00:21:58,950 --> 00:22:02,610
+Wes Bos: I love that one. Get in there and fix it. Yeah, do you smell
+
+62
+00:22:07,980 --> 00:22:15,060
+what is the sirens hold on we shady
+
+63
+00:22:16,020 --> 00:22:22,860
+Scott Tolinski: These are great. So that is the that I think that's the proper introduction that our 3 million downloads deserve 3
+
+64
+00:22:22,890 --> 00:22:58,620
+Wes Bos: million downloads it not too long ago that we passed to Milly as well. It's it's the podcast is it doesn't grow in leaps and bounds but it every single day you get a few more listeners. And over time that really starts to add up. That is over 94 episodes. So we pre record at least two or three episodes ahead of time all the time. Right now we're a little bit more ahead of that because we're trying to get ahead of it for Christmas so we can take some time off. So that works out to be about 30 to 33,000 downloads per episode or so. Which is pretty good. Obviously some of our top ones have much more than that and it all kind of evens out.
+
+65
+00:22:58,830 --> 00:23:03,720
+Scott Tolinski: Yeah, and who knows maybe by the time you listen to this, we'll be at 4 million Who knows?
+
+66
+00:23:03,930 --> 00:23:13,500
+Wes Bos: Maybe Maybe let's go through a top 10 countries so number 10 with so out of those 3 million downloads 38,000 in Poland
+
+67
+00:23:13,530 --> 00:23:15,540
+Scott Tolinski: hey my people what's up?
+
+68
+00:23:16,380 --> 00:23:17,250
+Wes Bos: Are you polish?
+
+69
+00:23:17,490 --> 00:23:18,840
+Scott Tolinski: Yeah, dude Delinski
+
+70
+00:23:20,430 --> 00:23:23,430
+Wes Bos: Well, I'm glad that my people are beating your people.
+
+71
+00:23:28,650 --> 00:23:30,600
+So now what's number 10? Or number nine?
+
+72
+00:23:30,630 --> 00:23:34,350
+Scott Tolinski: Number nine is Brazil with 40,000
+
+73
+00:23:34,530 --> 00:23:41,910
+Wes Bos: number eight is my people the Netherlands with 47,000 clearly beating Poland right out Oh come on.
+
+74
+00:23:41,910 --> 00:23:46,590
+Scott Tolinski: Next up we have India with 50,000 and some big numbers from India.
+
+75
+00:23:46,680 --> 00:24:13,320
+Wes Bos: India doesn't surprise me usually in most of the things I do online India's and top five. Usually reef three. Yeah, this next one in this there's a lot of people in India so what the next one is Sweden with 55,000 of those 3 million which is amazing because I really want to go to Sweden so I'm glad to know we have a lot of listeners there we should put this up against like, like a population like what population Yes, we did. Listen this isn't the
+
+76
+00:24:15,210 --> 00:24:19,740
+Scott Tolinski: next step we have Australia Coming in at number five and
+
+77
+00:24:19,800 --> 00:25:06,090
+Wes Bos: with Australia had 80,000 now they're starting to really climb these are top four countries. So number four is Germany at 109 and that doesn't surprise me as well Germany is in the top I think that Germans in top four for selling courses as well for me nice a big which is funny because German people have so much holidays that anytime I send a email blast out I get like 40 million German has been like I have like a Yeah, I have like a huge out of office filter reply and I had to figure out like what is out of office out today. Not no longer here or something I had to figure out what all those words were in German and then automatically filter them out of my inbox. Because I literally get maybe 100 just from Germans alone every time I send an email out, yeah. Oh, that's funny.
+
+78
+00:25:07,140 --> 00:25:16,860
+Scott Tolinski: Next up at number three is your land is the land of maple syrup. And hockey is Canada at 138,000. Yeah,
+
+79
+00:25:16,890 --> 00:25:40,440
+Wes Bos: yeah, that surprises me because there's not there's like only 30 million people in Canada. But then again, I've also I've taught probably 100 Canadians to code so that's probably a little bit biased in my direction. Number two 231,000 is the United Kingdom, which is pretty cool. Yeah, super cool. And then number one, Scott, what do you think it's gonna be? Oh, gonna be China.
+
+80
+00:25:40,469 --> 00:25:56,790
+Scott Tolinski: Russia. Number one coming in hot is the Philippines. No, it's the United States of America. 1,200,000. And that is the massive numbers from the US of A so go America. We got the red, white and blue up here on top.
+
+81
+00:25:57,180 --> 00:26:08,550
+Wes Bos: So about a third, just over a third of our listeners are from the US. It looks like which is good. Like we're pretty spread out around the world, which is kind of cool. I want to see if we can also get city info. Let
+
+82
+00:26:08,550 --> 00:26:23,340
+Scott Tolinski: me pull that up real quick. I want to see what do you think our biggest city is a biggest city. I would have thought it was somewhere in California. But I've already spoiled the results for me. So I am surprised to see that Washington DC is coming in at number one at 43,000.
+
+83
+00:26:23,670 --> 00:26:36,180
+Wes Bos: The lowest country to get with coming in with one download is the Virgin Islands British Virgin Islands. Swaziland. Northern Mariana Islands. Well, French Polynesia.
+
+84
+00:26:36,180 --> 00:26:36,750
+Scott Tolinski: Wow.
+
+85
+00:26:36,930 --> 00:26:43,620
+Wes Bos: nambia. I wonder if we're represented every single country? I'd like to see at one point, you know, it's funny.
+
+86
+00:26:43,650 --> 00:27:08,370
+Scott Tolinski: Let's look at some of our hometowns. Denver is the seventh most listened to city in the United States, you might be able to call that my hometown. I'm not originally from Denver. But I've been living here for a little while now. Wonder where Detroit area figures on this graph? Hey, there it is. It's coming at like 17 Oh, Canada is not showing me the cities. Okay, it's showing me Ontario is the most province.
+
+87
+00:27:08,400 --> 00:27:30,690
+Wes Bos: So in in Canada, we only see that a majority of the people are from Ontario. After that it looks like British Columbia and Quebec are big. And then the rest are almost almost no, almost no downloads. Just kind of interesting. They're in the northern territories. I got to go on tour and make sure we get up to all those episodes. Nice.
+
+88
+00:27:30,989 --> 00:27:49,860
+Scott Tolinski: Cool. Next up, we have, instead of top countries, let's go to the top podcast players to the software. You're using it somebody surprised me a little bit. The first one obviously the most listened to is going to be coming in from apple core media, which you'd guess is probably just the podcasting. I don't even know what you iPhone users use in your podcast to know that it's
+
+89
+00:27:49,860 --> 00:27:58,170
+Wes Bos: the podcast player. That's kind of like iTunes. It's so confusing. I don't use it. But that's what most people use to listen to.
+
+90
+00:27:58,259 --> 00:28:02,280
+Scott Tolinski: That's amazing to me. But it's not that surprised. Yeah, I guess because they did come up with it.
+
+91
+00:28:02,460 --> 00:28:29,970
+Wes Bos: Yeah. Number two, and I don't even know like this number right here. 313,000. I don't know what that is out of. But I'll give you some context. 313,000 is iTunes underneath that is overcast, at 123,000. So just over a third of iTunes is overcast. And that's a very popular iPhone client that's made from what's his name, Marco arment. I use that personally, myself. It's an awesome podcast player.
+
+92
+00:28:30,090 --> 00:28:44,370
+Scott Tolinski: Next is Chrome, which surprises me is this people listening@syntax.fm? Because it's coming in at 117. That's quite a bit. So yeah, it's just people listening online, which is a little surprising to me, because podcast apps are pretty darn slick.
+
+93
+00:28:44,520 --> 00:29:15,110
+Wes Bos: Yeah, I think it's because people are sitting at their desk and listening. And so they just play it right on the actual player. So what that makes me think is that we should get push notifications. I've already logged in issue in our repo for this nice not push notifications by default, because those are annoying as hell. But if a large percentage of our users are listening on Chrome, there's no mechanism to get them back or to let them know when there's a new podcast other than our Twitter feed. So if we had push notifications, I think that's a pretty good use case for it when people opt in.
+
+94
+00:29:15,239 --> 00:29:40,470
+Scott Tolinski: Yeah, I think that's great. Next up is pocket casts. And number four, and this is my podcast app that I use. I didn't make this I just use it. This app is awesome. It just had a big redesign. Lately, I didn't know if you're in the Android world, you can sign up for the beta and get access to the redesign. And it is slick. I love this app. I've been using it for years. That's pretty much the only podcast app I've used and loved for so long. So pocket casts coming in big 72,000.
+
+95
+00:29:40,710 --> 00:30:32,130
+Wes Bos: And that number five on this list is iTunes which I guess does not get lumped in with the iPhone podcast app. I guess there's people listening to podcasts on their desktop with the iTunes software. And it's pretty surprising actually. One thing that's pretty popular lately is Spotify has been coming out of nowhere with podcasts. Listen, I think it's about 8% of our Audience I looked at it a couple weeks ago, for some weird reason. Spotify stats are totally separate from all the other stats in our Lipson dashboard, which is bizarre to do that, but listen to the large percentage did you do Really? Yeah. That's amazing. That's kind of interesting to see what all the different players are where people are, because that also helps us design a better experience better shownotes. If you know that more people are on their mobile and more people are on the desktop. How can we make those experiences better for the parts that are not just listening to us?
+
+96
+00:30:32,189 --> 00:30:50,250
+Scott Tolinski: Cool. All right, let's get into some of our lessons learned about sponsors. And again, we mentioned at the top of the episode that like the sponsors that we work with just companies that we love, and love to work with and want to share with you more than anything else. So I hope it never sounds like we're trying too hard to to sell you on something that we don't believe in, you know,
+
+97
+00:30:50,309 --> 00:32:00,780
+Wes Bos: totally. So sponsors are pretty cool. They pay the bills, obviously, we have to pay for hosting this thing we have to pay our editor who is Adam, Adam is our editor. And he makes us sound so much smarter than we actually are, cuts out all of the arms and ahhs and things that we accidentally say, and we shouldn't make it into the podcast and things like that he is that podcast Royale dotnet. If you are looking for someone to do your podcast editing, he does a fantastic job, we're really happy with him. So we pay him we have to pay to host the podcast as well. And then our time I'll say pay for our own time that goes into it. So we record two a week. One of them's usually about an hour, the other ones a half an hour, each of those takes sometimes the episodes require like hours of research to go into it. Sometimes they're a little bit more off the cuff and but we always do spend at least half an hour 45 minutes prepping for every single episode and some of the other ones where it's like, like the progressive web apps, one was probably at least a full day of doing demos and stuff like that, because that's the thing about doing a podcast, you need to know what you're talking about, at least at some point, right? Like we're not experts on everything. But we need to be able to talk about this stuff. Otherwise, it wouldn't be all that interesting of a podcast.
+
+98
+00:32:00,780 --> 00:32:16,770
+Scott Tolinski: Yeah, absolutely. We have to be smart to do this about the stuff that we we are researching. And so that the topics are things that we like just talk about every day all day anyway. So it's like, oh, what are we doing this episode on react? Okay, let me prepare for the topic on react.
+
+99
+00:32:17,360 --> 00:33:36,960
+Wes Bos: Yeah, that was a quick one. Because we can just look we've teach react, we'd write react all day long. It's not a big deal to talk about something like that. Yeah, for sure. What else about sponsors, they always want hard numbers. So we maintain all of our listens and things like that on there. We're working on getting some like case studies, we have one dev lifts case study, which Devlin sponsored our fitness podcast, it works super well for them, they came back for a whole bunch more, but things like Log Rocket Freshbooks Sentry, it's it's like working really well enough that they can keep sponsoring the podcast. So that's really cool. hard numbers is hard to do with podcasting, because it's not like you can track a click Yeah, you don't get watched by code. Yeah, you can give people coupon codes, or you can give people like a specific link to go to, but a lot of times, it's like, oh, I need a I need like invoicing, or I need like an error tracking thing. Like, oh, what said, West talked about something like that, like 40 times on the podcast. And now I know, right? That's kind of where the benefit where a lot of these come in, it's just kind of like knowing about them. And then at some point, you're going to need one of these services, and you're going to try them out, which is pretty cool. Which is why we love it when people tell our sponsors that they came through syntax, because that shows them that it's working. We've had even I think as Log Rocket says, Man, your your listeners are loyal, they always tell me that they came through syntax. So cool to hear
+
+100
+00:33:37,019 --> 00:34:05,880
+Scott Tolinski: you to everyone who does that. And if you're, if you're going to do that, thank you. Because really, those are the kinds of things that are free for you to do. Right. It's free for you to tell the sponsor that that's how you heard about them. But it helps us so incredibly much. It definitely lets sponsors know that you know, what they're paying for is working or is doing the right thing. So I thank you so much for anyone who does that, because that is an awesome thing for you for to do. But yeah, I think that's pretty much it on sponsors.
+
+101
+00:34:05,909 --> 00:35:08,900
+Wes Bos: I got one more thing. People ask me all the time, how do you get these sponsors, and it's probably about half people just contact us. They listen to the podcast themselves, or their developers listen to the podcast. And they need to be put in front of some developers. So they come through that I also get tons of email about people who want to do like a YouTube video, or they want to, like pay me to tweet about them. And I don't really do that kind of thing. So I always try to like turn that into No, but do you want to sponsor the podcast? Or will often have people say, Can we like Manning is a good example. Manny wanted to have their authors Come on the podcast and talk about the books and we said, we don't do that. That's not the kind of podcast we are. But do you want to sponsor the podcast and we can maybe feature a couple bucks every single episode and you can still get in front of the the right audience and then it works out nicely. And they said, Yeah, that's a great idea. And we jumped on a call and talk through what that would look like. So it's always about I would just like I see what you're trying to ask from me. But I think that the sponsoring the podcast would probably be a good one. A good way to go about that. Nice. Cool.
+
+102
+00:35:08,900 --> 00:35:27,600
+Scott Tolinski: So let's get into our favorite episodes. And this is actually really funny, something that I didn't even realize, until just now about our favorite episodes are Oh, service. Our favorite episodes are consecutive they were released one after the other. So Wes, what was your favorite episode? Ah,
+
+103
+00:35:27,780 --> 00:35:42,230
+Wes Bos: that's great. My favorite episode was object in array methods one episode 43. I talked about why just because the amount of value that people have got from that one just makes me feel good. It's such a pickable thing. You can say like I made this code better because of this episode.
+
+104
+00:35:42,300 --> 00:36:15,840
+Scott Tolinski: Yeah. And my favorite episode is the how to learn things quickly, I mentioned that it's based on one of my talks. I felt really strongly about that topic. And it's when I put a lot of effort into and that was episode number 44. So it's actually this is hilarious because our two favorite episodes are consecutive 44 and 43, or 43, and 44. And they're also consecutive in terms of our most listened to episodes, which is number one and two on our most listened to episodes list, which would you prove that we peaked at Episode 43 and 44.
+
+105
+00:36:16,050 --> 00:36:23,250
+Wes Bos: It's all downhill from here. I can turn it turn it off now. That's it? Yeah, we've done our thing.
+
+106
+00:36:25,050 --> 00:36:55,170
+Scott Tolinski: Yeah, it seems like we really need to, we need to, we need to get some fresher topics to bump up those later episodes. But we also need to get some fresher books to do all the sponsors that we'll be getting with our new fresh episode. So this episode is also sponsored by one of our longtime sponsors. So it's appropriate that Sentry and Freshbooks are both sponsoring this particular episode because they've been with us. And they've heard so much. So freshbooks is another sponsor of this episode with the more about cloud accounting software, like fresh books is Wes.
+
+107
+00:36:55,230 --> 00:38:33,540
+Wes Bos: Yeah, he's gonna tell you a story about fresh books, as you've probably heard me explaining what it is it's cloud accounting, you can do your track your hours, you can make bills on there, you can get invoices, get your invoices out to your clients, you can track all your expenses. But here's a quick little example that I had, somebody contacted me the other day, sometimes people want to buy my courses and they need an invoice before they can pay for it because they have to get a purchase order and the purchase order gets approved. And then that gets sent over. It's like all like, the bigger the business, the harder it is to actually sell something to a big, big company. What happened is that I was doing my Black Friday sale, and someone's like, I want to buy all of them and but I need an invoice and need to go get it approved, and then it needs to come back and then they need to pay it and then you can set me up with the course. So I set up I just shot off an invoice on Freshbooks to them and and sent it on over and then I went and got lunch and then I got an email says hey, I can't pay this thing. I thought you said I could pay with credit card and I said Oh shoot, I forgot to turn on the option because there's an option in Freshbooks or you can turn on paying by credit card and all sometimes turn that off because I don't want to I'd rather them send a check. I don't have to take eat the 3% that the credit card is going to take but in this case, I was fine with it. It wasn't that expensive. So I forgot it. They're standing their credit card and hand eating ramen at us thing and I got this email like Oh crap, but we open the iPhone app, click the Edit invoice button, slide that checkbox on Click Save reply to the email. They paid it within two minutes. And it was amazing. I was like that. How awesome is that? Or I didn't even have to put down my chopsticks. And I got paid. And I think that that just goes to show how awesome Freshbooks Cloud accounting is. Where if you can send off an invoice and manage your client while enjoying some ramen, then you're probably in a good spot.
+
+108
+00:38:33,570 --> 00:39:00,810
+Scott Tolinski: Yeah. Nice. Yeah, I love that real world stuff. I think that's uh, there you go. It's important. Cool. So thank you so much for fresh books for sponsoring this episode along with so many episodes that they have sponsored for us so big, big time. Thank you to Freshbooks Next up we have some questions that we've been asked about the podcast itself and I think this is a great one. This is a question for me. And it's what's your favorite soundboard sound? I have no idea
+
+109
+00:39:02,460 --> 00:39:03,390
+Unknown: how did you have that so
+
+110
+00:39:03,390 --> 00:39:09,980
+Wes Bos: ready to go That was amazing. I was just like scanning really quickly. I was like what one wouldn't be funny here. Oh, oh.
+
+111
+00:39:12,810 --> 00:39:15,210
+Unknown: Downtown job downtown job
+
+112
+00:39:15,210 --> 00:39:28,320
+Wes Bos: is one of my favorite syntax isms. Where if you didn't hear Scott's Dad told him to do it make sure he does a downtown job with just like to go over and beyond with with the quality of something Yeah, and ever since I
+
+113
+00:39:28,320 --> 00:39:59,400
+Scott Tolinski: just call everything a downtown job but a great great and he is absolutely ecstatic that people are using it cuz it's Oh yeah, it was like we were doing yard work yard work for a neighbor or something. You just come out and just be like, you guys didn't even pick up those leaves over there. What are you doing? Gotta be? Yeah. I have probably two I think the 38 inches man is hilarious. That's like a fan favorite. But also, I think my more one of my new favorites. The sirens
+
+114
+00:40:00,480 --> 00:40:01,350
+Wes Bos: Which one is that?
+
+115
+00:40:01,380 --> 00:40:02,460
+Scott Tolinski: It's in your column?
+
+116
+00:40:06,000 --> 00:40:06,900
+Wes Bos: blazin.
+
+117
+00:40:06,980 --> 00:40:08,630
+Scott Tolinski: Yeah. Those are all good.
+
+118
+00:40:08,630 --> 00:40:13,770
+Wes Bos: Where did that come from? I just out of context, these things are so hilarious.
+
+119
+00:40:13,800 --> 00:40:15,810
+Unknown: They're great essay critics.
+
+120
+00:40:15,840 --> 00:40:28,860
+Wes Bos: Yeah. That's my dog. Nice. I think my favorite one is schema schema, because for some reason I say it funny. I think it's because I'm Canadian. I just don't understand how to say it. Otherwise, schema schema.
+
+121
+00:40:29,670 --> 00:40:31,590
+Scott Tolinski: schema, like I'm going schema
+
+122
+00:40:31,800 --> 00:40:34,440
+Wes Bos: schema, like skeeball schema schema?
+
+123
+00:40:34,500 --> 00:40:37,290
+Scott Tolinski: I'm going skiing with my MA schema schema.
+
+124
+00:40:37,920 --> 00:40:40,230
+Wes Bos: But there's a s ch Sure.
+
+125
+00:40:40,290 --> 00:40:41,100
+Unknown: Yeah, I don't have a
+
+126
+00:40:41,630 --> 00:40:47,880
+Wes Bos: schema. Although the thing I love about this podcast is everyone always gives us a hard time when we miss.
+
+127
+00:40:48,710 --> 00:41:00,750
+Scott Tolinski: Yeah, and another thing stop giving us fake names. When we're trying to read out your your questions. We have a hard enough time already with them. We're getting fake names. And I'm gonna my global enough I'm gonna believe every fake name you give me and I'm gonna feel bad.
+
+128
+00:41:00,959 --> 00:41:09,650
+Wes Bos: When tweeted this morning that Mike Roach was supposed to be Mike rock. my crotch. my crotch that's come on. Come on. That went by both of us.
+
+129
+00:41:09,780 --> 00:41:11,150
+Scott Tolinski: Yep. Got by the sensors.
+
+130
+00:41:11,189 --> 00:41:25,530
+Wes Bos: Next question we have here is what is your recording process? Like? Do you record your streams locally and edit them together? Are there any hacks you've cooked up as developers? So we both have pretty good recording gear, you can go back to the episodes about that. We do it for a living, we
+
+131
+00:41:25,530 --> 00:41:28,800
+Scott Tolinski: record things for a living. So yeah, the gear is important. So
+
+132
+00:41:28,800 --> 00:42:01,400
+Wes Bos: we are on zoom right now just so we can hear each other. But we don't record on zoom. Because that that compresses it doesn't sound that good. So we record locally. I use QuickTime and Scott you What do you Scott logic logic. We just record our our own. We drop it in Dropbox to send it off to our editor, Adam, and then he edits it all together. When else we put our show notes in Dropbox paper, which is kind of like Google Docs. Not sure why we use Dropbox paper and not Google Docs. Do you have any ideas? Why we do that? No.
+
+133
+00:42:01,439 --> 00:42:04,170
+Scott Tolinski: Because you started it? No. And I just went along with it.
+
+134
+00:42:05,100 --> 00:42:16,290
+Wes Bos: It's it works pretty well. It's pretty, pretty nice. I like it. That's what it is. shownotes we send that off to Adam as well. He takes our like, jumbled thoughts and makes it into timestamped shownotes.
+
+135
+00:42:16,400 --> 00:42:21,780
+Scott Tolinski: Yeah, Adam is invaluable, invaluable. Is that the right word? I don't know. He's endlessly valuable.
+
+136
+00:42:23,520 --> 00:43:47,130
+Wes Bos: He has value he has value isn't much value. Yes. And then he makes it sound better. I think he applies some maybe add a maybe can cut in I think about what you add to our voices here. But I think it always sounds really good. Well, hey, they're all you syntax listeners, if you thought I was gonna pass up an opportunity to plug podcast way out. Well, you were wrong. That's crazy duck. Actually, I'm not going to talk about podcast right now. But if you want to have a podcast, that sounds as great as syntax does, there are three things you need to remember all of which Scott and Wes do extremely well. Number one, be interesting. Number two, record high quality audio, it is so much easier to produce good audio than it is to fix bad audio. And Wes and Scott are great at this. They have good quality recording gear and they record in quiet environments. They record on separate tracks. They do all that stuff, right. And honestly, it makes my job super easy. And last but not least edit, you always have to edit the first draft is exactly that it's a first draft, it's not going to be perfect. But that's the whole point of editing. Great podcasts are edited. So take the time to edit your show. And your listeners will thank you. Alright, well, congrats guys on 100 episodes, and thanks for letting me be a part of it. Question does Scott practices segways? Or do they come on the fly? Oh, they
+
+137
+00:43:47,130 --> 00:44:15,900
+Scott Tolinski: come on the fly? And then I have a little sunglasses emoji guy? No. In fact, you might often hear with his reaction to my segways because he doesn't know they're coming. A lot of times you might know that that that he might know that there is a Segway coming and that he just doesn't know how it's going to work. Other times. I'll spring them on I'm totally out of nowhere. No, I make them up on the spot. And sometimes they're not as good because of that. But I think that adds to the whole the whole the term of it.
+
+138
+00:44:16,140 --> 00:44:24,840
+Wes Bos: Yeah, that's one thing we didn't talk about was sponsors is that we don't do the typical, like record it after and put some music in the background or something like that. Yeah.
+
+139
+00:44:24,840 --> 00:44:26,550
+Scott Tolinski: And we're not reading scripts.
+
+140
+00:44:27,000 --> 00:45:14,970
+Wes Bos: Nobody knows. It's great. We tell people give us some bullet points of what you want us to cover coupon codes tracking, a free month, whatever it is that you want us to get across to your users. And then we'll we'll just riff on that. And that tends to do the best for our listeners because it's our own experience with the product we've tried. We usually try it out before see what it's like talk about some some pains that we have and where it might solve like that. So I like it. I don't I don't think too many people. Fast forward through the sponsors. I know some some people do. That's I do that with a lot of my podcasts but a lot of people say you're the The only podcast that actually listened to the sponsor spot because we just talked about our own lives. That's One really cool thing about having technical sponsors on the podcast. So we're not just trying to sell razors or something like that. Yeah. Yes. Although we'd
+
+141
+00:45:14,970 --> 00:45:26,940
+Scott Tolinski: like to stay on the cutting edge. So let's talk about Harry's razors. We're here. All right. Yeah. I mean, we could have a whole episode where you're just feeding me sponsors. I'll give you 10 transitions all day until I get tired.
+
+142
+00:45:29,430 --> 00:45:31,740
+Wes Bos: Alright, what's the next question? You got one? Next question.
+
+143
+00:45:31,740 --> 00:45:45,960
+Scott Tolinski: Although I am all for peace. Why did you choose peace as your outro statement? Because it was funny. I think we just wrote it in there. I think you even originally wrote it in our document as a PA Why
+
+144
+00:45:47,190 --> 00:45:49,800
+Wes Bos: cacc? Yeah.
+
+145
+00:45:50,520 --> 00:45:58,710
+Scott Tolinski: We wanted an emphasize piece. No, I think it was just funny that there's nothing behind it. Although it would be nice. That'd be great, too.
+
+146
+00:45:58,950 --> 00:46:27,870
+Wes Bos: Sometimes the goofiness of this podcast is lost on people or it doesn't translate to maybe other cultures. And we get we get like messages being like this podcast is so cringy Oh, we know it's good. Yeah, we're trying to be goofy. We're just having fun. That's what that's probably the biggest compliment we get about it as well is that it's not dry. And it's it's not like so so stodgy. We are having fun here. And we are enjoying ourselves. And that's why it's so easy to listen to,
+
+147
+00:46:27,870 --> 00:47:37,680
+Scott Tolinski: it would be difficult for me to do a not fun podcast, like I would probably be not having fun. I'm just reading you documentation or something like that. Next one we have How did you meet each other and decide to start a podcast? We get asked this question a lot. we've answered it before we can answer it again. Wes, and I both released a course around the same time with the same name called react for beginners. And at the time, I don't want to offend us, but I had never heard of you or your courses. So when you messaged me, and like I have a course with the same name. I was sort of like oh to this guy. And then I went to your thing and saw you had a big audience and that if your course was bigger than my course, and was like, Oh, and I released it afterwards, I guess I'm sort of the dick in this situation. So I will definitely change it. I agreed to change it in like two seconds. And I did already Yeah, it was out of my naming scheme for things. Anyways, I was like, You know what? react for everyone, which is the original title of it isn't as easily found on Google is react for a beginner, so I'll change it. Sure enough, obviously, I didn't do any research, which is something I probably should have done that time.
+
+148
+00:47:38,730 --> 00:47:55,470
+Wes Bos: Yeah, that was that was really cool of you. So after that, we just got talking. I had been following Scott's YouTube, specifically for the sketch tutorials for like way before that, and I'm not sure how I found it. Someone maybe sent it to me or it just popped up in my YouTube feed. watches on
+
+149
+00:47:55,470 --> 00:47:57,150
+Scott Tolinski: YouTube. Yeah. I don't know how that happened.
+
+150
+00:47:57,630 --> 00:48:33,270
+Wes Bos: Yeah. But so I asked Scott, if he'd be interested in joining what's called a mastermind, which is a you meet up once a week and just chit chat about business and what's working and what's not. And we started up a mastermind, me and Scott Joel from egghead and Josh, who he doesn't do training he I think he does training at inside of a company now. He had a lot of Meteor stuff as well. We ran that for about a year. And we just talked about starting a podcast for about a year until after a year, we actually started up the whole thing. So we have a little bit more on our origin story about how we met, you can go listen to those, but that's the short and skinny of it right now. Yeah,
+
+151
+00:48:33,420 --> 00:49:28,080
+Scott Tolinski: it's funny, because maybe like a couple weeks before that, I had been looking for a mastermind group. Anyways, I had applied to be in a mastermind group, and really me like a trial run. And it was very serious. There was like seven or eight people in this mastermind group. And I was sort of like, Hey, we're looking for a new member, one of our members left, and we'll give like eight people a trial run. They gave me a trial run. And you know, here's what I believe. I believe that someone was salty enough, because I gave them website advice. And maybe they didn't ask for it. I believe I was denied that position. And that startup group, just simply because they did not like that. I told them that they were loading too many Java scripts and too many CSS is in their website, that's firmly what I believe. Instead of just yeah, I gave him some speed advice, and Hey, man, you're loading jQuery plugin, and you're not using it, but you're loading in anyways. You should not do that.
+
+152
+00:49:28,530 --> 00:49:59,940
+Wes Bos: People ask me all the time, like, Where do I find a mastermind group? And the answer is you just start asking people because there's it's not like a thing that they're always taking people on. So I reached out to probably eight different creators. Yep. And Scott, Joel and Josh was the The only people that were interested in it. Everyone else is either busier or didn't want the me to steal their secrets. It's kind of a weird thing to get together with your competitors and share what's working and what's not working. But I highly recommend it if you are trying to do something like that. Yeah.
+
+153
+00:50:00,000 --> 00:50:19,470
+Scott Tolinski: Somebody asked me in my Ask me anything on Reddit, if I view you as a competitor, I do not Oh, yeah, who is a competitor, man, I want you to succeed more than anything. Like I share your stuff all the time. And I'm not putting referral links on there or whatever I just want, you know, I just want to I just want to be big ups to Wes Bos, you know, I want, I want everyone to succeed.
+
+154
+00:50:19,650 --> 00:50:49,950
+Wes Bos: That's a kind of cool thing is like, I think there's enough out there for the both of us, we both make a good living off of it and enjoy what we do. So the fact that we do this podcast together, maybe we'll talk about that is, even though we do sort of sell the same thing, we just reach so many more people, because we can come together and make this awesome podcast and then eventually reach more people. Because I was asking Scott this earlier, like, we never really gave coupon codes or anything out there. But I definitely think that this podcast has helped my business immensely. What would you say about that?
+
+155
+00:50:50,100 --> 00:51:50,640
+Scott Tolinski: Yeah, I would say level up tutorials is not the same business as it was before we started this podcast by a longshot, you know, and and it's, it's, it's done a lot of things for me as a business owner and understanding that sort of thing. And I'm now have the resources to, like see sort of my dreams and goals through in terms of running a business. So it's only going to change even more over the next 100 episodes of syntax. So I'm just psyched. I'm psyched about the whole thing. It's, it's all been great. So next, let's get into the questions that we get asked the most. These aren't direct questions that we were asked, but this is just stuff that people ask us all the time. And so we might not have some answers for you. But we definitely have lots of questions here. The first one is, what episode was it that you blank? What episode was it that so and so sponsor? What episode was that? He talked about this, what episode was it that he talked about the drill brushes, which episode blah, blah, blah. And this all goes back to the fact that we don't have a lot of good filtering on the site, which is something that we'd like to probably improve?
+
+156
+00:51:50,730 --> 00:52:32,070
+Wes Bos: Yeah, we had some plans for search, I think algolia was gonna hook up something like that with their open source plan. I'm not sure what happened to that probably fizzled out or something like that. But we're gonna get search in there at some point. For now, you can just search on Google and say site colon syntax.fm. And that will allow you to search all of the Sona shownotes it is server rendered react, so you can search them all works. Well. Another question we get is, Can my boss come on the show and talk about Bitcoin? So it's hilarious. anytime anyone releases a book, or is doing some sort of PR tour, we get an email from like a PR person or like an assistant or something like that, who wants to have their like, their boss come on the show and talk about their book. They just
+
+157
+00:52:32,070 --> 00:52:34,740
+Scott Tolinski: see us in training and technology. And they're like, let's
+
+158
+00:52:34,890 --> 00:52:37,200
+Wes Bos: just do with web development.
+
+159
+00:52:37,230 --> 00:52:39,690
+Scott Tolinski: Yeah, blast the trending and technology people.
+
+160
+00:52:39,870 --> 00:52:53,190
+Wes Bos: So we I've only ever had one guest on and that progress has not gone live at the time recording this. So we'll see how it goes. But we would like we'll talk about a little bit more about that near the end, though. What other questions do we get? Can you do an episode on view j. s?
+
+161
+00:52:54,030 --> 00:53:13,200
+Scott Tolinski: That's a great one. And the answer is whenever Wes gets his act together, we can do an episode on Vue JS because I've been ready to go since like episode number 30. Whenever I released my DJ course, I've been ready to go west is dragging his feet here. We need to get west to the altar here. So to say, no?
+
+162
+00:53:14,070 --> 00:53:56,460
+Wes Bos: Yeah, it'll come soon. We'll also get asked about Angular episodes. And I can probably say that will never happen, just because I don't know anything about Angular anymore. I did do Angular many years ago. But it's all changed since then. And it's probably not something I'm going to spend a whole lot of time learning people ask me that with my course as well. Like, are you going to do an Angular course? And the answer to that is probably not just because, like I consider myself pretty good at react. And I don't want to just make a course on Angular when I haven't built any, like real world applications with it. I don't think that would be a very good course. I don't think you should trust somebody who doesn't actually build this stuff every day. Yeah, do it.
+
+163
+00:53:56,550 --> 00:54:29,820
+Scott Tolinski: Yeah, absolutely. And Angular actually like a very deep well, it's a very deep well of of topics and their way of doing things where like Vue js, if you have view, you're gonna feel very at home and a lot of the concepts and especially me, because there's concepts from like Angular one, there's concepts from Blaze and Meteor concepts from react, and it all sort of works really well together. Okay, next, we're going to talk about some of our just thoughts. Here's some, here's some thoughts about syntax from the syntax crew. So what are some of your random thoughts here? Wes,
+
+164
+00:54:30,000 --> 00:55:40,680
+Wes Bos: I think that it's pretty cool that we have a community built around syntax you can you can see it like on Twitter, people are always giving you the gears like like not being mean, but like, like it's an inside joke about specifity or drill brushes or, or things like that, which is really funny. The Twitter is awesome. There's almost 16,000 people on the Twitter account and I just really liked the syntax Twitter because it's a you can just like retweet the crap out of anyone's stuff or questions that they may have or things that they've built in. You can ask questions on it. You can get some really good feedback. And I think because it doesn't have like a face to it, there's never any of the, like angriness that comes along with like my regular Twitter where you tweet anything and you get like the the D bags come out of the woodwork anytime you post anything. And it's just so refreshing on the syntax, because it's just people that care enough to actually listen to this entire podcast. So it's just a cool community. There's lots of experts on there. So if you have like a question about something or you want someone to weigh in, before we record an episode, I can just send out a tweet on the syntax, and you'll get experts chiming in on specific things about service workers or whatever, because that's where they spend all of their time.
+
+165
+00:55:40,860 --> 00:56:14,040
+Scott Tolinski: Yeah, absolutely. That's super cool. And I think some of the things too, is just that, like, there's a lot of podcasts and a lot of voices. But I'd like to think that our voices and how we're like now, not the tambor tambor of our voices, specifically, but like our versions of explaining things and stuff like that, I'd like to think that we have a unique way of explaining things that makes our podcasts special. So that's just sort of a little random out there. I you know, there's a billion people can talk about react, but I think our, our the way that we talk about react or whatever it is important.
+
+166
+00:56:14,160 --> 00:57:14,700
+Wes Bos: Yeah, like, we've definitely found our little group of folks who support us by buying our courses, listen to the podcast, so we can get sponsors and like, it's really cool. Because like, my, our stuff is not for everybody, right? Like the things that I create is not meant to make everybody happy. The things that I agreed to, it was meant to resonate with a certain kind of person. And we definitely feel like we found those people through both my courses, as well as through the podcast. So people that like the way that we explain things, they found us, which is great. Yeah. So we're glad you found us. What else do we have here? I've just learned a lot from some researching shows asking for feedback from the community. It's amazing. Just this platform, anytime you have a question about anything, or anytime you want to run a show, and you ask for feedback, before you record, you often will get the people that are the experts at something chiming in and giving you some some helpful info. So that's really cool. Well, let's talk about the future. What is the future of syntax look like? Scott? Yeah, so 200? What is it gonna be?
+
+167
+00:57:14,790 --> 00:58:03,120
+Scott Tolinski: It's gonna look a lot like Episode Number 43 and 44. Because that was our golden era syntax. No, it's gonna it's gonna be awesome. I'm, I'm so excited. Because he would think that we would be running out of topics, we have too many topics to pick from every single time we want to record an episode, we're throwing out like five or six different topics that we could do it on. So it sounds like we're gonna be running out of ideas here. What I'm excited for in the future of syntax is basically that the podcast will always remain number one at the forefront of it being a most helpful resource, right? The goals of each episode should be that you can walk away learning something every single time and that it's going to help you in your day to day web development, your career or whatever. And that's, that's it that that needs to be the goal of every episode. And I'm confident that it will be.
+
+168
+00:58:03,330 --> 00:59:23,040
+Wes Bos: Yeah, that's what the tasty treats that's why we say it's a web development, tasty treat podcast, because we want you to walk away being like, Huh, that array method tasted great taste, you know, like to walk away with something or, huh, I'm gonna try that that audiobook that's got recommended or just something like that. Because it's, it's really cool to walk away and say, I'm going to try X, Y, or Z the next time I come across that. Yeah, absolutely. We are toying with the thought of doing some interviews, we've been doing really well with with no interviews. So far, we've been toying with the idea of doing these shows where you do talking to people, where it's not necessarily get the same folks on who go on every single podcast and talk about their open source project or what they're working on or whatever. But more like, we have this huge list. I've sourced from Twitter, were talking to someone who learned to code after having kids. So there's probably a lot of valuable information that it's gotten. I don't have there that it could be extremely valuable to our audience. So we're like, like, how can we use this platform to help people even more by possibly bringing on people and asking them questions or talking to people who did a boot camp talking to people who work at a big company? I learned this really cool. What's this acronym? Facebook, Google, Amazon Fang, have you heard this acronym?
+
+169
+00:59:23,280 --> 00:59:24,780
+Scott Tolinski: No. Facebook,
+
+170
+00:59:24,810 --> 01:00:30,720
+Wes Bos: Fang stands for Facebook, apple, Amazon, Netflix and Google. So talking to people, what is it like working at Google? Is there slides? Is there like lots of our slides. So we have this massive list of things that we want to talk to people about the problem with interviews is that scheduling is often really hard and the audio is not always great. And those are two things that we hold in high regard between Scott and I because we need to record during business hours. Most of the time. We broke that once talking to Sasha because he lives in Japan. And Second, the audio is always a hard thing. So like we can send people a microphone, that's 50 hundred bucks, but that they might be sitting in one of those like trendy fishbowl offices where it's it's echoey. And for me bad audio on a podcast is a huge turnoff. It's a Yeah, it's a turn off. I will literally turn off podcasts, this sounds like garbage. So those are things we have to figure out just yet. But I do think that we can tackle them because of the possible information that lives in other people's brands as well.
+
+171
+01:00:30,780 --> 01:01:15,750
+Scott Tolinski: Yeah, I don't think I think the big thing with interviews is that so many times that not only is it bad audio, but the podcast is is transparently just a stop on the promotional tour. Like here, I see you're releasing a book, let's talk about your book. Let's talk about this. Oh, yeah. And I don't want it to ever be that because there's enough podcasts that do that. Totally. Again, the idea would be that it would be helpful, I have a number in my head number, I mean, like two or three guests that I think will be really, really interesting for our listeners, and we can talk about it after, after the show is recording. I don't want to spoil anything. But I have a couple of guests that I think would be able to solve all of the problems that we have in terms of audio quality while remaining very, very interesting guests. So maybe some to look forward to that a little teaser, a little teaser, right?
+
+172
+01:01:15,780 --> 01:01:39,180
+Wes Bos: Oh, cool. All right. So that's it. Thank you so much for making this podcast a thing. It's amazing that we can do this as part of our jobs. I think it's it's really good just for our own skills, being able to I feel like I'm better at explaining things, I'm able to much better hold up a conversation in person just from the sheer amount of time that we've thrown at creating this podcast.
+
+173
+01:01:39,330 --> 01:01:49,980
+Scott Tolinski: Sick. Thank you so much for anyone who's listened to any of these 100 episodes. And those of you who've listened to all 100 episodes, Jai ganttic Thank you.
+
+174
+01:01:50,040 --> 01:01:51,150
+Unknown: Yeah, you are. Yeah,
+
+175
+01:01:51,150 --> 01:01:53,400
+Scott Tolinski: you are amazing. That's awesome.
+
+176
+01:01:53,459 --> 01:02:16,770
+Wes Bos: That's always the funniest part where somebody like finds a podcast like two months ago, and then they're listening to one every day. And then all of a sudden, they it's like they're listening to all 100 I listened to one a day. And you have to wait for one or twice a week is when we put it out. So props to you if you keep up with the the amount because I definitely have some podcasts where it's just way too, too much for me.
+
+177
+01:02:17,100 --> 01:02:30,300
+Scott Tolinski: We've missed one section of this episode, which would have been what are your favorite podcast episode titles, and mine would be Keeping Up With The Kardashians. That's my favorite episode title. And I know everyone hates it. So there that's uh, that's it. That's all I got.
+
+178
+01:02:30,540 --> 01:02:35,190
+Wes Bos: I don't have a favorite podcast episode name, maybe big zips? That was a good one.
+
+179
+01:02:35,220 --> 01:04:33,840
+Scott Tolinski: Yeah, that was a good one. That was a definitely a good one. I think it was well read. Just Well, let's go ahead and talk about sick pics, do you have a sick pig cuz I have a sick pick that I've been very fond of. While you're looking for your sick pick, I will go ahead with mine. My sick pick is an app called notion. And now, this app is probably no mystery, because it's been out for a little bit. But I've kept my eyes on it for a little bit. And I'm starting to actually use it very intensely now. And that notion is available at notion. So I'm not affiliated with them. However, I will have a link to my referral link in the show notes. So if you want to help support us in that way, and you want to sign up for notion, click my referral link, that'd be great. But notion is basically you could think of it as like a note taking app on steroids, it does notes, it does like knowledge base stuff, it does cabanne boards, it does spreadsheets and databases, it does to do lists, and it has a bunch of templates in it. And one of the things that I think this is like really sets us apart from other apps is that it definitely feels more like a web site sort of thing. Because you're creating pages, within pages within pages that I'll automatically create hyperlinks for you and stuff like that. And what it turns into is like a giant data resource. And I can have so many things on here. So for level up tutorials I can have which contractors I'm working with at the current time, you know, the status of invoices, I could have a to do list for my video series. So I have like a whole in production verse in progress sort of thing. And I have my design system stuff in here. And the coolest stuff about is you can link in and insert embed current things like I've embedded my figma documents in here. So you can embed your color themes and stuff like that directly in here. There's a desktop app, there's a mobile app, I have been loving this thing I have been spending all of my time in it, and I can't get enough of it.
+
+180
+01:04:34,050 --> 01:05:20,280
+Wes Bos: Awesome. I'm going to sic pick MongoDB compass Community Edition, which is the free version of it. I'm not sure what the other version if you have to pay for it or not. But if you are using MongoDB, and you need some sort of GUI tool to interface with your data, and this is often the case with me because if I build something, I might not build an actual admin UI until it's completely fleshed out and I just need to be able to edit my data directly. I've used all kinds of have apps I use one called Mongo hub for the longest time, but MongoDB compass is fairly actively developed. And I've noticed in the last six months or so it's been getting pretty good. It's a lot of the rough edges that I initially had with it are seemingly gone. So check it out if you need a GUI for managing your MongoDB. It's called MongoDB. compass. Cool.
+
+181
+01:05:20,310 --> 01:05:30,390
+Scott Tolinski: I use studio three t. I am interested in learning about compass here, because it looks like it was designed in 1990 and has not changed. So
+
+182
+01:05:30,750 --> 01:05:47,340
+Wes Bos: yeah, there's a lot of these like Java apps that like use their own GUI that are like pixelated and things like that. So yeah, this is such I think this is built in I think that's an electron app. It feels like an electron app. Which, which by I mean, it feels like a like a web app. Yeah. Yeah. That's pretty cool.
+
+183
+01:05:47,340 --> 01:05:51,450
+Scott Tolinski: I feel like notion is probably an electron app as well. Do you have any shameless plugs?
+
+184
+01:05:51,570 --> 01:06:04,830
+Wes Bos: It's gonna shamelessly plug all of my courses Wes Bos calm for slash courses. I probably just sent you tons of emails from Black Friday. So I won't push any further on that. But thank you so much. If you didn't pick it up on Black Friday, Cyber Monday means a lot to me.
+
+185
+01:06:04,980 --> 01:06:52,290
+Scott Tolinski: Yeah. And I'm going to again, I'm also going to, shamelessly plug levelup Pro, which is a subscription service for mobile tutorials. You'd access to over like something outrageous, I think was like 400 Premium tutorials right now. And then there's going to be like 300 more over the next year. If you send that yearly save 25%. And I'm going to announce right now you have very little time before the prices are going up. We have so much content right now, so many improvements coming to the platform prices are going up January 1. So if you miss the Black Friday sale, and you still want to get in at a low rate, and you want to be locked into that rate forever, sign up for it level up tutorials.com forward slash pro right now for one year, and you'll be locked into that rate while the prices go up. So thank you so so much for everyone who's subscribed so far. And yeah, appreciate it.
+
+186
+01:06:52,530 --> 01:07:00,030
+Wes Bos: Alright, that's it for today. Thanks for tuning in. See you at Episode 101101. Yeah, please, please.
+
+187
+01:07:01,830 --> 01:07:11,580
+Scott Tolinski: Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

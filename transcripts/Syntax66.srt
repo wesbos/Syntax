@@ -1,0 +1,476 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax,
+
+2
+00:00:02,849 --> 00:00:20,520
+Wes Bos: the podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski and West boss. Hello, everybody. And welcome to the syntax podcast where we talk about the tastiest web development treats out there with me as always, is Scott to linsky. How are you doing today, Scott? Hey, I'm
+
+3
+00:00:20,520 --> 00:00:22,859
+Scott Tolinski: doing super good, doing really good. How about you?
+
+4
+00:00:23,099 --> 00:00:50,939
+Wes Bos: I'm doing pretty good. Just back at it after a couple of weeks of vacation, which I'm had an awesome time on vacation. And now I'm back into It's funny how hard it is actually to get back into coding. Like I just like was sat down at my desk. And I was like, What do I do again? Like what am I working on? Like I feel for people who don't write like JavaScript every day because you get I feel like you get pretty rusty I found after just two weeks of being away, I I don't know how to code anymore.
+
+5
+00:00:51,509 --> 00:01:01,470
+Scott Tolinski: I think it's hard to get back in the groove of like, anything like that, where you're just like, You're out of your your normal flow. You're not you know, in your all the sudden gotta just jump back into it.
+
+6
+00:01:01,859 --> 00:01:02,820
+Wes Bos: Yeah, yeah, totally. I
+
+7
+00:01:02,820 --> 00:01:04,920
+Scott Tolinski: like to project you know,
+
+8
+00:01:05,369 --> 00:03:07,860
+Wes Bos: that's true, actually being able to jump into an old project and think about like, oh, how was I working on it? How is it working on it, like, I thrive in consistency and doing the same thing day in day out and stuff like that, when it gets messed up. It's it's really funky, but excited to be back. Today's episode is sponsored by two awesome company, Dev lifts, who sponsored the show. Many times in the past, they're back. And they will get you fit as if you're a developer, which you probably are, because you're listening to this, they are going to get you fit and M lab, which is going to host your MongoDB database. We'll talk about both of those companies partway through. But today we're talking about react, I was just kind of sitting around looking at the list of topics. And I messaged Scott, and I was like, you know what we've never done, we've never done a show on react we've done our first ever show over a year ago was on react tools. We've talked about react it probably in every single episode. But we've never actually done like, this is what react is, here's all the core concepts behind it. And we realize that not everybody who listens to this podcast is a react developer with a MacBook Pro that lives in North America. So we thought we would go into react to kind of explain all the ins and outs and our thoughts on it. And the opinions and this would be great if you are a new or intermediate react may also be a nice little refresher into all the different pieces. If you are coming from either another framework or not knowing a framework at all, maybe you're just learning JavaScript at the time. Hopefully this will solidify the ideas because I find that when I switched to react from Angular, I was initially Angular one Dev, I found that there was not a lot of things in react. Whereas in Angular that I felt like there was just endless things to learn. In react, it was pretty simple. There's components, state props, event handlers, couple lifecycle methods, and some ideas around fetching data. And and I guess you can get into it with because it doesn't do routing and stuff like that. But I found that it was easy to grasp the surface area of react. I don't know about you, do you feel the same way?
+
+9
+00:03:08,039 --> 00:03:48,810
+Scott Tolinski: Yeah, and a lot of the things in react, I think they're things that even people have trouble with this thinking are things in react or just JavaScript things and and that's like, the main thing that I am now going on often the worst thing here, but the main thing that I've been like really loving about react is just personally how much better at JavaScript and makes you and and just the amount of stuff that you can learn in react. And then you can take with you to other things, right? Because now all of a sudden, the stuff you're taking, or the stuff you're you're taking isn't isn't stuff that you have to leave behind, right? It's not dollar sign scope. It's not directives, it's not that kind of thing. It's JavaScript that you can take with you. And I like that a lot.
+
+10
+00:03:48,840 --> 00:04:11,729
+Wes Bos: Yeah, I feel like I've said this before many times over, but I feel like react has made me a much better JavaScript developer. Because there isn't a lot of magic. There is I guess, in like, the whole rendering and stuff like that, but actually authoring react code, there's not a whole lot of magic that goes on beyond beyond JSX and some of the auto binding stuff that is not totally in the language just yet.
+
+11
+00:04:11,759 --> 00:04:56,910
+Scott Tolinski: Yeah. And I think I remember back to when I first started learning react, besides the whole confusion around writing your your view in your JavaScript sort of thing, rather than having like a separate HTML file and stuff. I think the biggest thing for me is that felt very verbose. And I was just like, you got to write a whole lot of code to do very little and then I don't think that way at all anymore. It was only a couple weeks before I was just like, Oh, I totally get why everything's like this. And then now when you look at stuff that does a whole lot of stuff for you. I get a little where's this coming from? Why is this doing this? I you know, I never I was it was definitely a fan of a little bit of magic and still I'm a fan of a bit of magic, but like I'm definitely I get why people say there's a lot of too much magic and things you know, sometimes
+
+12
+00:04:56,999 --> 00:05:16,350
+Wes Bos: totally I agree that there's a fine line in Magic. And I like it just enough. And I don't really know how to how to say that. But react is is probably on the other side of it as not so magic, I probably would like a little bit more magic in react but the explicitness of it, I think does make you a better JavaScript developer.
+
+13
+00:05:16,350 --> 00:05:17,450
+Unknown: So
+
+14
+00:05:17,490 --> 00:05:26,070
+Wes Bos: let's get into it. Let's first talk about one of the core ideas of react. And that is a component. We want to take a stab, what is a component? Scott?
+
+15
+00:05:26,160 --> 00:05:54,360
+Scott Tolinski: Yeah, component is a reusable thing to reusable chunk of code, right. And a component can be something that augments your other things, or it can be something that is itself a thing, right, it can be a visual thing, or it can be something that augments other things like a wrapper or container or something like that. That's providing data. But at the end of the day, a component is an individual item that can plug into other items, or feature other items or contain other items.
+
+16
+00:05:54,420 --> 00:07:41,850
+Wes Bos: Yeah, totally. So explanation, I really like that, I think you nailed it there, it will either do one of two things, it will either display a part of your application. So maybe you are displaying a user's profile, you want to put an image of them, you want to put like a h2 tag, and maybe a tagline underneath them. And that will be your user component. And you'll be able to take that component wherever you want. And as long as you supply it data to who the user is, then it works. Another way to approach it is a component can be something that handles logic. And and some of that logic will be what happens when someone clicks on a user, what happens when someone hovers over it? What How does the data get into the component and at the very simplest, your logic and your display can be the same thing, you can put those together. And in a lot of cases, that makes sense. But you can just do one of the other where you might have a component that has all the logic in it. And then you might have a secondary component that that just answers the question, How do I display it? And I think maybe we'll get into maybe we should do that now right now. So there's your regular react components, which are you extend react component. And those are, those are what I like to call full blown components. And in those, you can put all of your custom logic, and then each component will have what's called a render method. And in your render method that describes at the end of the day, when I put this component on the page, what does it render out to the page, and that's where you put your HTML. The other type of component is called a stateless functional component, which is just a render and it doesn't it doesn't extend it's actually just a function that returns some JSX. And that's just a taking in data via something called props. We'll talk about that. And then spitting out some DOM elements on the page. Does that pretty good? I think,
+
+17
+00:07:41,910 --> 00:08:03,540
+Scott Tolinski: Yeah, I think so. And there's also pure components. But those are less important right now, especially if we're just getting into the basic stuff. But like, one of the things that's funny, they always were saying that like stateless functional components are going to bring performance benefits, but it was always like, they're going to bring performance benefits, and I don't think they have yet, right. So do use the stateless functional components in your code.
+
+18
+00:08:03,960 --> 00:08:48,529
+Wes Bos: I do use them whenever it is that I need to just render out something because it's a little bit simpler. But I do find it a bit of a pain, when I need to switch from a stateless functional component and go, Oh, I actually do need a custom method on this thing, or I actually do you need one of the lifecycle methods on it, and then you have to switch it over to a regular react component. So I myself have never really run into any performance issues with just regular react components. So I do think it's kind of funny, because like, maybe that is something the compiler should handle. If it doesn't see any custom stuff on it, maybe it should just turn it into a stateless one for us. I don't I don't necessarily know why one or the other. But I don't know, it's kind of, there's probably some good reasons that I don't know,
+
+19
+00:08:48,600 --> 00:09:38,539
+Scott Tolinski: for a long time, I think I was being very, like, I'm always gonna do a stateless functional component unless I have to. And now I'm very, I'm always just going to do a component. And I always Don't even think about stateless functional components, because it's like, it was such a pain to convert between the two that if I started one and had to change, I was always just annoyed by that. And since I wasn't seeing any performance decreasing, and I wasn't doing anything that would cause Well, I mean, obviously, there's no necessarily performance benefits from an anyways. So like, I was just just being cool. Okay, well, if if that's a, that's a thing, and all of a sudden, you know, you get this big benefit from it, I'll just do it all at once. I'll just convert all the ones I can at once rather than having to even think about it. So for the most part, I just use component. And I use pure component occasionally. But for the most part, I just use component. And in that way, I just don't even have to worry about it.
+
+20
+00:09:38,700 --> 00:10:41,700
+Wes Bos: That's, that's interesting. I like to hear that too. Because what happened when react came out is that everybody was opposed to react because it's through separation of concerns out the window where you used to be like you have your JavaScript here, you have your HTML here and your CSS here and they should all be separate because you have separation of concerns and they sort of threw that out the window and they said, You know what, just put it all in. A component right and and people were saying like, no, you're not allowed to do that. And and and we asked like, well, but why and if we got into this, like sort of developers do this all the time we have these rules that you should never do something. And then if you ask why you start to start stuttering, and you don't really know why you think it's just, it's just his mantra that you repeat over and over again. And you have to try really hard not to actually fall into that, because now we're starting to fall into things in react where people say, like, always use a stateless functional component for this, or what is the other one don't do inline event handlers. And then people come back and say, but why? And then yeah, you sort of stuttered. Uh, oh, I was just just kind of
+
+21
+00:10:42,720 --> 00:10:52,140
+Scott Tolinski: situation. And in this particular, whatever, you're gonna run into these tiny, little insignificant performance issues that you may or may not be having. Yeah. Therefore,
+
+22
+00:10:52,230 --> 00:11:04,679
+Wes Bos: there's a demo where I put 300,000 components on a single page, and they all have an inline event handler. Look at the for performance. Oh, okay. I'll remember that next time. I put 300,000 components on a page.
+
+23
+00:11:04,830 --> 00:11:47,399
+Scott Tolinski: Yeah, right, exactly. So I, I tend to not get wrapped up in that sort of stuff. I mean, there's always some sort of best practice that's going around. And I mean, by all means, follow best practices, right. But like, I don't, don't get too crazy about it for a long time. People were like, I wouldn't even use react without Redux. You're only using Redux. And now, you don't see that sentiment nearly as much anymore. People are using other things instead of just Redux. And in there, there's these new things like that, that happen all the time. And people shift from one to the next one to the next. And again, it's good to stay up on best practices, you don't want to ignore the best practices, you want to do them. But don't get hung up on micro optimizations or something like that, unless you need to.
+
+24
+00:11:47,790 --> 00:12:23,340
+Wes Bos: That's one thing I often see in senior developers. Whenever I talk with the senior developer, they're always skeptical over rules like that. And they always question why and how that works. I think that's a really good thing I've taken away from from talking to senior developers is don't get wrapped up in I do it myself all the time. And you see it in CSS as well. You see it in HTML, where people come up with these rules, they have to do it this way. Because someone once ran a test in Chrome. And it was like three milliseconds faster, but it's since been fixed. So who cares? In most cases?
+
+25
+00:12:23,850 --> 00:12:24,840
+Scott Tolinski: Yeah, for sure.
+
+26
+00:12:25,049 --> 00:13:02,610
+Wes Bos: So we'll move over to the next one, which is JSX. JSX is the templating language. I don't even know if I would call it a templating language, but it's how you make DOM elements, or I like to call it HTML, people will turn their nose and say it's not HTML, it's DOM elements. Yeah, JSX. But like, it's, it's how you get HTML on the page, right? And it looks exactly like HTML, hold a few little things. There's like, you have to use class name instead of class. And you have to use HTML four, instead of four, which are a couple little things. Hopefully, there's a rumbles that that will go away. And in this beautiful thing called JSX, to have been sort of falling
+
+27
+00:13:02,610 --> 00:13:11,760
+Scott Tolinski: in love, love that. I would love that. I think that was one of the initial things that turned me off of JSX. I was like, I gotta write classname. Yeah, the word here.
+
+28
+00:13:11,909 --> 00:14:37,020
+Wes Bos: It's bizarre and the fact that preact. So preact, and Inferno are libraries that are compatible with the React API, meaning that you can ideally just switch your entire application over from being a react application to a preact app or an inferno app. And actually, the dev of Inferno now works. Facebook on react in the dev of preact. Now works at Google doing performance stuff. So obviously, these were like sort of like faster versions of react that they built. And it's kind of interesting. I know, a couple big companies specifically use it, but they have fixed that class name and HTML for things. So it's not like a limitation of any language. It's just in the JSX compiler. So hopefully, that will go away at some point. But we use JSX to template out everything. You can take data into your component via three three ways state props, or context. We'll talk about that in just a bit. And it's just how you render it out. The the kind of weird thing about JSX or maybe the nice thing about it is that there is no logic at the logic list. templating language so if you're coming from pug, or Jade or handlebars, or ej s or any other templating language, you know, that they all have their own way of doing conditionals. And if statements and turn turn are rare Aires and look, how do you say?
+
+29
+00:14:37,529 --> 00:14:38,850
+Scott Tolinski: I say ternary
+
+30
+00:14:38,940 --> 00:15:19,260
+Wes Bos: ternary it's the one I but it's a bonkers you know, in a rare it's not it's I always say everything wrong. It doesn't have any of that logic in the idea is that you use JavaScript for that logic. And that can get a little hairy in places in most cases. You just need to map over an array of data. And then spit out another component for that. And it's not a big deal. In some of the conditionals, it can get a little bit hairy. But as soon as your templating gets a little bit hairy, it's likely that you need to split your code up into smaller little components that handle that logic before the render actually returns.
+
+31
+00:15:19,499 --> 00:16:16,950
+Scott Tolinski: Yeah, I'm a big fan. Because in JSX, you have the ability to use JavaScript expressions, right? And just being able to throw those expressions into your HTML. Again, it is it is for all intensive purposes. html, right? Yeah. Being able to just throw in JavaScript expressions in line into HTML, I always find that to be such a nicer approach than like having a property on an HTML element, Allah Angular or something like that, where you have an mg f that was on a div for me that always felt like, is the div going to show? Or is the contents within the div going to show or what is the wrapper here? Right? So I really like the fact that you can have all your expressions in JSX. And it makes it very obvious to me, what is actually going to be output rather than what's the container. Now obviously, if you're used to that stuff, is immediately obvious to you. But it to me, it's just less ambiguous at a glance.
+
+32
+00:16:17,099 --> 00:16:47,520
+Wes Bos: Awesome. Yeah, that's one thing. When I first started to react to everything that I bumped into, I was like, seriously, this is the way that they do it. But if you just give it a chance, a lot of react to sort of rethinking best practices, especially if you're coming from Angular one, or jQuery or backbone, things like that. It was a bit of a radical shift. And now a lot of the ideas of reactor are propagating through other frameworks. So it might not be that foreign to you. But if it's your first time approaching one of these, it might seem funky, but I'll just tell you give it a shot, because it's great.
+
+33
+00:16:48,209 --> 00:17:17,300
+Scott Tolinski: Yeah, yeah, definitely. Once you get past that hole, it's different and scary point. It doesn't it feels very intuitive. Once you're used to it. One of the things I was actually just looking on the that JSX two thread. And though somebody was saying like comments, comments feels, oh, yeah, sex, and it does feel hacky, you have to have curly brackets, then you have a forward slash, then the asterisk. And then he's like, sort of the JavaScript block comment inside of curly brackets. It's just a lot of code for a comment, right?
+
+34
+00:17:17,399 --> 00:17:18,540
+Wes Bos: Yeah, it's really annoying.
+
+35
+00:17:18,540 --> 00:17:30,780
+Scott Tolinski: Yeah, your text editor will occasionally decide like not to do it I was having for a while where VS code would just always do the double slash inside of JSX. And I was just like, no, stop, please don't do that. Like, I don't have to type this out.
+
+36
+00:17:30,989 --> 00:18:13,410
+Wes Bos: And if you leave a comment above your initial return, it gives you that cannot return to children, you have to return to put the comment inside. It's so bizarre to me that you can't just use regular HTML comments, which I would love. And I think I'm just opening up my my site stats right now, my most viewed blog post is how to comment in JSX, which is so funny. That's the one thing that everybody there we go to just today it's a noon, and over 300 people have come to my website, asked, How do you comment in JSX? So on any given day, there's probably between six and 900 people visiting my website just to learn how to comment and JSX it should be a little easier than that.
+
+37
+00:18:13,739 --> 00:19:01,230
+Scott Tolinski: Yeah, super annoying. Cool. Yeah, we're talking about JSX is the way to like write the view for react. But you can write react with actual just JavaScript, I mean, if you want to keep it all, so there's like no abstraction over JavaScript, you can write using react, create element, and you can create an element, right? And you can render those elements. And you can use all sorts of any of your normal HTML in JavaScript. Now, I don't know too many people that actually write react this way, because it's just a lot of extra code to do it. But it exists, right? So if you're like, I don't want to use any of these weird HTML abstractions. You can write everything in straight JavaScript if you want. It certainly is a way to do things. And of course, you can find more information about that again, do you know anybody that it does that kind of thing?
+
+38
+00:19:01,439 --> 00:20:00,480
+Wes Bos: I don't know. Anyone that specifically uses react dot create element in the way it works is that you, I think it's the you react dot create element. And the first one is the text that or no, the first one is what element you want to create. Second one is an object of properties that goes on that element. And then the third one is what goes inside. And that's either going to be text, or it's going to be another react create element. Because if you want to nest six or seven levels deep, then you have to have six or seven. So I don't use that. I know some people that use this thing called hyper script. It's called react hyper script, and you just use an H and you can give it like div dot example or h1 pound heading and it works a little similar, but the syntax is a little cleaner. I don't see the reason why you would want to use this unless you love finding missing braces and brackets and semi colons. Yeah, it's it's not for me. I don't know anybody that that uses this. But I do know it's it's somewhat popular. There's there's people out They're
+
+39
+00:20:00,690 --> 00:20:37,470
+Scott Tolinski: if you if you write react without JSX and with something else, whether that's hyper or hypertext or hyper whatever you're hyper, hyper aggressive it was, yeah, hyper script, or with just a regex built in tools, let us know I want to hear about it. Because that's like really interesting to me. It's something again, I can't imagine doing myself. And I kind of want to know, what your reasons are for, for doing that. And if you like it, and how it makes your life better. So JSX basically does a lot of the heavy lifting for JavaScript underneath the hood, right? I mean, it's all just JavaScript under JSX. And speaking of heavy lifting, our sponsor today is deadlift.
+
+40
+00:20:37,560 --> 00:21:27,240
+Wes Bos: So today's sponsor back at it is dev lifts. We had dev lift sponsor, I think three or four shows in the past specifically, we did a fitness and nutrition episode about a year ago. Now we're actually gonna do a follow up on that, because that was a pretty popular episode. But deadlifts is a company, it's JCL. Dad, there. Jc is a web developer, personal trainer, and that is a personal trainer. And they're on a mission to get devs web developers you healthy because as you know, Scott and I were joking the other day on Twitter, or maybe not joking. We're gonna do an episode on our top 10 favorite chips. Which, by the way, yeah, stop the stop the Add for a second. We have a way better chips in Canada. We have you Scott told me you don't have all dressed or ketchup chips.
+
+41
+00:21:27,480 --> 00:21:30,110
+Scott Tolinski: Yeah, but we have Cool Ranch. Do you have Cool Ranch?
+
+42
+00:21:30,390 --> 00:24:47,820
+Wes Bos: Oh, yeah. Doritos. Yeah, wow. Hmm. We've got some whenever like protein and smoky barbecue. Anyways, back. So dev lips has got two new plans or one new plan and the existing one that we talked about last time that they sponsored. So the new plan is called fit dot start. And it's 19 bucks a month. And it's going to be tailored towards a goal that you want to hit what's really important about either of these ones we're going to tell talk to you about so you don't need to have access to a gym. So with fit dot start, it's going to give you you choose a goal, you want to get lean, which is lose some fat, if you want to do bodyweight if you have no gym required. Or if you want to get strong. So you want to do compound lifts. So whatever it is, if you go back to the the fitness one, one, some of my goals were to lose some weight, and to get stronger so that I could have like better mental clarity when I'm approaching these things. So fit start, all the plants are 100%, beginner friendly. The first week, he says is just actually taking a walk, you get all the workouts via email. And he's telling me that they're going to have a mobile app Pretty soon, which I think is going to be super helpful, because I always had a Google Doc on my phone. And when I was opening it up at the gym, so a dedicated app would be pretty, pretty sweet. With fitstar, you get a nutrition guide, it's free for active contributors to any of the DevOps, open source projects, which is pretty nifty. It's free for students to just email your student email address, which I think is really, really cool. So if you're just looking to get started with getting back into the gym and need a really great way I've went through their plans and myself, they work really well. I think that's really neat about developers is sometimes you just need someone to give you a plan and say do this, and then you can go off and do it yourself. Use Fitz, use syntax for 50% off your script subscription for one month, two months, no forever. Check that out. That's at deadlifts.io. You click on the Join button. And then they also have the premium dev list, which is what we talked about last time. And this is like the custom tailored one towards your goal. So if you have specific goals that you have, you have specific injuries, dietary restrictions, things like that, and you want a little bit more hands on more personal personalization, accountability with JC and that you can have video calls with them you get there, you get the private Slack channel with the other one, you get Slack channel. But with this one, you get the private Slack channel. They'll do form form critiques on how your format because that's this one you don't want. Important. Yeah, hurt yourself very important. Yeah. And that one it has, he's only got 10 spots open for this, because obviously their time is not infinite. So there's only 10 spots, you can get 50% off with the coupon code. Tasty. I really like that coupon code. So either way, if you're looking to get fit, check out deadlifts.io. And if you don't know which plan is for you, I'm sure you can chat with JCR that and they'll they'll help you out. I highly recommend going with JC and that I went through it myself. And I know we talked about this before but it's really important to to get fit and to get in shape if you're a developer, not just because you're gonna look good, but I think more importantly, that you're you're going to be more mentally focused and you're going to be on it more.
+
+43
+00:24:48,000 --> 00:25:06,540
+Scott Tolinski: Yeah. And I think Yeah, I can't wait to do that. That second fitness episode. Everyone knows. I'm a big fan of, of that kind of stuff. So yeah, I'm very excited to talk more and you know, Douglas, everything is This these plans are awesome. And yeah, just check it out deadlifts.io Big, big fans of them.
+
+44
+00:25:06,600 --> 00:25:11,700
+Wes Bos: Yeah, thanks so much. I'm really excited to have them back sponsoring a couple podcasts. So back at it
+
+45
+00:25:11,760 --> 00:25:12,870
+Scott Tolinski: back at it. Alright, let's
+
+46
+00:25:12,870 --> 00:27:10,440
+Wes Bos: talk about data in react, how does data get to where it wants to go? Where does data live and how to fetch it and bring it into an application. So first, let's talk about how does the data get to where it needs to go. So if you have a component called a user, and you want to feed that, maybe an object with a user's name, a description of the user and an avatar, so you would have an author, you would either pass in one Prop, and a prop in JSX is the same thing as an attribute in HTML, except that you can pass it any type that JavaScript support. So you might have a prop on a user component that is like user details. And you would pass in an object that has those three things. Or you might have three separate props, where you have like, name, description, and image and those will all be passed in just like a regular HTML element would would take in a source on an image tag or an alt on an image tag, then once you are passed the data into it, you can easily access the data inside of your component by saying this dot props dot, whatever it is that you want, you can use the React dev tools to peer into a component and see the prop. So anytime that you want to surface data to a component. And this is kind of a tricky thing in react because there's no concept of like a global scope in react. So if you want a component to reach outside, or not even reach outside, but if you want a component to get data, you need to pass it in via props. And that's how you get a similarly if you want data to transcend six or seven levels, you have to do what's called prop drilling, or you have to pass it down all six or seven levels. There's a lot of different solutions to solve this, that issue as well. There's this thing called context, we'll talk about that there's other external data management, things called like Redux and whatnot. But at the very basic getting data into a component is called props. Then there's a couple other maybe you want to you want to take these, we also have what's called truck child props and render props. You want to take a stab at those.
+
+47
+00:27:10,500 --> 00:30:55,500
+Scott Tolinski: Yeah. And it's actually really funny, I saw a tweet from Dan Abrams the other day where he's like, I don't know why people always do prop drilling when they don't have to. And he showed an example where you had like a container. And then instead of having that container contain, like children that are nested inside of that component, he The children were just being output as the children, the children Prop, or the child props, and the prop itself, instead of drilling into the container and then into the children without ever being utilized. And the container itself just went right into the children in the US like now that container isn't isn't attached to that prop at all. Yes, the child is. And I thought that was really interesting, I hadn't really used that technique very much, I'm almost always passing it down, or I'm using some sort of state management to put that there. So I thought that was like a really interesting thing to say, Hey, your your property is coming from this, skipping the parent and going directly into the child, just because you're using this thing called child props, right? or children. So in react, you have a couple of different ways to utilize props. And one of the default props that react gives you is something called children. So you can think of this as if you were to have a header with a navigation, well, maybe that header could contain several different components. And maybe you'll have that header can Well, I guess, maybe this is a bad example, let's let's have like a card component, right? A card component is is a rapper, and then inside of that component is going to be a whole ton of different stuff, right. And so you could have your card as the outermost wrapper as the outermost component. And then you would have your children be available as a component that is just nested inside of there, you could think of it as like an h1 inside of a div, right? You have your content that's inside of the card. Well, to access the content, you output it with this dot props, dot children, okay. And so the children is just going to output anything that is contained, and it's not passed as an attribute. It's actually sandwiched in between the opening and closing element, just like you would any other HTML situation. So where render props comes in, is the idea that you could have a prop initially, you could see this in something like react router, where there's a prop named render, right, and that render is an arrow function that outputs some code, right and, and there's a whole host of benefits to this. I think, one of my videos I have a whole host of videos on level up tutorials, the level two react course. Check that out. I have like a three video little miniseries in that course. It's like the first three videos that really explain and build up render props, like one by one by one until you really get it. Mm hmm. But basically, the render prop ends up just being a function that outputs some code, and then what spawned from that is useful. In children as a render Prop, and then you end up being able to access things from the parent component in line in your children without having to have this like really tightly coupled parent child relationship. So you'll see this and things like context, you'll see this and things like Apollo when you're pulling data out, it's how I pull my data out. Definitely, it's a hard concept to explain without having some sort of visual thing. If you really want a full explainer, go to level up tutorials, comm check out the level two react course I explain it, in my opinion, a very good explanation. And we really like take it one step at a time take to give you the benefits of it, but it makes for very reusable code. Okay, so render props are a way that you can use an actual prop once named render, now it's just the child prop to access information from the parent inside of your child allowing for like way, way reusable code.
+
+48
+00:30:55,800 --> 00:31:52,170
+Wes Bos: Yeah, so earlier, we talked about having a one component that fetches your data and another component that displays the data. And that concept is usually referred to as a high order component. And in render props, I think the key there is that the the actual child of your component is going to be a function, and that function will run and the arguments that that function provides you is the data that you're looking for. So I might have a query component that queries for a list of items. And the child of that query component will be an array of items that I can then loop over and display. So the syntax of it, I think, is terrible. Because you've got these arrow functions, using you got curly brackets and square brackets and like triangles and any shape of bracket you can think of they put them in there. But that's just a bit of a think of the downside of the language. I don't know if that yeah.
+
+49
+00:31:53,100 --> 00:32:12,660
+Scott Tolinski: Yeah, yeah. Yeah, there's, that's the whole thing is that people just found out that this technique, you could just do this technique. And we found out the benefits of it. It wasn't like this is necessarily a feature. This is more just like a technique that was discovered fairly. I mean, in terms of like, things, new things in react that say this is a fairly recent,
+
+50
+00:32:12,690 --> 00:32:53,850
+Wes Bos: probably in the last 1415 months, I'd say, it's, it's become pretty popular in the last little bit. And there's, there's people that are very against it, and people that are very much for it. Yeah, in Apollo, you kind of have no choice, because they used to do high order component. And then they released some new features, and they only rolled it out as a render prop. And as long as you have prettier running on your render props, it's fine, because it will do the auto indentation for you. Although the one thing I don't like that it does is that if you have an implicit return, it will automatically switch it over to an implicit return if it can be. And then if you want to debug you want to throw a console log inside of your block. Yeah, it's really
+
+51
+00:32:53,850 --> 00:33:10,470
+Scott Tolinski: good. Yeah. What's the return? Yeah, dude, I know all about that. I for the most part, I agree. I'm right there with you. I'm a huge fan of render props that That to me is like the one thing that I'm always like, do I really want to throw a log in here? And like, go through that? Or do I just want to try to figure out blind faith? Because Yeah, in the as well,
+
+52
+00:33:10,590 --> 00:33:36,690
+Wes Bos: one little one little tip there is on an implicit return this is we're getting into the weeds. But between Scott and I, if you have an implicit return, and you want to console log the payload, you can do console, log the payload, and and and then do your implicit return. And because console log returns nothing, yeah, it's all C. So it'll, it's falsie. So it'll fall back to the actual return, but it'll still run the console log.
+
+53
+00:33:36,690 --> 00:33:40,560
+Scott Tolinski: You should, you should sick tip that on Twitter, I've never heard that.
+
+54
+00:33:40,590 --> 00:33:42,900
+Wes Bos: Let me fire up the fire emoji.
+
+55
+00:33:43,140 --> 00:33:51,000
+Scott Tolinski: Yeah, that's just get your fire extinguisher handy. Just in case it's a, we don't want to start any wildfires or anything.
+
+56
+00:33:52,650 --> 00:35:03,270
+Wes Bos: Let's move on to the next one, which is state. So props, I always tell people in my react workshop, you got state and props, those are the two big ones. And state is where your data lives. And props is how your data gets to where it needs to go. So always think of state is the house. And props is the car or the bus that it goes on to to get to the actual final destination, right? So props could be just you manually passing in data to a component, you could just literally write name equals quotes Wes Bos, and that's manually passing in data. But likely that data is living somewhere, it's living in some sort of data store at some point in the data store that comes with react is called state. And every component can have state meaning every component if it needs to, can hold its own data. But in a lot of cases, you have like, like a higher, I don't wanna say higher components. That's the thing, but you have a component that lives at the top, and that contains a lot of your application state. And then you pass down the data via via props or via sign called context, and that will that'll sort of infuse it into so state is where your data lives. Props is where Your data needs to go or it gets how it needs to go.
+
+57
+00:35:03,690 --> 00:35:14,400
+Scott Tolinski: Yeah. So the I guess the exception to that is that if you're using something like Apollo to get your data, or even like Redux, your data doesn't necessarily spend too much time in state, right?
+
+58
+00:35:14,610 --> 00:36:44,760
+Wes Bos: Yeah, you can, you can forego state entirely. Because you could just pass in data from you could load in a JSON object and pass it in via props. Immediately, you could have something like Redux, which is an external store. And what Redux will do is it'll wrap your components and just inject that data directly from the Redux store, into the props of your component. Or you could use something like Apollo, which will use a render prop and automatically inject that data via the via prop. So your there's really a whole bunch of different ways. But the way that react comes with is called state and you can use that at to hold your entire application state, or often I'll do just local state, like, I know that you did a tutorial of the button that I use, I have a button in my back end, that's called delete user or refund user, and it's called the scary button. And I don't want to accidentally click that button. I'm really sure I want to do it. So I click it once. And that that's that internally update state of the button called clicked. And like our number of times clicked, and that's one, and then a number of times clicked to. And then every time you click it, it increments that. And then on every click, I check if that number is greater than three. And if it's greater than three, then we run the actual action that that button was supposed to happen. And then you reset the counter back to zero and display the data and that that's great, because I never will accidentally refund someone or accidentally delete someone, I always click have to click it three times. And it gets scarier every time you click it.
+
+59
+00:36:45,980 --> 00:37:19,650
+Scott Tolinski: Yeah, in my video, I made the button larger and brighter every time you put, like, a little imposing a little bit more imposing Oh, no. Yeah, again, yeah, there was like a time where people didn't want to use local state for anything. And that was one of those little micro trends that like was kind of outrageously ridiculous. Like there are some things that make way more sense to be local state a, you know, that that are just like very nice to be local state. And I use local state for mostly local, local state things toggling this or that although now I actually have a have a render prop toggle component that I really like. So
+
+60
+00:37:19,650 --> 00:37:23,070
+Wes Bos: I get one of those in my upcoming course, for opening.
+
+61
+00:37:24,030 --> 00:37:47,400
+Scott Tolinski: Oh, yeah. I love I love the render prop toggle component. myself. But yeah, so local state you you can set your state. And And again, these are these are primarily things like not stuff that you need to access globally. But like, Hey, is this this navigation? Is this drawer open or closed? And maybe Yeah, something you need to be able to control from outside of that component, or, or whatever. But yeah,
+
+62
+00:37:47,580 --> 00:38:49,440
+Wes Bos: I'll give you another example of when I use state and that's with forms I use, if you had a form, like you, if you want to be able to fill out your name and description and upload an image, those are three pieces of data that as you type them into your input box, they actually have to be at react is kind of weird in this way, where if you're typing into an input box, it has to be bound to state there's a ways around it, I show how to use something called reps in my be in our course, as well. But primarily, if you're typing into an input box that needs to live somewhere in in your state. So what you can do is you can just mirror every time someone hits a key, you mirror that data to the state, and then the state will then populate the input. It's like sort of the circular circular thing. And then that's just sort of like a temporary holding place. And then when you click Upload, you take it out of state and then you send it off to your backend, you put it in your Apollo store, you put you do wherever you want, but state is a nice little way to just keep it temporarily inside of that component before it is that you need to submit it to the back end or whatever.
+
+63
+00:38:49,730 --> 00:39:34,170
+Scott Tolinski: Yeah, and if I could, I think I think forms are easily my least favorite thing and react easily. your least favorite ugly, least favorite thing and react like having to one like the syntax for ref sucks. It's always sucked all the iterations of syntax for refs has sucked except for when it was a string. But that like was confusing for some reasons. And then like, if you're not using refs having to have like an unchanged, you have to one there's like several ways you can have it automatically where you have like one on change function where maybe you're looking at the name of the input or something like that. But either way, but I use that on change on every single input. And it's just like, there has to be a better way to make a controlled input, obviously, not in the current system. But
+
+64
+00:39:34,260 --> 00:39:38,610
+Wes Bos: I think there's something called react forms, which I've never, I've never looked into before, but
+
+65
+00:39:38,610 --> 00:39:47,610
+Scott Tolinski: I think that there's a bunch of form form libraries like Formic Formic is one that a lot of people use. It's very popular. It has lots of stars on GitHub, yeah.
+
+66
+00:39:47,960 --> 00:40:44,190
+Wes Bos: formed. It's called react informed. They've have to check some of these out. Usually what I do and this is what Scott was talking about is that I have an input and that input will have a name. It will Have a type. And it will have, obviously a value. And and whenever any of those inputs change, I take the name. And I use, I have like one on change handler and I use ESX generated properties or dynamic properties. So you use the name as the key in state, you obviously use the value as the value in state and then I use the type to just double check that if it's a number I, I parse it into a number before I store it, because inputs are always strings. And if it's a type of number, then it needs to be properly parsed as a as a number. And I just like to write that over and over again, it's I'm pretty happy with it. And then if there's anything more involved, like uploading an image, then I'll have to write a custom handler for for that change event. Yeah,
+
+67
+00:40:44,340 --> 00:40:50,940
+Scott Tolinski: yeah. And then from that works nice, but it's like it's boilerplate, they have to add to every single thing that's true to form. That's what
+
+68
+00:40:50,940 --> 00:40:54,840
+Wes Bos: was so nice about Angular, where you could just bind it to scope,
+
+69
+00:40:54,980 --> 00:41:03,000
+Scott Tolinski: scope, directive or whatever. Yeah. Yeah. If you were, if you are, like writing a really tiny project, just bind it to global
+
+70
+00:41:03,000 --> 00:41:06,060
+Wes Bos: scope. Done. God today,
+
+71
+00:41:06,480 --> 00:41:21,150
+Scott Tolinski: we had, we had, like, so many projects, that would be like, Oh, shit, we have, you know, six hours to get this whole thing done. And it's a prototype, it's never gonna see the light of day, it's never gonna be in production. Just throw it on on scope. And let's just call it a day. And let's get this thing done.
+
+72
+00:41:21,600 --> 00:41:50,400
+Wes Bos: It's funny that yeah, it's because that happened with that initially happened with vanilla JavaScript, put everyone put everything on window. Then in Angular, or in jQuery, everybody put everything on the dollar sign, because they're like, Oh, it's just like kind of namespace. Every single time people figure out how to do something bad and react as hard as it is to do some things. It's because they don't want you making mistakes. And I find that I write a lot less terrible code in react, I still write my fair share terrible code, but I do less in react.
+
+73
+00:41:51,480 --> 00:42:39,510
+Scott Tolinski: Yeah, for sure. Yeah. So state we mentioned is where you go when you want to put your data places you want to you want to modify it, you want to open up your your local state, you want to you want to change it, you want to access and work with data, right? Well, a surface that we like to use over here as syntax for storing data long term, not in local state, but long term is our one of our favorite database services called m lab, which actually looked it was originally called Mongo lab, right? Mongo lab, that's what we were telling you about this last time. Yeah. So m lab, M. lab.com. is a place a basically a service for hosting your databases, that makes everything just super easy. And Western, I have both used m lab for a long time. And we both really like it.
+
+74
+00:42:39,570 --> 00:44:33,510
+Wes Bos: Yeah, this is one of my favorite times when a sponsor comes on that you've been using them for a long, long time as it's funny that like, almost all of our sponsors are the things that we actually use ourselves. And it's just because usually what happens is we just mentioned them on the podcast, they see a little boost from the podcast, show notes, and then they come back and properly sponsor, which is I think how drug dealers work. But, so m lab, I've been using them probably I think 2011 2012 is when I first started my course platform, and they've been hosting my MongoDB database ever since. And they're awesome, because they obviously host your MongoDB database for you. That's great, because you don't have to worry about scaling that thing. You don't have to worry about security against that thing. You don't have to worry about, they'll do backups for you, you can schedule as many backups as as you want, you have to pay a little bit extra for however many backups that you want. And it's great because databases, quite frankly, scare me because they scare me too. I just don't want to lose it. This the idea of spinning up a Amazon like they host the database on Amazon for you. But the idea of doing it myself and being like out to lunch with it is it kind of kind of scares me. So check out em lab, if you want them to host your MongoDB database, we use it in my node course as well. They weren't even a sponsor at that point. Because I just love using them, they have a sandbox, which is free you don't have to input a credit card number anything sneaky like that, you can just get up and running with a database. And then as you need to scale up as you go to production, you can start using their their their different paid plans that you have, they have got some some pretty cheap stuff. 15 bucks a gig on the shared one or dedicated if you've got some serious traffic being thrown your way I just use a shared one. And I have a fairly high traffic site myself. So check it out at em lab.com and thanks so much to em lab for sponsoring.
+
+75
+00:44:33,600 --> 00:44:47,250
+Scott Tolinski: Thank you. Yeah, I again, I love it. I mean, we just had to century sponsor the last tasty treat. It's like another service that we use just so much I love when our favorite services reach out to us. So thank you so much for sponsoring.
+
+76
+00:44:47,519 --> 00:45:50,520
+Wes Bos: So we talked about data in state, we talked about props, just getting a data to it, but like, the another thing about react is like how do you get the data into react components and there's a couple things that that react does. do for you and one of them is routing. And another one is actually data fetching, like, if you're coming from Angular, they had a way to fetch data. If you're coming from jQuery, always use dollar dot Ajax or dollar dot get JSON. In react, it's often bring your own, which means like you choose what it is that you want to use to fetch your data, which I didn't love at first, because I often prefer people just to tell me what to do. And this is the best way to do it. Rather than you have to figure out your own approach. I have that way with file systems as well, where react doesn't really have like a set way to organize your components and stuff like that. I much prefer a convention that this is how you use it, right? But how do you how do you fetch your data? Other than I guess you can, you can explain Apollo. But if it's just like a RESTful API, how would you handle that?
+
+77
+00:45:50,700 --> 00:46:49,290
+Scott Tolinski: So if it was like a RESTful API, I would have it in like the component did update, and then just hit that API, and then return the data or the error and set that to state and then then have that state being passed in as a prop into a child component, which would then access that data in before like, so I've used things like Meteor before, where they used to have like a mixin, that would go and grab your data from a lick Mongo find on the client side that was really kind of slick. And then there was it now I use Apollo, which is a graph qL API, where I can have my query, basically just in a higher order component, and it just spits out the data inside of a data out of the function from the render prop. And I just passed that down into my children that way. So yeah, again, if you, you know, I would just use the fetch API, although a lot of people use axios, and stuff like that. I mean, what is what what is axios?
+
+78
+00:46:50,040 --> 00:48:28,440
+Wes Bos: So shout out to Tom and Zahra, who they were like in like Provence, which is, I think, the south of France, listening to our podcasts, which is very flattering. And Tom said, with his ex iOS. So if you don't know, axios is a like, it's like fetch. It's a Ajax fetching library that you can install. And it works on promises. So you can use sink await. And it's really, really nice. So I use axios. Myself, anytime I'm working within Ajax requests, I'll use axios. And the way that it works is that you generally hook into what's called a lifecycle method. We'll talk about that in just a second. And like, generally, when the component loads, you, you go off and you fetch a list of dogs, ice cream, people, something like that, and then that data will come back from the API, you'll set it to state, and then you will pass that into props of your component, or it'll be you'll render it out directly via state in your component. Now, the downside to that is that you have to handle your own error states and your own loading states. So generally, you'll have something in state called loading true or false. And then in your render, you'll check if that Boolean is set or not. And then you'll also have an error state. And that's why that's something I really like about using Apollo. Obviously, it requires you to use a graph qL back end. But if you have a graph qL back end, Apollo handles all of the loading and error states for you so that you don't have to continually do this whole song and dance of is loading. Is there an area to check for all of them set these Boolean true and false. And it's it's a bit of a pain,
+
+79
+00:48:28,650 --> 00:48:40,380
+Scott Tolinski: easily one of my favorite parts about Apollo, yeah, you just spit out the loading error data and used to be if loading then returned spinner, or whatever. I mean, I love that. It's just it makes it nice and easy.
+
+80
+00:48:40,650 --> 00:49:20,490
+Wes Bos: Totally. So that's that's data in react, you can kind of fetch it any way you want. You can also use in my wreck for beginners course, we use Firebase, which is a like a real time database. And Firebase is awesome for for learning react, because you don't really need to know a whole lot about the back end. And there's some some really nice packages, one called a rebase, which will mirror some state to what's in Firebase. And it does a sort of like two way data binding. So if anything changes on either side, it will update the other side. And I really, really liked that. And the package just automatically will sync the data of your state with the data of your your Firebase.
+
+81
+00:49:20,760 --> 00:50:23,910
+Scott Tolinski: So next, we have event handlers, which obviously we're building sort of dynamic things, right. So event handlers are something that you're going to need quite frequently if you're building anything that's actually eaten when he interactive in react, right. So the way that event handlers work is you basically have a property, I guess you'd call it a property or an attribute on your JSX element. And that is going to be the event. You could think of these events as things like on click right, so you have a button and then you'd have an on click, and in that on click equals brackets. And then whatever you want it to do. So typically you're having it run a function or a method inside of your class. And you could just pass that function right in there. Or you could have an inline function in there. That's a nice little arrow function inside of your unclick. On click itself, and you know, as far as events go, it's pretty much just the events that you'd expect from JavaScript, right? It's JavaScript events.
+
+82
+00:50:24,090 --> 00:51:28,680
+Wes Bos: Yeah, there they are all the standard JavaScript events that you're used to. The only weird thing about it is that they are all in line meaning that like, like Scott said, it's on you have a button and you say on click, which we've been taught for years and years, don't ever do that. But because we are sort of blending our render layer with our logic layer, you do do it right inside. And I actually have learned to really, really like it. So you have it, they do. They are what are called synthetic events in react where they actually listened for every single event on the body tag, or maybe the maybe the document I forget, but they listen for every single event on the very top one. And then those events will propagate through your application. And they just reuse that one event over and over again, for performance reasons, as far as I know. But you as a developer don't really have to know a whole lot about that just because it works fairly similar. It's only when you try to like get into, like stop propagation or bubbling after a couple of milliseconds, because the event is reused. You have to do some some funkiness around that.
+
+83
+00:51:29,160 --> 00:51:47,910
+Scott Tolinski: What kind of events I mean, obviously unclick. But what other events do you you find yourself using a lot? Because it's one of those things that there's so many events that do exist, but I feel like they go under utilized? Like, yeah, girl, I mean, I guess on scrolls, so much utilized. But there's just some really interesting events that I feel like don't get a lot of use.
+
+84
+00:51:48,180 --> 00:52:09,330
+Wes Bos: Yeah, I really only use on click on submit, I'll always pop up on submit onto the form element, an on change where you would need to work with form inputs. And I've used like on mouse in and mouse mezza. Mouse enter a couple times, but I'm pretty much just those three, is most of your application.
+
+85
+00:52:09,690 --> 00:52:13,410
+Scott Tolinski: Yeah, likewise, I've never used on double click, but it exists.
+
+86
+00:52:15,120 --> 00:52:22,140
+Wes Bos: Yeah, I guess it's not the, the web doesn't really have much of double clicking. So we don't really need to reach for that all that often.
+
+87
+00:52:22,710 --> 00:52:24,150
+Scott Tolinski: Yeah, yeah.
+
+88
+00:52:24,330 --> 00:54:56,340
+Wes Bos: One weird thing about event handlers in react and specifically with classes is that if you want to reference the component itself, and specifically the state or the props of the component, inside an event handler, it's a little bit weird, because what happens is like, let's say you have a button component that you've made, and you say, when someone clicks that button, run the internal method called fetch dogs. And when you click that, you fetch them dogs, and you want to put them back into state, inside of your render method of a react component, you can always access this, and this is always going to be bound to the instance of that component. So if you've got six different buttons on the page, this will equal to that instance of the button. And that's great, because each button could have its own internal internal list of dogs, right. And what happens is that when you when you put it in a separate event handler called like fetch dogs, you no longer have access to the component instance. So that means you can't have access to this. And that means you can't say this dot set state, you can't update state, you can't see information about the component, which is props. So that's a bit of a pain. And the way that you could get around that traditionally is you would go into the class constructor, and bind it to this. So you'd have like this dot fetch dogs equals this dot fetch dogs dot bind this, which is just a nightmare to actually have to do that. And that's not a limitation of react, that's just a limitation of ESX classes. So react deprecated, create class and in favor of extending proper ESX classes. And one thing that ESX classes don't have yet is what are called instance, properties. And instance, properties are properties on a on a class that every time you make a new one, every time you make a new button, you have access to the specific data about that one, it's not shared amongst all of the buttons. So the solution is that there's a proposal out for JavaScript for ESX classes to add what are called instance properties. And the little trick is that you can set an instance property to be an arrow function, which will allow you to have this on every single component. So it's one of those things that might not make sense on this podcast. But as soon as you run into it, you go, Oh, I probably need an instance property. And even though it's not part of JavaScript, it's sort of widely accepted as the way that you do event handlers that need to access this word. A lot.
+
+89
+00:54:56,460 --> 00:56:10,260
+Scott Tolinski: I think it does. But again, it's gonna be one of those things that makes sense to me. you Google it. So next up on the list is lifecycle methods. Which lifecycle methods are something that, well, you have a component, right? Your component has a life, I guess you could say it has the life in the abstract away of things, and not necessarily it's not alive. But your component, basically, it's created and it's destroyed. And in that process, well, it's also updated, I should say, created, destroyed and updated in that process, you have methods that are run at the various stages, for instance, the constructor when the thing is being constructed when it's being created, the constructor runs, right. And there's a specific order to like the order in which these things run, right. So we have these various lifecycle methods from the constructor of the class to get derived state from props, which is a mouthful of a new component lifecycle method. Even render is considered a lifecycle method component did mount should component update component did update, I think the ones you end up using most often are obviously render, but component did mount and component did update, or probably the most used,
+
+90
+00:56:10,320 --> 00:58:32,190
+Wes Bos: yeah, so anytime you ask yourself, I want to do this when that's likely when you need to reach for a lifecycle method. Because these lifecycle methods are like little, like little like, I like to think of them, like escape hatches are little ways to slip in, as the component is doing its life. And often what needs to happen is that your component will do its initial mount to the page amount is when a component shows up. And then when a component when it's done mounting, that's generally when you need to go off and fetch the data, right and, and that will go off. And that will actually trigger a second rerender. It's not a big deal. But because when the data comes back, you said at the state and then your your dogs or whatever start to show on the page. And sometimes you need to use like external JavaScript libraries that aren't react specific. Like you need to use a DOM library or you actually have to like listen for events. And then what do you have to do with those events, you have to unless it like react handles all of the binding and unbinding for you. But if you're doing something that's outside of react in a react component, you'll likely need to reach into these lifecycle methods and, and listen, and you do your add event listeners on did mount and do your remove event listeners on will unmount. Just before it's about to to leave the page. So there's a whole bunch of these different ones, you probably will use all of them at different points. The component did update I find is also handy if you ever want to say like, okay, whenever something changes about this thing, and whenever some of the props change whenever some of the state changes, and what's kind of cool about that is it will give you the old props and the new props and and the old state and the new state. And you can compare those two things. And you can you can do a little bit of logic, oh, if these things have changed more than 30%, then trigger something, I specifically use that in my react player on my course thing where I want to, I want to save progress for how long someone is, and I listened for the html5 video player progress event. But I don't want to send an AJAX request every single one, I want to send it every 20 seconds. So what I'll do is I'll save the last time that I did it in state and then I'll say okay, if the progress has changed, either way, like backwards or forwards more than 20 seconds, then fire off the the AJAX request to update how far they are in that video.
+
+91
+00:58:32,430 --> 00:58:47,040
+Scott Tolinski: Yeah, and you always want to be careful. Of course, if in your component did update, if you are modifying the state, keep in mind that every time the state is modified, it triggers a another rerender, which triggers a another component did update and can lead do some infinite loops, right? If you're
+
+92
+00:58:47,610 --> 00:58:48,300
+Wes Bos: always say,
+
+93
+00:58:48,300 --> 00:58:59,160
+Scott Tolinski: yeah, make sure it's conditional, right? Otherwise, you could find yourself in one of those, you know, your fan starts spinning up and your CPU starts getting hot, and your website is non responsive.
+
+94
+00:58:59,400 --> 00:59:53,670
+Wes Bos: There's also another one called should component update, which is really handy. It basically tells whether react should trigger a rerender or not. And that's really handy. Because if you have like, for some reason, if you have like data being like boom, boom, boom, boom, boom, boom, boom, being fed into a component, many times that could trigger like six or seven re renders within a couple seconds. And what you can do in that case is you can return false from should component update. And that will actually stop it from re rendering. And then you have to have some logic in there that will like say, Okay, if it hasn't re rendered in six seconds, or if I now have five new things to show on this page, then trigger a new rerender. And you can sort of manage it there. And in most cases, I don't have to use that. But if it's a specific case where I'm really hammering the component, and I want some like some nice touch, like a light touch on when it renders and you can, you can do the logic in there.
+
+95
+00:59:53,760 --> 01:00:24,450
+Scott Tolinski: Yeah, definitely. Cool. Next, we have this context, which is a new new ish tutorial. react and basically is a way to have a global state or state or even just data passed from one section of your application to the other section of your application without having to have any sort of, you know, prop drilling or prop go from one to another, to another to another, you can have your state being set somewhere, and you can utilize that state via context.
+
+96
+01:00:24,570 --> 01:02:28,680
+Wes Bos: Yeah, context is awesome, because it like Scott said, It solves that problem of Prop drilling. And I like to think of context as the data is in the air. And meaning that you can define context at the top of your application. And then you can, you can have what's called a consumer a lower point in your application, and it will sort of like, reach out of the air for the data and, and be able to pull it out without you having to prop draw, kind of a cool thing about that is you can also stick methods in there that handle the updating of that data. So you can it's kind of like a kind of like Redux, we've talked about go back to the episode that says is Redux dead? And we talked about this? And the answer to that is no. But if you just have pretty simple data, and a couple of methods that need to update that data, you can likely get away with putting all of that in a provider, and then reaching for it with a context consumer. I've got a video on this, I'll link it up in the show notes. It's called here's how reacts new context API works. I'm very proud of this one, because it's if you search for react context, on Google Video, it's the first that comes up. Last thing that we have is just routing in react. This is another one of those things that doesn't come with react, you have to reach for an external package to do routing. routing is when a page changes from page to page, what do you do, right? So sort of the big router out there is react router, there is a router built into the next JS framework, which I'm very partial of I use that in all of my all of my applications. I actually just switched over my course platform from react router to a next JS application. And then just in the last week, I don't know if you've heard of this, Scott, but Ryan Florence, who I was, yeah, he's the creator behind react router coming out with It's been seven months since we've had a new router in react. So it's about time that we have something new because I was getting tired of, of not having to rewrite my application. So we have a new one, which is called reach. And it looks as far as I can see, it has a big focus on accessibility, which is really cool. Well, have you looked into this at all, Scott?
+
+97
+01:02:29,160 --> 01:04:05,670
+Scott Tolinski: I've looked into this pretty heavily. In fact, Gatsby just moved over to reach. Wow, are you sure it's for Gatsby too, I haven't been following that too much other than on Twitter. They did folly merge it in though and reach router. The thing I really like about react router is basically so with react router, you end up having either like a switch, which I think was a terrible idea. It's a switch. It's a JavaScript switch. But I think it's a terrible name for a routing component. But you end up having this router component that wraps around other actual components. Let's say you have a level of tutorials you have, let's say the about page or the homepage, you have the router wrapped around the about component and the home component. And then on those components themselves, you just pass in a path prop and that path prop defines whether or not that component is going to be rendered. So basically, it saves you from having to have an extra route prop that then loads a component and allows you to just load a component itself on a given path, allowing you to pass props into that component, just as if it were any other component instead of having to do a render function inside of a render prop to pass in props and stuff like that. So as far as like, the syntax Marco's I looked at it and instantly was like, I like this, I like this a lot. And then I made an issue in my level up tuts issue queue that says, convert router to reach now. Now obviously with me and refactoring, you know, it's who knows when that's gonna get done, because my applications pretty large, and that would break a ton of things. But I'm interested. I'm very interested. I really like the way it looks. I like the ideas behind it. I like that it's a stability first and all sorts of those things. So
+
+98
+01:04:05,970 --> 01:04:43,680
+Wes Bos: yeah, I'm just looking at right now. It's like it basically Yeah, like you said, I just have a path. I haven't looked at Doc's before. documentation is beautiful. It's amazing. Only show this component if the path matches this. That's that's very simple. I like that a lot. Impressive. So maybe we'll all be switching over. I also have heard some rumblings that next is going to switch over there internal router, two, two, I heard react router, but maybe it'll be reached at some point. But uh, hopefully it doesn't cause any code changes because you just use whatever it is that next use is under the hood.
+
+99
+01:04:44,160 --> 01:04:49,320
+Scott Tolinski: Yeah, that's how Gatsby works too. It's just like, kind of takes care of the routing. It's like file based and stuff like yeah,
+
+100
+01:04:49,320 --> 01:05:20,760
+Wes Bos: so cool. Cool. Cool. I so that's our sort of intro to react. It's kind of fun to be able to do an episode on some of the fundamentals of react and Talk about this stuff. If you've got any ideas of other react episodes you'd like to see, please hit us up and you can pop them in the potluck. If you go to syntax.fm there's a button that says ask a potluck, you can ask them in there and sometimes we convert a potluck to a full meal and do them as a proper proper show or a hasty Yeah,
+
+101
+01:05:20,820 --> 01:05:33,090
+Scott Tolinski: and we do have to do that view Episode Two, so West needs to its Cummings view. Just Just look over the docks and then I can I can lead the episode. Okay, and talk about it.
+
+102
+01:05:33,510 --> 01:05:46,730
+Wes Bos: Alright, that's that's gonna happen. People are starting to guess get a angry episode yet. Cool. Um, maybe I'm just afraid that I'm gonna like it so much that I'm going to switch everything over to view
+
+103
+01:05:47,010 --> 01:05:57,090
+Scott Tolinski: Oh, yeah that like that would be a huge bummer all the sudden there's something wonderful that you have to switch to. What kind of sick pick you sick picking today.
+
+104
+01:05:57,210 --> 01:07:55,730
+Wes Bos: All right, my sick because today is not a pick. It's a sick ask, which is not a it's a sick, ask, ask. Ask ask. And I'm forever. I hate carrying stuff in my pockets. So you got keys. And I just got it, we got a new car. And the key for it is so freakin huge. I'm so pissed at it. And my wallet. I recently I asked on Twitter maybe a couple months ago for wallet suggestions. And I just want like a nice slim wallet, something that can fit like nine cards because I'm trying to go I'm trying to put all the cards on my iPhone that I possibly can. And then just have whatever it is that I need in my actual wallet. And I got this like it's basically just an elastic band. I don't know who makes it, I'll try to find the link for it. But it's basically just an elastic band. Like not just like a like a broccoli elastic. I tried that. But it kept snapping, but it's like a like an elastic band that you get in like a pair of gym shorts. And it just wraps the entire cards. And I've been really really liking it because it's it's easy to get your cards in and out. And you can also stuff like receipts and stuff in there if you need to. Big fan of that. But now I'm moving on to my keys. Because I when I was a kid and I still do this, like when I was a scenester I would put everything on a carabiner and then like put it on my jeans and I still do that but I sound like a janitor walking around. It drives me crazy. So I I've seen people with these like these, like key management systems where you kind of like, use you flip them out like a, like a Swiss Army knife or something like that. And I'm really curious about if those work well or not and what the different ones are. And it's overwhelming to do research on them. So if anyone has one of these key management systems that doesn't make you sound like a janitor, then hit me up because I've got what 1236 keys that I have to carry around. And I need to be able to have something better than this jingling mess.
+
+105
+01:07:56,100 --> 01:08:00,780
+Scott Tolinski: We call keys cheese over my house cheese. Yeah. Did you get the cheese?
+
+106
+01:08:01,730 --> 01:08:03,150
+Wes Bos: I don't get it. Why?
+
+107
+01:08:03,660 --> 01:08:42,119
+Scott Tolinski: There's nothing to get. I I I've made a habit. I've made a habit of replacing words with other words and my Yeah. And like people who have just listened to me long enough, like know what I'm talking about. And people who don't have no idea what the hell I'm talking about. Like for a long time. I used to drink a lot of Redbull. So but I started just I just started calling it bread bowl for some reason. I just throw it in there. And then I'd be like, I think I'm gonna go get a bread bowl. And like at a co worker be like, it's like four o'clock dude. And my other co worker would just like shake his head and be like now he's talking about Red Bull like, like
+
+108
+01:08:42,890 --> 01:08:45,770
+Wes Bos: I do. mark of a millennial. I think
+
+109
+01:08:47,579 --> 01:09:09,229
+Scott Tolinski: I've been I swapped so many words with other words that I think it's like, hugely, probably distracting for some people. I'm surprised. I haven't done it in the context of this podcast before. That's what we it's like a daily thing. We're going on a walk and I'll be like, did you get the cheese? And my wife Courtney, she just doesn't even she doesn't even flinch about it at this point. Like Yeah, I got it.
+
+110
+01:09:10,590 --> 01:09:22,289
+Wes Bos: Man, that's Wait, speaking of millennials. Another quick pick real quick. I watched the comedy stand up from Lysa slushing her. Yeah, called elder millennial. Do you see it?
+
+111
+01:09:22,289 --> 01:09:23,369
+Unknown: I didn't.
+
+112
+01:09:23,369 --> 01:09:25,919
+Wes Bos: Oh my gosh, that's hilarious. She's so
+
+113
+01:09:25,919 --> 01:09:42,749
+Scott Tolinski: funny we we saw lately. That was also hilarious. Ali Wong's latest. Oh, yeah. Yeah. Especially if you have children. Oh, my God. That is the funniest thing very real world. Yeah. Ellie Wong. I mean, both of her specials were great. So
+
+114
+01:09:43,079 --> 01:09:56,159
+Wes Bos: me and my wife always talk to her first special she has this joke where she goes, lean in. I want to lie down. My wife always talk to each other. I want to lie down.
+
+115
+01:09:56,430 --> 01:12:02,130
+Scott Tolinski: Oh my god. Yeah, those are great. So my my sick pick today is a podcast. And this one is really, really interesting. And called. It's called syntax. Oh, it is check it out. syntax.fm No, this podcast called dark net diaries. And if you like, it's like a combination of a tech podcast and a true crime podcast. Because what it does is it it's, it talks about large hacks that have taken place. And these are very, super interesting. And one of them they had an interview with, which which episode was it here, they had an interview with an actual a, like a, someone who works for the government, who hacks like for the government, and they were the smartest person I've ever heard to talk on podcast, they were just like, based on these factors, we were able to determine that the server was running all of these specs in this version of this operating system and had these following exploits because of that, and, and I was just thinking, like, how did you determine that and then she, like went broke through how they determined that and I was just like, dang, this is really like, everything is really smart. But either way they interview, a lot of the people involved. There's some really interesting ones. There's some really like ones, it'll make you think like a, you know, a, there's one with an autistic child who like never had the proper sort of help for him in school. And because of that, he ended up getting like in a lot of trouble doing a hack that he didn't necessarily, at the time understand why it was so bad. And then because of that, he's still paying for it like many, many years later. So there's just a ton of really super interesting things. Some, some very, like high profile hacks have been covered some things you've never heard of it been covered. And it is just really, really, just really fascinating. It's a new podcast, there's only 19 episodes, it started. Looks like it started in September of last year, but they didn't really update a ton until lately, and there's been a bunch of episodes, so maybe one a month or so maybe not a bunch, but they've all been good. Every single one I've watched has been good. So check it out dark net diaries, it should be on any local podcast players.
+
+116
+01:12:02,130 --> 01:12:05,760
+Wes Bos: Awesome. I'm gonna check that out. That sounds amazing. Yeah,
+
+117
+01:12:05,760 --> 01:13:02,390
+Scott Tolinski: I'm a big fan. I'm it's one of those ones. You're like, dang it, how is there not more episodes, I want them. But yeah, and shameless plugs, I'm going to shamelessly plug level up a pro, I have a course coming out on react testing. And it's going to cover all sorts of things. We're using react testing library, which is just the very best. And so none of this enzyme stuff. We're using react testing library, we're using jest, we do all sorts of styles of react testing. And we use Cypress for some integration testing. So it's, it's pretty all encompassing, I hope to fill a gap. And what I feel like is, is good testing information for people who don't do a lot of testing. The main angle here is this is for beginners, I explained every terminology, all of the jargony stuff, and we break it down into really, really small chunks. So that's going to be out this month on level up pro sign up. If you sign up for a year you save 25%. So that's pretty sick, level up tutorials.com forward slash pro
+
+118
+01:13:02,550 --> 01:13:36,449
+Wes Bos: wicked, I'm just gonna plug all my stuff again and Wes bos.com forward slash courses got to listen to every single course that I have, half of them are free, half of them are premium, which is a fun way of saying they're paid. And that's how I support myself. So check it out. If you want to learn anything from react or node server side JavaScript, front end JavaScript, if you want to scale up on ESX. One thing about react is that it assumes that you know, all of these new things in ESXi ESX that i o course you can check out as well. I think that's it for today. Thanks so much for tuning in. And we'll catch you next week.
+
+119
+01:13:36,600 --> 01:13:50,430
+Scott Tolinski: Catch you later. Peace. Head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

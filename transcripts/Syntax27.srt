@@ -1,0 +1,480 @@
+1
+00:00:01,290 --> 00:00:09,599
+Unknown: You're listening to syntax the podcast with the tastiest web development treats out there. strap yourself in and get ready. Here is Scott solinsky and
+
+2
+00:00:09,599 --> 00:00:23,460
+Scott Tolinski: Wes Bos, and welcome to syntax and today we are talking all about graph QL. I'm Scotland ski and with me as always is West boss Say hello. Hello, everybody.
+
+3
+00:00:23,460 --> 00:00:32,720
+Wes Bos: Good to be back. I guess you didn't really miss us. But we we took about three weeks off to her for Christmas. So happy to be back a little bit rusty though.
+
+4
+00:00:32,880 --> 00:00:52,230
+Scott Tolinski: Yeah, apologize for any sort of rust ahead of time. I think. So. Yeah. This episode is sponsored by snip cart and fresh books. So we'll be talking a little bit more about snip cart and fresh books through the course of this episode. So thank you so much for both snip card and fresh books for sponsoring.
+
+5
+00:00:52,800 --> 00:00:54,720
+Wes Bos: Awesome How was your holiday Scott?
+
+6
+00:00:55,350 --> 00:01:24,120
+Scott Tolinski: It was great. Yeah, we we flew with baby to Michigan. So baby's first flight and everything like that. He did great. He was a little fussy on the way back, but you know, it's cool. It was as good as it could have gone. It was one of those things I was stressing out about, like, you know, the airport sucks enough. So yeah, having it with a child. You've never done it before. So yeah, it all was good. And the trip was great. Got to see family got to hang out Michigan. Have some Lacroix. Oh man the biz.
+
+7
+00:01:24,329 --> 00:01:30,030
+Wes Bos: Did you see someone on Twitter? Tried Lacroix for the first time after hearing this podcast.
+
+8
+00:01:30,180 --> 00:01:45,000
+Scott Tolinski: I love that because Lacroix liked that tweet and I was instantly like that's the most validated I think that's like an internet celebrity liking one of your tweets like I think that Lacroix liking some of our tweets there might have been like, high up for me.
+
+9
+00:01:45,060 --> 00:01:54,390
+Wes Bos: Yeah, let's shut it down after that, unless we're gonna try to get Lacroix is a sponsor. So if anyone has a hookup, please put us in touch because we would love to be sponsored by Lacroix.
+
+10
+00:01:54,659 --> 00:01:56,370
+Scott Tolinski: I would love that. Yeah, absolutely.
+
+11
+00:01:58,590 --> 00:02:41,610
+Wes Bos: All right, well, let's let's get into it. We're gonna talk about graph QL. Today, and what is it, it's it's sort of been like a bit of a buzz lately in that you hear everybody talking about it. Every time someone dips or toes into it, they're seeing the praises of it. There was some licensing stuff A while back with the that had the same licensing issues as as react had. But those are all a thing of the past now. So I'm pretty excited about graph QL. And I know Scott is as well. So this is going to be a fairly biased episode. But hopefully we can just like explain what it is and why we are so excited about it. So why don't you kick it off and talk about what is graph qL? Scott?
+
+12
+00:02:42,119 --> 00:03:59,630
+Scott Tolinski: Yeah, so graph qL itself is correct me if I'm wrong with anything I say here. But it's really just a specification for this sort of query language, right? It's a replacement for how your API works. So instead of hitting an endpoint with, you know, you hit a, an API URL with fetch or whatever, and then you accept whatever data they just decide to give you from that API endpoint, you grab all that data, and you just use whatever you want. A graph qL is is writing queries on the client side that allow you to specify a particular type of data and shape that you want it in. And so when you create your API, you create an a way as such that instead of having to hit and fetch a URL to return data, you basically say, Hey, give me let's say, the post with the post author, the post comments. Oh, and by the way, inside of the post comments, give me each post comment author in each post comment body. And it makes these awesome, awesome queries that are one just a joy to work with, and a joy to look at, and a relational and all sorts of amazing stuff. I guess that is the best I can do.
+
+13
+00:04:00,240 --> 00:06:27,870
+Wes Bos: Awesome, I like that I'll give my my stab at as well maybe fill in any holes. So it's not a framework or anything like that graph. qL is just a spec, very similar to how I guess rest isn't really a spec. But JSON is a spec where there's not actually one implementation of it. It's just this idea that someone has made in this case, Facebook has come up with it. And then every single language has to then go implement the spec. So whether you're working in JavaScript, or Python, or any language, you're going to have a library that will allow you to interface with a graph qL library. So it does require buying from both the server side as well as the client side, your server side will serve up a graph qL feed, and then your client side will talk to your graph qL server and specifically asked for the things that you want. So how is that different than than rest? Well, you first, you ask only for the data that you specifically want. So there's only one API endpoint. You don't have. Like, you don't have an endpoint for like blog posts, and then an endpoint for authors and then an endpoint for like pages on a website, you can specifically say, give me the latest three blog posts, and the specific pages or give me a list of cars. And for each car, give me their engines. And I only want, I don't know anything about engines is a stupid example. But I only want how many pistons come in each engine, I don't care about the rest of the data that comes along with that. And that's really neat. Because you don't have to make multiple requests, you only ever have to make one request to the API and ask for exactly the data that you need in that situation. And then if the data is relational at all, you can nest these queries infinitely and then just populate the related data without having to like how many times if you had a REST endpoint where you had to create like a new API, where you have like, give me top five authors. And then like, maybe give me top five authors with their friends. And then you have, by the end of the day, you have all these different endpoints, or all of these different options that you can pass to your endpoint. And in this case, the best way I ever heard of it as a graph, qL query is an object where you only provide it the properties that you want. So it's just like an object with only the left hand side, and then you give it to the graph qL server, and then it just gives it back to you with the data populated on the right hand side.
+
+14
+00:06:28,110 --> 00:07:41,910
+Scott Tolinski: Yeah, yeah, I think one of the important concepts is with like a standard sort of REST API. There's numerous connections to be made, right? Every single time you need some data, you make a connection to a specific endpoint, right, or with graph qL, there's just one connection endpoint, it connects you to the server. And then you can use these queries to get the data that you want, rather than having to make an individual connection and every single time, and like all that prevents, again, how many like repeat trips to, like particular API's, like some API's give you, they'll give you an array of IDs, and then you'll have to loop over those IDs and hit the API again, to get more information. And with a graph qL query, like Wes mentioned with the relational stuff, you can just say, Hey, give me all of the properties within that array. And well, the server side code is going to figure it out and serve up the stuff that you know, you actually care about as a end user on the client side, right? It's giving you the data you care about without having to worry about this API, then get this information, then hit the API potentially, again, for other reasons to get more information, you know,
+
+15
+00:07:42,060 --> 00:08:26,430
+Wes Bos: yeah, yeah, exactly. Like, how many times have you have you gotten a list of like, I see this all time, like maybe a list of movies. And then that API doesn't give you the like, maybe the movie description is, then you have to make a secondary call. So you end up making like, you want 10 movies, and each of them you wanted a description. So that is that 11 round trips to the server 11 different Ajax calls. And that's, that's brutal to have to do. Right. So this really is going to make your apps faster, because you don't have to worry about doing any of any of that round trips to the server or, or making extra calls or doing one of those things where you you have to like, I don't know, you still probably will have to paginate but not as much.
+
+16
+00:08:26,670 --> 00:09:17,340
+Scott Tolinski: Yeah, yeah, one of the things I really love about the graph qL queries, too, is that they're self documenting is just by looking at the query, you know exactly what data is going to be available. It's it's not like hitting an endpoint, and you're sort of like, Okay, well, I would assume this data is going to be available, or this is the data that I think is going to be available, or let me even check to see what's here. But with a graph, qL query, you're specifying very directly, it needs the title, the name, the description, you know, that the data coming in is not going to be anything other than the name, title and description if that data actually exists, right. So to me that like self documenting aspect of the queries is super nice. You sort of always know what you're getting, again, that relational stuff is is definitely a wow, inducing moment when you can just write this really simple query and get back all kinds of information.
+
+17
+00:09:17,880 --> 00:10:27,150
+Wes Bos: Yeah, exactly. And I think another important point is that this is not necessarily something that you have to start from scratch or replace your REST API. So one of the cool things about building if we're talking about the server side right now, building a graph qL API is that you, that will be your central point of getting data. And then behind the scenes, you can specify different types of queries. So if you want the latest six blog posts, you may query your WordPress database. But then if you want your latest GitHub projects that might then query your GitHub API. And then another one might actually query a MongoDB API. So this thing can sit in front of multiple sources of information, which, if you're building something from scratch, you maybe don't have that. But if you have any sort of legacy system where you have multiple pieces of information, you just have to code what's called a resolver. And a resolver essentially says, How do I get this data that the user has requested? and bring it back to bring it back to the graph? qL endpoint and just return that? That raw data, right?
+
+18
+00:10:27,290 --> 00:11:17,820
+Scott Tolinski: Yeah. And, and to expand on on that even with Apollo link state is a new package for Apollo, we'll get into what Apollo and relay is and that stuff for a second. But that actually allows you to not only query several different API's, from one query from one graph, qL query, but with Apollo link state, you can actually query local state as well. So in your graph, qL query, you could potentially be hitting multiple API's and your local state, all within one query, get all of that information directly into your components or your code. And that to me is just super cool. Because it's like, I don't have to worry about getting the data from the database from the local storage from the API. It's like there's one data source. And that's where you're grabbing your data from.
+
+19
+00:11:18,030 --> 00:12:08,610
+Wes Bos: Yeah, yeah, that's, that's super nice. Well, we talk about Apollo and Oh, we've talked about it on pod Pat, past podcast before, but maybe let's talk about the front end. So assuming that you have some sort of back end, that is a graph qL API, and we'll talk about what your options are in that in that case. So the options are limitless. You could build a graph qL API in anything or, or use one of these out of the box solutions as well. But let's talk about the front end, you're building an app in react or view or just plain old JavaScript? How do you talk to a graph qL API? Because you can't just use fetch? Because you have to specifically format these queries in in a specific way, be it right, it's not just JavaScript, you actually have to code these graph qL queries, which are in JavaScript, they're just strings. Right?
+
+20
+00:12:08,730 --> 00:13:01,680
+Scott Tolinski: Yeah, I think that is a little confusing aspect is that graph. qL code there is like a very, there's like graph qL syntax, which is, it is not JavaScript, it's very similar. I mean, there's objects and whatever, but these objects are missing commas, and there's a little things here and there. But to use graph qL you pretty much need a graph qL client and of which there's two major ones, which is relay and Apollo relay made by Facebook Apollo made by the meteor development group, the guys behind Meteor super amazing developers there. There's also a couple others, of which I have no experience with I don't know if you've checked out any of these graph qL request which is made by graph cool. loca which is made by khedira. And nano graph QL. Made by Yoshiko why it's I don't know how to say your last name. I'm so sorry.
+
+21
+00:13:03,270 --> 00:14:58,860
+Wes Bos: I haven't checked out any of those I have. So I'm actually been building a graph qL course for for a couple months now. And I when I initially looked at it, I looked at just the two big ones, which was what was Apollo? And was the other one I forget relay relay. Okay, I was I was once a reason. And Apollo, for me is the perfect library for dealing with dealing with graph QL. Because it does we I've said this before, it does a little bit of magic, where it takes care of the a lot of the harder stuff for you in terms of caching data. So if you have a query for something, and then you have that query again, in the future, it's not going to just you don't have to think about Oh, is this data already in my cache that I like, try to check if I have a state of first, you just simply shoot the query off? And you let Apollo do the hard work of figuring out? Do I need? Do I need to ask for all of this? Or do I need to even ask for any of it? Or is some of this stuff local? And then I can just give it to you immediately, instead of having to make a round trip to the actual server? So I have I don't I don't really want to speak to too much about using relay. But what I have found is that if you have very specific use cases, or you have a very big app, and you need, I guess performance, although Apollo is not, not performant, you can you can get a little bit more custom with relay. But in my case, I like using Apollo, because it does a little bit more for you. And the setup was is amazingly fast. Like you remember, like my, my Redux series was like, I think like six videos just to like do the first hello world. You got to do all this like a boilerplate setup. Whereas with Apollo, you're up and running immediately and you get that kind of like, Ooh, this is nice.
+
+22
+00:14:58,920 --> 00:16:16,650
+Scott Tolinski: Yeah. And then It's I mean, I had the same experience with Redux and, and actually the same experience overall with choosing Apollo over relay as well, I, you know, heard, I heard a little bit about relay, I looked at their documentation, and everything just didn't scream, as easy as Apollo looked. And, you know, I'm pretty like a low friction kind of guy. So if it's a low friction setup, and get going, then I'm gonna, I'm gonna go that direction. And in that regard, I really loved Apollo. And one thing I really liked about it, as well was being able to this isn't speaking on Apollo verse relay verse, any of them, by the way, but being able to incrementally add it. So I started with like, once I just added Apollo, I started with one collection, I started with one schema and all that stuff, and slowly migrated over. But made it easy to do that you don't have to go all in, you can just add Apollo, try it out in your app, or try out Apollo in some sort of demo environment and see it in action. Because it's really definitely exciting to to get going and some of your real data and see how quickly it is to get up and running with something like that and have it be so performant. And the caching and all sorts of stuff just
+
+23
+00:16:16,680 --> 00:16:28,110
+Wes Bos: does like for each nation is built in re fetching of data. Like if you just need to refresh the data, there's these little methods just called refetch. And it will go to the server and refresh that data.
+
+24
+00:16:28,140 --> 00:16:37,170
+Scott Tolinski: Yeah, or if you're using mutations that automatically out of automatically refreshed fetches it, so you don't even have to hit refetch if you're also in on the mutation side of things.
+
+25
+00:16:37,530 --> 00:18:28,070
+Wes Bos: Yeah, let's actually talk about about that little book, the core concepts behind behind using graph QL. But first let's let's hear about our sponsor, and our sponsor today is snip cart. SIM card is a entirely client side, shopping cart. So it's sort of like a software as a service where you sign up. And if you want to have the ability to sell things on your application, that's entirely client side, you don't want to worry about doing any of the back end stuff, you don't want to have to worry about accepting credit cards or any of this stuff. However, you also don't want to do the thing where you have to kick your user off to a separate page. That's like kind of branded the same way as your website, because I know myself that if you kick some money off your website, to a separate page to do the credit card transaction, like how many times have you been like, nevermind, I don't really feel like you know, like, but if remind, when you buy one of my courses, it just pops it up right there. And you don't even have to like leave the page, there's no separate URLs or anything like that. So snip cart is awesome, you can get it integrated into your website in just a number of minutes. It's super fast, it's just a JavaScript library, you can still use it with your existing PayPal and stripe and all that stuff. And what I really like about it is it has all of the different features that you would need, if you are selling goods, you're selling maybe a course you're selling a digital good. Everything from handling coupon codes to doing shipping to doing digital delivery, you name it. So check it out. It's at snip cart.com. But we want you to go to snip cart.com forward slash syntax. And that's going to get you three months free, which is pretty awesome. So check them out on screen, snip guard.com forward slash syntax.
+
+26
+00:18:28,229 --> 00:18:30,780
+Scott Tolinski: Nice. Nice. Yeah. So
+
+27
+00:18:30,780 --> 00:18:40,410
+Wes Bos: there's graph qL? I don't know. You want to say it's it's simple. But it's it's not because you are learning a new language, right?
+
+28
+00:18:40,410 --> 00:18:50,970
+Scott Tolinski: Like it's different. I've heard it described as like a paradigm shift and thinking about your data. And I mean, that's how I feel about it. It's totally different. It's something brand new.
+
+29
+00:18:51,540 --> 00:19:45,050
+Wes Bos: Exactly. So there's, there's a couple ideas that you need to nail down before you get into it. And I think that the two biggest ones are the ideas of queries and mutations. If you're on the you're on the client side, and you want to get data, that's a query. And you can pass arguments to that query. There's no specific set of queries that you that graph, qL outlines, that's up to your back end to implement those those different arguments as well as things like filtering and sorting. That's not part of graph QL. And I was a little bit bummed initially to learn that because I was like, well, it's not really a query language if you can't sort your eye. But I guess like you have to be at the pass all that data to, you can specifically tell your API to sort and filter and you get the point right, you But
+
+30
+00:19:45,050 --> 00:20:13,500
+Scott Tolinski: yeah, I was also initially one of those things that was like confusing to me. And then after I figured out, oh, the you know, a limit or a sword is just an argument that you're passing on through to the API and the API is going to deal with it. Then it made a little bit more sense to me that like, yeah, graph qL doesn't really care it, it's just accepting those as arguments. The API is what needs to know how to handle those arguments. Because graph qL isn't doing the Linux actually hurting themselves.
+
+31
+00:20:13,530 --> 00:21:03,480
+Wes Bos: And this is not a like I, you often read these StackOverflow, at least I ran into a couple of them where people are like, MySQL has been able to do that for years, or like Postgres does better. And that's not what this is at all. You still use your your mongoose, or your MySQL, or Postgres, or any database that you have, and you still use whatever language you're using to interact with that database. But the the way that your your graph qL works is that you just define a schema, which is, the different fields that you might have the different types of data, it's all typed, meaning that you have to know ahead of time, if it's going to be a string, or an array or something like that. And then your your Python and your MySQL, or your node and your mongoose will work to get that data to graph. QL. resolver. Right. Cool.
+
+32
+00:21:03,510 --> 00:21:11,190
+Scott Tolinski: Yeah. Yeah. quick aside, do you say, schema or schema? Like, schema in there? And I never know. Yeah,
+
+33
+00:21:11,220 --> 00:21:15,080
+Wes Bos: I say it, but I get a lot of emails, people being like, why do you say schema?
+
+34
+00:21:16,580 --> 00:21:25,550
+Scott Tolinski: schema? Look, I'm going skiing. And I might even like, call that out on one of my videos. Like, I don't know if I'm saying this word correctly. I never have any idea.
+
+35
+00:21:25,610 --> 00:21:31,500
+Wes Bos: I know. A lot of people tell me I say it wrong. I say most things wrong. So I would probably side with Scott on this one.
+
+36
+00:21:31,580 --> 00:22:43,110
+Scott Tolinski: Yeah. Okay. Well, let's, let's see about that. But yeah, so yeah, so the concept of resolvers. Right, a resolver is essentially where you talk to your database. And inside of a resolver is, whether that's that update code, if you're using like mongoose like a find or an update, or delete, or remove or whatever. The inside of these resolvers is where you're talking to your database. So resolver, that's changing or deleting the database, or data or something like that is called a mutation, it's mutating is changing the data, right, where resolver that's fetching the data is called a query. It's where you query your stuff from. But there's also resolvers that are custom named, that will like attach to your schema. So if you have a products resolver a products resolver can have its own properties that will grab data and allow you to create these relational connections. So a resolver is essentially just the place where your graph qL is talking to the server, I guess is the best way to describe Yeah,
+
+37
+00:22:43,140 --> 00:23:16,380
+Wes Bos: yeah, exactly. And then mutation, what we talked about what a query was, that's how you get data. And you can pass it arguments to to be able to filter and ask for specific things. But I mutation is when you want to push data to because it's just like a REST API where you can get you can get data, or you can put or post data to the server. And that's not a put or a post that is just called a mutation. And what those things do is update data in your back end, and your resolvers going to be able to specifically handle that data.
+
+38
+00:23:16,590 --> 00:23:50,010
+Scott Tolinski: Yeah. And like I mentioned before, with Apollo, I don't like I don't know if this is true of the relay or not. But with Apollo, when you do a mutation mutation, you automatically get a refetch of that data from the client. So but yeah, so that makes working with an API really nice if what you, you hit you change your data, and you automatically get all of the new data in there directly from your API? So yeah, graph qL mutations for me replaced any sort of time I'm talking to the database to change data. And that's just flat out it.
+
+39
+00:23:50,040 --> 00:24:37,200
+Wes Bos: Yeah. One other cool thing that Apollo says, while we're on that sort of refetch, is you have the ability to modify the cache being meaning that, like, let's say you were creating an item, for example, um, I'm building an online store. And when you create an item that is for sale, I want to immediately show that item when you hit add an item. And then I wanted to do the round trip to the server, because that could take a second, right, and you don't want that leg. So Apollo allows you to immediately inject that thing into the, the cache. And then and then it will also sync with the back end and then update any things like database IDs or whatever other things that were created on the server that need to then be pulled into the client side.
+
+40
+00:24:37,320 --> 00:24:52,980
+Scott Tolinski: Yeah, again, it's just taking stuff that you don't want to have to do manually and doing it for you is like the reason why Well, I mean, it's a reason why you would use something like Apollo, but you have to obviously use some sort of graph qL client, whether it's Apollo or relay or whatever.
+
+41
+00:24:54,450 --> 00:25:11,160
+Wes Bos: Yeah, we should also say that Apollo can be used with anything. There are a double actors, obviously Scott and I use it with Apollo react, to use with react, but you can use it with any programming or any JavaScript library out there, because there's adapters for, for all kinds of stuff.
+
+42
+00:25:11,280 --> 00:25:18,990
+Scott Tolinski: Yeah. Which, which is great. I mean, because then nobody is, it's not stuck in, in react land or anything like that. So.
+
+43
+00:25:20,460 --> 00:25:21,720
+Wes Bos: Exactly. Yeah. So
+
+44
+00:25:21,720 --> 00:26:56,730
+Scott Tolinski: I mean, we did mention, you know, the resolver part. But let's talk a little bit about like the server component of graph qL overall, or in my, my experience Apollo. So what graph qL essentially does on the the server is it collects your your schemas, right? Your schema defines all of your data, the shapes of your data, as well as all of the queries, what parameters all of your queries, except all of your mutations, what your mutations are named and what they accept. And that sort of outlines, your entire API is within the schemas. And then you have your resolvers, right. So you have your schemas, you have your resolvers, which include your mutations, your queries and that kind of stuff. And it collects all this stuff. And what Apollo does is you essentially just put these into a create server and it creates the server, then you just simply need to have some bit of code on your client side that's connecting to the Apollo server. So the Apollo server, basically just collects your stuff creates a server and has that data available, then you can connect to that server via the client side, and then blammo, all your stuff is available. Any of the queries, any of the mutations is all available on the client side. So there's really like only one hookup I mentioned this before, instead of having hitting a specific URL here or there, whatever there's, there's like one hookup into Apollo or graph QL. Here, and then from then on, you have access to your data as it's available.
+
+45
+00:26:57,689 --> 00:27:11,670
+Wes Bos: Yeah, exactly. And we should also say that we actually, I haven't used this Apollo server before, but it just creates a a proper graph qL server, and you don't necessarily have to be using Apollo on the front end. Is that right?
+
+46
+00:27:12,810 --> 00:27:21,270
+Scott Tolinski: That's actually a good question. I've only used them together. But it says it says it's an open source server, it seems to me that it would make it available.
+
+47
+00:27:21,330 --> 00:28:51,690
+Wes Bos: Yeah, because that's the beauty of graph. qL is like, even if you're using Apollo on the front end, you're not doing anything different than any other graph QL. So like, for example, GitHub has a graph qL API, and you could use Apollo just to hook up directly to GitHub API, and you don't have, they don't have to have anything special implemented to use Apollo. So that is pretty nifty. I should also say that one thing that I did when I was getting started is I was like, This is weird, because I just created my schema schema, for my MongoDB. And now I'm like recreating almost the exact right schema for my graph. QL. And there is a little bit of duplication that needs to happen there, because you don't necessarily want to one to one mirror your database to your actual public facing API, which could be terrible, you don't want to necessarily expose all of that data to it. So you will have to, there are like some packages out there that will will take your MongoDB schema, or whatever schema that you have in whatever database and automatically generate a schema for graph qL for like the equivalent, like you have a string in MongoDB. And I can also have a string and graph QL. But they're not all the exact same types. So you have to sort of mirror what what the equivalent is in graph qL, and to what it is in your existing database schema?
+
+48
+00:28:51,929 --> 00:30:41,640
+Scott Tolinski: Yeah, one of the things I like most about this is that it was confusing to me as well to say like, Oh, no, I have to define two schemas. Should I just be like copying and pasting this whole thing? No, you shouldn't yet that your public facing API is different. But one of the things I love about the Apollo and graph qL system for having this API is not thinking of my data as well, the data comes out of the database, it goes into the schema, and then it comes to me, you shouldn't think of it like that you shouldn't you should think of it as what data do I actually need. And because of that, you can write these like custom resolvers on types that can do things for you essentially, on the back end of your, your your server call that you don't have to do on the client side. So for instance, let's say I have a user right and you want to check to see on a client side for various client things, right? If this person bought let's say in my case with the tutorial, you want to see if they bought a tutorial and this is just for clients, I'm not providing them any sort of data, I'm just providing them changes to their view, right. So it's not a security issue. But let's say I wanted to know if they bought, I can do all of that computation on the server with a custom resolver and custom type. And when I hit my query, I can say, give me the user, give me their email, and tell me if they bought this course. And that's in my query. And so instead of having to do that, did they buy it on the client side? Or do it on the server side? I don't care about any of that. I just have to say, hey, API, did they buy it, and that that boolean value for if they bought, it isn't stored in my database, it's computed by the server itself, when that query is hit?
+
+49
+00:30:42,180 --> 00:31:49,320
+Wes Bos: Exactly, I'm a big fan of not storing data that you can necessarily compute on the fly. Although that has definitely been me in the past when things like tax rates change. But it's definitely huge there. Because you do not care at the client site, you just get a straight up Boolean, and that is all calculated on the back end. That's not necessarily something that's mirrored in your database. So that's why I initially thought like, Oh, so silly that I have to do this twice. But then someone explained to me, yeah, but you can compute things on the fly. Or if you need to grab data from two or three different data sources, like, for example, maybe the coupons, in my case, my coupons are stored in a j s file or a JSON file, whereas some of my customer data is stored in my MongoDB. Whereas some other data might be stored in GitHub. And it doesn't matter because you can reach into all of those things, whether it's memory and external API or my database, and just tidy it up into a nice, single payload that you get on the client side, you don't have to worry about fetching all of those different pieces on the client.
+
+50
+00:31:49,560 --> 00:33:02,940
+Scott Tolinski: Yeah, and here's a, here's a little real world example, where this kind of thing makes a big impact. And I guess it's, I guess, a small impact in a I don't know, whatever, it's, it's a super convenience factor here. But in Meteor, when you have a new account, it stores the email under an array of emails. So inside of that array of emails is an object of address or an object with the property of address and whether it's verified or whatever. But let's say I only care about the user's email. And I'm don't plan on storing multiple emails. Instead of having to query get the user, the user, look inside of that array inside of that array is an object and get that property of address. And for the having to do all of that I can have the API just return the first item from the emails array, the property address, and then when I hit the query, I could say, Hey, give me the user and their email. And it's going to give me a user and an email instead of an array full of objects with a property that I have to look into right, which is just one more way that adds complexity to your UI or your code on the front end, right because now I'm not caring about a user dot email, I'm caring about a user dot emails dot first item in a right whatever it just makes for much cleaner code.
+
+51
+00:33:03,090 --> 00:35:11,010
+Wes Bos: Let's take a quick break to talk about our sponsor and that is fresh books, fresh books is cloud accounting software, which it's it's the new year for me and I'm starting to pull all my tax information together and I really used to dread all of this tax time because it was it meant that I had to go off and find all the different invoices that I have and remember all these things that I kept in my head but now it comes to tax time and all I have to do is go into my Freshbooks generate a couple different Excel files where it will give me all the different invoices that I had all the different currencies that I've charged in. Most importantly all the expenses that I've had so as I go through the year and as I have expenses what I do is if it's a receipt I'll snap a picture with it on my iPhone or on my assistant take all of my PDFs and log all of those things as expenses and and then when it comes to tax time it's super simple. All of the PDFs and everything are attached into Freshbooks I just run a quick little report it tells me exactly how much in Canada we get HST back as a as a business or how much money I'm getting back in terms of collecting my taxes and how much I owe and all these things it's it's amazing how simple it is and it's it's amazing how like good I feel about the state and how clean my books are everyone always talks about the scary getting audited and quite honestly I don't think I would care that much because everything is so nice and clean for me that if I were if they were to ask like hey, can you show me a couple of receipts for your you're claiming a lot in terms of computer hardware, could you show me a couple of receipts of what you actually bought? No problem I would just query it up in Freshbooks and and be able to show it so knowing that it's safe and sound and nice and crisp in there is why I absolutely love fresh books. So if you're interested in you are a small business or sole proprietor or freelance or anything like that you need To get your books in order for 2018 go to freshbooks comm forward slash syntax and enter syntax into the How did you hear about a section? Thanks so much to fresh books for sponsoring.
+
+52
+00:35:11,210 --> 00:35:17,340
+Scott Tolinski: Thank you. Cool Yeah, it's getting close to that text time it's not quite here yet but it's a
+
+53
+00:35:17,360 --> 00:35:22,460
+Wes Bos: no what's the end of tax time for y'all Americans?
+
+54
+00:35:23,010 --> 00:35:25,940
+Scott Tolinski: April something I don't know. I always get it done pretty early.
+
+55
+00:35:25,940 --> 00:35:27,270
+Wes Bos: So yeah, me too. I always
+
+56
+00:35:28,260 --> 00:35:34,130
+Scott Tolinski: I hate the lead to success or in life is to not have that hanging over your head all the time.
+
+57
+00:35:34,260 --> 00:35:54,300
+Wes Bos: Yeah, I'm always waiting for a charitable receipts because those are the last that come in. Yeah. And they usually come in like February March. And then once they come in, I just send it all off to the accountant with all my Freshbooks exports, and just super nice, it's, it's not a pain in the in the butt anymore. Almost sad ass.
+
+58
+00:35:54,480 --> 00:35:55,920
+Scott Tolinski: Oh, my.
+
+59
+00:35:56,420 --> 00:35:59,520
+Wes Bos: Alright, we'll keep talking about graph qL here.
+
+60
+00:36:00,960 --> 00:36:01,730
+Unknown: All right, we're gonna,
+
+61
+00:36:01,980 --> 00:37:18,300
+Scott Tolinski: yeah, let's talk about some interesting new things a graph qL sort of brings that maybe we've seen in some ways, with some services, like maybe like content folder, stuff like this, where you don't have to worry about the server side of your your application in a component. And all you have to worry about is your your graph qL front end. So some of these really cool new projects or things like, well, these aren't the same, but like Gatsby is a static site generator, which basically allows you to write all of your graph qL queries that will then run and build a static site. And you can, there's plugins for all sorts of platforms. So it makes working with a WordPress API really easy or content for, like I mentioned, or even bringing in data from markdown files, which is how I do it in my Gatsby tutorial series, where like, you query a markdown file with graph qL and generates a static site for you. So that's just like one of these new sort of exciting things that I mean, static site generators existed and stuff like that. But being able to work with API so nice and smoothly inside of a static site generator is like pretty pretty darn sweet in my opinion.
+
+62
+00:37:19,460 --> 00:38:52,530
+Wes Bos: Yeah, another one that I'm I'm pretty excited about I'm people know, I'm a big fan of WordPress. And I often hear people are not a big fan of WordPress. And I often hear that clients and people that use WordPress are made because it's such an amazing interface, unable to, to edit your files and upload images and all this stuff. So WordPress does have a pretty good API. And there's this project called WP graph qL, which seems to be like fairly actively developed. And it seems to be pretty serious over the last, I don't know, I've been watching it for about a year now. And it's pretty neat, because you're going to be able to just use WordPress as like a headless CMS, it's the back end. And then you can use the graph qL API to just pull in the specific data that you need from your thing. And it works with advanced custom fields, and all of your different custom post types and your attachments and all this amazing stuff. So it's, I have played with it a little bit here and there. And it's kind of high on my list for when I want to redevelop my own website, I still want to stay on WordPress, just because I've got lots of content in there. Years and years of blog posts and speaking engagements and all kinds of stuff in there. But I would like also to like have a really slick single page website that has animations and everything like that. So yeah, I'm pretty excited about the the opportunities that this is bringing over. To us
+
+63
+00:38:52,610 --> 00:39:33,150
+Scott Tolinski: this I haven't actually seen this. And this seems like the sweet spot where and we talked about it before we're like there's so many sites that are built on WordPress that would really benefit from a whole new front end and connecting to that API. And connecting that API works right now. But like there's, there's so many I don't know, like different ways to do it. This seems like such a brilliant thing to be able to hit WordPress with a graph qL and and get your data that way. And then a fact that it works with the custom fields and everything cached this this seems like really a great way to sort of modernize some of these WordPress sites and build some, you know, front end framework.
+
+64
+00:39:33,270 --> 00:39:34,050
+Unknown: Yeah, exactly.
+
+65
+00:39:34,080 --> 00:39:34,590
+Scott Tolinski: Yes.
+
+66
+00:39:34,590 --> 00:40:04,880
+Wes Bos: There's there's a lot of like, kind of happy websites that are being be rebuilt right now. And the question is, like, do we build it in something like react or Gatsby or whatever or do we go the the older theme route and I don't know like it. Obviously there's still a huge use case for regular WordPress themes. But I think if you've got an existing site on WordPress and you want to build you want To build into something that's a little bit more interactive than this is going to be really good for you.
+
+67
+00:40:05,150 --> 00:40:58,290
+Scott Tolinski: Yeah, super cool. Another thing on that same sort of line of, you know, clients liking, pretty interfaces and stuff like that to be able to work with their data and things like that. There's a really cool new service called graph CMS, which aims to be a modern CMS back end. So basically, the the CMS part would live on their servers. And it's really super slick. The interface is really, really slick, adding fields and all that stuff. And then it exposes a graph qL API that you can then use to actually build out the front end of your site. So if you don't want to have to deal with the server side of stuff, graph, CMS looks like a really pretty sweet option there. The interface again, it's like pretty darn, pretty darn hot.
+
+68
+00:40:58,530 --> 00:41:36,480
+Wes Bos: Yeah, I really like these these, like, sort of back end as a service for you. And we'll talk about graph cool in just a second as well. But it's kind of neat, cuz even our sponsor today was, if you It seems to be a lot of people are just building front ends of websites. And when you need a back end of some case, you can do a traditional server, you could do serverless, which still requires you to code and interface with database. But sometimes you just want to save some frickin content to a database, and you're not reinventing the wheel. Right? And it's pretty exciting to see that all these different services are popping up.
+
+69
+00:41:36,600 --> 00:41:37,940
+Scott Tolinski: Yeah, absolutely.
+
+70
+00:41:38,010 --> 00:41:40,860
+Wes Bos: So graph CMS is not open source. Is that right?
+
+71
+00:41:41,630 --> 00:42:03,210
+Scott Tolinski: Uh, I don't think it is. But there might be there might be an open source version of it. I'm actually I'm not quite sure. I feel like there was something about that at some point, but I'm not I'm not sure if it is. Yeah, I would say there there is a did definitely a software as a service. Let me see, here's graph QL. CMS repo.
+
+72
+00:42:03,600 --> 00:45:54,570
+Wes Bos: I don't think that it is I'm looking at their, their GitHub. it very well may be that they're moving really quickly right now. And they're developing under the hood, before they open source it. Because this this is what happened with prettier as well as prettier was developed almost entirely under wraps. And then was open sourced. And the author of it said that allowed him to work so much faster, without all the like noise, hot drama and all that like I like we all know how exhausting it can be to manage, especially for a popular project can be to manage your your thing. So it might come open source at one point. Speaking of being open sourced, there's another huge one in in the space. It's called graph. Cool. That's that graph cool. Which I find hilarious for a database name. And what it is, is, it's a service where you sign in and you have you make your schema via their back end interface, you can either do it via the command line and like the settings file, or you can just use their amazing GUI on the back end to be like, I want to create an item. And my item will have a name a description, a price, that's a number and an array of strings, which has tags. And then I also want it to have a category, but category is another item and a category will have a title and a description. And then I can link those two as relationships. And then when I want to query the latest 10 items, I can also populate their category in their the category description as well. And it's pretty neat because now if you want to build something, whether it's just a quick app or something even bigger, you can just use graph cool as your entire back end to hold all of your data, they expose the all of the different all of the different methods that allow you to pull data from it, they expose all of different things that you can use to sort your data. They expose all the mutations where you can update or create an update. It's I've been a been a huge fan of it. I initially, when I was initially looking at my graph qL course that's going to be coming out in a couple months. I was looking at a couple options, including building your own. And I got like a couple hours into building your own. I was like this is way too complex for for something like this. And then I looked at I was been chatting with the graph cool people. And I'm like this is exactly what I want. But I don't really want to be recommending something that isn't open source. Which is a bit hypocritical of me because my other react series is built on Firebase. But what happened after I released my Firebase is that parse went under and like what happens if your database provider you built an app on top of this proprietary database thing, what happens if they go away? Especially because graph cool as a startup? What happens if they run out of money? And they say, like, yeah, like we're committed to your data, but like, there's always the hit by a bus, or it just goes away, right? And then everybody's going to be out of luck, or having to do a whole bunch of work to switch it over to a non proprietary system. So what they did tell me many months ago, what I wasn't allowed to say it is that they will would be open sourcing it. And it is now open source, meaning that you can run your own instance of graph cool without using their service at all, which is great. I don't would never want to do that myself. But the just knowing that if they ever go away, there's a GitHub with the actual code that's running graph cool behind the scenes. So I was pretty happy about that.
+
+73
+00:45:54,600 --> 00:46:16,140
+Scott Tolinski: Yeah, I guess my big question is, for both the graph, cool hosted service, as well as the self hosted version of this, what what's the database connection? Because you're, you're building a schema and API, but what like, what is the database itself? Like, what type of database? And how? Like, do you have to manage in control and make those connections yourself,
+
+74
+00:46:16,140 --> 00:46:44,970
+Wes Bos: it's, you do not have to make those connections yourself, it is the database for you. So it is both a database as well as a graph qL schema that sits on top of it and exposes the entire API with a whole bunch of mutations and the ability to query and sort and all that, and what is the actual tech behind the scenes? I did ask that I believe it's like made it's something like Haskell. Let me Let's pause a second. Let me Google it.
+
+75
+00:46:45,030 --> 00:47:15,900
+Scott Tolinski: Okay, so from their FAQ, what database is graph cool. Using graph cool is based on sequel, The hosted version of graph cool, uses an instance of AWS Aurora under the hood. And when running the self hosted version of graph cool, you can use my sequel. So it seems like my sequel for your self hosted version. And then something a little bit more fancy for the the hosted version.
+
+76
+00:47:16,620 --> 00:49:52,170
+Wes Bos: Pretty neat. I'm also just reading their FAQ here. It's been maybe a month or so since I've been in it. And I say wait a minute isn't graph qL back end as a service. So another cool thing that graph cool does it's it is the Database as a Service, and it does run both on your own server or you can use their their hosted one. But they they now call it a graph. qL graph cool framework. And what they also do is have the ability to just run your code as well. So if you are running an app, you can obviously store data. But what happens when you need to resize an image or send an email or charge a stripe transaction, that song where you're going to be doing my course as well? Like, what do you do, right? Do you have to like run a separate server just to run that code and then talk to us. And then their solution to that in a lot of solutions out is you you sort of run them in the separate functions, people call them serverless function or Cloud Functions or AWS lambda, you just basically write a node function that takes in the request. And you can trigger these these functions to run specifically on data creation. So in the case of mine, what we do is we create a charge that charge saves to the database. And then my function will then run and pick up that charge, go to stripe API and charge it and then come back with the the result, which is either the charge failed, and you delete it, or it was successful, and you store all the tokens and everything that you need to in your your graph, cool database, which is pretty neat. So it's kind of a one stop shop for an entire back end. Where if you need to do anything, it's likely either just storing data or running a separate Cloud Function that comes along with it. And they are slowly are now opening up the ability to just have all of this stuff running on your local computer, meaning that you don't have to like create your schema via their UI. Their UI is really, really nice. Because it's just like you just can like drag and drop relationships and add new fields without without any trouble. The downside to that is that it it's not in your version control. And you can't just like Well, what do you do with Dev and staging and all these things, right? So they are adding the ability to just have all of these things, including your Cloud Functions and your database and your authentication rules, like who can update and read and do the whole CRUD operations on your different pieces of data? All of that can be in a, a folder in your actual project, right?
+
+77
+00:49:52,350 --> 00:50:30,480
+Scott Tolinski: Yeah, love. So this is pretty cool. Yeah. I mean, these are sort of like, new classes of things and all this stuff's a little bit different. Like I mentioned, you know, like static site generators, yeah, they've existed. But the way that Gatsby does, it's really interesting and fun and cool. Like, same with graph CMS, it's, it's sort of like content flow where it's thinking like an API as a service. But it does. So in a really nice way. I mean, this graph, cool, all this stuff is just really exciting and different. And it blows my mind. But it's also really exciting. I love graph cools, Doc's, some of the nicest Doc's out there.
+
+78
+00:50:30,660 --> 00:50:36,750
+Wes Bos: Yeah, their documentation is extremely well done. And they have a tons and tons of examples.
+
+79
+00:50:37,290 --> 00:50:38,730
+Unknown: A great YouTube channel, too.
+
+80
+00:50:38,820 --> 00:51:24,030
+Wes Bos: Yeah. And their slack is extremely responsive. So same with the Apollo, I recommend if you're getting into this stuff, at least I had, like 4000 questions when I was first, this, and a lot of them were fundamental understandings of how does graph qL work? Or how does Apollo work? Or how does graph cool? Because that's the other thing is you have to understand, like, do I need to search for something that's graph cool? Or Apollo? Or, or just graph? qL? In general, right? Because it could be the spec or the implementation or the actual database that you have. So I would recommend jumping into the slack. Because their their help is really good. The community around the stuff seems seems like everyone is pretty excited. And, and pretty motivated for for making graph qL pretty big.
+
+81
+00:51:24,120 --> 00:53:31,470
+Scott Tolinski: Yeah. And honestly, if you want to get excited about graph qL, overall, just try it. Because that was one of the things for me, it was like, I sort of got why it could be cool. I thought it looked interesting. And then I used it and was like, not only do I have to use more of this, I have to convert my entire site to be using this right now. Because it's that awesome. It just you just leave it on you. I Oh, yeah, it's like, right before I write right, when I got back from Michigan trip, I decided to convert one little query over to graph qL on like a side branch using Apollo for my site. It's like, I'm just gonna move over. I think it was something really little like the Oh is the voting for if you're voting on future series, it's a really small commitment, very small object. And I was like, Okay, I'll just, I'll just check this out. And then, man, it was instantaneous, that like, the things like the relational database stuff, the mutations and all sorts of stuff like that just instantly made my life instantly better. And I was like, I have to drop everything I'm doing. And I just grinded it out and converted by entire data layer over to Apollo, I'm using link states, I'm using local state via Apollo link state I'm using connecting it to meteors account system. Man, it is so so good. It is so good. My current API is just, I feel like the amount of stuff I'm going to be able to get done quickly now that I have this in place is just I it was it was any little bit of, you know, strain or overworking myself I did to get this done. It was absolutely worth it. And I'm superduper psyched about the data layer going forward.
+
+82
+00:53:31,799 --> 00:53:41,130
+Wes Bos: So that's pretty exciting. I want to ask you a question about the the local data because one cool thing about using Apollo is you can use these or they call adapters.
+
+83
+00:53:44,400 --> 00:53:54,810
+Scott Tolinski: I don't know why it's called Apollo link state. That's what it's called. Right. Apollo link state is for local state. So Apollo link is sort of their their elayna.
+
+84
+00:53:54,840 --> 00:53:56,550
+Wes Bos: That's not aware.
+
+85
+00:53:56,790 --> 00:53:57,390
+Scott Tolinski: Yeah.
+
+86
+00:53:58,680 --> 00:54:53,280
+Wes Bos: Yeah, so it's the middleware. And it will allow you to obviously you can store your your graph qL data in it. But if you have other data that is part of your application, like UI states, you want to do someone have the shopping cart currently open, or Yeah, what was the last viewed item is stuff that doesn't need to be saved in the database. You can also store that in Apollo and still use graph qL for that, even though it's some data's in your database, and some data is just local data that's stored in memory or in local storage or anything like that. And that is pretty exciting to me, because you don't have to think about where does this data go. And then you also you don't need to use Redux or anything like that. This is an entire replacement used to be built on top of Redux. And you can still feed it an existing Redux store. But this is an entire replacement for using something like Redux. And I'm really excited about it because I think it's much easier to get up and running then than redex is
+
+87
+00:54:53,339 --> 00:55:29,490
+Scott Tolinski: Yeah, and you don't have to worry about things like invalidating your store. You don't have to worry about re fetching from your store. Again, if you Using this local state instead of Redux, here, you're querying with the rest of your data. Anytime that data is changing with a mutation, your pallo is going to refetch for you. So for me, like, yeah, I throw my local state in there. And I incrementally moved it over where I would do one thing at a time. So it's not like you had to rip out Redux and start from fresh immediately. I have both running for a long time here while I got this going. But I
+
+88
+00:55:29,490 --> 00:55:30,810
+Unknown: think most part I
+
+89
+00:55:30,810 --> 00:56:04,890
+Scott Tolinski: love is just being able to write those query like only having one query for all of your information, whether it's local state, or database stuff, or whatever. And just having that one single query and being will say, also, is the nav open? Is there an alert is there whatever in this sort of local state as well. And there's, there's some other links stuff like persistent caching. And I know the the Apollo link thing is pretty young, it came out with Apollo version two, which is fairly young as well. So I think the what's coming as far as like, what you can link into Apollo is, is just going to keep getting better and better.
+
+90
+00:56:06,960 --> 00:56:15,900
+Wes Bos: So I think that's it for our graph. qL, you have anything else to mention? Yeah, I don't think so. Again, I
+
+91
+00:56:15,900 --> 00:57:36,540
+Scott Tolinski: think just get out and try it. Oh, we didn't mention I'm sorry. Yeah, there's there are some things we didn't mention, actually. some really cool, small things that we don't need to take up a ton of time on. graphical, we didn't mention galipeau, which is like it. He's the best. Yeah. So graphical is this interface that allows you to build queries, graph qL queries. And if you're running a graph, qL server, like with Apollo, that automatically exposes another URL, which is graphical. And graphical is an interface allows you to build out these queries and test them out. There's, it makes your mixes so well, one, it gives you code hinting. So like, if you start typing in PR, it's going to say or do you mean is the query looking for products, and you can enter, you put your brackets and you say what you want, but it's like a documenting your API allows you to see what fields are available, allows you to test out everything and see that data that's coming back you you hit like a play button, and it spits out the data that's coming back. So you write your query, hit the play button, here's all your data that's, that's fresh right here. And that way, I can test out all your queries ahead of time to know exactly what you're getting into me that the graphical thing is one of the things that just completely swayed me towards graph QL. It was like a brilliant first experience with that.
+
+92
+00:57:36,780 --> 00:58:16,050
+Wes Bos: So good. If you've ever used like postman, or you've ever struggled, struggled with postman, or any of these other REST API apps where you have to craft these things. Graph qL is soft, self documenting, because it is typed, meaning that your the graphic qL will know about all of the mutations, all of the queries all of the fields. So as you start typing, or I think if we hit control space, it'll just pop down a list of possible fields that you can query from, and you never have spelling mistakes, and you know what all of your functions are, you don't ever have to go looking in documentation for them, because it will start to suggest them for you. And that was super exciting for me when I found that as well.
+
+93
+00:58:16,140 --> 00:58:33,330
+Scott Tolinski: Another low key awesome feature is that I don't know if this is Apollo or graph qL is doing but like, I would I think is probably I don't know, either way, if you type in a query and you misspell it, it occasionally finds the right one for you. Like if I add products, it'd be like, Did you mean products? Did like? Yes, I
+
+94
+00:58:33,330 --> 00:58:33,840
+Unknown: did. Thank
+
+95
+00:58:33,840 --> 00:58:35,580
+Scott Tolinski: you so much for finding that.
+
+96
+00:58:35,729 --> 00:59:05,370
+Wes Bos: Yeah, it's very easy. Once you get past that initial learning the new concepts behind graph QL. It's very friendly and very developer friendly. Whereas rest is sort of wild west where there is like best practices and rest, but no one really follows them. So you have to like figure out how every single individual API works. Whereas with this, it's all a standard, it's all implemented standard graph, QL. It's gonna be I think it's gonna save you a lot of debugging time.
+
+97
+00:59:05,399 --> 00:59:47,910
+Scott Tolinski: super friendly. Yeah. Also, one more. One more quick, quick thing is Apollo engine, which is basically a service that you connect to Paulo via a unique key. And then it tracks all your queries, and gives you insights into how your API is performing, allowing you to write a more performant better API. So it basically gives you like query times and helps you figure out how you can write faster queries and maybe potentially make your application perform much better. So giving you like, key key insight into how things are going and so that's, that's a killer feature for me. I love stuff like that, because it's easy, and it makes your life a lot better. Yeah,
+
+98
+00:59:47,939 --> 01:00:14,220
+Wes Bos: so Apollo engine is that they're, they have a fully managed one, which is how like, you might be asking, like, how is Apollo doing so much and they are a company it's it's the meteor folks They will they have the ability to give you this thing called engine that will sit on top of your existing graph qL like Scott said, and you can pay for that. Is it open source as well? Or is it just school
+
+99
+01:00:14,220 --> 01:00:17,880
+Scott Tolinski: managed? I'm not quite sure.
+
+100
+01:00:18,930 --> 01:00:28,140
+Wes Bos: So check it out. But that's how the the company Apollo is able to sort of fund the development all this amazing stuff, which is pretty neat.
+
+101
+01:00:28,290 --> 01:00:54,540
+Scott Tolinski: Yeah, yeah. So definitely super cool there. Yeah, I think that's it for for graph QL. It's a big topic. I'm sorry. if we missed anything. It's one of those things that's like, so we did different in in changing I hear we had like a page full of notes of stuff I wanted to talk to, and we still somehow missed graphical until the last minute. So that's just how it is. It's a big fun, cool thing. Yeah. Do you have any sick pics for this week?
+
+102
+01:00:54,569 --> 01:02:13,440
+Wes Bos: I do. And it's a podcast, which is this one. This you should listen to this podcast and you should go subscribe a friend. No, it's a it's a podcast called oh my gosh, I'm forgetting the name of it one sec. podcast called the indicator. So one of my favorite podcasts out there is from planet money in which it's like a economics podcast. But it always like goes into very interesting things like how the price of oil changes, or they one year they made a T shirt and they followed it around the world. Or they they once explained the concept of commodities trading to me and how orange juice and futures are traded. And it's just, it's just one of my favorite podcasts ever. That just explains how it works. And they started a second one called the indicator and it's just a short daily podcast where they break down some some news. So often, you'll hear some news about economics, and you'll understand what it is. And what they do is they make it very accessible. And they explain what is it what are the repercussions, what might happen, etc, etc. It's just a short little podcasts. I love listening to it. So my walk into the store sign, quick five minutes. So check it out the indicator from planet money.
+
+103
+01:02:13,680 --> 01:02:28,170
+Scott Tolinski: Nice like that. I have to subscribe to that. I like stuff like that, because it gives you a little bit insight into all sorts of things, but big picture stuff and just sort of makes you a little bit more. I don't know, well connected overall.
+
+104
+01:02:28,200 --> 01:02:33,230
+Wes Bos: Yeah, well rounded. You're kind of being an adult and understanding how the world works.
+
+105
+01:02:33,270 --> 01:02:34,560
+Scott Tolinski: Yeah, right, exactly.
+
+106
+01:02:34,770 --> 01:02:36,210
+Wes Bos: What do you got for me a sec pick?
+
+107
+01:02:36,230 --> 01:03:47,970
+Scott Tolinski: Yes, it's something that you know, I've read a while ago, when they first came out, I think I was like an original Kickstarter backer on these books. The you don't know, j s book series. There's a whole bunch of books on various topics in JavaScript such as this and object prototypes, scopes and closures. Yes, six, and beyond async, and performance types in grammar. And these are all from Kyle Simpson. These books are, in my opinion, some of the best JavaScript books that exist because they really make learning these concepts very approachable, but get really super in depth. Like, I don't know how many times I've cracked open books like this, that are going to go in depth on a topic and your eyes just start to roll back and you start to get asleep like this. These books were very engaging for me. And I felt like they went very, very deeper than most and really helped me understand concepts in JavaScript that were maybe not so obvious. First time. First time around when you're learning everything. So love this book series. It's excellent. I check back I reread them all the time just for fun. They're they're just really good.
+
+108
+01:03:49,560 --> 01:04:13,800
+Wes Bos: Awesome. That's a sick pic. I know. I know, some people got butthurt by the title you don't know. .js but they did. Yeah. billion butthurt over everything. Yes. means like, like, you don't you probably know JavaScript, but you don't know all the intricate details and the whys in the house and all the little gotchas here and there and that that's what these types of books that really really get into
+
+109
+01:04:13,860 --> 01:04:17,250
+Scott Tolinski: it's probably a play on the you don't know jack to I think
+
+110
+01:04:17,250 --> 01:04:27,840
+Wes Bos: that's what I was as well. Yeah. But people it gets lost in translation. Cool. Well, that about sums it up for today. Thanks so much for tuning in.
+
+111
+01:04:27,840 --> 01:04:30,540
+Unknown: I wait. Hold on, hold on. I'm
+
+112
+01:04:30,540 --> 01:04:31,980
+Scott Tolinski: plugging, plugging.
+
+113
+01:04:33,390 --> 01:04:39,090
+Wes Bos: Yeah, let me plug here for a second. Shameless plugs. I forgot how to podcast after over the holidays. Oh, no. So
+
+114
+01:04:39,090 --> 01:05:31,560
+Scott Tolinski: what this is, is, uh, the other day, was it Monday of last week, I was sort of sitting around like, Well, what do I do? What's the, you know, fresh start to the New Year like, Yeah, I was like, You know what, I'm gonna extra record a whole bunch of graph qL tutorials because I've been just, you know, plowing through graph qL for the past couple of weeks. So I made a pretty tutorial series on level up tutorials COMM And it's it's going to be continued today's Monday that we're recording it. So by the time you listen to this, there's going to be new videos up. And it's full stack graph QL. Now it is using Meteor. So if you're not interested in Meteor, don't worry, I'm going to be having some graph qL content without that. But it's like, Hey, here's how easy it is to get up and running. Graph qL full stack with Apollo Meteor react. And so it's all free videos, the code is going to be all available, check it out, we're going to be building something cool.
+
+115
+01:05:32,159 --> 01:06:06,090
+Wes Bos: Awesome. Looking forward to that. We'll put a big link to that in the show notes. Make sure you go click it. I'll plug my upcoming CSS Grid course. It loads will not be out by the time you hear this. But it's coming out probably in about a week, maybe a little bit less. I'm pretty much done it just wrapping up a couple little things having some people go through it make sure the contents all safe and sound but really proud of it really excited to get this thing launched. It's gonna teach you all about CSS Grid. That's gonna be at CSS grid.io. Awesome.
+
+116
+01:06:06,539 --> 01:06:07,710
+Scott Tolinski: Cool. Looking forward to it.
+
+117
+01:06:07,710 --> 01:06:09,660
+Wes Bos: Awesome. Can I end it now, Scott,
+
+118
+01:06:09,660 --> 01:06:11,070
+Scott Tolinski: you may we
+
+119
+01:06:12,690 --> 01:06:19,950
+Wes Bos: thanks so much for tuning in. Someone said we didn't say pace again. So let's do that. Alright, please.
+
+120
+01:06:23,310 --> 01:06:32,340
+Scott Tolinski: Head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

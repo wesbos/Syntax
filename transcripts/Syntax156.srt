@@ -1,0 +1,408 @@
+1
+00:00:01,319 --> 00:00:10,560
+Announcer: You're listening to syntax, the podcast with the tastiest web development treats out there. strap yourself in and get ready to live ski and West boss.
+
+2
+00:00:10,589 --> 00:00:14,610
+Wes Bos: Welcome to syntax. Scott is back. How you doing today, Scott?
+
+3
+00:00:14,969 --> 00:00:27,000
+Scott Tolinski: I'm good. I'm better than good. I'm excellent. I'm straight up. Excellent. I have a lovely, brand new daughter, Brooklyn, and glinsky. She's here, and I'm just man. loving it. loving it.
+
+4
+00:00:27,149 --> 00:00:31,890
+Wes Bos: Ah, she's super cute. We missed you in the last episode with Sarah.
+
+5
+00:00:31,949 --> 00:00:34,530
+Scott Tolinski: Yeah, that's weird. It was weird not to be there.
+
+6
+00:00:34,649 --> 00:00:52,500
+Wes Bos: It was weird. There was no one to bounce my jokes off. And Sarah said that I was the worst pronounciation of her last year. However. I was pretty proud of that as I didn't think I could I could put her anymore and I honestly thought that I had it had it down pat.
+
+7
+00:00:54,420 --> 00:01:27,990
+Scott Tolinski: What's funny about that is is a lot of our pot. We have a potluck episode today, which is an episode where people bring us questions, right? A lot of our submitters with difficult last themes gave us pronunciations, and they are all elevated human beings. So hopefully, we won't have too many of those kind of issues today. But I'm excited. I'm excited to be back. I'm excited. It was it was just weird. Knowing that you were recording an episode I was just sort of sitting at home with with the baby just being like, Huh, not recording this. Alright,
+
+8
+00:01:27,990 --> 00:01:51,540
+Wes Bos: today we are sponsored by two awesome companies. That is first one is Sentry gonna do all of your error and exception traction. And second one is Sanity, which is going to be a headless CMS for your next project. Cool. Today is a potluck. These are the questions that you submit, we do these once a month and we try to answer them. I really liked them. They get really good listens on these ones because we're kind of all over the place talking about lots of different topics.
+
+9
+00:01:51,560 --> 00:02:01,860
+Scott Tolinski: Yeah, it's a good one today. Yeah, we have a real good one. So the first one is from couch, john Australia. You I don't know what they used about.
+
+10
+00:02:01,950 --> 00:02:03,180
+Wes Bos: Probably Australian thing.
+
+11
+00:02:03,240 --> 00:03:36,960
+Scott Tolinski: Yeah, Australian clothes. Now if that's the thing, is the long question. So give me give me a warm up here and do any vocal exercises first, all right. Question that your wives might be able to help answer to I'm 33. With a wife and two young daughters. I am trying to change careers. I have an $80,000 a year job and I hate it. I realized a few years ago that software development is what I want to do. So two years ago, I started doing a bachelor degree in information technology and had been learning web development on the side. My wife is okay with me doing University. But when ever I tried to do web development tutorials or learning, she calls it a hobby. She wants me to stay at the job. I don't like we still do family things but I'm trying to crank by knowledge any chance I could get it. Am I being selfish? Should I stand my ground? And say no, I'm doing this I feel like my age is making my chances of becoming a dev harder and harder to achieve any tips on achieving my goals? make me happy but also keeping my family happy. Sorry for poor formatting. No worries john got through it. This is a tough one. Because you're you're dealing with a larger family dynamic right? than just like here are the here's the thing. I'm you know, what an 18 year old programmer hacker, I can just sit in my room all day and hack along and stuff. And so you have all these responsibilities. And so the way I see it is is your responsibilities. First and foremost are to your your family, right and providing for your family. So in my opinion, you should keep that $80,000 a year job.
+
+12
+00:03:37,020 --> 00:03:40,800
+Wes Bos: You should it's which is 55,000 us a year
+
+13
+00:03:40,859 --> 00:04:54,770
+Scott Tolinski: I did the math. Okay, so Okay. And I think should keep the job while you have, you know, you don't want to try to jump from one ship to another ship. If there's no other ship there. If you leave that job, and you might be stranded or something. I don't know, it's a tough one here because I don't think you should take away family time. Right? But is there time that you would have had as like your own time, where you could be studying and things like that, I don't know how it works in your family wise, but I personally need, you know, not like a decent amount but I need you know, solitude time I need time to either play video games or do some yard work or, or do something by myself, right? As much as I love hanging with my wife and hanging with the family once the kids are asleep. You know, there's some days a week where it really makes sense for me to go off and do my own thing, create some music, you know, do that sort of thing. And and in that time, that's the time I would have used to further my programming knowledge. But if it's time that you'd be spending with your family, then I'm not quite sure about this one. I would say, you know, don't, don't take away from your family. Try to find time somewhere else, whether that's on your lunch break at work or anything like that.
+
+14
+00:04:55,070 --> 00:08:25,260
+Wes Bos: Yeah, this, this is a tough one and I've sort of gone through this with my Wife as well, when we initially got married, she was a shoe designer. And she's like, I hate this commute. I don't like what I'm doing. I don't feel good about like the, like the Chinese factories that these shoes are being made in and all of these like things. And at the time, I was like, You know what, like, just quit and start going off on your own and do your own thing. And that was very much easier to do, because we had, like a cheap apartment that we were renting. And I was making pretty good money at the time. And we're sort of able to, like, kind of do it. And there was no, there's no real downside to something like that. But when there's like a wife and kids, and you probably have a house to pay for. And I think like once you get a little bit older, there's sort of an expectation. And I think like, I know, like some of my friends, significant others will sort of be like, you know what, like, I don't want this like instability that comes, you have a good job, just stick with it, we've got enough craziness going on in our life right now. It's like changing this one thing also is going to be frustrating. But then again, I've also seen lots of my other friends who've like, like 30 ish, 33, even even later than that, that's it sort of when you realize they're like, I don't like what I'm doing. And I've still got another 25 years left of this, like, that's a huge amount of time to sort of look down the barrel of it and be like, you know what, like, I will die if I have to do this for another 25 years, and I'm going to be miserable with what I'm doing. So I think that this is almost like a, like a marriage counseling, there needs to definitely be some give and take like, it's, it's not crazy that your wife is thinking like that this would be kind of a scary thing to do a career change. But I think at the same time, you also need to talk to them be like, Look, I don't like what I'm doing. I'm really passionate about this thing, it might not work out, it's really hard to break into this thing. There's a lot of learning. But it is something that I think I want to go into. So how do you do that? I don't know. Like, the thing is, at the end of the day, it's all time, right? You just need more time to build to work on this thing. And it's hard to take that time away from, from family from kids. And I think that really at the end of the day, you just need to figure out what that looks like for you and make sure that it's a nice clear boundaries. So if it is twice a week, where you take the mornings and serve, you take like, I don't know, three, you wake up early, and you don't have to deal with the kids for two, two mornings a week or two evenings a week, or just something like that, you're like, Look, I'm gonna give me a year and a half to do this. It's definitely going to be hard on on you and on me and on the family. But I think that in the long term, it will work out for us. And I think that's that's what marriage is all about. It's all about give and take and things like that. So I think that you need to maybe sit down with them, maybe even go and see like a marriage therapist or marriage service, not necessarily just for when things are in danger. It's just for like configuring it out, I want to do this, I want to be able to communicate, I want to make sure that everybody's happy with this, it's going to be hard, but I want to make sure everyone's happy with it and figure out how that so that's not really good. You're definitely not being selfish in wanting to do this. Because again, like you have like at least how old you are. Like you you're 33 now like, you might work until you're, you're 65 like you have your entire life to double over doing something that you love. So, again, people ask us all the time, am I too old? Absolutely not. This stuff changes so quickly that you can come up to speed with it. You can sort of hit your we always say what is it again? Hit your horse to that wagon?
+
+15
+00:08:25,320 --> 00:08:26,760
+Scott Tolinski: Yeah, I think you say that.
+
+16
+00:08:27,240 --> 00:08:59,580
+Wes Bos: I said hitch a dog last time, which is not. But you get the point. You can Yeah, you get into this industry, I don't think the I think the thing with age is just that when you're older, you just don't have the sheer amount of time and there's so much more pressure to actually make it a thing especially if you have like a well paying job that you're trying to jump ship from. That's where it's really frustrating. We see that in the boot camp all the time. Or like people are coming out of these, like super well paying jobs. And and their spouse might not necessarily be on board, but there's miserable and what they do.
+
+17
+00:09:00,000 --> 00:09:22,080
+Scott Tolinski: Yeah. So I mean, it's it's a hard one with I mean, there's a lot there and at the end of the day, like you said you need that family support, right? So you need everybody to be on board, there needs to be you know, a bit of push and pull their I liked your your idea to go see a marriage therapist or something to talk it through because I think that is an important thing, just to have that communication. Okay, next one is
+
+18
+00:09:22,140 --> 00:10:05,820
+Wes Bos: one more thing. Well, I got one more thing to say is, whoa, well in here, um, if it's a hobby like there's nothing wrong with calling it a hobby because like certainly, hobbies can turn into careers, certainly hobbies gonna be very profitable hobbies, like, it might even be like a thing where you're like, for the next couple years, you just do some freelance on the side. Like that's a great way to make some money and learn as you go. And if you're starting to bring in an extra couple thousand bucks a month, I think people's tune changes real quick because all of a sudden you can I don't know go buy a boat or something like that with extra money or like go on a vacation with the family. And then once you've got some of that freelance under your belt then you can start over applying for jobs and making that jump word. Yeah, don't buy a boat. Save it. Yeah, save it for when?
+
+19
+00:10:06,480 --> 00:12:57,179
+Scott Tolinski: Unless you Yeah, you've dreamed of owning about. Okay, next question is from Melissa. Maya. So thank you, Melissa for giving us a pronunciation there. She even added a smiley face, which I presume is not part of the pronunciation. What is your advice to a very junior to junior devs? In writing cover letters for jobs part of me feels like cover letter is pointless. I wonder what to say without sounding like canned? I wonder what to say without sounding canned and fake? Thanks. This is a good one because I believe in writing cover letters, because I think it makes you stand out. It really depends there. There's some when I was writing cover letters a lot for jobs, there were some jobs that were sort of here's the sort of the job that I just need to apply for. Right. And then there's other jobs through like, this is my dream job. And you know it to be entirely honest, I never felt too unprofessional, like letting them know that that was my dream job for those dream jobs. And I didn't say it on every single cover letter. So it wasn't fake. So it was saying like, Hey, you know, I obviously don't say, hey, in your cover letter, but just say, Hey, you know, ever since I started my career, this is the exact kind of opportunity I've been looking for. And I would really, really love to get an opportunity, or I'd really love to get the chance to show you that, you know, I have the passion and skill to do this job for you. And so I think in my opinion, cover letters are always best when it's something genuine and from your heart. And to be honest, if it's the job that it wasn't that kind of thing, right? It was just a job that I was looking at maybe a job to hold me over, I would still do a cover letter, but it might be a little bit more canned, it might be a little bit more fake. But you know, I think the important part is, is that you need to do it. And the more and more cover letters you write, it's not going to take you that long, you could write a one page or a half a page cover letter, you could do that in half an hour or less. And in your your you know, your your job, hunt, whatever the job that you're going to get. I think that's important enough that you want to be able to do it. Again, I'm not a great writer, and, and I still wrote cover letters for all of my applications. When I was interviewing some people at one of my jobs, I was on part of this interview team. And I was just amazed that the poor quality of some of these applicants, they would just have a crappy resume, you know, sort of just half assed everything. And the ones who did a cover letter, even if it was a canned and sort of fake cover letter, they did stand out in a positive way. So I think you want to do it, and you need to do it. But again, those jobs that are really personal and the ones that you you can't see yourself passing, make sure you let them know that this is, you know, personal this is this is genuine, this is something that you really need.
+
+20
+00:12:57,899 --> 00:14:28,649
+Wes Bos: So well Scott was talking, I just wrote up what I would put on a cover letter because like, as someone who gets we've talked about this lots of email, and it's often just like you, you look at it, and you're like, like I guarantee is the same feeling for people who get 100 100 resumes, and they just like look at it. And it's just wordy. And people say they're passionate about stuff. And like come on, you know, like, at least to me, I just like look at that. And I'm like, I don't feel like reading this whole thing. So if I were, I'm going to use tm lacs, which is a really well known design company here in Toronto. So if I was applying for a job there, I would I would write this on my cover letter. Hello, I'm Wes Bos, a full stack JavaScript dev from Hamilton. I'd absolutely love to interview at your job. I love the work that T hen lakhs is doing, especially the project that you last did. And then mention one of the projects that you're actually interested in, don't just go look don't yet don't just read the latest blog post they have. I once saw john speak at a conference. And I was really intrigued at the stuff he did with Bell or something like that. And then please take a look at my GitHub for a few work examples. Make sure you check out the webcam one I had really fun making that I'd love to hear from you. That's it. Like that's what I would do love it really quick to the point shows who you are shows that you actually know what the company is. And you're not just copy pasting it. I think there's like a delicate balance of just going to their website and like picking one of the projects that they did and like if you're actually interested in doing a little bit of research on the company, and just mentioned that really quickly. So I think that's that's really what you got to head for.
+
+21
+00:14:28,679 --> 00:14:30,450
+Scott Tolinski: Yeah, I like that. I like that one a lot.
+
+22
+00:14:30,480 --> 00:14:31,980
+Wes Bos: Let me do one here. Oh,
+
+23
+00:14:31,980 --> 00:14:32,850
+Scott Tolinski: I do them all.
+
+24
+00:14:34,950 --> 00:14:40,679
+Wes Bos: Next question from I don't know how to pronounce this is it? We? We wi
+
+25
+00:14:40,679 --> 00:14:42,870
+Unknown: Ll I think it's Wi Fi.
+
+26
+00:14:43,260 --> 00:14:50,340
+Wes Bos: We Scott Oh, this is a question for you. I will ask it. Hey, Scott, what was the stack you're using at Ford?
+
+27
+00:14:50,370 --> 00:16:40,770
+Scott Tolinski: Yeah, um, okay. So I should preface this I don't I don't know how much I can get into Ford's exact stack or how they do things in production. But we were a part of a team, I want to say like a crack team of excellent developers from all over Metro Detroit who came together to produce a style guide that other developers would then come in and use. But our style guide had to be interactive. But guess what, we couldn't show off any of our code, it was just bizarre and sort of, I don't know, it was it was sort of bizarre in a lot of ways. Basically, we're a part of a team that was developing interactive prototypes. And these were more than just like your, you know, your sort of envision prototypes. These are actual clickable, essentially real apps just with sort of, you know, cans data. So the stack wasn't a full stack thing, or anything, that what we were using was canned data. And we were using Gulp as a build tool, we were using Angular 1.3 on the front end, and no database or anything, because it was all canned data. And then we had this really neat build process where it could transform everything right to left, left to right. or different languages that were more than just translating, because some of the things had to change in the actual the code base. But yeah, that that's pretty much it. It was just Angular. And then you know what it was, it was sort of, I don't know how to say this correctly, because they were all prototypes. And we been given short deadlines with lots of stuff. It was sort of like, Alright, you have two days, we need user testing on this thing really quickly to see how it works. So then we would stay up till two in the morning, like hacking together things as fast as possible. So it was fast and dirty, quick and sloppy. And it had I don't know, can you say quick and sloppy? I'm gonna go ahead and oh, yeah,
+
+28
+00:16:40,980 --> 00:16:41,909
+Wes Bos: absolutely, no.
+
+29
+00:16:45,240 --> 00:17:25,820
+Scott Tolinski: And that's just just how it was. So that not not too much info there. Because this is not obviously not the stack or the code that they're using in production. Very little of my production, or my work actually made it into production, which is kind of sad, because we built some really cool stuff. Shout out to Jeff Marcel, who is one of the devs there for me for a long time did some really great work for them. Okay, next one from Julian Zammit, other than reading the ducks. How do you guys go about learning or trying out new technologies? Do you rebuild similar applications or pick up an individual features that you think are sick? Thank you for you using sick, Julian?
+
+30
+00:17:26,429 --> 00:17:36,270
+Wes Bos: Yeah, I'll start with this one. I've talked about this in the past. And I think we did like one of our most popular episodes was called keeping, what's it called Keeping Up With The Kardashians?
+
+31
+00:17:36,390 --> 00:17:42,780
+Scott Tolinski: That one and too fast, too furious? I don't know if that was that was the name of my talk. I don't know what the episode was like how to learn things quickly or something.
+
+32
+00:17:42,800 --> 00:18:39,420
+Wes Bos: Yeah, how does something how to learn things quickly, we did a whole episode on it. But the short and skinny of it is a first I immerse myself in it, though I started, read a bunch of blog posts, watch a bunch of talks, talk to people on Twitter about it. And it sort of just like suck in all the information that you possibly can. And that will give you sort of an idea of the surface area of that tech, then you go ahead and try it out. So I'll try to like grab like a demo from GitHub, or follow like a tutorial of something that is already made, then I'll tweak it. So I'll change the demo to do whatever it is that I want. So like, okay, I did a whole crud operation with this content type Can I then change it to be slightly different and but do the entire same thing. And then finally, when I'm done that, I'll just scrap everything and then build it out from the ground up. Because that's really, I think, where the lot of the learning comes. And that's just my approach to it. I know a lot of people are different, they just like to take something and tweak it to to their app. But I found it to be a really good process.
+
+33
+00:18:40,050 --> 00:19:15,210
+Scott Tolinski: Yeah, you know, what I do is I install it, I give a quick glance at the code and the examples and I just start typing. And then I get a bug and then I fix it and I get a bug and then I fix it. And then I go back and reread thing and be like okay, so for me should have read that. Yeah, should have read that. But to me that part of it is really, I don't know instrumental. It's just how I learned personally, where for me, if I get my hands dirty, quick, Lee, it doesn't matter if I'm making a lump of sand rather than a sandcastle. All that matters is that I'm playing in the sand. I just came up with that on the spot.
+
+34
+00:19:15,780 --> 00:19:17,910
+Wes Bos: Good. Wow, that's good. You're so prolific.
+
+35
+00:19:17,940 --> 00:20:48,270
+Scott Tolinski: Yeah, I don't know how to I don't know how I do it, man. But really, to be honest, like, that's sort of what I'll do. I'll make a mound of sand and then I'll go back and figure out how to make an actual sandcastle. Because what's what's important is that you actually get to feel that like here, here's the way things work. Maybe here's how he did to be entirely honest, you may be a very different type of person, you might be going to the source and say, Okay, I need to know the ins and outputs of the inputs and outputs of every single one of these API's. And then now when I start playing with that, I know how it all works. But for me, like I'm going to understand how it works better if I'm breaking it rather than if I'm just typing something. So I like to just get my hands dirty quicker rather than later. Wes has a Brilliant transition here into this ad read a My mind's blown Westboro. Yes, playing in the Sanity with Sanity, I think you in the middle here for the Sanity, man, they really good, that's really good. And that leads us into one of our sponsors today, which is sanity@sanity.io, where you can use a really awesome service to have your back end for all of that front end, front end framework sort of stuff you love to do. And you might be wondering, what do I do for the backend? What do I do for my data? What do I do for my database? How do I get halfway, you know, how do I build something with persisting real data, user accounts and that sort of thing? Well, that's where something like Sanity comes in into play here. What do you want to tell us a little bit about Sanity?
+
+36
+00:20:48,690 --> 00:22:13,560
+Wes Bos: Yeah, so the idea is that you, you log in, and you can create your own back end with Sanity. So you've got, obviously your different content types, I'm just looking at some of the different examples that they have here. And one of them was that they, the back end of the beer festival in Copenhagen was was powered by Sanity. So you would imagine that you log in, and you're like, Okay, well, what types Do I need, you probably need a beer type. These are all the beers that are being served. But then you also need like a brewery type, which is like a relation to each of the beers, then you probably also need like days, like a schedule. So you need like events. And those have to be on a have date input types, and maybe images associated with them. And, and you get the point, like, anytime you make something, you have a back end, and you have to make all the different types. And you have to relate all the different types, you have to have all the different types of fields and have them as rich text so people can edit them. And that's what Sanity does. And then you go ahead and you grab reactor view or anything really anything that can consume an API, and then you you consume that API, and you go ahead and build it. So obviously, something like Gatsby is a really good good choice for using as a front end with Sanity. So if you want to check it out, go to sanity.io forward slash syntax, and you are going to double your free usage limits. So go ahead and check it out there. They have lots of examples to get you up and running. Speaking of how to, you can go ahead and play in the sand. Yeah, yes, sanity, so
+
+37
+00:22:13,560 --> 00:22:23,130
+Scott Tolinski: that way, you're gone, man. Yeah, you are. Yeah, that was that's good. This is why I'm out of practice. And yeah, I missed the last episode, and all of a sudden, charming crashes. Wow.
+
+38
+00:22:23,160 --> 00:22:26,580
+Wes Bos: That's why we get paid the big bucks here to transfer into those ad reads,
+
+39
+00:22:26,610 --> 00:22:30,960
+Scott Tolinski: look at that. Look at that. All right. Next question. You want to take this one?
+
+40
+00:22:31,290 --> 00:24:05,670
+Wes Bos: Yeah, from Brad, Xia z pronounce z Yo, or like seija? Is it always necessary to use set state in react when storing data, for example, a form input, even if you don't intend on re rendering the page? Or can you get away without using state. So this is a good example. So like, let's say you've got a form input, and you've got three or four, sorry, you have a form with three or four inputs inside of that. And then when someone submits that form, you want to go ahead and send that data off to like an API back end? Like is it necessary to do the whole song and dance of like when they key up, put that data in state and then reflect it back into the input? Like, if you just need it once? When you submit a form? Is it necessary to first put that data in state and then go ahead and take it? And the answer to that is no, unless you actually need it in state, you don't necessarily have to, it's definitely handy to have it in state. And I've definitely run across many use cases where I'm like, I'll just use a ref right here, because I don't actually need this piece of data. And then you're like, Oh, I need to write an error message with the data in the error message, or Oh, I want to like, loop over this data and clean it before I go ahead and send it and for me, anytime you need to do anything with the data, put it in state and then you can massage it and then you actually have it just in case. Anything else happens. Otherwise, you just have to grab it off the input value every single time. So yeah, you don't need it. You don't necessarily need it. Yeah. Although if you're finding it like cumbersome just to put it into state, I would look at writing some hooks or some sort of helper library. It's just a pop that and mirror that data to state. Yeah, I
+
+41
+00:24:05,670 --> 00:25:11,820
+Scott Tolinski: mean, there's a lot of form libraries that that do that kind of thing to hide it a little bit. So you don't have to do all those use states set states, whatever. I know that I'm not totally opposed to using refs for on, you know, on tracked witnesses, they would they call that on that I am not sharp trolled for uncontrolled inputs. Yeah. I don't intend on re rendering the page. Yeah. If you're not going to put that state in anywhere. Yeah. And it's easy enough to grab it out of the input dot value, right. And you submit it then yeah, that's really neat. You could do some html5 form validation to make sure everything's validated. You can always cleanse your inputs in different ways. But I'm not totally opposed to just using refs and having a forum so you don't always have to, but in many times did end up being easier to just throw it in state like Wes nailed, I think you nailed it answer. So I don't really have a lot to contribute there. Next question is from Timothy. And the question is development has a stereotype for being a young person's game?
+
+42
+00:25:12,180 --> 00:25:14,760
+Wes Bos: We just talked about this perfect. Sorry, keep going. We did. Yeah.
+
+43
+00:25:14,760 --> 00:27:55,110
+Scott Tolinski: As someone who started their career out of university, I often wonder about how long I can sling divs. For man, I'm glad slinging divs is catching on. Do you think you could make it to retirement age? Or do you think the game will change out from under you, the game will only change out from under you if you have your head in your head in the clouds that aren't looking at the ground. I don't know if that works. But the point being here is really that, you know, if you're paying attention, the game won't change out for money. I mean, so for instance, when when I started web development, everything I did was with out a database, it was just straight up HTML. And you know, what, if we needed a header to be repeated on some pages, we maybe just copied and pasted that header onto some other pages. We weren't necessarily working with PHP or anything. And then, you know, the CMS, the rise of the CMS, and every single client needed a WordPress site, every single client needed a Drupal site, they all needed them, right. And if you were not the person who was going to take the time to notice that, well, maybe you got stuck just slinging static HTML files one at a time and saving them up onto the server or you dragging and dropping them with FTP, like any of those things, right? That that change has already happened. So so much. So if you've been in the industry, for any amount of time, like, five, five years, you've probably seen things change a ton already. And if you aren't looking at the current state of things being like, Well what the heck happened, then you're probably fine. And you're probably going to be fine, because it means you at least have your head in the game a little bit. And that doesn't mean you have to learn all of the front end frameworks, it doesn't mean you have to learn every new bit of everything. But it's good to keep up on the core new technologies. As in like the additions to JavaScript, it's good to keep up on the additions to HTML, the additions to CSS, you want to be able to write the foundational stuff for all of those things as they evolve. And you want to at least be aware of new technologies. For instance, I am aware of Web GL, I'm aware of what is that? react 360, which is the VR react platform. I'm aware of augmented reality, I'm aware of all of these things, just enough to know that if I need to do jump ship quickly into something else, that I could do it before the masses have done it, and I will be marketable. hireable, whatever. Now, that's all changed, since I'm an educator full time. But you know, at any given point, it's at least good to have your eyes on the things you don't need to learn everything.
+
+44
+00:27:55,590 --> 00:28:02,580
+Wes Bos: Yes, as long as you're like, I don't think webcam on Leadville and obviously does change quickly. But I don't think it's as quick as people think.
+
+45
+00:28:02,640 --> 00:28:38,520
+Scott Tolinski: Yeah, like, you're not gonna wake up in one year and be like, I'm totally obsolete, but you will wake up in seven years. And if you don't change your skills at all, like what was the skill set seven years ago in 20 2012? I don't know. It's funny. In 2010, I had a job where the webmaster at our job was creating real media files all day long. That's what his entire job was. If you've never heard of like a real video real media file in real player, real player, and I wouldn't be surprised if that guy was still doing it. He was a lifer. So that that is an example of somebody who the industry has passed them by.
+
+46
+00:28:38,760 --> 00:29:43,260
+Wes Bos: Yeah, the very fact that you listen to this podcast makes makes me think like you're gonna be fine. Yeah. I think the as you make small changes every day, like we said, you don't have to learn absolutely everything. Just Just be even just listen to those podcasts once or twice a week, knowing what's going on keeping up with your skills, when new stuff JavaScript comes, take three hours and figure out what is it how do I use it? I think you're gonna be fine. I think the kind of the the other scary part about that is just like staying interested in something. Because certainly I've run into lots of people who have been at it for 15 years, and they're like, just don't don't care about this stuff anymore. And they're just uninterested in, in how it works. And it's changing, and there's just no motivation to actually learn this new stuff and to actually go ahead and implement. So I think that's a that's an entirely other issue where maybe you're just a little bit burnt out on web belt in general. Certainly some people like that and they just move into other programming areas like web development is not the only thing you could certainly get much more into databases or much more into back end work or
+
+47
+00:29:43,650 --> 00:29:45,390
+Scott Tolinski: even management more than like that.
+
+48
+00:29:45,540 --> 00:30:08,190
+Wes Bos: Yeah, management is like that's a whole nother skill set or be like a marketing Dev. Like that's, that's huge for a lot of people are like, you're not necessarily building stuff, but you're using your skill set to crunch numbers into AB test stuff and like there's just so many different areas. You could go into that, as long as you still like typing and figuring out problems, and I think you'd be fine. Regardless of what comes your way.
+
+49
+00:30:08,550 --> 00:30:20,310
+Scott Tolinski: Yeah, totally. Like you said, I mean, I think the message that I got out of your answer was listen to syntax. And don't stop. Listen Daigo mentor everybody, you know, listen to syntax, that's the answer right?
+
+50
+00:30:20,310 --> 00:30:27,840
+Wes Bos: Or what? Or maybe don't tell a friend because then they'll be the one that no doubt lose their job. No, I tell a friend. Okay, Dell friend.
+
+51
+00:30:27,930 --> 00:30:30,660
+Scott Tolinski: Just don't tell your friends. Tell the coworkers you don't like don't
+
+52
+00:30:30,660 --> 00:30:44,400
+Wes Bos: tell your enemies. Yeah, yes. Next question from monkey man. This one's again for Scott, you've mentioned you love hip hop. Would you be willing to share any playlist of your all time favorite hip hop
+
+53
+00:30:44,460 --> 00:30:50,610
+Scott Tolinski: artists? Yeah, sorry. There's a couple that are directed at me here. I figured episode to yourself. Get a couple. Yeah,
+
+54
+00:30:50,610 --> 00:30:53,040
+Wes Bos: we gotta give Scott some some time here.
+
+55
+00:30:53,070 --> 00:32:18,860
+Scott Tolinski: Yeah. Um, so I have a couple of playlists. And I've shared them recently. My favorite golden era rap music. There's 75 songs here. It's like, almost like B boy tracks but 90s tracks. I have another playlist. That's like level up tutorials rap music to code for Oh, no, not sorry. It's called just rap music to code to. And I'm going to tell you up front that but all of these playlists are going to be a little bit explicit, their their their Parental Advisory sticker on them. So these aren't ones you want to listen to with kids in the car, your son's like, it's rap music. So I have a couple of playlists, right music to code to and golden era. And I'll make sure that both of these playlists are linked up in the show notes for this episode, so that you can go ahead and just in throw those on if you're interested in that kind of music, you want to see some of my favorite albums. is funny, Trevor, see Trevor Trevor see media, Brad. Trevor. See, I'm sorry, Brad, if I've never heard your last name said out loud. He tweeted at me asking about some of my favorite albums. And there's like a little tweet thread where I have like, maybe like 2030 albums that I list. So I'll make sure that's all linked up in the show notes. You can check out my favorite rap music. If that is something you are interested in. Wes has had none. had none had none. Okay, so that means I'm reading the next question. Next question is from Brooke. Brooke, you have a wonderful name as the same name. We just named our new daughter. So excellent job on having a name that says Oh,
+
+56
+00:32:18,870 --> 00:32:23,160
+Wes Bos: you're gonna call her Brooke will probably call her a short. Yeah, lucky.
+
+57
+00:32:23,279 --> 00:32:46,110
+Scott Tolinski: We call her brookie. Right now to Landon. That's what he calls her. But we call her I plan on calling her Brooke. Brooklyn's great Oh, my color Brooklyn. Who knows? I think the intention is to call her Brooke. So what are your thoughts on html? preprocessors? If you use one, which ones do you prefer? And why I know you actually do use Windows us or you have in the past.
+
+58
+00:32:46,650 --> 00:33:47,040
+Wes Bos: I use JSX. Oh. I also use pug. Yeah. Which was Jade. And there's now pug on my node course, which is server rendered. And quite a bit of my own actually now not quite a bit. I've been slowly moving over my course platform to like headless. So all of the pug is is slowly getting re factored into into react with JSX. So I think that's still one. What are my thoughts on it? I really like them. It's there's obviously like a learning curve there, where you need to learn how that specific templating language works. And you have to also like the fact that it's based on indentation, things like that, but I've always been a big fan of it. I quite think that I really like it. I would be happy to see something like pug in JSX. But I don't think that's gonna happen. So it's not a huge put out for me just to use Jade or sorry, JSX.
+
+59
+00:33:47,430 --> 00:34:06,060
+Scott Tolinski: Yeah, I think I've tried a whole bunch of them. Like was the ej s? Was that one of them? Yep. Yeah, I feel like I've tried a whole bunch of them over time. And it is never anything that I stuck with. But always something I kind of liked when I did. And then like kind of hated when I ran into like a little bug here or there and just realized I didn't understand the syntax well enough.
+
+60
+00:34:06,390 --> 00:34:32,730
+Wes Bos: Yeah, I think that like, they're all better than than HTML. And they all have, I really like all of I really like Jade specifically, because you can use all of the JavaScript logic inside of it. So all of your ifs, all of your loops, everything that you're used to. And I wish that we had all of that logic in JSX instead of having to use loops or like for loops and weird if statements inside of it in order to do logic.
+
+61
+00:34:33,380 --> 00:34:35,960
+Scott Tolinski: I'm sure there'll be something and if there isn't already.
+
+62
+00:34:36,509 --> 00:34:44,610
+Wes Bos: Yeah, they're looking at it for we should do a web like a hasty on JSX 2.0. Yeah, with that, I
+
+63
+00:34:44,610 --> 00:34:51,000
+Scott Tolinski: just feel like there's no one for me. I know is existed forever and ever and ever within like,
+
+64
+00:34:51,230 --> 00:34:52,500
+Wes Bos: three years almost.
+
+65
+00:34:53,040 --> 00:34:59,130
+Scott Tolinski: It's been in web developer years. It's been like 40 years. Which is like what like a year and a half. Talk
+
+66
+00:34:59,130 --> 00:35:09,060
+Wes Bos: about getting out J sX 2.0 is only three, three years old. I've been talking about it. I don't know what the the it was locked in 2016.
+
+67
+00:35:09,599 --> 00:35:15,750
+Scott Tolinski: Yeah. And about in 2016 they had this conversation, and then it's locked.
+
+68
+00:35:16,109 --> 00:35:49,440
+Wes Bos: Yeah, I wonder if after like suspense is out, if that's what they'll turn their attention to is adding a couple nice things to JSX. Cool. So that's, that's my thoughts there. I think they're great. We just don't use them all that often because a lot of what I'm doing is moving over to react. And if that's the case, I know that there's some hacks you can do, but I'm not about to. I don't like doing like weird stuff like that. Like I don't like doing weird Webpack configs and things like that. rather just keep it pretty standard so that almost anyone can jump in and work on it.
+
+69
+00:35:49,979 --> 00:35:57,750
+Scott Tolinski: Yeah, that's funny. That that needs to go into the soundboard. Whoever is working on the soundboard. I don't like doing weird stuff.
+
+70
+00:36:02,850 --> 00:36:10,230
+Wes Bos: All right, next one we have is from chase lorette. I think how do you think I did on that one? Li r e TT?
+
+71
+00:36:10,400 --> 00:36:16,080
+Scott Tolinski: I'm gonna go ahead and give it a you know, a seven hours six, seven out of 10? I don't know.
+
+72
+00:36:18,170 --> 00:37:43,230
+Wes Bos: What advice would you have for someone considering to level up? Oh, they're, wow, go to level up tutorials.com forward slash store. By moving from a city with a few tech jobs to a city with more opportunity for tech jobs? What are some of the biggest things to consider when moving cross country to further our career? So someone here is talking about like, what what do you think about moving from Nebraska, or apologies to our Nebraskan friends don't want to move to Silicon Valley in order to level up in something like that. And I think that I know a lot of people who have done that in early in their career, and I think it's been a good move for them just because they're able to sort of cut their teeth and just dive into the head of it. I'm very much against that. Just because obviously, I'm very much about working from home, and being able to live wherever you want it. It's funny, because we probably have like the most like remote, okay, jobs we all have are all connected, and we all can do it anywhere you can get an internet connection, but people still seem to want to flock or still have to flock to these big tech centers in order to get those jobs. So I think it's probably a good thing. But I also think at the same time, maybe that should be like a, like a goal of yours in order to like stay where it is that you want and be able to work remotely.
+
+73
+00:37:44,360 --> 00:40:08,820
+Scott Tolinski: Yeah, I'm gonna go ahead. And I'm gonna disagree with you pretty hard on this one, because I'm someone who did this kind of thing I moved from, it's not necessarily the middle of nowhere, because you know, sort of by the the University of Michigan there, but I moved from essentially farm country in Michigan, to Denver. And so you know, in Michigan, not to hate on the Michigan devastating because it's awesome, right. But you had the SE JavaScript meetup. Right. And that was Yeah, like all things JavaScript. That's great, right. That's the big meetup. But in Denver, there's a meetup, which is where I moved, there is a meetup for literally everything in Denver is like not I mean, 10% of big tech scene. It's a big, big tech scene, but it's not San Francisco, right. And yeah, you still get some of the small town vibes in different parts of Denver, you still get like some of the small areas stuff. But at the same time, you have all of these different meetups, there's conferences out the wazoo here, there's some insanely good conferences, and so many of the ones that like, there may be even the touring conferences, we didn't get them where I was from, and we get them here. And so I don't want to hate on the Michigan scene at all, because the Michigan dev scene is great. But the difference has been pretty big for me in terms of the amount of stuff I can't attend in the amount of things that are at my disposal, networking wise, you know, I can go the React meetup here in Denver, and it's a packed house. And there's a ton of people there. And there's a ton of companies looking to hire. And it's really a different vibe. Now, that said, I've been out of Michigan for three years now. So I have no idea what the scenes like there now if you're don't play me about cuz I'm sure it's great. You're all wonderful. But, you know, I moved from somewhere that had less stuff going on to someplace that had more stuff going on. And I was surrounded by dev stuff in a different way than I had been before. So yeah, that that, you know, my tips for this kind of thing is to get out there if you're going to these things and make yourself visible, be a part of the community, talk to people find where the devs at, find where the devs that find out where they're at, and like make yourself visible and show up to all these events and really take full advantage of what moving to a place that has more to offer has to offer. So you know, those are my thoughts on it. I know that's a you know, the move to from someplace to Silicon Valley like you mentioned. That's That's hard. That's lot of money, that's a huge commitment. There's a lot of stuff they're not saying it's the wrong idea. It's the right right idea for a lot of people maybe just moved to Denver, then maybe just moved to Denver
+
+74
+00:40:08,850 --> 00:40:11,400
+Wes Bos: sounds like a pretty sweet place to live. Yeah, I
+
+75
+00:40:11,400 --> 00:42:10,130
+Scott Tolinski: know, my, my wife's gonna roll her eyes if you listen to this, because she keeps telling me I should run for political office here now, because I'd be good at politics. But because I just talked about Denver so much. On this wonderful city, where everything is candy. Another, you know, place where everything is, is candy, and wonderful is one of our sponsors, was just typing something in here in our show notes. But our sponsor, this week is a century, which is a longtime sponsor syntax here. And this allows you to track your bugs to make sure there are no bugs in your candy, which who wants that unless you're into eating bugs, which I guess is okay, if you're into protein. So one of our sponsors today is century now century is a longtime sponsor have syntax here, and they are the excellent bug tracking service over@sentry.io. And they're gonna allow you to track solve, and really keep stock of every single bug that you have in your application, whether or not that's in your front end, your back end. It also integrates with all sorts of different services, everything you could possibly know and love. Seriously, there are more integrations than I could ever possibly list off here. So I want to highlight a couple of these integrations. You can, you can connect to GitHub to have it connect to your error log. So you can connect a specific bug in actual code land to a specific area and GitHub land but also in Bitbucket, get lab. Any of those lands as well. You can connect it to your Heroku for development, you can track releases that way. All sorts of things like another one of our sponsors, over here, clubhouse connects to clubhouse. It connects to Asana, Trello, JIRA, Slack, I don't know what rollout is, but rook out pager duty Twilio, data dog Splunk segment, and there's too many to go through here. So head on over to century.io and use the coupon code tasty treat all lowercase all one word and get two months for free. Check it out. And thank you so much for century for sponsoring.
+
+76
+00:42:10,770 --> 00:42:39,110
+Wes Bos: Awesome. Next question we have here is from Paris. Ah, you both seem very involved with parenting your kids, which is really awesome. Thank you. Also, that's like, I don't know, sometimes when people like congratulate the dad for being a parent like, that's Yeah, the parents supposed to do. Anyways, what are your recommendations in terms of resources for first time dads and moms like books, podcasts, etc? And generally good co parenting advice for working professionals? Yes,
+
+77
+00:42:39,110 --> 00:44:00,780
+Scott Tolinski: a good one. Um, I don't have a lot of great necessarily advice, because I'm lucky enough that I'm married to a child psychologist who taught a master's level course on human development. So I sort of defer to the doctor for everything, say, Hey, Hey, Doc, what do I do here. But now that said, we had a couple of decent books, we're still very much in the early stages of parenting. So we haven't really had to get too much into discipline or anything like that. My wife did just purchase a book on our audible that she's heard is really good. And I have not put it on yet. But it's on my my to do list here. She's invited on yet either. But we've heard excellent things. So this is going to be going on the recommendations of other people that aren't us. But the book is pull it up here, how to talk so little kids will listen, ages two through seven. And it's this final guide for kids. I've heard it's a really great book. And I think it has some scientific backings in terms of you know how kids will respond to things. So that said, you know, one of our kids is a week and a half old and the other one is two years old. So we still haven't gone too much into this. I'm interested to hear what kind of resources you're all about Wes, and maybe pick up some tips from the master.
+
+78
+00:44:01,080 --> 00:44:07,320
+Wes Bos: Yeah, I don't. I'm like not much of a book reader. I know. We did read like bringing up baby.
+
+79
+00:44:07,440 --> 00:44:10,350
+Scott Tolinski: Oh, yeah, we read that one. Yeah, this class,
+
+80
+00:44:10,350 --> 00:44:15,660
+Wes Bos: really not a whole lot of books and things like that. I'm sorry to interrupt.
+
+81
+00:44:16,320 --> 00:44:35,550
+Scott Tolinski: Do you know what I did? Before Landon was born, I attended a dad boot camp that was offered for free from our hospital. And it was awesome. I did not want to go because I was like, I know everything. I'm gonna be fine. And I went to this thing. We're like, Dad boot camp. Yes. So if you have any boot camp, stuff like that available near you take it because it works.
+
+82
+00:44:36,150 --> 00:45:42,660
+Wes Bos: Awesome. I've never heard of that. That's pretty cool. I don't even know what my tips are. I really like to explain things to my kids as to what's happening and how things work and going to the grocery store with my love going car shopping with my kids because they asked so many quality. Yeah. Like where'd beets grow? Did they grow under the ground or over the ground? Or what is that made out of? Is that healthy? Is that a good price? Things like that. Just being able to like talk to them. Like they're an adult, I think has been very helpful and to, to stop and answer their millions of questions that they have. Having good communication with your partner, I think is really important. If you're both working professionals, my wife and I go on date night, once a week, which we find extremely helpful. Just because like, I don't know, it's, it's, it's really easy to talk when you're sitting there over a meal or having a drink or whatever. And rather than like trying to, like sit down or a talk when you're watching TV or something like that. And we've found that to be obviously that's a bit of a privilege. We have a babysitter locked in once a week for that type of thing. And I know a lot of my friends are just like, I cannot find a babysitter for the life of me, which is like just for like once a month rather than
+
+83
+00:45:42,660 --> 00:45:45,240
+Scott Tolinski: weekly. We're sort of in that same boat there.
+
+84
+00:45:45,690 --> 00:46:39,780
+Wes Bos: Yeah, it's so hard to find like a decent babysitter, especially like I live downtown. And there's like just no teenagers at all that live downtown. It's just all young families, and they're all scrambling for like the two kids that can babysit. And then just prioritizing kids over work. So I'm not getting frustrated when they although I just said Hey, be quiet like they were stomping up the stairs, they usually don't come up to their floor. But sometimes they come and ask for stickers and things like that. And you always have to make sure like, I'm busy right now. But Sure, let's talk. Let's get some stickers. Let's talk about what you're working on today. Because obviously, that that's really important. And then I think just being like, like we talked about earlier, the question is like, knowing what your partner's goals are with their career as well. And making sure that you're aware of that. I think it's easy to be selfish, when you're all tired and things like that. But knowing what their goals are and where they want to go so that you can try to help them through that as well.
+
+85
+00:46:40,050 --> 00:46:42,870
+Scott Tolinski: Work. Cool. All right. ready to move on?
+
+86
+00:46:42,870 --> 00:46:43,590
+Wes Bos: Yep.
+
+87
+00:46:43,590 --> 00:49:01,620
+Scott Tolinski: All right. Next question from Anthony Brock Kuma man Anthony. Awesome. Bryan Kuma. Thank you so much for that pronunciation. I nailed it. Love the show with Travis. Me too. Travis is amazing. had a question about the gap. Similar to design ambitions tastes surpassing current skill, when did you feel like your code had grown up, and that you could actually do what you envisioned with JavaScript? I have. I don't know if I have a very specific story for this. But I have like a very clear understanding of that moment, there was something when Meteor came out. And it was it was along the lines actually, maybe around the same time that Angular one was like starting to pick up steam, where Meteor with a little bit different for me because it had a database, and it's persisting, and it had WebSockets, and all that usual, all this real time stuff. And it was all these things I couldn't do before. And I remember I created this, my boy tools app, the original version of it, which is, you know, the app is is not really in great shape right now. Because I haven't touched in a while. But when I first created it, and I was thinking it'd be really great if I had this tool that could keep track of all my breakdancing moves and categorize them. And, and and I created something that took values from each move. Like, if I had a dance move that I deemed to be a nine out of a 10 value in terms of like wow value or something, right, I gave all of my moves values, I wrote some code that would generate collections of moves that I could do in a competition together so that all of my sets, as we call them would be evenly scored. So like it would, if I had an level nine to move in my set, it would balance it out with like a weaker move. And then another one, it would be you know, so the average that I remember creating this thing, and that popped it out, and just being like, wow, wait, I made this what, like, this is something that I couldn't have made last year. So there was a very distinct moment when I was comfortable enough in JavaScript to be able to create something like that. And it just felt like holy cow, if I can create this, the possibilities of stuff that I can create beyond this are pretty much endless for me. And like it's only going to be limited by the energy I put into it. So even though you know, Meteor did a lot of that stuff for you. At the time, it was still just sort of a wow moment for me. And I was very, very happy with my skills at that point.
+
+88
+00:49:01,980 --> 00:50:38,430
+Wes Bos: I had sort of two big aha man, I can make anything moments. The first was when I made like a custom custom field in WordPress, or just custom fields in general, most WordPress and custom post types, because you realize, like, oh, everything in the world is just a type that has fields in it. And they can be related to each other and, and I can write queries to pull any of this data. And for me, that was like a big aha moment and being able to say like, Oh, I can, you can pretty much make anything at this point. Because I know what it is. Obviously, there's some limitations in WordPress, but you can you can really do a lot at that point without having to like worry about plugins and things like that. Just making it all from scratch. And the second one was when I wrote my first middleware and express so I've been building Express apps and sort of piecing stuff together and using plugins and at a certain point, I think I like console, I wrote a middleware and I like console log the entire world. request. And I had a database connection. And I was like, I have everything at this point I have the all of the things that had happened in this request is in this one object. And I have a connection to a database that I can pull data from and put data into. And at that point, you go like, oh, wow, like, this is what it is. This is what it is people are sending requests in. And I can do anything at this point. And that was like a really like relieving moment to Me, me remembering that, but like, I like obviously, it's gonna be hard. And I have to figure out all this JavaScript stuff. But I know how this all works. And I'm pretty sure I can figure anything out. From here on out.
+
+89
+00:50:39,030 --> 00:50:41,130
+Unknown: Word. Cool. Yes,
+
+90
+00:50:41,130 --> 00:50:45,030
+Wes Bos: I think that's enough questions for today. Should we get into some sick pics?
+
+91
+00:50:45,060 --> 00:51:06,840
+Scott Tolinski: Sick pigs? All right. For those of you who don't know, this may be your first episode of syntax. See, pics are the pics that we have that are sick. They're stuff that we like, could be literally anything and I'm using literally correctly there could be I mean, I think we've sic picked some of like the weirdest stuff like a TV channel before or something so you can pick pick anything you want. Do you have a sick pick? Ready and ready to go here?
+
+92
+00:51:07,410 --> 00:52:57,240
+Wes Bos: I am going to sick pick a sound machine. Oh, so are you one of these people who needs to sleep with a fan on you bet louder the better asked. Yeah. Yeah, I love having a fan on. And it's funny that sometimes when like we go to a hotel or something like that, and there's not like a fan or anything like that, I always go to the website, noisily and oh, s Li. What is it noisily.com. And you can just like mix your own little background noises. Like I always try to throw a little campfire in there. And Caitlin hates it. So you can do like rain and things like that. Anyways, just sound machines in general helped me sleep. And we've had sound machines for our kids. like crazy. We've had a bunch of these different random sound machines that you buy at the drugstore. And we recently got a new one that's called the marpac roem. white noise machine. And it just has like the most bacey I can't even describe it. But like the kids sound machines kind of stressed me out because the the sound of it, I didn't really enjoy it. And the I don't know if it's the quality of the speaker in this one or just the the recordings that they have on the white noise that they have on these ones. It just has like a very bacey sound to it. And I just I say it's hard to describe on this podcast, but we like turned it on. And we're like, this is so nice. I love this one. And we got another ones we have two of them in our house right now. It has a battery in it. So you can just charge it via USB, which is a must for me for any kids stuff these days. And then it has a battery, which I think will run about eight or 12 hours without a charge. Which is great. So you can just like sometimes if you don't have have somewhere to plug it in with when you're traveling, you can just take it with you so called the marpac Rome white noise sound machine. And I'm a big fan of it. Hmm,
+
+93
+00:52:57,780 --> 00:56:02,370
+Scott Tolinski: nice. Cool. I yeah, I'm gonna check that out. We use this like turtle right now that's probably not very loud. It makes like, some weird noise. And it's like sort of like oceany noise and does like a light projection, which is kind of nice. But oh yeah, yeah, yeah, this for layman's term. And for the light projection, I made this like really dope Twin Peaks esque style video with a light. I don't know if you've ever watched Twin Peaks that I've a feeling no of it. But it's like this weird light projection on his face and this sort of dreamy sound. And it was like something straight out of an avant garde film, and I loved it. Okay, On another note, my sick pick is going to be the Oculus quest. And let me tell you, this thing is legit. I've been waiting to buy a VR headset for a long time, I've had a daydream, which is the one your phone plugs into, I had the Google Cardboard, you know, these are just cheap little things you can use your phone to, but in terms of like the Oculus, or the Vive or any of those are vive or vive I don't know how people say it. And in terms of the any of the other headsets, they'll need a really you know, big powered powerful PC of which you know, I'm a Mac guy don't have a big powerful PC, I had one at one point. But you know what, I don't really want to be tethered to my computer. I like to keep my computer in my office is sort of my office space and not like gaming space or anything like that. So the headset those kind of headsets just weren't more quite for me. incomes the Oculus quest which is an all in one unit. So it's a bit like a bit like the the cardboard or the Daydream where it's like putting a phone into a headset. But this thing is so dang words can't really do it just to see kind of kind of go and try it or something like that. It's VR headset, you can draw in your your area. And if you get too close to like leaving that play space, then it like shows you that you're approaching your boundary. So what we do in my living room is I just sort of move a couple of chairs at draw this big old space in the living room. If you want to see me do it uh maybe I'll have a video I had there's a corny posted a video on Instagram but it's gonna be gone by the time you're listening this but Basically, I just draw the space in my living room. And I know that in this space, I'm free to move around, I was playing a game in VR last night. And there were people, it was like matrix bullet time, it's called super hot for those of you know, it's like bullet time, like the matrix, right, and you move really slowly. But there, there's so much room, in instance, you're not wired or tethered to anything. Like, there's bullets coming at me in slow motion, and I'm laying on the floor in my living, I'm like laying on the floor to dodge these bullets, and hiding behind things. It is incredible. This is the first VR headset that I put on, and then like, this is gonna change things. I'm loving it. Even my parents were playing like one game where you're either shooting targets or dancing with the robot or throwing paper airplanes. And my parents were using this thing and they took it off. And they were just like, we got to get one of these. So I really think this thing's gonna blow up once more people use it, because it's really that super cool. So Oculus quest. Is my sick pick for the day. Yeah.
+
+94
+00:56:02,550 --> 00:56:07,620
+Wes Bos: sick. I saw that video of you dancing around with it with it on Oh, yeah. Hilarious.
+
+95
+00:56:07,650 --> 00:56:08,430
+Unknown: It is hilarious. I
+
+96
+00:56:08,430 --> 00:56:12,780
+Scott Tolinski: know. It's funny, because you have this whole thing on the I didn't know Courtney was taping me while I was doing that.
+
+97
+00:56:13,080 --> 00:56:18,690
+Wes Bos: So it's like, haha, yes. Nowadays. That's great. What about shameless plugs,
+
+98
+00:56:19,080 --> 00:57:24,480
+Scott Tolinski: I'm gonna shamelessly plug my new course which came out yesterday. By the time you're listening to this, it's weird to say that say I haven't even started recording this course yet. But it came out yesterday, that shows how we're how far in advance we're recording these in the courses. Forgive me on the title of this course, this is a sort of pre release course name here. So by the time you're listening to this, the course name might change. But the course is going to be dev tools and debugging. It's going to be a full on guide into your Chrome Dev Tools, but not just Chrome Dev Tools, debugging techniques, we're going to have exercises, things like find them, find the the, you know the time sink in terms of performance, we're going to be diving into every single tab that you could possibly think of, we're going to be talking about how you can use those tabs to find and fix any of your problems. And we're going to be talking just a little bit about general debugging techniques. So this is one of these core skills that you're going to need to have in web development. If you're interested in learning, debugging and dev tools, head on over to level up tutorials.com forward slash pro and sign up for the year save 25%
+
+99
+00:57:25,020 --> 00:58:05,070
+Wes Bos: I'm gonna go into just sick pick all of my courses. By the time you listen to this, I might have my bet, depending on when baby boss comes, might have my beginner JavaScript course launch. I'm recording it right now as we record. And it's been a long time coming. It's not a huge course. But it has been like a tough course to sort of put together in terms of like, how do you teach JavaScript to beginners, in a way that is super interesting, but also like, you can't just make amazing stuff out of the gate. So I'm really happy with how I've put it together. That will be at Wes bos.com forward slash courses. Nice. That's it for today. Thanks for tuning in. And we'll catch you next week.
+
+100
+00:58:05,310 --> 00:58:05,820
+Unknown: Cool,
+
+101
+00:58:05,820 --> 00:58:07,620
+whose face
+
+102
+00:58:09,450 --> 00:58:19,200
+head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

@@ -1,0 +1,520 @@
+1
+00:00:02,820 --> 00:00:08,099
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:11,130 --> 00:00:45,780
+Wes Bos: Welcome to syntax. Today we are talking about accepting money on the internet. We're sponsored today by Freshbooks. We talked about Freshbooks in the last episode, and well look who came over to sponsor an episode for us, which is pretty cool. I'm going to talk a little bit more about Freshbooks partway through the episode. But for now, all you have to know is that they are an awesome cloud accounting software. And you can get 30 day free trial over at freshbooks comm forward slash syntax and enter in syntax in the How did you hear about us section? Welcome, Scott. How you doing?
+
+3
+00:00:46,050 --> 00:00:47,730
+Scott Tolinski: Doing? super good. How are you?
+
+4
+00:00:48,540 --> 00:00:51,480
+Wes Bos: Pretty good, pretty good. What are you working on these days?
+
+5
+00:00:52,050 --> 00:01:29,880
+Scott Tolinski: A whole bunch of stuff, recording some, some random new series, right. So like, there's some series that didn't want us to do for a long time, like go over some code pens that are popular, or maybe making waves or people are talking about and just sort of breakdown how they're done? None. They don't have to be like super tough ones. But like, just interesting for various reasons. Like the one I did for the first video was a really simple just like card flipping animation, but because of use of like perspective, and the use of z transforms. It made it really interesting. And the code wasn't complex or difficult at all. But it was nice to sort of just like highlight what's going on in that stuff.
+
+6
+00:01:30,780 --> 00:01:31,410
+Wes Bos: Yeah, yeah.
+
+7
+00:01:31,440 --> 00:02:04,980
+Scott Tolinski: Yeah. So I'm also recording a couple of new series and recording a free series on Gatsby right now, that's going to be out soon, I actually have three episodes that are just waiting to be published. So probably do that right after we're done recording. And then good. Yeah. And if you saw figmas, big release of their, like 2.0 package, or like prototyping features and stuff in there, you may have noticed a familiar voice on the video tutorials. So I got to do some videos for figma. And it was really super cool. And hopefully I get to do a few more.
+
+8
+00:02:05,850 --> 00:02:18,440
+Wes Bos: That's pretty cool. I've still yet to for those who didn't hear the last time we talked about figma. It's sort of like an online editor sort of replacement for sketch, which is pretty neat. I'm excited to try it out. Yeah,
+
+9
+00:02:18,470 --> 00:02:22,560
+Scott Tolinski: a lot of really, really cool features. Yeah, so what do you what do you what are you working on?
+
+10
+00:02:22,710 --> 00:03:35,820
+Wes Bos: I am today is actually a holiday I didn't realize part of working for yourself, is that you just take vacation whenever you want. And then I totally forgot when we scheduled this recording that today is a holiday but totally fine. Because I'm heading off on vacation next week. I'm working on graph QL. Mostly last couple of weeks have been like super heavy into understanding reading the whole graph qL spec, understanding what it is and how everything works. And then just the last a week or two I've been diving into and building quite a bit of stuff with Apollo, which is kind of neat, because like graph qL is the sort of like graph qL is like the the spec the standard. And then you have a graph qL server, which I'm still investigating a couple different server possibilities. But in order to interface with the graph, qL server, there's this thing called Apollo, which is from the meteor Meteor folks where you can it makes just fetching data, performing mutations, storing all of your data in a single Redux store makes it all really, really easy. And it's been like, I just been surprised at how like really nice it is to work with. So pretty happy about that.
+
+11
+00:03:35,880 --> 00:03:48,690
+Scott Tolinski: Yeah. If you were to see my computer right now, I probably have like, six or seven tabs open between Apollo and graph qL stuff just because it's so much there right now. And uh, it's really, really cool tech.
+
+12
+00:03:49,110 --> 00:03:58,980
+Wes Bos: Yeah, it seems to be really heating up. It's it's all I've been been hearing about for the last month or two. Yes, it's been around for a while now. But it seems like people are starting to really get into it.
+
+13
+00:03:59,010 --> 00:03:59,910
+Unknown: So yeah,
+
+14
+00:03:59,910 --> 00:04:02,010
+Wes Bos: I thought you should see some stuff from me on that.
+
+15
+00:04:02,970 --> 00:04:25,740
+Scott Tolinski: Yeah, yeah. I think some of the The reason it's hitting up is just that there's more technology around it right. Like you said graph qL spec is has been there but now you know Paulo's getting, you know, hired version, it's getting a little bit more mature here. And there's things like graph cool and all that stuff that you've mentioned before. So yeah, really? Yeah. So it's,
+
+16
+00:04:25,920 --> 00:04:54,770
+Wes Bos: it's finally getting like, I think approachable for us mortals. Which Yeah, it's funny cuz I initially thought that it was a bit hard to get up and running. But now, both with graph cool and Apollo, I feel like I feel like that's it. Whereas when I was initially learning some react stuff, I was like, really that much? And now I'm on the flip side where like, that's it. Oh, wow. It's it. We talked about it earlier. It's like it's a little bit of magic, which I definitely like
+
+17
+00:04:54,870 --> 00:05:12,020
+Scott Tolinski: Yeah, yeah, I'm looking to integrate into my stack as well. But there is There's some very, I mean, obviously, because it's written by the people behind Meteor that the using Apollo in Meteor is actually like, is really nice. Just trying to find the time to make that happen.
+
+18
+00:05:12,770 --> 00:06:08,370
+Wes Bos: Yeah, yeah, totally. Yeah. Cool. So today, we're gonna talk about something we both have quite a bit of experience with and that is accepting money on the internet, when you want somebody to buy something from you. How do you do that? What are the different services that you can use? What are the different code libraries we can use? What are some of the things you have to know about? I'm from Canada, I believe in us. So I've got a lot of like, sort of gotchas when you're at from an international customer. So there's really a lot to sort of learn about how to best accept money on the internet, and not get hosed on fees along the way, as well as make sure that you provide a really nice checkout experience for your users. So obviously, I accept credit card and PayPal on all of my course websites. What about you, Scott, what do you use? And
+
+19
+00:06:08,460 --> 00:06:23,580
+Scott Tolinski: yeah, so I'm also just accepting credit card and PayPal, or Initially, it was just credit card, but I was getting a lot of pushback on not having PayPal. So I did add PayPal. You know, for reasons that we'll get into. It was,
+
+20
+00:06:23,940 --> 00:06:27,750
+Wes Bos: yes, always. I've got some hilarious notes here on on paypal.
+
+21
+00:06:27,780 --> 00:06:33,150
+Scott Tolinski: Yeah, yeah, I know. It's it's total wreck. But But yeah, so also doing both of those.
+
+22
+00:06:34,050 --> 00:08:19,650
+Wes Bos: Cool. Alright, well, let's start with the sort of the three big services that make it easy to accept money on the internet are the two that make it easy, and the one that makes your life miserable. So there is stripe, which is what's called like a payment processor, or a payment gateway, which stripe has taken all of the complexity of accepting credit cards on the internet and debit cards. And they're actually they're moving into some more stuff right now. But it's primarily credit cards. And the way that it works is that you accept the credit card on your actual website. And stripe will take care of handling the number checking the checking if it's fraud, checking, if it's cracked, one of the CVC number, all of the sort of heavy lifting behind accepting a credit card on your, your website, stripe will do that all for you. And then you just have to focus on building your app and not have to get into the nitty gritty of actually doing that. So stripe is what I use primarily for all of my transactions, it is probably one of the best services I've ever worked with. Everything from how easy it is, from a developer perspective, I think that it's been built as a developer first tool, because it's not really like it's not really a consumer application. It's just a bunch of API's, and then a dashboard that you can see all of your data coming in. Yeah. And when I when I set out to implement it in my app, I was like, wow, this is this is beautiful. It's super nice. The documentation is fantastic. All of the examples are really, really good. Yes. Really happy with stripe.
+
+23
+00:08:19,830 --> 00:08:54,870
+Scott Tolinski: Yeah, if I were to, like have a documentation Hall of Fame, I think stripe would be right up at the top there. And it's always been good. And it's only gotten better. You know, it's not like it was good. And has, you know, stayed the same. they've improved in so many ways over time. That just made working with stripe way, way, way, way better than others, really. But yeah, I mean, overall, overall stripe is is the way to do it for that. I mean, the interface, the developer experience, everything is just been just pretty much a dream after working with others, right?
+
+24
+00:08:55,620 --> 00:09:33,120
+Wes Bos: Yeah, yeah, exactly. So we said credit cards. It also does accept debit cards, which is pretty big for for me at least I have a fairly large international audience who doesn't necessarily have credit card. So they do a lot of debit cards, a lot of what's called a Payoneer, prepaid, which is sort of like, like a rechargeable credit card that's pretty popular in India, a couple other places around the world. They do acth transfers, which I've actually haven't done, I've got a few requests, but as far as I know, that's sort of like a direct withdrawal right from your bank account. Do you do any of that Scott?
+
+25
+00:09:33,149 --> 00:09:41,519
+Scott Tolinski: I have it. I have it configured to do that. But I have not accepted any transactions in that way. So yeah, well, yeah,
+
+26
+00:09:41,580 --> 00:11:17,460
+Wes Bos: I would like to turn it on. Eventually I would like to turn absolutely everything and we'll we'll talk about why I don't have all of those things turned on. Just right now. I'm on the flip side. So stripe is the best piece of software in the world. And then on the flip side, there is this PayPal, which I like to gripe about PayPal, everybody gripes about PayPal. And usually what happens when I gripe about PayPal is people like, why don't you just use stripe. But the thing about PayPal and stripe is that they're not total replacements. Obviously PayPal will accept a credit card. But the big thing is that is that lots of people have a PayPal account with money loaded into it, what I found I used to not accept PayPal because it's so hard to integrate into your actual your stack, but people have sort of like fun money or off the grid money or money that's not part of the the daily budget in their household. And they're able to use that for buying things like training courses. So that was huge for me, as well as PayPal is big all across the world for people who don't necessarily have credit card debit card, most people will have a PayPal account that they can use to to buy your courses. So when I integrated PayPal into it, it was my sales went up quite a bit. I used to manually do it. And when I when I integrated it myself, quite a few people started buying it just because it was available to them.
+
+27
+00:11:17,490 --> 00:11:59,340
+Scott Tolinski: Yeah, I had the same experience in terms of sales going up or whatever finding that people just, you know, they they can't use stripe, for whatever reason. But they have this this paypal account, and the demand was so huge for just that adding it was was a big boost to the site overall. But it was it sort of made it worth the pain of integrating. Yeah. And well, I mean, we'll talk about that that pain, I guess in later on. But really, it's it's just like a matter of developer experience, right between stripe and PayPal. You do it, you add a PayPal you get it working. And then yeah, that's it, you know?
+
+28
+00:11:59,519 --> 00:13:06,269
+Wes Bos: Yeah. So maybe we should talk right now about like, Why don't people like PayPal? And there's a lot of reasons. First of all, they're huge monopoly, they take a much larger cut, then then a lot of the other the processors, especially for me, who's International, they seem to thing Yeah, I think it adds up to about 4% of, of each transaction when somebody uses PayPal, they have been known to just randomly freeze funds. I, I still remember the, the call I got when I launched my react series. It was just blowing up. And I got my phone rings, and I look and it says PayPal. f What are they gonna do? And I picked up the phone. I was like, hello. And he's like, Don't worry, we're not seizing your funds. First thing he said was like, Why are you calling? No. And it was, it was it was thankfully it was them being like, hey, like, like, what's going on? What are you doing? My obviously my sales had spiked. Yeah, but they
+
+29
+00:13:06,299 --> 00:13:45,899
+Scott Tolinski: they confirmed it. And it was it was always good. But I I try to keep every dollar out of my paypal account, because there's so many horror stories of them just locking up everybody's money. There is an even like, sort of shady stuff with maybe damaged goods and returns and basically money sort of floating in the nebula, sort of Yeah, where those refunds are actually going or whatever. I mean, you know, yeah, I think PayPal is one of those companies that it It represents this this big, monolithic thing that's been around forever. And it's a necessary necessary evil. Yeah. Yeah.
+
+30
+00:13:45,929 --> 00:15:03,330
+Wes Bos: Yeah. It's, I mean, it's a hard problem to solve. Like, I also wouldn't want to, to work there. Because not, not from like a developer standpoint. But like, I wouldn't want to be PayPal trying to solve all these problems, because right, they have to deal with fraud and international government rules and all that. And that's what, that's what stripe does so well is that stripe makes it seem so easy. But I know behind the scenes, that stripe is doing some serious heavy lifting, to make it easy for us in the consumer. Whereas Pay Pal sort of drops all that complexity on your lap, whether it's in complex fees, or in terms of like how to actually integrate PayPal into your, your stack is incredibly complex. There's probably 70 different names for different libraries, different ways that you can there's like Pay Pal banana, and pay pal Deluxe, and oh, hey, pal, pepperoni. And like there's like and then by each country, they change the names of them. So if you ever want to look for documentation, it's just a black hole of documentation of examples that don't work anymore of outdated libraries. And it's just a very, very poor developer experience.
+
+31
+00:15:03,360 --> 00:15:53,549
+Scott Tolinski: That's the hardest part about about working with PayPal is that when you don't know the name of anything that you're actually trying to do, like, if I'm just trying to, you know, if I'm trying to integrate just a simple, you know, payment button that sends into PayPal comes back through, you know, URL or something like that. What services that they don't they don't make it obvious at all based on their naming. They don't. Yeah, like you said, there's just 100 different names for things. And the developer spirit experience couldn't be any worse. I know, we both had the same experience of fully integrating like, I brought in like a, I thought I had everything totally good. And I'm getting some totally ambiguous error back when I hit their API. And it turns out, yeah, oh, all the doc, all the docs are out of date. And we just got a new version This week, but we didn't update any of the docs. So
+
+32
+00:15:53,759 --> 00:16:25,500
+Wes Bos: yeah, then they don't version their API either. So I just had, like, I what was happening is that they just changed the JSON response that came back from the server randomly, right? All sudden, I had, actually I didn't have failing, I had the opposite, which was the ability to for people to buy a course and then sign up multiple times. Which luckily never happened. But it's it was totally, totally doable.
+
+33
+00:16:25,769 --> 00:16:51,779
+Scott Tolinski: Yes. Is nuts. I don't know. I I'm optimistic that they've shown signs of improving it. But like, Yeah, I don't know. It's like a giant tangled web of wires, right. Like, it's, it's, there's so much legacy stuff. It's so large that untangling this, like giant rat's nest of, I don't know, issues that they have over there. Yeah, I feel like it's,
+
+34
+00:16:51,960 --> 00:17:33,540
+Wes Bos: it's definitely hard. Like I talked to Kent C. Dodds, who's fairly popular in JavaScript, he works at PayPal, and he always is so sad to hear that I'm frustrated, which is amazing to hear. Like, there's obviously lots of really good people out, oh, yeah, you work there. I don't mean to demean your work at all. I'm sure you're doing really good stuff, especially the interface of PayPal is getting really good. So the back end of managing used to be like, click something, sit and wait for three minutes while it loads. And then like random errors, or just give you like, Times New Roman error on a white screen. So that seems to be going away. And the inner that I think they're building a lot of react interfaces, which is cool.
+
+35
+00:17:33,540 --> 00:18:16,260
+Scott Tolinski: I just think it's going to take a long time, then the native apps really nice, too. Yeah, I found the native app experience to be better than the web experience overall. But yeah, no, I think they're they're definitely making improvements and a lot of great ways. So we'll see where that heads I would love a better developer experience, or at least a more reliable one. And then, yeah, I'd be I'd be, because I've been putting off integrating my subscription service into PayPal. I have subscriptions, and they're all done through stripe. And so I get a lot of people asking for subscriptions through PayPal, and I just don't know, I haven't decided if I want to make that bullet yet. Right. Normal payments. Yeah.
+
+36
+00:18:16,850 --> 00:20:51,930
+Wes Bos: So at this point, you're probably screaming at the your podcast player being like, why don't you just use the third one, which is Braintree. So PayPal went out and just bought an entire sort of a processing company like stripe, which is called Braintree. And it does a lot of the similar the same things to to what stripe does. But what the one huge benefit to Braintree is that it has PayPal baked in, meaning that if you're accepting credit card or PayPal, it doesn't really matter. Because you just use one single set of JavaScript APIs to interact with Braintree. And then it gives it gives all of that for you. So I get this all the time. A lot of people are like, why don't you use use Braintree? And I wanted to answer and maybe I'll point people to this podcast because I get this question all the time. It seems really good. The API's are really, really nice. I've actually integrated it into my entire stack already. The downside to it from my side is actually what's called a red tape, which means that in Canada, Braintree is actually just sits on top of another credit card processing company. And you need to go through their entire vetting process to become a merchant with that underlying credit card company. So when I initially applied for it, they would they first asked me for like the actual website that it was going to go on to as well as your terms of service and your refund policy and all of the stuff which it didn't have because the website wasn't launched. Yet, so there was no way for me to launch with Braintree because they were telling me you needed the website up first. And then once the website is up in Canada, at least this is not in the US I know it's much different. It's about a three to four week, wait for them to actually approve you. And that is per domain name. So the way that I sell my courses is that I launch a new domain name for every single course. And they need to do this one month long approval for every single domain name that you you deploy your stuff do so it just wasn't an option at the end of the day. And the hilarious thing is that Do you remember I don't know if you remember this, but remember back in the day with credit cards where they would put your credit card on this piece of carbon copy paper? Yeah,
+
+37
+00:20:51,930 --> 00:20:53,550
+Scott Tolinski: absolutely. Yeah.
+
+38
+00:20:53,550 --> 00:21:44,790
+Wes Bos: They sent me those nice. And then they sent me like a, we accept Visa and MasterCard sticker that you put in your window, like say they obviously had run me through the murders home. Yeah, like the merchant application, which is again, another thing that stripe does is that they they understand doing business on the internet. And they know they do not need a window sticker and carbon copy. Right? So I don't know, it's it was just a bit of a headache to go through. I really wish that Braintree would work. Because the one thing that they do is they give you the only way I've ever found possible is that they do the PayPal checkout in place, meaning that you don't have to like go to paypal and come back to the website, you can just do a little pop up in line without having to ever leave the website.
+
+39
+00:21:45,110 --> 00:22:33,570
+Scott Tolinski: Yeah, I think what I was initially investigating, I was just a little confused about all of again, all of paypals offerings and where Braintree fit into that. It looks like I'm on their site. Now it looks like I think they've clarified things quite a bit more. I don't know if the the site before had this much. I don't know explanation or clarity of the differences of their different products. But either way, it looks a lot. It looks a lot nicer in terms of explanation I might have to investigate. Moving to Braintree. I don't know I haven't had that much investigation about it because I got set up with stripe, and I haven't wanted to change it. But if this can get me a little bit easier, PayPal integration and maintain, you know, custom credit card forums, all that stuff. Be cool with this.
+
+40
+00:22:34,920 --> 00:22:46,260
+Wes Bos: That I would do it in a heartbeat because I don't like having to maintain two sets of API's one for stripe, and one for PayPal, like my killer feature for stripe would be accept PayPal.
+
+41
+00:22:46,260 --> 00:22:48,960
+Scott Tolinski: Yeah, right. Exactly. Absolutely.
+
+42
+00:22:48,989 --> 00:23:05,400
+Wes Bos: Which I hope maybe one day they will do I don't know if that's possible or not. But if you have subscriptions, you just have one set of subscriptions with Braintree. But again, that doesn't help you. You already have subscriptions in stripe, though. I know. Right? Right.
+
+43
+00:23:05,790 --> 00:23:11,850
+Scott Tolinski: Yeah, that's a great. That just adds a little bit more. So
+
+44
+00:23:11,970 --> 00:23:36,180
+Wes Bos: I as you can tell, I'm, there's pros and cons to all of the different ones. And it's it's not easy. And at the end of the day, it's definitely worth putting in the work to making all of them work. Just because it will help increase your sales at the end of the day. Like I could complain all I want but integrating PayPal. But if people are paying me more money, then I have to kind of be quiet,
+
+45
+00:23:36,180 --> 00:23:38,100
+Scott Tolinski: right? Absolutely. Yeah, yeah.
+
+46
+00:23:39,450 --> 00:23:56,640
+Wes Bos: So um, let's talk about the coding side. After you've selected which services you'd like to go to? How do you start accepting credit cards? Like does stripe give you something? Can you build your own? How does that work? Maybe you want to take a stab at that.
+
+47
+00:23:56,670 --> 00:25:23,970
+Scott Tolinski: Yeah, so like, there's several different ways you can go with any of this stuff, right? A lot of it PayPal or stripe, offer these sort of solutions. And that make things quite a bit easier on you. For instance, right that PayPal Express checkout is simply just a button that takes you away to PayPal, and you don't have to worry about the forums or anything like that. You simply just have to worry about catching that token on the hook coming in or the data coming in. We're stripe offers something called stripe Checkout, which is pretty much an iframe to a secured iframe that pops up and allows you to enter your information even if you've ever used a stripe checkout before the user could enter their information and it auto populate their their credit card if they wanted to save that information. So it could give you a little bit of ease of use there. But so you you have a couple options. You have these built in tools like stripe checkout or PayPal express that handle a lot for you. Or you have basically option that you can build your own checkout form and pass Secure Data along via their API's, I know stripe has their own node package, they have their own front end package, validating forms, generating tokens, that kind of stuff. So you really have the the two options, whether you want to use their built solution, or you want to do it yourself with their help kind of stuff. Yeah, exactly. And
+
+48
+00:25:24,029 --> 00:26:19,650
+Wes Bos: and the reason why you might not want to use stripes built in one is that if you want to customize your form in any way, so when I initially built my course site, I use the stripes built in one. And then I realized that there was no, there's no, there's no concept of coupon code built into stripe, because at the end of the day, stripe does have some nice stuff. But at the end of the day, it is just a utility, which is a credit card processor. So if you want to do coupons, stripe doesn't have that you have to, you have to build your own coupon solution, which is generally something that your shopping cart will actually do. So I had to move my note mine over to mine actually looks a lot like the stripe checkout. But it's actually it's a custom solution. And it has doing custom fields in there. And as well as things for for coupons.
+
+49
+00:26:19,769 --> 00:26:50,550
+Scott Tolinski: Yeah, see, I'm actually I'm doing coupons and stripe Checkout, but I'm doing the coupon stuff all within my own, like car to window. So it's like you have your cart. That's where you can enter your coupon. Ah, yes. Is that price along through the stripe checkout? Which obviously, it isn't as elegant as just having your own forum where you're sending that data all in one, one blast. Yeah, yeah. So that I mean that it is possible. But it does take a little bit different of a solution to do that, right?
+
+50
+00:26:50,580 --> 00:27:08,250
+Wes Bos: Yeah, exactly. I don't, the thing about me is that I never I always wanted it to be like a one page thing, or I don't want to click someone to click off to a shopping cart. I don't even have a shopping cart. I just have like a form where you can put in a coupon code, and it will update all of that stuff for you.
+
+51
+00:27:08,280 --> 00:27:10,230
+Scott Tolinski: Yeah, yeah, absolutely. Yeah.
+
+52
+00:27:11,790 --> 00:27:29,400
+Wes Bos: I wanted to talk and just explain real quickly how like the tokens work because sometimes people aren't like, like, what do you do when someone puts in their credit card on your website like Yikes, you don't want to touch that, like, the possibilities of that our stuff could go really wrong
+
+53
+00:27:29,430 --> 00:27:30,960
+Unknown: theory works.
+
+54
+00:27:31,080 --> 00:28:47,460
+Wes Bos: It's scary. Exactly. So the way that it works is that you have sort of two libraries when dealing with with stripe or PayPal, you have a client side library, like a stripe JavaScript library. And what happens is, when somebody submits your form, you take their billing address and their credit card and you send all of that over to stripe. And stripe will then check if the credit card is good, and all that stuff, and then it'll send to you back what's called a token, and that token, will you just take that token, and not the credit card data, you take that to your own server side to actually finalize the transaction, because you can't do this 100% client side, you must have some sort of server side to actually to finalize that transaction. So you have this token, which is is sort of like an IOU, the process hasn't been done yet. But you, you have sort of like pre qualified the the credit card and then on your server, you go ahead and push through that charge with the token, not your credit card number. And then the token will you'll give you information about whether it failed or, or worked or in how much it was foreign and all that good information.
+
+55
+00:28:47,520 --> 00:29:28,410
+Scott Tolinski: Yeah, and this way their their credit cards never hitting your server, you typically with stripe, you get an object with some information, like the last four digits and stuff like that, obviously, for just display purposes. But you're really like, you know, you don't want to touch or you don't want to own their their credit card information at any given point. Like that's a huge sign that that something's wrong if if their credit card information on up the skated in some way is coming into your server. So right, so you hit server, you get that token, that token represents all of that sensitive data that you don't want to touch. And can can be handled that way through that reference from that point forward.
+
+56
+00:29:29,280 --> 00:30:20,610
+Wes Bos: Exactly. And you even want it like you want to be really careful with this stuff. Because you don't want to mess around with credit cards at all. And one little tip I can give you is that do not put a name attribute on your credit card input field. And the reason behind that is because if if your form is submitted with JavaScript being broken, it should not eat like if if you don't intercept the Submit Request on a form element, then it's just going to submit it via a get request. to your server, and if that is there, it's going to pass along any data, any inputs with the name attribute. And if the credit card is in there, the your credit card is going to go into the URL bar, or it's going to be put into your server logs. Or it could go, it could leak out anywhere, which is again, not something you ever want to have happen, right? And credit cards.
+
+57
+00:30:20,670 --> 00:31:29,250
+Scott Tolinski: Yeah. And then, you know, you want to make sure you're familiar with the PCI compliance Guide, which is really just the Payment Card Industry data security standard. So like, you're gonna want to just google PCI compliance, you can basically get the frequently asked questions or guides on on what exactly that means. But you're gonna want to be in constant. I mean, obviously, a lot of these libraries like stripe Checkout, and stuff like that PayPal Express make it way easier to stay in PCI compliance. But I remember, you know, that back in the day, I mean, if you're coding your own own forms up here, and stuff like that, you just have to be very, very, very cognizant about where that data is going. Also secure the heck out of everything SSL, obviously, make sure that you're not accepting payment, or even have like, forms inputs and stuff like that without an SSL. So yeah, it's it's a big responsibility, taking care of someone else's data here, and especially some sensitive information. So you want to make sure you're following the guidelines really, really closely.
+
+58
+00:31:29,640 --> 00:31:45,090
+Wes Bos: Yeah. Exactly. In SSL everywhere. Whether you're connecting to sending an email, even if you have CloudFlare. Make sure that that connection between CloudFlare and your servers SSL, absolutely. Everything should be locked down tight.
+
+59
+00:31:45,420 --> 00:31:52,920
+Scott Tolinski: And it's easy now with Let's Encrypt. Let's Encrypt. Yeah. So no, it no excuses.
+
+60
+00:31:55,440 --> 00:32:31,650
+Wes Bos: One other little tip I have here is that look up the html5 autocomplete spec. Because you can obviously you can give names to your inputs, like name, equals first name, name equals last name, name equals Street. But you can look up the proper autocomplete spec and attach those attributes to your inputs. And that will give you the best case, autocomplete because I do know that I do this myself. If my like, if I'm like, somewhere without my wallet, or somewhere where I don't feel like logging into my LastPass and the autocomplete for my credit card doesn't work. I'll often just be like,
+
+61
+00:32:32,130 --> 00:32:36,860
+Scott Tolinski: yeah, whatever I'll do I really want to like go find my credit card right now. Yeah,
+
+62
+00:32:36,900 --> 00:32:41,550
+Wes Bos: I hate it when it doesn't autofill the three digits on the back of the card.
+
+63
+00:32:41,969 --> 00:33:06,030
+Scott Tolinski: Yeah, I know, maybe I might need to write my own form. Now, because stripe checkout disables autocomplete, unless you like enter your email there. Like unless you're entering your email and using your stripe account, when you hit the actual credit card form, it does, or at least it does on desktop. I don't know about mobile, but it doesn't disturb disable credit card, autocomplete, so might be a good reason to code your own.
+
+64
+00:33:06,989 --> 00:33:30,300
+Wes Bos: It's pretty sweet. I'm actually looking at recoding my entire checkout form, because there's all kinds of new stuff like Chrome now has like web payments or something like that in Safari and mobile Safari have Apple Pay. Mm hmm. So like, I really want to like build some sort of beast that's going to be able to handle stripe, PayPal, all of these different
+
+65
+00:33:30,719 --> 00:33:34,260
+Scott Tolinski: stripe can handle auto pay. No. Apple, yes.
+
+66
+00:33:34,260 --> 00:33:38,100
+Wes Bos: Yeah, Apple. But if you use the stripe Checkout, right?
+
+67
+00:33:38,130 --> 00:33:39,270
+Scott Tolinski: Yeah. Yeah. Right.
+
+68
+00:33:39,300 --> 00:33:48,540
+Wes Bos: Yeah. That's, that's a downside to coding your own as you can you just flip it on if you are using stripes. Whereas for me, I have to like code a custom.
+
+69
+00:33:48,960 --> 00:34:07,610
+Scott Tolinski: Yeah. And handler is something I've been we should connect on a code level later because that is something that I've been looking into as well with that PayPal subscription stuff is just like really beefing my my whole thing up a little bit, and maybe integrating a little bit more tightly into the site. So yeah, we'll have to chat in just a little bit.
+
+70
+00:34:08,310 --> 00:35:45,929
+Wes Bos: Cool. Yeah, totally. Alright, so our quick stop for a sponsor or sponsor is Freshbooks, which is cloud accounting software. I've actually been a Freshbooks user myself or laterano, maybe seven years now. It's actually a it was a local startup. I don't think it's a startup anymore. They're pretty big company, here from Toronto. And I really, really like fresh books for running my own business on it, because obviously, it does invoicing. But it has a whole bunch of stuff that makes accounting time a little bit easier. So what I do with fresh books is that I put all of my invoices to the clients to charging for any consulting that I do to any reimbursements I need to do. I put all my expenses in there, all of my HST stuff is automatically done. And at the end of the year, when accounting time comes, I hate doing it. Anything accounting, and I have a really good accountant for that. But I just export absolutely everything from that. And my accountant loves it. He said, when I first met with him, he's like, oh, you're on Freshbooks. That's a really, really good. So I definitely recommend using fresh books. And I want to thank them for sponsoring. So go ahead and check it out it whether you're just doing a little side job and billing one or two people, or whether you're trying to run an entire business with all the interworkings of paying yourself and doing expenses and managing different currencies and whatnot. So it's at freshbooks comm forward slash syntax, and to make sure you enter syntax in the How did you hear about us section? Thanks again.
+
+71
+00:35:45,929 --> 00:35:47,280
+Unknown: Um,
+
+72
+00:35:47,280 --> 00:36:46,860
+Wes Bos: let's talk about some pain points, some stuff that that's the not so fun part of accepting credit cards on the internet. Um, the biggest one for me is dealing with people's blocked credit cards. Yeah. So you try to buy a course from some random guy in Canada, in I also charge in us. So your America, Canadian business is charging you us. Often what will happen is, either the bank will block it entirely because they're like this is this is fishy. Or what will happen is that stripe will block it because they have their own, we'll talk about this in a second, they have a thing called a radar, which will set different levels and different rules for blocking it. So often, what I have to do is tell people to call their bank, which is a pain in they tell their bank that the charge is fine, and then they have to come back in and try it again. But have you ever run into troubles like that?
+
+73
+00:36:46,880 --> 00:37:29,610
+Scott Tolinski: Yeah, I get a lot of declined cards that you have to, you know, you could email so and so I've tried a whole bunch to subscribe or to buy this this thing. And, you know, it's telling me my cards declined. Can you give me more information? And then you go into stripe? And you basically the answer is your card was declined. Yeah. is a huge, huge pain point. Because you don't necessarily always have something to say like, Oh, your you know, your your thing was expired or whatever. Sometimes they give you that information. But sometimes it's just flat out card was card was declined. And I know a couple of times you messaged stripe and say, Hey, what's going on? And they'll say, Oh, well, we can fix this one, this person's legit. they'll fix it for you.
+
+74
+00:37:30,030 --> 00:37:30,650
+Wes Bos: Oh, really?
+
+75
+00:37:30,690 --> 00:38:09,420
+Scott Tolinski: Yeah. But I found the experience to be most of the time, just say, yeah, this is why it was suspicious. I won't, you know, only, you know, one out of a handful has been allowed to go through and other ones or just you just have to tell the customer? Hey, you're out of luck giving me money right now, unless you want to do it through PayPal? Or if for me with the subscriptions. It's, you're out of luck, you know. So that is that is a total pain point. And like, I understand you have to be pretty diligent with these rules, or else you run the risk of being open to, you know, a lot of fraud and security stuff that way.
+
+76
+00:38:10,190 --> 00:39:09,690
+Wes Bos: Yeah, yeah, exactly. So there's that there's the bank actually blocking the card, which recently stripe has made their I don't know if they recently got more info from the bank that blocks it. But it used to just be this, this card is blocked. We don't know why. And now it is this card has been declined by the bank. And here's, here's the best reason that we possibly have from you. And then there's on stripe side stripe will also determine if someone trying to buy a course is fraudulent. And, for example, if you are, let's say you're in the UK, or you have a UK card, but you are in trying to buy it from Vietnam, that's a huge red flag. And that will usually get blocked. However, sometimes people are vacationing and they are trying to buy something and like what's going on? So you have to sort of tell them to call their bank and to allow it Yeah,
+
+77
+00:39:09,710 --> 00:39:40,800
+Scott Tolinski: I think most of the times that that I found things get blocked are because oh, this is a maybe this is a check card purchased in this country. And it's being used in this country or something like that. Where cross country right the card is living in one country and is being used to another and sometimes they're there for work right. Like he said, Sometimes they're vacationing but that yeah, that is a bummer that that frequently happens but again, you know, you're opening yourself up for fraud if otherwise.
+
+78
+00:39:41,420 --> 00:41:04,050
+Wes Bos: Exactly. And what's really cool is just a couple of months ago stripe released this thing called radar which allows you to really fine tune what gets blocked and what doesn't get blocked. So like for example, if somebody fails the the street check where like they give you the credit card the credit card is fine. PVC is fine, but the like the postal code or the zip code and the address they provided doesn't line up. Because in most cases, the credit card will just push that through anyway, if you screw up the address in somehow. And so you can really like fine tune, what gets blocked and what doesn't get blocked and the different levels of risk that you're you're trying to accept. I'm not going to talk too much about what my rules are some people don't rip me off. But I can tell you that I have, in my situation just because of a bit of an international audience, I've I've tinkered around with it. And I found like a pretty good level where I'm not getting too much fraud. But it's also like not because when I first had it, it was blocking way more than what it was blocking more good transactions than it was fraudulent ones, which was ending me me losing money. Yeah. So now now with this radar, I lose a bit every month from fraud, but I think I make more because of it not blocking good people.
+
+79
+00:41:04,230 --> 00:41:19,800
+Scott Tolinski: So I haven't modified my radar. But I do get a lot of blocked ones due to radar. I didn't know you could relax it. I always thought it was like you could make it more strict.
+
+80
+00:41:20,760 --> 00:42:21,440
+Wes Bos: Oh, yeah, yeah, you can, you can go any way. And then you can also write your own rules. So if you have sort of, you got your finger on the pulse of what's going on, like another one for me is that often people from I forget which country it is, but a lot of countries that are around the US, people will have us credit cards, but they don't live in the US measure how that works. But those are those are very valid. So you have to have to know about that as well. And I think the other big one that I get is people forgetting because what it does is it shows up on the credit card as like boss type slash West boss, and often get calls from confused secretaries or people's significant others being like, what is this? And then I have to like be like, someone in your family, a developer? Oh, yeah, yeah, someone? Okay, well, they bought a course for me. That explains what it is like, okay, okay, that's fine.
+
+81
+00:42:22,190 --> 00:42:22,710
+Scott Tolinski: Awesome.
+
+82
+00:42:25,560 --> 00:42:32,420
+Wes Bos: Um, yeah. And then what else we got here any other pain points that you are things to look out for? on your end?
+
+83
+00:42:33,090 --> 00:43:00,060
+Scott Tolinski: I just changes an API. You know, you want to make sure like what was said the PayPal API isn't version. So I have your finger on the the pulse a little bit as to what the, you know, what those API's are doing, or how they're changing or evolving, follow those guys on Twitter and stuff like that. But it's really it's not a huge, I've probably had one or two issues that ever, so just something to think about.
+
+84
+00:43:01,110 --> 00:43:37,530
+Wes Bos: Exactly. Um, all right, let's talk about like getting your money. So once, once you have received money from stripe or PayPal, the money then goes into your account in you need to then get it out somehow. So the easiest way to do that is to deposit it right into a bank account that you've then linked to your account. And that's what I do I have daily weekly deposits right from stripe and PayPal, will just clean out my account and deposit that right into an actual account. What about you? Do you do the same?
+
+85
+00:43:37,590 --> 00:44:09,300
+Scott Tolinski: Yep, I do everything direct payment. And stripe is really good about you can choose the interval at which it deposits you can have a do once a month or whatever. So I just have a depositing I think every week. That way you get just like a bundled deposits. But yeah, so direct deposit stripe you got to do or PayPal, you have to do manually, I believe I just put it in your PayPal wallet. So every, every week or so you just go through your PayPal wallet to send funds to bank. But yeah, mostly just connecting your bank account direct deposit.
+
+86
+00:44:10,260 --> 00:45:16,020
+Wes Bos: Yeah, exactly. Um, so one little gotcha for international, which I guess I'm international I charge in us but I am in Canada. So you can in Canada, you set up a US business bank account on your Canadian account, and then they will deposit that money into us account. That's really important because you can get stripe and PayPal to convert it for you. But they they convert it at like a brutal rate and they will take three or 4% to themselves which is not something you want to do. So what I then do is I deposit into Us Bank Account. And then I take that money to foreign exchange company that takes half a percent rather than the 4% and then converts it for me and it's kind of cool because you can throw yet to play the markets. So you have to watch foreign exchange rates go up and down. And when you think it's good, and that's what your foreign exchange person can do, then you transfer that over to your native currency. Or you just can sit on it in the US currency as well.
+
+87
+00:45:16,050 --> 00:45:26,280
+Scott Tolinski: Yeah, this I mean, just hearing all this stuff makes me just pretty thankful that I'm not International, because it seems like it just adds a huge layer of complexity to everything.
+
+88
+00:45:26,790 --> 00:47:06,420
+Wes Bos: It is and even in so another reason like PayPal, why I don't like them is that stripe will deposit into a US Canadian us account. PayPal will not deposit into a Canadian us account, it will only deposit into us accounts, which I think that they do this because they want to screw you on the the conversion rate and make another like I used to get like at the end of the day, I was getting like 10 or 11% dinged by PayPal after I had taken the fee, taken the conversion fee, all of that stuff. So what somebody figured out is that you there's this one bank in Canada called the Royal Bank of Canada. And the reason why you can't deposit into Canadian count is because you need a routing number. And in Canada, we don't have routing numbers, we have transit numbers. So somebody figured out that you can open up a Royal Bank Canadian account and then send the money to the US Royal Bank because they have branches in the US and it just magically gets redirected over which is huge. Thousands of dollars a year. Yeah, so that was that was quite quite the ordeal to get set up but well worth in. And I'm from Canada the stuff is easy in Canada and in some other countries it's the stuff is near impossible where there is no PayPal. And there is no stripe. So stripe stripe has this thing called What is it called? I have I have it here somewhere. What's it called?
+
+89
+00:47:08,699 --> 00:47:11,969
+Scott Tolinski: They have some big international. Yeah,
+
+90
+00:47:11,969 --> 00:47:14,880
+Wes Bos: what's it called? stripe Atlas
+
+91
+00:47:14,940 --> 00:47:20,760
+Scott Tolinski: Atlas. I remember because the the landing page for it was really nice with those like flags diagnose Yeah, stripe
+
+92
+00:47:20,790 --> 00:47:26,520
+Wes Bos: stripe, some of the best. Along with some of the best API design, they have some of the best like front end,
+
+93
+00:47:26,579 --> 00:47:59,280
+Scott Tolinski: I use design, I use stripe as a like a design inspiration source maybe once a week, for various aspects. There are so many things about the entire site that is just like awesome. And now what was the only thing lagging behind was like the admin dashboard. And they're really well they've redesigned the admin dashboard in the past year. But even week by week, there's improvements to it. Yeah, really nice stuff. And you see that design language really transfer through even to the admin stuff a bunch more now.
+
+94
+00:48:00,210 --> 00:49:21,780
+Wes Bos: Amazing, I love it. So stripe Atlas is sort of, they'll set you up with a US business us business bank account, they'll set you up with everything that you need to run an online business. So if you're from a country where you can't do any of this stuff, it will handle all the legal everything for you, which I think is super cool. I don't think that it makes sense to do it from Canada. But definitely, if you're from somewhere else, I would take a look at that. Oh, transfer wise, this is another thing. Transfer wise if you need to convert currency, I have people that will convert it all for me. But transferwise does very, very some of the best conversion rates out there. And the way that it works is is pretty neat. If you watch the video, I won't attempt to explain how they do it with holding groups of money from people but essentially it hooks you up with people trying to buy the opposite currency. And then you just trade money with them. Which is really, really neat. So big fan of that the only downside is that it doesn't do direct deposits from a Canadian bank account. So you have to send them a wire, which is a pain because you have to go to the bank and do a wire for me at least and then also it's expensive to do a wire I think it's about 50 bucks. So it's it's better for me to use an external service.
+
+95
+00:49:21,810 --> 00:49:22,409
+Scott Tolinski: Sure.
+
+96
+00:49:24,090 --> 00:49:28,050
+Wes Bos: Um, taxes. How do you do taxes, Scott? Yeah, I
+
+97
+00:49:28,050 --> 00:49:58,380
+Scott Tolinski: think I just accept taxes on sales or sales tax in Colorado. That's it. I don't I don't know what the rules are for. For Canadian companies, but I believe man, it's like a big deal here because right you buy so much stuff on Amazon. That like yeah, you only have to pay taxes on it. I don't want to say this incorrectly. But I believe you only have to pay stuff, taxes and stuff from Amazon, in states where Amazon has like a presence. Yeah,
+
+98
+00:49:58,679 --> 00:49:59,369
+Wes Bos: I've heard
+
+99
+00:49:59,400 --> 00:50:22,050
+Scott Tolinski: Yeah, otherwise Why's the user or the the purchaser themselves? Is like left to deal with that, like tax liability? I don't know how much that is like a big deal or not. But so yeah, as sales in Colorado, that's it for me, just because obviously, it's my only outpost here. So how about you?
+
+100
+00:50:22,860 --> 00:52:07,440
+Wes Bos: That's pretty simple. Um, mine's a little bit more complicated. So how it works in Canada. And I, when I was first getting started, I like didn't understand how this worked. So I spent a lot of time on the phone with the the CRA Canada Revenue Agency, and I'd like to explain to them how this I'm like, I'm selling a digital good. Mm hmm. Like, what do I need to charge? And they said, they said, you have to charge everybody your local tax rate unless you can prove that they are not from that province or state or whatever it is so and I asked them, like, Can I just grab that by an IP address? And they said, No, that's not good enough, because people can use VPN. So if you check out via PayPal, on my website, you'll notice that when you come back from PayPal ask you for your your address, and like that's weird, because, like, why do you need my address, if it's just PayPal, but I need to keep that on file to show that I do not need to pay taxes for anyone that is outside of Canada. So if you buy it from me and you're outside of Canada, you there's no, there's no tax. And if you buy it for me, and it is inside of Canada, I have to charge the destination tax rate. So every province in Canada has its own HST and GST or, or PST, and it's all different kinds of taxes. So I have to figure out what is their tax rate, and then fold that into the invoice. And that's super complicated. And I don't want to have to charge people more. So what I end up doing is for Canadian customers, I just eat the whatever percentage it is. And then and then at the end of the year, I have to pay out to every single province, whatever it is that I collected,
+
+101
+00:52:07,560 --> 00:52:35,130
+Scott Tolinski: I also have I eat I eat any taxes. So like I just assume everyone is not from Colorado. Yeah. And then I you know, I have a report that will help with that. And I actually would be really interested in knowing if i if i legally need those records. So if anybody knows, you know, hit us up, because I I'm pretty sure you you don't need something like that, because I haven't encountered that. But that would be interesting to know as well.
+
+102
+00:52:36,179 --> 00:53:19,409
+Wes Bos: Yeah, yeah, absolutely. Um, one other like sort of bummer. The way that I do that is that if a business buys my course from Canada, I do charge them tax, or I pay out the tax for that. But businesses don't actually have to pay HST or they do have to pay it, but they get it back at the end of the year. So I buy $1,000 laptop, I have to pay 1130, but I get the hundred and 30 bucks back in the end of the year. So that's that's one downside, but it greatly simplifies the checkout experience. Without I just tell people like it's it's 100 bucks, and it's 100 bucks at the end of the day. That's right.
+
+103
+00:53:19,500 --> 00:53:38,460
+Scott Tolinski: Yeah. Yeah. And I think that's, I don't know, simplifying to me that simplifying the the checkout experience, and like the the price and all that stuff like that, I think that's more valuable than having to, you know, really give your users all that information or whatever. I don't know,
+
+104
+00:53:38,579 --> 00:54:01,619
+Wes Bos: exactly. Just I often go to websites, where it's like, pages and pages of input fields. And it's so exhausting to have to input all of that stuff, and then it recalculates how much you owe in taxes and shipping whatnot, lightning and yeah, like, I just want someone to put in their credit card number, press a button and charge them if I have to pay a little bit more in some situations. I'm totally fine with that.
+
+105
+00:54:01,650 --> 00:54:16,920
+Scott Tolinski: Yeah, for sure. Yeah, absolutely. Next, we have accepting Bitcoin, which is another thing that stripe checkout makes really easily doable just by simply clicking a checkbox and having your your wallet, your address, your Bitcoin. So
+
+106
+00:54:16,920 --> 00:54:19,290
+Wes Bos: do you accept Bitcoin on your site, then I
+
+107
+00:54:19,560 --> 00:54:59,969
+Scott Tolinski: don't only because I was accepting Bitcoin. And I turned it off briefly. And I haven't turned it back on. Because there was a change in the API. And I just didn't want to I didn't have time to update my code at that time. So I just, oh, yeah, I wanted to update the rest of the API. And I just turned it off. So it's on my list of things to do is to turn it back on, I believe it's like one of my high issues on Bitbucket over here to do but just haven't done it yet. just haven't turned it back on. It's probably as simple as swit like flipping a switch and then changing maybe like five lines of code in my workout.
+
+108
+00:55:00,000 --> 00:55:04,440
+Wes Bos: If the hummus Did you get a lot of people buying with Bitcoin when you had it turned on a decent?
+
+109
+00:55:04,500 --> 00:55:05,369
+Scott Tolinski: Yeah decent?
+
+110
+00:55:05,369 --> 00:55:06,210
+Wes Bos: Really?
+
+111
+00:55:06,210 --> 00:55:56,790
+Scott Tolinski: Yeah And now that now that people have made so much money on Bitcoin yeah you know one of the challenges of Bitcoin for people don't know Bitcoin is a cryptocurrency amongst others that are like fighting for this sort of cryptocurrency space which will sort of went out you know, there's a whole bunch of different competing cryptocurrencies Bitcoin being the largest they recently had like a split I believe there's like Bitcoin cash now and bit coin, I don't want to speak too much on it because I don't I'm not educated enough. You know, really the, the whole Bitcoin system, people have made a lot of money by buying Bitcoin when it was really, you know, what, even thousand dollars a Bitcoin and now it's 3000, or whatever it is, I haven't checked the prices. They've been like going
+
+112
+00:55:56,849 --> 00:55:58,440
+Wes Bos: over 3000 bucks today. Yeah,
+
+113
+00:55:58,469 --> 00:56:33,929
+Scott Tolinski: yeah, it's been going up and down like crazy. So people have made a ton of money, and they don't have a lot of great ways to get that money out of there without accepting huge tax burden or something like that. So people might be, again, like you said, having this like sort of paypal account that's just sort of sitting there with a whole ton of cash in it. They might just have a Bitcoin account. What's sitting there with a whole ton of money in there? Yeah, fun money, right. And fun money that you've made. A whole bunch on out of nothing is definitely fun money to spend. So yeah, it's one of those things I should be. should be getting actually in there. Maybe I'll do it today. Who knows? Maybe?
+
+114
+00:56:33,929 --> 00:56:35,070
+Wes Bos: That would be sweet. It's
+
+115
+00:56:35,070 --> 00:56:41,429
+Scott Tolinski: called on? Yeah, it's a straight. Like I said, stripe checkout gets it for you for free. So yeah, it's pretty neat.
+
+116
+00:56:42,119 --> 00:57:18,570
+Wes Bos: I've been just accepting Bitcoin manually. And I've maybe done, I don't know, four or five transactions with it. And I did a couple like a couple years ago, people paid with it. And like, I think out of the four transactions, I've sold, maybe like $180 worth of product, but it's up over 1000 bucks now, because it's just like the rate increase so much. So that's pretty neat. I definitely want to turn that on, though, because I think it's becoming a lot more popular and why not? Right? Like if it's worth it, if 10 people a year actually end up using it.
+
+117
+00:57:18,630 --> 00:57:48,960
+Scott Tolinski: Yeah, and I would be interested in implementing it in a in stripe, implementing aetherium for payments. I don't know if you know much about aetherium. That'd be a great, great idea topic to talk about some time on this show. And I think that's the cryptocurrency I'm most interested in so obviously, I would be very psyched if stripe to at some point add that obviously. You know, it has to reach a level of mainstream pneus before it enters something like that, but we'll see. You know.
+
+118
+00:57:50,550 --> 00:57:59,670
+Wes Bos: Cool. So I'm yeah, I'm still sort of sitting on the sidelines, but definitely going to be getting into it fairly soon. Yeah, let's move over to our sick pics,
+
+119
+00:57:59,699 --> 00:58:01,260
+Scott Tolinski: sick pics.
+
+120
+00:58:02,400 --> 00:58:40,949
+Wes Bos: I'll go first. My sick pick this week is chefsteps which is a YouTube channel that teaches you how to cook things. And it's really cool because they do a lot of experiments. And I think that's the way that they approach explaining how things work and why they've done it. I take a lot of like, kind of inspiration in my own explanations when I do my own tutorials. So it's there's a lot of cooking channels out there on YouTube and, and whatnot. But this has been one of the best that has really dived with me. So if you're, you're into like quick ways to learn how to cook new things. Check out chefsteps on YouTube. Cool.
+
+121
+00:58:40,949 --> 00:59:18,230
+Scott Tolinski: Yeah, I love you know, there's obviously like the, the negative sides of YouTubes and stuff like that. YouTube's the negative side of YouTube, like YouTube is really just the greatest resource in the world for learning anything. I was just on a YouTube channel called bull lawn care nut. I'm like, I'm like mowing my lawn like trying to figure this stuff out. I don't really I'm not good at anything about it. And here I am like watching YouTube. Okay, here's what to do. You know, it's, I'll definitely be checking those out. I love educational YouTube. It's It's by far like one of the greatest improvements Yeah, yeah. And life overall totally.
+
+122
+00:59:18,540 --> 00:59:27,540
+Wes Bos: Especially like like a 10 minute videos where you got like, if you're having lunch or whatever, I always throw something on. And if you can learn a thing or two, it's it's great.
+
+123
+00:59:27,570 --> 01:01:27,179
+Scott Tolinski: chefsteps Alright, y'all check that out. What about you my sick pig is a it's a really high end, but really like reasonably priced t store called what? hyphen cha.com. So w en hyphen. Yeah, there's a lot of well, I am in Colorado here. So yeah. This no this tea sorry. This tea is like it's it's really high end tea in the way that like, this isn't the stuff that you're going to find. Everywhere I'm a big loose leaf tea drinker. And there's several shops that I've been going to for a long time. But in terms of like the highest quality and rare, more rare set of teas, this what hyphen cha is like the best place ever, they have a lot of like, really, whatever, whatever kind of teas you're interested in. They even have a lot of T's like, or like classifications of teas that you don't see a lot of here in the states like yellow tea, which is less oxidization than green tea, but more than white tea so it's a little bit in there, you get a little bit brighter color. So those yellow teas are really nice. There's also pu RS and dark teas which are fermented, like really heavy smoky teas. And yeah, and some of these, pu ours are like pretty rare, I mean, or at least a little they take a long time to make and my dad came home from China one time with a pu R. That was like just wrapped in paper in this big ol stick a big old brick of tea and you break off a chunk it it's not for everyone that pu ours and some of these stronger dark teas have a little bit different flavor. But like I said, this, this place is where you're going to go to get a whole bunch of teas that you did not know existed, and it's a really high quality. I bought like a big box of stuff there. They sent me a ton of stuff for free. So really, really cool little place. Yeah, if you're into high quality loose leaf teas. What I love a good pu R Yeah, good pu r n.
+
+124
+01:01:27,690 --> 01:01:29,310
+Wes Bos: Oh yeah, who are all day?
+
+125
+01:01:31,170 --> 01:01:31,770
+Unknown: Are they enough?
+
+126
+01:01:31,770 --> 01:01:42,300
+Scott Tolinski: It does smell slightly like poo or but it's not the best smelling tea in the world. Those dark teas, but they're there, they can be pretty yummy.
+
+127
+01:01:43,320 --> 01:02:31,079
+Wes Bos: Awesome. Um, all right, let's move on our last one. I don't know, if you have anything to plug in. We've plugged all of our courses. But obviously my courses are at Wes Bos calm for slash courses. But I wanted to just plug somebody else's course right now, just because I ran through it real quickly. And it was really good. It's how to graph ql.com. It's put together by the folks behind graph. Cool. And it's it's a really nice introduction to like, what is graph qL? What are the core concepts? What is the architecture that you need? All the different stuff that you need? And it's just like a nice high level. Maybe spend a couple hours on it, and you get an idea of what it is and then you can move forward into some some chewier stuff to actually implement it. Hmm.
+
+128
+01:02:31,349 --> 01:03:09,270
+Scott Tolinski: Yeah, it's really a well designed resource. And those, that's always a good indication if the you can tell like the educational resources, like taking the time to like, do that design element of it, you know, it's usually going to get into everything pretty nicely. So, yeah, yeah, yeah. How to graph QL. Cool. I guess my shameless plug will just be my YouTube channel. Level Up tuts on YouTube. I'm releasing a bunch of free stuff. And like I said, new adventures kind of different series than I'm used to doing. So yeah, check it out. There's just going to be a bunch of new content there very soon, all the time. So yeah.
+
+129
+01:03:10,290 --> 01:03:14,610
+Wes Bos: So that's it for today. Thanks so much for tuning in. And we'll see you next time.
+
+130
+01:03:19,199 --> 01:03:29,699
+Scott Tolinski: Head on over to syntax.fm for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show until next time.
+

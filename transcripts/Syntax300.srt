@@ -1,0 +1,2424 @@
+1
+00:00:01,319 --> 00:00:02,820
+Announcer: You're listening to syntax,
+
+2
+00:00:02,849 --> 00:00:04,590
+Unknown: the podcast with the tastiest web
+
+3
+00:00:04,590 --> 00:00:06,120
+development treats out there.
+
+4
+00:00:06,149 --> 00:00:09,000
+strap yourself in and get ready to live ski
+
+5
+00:00:09,000 --> 00:00:10,650
+and West boss.
+
+6
+00:00:10,889 --> 00:00:11,670
+Oh, welcome
+
+7
+00:00:11,670 --> 00:00:18,750
+Wes Bos: to syntax. This is episode number 300. Can you believe it's got?
+
+8
+00:00:19,259 --> 00:00:20,010
+Unknown: I can't.
+
+9
+00:00:20,010 --> 00:00:27,320
+Scott Tolinski: I know it's actually kind of ridiculous. It's been 300 episodes. I had no idea that it's been that many.
+
+10
+00:00:27,779 --> 00:01:04,980
+Wes Bos: Yeah, it creeps up on you. That's a lot. So today we've got a like a banger episode for you. We're doing a live show. So shout out to everybody who is currently on one of the hundred platforms that we are streaming to right now. And we will also obviously publish this out through the regular podcast feed. But let's talk about sponsors real quick and then we'll get into the the nitty gritty of of you coming on the show and asking us questions and and whatnot. So today we're sponsored by two awesome companies. First one is Sentry. And the second one is Netlify. We'll talk about both of them partway through the episode. Sick hi doing today, Scott.
+
+11
+00:01:06,630 --> 00:01:34,740
+Scott Tolinski: Do good. I did a little like, you know that low ugly intro that you saw. We were laughing before the show started because I was doing a little pre streaming to make sure things were working. Okay, and getting the video gone. And Courtney showed up in the chat to absolutely roast me for drinking all the cold brew. So I drank all the cold brew and I put some hot water on for the tea to be running and it's just waiting waiting for the cooking. Oh, Henry Helvetica in the chat. What's up, Henry?
+
+12
+00:01:34,800 --> 00:01:56,790
+Wes Bos: So we're gonna do a listener Collin shows is the first time we've ever done it. We spent most of our week trying to figure out how to technically do this. There was lots of different products out there. Like even like everyone was saying use zoom because it has breakout rooms. But if we're in the breakout room, we couldn't see who was in the other room. So finally we settled on Scotts discord, which I think this setup is working pretty well.
+
+13
+00:01:56,810 --> 00:03:30,240
+Scott Tolinski: Yeah, it's really interesting what we're doing here actually, I think that might qualify for like a hasty because I'm using like several audio routing software's, we have a discord room where we're going to be manually changing roles. And then I'm technically I'm streaming my desktop, because it's a smoother stream than piping, discord, or zoom directly into OBS. It was like way choppy for some reason. I don't know the details there. So we're just streaming my screen here. And it's working pretty well. And we're streaming on simulcasting, on four different platforms to YouTube channels, a twitch channel, and syntax FM. And I should say before we get too crazy that this is being streamed on a platform called mux. So I'm gonna shut up mocks real quick. This is mcse at MCC Comm. This is not an advertisement. But this is where I host my videos personally, they had a really neat streaming system that we're just basically piping in and then using HLS and a react player called react HLS player. And we're just pasting in basically the URL to the wizard, the M, M, three ua whatever file and yeah, whatever that file extension is, we're passing that in to the React video player as if it was just a video. And voila, it just works pretty amazing, big, big fan of this. So I'm psyched to see that we can do live streaming so easily on our own platforms, without relying on Twitch or whatever, you know, pretty sweet.
+
+14
+00:03:30,240 --> 00:04:19,380
+Wes Bos: So today, we've got you're gonna call in. So join in the discord if you are not links and all of the descriptions wherever you're watching. And the way it's gonna work is we will bring you in either video and audio or just audio if you only prefer to do that. And you can do one of four things. Or you can you can do them all if you really want we might cut you off. If it's too long, though. You can ask us a potluck question. You can do a sick pick of your own, you can take a stumped question. So have Scott and I give you a interview question related to CSS or or JavaScript or node or something like that. Or you can do a shameless plug. So if you've got a project you're working on, you got a YouTube channel or a book or whatever you want to plug. We're talking to Scott, this is your show. You guys get to supply all the content for this show.
+
+15
+00:04:19,640 --> 00:04:28,260
+Scott Tolinski: Very true. And it's gonna be a lot of fun. So I don't know. I'm very excited. Do we want to bring somebody on right now? Or do we want to talk about stuff? Do we want to
+
+16
+00:04:28,700 --> 00:04:37,760
+Wes Bos: know, let's do it. Let's bring somebody on. Let's bring Brad on. He was like three hours. He was already in the chat and he had all his links ready. So he's he's raring to go.
+
+17
+00:04:37,770 --> 00:04:59,010
+Scott Tolinski: Yeah, Brad did have these links, right. He posted all of his links, I think so. Let's bring Brad Garrett up. I remember because he told us how to pronounce it once he said like therapy therapy. So let's break bread on Brad. I'm gonna hook you up with a roll right now. Okay, so the first one we're gonna see There he is. Okay Brad. pop it in
+
+18
+00:04:59,390 --> 00:05:00,810
+Unknown: a Hey,
+
+19
+00:05:00,990 --> 00:05:02,100
+Scott Tolinski: Brad, what the setup?
+
+20
+00:05:02,100 --> 00:05:07,050
+Unknown: What's up y'all? Thanks for having me on. I get to break the ice. So that's, that's nice. Yeah,
+
+21
+00:05:07,070 --> 00:05:16,920
+Scott Tolinski: yeah, no experience with this stuff. Brad has his own YouTube channel his own content and stuff. So you seem like you've got this down to some degree. Yeah,
+
+22
+00:05:16,920 --> 00:05:21,870
+Unknown: I'm brave enough to do three out of the four. I'm going to save face and skip on the stumped. Question.
+
+23
+00:05:23,610 --> 00:05:29,700
+Scott Tolinski: Yes, anybody would like it. So if anybody would like to do us dumbed question we will do we
+
+24
+00:05:29,700 --> 00:05:34,530
+Wes Bos: need someone who's gonna do a stump question next? Yeah, we should even do it not that hard. Don't
+
+25
+00:05:34,530 --> 00:05:37,950
+Scott Tolinski: worry, the domain game that should have been one to Oh, yeah, domain
+
+26
+00:05:37,950 --> 00:05:50,580
+Wes Bos: get well, we can do it. We can do a live again, because we're doing live at react athon in December. Maybe we should do domain game there. All right. So what's your What do you want to start with? Let's pick pick question.
+
+27
+00:05:50,610 --> 00:06:32,850
+Unknown: Let's start with a question. Something interesting came up on my team at Adobe, we were kind of rushed to get out an alpha of a product. And this product included a graph qL API, and we didn't have time to document it. And I said, Well, hey, they have this awesome thing called graph qL playground that we can embed into the website, that that's better than documentation. Yeah, my back end team actually brought up some security concerns. They're like, we don't we don't think that's safe, due to the ability to introspect the graph qL API. So my question to y'all is, are you aware of any security concerns around graph qL introspection?
+
+28
+00:06:33,330 --> 00:06:56,970
+Wes Bos: Let's explain real quick. What introspection is, is that, when you enable this thing, it will give you a picture of what the entire API surface looks like, every single query every single input every single type that is possibly in and if somebody were to see this, like a developer, they can quit very easily see the entire surface area of the API. So that's what it is. Go ahead, Scott.
+
+29
+00:06:57,059 --> 00:07:55,080
+Scott Tolinski: Yeah. So I do want to say I think first and foremost, that if you're using Apollo or I don't know if you are Apollo, by default, has introspection turned off in production. So that's one key is that I personally turn off introspection in production. Same with playground, I have playground and introspection turned off. Only just because I don't want people snooping around. But in the same regard, I've always heard this being said is like you shouldn't rely on security through obscurity. Yeah. And that, like somebody should be able to see your ends. And if your ends aren't secured, then that's like a bigger problem. I don't know, I turn off introspection myself again, personally, because I just don't I don't need it. I don't want it in production. Yeah, I don't know. There are concerns there. But again, I guess it's a matter of how well the the I guess, they're not necessarily endpoints, but how well the the mutations are secured themselves.
+
+30
+00:07:55,230 --> 00:08:23,460
+Wes Bos: Yeah, like, yeah, someone could could figure it out. If it was, like, if you put these graphical endpoints into production, if it's on an iOS app, or if it's on a client side application, someone can figure out what all of our it's just like trying to piece together reverse engineer API is much harder than actually just having all the documentation for the entire API. Yeah. So I turned it off as well, just because Apollo recommends that, but I as long as it's secured properly,
+
+31
+00:08:23,610 --> 00:08:29,790
+Scott Tolinski: Iran in the chat says that they expose the playground via B only behind a VPN.
+
+32
+00:08:30,240 --> 00:08:31,620
+Wes Bos: That makes sense. I like that.
+
+33
+00:08:31,710 --> 00:08:41,070
+Unknown: That's essentially what we wound up doing was we routed it through this service that required authentication, that would then allow request to pass back through to the API.
+
+34
+00:08:41,820 --> 00:08:55,260
+Scott Tolinski: Interesting. Yeah, fascinating. Yeah, this is a these are not necessarily problems I run into concerning the I don't work at a company like Adobe. Yeah, you know, that's for sure. That's a big way different fish than what I'm dealing with.
+
+35
+00:08:55,620 --> 00:08:56,820
+Wes Bos: What about your sick pick?
+
+36
+00:08:56,940 --> 00:09:38,970
+Unknown: For sure, thanks. Yeah. Okay, so my sick pick and my shameless plug kind of go together. Um, I'm a fan of working out. I'm a fan of fitness and a while back, a buddy of mine challenged me to do a bunch of Murph workouts. These are this CrossFit workout where you do like hundreds of push ups and pull ups and squats and stuff and you're supposed to wear this weighted vest. And so I finally purchased that weighted vest and it's awesome neck so this is the 511 tack tech plate carrier you can get it from rogue fitness.com I got a 10 pound plate in the front 10 pound plate back. That thing is built like a tank I love it fits like a glove ha cool. I would
+
+37
+00:09:38,970 --> 00:09:48,919
+Scott Tolinski: love a weighted vest. There are so many times that I put on ankle weights and I'm like I wish you were a weighted vest. So let's take a look very cool,
+
+38
+00:09:48,990 --> 00:09:55,470
+Unknown: super comfortable to I you can do all your pull ups and stuff in them and not feel like you're rubbing you know on your chest or anything like that.
+
+39
+00:09:55,980 --> 00:10:06,899
+Scott Tolinski: I hate when the weight belt around your waist and that's like pulling on your Hips in a weird way when you're trying to do weighted pull up so sick I will take a look at this. In Brad, do you have anything to shamelessly plug?
+
+40
+00:10:07,200 --> 00:10:43,860
+Unknown: I do. I actually built an application called Murphy that that is specifically designed to time and track your CrossFit Murph workouts. It's really complex. It's like broken up into into 20 rounds of five pull ups, 10 push ups, 15 squats, and it's really hard when you're like, sweating and stuff to remember what count you're on. So I built an app. It's a it's a pw a made with spelt. And I released it to the Google Play Store. So if you search Murphy and you are PHY on the Google Play Store, you can pick it up.
+
+41
+00:10:44,130 --> 00:10:46,020
+Scott Tolinski: What's it say that once more Murphy what
+
+42
+00:10:46,230 --> 00:10:49,740
+Unknown: am you are PHYO Okay,
+
+43
+00:10:49,770 --> 00:10:58,380
+Scott Tolinski: you were just spelling Murphy. I thought that was cool. I will check this out. So pw a on the App Store. How was that process?
+
+44
+00:10:58,500 --> 00:11:28,049
+Unknown: It was confusing. Doing like the signing process. Because like pw a builder.com wants to sign up for you Google App Store wants to sign it for you. And I got all the keys crossed the first time around, so I hadn't delete the whole thing and start over. Once you get past that hump, it's like really, really simple. And if anybody wants to the app cost money on the App Store, but it's a PVA, so it lives online. Cool. So you can Oh, Murphy, Murphy dot Brad derpy.com. And you can use it for free. Cool.
+
+45
+00:11:28,110 --> 00:11:45,210
+Scott Tolinski: That sounds awesome. Little sick. Brad will will get a link to that in the show notes and everything and thanks for stopping by. Man. Happy to have you here on the three. I'm glad that you're the first guest Brad because Brad's been a longtime member and he's been around so you happy to have you, Brad. Thanks.
+
+46
+00:11:45,480 --> 00:11:46,799
+Wes Bos: Appreciate it. Thanks, man. See
+
+47
+00:11:46,800 --> 00:11:53,580
+Scott Tolinski: ya. Okay, sick. Okay, so he just left on his own accord, which is great. You should bring
+
+48
+00:11:53,610 --> 00:11:54,870
+Wes Bos: Brittany in next.
+
+49
+00:11:55,590 --> 00:11:59,159
+Scott Tolinski: Yes, I am giving Brittany the roll of live.
+
+50
+00:12:00,870 --> 00:12:04,620
+Unknown: Brittany? Yes. Hey,
+
+51
+00:12:04,919 --> 00:12:17,340
+Wes Bos: hi. Hey. Oh, video. That's always the last. Like, whenever you like a client, you have a 30 meeting. Oh, video. We put it on.
+
+52
+00:12:19,890 --> 00:12:35,130
+Scott Tolinski: Yeah, it was funny. This morning. I think it was like at like 10 o'clock or something corny was like, I have a video meeting in five minutes. I can't be like, Oh, you have to be on video. Just do it. Audio. Just go. Yeah, that's very funny.
+
+53
+00:12:35,220 --> 00:12:35,789
+Unknown: Yes.
+
+54
+00:12:35,789 --> 00:12:36,720
+I love Discord.
+
+55
+00:12:37,320 --> 00:12:38,610
+Yes, Discord.
+
+56
+00:12:39,360 --> 00:12:49,860
+Yeah, I'm a huge fan of both of you. I think both of you know that. I've spoken to both of you through Instagram and Twitter. A little bit because mainly because of where I live, I think because you're
+
+57
+00:12:49,860 --> 00:12:50,970
+in Michigan.
+
+58
+00:12:51,419 --> 00:12:52,710
+Yeah. And Michigan.
+
+59
+00:12:53,220 --> 00:12:54,299
+Yeah.
+
+60
+00:12:54,809 --> 00:12:56,010
+Scott Tolinski: The tulips. Right.
+
+61
+00:12:56,309 --> 00:13:01,890
+Wes Bos: My sister lived in Holland, Michigan for the longest time and Scott lived in not far from Holland, Michigan for
+
+62
+00:13:01,950 --> 00:13:05,399
+Unknown: most of his life a little far. At the other side of the state.
+
+63
+00:13:05,940 --> 00:13:06,630
+Wes Bos: Okay.
+
+64
+00:13:06,750 --> 00:13:09,450
+Scott Tolinski: Yeah. The other two hours. Okay. It's not that far.
+
+65
+00:13:09,960 --> 00:13:13,620
+Unknown: So I'm gonna have to hold the can the button to talk?
+
+66
+00:13:13,679 --> 00:13:17,820
+Scott Tolinski: Oh, you know, you don't have No, she doesn't have to hold the button to talk. Oh, I
+
+67
+00:13:17,820 --> 00:13:19,080
+Unknown: have it set in my
+
+68
+00:13:19,200 --> 00:13:22,649
+Scott Tolinski: okay. No, okay. Yes, that is very smart of you.
+
+69
+00:13:22,919 --> 00:13:30,570
+Wes Bos: That's how people in Michigan tell how where they live. They're just showing their hand, which is great. I wish Ontario had some of that. Like, it's very true.
+
+70
+00:13:30,720 --> 00:13:35,640
+Scott Tolinski: One of my best friends. It got a little dot tattooed where Ann Arbor is on his hand.
+
+71
+00:13:36,059 --> 00:13:37,649
+Unknown: Oh, that's awesome. So he could just be like that
+
+72
+00:13:37,860 --> 00:13:43,980
+Scott Tolinski: was although he moved back to to Michigan. So it's like now he's just like, yeah, I live.
+
+73
+00:13:44,070 --> 00:13:48,960
+Unknown: I live in the same place. Actually more than Michigan colors today for you, Scott.
+
+74
+00:13:48,990 --> 00:13:49,830
+Yeah.
+
+75
+00:13:51,300 --> 00:13:55,590
+Wes Bos: I thought that was about two colors. Oh, yeah, it is.
+
+76
+00:13:56,880 --> 00:13:58,049
+Unknown: The same as that.
+
+77
+00:13:58,049 --> 00:14:02,820
+Scott Tolinski: Yeah, the your colors are the same as my alma mater. So thank you, Wes. for that.
+
+78
+00:14:03,779 --> 00:14:06,960
+Wes Bos: I did on purpose. All right. What do you got for us today? What would you like to do?
+
+79
+00:14:07,710 --> 00:14:43,260
+Unknown: I would love to shamelessly plug the zoo team Academy. Oh, what's that started. So I started learning to code from Andre nangloi, a couple years ago on his Udemy courses, and this year, they launched the GTM Academy. I just led a responsive web design workshop a couple days ago, and on the website next week. And I have to say, though, that I would not be where I am without the two of you. Because I learned CSS Grid from was this course. And it made me fall in love with responsive layouts. And then Scott, your CSS design systems course was incredible for
+
+80
+00:14:44,520 --> 00:14:45,029
+Wow,
+
+81
+00:14:45,049 --> 00:14:58,380
+learning how to use CSS variables. So I mean, both of you have been just extremely helpful to me. So I love both of you. It's great, but the ctm Academy is great. And so I shamelessly plug that back and
+
+82
+00:14:58,380 --> 00:15:15,240
+Wes Bos: in Canada. It's the best At tm Academy, translate for anybody. Nobody in Canada actually says that. I have all of my friends say z, even like my kids learn the alphabet in the class the other day, and I was like, say it to me. And I listened. And they say, they say, See?
+
+83
+00:15:16,110 --> 00:15:20,070
+Unknown: I know a couple people from Canada and they have said Zed before, and I'm like, Really?
+
+84
+00:15:20,760 --> 00:15:30,090
+Wes Bos: Yeah. Well, I say I say Zed sh. So we did. Yeah, just interchangeably use it. Yeah. Sad to say, use a Z, sh, z shell, I'm sure.
+
+85
+00:15:31,799 --> 00:15:40,470
+Unknown: Originally, and I'm sure there's a lot of things I say that I'm like, why did I just say that? Like, yeah, I stopped saying y'all for a long time because I didn't want to be
+
+86
+00:15:44,279 --> 00:15:49,260
+Wes Bos: Oh, man, awesome. Any any other ones you want to do or just wanted to plug this ETM Academy?
+
+87
+00:15:49,799 --> 00:16:03,000
+Unknown: Yeah, I just wanted to get on say how much of a fan I am. Your your guys dynamic from the beginning has been just amazing. So I wanted to say thanks to the fans that plug that and because I've got my workshop coming on there. So super nice.
+
+88
+00:16:03,630 --> 00:16:21,179
+Scott Tolinski: Yeah. And Barry, I mean, we he could Britney's been around that level discord for a long time. And she's always sharing her posts and all that stuff on on dev two and everywhere. So I've been appreciating seeing all your stuff just over over the course of time. So shout out to Brittany. Thank you. Yeah,
+
+89
+00:16:21,360 --> 00:16:23,880
+Unknown: I really appreciate this, guys. This is awesome. Thank you.
+
+90
+00:16:24,120 --> 00:16:27,360
+Scott Tolinski: Yeah. Thanks for having me. Got it. Thanks for helping us elevate 300
+
+91
+00:16:27,779 --> 00:16:28,890
+Unknown: Yes, see you.
+
+92
+00:16:29,520 --> 00:16:33,179
+Wes Bos: This is really convenient that everybody has like high quality microphones.
+
+93
+00:16:36,000 --> 00:16:36,899
+Unknown: I do have a setup.
+
+94
+00:16:39,390 --> 00:16:40,260
+Thank you guys. So
+
+95
+00:16:40,260 --> 00:16:46,770
+Wes Bos: thanks again. All right, next, we've got cook, code stacker. Hello.
+
+96
+00:16:47,880 --> 00:16:48,480
+Unknown: Hey,
+
+97
+00:16:49,350 --> 00:16:50,669
+can you hear us?
+
+98
+00:16:50,789 --> 00:16:53,940
+Yeah, good. Okay. Hey,
+
+99
+00:16:54,779 --> 00:16:58,860
+Wes Bos: thanks for coming on. But do you have a name or just code stacker?
+
+100
+00:16:58,950 --> 00:17:07,050
+Unknown: Yeah, no, no, no, my name is Jesse. I've talked to Scott before, but I've never met us. So it's great. Great to see you guys. I appreciate it.
+
+101
+00:17:07,679 --> 00:17:13,860
+Wes Bos: Oh, no problem. Thanks for thanks for coming on. So like, Where are you from there? Yeah, so
+
+102
+00:17:13,860 --> 00:17:16,410
+Unknown: I'm in I'm in Texas. Yeah.
+
+103
+00:17:16,679 --> 00:17:25,530
+Scott Tolinski: Yay. Wow. Yeah, access. Mm. Yep. Alexis and Brittany is from the south. So we Yeah, we gotta get some Northerners on the show.
+
+104
+00:17:27,149 --> 00:17:28,610
+Unknown: We got a Canadian on next.
+
+105
+00:17:30,480 --> 00:17:44,910
+Yeah, so I know. I really appreciate it. You guys are you guys are great. I'm, you know, fairly new to this industry of teaching online tutorials and stuff like that. So you know, I have a YouTube channel. But you guys have been a great inspiration for me. Oh, thanks
+
+106
+00:17:44,910 --> 00:17:45,960
+Wes Bos: a lot. Appreciate that.
+
+107
+00:17:45,990 --> 00:17:54,090
+Scott Tolinski: You'll have to you'll have to have to plug your plug your channel. Would you like to do a stump question or a good? Oh, okay.
+
+108
+00:17:54,090 --> 00:17:58,050
+Unknown: I will do I will do a stump question. plug my stuff.
+
+109
+00:17:58,410 --> 00:18:13,680
+Scott Tolinski: Yes. That is a good trade. I was just about to get it. And then I typed in stumped into the Google search bar to let you know exactly how on my brain is today. But what was the the site I can't find the site 32nd Interview Questions? 30
+
+110
+00:18:13,680 --> 00:18:21,540
+Wes Bos: seconds of interviews.org. I put I popped it in the notion. There's a lot of things that we have to open right now. I've got three monitors, and they are all full.
+
+111
+00:18:22,380 --> 00:18:31,950
+Scott Tolinski: That is Yeah, I have the Discord. I got the OBS YouTubes. And yeah, let's stuff. Sorry, you can find it because I can't find the link right now.
+
+112
+00:18:32,009 --> 00:18:34,200
+Wes Bos: All right, I'll grab one. I'm just looking through them right now.
+
+113
+00:18:34,200 --> 00:18:35,460
+Unknown: Don't make it too hard.
+
+114
+00:18:35,549 --> 00:18:46,920
+Wes Bos: That's a silly question. There was one on like, what are the advantages of the Node JS callback pattern? And I was like, none, it sucks. It's now that we have a sink await. Are you a reactive?
+
+115
+00:18:47,160 --> 00:18:47,760
+Unknown: Yeah,
+
+116
+00:18:47,760 --> 00:18:51,510
+react? JavaScript, CSS, any kind of front? Okay, we've
+
+117
+00:18:51,510 --> 00:18:53,790
+Wes Bos: got a react question here. That's marked as hard.
+
+118
+00:18:53,790 --> 00:18:55,230
+Unknown: What are
+
+119
+00:18:55,230 --> 00:18:57,690
+Wes Bos: portals and react?
+
+120
+00:18:58,110 --> 00:18:59,010
+Unknown: Oh, that's easy.
+
+121
+00:18:59,010 --> 00:19:00,450
+Why are
+
+122
+00:19:02,610 --> 00:19:07,140
+Wes Bos: the portals are very, very niche used part of react? I mean, I
+
+123
+00:19:07,140 --> 00:19:08,790
+Unknown: don't think so. It's just a pop up. Right?
+
+124
+00:19:09,240 --> 00:19:10,860
+What did they do? Well, it's
+
+125
+00:19:10,860 --> 00:19:26,940
+almost like a modal. Right? So it's just a puts a container up on top of another container and you can actually access the root of react from it. So it doesn't, it can it's basically on its own, but it can be pulled into another container.
+
+126
+00:19:27,350 --> 00:19:31,850
+Wes Bos: Yeah, it's it's your react application outside of your root element. Right.
+
+127
+00:19:31,890 --> 00:19:38,060
+Scott Tolinski: Right. Yeah. Right. allows you to insert into the DOM into an element basically all right.
+
+128
+00:19:38,160 --> 00:19:42,320
+Wes Bos: Yeah. Okay. I think that was that was good. Good. Luck your thing.
+
+129
+00:19:45,150 --> 00:19:56,790
+Unknown: Appreciate, ya know, so my youtube channel is obviously code stacker with an R in then also just released a new course VS code hero Comm. So yes, check that out. That would be great.
+
+130
+00:19:57,860 --> 00:20:00,630
+The hero.com Yeah, and
+
+131
+00:20:00,630 --> 00:20:05,220
+just for syntax, if you put in the coupon code syntax, we'll get a discount.
+
+132
+00:20:05,300 --> 00:20:07,610
+Scott Tolinski: Oh, look at you came prepared.
+
+133
+00:20:10,440 --> 00:20:12,560
+Unknown: Props sweet.
+
+134
+00:20:12,690 --> 00:20:16,230
+Scott Tolinski: Yeah, this looks nice. I like the the shadows.
+
+135
+00:20:16,499 --> 00:20:18,090
+Unknown: Thanks. Cool. It's
+
+136
+00:20:18,090 --> 00:20:20,430
+all done with Gatsby and tailwind.
+
+137
+00:20:20,700 --> 00:20:22,020
+Whoo. All right.
+
+138
+00:20:22,020 --> 00:20:25,140
+Wes Bos: All right. Even the enum animations to
+
+139
+00:20:25,739 --> 00:20:30,180
+Unknown: animations or iOS animate on scroll. Cool. Super simple.
+
+140
+00:20:30,180 --> 00:20:39,050
+Scott Tolinski: Sure enough, you're allowed to say the world tailwinds on this podcast anymore. Because there people always Tweet, tweet at us. Whenever we say the word tail would
+
+141
+00:20:39,800 --> 00:20:51,110
+Wes Bos: really get in trouble. Yeah, no, just joking around, but just joking. Awesome. Cool. All right. Would you like to do any other? Are you are you done?
+
+142
+00:20:51,320 --> 00:20:57,900
+Unknown: No. That's good. I appreciate it. Yeah. Great show. let some other guys get in here. Sweet. Thanks. Thanks for coming on.
+
+143
+00:20:58,050 --> 00:20:59,280
+Scott Tolinski: Yeah, seriously. Thank you.
+
+144
+00:20:59,330 --> 00:21:00,320
+Unknown: All right, thanks.
+
+145
+00:21:01,980 --> 00:21:09,860
+Wes Bos: Who do we want next? Spence's? 10 he just he tweeted that he's having a beer. Watching this. So let's have him on.
+
+146
+00:21:10,260 --> 00:21:22,950
+Scott Tolinski: Bear. But it's not beer o'clock here. Yeah, sorry for everybody gets some downtime. Usually when we record there's not a ton of downtime but we do get some some Adam cut this out.
+
+147
+00:21:22,980 --> 00:21:32,700
+Wes Bos: Yeah. And cut the sometimes a kid will come running in or the last podcast I had my kid on my lap the entire podcast, you can hear him a little bit. Which I thought was funny.
+
+148
+00:21:33,240 --> 00:22:01,050
+Scott Tolinski: Yeah, in fact, it is very frequent that we have children either running around or or fiddling with our knobs or, or just ruining the, the audio in general for me in my office, they just love twiddling the knobs on my compressor. And then just we've been getting, Adam has been sending us messages about the quality of our audio. So hopefully it hasn't been too bad. Alright, Spence is joining Oh, and Henry helvetic has got to hop on,
+
+149
+00:22:01,470 --> 00:22:04,860
+Wes Bos: bring Henry and if Spence is not joining in?
+
+150
+00:22:05,430 --> 00:22:09,630
+Scott Tolinski: We'll do Spence first. Okay, we could do double. Could we
+
+151
+00:22:12,030 --> 00:22:15,540
+Wes Bos: please at the very end, we should just let as many people as we can.
+
+152
+00:22:16,950 --> 00:22:31,860
+Scott Tolinski: We might actually hit both of them at the same time. At the same time. Those of you wondering, I do not know how to do pop popping. I do not know how to do that style of dance Just in case you're wondering.
+
+153
+00:22:32,610 --> 00:22:35,040
+Wes Bos: Oh, pop and lock their doors? No, you
+
+154
+00:22:35,040 --> 00:23:06,180
+Scott Tolinski: can't say pop in lock Wes. That's because they're very different dances. Popping is the popping is the kind of stuff well, this is waving. But popping. This is popping. And then locking is is like is is like very clown like it's it's hard to explain. But there's finger points and wrist rolls. There's this is your lines. This is a lock. And this is a pop. They're very different.
+
+155
+00:23:06,660 --> 00:23:08,100
+Unknown: All right. Oh, here's Henry.
+
+156
+00:23:08,700 --> 00:23:09,390
+Scott Tolinski: Henry.
+
+157
+00:23:09,390 --> 00:23:09,990
+Unknown: Yo, can
+
+158
+00:23:09,990 --> 00:23:11,040
+you guys hear me?
+
+159
+00:23:11,250 --> 00:23:13,290
+Yeah. Can you hear? Oh, come
+
+160
+00:23:13,290 --> 00:23:16,620
+on. Oh, somebody
+
+161
+00:23:16,620 --> 00:23:24,570
+Scott Tolinski: didn't give Spence the roll. I'm sorry. That's why can you guys hear me? Can you guys hear me? Yeah. In your face? I don't know if you can hear us.
+
+162
+00:23:25,110 --> 00:23:27,420
+Unknown: Yeah, but I don't know which mic
+
+163
+00:23:31,470 --> 00:23:32,040
+Scott Tolinski: syntax.
+
+164
+00:23:33,510 --> 00:23:36,690
+Wes Bos: You gotta you gotta turn off your live stream folks when you call in.
+
+165
+00:23:38,460 --> 00:23:41,940
+Scott Tolinski: Okay, I think oh my god. Oh, hey,
+
+166
+00:23:42,780 --> 00:23:43,410
+Wes Bos: how's it going?
+
+167
+00:23:43,590 --> 00:24:25,050
+Unknown: Okay, cool. Cool. I was like, completely confused. I was like, what is going on right now? I have too many screens. And I didn't know which one was live. Which one was lagging? I don't know. Anyways, how you guys doing good. I'm alright, man. Just add a pretty interesting morning. I just did a little q&a with this new web dev class in London, London, England. And I was just answering questions and stuff like that. So it was it was pretty interesting. But man, I you know, honestly, I'm glad to be with you guys. Because as you know, I probably caught some of your early episodes. Like, I think under like the first 20 or so then I kind of fell off after that. So I have to apologize. Oh,
+
+168
+00:24:27,630 --> 00:24:28,500
+Wes Bos: yeah, you know, I've
+
+169
+00:24:28,500 --> 00:24:40,530
+Unknown: said so but, but yeah, yeah, we like I saw the announcement about the the live show. And I was like, dude, I'm still here. Let me just log in and see what's going on. And you're a man, and I think I'm your first Canadian.
+
+170
+00:24:40,530 --> 00:24:42,750
+Scott Tolinski: Yeah. first official
+
+171
+00:24:42,780 --> 00:24:51,660
+Wes Bos: here from Toronto, which we used to hang out in person when I was back living in Toronto. And I think actually the first time I met you was in New Orleans.
+
+172
+00:24:52,170 --> 00:24:58,200
+Unknown: Yeah, dude, it was like that. Was that Sunday? Yeah, exactly.
+
+173
+00:24:59,100 --> 00:25:00,480
+Wes Bos: The pencils are behind. Me,
+
+174
+00:25:00,600 --> 00:25:12,570
+Unknown: that sounds so weird because I used to work at this design firm at some days I had to eat up. And I was like, dude, I don't know what to do. And then I ended up just flying to Nola to volunteer. So it's
+
+175
+00:25:14,730 --> 00:25:20,790
+Scott Tolinski: just just just head on over to NOAA just to chill. Yeah. And volunteer. That sounds. That sounds like quite the
+
+176
+00:25:20,940 --> 00:25:24,000
+Wes Bos: as fun as the get get really good conference. Yeah, it
+
+177
+00:25:24,000 --> 00:25:36,330
+Unknown: was fun, man. It was fun. I met a bunch of folks and yourself, obviously. And then, you know, there are a few days there to actually, I'll probably post a photo cuz that was one photo, a bunch of us just hanging out. So it was pretty interesting.
+
+178
+00:25:36,870 --> 00:25:43,740
+Wes Bos: Yeah. Tell us about your your performance. You run jam stack Toronto. What do you want to talk to us about today?
+
+179
+00:25:44,070 --> 00:26:21,000
+Unknown: So I really was going to plug a set of videos. I'm about to drop next week about a particular sort of like event I put together but roughly, I'm from Toronto for that. Instead, I run a couple of meetups trying to work performance meetup and the jam stack Toronto meetup. But as you mentioned, I'm actually going to drop a link about that in the in the chat. So basically, two things I wanted to plug real quick. Next month. Yeah, I'm doing a I always mispronounce it. Sorry. I'm French. Ella, venti. I'm saying that wrong. 11. d 11. That's it. Sorry, sir.
+
+180
+00:26:21,060 --> 00:26:23,580
+Wes Bos: What's the acronym for it?
+
+181
+00:26:24,480 --> 00:26:27,660
+Unknown: eleventy 112? y? Yes.
+
+182
+00:26:28,710 --> 00:26:32,100
+Scott Tolinski: Oh, yeah. Yeah, I hear so much about this, but I've never used it.
+
+183
+00:26:32,400 --> 00:26:52,470
+Unknown: Yeah, it's, it's really getting a lot of momentum around the SSRS. Oh, CSS g sorry. So sorry. I'm so confused. Now. What I want to say is just for fun, I'm doing a meet up on November 11. So 11 1111 minute, lightning talks on eleventy.
+
+184
+00:26:53,700 --> 00:26:55,500
+Wes Bos: So Oh, that's awesome. Yeah,
+
+185
+00:26:55,500 --> 00:27:51,900
+Unknown: it's something a little different. I'll leave a little link in the slack of slack into discord about it. But what I really want to talk about was, I'm releasing a set of videos from a little sort of mini conference I put together last week or no, last month, basically on images and image formats. You know, as you mentioned, I'm a bit of performance fan. And the image conversations ones that I've always had in mind, and especially this week, would, I guess next announcing that image component, and all this sort of like tooling around performance, and specifically, performance monitoring, images have become a little important. So I have some videos coming next week about this conference I put together. So people talking about emeth, which I'm sure you may have heard about, which is sort of like the new kid on the block in terms of image formats, supported right now in stable Chrome, and behind a flag in Firefox,
+
+186
+00:27:51,900 --> 00:27:56,790
+Wes Bos: I believe, does that replace web p then like, that's another new image format, right.
+
+187
+00:27:57,059 --> 00:29:14,820
+Unknown: So interestingly enough, what P is actually 10 years old, but it's only really gained a bunch of momentum in the last two or three years. And what is been very important this year, specifically, because finally, in Safari 14, so Big Sur, and iOS 14, is you'll get where P support. But this is basically on its 10th here, but what some consider now an old format at 10 years old, because even around with better bit with better specs. But in some of these videos that I'm releasing, we're talking about web p 2.0. being worked on as we speak, one of the videos I talked about metrics like LCP and images, and what people may not realize that images, or at least your largest image on your page will affect your score your lighthouse score drastically, because it'll take up about 25% of the score. So if you miss that on, you mess up your your Lh score as well. Very interesting set of videos. You know, I talked about what we talked about, if we talk about web p a viff, skoosh, we talk about that, as well, because they have a lot of support. And we talked about this format called JPEG Excel, which is sort of getting a little bit. Yeah, it's getting a little bit of traction right now. So it's pretty cool. So yeah, I mean, I just want to mention that I'll probably be dropping that next week. So
+
+188
+00:29:15,390 --> 00:29:16,770
+Wes Bos: where can we get that?
+
+189
+00:29:17,069 --> 00:29:28,800
+Unknown: I'll probably do it on Twitter. So my Twitter handle which is basically my handle on discord right now, so I'll be Helvetica and yeah, I mean, it's just some pretty neat information I just want to discuss.
+
+190
+00:29:29,219 --> 00:29:37,530
+Wes Bos: I'm really glad that I found out you're French and we call I can call you only now you absolutely can. I was always saying yes sweet.
+
+191
+00:29:38,850 --> 00:29:43,350
+Unknown: It's actually preferred, but you can have problems with that are
+
+192
+00:29:43,680 --> 00:29:47,100
+Wes Bos: not me. I took grade 10 French. Hey, I didn't take
+
+193
+00:29:47,100 --> 00:29:53,400
+Scott Tolinski: French but my my grandmother has a French maiden last name. So I basically French. Yeah.
+
+194
+00:29:54,420 --> 00:29:58,770
+Wes Bos: Awesome. Cool. Well, thanks so much for coming on. Appreciate it. Hey, Ben. Thank
+
+195
+00:29:58,770 --> 00:30:03,360
+Unknown: you. Thanks for Send through these issues I was having said into what was going on for a second oh
+
+196
+00:30:03,360 --> 00:30:04,680
+Scott Tolinski: it's all good.
+
+197
+00:30:04,950 --> 00:30:06,630
+Wes Bos: I say
+
+198
+00:30:07,290 --> 00:30:14,610
+Scott Tolinski: thanks for stopping by every alright Spence is up next. Oh Henry you're still here you might have to leave there we go
+
+199
+00:30:16,350 --> 00:30:27,540
+Wes Bos: say yes that should be his like developer name. That's like a big jewelry store here in Canada spends diamonds and diamonds I don't even know it is here Spence diamonds.
+
+200
+00:30:27,719 --> 00:30:29,670
+Scott Tolinski: That's actually really sick nickname though.
+
+201
+00:30:29,700 --> 00:30:39,450
+Wes Bos: Yeah, that sounds like a like a MySpace crunk core. Like band name like Spence diamonds and the the wild cats.
+
+202
+00:30:39,990 --> 00:30:41,360
+Unknown: I wild cats.
+
+203
+00:30:42,750 --> 00:30:45,860
+Scott Tolinski: wild cats or wild cats. Wow. Cuz I feel
+
+204
+00:30:45,870 --> 00:30:48,330
+Unknown: like Oh, there it is
+
+205
+00:30:48,360 --> 00:30:50,670
+that room very far.
+
+206
+00:30:51,840 --> 00:30:55,950
+Wes Bos: Scott clean speaking. We can hear your Spence mark on here. Anyone?
+
+207
+00:30:56,850 --> 00:31:03,630
+Scott Tolinski: Oh, we can hear you. Test. Test test test. Check your audio and check your audio.
+
+208
+00:31:03,720 --> 00:31:05,100
+Unknown: Oh, my.
+
+209
+00:31:06,570 --> 00:31:08,490
+Scott Tolinski: Smith's gone. He'll be come back
+
+210
+00:31:08,580 --> 00:31:11,460
+Wes Bos: and his back. Hello. Hey,
+
+211
+00:31:11,460 --> 00:31:15,360
+Unknown: you can hear me cool. I've got the
+
+212
+00:31:18,480 --> 00:31:21,780
+Wes Bos: site. bring somebody else in. Alright, bring Jason.
+
+213
+00:31:21,860 --> 00:31:27,210
+Scott Tolinski: I'll bring Jason because Jason is gonna Jason say a discord Pro. All right,
+
+214
+00:31:27,420 --> 00:31:27,990
+Wes Bos: Jason.
+
+215
+00:31:27,990 --> 00:31:28,770
+Unknown: Hello.
+
+216
+00:31:28,920 --> 00:31:29,550
+Scott Tolinski: Hello.
+
+217
+00:31:29,550 --> 00:31:31,020
+Wes Bos: How's it going? It's going well, How
+
+218
+00:31:31,020 --> 00:31:31,680
+Unknown: are y'all?
+
+219
+00:31:32,100 --> 00:31:33,120
+Scott Tolinski: Good. How are you doing?
+
+220
+00:31:33,120 --> 00:31:34,110
+Unknown: Good. Good.
+
+221
+00:31:34,110 --> 00:31:36,090
+Let me let me get my camera going here.
+
+222
+00:31:36,110 --> 00:31:39,660
+Scott Tolinski: Yeah, you got a fancy setup to spooky.
+
+223
+00:31:43,110 --> 00:31:50,130
+Unknown: Doing the you know, we aren't doing anything fun for Halloween. So we figured we'd dress up for all our Friday zoom calls. Sick.
+
+224
+00:31:50,850 --> 00:31:51,630
+Scott Tolinski: That's amazing.
+
+225
+00:31:53,190 --> 00:31:54,030
+Unknown: That's great.
+
+226
+00:31:54,030 --> 00:31:57,360
+Scott Tolinski: So how is that being affixed to your head? Is that Is it a band?
+
+227
+00:31:57,630 --> 00:31:59,820
+Unknown: It's Yeah, it's like a it's a little like a headband.
+
+228
+00:31:59,999 --> 00:32:02,760
+Scott Tolinski: Oh, yeah. All right. All right. All right. But the
+
+229
+00:32:03,239 --> 00:32:07,200
+Unknown: days I actually have my ears pierced from back in my rock star days. And so Oh,
+
+230
+00:32:07,200 --> 00:32:08,130
+yeah.
+
+231
+00:32:08,580 --> 00:32:09,840
+These are just real earrings.
+
+232
+00:32:10,410 --> 00:32:19,440
+Scott Tolinski: I had a tongue piercing for like, eight years. So I wonder if I could still shove something through my tongue and have like a spooky, spooky Halloween Town.
+
+233
+00:32:20,249 --> 00:32:25,530
+Unknown: I had a tongue piercing and as a result, I have a lot of very expensive dental work. Yes.
+
+234
+00:32:25,530 --> 00:32:44,490
+Scott Tolinski: Do I know dude? My Yes, my aunt, my aunt in law was like, is that she was a nurse and she was like, you need to take that thing out. Because you are gonna really regret it later on in life when your dental bills are really high. And it's just like, whatever. And then like, sure enough, I'm like, I wish I wouldn't have had that thing. And for some
+
+235
+00:32:45,720 --> 00:32:46,440
+Unknown: of you.
+
+236
+00:32:47,340 --> 00:32:50,280
+Scott Tolinski: It sucks at the dentist. I will tell you that.
+
+237
+00:32:50,490 --> 00:32:55,770
+Unknown: Yeah, a little time you go in for a cleaning. You just get judgment. Like they're like, oh, tongue pierced, didn't you?
+
+238
+00:32:55,830 --> 00:33:14,910
+Scott Tolinski: Yeah, dumb now. Yeah, but you feel dumb. Now Westbrook you don't know. Basically, there's like a ball on the underneath side of it. And it rubs against the gums on the die, er, and then your teeth and it just that stuff doesn't come back. never comes back. And it hurts really bad. Yeah, definitely.
+
+239
+00:33:16,950 --> 00:33:20,160
+Wes Bos: So somebody on Twitter tagged you and told you to jump in here?
+
+240
+00:33:20,309 --> 00:33:34,380
+Unknown: Yeah, yeah, I got a I got tagged with a link to the like to the YouTube. And oh, yeah. Cool. Toby. Come in. So I, I wasn't sure if somebody asked me or it was like actually, like, hey, Jason's coming or something. But
+
+241
+00:33:34,499 --> 00:33:55,650
+Wes Bos: no, no, that was we're so what we're doing for is our 300 episode. And we are having people come on. And they either have to ask us a Paula question. They have to do a sick pick. You got to take a stumped question. So Scott, and or I will give you a question about JavaScript or CSS that you have to answer or shamelessly plug something.
+
+242
+00:33:56,190 --> 00:33:58,680
+Unknown: I guess stumped me. Let's try it. All
+
+243
+00:33:58,680 --> 00:33:59,340
+right, let's
+
+244
+00:33:59,340 --> 00:34:11,640
+Wes Bos: do it. The question is, this is a hard a JavaScript question. What does use strict in quotes do? And what are some of the benefits of using it? Oh, my
+
+245
+00:34:11,640 --> 00:34:12,210
+Unknown: God.
+
+246
+00:34:13,980 --> 00:34:17,130
+Wes Bos: I had this one myself. And I could only think of one thing.
+
+247
+00:34:17,610 --> 00:34:20,480
+Unknown: Yeah, I use strict.
+
+248
+00:34:21,569 --> 00:34:46,380
+I don't know, I don't know if I know any of these. So I know that. One of the things that people complain about in JavaScript is that it does inference of a lot of things. And if I remember correctly, you strict was a way to turn some of that inference off or to make it stricter. And that helps avoid some kind of confusing errors. However, I have no idea if that is accurate or even close.
+
+249
+00:34:47,400 --> 00:34:54,690
+Scott Tolinski: My answer would have been it makes it more strict. Because I don't I don't think I've ever used use straight. I don't know why it just happened. You know,
+
+250
+00:34:54,710 --> 00:36:06,270
+Wes Bos: I know why. I know. I neither of you have done this and it's because you're probably writing modules. For years now, yes. All right and right about the time that this rolled out, you probably move to module so you never used it but you strict is, is if you've got a JavaScript file or a script tag, and you type in you strict at the top of it, it will convert that the JavaScript runtime to strict mode, which cleans it up. Because if you can't break old JavaScript, and some some things like you can create a variable without putting var in front of it, or you can have a global variable accidentally. That's the big one for me. One of the other ones here sometimes provides increased performance simplifies eval, and helps make JavaScript more secure. For me, it basically like turns off these silly things that we've had in JavaScript forever that you shouldn't be allowed to do, which is the case if you write JavaScript in a module. But if you still are writing JavaScript and a.js file, and that's why often when you bundle your JavaScript, you'll see the first line says, use strict and this way, if you like, create a variable without putting a VAR in front of it. It won't even run because you might accidentally be doing something that's bad.
+
+251
+00:36:06,510 --> 00:36:13,830
+Unknown: I'm not gonna lie. I didn't even know that you could do that in JavaScript like keyword.
+
+252
+00:36:13,980 --> 00:36:20,880
+Wes Bos: Yeah. That's good. It's funny and yeah, it's like, like, obtuse thing to know about JavaScript. But
+
+253
+00:36:20,880 --> 00:36:22,650
+Unknown: like, I didn't know you could do that either.
+
+254
+00:36:22,650 --> 00:36:25,590
+Wes Bos: All right. Well, dumped. stomped
+
+255
+00:36:25,770 --> 00:36:27,810
+Unknown: on was completely stumped.
+
+256
+00:36:30,900 --> 00:36:33,060
+Scott Tolinski: Yeah, stumped. stump shows no mercy.
+
+257
+00:36:35,070 --> 00:36:37,860
+Wes Bos: All right. Well, thank you so much for coming on. Really? appreciate it.
+
+258
+00:36:38,280 --> 00:36:42,920
+Unknown: Yeah, absolutely. Thanks for having me. Have fun with the rest of the episode. Congratulations on 300.
+
+259
+00:36:42,959 --> 00:36:44,550
+Wes Bos: Yeah, thank you. Okay.
+
+260
+00:36:45,710 --> 00:36:50,400
+Scott Tolinski: Spence. He said he could hear us now so Okay, yeah.
+
+261
+00:36:51,510 --> 00:36:53,760
+Unknown: Our thing was, hey,
+
+262
+00:36:55,530 --> 00:36:57,780
+Scott Tolinski: it's all good. You can hear us we're good.
+
+263
+00:36:58,109 --> 00:37:06,810
+Unknown: Oh, from the UK? Yes. Yeah, we say he's dead. And we put, you know, unnecessary use and stuff in
+
+264
+00:37:08,610 --> 00:37:12,380
+Wes Bos: the correct way, like, miles per hours on your street, right.
+
+265
+00:37:13,080 --> 00:37:14,900
+Unknown: Y'all don't know what's going on with that. So?
+
+266
+00:37:16,670 --> 00:37:19,940
+Scott Tolinski: Yeah, that is weird. Yeah,
+
+267
+00:37:19,940 --> 00:37:20,550
+Unknown: sorry about that.
+
+268
+00:37:21,149 --> 00:37:22,710
+Scott Tolinski: Your name is Scott as well. Right?
+
+269
+00:37:23,070 --> 00:37:23,690
+Unknown: It is Scott.
+
+270
+00:37:23,690 --> 00:37:27,170
+Scott Tolinski: Yeah. I've seen you around on the on the social
+
+271
+00:37:27,170 --> 00:37:49,730
+Unknown: sciences. Pretty much Spencer's 10 everywhere. So thank you guys, both you. I mean, I think Wes, and your JavaScript 30 was like one of the sort of the first part the gateway drug into me becoming like a proper professional web developer. So thank you.
+
+272
+00:37:50,040 --> 00:37:51,650
+Wes Bos: That's awesome to hear that you're welcome.
+
+273
+00:37:51,749 --> 00:38:03,110
+Scott Tolinski: I think there's a new toll that everyone's gonna have to pay to come on the show where they have to send us each a compliment at the beginning. Butter for his barbecue.
+
+274
+00:38:05,190 --> 00:39:42,380
+Unknown: So yeah, I just wanted to come on and plug act tober Fest, which no one has spoken about so far. So I've been contributing to a foster tree called MDX embed, which is lets you embed third pi things into your MDX file. So not just Gatsby, but next j s. And anywhere where you can use MDX you can use MDX embed, just just wrap it in in the provider and you can sort of embed tweets, YouTube videos. And that's the main thing I use it for, ah, there's a ton of stuff in there. And this is a really good success story from Oktoberfest. And I just like to say there was like 80, around 80 issues. And so Paul Scanlon, who is in his repository at the moment, he did a great job setting up an umbrella issue. And this was just for test coverage. So we could do a v1 release. And we've achieved it. We've got 98% test coverage, I think now, it was zero before. So thanks to this, just saying saying thanks to everyone contributing throughout October 1. So and thanks to Paul for, you know, for the library as well. So it's, it's been great. We've had tons of people come in and contribute. And it's been really active. And we did it. I mean, we did I think it was the AC issues and we just churn Wow, integration tests and enter in tests. So it's been great. So that's my plug. And we
+
+275
+00:39:42,380 --> 00:39:45,360
+Scott Tolinski: just talk about how awesome MDX is in general Ah,
+
+276
+00:39:45,360 --> 00:40:23,360
+Unknown: boy Yeah, no, I love MDX is the best and it just makes document stuff so much more fun. I tweeted the other day, I put a sarcasm component into my empty hex, just so I could rap a bit of text In the sarcasm component to say, up and down, I took it from weiss's proposal for the sarcasm proposal, which is basically just that and then put it into a component folder then CMD exe. And that's it. 10 minutes late, you've got a sarcasm component in your, in your mouth and so it's great.
+
+277
+00:40:24,000 --> 00:40:29,360
+Wes Bos: That's so good. Oh, that's hilarious. That's like actually a really good use case for learning.
+
+278
+00:40:29,480 --> 00:40:35,790
+Scott Tolinski: Yeah, totally. And shout out to those of you who use spelt there is an MD specs, which is a
+
+279
+00:40:35,790 --> 00:40:38,550
+Unknown: Yeah, no, I was looking at it. So it's
+
+280
+00:40:38,550 --> 00:40:42,110
+Scott Tolinski: a very good, I'll put it in the discord. It's very, very good.
+
+281
+00:40:42,900 --> 00:41:05,250
+Unknown: Brilliant. So that's me done. Thank you guys. And I have listened. I wouldn't say to everything hundred. But I have listened to nearly all of the syntax episodes. I listen to the a lot of podcasts. And a lot more thanks to your recommendation, Scott. So dotnet diaries. Oh, yeah. We're swindled and there's just tons of stuff now.
+
+282
+00:41:06,150 --> 00:41:14,340
+Scott Tolinski: The crime crime based podcast. Yes. It makes me very depressed. But
+
+283
+00:41:16,830 --> 00:41:19,260
+Unknown: later on that now I guess, but thank you, chaps.
+
+284
+00:41:19,290 --> 00:41:20,880
+Wes Bos: Thanks for joining us. Appreciate it.
+
+285
+00:41:21,090 --> 00:41:26,190
+Scott Tolinski: Thanks, Brad. You got it. Got your audio work. Anyway, happy to have you on Skype.
+
+286
+00:41:26,310 --> 00:41:28,770
+Unknown: Yeah, I can take my thumb off the spacebar now. Thanks, guys.
+
+287
+00:41:32,400 --> 00:41:37,050
+Scott Tolinski: James. James is gonna set up. Everybody's has pro setups.
+
+288
+00:41:37,230 --> 00:41:40,440
+Unknown: Sweet. I'm on. What's up with turn on camera.
+
+289
+00:41:40,920 --> 00:41:42,210
+Yeah. And like,
+
+290
+00:41:43,710 --> 00:41:47,420
+what's going on? This light is your chance to go dance at
+
+291
+00:41:48,230 --> 00:41:50,880
+a supernatural poster. I'll get a kick out of those.
+
+292
+00:41:51,270 --> 00:41:53,250
+Scott Tolinski: Oh, yeah. Oh, yeah.
+
+293
+00:41:53,370 --> 00:41:57,000
+Unknown: Well, thank you. I appreciate it. It seems like it's going well, this is super cool.
+
+294
+00:41:57,330 --> 00:42:27,150
+Scott Tolinski: It's very cool. We spent a significant amount of time trying to figure out the technical aspects of this. We're like, okay, let's use breakout rooms and zoom and like what the heck, we couldn't get anywhere. We tried a lot of different stuff. It's definitely pretty eye opening. And me personally, I learned how to do a countdown clock on OBS and a looping video with audio and stuff. It was pretty good. Yeah, I'm finally getting that OBS kick going. I know, James, you're you're pretty comfortable on. On OBS.
+
+295
+00:42:27,630 --> 00:42:44,940
+Unknown: I yeah, like I do it a lot. I actually stream this morning, but I don't do anything too fancy. And I actually have So you mentioned having the issue with recording the window with zoom was choppy. I've had the exact same thing. So I do the same. Grabbing the screen and then just clipping out the stuff that I need. Yeah, yeah.
+
+296
+00:42:45,000 --> 00:42:53,070
+Scott Tolinski: Yeah. I think I saw on the internet somewhere and was like, Oh, good. Just try and yeah, I'm using the stream labs OBS
+
+297
+00:42:53,400 --> 00:42:54,720
+Unknown: for us. Yeah.
+
+298
+00:42:54,720 --> 00:43:11,100
+Scott Tolinski: Yeah. It's pretty nice. There's all these plugins I got, I got that I actually a shame. ashamedly paid money just so I could get the gold color scheme. It's a golden black color scheme. There's a lot of other features that come with the Pro, but I don't care. I paint gold colors.
+
+299
+00:43:12,900 --> 00:43:16,230
+Unknown: So that we can shame you specifically for this. How much did you pay just for the gold? Oh, I
+
+300
+00:43:16,230 --> 00:43:18,630
+don't? I don't know. I don't know.
+
+301
+00:43:19,190 --> 00:43:21,060
+Wes Bos: It's a rounding error for Scott.
+
+302
+00:43:23,040 --> 00:43:52,530
+Scott Tolinski: Yes, no, it's uh, I was like, Well, if I'm gonna if I'm, well, there's a lot of extra little templates and gadgets and gizmos that they give you with it. So I was like, Well, if I'm gonna if I'm gonna do live streaming, I don't want to have to figure out how to do all that stuff myself. I want to click button, get countdown clock and then change the values though. Yeah, Jane, do you want to do a shameless plug a stumped question, a potluck question? Or was the other one a sec, pick? Six pick. Whatever you want.
+
+303
+00:43:52,890 --> 00:44:40,140
+Unknown: Yeah, I will. I'll volunteer for a stumped question. We'll see how it goes. But I would like to ask a question first, if you're cool with it. Yeah, I am now teaching my second round of a boot camp. But I know Wes, you've done that in the past. This one is twice a week at nights. And this one is virtual this time around the last one was in person in Memphis. So it's a different experience. And a lot of what we talked about, I've talked about this on the podcast before but just the idea of imposter syndrome, the idea of being really nervous to ask questions specifically, that's the easiest way for people to fall behind. So any like we bring this up, myself and ta are always encouraging people. Hey, ask questions. What questions do you have trying to be pre emptive any specific advice on how to really keep keep people engaged and make them feel comfortable asking questions to make sure that as they start to Yeah, maybe fall behind that we kind of catch on pretty quick.
+
+304
+00:44:40,379 --> 00:45:47,160
+Wes Bos: My answer is gonna be for in person because I spent a lot of time like thinking about this and because what would happen is you would teach something, and the question was come up during that time, and then I made sure that we had like 1015 minute like, work on it yourself breaks, and then I had to master the walk around. The classrooms slowly but not like a teacher who's trying to look at everyone's screens. And just saying like, hey, any questions over here or like really reading body language from certain people and you just like walk it up, like, hey, everything looking Okay, or, or whatever, or even just like going up to somebody who had finished it and the check it out. And then while you're sitting down usually the person next to it would be like, actually, you know what, I have a quick question as well. So just like trying to, like tease the questions out of people. And it literally it's just being physically close enough to people where they're like, okay, now it's not a big deal. You know what, while you're here, come on over, and I got a question and then and whatnot. So that was that was my little trick. And I feel like I got that down pretty, pretty down pat, because I could stand in front of the class and say questions. Nobody, nobody's gonna Yeah, nobody's
+
+305
+00:45:47,160 --> 00:45:48,420
+Scott Tolinski: gonna say yeah,
+
+306
+00:45:48,450 --> 00:45:57,030
+Wes Bos: yeah, start walking around tons of questions. And also, like, people would listen into other people's questions. They have questions on that. So that's, that's my advice there.
+
+307
+00:45:57,750 --> 00:46:33,480
+Unknown: Oh, yes, definitely. It's a challenge being completely remote. So we have Yeah, and it's actually an interesting program, we start with 160 students. So it's just kind of a numbers game really of like, it's free. So we have a ton of people start or down probably to 130 or so now after a couple of weeks. And that's expected. So I do like a main lecture thing for everyone in zoom and then we break out into our ta groups and then I kind of float around and try to help there so it's a it's a different thing trying to do a virtual versus actually being able to be there in person read the body language like I try to see as many faces as I can but you can only see so zoom at a time. Totally.
+
+308
+00:46:33,600 --> 00:46:39,390
+Scott Tolinski: Let's get a stumped question going here. Let me know my papa papa, papa, papa, papa, papa.
+
+309
+00:46:39,870 --> 00:46:58,260
+Wes Bos: I got Yeah, you might you might not know this one. This one is this one is easy. But I this is something that I know a lot of people don't know, because maybe not necessarily something they've used. What is the difference between the post fix i plus plus and prefix plus, plus i increment operators. Okay.
+
+310
+00:46:58,710 --> 00:47:38,850
+Unknown: So one will do I have to like, picture it in my head to actually explain which one, one will increment the value first before, like, you actually get to reference it and the set the other one will like reference it first and then increment it. So if you do, like plus, plus, if you console log plus plus i, it would increment i and then log versus if you i plus, plus, it would log I and then add the one. I was like, I was waiting for some sort of reaction to see if I if I was even close. And then
+
+311
+00:47:38,850 --> 00:47:39,510
+Wes Bos: what can I
+
+312
+00:47:44,130 --> 00:47:59,910
+Unknown: so I'm gonna I'm gonna strip that out of the YouTube video later on, and use that for like, my promotional stuff. This is the highest reward I've ever gotten is the flyers and the energy drink combo.
+
+313
+00:48:03,060 --> 00:48:14,580
+Wes Bos: That's good. Good. Well, good job. That's it. I remember that one biting me and I didn't know it and that I very clearly remember having an off by one error. Yep, like something.
+
+314
+00:48:15,480 --> 00:48:17,430
+Unknown: That's a tricky one. Definitely. And it's not. That's why
+
+315
+00:48:17,430 --> 00:48:27,180
+Wes Bos: like a lot of us Lin will say, just don't use those at all. Use those circles if you need to. Because it can bite you if you don't know you're doing.
+
+316
+00:48:27,630 --> 00:48:29,040
+Unknown: Yeah, yeah.
+
+317
+00:48:29,760 --> 00:48:42,810
+Yeah. And you almost never see. Unless you really know what you're doing. You're almost ever c++. I, uh, you almost always c++. So throw that in for someone that doesn't specifically know what it does would would definitely throw them off.
+
+318
+00:48:43,020 --> 00:48:48,300
+Scott Tolinski: Yeah. I don't know if I use that much outside of like, I don't know if I use that ever anymore.
+
+319
+00:48:48,570 --> 00:48:49,410
+Unknown: Yeah, like,
+
+320
+00:48:49,410 --> 00:48:50,430
+I know that I,
+
+321
+00:48:50,670 --> 00:48:59,070
+Scott Tolinski: I do. plus equals Yeah, yeah, I'm trying to think of when I when I was thinking like loops. It's like a written loop and no 1982.
+
+322
+00:48:59,670 --> 00:49:26,130
+Unknown: So you want to start my biggest pet peeve right now. And teaching is right from scratch. So we're learning for loops. And as I'm writing out all this stuff, for several days before we learned about map, or like I showed them for each, I was having to type all these damn for loops, like every single time and it was like the bane of my existence. It's like, if I were to do it in VS code, for example, I've got snippets. But now I need to actually explain what I'm doing. So it's like, yeah, worse to type
+
+323
+00:49:27,000 --> 00:49:32,310
+Wes Bos: a semicolon after the anchorman condition. Don't Yeah, it's funny.
+
+324
+00:49:32,340 --> 00:49:47,340
+Scott Tolinski: My biggest thing is when when prettier stops working. And I've realized just how awful I am at formatting by people, like start mashing the keyboard and then when I click Save, and it doesn't fix itself, I'm like, What is going on here? This code looks terrible. And I
+
+325
+00:49:47,490 --> 00:49:59,970
+Unknown: I look like not so great of a developer because I make lots of mistakes because right now we're using a browser thing called restlet. Which is not vs. Oh, yeah. And they see me make all sorts of mistakes that I wouldn't usually make inside of VS code whatsoever.
+
+326
+00:49:59,970 --> 00:50:07,470
+Wes Bos: Up. The chat is like, why do you have pliers on your desk? And someone's like, Wes has a bunch of random motors on his desk. I'm like I do.
+
+327
+00:50:08,220 --> 00:50:32,700
+Scott Tolinski: That's true. I mean, I have a bunch of random crackers, which is really crackers and cold beers. Really my mo here. You know what else is something that is a really big problem of mine, when I really don't like it is when I have bugs and creepy crawlies in my code. And one thing that I do to get those out of there, James, do you know what it is, when I have bugs in my code
+
+328
+00:50:32,910 --> 00:50:36,810
+Unknown: I missed to the sponsor was, so I don't want to guess I was one and then mess it up.
+
+329
+00:50:37,260 --> 00:51:55,110
+Scott Tolinski: Okay. Oh, that is very kind of you, because it is your century. I'm talking about century hi.io. This is a error and Exception Handling service that Wes and I both use for a very long time that really gives us all sorts of really awesome information about our application at any given point is totally a central piece of software. In my mind, if you are running any sort of application that people are using, because people have bugs, people have issues, and then you get to catalog them. And if you're in a team, you get to say, somebody else do this for me. And then you can have them fix it, submit the issue marked as resolved and then be shocked and horrified when it comes back. And it is a regression because that's just how life is right. So head on over to sentry@sentry.io use the coupon code tastytrade all lowercase all one word, and you will get rid of all those creepy crawlies in your here's, here's what's gonna happen if you sign up for century those creepy crawlies, they're going to turn into gummy worms. And that's going to be a lot and I'm going to eat them. Because that's that's how the candy situation is going in my household. Right? We we were on a call with unrelated we were on a call with my parents the other day and they said something about the candy and Courtney was like, I don't know if we're gonna have any left because Scott ate a whole bag of the coffee.
+
+330
+00:51:58,380 --> 00:52:06,690
+Wes Bos: Scott, you totally missed my softball. I was trying to give you I was drinking from the Netlify water bottle. And I thought that transition
+
+331
+00:52:06,720 --> 00:52:16,740
+Scott Tolinski: Hey, Wes. The yes answers are read in the order in which they're in the know document or the notion document and
+
+332
+00:52:17,760 --> 00:52:18,300
+Unknown: notes.
+
+333
+00:52:18,720 --> 00:52:20,850
+Wes Bos: Yeah, check your no my bad My bad. But no,
+
+334
+00:52:20,999 --> 00:52:24,330
+Scott Tolinski: I could not. I couldn't see the Netlify logo on your water bottle.
+
+335
+00:52:24,780 --> 00:52:28,800
+Unknown: But I saw it. I just didn't know what he was doing. I thought he was just like really proud of the water bottle.
+
+336
+00:52:29,249 --> 00:52:37,200
+Wes Bos: I have a century shirt too. I should like go full. What's the author? He's wearing? He's wearing all the Reebok.
+
+337
+00:52:37,830 --> 00:52:38,580
+Scott Tolinski: We wrote
+
+338
+00:52:38,970 --> 00:52:44,340
+Wes Bos: Wayne's World. Wayne's World on the on the swag. Cool.
+
+339
+00:52:45,030 --> 00:52:51,270
+Unknown: For what it's worth. I was gonna guess century by the way. I just didn't quite hear the interest. So I didn't know I didn't want to say it wrong. But
+
+340
+00:52:51,480 --> 00:53:01,350
+Scott Tolinski: it was verified. verified to be data. Excellent. Thank you. Okay, anything else? I shamelessly plug anything I'm
+
+341
+00:53:01,680 --> 00:53:31,380
+Unknown: sure we have. Yeah. YouTube, James q quick. And recently put out an E book actually called YouTube for developers at YouTube for developers calm Oh, awesome about how to get started why people should the benefits that come along with it. Really the benefits like for your career, and I just record a video this morning. That is not live yet. But like the five things that I've learned doing YouTube videos and how it's influenced my career. So YouTube for developers calm and then just James q quick on YouTube.
+
+342
+00:53:32,100 --> 00:53:37,650
+Scott Tolinski: sec. James, really appreciate it. Yeah, appreciate it. It would have been 300. Without Yeah, that's for sure.
+
+343
+00:53:38,640 --> 00:53:43,950
+Unknown: Well, I feel pretty privileged that I got to be part of a transition for a sponsor. That was pretty special.
+
+344
+00:53:44,280 --> 00:53:51,450
+Scott Tolinski: Yeah. How the coffee is made. Alright,
+
+345
+00:53:51,450 --> 00:53:52,260
+Unknown: I'll talk to you later.
+
+346
+00:53:52,800 --> 00:53:56,250
+Scott Tolinski: See ya later, James. Yeah, we're gonna get whaletail on.
+
+347
+00:53:56,370 --> 00:54:00,600
+Wes Bos: Yeah, I'm gonna take a break. I'll be right back in two seconds.
+
+348
+00:54:00,840 --> 00:54:03,660
+Scott Tolinski: How about I take a break too. Okay. And we just leave.
+
+349
+00:54:04,650 --> 00:54:06,450
+Wes Bos: We'll just leave it. We'll help.
+
+350
+00:54:07,770 --> 00:54:09,570
+Scott Tolinski: I need some some water here. I'm
+
+351
+00:54:09,570 --> 00:54:13,740
+Wes Bos: getting a little tired. Why don't you just add a bunch of people to the stream and then we'll leave.
+
+352
+00:54:16,740 --> 00:54:23,820
+Scott Tolinski: No, you go first. Well, and then I'll go. Okay. Well fail. Well, we'll fail you.
+
+353
+00:54:26,100 --> 00:54:27,450
+Unknown: Got it got the mute.
+
+354
+00:54:27,450 --> 00:54:28,680
+Scott Tolinski: Where's a plan?
+
+355
+00:54:28,680 --> 00:54:30,210
+Unknown: I am an egg plant. It's
+
+356
+00:54:30,210 --> 00:54:35,850
+my Halloween costume because discord hasn't implemented. Server specific photos.
+
+357
+00:54:38,430 --> 00:55:04,980
+Scott Tolinski: that's a that's a pretty, pretty dope Halloween costume. My son is going is a dragon and I'm trying to Well, we're not going out. But I'm trying to figure out what what to be wearing around the house. I'm notoriously bad at Halloween costumes. I was LL Cool J ones and I was a Fresh Prince once and then I was a golfer. They're just all terrible costumes and everyone would be like, I have no Do what the hell you are, like, well, I'm wearing a candle and I'm wearing a vest. So I'm obviously LL Cool. J.
+
+358
+00:55:05,670 --> 00:55:06,540
+Wes Bos: Oh my god, like,
+
+359
+00:55:06,780 --> 00:55:07,650
+Unknown: I don't know about it.
+
+360
+00:55:08,400 --> 00:55:18,750
+I've been like the same Mario costume for the past like four years since I started University. So on the terrible costumes thing can't be
+
+361
+00:55:19,410 --> 00:55:23,760
+Scott Tolinski: the one. You seem like you could rock a pretty pretty mean Mario with that mustache.
+
+362
+00:55:26,460 --> 00:55:38,040
+Unknown: I think I'm better left to get enough attachable Yeah. Princess in a castle would want this moustache saving.
+
+363
+00:55:38,070 --> 00:55:45,390
+Scott Tolinski: So I'm going to take over for a second. I'm gonna get I'm gonna get some tea. All right, good.
+
+364
+00:55:45,450 --> 00:55:48,300
+Wes Bos: Well fail. Is that reference to Twitter
+
+365
+00:55:48,330 --> 00:55:53,430
+Unknown: going down? reference to Twitter going down? No. Didn't have something to do.
+
+366
+00:55:53,910 --> 00:56:12,690
+Wes Bos: No. Yeah, yeah, that was well, also Olden, Olden folk when Twitter used to go down like every day. Therefore a four page how to fail whale on it. And when something would go down, you'd be like, oh, that that service fail. Well, their whale failed. was in reference to
+
+367
+00:56:13,350 --> 00:56:16,500
+Unknown: my last name is MacPhail. So just
+
+368
+00:56:16,530 --> 00:56:19,200
+Wes Bos: seriously, that's amazing. Yeah. What's your first name?
+
+369
+00:56:19,770 --> 00:56:20,370
+Unknown: Austin.
+
+370
+00:56:21,030 --> 00:56:22,350
+Wes Bos: Austin, where are you from?
+
+371
+00:56:22,350 --> 00:56:24,720
+Unknown: Saskatchewan, Regina.
+
+372
+00:56:25,200 --> 00:56:45,720
+Wes Bos: Oh, a Canadian and my wife is from yorkton. Oh, really? Yeah. So not far away. I've been to Saskatchewan many times in the winter, which is absolutely freezing. But yeah, Saskatchewan. Ian's are in an odd type. What do you what do you call this that I'm wearing right now?
+
+373
+00:56:46,169 --> 00:56:55,500
+Unknown: That is to me because I find the word bunny hug embarrassing. When I say to other people, I say hoodie. Yeah.
+
+374
+00:56:56,670 --> 00:56:58,140
+Wes Bos: I call it a bunny hug.
+
+375
+00:56:58,350 --> 00:57:03,180
+Unknown: Yeah, there's there's billboards when you're driving that says our CEO calls it a bunny hug.
+
+376
+00:57:05,310 --> 00:57:06,090
+That is the
+
+377
+00:57:07,470 --> 00:57:08,280
+CTO to
+
+378
+00:57:09,450 --> 00:57:14,430
+Wes Bos: yummy. You have your own Ted like telephone company up there to sask tell which is
+
+379
+00:57:14,460 --> 00:57:29,040
+Unknown: Yeah, we got my bed actually right now they have been making a bunch of noise outside my house or outside my apartment installing infinite, which I'm very excited for. Because that is their LTE. The fiber lines.
+
+380
+00:57:29,700 --> 00:57:31,230
+Wes Bos: Oh, man,
+
+381
+00:57:31,440 --> 00:57:39,690
+Unknown: they can highlight good speeds. Oh, that's awesome. So I don't I don't have a nice setup like everyone else. But I do massage chair. So
+
+382
+00:57:39,750 --> 00:57:46,920
+Scott Tolinski: Oh, buddy. Well, okay, well. Yeah. Is that your normal chair?
+
+383
+00:57:47,160 --> 00:57:47,700
+Unknown: No,
+
+384
+00:57:47,700 --> 00:57:56,220
+I just I got this from my dad. Not that long ago. They didn't need it at their condo. So they asked if I wanted it. And I could not say no
+
+385
+00:57:56,460 --> 00:58:01,230
+Wes Bos: to a computer chair. Or it's just like one of those like lazy boys at the mall. This is
+
+386
+00:58:01,230 --> 00:58:02,160
+Unknown: a lazy boy.
+
+387
+00:58:04,740 --> 00:58:18,300
+Wes Bos: Dreams, man. Like My dream is to have one of those L shaped couches, that every single spot that you sit in is a lazy boy that has a cooler and cupholders and my wife is like never in your life. Will we buy that?
+
+388
+00:58:19,590 --> 00:58:54,870
+Scott Tolinski: One, one time in high school. One of my friends his dad had a company that invented the shoot with just dizzy I always remember the name of this thing. But it is essentially a golf ball puzzle that you could print a logo on and sell. And he sold the company for like millions of dollars. And the first thing they did was build build a theater in their basement. And the theater in their basement had like rows of massage chair. Massage, but it was just like the dude went from like one day being like normal, normal everyday dude to the next day. A massage chair theater.
+
+389
+00:58:56,310 --> 00:58:58,710
+Wes Bos: Kind of money. I hope that one day is massage.
+
+390
+00:58:59,280 --> 00:59:07,950
+Scott Tolinski: a golf ball puzzle man a golf club puzzle. It had a really good name to I forget what it was the bogey buddy. Oh my gosh, the boat. That's awesome.
+
+391
+00:59:09,780 --> 00:59:12,840
+Wes Bos: What do you what do you got for us today? What do you want to talk to us about?
+
+392
+00:59:13,200 --> 00:59:15,230
+Unknown: Okay, so I've
+
+393
+00:59:15,479 --> 00:59:16,170
+always had
+
+394
+00:59:17,370 --> 00:59:50,430
+problems with Eclipse. prettier and VS code working together. The tutorials I think if the step of where they've selected their extension, and they go right to npm install, yes, lint. Oh, Bob's your uncle. I hit save and my code looks good. But I feel like there's a step missing there because I've just been given so yes, lint and stuff doesn't work. And then I realized oh vs lint or VS code has this autosave plugin. Yeah.
+
+395
+00:59:50,850 --> 00:59:59,070
+So yeah, we're like what is the process that it's on the headphones are really physically here. here once again. Oh, yeah.
+
+396
+00:59:59,280 --> 01:00:10,560
+Scott Tolinski: Your question is About VS code and es lint and prettier playing nicely together, which I have a significant amount of problems with myself. I feel like, right. Am I?
+
+397
+01:00:10,950 --> 01:00:15,000
+Wes Bos: Sorry? The question was like, how do you set it up? Or like What's missing? Yeah, like
+
+398
+01:00:15,000 --> 01:00:48,720
+Unknown: What's missing? Because it's like, it's obviously not bibbidi bobbidi boo MPN my es lint and prettier. And it all just works when you get your prettier RC and or es lint RC. Get all that extension set up. But you're in suddenly we are in B, we Airbnb in here. No, there's there's a VS code setting. But I don't know which one it is because there's three extensions. vs. Code. Yes, lint VS code prettier. And then VS code prettier es lint. And I don't know which one to select as default for better.
+
+399
+01:00:49,440 --> 01:01:10,110
+Scott Tolinski: The way the way that I do it is I just keep installing and adding configs until it works. And then No, no works. I just don't touch it. Yeah, anything more official than that? Brittany posted a really nice blog post that she did in the chat about getting it all set up. So maybe that might be a good help, Brittany might be the
+
+400
+01:01:10,260 --> 01:02:11,670
+Wes Bos: I've spent a lot of time on this. Because it's so frustrating. It never frickin works. And I I too, and I set off to disaffiliated. It's because of moving parts. There's, there's prettier, there's. And then there is also three extensions in VS code that could be installed. And then there also is a beautifier built into vs. Code. Yep. And they can fight with each other. So personally, I use both es lint and prettier. A lot of people just use prettier but i like i like getting the feedback from Yes, lint, and I like getting the formatting from prettier. So the way I do it is I use prettier via an es lint config. Not every es lint config will do that. But I put them together. So it's just one config at the end of the day, then you need to not install any prettier VS code extension, you only need to install the ES lint extension. And then you need to go into your settings. And this is all documented. I have a just Google no sweat,
+
+401
+01:02:11,790 --> 01:02:14,730
+Scott Tolinski: yes, lint. That's such a West blog title.
+
+402
+01:02:16,590 --> 01:02:48,690
+Wes Bos: It's a it's a YouTube video, and it's a readme on on GitHub. And it goes through all the VS code, you got to turn off format on save and you got to turn on code actions on Save dot fix all. So you have to go off and turn something in this even this morning, I was battling. I'm working on converting my config to TypeScript. And I have the prettier comma Dangal setting and I have the ES lint no comment dangle setting. They were fighting each other. So every other time I saved it will go back and forth.
+
+403
+01:02:50,040 --> 01:02:51,060
+Scott Tolinski: I know that.
+
+404
+01:02:52,920 --> 01:03:16,620
+Wes Bos: So yeah, I've I've honestly spent days working on my config. And you don't have to use my config because you can just follow the settings and plug in your own or you can extend it But yeah, I feel you there it's always frustratingly and I've gotten to a point now where I can get all my tutorial people up and running on it. Because the auto format is such a key thing when learning. Yeah, so good.
+
+405
+01:03:17,100 --> 01:03:29,640
+Unknown: Yeah, well, I mean, like, like Scott was saying, It feels weird when he doesn't have the auto format or and it's when you actually like backspace stuff and add a semi colon or remove it.
+
+406
+01:03:30,660 --> 01:03:53,670
+Scott Tolinski: Yeah, it makes me feel so weird about how I used to code like without I mean I had to yes lint but even he esslyn Did you know auto formatting at some point, whatever. But like, man before prettier and Ts lint together side by side kicking butt I don't know what I did. Personally, I think my code just probably look terrible. And now Thank you very much.
+
+407
+01:03:54,180 --> 01:04:45,000
+Unknown: Okay, so I know this is probably running a little longer because you guys took your segmented break there. Now let me hang on let me hang in. So I think I'm gonna skip the stumped and not risk myself embarrassing myself. But I do kind of want to plug something because I want to I want to get some feedback on it. Because Yeah, you guys decided to go with Gatsby and sanity for an artist blog site artists blog slash portfolio site. So let me know I guess folks at can go to Erica er, I see kk a weird would say spell Erica dot art. And that's like my first kind of solo project that I've launched ever. And they just kind of went back. Let me know. Cool.
+
+408
+01:04:45,120 --> 01:04:59,970
+Scott Tolinski: Yeah, my network is being really slow. What's going on here? I'm only streaming and doing all this video stuff. Why isn't it going faster? A e i r e i know er like aka.rs
+
+409
+01:05:00,810 --> 01:05:03,150
+Unknown: There's a C before the two K's. Okay,
+
+410
+01:05:03,180 --> 01:05:10,680
+Scott Tolinski: well, that is a good. Good for me. Hey, great. Yeah, yeah. Cool.
+
+411
+01:05:11,220 --> 01:05:34,050
+Wes Bos: Nice job. You. I don't think you're using the Gatsby sanity image component. No, I thought that would be. Yeah, cuz a Gatsby image Sanity provides all the pieces you need for Gatsby image. And it will provide you multiple sizes and resizes and image formats. So that's probably somewhere to look, but it looks awesome. Nice job. All
+
+412
+01:05:34,410 --> 01:05:41,820
+Unknown: right. Thanks. Thanks, guys. And thanks for having me on. And then your answering this question. Hopefully that is my feature was,
+
+413
+01:05:41,820 --> 01:05:43,920
+yeah. All right. All right.
+
+414
+01:05:44,520 --> 01:05:46,590
+Scott Tolinski: Have a good one. Well, thanks for popping on.
+
+415
+01:05:47,040 --> 01:05:49,230
+Wes Bos: Pop and Lock in, pop in and lock it.
+
+416
+01:05:49,260 --> 01:05:50,310
+Unknown: All right. I know.
+
+417
+01:05:51,690 --> 01:05:54,630
+Wes Bos: Tons of people on it. All right. You are you grabbing someone's got?
+
+418
+01:05:54,810 --> 01:05:58,200
+Scott Tolinski: I have added Dave kiss.
+
+419
+01:05:58,560 --> 01:06:05,250
+Wes Bos: This is fun. There's there's like a little chat room going on YouTube. A huge chat room going on. The Discord.
+
+420
+01:06:05,670 --> 01:06:09,510
+Scott Tolinski: Oh, yeah. Oh, yeah. And I'm trying to monitor them all.
+
+421
+01:06:11,160 --> 01:06:14,070
+Wes Bos: I'm not looking at your YouTube is there. There's a bunch of people in there too.
+
+422
+01:06:14,580 --> 01:06:19,500
+Scott Tolinski: Yes. Oh, you have people in yours as well. Yeah. That's what we do. simulcasting.
+
+423
+01:06:20,550 --> 01:06:21,180
+Unknown: We're,
+
+424
+01:06:21,330 --> 01:06:24,720
+Scott Tolinski: we made it. Hey, Whoa, look at that setup.
+
+425
+01:06:25,080 --> 01:06:30,690
+Unknown: Yeah, this is my this is my work from home office. I need a little bit. Lucky going on. You know, no, my
+
+426
+01:06:30,810 --> 01:06:37,860
+Wes Bos: gosh. So Insta worthy. Are you sure you're not desk boy? Um,
+
+427
+01:06:37,920 --> 01:06:39,030
+Unknown: I'm not sure what that is.
+
+428
+01:06:40,800 --> 01:06:42,930
+Scott Tolinski: It's uh, yeah, that's a definitely West thing.
+
+429
+01:06:44,580 --> 01:06:50,820
+Wes Bos: It doesn't boys is someone who posts a photo of their desk on Instagram every day. Oh, man, that's sick. His office.
+
+430
+01:06:50,850 --> 01:06:59,730
+Scott Tolinski: You know what the saddest thing about that is the West is that like, when I do that? When I post a photo of my desk every day on Instagram? I get way more people following me than when I
+
+431
+01:06:59,730 --> 01:07:03,960
+Wes Bos: worked. Oh, I do too. Or just Yeah. Just joshing around.
+
+432
+01:07:04,170 --> 01:07:11,220
+Unknown: ojama covered in Sour Patch Kids wrappers, and Oh, yeah. That probably wouldn't go too far.
+
+433
+01:07:11,970 --> 01:07:22,710
+Scott Tolinski: Sour Patch or top tier Halloween candy for me in my mind. I'm a Gummy that I'm I'm I'm a salt. sugary, sugary, sweet gummy guy. That's definitely my my go to.
+
+434
+01:07:23,130 --> 01:07:23,670
+Unknown: Yeah, it's
+
+435
+01:07:23,670 --> 01:07:26,310
+definitely I think a pretty underrated
+
+436
+01:07:27,030 --> 01:07:29,190
+Wes Bos: the chocolate gets all the love peanut butter chocolate
+
+437
+01:07:29,190 --> 01:07:30,600
+Scott Tolinski: chocolate does get all the love. Yeah,
+
+438
+01:07:30,600 --> 01:07:33,750
+Wes Bos: peanut butter chocolate kind of guy. You're not a big candy guy. So
+
+439
+01:07:33,750 --> 01:07:40,770
+Scott Tolinski: I'm not either but like if there is a gummy worms in the house. I'm all over those gummy worms. That's for sure.
+
+440
+01:07:41,250 --> 01:08:00,450
+Unknown: Alright, check this out. I got a sick pic for y'all love it. All right, you were mentioned before about how you're using. I think OBS for like the fancy middleware for your video to your stream, right? Oh, yeah. I just came across this. not affiliated with it called Hmm. You ever hear of it?
+
+441
+01:08:00,690 --> 01:08:02,480
+Wes Bos: Mm hmm. No,
+
+442
+01:08:02,550 --> 01:08:28,709
+Unknown: ah, check it out. Okay, so this is what I'm using to kind of compose this thing. So essentially, what happens is you get like this keynote for your live stream. So you have the ability to put together slides or pipe in your video. And I could also co pilot it if I want to throw another remote webcam here in the corner. And then as a background, I can change the room on me and I get these pointers to be able to like say this is what I'm talking about over here.
+
+443
+01:08:28,709 --> 01:08:30,140
+Oh, someone mentioned
+
+444
+01:08:30,539 --> 01:08:37,970
+that Twitter thread. I can share my screen. It's super dope. I've been using it lately on some demo calls. And it's been pretty great.
+
+445
+01:08:38,270 --> 01:08:41,039
+Scott Tolinski: I like their branding. Once they finally arrived here.
+
+446
+01:08:41,039 --> 01:08:47,850
+Wes Bos: Yeah. I especially like that they're using grunge on their website. And I think it is the same grunge I use. I
+
+447
+01:08:49,079 --> 01:08:50,520
+Scott Tolinski: do like the paint splatter when I remember
+
+448
+01:08:50,520 --> 01:08:57,659
+Wes Bos: you know behind it is like a subtle. Oh, is that correct? Oh no, that's my monitor. Oh my gosh.
+
+449
+01:08:58,640 --> 01:09:06,020
+Scott Tolinski: Like what are you talking about? I see that your monitor is so crappy or is that dirty? It
+
+450
+01:09:06,140 --> 01:09:45,720
+Wes Bos: is dirty? Because no, let me explain that so that you could get as aggressive. So you know why? Okay, two things. First of all, we just ran out our top room up here. And we just threw out the drywall out this window into the river. So not joking. We put in a thing. And we're this guy's just still laughing. And they hit the guy and I couldn't. And then I got the Ben q light. And it Oh, yeah, she delights straight down. Yeah, and I didn't realize how dusty that was that I thought it was grunge. Wow. Anyways, that's been bad day. So
+
+451
+01:09:45,720 --> 01:09:49,560
+Unknown: do you just get like a rain in the towel? There's really not much to it. Yeah,
+
+452
+01:09:49,560 --> 01:09:50,270
+I got
+
+453
+01:09:51,350 --> 01:09:53,930
+Scott Tolinski: one of these. microfiber though.
+
+454
+01:09:53,930 --> 01:09:57,810
+Wes Bos: Yeah, you send it over that way. Like that's a quick Sorry, I do have one.
+
+455
+01:09:58,710 --> 01:09:59,970
+Unknown: Here's a better route. Oh,
+
+456
+01:10:00,000 --> 01:10:01,310
+Go to curl. Yeah.
+
+457
+01:10:01,830 --> 01:10:12,119
+Scott Tolinski: For those of you who are listening at home, there is a spooky house. You can tell it's a spooky house because there's the sinuses keep out on the front and the green
+
+458
+01:10:12,119 --> 01:10:31,830
+Unknown: listening to Oh, so all these like awkward pauses are gonna make a home No. Well sick pick. Yeah, that's what I got in terms of sick pick. I, truthfully, the stump thing I was like down for it. And then I think I got virtually stumped from all the other questions as well. I couldn't get embarrassed. But uh, I guess I'm down to try it.
+
+459
+01:10:31,949 --> 01:10:32,550
+Wes Bos: All right.
+
+460
+01:10:32,760 --> 01:10:35,580
+Scott Tolinski: Yeah, I think we should did chest test your luck.
+
+461
+01:10:35,930 --> 01:10:38,010
+Unknown: All right. Roll the dice.
+
+462
+01:10:38,180 --> 01:10:38,850
+Wes Bos: Okay.
+
+463
+01:10:38,850 --> 01:10:41,040
+Scott Tolinski: It's not master West in the house here.
+
+464
+01:10:41,220 --> 01:10:54,560
+Wes Bos: This is a CSS question. What is the difference between the plus and the Tilda sibling selectors in CSS? Oh,
+
+465
+01:10:55,430 --> 01:11:27,119
+Unknown: plus Hill dot kilda, tell D, for those listening at home on a preface this answer with its completely made up. So don't take it for granted. Don't think for the truth. The plus is going to select the element that is right next to the element that you're targeting with the original selector. And the Tilda is a like a parent selector for the current element. That'd be that.
+
+466
+01:11:27,390 --> 01:11:31,170
+Scott Tolinski: That'd be neat. The second one would be cool. If that existed.
+
+467
+01:11:31,640 --> 01:11:48,540
+Wes Bos: Now, that close enough that you got the first part, right, first one is right. Yes. Is the next the adjacent, the adjacent siblings, and the Tilda selects all further siblings and the exact next one, right?
+
+468
+01:11:48,770 --> 01:11:50,310
+Unknown: Correct. Yes.
+
+469
+01:11:50,310 --> 01:11:51,180
+All right.
+
+470
+01:11:51,180 --> 01:11:51,869
+That wasn't bad.
+
+471
+01:11:52,290 --> 01:11:59,369
+Scott Tolinski: Yeah, no, you got sweet. All right selector would be very cool to have a be very intuitive parent selector.
+
+472
+01:11:59,970 --> 01:12:28,350
+Wes Bos: Yeah, I wonder if we'll ever get that. Like there was some talk about like putting like an asterisk on the selected element. So you could say like, this came out the other day. In next .js released the image component. And if you put a class on the image, it puts it puts the class on the image itself. But it wraps it in a couple divs because of responsiveness or whatever. And there's no way to select, there's no way to add a class currently there. They'll they'll add it, I'm sure. But I was like, yeah, it would be cool to have a parent selector in CSS.
+
+473
+01:12:28,520 --> 01:12:44,790
+Unknown: There's some crazy thing that I'm doing and one as one of my selectors, I don't know what it is. Maybe you can enlighten me to tell me how I'm doing this thing. But I thought it had some like, I've never seen too much about this, but it was like equals Tilda
+
+474
+01:12:46,020 --> 01:12:47,340
+maybe equals
+
+475
+01:12:47,390 --> 01:12:48,420
+or r star equals?
+
+476
+01:12:48,420 --> 01:13:53,159
+No, it was it? Or maybe the other way around? Let me see real quick, essentially, to describe it before before I can find it is. So yeah, it's a tilde equals. So I have a I have a class that essentially an element child of that of the top level class, I wanted to like look up the tree and say, Hey, if the thing above me, like somewhere up there has this class associated with it, or in fact, I'm using maybe I should just put this in the score. And you have tell me exactly what this looks like to you. So this isn't a style component. Okay, check that out. So this goes into a style component for part of the app that I'm working on. And something about that allows it to look up the tree and determine whether or not in this case we have is like this data attribute right to determine whether or not that element up there has that data attribute so what's going on there that I mean I was like, I don't know I must I have no idea offbeat up and I saw but it actually it works somehow I don't really understand it
+
+477
+01:13:53,160 --> 01:14:41,720
+Wes Bos: though. The Tilda is, I think it's like the star where it's it does like a partial match. So you could say anywhere where the title or attribute or class is has the word LG in it. So it could be LG dash five LG dash six, anything that just starts with or has that LG in it, we'll we'll do it the and percent selector. I think that is something styled components. I've not seen the at the end of I've not seen the ampersand at the end of a selector like that. That's definitely not CSS, regular CSS, but because of style components, maybe it has the ability to traverse the selectors and go up. But usually the end is like and this thing plus the followings selector, right?
+
+478
+01:14:41,760 --> 01:14:58,770
+Unknown: Yeah, that's how I've always used it. And I must say, like, I don't know, like I said, stayed up late or had too much coffee and you just get one of those zones where you just start coming up with I don't know something that came out one time and I've never been able to actually figure out how, what it meant or why I wrote it, but it actually was I was pumped about it.
+
+479
+01:14:59,460 --> 01:15:08,670
+Scott Tolinski: Very weird. We're checking. Interesting. Cool. Well, well, thanks for sharing that. We'll we'll check that out and see what the heck is going on there. Yeah, we
+
+480
+01:15:08,670 --> 01:15:10,619
+Unknown: know I'd love to follow up on that at some point,
+
+481
+01:15:10,640 --> 01:15:49,470
+Wes Bos: I just found a blog post about it. Oh, the ampersand will allow you to have siblings of a styled component that's actually handy. So let's say you are in a style component, and you have like a like a list item stuck style component, and then you have a next one beside it, the ampersand will allow you to select the next styled component, no matter how deep you are, which is, that's really cool. So if you're if you're five levels, deep Oh, selectors inside of one style component, you can still select the next top level styled component without having to go back up the tree and then into it. That's awesome. I didn't know that existed.
+
+482
+01:15:49,920 --> 01:17:14,430
+Scott Tolinski: The I didn't know they existed either. Straight up. Well, uh, that, uh, that that's definitely Awesome. Well, thank you so much for sharing that, Oh, well, shaking his his water bottle letting me know that it is time to talk about hosting. Because if if you could get this, get this, if you wanted to share this neat little bit of information that you just shared with us, what are you gonna do? Well, the easiest way to do anything is to just pop up a quick little blog on Netlify. And it is a very quick, you can do it with any tech you want, including styled components in Gatsby and whatever you might like to do are spelt in some front end tech or some view and whatever. You can pop any front end code on and Netlify in just about two seconds, and it's so dang easy. You just pass it in a GitHub repo and, Wham it, it's up. And it takes care of all that continuous integration stuff that's so hard to set up. Who wants to fiddle with build pipelines, when you can just get it for free with Netlify. So you're gonna want to check out Netlify. They were more than just a front end host though, they have all sorts of additional things like server lists, functions, user accounts, contact forms, and all sorts of more things. So check it out@netlify.com forward slash syntax. And you will see all of the magic I don't know I'm kind of trying to come up with another, another slogan on the fly here and see the magic The only one I ever come up with. So
+
+483
+01:17:14,479 --> 01:17:40,050
+Wes Bos: did you see that they they release background functions yesterday. So you can now run serverless functions. A synchronously meaning that like it doesn't have to be triggered by somebody hitting a URL, and or run for up to 15 minutes, which is pretty cool. Someone was asking me about that on Instagram, like, two days ago. And I was like, Ah, you can't really do it. And then they were they released it.
+
+484
+01:17:40,640 --> 01:17:44,100
+Scott Tolinski: You can't really do it. Oh, oopsies. Now you can.
+
+485
+01:17:44,390 --> 01:17:49,050
+Wes Bos: Yeah, now you can they rolled it out. So I also just realized we had Jason on the show.
+
+486
+01:17:49,500 --> 01:17:50,100
+Unknown: Yeah. And
+
+487
+01:17:50,250 --> 01:17:55,470
+Wes Bos: talk about Netlify he works there. So is that part of is that harming our editorial? integrity,
+
+488
+01:17:55,830 --> 01:18:13,970
+Scott Tolinski: Scott? Ah, no, because remember how much I talked about Netlify before they sponsored our show. Shout out to Netlify for being a longtime sponsor of ours. And thank you, Dave, for popping on your name is Dave Right. I've just assumed Your name's Dave based on your username. So
+
+489
+01:18:14,340 --> 01:18:28,920
+Unknown: it's Paulo. I'm just kidding. Yes, Dave. Thank you. Yes. Thanks for chair. I'd actually didn't want to break up your ad speak. But yeah, trying to get I don't know how to get off of your big discord user.
+
+490
+01:18:29,369 --> 01:18:46,920
+Scott Tolinski: No, that is very fine. is actually better that you were here for the ad read? Because that that's what we call a personal engagement right there. Dave, I think you can just click there's an x at the bottom of discord. There's like a little phone within my God. It's like a phone with an X. There it goes.
+
+491
+01:18:48,060 --> 01:18:51,470
+Wes Bos: Alright, we had a whole bunch of other people that wanted to come on. Yeah,
+
+492
+01:18:51,470 --> 01:18:54,330
+Scott Tolinski: but I promised Gary he could come on.
+
+493
+01:18:55,970 --> 01:19:09,630
+Unknown: Turn on my camera, turn off the radio. I'm doing Halloween early. It's my favorite holidays. I figured why wait till tomorrow.
+
+494
+01:19:09,680 --> 01:19:11,100
+Wes Bos: He's a JavaScript wizard.
+
+495
+01:19:11,130 --> 01:19:50,580
+Scott Tolinski: That's how I live life. My favorite XYZ Why wait till tomorrow. That's, that's really dope. I'm happy you are able to come on. So this is going to be an embarrassing question. Because it is Garrett right? Or is it? I forever and ever and ever. Garrett's been on the chat room for a very long time. And every time I read his username, I read it as Gareth and I just sort of assumed your name was Gareth and then one day I was like, I'm so dumb, what it would have would have by taking Gareth who's named Gareth. So sorry if your name is Gareth out there. And they just said that but no, thanks for coming on.
+
+496
+01:19:50,580 --> 01:19:59,930
+Unknown: Get there. No, you're right. It's th Yeah, it's good, Gareth. Oh, okay. It was right there. Yeah. Read earlier. Yeah. Yeah.
+
+497
+01:20:00,449 --> 01:20:21,140
+Scott Tolinski: Okay, well that that hope it just toss it. Um, Gareth is our typing champion over here at the level of tutorials discord by a significant margin. We did a typing challenge test, and I think you beat me by like 100 words per minute or something outrageous. You're so like untouchable. What was it like to 16 or something?
+
+498
+01:20:21,140 --> 01:20:24,680
+Unknown: No, no, it was like 135 or something. But yeah, oh,
+
+499
+01:20:24,680 --> 01:20:43,380
+Scott Tolinski: mine was like 60. And yours was like 135 or either way, everybody was like, well, well, you think you would take out west too? We had some stiff competition, too. And you just about decimated everybody. competition? I don't think anybody came close.
+
+500
+01:20:43,500 --> 01:21:01,430
+Unknown: Yeah, because I took keyboarding class and I think it was sixth grade. And they were trying to make us do like the home keys or whatnot, the quote, unquote, proper way to type. And by that point, you know, I've been on computers my whole life. So I had my own way. And I think I got a C in the class. So I have a vendetta against that teacher and have always been kind of faster, ever since leaving
+
+501
+01:21:04,619 --> 01:21:07,350
+Scott Tolinski: the swapping all the keys to divorce, or whatever is that
+
+502
+01:21:10,560 --> 01:21:11,180
+Unknown: level.
+
+503
+01:21:11,580 --> 01:21:37,020
+Scott Tolinski: I listened. I actually tried to do it once. Because I listened to a podcast where the guy who created WordPress was like, Yeah, I have some like statistics that say, how much like further your fingers move over the course of your lifetime if you don't use Dvorak. And I was like, Wow, that's pretty significant. Maybe I'll give that a try. And I moved my phone to divorce. And my computer was still the normal Qwerty. And it was very confusing for me for a very long time until I swapped it back.
+
+504
+01:21:38,100 --> 01:21:43,290
+Unknown: Cool. Yeah. So I have a have a potluck question I wanted to ask, I'll get some insight on this.
+
+505
+01:21:43,290 --> 01:21:44,250
+All right. Um, I've
+
+506
+01:21:44,250 --> 01:22:23,699
+been working with with React Native recently, I come from a web background. And I basically got transferred to a new project that's React Native. And I'm loving it, like React Native is super fun to work in the skills transfer over pretty well. And so my question is, what do you think about the future of mobile development in terms of these hybrid platforms? React Native flutter Xamarin. You know, there's a bunch of them right now, I think spelt as a native implementation, versus traditional Android or iOS development, specifically aimed at new developers looking to get into mobile development. Would you say you know, learn React Native learn react or learn Android learn iOS in terms of employability, that kind of thing?
+
+507
+01:22:24,390 --> 01:24:01,770
+Scott Tolinski: I think to me, personally, it depends on like what you're looking to build, right? Because React Native it by no means is React Native, like lesser in terms of like the stuff you're able to make. But if you are a react, or a view or a stealth developer, there's absolutely no reason why you can't build like, really good native apps. But those tools, let's say if you're going to be you could probably build games just fine. But let's say you wanted to build was that the Flappy Bird now Flappy Bird. Because Flappy Bird simple though. The one where you pull the string and the bird flies and hits the or the pig fly every bird game. Angry Birds. Let's say you wanted to build Angry Birds. I don't think I'd go with react. And at that point, so for me personally, as a, as a web developer, somebody who has these skills, I would pick up I would use those skills to build the thing. Yeah. atn, who created Mrs. and Mrs. Is backbone. CoffeeScript and Cordova and I use that app every single day. And I'm happy with it. So like, if you could if you have these skills, you can make stuff that is like super legit. You mentioned the spell one, by the way, the salt one uses native script to actually sponsor our show at one point. And native script is really interesting to me. But a works like everything. And it's kind of crazy that it does. But I I say if unless you're looking to become an iOS dev like full time, I yeah, just keep on with these tools. Or if there's like a specific point that you're hitting, that's like, shoot, I can't go forward. But React Native is capable of so much. I'm sure there's somebody out there who has built a neat game with React Native and stuff. It is very, very capable.
+
+508
+01:24:01,920 --> 01:24:58,100
+Wes Bos: Yeah, I think it's worth your time digging into the React Native or whatever the equivalent is for view or whatever, just because like they are really good. And if you just look at like desktop apps, every desktop app that has come out in the last couple years has all been built on on webtech. discord notion. I'm just looking at my my URL bar notion. Yes. Yes. Yes. Yeah, they're all electron base. So like, that's not to say you couldn't do that on the on the phone, especially as these phones start getting faster and faster and beefier, and that like hit that comes. It's not just it's not even a hit with React Native, right, because it does compile to Yeah, but just run the JavaScript just runs in, in a background thread. So yeah, so and like they did. They literally did Angry Birds in html5, like 10 years ago. They did it in the browser. So there's not to say that that wouldn't run. Yeah,
+
+509
+01:24:58,520 --> 01:25:22,520
+Scott Tolinski: bad example. Then What? Are you familiar with it? what's called Universal react? Wes? Ah, no. So there is a sort of like a native first approach to writing react where you write React Native using Expo. And then you could basically output to web. So the idea would be that you do get to write once deploy everywhere you just sort of the backwards way,
+
+510
+01:25:22,560 --> 01:25:37,080
+Wes Bos: like React Native web. Makes sense? Yeah. Because then you're not like trying to shoehorn web into mobile, you're just creating this one layer, right? But like, I've never used it, maybe. Maybe that would work. It probably would.
+
+511
+01:25:37,470 --> 01:25:41,760
+Scott Tolinski: Expo is really sweet. I dig it. Yeah, no doubt.
+
+512
+01:25:41,790 --> 01:26:04,800
+Unknown: Yeah, that's something I've run into with React Native is that some of the tools I love with web are not available. Cypress is a good example. And so he's a kind of cross platform, things like React Native web that lets you run React Native in the browser opened up this whole new ecosystem of web tools. And I've been very pleased with how these two parallel react ecosystems are kind of merging, or they have a lot of crossover.
+
+513
+01:26:05,159 --> 01:26:55,920
+Scott Tolinski: Yeah, it's an interesting space. And even in like, a lot of other languages, like I, like I said, I'm learning rust. And there's like some neat stuff going on there. And using whatever web tech in with rust to deploy, like, basically, they have somebody working on basically electron, where it's like a drop in replacement for electron basically, with the exception of your, your writing and in rust rather than node. And it does, it feels exactly like electron, it just uses just infinitely less of your CPU. So there's a lot of interesting stuff going on there. And web tech is, it's definitely one of those things that you can bet on for any given amount of time, and it's gonna come through. I mean, what is it Brad, Brad released an app in the App Store, that's a pw a II, we talked about being able to do that. But I haven't seen the implementation of it before. So that I mean, it's just sick when people are able to do
+
+514
+01:26:56,369 --> 01:27:01,500
+Unknown: it's a recent thing, right that Apple opened up the app store the pw A's I believe, I think,
+
+515
+01:27:03,090 --> 01:27:10,050
+Scott Tolinski: oh, I don't know what Apple can Google does with what they're calling Tw as I don't really understand the difference. But
+
+516
+01:27:11,060 --> 01:27:17,159
+Unknown: seriously, we should all learn rust because webassembly is gonna gonna replace JavaScript, you know, maybe next month
+
+517
+01:27:17,159 --> 01:27:41,279
+Scott Tolinski: or something maybe next. And it's pretty sick. I when the more I learn about it, the more I find out about companies that are using it today. Yeah, like for the things that they're using it I'm like, Huh, so it's actually being used in stuff for really expensive things. And for the most, most things that we need to do on a day to day basis, who cares? But we have something really expensive. Not a bad idea. Yeah,
+
+518
+01:27:41,369 --> 01:27:44,670
+Unknown: you want to run Unreal Engine four in your browser or something? Yes.
+
+519
+01:27:48,119 --> 01:27:55,170
+Scott Tolinski: Yeah, absolutely. Cool. Well, thank you so much, Gareth, anything else you want to shout out or Yeah,
+
+520
+01:27:55,199 --> 01:28:27,060
+Unknown: got a sick pic I've been enjoying recently. It's a browser extension. They have Chrome, Safari, Firefox and edge. It's called dark reader to dark reader. org. And it's kind of like a universal dark mode. So for sites that don't have dark mode available, it kind of forces them to have a dark mode. And another really great um, a lot of sites I visit a lot do not have a dark mode. And so suddenly they do it's really great for accessibility, all that kind of thing. So I'll drop a link in the discord. But yeah, if you're a dark mode aficionado, like myself, I found these to be Yeah,
+
+521
+01:28:27,090 --> 01:28:31,649
+Scott Tolinski: likewise. I like it. And I'm gonna use it. I'm already clicking the Edit button.
+
+522
+01:28:32,279 --> 01:28:44,819
+Unknown: Yeah, I would. I would shamelessly plug, not something of mine. But actually, the level of tutorials. discord is really cool. And if you're someone who's only in there to watch syntax live, stick around and hang out we have.
+
+523
+01:28:46,170 --> 01:28:47,760
+Scott Tolinski: Yeah, we do have a lot of fun. But,
+
+524
+01:28:47,939 --> 01:28:54,119
+Unknown: yeah, chill, especially during 2020 when we're all a little bit more isolated, perhaps than we have been. It's been it's been great.
+
+525
+01:28:54,750 --> 01:28:59,970
+Scott Tolinski: Very true. Very, very true. Well, thank you so much for stopping by. And thank you for shamelessly plugging our Discord.
+
+526
+01:28:59,970 --> 01:29:01,319
+Unknown: Yeah.
+
+527
+01:29:01,830 --> 01:29:03,420
+Thanks for having me on. It's a lot of fun.
+
+528
+01:29:03,449 --> 01:29:04,260
+Thanks for joining. Appreciate
+
+529
+01:29:04,260 --> 01:29:10,140
+Scott Tolinski: it. Appreciate it. Okay, one more. So
+
+530
+01:29:10,140 --> 01:29:13,439
+Wes Bos: one more, and then we'll have bring everybody in.
+
+531
+01:29:13,859 --> 01:29:14,939
+Scott Tolinski: We'll open it up.
+
+532
+01:29:15,090 --> 01:29:17,100
+Wes Bos: That might be awful, but let's do it.
+
+533
+01:29:17,370 --> 01:29:22,949
+Scott Tolinski: Oh, it's okay. All right. Let me type I'm getting some major lag lag.
+
+534
+01:29:23,010 --> 01:29:28,739
+Wes Bos: Yeah, you're lagging for me, too. All right. It's gonna let you pick somebody. There's a lot of people that want it. We should do this more often.
+
+535
+01:29:28,920 --> 01:29:44,939
+Scott Tolinski: Yeah, we should do this more often. axos getting in because he typed the fastest. And oh, Louis. I accidentally gave them all the Louis. Okay, so excellent. And Louis can come on, because I do for you. Excellent. Louis, because I accidentally gave Louis the role to
+
+536
+01:29:45,630 --> 01:29:47,010
+Wes Bos: accidentally
+
+537
+01:29:47,369 --> 01:29:49,260
+Scott Tolinski: Axel and Louis.
+
+538
+01:29:50,609 --> 01:29:51,569
+Unknown: Oh,
+
+539
+01:29:51,569 --> 01:29:57,750
+Wes Bos: hey, Scott. Wes is doing let's let's stop for a second. Let's see that shirt you got on there.
+
+540
+01:29:57,779 --> 01:29:59,399
+Scott Tolinski: Yeah, let's see that shirt.
+
+541
+01:29:59,550 --> 01:30:03,060
+Wes Bos: look better. Wow, yeah lebanner winnipeggers Oh, beer.
+
+542
+01:30:05,699 --> 01:30:07,649
+That is awesome. Where'd you get that?
+
+543
+01:30:07,649 --> 01:30:18,210
+Unknown: I just I thrifted finds ya is mostly for the color but then this you know the curling is like so sick i think is like a curling thing too.
+
+544
+01:30:18,239 --> 01:30:20,310
+Scott Tolinski: Yeah, definitely a curling stone. Yeah,
+
+545
+01:30:20,369 --> 01:30:37,560
+Wes Bos: I have a really sick blue like jacket that says Labatt sailing on it that I found. And it's got the big sailboat and this is like Labatt is like an old school Canadian beer company. And it's it's so cool. Like people ask me about all the time when I'm out. So I love that kind of stuff.
+
+546
+01:30:37,949 --> 01:30:40,380
+Scott Tolinski: Yeah. Do you have any stones at your house was
+
+547
+01:30:40,710 --> 01:30:53,250
+Wes Bos: no no. My friend up at our cottage they do. They fill bleach bottles with ice and then spray paint them. And then they have like curling on the lake. With that, so cool.
+
+548
+01:30:53,550 --> 01:30:55,229
+Scott Tolinski: I would do that. I'd be very into that.
+
+549
+01:30:55,649 --> 01:31:09,449
+Unknown: Well, that sounds amazing. Yeah, curl. I've never been curling before. I mean, so I kind of feel like one of those people who wears like a bad t shirt that you know doesn't listen like you ask them what their favorite album or a favorite Led Zeppelin album is like, I
+
+550
+01:31:09,869 --> 01:31:16,350
+Wes Bos: haven't listened to the outside. But everybody's wearing Thrasher t shirts right now. Yeah. And do you even skate?
+
+551
+01:31:17,460 --> 01:31:27,689
+Scott Tolinski: Yeah, I have a shirt with a Griffin on it. And I've never written the Griffin. So it's Yeah, I think we're all okay with supporting things that we like, like Griffin's
+
+552
+01:31:27,989 --> 01:31:30,060
+Unknown: cool. Are you? Are you from Winnipeg? No, I'm
+
+553
+01:31:30,060 --> 01:31:35,729
+from sarnia. Ontario actually close to Ontario. So, yeah,
+
+554
+01:31:35,850 --> 01:31:38,159
+Wes Bos: God knows all about another Canadian. Yeah.
+
+555
+01:31:38,699 --> 01:31:59,220
+Scott Tolinski: Because I'm from Detroit area. So I've been to London and I've been to Windsor extensively. Yeah, so that whole area. I think the furthest we ever got in that way was like grant grand band. And that's not very far either. But all that area of Canada that's right around Michigan. That's that's definitely my my area of Canada that I'm very familiar with.
+
+556
+01:31:59,279 --> 01:32:21,119
+Unknown: I mean, this this no word like starting is not worth stopping by. Really? You know what I mean? Like if you're ever traveling, especially when you're going to grant bad if you're going to Grand band just like around sarnia just go right to grant man like That's way better than it is here. But GB cool. You know what? congratulations guys on 300 episodes. Thank you want to say Congrats. You get amazing, amazing accomplishment.
+
+557
+01:32:21,720 --> 01:32:23,909
+Wes Bos: Yeah, really appreciate it.
+
+558
+01:32:23,970 --> 01:32:26,699
+Scott Tolinski: We got Axl in the house to Axl. Hi, Axl.
+
+559
+01:32:26,970 --> 01:32:30,420
+Unknown: Hi. Doing. Hey, awesome.
+
+560
+01:32:30,449 --> 01:32:36,600
+Wes Bos: Where are you from? Mexico. Awesome. Oh, nice. It's probably much warmer than up here.
+
+561
+01:32:37,050 --> 01:32:38,880
+Unknown: This actually, yeah.
+
+562
+01:32:40,740 --> 01:32:42,630
+Wes Bos: Oh, cool. What kind of dev? Are you?
+
+563
+01:32:43,739 --> 01:32:52,319
+Unknown: mostly a front end dev? I work with Angular dress right now for my project. But I like all things JavaScript,
+
+564
+01:32:52,380 --> 01:32:54,840
+I say eautiful.
+
+565
+01:32:55,199 --> 01:32:59,010
+Scott Tolinski: Yeah. We're not talking about Angular very much on the show.
+
+566
+01:33:00,810 --> 01:33:09,750
+Unknown: Yeah, no worries. I'm actually a little bit into view these days as well. So I'm learning it on the side. Yeah, you're gonna keep updated? And
+
+567
+01:33:10,050 --> 01:33:15,569
+Scott Tolinski: that seems like a natural progression to they seem like they are very compatible with each other.
+
+568
+01:33:16,140 --> 01:33:41,310
+Unknown: Oh, yeah. Yeah, they're, they're very similar. I just wanted to say, you know, buttering you up. Your inspiration for for me, personally. And it's been great to follow you and see how you've progressed and created all these quality stuff. I have a couple of courses from Wes. And it's been really, really great to learn from you. Thanks a lot for all you do.
+
+569
+01:33:41,430 --> 01:33:49,409
+Wes Bos: Oh, thank you. I appreciate that. That's really cool to hear. You got anything you want to do a stomped or sick pic or anything else.
+
+570
+01:33:49,739 --> 01:34:31,319
+Unknown: I do kind of have a shout out. And also a shameless self plug. That's where we hear some really cool. So the first shout out is we're having a .js conference in Mexico. It's the .js counts. Same, the one you know, but the Mexico edition. So that's going to happen the second, third and fourth of November, it's obviously going to be remote. So you can go to .js comm.mx. You can watch the talks there. People like Sarah v. Ada, it's gonna be there, as well as Tracy Lee from the stuff media and things like that. So there's a few really interesting talks in there. So you can check it out.
+
+571
+01:34:31,739 --> 01:34:33,270
+Sick. Sorry. Yeah,
+
+572
+01:34:33,270 --> 01:34:34,170
+Wes Bos: that's that's
+
+573
+01:34:34,380 --> 01:34:39,060
+Scott Tolinski: Js conf.mx. You said, right. That's correct. Yep. Cool. Say,
+
+574
+01:34:39,569 --> 01:35:30,600
+Unknown: and I have a shameless self plug for the YouTube channel. I have. I'm running. I'm creating lists. And the idea is to have different playlists for different projects that we build. And it's kind of like, a little bit of egghead style where you take just one topic at Time short videos that should be real quick on it. And so we have something I think Scott will like, which is Meteor plus view. Oh, cool. Yeah, really intermediate as well. So yeah, yeah, there's one playlist for that and one for building desktop applications with NW, j. s, and view as well. And things like that. So you can check that out@youtube.com slash Expo just, it's my name, but it's spelled differently. Um, it's a ck zet E. LL.
+
+575
+01:35:30,659 --> 01:35:33,569
+Yeah.
+
+576
+01:35:33,630 --> 01:35:34,949
+Yeah, that's, that's the one
+
+577
+01:35:35,939 --> 01:35:38,189
+Scott Tolinski: back. Well, thanks for thanks for popping on.
+
+578
+01:35:38,340 --> 01:35:38,850
+Unknown: Thanks a lot.
+
+579
+01:35:38,850 --> 01:35:48,569
+Wes Bos: We should also say tickets to .js comp, Mexico are only 10 bucks. So definitely hit that up. That sounds awesome. Well, thanks again. All right, Louis, what do you got for us?
+
+580
+01:35:48,989 --> 01:36:21,270
+Unknown: I actually have a potluck question for you guys. So yeah, so it's not it's not technical. It's more so so you guys are always so busy. You know, you guys are amazing. devs. So, but you're also you know, you're learning new things you are keeping up with your family. You guys have families, you know, you guys have other things are probably working on outside that you don't share online. Keep an eye out, you know, you got so many things going on. So I was just wondering, like what your daily routine is like? And how do you decide to prioritize the projects that you guys think are worth working on?
+
+581
+01:36:21,659 --> 01:38:41,580
+Scott Tolinski: I can't go first because my daily routine is a complete mess right now. Especially, although it's, it's been, it's been getting a little bit better, Courtney and I, so Courtney, my wife works full time, she's a psychologist, and she has a full time schedule on her plate, I have a full time schedule on my plate. So therefore we are the agreement that we've come up to is that neither of us get full time. I get the morning shift with the with the kids. So I get before lunch with the kids, and she gets after lunch with the kids. And then we just sort of swap or we do that every single day. So for me, I have what like from noon to five every single day to work. And that really, really stinks. For me, especially because I'm running a business, I have people working on level up tutorials, we're doing syntax, so Mondays right away are spent on the podcast, that means I have four days out of the week to hustle and somehow record a new tutorial series every month, in four days a week, and four hours of those days. So, for me, it's all about like being really, really, really hard about scheduling everything. And more importantly, like nowadays, it's about saying no to everything. I Well, I say that as somebody who just had guests to three different conference talks, one of which I just did for Meteor and then I'm doing one for Apollo and then one for graph qL I should be saying no to everything. And I the most part, say no to everything, everything because just about everything that's not my main objective kind of gets in the way right now. So for me, it's just been about really, really, really hard scheduling. And then not not getting away from that schedule as much as possible. Like today today is like kind of backwards because we're doing the live show. So Courtney is going to take the afternoon shift, but we're already you know, what time is it 130 here here in Denver, so she's she's gonna get like a diminished time. So I'll have to give her like weekend time or whatever. It is just about shop, shuffling things around as much as possible. But at the end of the day, I have to I have to do weekends, and I have to do nights and I have to do whatever it takes. I take my computer to the gym. And when I'm in between sets, I am approving prs like that is I'm approving prs while getting prs in the gym. And writing PR for Twitter, and email. So it's just about getting it all in when you can and scheduling as hard as possible for me.
+
+582
+01:38:41,699 --> 01:38:43,050
+Unknown: eight hours of sleep a night though,
+
+583
+01:38:43,199 --> 01:39:14,040
+Scott Tolinski: at least at the mall, trying to Yeah, yeah, we I pretty much close the computer at like eight o'clock each night. That's not like a given but like cornea, we'll sit down, we'll watch TV, we'll watch whatever, just to wind down and we've been trying to go to bed earlier to just because neither of us get get the time. The kids have been waking us up in the middle of night, those kind of things. So if we're not getting eight hours of sleep, it's it's because of outside. Outside intervention outside the intervention. I don't know.
+
+584
+01:39:14,069 --> 01:39:15,600
+Wes Bos: Yeah, its sources. Yeah, the
+
+585
+01:39:15,600 --> 01:39:16,350
+Scott Tolinski: best thing we can do.
+
+586
+01:39:17,640 --> 01:39:36,000
+Wes Bos: For me, what is my daily routine look like? I generally work I drop the kids off at school like 820 I get back usually at my desk by about nine o'clock. I'm pretty strict about trying to do a nine to five every day, Monday through Friday, and then not No, no evenings, no weekends.
+
+587
+01:39:36,119 --> 01:39:52,470
+Scott Tolinski: I'm gonna interrupt you here because I sent a message message yesterday that would have been at like 503 it's just like complete silence. And then this morning, he's just like, Yeah, I don't work after five. It's like you are so good about that. I would. I really applaud you
+
+588
+01:39:52,470 --> 01:42:17,640
+Wes Bos: for that too. I also don't have slack on my phone either. So like if something happens, it's just smart. I don't see it. But like, I'm not I'll say a little bit flexible with that as well, usually about three o'clock, my wife will say, Hey, keep an ear out for kit, she's got to go pick the kids up. So sometimes I'll wake up and off to take half an hour to go be with him. But that's okay. That's that's just what the working looks like right now, like Scott just shared what his looks like as well. My wife usually works on weekends, I take the kids on Saturday mornings. And then my wife just works at night and stuff just trying to fit it in or it's possible. It does seem like I have a lot going on. But usually I just focus on two to three or four projects at once. That's for development, I usually have like a course that I'm working on. And then I usually have like another course that I'm sort of thinking about. And if I'm like, if I'm stalled with something, like, for example, I'm recording my advanced react course right now. It's Friday afternoon, I got to wait until Monday because there's a there's an update that's coming out with Keystone that comes out on Monday. And we're going to use that in the course. So I'm stalling that and I could switch over to something else like the podcast or working on one of my new courses that are coming up. Just like personally, we have a lot going on with our house. Right now we are doing a bunch of rhinos, to our house. And that involves painting and sanding and having trades in and like we're doing a lot of the work ourselves as well. And what I try to do both for work as well as for house stuff is to have big goals. Like we've got five rooms in our house that we're working on right now. But you have to break it down into much smaller little things. Like every night, I have maybe an hour and a half of time to work on the house that you can't just like it's it's so overwhelming to look at some of these projects that take 30 hours, so you just got to chip away or it's like, okay, tonight, I'm gonna patch this thing. I'm gonna sand I'm gonna paint it. And having those small wins is critical for me. Because I go ha like I did something like my wife knows that when I'm grumpy. It's because I ended off by not getting something done. And I didn't have that win. And I feel like I wasted my whole day, especially like when I have a bug. And I'm like, deep into it. And then my wife texted me She's like, hey, it's like 507 you're not down yet. I'm like, this is killing me because I'm like so into it, but I can't I have to break away from it. So trying to make get those small wins is key for me.
+
+589
+01:42:18,029 --> 01:43:05,640
+Scott Tolinski: Yeah, well, I it's funny, I think both of us, we have like a bit of a weird thing where like, I think our schedules are very different in the middle of a course. And at the end of the course then when we're not doing the course, like for me my like my schedule is very much like on the month, right? Like the the second and third week of the month, or like second month is planning a course I'm just like writing a lot of code. The third month is recording our course I'm just like non stop recording. And then the the fourth is like editing and getting it ready. Like today I have to export like 20 some videos when we're done with this. So like, it's weird, because my days look very different based on what day of the month it is specifically but yeah, yeah, that's, that's, uh, it's gonna feel like I feel like we're gonna feel like we have superpowers. Once everybody gets their time back. They'll be really sweet.
+
+590
+01:43:06,029 --> 01:43:39,510
+Wes Bos: Yeah, that's like one like, good thing about having kids is that like, like, I used to complain about how busy I was when I had homework. And like, that's not to throw shade on anyone who doesn't have kids or isn't busy, like everyone obviously has their own challenges in their life. And I certainly felt very overwhelmed when all I had was homework, but I'm really looking forward to life gets harder and harder every, every day. I'm very looking forward to that part where it gets a bit easier. And then all sudden you have these skills that you've learned in hard life manage and you can apply that Yeah, yeah, exactly.
+
+591
+01:43:40,109 --> 01:43:40,739
+Unknown: Yeah.
+
+592
+01:43:41,010 --> 01:43:44,460
+Scott Tolinski: I am very ready for that right now. Yeah. Are you ready? Nice.
+
+593
+01:43:44,489 --> 01:43:48,899
+Unknown: Yeah. Thank you very much. Yeah. Yeah. Hundred percent great answers as well. Great answers as well. Thank
+
+594
+01:43:48,899 --> 01:44:00,270
+Wes Bos: you. Yeah. Cool. Well, thanks so much for joining Scott. Do you want to unleash Can you just add a whole bunch of people into the room and we'll do a send off? Yeah.
+
+595
+01:44:01,710 --> 01:44:15,840
+Scott Tolinski: Oh, boy. I can't wait to see my computer crashed. Oh my gosh. Because there's a limit. The limit?
+
+596
+01:44:16,260 --> 01:44:17,760
+Wes Bos: Everyone turn your cameras on.
+
+597
+01:44:21,029 --> 01:44:22,859
+Unknown: Britney, your daughter What's up?
+
+598
+01:44:22,949 --> 01:44:24,180
+Wes Bos: This is relatively calm.
+
+599
+01:44:24,300 --> 01:44:31,920
+Scott Tolinski: Yeah, this is relatively calm. And there's Trevor?
+
+600
+01:44:31,980 --> 01:44:35,520
+Wes Bos: Never never see one of those.
+
+601
+01:44:38,279 --> 01:44:43,170
+Scott Tolinski: Thank you, everybody for hopping on and celebrating our 300th episode. It's really sincerely amazing.
+
+602
+01:44:43,439 --> 01:44:46,680
+Wes Bos: Yeah, that's really cool. We need to do some sort of like,
+
+603
+01:44:47,040 --> 01:44:48,090
+Unknown: we have to say peace.
+
+604
+01:44:54,029 --> 01:44:56,550
+Scott Tolinski: What there's 26 people, we how do we do that?
+
+605
+01:44:57,540 --> 01:45:11,340
+Wes Bos: We've broken this. So we will And off by saying piece. Ready 321 awesome.
+
+606
+01:45:14,609 --> 01:45:24,359
+Scott Tolinski: Head on over to syntax.fm for you full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

@@ -1,0 +1,468 @@
+1
+00:00:06,000 --> 00:00:11,250
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:14,490 --> 00:01:21,330
+Wes Bos: Hello, everybody, welcome to syntax. We're here again for another sweet podcast full of tasty treats. This podcast is sponsored by fresh books, cloud accounting, go to freshbooks.com Ford slash syntax and enter in syntax into the head to hear about a section. We'll hear a little bit more about them partway through the show. Today, we're talking all about productivity hacks, how do you squeeze that extra little bit of time, or productivity out of your computer out of your workflow, these little things, these little changes to your life, whether it's a specific app, or whether it's a way that you tackle something can can really help you get an extra 2030 40% out of the way. And sometimes you see these people and you go, like, how do you get so much done. And it's almost like, it's almost always that they have some sort of system in place, they use a bunch of tools, they've spent the time focusing on their process and their productivity so that when they actually gets down to work, they can have a lot more output than normal. So I'm a huge productivity geek. What about you, Scott?
+
+3
+00:01:21,839 --> 00:01:44,520
+Scott Tolinski: Yeah, it's one of those things you can't, you can't ever get too much of Well, I mean, you probably get too much of it. Yeah. But it's one of the things you can really optimize so many things that you may not even understand are holding you back and various Time, Time sinks and stuff like that. So finding ways to optimize and improve the little stuff is super duper, duper handy, pretty much 24. Seven.
+
+4
+00:01:45,540 --> 00:02:30,840
+Wes Bos: Cool. So why don't we start off with probably both of our favorite productivity tool, which is Alfred. And Alfred is a does a lot of things. But the thing that everyone knows it for is it's that application launcher, where when you hit option space, it opens up this bar that you can type in, and you can type all kinds of stuff in there, most likely you want to open up an application and will quickly pop it open. So you're not rooting through your list of applications. Now, I OSX, or Mac OS has totally ripped that off in the latest version. However, it's not nearly as good. So if you're using that, I definitely recommend you switch to Alfred, and let's talk about why why do you like it? Scott, what do you use it for?
+
+5
+00:02:31,130 --> 00:04:24,320
+Scott Tolinski: Yeah, I like it for Well, in addition to like doing sort of custom workflows, there's just a lot of little handy extras, I mean, even doing all of your math directly in it, you can just do the quick math right quick math pops up, you don't have to open a calculator or anything like that. Actually, I think the Mac OS version can do that too. But it gives you a lot more options to have more of these type of things, right. And you can build your own custom ones directly within Alfred. One of the things I use Alfred most for is getting myself set up in a particular environment. You know how many times let's say I'm working on a WordPress site, you have to go to your apps, your doc open up MAMP or whatever way you're serving your PHP. And then you have to open up your browser localhost port eight, whatever, you have to do all that stuff, and I have mine, basically, I can just do you know, command, enter, and I can start typing MAMP Ma, it will open up MAMP it will open up a tab in my browser, and it will just get me set up and started basically saving you a little bit of time here, right? Like three keystrokes for doing something that would have taken I don't know half a minute to click through but still it's saving you some time there because you don't have to do that you know ever again also, I did use it a lot for browser tab stuff right? Maybe there's sites you go to all the time specific locations and for a little while have like all these level up tut's sites, right I have my accounting stuff, I have my my my repos. And a lot of times, if I'm working on level up tough stuff, I want all of it to be open. And I don't want to have to open up all of these tabs, I can just do you know, Alfred, and then type in L UT, hit Enter, and it opens up everything I could need for my accounting stuff, to my app to my death to my repos, any of that stuff in the browser, and it will open up iterm and all that stuff for me.
+
+6
+00:04:24,630 --> 00:05:07,560
+Wes Bos: Yeah, it may seem like a bit of like overkill to schedule these things. Yes, you're saving half a minute. And that probably will add up over your lifetime and allow you to retire early or something silly like that. But I think also just the the mental energy of thinking, what is it like having to make all these decisions, you really only have so much bandwidth per day to make all these decisions and to figure out what needs to be open. So if you can just like take yourself out of remembering those eight things that need to be open. It's sort of similar to when you're scripting, maybe a gulp task or anything like that. It's Way better to automate that process, rather than to have to remember every single step along the way? Yeah,
+
+7
+00:05:07,580 --> 00:05:30,600
+Scott Tolinski: yeah, definitely. And like, like you said, these things aren't going to be to shaving a ton of time off. But it does make your life better on a consistent basis. And once you get into that muscle memory of, you know, I'm working on level up lsvt, enter, whatever. Okay, that's it. That's all I had to think about. And yeah, reducing that decision, fatigue is where it'll make your decisions better for the rest of the day.
+
+8
+00:05:30,840 --> 00:06:12,870
+Wes Bos: Exactly. So Alfred comes with some built in workflows, it comes with the ability to add other people's workflows. And you can also make your own which is, which is what Scott was just talking about. So there's this workflow editor, which allows you to do everything from run terminal commands, which will allow you to output scripts, to open up applications to open up tabs in your browser, you name it, it comes with all of that stuff built in. So being able to customize workflows, and select other people's workflows that are handy. Is, is amazing. So maybe let's talk about some of the other workflows that we use. Um, do you have any? Or do you want me to go?
+
+9
+00:06:13,590 --> 00:06:35,100
+Scott Tolinski: You can go for me, I pretty much write all my own workflows, which I'm thinking now is probably a terrible idea. As I'm starting, you know, from scratch every time like, Oh, I should should do this. I guess I don't have the the knowledge of like a Alfred riepe repository of like, excellent workflows. Like, I feel like, that would be really helpful for me.
+
+10
+00:06:35,370 --> 00:07:49,260
+Wes Bos: Yeah. So if you go to Alfred app.com, for slash workflows, you'll see that there's tons and tons of different workflows that will integrate into some of the more common ones out of us is converting a hex to RGB, or being able to do time zones. So if for example, if I want to know what time it is, in India, or in China, or in San Francisco, or in Denver, I just type Tz and then the name of the city, and it's going to automatically pop down a list of all the times. So like, you know, like those people, and I do this myself, when you Google something like what is $100 Canadian in us? Or what is the time in India right now and you have all these things that you Google? Well, you shouldn't even have to wait for your browser tab to open you should be able to access that information right from your Alfred and doing timezones with the timezone one and doing the there's a conversion one that I use all the time for converting money, converting kilometers, converting kilograms to pounds, all of you Americans have the most messed up system for measuring things. So I always need to convert it into a sane metric, or Canadian dollars. And that saves me tons and tons of time.
+
+11
+00:07:49,650 --> 00:07:57,020
+Scott Tolinski: We know this. I mean, we know this guy I wish so desperately, we could just abandon it all and head to the metric system.
+
+12
+00:07:57,719 --> 00:07:59,550
+Wes Bos: I don't know if it'll ever happen.
+
+13
+00:07:59,550 --> 00:08:13,320
+Scott Tolinski: I know. Oh, man, I can't believe I didn't know about this. Yeah, I've used Alfred since like version one. And I've never seen this page on their website. I guess. I downloaded it, installed it and then that was the last time I went to their website.
+
+14
+00:08:13,350 --> 00:08:39,390
+Wes Bos: Yeah, there's there's one called kill in you know, sometimes you need to kill a process and you open up your Activity Monitor and you hunt through and you find your node process and you kill it. There's one or you just type kill, and it'll populate all of your node processes and you can just type node and then you'll find all the node processes or anything that has the word node in it. It's like a fuzzy search and you can kill them right from Alfred. Which I love that. Yeah,
+
+15
+00:08:39,450 --> 00:08:42,960
+Scott Tolinski: yeah. Do you use this pack pakal
+
+16
+00:08:43,289 --> 00:08:45,330
+Unknown: Oh, that's the one I use Dale.
+
+17
+00:08:45,720 --> 00:08:48,240
+Scott Tolinski: Yeah, cuz it looks like Alfred still links to there
+
+18
+00:08:49,020 --> 00:09:13,550
+Wes Bos: when you when you go ahead and click off to them. So yeah, I was just manually downloading them on but that's terrible because they'll never update so this package is sort of like NPM for Alphard package. So you can you can install them there's ones for Spotify and iTunes there's a whole bunch of themes on there. I have my own cobalt to theme for Alfred. It's pretty pretty nuts all the different workflows that go into it.
+
+19
+00:09:15,000 --> 00:09:16,470
+Scott Tolinski: Nice. Oh yeah.
+
+20
+00:09:16,710 --> 00:10:59,700
+Wes Bos: Some other tips that I use on here is large text quickly. So sometimes you just need to I do this all time when I'm teaching and and I need to get a URL to everybody or I need to post the Wi Fi password or I need to like post something huge on the screen. In Alfred you just open it up and you type your thing and then you hit I believe it's command Yeah, you hit command L and it will just take whatever you've typed into Alfred and put it in big white letters, a black background all over your your screen so kind of neat. I've also used it like on an airplane we Intel people are watching what you're doing this type into it. watching me in the screen. Um, what else? A little tip, when you're doing math, you can turn on the ability to ignore commas. So often all a copy paste like 2000 USD, and that will have a comma after the two, you can turn off the ignoring, or you can turn on ignoring of commas so that it will do the math and ignore the actual commas for you. I'm just trying to think about there's so many that I've used here, and I'm all excited about it. Now that there's some other ones here, oh, font, awesome. Look up. I know that you're not supposed to use Font Awesome anymore, because SVG is the way to go. But if you still have a website with fun, awesome. And you need to know what is the class like fa, dash Twitter, the font, awesome workflow, you just type FA space, and then you can just like, search for the name of the thing that you want. So arrow, play, whatever it is, and I love that because I hate going to Font Awesome website and looking at the 12,000 icons that are available there and searching through it.
+
+21
+00:11:00,329 --> 00:11:06,450
+Scott Tolinski: This leads me to another thing. entities HTML entities, yes. Is there one for that?
+
+22
+00:11:06,480 --> 00:11:07,890
+Unknown: There is there's a Okay,
+
+23
+00:11:07,920 --> 00:11:11,640
+Scott Tolinski: there's a widget for that. And that'd be psyched to not have to use it was like a decode
+
+24
+00:11:11,640 --> 00:11:21,570
+Wes Bos: and encode. So you you pop in an entity, like EAX something you? And actually like my French accent there? Yeah, you're welcome.
+
+25
+00:11:21,810 --> 00:11:23,880
+Scott Tolinski: I mean, you are Canadian, there's a bit of that there.
+
+26
+00:11:23,939 --> 00:11:45,120
+Wes Bos: So it will it will kick out the HTML entity, it will kick out the like, there's like two other ways to encode it like base 64 encoded and like another way, and then if you put an encoded value in there, you can decode it into whatever the equivalent is on there. So that one is I use that one quite a bit as well.
+
+27
+00:11:45,449 --> 00:11:53,940
+Scott Tolinski: Nice. Yeah, that's it. There's, you know, having to remember the right angle, quote, or rank or whatever. But having to remember those is no fun.
+
+28
+00:11:54,209 --> 00:12:19,560
+Wes Bos: Yeah, exactly. Here we go. I have a I have a screenshot on my workflows on my Wes bos.com for slash uses. Dev docs. That's another really good one. So if you need the docs real quick for array dot push, you just type JavaScript space push, and it will bring down all the documentation for whatever methods specifically match that one. Ah, let's see. What else do we have here kill.
+
+29
+00:12:20,220 --> 00:12:33,870
+Scott Tolinski: I'm looking at the this, this pakal site and and see like a Stack Overflow search, I could see that being super useful. Obviously, you could search just like limit your query to stack overflow. But it seems like this is just a nice way of making that super seamless.
+
+30
+00:12:33,900 --> 00:12:48,990
+Wes Bos: Yep, there's one for turning on. There's a lot that just turn on and off thing. So turn on sleep, turn on flux, turn on Wi Fi, whatever you turn off Bluetooth, you know, you want to toggle these things really quickly. There's a lot of workflows, I would just turn these things on and off real quickly.
+
+31
+00:12:49,830 --> 00:12:52,470
+Scott Tolinski: Nice. So yeah, big fan. super handy.
+
+32
+00:12:52,590 --> 00:13:30,090
+Wes Bos: Oh, I remembered one more. And that is Alfred has this built in. And it's the clipboard history. So if you don't mind some application, keeping log of all of your clipboard, you can have a clipboard history anywhere I know sublime tax, and a lot of editors have clipboard history built in. But if you copy something, and then you accidentally copy something else, and you lose whatever was in your your clipboard, this will give you a list of I don't know 10 or 20 of your previous clipboard items. And you can always get them back, which is really saved me saves me all the time.
+
+33
+00:13:30,449 --> 00:15:24,800
+Scott Tolinski: Yeah, so I'm gonna blow your mind here with an alternative to this. Yes. This is an app that used to be called Well, it was an app called clip menu and it is existed for a long time it was free was just sort of existed, and shit might not have been free. But either way, I hadn't seen an update in forever. And when I went to use my new computer, I found out it didn't. There's no way to install it. The installer was totally broken. So I started to explore some new alternatives to clip menu and I found this app, which is actually clip menu open sourced with a ton of updates called Clippy. So the get the pages Clippy CL IP y hyphen, app.com. And Clippy is basically the continuation of this clip menu app that I use so much. And it is totally configurable. You can say, hey, use, remember the last 100 things I copied, whoa, it can copy a rich media. It can paste in like images and stock images and stuff. It's pretty darn sweet. You can also actually use it as my primary like global snippets manager. The keyboard shortcut on your computer is just Command Shift v. So that's super easy to use compared to Command V, Command Shift v. and you get all of your history, your past hundred things and then your snippets, wood you can organize into folders and stuff like that, which I use pretty pretty frequently. But there's the preferences if you don't want it to copy The rich media you don't want it to save you the last 100 things. You can have it save the last 10 things if you want, but it's open source. So you github.com forward slash Clippy forward slash Clippy, double forward slash clippies. But if you go there, you can see it's totally open source. So you don't have to worry about them, like sending your clipboard history off to another service, because you can go look at the source if you want to.
+
+34
+00:15:25,229 --> 00:15:42,300
+Wes Bos: This is really sweet. I just, I just installed it. Yeah, super excited for that. Because Yeah, sometimes I have like, like three or four elements in sketch, and I copy them. And then I want to call me something else by accident. I want to still get those elements back. So it sounds like this will do that.
+
+35
+00:15:42,569 --> 00:16:08,610
+Scott Tolinski: I use this thing. Literally 24 seven. I think like, most of the time, I'm pasting anything. It's it's, you just start to use your computer differently. I copy things freely. Like if I see something, just Command C, Command C, Command C, whatever, you never know when you're gonna need it. Yeah. And then it's always just hanging out in my last 100, clipboard items. It's pretty easy to find. And you can even navigate it by keyboard and stuff like that. So this is what I use for my clipboard management.
+
+36
+00:16:09,449 --> 00:16:14,700
+Wes Bos: Wow, that's that's great that this is like the whole show them. I can't believe that. I had never heard of that.
+
+37
+00:16:15,029 --> 00:16:32,340
+Scott Tolinski: Yeah, I well, it. It only it took me getting this new computer to have to find an alternative to clip menu, which I was just so excited to see that it was one open source like the creator allowed it to be open sourced and to that it was so excellent. So yeah, pretty psyched. Pretty sweet.
+
+38
+00:16:32,819 --> 00:16:46,650
+Wes Bos: So that's that's Alfred, there's so much that goes into Alfred, he even has his own snippets manager built into it. I use something else for that as well. But check it out. If you haven't done Alfred, it's worth spending a little bit a little bit of time with it.
+
+39
+00:16:47,099 --> 00:16:48,210
+Scott Tolinski: Yeah, absolutely.
+
+40
+00:16:49,049 --> 00:16:53,970
+Wes Bos: Let's talk about to do apps. What do you use for? Do you use it to do app? If so what do you use?
+
+41
+00:16:54,209 --> 00:18:49,580
+Scott Tolinski: Yeah, I have one of the world's worst short term memories. I actually, my wife is a doctor of psychology and, and she has done more, you know, tests on me than I can, you know, possibly comprehend while she was getting her degree here. And one of the tests, she found out that my short term memory is so bad that it prevents me from having an IQ. Because I'm I'm really good in some areas and really deficient in other on the short term memory totally kills, like some aspects of my, my IQ test. So I have the world's worst short term memory. And because of that, I need a to do manager like crazy. So I used to do list, which is a site and native app. Well, it's an electron app. And there's a really excellent both Android and iOS app for it. And as far as it goes, it's it's feature rich enough that it's a brilliant to do list with sorting and categories and filters and whatever. But it doesn't overwhelm you with being too. Too much stuff. It's not trying to do too much stuff. It's not a repository for everything. Yeah, you can, it's essentially a to do list and you can schedule and time and collaborate on things with other people. And I use it so heavily that my daily to do list is pretty much planned out on their 24 seven, and anything that I need to accomplish ends up on there first, I use it for sorting of issue queues and stuff like that on projects I'm working on to remember, and I use it for planning my level of tutorial series. I use it for everything. restaurants that I want to go to whatever if I need to remember anything. It goes into detail as to because I'm sure as hell not remembering it. Otherwise, it's
+
+42
+00:18:49,580 --> 00:18:52,710
+Wes Bos: like sweet, do you? Are you paying for it? Or is it free? Yeah, I'm
+
+43
+00:18:52,710 --> 00:19:07,020
+Scott Tolinski: paying for it. I've been paying for maybe two years now. A big fan. As far as to do list apps go I like it because it's it's simple, but has enough features. I think that's sort of the sweet spot is what you want it to do. sort of thing.
+
+44
+00:19:07,050 --> 00:19:07,890
+Unknown: Yeah. For me, I
+
+45
+00:19:07,890 --> 00:19:30,900
+Scott Tolinski: don't I don't want this monolithic sort of thing that does a whole bunch of stuff other than to do lists. You know, I tried using things like Trello to manage to do lists, and it just did too much stuff that wasn't wasn't a to do list for me, right? Yeah, not that Trello isn't an amazing tool for all sorts of other things. But for to do list. I used to do list big fan big fan.
+
+46
+00:19:31,170 --> 00:22:54,390
+Wes Bos: That's pretty sweet. Um, this looks very similar to what I use. And I use a thing called things and things is a to do app. And I've used it for probably 810 years now forever. It's funny like I bought it I think seven years ago I finally broke down and bought it and after seven years they released things for which is just about a week or two ago and I easily bought a no problem. I was super happy with it. So things is a to do application for OSX. And I believe there's a Windows version, but there's one for for iOS as well, they'll sync together. And the whole idea behind things is this philosophy called Getting Things Done. And if I highly recommend that you read the book by David Allen called Getting Things Done, it was just released for like, sort of like a modern, like, email based era, it's been around forever, it's like kind of this cheesy, like corporate thing that like, if you work at a bank, you wear it, and it's as cheesy as it is, is really, really good for anyone who has problems, getting things done, being overwhelmed with the amount of stuff forgetting things, unable to, to focus on on the task at hand. So the whole idea behind getting things done is you get it out of your head and into your system. So if it's if you're trying to, like use mental energy to remember these things, that's bad. So you should put it into your inbox, which is things has the concept of an inbox, and you just dump it in there. And then once you are in things once it's out of your head, and once you have some time, you have the ability to assign these things, these tasks to different aspects of your life. So they're called projects in things. So you can drag them into specific projects. So I have one for things that I need to do for my own course platform, things I need to do for the podcast, things I need to do for my entire life, like things that need to be fixed around the house and whatnot. And then every day, or what I'll do is I'll open up things, and there's a today section, and then you drag things out of your, you can drag things out of your different projects and put them into today. So you know exactly what's on your plate, what order you can tackle them in on, they're still associated with a certain aspect of your life. But you can you have sort of like a order of operations, and there's a whole lot more to it, you can assign dates to things, you can have attachments, you can put notes on them, I don't use that stuff all that much, it's part of why I like things is that it's, it will allow you to go as deep as getting things done will let you but on the surfaces surface, it's very, very simple. There's another big one out there called Omni focus, which is like if you can learn to use that you're a monster because it's amazing. And it's just it's like well oiled machine. But it takes there's a big hump and I found it was too hard to get over that hump of learning how it actually works. So if you're interested in like getting things done, read the book, and then get things or to do list or any of these ones that have project based tasks. Because they'll definitely, definitely help you out and simplify your life. You don't have that anxiety of forgetting things or having too much on your plate.
+
+47
+00:22:54,750 --> 00:23:36,870
+Scott Tolinski: Yeah, and it looks like I'm I hadn't heard of things I'd only heard of to do it. Because obviously you find a solution that works. And yeah, you don't go searching for too much more. But it looks like they do the really the same thing. I'm hearing you talk about this. And it's like exactly how I it's exactly the same anyways. Yeah. So it's funny that we both have the same process. And I also arrived at to do it after listening to getting things done. which I found to be just for for me, like I said, with the short term memory issues it is like it's brilliant when you you feel like actually in control of things. So yeah, getting things done is just a totally invaluable for productivity overall.
+
+48
+00:23:36,900 --> 00:24:01,380
+Wes Bos: Yeah, I would say I'm just looking at the the website now things is a one time 50 bucks for the Mac App. 10 bucks for your iPhone app, and 20 bucks for the iPad. So huge downsides to that is there's no web interface. And if you move away from the Mac or an iPhone, then you are out of luck. So yeah, I would probably if I was picking it up today, I would probably pick up to do his
+
+49
+00:24:01,980 --> 00:24:07,560
+Scott Tolinski: To Do List cross platform desktop web, Android, iOS, Windows. Yeah. So don't
+
+50
+00:24:07,560 --> 00:24:23,490
+Wes Bos: don't get things get what it does, but don't buy it because unless you're you're all in on OSX and not now ever gonna move. Cool. So that is that is our to do apps. What do you got next for me, Scott?
+
+51
+00:24:24,720 --> 00:26:10,170
+Scott Tolinski: Yeah, let me check. Yeah, so here's something that I use a lot in a more web developer sense here. I use a ton of aliases in my command line. So for I use, I turn with fish shell if you're using bash or whatever, any of these things, you can set up aliases. And you know, I don't know if if everyone sets up a lot of aliases, but if I'm if I'm typing something, essentially more than a couple of times into my command line over the course of a couple months or whatever, I'll set up an alias for it. For instance, even get the the any of my sites running You know, typically you put in a script in your package file, which is, you know, NPM start or whatever. And then you have to type in NPM, run start. And I am so crazy about these aliases that I don't want to have to type in NPM, run start, I want to type in start and just run start it. But in addition, I actually have everything forget, right? You know, instead of doing git add period, or whatever the command that you use, typically for your Git commits, I just do add calm, I use calm for commit calm and then type the commit message, then you don't have to write git commit hyphen, M, then the commit message, just like little things like that, that are really personalized for me, like, I'm not going to publish these things out and have everyone use them because they're, they're, they're terminal commands that I'm personally writing. And they're not meant to be sort of globally used. And I found that writing these very, very personalized get snippets, or command line snippets, can just like really, really just, I don't know, remove a lot of typing from your life, especially things you type a ton, like a git commands, or NPM installs and stuff like that.
+
+52
+00:26:10,680 --> 00:26:39,360
+Wes Bos: Yeah, I use those quite a bit as well. One specifically that I use all the time is, you know, when you, you start a new project, and then you forget the Git ignore, and then you add a whole bunch of like, dot files or whatever, it doesn't need to go in the repo. And then you have your Git ignore, it's sort of too late. So I have this alias for like git, like, oops, or whatever I aliased it to, and that will just remove anything that's in my dot file that I've previously added. To the repo.
+
+53
+00:26:39,660 --> 00:27:01,140
+Scott Tolinski: Yeah, nice. I saw somebody had a hilarious snippet that was just like, or alias that was just like, please. And all it did was like rerun the previous command with sudo, and whatever. So you don't have to type the command again, or whatever. And you can just say, Oh, I ran this. Oh, gives you a new permissions error, please enter. And like, I just think that's hilarious.
+
+54
+00:27:01,200 --> 00:27:07,560
+Wes Bos: I just added a card to our show ideas for the command line, because we'd do a whole episode on command line stuff.
+
+55
+00:27:07,740 --> 00:27:14,910
+Scott Tolinski: Yeah. Okay. Well, then let's not get too much more into those then. What else do you got? I know you make heavy use of text expander.
+
+56
+00:27:14,940 --> 00:28:50,460
+Wes Bos: Yeah, so text. expander is probably my most used application besides Sublime Text in the browser. And I find a lot of people don't really understand what it is because the first thing that I hear from everybody when I talk about text expander is like, you know, Mac OSX has that built in. And it yes, it is obviously a text expander. So you write hi and hit tab, or you write hi and Dhoni and hit tab, it will just automatically expand it. That's the very basics of it. But text expander is useful for a whole lot more stuff. So I primarily use text expander. For coding, I've actually stopped doing snippets in Sublime Text, and I've moved all my snippets over to text expander so that I can use them whether I'm uncle pan or another editor, no problem. It has a clipboard paste into place. So like let's say I have a support email. That's what I use it quite a bit for. And I want to reply to somebody with like a canned response. I'll have a snippet for that. And it will say, Hey, your name, thanks so much for the email, and then it will give them the canned response. Or even just that one little part, hey, blah, blah, blah, thanks so much for the email that takes me like 10 seconds to write, or one second with a snippet. So what I'll do is quickly copy their name into my clipboard from the email, and then I'll hit the snippet, and then it will automatically reply to them with their name in the thing. So it'll take whatever's in your clipboard and paste it right into this actual snippet. So it'll interpolate actual data. So that is really sweet.
+
+57
+00:28:51,420 --> 00:29:05,220
+Scott Tolinski: Yeah, I, I was going to start using text expander. And then they moved to the subscription model. Yeah. And then I just started Googling text expander alternatives because like, I can justify paying a subscription to that
+
+58
+00:29:05,250 --> 00:29:26,430
+Wes Bos: I yeah, I'm still on the the one time payment. I hate that all these apps. That's part of why I like things. I don't like that all these apps are moving to a subscription model. I much rather pay for a once and be done with it and not have it. chip away at me every single time there is a really nice alternative to text expander that's called I find it.
+
+59
+00:29:27,360 --> 00:30:01,260
+Scott Tolinski: While you're looking. I think the speaking of apps that are productive that have gone to a subscription model. I used to use Ulysses all the time, which is just like a basic note taking app, but it's really nice. It has like nice synching features. It has a you know, markdown support and stuff like that to make really nice looking notes. You can download themes for it. I know. I'm a sucker for themes for stuff. So but they just went subscription model and I can't believe it because it's not that like I already paid for this app. I paid a decent amount for the app and now it's subscription model. And I'm just like,
+
+60
+00:30:02,340 --> 00:30:02,880
+Wes Bos: Ah,
+
+61
+00:30:02,909 --> 00:30:06,990
+Scott Tolinski: yeah. All right, my own. All right, my own electronic note taking app.
+
+62
+00:30:08,370 --> 00:32:29,460
+Wes Bos: Yeah, I get it because they need to like continually pay, or they want to make more money, but I just hate, I love being able to pay for it once. And then every time you have a major update with nice new features, major updates, it's do it. So the alternative is called a tax, then it's five bucks, one time payment. I used that for maybe a year until I got pretty heavy into some of the stuff that TextExpander did. And then I had to actually buy it, because so let me talk about some of the other stuff that has dropped down variable data. So one thing I used to do for student discounts before I completely automated the student discount process right now, but before I used to reply to them, and there was a Hey, can I have a student discount? And then I would, I would say, hey, blah, blah, blah, clipboard name. Thanks for the email. And then I would like ask them a question about about their school, depending on how much information they've given me. So if they've left out some information, or if they've given it all, to me, I want to say that sounds really interesting. Whatever it is, so what it will do is it'll pop up this little interface and give you a drop down of like six or seven possible questions. And then we're able to select one of those, and it will insert it in. So sometimes your snippets aren't just current carte blanche Is that a thing? So you have to be able to make them a little bit variable and having this possible drop down of options. Is is super helpful in text expander. And then the final one I use is called case sensitive expansions. So I always say, let me know, you type Lmk. And it'll expand to let me know. But sometimes, I'll be it'll be in a sentence where it says, I'm getting them Tuesday. So let me know if you want in. So that's all lowercase. But then I might have a sentence that says, Let me know if you're interested in coming. So that's capital, let me know. So TextExpander will allow you to say like capital L, M, k lowercase, and then that will expand to the proper case, which is super helpful. You don't have to spend time going back and correcting any of the stuff that it has. So if you think text expander is just expanding, take a little bit more time looking into it. Because time invested in that air is always paid back.
+
+63
+00:32:30,179 --> 00:32:39,810
+Scott Tolinski: Nice. Yeah, it's amazing how those like that little like that case sensitive thing. Yep. It's amazing how those like little things just add up to be such like nice quality of life improvements.
+
+64
+00:32:40,290 --> 00:33:49,350
+Wes Bos: Today, we are sponsored by fresh books, fresh books is the bee's knees for anytime they need to do your books with a small business, medium sized business, large business, whatever it is keeping track of your invoices in different currencies, being able to expense being able to remind one of my favorite features is the the like robot reminder. So if you've got a client that's not paying, you can log in, you can see that they've logged in, and then you can make Freshbooks follow up for you. So you don't have to and that really like saves a little bit of your relationship. So it's not you that shaking down a non paying customer, it's the system or the robot that will shake them down and say, Hey, reminder, this is the unpaid invoice. Make sure make sure you pay it. They've got online payments as well I use stripe and PayPal credit cards right on my invoices, so people can pay them right through. They're really great. Go to freshbooks comm forward slash syntax to get a 30 day free trial, make sure you enter in syntax into the How did you hear about section so Scott and I can feed our family and pay for our MacBook Pros? Yeah, absolutely. What else do you have?
+
+65
+00:33:50,760 --> 00:34:49,650
+Scott Tolinski: Yeah, so um, this is this is one that is a little less techie, I use pen and paper pretty heavily. I use a graphing paper like those big old graphing notebooks. And I always have a pen and a graphing notebook handy at like all times to jot down notes to plan to draw things out. Because you know, you could open up an app and start drawing out some diagrams in the app or whatever on a tablet. But to me, like the ease of use of not having to turn it on and grab it, pick it up and just start drawing or writing is is really important for me, because like I said short term memory things come in, they go out very quickly. So I committed to paper and then I'll make a further organization of those notes into to do list if it requires me to do any further action on it. But a pen and paper is extremely extremely, extremely important for remembering ideas and keeping things getting things down and just keeping stock of everything.
+
+66
+00:34:50,190 --> 00:35:06,150
+Wes Bos: Yeah, I used to use pen and paper quite a bit. I had like a moleskin where I would take notes in it and I've since moved to just using Evernote for that but I definitely missed the The freedom and the distraction list that pen and paper gives you so maybe I need to give it another shot.
+
+67
+00:35:06,440 --> 00:35:31,860
+Scott Tolinski: Yeah, and part of the problem with like a moleskin, is there still a barrier to entry? Right? You got to open it up, like I'm using like a spiral, big full sheet, graph paper. And so like, it's always open, and there's always a pen sitting on it. So I don't even have to open it up. I just open the cap off dependent start writing. Ease of use is important for me there. But yeah, that's definitely definitely something I use all the time. Yeah, what about you anything else,
+
+68
+00:35:31,940 --> 00:36:45,210
+Wes Bos: I've got a quick one right now, which is video speed controller for Chrome. So I've talked previously about watching content at 1.5 to x, even three x in some cases. And what video speed controller will do is it'll hitch on to any html5 video, which is almost every single video on the web now, it'll give you this little tool where you can increase the speed playback rate of the video, as well as jumping around in it. So I find that both very helpful because on YouTube, you can skip ads really quickly, you can hit it once, and it's past that five second wait time. And second, if you are watching anything, I never watch anything at one x, it's always at two, two and a half three x. And that is huge for being able to consume content quickly, I find that I often close stuff down when it's one x because I get bored of it. And I find myself drifting. Whereas if it's way faster, I'm paying attention and getting a lot more, getting a lot more in which is terrible for conferences now because I go to a conference and I'm sitting there being like, this is so slow, I could probably get this done in 20 minutes with speed and jumping.
+
+69
+00:36:45,750 --> 00:37:11,940
+Scott Tolinski: Yeah, that's hilarious. Yeah, I do. I mean, I do all that podcast set to x and all that stuff, too. So definitely one of those things I can help you get through stuff that is if you can, like focus on it. Sometimes if it goes too fast, you'll start to gloss over a little bit as well. So maybe it's a little bit about finding that sweet spot that you personally can handle. I'm sure it's a little bit about like speed reading to just like takes practice.
+
+70
+00:37:12,960 --> 00:37:24,980
+Wes Bos: It definitely takes a lot of practice, maybe a year to get out to two x but it's just inch it up by 10%. Every single time that every couple of weeks and you're gonna learn your brain will catch up. No problem.
+
+71
+00:37:25,400 --> 00:39:11,460
+Scott Tolinski: Yeah, let's talk about keyboard shortcuts. Because keyboard shortcuts are really important for a lot of reasons. And in memorizing the keyboard shortcuts, you don't have to take your hands off the keyboard to work. But one thing I like to do is I'm not afraid to modify keyboard shortcuts and applications and really set up things that I do all the time. For instance, I edit a ton of videos, if you've seen any of the thousands of videos on my YouTube channel, I did all those by myself and for editing, your frequently wanting to cut the video, and then maybe roll up the current time to where the playhead is and stuff like that. And those keyboard shortcuts on Mac OSX they'd be like command to bracket command right bracket or I don't even know what the blade tool one is. But I use this all the time. And so what I did is I moved those to even just straight keys without modifiers because you don't type really in Final Cut that much. So I have the C key for cut the X key for to move up the cut up until and then the Z key for the opposite of that. And I edit videos like I'm playing the piano, I'd never take my hands off of those three keys. And I move my mouse to control the playhead. And I just quickly click lick lick lick lick, and I'm just tapping. And I've gotten so good at it. But I wouldn't, it wouldn't be possible if you had to do command bracket or whatever, take your hands off of their current orientation, I can just leave them on those keys and really chop up videos so quickly. But you know, if somebody else came in to use my setup, they might be like, what the heck is going on here? Yeah. But it's your setup, right? If it's your hairs, it's gonna make it a lot easier. The things you do all the time, make them easier for yourself with keyboard shortcuts.
+
+72
+00:39:12,230 --> 00:39:16,980
+Wes Bos: Oh, that's a really good one. And so do you set those you set those shortcuts in the app itself?
+
+73
+00:39:17,399 --> 00:39:39,980
+Scott Tolinski: Yeah, it depends. Final Cut has really nice keymapping. So for that I use the the in app version. I think there's most of the time. Yeah, most of the time things. Sometimes. It just sends you right into the Mac OS settings for keyboard shortcuts and you do it in there depends on whatever the app is pretty sweet. Um,
+
+74
+00:39:40,169 --> 00:41:34,800
+Wes Bos: so I have gotten a lot on keyboard shortcuts here. So previously, in episodes I've talked about using something called carabiner elements, which will allow you to map your caps lock, which is a useless key, no one needs a Caps Lock key. It'll map it to the combo combo of shift control, option command and that will give you is a sort of a fifth modifier key that will allow you and it's no apps will ever use that. So you can do caps lock, Q, Caps Lock, a Caps Lock arrow, and over and over and down. So I use carabiner to map it. And then I use a, what is it called better touch tool to map all of those keyboard shortcuts to launching applications to minimizing windows to two snapping windows, the left or the right to move into two different monitors, all kinds of different stuff that I have for, for launching different apps and moving around my Windows is is super helpful, you never have to worry about overwriting any of the built in keyboard shortcuts. So definitely check that out. You're, you're interested in it. Nice. And then I just want to talk about like, like keyboard shortcuts that everybody should know, part of teaching in person makes me realize that most people don't know any shortcuts. So like a little tip is, whenever you're in an application, just open up the menus and click on all of them. And they always have the keyboard shortcuts beside them. So for whatever action you're trying to take, take us back in and figure out what the keyboard shortcut is. But there's a couple that are just like system wide that a lot of people don't necessarily know. And it's like, it's sort of like beginner stuff. But I think a lot of people just don't even are totally oblivious to actually having them. So
+
+75
+00:41:34,830 --> 00:41:43,920
+Scott Tolinski: yeah, some of these are infuriating when you see people giving like a conference talk, yeah. And they're not using one of these like basic keyboard shortcuts, you're like, oh, man, why are you doing that? That's awesome. touching
+
+76
+00:41:43,920 --> 00:42:52,290
+Wes Bos: your mouse. Yeah, the one that gets me all the time is I have students drag their windows around. So like, they'll they'll have their editor. And then they'll have a browser. And then they'll drag the browser like off enough that so that they can see it, and then they'll drag, drag their browser back up. And so they can get back to their code. And they're just constantly like shuffling papers around on their desk with all these different apps, when the two that everybody should absolutely know is command tab or all, or whatever it is on Windows control, control will open up your app switcher. So you can hold down Command and just keep hitting tab to switch between all of your apps or or use your arrow keys to switch between the two. And then the lesser known one is command backtick will allow you to cycle between multiple windows of that app. So you got three versions of Chrome open, or you got two Sublime Text, windows open ended a cycle between those two, you hit command backtick. And that will do the same thing as command tab. But for only that application with multiple windows open.
+
+77
+00:42:53,820 --> 00:43:09,540
+Scott Tolinski: Yeah, another one very simple. You probably use it all the time. In most applications, Command T if it has a tab will take you to a new tab. So Command T is something I use all the time, right, because working with tabs is pretty common.
+
+78
+00:43:09,600 --> 00:43:14,790
+Wes Bos: Yeah, and Command Shift t if you accidentally close a tab, it'll reopen the the latest tab.
+
+79
+00:43:15,380 --> 00:43:17,850
+Scott Tolinski: Yeah, man shift T is a definitely a big one.
+
+80
+00:43:18,570 --> 00:44:22,740
+Wes Bos: Another one that gets me when people don't do is being able to move around your text editor or your email or just text with your cursor quickly, you shouldn't have to like move your mouse and click where you want to go, you should be able to jump by word by word and move along. So first, actually, I tell people to go into your keyboard settings and crank up the key Repeat as fast as it goes. So that when you hold down your arrow key, it just flies instead of you waiting there and look looking at the screen. And then second, if you use whatever we got here, I don't even know what the keys are, I have to look at my actual hand. If you want to jump word by word, you just hold down Option and use your arrow keys. And that's much faster than moving letter by letter. And then you can use Command arrows to move line by line so to the front of the line or the end of the line. Nice and quickly. And if you want to select the text in any of these combos, you hold down shift. So I'll put these all in the show notes. Yeah, because you should learn all of them.
+
+81
+00:44:22,740 --> 00:44:56,640
+Scott Tolinski: And this is one that I use all the time in VS code for to copy a line or to move a line. So if you hold down in like Vsq I don't know if it's the same with other text editors, I would guess I would assume that it is if you hold down Option and hit the up or down key it's moving that particular line up and down. I found a lot of people don't use that. Another one is if you hold Option Shift and hit up or down it copies the line and moves it up or down one. So if you need to copy a particular line or you want to move a particular line, those two are used constantly by myself.
+
+82
+00:44:56,850 --> 00:45:15,360
+Wes Bos: Yeah, absolutely. I'm switching tabs between mean switching between tabs really quickly hold on Command Option, use your arrow keys to switch between tabs. If you need to. If you need to jump to tab two or to tab three, just hit command one, command to command three command for those will jump to the first, second, third and fourth tabs. Unless
+
+83
+00:45:15,360 --> 00:45:17,400
+Scott Tolinski: you're in VS code. That's no
+
+84
+00:45:17,790 --> 00:45:18,660
+Wes Bos: good. No, if
+
+85
+00:45:18,660 --> 00:45:42,240
+Scott Tolinski: you hit command two in VS code, it takes you to a second window and if you have one window, it opens up your tab in a new window or whatever. And so I actually if you go to my GitHub s Alinsky, or they level up tuts GitHub, I'll put in the show notes. I actually have a keymapping in my Zed just their guests, guests.
+
+86
+00:45:42,750 --> 00:45:44,250
+Wes Bos: I think g OSS
+
+87
+00:45:44,550 --> 00:46:07,980
+Scott Tolinski: D asks, yeah, yeah, whatever that is, I have a snippet in there, you can paste it into your key bindings, and that actually successfully remaps, one through nine to year one through nine tabs correctly. There's like eight open issues or even more than that on the VS code in there. I don't know like what it is, if it's that that's like a Windows thing or what, but they're just sort of like, why would we want it to do that? Yeah. Like that's how every other application is.
+
+88
+00:46:08,070 --> 00:46:20,430
+Wes Bos: I think that that's part of why Adam had such an easy win is that they just copied everything sublime did in the VS code has a bit of different shortcuts. So you gotta spend a bit of time relearning, which is always frustrating, but I guess worth it.
+
+89
+00:46:20,790 --> 00:46:26,280
+Scott Tolinski: Word. Yeah, anymore. Their killer keyboard shortcut Hillary sequence. I
+
+90
+00:46:26,280 --> 00:46:50,970
+Wes Bos: think that's, that's all of my keyboard shortcuts that I've got there. I've got some, some other like, I guess like softer ones. That's not necessarily an app. But sometimes I find myself just opening up Twitter, or doing command tab and opening up a website, which is mindlessly, like, how many times have you been on Facebook, closed Facebook, and then new tab and type Facebook? and go do it? Right?
+
+91
+00:46:50,970 --> 00:46:51,510
+Unknown: Yeah, absolutely.
+
+92
+00:46:53,040 --> 00:47:29,010
+Wes Bos: What I'll do is, I'll rename my Twitter app every week to something like, Don't open this, or, or deep work, or what does something silly so that when I hit option, space, Tw, Twitter does not pop up. And allow me to open it mindlessly, I have to explicitly remember what I called it or find the icon. So as good as Alfred is it also, it will make that habit in your brain. concrete. So you have to do things to stop yourself from mindlessly opening up distractions. Yeah, so
+
+93
+00:47:29,010 --> 00:48:43,680
+Scott Tolinski: here's something along the same vein as a productivity thing, I use an app called focus, a focus comm where you can set it up and say, Hey, do not Lau me to visit any of these websites. And by default, it has all the big ones like Facebook and Twitter and Reddit and whatever. I obviously have YouTube unblocked from there, because I use YouTube professionally. And then so basically, if you open up a tab while you're focusing, and you can set schedules, and whatever it gives you like a quote, that is pretty much shaming you into working. And it's not like an aggressive quote, but they're like, you know, they're inspirational quotes that make you think like, Oh, yeah, that's right. And that's actually the worst. Because when you get that muscle memory, and let's say, you go to Facebook, you, you maybe you're focusing, right, I have focus turned on, I go to Facebook, it gives me the air, I close the tab, I do something, I hit the tab again, I go to the Facebook, gives me the air, and I'm like, Oh, yeah, I just did this second ago. Like, it can really make it apparent how many times you're browsing to this stuff, without even knowing it mindlessly, whatever. And this just really prevents you there. You can even block apps with it. I think it's Mac OS only. No windows. Sorry, windows, folks. But I'm sure there's a ton of other applications that do the same thing. Yeah, I use one blocking yourself.
+
+94
+00:48:44,009 --> 00:49:07,140
+Wes Bos: Sorry, no, no, I used to use one called self control, which will essentially just put an entry into your hosts file and block it. Which is funny because you can't actually edit your host file. So if you're trying to do some dev work at the same time, you're out of luck. But I switched to focus, because it'll allow you to block apps as well, like TweetDeck, or whatever that you're using on your desktop.
+
+95
+00:49:07,410 --> 00:49:25,320
+Scott Tolinski: Yeah, and you can turn on hardcore mode, which allows you to not be able to shut it off, or change the settings. If you are like, if you find yourself, hey, well just bypass it by quitting focus. And then the hardcore hardcore mode is gonna say, Ah, you know, it's the Jurassic Park Dennis nedry in there.
+
+96
+00:49:27,150 --> 00:50:52,020
+Wes Bos: That's pretty sweet. I'm just looking here I've got any other from I have a whole email workflow called the breakout email management workflow. Maybe we'll save that for another podcast, sort of going into all the different pieces of it, how I manage my email or try to at least manage my email. So we'll we'll save that one for now. I guess my last one that I have is just like automating any sort of exports. I don't use this one a whole lot anymore. But sometimes when you do a design that's heavy on custom elements in Photoshop or sketch You need to export them. But then you make a change to the design, you need to re export them in sketches is pretty easy, you can just like, you can just re export them and they'll go to the same folder and overwrite them. You can even script it. With some command line tools, every time the file changes, you could like get a gulp task that will re export your sketch project. But when I use Photoshop back in the day, there was one called slicey. And then you just name your layers like the back in the day, it was like button dot png or hero jpg, and then it will you just drop the PSD into slicey. And it will kick out all of your actual value. So anytime the PST changes, it will just regenerate all those assets for you, you don't have to worry about like, you don't have to worry about slicing and dicing it up again. So I was a huge time saver for me when I was doing that kind of work.
+
+97
+00:50:52,919 --> 00:51:23,100
+Scott Tolinski: Yeah, and along those same lines, I know I mentioned figma a bunch of times in figma. If you set all your exports or like assign a layer or a particular component to be exported, they have like a really nice export all button in the top right. And if you select that it gives you just like a bunch of checkboxes. So same thing, you can just re export all of your things over and over again, if you want that way, just by putting all of your exports in one one spot, I guess sketch kinda does that too. Right? Yeah, yeah, kind of all of your exports there. Yeah, absolutely.
+
+98
+00:51:23,160 --> 00:52:11,550
+Wes Bos: Pretty sweet. Um, and I guess the last one I have is maybe you selling so much of this, I use something called Cloud App. To take every time I take a screenshot, it will automatically upload it to cloud app. And you can also take video on it really quickly. You can take webcam video, you can put annotations on top of it. So anytime you're trying to get feedback, send somebody a screenshot of something, you can drag and drop files right into this thing. I whenever I do a podcast with somebody, like even Scott, and I need to give them the audio, I just drag it into it, it gives you a link immediately. And then it will upload I can go have a beer or something. Well, the upload is actually happening. You don't have to wait. You don't have to wait for it to be finished in order to give them a link to something so big fan dues anything like that?
+
+99
+00:52:11,850 --> 00:52:36,720
+Scott Tolinski: No, no, I don't Not really. I have a separate I used record it for recording gifts and sharing those first stuff. But I for the most part, I use Google Drive and just save everything there. And then you do have to wait for the thing to upload to get those links. But I did just get gigabit internet. So I'm not waiting too long right now. But yeah, definitely. That's
+
+100
+00:52:36,720 --> 00:53:33,720
+Wes Bos: pretty sweet. Another thing I use it for is like a GitHub issue, I'll take a quick animated GIF, it will automatically host it. And then you can just embed that thing. You just do the name the URL of west.io forward slash c 949. And then you do forward slash content or forward slash Hello dot png or Hello dot GIF, and then it will just embed it right into that thing. You don't have to worry about it. Sometimes I've run into the issue. It's gotten quite expensive. And I don't have like I have like pay like 20 bucks a month, which I think is a bit too much. And then I still if I tweet something out and it gets popular, then I still run out of bandwidth. And then they like take it down which is so frustrating because I know how much bandwidth costs and it's not $20 a month for me tweeting out a link to something so that's as a bit of a downside to it. But for almost everything else. It's great. Nice. Cool, what about a sick pick? You got a sick pick here today, Scott.
+
+101
+00:53:34,350 --> 00:55:10,290
+Scott Tolinski: I have a sick pick. Okay, so phone cases, right? They're sort of a necessary evil. You have unless you're living life dangerously you probably have some kind of phone case which I have lived live dangerously a lot. I hate phone cases. I hate how bulky they make your nice phone feel. Okay, I have the Nexus six p and hopefully it's a new pixel phones very soon, right, but the phone feels so nice. Last thing I want to do is wrap the whole thing in a giant bunch of plastic. So I found this case, it is incredible. It's the rhinoshield they have some awesome videos of them dropping them and it's really just a bumper. It's a thin plastic bumper. There's nothing on the front, nothing on the back. But it raises your phone up just enough like I've dropped to this phone on concrete so many times and it looks brand new. And you still have access to like the back of the device. So it still feels like a nice premium thing in your hand. It's not like a just a giant chunk of plastic and it's not that thick. You if you have wireless charging, which so many Android fans do and you wouldn't iOS fans or don't experience the joys of wireless charging, no like it still lets you have that wireless charging. So for me, it's rhinoshield I think it's called the crash guard bumper. But there's a ton of videos on YouTube of them testing their phones, just dropping them On searches stuff, and I can personally test that I have dropped this thing hundreds of times with this case, and not a single scratcher done on it. So big fan.
+
+102
+00:55:10,770 --> 00:55:11,850
+Wes Bos: That sounds pretty sweet.
+
+103
+00:55:12,390 --> 00:56:38,550
+Scott Tolinski: Yeah, yeah, my last time not having a phone case and didn't like comic tragedy. It's like one of the most ridiculous things in my life. I was like trying to install a floodlight in the house. And I was like a story up on a giant ladder. And, and so this is like, it's a total cartoon here. I had my phone I was so like, careful with this phone. I never ever broken it. I was just like, I didn't have a case. I was just super careful with it. This is the last time I had a phone without a case. And I went to take the ladder down, which is giant tall ladder. I take the letter, I trip over a garden hose, the garden hose. Oh, no, I'm sorry, I didn't trip over the garden. I kicked the garden hose. Because it was in my way, like get out of here. garden hose flies. And it actually turns on because it's one of those handled ones. And it's on the jet mode which sprays right at me. I'm holding a giant ladder above my head. So I dropped the ladder on my head. I dropped the ladder in the hoses still spraying me and my phone falls out of my pocket and completely shatters. Oh, and I'm sitting there like soaking wet. And I get inside the house. And my wife's just like, Hey, what happened out there heard a bunch of noise and I was just like, I need I need 15 minutes here. I can't talk about it. This some stuff just went down outside. So ever since then. I've been really good about a phone case because you never know. And some like, you know comic mischief is gonna go down and you're gonna be the victim.
+
+104
+00:56:39,120 --> 00:56:56,790
+Wes Bos: Yeah, I used to never have a phone case and I dropped it one too many times. And I dropped mine and it bent the side which means that you can't go for like the hundred dollar Apple Store replacement. Just not the end of the world when when they can do that. But I finally got I don't know what it is some black one out to check this one out, though.
+
+105
+00:56:57,180 --> 00:57:03,210
+Scott Tolinski: Yeah, they're cheap. 24 bucks or whatever. Yeah, I like them. rhinoshield. Cool.
+
+106
+00:57:03,240 --> 00:59:05,880
+Wes Bos: Well, what about sick pick is another book some people seem to like the the What did I recommend last week or two weeks ago, I recommended the essentialism book, The disciplined pursuit of less, I recommend another one. It's called Deep work rules for focus success in a distracted world. So I think that what is happening now in our society, with all of the distractions that we have, and the internet and everything going on, is that it's no longer okay to be like the middle of the road at something, and it's no longer okay to just be mediocre at something. And there's a huge opportunity for you just to kick ass at whatever it is that you're doing in your job by learning to be more focused. And that's the whole idea behind this deep work book is how do you get into the state of flow? How do you get into the state where you are just totally in your actual work in going going at it 100% and not being distracted by all the other things that that goal that are going on in your life. And I feel like you can get a huge competitive advantage in life if you're able to get yourself into that state of deep work. So I read that I've read it, I think twice. Now I've recommended it to a whole bunch of people. And they've all said it's like a life changing book. It's it's really, really good. It's by Cal Newport, who I'll probably recommend a couple of his other books as well. But if you feel like you are a little bit distracted, or if you feel like you could probably get an extra 30% out of your day by not being so distracted. And that could mean other things. A lot of times people think it's just people on Twitter too much. But Twitter is part of my job. So I do do do go on it quite a bit in the day. But other distractions, being able to get into that state of flow, where you're just cranking through work is really great. So check it out.
+
+107
+00:59:06,230 --> 00:59:08,520
+Scott Tolinski: Now it's a nice topical tick. Yeah.
+
+108
+00:59:08,670 --> 00:59:10,200
+Wes Bos: For productivity. There you go.
+
+109
+00:59:10,350 --> 00:59:11,700
+Scott Tolinski: Yeah, like that. Dang.
+
+110
+00:59:11,820 --> 00:59:23,670
+Wes Bos: Like, like I said, I love this kind of stuff, being able to squeeze a little bit of extra. I wouldn't say I'm a pro, but I'm definitely interested in it. I always like to try apply different techniques.
+
+111
+00:59:24,230 --> 00:59:27,510
+Scott Tolinski: Nice. Yeah, I think there's a lot lot to learn there.
+
+112
+00:59:27,980 --> 00:59:33,090
+Wes Bos: Awesome. So I think that's it for today or do you have any shameless plugs? Are you good for today?
+
+113
+00:59:33,270 --> 00:59:35,010
+Scott Tolinski: I'm good for today. Maybe next time?
+
+114
+00:59:35,520 --> 00:59:57,450
+Wes Bos: Yeah, I don't think I don't think I have anything either. We have been getting quite a bit of good suggestions for shows up on Twitter. So if you have a topic that you'd like to hear us confidently talk about then. Even if we're not so smart about it, then let us know tweet me I'm at Wes Bos and Scott you are
+
+115
+00:59:57,779 --> 00:59:59,970
+Scott Tolinski: at S kolinsky awesome.
+
+116
+01:00:00,000 --> 01:00:01,730
+Wes Bos: See you next time. See?
+
+117
+01:00:05,069 --> 01:00:15,570
+Scott Tolinski: Head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show until next time
+

@@ -1,0 +1,540 @@
+1
+00:00:01,319 --> 00:00:10,590
+Announcer: You're listening to syntax the podcast with the tastiest web development treats out there, strap yourself in and get ready to live ski and West boss.
+
+2
+00:00:10,619 --> 00:00:41,009
+Wes Bos: Welcome to syntax the podcast with the tastiest web relevant treats out there. Today we are talking about CSS the cool part, Scott has added three sunglass emojis Happy holidays in front of me. We're just gonna kind of go through some of the like more neat parts of CSS that you might not necessarily know about. Or you might not necessarily know but like kind of these neat ways in which they can be used in CSS. So with me, as always, today is Mr. szalinski. How you doing?
+
+3
+00:00:41,159 --> 00:00:48,119
+Scott Tolinski: Hey, I'm doing good. ready to start talking about these cool, cool, cool parts here? This is some of my favorites. Devon CSS, to be honest.
+
+4
+00:00:48,270 --> 00:00:52,740
+Wes Bos: Yeah. And you just been going through a big redesign of your your level up tuts Right,
+
+5
+00:00:52,799 --> 00:01:30,060
+Scott Tolinski: yeah. Big, big redesign. And since my user base is usually people, and when I say Usually, I mean, like 99% of people with modern browsers. Yeah, me a ton of freedom to use new CSS stuff, which I have been doing to maybe the fullest extent, yeah, look at the Can I use and I get to use some of this cool stuff. And then I get to feel just so inspired by how far we've come with CSS. So I'm really excited about a lot of the stuff we're going to be talking about on this episode, some of which these things I'm using currently in a website, some of which I used before, and some of which I'm sure you've used before yourself. Yeah,
+
+6
+00:01:30,060 --> 00:01:54,600
+Wes Bos: I think everything we're talking about today has been around for probably, what would you say at least two or three years? Yeah. So I think that they're pretty safe to use even more than that you have in here. I don't know if we'll go through the the browser support for every single one, just because like you can look that up yourself if you're really curious. But I think if you're if you're running a modern if you dropped iE 11 I think almost all of the stuff or if not all of it will work in all the browsers.
+
+7
+00:01:54,840 --> 00:02:06,840
+Scott Tolinski: Yeah. Cool. So this episode is sponsored by Sanity, as well as a century, we got a couple of sponsors, we needed a third sponsor with a C name, we could have had a CSS but the sponsors,
+
+8
+00:02:07,140 --> 00:02:11,520
+Wes Bos: oh, that would have been good clubhouse is one of our sponsors, hey, that would have been a lot of fun. Yes,
+
+9
+00:02:11,520 --> 00:03:14,759
+Scott Tolinski: Sanity is a bring your own front end back end system that is really super cool. They have some really neat new features, which we're going to get into and century, which is a place to keep track of all of your errors and bugs and exceptions in your application. Cool. So let's get into it here. And the first thing we wanted to talk about is a clip path. Now you have it written in here as clip path with an external SVG clip mask. But I'm just going to say clip path in general is pretty dang sweet. So for those of you who don't know what clip path is, is basically a way to clip or mask, it would be a word that you're frequently seeing in design applications. If you mask something, you're you're sort of hiding the things that are not within this shape, right, let's say you have a circle, the things that are inside of the circle will be shown and things outside of it won't be shown. And so with clip path in CSS, you finally have the ability to do masking, all sorts of things, shapes, circles, polygons, ellipses, so many different things,
+
+10
+00:03:14,789 --> 00:03:16,080
+Wes Bos: parallelograms,
+
+11
+00:03:16,109 --> 00:03:26,100
+Scott Tolinski: parallelograms, or custom SVG paths, and you even have it listed in here and external SVG. And you want to talk a little bit about that, yeah,
+
+12
+00:03:26,100 --> 00:04:28,520
+Wes Bos: I use this clip pass all time. Because if you've got like, a div or something like that, and you want to like cut out a piece of it, like if you want to have like kind of a, the example that I give here is if you go to my advance react.com course, you will see that there's a wave on the top and the bottom of a lot of the sections in that that sort of wave feature I wanted on the top and the bottom of the white section, but I couldn't just use like a, like a PNG wave or SVG wave because also the background of that section has a background pattern that needs to go into the waves and there's no way you could possibly line up the background pattern with the top and the bottom of that thing because it just by chance the height of it will probably not line up to be just perfect. So the option there was to just make it a square div and then to use this wavy clip on the top of the bottom and that will sort of punch out the div and show whatever is behind it much like a mask would work in Photoshop illustrator sketch, whatever.
+
+13
+00:04:28,820 --> 00:04:46,290
+Scott Tolinski: Yeah, it's funny. This is the kind of technique I would have tried a lot with like background images and, and all sorts of stuff and try to get it to line or reader Yeah, with a Photoshop like slicing out a Photoshop way back in the day and it would probably wouldn't have those things I would have driven you mad trying to just kind of lay out
+
+14
+00:04:46,560 --> 00:05:39,510
+Wes Bos: it would just never line up because if you have a perfectly repeating pattern, it will either line up at the top because if you anchor your items at the top, and then you anchor the background pattern at the bottom of the top piece and then the bottom won't line up. Such a maddening thing. But if you have any sort of complex pattern, you can obviously just use it in CSS with the there's like these functions in CSS called polygon. And you can just pass it like clip path polygon. And then you give it just like the coordinates of wherever you want these things to go. But if it's more complicated than that, you can just have an like, I just went on noun project and found like a wave SVG, and then export that to an SVG. And if you embed that into your HTML and give it an ID, then you can just say, clip path URL, pound wave, and that will look up the SVG in the document and use that as a reference to punch out the shape. So I thought that was pretty neat. The super
+
+15
+00:05:39,510 --> 00:07:23,310
+Scott Tolinski: neat, I mean, all this stuff is really, really interesting. I think clip paths, I used one time as like a circle in my next level animation course yet, I did next level CSS animations course a couple years ago. And one of the examples that we had was a menu that sort of opened up as like a circle from the menu button. So when you click the menu, button, it like it almost like cut away. And it was just so cool to be able to take a clip path, and then animate that clip path as the transition and have it grow. You have this circle that grows and is revealing something, I think there's the possibility for this kind of stuff is pretty much limited by your creativity. So I think if you are the type of art kind of person you like messing around with art stuff, maybe you are a lot of experience with Photoshop masks, and all sorts of different things like that, you're going to really find a lot, a lot of these features to be a ton of fun, especially these ones. Next step we have in our feature list is CSS filters, which there are a whole lot of CSS filters. And I've probably used a decent amount of these. There's some of these that I haven't used, and I probably won't see the need to use. But CSS filters, just like what they sound like filter, or modify the thing that they're around and what kind of like give you an idea, what kind of stuff can we do there? Well, we can blur. We can give it brightness so we can give it contrast. You can pass in a drop, Shadow grayscale, you rotate, invert, opacity saturate sepia. There's also a URL one, but I don't necessarily understand the URL one it says it takes an SVG ID. But once I do,
+
+16
+00:07:23,640 --> 00:07:45,360
+Wes Bos: SVG has his own like subset of filters. So you can write custom filters in SVG. Let me just do quick. Little Google here, SVG filters. And there are all kinds of you can do like different types of blur. You know how like, there's no UI and CSS has like the ossian blur and you know, got gajan How do you say that?
+
+17
+00:07:45,390 --> 00:07:56,610
+Scott Tolinski: I always said gajan. But I never thought she and I don't say Ian, I don't say guys Jian. I say gushin. But I don't know if I'm saying this correctly. So I've never heard anyone else say it out loud. I
+
+18
+00:07:56,610 --> 00:08:20,940
+Wes Bos: just Oh, yeah. Yeah, there's a merge filter here, a morphology offset scalar lighting. So like SVG has, it says SVG. svg is its own like little world. So you can you can use the the filters in SVG. And then simply just point to them much like we did with clip path with the URL function in CSS, and it'll pick up those filters. From there,
+
+19
+00:08:21,150 --> 00:08:40,039
+Scott Tolinski: it's fine. I almost wish specular lighting was like ghost lighting, not like full spectrum, lighting, whatever it probably is, that would be cooler. So which of these have you used because I have used quite a bit of these. And I even saw some cool tricks with some of these I haven't used recently. So which of these have you Yeah, dug into
+
+20
+00:08:40,080 --> 00:10:11,520
+Wes Bos: his blur a lot. In a lot of my talks, what I do is I put like images in the background of my talks. And I don't want to like have to find nice images for every single one that works perfectly. So what I do is I just go out and get like 40 really nice images. And then I will automatically use saturation, I'll crank it down a little or I'll use grayscale, I'll crank up the brightness or down and then I'll adjust the contrast. And just by doing that, coupled with the background mix Blend Mode makes for like really nice background images that aren't they don't take away from the slide itself. So you don't have to have like a background color on your text. But they just added a little extra little bit of depth for it. So that's basically where I've used it. I used it once on I used the raster pace font. This is this was sort of canned but there was this idea that you could have these like a raster base font where every letter is actually just like a PNG and I did that because I wanted to get what was it like all the texture in the font is one thing vector sucks at is getting like really nice texture and raster based fonts did that. However, the thing about raster based fonts you can't change the color of them because it's just a raster image. So I it was white and I wanted it to be black or something like that. So I just use the CSS filters to flip it. Most of the stuff if you abuse any of the stuff we're talking about today, you will probably end up with a really poor performance website, definitely been there in a lot of different situations, but you can push them pretty far before they start to get a bit chuggy.
+
+21
+00:10:11,820 --> 00:12:42,090
+Scott Tolinski: I had a really odd bug one time with one of these. And I'm really interested to know if this was like a bug that has been since fixed or if it is like, because I just abandoned using the filter. So here, here it goes, I had a drop shadow filter, which exists to allow you to put drop shadows on, you could think of it as like the entire shape, right? So if you were to build maybe like a tooltip, that has a little triangle for the thing, and then you were to put a shadow filter on it. Yeah, the triangle would actually get the shadow and not just the box in the show. Yeah, they get separately. So that's kind of the use case. Well, I was building like an Instagram style profile page. And I wanted to have some really interesting background sort of shapes, right, the main shape was sort of interesting with triangles, and whatever. And I wanted those to all have the shadow as well. So I threw a drop shadow on the whole thing. And it looked really nice on every browser, and I'm talking everything, even Samsung browser, whatever, except for Safari, which, as we know has been the outlier for a lot of these things. in Safari, instead of applying the shadow to the outer of everything, it applied a drop shadow to every single element inside of there individually. So they each had their own rather than the all encompassing shadow that I was expecting and that I was seeing in other platforms. So I don't know if Safari just handles these things differently. But either way, because there was a ton of elements inside of this user profile. The thing absolutely will besides looking like pure garbage, the thing absolutely chugged on mobile Safari specifically, it was like totally unusable. So these things can really get in your CPU usage pretty quickly. I've used among these I've used saturate to to desaturate images before that's a really good one for progressive enhancement. Because the browsers that don't support these, I mean, they're just going to get a in color photo, rather than a black and white one. And it was really that second a sinker design, I don't really think so. So for me, I think something like that was nice. I saw a really interesting trick with the invert one the other day where somebody created a dark mode, simply by using the invert filter on their site, and I will I hear, I think they had like a day of sitting on top of everything. I'm not quite sure I didn't look into the code too much. But they use the invert filter. And since it was a white and black site, It then became a black and white site. Really pretty neat trick.
+
+22
+00:12:42,120 --> 00:12:59,279
+Wes Bos: I'm gonna try that. I'm going to go on the HTML element of Twitter and say, filter, invert one. Oh, my gosh, it doesn't really work with pictures of people's faces. It looks like a Yeah, like, I hate camera, but it doesn't look terrible. Like it works.
+
+23
+00:12:59,309 --> 00:13:32,429
+Scott Tolinski: He kind of works. Yeah, it really depends on the situation of how you use this. But I just thought that was really clever. These things can be used in multiples, just like you can with a trend, I was gonna say transition transform the dance form, you can have a filter, and then you have the various properties. So if you want to give it a shadow and a saturate, you would just have those listed one after another. No commas, Does that ever trip you up at CSS West? That trips me up sometimes? like where do you put a comma between properties? And when do you not?
+
+24
+00:13:32,669 --> 00:13:41,700
+Wes Bos: There's probably some like sane reasoning behind when you do it and when you don't, but it does definitely trip me up. Or sometimes it's commas. Sometimes it's just spaces. I feel
+
+25
+00:13:41,700 --> 00:13:53,520
+Scott Tolinski: like that's one of the bugs that I create a lot of times on this working Oh, I had a comma in there. Okay. Oh, if you know the same reason if there is one why that exists, please let us know. But yeah, so these are
+
+26
+00:13:53,610 --> 00:14:08,850
+Wes Bos: I also just found out Sorry to interrupt but I also just found out you can transition all of these filters so if you transition sign to blur and invert and use put a transition on it, it will go from one to another which I thought was pretty neat.
+
+27
+00:14:09,090 --> 00:15:02,970
+Scott Tolinski: Yeah. And and the old old old version of the level of tutorial site the one that was like built in Drupal way back Yeah, day, I used desaturate or saturate and I transition the like the logo, so all of the logos, were a little bit transparent and had no saturation, you hover they become fully cake and then get their full color. I mean, that was like a long time ago. And I just remember being like, wow, this is the future. And yeah, sure enough, here we are. This stuff is still not being used that much, but it exists, it should be being used. I think you'll see people use blur a lot for us image loading now with a load like crappy small can have an image blurred up and then transition that into faded into the full res image once that image is loaded. That's like one of the coolest thing about some of these platforms like Gatsby and grid some is that they like Do all that default out of the box for you for free. Really,
+
+28
+00:15:03,120 --> 00:16:06,270
+Wes Bos: it's really cool. I someone tweeted me like a month ago who I have a tweet right here, David guar GW, er, I don't know how to say his last name, but he ran into a bug in react where if you're passing state into SVG filter for blur, React will not render it, even if that piece of state changes and you're using it in a because of the SVG is is being used is like separate like via URL, I guess react doesn't understand that it reaches out to that to get the blur value, even though the filter was right in the same component. And it stumped me for a while but the fix was just to put a key on the element to force react to rerender it whenever the the blur value change. So just like the key equals blurred ash, whatever. And that that forced react to rerender the whole thing whenever the blur value changed, it's a fun little a fun little bug right there. Yeah, I was I was i'd love stuff like that. Because I was like, Oh, this is should be easy. And then like an hour later, I was like, Oh, this is deep. This is deep, we might have found a bug.
+
+29
+00:16:06,659 --> 00:16:10,679
+Scott Tolinski: Do you really love stuff like that? Because I don't know if I love stuff like that.
+
+30
+00:16:11,070 --> 00:17:11,460
+Wes Bos: What also it's when somebody asks me, hey, do you know about this I in my ego gets going, of course, I can do that, you know. And I can't sleep until I found the solution. Funny. What do we got next here background mix blend mode. This is a pretty handy one. So very similar to in Photoshop or sketch or figma or anything where you have all of your blend modes. If you have got like a color behind something and you want to blend that thing you can you can do that. With background mix blend mode, I don't use this all that often. The one time I do use it is sometimes you'll have like a bunch of logos on a page. And the person that gives you the logo, it gives it to you with like a white background on it. Oh yeah. And you have like a gray background that you need to display it on. And you can't like wait for them to give you whatever it is that you need. So in that case, what I'll do is I'll just say background mix blend mode, I forget which one it is saturate? I don't know. I'm just guessing right now, but it's something to do. Let me find it.
+
+31
+00:17:11,570 --> 00:17:23,040
+Scott Tolinski: I think it's screen or must not multiply and multiply literally multiplies the values, luminosity, luminosity? Yeah,
+
+32
+00:17:23,060 --> 00:17:42,960
+Wes Bos: I tweeted it. Let me find it here found the tweet, use mixed Blend Mode multiply in your CSS to knock out white backgrounds for from images. So if you've got a white background on something, you can knock that out. I tweeted that in 2016. It's also a bit old. But it's it's definitely a handy one I reach for a couple times a year.
+
+33
+00:17:43,170 --> 00:18:39,690
+Scott Tolinski: Yeah, these are really fun. I think a lot of this stuff really feels like designer things that have been available in design applications for a long time like masks and filters, and over Erna blending modes here. And these are things that designers I don't know if you've ever worked with a no, because you do a lot of your design yourself. But I in the past had been working with designers somewhat frequently, that will take a color a background and then have the color be multiply on there. And then you had to go to them and be like, Listen, the web does not have blending modes. Like I can't get this look for you unless you do it differently. Or you output the asset like this. And I don't want to do that myself. Because I don't think that's a good strategy, whatever. But these these things are really all changing. Like now a designer come to me with a blending mode background. I can just say, Oh, yeah, okay, I got that. No problem.
+
+34
+00:18:39,870 --> 00:18:57,560
+Wes Bos: I did a popular look right now where someone takes like a like a brand color. And then they have a photo that blends on top of it. And you always see just like the people having to Photoshop and export that thing. And it would be so much nicer if you could just do it in CSS. You could even like do it in Canvas too, I guess.
+
+35
+00:18:57,800 --> 00:19:52,340
+Scott Tolinski: Yeah, yeah, these things are great. So the blending modes they include all of the ones you'd expect multiply screen overlay, dark and light and color dodge saturation color and luminosity alone I don't know if I would expect luminosity but that's sweet that they exist but I don't use these a whole lot but I could that's pretty much the way it comes down to it again if designers want to get it in their design some stuff with blending modes. Hey, they exist now I again I don't know about the looks like they're not supported in edge but they're in Chrome, Firefox Safari, opera. So yeah, look it up look up the the Can I use on your own time because there's there's definitely probably a little bit more nuance to what I just said there. But yeah, so these are these are all super duper cool. Now another thing that is super duper cool is one of our sponsors this week is releasing some new features. And that's Sanity. They've been around for a little bit as a sponsor and Wes and then he got a little bit you get some access to some new Sanity features.
+
+36
+00:19:52,380 --> 00:21:39,930
+Wes Bos: You want to talk about it. I don't even know if this is live at the time recording but it will be by the time this goes. This podcast goes live and it's called Sandy Create. So a real quick Sanity is a sort of headless CMS. So you sign up with Sanity, and you can create your own sort of back end with Sanity. And then you get an API, you will pull all that data into wherever you want into a react application into view, or Angular or whatever, a Gatsby, something like that. And what Sanity is releasing now is called Sanity create, which is going to get you started with a Gatsby And next, or a nuxt website deployed to Netlify. So they're sort of taking all of the steps, which is you get a back end, you get a host. And then you get a theme. And they're, they're putting them all together so that you can just one click Deploy a website. And I think mostly just to try this out in to sort of get you hooked on what's in it is, so I figured I'm gonna try it right as part of the ad just to see how quick it is to get up and running. So I'm going to sanity.io forward slash create, I'm going to use their portfolio with Gatsby example, I am going to connect to my GitHub account, let's see how quickly we can actually do this. So you just go to sanity.io, forward slash create, and you can hook up your GitHub, and you can hook up your Netlify. And just go ahead and deploy one of the examples that you have, they also are going to have support for other people's templates. So if someone else has a template up on GitHub, it will point over to that, and go ahead and click through to that it will scaffold it all up, and you'll have everything up and running real quick. So check it out@sanity.io forward slash create. And thanks so much to Sanity for sponsoring. Cool,
+
+37
+00:21:40,310 --> 00:22:10,860
+Scott Tolinski: super cool three sunglasses, smiley face, super cool. Next one we're going to get into and border images. Now, border images is not something I've used before. But it is something that I think opens up quite a bit of possibilities to do some interesting things for a long time. We've always had to deal with the border image, or the border style that came in CSS, which was some very, very, very basic stuff. It was just the dash that was the dashed
+
+38
+00:22:11,160 --> 00:22:14,910
+Wes Bos: line, dash dotted dotted line double,
+
+39
+00:22:15,180 --> 00:22:17,190
+Scott Tolinski: and never used anything other than
+
+40
+00:22:17,640 --> 00:22:19,350
+Wes Bos: line solid. Yeah, like,
+
+41
+00:22:19,350 --> 00:22:20,190
+Scott Tolinski: Yes,
+
+42
+00:22:20,190 --> 00:22:29,250
+Wes Bos: I use double every now and then. But you'd still can't control the width of how each one is. So if you have a very large solid, it doesn't look, it doesn't work as well as you think it would.
+
+43
+00:22:29,430 --> 00:22:58,350
+Scott Tolinski: Yeah, it's just okay. But now we can use images, and even coolibar, you can use svgs. And this really opens up to some very interesting things like gradients, right, you can now have a gradient border, which is not something that we've ever been able to do. Or you can just have a straight up image that is something that needs to be repeatable, and it could be really super cool. Again, this is one of those ones, I think that has the potential to go awry. I've seen some very ugly
+
+44
+00:22:58,980 --> 00:23:03,870
+Wes Bos: examples look like Word Art. And something that you get out of Microsoft Word from three
+
+45
+00:23:03,990 --> 00:23:15,420
+Scott Tolinski: is definitely one that I think has more potential than what you'll see a lot of the examples give it but this is again, basically just allowing you to use an image and have it be a border. Yeah,
+
+46
+00:23:15,450 --> 00:24:06,030
+Wes Bos: it's really cool. There's a whole it's very, very fine grained control over if they repeat, or if they stretch where you anchor them in the top left hand corner or wherever it is that you want it I have never needed this. But I could imagine like making like a diploma or something like that if you need to have the diplomas be a variable size, but you still need that fancy border that goes around what would be really cool to see somebody make make like a like a bill for their like a $10 bill or something like that with the borders that go around it, but make it like responsive based on using this I think that would be pretty neat as well. It's just some some pretty cool stuff that that can that can happen. It's one of those things that like not everything in CSS you're going to be using every single day. But it's nice to know that it's there. Should you ever run across needing something like this.
+
+47
+00:24:06,240 --> 00:24:35,670
+Scott Tolinski: Yeah, I think both of these come up about like when designer passes you off design COMM And in the past, you've had to say I can't do that. Now you can say let's talk about it. Maybe we can do this. Maybe we can make this work. Or maybe you can use one of the new exciting techniques. I actually really loved it when I learned something new and then and then I got a design that had that thing and then I guess this is the chance for me to to flex my background image muscle. I'm so excited about this because I get to finally show off some of my skills.
+
+48
+00:24:35,880 --> 00:24:51,000
+Wes Bos: You know what this reminds me of? is like when you're in like grade school, they had this like paper that you could buy that had like, like borders on it already. And then you could just like run that through the printer in the jail or something like that. That's what this reminds me of.
+
+49
+00:24:52,920 --> 00:24:56,760
+Scott Tolinski: Yeah, right. You have to like line it up. That's great. That's hilarious. Oh, that's
+
+50
+00:24:56,760 --> 00:25:18,150
+Wes Bos: good. So if you've ever used those, let us know twist. syntax FM because I would love to see some use cases or even like, like invitations depending on like the the paper size that you print. It's like responsive borders. This is a whole lot. I think a lot of it is more like printable and offline than it is having a ridiculous image border on your your website.
+
+51
+00:25:18,330 --> 00:25:36,240
+Scott Tolinski: I think. I think you just you just opened up the possibility of something. Yeah, you could you could make you could make an app that creates some you never get these from your grandma where they would print out like a card from Word Art or something. It was like a greeting cards, you'd go to word you say give me the Give me the birthday cards?
+
+52
+00:25:36,660 --> 00:25:38,040
+Wes Bos: It fold it in for
+
+53
+00:25:38,070 --> 00:25:41,190
+Scott Tolinski: ya, you fold it? Yeah, yes. Yeah, that'd be great.
+
+54
+00:25:41,430 --> 00:25:42,120
+Wes Bos: Oh, man,
+
+55
+00:25:42,300 --> 00:26:55,920
+Scott Tolinski: one of those things, actually, you could use this next one to do that, too, which would be multiple background images. This one here really good multiple background images actually is another one where the a lot of the examples you'll look at online are just corny and cheesy and like not useful. But there's a lot you can do with this. In fact, because you have the option to do multiple background images, I actually used this on level up tutorials to overlay a gradient on top of an image, both of which are background images in the same div. And then you can change you can have some opacity, you can have some saturation changes or something like that. Like I really like this technique, multiple, multiple backgrounds, it basically just says, Hey, you have a background image. And then coming back to the conversation we had about when to use commas and when to not you use a comma to differentiate your background images. And you can even give them different positions. What's cool about is you could give these like using the background position property, you could do like right bottom, comma, left top and the right bottom, we'll be talking about the first one and the left gap, we'll be talking about the second one. So you can align them and have them totally different positions, places, whatever in this is this one is right for for all sorts of interesting techniques. Yeah, I
+
+56
+00:26:55,920 --> 00:27:39,270
+Wes Bos: use this all the time, often, I'll just do a background pattern on the I'll do a background color. And I'll do a background pattern that goes over the whole thing. And if you go to my advanced react.com website, I use this. And in the top left hand corner, I anchor like a black crunch. In the top right hand corner, I anchor a white grunge in those two grunge textures go over top of each other. And depending on how wide or how short the browser is, they overlap more and less, but they both are sort of anchored in the top right and left hand corner. And I use this all the time, just like you said you you use specify multiple background images. And then if you have things like background attachment background position, you can you just separate them by a comma.
+
+57
+00:27:39,690 --> 00:27:42,900
+Scott Tolinski: Yeah, comma, there's that amino comma coming in again.
+
+58
+00:27:44,700 --> 00:28:16,680
+Wes Bos: What else do we have here, background gradients, like you said, you can make these like really cool backgrounds because you can have a gradient that is partially transparent. So you could make a background that has three or four gradients and they all sort of meld into each other. And you can even couple this with the background mix blend mode as well. And make some pretty nifty there was like a CSS gradient generator that use this but the the URLs no longer live I used to love that because people say like, you always have the best gradients. I'm like I'm just taking them website.
+
+59
+00:28:17,970 --> 00:28:21,990
+Scott Tolinski: That's a nice day. You have the best gradients. I love that somebody came up with a nice,
+
+60
+00:28:22,590 --> 00:28:45,660
+Wes Bos: yeah, we also thanks to layover Ooh, we have radial gradients in CSS now. Yeah, which we haven't had for a long, long time. And she worked really hard to get them into the CSS language itself. And these are just basically circle gradients where you can you can start from the middle and go on out. I don't know there's not too much else else to that. But they're they're pretty cool.
+
+61
+00:28:45,870 --> 00:30:49,560
+Scott Tolinski: Yeah, those are one of those things that you know, design applications could do. And you couldn't do that now you can do so again. Yeah, not too much to say about radial gradients. I actually had one of these on level up for a little bit but I don't anymore. I just have just a gradient that's been slanted down it has like a really interesting look to it on the new design. Next is going to be multiple box shadows. Now multiple box shadows is something that I don't I wouldn't want to say I abused this because I just use it uses a handsome Yeah, yeah, all the time. And the reason why multiple box shadows are interesting or good is because one box shadow has the tendency to like that's not really how shadows actually work or look in real life. And so because of that, if you have multiple shadows, and you define them with our good old friend, the comma, you have to give all of your values first. So you could say five pixels, five pixels, 10 pixels for a blur, rgba 000 0.3. And then you'd have a comma, and then you could have your second one. Now these get into a couple of different territories because with shadows with multiple shadows, you can do some really interesting effects. And you can do some more realistic looking shadows that actually Give your layers a little bit more character, I use these specifically to give my characters the distance from the surface, I used to give it a much more realistic shadow, maybe I have like a tighter, darker shadow. And then I have a looser, a little bit wider have a little bit more of like a fluffier shadow as well that much more transparent and can give like a really nice effect. If you want to see like an all star example of how to do this, just check out the material design guidelines. The material design guidelines have really, really excellent well thought out shadows. But you can also use these to stack up and do some really interesting effects. I have a code pen that I made a while ago of text effects that I made with multiple shadows. And, for instance, I made the this is actually I don't know if you're familiar with Wayne's World at all, but I know Yeah, movies.
+
+62
+00:30:50,550 --> 00:30:52,470
+Wes Bos: That's like one of the few movies I have seen.
+
+63
+00:30:52,610 --> 00:31:28,050
+Scott Tolinski: Okay, good. In Wayne's World, the text moves one way, and it does like yeah, square. And then the background is sort of like these, like repeated versions of it moves in the opposite sort of way, I actually made that Wayne's World style text effect by using transform to shift the background shadows one way and then translate the other way. And you create this really, really a really cool effect. So you can do like by layering a whole bunch of these code paths, or a whole bunch of these shadows, you can build some really, really interesting things.
+
+64
+00:31:28,350 --> 00:32:14,850
+Wes Bos: I love this, I use it all the time, on my own, where I will have like a background shadow that's just like a very, very light, one pixel darker version of the color that I'm on. And then I'll have like an another shadow that's like a more spread out. What's the word for it you have, you have your x, your y, your offset, no x, blur, y offset, your blur, Blur and your spread. And I'll usually do a little bit more blur and a little bit more spread to have it out. And I think just like two or three box shadow or tech shadows or works for box shadows, well, will often look really good, you shouldn't be able to tell that there's multiple box shadows without like really looking at it. Because if you can tell, then it's probably too heavy handed. Almost you're going for that. Right?
+
+65
+00:32:14,850 --> 00:32:16,320
+Scott Tolinski: Unless you're going for that
+
+66
+00:32:17,340 --> 00:32:18,840
+Wes Bos: look that you like Yeah, yeah, right.
+
+67
+00:32:18,840 --> 00:35:01,130
+Scott Tolinski: All of these things there are with a caveat of if it's intentional Lee, what they used to say in the School of Music, it was like you have to know the rules first to break them. So you learn the rules. And then like, it doesn't matter that Beethoven broke the rules, because he was very, like familiar with the rules. And when he broke the rules, there was intentional. So I mean, I think there there is a lot to that, where you're like, you know, you know how to make these things work in a way that shouldn't work just because you're that good. And let's say the rules have been broken on your application and your application has been broken, you're gonna want to head to one of our sponsors, which is Sentry at Sentry dot i o now I'm staring at my century right now. And when I log in, it shows me all of the issues that have taken place in the last 24 hours with their frequency, how many users they're affecting, and what kind of problems they're I can see some of these things are potentially issues that I need to be looking at ASAP and other which are, are well, they're not issues that I really need to worry about. For instance, I have an error in here that's telling me it's about the YouTube players not attached to the DOM. It's actually I think, an issue with the YouTube player embed code and not actually anything that I have to worry about. So you know what I do, I select that error, and I click ignore. And then what happens is Sentry ignores that error, cleared it off my thing, I don't have to look at it anymore. I don't have to think about it. It's not an error that I need to talk about. However, if there is an error that I fixed, I can select that error and I can select resolve and that error is going to be marked as resolved then if anyone happens to come across that same error again, it gets marked in two as a regression. That way I can look to see, okay, did I actually fix this diagnostics? This? What are the problems? What are the things I need to look at, and that's what Sentry is all about. So if you want to give Sentry a try, head on over to sentry.io use the coupon code at tasty treat all lowercase all one word, and you will get two weeks for free. Trust me, you're gonna want to throw this into your website and see how this can improve your air tracking your vision across your entire application. And it works on every single platform you could possibly imagine. So check it out at Sentry dot i O. Alright, next we're going to get into here is hex plus alpha. Now this one's fun because it's a hex values that we know and love are in our standard all hex values, but we can add a couple of different hex values that the two hex values at the end of our hex value if it's an FF for a 00, or anything in between, and you can actually make it transparent. So instead of our standard six value hex values that we're used to it would be eight, eight numbers or characters in your head. x value. Yeah,
+
+68
+00:35:01,130 --> 00:35:51,060
+Wes Bos: I use this all the time specifically in I don't use sorry, I don't use it all the time. But I use it in my cobalt to theme, because that's how VS code allows you to specify opacity on hex codes. Because sometimes you need to set like, like, if you have like a highlight in the VS code theme, and you want that highlight to be somewhat transparent, then you can set a hex value. It's kind of annoying, because I can not for the life of me convert zero to 100 to hack. Because like, I don't know, I memorized like some of the handy ones like 50 and 20, or whatever. Yeah, but I almost always have to just look it up, I would have liked if it was like, just like actual value, like you could just tack 0.5 million. And we're getting that with CSS color functions. It's a bit of a bummer that you have to memorize hex codes for it.
+
+69
+00:35:51,300 --> 00:36:23,670
+Scott Tolinski: Yeah, I always just know that instead of like trying to convert it to like a percentage. I just try to think of it as like, you know, FF, cc DD, you know, like, I know where those a chart, and I don't actually try to use, like, 20%, I try to use whatever cc is, you know, rather than what the actual percentage is because it for me, that makes more sense that said, I don't use these very often, most of the time, I'm using RGBA or hsla. instead. Have you heard the design book that came out from Steve sugar lately?
+
+70
+00:36:23,690 --> 00:36:25,230
+Wes Bos: No, I haven't yet.
+
+71
+00:36:25,350 --> 00:36:32,040
+Scott Tolinski: Yeah, he he makes a really good case for why you should use hsla. And I think I'm pretty pretty on board with that one.
+
+72
+00:36:32,250 --> 00:36:48,690
+Wes Bos: Yeah, I it just sells the best. I just sometimes they memorize like my yellow. I just memorized the, the yellow hex code. And I just change that in my head. Because like, this wouldn't be a problem if I just didn't use anymore. I just use a to sell. Yeah, right.
+
+73
+00:36:48,810 --> 00:37:19,230
+Scott Tolinski: Yeah, I know. That is one of those things that say if you you have these built in ways that you just do things and you feel like, you know, that's just how you know to do it, it is all and always like, I have to like open up my application and be like, what is just oh, no, I have no idea for this, where especially I mean, rgba and our RGB. I don't necessarily have those memorized. But I'm very comfortable within the point where I can write some stuff that I feel comfortable using, whether without having to open in my application or whatever. But I guess it's just one of those things.
+
+74
+00:37:19,500 --> 00:37:51,300
+Wes Bos: I'm gonna plug the website mother effing hsl.com. It's made by Paul Irish like very long ago. But it's helped me so much, because it just gives you the the whole spectrum. And I can almost now without going to this website, after using it for years, sort of just picture in my head, like what the rainbow looks like. Yeah. And then be able to just like between three, zero, and 360, you can sort of pick where you want to be in the rainbow. And then you can go up and down on the rainbow based on how the saturation and lightness
+
+75
+00:37:51,440 --> 00:38:02,150
+Scott Tolinski: Yeah, because that we should actually say we're talking a little bit about HSL. And its hue, saturation, lightness, and then a would be alpha channel for transparency.
+
+76
+00:38:02,360 --> 00:38:18,090
+Wes Bos: Do you know that if you add No, if you subtract 180 from HSL, it will give you the exact opposite color. And that works with any value. Because if you go HSL is between zero and 360, or zero and 359. And talking
+
+77
+00:38:18,090 --> 00:38:21,600
+Scott Tolinski: about the subtract the 180 from the H value, right? Thank you.
+
+78
+00:38:21,630 --> 00:38:48,090
+Wes Bos: Yeah, yeah. But if you're if you're at like 20, and you subtract 180, it still works. Or if you're at 200, and you add 180, and it goes past the rainbow, it just circles around the rainbow and it just keeps going. So ADSL will go infinitely in both directions. I'm sure there's a limit at some point. But you don't have to worry about being like wrapping around. If you have those values, you can just add it and it will wrap around for you.
+
+79
+00:38:48,300 --> 00:39:05,940
+Scott Tolinski: I think we should push it to the limit and write some code to see what that limit is. With like a nice little extra. I feel like I would love to do a, like a TV show where all we do is experiments like that. Can we break hsla just by increasing the H value to something that's ridiculous. Let's figure
+
+80
+00:39:05,940 --> 00:39:13,110
+Wes Bos: it out. Oh, let's try it right now. Do you think that what do you think that the highest HSL value? 10 ad?
+
+81
+00:39:13,320 --> 00:39:16,380
+Scott Tolinski: That's actually probably not 100? If it's this infinite?
+
+82
+00:39:16,670 --> 00:39:23,360
+Wes Bos: No, it's probably like the amount of like, like there's a limit to what integers can hold like the the highest number integer can hold.
+
+83
+00:39:23,480 --> 00:39:25,650
+Scott Tolinski: Yeah, right. But that wouldn't Yeah,
+
+84
+00:39:25,730 --> 00:39:55,170
+Wes Bos: I'm at about 15 three so far. Oh, I think I hit it. push it to the limit. So 1-234-567-8910 1112 1314 1516 1718 19 I don't know it's about 30 threes I just inputted and then a broke. So now you know if somebody finds the exact value tweet us at index FM. I would love to know what the upper limit of that is. Because there's a limit for z and x. I found it once. Yeah,
+
+85
+00:39:55,190 --> 00:40:27,510
+Scott Tolinski: there's a lady. Love it for a lot of things. I was telling this story about that. time we pushed it to the limit. We had a really weird bug. And you remember the background image replacement technique where you push something off the canvas? Yeah, yeah. Well, our our intern used EMS instead of pixels, but he had like 9000 EMS and it just like it just totally broke the site. And we're just like, what is what is going on here? It was a hard, hard bug to solve. We pushed it to the limits. We walked along the razor's edge. Where's the next lyric in that song? Do you know that song?
+
+86
+00:40:27,510 --> 00:40:28,770
+Unknown: push you to know?
+
+87
+00:40:29,189 --> 00:41:50,280
+Scott Tolinski: Well, good luck. Okay. But don't look down. Keep your head or you'll be finished. Hmm. Yes. That's a great time. Okay, let's talk about this next one viewport units. This is one I use 20 473 65. I use viewport units. And every literally he is that literally, literally, literally 20 473 65. I got a V WVH. tattoo. No, I don't. But I love viewport units. Because what they allow you to do is basically talk to the viewport in a way that says, hey, this is going to be 100 viewport units, aka it's going to be 100% of the viewport. Now the cool thing that I like about viewport units, besides the fact that you can actually get values that make your your thing fit into the viewport. That's all great, right? You can finally design things and have it develop without JavaScript to fit to the viewport. But when you say 100 Vh it does its job. Unlike when you say 100% height. Yeah, it's just sort of like oh, no, does that mean like if you do 100 Vh, it's like, okay, I'll do 100% of the height, or 100% of the viewport height, I don't need content to push me to 100% of the height. So viewport units are a godsend. They're just like, amazing. I love them, I use them. 24 seven,
+
+88
+00:41:50,520 --> 00:43:21,030
+Wes Bos: I absolutely love viewport units, nothing else to add there. They're just fantastic. So happy with them. The one thing that we did tell you last time was you can use viewport units for tech sizing, which blew your mind and a few other people tweeted that that blew their mind as well. So you can you can use v min. And VW in all of the viewport units for texts to size text based on how big the screen is, which is or the width or the height of the screen is which is pretty cool. Next up, we have calc. calc is awesome because it allows you to mix units. So if you have like a, if you have like a fixed header or something like that, in it, you say say that header is 30 pixels high. And you want something else to be 100% high minus that. Well, first of all, you could probably do that with like Flexbox, or grid. But if you need to do it for some reason, there's lots of use cases I've run into it, you can simply just a calc 100 Vh minus 30 pixels, and then that will output whatever that is. And it will recalculate itself when the window resizes, which is so cool, because now you can mix and match. Same thing with like, if you want something to be like, I don't know, 80% wide, and then you want to put like some margin on there, you can use calc to take away the margin from that and then the margin was and then the same. Previously, you've had to use like, if it's 80% wide, then you have to have like 2% margin and then at a certain point that's too much or too little margin. So you can keep it as a fixed amount with the calc.
+
+89
+00:43:21,359 --> 00:45:11,250
+Scott Tolinski: Yeah, I love this. I actually you were saying like some of the things that Flexbox could do one of the things that I I've found myself using for especially when you have like a, an area where you want it to be 100% height of the viewport, but then you have a fixed header. And so yeah, I could say I want this to be 100% of the viewport minus the height of the header. That way you have it actually the space that like people that are going to be like visible the visible space there. I use calc, I use them with viewport units a lot. I use them with a I think just anytime you you take percentages and say hey, maybe I want to subtract, you know, 50 pixels for this for some reason, right? This thing has a defined size. Yeah, I think calc is another one of these things that doesn't necessarily get used to its full potential. And the times when I see it being used to its full potential, it like really blows my mind. I'll be on a website how to like man, how they do that, I'll look in the Inspect Element. And I'll see some really like fantastic calc skills. And I'll be like, yeah, that's where it's at. I need to open my mind a little bit more to callkit myself, but it's definitely one of those things that's going to bring up a ton of possibilities. Now next one here, we have CSS variables, aka custom properties. And this is one I have become very, very familiar with. Lately, I've been building my new site with custom properties, instead of any sort of JavaScript variables or any sort of sass variables. I'm using styled components. So for me it would have been JavaScript and that actually got to be a huge giant pain. I'm importing all of my colors. okay to use the brand teal, I have to import teal from colors. You know, like that. That just sucks. I mean, we never had to do that in SAS, we never to do that and stylist. And it's a huge bummer that I have to do that in CSS and j s. Now I understand why, why it exists.
+
+90
+00:45:11,280 --> 00:45:19,890
+Wes Bos: We talk so much about like modularity and components. But there's something, something so nice of just have a global variable. Sometimes, you know,
+
+91
+00:45:19,950 --> 00:46:49,800
+Scott Tolinski: there are some things that need that like are cool to be global. Yeah, CSS custom properties have not only allowed me to do that. But that allows me I think about my design system in a totally different way. So for instance, I'll have all my colors, defined all my fonts, assign it, literally everything is defined in a custom property. And then I'm using it all just anytime I want to pull out my color, and you know, accent, color, brand, color, whatever. And I can change those colors. And it could be a global change. One of the things that I've been experimenting a lot is building in not only a dark mode, but an OLED mode. And I don't know if stuff like this is going to, if my new website design is going to be out by the time this episodes done. But there's some really, really amazing things that you can do, just by changing one custom property, I could change one custom property and see so much of my site change. And that, to me is absolutely fantastic. It opens up the door to a lot of really interesting ideas. So CSS variables, custom properties are one of those things that have really changed everything for me, because like we didn't really mention this in this episode, but we have in the past, unlike sass variables, or JavaScript, or maybe JavaScript, but unlike sass variables, if you change one of them, it actually updates live instead of needing to be compiled. So that's the use case. That's why they're better than a CSS preprocessor variable. But then again, the browser support isn't quite there yet. Luckily for me, my audience has the required browser nests necessities.
+
+92
+00:46:50,040 --> 00:47:22,320
+Wes Bos: Yeah, I use them a lot as well. I usually like to define them like nice and high on the route or HTML or body, something like that. And then what I love about them that you didn't say is that you can overwrite them later on. Yes, you can also use them. Like if you've got something like like text shadow, and you just want to change the color. There's no ability to just like reach into tech shadow, and just overwrite one part of tech shadow. But if it is a variable, all you have to do is just change the variable on hover or at a later point in your CSS. And that one piece will change in repaint the CSS.
+
+93
+00:47:22,680 --> 00:47:53,340
+Scott Tolinski: Yeah, yeah, that those are aspects of it are really super neat. And I was actually finding it to be really nice for responsive design to to say, all right, at this breakpoint, my body font sizes this via a custom property, change it up and have the whole thing the whole like type system adjust sort of accordingly. I'm a big fan of how these all work together. Last one we have here is text decoration style color, Linus skip ink, I have not used anything in this camp here. I've not used any of these I
+
+94
+00:47:53,340 --> 00:48:04,170
+Wes Bos: just stumbled upon this like two months ago, I didn't know you. So like, right now, if you want to have a link, and you want the links underline to be a different color. Like what would you do you put a border on it? border bottom Yeah.
+
+95
+00:48:04,170 --> 00:48:07,710
+Scott Tolinski: Or gradient, you can do a background image gradient and have it
+
+96
+00:48:07,710 --> 00:49:20,310
+Wes Bos: Yeah, exactly. And I only recently learned that like, we have text decoration color, where you can just change the underlying color of a link to be a different color. And it's it's the perfect use case for something like this, because it works in most browsers. And if it doesn't work, it just falls back to the color of the actual text. Interesting. So that's pretty cool. You can give text decoration takes multiple. So you can do text decoration, underline and overline. If you wanted to, you could do like line through which is sort of the strikeout. I don't know why you would want to do that. But maybe there's a situation you run into needing to do that. The really cool thing about it other than changing the color of it is there's text decoration style, which you can change it from just a regular underline to, there's a couple options here. There's solid, which is the default, novel dotted dashed. So you know, all three of those from just regular borders. But then there's also wavy, which wavy has been a border style only in Firefox for a long time. But I think wave is implemented in all the browsers now, which is really cool. So you can do this kind of like little, you know, like a spelling mistake in most editors. Yeah, it'll give you a little wavy underline.
+
+97
+00:49:20,460 --> 00:49:29,730
+Scott Tolinski: I bet that's how they do it in VSS. VSS code is what it is. I can't believe, like CSS so much
+
+98
+00:49:29,730 --> 00:49:31,110
+Unknown: CSS
+
+99
+00:49:31,230 --> 00:49:59,250
+Scott Tolinski: is just wanted to say VSS, it was so hard to say vs. Code. Okay. That's all I got for these. This is CSS, the cool part. There's a lot I've been CSS that gets a lot of hate. And we didn't even talk about like CSS itself, which is my opinion. I like CSS quite a bit. I'm a big CSS fan. So big fan. Yeah. Big fan of CSS, and it's only getting cooler. This is some of the fun stuff though. Some of the fun cool things, some of the sunglasses emoji stuff inside of CSS. Do you have any more
+
+100
+00:50:00,000 --> 00:50:07,230
+Wes Bos: I think that's if you have any other things you want to add maybe we'll do another show like this because there's clearly lots of cool things in CSS but
+
+101
+00:50:07,710 --> 00:50:31,590
+Scott Tolinski: so we didn't talk about this a whole lot but the CSS painting stuff Diane Smith has just this the most amazing will share the link in the show notes. Diana hyphen, is that Adrian calm Olguin will have the link in the description if you haven't seen this, this is like Well, well, well worth your time only inspect element on this thing and check it out. This is like this is top tier CSS. This is like this is
+
+102
+00:50:32,730 --> 00:50:39,660
+Wes Bos: black. He just took the blur off. Oh, that's a bad eyebrow job. Because the hilarious
+
+103
+00:50:39,690 --> 00:50:42,870
+Scott Tolinski: Yeah, yeah, this is some some prime CSS thing.
+
+104
+00:50:43,110 --> 00:50:45,630
+Wes Bos: Wow. That's Yeah. Incredible.
+
+105
+00:50:45,900 --> 00:50:49,770
+Scott Tolinski: Incredible. All right, so Diane, for that one.
+
+106
+00:50:49,800 --> 00:50:51,540
+Wes Bos: What about sick pics for today?
+
+107
+00:50:51,750 --> 00:50:55,620
+Scott Tolinski: take pics. Um, do you have anything if you have something go for it.
+
+108
+00:50:56,010 --> 00:52:27,180
+Wes Bos: I'm going to sic pick another tool that I've been finding so handy. I've had this for probably about a year now. I initially bought it for my stickers because I needed to know the width of my sticker. Oh, interesting. And it's it's a set of digital calipers. So it's I'm just showing Scott right now what it is, it's sort of a ruler with some pointy bits on the inside. And you can use it to measure how thick things are or how wide things are. And I found myself needing it all the time, like we bought, we bought an umbrella the other day, and we needed to buy a stand. And it wasn't like the standard umbrella stand width. So I just whipped out the calipers and measured it right up and like I can quickly find out how wide something is. Rather than taking a ruler and trying to like eyeball the center of a circle or something like that. You can just get this thing out. It's super precise. I use it for bikes all the time. If I need to know like the width of a pair of handlebars or a C post or something like that. And I was just thinking the other day I'm like I'm for sure gonna get this as a gift for somebody because it's one of those things that I never knew I did. But now that I have it, I use it all the time. And it's just the I don't specifically really high end one I know you can get ones that are like made for scientific purposes. This is just like a $20 Amazon one and it's it works really well it gets down to like the very like half millimeter. It goes to like the 10th of a millimeter or the which is really really specific for me. And when I measure something like a bike see posts were half a millimeters difference between two different sizes of seatposts it always gets it for me. Nice.
+
+109
+00:52:27,480 --> 00:52:32,490
+Scott Tolinski: Yeah, calipers. Yeah, I've never I've never had the need for something like that. But I think it's a really neat instrument. Yeah,
+
+110
+00:52:32,520 --> 00:52:41,910
+Wes Bos: you will that instrument that's a good word for it. You will you'll find yourself needing it at some point being like, Ah, this is why West has calipers.
+
+111
+00:52:42,060 --> 00:52:47,340
+Unknown: Yeah, I think the show is slowly becoming into tool. Yeah, what till the time was just been.
+
+112
+00:52:49,740 --> 00:53:01,560
+Wes Bos: The Summer is here doing stuff all around the house and the size of warm and it's funny how, how often I reach for a tool and be like, I'm so glad to have the right one right now because this was so much harder last time I did it.
+
+113
+00:53:01,740 --> 00:53:07,470
+Scott Tolinski: Yeah, yeah. Tim the tool man West West the tool, man. What
+
+114
+00:53:07,500 --> 00:53:08,400
+Wes Bos: was this? Taylor? I
+
+115
+00:53:08,400 --> 00:53:09,870
+Scott Tolinski: don't even know. Taylor.
+
+116
+00:53:09,899 --> 00:53:13,830
+Wes Bos: Yeah. jtt was murdered. jtt had to come on.
+
+117
+00:53:13,859 --> 00:53:15,390
+Scott Tolinski: Do I remember? Yeah, yeah.
+
+118
+00:53:15,450 --> 00:53:16,860
+Wes Bos: What's he up to these days?
+
+119
+00:53:17,220 --> 00:53:24,570
+Scott Tolinski: I don't know. Yeah. jtt If you Google jtt he comes. He owns the letters jtt.
+
+120
+00:53:25,379 --> 00:53:33,390
+Wes Bos: It's actually incredible. 1981. So he's like, he's 37. Yeah, it sounds about Oh, impressive.
+
+121
+00:53:33,479 --> 00:53:47,160
+Scott Tolinski: Yeah, impressive. My say pick today is kind of hipster if ik and trendy in a way but also very nice and futuristic. In a way you don't have those. You know that all hanging down? lights the patio like what are they called? Oh, the lights
+
+122
+00:53:47,430 --> 00:53:49,980
+Wes Bos: are off. Sir. hipster lights.
+
+123
+00:53:50,399 --> 00:55:17,610
+Scott Tolinski: Yeah, the hipster lights that make any space cozy. It's like cozy plus 10 we have been really interested in making our backyard more cozy. And just like so many other people we've like, let's bring up some lights. Because these things really make it nice and cozy now forever and ever and ever. And I trust me, I've been in this market for a little while. They have not gotten on to the solar trend for these. So if you were looking for solar lights of this style, like even I feel like last year, you had a hard time finding good ones. And now there's just like 10,000 of them on Amazon. So these ones are really super nice. They're weatherproof, they're indoor, outdoor, 27 feet, they have a little solar stake, you stick in the ground and it powers them you can clip on to have more. They're great. These things are just so great. And one of the things that's I think an underrated thing about lights like this being solar powered, is that they don't have to be here any sort of power plug whatever. You can string them up in your tree. You can string them up anywhere as long as little thing gets done. And to me that's like incredible because my backyard only has two hours. Let's and they're neither of them are in a good spot. They're both in just straight up bad spots. So be able to have some interesting cozy nice lighting in our backyard with these things is just been incredible. So I linked to the one I've been using there's a whole host of other ones I recommend just checking out some see what works for you.
+
+124
+00:55:17,850 --> 00:55:23,550
+Wes Bos: So are these like does it have a battery in it? Or how does it work? There's there's capacitors there. There's a solar
+
+125
+00:55:23,850 --> 00:55:24,870
+Scott Tolinski: power. Oh, you mean like
+
+126
+00:55:24,900 --> 00:55:28,290
+Wes Bos: Yeah, but like you need lights at night when they're when there's no sun. Right?
+
+127
+00:55:28,290 --> 00:55:38,760
+Scott Tolinski: I would assume that the what it is, is the battery and then the solar thing charges the battery. Yeah. And then the battery powers the lights on. That seems fine. That seems right to me.
+
+128
+00:55:39,210 --> 00:55:52,800
+Wes Bos: Oh, yeah. 45 milliamp 4500 milli amp hour charges over the course of five hours of sunlight in shines for eight hours. Yeah. That's awesome. Awesome. So you never need to plug them in.
+
+129
+00:55:52,860 --> 00:56:08,070
+Scott Tolinski: Yeah, yeah. And then again, and there's a ton of different options online. There's some really interesting ones too. So check them out. I found in my my search for this is that you can buy all of your Christmas lights if you celebrate Christmas or holiday lights. Whatever holiday you celebrate.
+
+130
+00:56:08,100 --> 00:56:09,750
+Wes Bos: Yeah, please just don't offend me, Scott. I
+
+131
+00:56:10,050 --> 00:57:47,190
+Scott Tolinski: Well, I mean, you know, I I'm not trying to offend here. But no, I mean, whatever. Whatever you celebrate if you need to let go festive lights. You've got solar power now and their little LEDs. We we went to a wedding and they put these little LEDs in a jar and and taped a battery to it and that liquid glow fireflies in a jar. It's incredible. The world is crazy. LEDs have changed. So so much stuff. It's no okay. No kidding. Hey, that's cool. A it's a shameless plugs today, what do you got, I have a new course on react animations. It's called animating react, we do a bunch of really awesome practical animations, stuff that you see all over the place stuff that you're gonna want to learn how to do and we do it all physics based with react spring. React spring is one of those libraries that you're going to want to learn these Let me tell you this thing is incredible. React spring does so so much. And for like I did, I just recorded a 24 tutorial video series on react spring and like I honestly feel like we scratched the surface of what react spring is capable of just to teach you practical, real world stuff. And so it's like it's not that react spring is hard because it's not hard. It's it's really easy. Once you get it, there's just it's effortlessly flexible. So if you want to learn react spring head on over to level up tutorials comm forward slash pro sign up to become a pro. If you sign up for the year you save 25% percent percent. And very, very soon when this redesign hits, the prices are going up. I know I said that before the prices are going up when the redesign hits. So get in now and lock in the price. lock it in.
+
+132
+00:57:47,550 --> 00:57:59,040
+Wes Bos: Awesome. A Wes bos.com forward slash courses has all of my free and paid ones. Check it out. Use the code syntax for extra 10 bucks off any of the courses and that is it.
+
+133
+00:57:59,370 --> 00:58:00,120
+Scott Tolinski: That is it.
+
+134
+00:58:00,419 --> 00:58:03,720
+Wes Bos: Thanks for tuning in. We'll catch you next week. Dude, please
+
+135
+00:58:05,610 --> 00:58:15,360
+Scott Tolinski: head on over to syntax.fm for a full archive of all of our shows. And don't forget to subscribe in your podcast player or drop a review if you like this show.
+

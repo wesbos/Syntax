@@ -1,0 +1,340 @@
+1
+00:00:06,000 --> 00:00:36,320
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers. Oh, welcome, welcome, welcome. Today we are wrapping up part two of our two part origin stories where in part one, I talked a bit about my career and sort of non conventional growth in web development. And today, we're going to be hearing Wess origin story, basically, how he got to where he is Wes Bos.
+
+2
+00:00:36,360 --> 00:02:09,470
+Wes Bos: Awesome. Thanks so much. Cool. Well, I want to start things off quick thanks to our sponsor, which is fresh books, fresh books is easy to use Cloud accounting software is perfect for small businesses. I've been using it myself for about seven years now. A big fan of it. So we'll talk a little bit more about them partway through the show, but hit up freshbooks.com for slash syntax, and use the code syntax in the How did you hear about a section that tells them that syntax listeners are the best? And they will continue to sponsor the show? The very best? The Very Best of you? All right, so let's talk about my my origin story here. Um, I've been at this for quite a long, long time. And I have somewhat of a similar story to Scott, but I thought it'd be kind of interesting to dive deep into all of the different pieces. So I have always been super into computers. My dad was sort of in it all of his life. We always had a computer, we were first Kids on the Block to have internet. And part of being on the internet in the early days. I don't know, I was in I think, when I first really got super interested in building websites was I own about fifth or grade five, or grade six, which is fifth and sixth grade, as y'all say, down in the States. And at the time, I was super into PlayStation two. So maybe I should search that when did PlayStation two,
+
+3
+00:02:09,630 --> 00:02:11,060
+Scott Tolinski: March 2000?
+
+4
+00:02:11,340 --> 00:02:46,890
+Wes Bos: march for 2000. So, Wow, I've been building websites for 717 years. Wow. That's, that's a lot. So that was really when I first got into it. I was building. I was visiting all these websites. And I said I wanted to make my own website for PlayStation two in anticipation for it to come out. So I made this website called ps 28. Go calm, it's actually still up if you visited. So ps twenty.itgo.com.
+
+5
+00:02:46,950 --> 00:02:50,700
+Scott Tolinski: The best site on PlayStation two. I love this. This is great
+
+6
+00:02:50,730 --> 00:03:25,950
+Wes Bos: that the funniest part is, is that I was hiring. Because at the time I had this like brutal horizontal scroll issue that I couldn't figure out. And I put on the on the front page. I will give you the password and you can help also, if off you know how to obviously my spelling mistakes have not improved in 17 years. If you know how to fix a problem that it is too wide. I would like it if you helped because like I couldn't figure out how to fix the horizontal scroll. Anyways, that was the first website. There was a hit counter on it. I got so crazy traffic to it. I'm voting in your poll right now. I'm
+
+7
+00:03:25,950 --> 00:03:29,550
+Unknown: gonna vote in your poll. Is the poll still work? I don't know. I'm gonna find out.
+
+8
+00:03:30,090 --> 00:03:37,050
+Wes Bos: The poll is are you going to buy PS two? Yes, I definitely have mine reserved. But I have to wait in line on October 26.
+
+9
+00:03:37,079 --> 00:03:45,030
+Scott Tolinski: I love how all of the eyes are lowercase. I'm sorry, Wes. This is great.
+
+10
+00:03:45,750 --> 00:05:01,520
+Wes Bos: I know. I'm so super happy that it's still up. So that was like my first my first foray into it. And after have using one of these website builders, I thought like it'd be really cool to learn how to build them myself. So I learned about HTML, I learned about how iframes worked. And I built this like pretty bomb diggity website that had like a nav iframe and a header iframe and your main iframe, and I just use that as a place to embed games. put up pictures of me and my friends. Post I don't know, I posted all kinds of different stuff. And it was at Wes bos.tk. Because at the time, I don't know if this is true or not. But that's the only way you could get a domain name that was top level like Wes bos.tk that you didn't have to pay for it. And I was pretty stoked on that at the time. So that's that was me in grade 567 and eight just sort of building stuff fooling around. I was also really into this website called CDN money. And what that was is a money tracking website. I think in the states you have like a Where's what's who's on you? Who's on your dollar bill?
+
+11
+00:05:02,550 --> 00:05:10,010
+Scott Tolinski: The single dollar Oh man. I don't, I don't carry money with me, man. I know, I don't know, I have no idea to be honest and
+
+12
+00:05:10,409 --> 00:07:17,100
+Wes Bos: whoever, whoever it was, but it would track money around the world, and you had a stamp, and you would stamp your bill. And it would say, go to CDN dash money.com and input the serial number, and you'd get hits around the world. So at that time, you could you could customize your profile. And I was super into adding custom like fonts and clocks and all kinds of hilarious stuff. So I played around with that stuff for a little while. But when I hit High School, which is grade nine up here, I got really into the music scene that was in the town where I grew up here in Canada called Burlington and I started building websites for a friend of mine had a had a band, so I built them a website. And I'm sort of like the first website that had done for someone else. And as websites started to die off, people started getting my spaces. So I really cut my teeth in understanding how HTML and CSS worked by taking these designs because I was like, kind of initially, like a designer, I was like a huge Photoshop kid, I had learned Photoshop all through grade 678 when I was in grade school, and then it came around to building these websites for these bands. And the way that it worked is you would you would slice and dice it, you would slice it in Photoshop, if you remember that. And then you would take one slice, and replace it with an iframe, and that iframe would scroll. And that's where the content would actually go. And you'd have like image maps on the side for for all of your images. So that was pretty funny. But that started to die off. And I remember MySpace becoming super, super popular. So I learned all of the CSS that you needed to customize these MySpace profiles to sort of match all of the designing of the T shirts and the cdr. And the flyers that I was designing, it's sort of all had to go together. So it's it's funny, because it's probably half of all web developers have gotten their start coding my spaces.
+
+13
+00:07:18,180 --> 00:07:23,130
+Scott Tolinski: Some bad yeah, I was pretty amazing. The amount of CSS they let you add in there,
+
+14
+00:07:23,310 --> 00:07:29,910
+Wes Bos: and JavaScript to in the early days, until someone figured out that you could click the Add to friend luck, add friends or whatever.
+
+15
+00:07:30,210 --> 00:07:38,610
+Scott Tolinski: Yeah, that's a great story to that that guy who wrote the first like Internet worm, like just expecting to get more friends and then like, woke up the next morning with like, several hundred thousand.
+
+16
+00:07:38,640 --> 00:07:43,410
+Wes Bos: Yeah. And he like, took down MySpace, because the way that it works is it will FBI
+
+17
+00:07:43,410 --> 00:07:44,520
+Scott Tolinski: showed up to
+
+18
+00:07:46,170 --> 00:08:10,860
+Wes Bos: like, automatically add a friend. And then it would post in your feed that JavaScript code, which would automatically add all of your friends friends to there. And it just like, within a day, he had added all of my space, which is hilarious. And it's funny, because like, that's how I first understood what JavaScript was. It was like the ability to programmatically do things on on a webpage.
+
+19
+00:08:11,670 --> 00:08:16,890
+Scott Tolinski: So yeah, I think I only got into that with snippets, like just like, copying and pasting some stuff.
+
+20
+00:08:17,159 --> 00:09:04,040
+Wes Bos: Yeah, exactly. And the html.org or.com was a big website back then, it had all these like, loading packs and whatnot. But as So I did that for, I don't know, maybe three or four years all through high school, I made decent money going through high school building my spaces, but MySpace started to die. All these punks who are in the websites, or all these punks in the band started to retire and And what happened is that their parents needed websites. So I would start building websites for pool companies. And I remember like a gasket company and all these little businesses, I their parents would come to me and I would start to actually build websites for them.
+
+21
+00:09:05,300 --> 00:09:06,360
+Scott Tolinski: Did you say gasket gasket
+
+22
+00:09:06,360 --> 00:09:07,790
+Wes Bos: company, you know just
+
+23
+00:09:08,609 --> 00:09:16,400
+Scott Tolinski: seals and I also built a site for a gasket company? Much later in like 2011 Yeah,
+
+24
+00:09:17,030 --> 00:09:18,870
+Wes Bos: I know. Oh, man. So I know. I couldn't
+
+25
+00:09:18,870 --> 00:09:23,490
+Scott Tolinski: believe it. When you said a gas gate coming. I'm like, What? How many people? How many guests good companies are there?
+
+26
+00:09:23,540 --> 00:10:38,190
+Wes Bos: It's a big business apparently. Just people yeah. seals. Um, so all through high school, I had done that. And I had loved graphic design and I had love web development. At that time I was I still considered myself more of like a designer then actually someone who is a web developer the CSS in and doing the web stuff was just sort of necessary to get it online. And when I went to university I had applied for for quite a few like graphic design and like packaging programs, but I didn't get into any of them. But at the same time, I was like Very computer savvy. So I applied to a bunch of different it programs as well. And I ended up getting into Ryerson University for a program called Business Technology Management. Which if you know me is like exactly me it's it's a business degree, heavily focused on the tech that runs, large corporate businesses. And I had all my professors worked for BMW and Zahra and stuff like that. It's interesting to like, people love Zahra because of the clothes but if you like, Look, if you read into how Zara works, it's all tech run, which is it's amazing to hear.
+
+27
+00:10:38,340 --> 00:10:39,990
+Scott Tolinski: So what is that?
+
+28
+00:10:40,080 --> 00:10:41,820
+Wes Bos: You know, Zahra? Sara clothes?
+
+29
+00:10:41,820 --> 00:10:43,020
+Scott Tolinski: No,
+
+30
+00:10:43,550 --> 00:10:52,980
+Wes Bos: no. Oh, it's like it. You know, it's like one of the biggest clothing companies in the world. It's it's like h&m, but like a little higher tier.
+
+31
+00:10:53,490 --> 00:10:56,790
+Unknown: I don't know if we get them? Nobody? I don't know.
+
+32
+00:10:56,880 --> 00:11:00,780
+Wes Bos: I guess in Colorado, everyone just does Rei. And yes, no, that
+
+33
+00:11:00,780 --> 00:11:15,810
+Scott Tolinski: is a more accurate north, you know? Yeah, it's it's a Patagonia Rei. There's the Rei flagship store has its own like river to test out products here and stuff. It's just like, just everyone's wearing hiking boots all the time.
+
+34
+00:11:15,870 --> 00:11:17,070
+Wes Bos: Okay. Yeah.
+
+35
+00:11:18,540 --> 00:11:22,530
+Scott Tolinski: That was a very accurate portrait portrait of Colorado right there.
+
+36
+00:11:22,560 --> 00:15:52,800
+Wes Bos: So, um, I was super excited about this Ryerson University going for Business Technology Management. It was a four year program, but I opted to go for a five year program, which was four years and co Ops, sort of, sprinkled in between. So it was four years of learning, and then an extra year, plus summers of actual co ops getting paid, which was sort of ideal for me. So I, at that time, sort of throughout the thing, really what they're they're grooming you for in in the business technology program was to be like IT manager to build these really big. So I was in university, I was still doing some design and some some stuff over there. But I started to transition more into to doing freelance work. So at that time, I had picked up WordPress, and I started getting really, really involved in the local agency scene. So in the last episode, we talked about doing freelancing and all that good stuff. So that's really where I started to meet all the different people at the agencies and to do a lot of work with agencies as well as work that they had had passed on. So I was pretty excited about that all doing all that freelancing. And I had sort of decided at that point that I wanted to be a web developer. But I also had to do these four different co ops that I was doing through university. So my first Co Op, I had worked at an investment bank, which is pretty cool. I worked on the trading floor, which would, I worked with Microsoft Access building reporting for all the traders that were, were buying and selling different stock options and bonds and whatnot. So that was a pretty cool experience. I worked there for about a year. Then I moved on to working at Exxon Mobil, which I learned really valuable lesson, which was it doesn't matter how much money you're making, is if you're miserable, it doesn't all because I was I was a intern getting paid 28 bucks an hour, which was crazy. Most of my friends were getting paid 15 bucks an hour for their co ops. And I was making all kinds of money, but I just just hated the culture, people there didn't really seem to like their jobs, they were sort of just it seemed like they were in it because of how much money they're making. And they obviously can't move, obviously, oil and gas is a huge, huge company. So at that time, I had just been sitting at my desk in in between tasks that they gave me I read the entire WordPress Codex. And I got really, really good at WordPress, just by sort of taking in all of the possible information that I had had learned. So by the time it came around to getting my third Co Op, I worked with a little agency, a video agency in Toronto, that called angle Media Group. And they did quite a bit of web work sort of along with the video work that they had done. And I was just building websites for them, which is amazing because they brought me on and I can basically just do any of the stuff we do. We often pitched projects to people including web work, just because we now had that skill on I was the only web developer there. So it was pretty neat. And obviously at this time I was still doing freelancing during the nights and weekends and stuff like that. And by the time I got to the end of my third Co Op, I had the option of staying with the that agency. But I really what was happening is I would work all day at the agency. And then I will go home at night into freelancing. I was making more money at night on the freelancing stuff than it was during the agency job. So I actually sat down with my my co op coordinator, and I said, like, Look, I don't want to do another Co Op, I know what I want to do with my life. I'm already doing it. I just have to finish up two more years of school. Let me Co Op for myself. And they they went ahead and said, Sure, you can you can call for yourself as long as you write your own Co Op review.
+
+37
+00:15:53,130 --> 00:15:58,080
+Scott Tolinski: That seems pretty reasonable. Yeah, like for them to just say cool to that, like that seems pretty reasonable. I
+
+38
+00:15:58,080 --> 00:17:12,660
+Wes Bos: know. It was great. And I like showed them I was like, I had gotten, I think it was like $3,000 from the government to like start a small business through a program that they had a pod $3,000 laptop. And and I just like went full blast. I was still in school at this time. But I went like full blast into being a freelance developer and I had, I was making pretty good money at the time, I had really good contacts with the people I was working with an agency here in Toronto called jet Cooper, which got bought out by Shopify it and it is now Shopify Toronto, it is huge. I was doing a lot of Facebook applications. So I finished up that last Co Op that was co opting for myself. And I was like, at that time full blown into being a freelancer running my own business. I have one more year of school done. And at that time, I sort of, I didn't check out of school, but I stopped caring all that much. I got decent grades, but I wasn't as focused on it as some of my my friends were, because I knew exactly that I wanted to be a developer and I wanted to double down on running my own business. Yeah.
+
+39
+00:17:12,660 --> 00:17:37,500
+Scott Tolinski: And that's really hard. I mean, I remember being in school and I had to take, like, musicology. I remember taking musicology is like the history of music. And like, I had to memorize all this stuff about all these pieces of music. And like, I nearly failed out completely, because all I was doing all class was programming, like I'm sitting in the class, get a seat in the back. Yeah. And program because that's what you want to do. Right? You're doing that.
+
+40
+00:17:37,680 --> 00:22:27,180
+Wes Bos: Exactly. And I was like, just so I really liked school because it gave me that time to just explore and be happy A lot of people ask me like, should I go to school, or should I just like go straight into this. And at the time, I didn't have those stresses of having to pay bills or anything like that I was just in school, having fun, hanging out my friends and learning to code. So I really picked up a lot of that at the time. I'm gonna take a quick break and talk about our sponsor, our sponsor is fresh books, fresh books is cloud accounting software that I use myself, to invoice all of my clients to invoice anytime maybe I go to a conference and I have to build someone for some of the maybe a workshop that I have done or maybe a flight that in to be reimbursed for. So fresh books is where I do all of my accounting, all of my expenses go into fresh books I, at the end of the year, I often end up having three or four different currencies that I've built in to people and it's just the best way to manage your online invoicing and accounting software. At the end of the year, I just give one big export to my accountant and he's super happy with that. So if you are and what I'm really happy about Freshbooks is that when I first started when I was just small fry, I started with Freshbooks and it's sort of grown with me over the time. And I'm happy that it didn't start off just using Microsoft Excel or something like that, because I can look back on years and years of data as to how I've done and how my expenses have grown and shrunk and all that good stuff. So if you're looking at billing someone check out fresh books@freshbooks.com for slash syntax, make sure you pop in syntax in the How did you hear about us, you'll get 30 free days. All right, so back at it, um, where were we? Oh yeah, so I was had about a year left of school. And at the time, if you remember it was the popular things on the internet were Groupon and all of these daily deal websites. So I had love these daily deal websites because I was dating my wife at the time and we were poor. So we would buy this like sushi Groupon and then go and redeem it at the sushi restaurant and go for it. dates all via Groupon. And I had hated checking all the websites and I had hated getting the email. So I built this little PHP script that would sort of just collect all of the different daily deals and put them into one website. And it was like just deal page, it was called deal page, I think it was deal page.ca it later moved to deal page dot m e. And it just showed us all and the really cool thing about that is that it would scrape all of the deals, it was just a brutal PHP script that would would run every single time someone went to the website, it was so slow, I learned later learned what caching was. And then it would click on affiliate links. So almost all of these daily deal websites would either give us cash, when somebody bought the deal, or they would give us credit. And it was amazing, because people would go to the website, they would buy one of the daily deals, and you would get like a cut of it. Or you would get like a $10 signup credit. So after a year or so of actually running this thing on my own, I was just just raking in the affiliate, like I had something like $7,000 worth of credit to one of these websites, I had thousands of dollars in Groupon bucks. And I was getting all these different affiliate checks coming in every single month from from these websites. And I thought this is this is awesome. Like, I'm really excited about this. And people started telling me I had a startup. And I was like, wait, I have a startup that I put together. But it was pretty cool. So um, I at the time, I was just like, kind of like still learning like what like real web development was. And I had a really good friend of mine, Darcy Clark, who also had was like the the only employee of jack Cooper at the time. And he was just teaching me all kinds of stuff, I really owe a lot to him in terms of like getting me up to speed on on different web technologies. And he basically came to me and was like, look like, you need to build this thing properly. And you need to scale it to all the different cities that there possibly are. Because if you're making thousands of bucks on one, one actual website that or one city like Toronto, like there's lots of cities in the world that you could this could work for, right?
+
+41
+00:22:27,270 --> 00:22:28,830
+Scott Tolinski: Yeah, right. Yeah, seriously. So
+
+42
+00:22:28,830 --> 00:23:33,270
+Wes Bos: we, we he he came over and he taught me codeigniter, which is a PHP framework, sort of like Laravel. And we built this like really sweet scraper thingy that would like, go off and scrape all the websites at 7am. In the local time on that one, I had built all of the actually didn't know what transactional email was at the time, which is like sending one of emails. So I use the MailChimp API to create a list for every single city, you would sign up for a city and then the MailChimp API would hit every single city list, and then make an email of all the deals and then send it off to each of those people, which is pretty cool. So we built this pretty sweet thing. I learned so much doing that, and then ultimately just tanked because the whole daily deal industry then tanked people stopped paying their affiliate checks in. And all of these websites went under or got bought out by by actual Groupon.
+
+43
+00:23:34,020 --> 00:24:07,410
+Scott Tolinski: Yeah, my my brother actually worked at Groupon for a long time, did he? Before getting out and I remember the culture there along the time was getting a little scary. Like he didn't know, you know what he should be doing? He obviously left before. I mean, Groupon still going and everything like that. Yeah. Remember, there's a while where you're like checking in on him every month, like so. Like, are you looking for something else right now? Or like, you know, because you just didn't know what the that was gonna happen. Because all that stuff was just sort of blew up got huge. And yeah, you know, it was
+
+44
+00:24:07,410 --> 00:25:55,350
+Wes Bos: it was a crazy time because like people all over the place. We were like talking about like buying it from us. And like I had no idea about any of this stuff at the time. And if I was smart, I probably would have flipped it for some cash, but it's sort of just just died. It's done its own death. And I had a really, really cool experience. In building it. I learned a lot about it along the way. And once once I had sort of wrapped that up. I had finished school. And it was time for me to to go full blown. I proposed to my right wife right out of school. And it was time to sort of double down and start building this business that was mine. So probably for maybe about three, three or four years. I was doing lots of WordPress. I had gotten pretty heavily into JavaScript at that time. So I was being hired for a lot, a lot of front end stuff, I started to really figure out the like, freelancing thing, like where the good paying clients are, and whatnot. And I was also like, super getting involved with the community. I was attending a lot of meetups. I was part of this like back channel. I was like, super into IRC at the time, which I was in the jQuery IRC room. And we would just help people with whatever jQuery questions they had, I was really big on Stack Overflow. And that opened up some doors where I got invited to this like sort of back channel, jQuery IRC channel where a lot of my like heroes, Paul, Irish, and whatnot, all of those folks were hanging out in there.
+
+45
+00:25:55,740 --> 00:25:58,050
+Scott Tolinski: Yeah, to remember the yay, yay, query
+
+46
+00:25:58,050 --> 00:26:01,680
+Wes Bos: show. It was although a query, folks. Oh, yeah, I
+
+47
+00:26:01,680 --> 00:26:04,500
+Scott Tolinski: know. That was like, that was the show that was the best. So
+
+48
+00:26:04,500 --> 00:28:09,390
+Wes Bos: it was so good. So what happened after that? Yeah, I was I was like, just loving how especially like looking at people like Addy osmani and Paul Irish. And they wanted, they were just like, helping people understand how it worked. And I was like, That's amazing. I would like to do that as well. So I started whipping up some screencasts. I got a YouTube account, I started doing like some WordPress screencasts. I started doing blog posts about different WordPress things here and there. And what happened is, in Toronto, we have this thing called ladies learning code, which is a not for profit that does these like Saturday workshops that help women learn how to code. It's pretty straightforward there. Obviously, they've expanded into Kids Learning code and girls learning code now. And we had run one of the first weekend workshops on WordPress, and they had asked me to actually lead it. And I remember being like no way That's so scary to be able to do that. But I ended up doing it. And I loved it. I love being able to stand up there and explain to people how queries in the loop worked and how different the different theme files came all together. And, and people like the way that I explained it, I remember being like, Oh, I have to like, study how how teachers teach and stuff like that. And then I was just like, what if I just explain it, how I understand it. And that was a huge breakthrough moment for me because I realized that he don't have to be so academic about teaching people and it doesn't have to be so stodgy. I remember reading tutorials, and all these like technical books, and just being like, I don't understand how any of this works. But if I can explain how I understand it, and in ways that makes sense to just regular people, maybe that is something that will like and that's initially what started my whole training tutorial. Empire profits an empire?
+
+49
+00:28:09,870 --> 00:28:49,560
+Scott Tolinski: No, I mean, this is same thing. I mean, I totally understand that, right? Like this, this this space of teaching where you don't know how to teach. And that's a huge benefit. For me. I, you know, I thought about it like you, but it's really like you came down, you just started making this stuff. And I was surprised at how many like, I'm surprised at comments, I get on videos from 2012, where people are like, this is the best video on this topic. I'm like, I made this when I had no idea. Yeah, what I was doing, right. I mean, and I think that's a huge benefit for both of us is just that we're teaching things, how we understand it, or how we are, you know, how we think and it just resonates.
+
+50
+00:28:50,010 --> 00:32:26,460
+Wes Bos: Exactly, exactly. So the laser encode thing was going really well. We're doing it a couple times, we're iterating on the WordPress content, that content started to be used by people all over Canada. And then we sort of had this idea, like people were like, like, all amped up after the workshop, and they're like, Where do I learn more? And we're like, well, like, we don't really have anything. So we toyed with this idea of doing like evening workshops that were paid with ladies learning code. And we did a bunch of them. They're they're pretty good. But it just like wasn't like media enough for for what we want it. So sort of what came out of ladies learning code was this thing called hacker U. And what hacker u was, was sort of like evening classes that teach people web development. They're there. We didn't realize it at the time, but it is what a coding bootcamp is today. So we started up this thing called hacker U is myself as the only instructor and then the girls that had founded ladies learning code started up hacker u and I wrote all the like, sort of like The intro to HTML and CSS content. And from there, we had delivered that a whole bunch of times after a couple years, they decided to do a boot camp because we were just doing them on evenings. And then they I wrote all the content for the first boot camp, I delivered the first boot camp took a bit of a break from the boot camp. After that, I did come back and do a second boot camp a year later. But I had I had liked doing my client work as well. So I didn't want to be doing that, that totally full time. And just over these years of being a teaching people I really like had focused in on like, how people understand and what are common trip ups for people and being able to be there in person and see the look on someone's face when they're confused. And see the look on someone's face when they have enlightenment. It really like helped me hone in on like how best to explain a topic to someone and how much to explain at once. And what type of exercises will actually click versus like, what totally just gets blank stares back. So at that, after that I was super into Sublime Text. And I was doing, again, like I got into ladies learning code because I was blogging about WordPress. And then I started blogging about Sublime Text. And those Sublime Text blog posts got super popular, I got there getting tons and tons of traffic to them. And like you write any blog post, I didn't know this at the time. But if you write any blog posts, you instantly have publishers knocking on your doorstep asking if you want to write a book for them. And I was, I was thrilled at the time, I remember telling my parents I'm going to write a book and stuff like that. But then like, we this is probably another topic. I like that a little bit of talking to people and I realized that the whole technical publishing industry is it's it's great. It's, it sucks. Yeah, it's, it's, it's a bit of like a, they just throw a whole bunch of spaghetti at the wall and see what sticks. And you don't get paid very much at all for these type of things. And it's just like kind of a bum deal. To write a textbook through a major I
+
+51
+00:32:26,460 --> 00:33:20,880
+Scott Tolinski: did a video series through a major publisher. And outside of my I forget, it was probably like 2012 ish. Yeah, 2013 I just got my first royalty check. Last quarter. It has been that long. And the most depressing thing is you see, because they give you all the sales information. So you see how many it sold, how much money it makes. And then you know, they give you an advanced my advanced with $1,000 in your royalty limit where your growth rate was so tiny, that you're just like chipping away at that thousand dollar advance for what like, you know, several years, like four or five years until you finally see additional money. And it's like $1,000 for you know, 30 plus video series is kind of, it's just not worth it at all. Yeah, so much time. Yeah,
+
+52
+00:33:20,910 --> 00:33:52,830
+Wes Bos: it's I remember talking to them, and like really giving them the gears because they really dance around like what I'm like, how much money can I make. And what ended up happening is that the way that were they explained it to me and I talked to maybe I talked to every major publisher out there is that, like if a book sells for 30 bucks in a bookstore, the the publisher gets about 15 of that. And then you as the author gets about 10% of that. So every time someone's buying your $30 book, you see about a buck 50 in your pocket.
+
+53
+00:33:53,850 --> 00:34:02,760
+Scott Tolinski: And that's subtracted from here or your your advance to if they give you an exactly exactly most likely unless of course it's different in your contract. So
+
+54
+00:34:02,760 --> 00:37:08,250
+Wes Bos: what I did as his blog post, we're getting super popular about some on taxes I just threw up. I just threw up a email, MailChimp signup form, saying like I'm writing a book, and people started subscribing like at a pretty rapid pace. I said like I'm writing a book if you're interested in it, I'll send you a coupon when it launches. So I started writing this book because people started signing up and it took me a year and a half because I didn't know how to write a book and I wasn't all that motivated because I thought it would wouldn't go very well and halfway through someone else released the sublime text book and I was like oh no, like it's already out there which is like lesson number one like it doesn't matter if someone else has already done the same thing. People will like yours for whatever reason you'll find your little crew that that likes your stuff better than whatever is out there and I was pretty cool for me to to learn but actually After a year and a half, I released my sublime text book, I also was realizing that some of the stuff was hard to describe in text. So I recorded a bunch of videos along with that, and I released it. And it didn't really well, I had like 2000 people on my email list. And I think like 300 people bought it, which is it, you can't even think of conversion rates that high these days. But it was like really what I needed to like to understand that you can make your own content, you can, you can go out on your own and be able to, without anybody else's platform, or whatever it is, if you can put a little bit of time into to building an email list and to building a bit of a following online, because you seem to be a bit of an expert at this, because you're blogging about it, it will really, really pay off. So that was a sublime text, book and videos. And what I realized from that is that I hate writing books, and I love making. So I decided to never write a book again. Because it's not much fun. I don't even know how many people actually read through it, there is a certain group of people who like to read books much better, but I like creating videos much better. So I was I started to go into that a lot more. So from that, I created a free course called command line power user, which was meant purely to drive traffic to my sublime text book. And if you view any of the videos today, on my command, line one, at the end of every video, it will say if you like these, check out my sublime text book. And that worked surprisingly, really, really well. And I sort of like figured out like, Oh, I get this whole I since learned that this is like a common marketing technique. But give something away for free. That is like really good quality. And people will buy your other stuff because they they like the way that you teach or they like the sort of content that you cover.
+
+55
+00:37:10,080 --> 00:37:15,330
+Scott Tolinski: Unless, of course you release like 1000 things for free. And then people don't want to buy anything.
+
+56
+00:37:17,010 --> 00:37:54,650
+Wes Bos: Oh, yeah, I guess that that can be a bit of a problem, too, as well. I guess that's a another show. But yeah, right. was saying so yeah, I had this command line power user book or video series that came out it was doing pretty well. The sublime book was continually selling pretty well. And at the time, I was like soup doing a lot of client work in Angular. And Angular was in that weird time, you'll probably remember this where they like announced Angular two was going to be totally different than Angular one. But it's not going to be released for 12 years. They said,
+
+57
+00:37:54,650 --> 00:38:17,850
+Scott Tolinski: yeah, it was absolute chaos. Because everyone was like, Oh, I'm, I'm done. Like, I don't want to do this. I don't want to make this change. And then there's people who are like, well, let's give it a chance, you know, and like nobody, at the end of the day knew what the hell was going to happen. Yeah, nobody knew anything. So I just remember being very concerned that I wasn't going to be on Angular anymore. And sure enough, I left Angular, you know,
+
+58
+00:38:17,879 --> 00:43:04,460
+Wes Bos: yeah. So without I was like, I was building all this stuff. for clients with Angular, we had some pretty big apps in Angular, and then like, angular two was gonna come out and like, it was actually like, two years or a year and a half. And I was like, I'm not gonna, like sit on my head, I'm not gonna put any more time into Angular one. I'm not gonna sit here and wait for Angular two. And I sort of, like I said, Who else is out there. And at the time, React was just becoming super popular. I went in, and I built a couple things in react, I really liked it. And I was pretty happy about it. So I decided that would be my, my next big, you know, before that, before that, I did a Flexbox series. That was that was huge for me as well, because, like, sort of like my advice to anybody, if they're looking at doing this is just like jump on some new tech. And just like ride that way. Because I put out that Flexbox series for free. And it just ballooned my email list. Because at the time, a, it was really good. And B, what is b? It was really good. And people, everybody had to know how it worked at the time, right? Because whether you're brand new to web development, or been at it for 10 years, Flexbox was new to absolutely everybody. So yeah, mysterious. Exactly. So I built my react series after that. And it was obviously much better than the Sublime Text videos in terms of production quality and whatnot on my email list had grown quite a bit because of the the free series And then I started to learn a couple things here and there about email marketing. I was continually doing quite a bit of hot tips on Twitter, which is mostly how I grew my Twitter following by posting Hot Tips on Twitter. So like I had realized, like, I have this bit of audience. And it's a, it's great for me to be able to launch these courses by myself. So I launched that react one. And I think for about two years after I launched the React one or a year and a half, I still did a whole bunch of client work. And then just as I was getting ready to launch my next free, or my next paid one, which was the s6 for everybody, I put in my I was doing a lot of contract work for Red Hat at the time, Red Hat software. And I had a whole bunch of other different clients as well. And I had spent about six months sort of sunsetting those relationships and passing them on to other people, because I decided, it's the time to go full blast into these training series I are I've done it twice now. And both of them have been more successful than I ever thought they would be. So obviously, I can just keep doing this and keep creating really good content. So I released my yes six series, I got a whole bunch of other different free ones that were sort of in between there as well. And I released my sort of the huge one for me, like the ESX. One, the React one doing really, really well. My Flexbox one was doing really well. But all through doing ladies learning code, all through hacker you also doing my own, I realized that like, people were having sometimes trouble doing any of this stuff, because their fundamental JavaScript was not a strong. And they were also just asking me like, Great, thanks for showing me this. How do I do more? Or like, what do I do to get better? What book do I sleep on? to do more? So I kept telling people, like, just keep building stuff, keep building stuff? And they're like, Yeah, but like, what, what do I build Wes? So I had for probably about two years, I've been keeping a list of like, what do I build? And it was just a list of things that people should build. And then I would give that to people. And they'd be like, well, like, Where's the answers? So I was finally like, oh, okay, listen, I'm gonna build 30 things that you should also build. And I'm going to release it. And I decided to call it JavaScript. 30 is a 30 day challenge. I had listened to a podcast about these green smoothie girls that did this, like 30 days green smoothie challenge, and we're just blown it out of the water in terms of like, getting people on board and how much enthusiasm was behind this 30 day green smoothie challenge. I was like, well, we can do 30 day JavaScript. So we did that. And it blew up. Like, I didn't realize it at the time. I knew it would do well, but like, I think we had something like 30 or 40,000. I say we it's just me here. I don't have people.
+
+59
+00:43:05,880 --> 00:44:51,420
+But I think we had 30 or 40,000 people sign up for it in the first week. It's well over 100,000 now signing up for it. And it's just like exactly what people needed. No one was really all that much asking exactly for that. But by by putting yours in with laser encode and hacker you just like kind of like, seeing that little those little pain points here. And there. People are like, this is exactly what I need I just need is 30 different things that I could build so that I can get better at just vanilla JavaScript. So that that worked really, really well that again, had ballooned, my is about 100,000 people subscribe to it, probably 60,000 of those are the first time someone's ever heard of me, which was massive for my email list massive for people discovering my other series, like once they had finished JavaScript 30 they go, Oh, I like I actually finished something that was fun. Like, what else can I learn from less? So that did while I released my node course a couple months ago. And now I'm starting to get a handle on like, What does running this business? I'm done client work. And now I'm starting to get a handle on like, how do I run a business? What is how do you market this thing? And how do you find out how do you teach? Well, all these things that come along with with running a training business. I'm sort of like this is not just a fun thing. I'm doing sort of like you said last clot last episode. It's not like a fun thing or doing any more for side money. Like this is my actual business now and I'm doubling down on that. So I think that's,
+
+60
+00:44:52,020 --> 00:44:57,510
+Scott Tolinski: that's my origin story. brings us to today where we started a podcast now.
+
+61
+00:44:57,510 --> 00:45:46,380
+Wes Bos: Exactly. Well, that's it. That's it. My whole, um, maybe maybe that's why I should say as well, like, my whole philosophy behind these things is that if I'm going to try and help someone, if I'm going to try and explain something to someone, I want everybody to have access to it regardless of where it's at, so I what I mean by that is not that like, it should be free to everyone, because obviously my courses are paid. But what I mean is that, like, I don't like doing too much one on one or too many answering emails or too many coffee dates, because I much rather do it on a podcast where 20 30,000 other people can can benefit from some of this information, whether it's good or not. Really?
+
+62
+00:45:46,410 --> 00:45:48,150
+Scott Tolinski: Yeah. Yeah.
+
+63
+00:45:49,050 --> 00:45:49,770
+Wes Bos: So Well, yeah,
+
+64
+00:45:49,770 --> 00:46:10,800
+Scott Tolinski: that was a done. That's great. I mean, I think I said this before the first episode, just that there's so many, like non conventional or different ways to get into this career path. Yep. And like, I mean, just a totally different, totally different experience. Totally different example yet, you know, here we both are. So it's it's pretty. It's pretty amazing. I love hearing stories like this.
+
+65
+00:46:10,830 --> 00:46:59,070
+Wes Bos: Yeah, exactly. And if I think if I think about, like, what the takeaways are, is, like Scott said, do what you're excited about, and sort of run and follow that. And also just help people like almost absolutely everything that I've done. all boils down to every sort of door that opened for me, is because I initially tried to help someone for free first. And, and people were happy about that, because I was in jQuery chat room, which got me into this, like private chat room, and I was answering Stack Overflow questions, and I was writing blog posts and answering questions on Twitter and, and all of that sort of reciprocity starts to build up. And people really appreciate. Appreciate you for it.
+
+66
+00:47:00,030 --> 00:47:00,960
+Scott Tolinski: Yeah, definitely.
+
+67
+00:47:00,990 --> 00:48:06,870
+Wes Bos: So that's, that's it, I've one thing that was totally different Scott is I've actually never had a job I've, I obviously had those co ops in school. But outside of those co Ops, I had always worked for myself. And that's, that's not just something I stumbled into, though, I had always grown up being entrepreneurial. I just remember being a kid and just every night out count my money, which sounds kind of dark. But I was just like, I remember just like sitting there like thinking like, how can I make more money, I would go to my neighbor's what go to my neighbor's like pear tree and pick up the pears and sell them on the side of the road. And I would in grade school, we would like hustle these chocolates for charity and they would give you two bucks per box sold like a huge box. And I would just like go every night, I would go out for hours and hours just selling and selling. And I just remember having this fistful of $2 bills at the end of the day. So it entrepreneurial aspect is sort of always been always been with me. And then the web development stuff I've picked up as we go.
+
+68
+00:48:07,770 --> 00:48:37,590
+Scott Tolinski: And I sort of the opposite. I had to learn that, like, I always had a job. So you know, level up, tuts was like, oh, we'll just put out everything for free into the world. And I'll put ad revenue and you know, maybe suborn myself on that ad revenue someday, like not knowing that that ad revenue is like a drop in the bucket and like nothing, really. So it was like, Okay, now I have to figure out how to sell and market my products. And that's like been a huge learning experience for me. Yeah.
+
+69
+00:48:38,250 --> 00:49:15,510
+Wes Bos: Yeah, it's, it's, we should have like some sort of, I don't even know what that show would be called tweet us if you understand what the show would be called. But like something about marketing or how to figure out what to charge and whatnot, because it's, it's a whole nother another skill set that you obviously have to learn. learn along the way, especially with marketing is there's so many, it's just a dirty word to say, especially with developers are fairly allergic to marketing. So like, how do you be genuine and for me, it just ended up being great, awesome, free shit. And people will buy the other ship.
+
+70
+00:49:16,410 --> 00:49:28,950
+Scott Tolinski: Yeah, I know. I had like a really hard time like asking people to buy my things just because I had never done it before. Right? Yeah, that's definitely when the skills you have to you have to get somewhere.
+
+71
+00:49:28,980 --> 00:49:36,900
+Wes Bos: Yeah, yeah, totally. But uh, that's cool to see that you got past that? A little bit. A little bit. Still still along the way.
+
+72
+00:49:37,620 --> 00:49:43,620
+Scott Tolinski: I like cringe a little bit. Anytime I send out an email that's like, please buy my stuff. Like, Oh, do I want to hit send? Yes,
+
+73
+00:49:44,310 --> 00:49:46,110
+I guess I want to eat this week.
+
+74
+00:49:46,589 --> 00:53:21,540
+Wes Bos: Me too. Like everybody like everybody. I don't send a whole lot of email. And whoever I talk to about my strategy, they're always like, you should be emailing like every other day. They have to know who you are. Like they say all this stuff and I was like, I hate diet, like, I feel I don't, I don't want to bug people too much. And I don't, I don't feel good about that. So like, there is a delicate balance that you need to hit in between, like, feeding your family, but also like feeling good about like, absolutely everything that you put out there. Cool. Um, my let's talk about sick picks. Scott did his sick pick during his origin story. I'll do mine now. So a couple years ago, I'll start us off a little story. I was at a conference. And there was a blind iPhone user there. And he was his talk was demoing, how do blind people use their phone. And it was really cool, because first of all, the battery life is amazing, because it's just a black screen, he doesn't use the screen. But he just touches the black screen and sort of moves away around. And I'm sure you can look up a YouTube video of how blind people use an iPhone. But what I took away from it was that the voiceover where if you touch a button, it tells you what that button is. The voiceover he had was cranked up, it was so fast. And I was like, how do you like, how do you understand that and he said, like, obviously, I can't see. But my like, my ability to understand very quickly read sentences is really good is that the your brain can adjust too fast. So I got really into that. I'm like, Well, I hate reading. I never read books. But I like audiobooks. I just don't have a whole lot of time for it. So I started just speeding up anything that I was taking in any YouTube video or audio book or podcasts, I would speed it up to like 1.25. And initially it sounds like chipmunks. But over time over maybe a year or two, you just train your brain to be able to listen to stuff at 1.5 1.752 x two and a half x depending on who it is, who's speaking how clear they are, if there's fast talker normally or not. So I'm just like, I don't listen to anything at one x now. And I listened to most stuff 1.5 to two x. And the one thing that always pains me is that when I'm on my desktop, I have like a video speed extension. But um, when I'm on my iPhone, if I want to watch a YouTube video, like it doesn't speed it up. So there's this really great app I found called motor read. And what it will do is you can put like, you can hook it up to your pocket, you can put text articles in it, but what I use it for is that you add a YouTube video to it and you can just like playback the YouTube video at a much faster speed. And then what I mostly use it for is that you know, like when you're trying to listen to something on YouTube on your phone, but you want to lock your phone and put it in your pocket. And like stops YouTube, this will keep playing the audio for you. Well, it's in your pocket. So TED Talks, things like that, that you don't necessarily want to watch the video for. It's gonna gonna do that for you. So it's called motor read. I think it's, I think you got to pay for it if you want to do a certain amount per week or per month, and I just just started using it as using sine previously. Yeah,
+
+75
+00:53:21,780 --> 00:53:29,850
+Scott Tolinski: I actually heard that YouTube is going to be adding in native functionality to increase the playback speed in their native apps.
+
+76
+00:53:29,880 --> 00:53:30,930
+Wes Bos: Oh, I hope so.
+
+77
+00:53:31,710 --> 00:54:32,880
+Scott Tolinski: I know me too. I know actually is really funny. I know. That's like a tip you like to use for podcasts, right is to listen to them at like 1.2 times the speed or something like that. I don't know what your number is. I have a number that I prefer as well. I was like, I was actually recently reaching out to some editing forums like is there any way to make Final Cut Pro just like playback all audio at 1.2 in playback, but not in real life? Just so like editing can be a huge pain. Yeah, just sitting and listening to that. All right. So like if I could listen to everything a little bit faster, I'd get editing done a little bit faster. Obviously there isn't a way to do that. But like there's not I love No, no, there isn't I was really well. If you know of a way again, reach out to me because I did some research on Creative cow and looked around and I could not I found most of the time. If I were asking the question, the answer would be like, why? Oh, yeah, you want to do that. Because when I editing large amounts of blank text, you know, you know text?
+
+78
+00:54:33,450 --> 00:55:15,900
+Wes Bos: Well, when I because when I edit my screencasts I need to make sure that I didn't accidentally leave like a swear word in our screw up. And so what I do is I'll just, I'll hit l on my keyboard and that will speed it up. I use ScreenFlow which is totally different. But yeah, it's super popular and even like, like last week when I had to do the show notes for this own podcast. I put it out to people point nine x. And it just like it's an hour long podcast, but I got through it in about 1520 minutes. And it was fast enough that I could still listen to what it was. And then I could go out and get the links for the show notes. As I went through it, you can
+
+79
+00:55:16,140 --> 00:55:18,210
+Scott Tolinski: you can do that in ScreenFlow. He said,
+
+80
+00:55:18,240 --> 00:55:24,630
+Wes Bos: Yeah, yeah, you hit l on the keyboard and it will it will speed up there. It's kind of choppy. It doesn't sound as good as Okay,
+
+81
+00:55:24,660 --> 00:55:35,160
+Scott Tolinski: like quick time if I don't cook and do that. I don't cook and do that as well. But it to me, I think that might be a little bit fast. I don't know if ScreenFlow speeds or maybe just a little bit slower. But
+
+82
+00:55:35,549 --> 00:56:02,670
+Wes Bos: yeah, I think it goes like 1.5 to 1.7 to one point or to two. So there's different levels that you can use to increase your playback. Cool. Um, so that's my sick pick, check it out motor read. Other than that, that's the end of this podcast. Thanks so much to fresh books for sponsoring. And we'll see you in the next one. If you've got ideas for the show or you have any feedback whether you think tasty treats is cringy or not tweet us at Wes
+
+83
+00:56:02,670 --> 00:56:09,780
+Scott Tolinski: Bos esbls. Scott is an ad s kolinsky stll i NSK
+
+84
+00:56:09,840 --> 00:56:19,170
+Wes Bos: i and our own Twitter is syntax FM. If you want to follow that we just broke 2000 followers. Head on over to
+
+85
+00:56:19,170 --> 00:56:29,130
+Scott Tolinski: syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player. Drop a review if you'd like the show. Until next time
+

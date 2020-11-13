@@ -1,0 +1,472 @@
+1
+00:00:05,970 --> 00:00:11,220
+Scott Tolinski: Welcome to syntax where we deliver tasty treats for web developers.
+
+2
+00:00:14,219 --> 00:00:39,060
+Wes Bos: Welcome everybody. How's everybody doing? Hopefully you're ready for a another syntax. Today we're gonna be talking about JavaScript utility libraries, which it's, it's truly a tasty treats episode because they're just gonna rattle through, I don't know, a couple half dozen or a dozen or two different utility libraries, things that we use that make your life a little bit easier things that make you go Hmm, that's handy. So hi, how you doing, Scott?
+
+3
+00:00:39,060 --> 00:00:49,710
+Scott Tolinski: I'm doing really, really good here. Just uh, you know, live in the live in the code, live coding, recording videos, you know, doing all that good stuff. Yeah, how about you?
+
+4
+00:00:50,699 --> 00:01:06,090
+Wes Bos: I'm doing good. Doing good. Just getting getting ready for fall. Yeah, end of August here and certainly get the flannels out of storage. For primetime. That's good. Anything special you're working on these days.
+
+5
+00:01:06,330 --> 00:02:04,470
+Scott Tolinski: I'm, uh, I'm working on that cart, rebuild the shopping cart rebuild, and I have some I'm so excited to get this done. Because I don't know if you follow me on Instagram or anyone who follows me on instagram will maybe see some of these like little sneak peeks I'm giving of it but the thing is, is pretty sweet. It's it's in react, and it's as its mounting, it animates in from both sides it like flies in and a really interesting way and does some really like practical but nice effects while things are loading. It's obviously like, I'm trying to make it so it's, you know, sort of inspo worthy, right, I want people to talk about it, but I don't want to make it totally overblown and totally, you know, have those things. Yeah, way. So I'm just working on that I have at the front end like 99% done and I've started the API and back end for it. And it's it's cruzan I just got to get it done and then work on the subscriptions part of it all and then you should be able to see it in the level up tut's store soon, hopefully by pretty sweet episode or two. Yeah. How about you,
+
+6
+00:02:04,500 --> 00:02:10,500
+Wes Bos: though, for the back end? Did I got a question about this? Did you end up going with Braintree or rewriting it?
+
+7
+00:02:10,530 --> 00:03:09,750
+Scott Tolinski: Yeah, that's actually why I chose to rewrite it is to go with Braintree to sort of simplify my offerings between PayPal and before and credit card right. So before I was using stripe for credit card, PayPal for PayPal, and yeah, managing two entirely separate API's really had, you know, Braintree doesn't take away all of that pain so far, but it has made it really nice and easy. And I do like some of the things they offer like there's the hosted fields. thing. I don't know if we've talked, we didn't we didn't talk about that in our episodes. We haven't really dove much into Braintree. But there's basically you you code up some divs with IDs of fields, and then say, Hey, hey, Braintree, these are going to be my secure fields. And then Braintree sort of injects a form iframe into that. But it uses the style of your divs as the style of the inputs. So you can have a really customized secure form or whatever. And without having to worry too much about what you're doing. Other than that.
+
+8
+00:03:10,020 --> 00:03:33,330
+Wes Bos: That's pretty sweet. Another thing I was looking into, because we talked about one of the challenges of moving from stripe to Braintree, if you already have like recurring billing happening in stripe, how do you get out. And apparently, if you do contact stripe, they will migrate it for you to a another approved vendor. Interesting. So there it is possible to get that data out. I was considering just
+
+9
+00:03:33,330 --> 00:03:42,660
+Scott Tolinski: something that was maintaining a legacy subscription model. And just because I mean, it works, so just keep it there and hold on to it. Yeah, but I'll have to look into that. I wasn't aware of that.
+
+10
+00:03:43,290 --> 00:04:41,790
+Wes Bos: Yeah, so I was I thought that I don't even have recurring billing, but I just thought that was interesting to to not be locked into one. So yeah, nice. on my end, I am. I am full blown. I've been mentioned this a couple of times ago, but I sent an email out about it a couple days ago is I'm full blown working on a sort of an advanced react course I think I'm going to call it which is primarily focused around using graph qL and charging credit cards. So I'm sort of deep into that. Feeling a couple of pain points. It's it's definitely early days for for graph qL and some of the services so I'm definitely running into lots of like little little hiccups along the way, I've logged a couple bugs in a couple of libraries, and they've since been fixed. So it's definitely definitely early days for the stuff but it's it's also starting to feel fairly stable. The stuff I'm finding is just minor little edge Casey stuff. So pretty happy about that.
+
+11
+00:04:41,819 --> 00:05:14,939
+Scott Tolinski: Nice. Yeah, that's got to be really exciting to dive into a bunch of new tech like that. So I'm really excited for this graph. qL graph qL episode we're gonna do where Wes, who is, you know, at this point, much more knowledgeable but it's still a you know, growing in it and I am I haven't really dove into it at all yet other than the basics of what it is, I'm going to just sit down and ask us all a whole bunch of questions. And maybe we can take some questions we get over Twitter that people have over two, and we can both try to solve and figure out what these answers are. Yeah. Yeah, it's
+
+12
+00:05:14,939 --> 00:05:30,629
+Wes Bos: gonna be a good a good episode, because I still like, I still remember all of my questions about graph QL. So we can, we can talk about it as it's fresh, which is sometimes better than someone who's been in it for four or five years. And it's all second nature to them. Yeah.
+
+13
+00:05:30,660 --> 00:05:33,449
+Scott Tolinski: So I find that to be the case most of the time.
+
+14
+00:05:34,079 --> 00:07:01,110
+Wes Bos: Awesome. Well, let's kick it off with our libraries. We want to say thanks so much to fresh books for sponsoring fresh books is cloud accounting software, we'll talk a little bit more about what they are. But if you go to fresh books calm for slash syntax, and sign up, you can get 30 day free trial. So thanks so much to them for sponsoring. So today we're talking about JavaScript utility libraries, what is the utility library? Well, it's it's kind of this like loose idea of something that is not necessarily for maybe dealing with the DOM or not necessarily for processing payments. But it's just a library that helps you get stuff done. So whether that's working with this specific type of data, or maybe you have a task that is fairly repetitive that you need to do over and over again, these libraries make life a lot or a little bit easier on us. So probably the most popular utility library out there is a library called lodash. And if you've never heard of it before, essentially, it's just a collection, a huge collection of handy methods that allow us to work with different types of data. So there's a whole bunch of methods for dealing with arrays, there's a whole bunch of methods for dealing with objects, a whole bunch of methods for dealing with functions, and functional programming and all kinds of really nice stuff in it. So are you a lodash? user there, Scott?
+
+15
+00:07:01,290 --> 00:08:49,470
+Scott Tolinski: Yeah, for a good amount of time. I feel like I caught the lodash bug, just as it was, like firing up. I mean, for a long time, everyone was on underscore lodash was sort of the the second generation of something a tool like underscore. And yeah, I pretty much at first, I remember seeing it and looking through these JavaScript functions back when I wasn't doing a ton of like heavy JavaScript stuff, I still wasn't doing any, like single page application stuff. And I just remember thinking, yeah, maybe I'll use this, but none of this stuff seems super useful. And then I started doing this world of, of these larger JavaScript applications. And I remember the first time the light bulb clicked for me with lodash, and I was just like, holy cow, this thing makes my life so much better. And, and ever since then, it's just been like a constant I, you know, you you end up importing only what you need, or whatever, from lodash. But, you know, I there's just some things that it just, it takes all of the guesswork out, it takes away all this like mundane sort of JavaScript stuff that you may potentially had to memorize some sort of, you know, strategy, right, even like finding a specific item in a collection of objects, right? You didn't know more have to iterate over things like that, you can just find as if it was like, even like a Mongo query or something like that, that sort of style. So I think lodash is just one of those things that, then when you start really utilizing the full power of it, it can just save you an endless amount of time. And then the best part is to they've already gone through and done all of these, you know, best practices and optimizing. And, and so you don't have to worry about whether or not the code is going to hold up. Because, you know, it's, it's being constantly improved.
+
+16
+00:08:50,270 --> 00:09:57,240
+Wes Bos: Yeah, and anytime that you have like a specific set of data, whether it's an array of values, an array of objects, an object with that's deeply nested inside of each other anytime you're like, Hmm, this is either hard to work with, or I have this specific situation where I need to find an item inside of it or flatten this data or find the difference between two arrays. And it's all over the place. They have all kinds of really helpful little methods inside it. Anytime you have that question. More than likely, there's going to be a lodash method that lives inside of it. And sometimes you hear criticism for for lodash being like, well, you can do that with ESX. But really, if you if you dive into it and realize what all of the different methods are, maybe just spend 1020 minutes after this podcast or while you're listening to this podcast, going through all the documentation and figuring out what all the different methods are. It's good to know that sort of everything that lodash does, then when you run into situations, you're not going to going to hack something together for yourself. You're just going to reach for whatever handy method lives inside of lodash
+
+17
+00:09:57,289 --> 00:10:24,289
+Scott Tolinski: I was gonna say those methods can just they can Increase your code readability make everything wait cleaner and easy to sort of understand. I mean, if you're writing your own version of all this stuff all the time, that code is going to take up a lot more space. But then if you're writing, let's say, a poll at and you want to pull a specific object, add something, you know, you could just drop in, pull, add or find or whatever, and it just drops in there, instead of having to rewrite that code, or having take up that space in your project.
+
+18
+00:10:25,140 --> 00:12:05,909
+Wes Bos: Exactly, and dealing with unique values is I want us to do is I would always be like, Hi, I need to like unique an array, I would go to stack overflow copy, paste that little helper function. And then I'd have these like, at the have like a helpers file that had all these random different functions that are not necessarily battle tested, maybe you run into a weird edge case at some point, or you're gonna run into performance problems where you don't know if there's a memory leak, or it's not the best way to approach this with an extremely large data set. JOHN, David Dalton, who is behind lodash, he is extremely performance minded in all of this stuff. And what we're lodash initially came from was there's another library called underscore that everybody used with with backbone, or you could use it on your own. And he just rewrote the entire API as a drop in replacement for underscore but it was like extremely performant, which is pretty neat. It's it's, it's far past that now it has added all kinds of really nice stuff to it as well. And then one other thing, I guess, we should say about lodash, is that you can also just pluck no different methods that you like, so even the other day, I knew this, but the other day, I asked on Twitter, what's the best? what's called like a nested get like rumor. Sometimes you have an object that's like six or seven levels deep. And you don't know if all of those six or seven levels deep are gonna like you don't know if there's going to be a person object. And even when you have a person object, you don't know if there's going to be a name, object. And then on that you don't know if there's going to be a last name. So like, you always have to check for everything along the way. Otherwise, it's gonna break
+
+19
+00:12:05,970 --> 00:12:15,929
+Scott Tolinski: No, as I say that's, that's like a, a guaranteed ticket to a big old error if you're looking inside of it a nested nested nested object, right? If you're not checking any of that stuff, right?
+
+20
+00:12:16,919 --> 00:12:59,820
+Wes Bos: Exactly. So I asked like what's the best like standalone library for this because I'm always I'm still have like the mindset like don't bring a monolith library with you, where you can just like take a little helper function, but lodash will actually export every single one of its function with only the little piece that you actually need. So you can always just like grab a little, like, sort of like tear off a function from lodash. And just put that one piece into your app, you can npm install lodash dot has lodash dot get lodash.an arc or over or any of these different arguments that it has. So there's no reason to have that sort of like bloat example that you've had before.
+
+21
+00:12:59,850 --> 00:13:37,500
+Scott Tolinski: Yeah, and if you're working with sort of, like, you know, modern code splitting, and you know, all that sort of stuff, you can install the entire lodash package. And if you look in your, if your in your packages folder, for lodash, each one of those functions has its own file, so you can import the function directly from its own file, and not have to import the entirety of lodash. So that way, if your, your files are code splitting wrapped up correctly, you're only getting that one thing. Well, and then you have access to the entire library to so mean a lot of different strategies for not having to load the entire library itself.
+
+22
+00:13:38,190 --> 00:13:59,730
+Wes Bos: Exactly. That's sort of the beauty of using common j s or ESX. Modules so that you just grab the one thing that you want and and you'll you can be sure that the module that you want will go off and get its dependencies. Maybe it has shared dependencies through a couple other modules, and it will pull those in. So big fan of lodash. If you haven't checked it out before or haven't used it before, definitely take a look at it.
+
+23
+00:13:59,850 --> 00:14:37,950
+Scott Tolinski: Cool. Yeah. Next up, we have one library that's extremely popular, takes care of something that basically is sort of a pain to work with on your own is dates and JavaScript, and date and time and all that stuff, time zones. And that's moment. Moment. js is a very popular library for working with date formats, it makes it really easy to change between time zones, format, your dates, sort of pull dates, create dates add to any sort of manipulation of time is moments strong suit, right, it becomes a really, really nice way of working with date and time.
+
+24
+00:14:39,510 --> 00:15:34,440
+Wes Bos: Yeah, it's, it's both for formatting time. So if you're coming from PHP world, where you have this really nice date function that you can pass like all these different like and and i in capital Y and get all the format of date from that you can pass those values to dot format on moment and then it will then kick out the format. For you. But the other things that it does is it does relative time, which is like, if you have like a blog post and you wrote it two seconds ago, it's gonna say two seconds ago. But if you wrote it three years ago, it's not going to say 3000 seconds ago, it's going to say six years ago, or however many years ago you wrote it. So you don't have to, like worry about all those if statements that I myself have written 100 times if the number of seconds is greater than show a day. And if it's, if it's more than six days and show a week, and you get the point, right?
+
+25
+00:15:34,710 --> 00:15:42,570
+Scott Tolinski: Yeah, absolutely. And it's, like I said, it's no fun working in in time and date, usually in moment takes so many of the stressors out of it.
+
+26
+00:15:43,679 --> 00:17:29,810
+Wes Bos: Yeah, um, one example I want to give one I've recently used it is, I built like a reporting dashboard for myself. So I could see like how many sales I got in a specific day or whatever. And then I have a calendar picker, which is great. And you can pick different things. But then I put these like little handy buttons along the bottom that say today, yesterday, two days ago, this week, last week, last seven days, last 30 days, last 60 days, this month, last month, and then all the years and whatever. And those buttons were really easy to to make, I didn't have to do any calculating, I just said, for each of those buttons, like let's take last week, for example, what I would do is I would say give me now, which is a moment, whatever today is, and then go to the start of last week or something like that. And then you can also include the entire week as well. Or, if you want to do today, you can say give me from whatever now is it's 251. And you can go Go to Start of today, you can go to end of day, or go to start of 30 or add seven days or subtract seven days, you get the point, right, you can do math as if it were English, but it will figure out all of the the milliseconds at timing and including I also a couple months ago, I had a reporting bug in my affiliate system where I was not giving people affiliates for like, I think the last four hours every on what the bug was, but I had to go back and pay out a couple people that I had had missed there. And that was because I had tried to do the adding of the time myself, whereas using moment, it would be way easier.
+
+27
+00:17:30,240 --> 00:17:59,060
+Scott Tolinski: Yeah, it's actually funny. You know, we both did the same technique there for our admin dashboards. It's funny because we we've both built our own platforms for e commerce. And we've done it entirely separately, but it's hilarious to see how many like the same choices we've made. So I also did that exact same thing, I have that row of buttons. I mean, obviously stole the idea from you know, stripe or YouTube, whoever has all those buttons and but yeah, same exact thing. And in moment makes all that stuff easy.
+
+28
+00:17:59,670 --> 00:18:46,550
+Wes Bos: That's really sweet. So we should also talk about an sort of new ish library called date functions date dash f n s. And it's sort of aims to be sort of the lodash, as lodash was like a an answer to some of the problems that underscore had, one of the problems that moment has is that it's starting to become a bit of a large library. And it's not extremely modular at the moment. And that's probably going to change. But somebody has written date functions, which is a sort of a modular version of moment, it does all the same stuff, that moment does, however, you can just cherry pick the different pieces of the library that you actually want to bring in from the library. Now,
+
+29
+00:18:46,580 --> 00:19:13,290
+Scott Tolinski: I haven't looked at date FNS enough. I mean, you shared it with me the other day, and I was really excited to see that this exists. But do you know about how it modifies the date, because in moment, if you're working with the date, and you're changing, you're constantly having to use that that clone method to create a new one, to create a new date to prevent you from manipulating something without setting it to a variable? Does date FNS function like that as well? Are you aware?
+
+30
+00:19:13,770 --> 00:20:02,130
+Wes Bos: Yeah, it's one of the big reasons people have moved away from moment is that it's it's mutable, you can mutate the actual data. That's what happens when you when you run a function against it. And the whole chant of the functional programming is make sure that everything is immutable, meaning that if you have a method that runs against an object, it shouldn't modify that original object, it should just return a new version of that. So one of the benefits to date functions is that it's immutable. It's a pure function, meaning that it's not going to overwrite the old one, it will just return you an actual a new version of it. So you can really shoot yourself in the foot sometimes there where you don't necessarily know if a function is going to mutate your data or not. And you can sleep easy With date functions knowing that it is immutable.
+
+31
+00:20:02,160 --> 00:20:30,510
+Scott Tolinski: Yeah, that's, that's really nice. Because I can't tell you how many times, you know, not having moment be immutable has, has caused, you know, bugs here or there or just sort of weird mysterious things. You're like, why is this? Oh yeah, I forgot it mutated the data I wasn't expecting it to. And, you know, even though you, you set it to a new variable, it's still mutated the original, causing you a whole bunch of headaches. So yeah, really excited to see that. I'll have to be checking this out pretty significantly.
+
+32
+00:20:31,530 --> 00:21:08,670
+Wes Bos: Yeah, it seems to be at a point where if if you were needing a date function, right now, I would probably reach for date functions instead of moment. That's not to poopoo anything moment has done obviously, that they have absolutely changed the way developers have have worked with dates. But it looks like date functions is a bit more of a modern library for working with dates. And as far as I have worked with it, the examples that I gave earlier, were actually all done with day functions, not with moment. All of the stuff has has been transferred over to the date function. So all the functionality is there.
+
+33
+00:21:08,700 --> 00:21:24,830
+Scott Tolinski: Nice. Yeah. And I heard a moment is well, I didn't just hear this it's been this way for like the past two years now or three years, whatever moments not going there's there's no updates to moment really is there. There's nobody at the helm. Or has that changed? Had you know about?
+
+34
+00:21:24,859 --> 00:21:35,790
+Wes Bos: I don't know. Let's, let's see. Let's look at the commit history. I haven't heard that myself. Um, the command history looks pretty. Pretty popular.
+
+35
+00:21:35,879 --> 00:21:41,550
+Scott Tolinski: So it's still being updated. Maybe it may be the original creator had abandoned it or
+
+36
+00:21:41,639 --> 00:21:42,630
+Wes Bos: move on. Okay.
+
+37
+00:21:42,630 --> 00:21:48,300
+Scott Tolinski: I you know, I'm not positive. remember seeing some posts about that, but it was a couple years ago. So maybe that's since changed.
+
+38
+00:21:48,540 --> 00:21:58,619
+Wes Bos: Maybe that's it. It looks like it's on its own like GitHub repo now, like moment, forward slash moment. So it probably is being actively worked on. So couldn't write it off just yet. Yeah.
+
+39
+00:21:58,619 --> 00:22:01,230
+Scott Tolinski: Community takeover. Good. Yeah.
+
+40
+00:22:02,640 --> 00:23:29,849
+Wes Bos: Cool. What do we got next in our list of things. One is called slug fi and all, I'll give you a little hilarious story about how I came across this library. So a slug is if you've use WordPress or anything like that, if you want to make a sentence into a URL friendly sentence without any of those, like percent 20. When you have a space, you need a slug library, that's going to convert it now. Most slug libraries come with the entire like the entire Unicode list, meaning that if you have like a heart, it will say like I heart you instead of like I emoji heart or it will convert any Unicode symbols emojis to the actual English representation of them. And that's really cool. But I was doing a react application on the client side where I needed that and it actually ended up making my bundle almost three. Meg's Yeah, so it's not something you can do. So sometimes you just reach for these libraries. npm install it, and you use it. And it works great locally, because it's instant. But you have to be careful about the the bundle size at the end of the day. So there's this library called slugga phi that doesn't include any of that it's a really small implementation of doing slugs, it does have the option to bring in Unicode if you need it on server side, but without it, you don't necessarily, you don't need it on the client side. So it's pretty simple. takes in a sentence will export out a URL friendly slug, that looks really nice.
+
+41
+00:23:29,910 --> 00:23:40,349
+Scott Tolinski: Yeah. And so I actually use a different library for this same thing. I use a called one is speaking URL. It's just all one word speaking URL.
+
+42
+00:23:40,560 --> 00:23:42,359
+Wes Bos: And I've heard of this. Yeah.
+
+43
+00:23:42,390 --> 00:24:15,990
+Scott Tolinski: And for me, I really only using this slug of five sort of technique, I'm pretty much only using it on the server. So I didn't look too hard at the bundle size, because it's not affecting my client bundle. But it's pretty feature complete has a lot of language stuff. And it was a nice and easy use for me just simply gets logged. That's it. So for me, I use a speaking URL. It's it's fairly popular, has a good number of stars and seems to be really active in development. So
+
+44
+00:24:17,700 --> 00:24:44,430
+Wes Bos: that's pretty sweet. It looks like it says on the NPM repo that it is or client and browser, or sorry, client and server side. So you're up and running. Cool. That's good off to check that one at the end of the day. Like sometimes these things do the exact same thing. And people love to talk about the differences between the two but they they often just do the exact same thing, which is replacing spaces with dashes. Yeah, and comments, stuff like that. Yeah,
+
+45
+00:24:44,430 --> 00:25:18,420
+Scott Tolinski: right. Yeah. Okay, it looks like speaking URL is 12 K, normally and 6.2 k g zipped. So not not too big there but yeah, I only use it server side. But yeah, I mean, same, same for same for here. It's whatever works for you works. And if you don't need a library to make your slugs, you know, totally get it if your slugs are very simple if you want to make sure and you know, take care of edge cases, like what emojis and our languages and all sorts of stuff like that, you might need a library to save yourself some time.
+
+46
+00:25:19,619 --> 00:26:35,099
+Wes Bos: Totally. Next up, let's talk about data fetching. So on the client, we now have fetch, which is a built in, maybe we'll talk about the olden days, the olden days, we had jQuery is dollar dot get or dollar dot Ajax, which it was a really nice API for actually fetching data. And then along came fetch built into the browser. And it's great, but sort of the downside to using fetch in the browser is that the, there are no good defaults, meaning that often these libraries will default to using JSON. And if you don't tell it that you're using JSON, or if you don't parse the JSON response, in a second promise on fetch, it will break. So you have to make sure that you do that. And specifying headers and whatnot isn't necessarily the easiest. So when I am doing any sort of serious Ajax, if I'm just doing quick demo, I'll use fetch. But whenever I'm doing some serious Ajax in the browser, I will reach for a library called axios, which is by far in my opinion, the best library both on the client and on the server for fetching data, pinging URLs, posting data to REST endpoints, or submitting forms or anything like that have used axios before
+
+47
+00:26:35,099 --> 00:27:18,300
+Scott Tolinski: No, I've always used just fetch with the the fetch polyfill from GitHub, you know, for browser support, but I haven't, I mean, the stuff you just said, hit close to home with the you know, the nice defaults. You know, there's absolutely nothing fun about setting your headers all the time and stuff like that. So no, I'm gonna give this library a look, I haven't, you know, I haven't done a ton of data fetching, to be honest, I work mostly with the YouTube API. But even then, you know, my systems in Meteor and Meteor has their own fetching library, which is just HTTP GET, which is really nice. And so for me, I haven't had crazy amount of use for this. But I can see, you know, the benefits almost immediately and be totally psyched to use this.
+
+48
+00:27:19,230 --> 00:28:08,970
+Wes Bos: It's, it's really nice and especially on when you're on the server side with node, whatever you use for long size, a library called request. And axios is all promised based, meaning that you can use it with dot then or you can use a sink await, if you haven't a sync function. And then also has the ability to use something called cookie jar, which is you can sort of fake or hold cookies, if you're doing server side requests, you don't really have the concept of cookies in your browser. So you can use this thing called cookie jar, which will allow you to save cookies and or fake cookies and submit them on every single request. So if you're doing any sort of scraping or logging into systems, that's going to be super helpful. They're nice. I like the name to cookie jar. Yeah. Some about JavaScript there. People are really good at naming their naming their projects.
+
+49
+00:28:09,000 --> 00:28:19,980
+Scott Tolinski: Yeah, I know, there is an influencer whether or not I'm excited to use a library or not, it's got a sweet name, maybe just a little bit more excited to use it. Yeah, exactly. There's
+
+50
+00:28:19,980 --> 00:28:44,160
+Wes Bos: also this is something I haven't used before. But there's there's a caching plugin for axios as well. So sometimes, I implement my own caching. And I think like, maybe it'd be easier if there's just like something I could plug into the the GATT library. So if I were to, to ping this URL again, then it would maybe Deliver me a cache of that actual data. So pretty sweet. Check it out. axios is really, really good.
+
+51
+00:28:44,940 --> 00:29:21,570
+Scott Tolinski: Nice. Yeah. Next I have a, I have one that's working with local storage variables. And this is just store dot j s. And it makes working with local local storage as easy as like store dot get or store dot set. And because of that, you don't have to worry about any sort of browser versions or you don't have to worry about any of that stuff. It just makes setting and saving information to local storage as easy as possible. I you know, basically could not work with local storage as smoothly as without this.
+
+52
+00:29:22,830 --> 00:31:04,920
+Wes Bos: That is pretty sweet. I have actually have a local storage one as well. And this is something I use heavily on my website, since the way that I do my courses is that I have a new domain name for every single one. I have a bit of trouble with sinking data between all of my actual websites. So we'll cross storage cross charges from Zendesk. So if you've ever had to do ever had like a chat pop up on a website or had to do like, if you had like a file an issue with someone's like a help desk software, they have this library called cross storage. And essentially the way that it works is that you create a hub. So you create a hub on on what website, and that is your local storage hub. And then you can give it permissions on all of these other domains, which you wish to share local storage between the two. So essentially, it will just pop up a little iframe in every other domain name. And then if you set local storage on one of your domain names, or if one of the other domain names set some data, it will sync between all of your domain names as if you are on a single domain name. But it will sync up between everyone. So I use that fairly heavily on on my websites. Nice. Yeah, that's pretty immediately super handy if you're working on a cross cross domain stuff. Yeah, you don't really have to, it's, it's pretty good in terms of telling you about the security of that. But you definitely need to, like check your stuff three times over. Because whenever you're doing anything that is cross domain, you need to be careful that you're not accidentally giving access to other domain names that should not have access to that data.
+
+53
+00:31:05,010 --> 00:31:06,150
+Scott Tolinski: Mm hmm. Absolutely.
+
+54
+00:31:06,210 --> 00:31:32,310
+Wes Bos: Like, if if Scott were to if you were to visit Scott's website, he shouldn't be able to load up my website in iframe and grab all of the local storage data from that'd be huge security issue word. Yeah. Next up, what do we got here? I got one called Faker j. s know if you've ever needed to create a bunch of fake data, whether it's names, last names, profiles. Let's take a look here. Well,
+
+55
+00:31:32,609 --> 00:31:55,170
+Scott Tolinski: yeah, Faker is one of those libraries that if you are doing any sort of testing, or you're building out some default data in your system, you've probably come across Faker is really just a, it's one of the coolest things ever to basically just implant a whole bunch of fake data. And it can come from anything from photos to names to locations to any sort of data that
+
+56
+00:31:55,170 --> 00:32:23,910
+Wes Bos: you want addresses. Yeah, postal codes, Country, Country codes, account names, credit cards, abbreviation verbs, images, you get the point, right, it's tons and tons of fake data. And I'm, I always love using, like good data when I'm even when I'm making something. So rather than just like mashing your keyboard, it's nice to be able to fill it with some some real world looking data.
+
+57
+00:32:25,230 --> 00:32:38,670
+Scott Tolinski: Yeah, absolutely. And if you I mean, if you're working in teams, and you need like, a default set of data, you know, couldn't make it any easier to populate that database, right? So yeah, yeah, absolutely. Faker is a big, big one.
+
+58
+00:32:39,840 --> 00:33:52,140
+Wes Bos: Big fan of that, um, I am going to take a break and talk about our sponsor. So a sponsor is fresh books, which is cloud accounting software, I use it myself to send out invoices to clients of mine, anytime I need to be reimbursed for travel. Anytime I have an expense, what I'll do is I'll quickly if I got a receipt in my pocket, I'll open it up, I'll snap a picture of the receipt, I'll input how much it was. And I can I can archive that receipt or throw it in the garbage. So anytime I have any sort of invoice that comes in any sort of expense. At the end of the year, what I do is I just hit export on all the data, from all of my invoices, all of my expenses, all of my clients, all of the different currencies. I know I have three or four different currencies at the end of the year. Give that all to my accountant and he's really happy with that I don't have to spend any time and I hate doing book stuff like that. I understand it. I just don't like doing it at all, because I'd rather be actually coding so big fan of fresh books. I've been with them for about seven years. If you want to get a 30 day free trial, go to fresh books comm forward slash syntax and make sure you enter in syntax in the How did you hear about a section? Thanks so much for them to sponsoring.
+
+59
+00:33:54,540 --> 00:35:04,170
+Scott Tolinski: Cool, so let's get back into these uh, utility libraries. I have a basically, I don't know if you've if you've migrated over to react router for for your stuff yet? Yes, I have. Yeah. Yeah, I was pretty bummed to learn that they don't have URL parameters anymore. Like query parameter parsing? Yeah. Yeah. So they sort of I mean, I understand the take, right. So it's, why include this when you could, if you need it, include it yourself, right? So yeah, luckily, there's no in the browser a way to basically pull out these query parameters from your string from your URL, but it's not totally browser compliant. So one thing I pretty much use all the time is this URL search params polyfill. And there's a couple of libraries here I use the one that's URL hyphen, search, hyphen, params hyphen, polyfill. However, there's also one without the word polyfill. That looks pretty popular as well. I don't know the difference between the two. I haven't really investigated that much. But it basically allows you to just parse your URL and grab out the query parameters or pretty much Anything as you need without having to worry about browser compatibility,
+
+60
+00:35:04,800 --> 00:35:20,960
+Wes Bos: I did not know that this was coming to the browser. So you're saying that, and this was actually one of my pics later. But if I have like a gnarly URL that's got a whole bunch of search params in it like three or four, it will parse that, like, it'll parse the string.
+
+61
+00:35:21,030 --> 00:35:41,730
+Scott Tolinski: Yeah. So check out a developer dot mot. Well, whatever. The Mozilla developer, it's called URL search. params. Basically, it's Yeah, it's utility methods for working with a string URL string allows you to get get all has keys set sort to string values. Oh,
+
+62
+00:35:42,960 --> 00:35:44,010
+Wes Bos: that's pretty sweet.
+
+63
+00:35:44,360 --> 00:35:48,540
+Scott Tolinski: Yeah. I guess more of a polyfill than a library. But you know,
+
+64
+00:35:49,530 --> 00:36:22,350
+Wes Bos: exactly. Well, I guess like, the tip would be that the browser now has or will have this thing called URL search. params. Which, if you've ever tried to parse the URL yourself, like, I always like, oh, how hard can it be split it on the ampersand and, and then and then split it each one of those on the equal sign, and you can call it a day. But there's so much that goes into dealing with URL search params. So that is pretty neat. It looks like it's a iterable as well, yeah, I
+
+65
+00:36:22,350 --> 00:36:37,880
+Scott Tolinski: discovered this when I was just trying to solve that react router four issue found an issue queue about asking about query parameters and react router, and someone recommended it in the in the issue queue. I'm just really psyched to learn that it exists. So nice. That's pretty cool.
+
+66
+00:36:38,360 --> 00:37:34,050
+Wes Bos: Well, along the same, I guess the same idea of that is, there's a library called or this little snippet called parse u ri, which if you have an entire string, and you need to get what is the domain name, what is the origin? What is the path? What is the hash? What is the not just the this search query after the question mark, this library will give you absolutely all of that, which is pretty sweet. And then I also when I was doing this, I also found out that someone said that you can just create do a document, create element and create like a blank link, and then set the href to whatever it is that you want. And then you can you can take that link and look for the protocol, hostname port, path name search, and hash, which is pretty neat. And the one thing that does not do is the IT WILL NOT chunk up your your actual search. So if you have three or four things in your search, then you need to use your actual library there.
+
+67
+00:37:34,110 --> 00:37:35,940
+Scott Tolinski: Gotcha. Cool,
+
+68
+00:37:36,000 --> 00:37:37,290
+Unknown: pretty sweet.
+
+69
+00:37:37,320 --> 00:38:34,730
+Scott Tolinski: Yeah, um, here's a library I use all the time for working with web hooks is the is n grok. I don't know how to say this. It's mg R, okay. And it basically just exposes, it connects here a port, and opens it up so that you can hit that port. So if you're working locally, and you need to test out your web hooks, what did I used to use, I used to use local tunnel and local tunnel would essentially crash for me every 20 minutes to an hour. And each time it restarted, it would generate a new URL. So then you'd have to go back into stripe, reset your web hook, reset your URL. And luckily, I've just shared asked around on Twitter what people use. And this end graph is by far the most Suggested Use it haven't had any issues with crashing, keeps the tunnel open, and has been making my life a lot better with working with web web hooks there.
+
+70
+00:38:35,730 --> 00:39:06,030
+Wes Bos: That's pretty sweet. I should say before we get 1000 are Twitter replies that local tunnel does allow you to specify a domain name, so that it will be consistent across it will if you do not give it a domain name, it will it'll give you a random key every single time. But it will allow you to say like Wes Bos, and then it'll try to give you Wes Bos dot local tunnel.me if it's available. And then that's what I've used previously to keep your web hooks consistent.
+
+71
+00:39:06,030 --> 00:39:10,190
+Scott Tolinski: Oh, nice. So you don't have issues with it. It's stopping after a period of time.
+
+72
+00:39:10,560 --> 00:39:45,990
+Wes Bos: And no, I've been I've been I I've heard a couple other people, which is why people really like and grok. So I've heard it's really good. But I am a big fan of a tool called browser sync. And browser sync has a local tunnel baked right in and you can just pass it a URL and I use I use that a lot because if I need to either do a web hook or show somebody a website that is only local or want to open it up on my phone and it's only on my computer, it will just expose it via an external URL. I guess what we'll do a whole show on like, kind of cool tools like that as well though.
+
+73
+00:39:45,990 --> 00:39:47,520
+Scott Tolinski: cool tools.
+
+74
+00:39:48,170 --> 00:39:48,690
+Wes Bos: Cool to
+
+75
+00:39:51,090 --> 00:39:58,620
+Scott Tolinski: tasty, delicious, cool tools. Okay, cool. So, yeah, what else we got here? Um,
+
+76
+00:39:58,620 --> 00:42:03,600
+Wes Bos: I got one called a sale. Which was massive in the node community a couple of years ago. And it's still really, really popular. A lot of people don't use it anymore, because we now have promises and async await. But there's this library called a sink. And it essentially allows you to do really good flow control in your application. So like, let's say, for example, you're trying to charge somebody's credit card and create an account, there might be four or five steps where you validate their data, you, you charge the credit card, you create an account, you check if there's actually an account, or whatever needs to go on in between that. And if you were doing that, just with callbacks, it would really quickly get into what's called callback hell. So what a sink allows you to do is like, there's all these different methods that live inside of a sink like there is, you can run parallel, you can run them after series, you can run them in waterfall, where you do one, you pass the result to the next one, and you pass the results. The next one, a lot of these are now are now obsoleted by a sink away, but some of them were if you need to do some like really heavy stuff, like for example, I was updating 100,000 Records. And my computer couldn't do all of them at once. But I also didn't want to do one app at a time. So there's, I think there's like you can do like, forget what it is. But you can say like, do at least five at once or do at most 12 at once. And if you ever have any sort of like complicated flow control, where you need your code to run as fast as possible and make a lot of sense, take a look at the methods of a sink. So well the way I think about it is that like lodash is this like helper methods for dealing with data. A sink is a whole bunch of helper methods for dealing with complicated flow control where things need to happen a synchronously and, and a synchronous synchronously at different times. Nice, yeah, big fan of it. What else we got from you, Scott, anything else?
+
+77
+00:42:11,100 --> 00:43:03,150
+Scott Tolinski: tier might have hit my limit of utility library. I don't know, I think a good suggestion is to also don't be afraid to roll your own utility library. I know we mentioned before that, you know, you might end up building up a maybe there are a large file or folder structure of files. But even creating helpers for your own code, whether it's you don't like a particular libraries API, and you want to maybe change it or there's one particular function that you're reading all the time, and you want to write some defaults for yourself. writing these like helper methods or helper functions for yourself, could be a really super useful way to save yourself some time overall, as long as it's, you're using things like bundling and stuff like that you're not bundling a whole bunch of helper functions that you don't need, you know, so yeah, don't I guess it's not necessarily library. But yeah, don't be afraid to write your own helpers.
+
+78
+00:43:04,130 --> 00:43:37,610
+Wes Bos: I think that's really important, especially if you are in the interviewing stage right now. Because often, what interview questions are, are these things that you go, I don't, I don't know, I would have just used lodash for that. So if you can, like, be like, Hi, I wonder how I would do that without lodash is sort of like when we transition from jQuery to vanilla? Or like, how would I do that without jQuery? Maybe challenge yourself and say, like, how would I do that without? Without lodash? How would I just write that in just vanilla JavaScript. And the best part about all
+
+79
+00:43:37,610 --> 00:44:12,180
+Scott Tolinski: of that is, is you have a really awesome answer sheet, if you like, you challenge yourself to do this. And then you can go look at the code of lodash and just say, Oh, this is how they're doing it. And you know that because of you know, who's behind lodash, you know that their solution is going to be top notch, like, so you can look at that code and learn so much about JavaScript, and maybe compare yours to that and think about how could you have changed your thinking to make it a little bit better based on what they're doing in other libraries, right,
+
+80
+00:44:13,800 --> 00:46:08,130
+Wes Bos: though? Totally, totally. So I got one more here that I'll say I've got a couple others, but I think that they're better suited to a different episode. But this one is called blink. j. s. And it's not even a library. It's just a just from Paul Irish that he he made this years and years ago. And essentially what it is it when we move over or if you've moved over from jQuery, you're used to like the the dollar sign selector to grab things and you're used to the nice.on method, which will bind to add event listener. So what blink dot j S will do is it will make window dot dollar equal to document dot query selector So, so instead of saying document I query selector all, you will just say dollar, and then that will go off and select all the items. If you've done my node course, you know that this is actually, we use a bit of a modified version in my node course of this just because it's so much easier. And then it will also modify the prototype of a node with just every element on the page. It will just, it basically just takes dot add event listener, and makes it.on. So you can, you can just chain.on onto your elements. And then there's a couple other things that it does, oh, yeah, if you can use on, which will loop over. So like, for example, if you've had, if you have a node list, that's six or seven items, you know, you have to loop over and attach an event listener to each one, this will just say.on. And will, it'll attach that event listener to every single one of them without you having to explicitly loop on it. So it's tiny, it's 15 lines long. But it makes life a lot easier, especially if you're used to the nice API that jQuery gives you. And the vanilla API is is not so nice.
+
+81
+00:46:08,490 --> 00:46:37,230
+Scott Tolinski: Nice. Yeah, love that. I mean, anyone who's grew up with jQuery, or has used jQuery extensively, you know, this some of this stuff, is, is one of the main reasons why you didn't want to go to just plain vanilla j. s, right? Just having that those long, sort of just methods that you have to remember, the techniques a little bit different, you have to worry about browser edge cases. So it's nice having stuff like this, to sort of ease that pain a little bit.
+
+82
+00:46:38,070 --> 00:47:19,620
+Wes Bos: Yeah, and there have been people that have taken this and and built it out a little bit further. So if you look up blink j. s, you'll also find some GitHub repos, I believe what they also do is, I believe what they added was the ability to if you select a node list, and there's nothing found and you try to chain on or to add event listener to it, it will fail silently, which is again, that's what jQuery does. And if you try to call the Add event listener against an empty node, or something that is undefined, you're going to get that problem cannot read property or cannot call mended. addEventListener of undefined. So it's, I don't know, it's kind of a slippery slope, because then your mind starts going. And before you know it, you've created your own jQuery. Yeah.
+
+83
+00:47:22,260 --> 00:47:31,440
+But I think adding a couple lines to your code base for boiling jazz is totally worth it if you're doing a lot of vanilla Dom interaction stuff.
+
+84
+00:47:32,610 --> 00:47:40,440
+Scott Tolinski: Cool. Love it. Awesome. I mean, these these, there have been some tasty, tasty utility treats.
+
+85
+00:47:43,230 --> 00:47:45,810
+Wes Bos: Well, let's move into our sick picks.
+
+86
+00:47:45,840 --> 00:47:46,500
+Scott Tolinski: Mm hmm.
+
+87
+00:47:46,500 --> 00:47:49,860
+Wes Bos: What do you got for a sick pick today, Scott? Yeah, today,
+
+88
+00:47:49,890 --> 00:48:37,800
+Scott Tolinski: my sick pick is a techy USB hub. So so touchy makes some really nice looking products, by the way. They just discovered them when we Wes and I both recently got the new MacBook Pros, which have a bunch of USB C ports, which obviously don't connect to a whole lot. So you know, we were We've been living the dongle life, and Wes recommended the Cal digit past couple of videos ago. And that one is a brilliant solution for if you need a lot, right? You're driving two monitors, right? And it has it powers itself. So it functions your power cord and stuff like that. I didn't need all that stuff. I'm only driving one monitor. Granted it is a ultra wide weak. Yeah.
+
+89
+00:48:38,820 --> 00:48:43,050
+Wes Bos: Okay, it's a 4k. ultra wide. Yeah. Wow. Okay, carry on. It's
+
+90
+00:48:43,050 --> 00:48:49,470
+Scott Tolinski: 38 inches, man. Then this thing is huge. It's seriously ridiculous.
+
+91
+00:48:50,040 --> 00:48:51,360
+Wes Bos: But is it 4k?
+
+92
+00:48:51,360 --> 00:48:58,680
+Scott Tolinski: It's it's not they say is 4k, but it's not truly 400 pixels. I would have to check the exact dimensions.
+
+93
+00:48:58,710 --> 00:49:00,300
+Wes Bos: It's close. It's long. It's
+
+94
+00:49:00,300 --> 00:50:01,710
+Scott Tolinski: Yeah, it's close. Because it's long. Yeah, it's three 344 by 1440 1440 tall. It's it's super wide. And it's curved. It's awesome. But either way I didn't need to drive multiple monitors just one and yeah, this thing's great because it has power pass through. So you plug your MacBook power into one end of it. And then it has three USBs it has Ethernet and it has HDMI and then an SD card and a micro SD card. So they make a whole bunch of different ones and all different shapes and sizes based on your needs. But the one I got was this type C 4k. Ethernet adapter is 89 bucks has really stepped up my dongle game. Pretty heavy. I actually recently got gigabit internet over here. So I got 1000 up and 1000 down. Wow in my office. Yeah. So I really needed that Ethernet wired up to take full advantage of that. So this thing has been making My network fly.
+
+95
+00:50:02,550 --> 00:50:13,170
+Wes Bos: That's sweet. So you just plug this little thing. Am I looking at it right now where it has two USB C connectors and it kind of just clips into the side?
+
+96
+00:50:13,290 --> 00:50:38,670
+Scott Tolinski: No. So I got the the Type C multi port adapter. It's it. I see it. Yeah, so it only takes up one I didn't want to take up to the other one potentially could have taken up your headphones or your headphone jack and stuff on the one side. So this one's a little bit more flexible. Maybe a little less features. I'm not quite positive about that. But it has served me well in these past like week or week, two weeks that I've had it.
+
+97
+00:50:39,900 --> 00:50:42,000
+Wes Bos: Pretty sweet. What color did you get? Oh, I
+
+98
+00:50:42,000 --> 00:50:48,090
+Scott Tolinski: got the Space Gray. Because you got to get matchy matchy matchy with the laptop. The only way you can go yet I
+
+99
+00:50:48,090 --> 00:50:49,620
+Wes Bos: got space. Great there. Oh, yeah.
+
+100
+00:50:49,950 --> 00:51:01,200
+Scott Tolinski: Yeah. I don't know why Apple didn't do this sooner with I mean, I think people have been asking for like a black or a darker aluminum laptop forever. So I'm pretty psyched about the Space Gray.
+
+101
+00:51:02,430 --> 00:52:26,070
+Wes Bos: Cool. Well, my pick of the sick pick, not pick the day sick pick is a book called essential ism. And this is a book that I actually I read or audio booked, maybe six months ago, and I'm getting back into it again. I'm just gonna give it another listen. Because it was so good. I often don't like leave books been like, wow, that was amazing. But this essential ism book essentially just looks gives makes you look at your life and cut out the stuff that you don't need. So I think everybody's a little bit over subscribed these days. I think as I get busier, I realized that like, I like to say yes to a lot of things. But then I often find myself looking back and be like, why did I say yes to this, or, Oh, it's so annoying that I got to spend a whole day doing X, Y or Z or I'd much rather just be doing the core fundamental thing that is running my business, which is creating courses that's at the end of the day. That's what all it is. So this essential ism book is is fantastic in that it shows you how to cut out stuff, and how to evaluate the different things in your life of whether they would be worth doing or how to evaluate what you should actually be spending time on in both your business and your life. So So is this it's a fantastic book. Yeah, go ahead. Is
+
+102
+00:52:26,070 --> 00:52:32,640
+Scott Tolinski: this the centralism? The disciplined pursuit of less is this. That's it. Okay, cool. Just making sure I'm looking at the right one.
+
+103
+00:52:32,970 --> 00:53:01,380
+Wes Bos: Greg McCowan is is the author of this one. And I again, I got it on audiobook about six months ago. I definitely recommend the audiobook or the hardcover if you prefer to read but it's it's something that I'm constantly doing. There's a really good quote by it. The quote is if it's not a hell yes, it's a no. Hmm. And that's by let me get the author of that
+
+104
+00:53:01,590 --> 00:53:04,890
+Scott Tolinski: already. Like that, quote. Sitting well with me right now.
+
+105
+00:53:06,720 --> 00:53:15,690
+Wes Bos: Um, it's like one of my favorite people ever. It's just the guy behind CD, baby. Oh,
+
+106
+00:53:15,720 --> 00:53:17,070
+Scott Tolinski: yeah, I remember CD Baby.
+
+107
+00:53:19,650 --> 00:54:00,330
+Wes Bos: Okay, I gotta figure this out. It's gonna bug me, Derek Severs? He said, If it's not a hell, yes, it's a no. And he has another really good book that I'll probably recommend another one. But essentially, if something is not getting you super excited, then it's probably not something you should be taking on. And I'd be careful with that. Because sometimes people shy away from stuff because they're a little bit intimidated or they're nervous, about about taking on something that's a little bit past them. But I often find myself regretting items that were only like, uh, huh, I could be cool. I'll do it. But when really it should have been. This is not a hell yes, I'm cutting it out of my life. Yeah. And
+
+108
+00:54:00,330 --> 00:54:38,520
+Scott Tolinski: that's one of those things you have to practice. I am the exact same way and as many times as you actually, you know, can, you know, praise yourself for saying no to stuff? It is really easy to creep back in and then you know, you'll find yourself a month later being like, Oh, wait, I should have said no to all this stuff. I thought I was doing really well. I know. I'm the exact same way I say yes to way too much stuff. And it cheapens everything you do, right, because no longer you're gonna get to do that much attention to any individual thing. So I'm gonna have to read this. Yeah, I have not, I will put it on audiobooks. I'm not a talented reader. So
+
+109
+00:54:39,600 --> 00:55:27,690
+Wes Bos: awesome. Let's move on to our last section, which is shameless plugs. And I actually don't want to plug my own stuff today. I want to plug a friend of mine. I don't know. I'll call him a friend. And I'm gonna totally butcher his name. Denise gajar. I'm so sorry. If I just Totally butchered that. But what happened is that every time we release a syntax episode, he creates this really cool like photoscape of what the episode is about. So for example, like the tooling one, he got it, he got a picture of his iPhone, he put a bunch of tools around it. Or for, for my origin story, he got a like, kind of like a superman but with like a really hilarious shirt that I would wear and put it underneath.
+
+110
+00:55:27,720 --> 00:55:29,460
+Scott Tolinski: So That sure was on point. Yeah.
+
+111
+00:55:31,710 --> 00:56:14,820
+Wes Bos: Or like the money one, he put like the picture of the iPhone, and it looks like Wi Fi, but with actual money on top. So he spends a lot of time on these. I think they're, they're really pretty cool. I've actually since hired him to do some design work for me, which is, I guess, a pro tip on how to get noticed. It's worked well. But the stuff he's been doing is just amazing. And also if you go on Instagram, it's Denise DHANHGA jj AR. He's right now he's doing the CSS flags, where he's doing every flag in the world in pure CSS. And it's just blowing my mind of how cool it is. Yeah,
+
+112
+00:56:14,820 --> 00:56:26,400
+Scott Tolinski: I've been telling is I really liked his, uh, his solutions to some of that stuff. So like when he runs into maybe a tricky, tricky flag. I've been really liking to see what he comes up with. So yeah,
+
+113
+00:56:26,460 --> 00:56:45,690
+Wes Bos: yeah, it's, it's very, He always talks about like, like, problems that he's having, which I love seeing people work out in the open like that. So definitely check out his Instagram, he posted to Twitter as well. But the Instagram is, I think kind of he's got almost 6000 followers on Instagram. So that's probably quite a few of you already following him. So
+
+114
+00:56:46,230 --> 00:57:53,250
+Scott Tolinski: yeah, so my shameless plug, I'll follow your lead and plug something that's not my own. Actually, it's kind of my own. In a way. I made a video on level up tutorials last week, you can check it out right now about easy snippets. Yeah. So this tool was created by Pavel Gish back. And it's basically a website that allows you to paste in some code. And then there's three tabs, there's a VS code, a sublime or an atom tab, and it outputs the snippets syntax. So if you're making the writing code snippets, and then neither of those editors, you will know that especially in VS code, it's a pain because each new line has to be its own string, you can't do like a multi line string with it, like you can add them. So this just takes away all of that stuff. You just enter the snippet name, you paste in your code and you know, blow up your your snippet. Shout out to you that you can just paste right into VS code. So awesome. Worked by Pavel there. I've been just tweeting about it. I've had it on my YouTube channel. So if you follow me in any capacity, you've probably seen this already. But seriously, excellent. Is the
+
+115
+00:57:53,250 --> 00:57:54,240
+Unknown: URL for it.
+
+116
+00:57:54,300 --> 00:58:16,950
+Scott Tolinski: It's his website, you'll want to just either go to my channel, go to the video and click on it. Or hit up shownotes Yeah, show notes. Exactly. Well, we'll link to it in there. So it's pavlos website. He's has a Polish last name. So I don't want to have people try to try to type that out every time you know, as someone with a Polish last name themselves knows the how well that works out.
+
+117
+00:58:18,000 --> 00:58:47,940
+Wes Bos: Yeah, I think everybody gets their last name, butchered, butchered, I often get both. Both. Yeah, yeah. Makes sense. But it's boss. Cool. Well, that's it for this week. Hopefully you enjoyed it. If you have ideas for the show. Anything you'd like to see us covered. Make sure you hit us up. We're on Twitter. I'm at Wes Bos and Scott is at s total insky. Awesome. Well, thanks so much. And we'll see in the next one. Head on over to
+
+118
+00:58:47,940 --> 00:58:57,900
+Scott Tolinski: syntax FM for a full archive of baller shows. Don't forget to subscribe in your podcast player. Drop a review if you'd like the show. Until next time
+

@@ -1,0 +1,176 @@
+1
+00:00:01,290 --> 00:00:02,790
+Announcer: You're listening to syntax,
+
+2
+00:00:02,790 --> 00:00:04,560
+Unknown: the podcast with the tastiest
+
+3
+00:00:04,560 --> 00:00:10,590
+web development treats out there, strap yourself in and get ready. Here is Scott solinsky and West boss
+
+4
+00:00:10,650 --> 00:00:34,500
+Scott Tolinski: and welcome to syntax in this hasty treat. We're gonna be talking about freelancing, answering some questions that we received via email and Twitter and all sorts of stuff, just about general thoughts on different topics relating to having freelancing clients, and working as a freelancer, as always, with me is West boss.
+
+5
+00:00:34,530 --> 00:02:46,050
+Wes Bos: Hello, Hello, we are trying another minisode. Um, it's gotten I have this massive list of topics that we would like to get through. And there's a lot of topics that are, are not beefy enough for an entire hour long episode, but would would better be suited towards a minisode, which I don't know, we'll see how long this one is maybe 2025 minutes. So that's exactly what we're doing here. We did a huge episode on freelancing a couple months back, and we got a lot of follow up questions. So we're going to try and tackle some of those questions that we have. This episode is sponsored by Jonathan Starks a value pricing bootcamp. So Jonathan Stark has his book called hourly billing is nuts. And he's a huge proponent of this thing called value based billing, we'll talk about it. And that book is awesome. And I totally agree with everything he has to say. And what he's doing with this podcast sponsoring is he's trying to get people to sign up for his free, what is it a six day email course called value pricing boot camp.com. And in that, he's going to teach you basically the basics of how to get up and running with value based billing rather than hourly billing. So he talks about how hourly billing limits limits the growth of your business, how value based pricing works, how to do it, versus fixed bid stuff, a whole bunch of stuff in there. So if you are either a freelancer or you're maybe thinking about doing like a side hustle, make an extra couple grand a month, doing some some side work. Or if you maybe would like one day like to live the dream and work for yourself, I would definitely start here. Because that mindset of being able to charge what you're worth and make some good money is crucial to being a developer as as is the actual development skill, I'd say both of them are just as important. So head on over to value pricing bootcamp.com. And you can sign up for his free email course that will come I think it comes one a day, which is nice, because you can sort of learn it over a week. So thanks so much to Jonathan Stark for sponsoring.
+
+6
+00:02:46,350 --> 00:03:01,380
+Scott Tolinski: Nice, it's one of those things that can save you so much money long term, like once you understand how to get that type of billing and everything like that, that can just well not just save you money can make you money can make you a lot more money than if you were trying to build other ways.
+
+7
+00:03:01,680 --> 00:03:52,740
+Wes Bos: Mm hmm. Absolutely. I did this myself. I'll talk a lot. I did some hourly billing as well, you can go back to the freelance episode and talk about that. There's some some situations where that still does make sense. But if you're trying to take on your own clients and do your own project, this value based billing is the way that you're going to make some significant money and be able to still take vacations and not feel like you're you're trading ass and seat time for for however much money. And if you if you want to take the day off and go snowboarding like Scott does, then you totally can. sick, sick. So let's that that was our sponsor spot. Let's move into the actual content of this episode, which is answering some questions about specifically about freelancing. Again, if you want to hear a little bit more about Scott and I's history with freelancing, go and check out let me find out what episode that was for you One sec. Yeah, I
+
+8
+00:03:52,740 --> 00:03:54,330
+Scott Tolinski: feel like that was an earlier one.
+
+9
+00:03:55,170 --> 00:04:06,690
+Wes Bos: Episode Five, how to. Yeah, that was a very long ago. So how to slam dunk freelancing. And we go into our histories with actually getting paid and doing it on your own.
+
+10
+00:04:06,720 --> 00:04:18,660
+Scott Tolinski: So I'm gonna I'm gonna jump in here and ask this first question. Okay, the first question. I'd love to hear ideas, I'm building a portfolio to land those first few customers. How do you build credibility?
+
+11
+00:04:18,689 --> 00:06:02,399
+Wes Bos: Yeah, so I think the important part here is that your portfolio really doesn't matter as much as your credibility and your your referrals. So for most of my career, I had a really terrible portfolio. And most of the decent stuff that I had worked on was not able to do publicly because often what had happened is that, like, an agency would, would get a huge contract and then they would bring me on in the agency would take credit for that or as I would just build it and get paid for it. So some of the best stuff I did. I was not able to say I did that. And I think that what's important is that when people are looking to hire a freelancer They want to skim through your portfolio and see that you're good. But it's not going to be that killer portfolio that's going to set you across this set you aside from everyone else, what is going to make people choose you is the reputation of you, yourself, your character, you as a business. So almost all of my work came from being referred from other people. So people would say I had worked with Wes, before he does a great job, I recommend that you go with him, and that's going to be worth its weight in gold. And as well as the reputation in the community. So I was blogging a lot about specific technologies, I was doing conference talks about specific technologies. And by putting yourself out there, and talking about these specific topics, you sort of position yourself as an industry expert, whether you are or not. And then that's going to to go much further than a really nice portfolio. Because you sort of stand out as as the person to hire for that topic. Yeah,
+
+12
+00:06:02,399 --> 00:06:36,420
+Scott Tolinski: I feel like portfolios are really only like super key with like, straight up design gigs, right? Like if someone wants to see your your style of work more so than your quality of work than a portfolio can come in certainly handy for design work. But yeah, so what about these before you have referrals? Like before you have somebody recommending you, you maybe haven't even done a freelance gig before? What What do you do to prove to them that you you do have what it takes to see their vision? True? Yeah, I
+
+13
+00:06:36,420 --> 00:08:07,500
+Wes Bos: think what I did is, first you tell people that that's what you do. Sometimes people are like, how do I get thing and they go to their website? And it's just like, it's like a white page. That's, like, super minimalistic. It's like, No, you have to tell people, I build kick ass websites. The second thing is you need to ask people. So a huge part of what I did is I would just I made a list of 100 businesses in Toronto, and I emailed 100 people. And I said, Hey, do you need any any work done. And that might seem weird, because that's annoying. But if I guarantee if you put in the time, and you contact 100 different businesses that might need some work, they're going to, they're going to find you. And then I, another thing that I did is I would be very vocal on Facebook, I will go to a lot of meetups and just tell people, hey, I'm a web developer. I'm a web developer. And what tends to happen is that just by saying it over and over whether it's like taking Instagram of your your laptop, and some code or whatever, that gets sent in people's mind, and then saw at some point in the next half a year year, someone's uncle is going to need a website, or someone's aunt's daughter is going to need some an app built. And they're going to say, oh, Wes, does that. Let me let me refer you to him. Because we will always reach out to their inner circles first and say, Do you know anyone? So being on the flip side of that, you need to make sure that you tell people, that's what you do. So that when someone something comes around, they're going to going to be remembering you.
+
+14
+00:08:08,339 --> 00:08:48,650
+Scott Tolinski: Yeah, yeah, totally agree. Yeah, just to get that out there and NAB those first few clients. I also think it's important how you present yourself as a business via and I'm sure will agree via email or communications and stuff like that. Timely professional communications will go a long way in proving that you are a business your legit business rather than just, you know, some some hacker guy or gal behind a computer, you know, wanting to just make a couple bucks here, something like that. So, okay, I think that's pretty good for that question. Okay, next question. What are some strategies for estimating or figuring out possible budgets?
+
+15
+00:08:49,560 --> 00:11:56,160
+Wes Bos: Yeah, this was another big one for me when I was doing freelancing, and people are always like, it's like, kind of like a like a standoff with the client where you, you start to like, you shoot them a number and you slide it across the table and they'd be they become outraged because negotiating for a use car or something like that. It's It's not like that at all. It generally, what I like to do with people is, first what you do is is you sit down with your client and you figure out before you even talk about money, no, I'll come back to that in a second. But before you even talk about money, you need to figure out like what is it that they need at the end of the day? So I would sit down with them and say like, what is it that you don't tell me what you want but what is that? What is it at the end of the day that you need? So if you sit down with a real estate agent, they might need more leads at the end of the day or if you're working with a landscaping company or something like that then they may be saying like I we need more customers at the end of the day and you as a business owner needs to understand the actual objective of the website not tell me what color and language you need this thing done it well. That's another pot aspect as well, like people would, as I go on in my career, people start hiring me for my excellence. teece in JavaScript, rather than just being like a website guy, but I guess that's a that's another area as well. But at that same time, you also need to ask them like, like, what is the, what's a client worth to you? If it's a real estate agent and every single time that they get a client, it's worth six grand to them, then you they may be super happy to pay you. I don't know. However, however many dollars for every single client they get, you don't have to get into the lead generation business. But you could you know, that this website might be worth 10 grand a year to them, if you were to put the work into making sure that they're going to get those things. So understanding the business aspect, understanding what it's actually worth to them at the end of the day is super, super important. Not what is the industry average for a website, or what is a website cost? It's understanding your client and what's worth them. And then finally, understanding what their budget is. So I would always ask them, What is your budget, and that will help you understand like, kind of where they're at and where they may be way off this, sometimes they say, I have no idea what my budget is, I have no idea what to expect for some of this thing. And at that point, you can sort of start to come at them with with some numbers about what it might be. And, and to avoid that sort of sticker shock. I always like to tell them like, okay, I generally work in the range of five to $20,000 for a website, depending on what it is that we need. And and then I always like to talk about like the future, where if we can't afford it all now maybe we can just start with a nice base. And the good thing is I was talking about like, I'm going to build on an open source technology so that you'll be able to add to it a certain point, you're making an investment right now in your online presence. And as you need to add stuff, as you have some more cash available to dedicate to this, then we can we can start to add to it. Yeah, I
+
+16
+00:11:56,160 --> 00:12:38,790
+Scott Tolinski: think I think the discussion of money is something that people are often uncomfortable with, and you need to sort of get over that. Because even that's simple question. Like, that's maybe always one of the first things I ask if it's not stated in like a proposal, if somebody wanted me to work or something like that, if somebody emails me asking, saying that they have some work or something like that, the first thing I asked them is, what's your budget? It's not because I'm greedy, and I want their money, it's because I want to understand if this project is a good fit, or what they're looking for out of it, or, you know, just sort of what they're expecting to pay for this work. And and then that can open up the dialogue about what exactly that that is going to be.
+
+17
+00:12:38,970 --> 00:13:44,220
+Wes Bos: And I also say it's, it's also budgeting and in quoting people is also just a skill as well, I remember I was just like, spend an entire day on putting together a quote, and I would just be like sick to my stomach being like, Oh, is it too much? Is it? Is it not enough? Like? How much more could I get them like you're trying to gauge it all. And at a certain point, you start to get really comfortable with this sort of skill, and be able to sort of feel people out feel kind of what it's worth to them on the other side. I keep I know, I keep saying that. But that's really, one of the most important things that you need to take away of running a business is you need to understand, if you build this thing for them, what is it going to be worth it to them, it's not like this, like sunk cost that people don't want to have to spend, it's I am running a business, I bet I could make more money if I had a really good website or online presence or app or whatever it is. So I'm hiring you to help me further my business. And at the end of day, you both make a lot of money. And then I tell you here are both in good shape. Cool.
+
+18
+00:13:44,220 --> 00:15:11,760
+Scott Tolinski: Okay, so here's a little bit different one, how do you have the conversation with long term clients, that you need to increase your rates or start charging more for a particular project? Because Yeah, long term projects can can sort of drag on and drag on, or maybe it's just something that you know, you're going to be working on monthly for, you know, a year or two years or whatever. And maybe you are realizing that you're putting way in more than you're getting out. And that you need to adjust yourself because otherwise, you know, the whole thing, or the whole entire project could just become a much larger loss for you then like a single one off loss. This is like a repeated loss, you know, so how do you have that conversation? And And my answer this is to just be honest, and to say, Hey, listen, like when we first talked this this project, I was seeing it as this and I understand we made this agreement in the past, however, it's now more apparent that I need this amount of time or this amount of resources to continue or to improve this project. And that I mean, that could mean the end of that relationship. They could tell you know you we said this and that's what I'm going to keep paying you unless you want to break the contract. Like that, but I think you need to be honest and have that discussion and in an honest way with your client, because if you keep your mouth quiet and you take the loss, you're going to take a big loss.
+
+19
+00:15:11,790 --> 00:16:39,330
+Wes Bos: Yeah, the way I did it with my clients is, I would build like pieces of their website. So like one of my clients, we build, like a newsletter bit. And then we built an online store locator. And then we built a, a gallery of all their posts. And what I would do is every single time that they wanted to take on a new project, I would take in all the what they wanted, I would make sure that the scope is nice and clean, and it was clear both what they weren't getting and what they were not getting. So every time I gave a quote, I would also have a section of what it does not include just to make sure that everybody's on the same page, and there's no misunderstanding there. And then I would just give it a fixed base price for that amount. And, and as I got to be a better developer, I got much faster at it. And it doesn't necessarily matter because it was just a fixed, fixed based, and I charged them based on what that dev work was going to be worth to them. And as I got more expensive, I would just the quotes would just get a little bit more expensive. And it's kind of hard to sort of compare those things to each other because it's like, oh, you charged us 3000 bucks for this piece of the website, and the other one was 5000 bucks. It's kind of hard to compare those things to them. So I think just not charging hourly, is probably the first thing that you can you can do in that use case.
+
+20
+00:16:39,390 --> 00:16:39,900
+Unknown: Yeah.
+
+21
+00:16:41,070 --> 00:17:43,290
+Wes Bos: Having clearly defined scope for all of your bids. And if you are charging hourly, like I had, I did have some clients where I was being pulled into their team. And if I was being pulled into their team, then I needed to charge hourly because the scope of the project was just too big. And there's too many moving parts to totally understand. So in that case, I had what was it every every single time that they needed to get more budget approved, they would ask me to rescind my contract. And at that time, I had the ability to increase my rates. So it I think it's just the simplest, look, I'm getting better at this cost of whatever, like the costs of life are going up. I'm charging more. And at a certain point, some of your older clients are going to go away and they're going to find someone else's cheaper and some of the other clients are going to be totally fine with paying that it just just being okay with being able to walk away from people is super important because you don't want to have that like oh, what are they gonna do sort of thing?
+
+22
+00:17:43,310 --> 00:18:21,110
+Scott Tolinski: Yeah, yeah. Because again, if you're sinking all this time into it, it could just end up being so you could be taking a huge loss on it. You know? So taking a big ol big l big Elvis use. If you listen to like, I don't know, I don't know how much rap music you listen to us. But there's plenty there's like a sample that's like been in like a billion songs. It's just like boo boos I don't know if it's Fat Joe or who does it actually but it's like an A billion songs cuz Big Al rest in peace he he died when he was way too young. That's a little hip hop history lesson for you right there.
+
+23
+00:18:21,150 --> 00:18:27,590
+Wes Bos: No, I'm I don't know anything about that one. But I was a big Biggie fan when I was a kid. So I'm sure if I heard it, I would.
+
+24
+00:18:27,900 --> 00:19:21,000
+Scott Tolinski: Yeah, yeah, it's it's all over the place. Alright, let's move on from big ol. Okay, so what is your take on value based pricing, which I feel like we've given several takes on value based pricing. Basically, value based pricing can get you out of a lot of tough situations that you can find yourself in from hourly based situations, right? Like, again, spending way too much time on to get something done, right? Where if you're, you're assessing out what the value is of that to your client, you can potentially save yourself some some trouble down the line, right? Rather than hourly based, right? Which, while you're always billing hourly, you could piss off your client by working too many hours or, you know that that idea of what are you doing for those hours or whatever, it could totally goes out the window, because it's all based around the value of what your client is getting out of this.
+
+25
+00:19:22,170 --> 00:20:28,890
+Wes Bos: Yeah, I think regardless of where you're at, in your dev career, value based pricing is a super good idea. Because if you're a new Dev and you you charge someone 2000 bucks or something, it's great to know that you can take your time and and not be rushed for something. So if you're still learning a new tech, maybe you take on only your first paid react project, you're feeling a little shaky on react, it's totally fine to to double up your time on that. Take twice as long as you normally think you would. And and learn along the way make sure you do a good job and On the flip side, if you're a sort of a seasoned Dev and or if you've you You've maybe done something similar to this. So one big thing that I used to do is I would, I would build a lot of store locators. And I could just kind of take the code from from one project and move it over to another. And if you charge 5000 bucks for one store locator, and you build that thing from scratch, and then obviously make sure that you retain licensing for this thing. And then you do it for another person, like, does the fact that you have already written the code, make it any less valuable to them? Yeah,
+
+26
+00:20:29,100 --> 00:20:30,390
+Scott Tolinski: absolutely not at all,
+
+27
+00:20:30,780 --> 00:21:38,400
+Wes Bos: their clients need to find them. So store locator should be 5000 bucks for them. And it's gonna take you a third of the time that it took you to do it that first time. Or if you you, you shouldn't be punished. Because like, if you're a good developer, and you're super efficient, and you have all this tooling in place to do stuff in your reader really quick. Does that mean you could get paid less? Yeah, no. So I'm a huge proponent of value based pricing. I think that he, your I always did like the hourly calculation after I did a project and it always worked out to being much more than, than I would if I were to charge hourly and a flipside, the clients don't like hourly billing either. Because, like, how often like people, sometimes people come to my house, and they're like working on something and they're like, I charge this much an hour. I'm like, I don't want that. You're just gonna take your sweet time and charge me more money. I don't want that. Just tell me how much it's gonna cost and what I should expect for that money and, and do it as fast or as quick as you can or as slow as you want. But I don't care just do a good job. And I should, I should know exactly what I'm paying and what I'm getting up front.
+
+28
+00:21:38,670 --> 00:22:03,570
+Scott Tolinski: Yeah, totally. Totally agree. Yeah. I mean, because then yeah, I mean, that that that hourly, like, what are you doing for these hours can build resentment because they feel like you're taking too long on anything that can like sort of sour relationship? Where if the other cost is determined up front, everybody sort of knows exactly what's happening before it even happens. Yeah, so Okay. I think that's a good good answer for that one. Moving right along here. We're I think we're getting kind of close to our time.
+
+29
+00:22:03,900 --> 00:22:10,260
+Wes Bos: room for one more otherwise, it starts to move to a maxi sewed. Yeah, are many What is it called hasty tree?
+
+30
+00:22:10,769 --> 00:22:16,440
+Scott Tolinski: Yeah, hasty tree? What? What are these three last questions we got here? Do you have a particular favorite?
+
+31
+00:22:16,830 --> 00:22:20,970
+Wes Bos: Uh, let's do the one about WordPress and premade. themes. Okay.
+
+32
+00:22:21,840 --> 00:23:34,890
+Scott Tolinski: Okay, yes. So I'd like to know when it's okay to use tools like WordPress and pre made themes. And when it's bad behavior, should I be using more advanced tools, when I could do a better faster job with WordPress, it feels like cheating. In my opinion, you know, I feel like if the tools, get the job done, get used those tools to get the job done. Now, the caveat I have here is with this pre made themes. If you're using a premade theme that is going to remain unchanged, then I think ethically, you need to make sure your client knows that this is a pre made theme that you're installing and that it's not a unique web project. Now, if you're taking that premade theme and flipping it and modifying it enough to that it's not recognizable, then I think that that that line gets blurred based on how much you're changing the theme. But for me, using tools like WordPress, or pre made themes, or whatever, can save you a ton of time, save you a ton of money, and we'll be all good, but do not lie to your client and say they're getting a unique design, if it is a design that is, you know, not unique to their their business.
+
+33
+00:23:35,340 --> 00:25:37,860
+Wes Bos: Yeah, that's usually part of the initial conversation with these sort of things where you say to the client, hey, we can sort of hit the ground running, I'm going to start with this existing theme. And you're gonna save yourself. Otherwise, if we did is totally custom, it might be 10 grand, but I'm doing this for three grand because right, we're sort of hitting the ground running with a premade theme. My thoughts on this on sort of the the flip side is, of course, use as many things as you can to make it faster, like what are you gonna write your own JavaScript compiler, right? Yeah. Because like, your client doesn't know I'm using Babel. So I have to write it from scratch. No, of course not. You can you can lean on these tools. And that's sort of the beauty of open source. So on that's like the business Wes answer to that. And the developer West answer to that is that there is especially in this whole WordPress 1500 dollar website area, there is a ton of people doing this kind of stuff. And as websites like Squarespace and Wix as these things are becoming more and more popular. Laura's starting to see is people are we're starting to see a lot of like agencies that do this sort of $5,000 WordPress job. We're starting to see a lot of them close down and it's it's because you can get a better website. When you go go get Squarespace or something like that. And then you can edit you edit it yourself and you're not sort of held at gunpoint by a developer. So you might I never used premade WordPress themes just because I wanted to continue my, my skills as a developer I want it to be Get a grip get to be a really good developer, I did the WordPress thing for a long time. But as I got on in my career, I was doing more like custom WordPress stuff where people needed a custom plugin developed or they needed to integrate it into this other system or they needed like a JavaScript thing built into into the WordPress theme. And I'm glad I did that, because it did get me into much better paying stuff
+
+34
+00:25:37,890 --> 00:25:39,510
+Scott Tolinski: raises your value significantly.
+
+35
+00:25:39,570 --> 00:26:34,710
+Wes Bos: It made me a better developer, I wasn't just me. And also I can't believe how frustrating some of these crappy ass WordPress themes are in the box. So they're not crappy. But like every developer wants to do everything themselves, myself included. So I would say it's totally fine. There's nothing wrong with that. But if you're looking to long term in your career, and you're looking to become like a, like a top dollar custom developer and not just like slinging these WordPress $2,000 WordPress theme every day, then I would probably say that it's worth your time to build these things from scratch and, and what ended up happening for myself is I had my own, I had this WordPress theme called WP hit the ground running. And that was my own starter file, and it had Gulp and Babel and yeah, image compression had all that stuff built into it. And I just like it was my own little competitive advantage. Best of all worlds, right? You
+
+36
+00:26:34,710 --> 00:26:47,100
+Scott Tolinski: have your own tools, you got to build them. You got that experience. And you got a little head start in different ways. Yeah. Again, yeah, best of all worlds. That way, you know, it's gonna be good, because you did it. Or at least, it's going to be familiar to you, you know?
+
+37
+00:26:47,640 --> 00:27:08,550
+Wes Bos: Mm hmm. I honestly found myself when I would take an existing theme. At first I found I would spend more time undoing a lot of the built in styles and trying to figure out what the heck was going through this developers mind when I was just like, I would just rather start this thing from scratch with my like, CSS reset, and then I'm up and running, trying
+
+38
+00:27:08,550 --> 00:27:23,430
+Scott Tolinski: to like dance around all of these, you know, cascading styles that who knows, you know, how they were written. And you change one thing, and it changed some other things, because you don't have a handle fully on the CSS. It's giant monolithic file or something. Yeah, I totally agree.
+
+39
+00:27:24,840 --> 00:27:44,280
+Wes Bos: So hopefully, that that answers your question there. It's definitely not cheating. But long term, definitely. Look at building your own stuff. Word. So that's just under half an hour here. I think we should should wrap it up. That's our minisode. If you have any. We will be calling it a hazy tree to tree. Yeah.
+
+40
+00:27:45,300 --> 00:28:09,390
+Scott Tolinski: I think like there's so many questions around this freelance stuff. And such a large part of our job is doing this kind of stuff. I think we should do somewhat regular of like a freelance themed hasty treat, in addition to some other hasty treats, obviously, but I think we should answer more of these questions. So I mean, again, if you have any more hasty questions for us regarding freelancing hit us up we can just add them to the list and get to them whenever we do another one of these
+
+41
+00:28:09,419 --> 00:28:37,800
+Wes Bos: I think just business in general is kind of fun to talk about in hasty treats. Yeah, marketing. And there's this like whole other side to running your own business, especially if you like, want to build a course or something like Scott and I do. There's a lot that can be shared there. So if you got specific questions about business side of things, or anything that you'd like to see a hasty treat on just tweet us that tweet us or put it into the spreadsheet, we have a little a form you can fill out we'll put that in the show notes.
+
+42
+00:28:37,830 --> 00:28:42,120
+Scott Tolinski: Yes, sick. Cool. This is a nice little hasty trade here.
+
+43
+00:28:42,180 --> 00:29:25,020
+Wes Bos: Alright, that's it. Thanks so much to Jonathan Stark for sponsoring again, you can go to his site value pricing, a boot camp calm to get his free 60 day boot camp miniseries and also check out his book, hourly billing is nuts. If you're interested, a little bit more of the stuff we talked about. I always like having sponsors that line up perfectly with the topic that we're talking about. Yeah, yeah, we he asked the sponsor like months ago and I was like, Oh, just wait until we have a freelancing one because then you'll get the most bang for your buck in sponsoring this thing. So thanks so much. Check that out. And with that, we'll see in the next one, peace Foose.
+
+44
+00:29:26,160 --> 00:29:35,190
+Scott Tolinski: Head on over to syntax FM for a full archive of all our shows. Don't forget to subscribe in your podcast player and drop a review if you'd like to show
+

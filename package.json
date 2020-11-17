@@ -43,7 +43,8 @@
     "react-dom": "^17.0.1",
     "react-hls-player": "^1.1.0",
     "react-icons": "^3.11.0",
-    "speakingurl": "^14.0.1"
+    "speakingurl": "^14.0.1",
+    "use-local-storage-state": "^6.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

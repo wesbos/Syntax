@@ -12,7 +12,6 @@ export default function Transcript({ transcript }) {
 
 function TranscriptLine({ line }) {
   if (!line.text) return '';
-  console.log(line);
   return (
     <div className={`line line--${line.initials}`}>
       <header>

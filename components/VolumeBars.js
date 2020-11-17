@@ -1,11 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 
-// TODO Fix all eslint issues
-
 // data generator -> to create 11 volume bars
-const getItems = count =>
-  Array.from({ length: count }, (v, i) => (i + 1) * 10).map(k => {
+function getItems(count) {
+  return Array.from({ length: count }, (v, i) => (i + 1) * 10).map((k) => {
     const decimal = k / 110;
     return {
       integer: `${k}`,
@@ -14,8 +12,59 @@ const getItems = count =>
       level: `Volume Level ${k}/110`,
       checked: true,
     };
-  }); // END MAP // END ARROW
-class VolumeBars extends Component {
+  });
+}
+
+function VolumeBars({ volume, volumeUpdate }) {
+  const [volumeBarList, setVolumeBarList] = useState(getItems(11));
+
+  function handleOnClick(index) {
+    const volumeBarListCopy = [...volumeBarList].map((bar, barIndex) => {
+      if (barIndex <= index) {
+        bar.checked = true;
+      } else {
+        bar.checked = null;
+      }
+      return bar;
+    });
+    setVolumeBarList(volumeBarListCopy);
+  }
+
+  return (
+    <>
+      {volumeBarList.map((item, index) => (
+        <Fragment key={item.integer}>
+          <input
+            onClick={() => {
+              handleOnClick(index);
+            }}
+            onChange={volumeUpdate}
+            type="radio"
+            name="volume"
+            value={item.deci}
+            id={item.vol}
+            className="sr-only"
+          />
+          <label
+            htmlFor={item.vol}
+            style={
+              // eslint-disable-next-line no-nested-ternary
+              item.integer > 100 && item.checked
+                ? { background: '#f1c15d' }
+                : item.checked
+                ? { background: '#03fff3' }
+                : { background: '#e4e4e4' }
+            }
+          >
+            <span className="sr-only">{item.level}</span>
+          </label>
+        </Fragment>
+      ))}
+    </>
+  );
+}
+
+class VolumeBars2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,7 +88,7 @@ class VolumeBars extends Component {
   }
 
   // We are going to track which volume bars are "checked"
-  handleOnClick = index => {
+  handleOnClick = (index) => {
     // make a copy of state
     const { volumeBarList } = this.state;
     const volumeBarListCopy = [...volumeBarList];
@@ -94,9 +143,5 @@ class VolumeBars extends Component {
     );
   }
 }
-
-VolumeBars.propTypes = {
-  volume: PropTypes.func.isRequired,
-};
 
 export default VolumeBars;

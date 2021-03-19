@@ -45,7 +45,10 @@ export default class Player extends React.Component {
 
   componentDidUpdate(prevProps, prevState) { //eslint-disable-line
     const { show } = this.props;
-    const { currentTime, currentVolume, playbackRate } = this.state;
+    const { currentTime, currentVolume, playbackRate, playing } = this.state;
+    if (!playing && this.props.isPlaying) {
+      this.audio.play();
+    }
     if (show.number !== prevProps.show.number) {
       const lp = localStorage.getItem(`lastPlayed${show.number}`);
       if (lp) {
@@ -278,4 +281,5 @@ export default class Player extends React.Component {
 Player.propTypes = {
   show: PropTypes.object.isRequired,
   onPlayPause: PropTypes.func,
+  isPlaying: PropTypes.bool,
 };

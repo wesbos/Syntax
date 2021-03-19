@@ -81,15 +81,28 @@ export default function IndexPage({ showNumber, shows }) {
       <Meta show={show} />
       <div className="wrapper">
         <main className="show-wrap" id="main" tabIndex="-1">
-          <Player show={current} onPlayPause={a => setIsPlaying(!a.paused)} />
+          <Player
+            show={current}
+            onPlayPause={a => setIsPlaying(!a.paused)}
+            isPlaying={isPlaying}
+          />
           <ShowList
             shows={shows}
             currentShow={currentShow}
             currentPlaying={currentPlaying}
-            setCurrentPlaying={setCurrentPlaying}
+            setCurrentPlaying={n => {
+              setCurrentPlaying(n);
+              setIsPlaying(true);
+            }}
             isPlaying={isPlaying}
           />
-          <ShowNotes show={show} setCurrentPlaying={setCurrentPlaying} />
+          <ShowNotes
+            show={show}
+            setCurrentPlaying={n => {
+              setCurrentPlaying(n);
+              setIsPlaying(true);
+            }}
+          />
         </main>
       </div>
     </Page>

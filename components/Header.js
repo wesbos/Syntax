@@ -9,6 +9,15 @@ const Header = () => (
           <img className="header__logo" src="/static/logo.png" alt="Syntax" />
         </a>
       </Link>
+      <div className="reddit">
+      <a
+        target="_blank"
+        href="https://www.reddit.com/r/SyntaxFM/"
+        rel="noopener noreferrer"
+      >
+        r/SyntaxFM
+      </a>
+      </div>
     </div>
     <div className="header__right">
       <div className="title">

@@ -22,7 +22,7 @@ With Hasura, you can get a fully managed, production-ready GraphQL API as a serv
   * Ikea countertop on [Jarvis Legs](https://www.amazon.com/Jarvis-Standing-Desk-Frame-Only/dp/B01N023V8B).
     * Four presets - sit, stand, horse stance, lunge
 * Wes
-  * 8" Ikea Butcher Block countertop on legs
+  * 8' Ikea Butcher Block countertop on legs
   * [LackRack](https://wiki.eth0.nl/index.php/LackRack) on wheels underneath
   * Desk at cottage is Maple Live Edge Slab on Hairpin Legs
 
@@ -90,7 +90,7 @@ With Hasura, you can get a fully managed, production-ready GraphQL API as a serv
 * Scott
   * [Audient Nero Monitor Controller](https://audient.com/products/monitor-controllers/nero/overview/)
   * [M-Audio BX8](https://m-audio.com/products/view/bx8-d2)
-  * [EV RE20](https://www.amazon.com/Electro-Voice-RE20-Broadcast-Microphone-Variable-D/dp/B00KCN83V8) 
+  * [EV RE20](https://www.amazon.com/Electro-Voice-RE20-Broadcast-Microphone-Variable-D/dp/B00KCN83V8)
   * [Focusrite Scarlett 2i2](https://www.amazon.com/Focusrite-Scarlett-Audio-Interface-Tools/dp/B07QR73T66/)
   * [dbx 286s](https://www.amazon.com/dbx-286s-Microphone-Channel-Processor/dp/B004LWH79A/)
   * [Cloudlifter CL-1](https://www.amazon.com/Cloud-Microphones-CL-1-Cloudlifter-1-channel/dp/B004MQSV04/)

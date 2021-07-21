@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import slug from 'speakingurl';
 import { FaPlay } from 'react-icons/fa';
-import Link from 'next/link';
+import ShowLink from './ShowLink';
 import Bars from './bars';
 
 export default class Show extends React.Component {
@@ -21,24 +20,11 @@ export default class Show extends React.Component {
         } ${currentShow === show.displayNumber ? 'show--active' : ''}
       `}
       >
-        <Link
-          shallow
-          scroll={false}
-          href="/show/[number]/[slug]"
-          as={`/show/${show.displayNumber}/${slug(show.title)}`}
-        >
-          <a className="show__link">
-            <div className="show__container">
-              <p className="show__displayNumber">
-                Episode {show.displayNumber}
-              </p>
-              <span className="show__seperator"> | </span>
-              <p className="show__modifiedDate">{show.displayDate}</p>
-            </div>
-            <h3 className="show__title">{show.title}</h3>
-          </a>
-        </Link>
-
+        <ShowLink
+          displayNumber={show.displayNumber}
+          title={show.title}
+          displayDate={show.displayDate}
+        />
         <div className="show__playcontrols">
           {currentPlaying === show.displayNumber ? (
             <Bars isPlaying={isPlaying} />

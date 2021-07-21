@@ -7,7 +7,7 @@
   display flex
   @media (max-width: 650px)
     flex 1 0 auto
-  a
+  a, button
     flex 1 1 auto
     padding 10px
   &__playcontrols
@@ -75,8 +75,19 @@
     width 100%
     overflow-x auto
     overflow-y scroll
+  .show__link
+    &:focus
+      outline 1px solid yellow
+    appearance none
+    background transparent
+    border none
+    line-height 1.5
+    text-align left
 
 .showNotes
+  &:focus
+    outline 1px solid yellow
+    outline-offset -1px
   position sticky
   top 102px
   height calc(100vh - 102px)
